@@ -1,0 +1,8 @@
+{
+  "name": "cramit-quiz",
+  "version": "1.0.0",
+  "description": "CramIT HSC Quiz — Netlify Functions",
+  "dependencies": {
+    "stripe": "^14.0.0"
+  }
+}
