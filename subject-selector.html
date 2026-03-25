@@ -1,0 +1,287 @@
+<!-- 
+  subject-selector.html
+  ─────────────────────
+  Drop-in subject selection UI for HSC Quiz PWA.
+  Replaces the home screen subject grid once billing is wired up.
+  
+  Usage: include billing.js first, then this component handles
+  all subject selection, plan display, and upgrade prompts.
+-->
+
+<style>
+  /* Subject selector styles — appended to existing app CSS */
+  .sub-selector-wrap { padding: 0 0 24px; }
+  .plan-bar { background: var(--surface2); border: 1px solid var(--border); border-radius: 12px; padding: 14px 16px; margin-bottom: 16px; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+  .plan-bar-left .plan-name { font-family: var(--font-display); font-size: 14px; font-weight: 700; }
+  .plan-bar-left .plan-price { font-size: 12px; color: var(--muted); margin-top: 2px; }
+  .plan-bar-right { display: flex; align-items: center; gap: 8px; }
+  .manage-btn { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 7px 12px; font-family: var(--font-display); font-size: 12px; font-weight: 600; color: var(--text); cursor: pointer; }
+  .cap-meter { display: flex; align-items: center; gap: 6px; font-size: 11px; color: var(--muted); margin-bottom: 12px; }
+  .cap-dots { display: flex; gap: 3px; }
+  .cap-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--surface2); border: 1px solid var(--border); transition: all 0.2s; }
+  .cap-dot.used { background: var(--accent); border-color: var(--accent); }
+  .cap-dot.free-extra { background: var(--accent3); border-color: var(--accent3); }
+  .subject-list { display: flex; flex-direction: column; gap: 8px; }
+  .subject-row { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 14px 16px; display: flex; align-items: center; gap: 12px; transition: all 0.15s; }
+  .subject-row.selected { border-color: var(--accent); background: rgba(124,106,247,0.08); }
+  .subject-row.locked { opacity: 0.45; }
+  .subject-icon-sm { font-size: 20px; flex-shrink: 0; }
+  .subject-info { flex: 1; }
+  .subject-info .sname { font-family: var(--font-display); font-size: 13px; font-weight: 700; }
+  .subject-info .smeta { font-size: 11px; color: var(--muted); margin-top: 2px; }
+  .subject-toggle { width: 22px; height: 22px; border-radius: 50%; border: 2px solid var(--border); background: var(--surface2); cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 11px; transition: all 0.15s; flex-shrink: 0; }
+  .subject-row.selected .subject-toggle { background: var(--accent); border-color: var(--accent); color: white; }
+  .upgrade-prompt { background: var(--surface2); border: 1px solid var(--accent); border-radius: 14px; padding: 18px; margin-top: 12px; text-align: center; animation: fadeUp 0.3s ease; }
+  .upgrade-prompt .up-title { font-family: var(--font-display); font-size: 15px; font-weight: 700; margin-bottom: 4px; }
+  .upgrade-prompt .up-price { font-size: 24px; font-weight: 800; color: var(--accent); font-family: var(--font-display); margin: 8px 0; }
+  .upgrade-prompt .up-desc { font-size: 12px; color: var(--muted); margin-bottom: 14px; line-height: 1.5; }
+  .upgrade-btn { background: var(--accent); color: white; border: none; border-radius: 11px; padding: 14px; width: 100%; font-family: var(--font-display); font-size: 14px; font-weight: 700; cursor: pointer; }
+  .swap-prompt { background: rgba(106,247,200,0.08); border: 1px solid var(--accent3); border-radius: 12px; padding: 14px 16px; margin-top: 8px; font-size: 12px; color: var(--accent3); line-height: 1.5; }
+  .swap-prompt strong { font-family: var(--font-display); display: block; margin-bottom: 3px; }
+  @keyframes fadeUp { from { opacity:0; transform:translateY(8px); } to { opacity:1; transform:translateY(0); } }
+</style>
+
+<div class="sub-selector-wrap" id="sub-selector">
+
+  <!-- Plan status bar -->
+  <div class="plan-bar" id="plan-bar">
+    <div class="plan-bar-left">
+      <div class="plan-name" id="plan-name">Free plan</div>
+      <div class="plan-price" id="plan-price">1 subject included</div>
+    </div>
+    <div class="plan-bar-right">
+      <button class="manage-btn" onclick="BillingUI.openPortal()">Manage</button>
+    </div>
+  </div>
+
+  <!-- Cap meter (shows 7 dots when on unlimited plan) -->
+  <div class="cap-meter" id="cap-meter" style="display:none">
+    <div class="cap-dots" id="cap-dots"></div>
+    <span id="cap-label">0 / 7 subjects</span>
+  </div>
+
+  <!-- Subject list -->
+  <div class="subject-list" id="subject-list"></div>
+
+  <!-- Upgrade prompt (shown when user tries to add a subject they can't) -->
+  <div class="upgrade-prompt" id="upgrade-prompt" style="display:none">
+    <div class="up-title" id="up-title">Unlock more subjects</div>
+    <div class="up-price" id="up-price">$7.99/mo</div>
+    <div class="up-desc" id="up-desc">Subscribe to access all your HSC subjects with instant feedback and model answers.</div>
+    <button class="upgrade-btn" id="upgrade-btn" onclick="BillingUI.checkout()">Subscribe now →</button>
+  </div>
+
+  <!-- Swap prompt (shown when at cap limit on unlimited plan) -->
+  <div class="swap-prompt" id="swap-prompt" style="display:none">
+    <strong>7-subject cap reached</strong>
+    Deselect a subject to swap it out — your price stays at $19.99. Or upgrade to the Flex plan to add more.
+    <button class="manage-btn" style="margin-top:10px;width:100%;text-align:center" onclick="BillingUI.upgradeToFlex()">Upgrade to Flex (+$2.99/subject)</button>
+  </div>
+
+</div>
+
+<script>
+// All available subjects (matches your existing quiz subjects)
+const ALL_SUBJECTS = [
+  { id: 'mathematics-standard-2', name: 'Mathematics Standard 2', icon: '📐', meta: '90 questions · 2020–2025' },
+  { id: 'pdhpe-hms',              name: 'PDHPE — HMS Depth Study', icon: '🏃', meta: 'MC + written · Yr 12' },
+  { id: 'vet-construction',       name: 'VET Construction',        icon: '🔨', meta: 'MC + written · 2021–2025' },
+  { id: 'english-advanced',       name: 'English Advanced',        icon: '📖', meta: 'Coming soon' },
+  { id: 'biology',                name: 'Biology',                 icon: '🧬', meta: 'Coming soon' },
+  { id: 'chemistry',              name: 'Chemistry',               icon: '⚗️',  meta: 'Coming soon' },
+  { id: 'physics',                name: 'Physics',                 icon: '⚡', meta: 'Coming soon' },
+  { id: 'mathematics-advanced',   name: 'Mathematics Advanced',    icon: '📏', meta: 'Coming soon' },
+];
+
+const CAP_LIMIT   = 7;
+const PRICING_UI  = { BASE: 7.99, EXTRA: 2.99, CAP: 19.99, BASE_INCLUDES: 2 };
+
+// State
+let currentUser       = null;
+let currentSub        = { plan: 'free', subject_count: 1 };
+let selectedSubjects  = [];
+let pendingSubjectId  = null;
+
+// ── BillingUI — public API used by onclick handlers ──────────
+window.BillingUI = {
+
+  async init(user) {
+    currentUser = user;
+    if (!user) {
+      selectedSubjects = [];
+      renderSubjectList();
+      return;
+    }
+    try {
+      // Load subscription + selected subjects
+      [currentSub, selectedSubjects] = await Promise.all([
+        window.Billing.getSubscription(user.id),
+        window.Billing.getSelectedSubjects(user.id),
+      ]);
+    } catch (e) {
+      console.warn('Could not load billing state:', e);
+    }
+    renderAll();
+  },
+
+  async toggleSubject(subjectId) {
+    if (!currentUser) {
+      showUpgradePrompt(subjectId, 'sign_up');
+      return;
+    }
+    if (selectedSubjects.includes(subjectId)) {
+      await handleRemove(subjectId);
+    } else {
+      await handleAdd(subjectId);
+    }
+  },
+
+  async checkout() {
+    if (!currentUser || !pendingSubjectId) return;
+    const newCount = selectedSubjects.length + 1;
+    await window.Billing.createCheckoutSession(currentUser.id, newCount, 'swap');
+  },
+
+  async openPortal() {
+    if (!currentUser) return;
+    await window.Billing.openCustomerPortal(currentUser.id);
+  },
+
+  async upgradeToFlex() {
+    if (!currentUser) return;
+    await window.Billing.upgradeToFlex(currentUser.id);
+    currentSub = await window.Billing.getSubscription(currentUser.id);
+    renderAll();
+  },
+};
+
+async function handleAdd(subjectId) {
+  const newCount = selectedSubjects.length + 1;
+
+  // Free plan — can't add 2nd subject without subscribing
+  if (currentSub.plan === 'free' && newCount > 1) {
+    pendingSubjectId = subjectId;
+    showUpgradePrompt(subjectId, 'subscribe');
+    return;
+  }
+
+  // At cap on swap plan — show swap prompt
+  if (currentSub.plan === 'unlimited' && selectedSubjects.length >= CAP_LIMIT) {
+    document.getElementById('swap-prompt').style.display = 'block';
+    document.getElementById('upgrade-prompt').style.display = 'none';
+    return;
+  }
+
+  try {
+    const result = await window.Billing.addSubject(currentUser.id, subjectId);
+    if (result.ok) {
+      selectedSubjects.push(subjectId);
+      currentSub.subject_count = selectedSubjects.length;
+      renderAll();
+      // Open quiz picker immediately
+      if (typeof openPicker === 'function') openPicker(subjectId);
+    }
+  } catch (e) {
+    console.error('Add subject failed:', e);
+  }
+}
+
+async function handleRemove(subjectId) {
+  if (selectedSubjects.length <= 1) {
+    alert('You need at least one subject. Cancel your subscription in Manage if you want to stop.');
+    return;
+  }
+  try {
+    await window.Billing.removeSubject(currentUser.id, subjectId);
+    selectedSubjects = selectedSubjects.filter(s => s !== subjectId);
+    currentSub.subject_count = selectedSubjects.length;
+    renderAll();
+  } catch (e) {
+    console.error('Remove subject failed:', e);
+  }
+}
+
+function showUpgradePrompt(subjectId, mode) {
+  const newCount = selectedSubjects.length + 1;
+  const { price, breakdown } = calcPrice(newCount);
+  document.getElementById('up-title').textContent  = mode === 'sign_up' ? 'Create an account to continue' : 'Unlock ' + ALL_SUBJECTS.find(s => s.id === subjectId)?.name;
+  document.getElementById('up-price').textContent  = '$' + price.toFixed(2) + '/mo';
+  document.getElementById('up-desc').textContent   = breakdown + ' — cancel anytime.';
+  document.getElementById('upgrade-prompt').style.display = 'block';
+  document.getElementById('swap-prompt').style.display    = 'none';
+}
+
+function calcPrice(n) {
+  const { BASE, EXTRA, CAP, BASE_INCLUDES } = PRICING_UI;
+  if (n <= 1) return { price: 0, breakdown: 'Free' };
+  if (n <= BASE_INCLUDES) return { price: BASE, breakdown: `$${BASE} base plan` };
+  const raw = BASE + (n - BASE_INCLUDES) * EXTRA;
+  if (raw >= CAP) return { price: CAP, breakdown: `$${CAP} unlimited cap` };
+  return { price: parseFloat(raw.toFixed(2)), breakdown: `$${BASE} + ${n - BASE_INCLUDES} × $${EXTRA}` };
+}
+
+// ── RENDER ────────────────────────────────────────────────────
+function renderAll() {
+  renderPlanBar();
+  renderCapMeter();
+  renderSubjectList();
+  document.getElementById('upgrade-prompt').style.display = 'none';
+  document.getElementById('swap-prompt').style.display    = 'none';
+}
+
+function renderPlanBar() {
+  const names = { free: 'Free plan', base: 'Base plan', base_plus: 'Base + extras', unlimited: 'Unlimited plan', flex: 'Flex plan' };
+  const { price, breakdown } = calcPrice(selectedSubjects.length || 1);
+  document.getElementById('plan-name').textContent  = names[currentSub.plan] || 'Free plan';
+  document.getElementById('plan-price').textContent = selectedSubjects.length <= 1 ? '1 subject — free' : '$' + price.toFixed(2) + '/mo · ' + breakdown;
+}
+
+function renderCapMeter() {
+  const meter = document.getElementById('cap-meter');
+  if (currentSub.plan !== 'unlimited' && currentSub.plan !== 'flex') {
+    meter.style.display = 'none'; return;
+  }
+  meter.style.display = 'flex';
+  const dots = document.getElementById('cap-dots');
+  dots.innerHTML = '';
+  for (let i = 0; i < CAP_LIMIT; i++) {
+    const d = document.createElement('div');
+    d.className = 'cap-dot' + (i < selectedSubjects.length ? (i === CAP_LIMIT - 1 ? ' free-extra' : ' used') : '');
+    dots.appendChild(d);
+  }
+  document.getElementById('cap-label').textContent = selectedSubjects.length + ' / ' + CAP_LIMIT + ' subjects';
+}
+
+function renderSubjectList() {
+  const list = document.getElementById('subject-list');
+  list.innerHTML = '';
+  ALL_SUBJECTS.forEach(s => {
+    const isSelected = selectedSubjects.includes(s.id);
+    const isLocked   = !isSelected && currentSub.plan === 'free' && selectedSubjects.length >= 1;
+    const isComing   = s.meta.includes('Coming');
+    const row = document.createElement('div');
+    row.className = 'subject-row' + (isSelected ? ' selected' : '') + (isLocked || isComing ? ' locked' : '');
+    row.innerHTML = `
+      <span class="subject-icon-sm">${s.icon}</span>
+      <div class="subject-info">
+        <div class="sname">${s.name}</div>
+        <div class="smeta">${s.meta}</div>
+      </div>
+      <div class="subject-toggle" onclick="BillingUI.toggleSubject('${s.id}')">${isSelected ? '✓' : isComing ? '—' : '+'}</div>
+    `;
+    if (!isComing) {
+      row.style.cursor = 'pointer';
+      row.onclick = (e) => { if (!e.target.classList.contains('subject-toggle')) BillingUI.toggleSubject(s.id); };
+    }
+    list.appendChild(row);
+  });
+}
+
+// Init when auth state available
+document.addEventListener('DOMContentLoaded', () => {
+  if (window.Billing?.getCurrentUser) {
+    window.Billing.getCurrentUser().then(user => BillingUI.init(user));
+    window.Billing.onAuthStateChange((event, user) => BillingUI.init(user));
+  }
+});
+</script>
