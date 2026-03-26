@@ -9,6 +9,7 @@
   <meta name="apple-mobile-web-app-title" content="HSC Quiz"/>
   <link rel="manifest" href="manifest.json"/>
   <link rel="apple-touch-icon" href="icons/icon-192.png"/>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,400&display=swap" rel="stylesheet"/>
   <title>HSC Quiz</title>
@@ -152,7 +153,7 @@
 
   <div class="section-label">Your subjects</div>
 
-  <!-- Auth buttons — shown when logged out -->
+  <!-- Auth buttons — shown when logged out (hidden until Supabase loads) -->
   <div id="auth-buttons" style="display:none;flex-direction:column;gap:8px;margin-bottom:16px">
     <button onclick="handleGoogleSignIn()" style="background:#fff;color:#333;border:1px solid #ddd;border-radius:12px;padding:13px 16px;font-family:var(--font-display);font-size:14px;font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:10px">
       <span style="font-size:16px">G</span> Continue with Google
@@ -3002,7 +3003,10 @@ function goHome() {
   document.getElementById('picker').style.display = 'none';
   document.getElementById('quiz').style.display = 'none';
   document.getElementById('results').style.display = 'none';
+  document.getElementById('upgrade-prompt-home').style.display = 'none';
+  document.getElementById('swap-prompt-home').style.display = 'none';
   updateStats();
+  renderSubjectList();
 }
 
 // ── PICKER ──
@@ -3276,9 +3280,10 @@ if ('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js');
 //  BILLING & AUTH — Supabase + Subject Access Control
 // ════════════════════════════════════════════════════════════════
 
-// ── CONFIG — update these with your real values ──────────────
+// ── CONFIG — REPLACE THESE BEFORE DEPLOYING ──────────────────
 const SUPABASE_URL  = 'https://ohqtefjawaphtsebnaxg.supabase.co';
-const SUPABASE_ANON = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9ocXRlZmphd2FwaHRzZWJuYXhnIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzQzNzIyODIsImV4cCI6MjA4OTk0ODI4Mn0.NBAQ9SbzprUNX1Gao44vTD0_1Il7BRVbV4xpSrvM0ac';
+const SUPABASE_ANON = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9ocXRlZmphd2FwaHRzZWJuYXhnIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzQzNzIyODIsImV4cCI6MjA4OTk0ODI4Mn0.NBAQ9SbzprUNX1Gao44vTD0_1Il7BRVbV4xpSrvM0ac'; // ← Supabase → Settings → API → anon/public key
+const APP_URL       = 'https://cramit.netlify.app'; // ← your Netlify URL e.g. https://cramit.netlify.app
 
 const PRICING_CFG = {
   BASE: 7.99, EXTRA: 2.99, CAP: 19.99,
@@ -3493,7 +3498,7 @@ async function handleCheckout() {
   const newCount = userSubjects.length + 1;
   const { price } = calcPrice(newCount, 'swap');
   try {
-    const res = await fetch('/api/create-checkout', {
+    const res = await fetch('/.netlify/functions/create-checkout', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', 'x-user-email': currentUser.email },
       body: JSON.stringify({
@@ -3522,7 +3527,7 @@ async function handleManageBilling() {
   const { data } = await sbClient.from('subscriptions').select('stripe_customer_id').eq('user_id', currentUser.id).single();
   if (!data?.stripe_customer_id) { alert('No active subscription found.'); return; }
   try {
-    const res = await fetch('/api/customer-portal', {
+    const res = await fetch('/.netlify/functions/customer-portal', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ customer_id: data.stripe_customer_id, return_url: window.location.origin })
@@ -3534,11 +3539,15 @@ async function handleManageBilling() {
 
 // ── AUTH HANDLERS ─────────────────────────────────────────────
 async function handleGoogleSignIn() {
-  if (!sbClient) return;
-  await sbClient.auth.signInWithOAuth({
+  if (!sbClient) { alert('Loading... please try again in a moment.'); return; }
+  const { error } = await sbClient.auth.signInWithOAuth({
     provider: 'google',
-    options: { redirectTo: window.location.origin }
+    options: {
+      redirectTo: APP_URL,
+      queryParams: { access_type: 'offline', prompt: 'consent' }
+    }
   });
+  if (error) { alert('Google sign in failed: ' + error.message); console.error(error); }
 }
 
 function showEmailAuth() {
@@ -3594,16 +3603,11 @@ async function handlePaymentReturn() {
 }
 
 // ── INIT ──────────────────────────────────────────────────────
-// Load Supabase then initialise
-(function loadSupabase() {
-  const script = document.createElement('script');
-  script.src = 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js';
-  script.onload = () => {
-    initSupabase();
-    handlePaymentReturn();
-  };
-  document.head.appendChild(script);
-})();
+// Supabase is loaded via <script> tag in <head> — init directly
+document.addEventListener('DOMContentLoaded', () => {
+  initSupabase();
+  handlePaymentReturn();
+});
 
 // ── INIT ──
 currentStreak = parseInt(localStorage.getItem('hsc_streak') || '0');
