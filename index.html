@@ -147,31 +147,60 @@
 <!-- HOME -->
 <div id="home">
   <div class="home-glow"></div>
-  <div class="app-title">HSC<br/><span>Quiz</span></div>
-  <div class="app-subtitle">NSW · Tap a subject to begin</div>
+  <div class="app-title">Cram<span>IT</span></div>
+  <div class="app-subtitle">HSC exam practice · NSW · Auto-updated from NESA</div>
 
   <div class="section-label">Your subjects</div>
-  <div class="subject-grid">
-    <div class="subject-card" style="--card-accent:#7c6af7" onclick="openPicker('maths')">
-      <span class="subject-icon">📐</span>
-      <div class="subject-name">Mathematics Standard 2</div>
-      <div class="subject-meta">90 questions · 2020–2025</div>
+
+  <!-- Auth buttons — shown when logged out -->
+  <div id="auth-buttons" style="display:none;flex-direction:column;gap:8px;margin-bottom:16px">
+    <button onclick="handleGoogleSignIn()" style="background:#fff;color:#333;border:1px solid #ddd;border-radius:12px;padding:13px 16px;font-family:var(--font-display);font-size:14px;font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:10px">
+      <span style="font-size:16px">G</span> Continue with Google
+    </button>
+    <button onclick="showEmailAuth()" style="background:var(--surface);color:var(--text);border:1px solid var(--border);border-radius:12px;padding:13px 16px;font-family:var(--font-display);font-size:14px;font-weight:600;cursor:pointer">
+      Continue with email
+    </button>
+  </div>
+
+  <!-- Email auth form — hidden by default -->
+  <div id="email-auth" style="display:none;margin-bottom:16px">
+    <input id="auth-email" type="email" placeholder="Email address" style="width:100%;background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:12px 14px;color:var(--text);font-size:14px;margin-bottom:8px"/>
+    <input id="auth-password" type="password" placeholder="Password" style="width:100%;background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:12px 14px;color:var(--text);font-size:14px;margin-bottom:8px"/>
+    <div style="display:flex;gap:8px">
+      <button onclick="handleEmailSignIn()" style="flex:1;background:var(--accent);color:white;border:none;border-radius:10px;padding:12px;font-family:var(--font-display);font-weight:700;font-size:13px;cursor:pointer">Sign in</button>
+      <button onclick="handleEmailSignUp()" style="flex:1;background:var(--surface2);color:var(--text);border:1px solid var(--border);border-radius:10px;padding:12px;font-family:var(--font-display);font-weight:600;font-size:13px;cursor:pointer">Create account</button>
     </div>
-    <div class="subject-card" style="--card-accent:#f76a8a" onclick="openPicker('hms')">
-      <span class="subject-icon">🏃</span>
-      <div class="subject-name">PDHPE — HMS Depth Study</div>
-      <div class="subject-meta">MC + written · Yr 12</div>
+    <p id="auth-error" style="color:#f76a8a;font-size:12px;margin-top:8px;display:none"></p>
+  </div>
+
+  <!-- User bar — shown when logged in -->
+  <div id="user-bar" style="display:none;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:12px 14px;margin-bottom:14px;flex-direction:row;align-items:center;justify-content:space-between">
+    <div>
+      <div style="font-family:var(--font-display);font-size:13px;font-weight:700" id="user-email-display"></div>
+      <div style="font-size:11px;color:var(--muted)" id="plan-display">Free plan</div>
     </div>
-    <div class="subject-card" style="--card-accent:#f7c46a" onclick="openPicker('vet')">
-      <span class="subject-icon">🔨</span>
-      <div class="subject-name">VET Construction</div>
-      <div class="subject-meta">MC + written · 2021–2025</div>
+    <div style="display:flex;gap:8px">
+      <button onclick="handleManageBilling()" style="background:var(--surface2);border:1px solid var(--border);border-radius:8px;padding:6px 10px;color:var(--text);font-size:11px;font-family:var(--font-display);font-weight:600;cursor:pointer">Billing</button>
+      <button onclick="handleSignOut()" style="background:var(--surface2);border:1px solid var(--border);border-radius:8px;padding:6px 10px;color:var(--muted);font-size:11px;cursor:pointer">Sign out</button>
     </div>
-    <div class="subject-card" style="--card-accent:#6af7c8;opacity:0.5;pointer-events:none">
-      <span class="subject-icon">➕</span>
-      <div class="subject-name">More coming</div>
-      <div class="subject-meta">Auto-updated by AI agent</div>
-    </div>
+  </div>
+
+  <!-- Subject list — always visible -->
+  <div id="subject-list-billing" style="display:flex;flex-direction:column;gap:8px;margin-bottom:8px"></div>
+
+  <!-- Upgrade prompt -->
+  <div id="upgrade-prompt-home" style="display:none;background:var(--surface2);border:1px solid var(--accent);border-radius:14px;padding:16px;margin-bottom:8px;text-align:center">
+    <div style="font-family:var(--font-display);font-size:15px;font-weight:700;margin-bottom:4px" id="upgrade-title">Unlock this subject</div>
+    <div style="font-size:26px;font-weight:800;color:var(--accent);font-family:var(--font-display);margin:8px 0" id="upgrade-price">$7.99/mo</div>
+    <div style="font-size:12px;color:var(--muted);margin-bottom:12px" id="upgrade-desc">Subscribe to access all your HSC subjects.</div>
+    <button onclick="handleCheckout()" style="background:var(--accent);color:white;border:none;border-radius:11px;padding:14px;width:100%;font-family:var(--font-display);font-size:14px;font-weight:700;cursor:pointer">Subscribe now →</button>
+  </div>
+
+  <!-- Swap prompt (at 7-subject cap) -->
+  <div id="swap-prompt-home" style="display:none;background:rgba(106,247,200,0.08);border:1px solid var(--accent3);border-radius:12px;padding:14px;margin-bottom:8px;font-size:12px;color:var(--accent3)">
+    <strong style="font-family:var(--font-display);display:block;margin-bottom:3px">7-subject cap reached</strong>
+    Deselect a subject to swap it — your price stays at $19.99. Or upgrade to Flex for +$2.99/subject.
+    <button onclick="handleUpgradeFlex()" style="background:var(--surface);border:1px solid var(--accent3);border-radius:8px;padding:7px 12px;color:var(--accent3);font-size:11px;font-family:var(--font-display);font-weight:600;cursor:pointer;margin-top:8px;width:100%">Upgrade to Flex plan</button>
   </div>
 
   <div class="section-label">Your progress</div>
@@ -3242,6 +3271,339 @@ window.addEventListener('beforeinstallprompt', e => {
 });
 
 if ('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js');
+
+// ════════════════════════════════════════════════════════════════
+//  BILLING & AUTH — Supabase + Subject Access Control
+// ════════════════════════════════════════════════════════════════
+
+// ── CONFIG — update these with your real values ──────────────
+const SUPABASE_URL  = 'https://ohqtefjawaphtsebnaxg.supabase.co';
+const SUPABASE_ANON = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9ocXRlZmphd2FwaHRzZWJuYXhnIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzQzNzIyODIsImV4cCI6MjA4OTk0ODI4Mn0.NBAQ9SbzprUNX1Gao44vTD0_1Il7BRVbV4xpSrvM0ac';
+
+const PRICING_CFG = {
+  BASE: 7.99, EXTRA: 2.99, CAP: 19.99,
+  CAP_LIMIT: 7, BASE_INCLUDES: 2
+};
+
+// Subject catalogue — maps quiz subject keys to billing IDs
+const SUBJECT_CATALOGUE = [
+  { id: 'mathematics-standard-2', quizKey: 'maths', name: 'Mathematics Standard 2', icon: '📐', meta: '90 questions · 2020–2025', accent: '#7c6af7', available: true },
+  { id: 'pdhpe-hms',              quizKey: 'hms',   name: 'PDHPE — HMS Depth Study', icon: '🏃', meta: 'MC + written · Yr 12',    accent: '#f76a8a', available: true },
+  { id: 'vet-construction',       quizKey: 'vet',   name: 'VET Construction',         icon: '🔨', meta: 'MC + written · 2021–2025', accent: '#f7c46a', available: true },
+  { id: 'english-advanced',       quizKey: null,    name: 'English Advanced',         icon: '📖', meta: 'Coming soon',              accent: '#6af7c8', available: false },
+  { id: 'biology',                quizKey: null,    name: 'Biology',                  icon: '🧬', meta: 'Coming soon',              accent: '#6af7c8', available: false },
+  { id: 'chemistry',              quizKey: null,    name: 'Chemistry',                icon: '⚗️', meta: 'Coming soon',              accent: '#6af7c8', available: false },
+];
+
+// ── STATE ─────────────────────────────────────────────────────
+let sbClient       = null;
+let currentUser    = null;
+let userSub        = { plan: 'free', subject_count: 1, status: 'active' };
+let userSubjects   = [];   // array of subject IDs they've selected
+let pendingSubject = null; // subject waiting for payment
+
+// ── INIT SUPABASE ─────────────────────────────────────────────
+function initSupabase() {
+  if (typeof window.supabase === 'undefined') {
+    console.warn('Supabase not loaded yet');
+    return;
+  }
+  sbClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON);
+
+  // Listen for auth state changes
+  sbClient.auth.onAuthStateChange(async (event, session) => {
+    currentUser = session?.user ?? null;
+    await loadUserState();
+    renderHomeAuth();
+  });
+
+  // Check existing session on load
+  sbClient.auth.getSession().then(async ({ data }) => {
+    currentUser = data.session?.user ?? null;
+    await loadUserState();
+    renderHomeAuth();
+  });
+}
+
+// ── LOAD USER SUBSCRIPTION + SUBJECTS ────────────────────────
+async function loadUserState() {
+  if (!currentUser || !sbClient) {
+    userSub      = { plan: 'free', subject_count: 1, status: 'active' };
+    userSubjects = [];
+    return;
+  }
+  try {
+    const [subRes, selRes] = await Promise.all([
+      sbClient.from('subscriptions').select('*').eq('user_id', currentUser.id).single(),
+      sbClient.from('subject_selections').select('subject_id').eq('user_id', currentUser.id)
+    ]);
+    userSub      = subRes.data ?? { plan: 'free', subject_count: 1, status: 'active' };
+    userSubjects = (selRes.data ?? []).map(s => s.subject_id);
+  } catch(e) {
+    console.warn('Could not load user state:', e);
+  }
+}
+
+// ── CAN ACCESS SUBJECT? ───────────────────────────────────────
+function canAccess(subjectId) {
+  if (!currentUser) return false;
+  if (userSub.status !== 'active' && userSub.status !== 'trialing') return false;
+  return userSubjects.includes(subjectId);
+}
+
+// ── PRICE CALCULATOR ─────────────────────────────────────────
+function calcPrice(n, mode) {
+  const { BASE, EXTRA, CAP, CAP_LIMIT, BASE_INCLUDES } = PRICING_CFG;
+  if (n <= 1)             return { price: 0,    label: 'Free' };
+  if (n <= BASE_INCLUDES) return { price: BASE,  label: `$${BASE}/mo` };
+  const raw = BASE + (n - BASE_INCLUDES) * EXTRA;
+  if (raw >= CAP) {
+    if (mode === 'flex' && n > CAP_LIMIT) {
+      const p = CAP + (n - CAP_LIMIT) * EXTRA;
+      return { price: parseFloat(p.toFixed(2)), label: `$${p.toFixed(2)}/mo` };
+    }
+    return { price: CAP, label: `$${CAP}/mo` };
+  }
+  return { price: parseFloat(raw.toFixed(2)), label: `$${raw.toFixed(2)}/mo` };
+}
+
+// ── RENDER HOME AUTH STATE ────────────────────────────────────
+function renderHomeAuth() {
+  const authBtns  = document.getElementById('auth-buttons');
+  const userBar   = document.getElementById('user-bar');
+  const emailAuth = document.getElementById('email-auth');
+
+  if (!currentUser) {
+    if (authBtns)  authBtns.style.display  = 'flex';
+    if (userBar)   userBar.style.display   = 'none';
+    if (emailAuth) emailAuth.style.display = 'none';
+  } else {
+    if (authBtns)  authBtns.style.display  = 'none';
+    if (userBar)   userBar.style.display   = 'flex';
+    if (emailAuth) emailAuth.style.display = 'none';
+    const emailEl = document.getElementById('user-email-display');
+    const planEl  = document.getElementById('plan-display');
+    if (emailEl) emailEl.textContent = currentUser.email;
+    if (planEl) {
+      const { price, label } = calcPrice(userSubjects.length || 1, userSub.plan);
+      planEl.textContent = price === 0 ? 'Free plan · 1 subject' : `${label} · ${userSubjects.length} subjects`;
+    }
+  }
+  renderSubjectList();
+}
+
+// ── RENDER SUBJECT LIST ───────────────────────────────────────
+function renderSubjectList() {
+  const list = document.getElementById('subject-list-billing');
+  if (!list) return;
+  list.innerHTML = '';
+
+  SUBJECT_CATALOGUE.forEach(s => {
+    const isSelected = userSubjects.includes(s.id);
+    const isLocked   = !isSelected && (!currentUser || !canAccess(s.id));
+    const isComing   = !s.available;
+    const atCap      = userSub.plan === 'unlimited' && userSubjects.length >= PRICING_CFG.CAP_LIMIT;
+
+    const row = document.createElement('div');
+    row.style.cssText = `background:var(--surface);border:1px solid ${isSelected ? s.accent : 'var(--border)'};border-radius:12px;padding:14px 16px;display:flex;align-items:center;gap:12px;transition:all 0.15s;${isComing ? 'opacity:0.4;' : 'cursor:pointer;'}`;
+
+    const accentBar = isSelected ? `border-left:3px solid ${s.accent};` : '';
+    row.style.cssText += accentBar;
+
+    row.innerHTML = `
+      <span style="font-size:22px;flex-shrink:0">${s.icon}</span>
+      <div style="flex:1">
+        <div style="font-family:var(--font-display);font-size:13px;font-weight:700">${s.name}</div>
+        <div style="font-size:11px;color:var(--muted);margin-top:2px">${s.meta}</div>
+      </div>
+      <div style="width:24px;height:24px;border-radius:50%;border:2px solid ${isSelected ? s.accent : 'var(--border)'};background:${isSelected ? s.accent : 'var(--surface2)'};display:flex;align-items:center;justify-content:center;font-size:12px;color:white;flex-shrink:0">
+        ${isSelected ? '✓' : isComing ? '—' : isLocked ? '🔒' : '+'}
+      </div>`;
+
+    if (!isComing) {
+      row.onclick = () => handleSubjectTap(s, isSelected, atCap);
+    }
+    list.appendChild(row);
+  });
+}
+
+// ── HANDLE SUBJECT TAP ────────────────────────────────────────
+async function handleSubjectTap(subject, isSelected, atCap) {
+  // If selected — open quiz picker directly
+  if (isSelected && subject.quizKey) {
+    openPicker(subject.quizKey);
+    return;
+  }
+
+  // Not logged in — show auth
+  if (!currentUser) {
+    pendingSubject = subject;
+    document.getElementById('auth-buttons').style.display = 'flex';
+    document.getElementById('auth-buttons').scrollIntoView({ behavior: 'smooth' });
+    return;
+  }
+
+  // At swap cap — show swap prompt
+  if (atCap && userSub.plan === 'unlimited') {
+    document.getElementById('swap-prompt-home').style.display = 'block';
+    document.getElementById('upgrade-prompt-home').style.display = 'none';
+    return;
+  }
+
+  // Free plan trying to add 2nd subject — show upgrade
+  if (userSub.plan === 'free' && userSubjects.length >= 1) {
+    pendingSubject = subject;
+    showUpgradePrompt(subject, userSubjects.length + 1);
+    return;
+  }
+
+  // Paid plan — add subject
+  await addSubject(subject.id);
+}
+
+function showUpgradePrompt(subject, newCount) {
+  const { label } = calcPrice(newCount, 'swap');
+  document.getElementById('upgrade-title').textContent  = `Unlock ${subject.name}`;
+  document.getElementById('upgrade-price').textContent  = label;
+  document.getElementById('upgrade-desc').textContent   = `${label} · cancel anytime · all subjects included`;
+  document.getElementById('upgrade-prompt-home').style.display = 'block';
+  document.getElementById('swap-prompt-home').style.display    = 'none';
+  document.getElementById('upgrade-prompt-home').scrollIntoView({ behavior: 'smooth' });
+}
+
+// ── ADD SUBJECT ───────────────────────────────────────────────
+async function addSubject(subjectId) {
+  if (!currentUser || !sbClient) return;
+  try {
+    await sbClient.from('subject_selections').insert({ user_id: currentUser.id, subject_id: subjectId });
+    userSubjects.push(subjectId);
+    renderHomeAuth();
+    document.getElementById('upgrade-prompt-home').style.display = 'none';
+    // Open quiz immediately
+    const s = SUBJECT_CATALOGUE.find(x => x.id === subjectId);
+    if (s?.quizKey) openPicker(s.quizKey);
+  } catch(e) {
+    console.error('Add subject failed:', e);
+  }
+}
+
+// ── CHECKOUT ─────────────────────────────────────────────────
+async function handleCheckout() {
+  if (!currentUser || !pendingSubject) return;
+  const newCount = userSubjects.length + 1;
+  const { price } = calcPrice(newCount, 'swap');
+  try {
+    const res = await fetch('/api/create-checkout', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'x-user-email': currentUser.email },
+      body: JSON.stringify({
+        user_id:       currentUser.id,
+        subject_count: newCount,
+        plan_type:     price >= PRICING_CFG.CAP ? 'unlimited' : newCount <= PRICING_CFG.BASE_INCLUDES ? 'base' : 'base_plus',
+        plan_mode:     'swap',
+        success_url:   `${window.location.origin}?payment=success&subject=${pendingSubject.id}`,
+        cancel_url:    window.location.origin,
+      })
+    });
+    const { url } = await res.json();
+    window.location.href = url;
+  } catch(e) {
+    alert('Could not start checkout. Please try again.');
+    console.error(e);
+  }
+}
+
+async function handleUpgradeFlex() {
+  alert('To upgrade to the Flex plan please contact support or manage your billing below.');
+}
+
+async function handleManageBilling() {
+  if (!currentUser || !sbClient) return;
+  const { data } = await sbClient.from('subscriptions').select('stripe_customer_id').eq('user_id', currentUser.id).single();
+  if (!data?.stripe_customer_id) { alert('No active subscription found.'); return; }
+  try {
+    const res = await fetch('/api/customer-portal', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ customer_id: data.stripe_customer_id, return_url: window.location.origin })
+    });
+    const { url } = await res.json();
+    window.location.href = url;
+  } catch(e) { console.error(e); }
+}
+
+// ── AUTH HANDLERS ─────────────────────────────────────────────
+async function handleGoogleSignIn() {
+  if (!sbClient) return;
+  await sbClient.auth.signInWithOAuth({
+    provider: 'google',
+    options: { redirectTo: window.location.origin }
+  });
+}
+
+function showEmailAuth() {
+  const ea = document.getElementById('email-auth');
+  if (ea) ea.style.display = ea.style.display === 'none' ? 'block' : 'none';
+}
+
+async function handleEmailSignIn() {
+  const email    = document.getElementById('auth-email')?.value;
+  const password = document.getElementById('auth-password')?.value;
+  const errEl    = document.getElementById('auth-error');
+  if (!email || !password) return;
+  const { error } = await sbClient.auth.signInWithPassword({ email, password });
+  if (error) { if(errEl){ errEl.textContent = error.message; errEl.style.display = 'block'; } }
+}
+
+async function handleEmailSignUp() {
+  const email    = document.getElementById('auth-email')?.value;
+  const password = document.getElementById('auth-password')?.value;
+  const errEl    = document.getElementById('auth-error');
+  if (!email || !password) return;
+  const { error } = await sbClient.auth.signUp({ email, password });
+  if (error) { if(errEl){ errEl.textContent = error.message; errEl.style.display = 'block'; } }
+  else { if(errEl){ errEl.style.color='var(--accent3)'; errEl.textContent = 'Check your email to confirm your account!'; errEl.style.display='block'; } }
+}
+
+async function handleSignOut() {
+  if (!sbClient) return;
+  await sbClient.auth.signOut();
+  userSubjects = [];
+  userSub = { plan: 'free', subject_count: 1, status: 'active' };
+  currentUser = null;
+  renderHomeAuth();
+}
+
+// ── HANDLE PAYMENT SUCCESS REDIRECT ──────────────────────────
+async function handlePaymentReturn() {
+  const params  = new URLSearchParams(window.location.search);
+  const success = params.get('payment');
+  const subject = params.get('subject');
+  if (success === 'success') {
+    // Wait a moment for webhook to fire, then reload user state
+    await new Promise(r => setTimeout(r, 2000));
+    await loadUserState();
+    renderHomeAuth();
+    if (subject) {
+      const s = SUBJECT_CATALOGUE.find(x => x.id === subject);
+      if (s?.quizKey) openPicker(s.quizKey);
+    }
+    // Clean URL
+    window.history.replaceState({}, '', window.location.pathname);
+  }
+}
+
+// ── INIT ──────────────────────────────────────────────────────
+// Load Supabase then initialise
+(function loadSupabase() {
+  const script = document.createElement('script');
+  script.src = 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js';
+  script.onload = () => {
+    initSupabase();
+    handlePaymentReturn();
+  };
+  document.head.appendChild(script);
+})();
 
 // ── INIT ──
 currentStreak = parseInt(localStorage.getItem('hsc_streak') || '0');
