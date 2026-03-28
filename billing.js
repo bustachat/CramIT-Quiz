@@ -279,7 +279,7 @@ export async function createCheckoutSession(userId, nSubjects, planMode = 'swap'
   const pricing = calculatePrice(nSubjects, planMode);
 
   // Call your Netlify/Supabase function to create a Stripe checkout session
-  const res = await fetch('/api/create-checkout', {
+  const res = await fetch('/.netlify/functions/create-checkout', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
@@ -303,7 +303,7 @@ export async function openCustomerPortal(userId) {
   const sub = await getSubscription(userId);
   if (!sub.stripe_customer_id) throw new Error('No billing account found');
 
-  const res = await fetch('/api/customer-portal', {
+  const res = await fetch('/.netlify/functions/customer-portal', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
@@ -319,7 +319,7 @@ export async function openCustomerPortal(userId) {
 async function updateStripeSubjectCount(userId, newCount, sub) {
   if (!sub.stripe_subscription_id) return; // Free plan, no Stripe sub yet
 
-  await fetch('/api/update-subscription', {
+  await fetch('/.netlify/functions/update-subscription', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
@@ -339,7 +339,7 @@ export async function upgradeToFlex(userId) {
   const sub = await getSubscription(userId);
   if (!sub.stripe_subscription_id) throw new Error('No active subscription');
 
-  await fetch('/api/upgrade-flex', {
+  await fetch('/.netlify/functions/upgrade-flex', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
