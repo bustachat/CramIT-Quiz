@@ -3274,7 +3274,7 @@ window.addEventListener('beforeinstallprompt', e => {
   };
 });
 
-if ('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js');
+// Service worker disabled during testing ** if ('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js');
 
 // ════════════════════════════════════════════════════════════════
 //  BILLING & AUTH — Supabase + Subject Access Control
