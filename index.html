@@ -3313,29 +3313,12 @@ function initSupabase() {
     console.warn('Supabase not loaded yet');
     return;
   }
-  // Cookie-based session storage — survives cache clears and redirects
-  const cookieStorage = {
-    getItem: (key) => {
-      const match = document.cookie.match(new RegExp('(^| )' + encodeURIComponent(key) + '=([^;]+)'));
-      if (!match) return null;
-      try { return decodeURIComponent(match[2]); } catch { return null; }
-    },
-    setItem: (key, value) => {
-      const encoded = encodeURIComponent(key) + '=' + encodeURIComponent(value);
-      document.cookie = encoded + '; path=/; max-age=604800; SameSite=Lax; Secure';
-    },
-    removeItem: (key) => {
-      document.cookie = encodeURIComponent(key) + '=; path=/; max-age=0';
-    },
-  };
-
   sbClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON, {
     auth: {
       detectSessionInUrl: true,
       persistSession:     true,
       autoRefreshToken:   true,
-      flowType:           'pkce',
-      storage:            cookieStorage,
+      flowType:           'implicit',
     }
   });
 
@@ -3619,6 +3602,7 @@ async function handleGoogleSignIn() {
     options: {
       redirectTo:  APP_URL,
       queryParams: { access_type: 'offline', prompt: 'consent' },
+      skipBrowserRedirect: false,
     }
   });
   if (error) { alert('Google sign in failed: ' + error.message); console.error(error); }
