@@ -3590,7 +3590,7 @@ async function handlePaymentReturn() {
   const subject = params.get('subject');
   if (success === 'success') {
     // Wait a moment for webhook to fire, then reload user state
-    await new Promise(r => setTimeout(r, 2000));
+    await new Promise(r => setTimeout(r, 4000));
     await loadUserState();
     renderHomeAuth();
     if (subject) {
