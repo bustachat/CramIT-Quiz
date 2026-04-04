@@ -3283,7 +3283,7 @@ if ('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js');
 // ── CONFIG — REPLACE THESE BEFORE DEPLOYING ──────────────────
 const SUPABASE_URL  = 'https://ohqtefjawaphtsebnaxg.supabase.co';
 const SUPABASE_ANON = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9ocXRlZmphd2FwaHRzZWJuYXhnIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzQzNzIyODIsImV4cCI6MjA4OTk0ODI4Mn0.NBAQ9SbzprUNX1Gao44vTD0_1Il7BRVbV4xpSrvM0ac'; // ← Supabase → Settings → API → anon/public key
-const APP_URL       = 'https://cramitexams.netlify.app';
+const APP_URL       = 'https://cramit.netlify.app'; // ← your Netlify URL e.g. https://cramit.netlify.app
 
 const PRICING_CFG = {
   BASE: 7.99, EXTRA: 2.99, CAP: 19.99,
@@ -3318,7 +3318,6 @@ function initSupabase() {
       detectSessionInUrl: true,
       persistSession:     true,
       autoRefreshToken:   true,
-      flowType:           'pkce',
     }
   });
 
@@ -3329,12 +3328,24 @@ function initSupabase() {
     renderHomeAuth();
   });
 
-  // Check existing session on load
-  sbClient.auth.getSession().then(async ({ data }) => {
-    currentUser = data.session?.user ?? null;
-    await loadUserState();
-    renderHomeAuth();
-  });
+  // Check existing session on load — handle PKCE code exchange if present
+  const urlParams = new URLSearchParams(window.location.search);
+  if (urlParams.get('code')) {
+    // PKCE: exchange the code for a session, then clean the URL
+    sbClient.auth.exchangeCodeForSession(window.location.href).then(async ({ data, error }) => {
+      if (error) console.error('Code exchange error:', error);
+      currentUser = data?.session?.user ?? null;
+      window.history.replaceState({}, document.title, window.location.pathname);
+      await loadUserState();
+      renderHomeAuth();
+    });
+  } else {
+    sbClient.auth.getSession().then(async ({ data }) => {
+      currentUser = data.session?.user ?? null;
+      await loadUserState();
+      renderHomeAuth();
+    });
+  }
 }
 
 // ── LOAD USER SUBSCRIPTION + SUBJECTS ────────────────────────
@@ -3462,26 +3473,14 @@ async function handleSubjectTap(subject, isSelected, atCap) {
     return;
   }
 
-  // Free plan — show upgrade prompt for any subject beyond 1
+  // Free plan trying to add 2nd subject — show upgrade
   if (userSub.plan === 'free' && userSubjects.length >= 1) {
     pendingSubject = subject;
     showUpgradePrompt(subject, userSubjects.length + 1);
     return;
   }
 
-  // Paid plan — check if adding this subject increases the price
-  if (userSub.plan !== 'free') {
-    const currentPrice = calcPrice(userSubjects.length, 'swap').price;
-    const newPrice     = calcPrice(userSubjects.length + 1, 'swap').price;
-    if (newPrice > currentPrice) {
-      // Price goes up — show prompt so student knows before being charged
-      pendingSubject = subject;
-      showUpgradePrompt(subject, userSubjects.length + 1);
-      return;
-    }
-  }
-
-  // No price change — add subject silently
+  // Paid plan — add subject
   await addSubject(subject.id);
 }
 
@@ -3489,20 +3488,36 @@ function showUpgradePrompt(subject, newCount) {
   const { label } = calcPrice(newCount, 'swap');
   document.getElementById('upgrade-title').textContent  = `Unlock ${subject.name}`;
   document.getElementById('upgrade-price').textContent  = label;
-  document.getElementById('upgrade-desc').textContent   = `${label}/mo · cancel anytime`;
+  document.getElementById('upgrade-desc').textContent   = `${label} · cancel anytime · all subjects included`;
   document.getElementById('upgrade-prompt-home').style.display = 'block';
   document.getElementById('swap-prompt-home').style.display    = 'none';
   document.getElementById('upgrade-prompt-home').scrollIntoView({ behavior: 'smooth' });
 }
 
-// ── ADD SUBJECT (no price change path) ───────────────────────
+// ── ADD SUBJECT ───────────────────────────────────────────────
 async function addSubject(subjectId) {
   if (!currentUser || !sbClient) return;
   try {
+    // Insert into subject_selections
     await sbClient.from('subject_selections').insert({ user_id: currentUser.id, subject_id: subjectId });
     userSubjects.push(subjectId);
+
+    // If on a paid plan, update Stripe subscription to reflect new subject count
+    if (userSub.plan !== 'free' && userSub.stripe_subscription_id) {
+      await fetch('/.netlify/functions/update-subscription', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          subscription_id: userSub.stripe_subscription_id,
+          subject_count:   userSubjects.length,
+          plan_mode:       userSub.plan === 'flex' ? 'flex' : 'swap',
+        })
+      });
+    }
+
     renderHomeAuth();
     document.getElementById('upgrade-prompt-home').style.display = 'none';
+    // Open quiz immediately
     const s = SUBJECT_CATALOGUE.find(x => x.id === subjectId);
     if (s?.quizKey) openPicker(s.quizKey);
   } catch(e) {
@@ -3511,49 +3526,10 @@ async function addSubject(subjectId) {
 }
 
 // ── CHECKOUT ─────────────────────────────────────────────────
-// Called by "Subscribe now" button for both new subs and upgrades
 async function handleCheckout() {
   if (!currentUser || !pendingSubject) return;
   const newCount = userSubjects.length + 1;
   const { price } = calcPrice(newCount, 'swap');
-
-  // Already has a subscription — update it via Stripe, then add subject locally
-  if (userSub.plan !== 'free' && userSub.stripe_subscription_id) {
-    try {
-      const btn = document.querySelector('#upgrade-prompt-home button');
-      if (btn) { btn.textContent = 'Updating…'; btn.disabled = true; }
-
-      await fetch('/.netlify/functions/update-subscription', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          subscription_id: userSub.stripe_subscription_id,
-          subject_count:   newCount,
-          plan_mode:       userSub.plan === 'flex' ? 'flex' : 'swap',
-        })
-      });
-
-      // Add subject to DB and update local state
-      await sbClient.from('subject_selections').insert({ user_id: currentUser.id, subject_id: pendingSubject.id });
-      userSubjects.push(pendingSubject.id);
-      userSub.subject_count = newCount;
-      userSub.plan = price >= PRICING_CFG.CAP ? 'unlimited' : newCount <= PRICING_CFG.BASE_INCLUDES ? 'base' : 'base_plus';
-
-      const justAdded = pendingSubject;
-      pendingSubject = null;
-      renderHomeAuth();
-      document.getElementById('upgrade-prompt-home').style.display = 'none';
-      if (justAdded.quizKey) openPicker(justAdded.quizKey);
-    } catch(e) {
-      alert('Could not update subscription. Please try again.');
-      console.error(e);
-      const btn = document.querySelector('#upgrade-prompt-home button');
-      if (btn) { btn.textContent = 'Subscribe now →'; btn.disabled = false; }
-    }
-    return;
-  }
-
-  // No subscription yet — go through Stripe checkout
   try {
     const res = await fetch('/.netlify/functions/create-checkout', {
       method: 'POST',
@@ -3600,9 +3576,8 @@ async function handleGoogleSignIn() {
   const { error } = await sbClient.auth.signInWithOAuth({
     provider: 'google',
     options: {
-      redirectTo:  APP_URL,
-      queryParams: { access_type: 'offline', prompt: 'consent' },
-      skipBrowserRedirect: false,
+      redirectTo: APP_URL,
+      queryParams: { access_type: 'offline', prompt: 'consent' }
     }
   });
   if (error) { alert('Google sign in failed: ' + error.message); console.error(error); }
@@ -3646,36 +3621,17 @@ async function handlePaymentReturn() {
   const params  = new URLSearchParams(window.location.search);
   const success = params.get('payment');
   const subject = params.get('subject');
-  if (success !== 'success') return;
-
-  // Clean URL immediately
-  window.history.replaceState({}, '', window.location.pathname);
-
-  // Wait for webhook to write to Supabase
-  await new Promise(r => setTimeout(r, 4000));
-
-  // Check if session survived the redirect
-  const { data } = await sbClient.auth.getSession();
-  if (data.session) {
-    // Session intact — load state normally
-    currentUser = data.session.user;
+  if (success === 'success') {
+    // Wait a moment for webhook to fire, then reload user state
+    await new Promise(r => setTimeout(r, 4000));
     await loadUserState();
     renderHomeAuth();
     if (subject) {
       const s = SUBJECT_CATALOGUE.find(x => x.id === subject);
       if (s?.quizKey) openPicker(s.quizKey);
     }
-  } else {
-    // Session lost after Stripe redirect — show friendly re-login prompt
-    const authBtns = document.getElementById('auth-buttons');
-    const banner   = document.createElement('div');
-    banner.style.cssText = 'background:var(--surface2);border:1px solid var(--accent);border-radius:14px;padding:16px;margin-bottom:12px;text-align:center';
-    banner.innerHTML = '<div style="font-family:var(--font-display);font-size:15px;font-weight:700;color:var(--accent);margin-bottom:6px">✅ Payment successful!</div><div style="font-size:13px;color:var(--muted);margin-bottom:12px">Sign back in to access your subjects.</div>';
-    if (authBtns) {
-      authBtns.style.display = 'flex';
-      authBtns.parentNode.insertBefore(banner, authBtns);
-      authBtns.scrollIntoView({ behavior: 'smooth' });
-    }
+    // Clean URL
+    window.history.replaceState({}, '', window.location.pathname);
   }
 }
 
