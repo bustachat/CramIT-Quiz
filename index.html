@@ -3480,8 +3480,23 @@ function showUpgradePrompt(subject, newCount) {
 async function addSubject(subjectId) {
   if (!currentUser || !sbClient) return;
   try {
+    // Insert into subject_selections
     await sbClient.from('subject_selections').insert({ user_id: currentUser.id, subject_id: subjectId });
     userSubjects.push(subjectId);
+
+    // If on a paid plan, update Stripe subscription to reflect new subject count
+    if (userSub.plan !== 'free' && userSub.stripe_subscription_id) {
+      await fetch('/.netlify/functions/update-subscription', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          subscription_id: userSub.stripe_subscription_id,
+          subject_count:   userSubjects.length,
+          plan_mode:       userSub.plan === 'flex' ? 'flex' : 'swap',
+        })
+      });
+    }
+
     renderHomeAuth();
     document.getElementById('upgrade-prompt-home').style.display = 'none';
     // Open quiz immediately
