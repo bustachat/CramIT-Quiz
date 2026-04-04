@@ -3313,7 +3313,13 @@ function initSupabase() {
     console.warn('Supabase not loaded yet');
     return;
   }
-  sbClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON);
+  sbClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON, {
+    auth: {
+      detectSessionInUrl: true,
+      persistSession:     true,
+      autoRefreshToken:   true,
+    }
+  });
 
   // Listen for auth state changes
   sbClient.auth.onAuthStateChange(async (event, session) => {
