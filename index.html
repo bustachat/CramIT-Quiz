@@ -3625,18 +3625,26 @@ async function handleSignOut() {
 async function handlePaymentReturn() {
   const params  = new URLSearchParams(window.location.search);
   const success = params.get('payment');
-  const subject = params.get('subject');
-  if (success === 'success') {
-    // Wait a moment for webhook to fire, then reload user state
-    await new Promise(r => setTimeout(r, 4000));
-    await loadUserState();
-    renderHomeAuth();
-    if (subject) {
-      const s = SUBJECT_CATALOGUE.find(x => x.id === subject);
-      if (s?.quizKey) openPicker(s.quizKey);
-    }
-    // Clean URL
-    window.history.replaceState({}, '', window.location.pathname);
+  if (success !== 'success') return;
+
+  // Clean URL immediately
+  window.history.replaceState({}, '', window.location.pathname);
+
+  // Wait for webhook to write subscription to Supabase
+  await new Promise(r => setTimeout(r, 5000));
+
+  // Reload fresh state from Supabase
+  await loadUserState();
+  renderHomeAuth();
+
+  // Show success message on home screen
+  const list = document.getElementById('subject-list-billing');
+  if (list) {
+    const banner = document.createElement('div');
+    banner.style.cssText = 'background:rgba(106,247,200,0.1);border:1px solid var(--accent3);border-radius:12px;padding:12px 16px;margin-bottom:8px;font-size:13px;color:var(--accent3);text-align:center';
+    banner.textContent = '✅ Payment successful — your subjects are now unlocked!';
+    list.parentNode.insertBefore(banner, list);
+    setTimeout(() => banner.remove(), 5000);
   }
 }
 
