@@ -3308,7 +3308,7 @@ let userSubjects   = [];   // array of subject IDs they've selected
 let pendingSubject = null; // subject waiting for payment
 
 // ── INIT SUPABASE ─────────────────────────────────────────────
-function initSupabase() {
+async function initSupabase() {
   if (typeof window.supabase === 'undefined') {
     console.warn('Supabase not loaded yet');
     return;
@@ -3322,31 +3322,35 @@ function initSupabase() {
     }
   });
 
-  // Listen for auth state changes
-  sbClient.auth.onAuthStateChange(async (event, session) => {
-    currentUser = session?.user ?? null;
-    await loadUserState();
-    renderHomeAuth();
-  });
-
-  // Check existing session on load — handle PKCE code exchange if present
+  // Handle PKCE code exchange FIRST before anything else renders
   const urlParams = new URLSearchParams(window.location.search);
   if (urlParams.get('code')) {
-    // PKCE: exchange the code for a session, then clean the URL
-    sbClient.auth.exchangeCodeForSession(window.location.href).then(async ({ data, error }) => {
-      if (error) console.error('Code exchange error:', error);
-      currentUser = data?.session?.user ?? null;
-      window.history.replaceState({}, document.title, window.location.pathname);
-      await loadUserState();
-      renderHomeAuth();
-    });
+    const { data, error } = await sbClient.auth.exchangeCodeForSession(window.location.href);
+    if (error) console.error('Code exchange error:', error);
+    currentUser = data?.session?.user ?? null;
+    window.history.replaceState({}, document.title, window.location.pathname);
   } else {
-    sbClient.auth.getSession().then(async ({ data }) => {
-      currentUser = data.session?.user ?? null;
+    const { data } = await sbClient.auth.getSession();
+    currentUser = data.session?.user ?? null;
+  }
+
+  // Now render with correct auth state
+  await loadUserState();
+  renderHomeAuth();
+
+  // Listen for future auth state changes (sign out, token refresh etc)
+  sbClient.auth.onAuthStateChange(async (event, session) => {
+    if (event === 'SIGNED_OUT') {
+      currentUser = null;
+      userSubjects = [];
+      userSub = { plan: 'free', subject_count: 1, status: 'active' };
+      renderHomeAuth();
+    } else if (event === 'TOKEN_REFRESHED' || event === 'SIGNED_IN') {
+      currentUser = session?.user ?? null;
       await loadUserState();
       renderHomeAuth();
-    });
-  }
+    }
+  });
 }
 
 // ── LOAD USER SUBSCRIPTION + SUBJECTS ────────────────────────
