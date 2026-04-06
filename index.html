@@ -3313,12 +3313,27 @@ async function initSupabase() {
     console.warn('Supabase not loaded yet');
     return;
   }
+  // Cookie storage — survives Edge tracking prevention which clears localStorage
+  const cookieStorage = {
+    getItem(key) {
+      const match = document.cookie.match(new RegExp('(^| )sb-' + key.replace(/[.*+?^${}()|[\]\]/g, '\\$&') + '=([^;]+)'));
+      return match ? decodeURIComponent(match[2]) : null;
+    },
+    setItem(key, value) {
+      document.cookie = 'sb-' + key + '=' + encodeURIComponent(value) + '; path=/; max-age=604800; SameSite=Lax; Secure';
+    },
+    removeItem(key) {
+      document.cookie = 'sb-' + key + '=; path=/; max-age=0';
+    }
+  };
+
   sbClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON, {
     auth: {
       detectSessionInUrl: true,
       persistSession:     true,
       autoRefreshToken:   true,
       flowType:           'implicit',
+      storage:            cookieStorage,
     }
   });
 
@@ -3532,7 +3547,44 @@ async function handleCheckout() {
       })
     });
     const { url } = await res.json();
-    window.location.href = url;
+
+    // Open Stripe in a new tab so session is preserved in this tab
+    const stripeTab = window.open(url, '_blank');
+
+    // Show waiting message
+    const btn = document.querySelector('#upgrade-prompt-home button');
+    if (btn) { btn.textContent = 'Complete payment in new tab…'; btn.disabled = true; }
+
+    // Poll Supabase every 3 seconds waiting for subscription to appear
+    const subjectId = pendingSubject.id;
+    const poll = setInterval(async () => {
+      const { data } = await sbClient.from('subscriptions')
+        .select('plan, status')
+        .eq('user_id', currentUser.id)
+        .single();
+
+      if (data && data.status === 'active' && data.plan !== 'free') {
+        clearInterval(poll);
+        if (stripeTab) stripeTab.close();
+        await loadUserState();
+        renderHomeAuth();
+        document.getElementById('upgrade-prompt-home').style.display = 'none';
+        pendingSubject = null;
+        // Show success
+        const list = document.getElementById('subject-list-billing');
+        if (list) {
+          const banner = document.createElement('div');
+          banner.style.cssText = 'background:rgba(106,247,200,0.1);border:1px solid var(--accent3);border-radius:12px;padding:12px 16px;margin-bottom:8px;font-size:13px;color:var(--accent3);text-align:center';
+          banner.textContent = '✅ Payment successful — your subjects are now unlocked!';
+          list.parentNode.insertBefore(banner, list);
+          setTimeout(() => banner.remove(), 5000);
+        }
+      }
+    }, 3000);
+
+    // Stop polling after 10 minutes
+    setTimeout(() => clearInterval(poll), 600000);
+
   } catch(e) {
     alert('Could not start checkout. Please try again.');
     console.error(e);
