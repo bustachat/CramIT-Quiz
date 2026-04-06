@@ -3330,7 +3330,7 @@ async function initSupabase() {
     setItem: function(key, value) {
       const encodedKey = encodeURIComponent(key);
       const encodedValue = encodeURIComponent(value);
-      document.cookie = encodedKey + '=' + encodedValue + '; path=/; max-age=604800; SameSite=Lax; Secure';
+      document.cookie = encodedKey + '=' + encodedValue + '; path=/; max-age=604800; SameSite=Lax';
     },
     removeItem: function(key) {
       document.cookie = encodeURIComponent(key) + '=; path=/; max-age=0; SameSite=Lax';
