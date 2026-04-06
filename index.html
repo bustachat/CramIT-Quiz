@@ -3650,9 +3650,9 @@ async function handlePaymentReturn() {
 
 // ── INIT ──────────────────────────────────────────────────────
 // Supabase is loaded via <script> tag in <head> — init directly
-document.addEventListener('DOMContentLoaded', () => {
-  initSupabase();
-  handlePaymentReturn();
+document.addEventListener('DOMContentLoaded', async () => {
+  await initSupabase();   // must complete first — sets up sbClient and auth state
+  handlePaymentReturn();  // runs after auth is settled
 });
 
 // ── INIT ──
