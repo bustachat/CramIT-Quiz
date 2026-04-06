@@ -3314,12 +3314,38 @@ async function initSupabase() {
     return;
   }
 
+  // Cookie storage — survives Edge tracking prevention which clears localStorage
+  const cookieStore = {
+    getItem: function(key) {
+      const name = encodeURIComponent(key) + '=';
+      const decodedCookie = decodeURIComponent(document.cookie);
+      const parts = decodedCookie.split(';');
+      for (let i = 0; i < parts.length; i++) {
+        let c = parts[i].trim();
+        if (c.indexOf(name) === 0) {
+          return c.substring(name.length);
+        }
+      }
+      return null;
+    },
+    setItem: function(key, value) {
+      const encodedKey = encodeURIComponent(key);
+      const encodedValue = encodeURIComponent(value);
+      document.cookie = encodedKey + '=' + encodedValue + '; path=/; max-age=604800; SameSite=Lax; Secure';
+    },
+    removeItem: function(key) {
+      document.cookie = encodeURIComponent(key) + '=; path=/; max-age=0; SameSite=Lax';
+    }
+  };
+
   sbClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON, {
     auth: {
       detectSessionInUrl: true,
       persistSession:     true,
       autoRefreshToken:   true,
       flowType:           'implicit',
+      storage:            cookieStore,
+      storageKey:         'sb-cramit-auth-token',
     }
   });
 
@@ -3331,8 +3357,15 @@ async function initSupabase() {
   });
 
   // Check existing session on load
-  const { data } = await sbClient.auth.getSession();
+  const { data, error } = await sbClient.auth.getSession();
+  if (error) console.error('Session error:', error);
   currentUser = data.session?.user ?? null;
+
+  // Clean up hash from URL after session detected
+  if (window.location.hash) {
+    window.history.replaceState({}, document.title, window.location.pathname + window.location.search);
+  }
+
   await loadUserState();
   renderHomeAuth();
 }
