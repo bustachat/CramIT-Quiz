@@ -3318,12 +3318,11 @@ async function initSupabase() {
   const cookieStore = {
     getItem: function(key) {
       const name = encodeURIComponent(key) + '=';
-      const decodedCookie = decodeURIComponent(document.cookie);
-      const parts = decodedCookie.split(';');
+      const parts = document.cookie.split(';');
       for (let i = 0; i < parts.length; i++) {
         let c = parts[i].trim();
         if (c.indexOf(name) === 0) {
-          return c.substring(name.length);
+          try { return decodeURIComponent(c.substring(name.length)); } catch(e) { return null; }
         }
       }
       return null;
