@@ -3318,39 +3318,22 @@ async function initSupabase() {
       detectSessionInUrl: true,
       persistSession:     true,
       autoRefreshToken:   true,
-      flowType:           'pkce',
+      flowType:           'implicit',
     }
   });
 
-  // Handle PKCE code exchange FIRST before anything else renders
-  const urlParams = new URLSearchParams(window.location.search);
-  if (urlParams.get('code')) {
-    const { data, error } = await sbClient.auth.exchangeCodeForSession(window.location.href);
-    if (error) console.error('Code exchange error:', error);
-    currentUser = data?.session?.user ?? null;
-    window.history.replaceState({}, document.title, window.location.pathname);
-  } else {
-    const { data } = await sbClient.auth.getSession();
-    currentUser = data.session?.user ?? null;
-  }
+  // Listen for auth state changes — fires on login, logout, token refresh
+  sbClient.auth.onAuthStateChange(async (event, session) => {
+    currentUser = session?.user ?? null;
+    await loadUserState();
+    renderHomeAuth();
+  });
 
-  // Now render with correct auth state
+  // Check existing session on load
+  const { data } = await sbClient.auth.getSession();
+  currentUser = data.session?.user ?? null;
   await loadUserState();
   renderHomeAuth();
-
-  // Listen for future auth state changes (sign out, token refresh etc)
-  sbClient.auth.onAuthStateChange(async (event, session) => {
-    if (event === 'SIGNED_OUT') {
-      currentUser = null;
-      userSubjects = [];
-      userSub = { plan: 'free', subject_count: 1, status: 'active' };
-      renderHomeAuth();
-    } else if (event === 'TOKEN_REFRESHED' || event === 'SIGNED_IN') {
-      currentUser = session?.user ?? null;
-      await loadUserState();
-      renderHomeAuth();
-    }
-  });
 }
 
 // ── LOAD USER SUBSCRIPTION + SUBJECTS ────────────────────────
