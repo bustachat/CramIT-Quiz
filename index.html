@@ -9,7 +9,7 @@
   <meta name="apple-mobile-web-app-title" content="HSC Quiz"/>
   <link rel="manifest" href="manifest.json"/>
   <link rel="apple-touch-icon" href="icons/icon-192.png"/>
-  <script src="/supabase.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,400&display=swap" rel="stylesheet"/>
   <title>HSC Quiz</title>
@@ -3351,6 +3351,16 @@ async function initSupabase() {
   // Listen for auth state changes — fires on login, logout, token refresh
   sbClient.auth.onAuthStateChange(async (event, session) => {
     currentUser = session?.user ?? null;
+    // Manually persist session to cookie store when auth state changes
+    if (session) {
+      cookieStore.setItem('sb-cramit-auth-token', JSON.stringify(session));
+    } else {
+      cookieStore.removeItem('sb-cramit-auth-token');
+    }
+    // Clean hash from URL after login
+    if (window.location.hash && window.location.hash.indexOf('access_token') !== -1) {
+      window.history.replaceState({}, document.title, window.location.pathname);
+    }
     await loadUserState();
     renderHomeAuth();
   });
@@ -3358,11 +3368,27 @@ async function initSupabase() {
   // Check existing session on load
   const { data, error } = await sbClient.auth.getSession();
   if (error) console.error('Session error:', error);
-  currentUser = data.session?.user ?? null;
 
-  // Clean up hash from URL after session detected
-  if (window.location.hash) {
-    window.history.replaceState({}, document.title, window.location.pathname + window.location.search);
+  if (data.session) {
+    currentUser = data.session.user;
+  } else {
+    // Try recovering session from our cookie
+    const stored = cookieStore.getItem('sb-cramit-auth-token');
+    if (stored) {
+      try {
+        const parsed = JSON.parse(stored);
+        if (parsed && parsed.user) {
+          const { data: refreshed } = await sbClient.auth.setSession({
+            access_token:  parsed.access_token,
+            refresh_token: parsed.refresh_token,
+          });
+          currentUser = refreshed?.session?.user ?? null;
+        }
+      } catch(e) {
+        console.warn('Could not restore session from cookie:', e);
+        currentUser = null;
+      }
+    }
   }
 
   await loadUserState();
