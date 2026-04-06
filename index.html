@@ -3469,7 +3469,18 @@ async function handleSubjectTap(subject, isSelected, atCap) {
     return;
   }
 
-  // Paid plan — add subject
+  // Paid plan — check if price increases before adding
+  if (userSub.plan !== 'free') {
+    const currentPrice = calcPrice(userSubjects.length, 'swap').price;
+    const newPrice     = calcPrice(userSubjects.length + 1, 'swap').price;
+    if (newPrice > currentPrice) {
+      pendingSubject = subject;
+      showUpgradePrompt(subject, userSubjects.length + 1);
+      return;
+    }
+  }
+
+  // No price change — add silently
   await addSubject(subject.id);
 }
 
