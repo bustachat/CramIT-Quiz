@@ -3394,13 +3394,31 @@ async function initSupabase() {
   } else {
     // ── STEP 2: RESTORE SESSION ON NORMAL PAGE LOAD ────────
     // Try Supabase's built-in localStorage first
-    const { data, error } = await sbClient.auth.getSession();
+    let sessionData = null;
+    let sessionError = null;
 
-    if (data?.session) {
+    try {
+      const result = await sbClient.auth.getSession();
+      sessionData = result.data;
+      sessionError = result.error;
+    } catch(e) {
+      console.warn('[CramIT] getSession threw:', e);
+      sessionError = e;
+    }
+
+    // If getSession returned an error (stale/invalid token in localStorage),
+    // sign out to clear the bad state and prevent infinite retry loops.
+    if (sessionError) {
+      console.warn('[CramIT] Stale session detected — clearing:', sessionError.message || sessionError);
+      try { await sbClient.auth.signOut(); } catch(e) { /* ignore */ }
+      clearTokenCookies();
+      currentUser = null;
+
+    } else if (sessionData?.session) {
       // localStorage had a valid session — great
-      currentUser = data.session.user;
+      currentUser = sessionData.session.user;
       // Keep cookie backup fresh
-      saveTokenCookies(data.session.access_token, data.session.refresh_token);
+      saveTokenCookies(sessionData.session.access_token, sessionData.session.refresh_token);
       console.log('[CramIT] Session restored from localStorage:', currentUser.email);
 
     } else {
