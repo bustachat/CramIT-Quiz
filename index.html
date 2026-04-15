@@ -3722,12 +3722,23 @@ async function handleCheckout() {
         // Add the pending subject to subject_selections if not already there
         if (subjectId && !userSubjects.includes(subjectId)) {
           try {
-            await sbClient.from('subject_selections')
-              .upsert({ user_id: currentUser.id, subject_id: subjectId },
-                       { onConflict: 'user_id, subject_id' });
-            console.log('[CramIT] Subject added after payment:', subjectId);
+            const { data: existing } = await sbClient.from('subject_selections')
+              .select('id')
+              .eq('user_id', currentUser.id)
+              .eq('subject_id', subjectId)
+              .maybeSingle();
+
+            if (!existing) {
+              const { error: insErr } = await sbClient.from('subject_selections')
+                .insert({ user_id: currentUser.id, subject_id: subjectId });
+              if (insErr) {
+                console.error('[CramIT] Poll: insert subject failed:', insErr);
+              } else {
+                console.log('[CramIT] Poll: subject added:', subjectId);
+              }
+            }
           } catch(e) {
-            console.warn('[CramIT] Could not add subject:', e);
+            console.warn('[CramIT] Poll: could not add subject:', e);
           }
         }
 
@@ -3828,26 +3839,64 @@ async function handlePaymentReturn() {
   const subjectId = params.get('subject');
   if (success !== 'success') return;
 
+  console.log('[CramIT] Payment return detected. Subject:', subjectId, 'User:', currentUser?.email);
+
   // Clean URL immediately
   window.history.replaceState({}, '', window.location.pathname);
 
   // Wait for webhook to write subscription to Supabase
-  await new Promise(r => setTimeout(r, 5000));
-
-  // Add the subject to subject_selections if provided and not already there
-  if (subjectId && currentUser && sbClient && !userSubjects.includes(subjectId)) {
-    try {
-      await sbClient.from('subject_selections')
-        .upsert({ user_id: currentUser.id, subject_id: subjectId },
-                 { onConflict: 'user_id, subject_id' });
-      console.log('[CramIT] Subject added on payment return:', subjectId);
-    } catch(e) {
-      console.warn('[CramIT] Could not add subject on return:', e);
+  // Poll instead of fixed wait — webhook can take 2-15 seconds
+  let subConfirmed = false;
+  for (let i = 0; i < 10; i++) {
+    await new Promise(r => setTimeout(r, 2000));
+    const { data } = await sbClient.from('subscriptions')
+      .select('plan, status')
+      .eq('user_id', currentUser.id)
+      .single();
+    console.log('[CramIT] Polling subscription:', data);
+    if (data && data.status === 'active' && data.plan !== 'free') {
+      subConfirmed = true;
+      break;
     }
+  }
+
+  if (!subConfirmed) {
+    console.warn('[CramIT] Subscription not confirmed after polling — may still be processing');
+  }
+
+  // Add the subject to subject_selections
+  if (subjectId && currentUser && sbClient) {
+    console.log('[CramIT] Inserting subject:', subjectId, 'for user:', currentUser.id);
+    try {
+      // Check if already exists first
+      const { data: existing } = await sbClient.from('subject_selections')
+        .select('id')
+        .eq('user_id', currentUser.id)
+        .eq('subject_id', subjectId)
+        .maybeSingle();
+
+      if (existing) {
+        console.log('[CramIT] Subject already in subject_selections');
+      } else {
+        const { data: inserted, error: insertErr } = await sbClient.from('subject_selections')
+          .insert({ user_id: currentUser.id, subject_id: subjectId })
+          .select();
+        if (insertErr) {
+          console.error('[CramIT] INSERT subject_selections FAILED:', insertErr);
+        } else {
+          console.log('[CramIT] Subject inserted successfully:', inserted);
+        }
+      }
+    } catch(e) {
+      console.error('[CramIT] Subject insert threw:', e);
+    }
+  } else {
+    console.warn('[CramIT] Missing data for subject insert — subjectId:', subjectId, 'currentUser:', !!currentUser, 'sbClient:', !!sbClient);
   }
 
   // Reload fresh state from Supabase
   await loadUserState();
+  console.log('[CramIT] After loadUserState — userSubjects:', userSubjects, 'userSub:', userSub);
   renderHomeAuth();
 
   // Show success message on home screen
@@ -3855,9 +3904,11 @@ async function handlePaymentReturn() {
   if (list) {
     const banner = document.createElement('div');
     banner.style.cssText = 'background:rgba(106,247,200,0.1);border:1px solid var(--accent3);border-radius:12px;padding:12px 16px;margin-bottom:8px;font-size:13px;color:var(--accent3);text-align:center';
-    banner.textContent = '✅ Payment successful — your subjects are now unlocked!';
+    banner.textContent = subConfirmed
+      ? '✅ Payment successful — your subjects are now unlocked!'
+      : '⏳ Payment received — unlocking your subjects (may take a moment)...';
     list.parentNode.insertBefore(banner, list);
-    setTimeout(() => banner.remove(), 5000);
+    setTimeout(() => banner.remove(), 8000);
   }
 }
 
