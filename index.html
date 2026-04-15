@@ -3701,15 +3701,36 @@ async function handleCheckout() {
 
     // Poll Supabase every 3 seconds waiting for subscription to appear
     const subjectId = pendingSubject.id;
+    const pollStartTime = Date.now();
     const poll = setInterval(async () => {
       const { data } = await sbClient.from('subscriptions')
-        .select('plan, status')
+        .select('plan, status, updated_at')
         .eq('user_id', currentUser.id)
         .single();
 
-      if (data && data.status === 'active' && data.plan !== 'free') {
+      // Only count as success if:
+      // 1. Status is active and plan is paid
+      // 2. The subscription was updated AFTER we started polling
+      //    (prevents false positives from old test data)
+      const isActive = data && data.status === 'active' && data.plan !== 'free';
+      const isRecent = data?.updated_at && (new Date(data.updated_at).getTime() > pollStartTime - 10000);
+
+      if (isActive && isRecent) {
         clearInterval(poll);
         if (stripeTab) stripeTab.close();
+
+        // Add the pending subject to subject_selections if not already there
+        if (subjectId && !userSubjects.includes(subjectId)) {
+          try {
+            await sbClient.from('subject_selections')
+              .upsert({ user_id: currentUser.id, subject_id: subjectId },
+                       { onConflict: 'user_id, subject_id' });
+            console.log('[CramIT] Subject added after payment:', subjectId);
+          } catch(e) {
+            console.warn('[CramIT] Could not add subject:', e);
+          }
+        }
+
         await loadUserState();
         renderHomeAuth();
         document.getElementById('upgrade-prompt-home').style.display = 'none';
@@ -3804,6 +3825,7 @@ async function handleSignOut() {
 async function handlePaymentReturn() {
   const params  = new URLSearchParams(window.location.search);
   const success = params.get('payment');
+  const subjectId = params.get('subject');
   if (success !== 'success') return;
 
   // Clean URL immediately
@@ -3811,6 +3833,18 @@ async function handlePaymentReturn() {
 
   // Wait for webhook to write subscription to Supabase
   await new Promise(r => setTimeout(r, 5000));
+
+  // Add the subject to subject_selections if provided and not already there
+  if (subjectId && currentUser && sbClient && !userSubjects.includes(subjectId)) {
+    try {
+      await sbClient.from('subject_selections')
+        .upsert({ user_id: currentUser.id, subject_id: subjectId },
+                 { onConflict: 'user_id, subject_id' });
+      console.log('[CramIT] Subject added on payment return:', subjectId);
+    } catch(e) {
+      console.warn('[CramIT] Could not add subject on return:', e);
+    }
+  }
 
   // Reload fresh state from Supabase
   await loadUserState();
