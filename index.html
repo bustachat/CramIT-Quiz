@@ -3693,74 +3693,13 @@ async function handleCheckout() {
     });
     const { url } = await res.json();
 
-    // Open Stripe in a new tab so session is preserved in this tab
-    const stripeTab = window.open(url, '_blank');
+    // Save the pending subject ID to localStorage before leaving the page
+    // so handlePaymentReturn can pick it up when Stripe redirects back
+    localStorage.setItem('cramit_pending_subject', pendingSubject.id);
 
-    // Show waiting message
-    const btn = document.querySelector('#upgrade-prompt-home button');
-    if (btn) { btn.textContent = 'Complete payment in new tab…'; btn.disabled = true; }
-
-    // Poll Supabase every 3 seconds waiting for subscription to appear
-    const subjectId = pendingSubject.id;
-    const pollStartTime = Date.now();
-    const poll = setInterval(async () => {
-      const { data } = await sbClient.from('subscriptions')
-        .select('plan, status, updated_at')
-        .eq('user_id', currentUser.id)
-        .single();
-
-      // Only count as success if:
-      // 1. Status is active and plan is paid
-      // 2. The subscription was updated AFTER we started polling
-      //    (prevents false positives from old test data)
-      const isActive = data && data.status === 'active' && data.plan !== 'free';
-      const isRecent = data?.updated_at && (new Date(data.updated_at).getTime() > pollStartTime - 10000);
-
-      if (isActive && isRecent) {
-        clearInterval(poll);
-        if (stripeTab) stripeTab.close();
-
-        // Add the pending subject to subject_selections if not already there
-        if (subjectId && !userSubjects.includes(subjectId)) {
-          try {
-            const { data: existing } = await sbClient.from('subject_selections')
-              .select('id')
-              .eq('user_id', currentUser.id)
-              .eq('subject_id', subjectId)
-              .maybeSingle();
-
-            if (!existing) {
-              const { error: insErr } = await sbClient.from('subject_selections')
-                .insert({ user_id: currentUser.id, subject_id: subjectId });
-              if (insErr) {
-                console.error('[CramIT] Poll: insert subject failed:', insErr);
-              } else {
-                console.log('[CramIT] Poll: subject added:', subjectId);
-              }
-            }
-          } catch(e) {
-            console.warn('[CramIT] Poll: could not add subject:', e);
-          }
-        }
-
-        await loadUserState();
-        renderHomeAuth();
-        document.getElementById('upgrade-prompt-home').style.display = 'none';
-        pendingSubject = null;
-        // Show success
-        const list = document.getElementById('subject-list-billing');
-        if (list) {
-          const banner = document.createElement('div');
-          banner.style.cssText = 'background:rgba(106,247,200,0.1);border:1px solid var(--accent3);border-radius:12px;padding:12px 16px;margin-bottom:8px;font-size:13px;color:var(--accent3);text-align:center';
-          banner.textContent = '✅ Payment successful — your subjects are now unlocked!';
-          list.parentNode.insertBefore(banner, list);
-          setTimeout(() => banner.remove(), 5000);
-        }
-      }
-    }, 3000);
-
-    // Stop polling after 10 minutes
-    setTimeout(() => clearInterval(poll), 600000);
+    // Redirect to Stripe in the same tab
+    // (new tab approach fails with popup blockers and splits the session)
+    window.location.href = url;
 
   } catch(e) {
     alert('Could not start checkout. Please try again.');
@@ -3837,13 +3776,18 @@ async function handleSignOut() {
 async function handlePaymentReturn() {
   const params  = new URLSearchParams(window.location.search);
   const success = params.get('payment');
-  const subjectId = params.get('subject');
+  // Get subject from URL param, or fall back to localStorage
+  let subjectId = params.get('subject');
+  if (!subjectId) {
+    subjectId = localStorage.getItem('cramit_pending_subject');
+  }
   if (success !== 'success') return;
 
   console.log('[CramIT] Payment return detected. Subject:', subjectId, 'User:', currentUser?.email);
 
-  // Clean URL immediately
+  // Clean URL and localStorage
   window.history.replaceState({}, '', window.location.pathname);
+  localStorage.removeItem('cramit_pending_subject');
 
   // Wait for webhook to write subscription to Supabase
   // Poll instead of fixed wait — webhook can take 2-15 seconds
@@ -3916,11 +3860,13 @@ async function handlePaymentReturn() {
 // ── INIT ──────────────────────────────────────────────────────
 // Supabase is loaded via <script> tag in <head> — init directly
 document.addEventListener('DOMContentLoaded', async () => {
+  console.log('[CramIT] Page loaded. URL:', window.location.href);
+  console.log('[CramIT] Search params:', window.location.search);
   currentStreak = parseInt(localStorage.getItem('hsc_streak') || '0');
   updateStats();
   goHome();
   await initSupabase();   // sets up sbClient and auth state
-  handlePaymentReturn();  // runs after auth is settled
+  await handlePaymentReturn();  // runs after auth is settled — added await
 });
 </script>
 </body>
