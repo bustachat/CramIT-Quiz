@@ -3493,11 +3493,12 @@ async function loadUserState() {
   }
   try {
     const [subRes, selRes] = await Promise.all([
-      sbClient.from('subscriptions').select('*').eq('user_id', currentUser.id).single(),
+      sbClient.from('subscriptions').select('*').eq('user_id', currentUser.id).maybeSingle(),
       sbClient.from('subject_selections').select('subject_id').eq('user_id', currentUser.id)
     ]);
     userSub      = subRes.data ?? { plan: 'free', subject_count: 1, status: 'active' };
     userSubjects = (selRes.data ?? []).map(s => s.subject_id);
+    console.log('[CramIT] loadUserState — plan:', userSub.plan, 'subjects:', userSubjects);
   } catch(e) {
     console.warn('Could not load user state:', e);
   }
