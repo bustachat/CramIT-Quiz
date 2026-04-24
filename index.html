@@ -3,28 +3,28 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=no"/>
-  <meta name="theme-color" content="#0a0a0f"/>
+  <meta name="theme-color" content="#FAF8F5"/>
   <meta name="apple-mobile-web-app-capable" content="yes"/>
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
-  <meta name="apple-mobile-web-app-title" content="HSC Quiz"/>
+  <meta name="apple-mobile-web-app-title" content="CramIT"/>
   <link rel="manifest" href="manifest.json"/>
   <link rel="apple-touch-icon" href="icons/icon-192.png"/>
   <script src="/supabase.min.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,400&display=swap" rel="stylesheet"/>
-  <title>HSC Quiz</title>
+  <title>CramIT</title>
   <style>
     :root {
-      --bg: #0a0a0f;
-      --surface: #13131a;
-      --surface2: #1c1c28;
-      --border: #2a2a3d;
-      --accent: #7c6af7;
-      --accent2: #f76a8a;
-      --accent3: #6af7c8;
-      --amber: #f7c46a;
-      --text: #f0f0f8;
-      --muted: #7070a0;
+      --bg: #FAF8F5;
+      --surface: #FFFFFF;
+      --surface2: #F2EFE9;
+      --border: #E0D9CF;
+      --accent: #C17D3C;
+      --accent2: #7B9E6B;
+      --accent3: #5B7FA6;
+      --amber: #C17D3C;
+      --text: #2C2420;
+      --muted: #8C7B6E;
       --radius: 16px;
       --font-display: 'Syne', sans-serif;
       --font-body: 'DM Sans', sans-serif;
@@ -41,18 +41,24 @@
 
     /* ── HOME ── */
     #home { display: flex; flex-direction: column; min-height: 100dvh; padding: 52px 20px 32px; position: relative; }
-    .home-glow { position: absolute; top: -60px; left: 50%; transform: translateX(-50%); width: 340px; height: 340px; background: radial-gradient(circle, rgba(124,106,247,0.15) 0%, transparent 70%); pointer-events: none; }
+    .home-glow { display: none; }
     .app-title { font-family: var(--font-display); font-size: 38px; font-weight: 800; letter-spacing: -1px; line-height: 1; margin-bottom: 4px; }
     .app-title span { color: var(--accent); }
     .app-subtitle { color: var(--muted); font-size: 14px; font-weight: 300; margin-bottom: 36px; }
     .section-label { font-family: var(--font-display); font-size: 10px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); margin-bottom: 12px; margin-top: 24px; }
-    .subject-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-    .subject-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 18px 14px; cursor: pointer; transition: all 0.2s; position: relative; overflow: hidden; }
-    .subject-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: var(--card-accent, var(--accent)); }
-    .subject-card:active { transform: scale(0.97); background: var(--surface2); }
-    .subject-icon { font-size: 26px; margin-bottom: 8px; display: block; }
-    .subject-name { font-family: var(--font-display); font-size: 13px; font-weight: 700; margin-bottom: 3px; line-height: 1.2; }
-    .subject-meta { font-size: 11px; color: var(--muted); }
+    .subject-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 14px; }
+    .subject-card { border-radius: 16px; position: relative; overflow: hidden; cursor: pointer; aspect-ratio: 1/1; display: flex; flex-direction: column; transition: transform 0.15s ease, box-shadow 0.15s ease; box-shadow: 0 4px 12px rgba(44,36,32,0.10), 0 1px 3px rgba(44,36,32,0.08); }
+    .subject-card:hover { transform: translateY(-3px); box-shadow: 0 10px 28px rgba(44,36,32,0.16), 0 2px 6px rgba(44,36,32,0.10); }
+    .subject-card:active { transform: scale(0.97); }
+    .subject-card.maths  { background: linear-gradient(145deg, #D4913A, #C17D3C); }
+    .subject-card.hms    { background: linear-gradient(145deg, #8BB278, #6A9058); }
+    .subject-card.vet    { background: linear-gradient(145deg, #6A90B8, #4E7299); }
+    .subject-card.coming { background: linear-gradient(145deg, #D4C9B8, #C2B8A8); opacity: 0.65; cursor: default; pointer-events: none; }
+    .subject-card:hover.coming { transform: none; }
+    .subject-name { font-size: 12px; font-weight: 700; color: #fff; padding: 12px 12px 0; z-index: 2; position: relative; text-shadow: 0 1px 3px rgba(0,0,0,0.15); line-height: 1.3; }
+    .subject-card.coming .subject-name { color: rgba(44,36,32,0.7); text-shadow: none; }
+    .subject-art { flex: 1; display: flex; align-items: center; justify-content: center; padding: 4px 8px 12px; }
+    .subject-meta { display: none; }
     .stats-row { display: flex; gap: 8px; margin-top: auto; padding-top: 24px; }
     .stat-card { flex: 1; background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 12px; text-align: center; }
     .stat-num { font-family: var(--font-display); font-size: 22px; font-weight: 800; color: var(--accent); }
@@ -91,11 +97,11 @@
     .options-list { display: flex; flex-direction: column; gap: 9px; }
     .option-btn { background: var(--surface); border: 1px solid var(--border); border-radius: 11px; padding: 14px 16px; color: var(--text); font-family: var(--font-body); font-size: 14px; text-align: left; cursor: pointer; transition: all 0.15s; line-height: 1.4; }
     .option-btn:active:not(.disabled) { transform: scale(0.98); }
-    .option-btn.correct { background: rgba(106,247,200,0.10); border-color: var(--accent3); color: var(--accent3); }
-    .option-btn.wrong { background: rgba(247,106,138,0.10); border-color: var(--accent2); color: var(--accent2); }
+    .option-btn.correct { background: rgba(123,158,107,0.12); border-color: var(--accent2); color: #3A5C2E; }
+    .option-btn.wrong { background: rgba(193,90,60,0.10); border-color: #C15A3C; color: #7A2E10; }
     .option-btn.disabled { pointer-events: none; }
     .option-label { font-weight: 700; margin-right: 6px; }
-    .explanation-box { margin-top: 16px; padding: 14px; background: var(--surface2); border: 1px solid var(--border); border-left: 3px solid var(--accent); border-radius: 11px; font-size: 13px; line-height: 1.6; color: #a0a0c8; display: none; }
+    .explanation-box { margin-top: 16px; padding: 14px; background: var(--surface2); border: 1px solid var(--border); border-left: 3px solid var(--accent); border-radius: 11px; font-size: 13px; line-height: 1.6; color: var(--muted); display: none; }
     .explanation-box.show { display: block; animation: fadeUp 0.25s ease; }
     .option-exp { font-size: 12px; color: var(--muted); margin-top: 10px; padding-top: 10px; border-top: 1px solid var(--border); line-height: 1.5; display: none; }
     .option-exp.show { display: block; }
@@ -106,12 +112,19 @@
     .next-btn { margin: 14px 20px 28px; background: var(--accent); color: white; border: none; border-radius: 13px; padding: 16px; font-family: var(--font-display); font-size: 15px; font-weight: 700; cursor: pointer; transition: all 0.2s; display: none; }
     .next-btn.show { display: block; animation: fadeUp 0.25s ease; }
     .next-btn:active { transform: scale(0.97); }
+    .option-btn.selected-test { background: var(--surface2); border-color: var(--accent); }
+    .quiz-footer { display: flex; gap: 8px; padding: 0 20px 28px; align-items: stretch; }
+    .prev-btn { background: var(--surface); color: var(--text); border: 1px solid var(--border); border-radius: 13px; padding: 16px 18px; font-family: var(--font-display); font-size: 14px; font-weight: 600; cursor: pointer; transition: all 0.15s; white-space: nowrap; }
+    .prev-btn:disabled { opacity: 0.3; cursor: default; }
+    .check-btn { flex: 1; background: var(--accent2); color: white; border: none; border-radius: 13px; padding: 16px; font-family: var(--font-display); font-size: 15px; font-weight: 700; cursor: pointer; transition: all 0.2s; display: none; animation: fadeUp 0.25s ease; }
+    .check-btn.show { display: block; }
+    .next-btn-wrap { flex: 1; }
 
     /* Written response */
     .written-area { width: 100%; min-height: 120px; background: var(--surface2); border: 1px solid var(--border); border-radius: 11px; padding: 14px; color: var(--text); font-family: var(--font-body); font-size: 14px; resize: vertical; margin-top: 16px; line-height: 1.6; }
     .written-area:focus { outline: none; border-color: var(--accent); }
-    .marks-badge { display: inline-block; padding: 3px 10px; background: rgba(124,106,247,0.15); border: 1px solid var(--accent); border-radius: 20px; font-size: 11px; font-weight: 600; color: var(--accent); margin-bottom: 12px; }
-    .model-answer { background: var(--surface2); border: 1px solid var(--border); border-left: 3px solid var(--accent3); border-radius: 11px; padding: 14px; margin-top: 14px; font-size: 13px; line-height: 1.6; color: #a0c8b8; display: none; }
+    .marks-badge { display: inline-block; padding: 3px 10px; background: rgba(193,125,60,0.12); border: 1px solid var(--accent); border-radius: 20px; font-size: 11px; font-weight: 600; color: var(--accent); margin-bottom: 12px; }
+    .model-answer { background: var(--surface2); border: 1px solid var(--border); border-left: 3px solid var(--accent3); border-radius: 11px; padding: 14px; margin-top: 14px; font-size: 13px; line-height: 1.6; color: var(--text); display: none; }
     .model-answer.show { display: block; animation: fadeUp 0.25s ease; }
     .model-answer-label { font-family: var(--font-display); font-size: 10px; font-weight: 700; letter-spacing: 2px; color: var(--accent3); text-transform: uppercase; margin-bottom: 8px; }
 
@@ -134,7 +147,7 @@
     .btn-secondary { background: var(--surface); color: var(--text); border: 1px solid var(--border); border-radius: 13px; padding: 16px; font-family: var(--font-display); font-size: 14px; font-weight: 600; cursor: pointer; transition: all 0.15s; }
 
     /* Install banner */
-    #install-banner { position: fixed; bottom: 16px; left: 12px; right: 12px; background: var(--surface2); border: 1px solid var(--accent); border-radius: 14px; padding: 14px 16px; display: none; align-items: center; gap: 12px; z-index: 100; box-shadow: 0 8px 32px rgba(124,106,247,0.2); animation: slideUp 0.4s ease; }
+    #install-banner { position: fixed; bottom: 16px; left: 12px; right: 12px; background: var(--surface); border: 1px solid var(--accent); border-radius: 14px; padding: 14px 16px; display: none; align-items: center; gap: 12px; z-index: 100; box-shadow: 0 8px 32px rgba(193,125,60,0.15); animation: slideUp 0.4s ease; }
     @keyframes slideUp { from { transform:translateY(80px); opacity:0; } to { transform:translateY(0); opacity:1; } }
     .install-text { flex: 1; font-size: 13px; line-height: 1.4; }
     .install-text strong { font-family: var(--font-display); font-size: 14px; display: block; margin-bottom: 1px; }
@@ -148,8 +161,7 @@
 <!-- HOME -->
 <div id="home">
   <div class="home-glow"></div>
-  <div class="app-title">Cram<span>IT</span></div>
-  <div class="app-subtitle">HSC exam practice · NSW · Auto-updated from NESA</div>
+  <img src="CramIT_Logo_Transparent.png" alt="CramIT" style="height:44px;width:auto;margin-bottom:20px;"/>
 
   <div class="section-label">Your subjects</div>
 
@@ -171,7 +183,7 @@
       <button onclick="handleEmailSignIn()" style="flex:1;background:var(--accent);color:white;border:none;border-radius:10px;padding:12px;font-family:var(--font-display);font-weight:700;font-size:13px;cursor:pointer">Sign in</button>
       <button onclick="handleEmailSignUp()" style="flex:1;background:var(--surface2);color:var(--text);border:1px solid var(--border);border-radius:10px;padding:12px;font-family:var(--font-display);font-weight:600;font-size:13px;cursor:pointer">Create account</button>
     </div>
-    <p id="auth-error" style="color:#f76a8a;font-size:12px;margin-top:8px;display:none"></p>
+    <p id="auth-error" style="color:#C15A3C;font-size:12px;margin-top:8px;display:none"></p>
   </div>
 
   <!-- User bar — shown when logged in -->
@@ -187,7 +199,7 @@
   </div>
 
   <!-- Subject list — always visible -->
-  <div id="subject-list-billing" style="display:flex;flex-direction:column;gap:8px;margin-bottom:8px"></div>
+  <div id="subject-list-billing" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:14px;margin-bottom:8px"></div>
 
   <!-- Upgrade prompt -->
   <div id="upgrade-prompt-home" style="display:none;background:var(--surface2);border:1px solid var(--accent);border-radius:14px;padding:16px;margin-bottom:8px;text-align:center">
@@ -242,7 +254,11 @@
   </div>
   <div class="quiz-filters" id="quiz-filters"></div>
   <div class="question-area" id="question-area"></div>
-  <button class="next-btn" id="next-btn" onclick="nextQuestion()">Next →</button>
+  <div class="quiz-footer">
+    <button class="prev-btn" id="prev-btn" onclick="prevQuestion()" disabled>← Prev</button>
+    <button class="check-btn" id="check-btn" onclick="checkAnswer()">Check Answer</button>
+    <button class="next-btn next-btn-wrap" id="next-btn" onclick="nextQuestion()">Next →</button>
+  </div>
 </div>
 
 <!-- RESULTS -->
@@ -260,6 +276,7 @@
     <button class="btn-secondary" onclick="backToPicker()">Change mode</button>
     <button class="btn-secondary" onclick="goHome()">Home</button>
   </div>
+  <div id="results-breakdown" style="display:none;width:100%;max-width:420px;margin-top:8px"></div>
 </div>
 
 <!-- Install banner -->
@@ -2935,6 +2952,7 @@ let currentIdx = 0;
 let score = 0;
 let answers = [];
 let answered = false;
+let isPracticeMode = true; // true = practice (instant feedback), false = test (reveal at end)
 let currentStreak = 0;
 
 // ── SUBJECT CONFIGS ──
@@ -2942,7 +2960,7 @@ const SUBJECTS = {
   maths: {
     name: 'Mathematics Standard 2',
     icon: '📐',
-    accent: '#7c6af7',
+    accent: '#C17D3C',
     hasMC: true, hasWritten: false,
     getMC: (filters) => {
       let qs = [...mathsQuestions];
@@ -2956,7 +2974,7 @@ const SUBJECTS = {
   hms: {
     name: 'HMS — PDHPE Depth Study',
     icon: '🏃',
-    accent: '#f76a8a',
+    accent: '#7B9E6B',
     hasMC: true, hasWritten: true,
     getMC: (filters) => {
       let qs = [...mcQuestions];
@@ -3056,13 +3074,29 @@ function renderPicker() {
 
   html += '<div class="section-label" style="margin-top:24px">Mode</div>';
 
+  // Practice / Test mode toggle for MC
   if (s.hasMC) {
+    html += `<div style="display:flex;gap:8px;margin-bottom:12px">
+      <button id="btn-practice" onclick="isPracticeMode=true;document.getElementById('btn-practice').style.background='var(--accent)';document.getElementById('btn-practice').style.color='white';document.getElementById('btn-test').style.background='var(--surface)';document.getElementById('btn-test').style.color='var(--text)'"
+        style="flex:1;padding:11px;border-radius:10px;border:1px solid var(--accent);font-family:var(--font-display);font-size:13px;font-weight:700;cursor:pointer;transition:all 0.15s;background:${isPracticeMode ? 'var(--accent)' : 'var(--surface)'};color:${isPracticeMode ? 'white' : 'var(--text)'}">
+        Practice Mode
+      </button>
+      <button id="btn-test" onclick="isPracticeMode=false;document.getElementById('btn-test').style.background='var(--accent)';document.getElementById('btn-test').style.color='white';document.getElementById('btn-practice').style.background='var(--surface)';document.getElementById('btn-practice').style.color='var(--text)'"
+        style="flex:1;padding:11px;border-radius:10px;border:1px solid var(--border);font-family:var(--font-display);font-size:13px;font-weight:700;cursor:pointer;transition:all 0.15s;background:${!isPracticeMode ? 'var(--accent)' : 'var(--surface)'};color:${!isPracticeMode ? 'white' : 'var(--text)'}">
+        Test Mode
+      </button>
+    </div>
+    <div style="font-size:11px;color:var(--muted);margin-bottom:14px;line-height:1.5">
+      ${isPracticeMode
+        ? '✅ <strong>Practice:</strong> See correct answer and step-by-step solution after each question.'
+        : '📝 <strong>Test:</strong> No feedback until the end. Simulates real exam conditions.'}
+    </div>`;
     const count = s.getMC(pickerFilters).length;
     html += `<div class="mode-card" onclick="startQuiz('mc')">
       <div class="mode-icon">🎯</div>
       <div class="mode-info">
-        <div class="mode-name">Multiple Choice</div>
-        <div class="mode-desc">${count} questions · Instant feedback · Randomised</div>
+        <div class="mode-name">Start${isPracticeMode ? ' Practice' : ' Test'}</div>
+        <div class="mode-desc">${count} questions · ${isPracticeMode ? 'Instant feedback · Step-by-step solutions' : 'Exam conditions · Results at the end'}</div>
       </div>
       <div class="mode-arrow">›</div>
     </div>`;
@@ -3137,12 +3171,19 @@ function renderQuestion() {
       const correctIdx = q.answer !== undefined ? q.answer : q.correct;
       let cls = 'option-btn';
       let exp = '';
+      // Only show correct/wrong highlighting in practice mode (or test mode at end)
+      const showFeedback = answered && (isPracticeMode || currentIdx >= activeQuestions.length - 1);
       if (answered) {
         cls += ' disabled';
-        if (i === correctIdx) cls += ' correct';
-        else if (answers[currentIdx] === i) cls += ' wrong';
-        if (q.optionExplanations && q.optionExplanations[i]) {
-          exp = `<div class="option-exp show">${q.optionExplanations[i]}</div>`;
+        if (isPracticeMode) {
+          if (i === correctIdx) cls += ' correct';
+          else if (answers[currentIdx] === i) cls += ' wrong';
+          if (q.optionExplanations && q.optionExplanations[i]) {
+            exp = `<div class="option-exp show">${q.optionExplanations[i]}</div>`;
+          }
+        } else {
+          // Test mode: just show selected, no correct/wrong
+          if (answers[currentIdx] === i) cls += ' selected-test';
         }
       }
       html += `<button class="${cls}" onclick="selectAnswer(${i})">
@@ -3150,7 +3191,8 @@ function renderQuestion() {
       </button>`;
     });
     html += '</div>';
-    if (answered) {
+    // Show solution only in practice mode after answering
+    if (answered && isPracticeMode) {
       if (q.explanation) {
         html += `<div class="explanation-box show">${q.explanation}</div>`;
       } else if (q.solution) {
@@ -3177,22 +3219,47 @@ function renderQuestion() {
   document.getElementById('question-area').innerHTML = html;
   document.getElementById('question-area').scrollTop = 0;
 
+  // Previous button
+  const pb = document.getElementById('prev-btn');
+  pb.disabled = currentIdx === 0;
+
+  // Check Answer button (Practice Mode MC only — appears after selecting, before confirming)
+  const cb = document.getElementById('check-btn');
+  cb.className = 'check-btn'; // hide by default
+
   const nb = document.getElementById('next-btn');
+  nb.style.display = '';
   if (currentMode === 'written' && !answered) {
-    nb.className = 'next-btn show';
+    nb.className = 'next-btn next-btn-wrap show';
     nb.textContent = 'Show model answer →';
   } else if (answered) {
-    nb.className = 'next-btn show';
+    nb.className = 'next-btn next-btn-wrap show';
     nb.textContent = currentIdx + 1 < activeQuestions.length ? 'Next →' : 'See results →';
   } else {
-    nb.className = 'next-btn';
+    nb.className = 'next-btn next-btn-wrap';
   }
 }
 
 function selectAnswer(chosen) {
   if (answered) return;
-  answered = true;
   answers[currentIdx] = chosen;
+
+  // In Practice Mode: highlight selected and show Check Answer button
+  // In Test Mode: just record and auto-advance on next click
+  if (isPracticeMode && currentMode === 'mc') {
+    // Highlight selected option
+    document.querySelectorAll('.option-btn').forEach((b, i) => {
+      b.classList.remove('selected-test');
+      if (i === chosen) b.classList.add('selected-test');
+    });
+    // Show Check Answer button
+    const cb = document.getElementById('check-btn');
+    cb.className = 'check-btn show';
+    return; // Don't mark as answered yet — wait for Check
+  }
+
+  // Test mode: just record answer, move to next
+  answered = true;
   const correctIdx = activeQuestions[currentIdx].answer !== undefined
     ? activeQuestions[currentIdx].answer
     : activeQuestions[currentIdx].correct;
@@ -3210,6 +3277,36 @@ function selectAnswer(chosen) {
   renderQuestion();
 }
 
+function checkAnswer() {
+  // Called from Check Answer button in Practice Mode
+  if (answered) return;
+  answered = true;
+  const chosen = answers[currentIdx];
+  const correctIdx = activeQuestions[currentIdx].answer !== undefined
+    ? activeQuestions[currentIdx].answer
+    : activeQuestions[currentIdx].correct;
+  if (chosen === correctIdx) {
+    score++;
+    currentStreak++;
+  } else {
+    currentStreak = 0;
+  }
+  localStorage.setItem('hsc_streak', currentStreak);
+  const total = parseInt(localStorage.getItem('hsc_total') || '0') + 1;
+  const corr  = parseInt(localStorage.getItem('hsc_correct') || '0') + (chosen === correctIdx ? 1 : 0);
+  localStorage.setItem('hsc_total', total);
+  localStorage.setItem('hsc_correct', corr);
+  renderQuestion();
+}
+
+function prevQuestion() {
+  if (currentIdx > 0) {
+    currentIdx--;
+    answered = answers[currentIdx] !== null;
+    renderQuestion();
+  }
+}
+
 function nextQuestion() {
   if (currentMode === 'written' && !answered) {
     answered = true;
@@ -3217,9 +3314,10 @@ function nextQuestion() {
     renderQuestion();
     return;
   }
+  if (!answered) return; // Don't advance without answering in MC
   currentIdx++;
   if (currentIdx < activeQuestions.length) {
-    answered = false;
+    answered = answers[currentIdx] !== null;
     renderQuestion();
   } else {
     showResults();
@@ -3241,6 +3339,33 @@ function showResults() {
   const [, t, m] = msgs.find(([min]) => pct >= min);
   document.getElementById('result-title').textContent = t;
   document.getElementById('result-msg').textContent = m;
+
+  // In Test Mode, show per-question breakdown with correct answers
+  const breakdown = document.getElementById('results-breakdown');
+  if (currentMode === 'mc' && !isPracticeMode && breakdown) {
+    const LETTERS = ['A','B','C','D','E'];
+    let bhtml = '<div style="text-align:left;margin-top:16px;max-height:360px;overflow-y:auto">';
+    bhtml += '<div style="font-family:var(--font-display);font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:10px">Question Breakdown</div>';
+    activeQuestions.forEach((q, i) => {
+      const correctIdx = q.answer !== undefined ? q.answer : q.correct;
+      const userIdx = answers[i];
+      const correct = userIdx === correctIdx;
+      const color = correct ? '#EEF5EB' : '#FAF0EA';
+      const border = correct ? '#7B9E6B' : '#C17D3C';
+      bhtml += `<div style="background:${color};border:1px solid ${border};border-radius:10px;padding:10px 12px;margin-bottom:8px;font-size:12px">
+        <div style="font-weight:700;margin-bottom:4px;color:var(--text)">${i+1}. ${q.q || q.text}</div>
+        <div style="color:var(--muted)">Your answer: <strong style="color:${correct?'#3A5C2E':'#7A2E10'}">${userIdx !== null ? LETTERS[userIdx]+'. '+q.options[userIdx] : '—'}</strong></div>
+        ${!correct ? `<div style="color:var(--muted)">Correct: <strong style="color:#3A5C2E">${LETTERS[correctIdx]}. ${q.options[correctIdx]}</strong></div>` : ''}
+      </div>`;
+    });
+    bhtml += '</div>';
+    breakdown.innerHTML = bhtml;
+    breakdown.style.display = 'block';
+  } else if (breakdown) {
+    breakdown.innerHTML = '';
+    breakdown.style.display = 'none';
+  }
+
   document.getElementById('home').style.display = 'none';
   document.getElementById('picker').style.display = 'none';
   document.getElementById('quiz').style.display = 'none';
@@ -3292,12 +3417,12 @@ const PRICING_CFG = {
 
 // Subject catalogue — maps quiz subject keys to billing IDs
 const SUBJECT_CATALOGUE = [
-  { id: 'mathematics-standard-2', quizKey: 'maths', name: 'Mathematics Standard 2', icon: '📐', meta: '90 questions · 2020–2025', accent: '#7c6af7', available: true },
-  { id: 'pdhpe-hms',              quizKey: 'hms',   name: 'PDHPE — HMS Depth Study', icon: '🏃', meta: 'MC + written · Yr 12',    accent: '#f76a8a', available: true },
+  { id: 'mathematics-standard-2', quizKey: 'maths', name: 'Mathematics Standard 2', icon: '📐', meta: '90 questions · 2020–2025', accent: '#C17D3C', available: true },
+  { id: 'pdhpe-hms',              quizKey: 'hms',   name: 'PDHPE — HMS Depth Study', icon: '🏃', meta: 'MC + written · Yr 12',    accent: '#7B9E6B', available: true },
   { id: 'vet-construction',       quizKey: 'vet',   name: 'VET Construction',         icon: '🔨', meta: 'MC + written · 2021–2025', accent: '#f7c46a', available: true },
-  { id: 'english-advanced',       quizKey: null,    name: 'English Advanced',         icon: '📖', meta: 'Coming soon',              accent: '#6af7c8', available: false },
-  { id: 'biology',                quizKey: null,    name: 'Biology',                  icon: '🧬', meta: 'Coming soon',              accent: '#6af7c8', available: false },
-  { id: 'chemistry',              quizKey: null,    name: 'Chemistry',                icon: '⚗️', meta: 'Coming soon',              accent: '#6af7c8', available: false },
+  { id: 'english-advanced',       quizKey: null,    name: 'English Advanced',         icon: '📖', meta: 'Coming soon',              accent: '#5B7FA6', available: false },
+  { id: 'biology',                quizKey: null,    name: 'Biology',                  icon: '🧬', meta: 'Coming soon',              accent: '#5B7FA6', available: false },
+  { id: 'chemistry',              quizKey: null,    name: 'Chemistry',                icon: '⚗️', meta: 'Coming soon',              accent: '#5B7FA6', available: false },
 ];
 
 // ── STATE ─────────────────────────────────────────────────────
@@ -3558,32 +3683,73 @@ function renderSubjectList() {
   if (!list) return;
   list.innerHTML = '';
 
+  const CARD_ART = {
+    'mathematics-standard-2': `<svg viewBox="0 0 100 75" width="100%" height="100%" fill="none">
+      <line x1="12" y1="65" x2="88" y2="65" stroke="rgba(255,255,255,0.4)" stroke-width="1.5" stroke-linecap="round"/>
+      <line x1="12" y1="10" x2="12" y2="65" stroke="rgba(255,255,255,0.4)" stroke-width="1.5" stroke-linecap="round"/>
+      <rect x="20" y="45" width="13" height="20" rx="2" fill="rgba(255,255,255,0.35)"/>
+      <rect x="38" y="32" width="13" height="33" rx="2" fill="rgba(255,255,255,0.5)"/>
+      <rect x="56" y="18" width="13" height="47" rx="2" fill="rgba(255,255,255,0.7)"/>
+      <rect x="74" y="36" width="13" height="29" rx="2" fill="rgba(255,255,255,0.5)"/>
+      <text x="58" y="14" font-size="14" font-weight="800" fill="rgba(255,255,255,0.85)" font-family="Georgia,serif">π</text>
+    </svg>`,
+    'pdhpe-hms': `<svg viewBox="0 0 100 75" width="100%" height="100%" fill="none">
+      <polyline points="8,46 22,46 28,28 35,60 42,36 50,46 92,46" stroke="rgba(255,255,255,0.55)" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="72" cy="18" r="7" fill="rgba(255,255,255,0.85)"/>
+      <line x1="72" y1="25" x2="66" y2="44" stroke="rgba(255,255,255,0.85)" stroke-width="3" stroke-linecap="round"/>
+      <line x1="68" y1="33" x2="56" y2="27" stroke="rgba(255,255,255,0.85)" stroke-width="3" stroke-linecap="round"/>
+      <line x1="68" y1="33" x2="78" y2="38" stroke="rgba(255,255,255,0.85)" stroke-width="3" stroke-linecap="round"/>
+      <line x1="66" y1="44" x2="57" y2="58" stroke="rgba(255,255,255,0.85)" stroke-width="3" stroke-linecap="round"/>
+      <line x1="66" y1="44" x2="76" y2="57" stroke="rgba(255,255,255,0.85)" stroke-width="3" stroke-linecap="round"/>
+    </svg>`,
+    'vet-construction': `<svg viewBox="0 0 100 75" width="100%" height="100%" fill="none">
+      <polyline points="10,48 10,68 90,68 90,48" stroke="rgba(255,255,255,0.8)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+      <polyline points="6,50 50,16 94,50" stroke="rgba(255,255,255,0.8)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+      <rect x="40" y="50" width="20" height="18" rx="1.5" stroke="rgba(255,255,255,0.7)" stroke-width="2" fill="rgba(255,255,255,0.2)"/>
+      <rect x="16" y="52" width="14" height="11" rx="1" stroke="rgba(255,255,255,0.6)" stroke-width="1.5" fill="rgba(255,255,255,0.15)"/>
+      <rect x="16" y="8" width="68" height="10" rx="2" fill="rgba(255,255,255,0.2)" stroke="rgba(255,255,255,0.5)" stroke-width="1.5"/>
+      <line x1="28" y1="8" x2="28" y2="18" stroke="rgba(255,255,255,0.45)" stroke-width="1"/>
+      <line x1="40" y1="8" x2="40" y2="18" stroke="rgba(255,255,255,0.45)" stroke-width="1"/>
+      <line x1="52" y1="8" x2="52" y2="18" stroke="rgba(255,255,255,0.45)" stroke-width="1"/>
+      <line x1="64" y1="8" x2="64" y2="18" stroke="rgba(255,255,255,0.45)" stroke-width="1"/>
+      <line x1="76" y1="8" x2="76" y2="18" stroke="rgba(255,255,255,0.45)" stroke-width="1"/>
+    </svg>`,
+    'default': `<svg viewBox="0 0 100 75" width="100%" height="100%" fill="none">
+      <rect x="24" y="10" width="52" height="56" rx="4" stroke="rgba(80,60,50,0.3)" stroke-width="2" fill="rgba(80,60,50,0.07)"/>
+      <line x1="50" y1="10" x2="50" y2="66" stroke="rgba(80,60,50,0.2)" stroke-width="1.5"/>
+      <line x1="30" y1="26" x2="46" y2="26" stroke="rgba(80,60,50,0.25)" stroke-width="1.5" stroke-linecap="round"/>
+      <line x1="30" y1="34" x2="46" y2="34" stroke="rgba(80,60,50,0.25)" stroke-width="1.5" stroke-linecap="round"/>
+      <line x1="30" y1="42" x2="46" y2="42" stroke="rgba(80,60,50,0.25)" stroke-width="1.5" stroke-linecap="round"/>
+      <line x1="54" y1="26" x2="70" y2="26" stroke="rgba(80,60,50,0.25)" stroke-width="1.5" stroke-linecap="round"/>
+      <line x1="54" y1="34" x2="70" y2="34" stroke="rgba(80,60,50,0.25)" stroke-width="1.5" stroke-linecap="round"/>
+      <text x="30" y="62" font-size="8" fill="rgba(80,60,50,0.4)" font-family="system-ui" font-weight="700" letter-spacing="0.5">COMING SOON</text>
+    </svg>`
+  };
+
+  const CLASS_MAP = {
+    'mathematics-standard-2': 'maths',
+    'pdhpe-hms': 'hms',
+    'vet-construction': 'vet'
+  };
+
   SUBJECT_CATALOGUE.forEach(s => {
     const isSelected = userSubjects.includes(s.id);
-    const isLocked   = !isSelected && (!currentUser || !canAccess(s.id));
     const isComing   = !s.available;
     const atCap      = userSub.plan === 'unlimited' && userSubjects.length >= PRICING_CFG.CAP_LIMIT;
+    const cardClass  = CLASS_MAP[s.id] || (isComing ? 'coming' : 'maths');
+    const art        = CARD_ART[s.id] || CARD_ART['default'];
 
-    const row = document.createElement('div');
-    row.style.cssText = `background:var(--surface);border:1px solid ${isSelected ? s.accent : 'var(--border)'};border-radius:12px;padding:14px 16px;display:flex;align-items:center;gap:12px;transition:all 0.15s;${isComing ? 'opacity:0.4;' : 'cursor:pointer;'}`;
+    const card = document.createElement('div');
+    card.className = `subject-card ${isComing ? 'coming' : cardClass}`;
 
-    const accentBar = isSelected ? `border-left:3px solid ${s.accent};` : '';
-    row.style.cssText += accentBar;
-
-    row.innerHTML = `
-      <span style="font-size:22px;flex-shrink:0">${s.icon}</span>
-      <div style="flex:1">
-        <div style="font-family:var(--font-display);font-size:13px;font-weight:700">${s.name}</div>
-        <div style="font-size:11px;color:var(--muted);margin-top:2px">${s.meta}</div>
-      </div>
-      <div style="width:24px;height:24px;border-radius:50%;border:2px solid ${isSelected ? s.accent : 'var(--border)'};background:${isSelected ? s.accent : 'var(--surface2)'};display:flex;align-items:center;justify-content:center;font-size:12px;color:white;flex-shrink:0">
-        ${isSelected ? '✓' : isComing ? '—' : isLocked ? '🔒' : '+'}
-      </div>`;
+    card.innerHTML = `
+      <div class="subject-name">${s.name}</div>
+      <div class="subject-art">${art}</div>`;
 
     if (!isComing) {
-      row.onclick = () => handleSubjectTap(s, isSelected, atCap);
+      card.onclick = () => handleSubjectTap(s, isSelected, atCap);
     }
-    list.appendChild(row);
+    list.appendChild(card);
   });
 }
 
