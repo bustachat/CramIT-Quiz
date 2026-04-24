@@ -40,7 +40,9 @@
     }
 
     /* ── HOME ── */
-    #home { display: flex; flex-direction: column; min-height: 100dvh; padding: 52px 20px 32px; position: relative; }
+    #home { display: flex; flex-direction: column; min-height: 100dvh; padding: 52px 24px 32px; position: relative; max-width: 1200px; margin: 0 auto; width: 100%; }
+    body { display: flex; flex-direction: column; align-items: center; }
+    #picker, #quiz, #results { max-width: 1200px; margin: 0 auto; width: 100%; }
     .home-glow { display: none; }
     .app-title { font-family: var(--font-display); font-size: 38px; font-weight: 800; letter-spacing: -1px; line-height: 1; margin-bottom: 4px; }
     .app-title span { color: var(--accent); }
@@ -161,7 +163,7 @@
 <!-- HOME -->
 <div id="home">
   <div class="home-glow"></div>
-  <img src="CramIT_Logo_Transparent.png" alt="CramIT" style="height:44px;width:auto;margin-bottom:20px;"/>
+  <img src="CramIT_Logo_Transparent.png" alt="CramIT" style="height:44px;width:auto;max-width:220px;object-fit:contain;margin-bottom:20px;display:block;"/>
 
   <div class="section-label">Your subjects</div>
 
@@ -3418,7 +3420,7 @@ const PRICING_CFG = {
 // Subject catalogue — maps quiz subject keys to billing IDs
 const SUBJECT_CATALOGUE = [
   { id: 'mathematics-standard-2', quizKey: 'maths', name: 'Mathematics Standard 2', icon: '📐', meta: '90 questions · 2020–2025', accent: '#C17D3C', available: true },
-  { id: 'pdhpe-hms',              quizKey: 'hms',   name: 'PDHPE — HMS Depth Study', icon: '🏃', meta: 'MC + written · Yr 12',    accent: '#7B9E6B', available: true },
+  { id: 'pdhpe-hms',              quizKey: 'hms',   name: 'HMS Depth Study',          icon: '🏃', meta: 'MC + written · Yr 12',    accent: '#7B9E6B', available: true },
   { id: 'vet-construction',       quizKey: 'vet',   name: 'VET Construction',         icon: '🔨', meta: 'MC + written · 2021–2025', accent: '#f7c46a', available: true },
   { id: 'english-advanced',       quizKey: null,    name: 'English Advanced',         icon: '📖', meta: 'Coming soon',              accent: '#5B7FA6', available: false },
   { id: 'biology',                quizKey: null,    name: 'Biology',                  icon: '🧬', meta: 'Coming soon',              accent: '#5B7FA6', available: false },
