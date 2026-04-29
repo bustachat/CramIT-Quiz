@@ -25,17 +25,16 @@
       const isMac = /Macintosh/.test(ua) && !isIOS;
       const isWindows = /Windows/.test(ua);
       const dpr = window.devicePixelRatio || 1;
-      const isHighDPI = dpr >= 2;
       const root = document.documentElement;
       root.classList.add(isPhone ? 'device-phone' : isTablet ? 'device-tablet' : 'device-desktop');
       if (isTouch)   root.classList.add('device-touch');
       if (isIOS)     root.classList.add('os-ios');
       if (isAndroid) root.classList.add('os-android');
-      if (isHighDPI) root.classList.add('dpr-high');
+      if (dpr >= 2)  root.classList.add('dpr-high');
       window._device = {
         type: isPhone ? 'phone' : isTablet ? 'tablet' : 'desktop',
         os: isIOS ? 'ios' : isAndroid ? 'android' : isMac ? 'mac' : isWindows ? 'windows' : 'other',
-        dpr, highDPI: isHighDPI, viewportW: w
+        dpr, highDPI: dpr >= 2, viewportW: w
       };
       window._deviceType = window._device.type;
     })();
@@ -102,7 +101,7 @@
     .filter-chip.active { background: var(--accent); border-color: var(--accent); color: white; }
 
     /* ── QUIZ ── */
-    #quiz { display: none; height: 100dvh; max-height: 100dvh; flex-direction: column; overflow: hidden; }
+    #quiz { display: none; min-height: 100dvh; flex-direction: column; }
     #quiz.active { display: flex; }
     .quiz-header { padding: 18px 20px 14px; display: flex; align-items: center; gap: 14px; border-bottom: 1px solid var(--border); }
     .quiz-subject-name { font-family: var(--font-display); font-size: 14px; font-weight: 700; flex: 1; }
@@ -110,7 +109,7 @@
     .progress-wrap { padding: 14px 20px 0; }
     .progress-track { height: 3px; background: var(--surface2); border-radius: 4px; overflow: hidden; }
     .progress-fill { height: 100%; background: linear-gradient(90deg, var(--accent), var(--accent2)); border-radius: 4px; transition: width 0.4s ease; }
-    .question-area { flex: 1; padding: 16px 20px; display: flex; flex-direction: column; overflow-y: auto; -webkit-overflow-scrolling: touch; min-height: 0; }
+    .question-area { flex: 1; padding: 22px 20px 16px; display: flex; flex-direction: column; overflow-y: auto; }
     .q-meta { font-size: 10px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--accent); margin-bottom: 8px; }
     .q-text { font-family: var(--font-display); font-size: 18px; font-weight: 600; line-height: 1.45; margin-bottom: 22px; }
     .options-list { display: flex; flex-direction: column; gap: 9px; }
@@ -120,67 +119,40 @@
     .option-btn.wrong { background: rgba(193,90,60,0.10); border-color: #C15A3C; color: #7A2E10; }
     .option-btn.disabled { pointer-events: none; }
     .option-label { font-weight: 700; margin-right: 6px; }
-    /* ── QUIZ LAYOUT — fills viewport, question area scrolls ── */
-    #quiz { display: none; height: 100dvh; max-height: 100dvh; flex-direction: column; overflow: hidden; }
-    #quiz.active { display: flex; }
-    .question-area { flex: 1; padding: 16px 20px; display: flex; flex-direction: column; overflow-y: auto; -webkit-overflow-scrolling: touch; min-height: 0; }
-
-    /* ── QUESTION IMAGE — auto-fits content, no dead space ── */
     .q-image-wrap {
       margin-bottom: 14px;
       border-radius: 10px;
-      overflow: hidden;
-      background: var(--surface2);
       border: 1px solid var(--border);
-      /* Shrink to fit image — no empty grey box */
-      display: inline-block;
-      width: 100%;
+      background: var(--surface2);
+      /* NO overflow:hidden — that was cropping the image */
+      display: block;
       text-align: center;
     }
     .q-image-wrap img {
+      /* Scale by width only — height follows naturally, full image always visible */
       display: block;
-      /* Scale down to fit container, never upscale past natural size */
-      max-width: 100%;
+      max-width: min(100%, 600px); /* never wider than card, cap at 600px on large screens */
       width: auto;
       height: auto;
-      /* Max height varies by device — see classes below */
-      max-height: var(--img-max-h, 340px);
       margin: 0 auto;
+      border-radius: 10px;
       cursor: zoom-in;
-      object-fit: contain;
       transition: transform 0.2s;
     }
     .q-image-wrap img:hover { transform: scale(1.02); }
     .q-image-wrap.hidden { display: none; }
 
-    /* Phone portrait — shorter, full width */
-    .device-phone .q-image-wrap img       { --img-max-h: 210px; }
-    /* Phone landscape — a bit more room */
-    @media (max-height: 500px) {
-      .device-phone .q-image-wrap img     { --img-max-h: 160px; }
-    }
-    /* Tablet */
-    .device-tablet .q-image-wrap img      { --img-max-h: 280px; }
-    /* Desktop — standard */
-    .device-desktop .q-image-wrap img     { --img-max-h: 340px; }
-    /* Large desktop (1440px+) */
-    @media (min-width: 1440px) {
-      .device-desktop .q-image-wrap img   { --img-max-h: 420px; }
-    }
-    /* Retina bump — images are crisper so slightly more height is fine */
-    .dpr-high.device-phone .q-image-wrap img   { --img-max-h: 240px; }
-    .dpr-high.device-tablet .q-image-wrap img  { --img-max-h: 320px; }
-    .dpr-high.device-desktop .q-image-wrap img { --img-max-h: 400px; }
+    /* Phone — full width, no cap */
+    .device-phone .q-image-wrap img { max-width: 100%; }
 
-    /* iOS: remove tap flash, allow pinch-zoom inside lightbox */
-    .os-ios .q-image-wrap img { -webkit-tap-highlight-color: transparent; touch-action: manipulation; }
+    /* iOS tap */
+    .os-ios .q-image-wrap img { -webkit-tap-highlight-color: transparent; }
 
     /* ── LIGHTBOX ── */
-    #img-lightbox { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.88); z-index: 9999; align-items: center; justify-content: center; cursor: zoom-out; padding: 20px; }
+    #img-lightbox { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.9); z-index: 9999; align-items: center; justify-content: center; cursor: zoom-out; padding: 20px; }
     #img-lightbox.open { display: flex; animation: fadeUp 0.2s ease; }
-    #img-lightbox img { max-width: 100%; max-height: 90vh; border-radius: 10px; object-fit: contain; box-shadow: 0 8px 40px rgba(0,0,0,0.5); }
-    .device-phone #img-lightbox img { max-height: 85vh; border-radius: 6px; }
-    #lightbox-close { position: absolute; top: 16px; right: 16px; width: 36px; height: 36px; border-radius: 50%; background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.3); color: white; font-size: 20px; line-height: 36px; cursor: pointer; text-align: center; }
+    #img-lightbox img { max-width: 100%; max-height: 90vh; border-radius: 10px; object-fit: contain; }
+    #lightbox-close { position: absolute; top: 16px; right: 16px; width: 36px; height: 36px; border-radius: 50%; background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.3); color: white; font-size: 22px; line-height: 34px; text-align: center; cursor: pointer; }
     .explanation-box { margin-top: 16px; padding: 14px; background: var(--surface2); border: 1px solid var(--border); border-left: 3px solid var(--accent); border-radius: 11px; font-size: 13px; line-height: 1.6; color: var(--muted); display: none; }
     .explanation-box.show { display: block; animation: fadeUp 0.25s ease; }
     .option-exp { font-size: 12px; color: var(--muted); margin-top: 10px; padding-top: 10px; border-top: 1px solid var(--border); line-height: 1.5; display: none; }
@@ -361,7 +333,7 @@
 
 <!-- LIGHTBOX -->
 <div id="img-lightbox" onclick="closeLightbox()">
-  <button id="lightbox-close" onclick="closeLightbox()" aria-label="Close">×</button>
+  <div id="lightbox-close" onclick="closeLightbox()">×</div>
   <img id="img-lightbox-src" src="" alt="Question diagram enlarged"/>
 </div>
 
@@ -4182,7 +4154,7 @@ window.addEventListener('resize', updateDeviceClass);
 window.addEventListener('orientationchange', () => setTimeout(updateDeviceClass, 150));
 
 // ── INIT ──────────────────────────────────────────────────────
-// Supabase is loaded via <script> tag in <head> — init directly
+// Supabase is loaded via script tag in head — init directly
 document.addEventListener('DOMContentLoaded', async () => {
   console.log('[CramIT] Page loaded. URL:', window.location.href);
   console.log('[CramIT] Search params:', window.location.search);
