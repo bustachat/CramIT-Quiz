@@ -93,6 +93,10 @@
     .option-btn.wrong { background: rgba(193,90,60,0.10); border-color: #C15A3C; color: #7A2E10; }
     .option-btn.disabled { pointer-events: none; }
     .option-label { font-weight: 700; margin-right: 6px; }
+    .q-image-wrap { margin-bottom: 14px; border-radius: 10px; overflow: hidden; background: var(--surface2); border: 1px solid var(--border); }
+    .q-image-wrap img { width: 100%; height: auto; display: block; cursor: zoom-in; transition: transform 0.2s; }
+    .q-image-wrap img:hover { transform: scale(1.02); }
+    .q-image-wrap.hidden { display: none; }
     .explanation-box { margin-top: 16px; padding: 14px; background: var(--surface2); border: 1px solid var(--border); border-left: 3px solid var(--accent); border-radius: 11px; font-size: 13px; line-height: 1.6; color: var(--muted); display: none; }
     .explanation-box.show { display: block; animation: fadeUp 0.25s ease; }
     .option-exp { font-size: 12px; color: var(--muted); margin-top: 10px; padding-top: 10px; border-top: 1px solid var(--border); line-height: 1.5; display: none; }
@@ -153,7 +157,7 @@
 <!-- HOME -->
 <div id="home">
   <div class="home-glow"></div>
-  <img src="CramIT_Logo_Transparent.png" alt="CramIT" style="width:180px;height:auto;display:block;margin-bottom:24px;"/>
+  <img src="CramIT_Logo_Transparent.png" alt="CramIT" style="width:200px;height:auto;display:block;margin-bottom:24px;"/>
 
   <div class="section-label">Your subjects</div>
 
@@ -2029,6 +2033,43 @@ const writtenQuestions = [
 
 ];
 
+// ── VET QUESTION IMAGE MAP ─────────────────────────────────────
+const VET_IMG = {
+  "2021-q1":   "https://i.imgur.com/GR5sjtX.png",
+  "2021-q6":   "https://i.imgur.com/LUNA1qr.png",
+  "2021-q8":   "https://i.imgur.com/EsptBgA.png",
+  "2021-q10":  "https://i.imgur.com/q43Qxez.png",
+  "2021-q14":  "https://i.imgur.com/1JpLWIb.png",
+  "2021-q15":  "https://i.imgur.com/jHIIrbk.png",
+  "2021-q16":  "https://i.imgur.com/RPyszE0.png",
+  "2021-q18":  "https://i.imgur.com/1LEB15y.png",
+  "2022-q7":   "https://i.imgur.com/RHJcqaf.png",
+  "2022-q8":   "https://i.imgur.com/iaXIH6H.png",
+  "2022-q9":   "https://i.imgur.com/rbFEPiL.png",
+  "2022-q13":  "https://i.imgur.com/wld4f0s.png",
+  "2022-q15":  "https://i.imgur.com/spbE2pQ.png",
+  "2022-q16a": "https://i.imgur.com/d1JuYgy.png",
+  "2022-q17c": "https://i.imgur.com/O5DNnXR.png",
+  "2022-q19a": "https://i.imgur.com/g6Zpya0.png",
+  "2023-q6":   "https://i.imgur.com/uiiLoDW.png",
+  "2023-q16a": "https://i.imgur.com/0pcinIk.png",
+  "2023-q18b": "https://i.imgur.com/QaatyM6.png",
+  "2023-q19b": "https://i.imgur.com/jFUjJWP.png",
+  "2024-q5":   "https://i.imgur.com/JRouw2J.png",
+  "2024-q11":  "https://i.imgur.com/v5nyalp.png",
+  "2024-q16a": "https://i.imgur.com/HJYvTTm.png",
+  "2024-q16b": "https://i.imgur.com/YBZIivJ.png",
+  "2024-q19a": "https://i.imgur.com/V0XahE0.png",
+  "2024-q19b": "https://i.imgur.com/ONIvH1Y.png",
+  "2025-q1":   "https://i.imgur.com/K4tLP9S.png",
+  "2025-q4":   "https://i.imgur.com/sH9365W.png",
+  "2025-q6":   "https://i.imgur.com/NcCGkYV.png",
+  "2025-q9":   "https://i.imgur.com/pRdvB18.png",
+  "2025-q15":  "https://i.imgur.com/VO36VBh.png",
+  "2025-q16":  "https://i.imgur.com/DH9GfzV.jpeg",
+  "2025-q18b": "https://i.imgur.com/t14TvlO.png"
+};
+
 const vetMcQuestions = [
 
     // ── 2021 ──────────────────────────────────────────────────────────────────
@@ -3157,6 +3198,10 @@ function renderQuestion() {
   if (currentMode === 'mc') {
     const meta = [q.year, q.category, q.topic].filter(Boolean).join(' · ');
     if (meta) html += `<div class="q-meta">${meta}</div>`;
+    // Show image if question has one (VET)
+    if (q.img && VET_IMG[q.img]) {
+      html += `<div class="q-image-wrap"><img src="${VET_IMG[q.img]}" alt="Question diagram" loading="lazy"/></div>`;
+    }
     html += `<div class="q-text">${q.q || q.text || ''}</div>`;
     html += '<div class="options-list">';
     (q.options || []).forEach((opt, i) => {
@@ -3196,6 +3241,9 @@ function renderQuestion() {
     if (marks) html += `<span class="marks-badge">${marks} mark${marks > 1 ? 's' : ''}</span>`;
     const meta = [q.year, q.topic].filter(Boolean).join(' · ');
     if (meta) html += `<div class="q-meta">${meta}</div>`;
+    if (q.img && VET_IMG[q.img]) {
+      html += `<div class="q-image-wrap"><img src="${VET_IMG[q.img]}" alt="Question diagram" loading="lazy"/></div>`;
+    }
     html += `<div class="q-text">${q.q || q.question || q.text || ''}</div>`;
     if (answered) {
       const ans = q.answer || q.modelAnswer || q.sampleAnswer || '';
@@ -3239,6 +3287,7 @@ function selectAnswer(chosen) {
   // In Practice Mode: highlight selected and show Check Answer button
   // In Test Mode: just record and auto-advance on next click
   if (isPracticeMode && currentMode === 'mc') {
+    answers[currentIdx] = chosen; // store selection first
     // Highlight selected option
     document.querySelectorAll('.option-btn').forEach((b, i) => {
       b.classList.remove('selected-test');
