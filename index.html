@@ -124,28 +124,30 @@
       border-radius: 10px;
       border: 1px solid var(--border);
       background: var(--surface2);
-      /* NO overflow:hidden — that was cropping the image */
       display: block;
       text-align: center;
+      /* No overflow:hidden — never clips the image */
     }
     .q-image-wrap img {
-      /* Scale by width only — height follows naturally, full image always visible */
       display: block;
-      max-width: min(100%, 600px); /* never wider than card, cap at 600px on large screens */
-      width: auto;
-      height: auto;
       margin: 0 auto;
-      border-radius: 10px;
+      border-radius: 8px;
       cursor: zoom-in;
       transition: transform 0.2s;
+      /* Both dimensions constrained — image scales down to fit whichever limit hits first */
+      max-width: 100%;
+      max-height: 35vh;   /* never taller than 35% of screen — leaves room for Q + options */
+      width: auto;
+      height: auto;
+      object-fit: contain; /* shows full image, no cropping */
     }
     .q-image-wrap img:hover { transform: scale(1.02); }
     .q-image-wrap.hidden { display: none; }
-
-    /* Phone — full width, no cap */
-    .device-phone .q-image-wrap img { max-width: 100%; }
-
-    /* iOS tap */
+    /* Phone — tighter height budget */
+    .device-phone .q-image-wrap img  { max-height: 28vh; }
+    /* Tablet */
+    .device-tablet .q-image-wrap img { max-height: 32vh; }
+    /* iOS */
     .os-ios .q-image-wrap img { -webkit-tap-highlight-color: transparent; }
 
     /* ── LIGHTBOX ── */
