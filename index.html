@@ -13,6 +13,47 @@
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,400&display=swap" rel="stylesheet"/>
   <title>CramIT</title>
+  <script>
+    // ── DEVICE DETECTION — runs before paint to prevent layout flash ──
+    (function() {
+      const w = window.innerWidth || screen.width;
+      const ua = navigator.userAgent || '';
+      const isTouch = ('ontouchstart' in window) || navigator.maxTouchPoints > 0;
+      const isPhone = isTouch && w < 600;
+      const isTablet = isTouch && w >= 600;
+      const isDesktop = !isTouch;
+
+      // OS detection
+      const isIOS = /iPad|iPhone|iPod/.test(ua) && !window.MSStream;
+      const isAndroid = /Android/.test(ua);
+      const isMac = /Macintosh/.test(ua) && !isIOS;
+      const isWindows = /Windows/.test(ua);
+
+      // Pixel density — agent uses this to decide image export resolution
+      const dpr = window.devicePixelRatio || 1;
+      const isHighDPI = dpr >= 2;
+
+      // Apply CSS classes to <html> — used by CSS rules below
+      const root = document.documentElement;
+      root.classList.add(isPhone ? 'device-phone' : isTablet ? 'device-tablet' : 'device-desktop');
+      if (isTouch)   root.classList.add('device-touch');
+      if (isIOS)     root.classList.add('os-ios');
+      if (isAndroid) root.classList.add('os-android');
+      if (isHighDPI) root.classList.add('dpr-high');
+
+      // Global object — readable anywhere in JS and by agent.js
+      window._device = {
+        type:      isPhone ? 'phone' : isTablet ? 'tablet' : 'desktop',
+        os:        isIOS ? 'ios' : isAndroid ? 'android' : isMac ? 'mac' : isWindows ? 'windows' : 'other',
+        dpr:       dpr,
+        highDPI:   isHighDPI,
+        viewportW: w
+      };
+
+      // Legacy alias so any existing code still works
+      window._deviceType = window._device.type;
+    })();
+  </script>
   <style>
     :root {
       --bg: #FAF8F5;
@@ -93,10 +134,34 @@
     .option-btn.wrong { background: rgba(193,90,60,0.10); border-color: #C15A3C; color: #7A2E10; }
     .option-btn.disabled { pointer-events: none; }
     .option-label { font-weight: 700; margin-right: 6px; }
-    .q-image-wrap { margin-bottom: 14px; border-radius: 10px; overflow: hidden; background: var(--surface2); border: 1px solid var(--border); }
-    .q-image-wrap img { width: 100%; height: auto; display: block; cursor: zoom-in; transition: transform 0.2s; }
+    /* ── QUESTION IMAGE — device-aware scaling ── */
+    .q-image-wrap { margin-bottom: 14px; border-radius: 10px; overflow: hidden; background: var(--surface2); border: 1px solid var(--border); text-align: center; }
+    .q-image-wrap img { max-width: 100%; width: auto; height: auto; max-height: 380px; display: block; margin: 0 auto; cursor: zoom-in; transition: transform 0.2s; object-fit: contain; }
     .q-image-wrap img:hover { transform: scale(1.02); }
     .q-image-wrap.hidden { display: none; }
+
+    /* Phone: full-width, shorter height — tap to zoom is essential */
+    .device-phone .q-image-wrap img { max-height: 220px; width: 100%; cursor: zoom-in; }
+
+    /* Tablet: mid budget */
+    .device-tablet .q-image-wrap img { max-height: 300px; }
+
+    /* Desktop default: 380px (set above) */
+    .device-desktop .q-image-wrap img { max-height: 380px; }
+
+    /* Retina / high-DPI: slightly taller since images are sharper */
+    .dpr-high .q-image-wrap img { max-height: 440px; }
+    .dpr-high.device-phone .q-image-wrap img { max-height: 260px; }
+
+    /* iOS Safari: prevent tap highlight, allow pinch-zoom in lightbox */
+    .os-ios .q-image-wrap img { -webkit-tap-highlight-color: transparent; touch-action: manipulation; }
+
+    /* ── LIGHTBOX ── */
+    #img-lightbox { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.88); z-index: 9999; align-items: center; justify-content: center; cursor: zoom-out; padding: 20px; }
+    #img-lightbox.open { display: flex; animation: fadeUp 0.2s ease; }
+    #img-lightbox img { max-width: 100%; max-height: 90vh; border-radius: 10px; object-fit: contain; box-shadow: 0 8px 40px rgba(0,0,0,0.5); }
+    .device-phone #img-lightbox img { max-height: 85vh; border-radius: 6px; }
+    #lightbox-close { position: absolute; top: 16px; right: 16px; width: 36px; height: 36px; border-radius: 50%; background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.3); color: white; font-size: 20px; line-height: 1; cursor: pointer; display: flex; align-items: center; justify-content: center; }
     .explanation-box { margin-top: 16px; padding: 14px; background: var(--surface2); border: 1px solid var(--border); border-left: 3px solid var(--accent); border-radius: 11px; font-size: 13px; line-height: 1.6; color: var(--muted); display: none; }
     .explanation-box.show { display: block; animation: fadeUp 0.25s ease; }
     .option-exp { font-size: 12px; color: var(--muted); margin-top: 10px; padding-top: 10px; border-top: 1px solid var(--border); line-height: 1.5; display: none; }
@@ -273,6 +338,12 @@
     <button class="btn-secondary" onclick="goHome()">Home</button>
   </div>
   <div id="results-breakdown" style="display:none;width:100%;max-width:420px;margin-top:8px"></div>
+</div>
+
+<!-- LIGHTBOX -->
+<div id="img-lightbox" onclick="closeLightbox()">
+  <button id="lightbox-close" onclick="closeLightbox()" aria-label="Close">×</button>
+  <img id="img-lightbox-src" src="" alt="Question diagram — enlarged"/>
 </div>
 
 <!-- Install banner -->
@@ -3200,7 +3271,7 @@ function renderQuestion() {
     if (meta) html += `<div class="q-meta">${meta}</div>`;
     // Show image if question has one (VET)
     if (q.img && VET_IMG[q.img]) {
-      html += `<div class="q-image-wrap"><img src="${VET_IMG[q.img]}" alt="Question diagram" loading="lazy"/></div>`;
+      html += `<div class="q-image-wrap"><img src="${VET_IMG[q.img]}" alt="Question diagram" loading="lazy" onclick="openLightbox(this.src)"/></div>`;
     }
     html += `<div class="q-text">${q.q || q.text || ''}</div>`;
     html += '<div class="options-list">';
@@ -3242,7 +3313,7 @@ function renderQuestion() {
     const meta = [q.year, q.topic].filter(Boolean).join(' · ');
     if (meta) html += `<div class="q-meta">${meta}</div>`;
     if (q.img && VET_IMG[q.img]) {
-      html += `<div class="q-image-wrap"><img src="${VET_IMG[q.img]}" alt="Question diagram" loading="lazy"/></div>`;
+      html += `<div class="q-image-wrap"><img src="${VET_IMG[q.img]}" alt="Question diagram" loading="lazy" onclick="openLightbox(this.src)"/></div>`;
     }
     html += `<div class="q-text">${q.q || q.question || q.text || ''}</div>`;
     if (answered) {
@@ -4063,6 +4134,35 @@ async function handlePaymentReturn() {
     setTimeout(() => banner.remove(), 8000);
   }
 }
+
+// ── LIGHTBOX ──────────────────────────────────────────────────
+function openLightbox(src) {
+  const lb = document.getElementById('img-lightbox');
+  document.getElementById('img-lightbox-src').src = src;
+  lb.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeLightbox() {
+  document.getElementById('img-lightbox').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+
+// ── DEVICE CLASS UPDATE ON RESIZE / ORIENTATION CHANGE ────────
+function updateDeviceClass() {
+  const w = window.innerWidth;
+  const isTouch = ('ontouchstart' in window) || navigator.maxTouchPoints > 0;
+  const root = document.documentElement;
+  root.classList.remove('device-phone', 'device-tablet', 'device-desktop');
+  if (isTouch && w < 600)      { root.classList.add('device-phone');   window._device.type = 'phone';   window._deviceType = 'phone'; }
+  else if (isTouch)            { root.classList.add('device-tablet');  window._device.type = 'tablet';  window._deviceType = 'tablet'; }
+  else                         { root.classList.add('device-desktop'); window._device.type = 'desktop'; window._deviceType = 'desktop'; }
+  window._device.viewportW = w;
+}
+window.addEventListener('resize', updateDeviceClass);
+window.addEventListener('orientationchange', () => setTimeout(updateDeviceClass, 150));
 
 // ── INIT ──────────────────────────────────────────────────────
 // Supabase is loaded via <script> tag in <head> — init directly
