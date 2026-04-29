@@ -14,43 +14,29 @@
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,400&display=swap" rel="stylesheet"/>
   <title>CramIT</title>
   <script>
-    // ── DEVICE DETECTION — runs before paint to prevent layout flash ──
     (function() {
       const w = window.innerWidth || screen.width;
       const ua = navigator.userAgent || '';
       const isTouch = ('ontouchstart' in window) || navigator.maxTouchPoints > 0;
       const isPhone = isTouch && w < 600;
       const isTablet = isTouch && w >= 600;
-      const isDesktop = !isTouch;
-
-      // OS detection
       const isIOS = /iPad|iPhone|iPod/.test(ua) && !window.MSStream;
       const isAndroid = /Android/.test(ua);
       const isMac = /Macintosh/.test(ua) && !isIOS;
       const isWindows = /Windows/.test(ua);
-
-      // Pixel density — agent uses this to decide image export resolution
       const dpr = window.devicePixelRatio || 1;
       const isHighDPI = dpr >= 2;
-
-      // Apply CSS classes to <html> — used by CSS rules below
       const root = document.documentElement;
       root.classList.add(isPhone ? 'device-phone' : isTablet ? 'device-tablet' : 'device-desktop');
       if (isTouch)   root.classList.add('device-touch');
       if (isIOS)     root.classList.add('os-ios');
       if (isAndroid) root.classList.add('os-android');
       if (isHighDPI) root.classList.add('dpr-high');
-
-      // Global object — readable anywhere in JS and by agent.js
       window._device = {
-        type:      isPhone ? 'phone' : isTablet ? 'tablet' : 'desktop',
-        os:        isIOS ? 'ios' : isAndroid ? 'android' : isMac ? 'mac' : isWindows ? 'windows' : 'other',
-        dpr:       dpr,
-        highDPI:   isHighDPI,
-        viewportW: w
+        type: isPhone ? 'phone' : isTablet ? 'tablet' : 'desktop',
+        os: isIOS ? 'ios' : isAndroid ? 'android' : isMac ? 'mac' : isWindows ? 'windows' : 'other',
+        dpr, highDPI: isHighDPI, viewportW: w
       };
-
-      // Legacy alias so any existing code still works
       window._deviceType = window._device.type;
     })();
   </script>
@@ -116,7 +102,7 @@
     .filter-chip.active { background: var(--accent); border-color: var(--accent); color: white; }
 
     /* ── QUIZ ── */
-    #quiz { display: none; min-height: 100dvh; flex-direction: column; }
+    #quiz { display: none; height: 100dvh; max-height: 100dvh; flex-direction: column; overflow: hidden; }
     #quiz.active { display: flex; }
     .quiz-header { padding: 18px 20px 14px; display: flex; align-items: center; gap: 14px; border-bottom: 1px solid var(--border); }
     .quiz-subject-name { font-family: var(--font-display); font-size: 14px; font-weight: 700; flex: 1; }
@@ -124,7 +110,7 @@
     .progress-wrap { padding: 14px 20px 0; }
     .progress-track { height: 3px; background: var(--surface2); border-radius: 4px; overflow: hidden; }
     .progress-fill { height: 100%; background: linear-gradient(90deg, var(--accent), var(--accent2)); border-radius: 4px; transition: width 0.4s ease; }
-    .question-area { flex: 1; padding: 22px 20px 16px; display: flex; flex-direction: column; overflow-y: auto; }
+    .question-area { flex: 1; padding: 16px 20px; display: flex; flex-direction: column; overflow-y: auto; -webkit-overflow-scrolling: touch; min-height: 0; }
     .q-meta { font-size: 10px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--accent); margin-bottom: 8px; }
     .q-text { font-family: var(--font-display); font-size: 18px; font-weight: 600; line-height: 1.45; margin-bottom: 22px; }
     .options-list { display: flex; flex-direction: column; gap: 9px; }
@@ -134,26 +120,59 @@
     .option-btn.wrong { background: rgba(193,90,60,0.10); border-color: #C15A3C; color: #7A2E10; }
     .option-btn.disabled { pointer-events: none; }
     .option-label { font-weight: 700; margin-right: 6px; }
-    /* ── QUESTION IMAGE — device-aware scaling ── */
-    .q-image-wrap { margin-bottom: 14px; border-radius: 10px; overflow: hidden; background: var(--surface2); border: 1px solid var(--border); text-align: center; }
-    .q-image-wrap img { max-width: 100%; width: auto; height: auto; max-height: 380px; display: block; margin: 0 auto; cursor: zoom-in; transition: transform 0.2s; object-fit: contain; }
+    /* ── QUIZ LAYOUT — fills viewport, question area scrolls ── */
+    #quiz { display: none; height: 100dvh; max-height: 100dvh; flex-direction: column; overflow: hidden; }
+    #quiz.active { display: flex; }
+    .question-area { flex: 1; padding: 16px 20px; display: flex; flex-direction: column; overflow-y: auto; -webkit-overflow-scrolling: touch; min-height: 0; }
+
+    /* ── QUESTION IMAGE — auto-fits content, no dead space ── */
+    .q-image-wrap {
+      margin-bottom: 14px;
+      border-radius: 10px;
+      overflow: hidden;
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      /* Shrink to fit image — no empty grey box */
+      display: inline-block;
+      width: 100%;
+      text-align: center;
+    }
+    .q-image-wrap img {
+      display: block;
+      /* Scale down to fit container, never upscale past natural size */
+      max-width: 100%;
+      width: auto;
+      height: auto;
+      /* Max height varies by device — see classes below */
+      max-height: var(--img-max-h, 340px);
+      margin: 0 auto;
+      cursor: zoom-in;
+      object-fit: contain;
+      transition: transform 0.2s;
+    }
     .q-image-wrap img:hover { transform: scale(1.02); }
     .q-image-wrap.hidden { display: none; }
 
-    /* Phone: full-width, shorter height — tap to zoom is essential */
-    .device-phone .q-image-wrap img { max-height: 220px; width: 100%; cursor: zoom-in; }
+    /* Phone portrait — shorter, full width */
+    .device-phone .q-image-wrap img       { --img-max-h: 210px; }
+    /* Phone landscape — a bit more room */
+    @media (max-height: 500px) {
+      .device-phone .q-image-wrap img     { --img-max-h: 160px; }
+    }
+    /* Tablet */
+    .device-tablet .q-image-wrap img      { --img-max-h: 280px; }
+    /* Desktop — standard */
+    .device-desktop .q-image-wrap img     { --img-max-h: 340px; }
+    /* Large desktop (1440px+) */
+    @media (min-width: 1440px) {
+      .device-desktop .q-image-wrap img   { --img-max-h: 420px; }
+    }
+    /* Retina bump — images are crisper so slightly more height is fine */
+    .dpr-high.device-phone .q-image-wrap img   { --img-max-h: 240px; }
+    .dpr-high.device-tablet .q-image-wrap img  { --img-max-h: 320px; }
+    .dpr-high.device-desktop .q-image-wrap img { --img-max-h: 400px; }
 
-    /* Tablet: mid budget */
-    .device-tablet .q-image-wrap img { max-height: 300px; }
-
-    /* Desktop default: 380px (set above) */
-    .device-desktop .q-image-wrap img { max-height: 380px; }
-
-    /* Retina / high-DPI: slightly taller since images are sharper */
-    .dpr-high .q-image-wrap img { max-height: 440px; }
-    .dpr-high.device-phone .q-image-wrap img { max-height: 260px; }
-
-    /* iOS Safari: prevent tap highlight, allow pinch-zoom in lightbox */
+    /* iOS: remove tap flash, allow pinch-zoom inside lightbox */
     .os-ios .q-image-wrap img { -webkit-tap-highlight-color: transparent; touch-action: manipulation; }
 
     /* ── LIGHTBOX ── */
@@ -161,7 +180,7 @@
     #img-lightbox.open { display: flex; animation: fadeUp 0.2s ease; }
     #img-lightbox img { max-width: 100%; max-height: 90vh; border-radius: 10px; object-fit: contain; box-shadow: 0 8px 40px rgba(0,0,0,0.5); }
     .device-phone #img-lightbox img { max-height: 85vh; border-radius: 6px; }
-    #lightbox-close { position: absolute; top: 16px; right: 16px; width: 36px; height: 36px; border-radius: 50%; background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.3); color: white; font-size: 20px; line-height: 1; cursor: pointer; display: flex; align-items: center; justify-content: center; }
+    #lightbox-close { position: absolute; top: 16px; right: 16px; width: 36px; height: 36px; border-radius: 50%; background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.3); color: white; font-size: 20px; line-height: 36px; cursor: pointer; text-align: center; }
     .explanation-box { margin-top: 16px; padding: 14px; background: var(--surface2); border: 1px solid var(--border); border-left: 3px solid var(--accent); border-radius: 11px; font-size: 13px; line-height: 1.6; color: var(--muted); display: none; }
     .explanation-box.show { display: block; animation: fadeUp 0.25s ease; }
     .option-exp { font-size: 12px; color: var(--muted); margin-top: 10px; padding-top: 10px; border-top: 1px solid var(--border); line-height: 1.5; display: none; }
@@ -343,7 +362,7 @@
 <!-- LIGHTBOX -->
 <div id="img-lightbox" onclick="closeLightbox()">
   <button id="lightbox-close" onclick="closeLightbox()" aria-label="Close">×</button>
-  <img id="img-lightbox-src" src="" alt="Question diagram — enlarged"/>
+  <img id="img-lightbox-src" src="" alt="Question diagram enlarged"/>
 </div>
 
 <!-- Install banner -->
@@ -4137,29 +4156,27 @@ async function handlePaymentReturn() {
 
 // ── LIGHTBOX ──────────────────────────────────────────────────
 function openLightbox(src) {
-  const lb = document.getElementById('img-lightbox');
   document.getElementById('img-lightbox-src').src = src;
-  lb.classList.add('open');
+  document.getElementById('img-lightbox').classList.add('open');
   document.body.style.overflow = 'hidden';
 }
-
 function closeLightbox() {
   document.getElementById('img-lightbox').classList.remove('open');
   document.body.style.overflow = '';
 }
-
 document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
 
-// ── DEVICE CLASS UPDATE ON RESIZE / ORIENTATION CHANGE ────────
+// ── DEVICE CLASS REFRESH ON RESIZE / ROTATE ───────────────────
 function updateDeviceClass() {
   const w = window.innerWidth;
   const isTouch = ('ontouchstart' in window) || navigator.maxTouchPoints > 0;
   const root = document.documentElement;
   root.classList.remove('device-phone', 'device-tablet', 'device-desktop');
-  if (isTouch && w < 600)      { root.classList.add('device-phone');   window._device.type = 'phone';   window._deviceType = 'phone'; }
-  else if (isTouch)            { root.classList.add('device-tablet');  window._device.type = 'tablet';  window._deviceType = 'tablet'; }
-  else                         { root.classList.add('device-desktop'); window._device.type = 'desktop'; window._deviceType = 'desktop'; }
+  if      (isTouch && w < 600) { root.classList.add('device-phone');   window._device.type = 'phone';   }
+  else if (isTouch)            { root.classList.add('device-tablet');  window._device.type = 'tablet';  }
+  else                         { root.classList.add('device-desktop'); window._device.type = 'desktop'; }
   window._device.viewportW = w;
+  window._deviceType = window._device.type;
 }
 window.addEventListener('resize', updateDeviceClass);
 window.addEventListener('orientationchange', () => setTimeout(updateDeviceClass, 150));
