@@ -124,30 +124,28 @@
       border-radius: 10px;
       border: 1px solid var(--border);
       background: var(--surface2);
+      /* NO overflow:hidden — that was cropping the image */
       display: block;
       text-align: center;
-      /* No overflow:hidden — never clips the image */
     }
     .q-image-wrap img {
+      /* Scale by width only — height follows naturally, full image always visible */
       display: block;
-      margin: 0 auto;
-      border-radius: 8px;
-      cursor: zoom-in;
-      transition: transform 0.2s;
-      /* Both dimensions constrained — image scales down to fit whichever limit hits first */
-      max-width: 100%;
-      max-height: 35vh;   /* never taller than 35% of screen — leaves room for Q + options */
+      max-width: min(100%, 600px); /* never wider than card, cap at 600px on large screens */
       width: auto;
       height: auto;
-      object-fit: contain; /* shows full image, no cropping */
+      margin: 0 auto;
+      border-radius: 10px;
+      cursor: zoom-in;
+      transition: transform 0.2s;
     }
     .q-image-wrap img:hover { transform: scale(1.02); }
     .q-image-wrap.hidden { display: none; }
-    /* Phone — tighter height budget */
-    .device-phone .q-image-wrap img  { max-height: 28vh; }
-    /* Tablet */
-    .device-tablet .q-image-wrap img { max-height: 32vh; }
-    /* iOS */
+
+    /* Phone — full width, no cap */
+    .device-phone .q-image-wrap img { max-width: 100%; }
+
+    /* iOS tap */
     .os-ios .q-image-wrap img { -webkit-tap-highlight-color: transparent; }
 
     /* ── LIGHTBOX ── */
@@ -357,7 +355,7 @@
 const mathsQuestions = [
  
 // ====================== 2020 ======================
-    {year:2020,category:'A2',q:"Which of the following could represent the graph of y = −x² + 1?",options:["Parabola opening upward, y-intercept at 1","Parabola opening upward, y-intercept at -1","Parabola opening downward, vertex at (0,1)","Parabola opening downward, vertex at (1,0)"],answer:2,solution:`<div class="step"><span class="step-number">1.</span> Identify the equation as quadratic: y = −x² + 1 (standard form y = ax² + bx + c).</div>
+    {year:2020,category:'A2',q:"Which of the following could represent the graph of y = −x² + 1?",options:["Parabola opening upward, y-intercept at 1","Parabola opening upward, y-intercept at -1","Parabola opening downward, vertex at (0,1)","Parabola opening downward, vertex at (1,0)"],answer:2, img:"2020-q1",solution:`<div class="step"><span class="step-number">1.</span> Identify the equation as quadratic: y = −x² + 1 (standard form y = ax² + bx + c).</div>
 <div class="step"><span class="step-number">2.</span> Determine the coefficient a = −1.</div>
 <div class="step"><span class="step-number">3.</span> Since a < 0, the parabola opens downward.</div>
 <div class="step"><span class="step-number">4.</span> Find the vertex form or substitute x = 0: y = −(0)² + 1 = 1.</div>
@@ -423,7 +421,7 @@ const mathsQuestions = [
 <div class="step"><span class="step-number">9.</span> Options are positive values representing amount decreased.</div>
 <div class="step"><span class="step-number">10.</span> Correct: 10.</div>`},
 
-    {year:2020,category:'S1S2',q:"Which histogram best represents a dataset that is positively skewed?",options:["Tail on left","Symmetric","Tail on right","Uniform"],answer:2,solution:`<div class="step"><span class="step-number">1.</span> Recall skewness definitions.</div>
+    {year:2020,category:'S1S2',q:"Which histogram best represents a dataset that is positively skewed?",options:["Tail on left","Symmetric","Tail on right","Uniform"],answer:2, img:"2020-q7",solution:`<div class="step"><span class="step-number">1.</span> Recall skewness definitions.</div>
 <div class="step"><span class="step-number">2.</span> Positive skew (right skew): mean > median > mode.</div>
 <div class="step"><span class="step-number">3.</span> Data clustered on left (lower values).</div>
 <div class="step"><span class="step-number">4.</span> Long tail extends to right (higher values).</div>
@@ -434,7 +432,7 @@ const mathsQuestions = [
 <div class="step"><span class="step-number">9.</span> Uniform flat.</div>
 <div class="step"><span class="step-number">10.</span> Correct: Tail on right.</div>`},
 
-    {year:2020,category:'S1S2',q:"John's z-scores: French 1.5, Commerce 3.0, Music 2.0. Which is his strongest subject relative to his class?",options:["French","Commerce","Music","All equal"],answer:1,solution:`<div class="step"><span class="step-number">1.</span> Z-score measures standard deviations from mean.</div>
+    {year:2020,category:'S1S2',q:"John's z-scores: French 1.5, Commerce 3.0, Music 2.0. Which is his strongest subject relative to his class?",options:["French","Commerce","Music","All equal"],answer:1, img:"2020-q8",solution:`<div class="step"><span class="step-number">1.</span> Z-score measures standard deviations from mean.</div>
 <div class="step"><span class="step-number">2.</span> Higher z-score = better performance relative to class mean.</div>
 <div class="step"><span class="step-number">3.</span> Positive z-score = above mean.</div>
 <div class="step"><span class="step-number">4.</span> Compare values: French 1.5, Music 2.0, Commerce 3.0.</div>
@@ -445,7 +443,7 @@ const mathsQuestions = [
 <div class="step"><span class="step-number">9.</span> Strongest relative = highest z-score.</div>
 <div class="step"><span class="step-number">10.</span> Correct: Commerce.</div>`},
 
-    {year:2020,category:'N1',q:"Team A (3 members) and Team B (3 members) play chess. Each member of Team A must play each member of Team B once. Which network diagram represents this?",options:["Complete graph K₆","Complete bipartite K₃,₃","Star graph","Cycle graph"],answer:1,solution:`<div class="step"><span class="step-number">1.</span> This is a complete matching between two sets.</div>
+    {year:2020,category:'N1',q:"Team A (3 members) and Team B (3 members) play chess. Each member of Team A must play each member of Team B once. Which network diagram represents this?",options:["Complete graph K₆","Complete bipartite K₃,₃","Star graph","Cycle graph"],answer:1, img:"2020-q9",solution:`<div class="step"><span class="step-number">1.</span> This is a complete matching between two sets.</div>
 <div class="step"><span class="step-number">2.</span> No matches within Team A or B.</div>
 <div class="step"><span class="step-number">3.</span> Every A plays every B: 3 × 3 = 9 edges.</div>
 <div class="step"><span class="step-number">4.</span> Two disjoint sets of 3 vertices each.</div>
@@ -478,7 +476,7 @@ const mathsQuestions = [
 <div class="step"><span class="step-number">9.</span> Matches option.</div>
 <div class="step"><span class="step-number">10.</span> Correct: $4343.88.</div>`},
 
-    {year:2020,category:'A2',q:"For bivariate data, Pearson's correlation coefficient is –1. Which graph best represents this?",options:["Random scatter","Perfect upward line","Perfect downward line","Curved pattern"],answer:2,solution:`<div class="step"><span class="step-number">1.</span> Pearson's r measures linear correlation.</div>
+    {year:2020,category:'A2',q:"For bivariate data, Pearson's correlation coefficient is –1. Which graph best represents this?",options:["Random scatter","Perfect upward line","Perfect downward line","Curved pattern"],answer:2, img:"2020-q12",solution:`<div class="step"><span class="step-number">1.</span> Pearson's r measures linear correlation.</div>
 <div class="step"><span class="step-number">2.</span> r = −1 means perfect negative linear correlation.</div>
 <div class="step"><span class="step-number">3.</span> All data points lie exactly on a straight line.</div>
 <div class="step"><span class="step-number">4.</span> Line has negative slope.</div>
@@ -511,7 +509,7 @@ const mathsQuestions = [
 <div class="step"><span class="step-number">9.</span> Nominal = $10,000.</div>
 <div class="step"><span class="step-number">10.</span> Correct: PV < $10,000 < FV.</div>`},
 
-    {year:2020,category:'P1',q:"A die (1-6) lands on a table divided into 8 equal sections (1-8). Score = die value × section number. What is P(score = 6)?",options:["1/48","1/12","1/8","1/6"],answer:1,solution:`<div class="step"><span class="step-number">1.</span> Independent events: die and section uniform.</div>
+    {year:2020,category:'P1',q:"A die (1-6) lands on a table divided into 8 equal sections (1-8). Score = die value × section number. What is P(score = 6)?",options:["1/48","1/12","1/8","1/6"],answer:1, img:"2020-q15",solution:`<div class="step"><span class="step-number">1.</span> Independent events: die and section uniform.</div>
 <div class="step"><span class="step-number">2.</span> Total outcomes: 6 die × 8 sections = 48 equally likely.</div>
 <div class="step"><span class="step-number">3.</span> Favourable: score = die × section = 6.</div>
 <div class="step"><span class="step-number">4.</span> Pairs: (1,6), (2,3), (3,2), (6,1).</div>
@@ -535,7 +533,7 @@ const mathsQuestions = [
 <div class="step"><span class="step-number">9.</span> Largest is 44.</div>
 <div class="step"><span class="step-number">10.</span> Correct: Square.</div>`},
 
-    {year:2021,category:'N1',q:"For a network with 5 vertices and 8 edges, what is the sum of all degrees?",options:["5","8","14","16"],answer:3,solution:`<div class="step"><span class="step-number">1.</span> Use the handshaking lemma (fundamental theorem of graph theory).</div>
+    {year:2021,category:'N1',q:"For a network with 5 vertices and 8 edges, what is the sum of all degrees?",options:["5","8","14","16"],answer:3, img:"2021-q2",solution:`<div class="step"><span class="step-number">1.</span> Use the handshaking lemma (fundamental theorem of graph theory).</div>
 <div class="step"><span class="step-number">2.</span> The sum of all vertex degrees equals twice the number of edges.</div>
 <div class="step"><span class="step-number">3.</span> Each edge contributes 2 to the total degree sum.</div>
 <div class="step"><span class="step-number">4.</span> Number of edges = 8.</div>
@@ -546,7 +544,7 @@ const mathsQuestions = [
 <div class="step"><span class="step-number">9.</span> Direct application gives 16.</div>
 <div class="step"><span class="step-number">10.</span> Correct: 16.</div>`},
 
-    {year:2021,category:'S1S2',q:"Stem-and-leaf plot shows: 0|6 8, 1|2 4 5, 2|1 5 5 9, 3|5. What is the mode?",options:["5","18","25","29"],answer:2,solution:`<div class="step"><span class="step-number">1.</span> Read the stem-and-leaf plot carefully.</div>
+    {year:2021,category:'S1S2',q:"Stem-and-leaf plot shows: 0|6 8, 1|2 4 5, 2|1 5 5 9, 3|5. What is the mode?",options:["5","18","25","29"],answer:2, img:"2021-q3",solution:`<div class="step"><span class="step-number">1.</span> Read the stem-and-leaf plot carefully.</div>
 <div class="step"><span class="step-number">2.</span> Stem 0: leaves 6,8 → values 6, 8.</div>
 <div class="step"><span class="step-number">3.</span> Stem 1: leaves 2,4,5 → 12, 14, 15.</div>
 <div class="step"><span class="step-number">4.</span> Stem 2: leaves 1,5,5,9 → 21, 25, 25, 29.</div>
@@ -590,7 +588,7 @@ const mathsQuestions = [
 <div class="step"><span class="step-number">9.</span> Longer options have more sig figs.</div>
 <div class="step"><span class="step-number">10.</span> Correct: 3.14.</div>`},
 
-    {year:2021,category:'S1S2',q:"For the cumulative frequency graph showing 100 downloads, which box-plot matches the data?",options:["Box-plot A","Box-plot B","Box-plot C","Box-plot D"],answer:3,solution:`<div class="step"><span class="step-number">1.</span> Cumulative frequency graph rises to 100 (total observations).</div>
+    {year:2021,category:'S1S2',q:"For the cumulative frequency graph showing 100 downloads, which box-plot matches the data?",options:["Box-plot A","Box-plot B","Box-plot C","Box-plot D"],answer:3, img:"2021-q7",solution:`<div class="step"><span class="step-number">1.</span> Cumulative frequency graph rises to 100 (total observations).</div>
 <div class="step"><span class="step-number">2.</span> Find quartiles: Q1 at 25, median at 50, Q3 at 75 on y-axis.</div>
 <div class="step"><span class="step-number">3.</span> Read corresponding x-values from the curve.</div>
 <div class="step"><span class="step-number">4.</span> Also note minimum and maximum for whiskers.</div>
@@ -623,7 +621,7 @@ const mathsQuestions = [
 <div class="step"><span class="step-number">9.</span> Not linear or parabolic.</div>
 <div class="step"><span class="step-number">10.</span> Correct: Exponential decay from 10.</div>`},
 
-    {year:2021,category:'P1',q:"Box has 3 peppermint (P) and 5 caramel (C) chocolates. Kim chooses one, Sam chooses another. P(different centres)?",options:["15/64","15/56","15/32","15/28"],answer:3,solution:`<div class="step"><span class="step-number">1.</span> Total chocolates: 3P + 5C = 8.</div>
+    {year:2021,category:'P1',q:"Box has 3 peppermint (P) and 5 caramel (C) chocolates. Kim chooses one, Sam chooses another. P(different centres)?",options:["15/64","15/56","15/32","15/28"],answer:3, img:"2021-q10",solution:`<div class="step"><span class="step-number">1.</span> Total chocolates: 3P + 5C = 8.</div>
 <div class="step"><span class="step-number">2.</span> Without replacement, order matters (Kim first).</div>
 <div class="step"><span class="step-number">3.</span> Different centres: one P and one C.</div>
 <div class="step"><span class="step-number">4.</span> Case 1: Kim P, Sam C → (3/8) × (5/7) = 15/56.</div>
@@ -634,7 +632,7 @@ const mathsQuestions = [
 <div class="step"><span class="step-number">9.</span> Matches one of the options.</div>
 <div class="step"><span class="step-number">10.</span> Correct: 15/28.</div>`},
 
-    {year:2021,category:'M1',q:"Block of land shown. Using trapezoidal rule with 2 applications, approximate area in km²?",options:["9.9","19.8","39.6","72"],answer:1,solution:`<div class="step"><span class="step-number">1.</span> Trapezoidal rule for area under curve.</div>
+    {year:2021,category:'M1',q:"Block of land shown. Using trapezoidal rule with 2 applications, approximate area in km²?",options:["9.9","19.8","39.6","72"],answer:1, img:"2021-q11",solution:`<div class="step"><span class="step-number">1.</span> Trapezoidal rule for area under curve.</div>
 <div class="step"><span class="step-number">2.</span> 2 applications mean 3 strips (2 intervals).</div>
 <div class="step"><span class="step-number">3.</span> Formula: area ≈ (h/2) × (y0 + 2y1 + y2) where h = interval width.</div>
 <div class="step"><span class="step-number">4.</span> Read heights y0, y1, y2 from diagram (not visible).</div>
@@ -691,7 +689,7 @@ const mathsQuestions = [
 
     // ====================== 2022 ======================
     
-    {year:2022,category:'S1S2',q:"Which graph represents a negatively skewed distribution?",options:["Tail on left","Symmetric","Tail on right","Uniform"],answer:0,solution:`<div class="step"><span class="step-number">1.</span> Recall the definition of skewness.</div>
+    {year:2022,category:'S1S2',q:"Which graph represents a negatively skewed distribution?",options:["Tail on left","Symmetric","Tail on right","Uniform"],answer:0, img:"2022-q1",solution:`<div class="step"><span class="step-number">1.</span> Recall the definition of skewness.</div>
 <div class="step"><span class="step-number">2.</span> Negative skew (left skew): mean < median < mode.</div>
 <div class="step"><span class="step-number">3.</span> The bulk of the data is on the right (higher values).</div>
 <div class="step"><span class="step-number">4.</span> A long tail extends to the left (lower values).</div>
@@ -702,7 +700,7 @@ const mathsQuestions = [
 <div class="step"><span class="step-number">9.</span> Uniform distributions are flat.</div>
 <div class="step"><span class="step-number">10.</span> Correct: Tail on left.</div>`},
 
-    {year:2022,category:'A2',q:"Which could be the graph of y = −2x + 2?",options:["Line with positive slope","Line with negative slope through (0,2)","Parabola","Horizontal line"],answer:1,solution:`<div class="step"><span class="step-number">1.</span> Equation is in slope-intercept form y = mx + c.</div>
+    {year:2022,category:'A2',q:"Which could be the graph of y = −2x + 2?",options:["Line with positive slope","Line with negative slope through (0,2)","Parabola","Horizontal line"],answer:1, img:"2022-q2",solution:`<div class="step"><span class="step-number">1.</span> Equation is in slope-intercept form y = mx + c.</div>
 <div class="step"><span class="step-number">2.</span> Slope m = −2 (negative value).</div>
 <div class="step"><span class="step-number">3.</span> Negative slope means the line falls from left to right.</div>
 <div class="step"><span class="step-number">4.</span> y-intercept c = 2.</div>
@@ -713,7 +711,7 @@ const mathsQuestions = [
 <div class="step"><span class="step-number">9.</span> Positive slope would have m > 0.</div>
 <div class="step"><span class="step-number">10.</span> Correct: Line with negative slope through (0,2).</div>`},
 
-    {year:2022,category:'N1',q:"Network diagram shows project with critical path marked. What is the critical path?",options:["ACI","ADG","BEH","BEFG"],answer:2,solution:`<div class="step"><span class="step-number">1.</span> The critical path is the longest path through the network.</div>
+    {year:2022,category:'N1',q:"Network diagram shows project with critical path marked. What is the critical path?",options:["ACI","ADG","BEH","BEFG"],answer:2, img:"2022-q3",solution:`<div class="step"><span class="step-number">1.</span> The critical path is the longest path through the network.</div>
 <div class="step"><span class="step-number">2.</span> It determines the minimum project duration.</div>
 <div class="step"><span class="step-number">3.</span> Any delay on the critical path delays the whole project.</div>
 <div class="step"><span class="step-number">4.</span> Examine the diagram (not visible here, but marked).</div>
@@ -823,7 +821,7 @@ const mathsQuestions = [
 <div class="step"><span class="step-number">9.</span> Regression context supports this.</div>
 <div class="step"><span class="step-number">10.</span> Correct: Mark is 20 for zero study.</div>`},
 
-    {year:2022,category:'S1S2',q:"Normal distribution mean 0, SD 1. P(below 1.94) = 0.9738. What is P(between 0 and 1.94)?",options:["0.0262","0.4738","0.5262","0.9738"],answer:1,solution:`<div class="step"><span class="step-number">1.</span> Standard normal distribution (z-scores).</div>
+    {year:2022,category:'S1S2',q:"Normal distribution mean 0, SD 1. P(below 1.94) = 0.9738. What is P(between 0 and 1.94)?",options:["0.0262","0.4738","0.5262","0.9738"],answer:1, img:"2022-q13",solution:`<div class="step"><span class="step-number">1.</span> Standard normal distribution (z-scores).</div>
 <div class="step"><span class="step-number">2.</span> P(Z < 1.94) = 0.9738 (given).</div>
 <div class="step"><span class="step-number">3.</span> Mean = 0, so P(Z < 0) = 0.5.</div>
 <div class="step"><span class="step-number">4.</span> Area from 0 to 1.94 is the right half portion.</div>
@@ -845,7 +843,7 @@ const mathsQuestions = [
 <div class="step"><span class="step-number">9.</span> Algebraic steps balanced.</div>
 <div class="step"><span class="step-number">10.</span> Correct: x = (2y + b)/a.</div>`},
 
-    {year:2022,category:'S1S2',q:"Cumulative frequency graph for 100 people's movie downloads. Which box-plot matches?",options:["Box-plot A","Box-plot B","Box-plot C","Box-plot D"],answer:2,solution:`<div class="step"><span class="step-number">1.</span> Cumulative frequency graph shows running totals.</div>
+    {year:2022,category:'S1S2',q:"Cumulative frequency graph for 100 people's movie downloads. Which box-plot matches?",options:["Box-plot A","Box-plot B","Box-plot C","Box-plot D"],answer:2, img:"2022-q15",solution:`<div class="step"><span class="step-number">1.</span> Cumulative frequency graph shows running totals.</div>
 <div class="step"><span class="step-number">2.</span> Read off quartiles from the graph at 25%, 50%, 75% of total (100).</div>
 <div class="step"><span class="step-number">3.</span> Q1 at 25th value, median at 50th, Q3 at 75th.</div>
 <div class="step"><span class="step-number">4.</span> Also note min and max for whiskers.</div>
@@ -901,7 +899,7 @@ const mathsQuestions = [
 <div class="step"><span class="step-number">9.</span> 65,000 − 29,172 = 35,828.</div>
 <div class="step"><span class="step-number">10.</span> Correct: $35,828.</div>`},
 
-    {year:2023,category:'T2',q:"Four petrol pumps shown. Which represents best value?",options:["24L for $46.70","25L for $48.50","26L for $52.30","27L for $54.80"],answer:1,solution:`<div class="step"><span class="step-number">1.</span> Best value = lowest price per litre.</div>
+    {year:2023,category:'T2',q:"Four petrol pumps shown. Which represents best value?",options:["24L for $46.70","25L for $48.50","26L for $52.30","27L for $54.80"],answer:1, img:"2023-q5",solution:`<div class="step"><span class="step-number">1.</span> Best value = lowest price per litre.</div>
 <div class="step"><span class="step-number">2.</span> Calculate cost per litre for each.</div>
 <div class="step"><span class="step-number">3.</span> Option A: 46.70 / 24 ≈ 1.9458 $/L.</div>
 <div class="step"><span class="step-number">4.</span> Option B: 48.50 / 25 = 1.940 $/L.</div>
@@ -934,7 +932,7 @@ const mathsQuestions = [
 <div class="step"><span class="step-number">9.</span> Direction changes correctly.</div>
 <div class="step"><span class="step-number">10.</span> Correct: 38°N, 126°E.</div>`},
 
-    {year:2023,category:'P1',q:"Roll die and spin spinner (1-4). P(score of 7 or more)?",options:["1/6","1/4","5/18","5/12"],answer:3,solution:`<div class="step"><span class="step-number">1.</span> Die: faces 1–6, spinner: 1–4, independent.</div>
+    {year:2023,category:'P1',q:"Roll die and spin spinner (1-4). P(score of 7 or more)?",options:["1/6","1/4","5/18","5/12"],answer:3, img:"2023-q8",solution:`<div class="step"><span class="step-number">1.</span> Die: faces 1–6, spinner: 1–4, independent.</div>
 <div class="step"><span class="step-number">2.</span> Score = die × spinner.</div>
 <div class="step"><span class="step-number">3.</span> Total possible outcomes: 6 × 4 = 24 (equally likely).</div>
 <div class="step"><span class="step-number">4.</span> Favourable: score ≥ 7.</div>
@@ -978,7 +976,7 @@ const mathsQuestions = [
 <div class="step"><span class="step-number">9.</span> Simplify divide by 10: 5:8.</div>
 <div class="step"><span class="step-number">10.</span> Correct: 5:8.</div>`},
 
-    {year:2023,category:'M1',q:"Cylindrical pipe radius 12.5cm, water surface width 20cm. What is depth?",options:["2.5 cm","5.0 cm","7.5 cm","12.5 cm"],answer:2,solution:`<div class="step"><span class="step-number">1.</span> Cross-section is circle radius r = 12.5 cm.</div>
+    {year:2023,category:'M1',q:"Cylindrical pipe radius 12.5cm, water surface width 20cm. What is depth?",options:["2.5 cm","5.0 cm","7.5 cm","12.5 cm"],answer:2, img:"2023-q12",solution:`<div class="step"><span class="step-number">1.</span> Cross-section is circle radius r = 12.5 cm.</div>
 <div class="step"><span class="step-number">2.</span> Water forms chord of width 20 cm (surface).</div>
 <div class="step"><span class="step-number">3.</span> Chord length = 20 cm, half = 10 cm.</div>
 <div class="step"><span class="step-number">4.</span> Distance from centre to chord = d (sagitta related).</div>
@@ -1000,7 +998,7 @@ const mathsQuestions = [
 <div class="step"><span class="step-number">9.</span> 44% total discount.</div>
 <div class="step"><span class="step-number">10.</span> Correct: 44%.</div>`},
 
-    {year:2023,category:'N1',q:"Network with cut capacity 30 shown. Which statement correct about maximum flow?",options:["Max flow is 30","Max flow is 35","Max flow is 30 or less","Max flow is 30 or more"],answer:3,solution:`<div class="step"><span class="step-number">1.</span> Max-flow min-cut theorem.</div>
+    {year:2023,category:'N1',q:"Network with cut capacity 30 shown. Which statement correct about maximum flow?",options:["Max flow is 30","Max flow is 35","Max flow is 30 or less","Max flow is 30 or more"],answer:3, img:"2023-q14",solution:`<div class="step"><span class="step-number">1.</span> Max-flow min-cut theorem.</div>
 <div class="step"><span class="step-number">2.</span> Maximum flow ≤ capacity of any cut.</div>
 <div class="step"><span class="step-number">3.</span> A cut with capacity 30 exists.</div>
 <div class="step"><span class="step-number">4.</span> Therefore, max flow ≤ 30.</div>
@@ -1034,7 +1032,7 @@ const mathsQuestions = [
 <div class="step"><span class="step-number">9.</span> 6.40 becomes 6.41.</div>
 <div class="step"><span class="step-number">10.</span> Correct: 6.41.</div>`},
 
-    {year:2024,category:'A2',q:"Which could be equation of function shown? (graph shows negative slope through (0,3))",options:["y = 2x + 3","y = 2x − 3","y = −2x + 3","y = −2x − 3"],answer:2,solution:`<div class="step"><span class="step-number">1.</span> Graph is a straight line (linear function).</div>
+    {year:2024,category:'A2',q:"Which could be equation of function shown? (graph shows negative slope through (0,3))",options:["y = 2x + 3","y = 2x − 3","y = −2x + 3","y = −2x − 3"],answer:2, img:"2024-q2",solution:`<div class="step"><span class="step-number">1.</span> Graph is a straight line (linear function).</div>
 <div class="step"><span class="step-number">2.</span> Passes through y-intercept (0,3).</div>
 <div class="step"><span class="step-number">3.</span> Constant term = +3.</div>
 <div class="step"><span class="step-number">4.</span> Slope is negative (falls left to right).</div>
@@ -1056,7 +1054,7 @@ const mathsQuestions = [
 <div class="step"><span class="step-number">9.</span> Voluntary response bias common.</div>
 <div class="step"><span class="step-number">10.</span> Correct: Self-selecting.</div>`},
 
-    {year:2024,category:'N1',q:"Map shows 6 regions. How many edges in network diagram? (edges = shared borders)",options:["8","7","6","5"],answer:0,solution:`<div class="step"><span class="step-number">1.</span> Network: vertices = regions, edges = shared borders.</div>
+    {year:2024,category:'N1',q:"Map shows 6 regions. How many edges in network diagram? (edges = shared borders)",options:["8","7","6","5"],answer:0, img:"2024-q4",solution:`<div class="step"><span class="step-number">1.</span> Network: vertices = regions, edges = shared borders.</div>
 <div class="step"><span class="step-number">2.</span> Count each shared border once (undirected graph).</div>
 <div class="step"><span class="step-number">3.</span> Examine map (planar graph).</div>
 <div class="step"><span class="step-number">4.</span> Identify adjacent pairs.</div>
@@ -1067,7 +1065,7 @@ const mathsQuestions = [
 <div class="step"><span class="step-number">9.</span> Matches planar map properties.</div>
 <div class="step"><span class="step-number">10.</span> Correct: 8.</div>`},
 
-    {year:2024,category:'S1S2',q:"Pia's z-scores: English 2.0, Maths 0.9, Science 0.47, History 1.44. Which subject did she perform best?",options:["English","Mathematics","Science","History"],answer:0,solution:`<div class="step"><span class="step-number">1.</span> Z-scores compare performance relative to class mean/SD.</div>
+    {year:2024,category:'S1S2',q:"Pia's z-scores: English 2.0, Maths 0.9, Science 0.47, History 1.44. Which subject did she perform best?",options:["English","Mathematics","Science","History"],answer:0, img:"2024-q5",solution:`<div class="step"><span class="step-number">1.</span> Z-scores compare performance relative to class mean/SD.</div>
 <div class="step"><span class="step-number">2.</span> Higher z-score = further above mean.</div>
 <div class="step"><span class="step-number">3.</span> All positive: above mean in all subjects.</div>
 <div class="step"><span class="step-number">4.</span> English: 2.0.</div>
@@ -1078,7 +1076,7 @@ const mathsQuestions = [
 <div class="step"><span class="step-number">9.</span> 2.0 is highest.</div>
 <div class="step"><span class="step-number">10.</span> Correct: English.</div>`},
 
-    {year:2024,category:'M1',q:"Right triangle, hypotenuse 20, angle 40°. Which expression for opposite side x?",options:["20 cos 40°","20 sin 40°","20/cos 40°","20/sin 40°"],answer:1,solution:`<div class="step"><span class="step-number">1.</span> Right triangle, hypotenuse = 20.</div>
+    {year:2024,category:'M1',q:"Right triangle, hypotenuse 20, angle 40°. Which expression for opposite side x?",options:["20 cos 40°","20 sin 40°","20/cos 40°","20/sin 40°"],answer:1, img:"2024-q6",solution:`<div class="step"><span class="step-number">1.</span> Right triangle, hypotenuse = 20.</div>
 <div class="step"><span class="step-number">2.</span> Angle = 40° (one acute angle).</div>
 <div class="step"><span class="step-number">3.</span> Opposite side x to the 40° angle.</div>
 <div class="step"><span class="step-number">4.</span> Trigonometric ratio: sin θ = opposite / hypotenuse.</div>
@@ -1177,7 +1175,7 @@ const mathsQuestions = [
 <div class="step"><span class="step-number">9.</span> Slope of profit function.</div>
 <div class="step"><span class="step-number">10.</span> Correct: $5.50.</div>`},
 
-    {year:2024,category:'S1S2',q:"Box plot shown. Which histogram is NOT possible?",options:["Histogram A","Histogram B","Histogram C","Histogram D"],answer:2,solution:`<div class="step"><span class="step-number">1.</span> Box plot shows five-number summary.</div>
+    {year:2024,category:'S1S2',q:"Box plot shown. Which histogram is NOT possible?",options:["Histogram A","Histogram B","Histogram C","Histogram D"],answer:2, img:"2024-q15",solution:`<div class="step"><span class="step-number">1.</span> Box plot shows five-number summary.</div>
 <div class="step"><span class="step-number">2.</span> Quartiles, median, min/max visible.</div>
 <div class="step"><span class="step-number">3.</span> Histogram must reflect same quartile positions.</div>
 <div class="step"><span class="step-number">4.</span> Approximately 25% data in each quartile region.</div>
@@ -1189,7 +1187,7 @@ const mathsQuestions = [
 <div class="step"><span class="step-number">10.</span> Correct: Histogram C.</div>`},
 
     // ====================== 2025 ======================
-    {year:2025,category:'N1',q:"Network diagram shown. Which vertex has degree 4?",options:["A","B","C","D"],answer:2,solution:`<div class="step"><span class="step-number">1.</span> Degree of a vertex = number of edges connected to it.</div>
+    {year:2025,category:'N1',q:"Network diagram shown. Which vertex has degree 4?",options:["A","B","C","D"],answer:2, img:"2025-q1",solution:`<div class="step"><span class="step-number">1.</span> Degree of a vertex = number of edges connected to it.</div>
 <div class="step"><span class="step-number">2.</span> Examine the network diagram.</div>
 <div class="step"><span class="step-number">3.</span> Count edges incident on vertex A.</div>
 <div class="step"><span class="step-number">4.</span> Count edges incident on vertex B.</div>
@@ -1200,7 +1198,7 @@ const mathsQuestions = [
 <div class="step"><span class="step-number">9.</span> From diagram, vertex C has 4 connections.</div>
 <div class="step"><span class="step-number">10.</span> Correct: C.</div>`},
 
-    {year:2025,category:'A2',q:"Which graph could represent y = 4^x?",options:["Exponential decay","Exponential growth from 1","Linear","Parabola"],answer:1,solution:`<div class="step"><span class="step-number">1.</span> Equation y = 4^x is exponential form y = a × b^x.</div>
+    {year:2025,category:'A2',q:"Which graph could represent y = 4^x?",options:["Exponential decay","Exponential growth from 1","Linear","Parabola"],answer:1, img:"2025-q2",solution:`<div class="step"><span class="step-number">1.</span> Equation y = 4^x is exponential form y = a × b^x.</div>
 <div class="step"><span class="step-number">2.</span> Here a = 1 (implied), base b = 4.</div>
 <div class="step"><span class="step-number">3.</span> Base > 1 → exponential growth.</div>
 <div class="step"><span class="step-number">4.</span> When x = 0, y = 4^0 = 1.</div>
@@ -1211,7 +1209,7 @@ const mathsQuestions = [
 <div class="step"><span class="step-number">9.</span> Not linear or parabolic.</div>
 <div class="step"><span class="step-number">10.</span> Correct: Exponential growth from 1.</div>`},
 
-    {year:2025,category:'N1',q:"Network shows distances between towns. What is largest edge weight in minimum spanning tree?",options:["7","8","9","10"],answer:0,solution:`<div class="step"><span class="step-number">1.</span> Minimum spanning tree (MST) connects all vertices with minimum total weight.</div>
+    {year:2025,category:'N1',q:"Network shows distances between towns. What is largest edge weight in minimum spanning tree?",options:["7","8","9","10"],answer:0, img:"2025-q3",solution:`<div class="step"><span class="step-number">1.</span> Minimum spanning tree (MST) connects all vertices with minimum total weight.</div>
 <div class="step"><span class="step-number">2.</span> No cycles, uses Kruskal's or Prim's algorithm.</div>
 <div class="step"><span class="step-number">3.</span> Sort edges by increasing weight.</div>
 <div class="step"><span class="step-number">4.</span> Add smallest edges that don't form cycles.</div>
@@ -1266,7 +1264,7 @@ const mathsQuestions = [
 <div class="step"><span class="step-number">9.</span> Proportional representation.</div>
 <div class="step"><span class="step-number">10.</span> Correct: 50.</div>`},
 
-    {year:2025,category:'P1',q:"Spinner (4 colors) spun 100 times. Results shown in histogram. Which spinner most likely?",options:["Equal quarters","Mostly red","Mostly white","Mixed proportions"],answer:1,solution:`<div class="step"><span class="step-number">1.</span> Histogram shows frequency of each color.</div>
+    {year:2025,category:'P1',q:"Spinner (4 colors) spun 100 times. Results shown in histogram. Which spinner most likely?",options:["Equal quarters","Mostly red","Mostly white","Mixed proportions"],answer:1, img:"2025-q8",solution:`<div class="step"><span class="step-number">1.</span> Histogram shows frequency of each color.</div>
 <div class="step"><span class="step-number">2.</span> Total spins = 100.</div>
 <div class="step"><span class="step-number">3.</span> Compare bar heights to expected.</div>
 <div class="step"><span class="step-number">4.</span> Equal quarters → ~25 each.</div>
@@ -2132,6 +2130,38 @@ const VET_IMG = {
   "2025-q15":  "https://i.imgur.com/VO36VBh.png",
   "2025-q16":  "https://i.imgur.com/DH9GfzV.jpeg",
   "2025-q18b": "https://i.imgur.com/t14TvlO.png"
+};
+
+const MATHS_IMG = {
+  "2020-q1"    : "https://ohqtefjawaphtsebnaxg.supabase.co/storage/v1/object/public/exam-images/mathematics-standard-2/2020/q1_d1.jpg",
+  "2020-q7"    : "https://ohqtefjawaphtsebnaxg.supabase.co/storage/v1/object/public/exam-images/mathematics-standard-2/2020/q7_d1.jpg",
+  "2020-q8"    : "https://ohqtefjawaphtsebnaxg.supabase.co/storage/v1/object/public/exam-images/mathematics-standard-2/2020/q8_d1.jpg",
+  "2020-q9"    : "https://ohqtefjawaphtsebnaxg.supabase.co/storage/v1/object/public/exam-images/mathematics-standard-2/2020/q9_d1.jpg",
+  "2020-q12"   : "https://ohqtefjawaphtsebnaxg.supabase.co/storage/v1/object/public/exam-images/mathematics-standard-2/2020/q12_d1.jpg",
+  "2020-q15"   : "https://ohqtefjawaphtsebnaxg.supabase.co/storage/v1/object/public/exam-images/mathematics-standard-2/2020/q15_d1.jpg",
+  "2021-q2"    : "https://ohqtefjawaphtsebnaxg.supabase.co/storage/v1/object/public/exam-images/mathematics-standard-2/2021/q2_d1.jpg",
+  "2021-q3"    : "https://ohqtefjawaphtsebnaxg.supabase.co/storage/v1/object/public/exam-images/mathematics-standard-2/2021/q3_d1.jpg",
+  "2021-q7"    : "https://ohqtefjawaphtsebnaxg.supabase.co/storage/v1/object/public/exam-images/mathematics-standard-2/2021/q7_d1.jpg",
+  "2021-q10"   : "https://ohqtefjawaphtsebnaxg.supabase.co/storage/v1/object/public/exam-images/mathematics-standard-2/2021/q10_d1.jpg",
+  "2021-q11"   : "https://ohqtefjawaphtsebnaxg.supabase.co/storage/v1/object/public/exam-images/mathematics-standard-2/2021/q11_d1.jpg",
+  "2022-q1"    : "https://ohqtefjawaphtsebnaxg.supabase.co/storage/v1/object/public/exam-images/mathematics-standard-2/2022/q1_d1.jpg",
+  "2022-q2"    : "https://ohqtefjawaphtsebnaxg.supabase.co/storage/v1/object/public/exam-images/mathematics-standard-2/2022/q2_d1.jpg",
+  "2022-q3"    : "https://ohqtefjawaphtsebnaxg.supabase.co/storage/v1/object/public/exam-images/mathematics-standard-2/2022/q3_d1.jpg",
+  "2022-q13"   : "https://ohqtefjawaphtsebnaxg.supabase.co/storage/v1/object/public/exam-images/mathematics-standard-2/2022/q13_d1.jpg",
+  "2022-q15"   : "https://ohqtefjawaphtsebnaxg.supabase.co/storage/v1/object/public/exam-images/mathematics-standard-2/2022/q15_d1.jpg",
+  "2023-q5"    : "https://ohqtefjawaphtsebnaxg.supabase.co/storage/v1/object/public/exam-images/mathematics-standard-2/2023/q5_d1.jpg",
+  "2023-q8"    : "https://ohqtefjawaphtsebnaxg.supabase.co/storage/v1/object/public/exam-images/mathematics-standard-2/2023/q8_d1.jpg",
+  "2023-q12"   : "https://ohqtefjawaphtsebnaxg.supabase.co/storage/v1/object/public/exam-images/mathematics-standard-2/2023/q12_d1.jpg",
+  "2023-q14"   : "https://ohqtefjawaphtsebnaxg.supabase.co/storage/v1/object/public/exam-images/mathematics-standard-2/2023/q14_d1.jpg",
+  "2024-q2"    : "https://ohqtefjawaphtsebnaxg.supabase.co/storage/v1/object/public/exam-images/mathematics-standard-2/2024/q2_d1.jpg",
+  "2024-q4"    : "https://ohqtefjawaphtsebnaxg.supabase.co/storage/v1/object/public/exam-images/mathematics-standard-2/2024/q4_d1.jpg",
+  "2024-q5"    : "https://ohqtefjawaphtsebnaxg.supabase.co/storage/v1/object/public/exam-images/mathematics-standard-2/2024/q5_d1.jpg",
+  "2024-q6"    : "https://ohqtefjawaphtsebnaxg.supabase.co/storage/v1/object/public/exam-images/mathematics-standard-2/2024/q6_d1.jpg",
+  "2024-q15"   : "https://ohqtefjawaphtsebnaxg.supabase.co/storage/v1/object/public/exam-images/mathematics-standard-2/2024/q15_d1.jpg",
+  "2025-q1"    : "https://ohqtefjawaphtsebnaxg.supabase.co/storage/v1/object/public/exam-images/mathematics-standard-2/2025/q1_d1.jpg",
+  "2025-q2"    : "https://ohqtefjawaphtsebnaxg.supabase.co/storage/v1/object/public/exam-images/mathematics-standard-2/2025/q2_d1.jpg",
+  "2025-q3"    : "https://ohqtefjawaphtsebnaxg.supabase.co/storage/v1/object/public/exam-images/mathematics-standard-2/2025/q3_d1.jpg",
+  "2025-q8"    : "https://ohqtefjawaphtsebnaxg.supabase.co/storage/v1/object/public/exam-images/mathematics-standard-2/2025/q8_d1.jpg"
 };
 
 const vetMcQuestions = [
@@ -3262,9 +3292,10 @@ function renderQuestion() {
   if (currentMode === 'mc') {
     const meta = [q.year, q.category, q.topic].filter(Boolean).join(' · ');
     if (meta) html += `<div class="q-meta">${meta}</div>`;
-    // Show image if question has one (VET)
-    if (q.img && VET_IMG[q.img]) {
-      html += `<div class="q-image-wrap"><img src="${VET_IMG[q.img]}" alt="Question diagram" loading="lazy" onclick="openLightbox(this.src)"/></div>`;
+    // Show image if question has one (VET or Maths)
+    const imgUrl = q.img && (VET_IMG[q.img] || MATHS_IMG[q.img]);
+    if (imgUrl) {
+      html += `<div class="q-image-wrap"><img src="${imgUrl}" alt="Question diagram" loading="lazy" onclick="openLightbox(this.src)"/></div>`;
     }
     html += `<div class="q-text">${q.q || q.text || ''}</div>`;
     html += '<div class="options-list">';
@@ -3305,8 +3336,9 @@ function renderQuestion() {
     if (marks) html += `<span class="marks-badge">${marks} mark${marks > 1 ? 's' : ''}</span>`;
     const meta = [q.year, q.topic].filter(Boolean).join(' · ');
     if (meta) html += `<div class="q-meta">${meta}</div>`;
-    if (q.img && VET_IMG[q.img]) {
-      html += `<div class="q-image-wrap"><img src="${VET_IMG[q.img]}" alt="Question diagram" loading="lazy" onclick="openLightbox(this.src)"/></div>`;
+    const imgUrl2 = q.img && (VET_IMG[q.img] || MATHS_IMG[q.img]);
+    if (imgUrl2) {
+      html += `<div class="q-image-wrap"><img src="${imgUrl2}" alt="Question diagram" loading="lazy" onclick="openLightbox(this.src)"/></div>`;
     }
     html += `<div class="q-text">${q.q || q.question || q.text || ''}</div>`;
     if (answered) {
