@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CramIT — Diagram Extractor</title>
+<style>
+  :root {
+    --bg: #0f0f0f;
+    --surface: #1a1a1a;
+    --surface2: #242424;
+    --border: #2e2e2e;
+    --accent: #7c6af7;
+    --accent2: #a78bfa;
+    --text: #f0f0f0;
+    --muted: #888;
+    --green: #4ade80;
+    --red: #f87171;
+    --yellow: #fbbf24;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Courier New', monospace;
+    min-height: 100vh;
+    padding: 32px 24px;
+  }
+
+  header {
+    max-width: 900px;
+    margin: 0 auto 32px;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 20px;
+  }
+
+  header h1 {
+    font-size: 22px;
+    font-weight: bold;
+    color: var(--accent2);
+    letter-spacing: 1px;
+  }
+
+  header p {
+    color: var(--muted);
+    font-size: 13px;
+    margin-top: 6px;
+  }
+
+  .container { max-width: 900px; margin: 0 auto; }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+
+  .card h2 {
+    font-size: 13px;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 14px;
+  }
+
+  label {
+    display: block;
+    font-size: 12px;
+    color: var(--muted);
+    margin-bottom: 6px;
+  }
+
+  input[type="password"], input[type="text"] {
+    width: 100%;
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    color: var(--text);
+    font-family: 'Courier New', monospace;
+    font-size: 13px;
+    padding: 10px 12px;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+
+  input:focus { border-color: var(--accent); }
+
+  .pdf-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-bottom: 16px;
+  }
+
+  .pdf-slot {
+    background: var(--surface2);
+    border: 1px dashed var(--border);
+    border-radius: 6px;
+    padding: 12px;
+    text-align: center;
+    cursor: pointer;
+    transition: border-color 0.2s, background 0.2s;
+    position: relative;
+  }
+
+  .pdf-slot:hover { border-color: var(--accent); background: #1e1e2e; }
+  .pdf-slot.loaded { border-color: var(--green); border-style: solid; }
+  .pdf-slot.loaded .slot-year { color: var(--green); }
+
+  .slot-year {
+    font-size: 18px;
+    font-weight: bold;
+    color: var(--muted);
+    display: block;
+    margin-bottom: 4px;
+  }
+
+  .slot-label {
+    font-size: 11px;
+    color: var(--muted);
+  }
+
+  .slot-check {
+    position: absolute;
+    top: 8px;
+    right: 10px;
+    color: var(--green);
+    font-size: 14px;
+    display: none;
+  }
+
+  .pdf-slot.loaded .slot-check { display: block; }
+
+  input[type="file"] { display: none; }
+
+  .btn {
+    background: var(--accent);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 12px 24px;
+    font-family: 'Courier New', monospace;
+    font-size: 13px;
+    font-weight: bold;
+    cursor: pointer;
+    letter-spacing: 1px;
+    transition: opacity 0.2s;
+    width: 100%;
+  }
+
+  .btn:hover { opacity: 0.85; }
+  .btn:disabled { opacity: 0.4; cursor: not-allowed; }
+
+  .log {
+    background: #0a0a0a;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 14px;
+    font-size: 12px;
+    line-height: 1.8;
+    max-height: 280px;
+    overflow-y: auto;
+    display: none;
+  }
+
+  .log.active { display: block; }
+
+  .log .ok   { color: var(--green); }
+  .log .warn { color: var(--yellow); }
+  .log .err  { color: var(--red); }
+  .log .info { color: var(--accent2); }
+  .log .dim  { color: var(--muted); }
+
+  .results-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 12px;
+    margin-top: 16px;
+  }
+
+  .result-card {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    overflow: hidden;
+  }
+
+  .result-card img {
+    width: 100%;
+    display: block;
+    cursor: zoom-in;
+  }
+
+  .result-card .result-meta {
+    padding: 8px 10px;
+    font-size: 11px;
+  }
+
+  .result-card .result-label {
+    color: var(--accent2);
+    font-weight: bold;
+  }
+
+  .result-card .result-type {
+    color: var(--muted);
+    margin-top: 2px;
+  }
+
+  .result-card .dl-btn {
+    display: block;
+    width: 100%;
+    background: var(--surface);
+    border: none;
+    border-top: 1px solid var(--border);
+    color: var(--accent);
+    font-family: 'Courier New', monospace;
+    font-size: 11px;
+    padding: 7px;
+    cursor: pointer;
+    text-align: center;
+    transition: background 0.2s;
+  }
+
+  .result-card .dl-btn:hover { background: var(--surface2); }
+
+  .dl-all-btn {
+    background: var(--surface2);
+    color: var(--green);
+    border: 1px solid var(--green);
+    border-radius: 6px;
+    padding: 10px 20px;
+    font-family: 'Courier New', monospace;
+    font-size: 13px;
+    cursor: pointer;
+    margin-top: 16px;
+    width: 100%;
+    transition: background 0.2s;
+  }
+
+  .dl-all-btn:hover { background: #0a1a0a; }
+  .dl-all-btn:disabled { opacity: 0.4; cursor: not-allowed; }
+
+  .progress-bar {
+    height: 4px;
+    background: var(--surface2);
+    border-radius: 2px;
+    overflow: hidden;
+    margin-top: 12px;
+    display: none;
+  }
+
+  .progress-bar.active { display: block; }
+
+  .progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--accent), var(--accent2));
+    border-radius: 2px;
+    transition: width 0.3s;
+    width: 0%;
+  }
+
+  .status-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    font-size: 12px;
+    color: var(--muted);
+  }
+
+  #status-text { color: var(--accent2); }
+
+  .lightbox {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.9);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .lightbox.open { display: flex; }
+  .lightbox img { max-width: 90vw; max-height: 90vh; border-radius: 8px; }
+  .lightbox-close {
+    position: fixed;
+    top: 20px;
+    right: 24px;
+    color: white;
+    font-size: 28px;
+    cursor: pointer;
+    opacity: 0.7;
+  }
+
+  .note {
+    background: #1a1400;
+    border: 1px solid #3d3000;
+    border-radius: 6px;
+    padding: 12px 14px;
+    font-size: 12px;
+    color: var(--yellow);
+    margin-bottom: 16px;
+    line-height: 1.6;
+  }
+
+  .tag {
+    display: inline-block;
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 2px 8px;
+    font-size: 11px;
+    color: var(--muted);
+    margin: 2px;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>CRAMIT // DIAGRAM EXTRACTOR</h1>
+  <p>Extracts MC section diagrams from HSC Maths Standard 2 papers (2020–2025) · One-off tool · Output: JPEG files ready to upload to Supabase</p>
+</header>
+
+<div class="container">
+
+  <!-- Step 1: API Key -->
+  <div class="card">
+    <h2>Step 1 — Anthropic API Key</h2>
+    <label>Your key is sent directly to Anthropic. It is never stored or transmitted anywhere else.</label>
+    <input type="password" id="api-key" placeholder="sk-ant-api03-..." autocomplete="off" />
+  </div>
+
+  <!-- Step 2: Load PDFs -->
+  <div class="card">
+    <h2>Step 2 — Load PDF Papers</h2>
+    <div class="note">
+      ⚠ These must be the actual PDFs from your Google Drive — the ones with the HSC exam content.<br>
+      Only the MC section (pages 2–8, Q1–15) will be processed. Written section is skipped.
+    </div>
+    <div class="pdf-grid" id="pdf-grid">
+      <!-- slots injected by JS -->
+    </div>
+    <div style="font-size:11px; color: var(--muted);">Click any slot to load that year's PDF. You can run with just some years loaded.</div>
+  </div>
+
+  <!-- Step 3: Run -->
+  <div class="card">
+    <h2>Step 3 — Extract Diagrams</h2>
+    <button class="btn" id="run-btn" disabled onclick="runExtraction()">EXTRACT DIAGRAMS</button>
+    <div class="progress-bar" id="progress-bar">
+      <div class="progress-fill" id="progress-fill"></div>
+    </div>
+    <div class="status-row">
+      <span id="status-text">Load at least one PDF to begin</span>
+      <span id="cost-text"></span>
+    </div>
+    <div class="log" id="log"></div>
+  </div>
+
+  <!-- Results -->
+  <div class="card" id="results-card" style="display:none">
+    <h2>Results</h2>
+    <div id="naming-note" class="note" style="display:none"></div>
+    <div class="results-grid" id="results-grid"></div>
+    <button class="dl-all-btn" id="dl-all-btn" onclick="downloadAll()">⬇ DOWNLOAD ALL AS ZIP</button>
+  </div>
+
+</div>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <span class="lightbox-close">×</span>
+  <img id="lightbox-img" src="" alt="">
+</div>
+
+<script>
+// ── State ──────────────────────────────────────────────────────────────────────
+const YEARS = [2020, 2021, 2022, 2023, 2024, 2025];
+
+// Pages in the MC section known to contain diagrams (from pre-analysis)
+// Format: { year: [ { page, questions, hint } ] }
+const DIAGRAM_PAGES = {
+  2020: [
+    { page: 2, questions: [1, 2],     hint: 'Q1 has 4 small graphs as options A-D. Q2 may have visual.' },
+    { page: 4, questions: [7, 8],     hint: 'Q7 has 4 histograms as options A-D.' },
+    { page: 5, questions: [9],        hint: 'Q9 has 4 network diagrams as options A-D.' },
+    { page: 6, questions: [11, 12],   hint: 'Q12 may have a scatter plot.' },
+    { page: 8, questions: [15],       hint: 'Q15 has a table diagram.' },
+  ],
+  2021: [
+    { page: 3, questions: [2, 3],     hint: 'Network diagram and/or scatter plot.' },
+    { page: 4, questions: [4, 5],     hint: 'Visual figure for one of these questions.' },
+    { page: 5, questions: [7],        hint: 'Graph question.' },
+    { page: 6, questions: [8, 10],    hint: 'Graph questions.' },
+    { page: 7, questions: [11],       hint: 'Tree diagram or visual.' },
+  ],
+  2022: [
+    { page: 2, questions: [1, 2],     hint: 'Graph as answer options.' },
+    { page: 3, questions: [3, 4],     hint: 'Network diagram.' },
+    { page: 7, questions: [13, 14],   hint: 'Diagram question.' },
+    { page: 8, questions: [15],       hint: 'Graph or plot.' },
+  ],
+  2023: [
+    { page: 4, questions: [5, 6],     hint: 'Visual question.' },
+    { page: 5, questions: [7],        hint: 'Spinner diagram as answer options.' },
+    { page: 7, questions: [13],       hint: 'Visual shown.' },
+    { page: 8, questions: [15],       hint: 'Network diagram.' },
+  ],
+  2024: [
+    { page: 2, questions: [1, 2],     hint: 'Visual shown.' },
+    { page: 3, questions: [3, 4],     hint: 'Network diagram.' },
+    { page: 4, questions: [5, 6],     hint: 'Diagram shown.' },
+    { page: 8, questions: [14, 15],   hint: 'Histogram and plot.' },
+  ],
+  2025: [
+    { page: 2, questions: [1, 2],     hint: 'Graph and network diagram as options.' },
+    { page: 3, questions: [3, 4],     hint: 'Network/tree diagram.' },
+    { page: 5, questions: [7, 8],     hint: 'Histogram and spinner.' },
+  ],
+};
+
+const loadedPDFs = {}; // year -> ArrayBuffer
+const extractedDiagrams = []; // { year, questionNum, label, diagramType, dataUrl }
+let running = false;
+let totalPages = 0;
+let processedPages = 0;
+
+// ── Build PDF slots ────────────────────────────────────────────────────────────
+function buildSlots() {
+  const grid = document.getElementById('pdf-grid');
+  YEARS.forEach(year => {
+    const slot = document.createElement('div');
+    slot.className = 'pdf-slot';
+    slot.id = `slot-${year}`;
+    slot.onclick = () => document.getElementById(`file-${year}`).click();
+    slot.innerHTML = `
+      <span class="slot-check">✓</span>
+      <span class="slot-year">${year}</span>
+      <span class="slot-label">click to load PDF</span>
+      <input type="file" id="file-${year}" accept=".pdf" onchange="loadPDF(${year}, this)">
+    `;
+    grid.appendChild(slot);
+  });
+}
+
+function loadPDF(year, input) {
+  const file = input.files[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = e => {
+    loadedPDFs[year] = new Uint8Array(e.target.result);
+    const slot = document.getElementById(`slot-${year}`);
+    slot.classList.add('loaded');
+    slot.querySelector('.slot-label').textContent = file.name.substring(0, 22);
+    updateRunButton();
+    logMsg(`Loaded: ${file.name} (${Math.round(file.size/1024)}KB)`, 'ok');
+  };
+  reader.readAsArrayBuffer(file);
+}
+
+function updateRunButton() {
+  const hasKey = document.getElementById('api-key').value.trim().startsWith('sk-ant');
+  const hasPDF = Object.keys(loadedPDFs).length > 0;
+  document.getElementById('run-btn').disabled = !(hasKey && hasPDF);
+  if (hasPDF && !hasKey) {
+    document.getElementById('status-text').textContent = 'Enter API key to continue';
+  } else if (hasKey && !hasPDF) {
+    document.getElementById('status-text').textContent = 'Load at least one PDF to begin';
+  } else if (hasKey && hasPDF) {
+    const count = Object.keys(loadedPDFs).length;
+    // Count total pages to process
+    let pages = 0;
+    Object.keys(loadedPDFs).forEach(y => {
+      pages += (DIAGRAM_PAGES[y] || []).length;
+    });
+    document.getElementById('status-text').textContent = `Ready — ${count} paper(s), ~${pages} pages to analyse`;
+    document.getElementById('cost-text').textContent = `Est. cost: ~$${(pages * 0.006).toFixed(2)}`;
+  }
+}
+
+document.getElementById('api-key').addEventListener('input', updateRunButton);
+
+// ── Logging ────────────────────────────────────────────────────────────────────
+function logMsg(msg, type = 'dim') {
+  const log = document.getElementById('log');
+  log.classList.add('active');
+  const line = document.createElement('div');
+  line.className = type;
+  const time = new Date().toLocaleTimeString();
+  line.textContent = `[${time}] ${msg}`;
+  log.appendChild(line);
+  log.scrollTop = log.scrollHeight;
+}
+
+function setProgress(pct) {
+  document.getElementById('progress-bar').classList.add('active');
+  document.getElementById('progress-fill').style.width = pct + '%';
+}
+
+// ── PDF → page images ──────────────────────────────────────────────────────────
+async function pdfPageToBase64(pdfBuffer, pageNum) {
+  // Use PDF.js (loaded from CDN) to render a single page to canvas
+  const pdfjsLib = window['pdfjs-dist/build/pdf'];
+  pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+
+  const pdf = await pdfjsLib.getDocument({ data: pdfBuffer.slice() }).promise;
+  const page = await pdf.getPage(pageNum);
+  const scale = 1.5; // 150dpi equivalent
+  const viewport = page.getViewport({ scale });
+
+  const canvas = document.createElement('canvas');
+  canvas.width  = viewport.width;
+  canvas.height = viewport.height;
+  const ctx = canvas.getContext('2d');
+
+  await page.render({ canvasContext: ctx, viewport }).promise;
+  return { 
+    dataUrl: canvas.toDataURL('image/jpeg', 0.88),
+    width: canvas.width,
+    height: canvas.height,
+    canvas
+  };
+}
+
+// ── Crop a region from a canvas ────────────────────────────────────────────────
+function cropCanvas(sourceCanvas, cropHint) {
+  const { width: W, height: H } = sourceCanvas;
+  const pad = Math.round(0.015 * W);
+
+  let left, top, width, height;
+
+  if (!cropHint) {
+    // Full page
+    left = 0; top = 0; width = W; height = H;
+  } else {
+    left   = Math.max(0, Math.round(cropHint.left   * W) - pad);
+    top    = Math.max(0, Math.round(cropHint.top    * H) - pad);
+    width  = Math.min(W - left, Math.round(cropHint.width  * W) + pad * 2);
+    height = Math.min(H - top,  Math.round(cropHint.height * H) + pad * 2);
+  }
+
+  const out = document.createElement('canvas');
+  out.width  = width;
+  out.height = height;
+  out.getContext('2d').drawImage(sourceCanvas, left, top, width, height, 0, 0, width, height);
+  return out.toDataURL('image/jpeg', 0.88);
+}
+
+// ── Ask Claude Vision what diagrams are on this page ──────────────────────────
+async function analysePageWithClaude(apiKey, pageBase64, year, pageNum, hint) {
+  const response = await fetch('https://api.anthropic.com/v1/messages', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'x-api-key': apiKey,
+      'anthropic-version': '2023-06-01',
+      'anthropic-dangerous-direct-browser-access': 'true',
+    },
+    body: JSON.stringify({
+      model: 'claude-opus-4-5',
+      max_tokens: 800,
+      messages: [{
+        role: 'user',
+        content: [
+          {
+            type: 'image',
+            source: { type: 'base64', media_type: 'image/jpeg', data: pageBase64.split(',')[1] }
+          },
+          {
+            type: 'text',
+            text: `This is page ${pageNum} of the ${year} HSC Mathematics Standard 2 exam paper.
+Context hint: ${hint}
+
+Identify ALL diagrams, graphs, charts, tables, or visual figures that are part of exam questions on this page.
+
+IMPORTANT RULES:
+- DO include: graphs, charts, network diagrams, histograms, scatter plots, geometric figures, spinners, tree diagrams, tables with data, answer options that are visual (e.g. 4 small graphs labelled A/B/C/D)
+- DO NOT include: dotted answer lines, writing space, "Do NOT write" boxes, page numbers, "Centre Number" / "Student Number" boxes, the reference sheet
+- If the answer options A/B/C/D are all diagrams (e.g. 4 spinners, 4 histograms), treat the ENTIRE options block as ONE image
+- Each object must map to a specific question number visible on the page
+
+Return a JSON array only. No prose. No markdown fences.
+
+[
+  {
+    "questionNum": 7,
+    "diagramType": "4 histograms as answer options A-D",
+    "cropHint": { "top": 0.25, "left": 0.02, "width": 0.96, "height": 0.55 }
+  }
+]
+
+If there are NO diagrams on this page, return: []`
+          }
+        ]
+      }]
+    })
+  });
+
+  if (!response.ok) {
+    const err = await response.json();
+    throw new Error(err.error?.message || `API error ${response.status}`);
+  }
+
+  const data = await response.json();
+  const raw = data.content.find(b => b.type === 'text')?.text ?? '[]';
+  const cleaned = raw.replace(/^```[a-z]*\n?/i, '').replace(/\n?```$/i, '').trim();
+  
+  try {
+    return JSON.parse(cleaned);
+  } catch(e) {
+    return [];
+  }
+}
+
+// ── Main extraction loop ───────────────────────────────────────────────────────
+async function runExtraction() {
+  if (running) return;
+  running = true;
+
+  const apiKey = document.getElementById('api-key').value.trim();
+  document.getElementById('run-btn').disabled = true;
+  document.getElementById('results-card').style.display = 'none';
+  document.getElementById('results-grid').innerHTML = '';
+  extractedDiagrams.length = 0;
+
+  // Count total pages
+  totalPages = 0;
+  Object.keys(loadedPDFs).forEach(y => { totalPages += (DIAGRAM_PAGES[y] || []).length; });
+  processedPages = 0;
+
+  logMsg(`Starting extraction — ${Object.keys(loadedPDFs).length} paper(s), ${totalPages} pages`, 'info');
+
+  for (const yearStr of Object.keys(loadedPDFs).sort()) {
+    const year = parseInt(yearStr);
+    const pdfBuffer = loadedPDFs[year];
+    const pages = DIAGRAM_PAGES[year] || [];
+
+    logMsg(`\n── ${year} ──────────────────────`, 'info');
+
+    for (const { page, questions, hint } of pages) {
+      logMsg(`Rendering page ${page} (Q${questions.join(', ')})...`, 'dim');
+
+      let rendered;
+      try {
+        rendered = await pdfPageToBase64(pdfBuffer, page);
+      } catch(e) {
+        logMsg(`  ✗ Render failed: ${e.message}`, 'err');
+        processedPages++;
+        setProgress(Math.round(processedPages / totalPages * 100));
+        continue;
+      }
+
+      logMsg(`  Asking Claude Vision...`, 'dim');
+      let diagrams = [];
+      try {
+        diagrams = await analysePageWithClaude(apiKey, rendered.dataUrl, year, page, hint);
+      } catch(e) {
+        logMsg(`  ✗ Claude error: ${e.message}`, 'err');
+        processedPages++;
+        setProgress(Math.round(processedPages / totalPages * 100));
+        continue;
+      }
+
+      if (diagrams.length === 0) {
+        logMsg(`  No diagrams found on this page`, 'warn');
+      }
+
+      for (const d of diagrams) {
+        const dataUrl = cropCanvas(rendered.canvas, d.cropHint);
+        const label = `${year}_Q${d.questionNum}`;
+        extractedDiagrams.push({
+          year, questionNum: d.questionNum,
+          label, diagramType: d.diagramType, dataUrl
+        });
+        logMsg(`  ✓ Q${d.questionNum} — ${d.diagramType}`, 'ok');
+        addResultCard({ year, questionNum: d.questionNum, label, diagramType: d.diagramType, dataUrl });
+      }
+
+      processedPages++;
+      setProgress(Math.round(processedPages / totalPages * 100));
+
+      // Small delay between API calls
+      await new Promise(r => setTimeout(r, 600));
+    }
+  }
+
+  setProgress(100);
+  logMsg(`\nDone! ${extractedDiagrams.length} diagrams extracted.`, 'ok');
+  document.getElementById('status-text').textContent = `Complete — ${extractedDiagrams.length} diagrams extracted`;
+
+  if (extractedDiagrams.length > 0) {
+    document.getElementById('results-card').style.display = 'block';
+    document.getElementById('naming-note').style.display = 'block';
+    document.getElementById('naming-note').textContent =
+      `Files are named: mathematics-standard-2_YEAR_QNUM.jpg — ready to upload to Supabase Storage bucket "exam-images"`;
+  }
+
+  document.getElementById('run-btn').disabled = false;
+  running = false;
+}
+
+// ── Result cards ───────────────────────────────────────────────────────────────
+function addResultCard({ year, questionNum, label, diagramType, dataUrl }) {
+  const grid = document.getElementById('results-grid');
+  const card = document.createElement('div');
+  card.className = 'result-card';
+  card.innerHTML = `
+    <img src="${dataUrl}" alt="Q${questionNum}" onclick="openLightbox('${dataUrl}')">
+    <div class="result-meta">
+      <div class="result-label">${year} — Q${questionNum}</div>
+      <div class="result-type">${diagramType}</div>
+    </div>
+    <button class="dl-btn" onclick="downloadOne('${label}', '${dataUrl}')">⬇ Download</button>
+  `;
+  grid.appendChild(card);
+}
+
+function downloadOne(label, dataUrl) {
+  const a = document.createElement('a');
+  a.href = dataUrl;
+  a.download = `mathematics-standard-2_${label}.jpg`;
+  a.click();
+}
+
+async function downloadAll() {
+  // Download one by one with small delay (no JSZip needed)
+  document.getElementById('dl-all-btn').disabled = true;
+  logMsg(`Downloading ${extractedDiagrams.length} files...`, 'info');
+  for (const d of extractedDiagrams) {
+    downloadOne(d.label, d.dataUrl);
+    await new Promise(r => setTimeout(r, 300));
+  }
+  document.getElementById('dl-all-btn').disabled = false;
+  logMsg(`All files downloaded.`, 'ok');
+}
+
+// ── Lightbox ───────────────────────────────────────────────────────────────────
+function openLightbox(src) {
+  document.getElementById('lightbox-img').src = src;
+  document.getElementById('lightbox').classList.add('open');
+}
+
+function closeLightbox() {
+  document.getElementById('lightbox').classList.remove('open');
+}
+
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+
+// ── Init ───────────────────────────────────────────────────────────────────────
+buildSlots();
+</script>
+
+<!-- PDF.js from CDN — pure JS, no install needed -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+
+</body>
+</html>
