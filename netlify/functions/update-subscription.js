@@ -10,7 +10,6 @@
 const Stripe = require('stripe');
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 
-// ── Paste your real Price IDs here ─────────────────────────
 const PRICES = {
   base:      'price_1TEdRbPvnbx5MPYyExQIlaBK',   // $7.99/mo — 2 subjects
   extra:     'price_1TEdUJPvnbx5MPYy6luOiFjv',   // $2.99/mo per unit (metered add-on)
@@ -34,15 +33,26 @@ exports.handler = async (event) => {
   try {
     const { subscription_id, subject_count, plan_mode } = JSON.parse(event.body);
 
-    if (!subscription_id || !subject_count) {
+    if (!subscription_id || subject_count === undefined) {
       return {
         statusCode: 400,
         body: JSON.stringify({ error: 'Missing subscription_id or subject_count' }),
       };
     }
 
-    const stripeSub  = await stripe.subscriptions.retrieve(subscription_id);
-    const planType   = getPlanType(subject_count, plan_mode);
+    // FIX: If student drops to 0 or 1 subjects, cancel the Stripe subscription
+    // rather than leaving it active with no items — prevents billing leaks
+    if (subject_count <= 1) {
+      await stripe.subscriptions.cancel(subscription_id);
+      return {
+        statusCode: 200,
+        headers:    { 'Content-Type': 'application/json' },
+        body:       JSON.stringify({ ok: true, plan: 'free', subjects: subject_count, cancelled: true }),
+      };
+    }
+
+    const stripeSub    = await stripe.subscriptions.retrieve(subscription_id);
+    const planType     = getPlanType(subject_count, plan_mode);
     const updatedItems = buildUpdatedItems(stripeSub.items.data, subject_count, planType);
 
     if (updatedItems && updatedItems.length > 0) {
@@ -94,7 +104,7 @@ function getPlanType(n, mode) {
 function buildUpdatedItems(currentItems, nSubjects, planType) {
   const { BASE_INCLUDES, CAP_LIMIT } = PRICING;
   const updated = [];
-  const ids = currentItems.map(i => i.price.id);
+  const ids         = currentItems.map(i => i.price.id);
   const hasBase     = ids.includes(PRICES.base);
   const hasExtra    = ids.includes(PRICES.extra);
   const hasCap      = ids.includes(PRICES.cap);
@@ -113,11 +123,18 @@ function buildUpdatedItems(currentItems, nSubjects, planType) {
   if (planType === 'flex') {
     const flexExtras = nSubjects - CAP_LIMIT;
     currentItems.forEach(item => {
-      if (item.price.id === PRICES.cap)   updated.push({ id: item.id, deleted: true });
-      if (item.price.id === PRICES.extra) updated.push({ id: item.id, quantity: flexExtras });
+      if (item.price.id === PRICES.cap) {
+        updated.push({ id: item.id, deleted: true });
+      }
     });
     if (!hasFlexBase) updated.push({ price: PRICES.flex_base, quantity: 1 });
-    if (!hasExtra)    updated.push({ price: PRICES.extra,     quantity: flexExtras });
+    // FIX: use else-if to avoid pushing both an update AND a new item for PRICES.extra
+    const extraItem = currentItems.find(i => i.price.id === PRICES.extra);
+    if (extraItem) {
+      updated.push({ id: extraItem.id, quantity: flexExtras });
+    } else {
+      updated.push({ price: PRICES.extra, quantity: flexExtras });
+    }
     return updated;
   }
 

@@ -42,12 +42,18 @@ exports.handler = async (event) => {
     // Build line items based on subject count + plan
     const lineItems = buildLineItems(subject_count, plan_type, plan_mode);
 
+    // FIX: Safely append session_id param regardless of whether success_url
+    // already has query params or not
+    const successUrlWithSession = success_url.includes('?')
+      ? success_url + '&session_id={CHECKOUT_SESSION_ID}'
+      : success_url + '?session_id={CHECKOUT_SESSION_ID}';
+
     const session = await stripe.checkout.sessions.create({
-      mode:             'subscription',
+      mode:                 'subscription',
       payment_method_types: ['card'],
-      line_items:       lineItems,
-      success_url:      success_url + '&session_id={CHECKOUT_SESSION_ID}',
-      cancel_url:       cancel_url,
+      line_items:           lineItems,
+      success_url:          successUrlWithSession,
+      cancel_url:           cancel_url,
       metadata: {
         user_id,
         subject_count:  String(subject_count),
