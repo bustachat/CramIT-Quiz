@@ -198,11 +198,19 @@ cramit-quiz/
 
 ## 7. Current Subjects
 
-| Subject | Quiz Key | Subject ID | Type | Questions |
-|---|---|---|---|---|
-| Mathematics Standard 2 | `maths` | `mathematics-standard-2` | MC only | 90 HSC + 318 extended (variants) |
-| PDHPE — HMS Depth Study | `hms` | `pdhpe-hms` | MC + written | Yr 12 depth study |
-| VET Construction | `vet` | `vet-construction` | MC + written | 2021–2025 |
+| Subject | Quiz Key | Subject ID | Type | Questions | Standalone file in repo? |
+|---|---|---|---|---|---|
+| Mathematics Standard 2 | `maths` | `mathematics-standard-2` | MC only | 90 HSC + 318 extended (variants) | ✅ `2020-25 HSC Maths Quiz v5.4 (With New additional Variants Questions & Design).html` |
+| PDHPE — HMS Depth Study | `hms` | `pdhpe-hms` | MC + written | Yr 12 depth study | ✅ `CLAUDE.AI - HMS_In_Depth_Study_YR12_quiz.html` |
+| VET Construction | `vet` | `vet-construction` | MC + written | 2021–2025 | ✅ `VET_Construction_Quiz_v6 (Includes Updated code and HSC 2025).html` |
+| Industrial Technology — Multimedia | `multimedia` | `multimedia` | MC + written | 2020–2025 | ✅ `CLAUDE.AI - HSC_Multimedia_Quiz (v19 - with 2025 exam).html` |
+
+**Standalone HTML files are the source of truth for question data.** When porting a subject to index.html, always extract `mcQuestions[]` and `writtenQuestions[]` from the standalone file — never rewrite questions from scratch.
+
+**NESA exam PDFs** are stored locally (NOT committed to GitHub — copyright):
+`C:\Claude Code Space\CRAMIT QUIZ Code Folder\NESA Exams Folder\`
+Subfolders: `Maths Standard 2\`, `Health and Movement Science\`, `Industrial Technology - Multimedia\`, `VET - Construction\`
+Each folder contains exam papers + marking guidelines (`-mg` suffix). Marking guidelines are used to build NESA band descriptors for Stage 5.
 
 **More subjects planned** — the AI agent auto-discovers and adds new ones from NESA.
 
@@ -225,6 +233,16 @@ cramit-quiz/
 - The 7th subject is free (price caps at the 6-subject price, then rounds up to Unlimited)
 - Students on Unlimited can swap subjects freely — price stays $19.99
 - Never change pricing without also updating: `pricing_config` table, `billing.js`, `create-checkout.js`, `update-subscription.js`, AND creating new Stripe Price objects
+
+### ⬜ Planned Pricing Change — 10-Question Trial (Stage 6)
+The current "1 subject free" model leaks revenue from single-subject students. The planned change:
+- Remove the permanent free subject
+- Replace with a **10-question trial per subject** tracked in `localStorage`
+- After 10 questions on any subject, student hits an upgrade prompt
+- Student must subscribe to continue (even for a single subject)
+- This is **Option A** — keep existing tier structure ($7.99 for 2 subjects), just remove the free tier
+- Implementation touches: `canAccess()` in `index.html`, `billing.js`, `create-checkout.js`
+- **Do not implement until Stages 1–5 are complete and stable**
 
 ---
 
@@ -268,7 +286,7 @@ function canAccess(subjectId) {
 }
 ```
 
-### CSS variables (dark theme — never change these)
+### CSS variables (warm earth-tone design system — never change these)
 ```css
 :root {
   --bg: #FAF8F5;
@@ -487,21 +505,30 @@ GitHub Actions triggers → agent.js runs →
 - Billing UI wired into `index.html`
 - Google login working after redirect URL fix
 - `SUPABASE_ANON` and `APP_URL` filled in `index.html`
+- **Stage 1 complete** — progress bar glow, year/topic badges on questions, reset confirmation modal, touch targets 52px, safe-area-inset for notched phones
 
-### ⬜ Still to do (in priority order)
+### Staged Implementation Roadmap
+
+| Stage | What | Status |
+|---|---|---|
+| **Stage 1** | Quick wins: reset modal, year/topic badges, progress bar glow, touch targets, safe-area-inset | ✅ **DONE** |
+| **Stage 2** | Diagram extractor upgrade — Claude Vision auto-detection replaces hardcoded coords | ⬜ Next |
+| **Stage 3** | Category filter + dynamic counts + HSC 90/Extended 318 toggle (Maths) + question expansion strategy | ⬜ |
+| **Stage 4** | Port Multimedia + HMS subjects into index.html | ⬜ |
+| **Stage 5** | Written response + NESA band engine (keyword scoring → Band 1–6 feedback + band-tiered model answers) | ⬜ |
+| **Stage 6** | Pricing model update — 10-question trial replaces 1-free-subject | ⬜ |
+| **Stage 7** | Agent infrastructure (QA/Testing, Content, Analytics) — separate project | ⬜ |
+
+### ⬜ Still to do (non-staged)
 
 | Task | File(s) | Notes |
 |---|---|---|
-| **Upgrade quiz engine in index.html to match reference design** | `index.html` | Biggest gap — Practice/Test mode, step-by-step solutions, category filter with counts, option shuffle, Extended question set toggle |
 | Fix remaining billing UI issues | `billing.js`, `index.html` | Test full flow end-to-end in Stripe sandbox |
 | Test full payment flow | Stripe sandbox | Use test card `4242 4242 4242 4242` |
-| Wire diagram support into quiz renderer | `index.html` | Add `image` field rendering to `renderQuestion()` |
-| Upgrade diagram extractor to Claude Vision | `extract_maths_diagrams.py` | Replace hardcoded crop coords |
 | Set `ANTHROPIC_API_KEY` in GitHub Secrets | GitHub Settings | Enables nightly agent |
 | Switch Stripe to live mode | Stripe dashboard + Netlify + Supabase secrets | Update all 3 key locations |
 | Submit Google OAuth for verification | Google Console | Required for public launch |
 | Add custom domain `cramit.com.au` | Netlify → Domain management | Update DNS, update `APP_URL` |
-| Build AI written response marking | `netlify/functions/mark-written.js` + `written_submissions` table | See Blueprint §7.1 |
 | Deploy agent coordination tables | Supabase SQL editor | From Blueprint V3 Appendix |
 | Launch | — | — |
 
@@ -515,12 +542,12 @@ The biggest priority is bringing `index.html` (the hosted Netlify app) up to the
 
 1. **Practice vs Test mode toggle** — reference has a clean segmented control; index.html version needs verification
 2. **Step-by-step solutions** — reference uses numbered `<div class="step">` blocks; must be preserved exactly
-3. **Category/topic filter with live counts** — reference dynamically rebuilds the dropdown with `(n)` counts per topic; index.html needs this
-4. **Question set toggle (HSC 90 vs Extended 318)** — maths-specific; reference has `setQuestionSet('original'|'extended')`; variant questions have `variant: true` on the object
+3. **Category/topic filter with live counts** — reference dynamically rebuilds the dropdown with `(n)` counts per topic; index.html needs this (Stage 3)
+4. **Question set toggle (HSC 90 vs Extended 318)** — maths-specific; reference has `setQuestionSet('original'|'extended')`; variant questions have `variant: true` on the object (Stage 3)
 5. **Option shuffle per render** — `questionWithShuffledOptions()` shuffles options array and adjusts `answer` index to match; ensures same answer isn't always in position C
 6. **Correct answer behaviour** — in Practice mode after Check: correct option turns green, wrong option turns red, all other options muted, explanation box animates in
 7. **Results screen** — score %, correct/total count, scrollable per-question review list showing question text + what student picked + correct answer
-8. **Year badge** — small pill showing the exam year on each question
+8. **Year + topic badge** — ✅ DONE in Stage 1 — amber pills above each question showing year and topic code
 
 ### When upgrading index.html, preserve:
 - The warm earth-tone design system (`--accent: #C17D3C`, Syne + DM Sans fonts)
@@ -543,7 +570,9 @@ The biggest priority is bringing `index.html` (the hosted Netlify app) up to the
 - Agent commits directly to `main` → Netlify auto-deploys
 
 ### Subjects in the pipeline (next to add):
-- HSC Multimedia (a standalone HTML already exists — `CLAUDE_AI_-_HSC_Multimedia_Quiz__v19_-_with_2025_exam_.html`)
+- **Multimedia** — standalone file ready, port in Stage 4 (`CLAUDE.AI - HSC_Multimedia_Quiz (v19 - with 2025 exam).html`)
+- **HMS** — standalone file ready, port in Stage 4 (`CLAUDE.AI - HMS_In_Depth_Study_YR12_quiz.html`)
+- **VET Construction** — standalone file ready, port in Stage 4 (`VET_Construction_Quiz_v6 (Includes Updated code and HSC 2025).html`)
 - Mathematics Advanced
 - English Advanced / Standard
 - Biology, Chemistry, Physics
@@ -657,6 +686,56 @@ The Autonomous Operations Blueprint V3 defines 22 agents across 5 clusters. Thes
 **Compliance & Strategy (teal):** Compliance Agent, Data Protection Agent, Competitor Intelligence Agent, Pricing Optimisation Agent, Database & Infrastructure Agent, Syllabus & Standards Agent, Security & Threat Agent
 
 All agents communicate through `agent_tasks` table in Supabase. Each has a kill switch in `agent_config` table. Full specs in `CramIT_Autonomous_Operations_Blueprint_V3.docx`.
+
+---
+
+## 21. Question Expansion Strategy (Stage 3 Discussion)
+
+### Background
+The Maths Standard 2 standalone file (v5.4) was expanded from 90 to 318 questions using a **variant** strategy — 3 variants per non-image question, each with different numbers and a different correct answer position (A/B/C/D rotated), totalling 4 questions per concept. The `variant: true` flag marks expanded questions; the HSC 90/Extended 318 toggle controls which set students see.
+
+### Decision by subject
+
+| Subject | Variant approach | Reasoning |
+|---|---|---|
+| **Maths Standard 2** | ✅ Already done — 318 questions in v5.4 | Calculation questions = easy to variant. Rotate A/B/C/D as correct answer. |
+| **Multimedia** | ⬜ Generate additional questions from NESA reference docs | Mostly conceptual definitions — can't just "change the numbers". Generate new questions on same topics from marking guidelines and syllabus notes. |
+| **HMS** | ⬜ Generate additional questions from NESA reference docs + HMS study materials | Protocol-based (RICER, TOTAPS). Can use different injury scenarios/sports/body parts. Also has marking guidelines in NESA Exams folder. |
+| **VET Construction** | ❌ Skip entirely | Mostly visual (tool identification from images). Not worth generating variants or additional questions without images. |
+
+### Variant rules for Maths (already applied, for reference)
+- Skip any question that has a diagram/image (`img` field present)
+- Write 3 variants per skippable question: different numbers, different answer options, correct answer in a different position (A/B/C/D each correct once across the 4 questions)
+- Each variant has a full step-by-step `solution` block
+- Mark with `variant: true`
+- Python-verify all calculations before committing
+
+### Additional question generation for Multimedia + HMS (Stage 3 plan)
+- Source material: NESA marking guidelines (in `NESA Exams Folder`), syllabus documents, standalone HTML files
+- Use Claude to generate questions in the exact JS object format
+- Questions must be genuinely new (not paraphrases of existing questions)
+- MC questions: 4 options, 1 correct, rotate correct answer position
+- Add `variant: true` flag so they only appear in Extended mode
+- Target: ~2x the original question count per subject
+
+---
+
+## 22. Design System Decisions
+
+### Confirmed design direction (May 2026)
+- **Warm earth-tone system is locked** — `--accent: #C17D3C` amber, Syne + DM Sans fonts, `--bg: #FAF8F5`
+- The standalone Maths v5.4 file uses a DIFFERENT dark navy design — this is the standalone study tool only, NOT the CramIT brand
+- All index.html work must use the CramIT warm earth-tone tokens
+
+### Mobile-first principles (applied in Stage 1, carry forward)
+- Touch targets: `min-height: 52px` on touchscreen devices via `@media (hover:none) and (pointer:coarse)`
+- Safe-area-inset: `padding-bottom: max(28px, calc(env(safe-area-inset-bottom) + 12px))` on quiz footer
+- Progress bar: 5px, amber glow `box-shadow: 0 0 8px rgba(193,125,60,0.5)`
+- Check button: pulse animation on appear (`checkPulse` keyframe)
+- All design decisions must translate to native mobile app (same hex values usable in React Native/Flutter)
+
+### Landing page (deferred)
+The current home screen is student-centric. A general-public-facing landing page is needed before launch — but this is deferred until end-to-end quiz and billing functionality is complete.
 
 ---
 
