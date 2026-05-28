@@ -146,8 +146,10 @@
 
     /* ── OPTION IMAGES (questions where the answer options ARE diagrams) ── */
     .option-btn-img { padding: 10px 14px; }
-    .option-btn-img .option-label { display: block; margin-bottom: 6px; }
-    .option-img { display: block; width: 100%; border-radius: 6px; margin-bottom: 4px; cursor: zoom-in; }
+    /* Letter label is baked into the cropped image — hide the HTML duplicate */
+    .option-btn-img .option-label { display: none; }
+    /* Scale relative to viewport — never distorts, works on any screen size */
+    .option-img { display: block; max-width: 100%; width: auto; max-height: clamp(150px, 28vh, 280px); height: auto; margin: 0 auto 4px; border-radius: 6px; cursor: zoom-in; }
     .option-img-desc { font-size: 11px; color: var(--muted); font-style: italic; }
 
     /* Phone — full width, no cap */
