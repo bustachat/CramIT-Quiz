@@ -146,10 +146,10 @@
 
     /* ── OPTION IMAGES (questions where the answer options ARE diagrams) ── */
     .option-btn-img { padding: 10px 14px; }
-    /* Letter label is baked into the cropped image — hide the HTML duplicate */
-    .option-btn-img .option-label { display: none; }
-    /* Scale relative to viewport — never distorts, works on any screen size */
-    .option-img { display: block; max-width: 100%; width: auto; max-height: clamp(150px, 28vh, 280px); height: auto; margin: 0 auto 4px; border-radius: 6px; cursor: zoom-in; }
+    /* Show the letter label above the image — not every image has it baked in */
+    .option-btn-img .option-label { display: block; margin-bottom: 8px; }
+    /* width:100% fills the button; max-height clamp prevents it towering on any screen size */
+    .option-img { display: block; width: 100%; height: auto; max-height: clamp(150px, 28vh, 280px); border-radius: 6px; margin-bottom: 4px; cursor: zoom-in; }
     .option-img-desc { font-size: 11px; color: var(--muted); font-style: italic; }
 
     /* Phone — full width, no cap */
@@ -3114,7 +3114,11 @@ const SUBJECTS = {
       return shuffle(qs);
     },
     years: ['all','2020','2021','2022','2023','2024','2025'],
-    categories: ['all','A2','M1','M2','M3','M4','M5','M6','M7'],
+    // Derive categories from actual question data — never goes stale when new questions added
+    categories: (() => {
+      const cats = [...new Set(mathsQuestions.map(q => q.category).filter(Boolean))];
+      return ['all', ...cats];
+    })(),
   },
   hms: {
     name: 'HMS — PDHPE Depth Study',
@@ -3201,9 +3205,17 @@ function renderPicker() {
   }
   if (s.categories) {
     html += '<div class="section-label" style="margin-top:16px">Category</div><div class="filter-row">';
+    // Get questions filtered by current year to show live counts and hide empty categories
+    const qsForCounts = s.getMC({ year: pickerFilters.year || 'all', category: 'all' });
     s.categories.forEach(c => {
+      if (c !== 'all') {
+        const n = qsForCounts.filter(q => q.category === c).length;
+        if (n === 0) return; // hide categories with no questions for selected year
+      }
       const active = (pickerFilters.category || 'all') === c ? 'active' : '';
-      html += `<div class="filter-chip ${active}" onclick="setFilter('category','${c}');renderPicker()">${c === 'all' ? 'All' : c}</div>`;
+      const count = c === 'all' ? qsForCounts.length : qsForCounts.filter(q => q.category === c).length;
+      const label = c === 'all' ? `All (${count})` : `${c} (${count})`;
+      html += `<div class="filter-chip ${active}" onclick="setFilter('category','${c}');renderPicker()">${label}</div>`;
     });
     html += '</div>';
   }
