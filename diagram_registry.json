@@ -1,249 +1,623 @@
 {
-  "version": "2",
+  "version": "3",
   "subject": "mathematics-standard-2",
   "papers": {
     "2020": [
       {
         "question": 1,
         "page": 2,
-        "y_start": 465,
-        "y_end": 980,
-        "description": "4 graphs as ABCD options",
-        "source": "hardcoded-bootstrap"
+        "type": "options_only",
+        "source": "hardcoded-bootstrap",
+        "stimulus": null,
+        "options": [
+          {
+            "label": "A",
+            "y_start": 465,
+            "y_end": 593
+          },
+          {
+            "label": "B",
+            "y_start": 593,
+            "y_end": 721
+          },
+          {
+            "label": "C",
+            "y_start": 721,
+            "y_end": 849
+          },
+          {
+            "label": "D",
+            "y_start": 849,
+            "y_end": 980
+          }
+        ]
       },
       {
         "question": 7,
         "page": 4,
-        "y_start": 205,
-        "y_end": 805,
-        "description": "4 histograms as ABCD options",
-        "source": "hardcoded-bootstrap"
+        "type": "options_only",
+        "source": "hardcoded-bootstrap",
+        "stimulus": null,
+        "options": [
+          {
+            "label": "A",
+            "y_start": 205,
+            "y_end": 355
+          },
+          {
+            "label": "B",
+            "y_start": 355,
+            "y_end": 505
+          },
+          {
+            "label": "C",
+            "y_start": 505,
+            "y_end": 655
+          },
+          {
+            "label": "D",
+            "y_start": 655,
+            "y_end": 805
+          }
+        ]
       },
       {
         "question": 8,
         "page": 4,
-        "y_start": 885,
-        "y_end": 1600,
-        "description": "Score table + answer-options table",
-        "source": "hardcoded-bootstrap"
+        "type": "stimulus_and_options",
+        "source": "hardcoded-bootstrap",
+        "stimulus": {
+          "y_start": 885,
+          "y_end": 1150,
+          "description": "Score table"
+        },
+        "options": [
+          {
+            "label": "A",
+            "y_start": 1170,
+            "y_end": 1277
+          },
+          {
+            "label": "B",
+            "y_start": 1277,
+            "y_end": 1384
+          },
+          {
+            "label": "C",
+            "y_start": 1384,
+            "y_end": 1491
+          },
+          {
+            "label": "D",
+            "y_start": 1491,
+            "y_end": 1600
+          }
+        ]
       },
       {
         "question": 9,
         "page": 5,
-        "y_start": 348,
-        "y_end": 880,
-        "description": "4 network diagrams as ABCD options",
-        "source": "hardcoded-bootstrap"
+        "type": "options_only",
+        "source": "hardcoded-bootstrap",
+        "stimulus": null,
+        "options": [
+          {
+            "label": "A",
+            "y_start": 348,
+            "y_end": 481
+          },
+          {
+            "label": "B",
+            "y_start": 481,
+            "y_end": 614
+          },
+          {
+            "label": "C",
+            "y_start": 614,
+            "y_end": 747
+          },
+          {
+            "label": "D",
+            "y_start": 747,
+            "y_end": 880
+          }
+        ]
       },
       {
         "question": 12,
         "page": 6,
-        "y_start": 635,
-        "y_end": 1220,
-        "description": "4 scatter plots as ABCD options",
-        "source": "hardcoded-bootstrap"
+        "type": "options_only",
+        "source": "hardcoded-bootstrap",
+        "stimulus": null,
+        "options": [
+          {
+            "label": "A",
+            "y_start": 635,
+            "y_end": 781
+          },
+          {
+            "label": "B",
+            "y_start": 781,
+            "y_end": 927
+          },
+          {
+            "label": "C",
+            "y_start": 927,
+            "y_end": 1073
+          },
+          {
+            "label": "D",
+            "y_start": 1073,
+            "y_end": 1220
+          }
+        ]
       },
       {
         "question": 15,
         "page": 8,
-        "y_start": 200,
-        "y_end": 320,
-        "description": "Rectangular table grid",
-        "source": "hardcoded-bootstrap"
+        "type": "stimulus_only",
+        "source": "hardcoded-bootstrap",
+        "stimulus": {
+          "y_start": 200,
+          "y_end": 320,
+          "description": "Rectangular table grid"
+        },
+        "options": null
       }
     ],
     "2021": [
       {
         "question": 2,
         "page": 3,
-        "y_start": 195,
-        "y_end": 380,
-        "description": "Network diagram",
-        "source": "hardcoded-bootstrap"
+        "type": "stimulus_only",
+        "source": "hardcoded-bootstrap",
+        "stimulus": {
+          "y_start": 195,
+          "y_end": 380,
+          "description": "Network diagram"
+        },
+        "options": null
       },
       {
         "question": 3,
         "page": 3,
-        "y_start": 800,
-        "y_end": 945,
-        "description": "Stem-and-leaf plot",
-        "source": "hardcoded-bootstrap"
+        "type": "stimulus_only",
+        "source": "hardcoded-bootstrap",
+        "stimulus": {
+          "y_start": 800,
+          "y_end": 945,
+          "description": "Stem-and-leaf plot"
+        },
+        "options": null
       },
       {
         "question": 7,
         "page": 5,
-        "y_start": 200,
-        "y_end": 1660,
-        "description": "Histogram + 4 cumulative freq graphs",
-        "source": "hardcoded-bootstrap"
+        "type": "stimulus_and_options",
+        "source": "hardcoded-bootstrap",
+        "stimulus": {
+          "y_start": 200,
+          "y_end": 540,
+          "description": "Histogram of downloads per day"
+        },
+        "options": [
+          {
+            "label": "A",
+            "y_start": 560,
+            "y_end": 835
+          },
+          {
+            "label": "B",
+            "y_start": 835,
+            "y_end": 1110
+          },
+          {
+            "label": "C",
+            "y_start": 1110,
+            "y_end": 1385
+          },
+          {
+            "label": "D",
+            "y_start": 1385,
+            "y_end": 1660
+          }
+        ]
       },
       {
         "question": 10,
         "page": 6,
-        "y_start": 999,
-        "y_end": 1530,
-        "description": "4 exponential graphs as ABCD options",
-        "source": "hardcoded-bootstrap"
+        "type": "options_only",
+        "source": "hardcoded-bootstrap",
+        "stimulus": null,
+        "options": [
+          {
+            "label": "A",
+            "y_start": 999,
+            "y_end": 1131
+          },
+          {
+            "label": "B",
+            "y_start": 1131,
+            "y_end": 1263
+          },
+          {
+            "label": "C",
+            "y_start": 1263,
+            "y_end": 1395
+          },
+          {
+            "label": "D",
+            "y_start": 1395,
+            "y_end": 1530
+          }
+        ]
       },
       {
         "question": 11,
         "page": 7,
-        "y_start": 380,
-        "y_end": 660,
-        "description": "Probability tree diagram",
-        "source": "hardcoded-bootstrap"
+        "type": "stimulus_only",
+        "source": "hardcoded-bootstrap",
+        "stimulus": {
+          "y_start": 380,
+          "y_end": 660,
+          "description": "Probability tree diagram"
+        },
+        "options": null
       }
     ],
     "2022": [
       {
         "question": 1,
         "page": 2,
-        "y_start": 463,
-        "y_end": 855,
-        "description": "4 frequency curves as ABCD options",
-        "source": "hardcoded-bootstrap"
+        "type": "options_only",
+        "source": "hardcoded-bootstrap",
+        "stimulus": null,
+        "options": [
+          {
+            "label": "A",
+            "y_start": 463,
+            "y_end": 561
+          },
+          {
+            "label": "B",
+            "y_start": 561,
+            "y_end": 659
+          },
+          {
+            "label": "C",
+            "y_start": 659,
+            "y_end": 757
+          },
+          {
+            "label": "D",
+            "y_start": 757,
+            "y_end": 855
+          }
+        ]
       },
       {
         "question": 2,
         "page": 2,
-        "y_start": 996,
-        "y_end": 1565,
-        "description": "4 line graphs as ABCD options",
-        "source": "hardcoded-bootstrap"
+        "type": "options_only",
+        "source": "hardcoded-bootstrap",
+        "stimulus": null,
+        "options": [
+          {
+            "label": "A",
+            "y_start": 996,
+            "y_end": 1138
+          },
+          {
+            "label": "B",
+            "y_start": 1138,
+            "y_end": 1280
+          },
+          {
+            "label": "C",
+            "y_start": 1280,
+            "y_end": 1422
+          },
+          {
+            "label": "D",
+            "y_start": 1422,
+            "y_end": 1565
+          }
+        ]
       },
       {
         "question": 3,
         "page": 3,
-        "y_start": 175,
-        "y_end": 600,
-        "description": "Network diagram with critical path",
-        "source": "hardcoded-bootstrap"
+        "type": "stimulus_only",
+        "source": "hardcoded-bootstrap",
+        "stimulus": {
+          "y_start": 175,
+          "y_end": 600,
+          "description": "Network diagram with critical path"
+        },
+        "options": null
       },
       {
         "question": 13,
         "page": 7,
-        "y_start": 260,
-        "y_end": 745,
-        "description": "Z-score table + normal distribution curve",
-        "source": "hardcoded-bootstrap"
+        "type": "stimulus_only",
+        "source": "hardcoded-bootstrap",
+        "stimulus": {
+          "y_start": 260,
+          "y_end": 745,
+          "description": "Z-score table and normal distribution curve"
+        },
+        "options": null
       },
       {
         "question": 15,
         "page": 8,
-        "y_start": 235,
-        "y_end": 1222,
-        "description": "Cumulative freq graph + 4 box plots",
-        "source": "hardcoded-bootstrap"
+        "type": "stimulus_and_options",
+        "source": "hardcoded-bootstrap",
+        "stimulus": {
+          "y_start": 235,
+          "y_end": 620,
+          "description": "Cumulative frequency graph"
+        },
+        "options": [
+          {
+            "label": "A",
+            "y_start": 640,
+            "y_end": 785
+          },
+          {
+            "label": "B",
+            "y_start": 785,
+            "y_end": 930
+          },
+          {
+            "label": "C",
+            "y_start": 930,
+            "y_end": 1075
+          },
+          {
+            "label": "D",
+            "y_start": 1075,
+            "y_end": 1222
+          }
+        ]
       }
     ],
     "2023": [
       {
         "question": 5,
         "page": 4,
-        "y_start": 260,
-        "y_end": 945,
-        "description": "4 petrol pump diagrams as ABCD options",
-        "source": "hardcoded-bootstrap"
+        "type": "options_only",
+        "source": "hardcoded-bootstrap",
+        "stimulus": null,
+        "options": [
+          {
+            "label": "A",
+            "y_start": 260,
+            "y_end": 431
+          },
+          {
+            "label": "B",
+            "y_start": 431,
+            "y_end": 602
+          },
+          {
+            "label": "C",
+            "y_start": 602,
+            "y_end": 773
+          },
+          {
+            "label": "D",
+            "y_start": 773,
+            "y_end": 945
+          }
+        ]
       },
       {
         "question": 8,
         "page": 5,
-        "y_start": 540,
-        "y_end": 1185,
-        "description": "Die + spinner + score table",
-        "source": "hardcoded-bootstrap"
+        "type": "stimulus_only",
+        "source": "hardcoded-bootstrap",
+        "stimulus": {
+          "y_start": 540,
+          "y_end": 1185,
+          "description": "Die, spinner and score table"
+        },
+        "options": null
       },
       {
         "question": 12,
         "page": 7,
-        "y_start": 290,
-        "y_end": 660,
-        "description": "Cylindrical pipe cross-section",
-        "source": "hardcoded-bootstrap"
+        "type": "stimulus_only",
+        "source": "hardcoded-bootstrap",
+        "stimulus": {
+          "y_start": 290,
+          "y_end": 660,
+          "description": "Cylindrical pipe cross-section"
+        },
+        "options": null
       },
       {
         "question": 14,
         "page": 8,
-        "y_start": 240,
-        "y_end": 555,
-        "description": "Directed network diagram",
-        "source": "hardcoded-bootstrap"
+        "type": "stimulus_only",
+        "source": "hardcoded-bootstrap",
+        "stimulus": {
+          "y_start": 240,
+          "y_end": 555,
+          "description": "Directed network diagram"
+        },
+        "options": null
       }
     ],
     "2024": [
       {
         "question": 2,
         "page": 2,
-        "y_start": 750,
-        "y_end": 1080,
-        "description": "Linear function graph",
-        "source": "hardcoded-bootstrap"
+        "type": "stimulus_only",
+        "source": "hardcoded-bootstrap",
+        "stimulus": {
+          "y_start": 750,
+          "y_end": 1080,
+          "description": "Linear function graph"
+        },
+        "options": null
       },
       {
         "question": 4,
         "page": 3,
-        "y_start": 535,
-        "y_end": 1130,
-        "description": "Country map with regions",
-        "source": "hardcoded-bootstrap"
+        "type": "stimulus_only",
+        "source": "hardcoded-bootstrap",
+        "stimulus": {
+          "y_start": 535,
+          "y_end": 1130,
+          "description": "Country map with regions"
+        },
+        "options": null
       },
       {
         "question": 5,
         "page": 4,
-        "y_start": 230,
-        "y_end": 490,
-        "description": "Data table",
-        "source": "hardcoded-bootstrap"
+        "type": "stimulus_only",
+        "source": "hardcoded-bootstrap",
+        "stimulus": {
+          "y_start": 230,
+          "y_end": 490,
+          "description": "Data table"
+        },
+        "options": null
       },
       {
         "question": 6,
         "page": 4,
-        "y_start": 855,
-        "y_end": 1015,
-        "description": "Triangle diagram",
-        "source": "hardcoded-bootstrap"
+        "type": "stimulus_only",
+        "source": "hardcoded-bootstrap",
+        "stimulus": {
+          "y_start": 855,
+          "y_end": 1015,
+          "description": "Triangle diagram"
+        },
+        "options": null
       },
       {
         "question": 15,
         "page": 8,
-        "y_start": 780,
-        "y_end": 1494,
-        "description": "Box plot + 4 histograms as ABCD",
-        "source": "hardcoded-bootstrap"
+        "type": "stimulus_and_options",
+        "source": "hardcoded-bootstrap",
+        "stimulus": {
+          "y_start": 780,
+          "y_end": 1000,
+          "description": "Box plot question data"
+        },
+        "options": [
+          {
+            "label": "A",
+            "y_start": 1020,
+            "y_end": 1138
+          },
+          {
+            "label": "B",
+            "y_start": 1138,
+            "y_end": 1256
+          },
+          {
+            "label": "C",
+            "y_start": 1256,
+            "y_end": 1374
+          },
+          {
+            "label": "D",
+            "y_start": 1374,
+            "y_end": 1494
+          }
+        ]
       }
     ],
     "2025": [
       {
         "question": 1,
         "page": 2,
-        "y_start": 465,
-        "y_end": 660,
-        "description": "Network diagram",
-        "source": "hardcoded-bootstrap"
+        "type": "stimulus_only",
+        "source": "hardcoded-bootstrap",
+        "stimulus": {
+          "y_start": 465,
+          "y_end": 660,
+          "description": "Network diagram"
+        },
+        "options": null
       },
       {
         "question": 2,
         "page": 2,
-        "y_start": 1050,
-        "y_end": 1565,
-        "description": "4 graphs as ABCD options",
-        "source": "hardcoded-bootstrap"
+        "type": "options_only",
+        "source": "hardcoded-bootstrap",
+        "stimulus": null,
+        "options": [
+          {
+            "label": "A",
+            "y_start": 1050,
+            "y_end": 1178
+          },
+          {
+            "label": "B",
+            "y_start": 1178,
+            "y_end": 1306
+          },
+          {
+            "label": "C",
+            "y_start": 1306,
+            "y_end": 1434
+          },
+          {
+            "label": "D",
+            "y_start": 1434,
+            "y_end": 1565
+          }
+        ]
       },
       {
         "question": 3,
         "page": 3,
-        "y_start": 215,
-        "y_end": 510,
-        "description": "Weighted network diagram",
-        "source": "hardcoded-bootstrap"
+        "type": "stimulus_only",
+        "source": "hardcoded-bootstrap",
+        "stimulus": {
+          "y_start": 215,
+          "y_end": 510,
+          "description": "Weighted network diagram"
+        },
+        "options": null
       },
       {
         "question": 8,
         "page": 5,
-        "y_start": 230,
-        "y_end": 1304,
-        "description": "Histogram + 4 pie chart spinners as ABCD",
-        "source": "hardcoded-bootstrap"
+        "type": "stimulus_and_options",
+        "source": "hardcoded-bootstrap",
+        "stimulus": {
+          "y_start": 230,
+          "y_end": 600,
+          "description": "Histogram of data"
+        },
+        "options": [
+          {
+            "label": "A",
+            "y_start": 620,
+            "y_end": 791
+          },
+          {
+            "label": "B",
+            "y_start": 791,
+            "y_end": 962
+          },
+          {
+            "label": "C",
+            "y_start": 962,
+            "y_end": 1133
+          },
+          {
+            "label": "D",
+            "y_start": 1133,
+            "y_end": 1304
+          }
+        ]
       }
     ]
   }
