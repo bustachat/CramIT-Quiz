@@ -65,6 +65,7 @@ Netlify auto-deploys on every push to `main`. Remind the owner of this.
 | Webhook handler | Supabase Edge Function named `clever-action` | NOT `stripe-webhook` — this was auto-named |
 | AI Agent | Node.js + Anthropic Claude API | Runs via GitHub Actions nightly |
 | Repo | GitHub — `bustachat/CramIT-Quiz` | Public repo, main branch |
+| Diagram images | Netlify static files at `/diagrams/` | Served from git repo — NOT Supabase Storage. 100GB/mo free vs Supabase's 2GB/mo. Agent auto-deploys new images via git commit. |
 
 ---
 
@@ -180,10 +181,15 @@ cramit-quiz/
 ├── billing.js                  ← Client-side billing module (auth, checkout, pricing calc)
 ├── subject-selector.html       ← Subject selection UI component
 ├── package.json                ← { "dependencies": { "stripe": "^14.0.0" } }
-├── extract_maths_diagrams.py   ← PDF diagram extractor (PyMuPDF + Pillow)
+├── extract_maths_diagrams.py   ← PDF diagram extractor v3 (PyMuPDF + Pillow + calibration)
+├── diagram_registry.json       ← Crop coordinates for all 76 diagram images (2020–2025)
 ├── process_maths_backlog.js    ← Backlog processor for question generation
 ├── schema.sql                  ← Supabase table definitions + RLS policies
 ├── supabase_min.js             ← Local Supabase JS client (loaded via script tag)
+├── diagrams/                   ← Exam diagram images — served by Netlify at /diagrams/
+│   ├── .gitignore              ← Excludes _debug/ folder from git
+│   └── mathematics-standard-2_{year}_Q{n}_{suffix}.jpg
+│       suffix = stimulus | A | B | C | D
 ├── subjects/
 │   ├── index.json              ← List of all available subject files
 │   └── mathematics-advanced-2024.json
@@ -330,7 +336,7 @@ The standalone HTML files in the project are the **gold standard** for quiz func
 | Responsive/mobile | `clamp()` font sizing, safe area insets, touch targets ≥ 48px | ✅ In reference |
 | Correct/incorrect colours | Green `#10B981` / Red `#F43F5E` highlight on options | ✅ In reference |
 | Written response mode | Text input, keyword scoring, band descriptor, model answer reveal | ✅ HMS + VET files |
-| Diagram support | `<img>` tags in question text pointing to `/diagrams/` folder | ⚠️ Needs wiring |
+| Diagram support | `image` field → stimulus above question. `optionImages` array → per-option images inside each button. Paths point to `/diagrams/` (Netlify). | ⚠️ Extractor ✅ done — wiring in Stage 3 |
 | NESA band marking (AI) | AI marks written responses via `/.netlify/functions/mark-written` | ⬜ Planned |
 
 ### Question data structure (JS object)
@@ -339,8 +345,24 @@ The standalone HTML files in the project are the **gold standard** for quiz func
   year: 2024,
   category: 'F2',       // syllabus topic code
   variant: true,         // optional — omit for original HSC questions
-  q: "Question text here. Can contain HTML for diagrams.",
+  q: "Question text here.",
+  // --- Diagram fields (only add when the question has images) ---
+  image: "/diagrams/mathematics-standard-2_2024_Q6_stimulus.jpg",
+  //   ^ stimulus diagram shown ABOVE the question text (null/omit if none)
+  optionImages: [
+    "/diagrams/mathematics-standard-2_2022_Q1_A.jpg",
+    "/diagrams/mathematics-standard-2_2022_Q1_B.jpg",
+    "/diagrams/mathematics-standard-2_2022_Q1_C.jpg",
+    "/diagrams/mathematics-standard-2_2022_Q1_D.jpg",
+  ],
+  //   ^ per-option images rendered INSIDE each A/B/C/D button (null/omit if text options)
+  //   For stimulus_only questions: set image, omit optionImages
+  //   For options_only questions:  omit image, set optionImages
+  //   For stimulus_and_options:    set both
+  // --- Answer fields ---
   options: ["Option A", "Option B", "Option C", "Option D"],
+  //   ^ text labels for options — still required even when optionImages present
+  //     (used in results screen, accessibility, and shuffle logic)
   answer: 2,             // 0-indexed — index into options[] before shuffle
   solution: `<div class="step"><span class="step-number">1.</span> Step one explanation.</div>
              <div class="step"><span class="step-number">2.</span> Step two explanation.</div>`
@@ -350,6 +372,24 @@ The standalone HTML files in the project are the **gold standard** for quiz func
   // keywords: ['keyword1', 'keyword2'],
   // modelAnswer: "Full Band 5/6 model answer text"
 }
+```
+
+### Image hosting — Netlify `/diagrams/` (NOT Supabase Storage)
+All diagram images are committed to the git repo under `diagrams/` and served by Netlify.
+
+**Do NOT use Supabase Storage for exam diagrams.** The `exam-images` bucket in Supabase is retired — it contained old unsplit images (one image per question). The new images are split into stimulus + per-option files.
+
+**Do NOT use `MATHS_IMG` lookup table** — this is being retired in Stage 3. Images are referenced directly on each question object via `image` and `optionImages` fields.
+
+**VET questions** currently use `VET_IMG` with Imgur URLs — keep these until VET diagram extraction is built (post Stage 4).
+
+**Path convention:**
+```
+/diagrams/{subject}_{year}_Q{n}_stimulus.jpg   ← question diagram
+/diagrams/{subject}_{year}_Q{n}_A.jpg          ← option A image
+/diagrams/{subject}_{year}_Q{n}_B.jpg          ← option B image
+/diagrams/{subject}_{year}_Q{n}_C.jpg          ← option C image
+/diagrams/{subject}_{year}_Q{n}_D.jpg          ← option D image
 ```
 
 ### Subject JSON file structure (for `subjects/` folder)
@@ -368,95 +408,65 @@ The standalone HTML files in the project are the **gold standard** for quiz func
 
 ## 11. Diagram Extraction Pipeline
 
-### Current state
-The `extract_maths_diagrams.py` script extracts diagrams from HSC PDF papers and saves them as JPEGs to a `./diagrams/` folder. It uses PyMuPDF (`fitz`) for PDF rendering and Pillow for cropping.
+### ✅ Current state — v3 extractor with calibration (Stage 2 complete)
 
-**Current approach — hardcoded crop coordinates:**
-```python
-# Format: (year, question_number, page_number, y_start_px, y_end_px)
-CROPS = [
-    (2020,  1,  2,   460,  1280),  # 4 graphs as ABCD options
-    (2020,  7,  4,   203,   799),  # 4 histograms as ABCD options
-    # ... etc
-]
-RENDER_DPI = 150  # renders at 150 DPI = ~1240×1755px per page
-```
+`extract_maths_diagrams.py` extracts diagrams from HSC PDF papers, correctly separating the **question stimulus** from the **answer option images** so the quiz can render them at different sizes.
 
-**Limitations of current approach:**
-- Crop coordinates are hand-calibrated — breaks if NESA changes page layout
-- Only covers Maths Standard 2 (2020–2025)
-- Does not detect diagrams automatically — must manually identify coordinates
-- Does not handle multi-page spanning diagrams
+**Three diagram types handled:**
+| Type | Output files | Description |
+|---|---|---|
+| `stimulus_only` | `_Q{n}_stimulus.jpg` | Question has a diagram; options are text |
+| `options_only` | `_Q{n}_A/B/C/D.jpg` | Each option A–D is a separate image |
+| `stimulus_and_options` | `_Q{n}_stimulus.jpg` + `_Q{n}_A/B/C/D.jpg` | Both question diagram and image options |
 
-### Recommended upgrade path — Claude Vision auto-detection
-
-Replace hardcoded crops with an AI-driven pipeline using Claude Vision:
-
-```python
-# Upgraded pipeline (to build):
-# 1. Render each PDF page to image at 150 DPI (keep existing render code)
-# 2. Send each page image to Claude Vision with prompt:
-#    "Identify all diagrams, graphs, tables, and figures on this exam page.
-#     For each, return: question_number, description, bounding_box {x, y, width, height}
-#     in pixels. Ignore decorative headers and footers. Return JSON only."
-# 3. Parse JSON response → auto-crop at returned bounding boxes
-# 4. Save as diagrams/{subject}_{year}_Q{n}.jpg
-# 5. Update crop registry for reproducibility
-```
-
-**Why this is better:**
-- Works on any new subject paper without manual coordinate calibration
-- Handles layout changes between years
-- Can distinguish "diagram that is part of the question" vs "options shown as images"
-- Self-documents what it found (description field)
-
-**Recommended Python libraries:**
+**Three run modes:**
 ```bash
-pip install pymupdf pillow anthropic
-# pymupdf (fitz) — PDF rendering
-# pillow — image cropping/saving
-# anthropic — Claude Vision API calls
+# CROP (default) — crops from registry, bootstraps if no registry exists
+python extract_maths_diagrams.py
+python extract_maths_diagrams.py --year 2024
+
+# CALIBRATE (recommended after bootstrap) — reads PDF text to find exact
+# A./B./C./D. label pixel positions, sets y_start = label_y - 10px, then crops
+python extract_maths_diagrams.py --calibrate
+python extract_maths_diagrams.py --calibrate --year 2023
+
+# DETECT (requires ANTHROPIC_API_KEY) — Claude Vision auto-detects all
+# diagrams on each MC page; use for new exam years
+python extract_maths_diagrams.py --detect --year 2026
 ```
+
+**Workflow for a new exam year:**
+1. Copy PDF to `C:\Claude Code Space\CRAMIT QUIZ Code Folder\NESA Exams Folder\Maths Standard 2\`
+2. Add filename to `PAPERS` dict in `extract_maths_diagrams.py`
+3. Run: `python extract_maths_diagrams.py --calibrate --year 2026`
+4. Check images in `diagrams/` — verify each option shows one clean graph
+5. Add `image` / `optionImages` to new question objects
+6. Commit `diagrams/`, `diagram_registry.json`, `extract_maths_diagrams.py`
+
+**Registry (`diagram_registry.json`):**
+- Records all crop coordinates (y_start, y_end, x_start, x_end per option)
+- `source` field: `hardcoded-bootstrap` | `calibrated` | `claude-vision`
+- Version 3 — auto-upgrades old versions on load
+
+**2x2 grid vs vertical stack:**
+NESA uses two option layouts. The extractor handles both:
+- **2x2 GRID**: A+B side-by-side on top row, C+D below. Each option has `x_start`/`x_end` to split left/right column.
+- **VERTICAL STACK**: All 4 options full-width, stacked top-to-bottom. No x split needed.
+Calibration auto-detects layout from whether A and B labels share the same y position (within 30px).
+
+**Current coverage: 76 images across 2020–2025 (Maths Standard 2 only)**
 
 ### GitHub Actions integration for diagrams
 When the nightly agent detects a new exam paper:
 1. `agent.js` downloads the PDF
-2. Calls the Python extractor (or a JS equivalent using Claude Vision directly)
-3. Commits extracted diagrams to `diagrams/` folder in repo
-4. Netlify deploys — diagrams immediately available at `/diagrams/filename.jpg`
+2. Runs `python extract_maths_diagrams.py --calibrate --year {year}`
+3. Commits new images to `diagrams/` folder
+4. Netlify auto-deploys — images immediately available at `/diagrams/filename.jpg`
 
-### Wiring diagrams into questions
-In the question object, add an `image` field:
-```js
-{
-  year: 2024,
-  category: 'M1',
-  q: "The diagram shows a cylindrical pipe. What is the volume?",
-  image: "/diagrams/mathematics-standard-2_2024_Q6.jpg",
-  options: [...],
-  answer: 2,
-  solution: `...`
-}
-```
-
-In `renderQuestion()`:
-```js
-function renderQuestion() {
-  const q = filteredQs[currentIdx];
-  els.questionText.innerHTML = q.q; // use innerHTML not textContent when diagrams present
-  
-  // Insert diagram if present
-  const diagContainer = document.getElementById('questionDiagram');
-  if (q.image) {
-    diagContainer.innerHTML = `<img src="${q.image}" alt="Exam diagram" 
-      style="max-width:100%;border-radius:8px;margin-bottom:12px;">`;
-    diagContainer.classList.remove('hidden');
-  } else {
-    diagContainer.classList.add('hidden');
-  }
-  // ... rest of render
-}
-```
+### Adding diagram support to other subjects
+- **VET Construction**: Questions reference `VET_IMG` Imgur URLs — migrate to `/diagrams/` in Stage 4
+- **HMS / Multimedia**: No image questions currently — add as needed in Stage 4
+- **New subjects via agent**: Agent uses `--detect` mode (Claude Vision) for automatic extraction
 
 ---
 
@@ -512,8 +522,8 @@ GitHub Actions triggers → agent.js runs →
 | Stage | What | Status |
 |---|---|---|
 | **Stage 1** | Quick wins: reset modal, year/topic badges, progress bar glow, touch targets, safe-area-inset | ✅ **DONE** |
-| **Stage 2** | Diagram extractor upgrade — Claude Vision auto-detection replaces hardcoded coords | ⬜ Next |
-| **Stage 3** | Category filter + dynamic counts + HSC 90/Extended 318 toggle (Maths) + question expansion strategy | ⬜ |
+| **Stage 2** | Diagram extractor v3 — stimulus/options split, calibration mode, 76 images committed to repo | ✅ **DONE** |
+| **Stage 3** | Wire images into quiz renderer (`image` + `optionImages` on question objects, retire `MATHS_IMG`). Category filter + dynamic counts + HSC 90/Extended 318 toggle | ⬜ Next |
 | **Stage 4** | Port Multimedia + HMS subjects into index.html | ⬜ |
 | **Stage 5** | Written response + NESA band engine (keyword scoring → Band 1–6 feedback + band-tiered model answers) | ⬜ |
 | **Stage 6** | Pricing model update — 10-question trial replaces 1-free-subject | ⬜ |
@@ -610,7 +620,7 @@ The biggest priority is bringing `index.html` (the hosted Netlify app) up to the
 | Google OAuth is in Testing mode | ⬜ Todo | Submit for verification |
 | `APP_URL` and `SUPABASE_ANON_KEY` were placeholders | ✅ Fixed | Owner filled these in |
 | Edge Function named `clever-action` not `stripe-webhook` | ✅ Known, working | Do not rename — webhook registered to this URL |
-| Diagram images not rendering in hosted quiz | ⬜ Todo | Diagrams folder + `renderQuestion()` wiring |
+| Diagram images not rendering in hosted quiz | ⬜ Stage 3 | Extractor done (76 images in `/diagrams/`). Need to: add `image`/`optionImages` to question objects, retire `MATHS_IMG`, update `renderQuestion()` |
 | Written response AI marking not yet built | ⬜ Parked | Keyword matching is active in the meantime |
 
 ---
@@ -704,7 +714,7 @@ The Maths Standard 2 standalone file (v5.4) was expanded from 90 to 318 question
 | **VET Construction** | ❌ Skip entirely | Mostly visual (tool identification from images). Not worth generating variants or additional questions without images. |
 
 ### Variant rules for Maths (already applied, for reference)
-- Skip any question that has a diagram/image (`img` field present)
+- Skip any question that has a diagram/image (`image` or `optionImages` field present)
 - Write 3 variants per skippable question: different numbers, different answer options, correct answer in a different position (A/B/C/D each correct once across the 4 questions)
 - Each variant has a full step-by-step `solution` block
 - Mark with `variant: true`
