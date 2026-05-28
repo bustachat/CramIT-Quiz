@@ -3578,10 +3578,11 @@ function closeResetModal() {
 }
 
 function confirmResetAction() {
+  const action = pendingNavAction; // capture before closeResetModal() nulls it
   closeResetModal();
-  if (pendingNavAction === 'retry') {
+  if (action === 'retry') {
     startQuiz(currentMode);
-  } else if (pendingNavAction === 'picker') {
+  } else if (action === 'picker') {
     openPicker(currentSubjectKey);
   }
 }
