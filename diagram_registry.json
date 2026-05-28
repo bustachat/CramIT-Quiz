@@ -1,0 +1,250 @@
+{
+  "version": "2",
+  "subject": "mathematics-standard-2",
+  "papers": {
+    "2020": [
+      {
+        "question": 1,
+        "page": 2,
+        "y_start": 465,
+        "y_end": 980,
+        "description": "4 graphs as ABCD options",
+        "source": "hardcoded-bootstrap"
+      },
+      {
+        "question": 7,
+        "page": 4,
+        "y_start": 205,
+        "y_end": 805,
+        "description": "4 histograms as ABCD options",
+        "source": "hardcoded-bootstrap"
+      },
+      {
+        "question": 8,
+        "page": 4,
+        "y_start": 885,
+        "y_end": 1600,
+        "description": "Score table + answer-options table",
+        "source": "hardcoded-bootstrap"
+      },
+      {
+        "question": 9,
+        "page": 5,
+        "y_start": 348,
+        "y_end": 880,
+        "description": "4 network diagrams as ABCD options",
+        "source": "hardcoded-bootstrap"
+      },
+      {
+        "question": 12,
+        "page": 6,
+        "y_start": 635,
+        "y_end": 1220,
+        "description": "4 scatter plots as ABCD options",
+        "source": "hardcoded-bootstrap"
+      },
+      {
+        "question": 15,
+        "page": 8,
+        "y_start": 200,
+        "y_end": 320,
+        "description": "Rectangular table grid",
+        "source": "hardcoded-bootstrap"
+      }
+    ],
+    "2021": [
+      {
+        "question": 2,
+        "page": 3,
+        "y_start": 195,
+        "y_end": 380,
+        "description": "Network diagram",
+        "source": "hardcoded-bootstrap"
+      },
+      {
+        "question": 3,
+        "page": 3,
+        "y_start": 800,
+        "y_end": 945,
+        "description": "Stem-and-leaf plot",
+        "source": "hardcoded-bootstrap"
+      },
+      {
+        "question": 7,
+        "page": 5,
+        "y_start": 200,
+        "y_end": 1660,
+        "description": "Histogram + 4 cumulative freq graphs",
+        "source": "hardcoded-bootstrap"
+      },
+      {
+        "question": 10,
+        "page": 6,
+        "y_start": 999,
+        "y_end": 1530,
+        "description": "4 exponential graphs as ABCD options",
+        "source": "hardcoded-bootstrap"
+      },
+      {
+        "question": 11,
+        "page": 7,
+        "y_start": 380,
+        "y_end": 660,
+        "description": "Probability tree diagram",
+        "source": "hardcoded-bootstrap"
+      }
+    ],
+    "2022": [
+      {
+        "question": 1,
+        "page": 2,
+        "y_start": 463,
+        "y_end": 855,
+        "description": "4 frequency curves as ABCD options",
+        "source": "hardcoded-bootstrap"
+      },
+      {
+        "question": 2,
+        "page": 2,
+        "y_start": 996,
+        "y_end": 1565,
+        "description": "4 line graphs as ABCD options",
+        "source": "hardcoded-bootstrap"
+      },
+      {
+        "question": 3,
+        "page": 3,
+        "y_start": 175,
+        "y_end": 600,
+        "description": "Network diagram with critical path",
+        "source": "hardcoded-bootstrap"
+      },
+      {
+        "question": 13,
+        "page": 7,
+        "y_start": 260,
+        "y_end": 745,
+        "description": "Z-score table + normal distribution curve",
+        "source": "hardcoded-bootstrap"
+      },
+      {
+        "question": 15,
+        "page": 8,
+        "y_start": 235,
+        "y_end": 1222,
+        "description": "Cumulative freq graph + 4 box plots",
+        "source": "hardcoded-bootstrap"
+      }
+    ],
+    "2023": [
+      {
+        "question": 5,
+        "page": 4,
+        "y_start": 260,
+        "y_end": 945,
+        "description": "4 petrol pump diagrams as ABCD options",
+        "source": "hardcoded-bootstrap"
+      },
+      {
+        "question": 8,
+        "page": 5,
+        "y_start": 540,
+        "y_end": 1185,
+        "description": "Die + spinner + score table",
+        "source": "hardcoded-bootstrap"
+      },
+      {
+        "question": 12,
+        "page": 7,
+        "y_start": 290,
+        "y_end": 660,
+        "description": "Cylindrical pipe cross-section",
+        "source": "hardcoded-bootstrap"
+      },
+      {
+        "question": 14,
+        "page": 8,
+        "y_start": 240,
+        "y_end": 555,
+        "description": "Directed network diagram",
+        "source": "hardcoded-bootstrap"
+      }
+    ],
+    "2024": [
+      {
+        "question": 2,
+        "page": 2,
+        "y_start": 750,
+        "y_end": 1080,
+        "description": "Linear function graph",
+        "source": "hardcoded-bootstrap"
+      },
+      {
+        "question": 4,
+        "page": 3,
+        "y_start": 535,
+        "y_end": 1130,
+        "description": "Country map with regions",
+        "source": "hardcoded-bootstrap"
+      },
+      {
+        "question": 5,
+        "page": 4,
+        "y_start": 230,
+        "y_end": 490,
+        "description": "Data table",
+        "source": "hardcoded-bootstrap"
+      },
+      {
+        "question": 6,
+        "page": 4,
+        "y_start": 855,
+        "y_end": 1015,
+        "description": "Triangle diagram",
+        "source": "hardcoded-bootstrap"
+      },
+      {
+        "question": 15,
+        "page": 8,
+        "y_start": 780,
+        "y_end": 1494,
+        "description": "Box plot + 4 histograms as ABCD",
+        "source": "hardcoded-bootstrap"
+      }
+    ],
+    "2025": [
+      {
+        "question": 1,
+        "page": 2,
+        "y_start": 465,
+        "y_end": 660,
+        "description": "Network diagram",
+        "source": "hardcoded-bootstrap"
+      },
+      {
+        "question": 2,
+        "page": 2,
+        "y_start": 1050,
+        "y_end": 1565,
+        "description": "4 graphs as ABCD options",
+        "source": "hardcoded-bootstrap"
+      },
+      {
+        "question": 3,
+        "page": 3,
+        "y_start": 215,
+        "y_end": 510,
+        "description": "Weighted network diagram",
+        "source": "hardcoded-bootstrap"
+      },
+      {
+        "question": 8,
+        "page": 5,
+        "y_start": 230,
+        "y_end": 1304,
+        "description": "Histogram + 4 pie chart spinners as ABCD",
+        "source": "hardcoded-bootstrap"
+      }
+    ]
+  }
+}
