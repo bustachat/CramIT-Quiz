@@ -148,8 +148,8 @@
     .option-btn-img { padding: 10px 14px; }
     /* Show the letter label above the image — not every image has it baked in */
     .option-btn-img .option-label { display: block; margin-bottom: 8px; }
-    /* width:100% fills the button; max-height clamp prevents it towering on any screen size */
-    .option-img { display: block; width: 100%; height: auto; max-height: clamp(150px, 28vh, 280px); border-radius: 6px; margin-bottom: 4px; cursor: zoom-in; }
+    /* object-fit:contain keeps aspect ratio at any screen size — never stretches */
+    .option-img { display: block; width: 100%; height: clamp(150px, 28vh, 280px); object-fit: contain; object-position: center; border-radius: 6px; margin-bottom: 4px; cursor: zoom-in; }
     .option-img-desc { font-size: 11px; color: var(--muted); font-style: italic; }
 
     /* Phone — full width, no cap */

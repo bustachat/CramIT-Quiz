@@ -13,32 +13,32 @@
             "x_start": 16,
             "x_end": 618,
             "label": "A",
-            "y_start": 465,
-            "y_end": 579
+            "y_start": 462,
+            "y_end": 700
           },
           {
             "x_start": 622,
             "x_end": 1224,
             "label": "B",
-            "y_start": 465,
-            "y_end": 579
+            "y_start": 462,
+            "y_end": 700
           },
           {
             "x_start": 16,
             "x_end": 618,
             "label": "C",
-            "y_start": 582,
-            "y_end": 883
+            "y_start": 760,
+            "y_end": 1005
           },
           {
             "x_start": 622,
             "x_end": 1224,
             "label": "D",
-            "y_start": 582,
-            "y_end": 883
+            "y_start": 760,
+            "y_end": 1005
           }
         ],
-        "source": "hardcoded-bootstrap"
+        "source": "pixel-scan-corrected"
       },
       {
         "question": 7,
@@ -120,32 +120,32 @@
             "x_start": 16,
             "x_end": 618,
             "label": "A",
-            "y_start": 465,
-            "y_end": 618
+            "y_start": 278,
+            "y_end": 582
           },
           {
             "x_start": 622,
             "x_end": 1224,
             "label": "B",
-            "y_start": 465,
-            "y_end": 618
+            "y_start": 278,
+            "y_end": 582
           },
           {
             "x_start": 16,
             "x_end": 618,
             "label": "C",
-            "y_start": 622,
-            "y_end": 777
+            "y_start": 625,
+            "y_end": 895
           },
           {
             "x_start": 622,
             "x_end": 1224,
             "label": "D",
-            "y_start": 622,
-            "y_end": 777
+            "y_start": 625,
+            "y_end": 895
           }
         ],
-        "source": "hardcoded-bootstrap"
+        "source": "pixel-scan-corrected"
       },
       {
         "question": 12,
@@ -157,32 +157,32 @@
             "x_start": 16,
             "x_end": 618,
             "label": "A",
-            "y_start": 858,
-            "y_end": 1023
+            "y_start": 625,
+            "y_end": 895
           },
           {
             "x_start": 622,
             "x_end": 1224,
             "label": "B",
-            "y_start": 858,
-            "y_end": 1023
+            "y_start": 625,
+            "y_end": 895
           },
           {
             "x_start": 16,
             "x_end": 618,
             "label": "C",
-            "y_start": 1027,
-            "y_end": 1195
+            "y_start": 960,
+            "y_end": 1235
           },
           {
             "x_start": 622,
             "x_end": 1224,
             "label": "D",
-            "y_start": 1027,
-            "y_end": 1195
+            "y_start": 960,
+            "y_end": 1235
           }
         ],
-        "source": "hardcoded-bootstrap"
+        "source": "pixel-scan-corrected"
       },
       {
         "question": 15,
