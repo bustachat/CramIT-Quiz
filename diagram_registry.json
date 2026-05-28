@@ -7,162 +7,194 @@
         "question": 1,
         "page": 2,
         "type": "options_only",
-        "source": "hardcoded-bootstrap",
         "stimulus": null,
         "options": [
           {
+            "x_start": 16,
+            "x_end": 618,
             "label": "A",
             "y_start": 465,
-            "y_end": 593
+            "y_end": 579
           },
           {
+            "x_start": 622,
+            "x_end": 1224,
             "label": "B",
-            "y_start": 593,
-            "y_end": 721
+            "y_start": 465,
+            "y_end": 579
           },
           {
+            "x_start": 16,
+            "x_end": 618,
             "label": "C",
-            "y_start": 721,
-            "y_end": 849
+            "y_start": 582,
+            "y_end": 883
           },
           {
+            "x_start": 622,
+            "x_end": 1224,
             "label": "D",
-            "y_start": 849,
-            "y_end": 980
+            "y_start": 582,
+            "y_end": 883
           }
-        ]
+        ],
+        "source": "hardcoded-bootstrap"
       },
       {
         "question": 7,
         "page": 4,
         "type": "options_only",
-        "source": "hardcoded-bootstrap",
         "stimulus": null,
         "options": [
           {
+            "x_start": 16,
+            "x_end": 618,
             "label": "A",
             "y_start": 205,
-            "y_end": 355
+            "y_end": 502
           },
           {
+            "x_start": 622,
+            "x_end": 1224,
             "label": "B",
-            "y_start": 355,
-            "y_end": 505
+            "y_start": 205,
+            "y_end": 502
           },
           {
+            "x_start": 16,
+            "x_end": 618,
             "label": "C",
-            "y_start": 505,
-            "y_end": 655
+            "y_start": 506,
+            "y_end": 805
           },
           {
+            "x_start": 622,
+            "x_end": 1224,
             "label": "D",
-            "y_start": 655,
+            "y_start": 506,
             "y_end": 805
           }
-        ]
+        ],
+        "source": "hardcoded-bootstrap"
       },
       {
         "question": 8,
         "page": 4,
         "type": "stimulus_and_options",
-        "source": "hardcoded-bootstrap",
         "stimulus": {
           "y_start": 885,
-          "y_end": 1150,
+          "y_end": 1418,
           "description": "Score table"
         },
         "options": [
           {
             "label": "A",
-            "y_start": 1170,
-            "y_end": 1277
+            "y_start": 1411,
+            "y_end": 1458
           },
           {
             "label": "B",
-            "y_start": 1277,
-            "y_end": 1384
+            "y_start": 1458,
+            "y_end": 1505
           },
           {
             "label": "C",
-            "y_start": 1384,
-            "y_end": 1491
+            "y_start": 1505,
+            "y_end": 1552
           },
           {
             "label": "D",
-            "y_start": 1491,
+            "y_start": 1552,
             "y_end": 1600
           }
-        ]
+        ],
+        "source": "calibrated"
       },
       {
         "question": 9,
         "page": 5,
         "type": "options_only",
-        "source": "hardcoded-bootstrap",
         "stimulus": null,
         "options": [
           {
+            "x_start": 16,
+            "x_end": 618,
             "label": "A",
-            "y_start": 348,
-            "y_end": 481
+            "y_start": 465,
+            "y_end": 618
           },
           {
+            "x_start": 622,
+            "x_end": 1224,
             "label": "B",
-            "y_start": 481,
-            "y_end": 614
+            "y_start": 465,
+            "y_end": 618
           },
           {
+            "x_start": 16,
+            "x_end": 618,
             "label": "C",
-            "y_start": 614,
-            "y_end": 747
+            "y_start": 622,
+            "y_end": 777
           },
           {
+            "x_start": 622,
+            "x_end": 1224,
             "label": "D",
-            "y_start": 747,
-            "y_end": 880
+            "y_start": 622,
+            "y_end": 777
           }
-        ]
+        ],
+        "source": "hardcoded-bootstrap"
       },
       {
         "question": 12,
         "page": 6,
         "type": "options_only",
-        "source": "hardcoded-bootstrap",
         "stimulus": null,
         "options": [
           {
+            "x_start": 16,
+            "x_end": 618,
             "label": "A",
-            "y_start": 635,
-            "y_end": 781
+            "y_start": 858,
+            "y_end": 1023
           },
           {
+            "x_start": 622,
+            "x_end": 1224,
             "label": "B",
-            "y_start": 781,
-            "y_end": 927
+            "y_start": 858,
+            "y_end": 1023
           },
           {
+            "x_start": 16,
+            "x_end": 618,
             "label": "C",
-            "y_start": 927,
-            "y_end": 1073
+            "y_start": 1027,
+            "y_end": 1195
           },
           {
+            "x_start": 622,
+            "x_end": 1224,
             "label": "D",
-            "y_start": 1073,
-            "y_end": 1220
+            "y_start": 1027,
+            "y_end": 1195
           }
-        ]
+        ],
+        "source": "hardcoded-bootstrap"
       },
       {
         "question": 15,
         "page": 8,
         "type": "stimulus_only",
-        "source": "hardcoded-bootstrap",
         "stimulus": {
           "y_start": 200,
           "y_end": 320,
           "description": "Rectangular table grid"
         },
-        "options": null
+        "options": null,
+        "source": "hardcoded-bootstrap"
       }
     ],
     "2021": [
@@ -170,31 +202,30 @@
         "question": 2,
         "page": 3,
         "type": "stimulus_only",
-        "source": "hardcoded-bootstrap",
         "stimulus": {
           "y_start": 195,
           "y_end": 380,
           "description": "Network diagram"
         },
-        "options": null
+        "options": null,
+        "source": "hardcoded-bootstrap"
       },
       {
         "question": 3,
         "page": 3,
         "type": "stimulus_only",
-        "source": "hardcoded-bootstrap",
         "stimulus": {
           "y_start": 800,
           "y_end": 945,
           "description": "Stem-and-leaf plot"
         },
-        "options": null
+        "options": null,
+        "source": "hardcoded-bootstrap"
       },
       {
         "question": 7,
         "page": 5,
         "type": "stimulus_and_options",
-        "source": "hardcoded-bootstrap",
         "stimulus": {
           "y_start": 200,
           "y_end": 540,
@@ -208,61 +239,70 @@
           },
           {
             "label": "B",
-            "y_start": 835,
-            "y_end": 1110
+            "y_start": 838,
+            "y_end": 1113
           },
           {
             "label": "C",
-            "y_start": 1110,
-            "y_end": 1385
+            "y_start": 1116,
+            "y_end": 1391
           },
           {
             "label": "D",
-            "y_start": 1385,
+            "y_start": 1394,
             "y_end": 1660
           }
-        ]
+        ],
+        "source": "hardcoded-bootstrap"
       },
       {
         "question": 10,
         "page": 6,
         "type": "options_only",
-        "source": "hardcoded-bootstrap",
         "stimulus": null,
         "options": [
           {
+            "x_start": 16,
+            "x_end": 618,
             "label": "A",
             "y_start": 999,
-            "y_end": 1131
+            "y_end": 1261
           },
           {
+            "x_start": 622,
+            "x_end": 1224,
             "label": "B",
-            "y_start": 1131,
-            "y_end": 1263
+            "y_start": 999,
+            "y_end": 1261
           },
           {
+            "x_start": 16,
+            "x_end": 618,
             "label": "C",
-            "y_start": 1263,
-            "y_end": 1395
+            "y_start": 1265,
+            "y_end": 1530
           },
           {
+            "x_start": 622,
+            "x_end": 1224,
             "label": "D",
-            "y_start": 1395,
+            "y_start": 1265,
             "y_end": 1530
           }
-        ]
+        ],
+        "source": "hardcoded-bootstrap"
       },
       {
         "question": 11,
         "page": 7,
         "type": "stimulus_only",
-        "source": "hardcoded-bootstrap",
         "stimulus": {
           "y_start": 380,
           "y_end": 660,
           "description": "Probability tree diagram"
         },
-        "options": null
+        "options": null,
+        "source": "hardcoded-bootstrap"
       }
     ],
     "2022": [
@@ -270,89 +310,104 @@
         "question": 1,
         "page": 2,
         "type": "options_only",
-        "source": "hardcoded-bootstrap",
         "stimulus": null,
         "options": [
           {
+            "x_start": 16,
+            "x_end": 618,
             "label": "A",
-            "y_start": 463,
-            "y_end": 561
+            "y_start": 450,
+            "y_end": 676
           },
           {
+            "x_start": 622,
+            "x_end": 1224,
             "label": "B",
-            "y_start": 561,
-            "y_end": 659
+            "y_start": 450,
+            "y_end": 676
           },
           {
+            "x_start": 16,
+            "x_end": 618,
             "label": "C",
-            "y_start": 659,
-            "y_end": 757
+            "y_start": 676,
+            "y_end": 875
           },
           {
+            "x_start": 622,
+            "x_end": 1224,
             "label": "D",
-            "y_start": 757,
-            "y_end": 855
+            "y_start": 676,
+            "y_end": 875
           }
-        ]
+        ],
+        "source": "calibrated"
       },
       {
         "question": 2,
         "page": 2,
         "type": "options_only",
-        "source": "hardcoded-bootstrap",
         "stimulus": null,
         "options": [
           {
+            "x_start": 16,
+            "x_end": 618,
             "label": "A",
-            "y_start": 996,
-            "y_end": 1138
+            "y_start": 976,
+            "y_end": 1315
           },
           {
+            "x_start": 622,
+            "x_end": 1224,
             "label": "B",
-            "y_start": 1138,
-            "y_end": 1280
+            "y_start": 976,
+            "y_end": 1315
           },
           {
+            "x_start": 16,
+            "x_end": 618,
             "label": "C",
-            "y_start": 1280,
-            "y_end": 1422
+            "y_start": 1318,
+            "y_end": 1585
           },
           {
+            "x_start": 622,
+            "x_end": 1224,
             "label": "D",
-            "y_start": 1422,
-            "y_end": 1565
+            "y_start": 1318,
+            "y_end": 1585
           }
-        ]
+        ],
+        "source": "hardcoded-bootstrap"
       },
       {
         "question": 3,
         "page": 3,
         "type": "stimulus_only",
-        "source": "hardcoded-bootstrap",
         "stimulus": {
           "y_start": 175,
           "y_end": 600,
           "description": "Network diagram with critical path"
         },
-        "options": null
+        "options": null,
+        "source": "hardcoded-bootstrap"
       },
       {
         "question": 13,
         "page": 7,
         "type": "stimulus_only",
-        "source": "hardcoded-bootstrap",
         "stimulus": {
           "y_start": 260,
           "y_end": 745,
           "description": "Z-score table and normal distribution curve"
         },
-        "options": null
+        "options": null,
+        "source": "hardcoded-bootstrap"
       },
       {
         "question": 15,
         "page": 8,
         "type": "stimulus_and_options",
-        "source": "hardcoded-bootstrap",
         "stimulus": {
           "y_start": 235,
           "y_end": 620,
@@ -360,26 +415,35 @@
         },
         "options": [
           {
+            "x_start": 16,
+            "x_end": 618,
             "label": "A",
-            "y_start": 640,
-            "y_end": 785
+            "y_start": 817,
+            "y_end": 1034
           },
           {
+            "x_start": 622,
+            "x_end": 1224,
             "label": "B",
-            "y_start": 785,
-            "y_end": 930
+            "y_start": 817,
+            "y_end": 1034
           },
           {
+            "x_start": 16,
+            "x_end": 618,
             "label": "C",
-            "y_start": 930,
-            "y_end": 1075
+            "y_start": 1034,
+            "y_end": 1242
           },
           {
+            "x_start": 622,
+            "x_end": 1224,
             "label": "D",
-            "y_start": 1075,
-            "y_end": 1222
+            "y_start": 1034,
+            "y_end": 1242
           }
-        ]
+        ],
+        "source": "calibrated"
       }
     ],
     "2023": [
@@ -387,66 +451,74 @@
         "question": 5,
         "page": 4,
         "type": "options_only",
-        "source": "hardcoded-bootstrap",
         "stimulus": null,
         "options": [
           {
+            "x_start": 16,
+            "x_end": 618,
             "label": "A",
-            "y_start": 260,
-            "y_end": 431
+            "y_start": 250,
+            "y_end": 618
           },
           {
+            "x_start": 622,
+            "x_end": 1224,
             "label": "B",
-            "y_start": 431,
-            "y_end": 602
+            "y_start": 250,
+            "y_end": 618
           },
           {
+            "x_start": 16,
+            "x_end": 618,
             "label": "C",
-            "y_start": 602,
-            "y_end": 773
+            "y_start": 618,
+            "y_end": 965
           },
           {
+            "x_start": 622,
+            "x_end": 1224,
             "label": "D",
-            "y_start": 773,
-            "y_end": 945
+            "y_start": 618,
+            "y_end": 965
           }
-        ]
+        ],
+        "source": "calibrated"
       },
       {
         "question": 8,
         "page": 5,
         "type": "stimulus_only",
-        "source": "hardcoded-bootstrap",
         "stimulus": {
           "y_start": 540,
           "y_end": 1185,
           "description": "Die, spinner and score table"
         },
-        "options": null
+        "options": null,
+        "source": "hardcoded-bootstrap"
       },
       {
         "question": 12,
         "page": 7,
         "type": "stimulus_only",
-        "source": "hardcoded-bootstrap",
         "stimulus": {
           "y_start": 290,
           "y_end": 660,
           "description": "Cylindrical pipe cross-section"
         },
-        "options": null
+        "options": null,
+        "source": "hardcoded-bootstrap"
       },
       {
         "question": 14,
         "page": 8,
         "type": "stimulus_only",
-        "source": "hardcoded-bootstrap",
         "stimulus": {
           "y_start": 240,
           "y_end": 555,
           "description": "Directed network diagram"
         },
-        "options": null
+        "options": null,
+        "source": "hardcoded-bootstrap"
       }
     ],
     "2024": [
@@ -454,82 +526,90 @@
         "question": 2,
         "page": 2,
         "type": "stimulus_only",
-        "source": "hardcoded-bootstrap",
         "stimulus": {
           "y_start": 750,
           "y_end": 1080,
           "description": "Linear function graph"
         },
-        "options": null
+        "options": null,
+        "source": "hardcoded-bootstrap"
       },
       {
         "question": 4,
         "page": 3,
         "type": "stimulus_only",
-        "source": "hardcoded-bootstrap",
         "stimulus": {
           "y_start": 535,
           "y_end": 1130,
           "description": "Country map with regions"
         },
-        "options": null
+        "options": null,
+        "source": "hardcoded-bootstrap"
       },
       {
         "question": 5,
         "page": 4,
         "type": "stimulus_only",
-        "source": "hardcoded-bootstrap",
         "stimulus": {
           "y_start": 230,
           "y_end": 490,
           "description": "Data table"
         },
-        "options": null
+        "options": null,
+        "source": "hardcoded-bootstrap"
       },
       {
         "question": 6,
         "page": 4,
         "type": "stimulus_only",
-        "source": "hardcoded-bootstrap",
         "stimulus": {
           "y_start": 855,
           "y_end": 1015,
           "description": "Triangle diagram"
         },
-        "options": null
+        "options": null,
+        "source": "hardcoded-bootstrap"
       },
       {
         "question": 15,
         "page": 8,
         "type": "stimulus_and_options",
-        "source": "hardcoded-bootstrap",
         "stimulus": {
           "y_start": 780,
-          "y_end": 1000,
+          "y_end": 980,
           "description": "Box plot question data"
         },
         "options": [
           {
+            "x_start": 16,
+            "x_end": 618,
             "label": "A",
-            "y_start": 1020,
-            "y_end": 1138
+            "y_start": 987,
+            "y_end": 1265
           },
           {
+            "x_start": 622,
+            "x_end": 1224,
             "label": "B",
-            "y_start": 1138,
-            "y_end": 1256
+            "y_start": 987,
+            "y_end": 1265
           },
           {
+            "x_start": 16,
+            "x_end": 618,
             "label": "C",
-            "y_start": 1256,
-            "y_end": 1374
+            "y_start": 1265,
+            "y_end": 1514
           },
           {
+            "x_start": 622,
+            "x_end": 1224,
             "label": "D",
-            "y_start": 1374,
-            "y_end": 1494
+            "y_start": 1265,
+            "y_end": 1514
           }
-        ]
+        ],
+        "source": "calibrated"
       }
     ],
     "2025": [
@@ -537,60 +617,67 @@
         "question": 1,
         "page": 2,
         "type": "stimulus_only",
-        "source": "hardcoded-bootstrap",
         "stimulus": {
           "y_start": 465,
           "y_end": 660,
           "description": "Network diagram"
         },
-        "options": null
+        "options": null,
+        "source": "hardcoded-bootstrap"
       },
       {
         "question": 2,
         "page": 2,
         "type": "options_only",
-        "source": "hardcoded-bootstrap",
         "stimulus": null,
         "options": [
           {
+            "x_start": 16,
+            "x_end": 618,
             "label": "A",
-            "y_start": 1050,
-            "y_end": 1178
+            "y_start": 1025,
+            "y_end": 1324
           },
           {
+            "x_start": 622,
+            "x_end": 1224,
             "label": "B",
-            "y_start": 1178,
-            "y_end": 1306
+            "y_start": 1025,
+            "y_end": 1324
           },
           {
+            "x_start": 16,
+            "x_end": 618,
             "label": "C",
-            "y_start": 1306,
-            "y_end": 1434
+            "y_start": 1327,
+            "y_end": 1585
           },
           {
+            "x_start": 622,
+            "x_end": 1224,
             "label": "D",
-            "y_start": 1434,
-            "y_end": 1565
+            "y_start": 1327,
+            "y_end": 1585
           }
-        ]
+        ],
+        "source": "hardcoded-bootstrap"
       },
       {
         "question": 3,
         "page": 3,
         "type": "stimulus_only",
-        "source": "hardcoded-bootstrap",
         "stimulus": {
           "y_start": 215,
           "y_end": 510,
           "description": "Weighted network diagram"
         },
-        "options": null
+        "options": null,
+        "source": "hardcoded-bootstrap"
       },
       {
         "question": 8,
         "page": 5,
         "type": "stimulus_and_options",
-        "source": "hardcoded-bootstrap",
         "stimulus": {
           "y_start": 230,
           "y_end": 600,
@@ -598,26 +685,35 @@
         },
         "options": [
           {
+            "x_start": 16,
+            "x_end": 618,
             "label": "A",
-            "y_start": 620,
-            "y_end": 791
+            "y_start": 641,
+            "y_end": 991
           },
           {
+            "x_start": 622,
+            "x_end": 1224,
             "label": "B",
-            "y_start": 791,
-            "y_end": 962
+            "y_start": 641,
+            "y_end": 991
           },
           {
+            "x_start": 16,
+            "x_end": 618,
             "label": "C",
-            "y_start": 962,
-            "y_end": 1133
+            "y_start": 991,
+            "y_end": 1324
           },
           {
+            "x_start": 622,
+            "x_end": 1224,
             "label": "D",
-            "y_start": 1133,
-            "y_end": 1304
+            "y_start": 991,
+            "y_end": 1324
           }
-        ]
+        ],
+        "source": "calibrated"
       }
     ]
   }

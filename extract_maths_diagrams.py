@@ -21,8 +21,17 @@ Two modes:
 
       Crops diagrams from diagram_registry.json.
       On first run the registry is auto-bootstrapped from hardcoded coordinates.
-      stimulus_only crops are precise; option splits are approximate equal strips.
-      Run --detect to replace with Claude Vision precise coordinates.
+
+  CALIBRATE (no API key needed -- recommended after bootstrap):
+      python extract_maths_diagrams.py --calibrate
+      python extract_maths_diagrams.py --calibrate --year 2023
+
+      Uses PyMuPDF text extraction to find the exact pixel y-position of every
+      A./B./C./D. option label in the PDF.  Sets y_start to label_y - 10px and
+      y_end to the next label's y (or the section bottom for the last option).
+      Automatically crops after calibrating.  No API calls needed.
+      Run this once after bootstrap -- it fixes the "question text bleeding into
+      option images" problem without touching x_start/x_end column splits.
 
   DETECT (requires ANTHROPIC_API_KEY):
       python extract_maths_diagrams.py --detect
@@ -36,7 +45,7 @@ Two modes:
 Workflow for a new exam paper:
   1. Copy PDF to the NESA Exams folder (see PDF_DIR)
   2. Add the filename to the PAPERS dict below
-  3. Run:  python extract_maths_diagrams.py --detect --year 2026
+  3. Run:  python extract_maths_diagrams.py --calibrate --year 2026
   4. Check output images in ./diagrams/
   5. Commit diagram_registry.json + new images to git
 
@@ -103,145 +112,277 @@ MC_PAGES = list(range(2, 9))
 
 
 # -- BOOTSTRAP DATA ------------------------------------------------------------
-# Verified pixel coords for 2020-2025 at RENDER_DPI=150 (1240x1755 px per page).
+# Verified pixel coords for 2020-2025 at RENDER_DPI=150 (~1240x1755 px per page).
 #
-# Types:
-#   'stimulus_only'
-#       y_start/y_end = the single question diagram.
-#       Output: _Q{n}_stimulus.jpg
+# Each entry directly specifies 'stimulus' and/or 'options' matching the registry
+# format. No equal-split guessing -- every option has explicit coordinates.
 #
-#   'options_only'
-#       y_start/y_end = total bbox covering all 4 option images.
-#       Bootstrap splits into 4 equal strips (approximate -- run --detect to fix).
-#       Output: _Q{n}_A.jpg  _Q{n}_B.jpg  _Q{n}_C.jpg  _Q{n}_D.jpg
+# 2x2 GRID options include x_start/x_end to split left vs right column.
+# VERTICAL STACK options omit x coords (full page width used automatically).
+# Column split for 2x2 grids: left x=16-618, right x=622-1224.
 #
-#   'stimulus_and_options'
-#       y_start/stimulus_y_end = question stimulus.
-#       stimulus_y_end/y_end = the 4 option images (equal-split for bootstrap).
-#       Output: _Q{n}_stimulus.jpg + _Q{n}_A/B/C/D.jpg
+# Row-split y values for 2x2 questions were derived from PDF label positions
+# and confirmed against rendered debug images.
+#
+# NOTE: 2020 Q1/Q9/Q12 row splits are estimated from PDF H-separator lines.
+#       Run --detect to replace all bootstrap coords with Claude Vision precision.
+
+_L = {'x_start':  16, 'x_end': 618}   # left  column for 2x2 grids
+_R = {'x_start': 622, 'x_end': 1224}  # right column for 2x2 grids
 
 BOOTSTRAP_CROPS = [
-    # -- 2020 --
-    {'year': 2020, 'q':  1, 'page': 2, 'y_start':  465, 'y_end':  980,
-     'type': 'options_only',
-     'desc': '4 graphs as ABCD options'},
 
-    {'year': 2020, 'q':  7, 'page': 4, 'y_start':  205, 'y_end':  805,
-     'type': 'options_only',
-     'desc': '4 histograms as ABCD options'},
+    # ---- 2020 ----------------------------------------------------------------
 
-    {'year': 2020, 'q':  8, 'page': 4, 'y_start':  885, 'y_end': 1600,
-     'type': 'stimulus_and_options', 'stimulus_y_end': 1150,
-     'desc': 'Score table'},
+    # Q1  p2  options_only  2x2 GRID  (row split from PDF H-separator at y=582)
+    {'year': 2020, 'q':  1, 'page': 2, 'type': 'options_only',
+     'stimulus': None,
+     'options': [
+         {**_L, 'label': 'A', 'y_start':  465, 'y_end':  579},
+         {**_R, 'label': 'B', 'y_start':  465, 'y_end':  579},
+         {**_L, 'label': 'C', 'y_start':  582, 'y_end':  883},
+         {**_R, 'label': 'D', 'y_start':  582, 'y_end':  883},
+     ]},
 
-    {'year': 2020, 'q':  9, 'page': 5, 'y_start':  348, 'y_end':  880,
-     'type': 'options_only',
-     'desc': '4 network diagrams as ABCD options'},
+    # Q7  p4  options_only  2x2 GRID  (row split at ~505, confirmed debug image)
+    {'year': 2020, 'q':  7, 'page': 4, 'type': 'options_only',
+     'stimulus': None,
+     'options': [
+         {**_L, 'label': 'A', 'y_start':  205, 'y_end':  502},
+         {**_R, 'label': 'B', 'y_start':  205, 'y_end':  502},
+         {**_L, 'label': 'C', 'y_start':  506, 'y_end':  805},
+         {**_R, 'label': 'D', 'y_start':  506, 'y_end':  805},
+     ]},
 
-    {'year': 2020, 'q': 12, 'page': 6, 'y_start':  635, 'y_end': 1220,
-     'type': 'options_only',
-     'desc': '4 scatter plots as ABCD options'},
+    # Q8  p4  stimulus_and_options  VERTICAL options
+    # (stimulus = score table; options = 4 table rows, labels at y=1421/1468/1515/1562)
+    {'year': 2020, 'q':  8, 'page': 4, 'type': 'stimulus_and_options',
+     'stimulus': {'y_start': 885, 'y_end': 1418,
+                  'description': 'Score table'},
+     'options': [
+         {'label': 'A', 'y_start': 1421, 'y_end': 1465},
+         {'label': 'B', 'y_start': 1468, 'y_end': 1512},
+         {'label': 'C', 'y_start': 1515, 'y_end': 1559},
+         {'label': 'D', 'y_start': 1562, 'y_end': 1600},
+     ]},
 
-    {'year': 2020, 'q': 15, 'page': 8, 'y_start':  200, 'y_end':  320,
-     'type': 'stimulus_only',
-     'desc': 'Rectangular table grid'},
+    # Q9  p5  options_only  2x2 GRID  (options y=465-777 from H-separator; midpoint row split)
+    {'year': 2020, 'q':  9, 'page': 5, 'type': 'options_only',
+     'stimulus': None,
+     'options': [
+         {**_L, 'label': 'A', 'y_start':  465, 'y_end':  618},
+         {**_R, 'label': 'B', 'y_start':  465, 'y_end':  618},
+         {**_L, 'label': 'C', 'y_start':  622, 'y_end':  777},
+         {**_R, 'label': 'D', 'y_start':  622, 'y_end':  777},
+     ]},
 
-    # -- 2021 --
-    {'year': 2021, 'q':  2, 'page': 3, 'y_start':  195, 'y_end':  380,
-     'type': 'stimulus_only',
-     'desc': 'Network diagram'},
+    # Q12 p6  options_only  2x2 GRID  (options y=858-1195 from H-separator; midpoint row split)
+    {'year': 2020, 'q': 12, 'page': 6, 'type': 'options_only',
+     'stimulus': None,
+     'options': [
+         {**_L, 'label': 'A', 'y_start':  858, 'y_end': 1023},
+         {**_R, 'label': 'B', 'y_start':  858, 'y_end': 1023},
+         {**_L, 'label': 'C', 'y_start': 1027, 'y_end': 1195},
+         {**_R, 'label': 'D', 'y_start': 1027, 'y_end': 1195},
+     ]},
 
-    {'year': 2021, 'q':  3, 'page': 3, 'y_start':  800, 'y_end':  945,
-     'type': 'stimulus_only',
-     'desc': 'Stem-and-leaf plot'},
+    # Q15 p8  stimulus_only
+    {'year': 2020, 'q': 15, 'page': 8, 'type': 'stimulus_only',
+     'stimulus': {'y_start': 200, 'y_end': 320,
+                  'description': 'Rectangular table grid'},
+     'options': None},
 
-    {'year': 2021, 'q':  7, 'page': 5, 'y_start':  200, 'y_end': 1660,
-     'type': 'stimulus_and_options', 'stimulus_y_end': 540,
-     'desc': 'Histogram of downloads per day'},
+    # ---- 2021 ----------------------------------------------------------------
 
-    {'year': 2021, 'q': 10, 'page': 6, 'y_start':  999, 'y_end': 1530,
-     'type': 'options_only',
-     'desc': '4 exponential graphs as ABCD options'},
+    # Q2  p3  stimulus_only
+    {'year': 2021, 'q':  2, 'page': 3, 'type': 'stimulus_only',
+     'stimulus': {'y_start': 195, 'y_end': 380,
+                  'description': 'Network diagram'},
+     'options': None},
 
-    {'year': 2021, 'q': 11, 'page': 7, 'y_start':  380, 'y_end':  660,
-     'type': 'stimulus_only',
-     'desc': 'Probability tree diagram'},
+    # Q3  p3  stimulus_only
+    {'year': 2021, 'q':  3, 'page': 3, 'type': 'stimulus_only',
+     'stimulus': {'y_start': 800, 'y_end': 945,
+                  'description': 'Stem-and-leaf plot'},
+     'options': None},
 
-    # -- 2022 --
-    {'year': 2022, 'q':  1, 'page': 2, 'y_start':  463, 'y_end':  855,
-     'type': 'options_only',
-     'desc': '4 frequency curves as ABCD options'},
+    # Q7  p5  stimulus_and_options  VERTICAL options
+    # (confirmed VERTICAL from debug image -- green line cut through each graph)
+    {'year': 2021, 'q':  7, 'page': 5, 'type': 'stimulus_and_options',
+     'stimulus': {'y_start': 200, 'y_end': 540,
+                  'description': 'Histogram of downloads per day'},
+     'options': [
+         {'label': 'A', 'y_start':  560, 'y_end':  835},
+         {'label': 'B', 'y_start':  838, 'y_end': 1113},
+         {'label': 'C', 'y_start': 1116, 'y_end': 1391},
+         {'label': 'D', 'y_start': 1394, 'y_end': 1660},
+     ]},
 
-    {'year': 2022, 'q':  2, 'page': 2, 'y_start':  996, 'y_end': 1565,
-     'type': 'options_only',
-     'desc': '4 line graphs as ABCD options'},
+    # Q10 p6  options_only  2x2 GRID  (confirmed debug image; row split at midpoint ~1264)
+    {'year': 2021, 'q': 10, 'page': 6, 'type': 'options_only',
+     'stimulus': None,
+     'options': [
+         {**_L, 'label': 'A', 'y_start':  999, 'y_end': 1261},
+         {**_R, 'label': 'B', 'y_start':  999, 'y_end': 1261},
+         {**_L, 'label': 'C', 'y_start': 1265, 'y_end': 1530},
+         {**_R, 'label': 'D', 'y_start': 1265, 'y_end': 1530},
+     ]},
 
-    {'year': 2022, 'q':  3, 'page': 3, 'y_start':  175, 'y_end':  600,
-     'type': 'stimulus_only',
-     'desc': 'Network diagram with critical path'},
+    # Q11 p7  stimulus_only
+    {'year': 2021, 'q': 11, 'page': 7, 'type': 'stimulus_only',
+     'stimulus': {'y_start': 380, 'y_end': 660,
+                  'description': 'Probability tree diagram'},
+     'options': None},
 
-    {'year': 2022, 'q': 13, 'page': 7, 'y_start':  260, 'y_end':  745,
-     'type': 'stimulus_only',
-     'desc': 'Z-score table and normal distribution curve'},
+    # ---- 2022 ----------------------------------------------------------------
 
-    {'year': 2022, 'q': 15, 'page': 8, 'y_start':  235, 'y_end': 1222,
-     'type': 'stimulus_and_options', 'stimulus_y_end': 620,
-     'desc': 'Cumulative frequency graph'},
+    # Q1  p2  options_only  2x2 GRID  (labels A/B at y=460, C/D at y=686; row split=684)
+    {'year': 2022, 'q':  1, 'page': 2, 'type': 'options_only',
+     'stimulus': None,
+     'options': [
+         {**_L, 'label': 'A', 'y_start':  440, 'y_end':  681},
+         {**_R, 'label': 'B', 'y_start':  440, 'y_end':  681},
+         {**_L, 'label': 'C', 'y_start':  684, 'y_end':  875},
+         {**_R, 'label': 'D', 'y_start':  684, 'y_end':  875},
+     ]},
 
-    # -- 2023 --
-    {'year': 2023, 'q':  5, 'page': 4, 'y_start':  260, 'y_end':  945,
-     'type': 'options_only',
-     'desc': '4 petrol pump diagrams as ABCD options'},
+    # Q2  p2  options_only  2x2 GRID  (labels C/D at y=1320; row split=1318)
+    {'year': 2022, 'q':  2, 'page': 2, 'type': 'options_only',
+     'stimulus': None,
+     'options': [
+         {**_L, 'label': 'A', 'y_start':  976, 'y_end': 1315},
+         {**_R, 'label': 'B', 'y_start':  976, 'y_end': 1315},
+         {**_L, 'label': 'C', 'y_start': 1318, 'y_end': 1585},
+         {**_R, 'label': 'D', 'y_start': 1318, 'y_end': 1585},
+     ]},
 
-    {'year': 2023, 'q':  8, 'page': 5, 'y_start':  540, 'y_end': 1185,
-     'type': 'stimulus_only',
-     'desc': 'Die, spinner and score table'},
+    # Q3  p3  stimulus_only
+    {'year': 2022, 'q':  3, 'page': 3, 'type': 'stimulus_only',
+     'stimulus': {'y_start': 175, 'y_end': 600,
+                  'description': 'Network diagram with critical path'},
+     'options': None},
 
-    {'year': 2023, 'q': 12, 'page': 7, 'y_start':  290, 'y_end':  660,
-     'type': 'stimulus_only',
-     'desc': 'Cylindrical pipe cross-section'},
+    # Q13 p7  stimulus_only
+    {'year': 2022, 'q': 13, 'page': 7, 'type': 'stimulus_only',
+     'stimulus': {'y_start': 260, 'y_end': 745,
+                  'description': 'Z-score table and normal distribution curve'},
+     'options': None},
 
-    {'year': 2023, 'q': 14, 'page': 8, 'y_start':  240, 'y_end':  555,
-     'type': 'stimulus_only',
-     'desc': 'Directed network diagram'},
+    # Q15 p8  stimulus_and_options  2x2 GRID options
+    # (labels A/B at y=827, C/D at y=1044; row split=1042)
+    {'year': 2022, 'q': 15, 'page': 8, 'type': 'stimulus_and_options',
+     'stimulus': {'y_start': 235, 'y_end': 620,
+                  'description': 'Cumulative frequency graph'},
+     'options': [
+         {**_L, 'label': 'A', 'y_start':  620, 'y_end': 1039},
+         {**_R, 'label': 'B', 'y_start':  620, 'y_end': 1039},
+         {**_L, 'label': 'C', 'y_start': 1042, 'y_end': 1242},
+         {**_R, 'label': 'D', 'y_start': 1042, 'y_end': 1242},
+     ]},
 
-    # -- 2024 --
-    {'year': 2024, 'q':  2, 'page': 2, 'y_start':  750, 'y_end': 1080,
-     'type': 'stimulus_only',
-     'desc': 'Linear function graph'},
+    # ---- 2023 ----------------------------------------------------------------
 
-    {'year': 2024, 'q':  4, 'page': 3, 'y_start':  535, 'y_end': 1130,
-     'type': 'stimulus_only',
-     'desc': 'Country map with regions'},
+    # Q5  p4  options_only  2x2 GRID  (labels A/B at y=260, C/D at y=628; row split=626)
+    {'year': 2023, 'q':  5, 'page': 4, 'type': 'options_only',
+     'stimulus': None,
+     'options': [
+         {**_L, 'label': 'A', 'y_start':  240, 'y_end':  623},
+         {**_R, 'label': 'B', 'y_start':  240, 'y_end':  623},
+         {**_L, 'label': 'C', 'y_start':  626, 'y_end':  965},
+         {**_R, 'label': 'D', 'y_start':  626, 'y_end':  965},
+     ]},
 
-    {'year': 2024, 'q':  5, 'page': 4, 'y_start':  230, 'y_end':  490,
-     'type': 'stimulus_only',
-     'desc': 'Data table'},
+    # Q8  p5  stimulus_only
+    {'year': 2023, 'q':  8, 'page': 5, 'type': 'stimulus_only',
+     'stimulus': {'y_start': 540, 'y_end': 1185,
+                  'description': 'Die, spinner and score table'},
+     'options': None},
 
-    {'year': 2024, 'q':  6, 'page': 4, 'y_start':  855, 'y_end': 1015,
-     'type': 'stimulus_only',
-     'desc': 'Triangle diagram'},
+    # Q12 p7  stimulus_only
+    {'year': 2023, 'q': 12, 'page': 7, 'type': 'stimulus_only',
+     'stimulus': {'y_start': 290, 'y_end': 660,
+                  'description': 'Cylindrical pipe cross-section'},
+     'options': None},
 
-    {'year': 2024, 'q': 15, 'page': 8, 'y_start':  780, 'y_end': 1494,
-     'type': 'stimulus_and_options', 'stimulus_y_end': 1000,
-     'desc': 'Box plot question data'},
+    # Q14 p8  stimulus_only
+    {'year': 2023, 'q': 14, 'page': 8, 'type': 'stimulus_only',
+     'stimulus': {'y_start': 240, 'y_end': 555,
+                  'description': 'Directed network diagram'},
+     'options': None},
 
-    # -- 2025 --
-    {'year': 2025, 'q':  1, 'page': 2, 'y_start':  465, 'y_end':  660,
-     'type': 'stimulus_only',
-     'desc': 'Network diagram'},
+    # ---- 2024 ----------------------------------------------------------------
 
-    {'year': 2025, 'q':  2, 'page': 2, 'y_start': 1050, 'y_end': 1565,
-     'type': 'options_only',
-     'desc': '4 graphs as ABCD options'},
+    # Q2  p2  stimulus_only
+    {'year': 2024, 'q':  2, 'page': 2, 'type': 'stimulus_only',
+     'stimulus': {'y_start': 750, 'y_end': 1080,
+                  'description': 'Linear function graph'},
+     'options': None},
 
-    {'year': 2025, 'q':  3, 'page': 3, 'y_start':  215, 'y_end':  510,
-     'type': 'stimulus_only',
-     'desc': 'Weighted network diagram'},
+    # Q4  p3  stimulus_only
+    {'year': 2024, 'q':  4, 'page': 3, 'type': 'stimulus_only',
+     'stimulus': {'y_start': 535, 'y_end': 1130,
+                  'description': 'Country map with regions'},
+     'options': None},
 
-    {'year': 2025, 'q':  8, 'page': 5, 'y_start':  230, 'y_end': 1304,
-     'type': 'stimulus_and_options', 'stimulus_y_end': 600,
-     'desc': 'Histogram of data'},
+    # Q5  p4  stimulus_only
+    {'year': 2024, 'q':  5, 'page': 4, 'type': 'stimulus_only',
+     'stimulus': {'y_start': 230, 'y_end': 490,
+                  'description': 'Data table'},
+     'options': None},
+
+    # Q6  p4  stimulus_only
+    {'year': 2024, 'q':  6, 'page': 4, 'type': 'stimulus_only',
+     'stimulus': {'y_start': 855, 'y_end': 1015,
+                  'description': 'Triangle diagram'},
+     'options': None},
+
+    # Q15 p8  stimulus_and_options  2x2 GRID options
+    # (labels A/B at y=997, C/D at y=1275; row split=1273)
+    {'year': 2024, 'q': 15, 'page': 8, 'type': 'stimulus_and_options',
+     'stimulus': {'y_start': 780, 'y_end': 980,
+                  'description': 'Box plot question data'},
+     'options': [
+         {**_L, 'label': 'A', 'y_start': 1000, 'y_end': 1270},
+         {**_R, 'label': 'B', 'y_start': 1000, 'y_end': 1270},
+         {**_L, 'label': 'C', 'y_start': 1273, 'y_end': 1514},
+         {**_R, 'label': 'D', 'y_start': 1273, 'y_end': 1514},
+     ]},
+
+    # ---- 2025 ----------------------------------------------------------------
+
+    # Q1  p2  stimulus_only
+    {'year': 2025, 'q':  1, 'page': 2, 'type': 'stimulus_only',
+     'stimulus': {'y_start': 465, 'y_end': 660,
+                  'description': 'Network diagram'},
+     'options': None},
+
+    # Q2  p2  options_only  2x2 GRID  (labels A/B at y=1045, C/D at y=1329; row split=1327)
+    {'year': 2025, 'q':  2, 'page': 2, 'type': 'options_only',
+     'stimulus': None,
+     'options': [
+         {**_L, 'label': 'A', 'y_start': 1025, 'y_end': 1324},
+         {**_R, 'label': 'B', 'y_start': 1025, 'y_end': 1324},
+         {**_L, 'label': 'C', 'y_start': 1327, 'y_end': 1585},
+         {**_R, 'label': 'D', 'y_start': 1327, 'y_end': 1585},
+     ]},
+
+    # Q3  p3  stimulus_only
+    {'year': 2025, 'q':  3, 'page': 3, 'type': 'stimulus_only',
+     'stimulus': {'y_start': 215, 'y_end': 510,
+                  'description': 'Weighted network diagram'},
+     'options': None},
+
+    # Q8  p5  stimulus_and_options  2x2 GRID options
+    # (labels A/B at y=651, C/D at y=1001; row split=999)
+    {'year': 2025, 'q':  8, 'page': 5, 'type': 'stimulus_and_options',
+     'stimulus': {'y_start': 230, 'y_end': 600,
+                  'description': 'Histogram of data'},
+     'options': [
+         {**_L, 'label': 'A', 'y_start':  630, 'y_end':  996},
+         {**_R, 'label': 'B', 'y_start':  630, 'y_end':  996},
+         {**_L, 'label': 'C', 'y_start':  999, 'y_end': 1324},
+         {**_R, 'label': 'D', 'y_start':  999, 'y_end': 1324},
+     ]},
 ]
 
 
@@ -269,6 +410,15 @@ THREE diagram types:
    Example: a histogram at the top showing data, then 4 cumulative frequency graphs
    labelled A B C D below it.
 
+IMPORTANT LAYOUT NOTE:
+Option images can be arranged in two ways:
+  - VERTICAL STACK: all 4 options are full-width and stacked top-to-bottom.
+    In this case x_start and x_end span the full page width.
+  - 2x2 GRID: options A+B are side-by-side on one row, C+D on the row below.
+    In this case A and B share the same y range but have different x ranges
+    (A on the left half, B on the right half), and similarly for C and D.
+Always check which layout applies and give correct x_start/x_end per option.
+
 Return ONLY this JSON (no markdown fences, no explanation):
 {
   "diagrams": [
@@ -281,10 +431,10 @@ Return ONLY this JSON (no markdown fences, no explanation):
         "description": "histogram showing number of downloads per day"
       },
       "options": [
-        {"label": "A", "y_start": 530, "y_end": 780},
-        {"label": "B", "y_start": 800, "y_end": 1050},
-        {"label": "C", "y_start": 1070, "y_end": 1330},
-        {"label": "D", "y_start": 1350, "y_end": 1650}
+        {"label": "A", "x_start": 16, "x_end": 1224, "y_start": 530, "y_end": 780},
+        {"label": "B", "x_start": 16, "x_end": 1224, "y_start": 800, "y_end": 1050},
+        {"label": "C", "x_start": 16, "x_end": 1224, "y_start": 1070, "y_end": 1330},
+        {"label": "D", "x_start": 16, "x_end": 1224, "y_start": 1350, "y_end": 1650}
       ]
     },
     {
@@ -298,14 +448,14 @@ Return ONLY this JSON (no markdown fences, no explanation):
       "options": null
     },
     {
-      "question_number": 1,
+      "question_number": 9,
       "type": "options_only",
       "stimulus": null,
       "options": [
-        {"label": "A", "y_start": 463, "y_end": 614},
-        {"label": "B", "y_start": 630, "y_end": 781},
-        {"label": "C", "y_start": 797, "y_end": 948},
-        {"label": "D", "y_start": 964, "y_end": 1115}
+        {"label": "A", "x_start":  16, "x_end": 612, "y_start": 463, "y_end": 660},
+        {"label": "B", "x_start": 628, "x_end": 1224, "y_start": 463, "y_end": 660},
+        {"label": "C", "x_start":  16, "x_end": 612, "y_start": 676, "y_end": 880},
+        {"label": "D", "x_start": 628, "x_end": 1224, "y_start": 676, "y_end": 880}
       ]
     }
   ]
@@ -313,9 +463,11 @@ Return ONLY this JSON (no markdown fences, no explanation):
 
 Coordinate rules:
 - y_start and y_end are pixel distances from the TOP of this image (0 = top edge)
-- Add 20px padding above y_start and below y_end for each element
-- x coordinates are not needed -- we always crop the full page width
-- For options: give EACH of A, B, C, D its OWN separate y_start and y_end
+- x_start and x_end are pixel distances from the LEFT edge (image width is ~1240px)
+- Add 20px padding around each element
+- For VERTICAL STACK options: x_start=16, x_end=1224 (full width) for each option
+- For 2x2 GRID options: use ~16 to ~612 for left column, ~628 to ~1224 for right column
+- Stimulus always uses full page width (no x coordinates needed for stimulus)
 - DO NOT include: question text, the letters A/B/C/D themselves, \
 page numbers, NESA headers or footers
 - If no diagrams on this page, return: {"diagrams": []}
@@ -341,57 +493,26 @@ def bootstrap_registry():
     """
     Build diagram_registry.json v3 from BOOTSTRAP_CROPS.
 
-    stimulus_only:         precise single bbox.
-    options_only:          total bbox split into 4 equal horizontal strips.
-    stimulus_and_options:  stimulus up to stimulus_y_end; remaining height split x4.
+    Each entry in BOOTSTRAP_CROPS already has explicit 'stimulus' and 'options'
+    sub-dicts with precise pixel coordinates (no equal-split guessing).
 
-    NOTE: The option splits for options_only and stimulus_and_options are approximate.
-          Run --detect afterwards to replace with precise Claude Vision coordinates.
+    2x2 grid options include x_start/x_end for left/right column splitting.
+    Vertical-stack options omit x coords (crop_region defaults to full width).
+
+    Run --detect to replace hardcoded coords with Claude Vision precision.
     """
     registry = {'version': '3', 'subject': SUBJECT, 'papers': {}}
-    labels   = ['A', 'B', 'C', 'D']
 
     for c in BOOTSTRAP_CROPS:
-        year, q, page   = c['year'], c['q'], c['page']
-        y_start, y_end  = c['y_start'], c['y_end']
-        diag_type, desc = c['type'], c['desc']
-
         entry = {
-            'question': q,
-            'page':     page,
-            'type':     diag_type,
+            'question': c['q'],
+            'page':     c['page'],
+            'type':     c['type'],
+            'stimulus': c.get('stimulus'),
+            'options':  c.get('options'),
             'source':   'hardcoded-bootstrap',
         }
-
-        if diag_type == 'stimulus_only':
-            entry['stimulus'] = {'y_start': y_start, 'y_end': y_end, 'description': desc}
-            entry['options']  = None
-
-        elif diag_type == 'options_only':
-            height = y_end - y_start
-            each   = height // 4
-            entry['stimulus'] = None
-            entry['options']  = [
-                {'label': l,
-                 'y_start': y_start + i * each,
-                 'y_end':   y_start + (i + 1) * each if i < 3 else y_end}
-                for i, l in enumerate(labels)
-            ]
-
-        elif diag_type == 'stimulus_and_options':
-            stim_end   = c['stimulus_y_end']
-            opts_start = stim_end + 20   # 20px gap below stimulus
-            height     = y_end - opts_start
-            each       = height // 4
-            entry['stimulus'] = {'y_start': y_start, 'y_end': stim_end, 'description': desc}
-            entry['options']  = [
-                {'label': l,
-                 'y_start': opts_start + i * each,
-                 'y_end':   opts_start + (i + 1) * each if i < 3 else y_end}
-                for i, l in enumerate(labels)
-            ]
-
-        registry['papers'].setdefault(str(year), []).append(entry)
+        registry['papers'].setdefault(str(c['year']), []).append(entry)
 
     save_registry(registry)
     stim_count = sum(
@@ -403,8 +524,175 @@ def bootstrap_registry():
         for e in yr if e['type'] in ('options_only', 'stimulus_and_options')
     )
     print(f'Bootstrapped: {stim_count} stimulus-only, {opts_count} with option images.')
-    print('NOTE: option splits are approximate. Run --detect for precise coordinates.\n')
+    print('Run --detect for Claude Vision precision on any questions.\n')
     return registry
+
+
+# -- LABEL-BASED CALIBRATION --------------------------------------------------
+
+def find_label_positions(pdf_path, page_num, y_approx_min_px, y_approx_max_px):
+    """
+    Find the exact pixel y-position of option labels A./B./C./D. on one PDF page.
+
+    Uses PyMuPDF text extraction -- no API calls or ML models needed.
+    Searches within the approximate pixel y range (+ 100px slack each side).
+
+    NESA format is "A." "B." "C." "D." with a trailing period.
+    Falls back to bare "A" "B" "C" "D" near the left margin if the primary
+    search fails (some older PDFs encode labels without the period).
+
+    Returns {'A': int, 'B': int, 'C': int, 'D': int}  pixel y of label top,
+    or None if all four labels could not be located.
+    """
+    scale   = RENDER_DPI / 72          # PDF points -> render pixels
+    y_slack = 100 / scale              # 100px slack in PDF-point space
+
+    y_lo = (y_approx_min_px / scale) - y_slack
+    y_hi = (y_approx_max_px / scale) + y_slack
+
+    doc   = fitz.open(pdf_path)
+    page  = doc[page_num - 1]
+    words = page.get_text('words')     # (x0, y0, x1, y1, word, blk, ln, wrd)
+    doc.close()
+
+    # Primary: NESA standard "A." "B." "C." "D."
+    primary = {'A.': 'A', 'B.': 'B', 'C.': 'C', 'D.': 'D'}
+    found   = {}
+
+    for w in words:
+        x0, y0, x1, y1, text = w[0], w[1], w[2], w[3], w[4]
+        if y0 < y_lo or y0 > y_hi:
+            continue
+        clean = text.strip()
+        if clean in primary and primary[clean] not in found:
+            found[primary[clean]] = int(y0 * scale)
+
+    if len(found) == 4:
+        return found
+
+    # Fallback: bare letter near left margin (x0 < 200 PDF points)
+    for w in words:
+        x0, y0, x1, y1, text = w[0], w[1], w[2], w[3], w[4]
+        if y0 < y_lo or y0 > y_hi:
+            continue
+        clean = text.strip()
+        if clean in ('A', 'B', 'C', 'D') and clean not in found and x0 < 200:
+            found[clean] = int(y0 * scale)
+
+    return found if len(found) == 4 else None
+
+
+def run_calibrate(years, registry):
+    """
+    For every registry entry that has image options, use PDF text extraction to
+    find the exact pixel y of each A./B./C./D. label, then rewrite y_start and
+    y_end for every option.  Column splits (x_start/x_end) are preserved.
+
+    Layout auto-detection:
+      2x2 GRID   -- A and B labels share the same y row (within 30px)
+      VERT STACK -- A, B, C, D each appear at their own y position
+
+    Coordinate rules:
+      y_start  = label_y - 10px     (10px breathing room above the letter)
+      y_end    = next-row label_y - 10px   (last row keeps existing bottom)
+
+    Updates each entry in-place and sets source = 'calibrated'.
+    Call save_registry() after this function returns.
+    """
+    PADDING = 10
+    updated = skipped = 0
+
+    for year in years:
+        pdf_path = find_pdf(year)
+        if not pdf_path:
+            print(f'  [SKIP] {year}: PDF not found')
+            continue
+
+        entries = registry.get('papers', {}).get(str(year), [])
+        if not entries:
+            print(f'  [SKIP] {year}: no registry entries')
+            continue
+
+        print(f'\n  {year}')
+
+        for entry in entries:
+            if entry.get('type') == 'stimulus_only':
+                continue
+
+            q    = entry['question']
+            pg   = entry['page']
+            opts = entry.get('options') or []
+            if not opts:
+                continue
+
+            # Approximate y window from current registry coordinates
+            all_y  = [o['y_start'] for o in opts] + [o['y_end'] for o in opts]
+            bottom = max(o['y_end'] for o in opts)   # preserve existing bottom
+
+            labels = find_label_positions(pdf_path, pg,
+                                          min(all_y) - 100, max(all_y) + 100)
+
+            if not labels or len(labels) < 4:
+                print(f'  [WARN] Q{q:2d}: could not locate all 4 labels'
+                      f' -- keeping existing coords')
+                skipped += 1
+                continue
+
+            a_y = labels['A']
+            b_y = labels['B']
+            c_y = labels['C']
+            d_y = labels['D']
+
+            is_2x2 = abs(a_y - b_y) < 30   # same y row = 2x2 grid
+
+            # --- Sanity-check label order ----------------------------------
+            # For 2x2:  row-1 (A,B) must be ABOVE row-2 (C,D)
+            # For vert: A < B < C < D (each label below the previous)
+            if is_2x2:
+                if min(c_y, d_y) <= max(a_y, b_y):
+                    print(f'  [WARN] Q{q:2d}: C/D labels above A/B'
+                          f' (A@{a_y} B@{b_y} C@{c_y} D@{d_y})'
+                          f' -- likely picking up wrong labels, keeping bootstrap')
+                    skipped += 1
+                    continue
+            else:
+                if not (a_y < b_y < c_y < d_y):
+                    print(f'  [WARN] Q{q:2d}: vertical labels out of order'
+                          f' (A@{a_y} B@{b_y} C@{c_y} D@{d_y})'
+                          f' -- keeping bootstrap')
+                    skipped += 1
+                    continue
+
+            print(f'  [CAL] Q{q:2d}  {"2x2 " if is_2x2 else "vert"}'
+                  f'  A@{a_y}  B@{b_y}  C@{c_y}  D@{d_y}')
+
+            new_opts = []
+            for opt in opts:
+                lbl     = opt['label']
+                lbl_y   = labels[lbl]
+                new_opt = dict(opt)          # copy -- preserves x_start/x_end
+
+                new_opt['y_start'] = lbl_y - PADDING
+
+                if is_2x2:
+                    # AB row ends just before CD row; CD row ends at bottom
+                    if lbl in ('A', 'B'):
+                        new_opt['y_end'] = min(c_y, d_y) - PADDING
+                    else:
+                        new_opt['y_end'] = bottom
+                else:
+                    # Vertical stack: each option ends where the next begins
+                    next_y = {'A': b_y, 'B': c_y, 'C': d_y, 'D': None}[lbl]
+                    new_opt['y_end'] = (next_y - PADDING) if next_y else bottom
+
+                new_opts.append(new_opt)
+
+            entry['options'] = new_opts
+            entry['source']  = 'calibrated'
+            updated += 1
+
+    print(f'\n  Calibrated: {updated}   Skipped: {skipped}')
+    return updated
 
 
 # -- PDF / IMAGE UTILITIES -----------------------------------------------------
@@ -430,9 +718,19 @@ def render_page(pdf_path, page_num):
     return img
 
 
-def crop_region(img, y_start, y_end, h_margin=16):
+def crop_region(img, y_start, y_end, x_start=None, x_end=None, h_margin=16):
+    """
+    Crop a region from a full page image.
+    x_start/x_end default to full width (used for stimulus and vertical-stack options).
+    Pass explicit x_start/x_end for 2x2 grid option images.
+    """
+    if x_start is None:
+        x_start = h_margin
+    if x_end is None:
+        x_end = img.width - h_margin
     y_end = min(y_end, img.height)
-    return img.crop((h_margin, y_start, img.width - h_margin, y_end))
+    x_end = min(x_end, img.width)
+    return img.crop((x_start, y_start, x_end, y_end))
 
 
 def pil_to_jpeg_b64(img):
@@ -603,7 +901,11 @@ def crop_entry(page_img, entry, year, badge):
                     print(f'  [WARN] {year} Q{q} option {label}: missing coordinates')
                     skip += 1
                     continue
-                cropped = crop_region(page_img, y1, y2)
+                # Use explicit x coords if present (2x2 grid layout),
+                # otherwise fall back to full page width
+                x1 = opt.get('x_start')
+                x2 = opt.get('x_end')
+                cropped = crop_region(page_img, y1, y2, x_start=x1, x_end=x2)
                 fname, kb = save_crop(cropped, year, q, label)
                 print(f'  {badge} Q{q:2d}  [option {label}]  -> {fname} ({kb} KB)')
                 done += 1
@@ -673,6 +975,8 @@ Examples:
     )
     parser.add_argument('--detect', action='store_true',
                         help='Run Claude Vision to detect diagrams and update registry')
+    parser.add_argument('--calibrate', action='store_true',
+                        help='Auto-set option y coords from PDF label positions, then crop')
     parser.add_argument('--year', type=int,
                         help='Process one year only (e.g. --year 2026)')
     args = parser.parse_args()
@@ -680,7 +984,12 @@ Examples:
     os.makedirs(OUT_DIR, exist_ok=True)
 
     years = [args.year] if args.year else sorted(PAPERS.keys())
-    mode  = 'DETECT (Claude Vision)' if args.detect else 'CROP (from registry)'
+    if args.detect:
+        mode = 'DETECT (Claude Vision)'
+    elif args.calibrate:
+        mode = 'CALIBRATE (PDF text) + CROP'
+    else:
+        mode = 'CROP (from registry)'
 
     print('=' * 55)
     print('  CramIT Diagram Extractor v3')
@@ -702,7 +1011,7 @@ Examples:
         print('  python extract_maths_diagrams.py')
         return
 
-    # -- CROP MODE -------------------------------------------------------------
+    # -- Load / bootstrap registry (shared by --calibrate and plain crop) ------
     if not os.path.exists(REGISTRY_PATH):
         print('No registry found - bootstrapping from hardcoded coordinates...')
         registry = bootstrap_registry()
@@ -713,12 +1022,22 @@ Examples:
             print(f'Registry version {registry.get("version","?")} detected - upgrading to v3...')
             registry = bootstrap_registry()
 
+    # -- CALIBRATE MODE --------------------------------------------------------
+    if args.calibrate:
+        print('Calibrating option label positions from PDF text...\n')
+        run_calibrate(years, registry)
+        save_registry(registry)
+        print()
+        print('Calibration saved. Cropping now...')
+        print()
+
+    # -- CROP (runs after calibrate, or standalone) ----------------------------
     done, skipped = run_crop(years, registry)
 
     print()
     print(f'Done.  {done} files saved,  {skipped} skipped.')
     if skipped:
-        print('Tip: run --detect to auto-fix missing or approximate coordinates.')
+        print('Tip: run --calibrate or --detect to fix missing coordinates.')
     print(f'Files saved to: {OUT_DIR}')
 
 
