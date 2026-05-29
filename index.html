@@ -396,6 +396,23 @@
   </div>
 </div>
 
+<!-- TRIAL WALL -->
+<div id="trial-wall" style="display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:var(--bg);z-index:200;overflow-y:auto;padding:32px 20px;box-sizing:border-box">
+  <div style="max-width:420px;margin:0 auto;text-align:center;padding-top:20px">
+    <div style="font-size:48px;margin-bottom:16px">&#127919;</div>
+    <div style="font-family:var(--font-display);font-size:24px;font-weight:800;color:var(--text);margin-bottom:8px">Trial Complete</div>
+    <div id="trial-wall-score" style="font-size:36px;font-weight:800;color:var(--accent);font-family:var(--font-display);margin:12px 0">0 / 0</div>
+    <div id="trial-wall-subject" style="font-size:13px;color:var(--muted);margin-bottom:24px;line-height:1.5"></div>
+    <div style="background:var(--surface2);border:1px solid var(--accent);border-radius:16px;padding:20px;margin-bottom:20px">
+      <div id="trial-wall-unlock-text" style="font-family:var(--font-display);font-size:13px;font-weight:700;color:var(--text);margin-bottom:6px"></div>
+      <div style="font-size:30px;font-weight:800;color:var(--accent);font-family:var(--font-display);margin:10px 0">$7.99<span style="font-size:14px;font-weight:600">/mo</span></div>
+      <div style="font-size:11px;color:var(--muted);margin-bottom:16px">Includes a 2nd subject at no extra cost &middot; cancel anytime</div>
+      <button onclick="handleTrialCheckout()" style="background:var(--accent);color:white;border:none;border-radius:12px;padding:15px;width:100%;font-family:var(--font-display);font-size:15px;font-weight:700;cursor:pointer;min-height:52px">Subscribe &mdash; $7.99/mo &rarr;</button>
+    </div>
+    <button onclick="closeTrialWall()" style="background:none;border:none;color:var(--muted);font-size:13px;cursor:pointer;padding:10px">&larr; Back to home</button>
+  </div>
+</div>
+
 <!-- RESULTS -->
 <div id="results">
   <div class="score-ring" id="score-ring">
@@ -7497,6 +7514,17 @@ function nextQuestion() {
     return;
   }
   if (!answered) return; // Don't advance without answering in MC
+
+  // Trial counter — increment when advancing past a question
+  const _trialSubjectId = SUBJECT_CATALOGUE.find(s => s.quizKey === currentSubjectKey)?.id;
+  if (_trialSubjectId) {
+    incrementTrialCount(_trialSubjectId);
+    if (isTrialExhausted(_trialSubjectId)) {
+      showTrialWall(_trialSubjectId);
+      return;
+    }
+  }
+
   currentIdx++;
   if (currentIdx < activeQuestions.length) {
     answered = answers[currentIdx] !== null;
@@ -7841,11 +7869,37 @@ async function loadUserState() {
   }
 }
 
-// ── CAN ACCESS SUBJECT? ───────────────────────────────────────
-function canAccess(subjectId) {
+// ── TRIAL MECHANICS ───────────────────────────────────────────
+const TRIAL_LIMIT = 10;
+
+function getTrialCount(subjectId) {
+  return parseInt(localStorage.getItem('cramit_trial_' + subjectId) || '0');
+}
+
+function canAccessViaSubscription(subjectId) {
   if (!currentUser) return false;
   if (userSub.status !== 'active' && userSub.status !== 'trialing') return false;
   return userSubjects.includes(subjectId);
+}
+
+function isTrialExhausted(subjectId) {
+  if (canAccessViaSubscription(subjectId)) return false;
+  return getTrialCount(subjectId) >= TRIAL_LIMIT;
+}
+
+function incrementTrialCount(subjectId) {
+  if (!subjectId || canAccessViaSubscription(subjectId)) return;
+  const n = getTrialCount(subjectId);
+  if (n < TRIAL_LIMIT) {
+    localStorage.setItem('cramit_trial_' + subjectId, String(n + 1));
+  }
+}
+
+// ── CAN ACCESS SUBJECT? ───────────────────────────────────────
+function canAccess(subjectId) {
+  if (canAccessViaSubscription(subjectId)) return true;
+  if (!currentUser) return false;
+  return !isTrialExhausted(subjectId);
 }
 
 // ── PRICE CALCULATOR ─────────────────────────────────────────
@@ -7962,9 +8016,22 @@ function renderSubjectList() {
     const card = document.createElement('div');
     card.className = `subject-card ${isComing ? 'coming' : cardClass}`;
 
+    let trialBadge = '';
+    if (!isComing && currentUser && !canAccessViaSubscription(s.id)) {
+      const tc = getTrialCount(s.id);
+      if (tc === 0) {
+        trialBadge = `<div style="font-size:10px;color:var(--muted);text-align:center;margin-top:6px;font-weight:600">${TRIAL_LIMIT} free trial questions</div>`;
+      } else if (tc < TRIAL_LIMIT) {
+        trialBadge = `<div style="font-size:10px;color:var(--muted);text-align:center;margin-top:6px;font-weight:600">${tc}/${TRIAL_LIMIT} trial used &middot; ${TRIAL_LIMIT - tc} left</div>`;
+      } else {
+        trialBadge = `<div style="font-size:10px;color:var(--accent);text-align:center;margin-top:6px;font-weight:700">Trial ended &middot; Subscribe to continue</div>`;
+      }
+    }
+
     card.innerHTML = `
       <div class="subject-name">${s.name}</div>
-      <div class="subject-art">${art}</div>`;
+      <div class="subject-art">${art}</div>
+      ${trialBadge}`;
 
     if (!isComing) {
       card.onclick = () => handleSubjectTap(s, isSelected, atCap);
@@ -7975,8 +8042,8 @@ function renderSubjectList() {
 
 // ── HANDLE SUBJECT TAP ────────────────────────────────────────
 async function handleSubjectTap(subject, isSelected, atCap) {
-  // If selected — open quiz picker directly
-  if (isSelected && subject.quizKey) {
+  // Already subscribed to this subject — open picker directly
+  if (canAccessViaSubscription(subject.id) && subject.quizKey) {
     openPicker(subject.quizKey);
     return;
   }
@@ -7989,22 +8056,15 @@ async function handleSubjectTap(subject, isSelected, atCap) {
     return;
   }
 
-  // At swap cap — show swap prompt
+  // At swap cap (unlimited plan, 7 subjects) — show swap prompt
   if (atCap && userSub.plan === 'unlimited') {
     document.getElementById('swap-prompt-home').style.display = 'block';
     document.getElementById('upgrade-prompt-home').style.display = 'none';
     return;
   }
 
-  // Free plan trying to add 2nd subject — show upgrade
-  if (userSub.plan === 'free' && userSubjects.length >= 1) {
-    pendingSubject = subject;
-    showUpgradePrompt(subject, userSubjects.length + 1);
-    return;
-  }
-
-  // Paid plan — check if price increases before adding
-  if (userSub.plan !== 'free') {
+  // Already on a paid plan, adding a new subject — check if price increases
+  if (userSub.plan !== 'free' && userSub.stripe_subscription_id) {
     const currentPrice = calcPrice(userSubjects.length, 'swap').price;
     const newPrice     = calcPrice(userSubjects.length + 1, 'swap').price;
     if (newPrice > currentPrice) {
@@ -8012,20 +8072,100 @@ async function handleSubjectTap(subject, isSelected, atCap) {
       showUpgradePrompt(subject, userSubjects.length + 1);
       return;
     }
+    // No price increase — add silently
+    await addSubject(subject.id);
+    return;
   }
 
-  // No price change — add silently
-  await addSubject(subject.id);
+  // Trial exhausted — show upgrade prompt
+  if (isTrialExhausted(subject.id)) {
+    pendingSubject = subject;
+    showUpgradePrompt(subject, 2);
+    return;
+  }
+
+  // Trial active (0–9 questions used) — open picker directly
+  if (subject.quizKey) {
+    openPicker(subject.quizKey);
+  }
 }
 
 function showUpgradePrompt(subject, newCount) {
   const { label } = calcPrice(newCount, 'swap');
-  document.getElementById('upgrade-title').textContent  = `Unlock ${subject.name}`;
-  document.getElementById('upgrade-price').textContent  = label;
-  document.getElementById('upgrade-desc').textContent   = `${label} · cancel anytime · all subjects included`;
+  const isTrialUser = !userSub.stripe_subscription_id;
+  document.getElementById('upgrade-title').textContent = `Unlock ${subject.name}`;
+  document.getElementById('upgrade-price').textContent = label;
+  document.getElementById('upgrade-desc').textContent  = isTrialUser
+    ? `Your free trial has ended. Includes a 2nd subject at no extra cost · cancel anytime`
+    : `${label} · cancel anytime · all subjects included`;
   document.getElementById('upgrade-prompt-home').style.display = 'block';
   document.getElementById('swap-prompt-home').style.display    = 'none';
   document.getElementById('upgrade-prompt-home').scrollIntoView({ behavior: 'smooth' });
+}
+
+// ── TRIAL WALL ────────────────────────────────────────────────
+function showTrialWall(subjectId) {
+  const sub = SUBJECT_CATALOGUE.find(s => s.id === subjectId);
+  const subjectName = sub ? sub.name : 'this subject';
+
+  // Score from current quiz session
+  let correctCount = 0, answeredCount = 0;
+  answers.forEach((a, i) => {
+    const q = activeQuestions[i];
+    if (a === null || !q) return;
+    answeredCount++;
+    if (currentMode === 'mc' && a === (q.answer !== undefined ? q.answer : q.correct)) correctCount++;
+  });
+
+  // Total question count for this subject
+  const subjectKey = sub?.quizKey;
+  const mcCount = subjectKey && SUBJECTS[subjectKey] && SUBJECTS[subjectKey].getMC
+    ? SUBJECTS[subjectKey].getMC({}).length : 0;
+
+  document.getElementById('trial-wall-score').textContent = currentMode === 'mc'
+    ? `${correctCount} / ${answeredCount} correct`
+    : `${answeredCount} questions answered`;
+  document.getElementById('trial-wall-subject').textContent =
+    `You've used all ${TRIAL_LIMIT} free trial questions in ${subjectName}.`;
+  document.getElementById('trial-wall-unlock-text').textContent = subjectKey === 'maths'
+    ? `Unlock all 90 HSC + 318 extended questions in ${subjectName}`
+    : mcCount > TRIAL_LIMIT
+      ? `Unlock all ${mcCount} questions in ${subjectName}`
+      : `Unlock full access to ${subjectName}`;
+
+  pendingSubject = sub || { id: subjectId, name: subjectName };
+
+  document.getElementById('quiz').style.display = 'none';
+  document.getElementById('trial-wall').style.display = 'block';
+}
+
+function closeTrialWall() {
+  document.getElementById('trial-wall').style.display = 'none';
+  goHome();
+}
+
+async function handleTrialCheckout() {
+  if (!currentUser || !pendingSubject) return;
+  try {
+    const res = await fetch('/.netlify/functions/create-checkout', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'x-user-email': currentUser.email },
+      body: JSON.stringify({
+        user_id:       currentUser.id,
+        subject_count: 2,
+        plan_type:     'base',
+        plan_mode:     'swap',
+        success_url:   `${window.location.origin}?payment=success&subject=${pendingSubject.id}`,
+        cancel_url:    window.location.origin,
+      })
+    });
+    const { url } = await res.json();
+    localStorage.setItem('cramit_pending_subject', pendingSubject.id);
+    window.location.href = url;
+  } catch(e) {
+    alert('Could not start checkout. Please try again.');
+    console.error(e);
+  }
 }
 
 // ── ADD SUBJECT ───────────────────────────────────────────────
