@@ -240,15 +240,16 @@ Each folder contains exam papers + marking guidelines (`-mg` suffix). Marking gu
 - Students on Unlimited can swap subjects freely — price stays $19.99
 - Never change pricing without also updating: `pricing_config` table, `billing.js`, `create-checkout.js`, `update-subscription.js`, AND creating new Stripe Price objects
 
-### ⬜ Planned Pricing Change — 10-Question Trial (Stage 6)
-The current "1 subject free" model leaks revenue from single-subject students. The planned change:
-- Remove the permanent free subject
-- Replace with a **10-question trial per subject** tracked in `localStorage`
-- After 10 questions on any subject, student hits an upgrade prompt
-- Student must subscribe to continue (even for a single subject)
-- This is **Option A** — keep existing tier structure ($7.99 for 2 subjects), just remove the free tier
-- Implementation touches: `canAccess()` in `index.html`, `billing.js`, `create-checkout.js`
-- **Do not implement until Stages 1–5 are complete and stable**
+### ✅ 10-Question Trial — Implemented (Stage 6)
+The permanent 1-subject free tier has been replaced with a 10-question trial per subject:
+- Trial counter stored in `localStorage` keyed by subject ID (`cramit_trial_{subjectId}`)
+- Counter increments in `nextQuestion()` when advancing past a question
+- After 10 questions: trial wall appears mid-quiz with score + subject-specific unlock CTA
+- Picker shows trial restrictions: year filters, category chips, Extended 318, Test Mode, Written Response all grayed out during trial
+- Trial exhausted + not logged in → upgrade prompt with "Sign in to subscribe →" button
+- Trial exhausted + logged in → upgrade prompt with "Subscribe now →" → Stripe checkout
+- Stats (answered/accuracy/streak) only written to localStorage when logged in; show 0 when logged out
+- `handleTrialCheckout()` always subscribes to base plan (2 subjects, $7.99/mo)
 
 ---
 
@@ -520,6 +521,7 @@ GitHub Actions triggers → agent.js runs →
 - **Stage 3 complete** — images wired into quiz renderer (`image` + `optionImages`), `MATHS_IMG` retired, category filter with live counts, HSC 90/Extended 318 toggle
 - **Stage 4 complete** — Multimedia + HMS ported into `index.html` with full MC + written question sets
 - **Stage 5 complete** — keyword scoring + bandDescriptors on all 42 written questions, upgraded written UI (keyword grid, score heading, colour pills), AI marking via `/.netlify/functions/mark-written` with monthly quota by plan (Free=0, Base=50, Unlimited/Flex=100), student answer display, stem keyword matching, try-again fix, `ANTHROPIC_API_KEY` added to Netlify, SQL migration run in Supabase
+- **Stage 6 complete** — 10-question trial per subject replaces permanent free tier; trial counter in localStorage; mid-quiz trial wall with score + CTA; picker locks year/category/Extended 318/Test Mode/Written Response during trial; stats only tracked for logged-in users; upgrade prompt handles both logged-in and logged-out states
 
 ### Staged Implementation Roadmap
 
@@ -530,8 +532,10 @@ GitHub Actions triggers → agent.js runs →
 | **Stage 3** | Wire images into quiz renderer (`image` + `optionImages` on question objects, retire `MATHS_IMG`). Category filter + dynamic counts + HSC 90/Extended 318 toggle | ✅ **DONE** |
 | **Stage 4** | Port Multimedia + HMS subjects into index.html | ✅ **DONE** |
 | **Stage 5** | Written response + NESA band engine (keyword scoring → Band 1–6 feedback + band-tiered model answers) + AI marking via `/.netlify/functions/mark-written` | ✅ **DONE** |
-| **Stage 6** | Pricing model update — 10-question trial replaces 1-free-subject | ⬜ Next |
-| **Stage 7** | Agent infrastructure (QA/Testing, Content, Analytics) — separate project | ⬜ |
+| **Stage 6** | Pricing model update — 10-question trial replaces 1-free-subject | ✅ **DONE** |
+| **Stage 7** | Per-user per-subject progress tracking — Phase A: localStorage keyed by userId+subject; Phase B: Supabase `user_progress` table for cross-device sync | ⬜ **Next** |
+| **Stage 8** | Maths Section II written questions — extract + add extended response questions from 2020–2025 HSC papers | ⬜ |
+| **Stage 9** | Agent infrastructure (QA/Testing, Content, Analytics) — separate project | ⬜ |
 
 ### ⬜ Still to do (non-staged)
 
@@ -761,6 +765,6 @@ The current home screen is student-centric. A general-public-facing landing page
 
 ---
 
-*CLAUDE.md — CramIT Project — Last updated: May 2026 — Stages 1–5 complete*
+*CLAUDE.md — CramIT Project — Last updated: May 2026 — Stages 1–6 complete*
 *Repo: https://github.com/bustachat/CramIT-Quiz*
 *Supabase: https://ohqtefjawaphtsebnaxg.supabase.co*
