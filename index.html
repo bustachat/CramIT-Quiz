@@ -7362,11 +7362,13 @@ function selectAnswer(chosen) {
   } else {
     currentStreak = 0;
   }
-  localStorage.setItem('hsc_streak', currentStreak);
-  const total = parseInt(localStorage.getItem('hsc_total') || '0') + 1;
-  const corr  = parseInt(localStorage.getItem('hsc_correct') || '0') + (chosen === correctIdx ? 1 : 0);
-  localStorage.setItem('hsc_total', total);
-  localStorage.setItem('hsc_correct', corr);
+  if (currentUser) {
+    localStorage.setItem('hsc_streak', currentStreak);
+    const total = parseInt(localStorage.getItem('hsc_total') || '0') + 1;
+    const corr  = parseInt(localStorage.getItem('hsc_correct') || '0') + (chosen === correctIdx ? 1 : 0);
+    localStorage.setItem('hsc_total', total);
+    localStorage.setItem('hsc_correct', corr);
+  }
   renderQuestion();
 }
 
@@ -7384,11 +7386,13 @@ function checkAnswer() {
   } else {
     currentStreak = 0;
   }
-  localStorage.setItem('hsc_streak', currentStreak);
-  const total = parseInt(localStorage.getItem('hsc_total') || '0') + 1;
-  const corr  = parseInt(localStorage.getItem('hsc_correct') || '0') + (chosen === correctIdx ? 1 : 0);
-  localStorage.setItem('hsc_total', total);
-  localStorage.setItem('hsc_correct', corr);
+  if (currentUser) {
+    localStorage.setItem('hsc_streak', currentStreak);
+    const total = parseInt(localStorage.getItem('hsc_total') || '0') + 1;
+    const corr  = parseInt(localStorage.getItem('hsc_correct') || '0') + (chosen === correctIdx ? 1 : 0);
+    localStorage.setItem('hsc_total', total);
+    localStorage.setItem('hsc_correct', corr);
+  }
   renderQuestion();
 }
 
@@ -7645,6 +7649,12 @@ function handleResetModalOverlayClick(e) {
 
 // ── STATS ──
 function updateStats() {
+  if (!currentUser) {
+    document.getElementById('stat-total').textContent   = '0';
+    document.getElementById('stat-correct').textContent = '0%';
+    document.getElementById('stat-streak').textContent  = '0';
+    return;
+  }
   const total   = parseInt(localStorage.getItem('hsc_total')   || '0');
   const correct = parseInt(localStorage.getItem('hsc_correct') || '0');
   const streak  = parseInt(localStorage.getItem('hsc_streak')  || '0');
@@ -8097,16 +8107,10 @@ async function handleSubjectTap(subject, isSelected, atCap) {
     return;
   }
 
-  // Trial exhausted — need to sign in then subscribe
+  // Trial exhausted — show upgrade prompt (handles both logged-in and logged-out)
   if (isTrialExhausted(subject.id)) {
     pendingSubject = subject;
-    if (!currentUser) {
-      // Send them to sign in; after sign-in the upgrade prompt will appear
-      document.getElementById('auth-buttons').style.display = 'flex';
-      document.getElementById('auth-buttons').scrollIntoView({ behavior: 'smooth' });
-    } else {
-      showUpgradePrompt(subject, 2);
-    }
+    showUpgradePrompt(subject, 2);
     return;
   }
 
@@ -8124,6 +8128,8 @@ function showUpgradePrompt(subject, newCount) {
   document.getElementById('upgrade-desc').textContent  = isTrialUser
     ? `Your free trial has ended. Includes a 2nd subject at no extra cost · cancel anytime`
     : `${label} · cancel anytime · all subjects included`;
+  const btn = document.querySelector('#upgrade-prompt-home button');
+  if (btn) btn.textContent = currentUser ? 'Subscribe now →' : 'Sign in to subscribe →';
   document.getElementById('upgrade-prompt-home').style.display = 'block';
   document.getElementById('swap-prompt-home').style.display    = 'none';
   document.getElementById('upgrade-prompt-home').scrollIntoView({ behavior: 'smooth' });
@@ -8235,7 +8241,13 @@ async function addSubject(subjectId) {
 
 // ── CHECKOUT ─────────────────────────────────────────────────
 async function handleCheckout() {
-  if (!currentUser || !pendingSubject) return;
+  if (!pendingSubject) return;
+  if (!currentUser) {
+    document.getElementById('upgrade-prompt-home').style.display = 'none';
+    document.getElementById('auth-buttons').style.display = 'flex';
+    document.getElementById('auth-buttons').scrollIntoView({ behavior: 'smooth' });
+    return;
+  }
   const newCount = userSubjects.length + 1;
   const { price } = calcPrice(newCount, 'swap');
   try {
