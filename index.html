@@ -8001,6 +8001,7 @@ function renderHomeAuth() {
       planEl.textContent = price === 0 ? 'Free plan · 1 subject' : `${label} · ${userSubjects.length} subjects`;
     }
   }
+  updateStats();
   renderSubjectList();
 }
 
