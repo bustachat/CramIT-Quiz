@@ -7898,8 +7898,7 @@ function incrementTrialCount(subjectId) {
 // ── CAN ACCESS SUBJECT? ───────────────────────────────────────
 function canAccess(subjectId) {
   if (canAccessViaSubscription(subjectId)) return true;
-  if (!currentUser) return false;
-  return !isTrialExhausted(subjectId);
+  return !isTrialExhausted(subjectId); // trial works even when logged out
 }
 
 // ── PRICE CALCULATOR ─────────────────────────────────────────
@@ -8048,23 +8047,15 @@ async function handleSubjectTap(subject, isSelected, atCap) {
     return;
   }
 
-  // Not logged in — show auth
-  if (!currentUser) {
-    pendingSubject = subject;
-    document.getElementById('auth-buttons').style.display = 'flex';
-    document.getElementById('auth-buttons').scrollIntoView({ behavior: 'smooth' });
-    return;
-  }
-
   // At swap cap (unlimited plan, 7 subjects) — show swap prompt
-  if (atCap && userSub.plan === 'unlimited') {
+  if (currentUser && atCap && userSub.plan === 'unlimited') {
     document.getElementById('swap-prompt-home').style.display = 'block';
     document.getElementById('upgrade-prompt-home').style.display = 'none';
     return;
   }
 
   // Already on a paid plan, adding a new subject — check if price increases
-  if (userSub.plan !== 'free' && userSub.stripe_subscription_id) {
+  if (currentUser && userSub.plan !== 'free' && userSub.stripe_subscription_id) {
     const currentPrice = calcPrice(userSubjects.length, 'swap').price;
     const newPrice     = calcPrice(userSubjects.length + 1, 'swap').price;
     if (newPrice > currentPrice) {
@@ -8072,19 +8063,24 @@ async function handleSubjectTap(subject, isSelected, atCap) {
       showUpgradePrompt(subject, userSubjects.length + 1);
       return;
     }
-    // No price increase — add silently
     await addSubject(subject.id);
     return;
   }
 
-  // Trial exhausted — show upgrade prompt
+  // Trial exhausted — need to sign in then subscribe
   if (isTrialExhausted(subject.id)) {
     pendingSubject = subject;
-    showUpgradePrompt(subject, 2);
+    if (!currentUser) {
+      // Send them to sign in; after sign-in the upgrade prompt will appear
+      document.getElementById('auth-buttons').style.display = 'flex';
+      document.getElementById('auth-buttons').scrollIntoView({ behavior: 'smooth' });
+    } else {
+      showUpgradePrompt(subject, 2);
+    }
     return;
   }
 
-  // Trial active (0–9 questions used) — open picker directly
+  // Trial active (0–9 questions used) — open picker, no login required
   if (subject.quizKey) {
     openPicker(subject.quizKey);
   }
@@ -8145,7 +8141,15 @@ function closeTrialWall() {
 }
 
 async function handleTrialCheckout() {
-  if (!currentUser || !pendingSubject) return;
+  if (!pendingSubject) return;
+  if (!currentUser) {
+    // Not signed in — close wall and show login
+    document.getElementById('trial-wall').style.display = 'none';
+    document.getElementById('home').style.display = 'flex';
+    document.getElementById('auth-buttons').style.display = 'flex';
+    document.getElementById('auth-buttons').scrollIntoView({ behavior: 'smooth' });
+    return;
+  }
   try {
     const res = await fetch('/.netlify/functions/create-checkout', {
       method: 'POST',
@@ -8295,6 +8299,10 @@ async function handleSignOut() {
   userSubjects = [];
   userSub = { plan: 'free', subject_count: 1, status: 'active' };
   currentUser = null;
+  // Clear per-user progress stats (trial counters intentionally kept to prevent gaming)
+  localStorage.removeItem('hsc_total');
+  localStorage.removeItem('hsc_correct');
+  localStorage.removeItem('hsc_streak');
   renderHomeAuth();
 }
 
