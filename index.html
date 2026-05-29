@@ -6989,6 +6989,13 @@ function openPicker(subjectKey) {
 
 function renderPicker() {
   const s = SUBJECTS[currentSubjectKey];
+
+  // Trial state for this subject
+  const _trialId  = SUBJECT_CATALOGUE.find(sub => sub.quizKey === currentSubjectKey)?.id;
+  const inTrial   = _trialId ? !canAccessViaSubscription(_trialId) : false;
+  const trialLeft = _trialId ? Math.max(0, TRIAL_LIMIT - getTrialCount(_trialId)) : TRIAL_LIMIT;
+  if (inTrial) isPracticeMode = true; // trial = practice mode only
+
   let html = '';
 
   // ── Question Set toggle (Maths only) ──
@@ -7022,7 +7029,11 @@ function renderPicker() {
     html += '<div class="section-label">Year</div><div class="filter-row">';
     s.years.forEach(y => {
       const active = (pickerFilters.year || 'all') === y ? 'active' : '';
-      html += `<div class="filter-chip ${active}" onclick="setFilter('year','${y}');renderPicker()">${y === 'all' ? 'All years' : y}</div>`;
+      if (inTrial && y !== 'all') {
+        html += `<div class="filter-chip" style="opacity:0.35;cursor:not-allowed" title="Unlocks with subscription">${y}</div>`;
+      } else {
+        html += `<div class="filter-chip ${active}" onclick="setFilter('year','${y}');renderPicker()">${y === 'all' ? 'All years' : y}</div>`;
+      }
     });
     html += '</div>';
   }
@@ -7061,10 +7072,15 @@ function renderPicker() {
         style="flex:1;padding:11px;border-radius:10px;border:1px solid var(--accent);font-family:var(--font-display);font-size:13px;font-weight:700;cursor:pointer;transition:all 0.15s;background:${isPracticeMode ? 'var(--accent)' : 'var(--surface)'};color:${isPracticeMode ? 'white' : 'var(--text)'}">
         Practice Mode
       </button>
-      <button id="btn-test" onclick="isPracticeMode=false;document.getElementById('btn-test').style.background='var(--accent)';document.getElementById('btn-test').style.color='white';document.getElementById('btn-practice').style.background='var(--surface)';document.getElementById('btn-practice').style.color='var(--text)'"
-        style="flex:1;padding:11px;border-radius:10px;border:1px solid var(--border);font-family:var(--font-display);font-size:13px;font-weight:700;cursor:pointer;transition:all 0.15s;background:${!isPracticeMode ? 'var(--accent)' : 'var(--surface)'};color:${!isPracticeMode ? 'white' : 'var(--text)'}">
-        Test Mode
-      </button>
+      ${inTrial
+        ? `<button style="flex:1;padding:11px;border-radius:10px;border:1px solid var(--border);font-family:var(--font-display);font-size:13px;font-weight:700;background:var(--surface);color:var(--muted);opacity:0.45;cursor:not-allowed;line-height:1.3">
+            Test Mode<br><span style="font-size:9px;font-weight:500">&#128274; Unlocks with subscription</span>
+           </button>`
+        : `<button id="btn-test" onclick="isPracticeMode=false;document.getElementById('btn-test').style.background='var(--accent)';document.getElementById('btn-test').style.color='white';document.getElementById('btn-practice').style.background='var(--surface)';document.getElementById('btn-practice').style.color='var(--text)'"
+            style="flex:1;padding:11px;border-radius:10px;border:1px solid var(--border);font-family:var(--font-display);font-size:13px;font-weight:700;cursor:pointer;transition:all 0.15s;background:${!isPracticeMode ? 'var(--accent)' : 'var(--surface)'};color:${!isPracticeMode ? 'white' : 'var(--text)'}">
+            Test Mode
+           </button>`
+      }
     </div>
     <div style="font-size:11px;color:var(--muted);margin-bottom:14px;line-height:1.5">
       ${isPracticeMode
@@ -7076,21 +7092,35 @@ function renderPicker() {
       <div class="mode-icon">🎯</div>
       <div class="mode-info">
         <div class="mode-name">Start${isPracticeMode ? ' Practice' : ' Test'}</div>
-        <div class="mode-desc">${count} questions · ${isPracticeMode ? 'Instant feedback · Step-by-step solutions' : 'Exam conditions · Results at the end'}</div>
+        <div class="mode-desc">${inTrial
+          ? `${trialLeft > 0 ? trialLeft + ' trial questions remaining' : 'Trial complete'} &middot; Subscribe to unlock all ${count}`
+          : `${count} questions &middot; ${isPracticeMode ? 'Instant feedback · Step-by-step solutions' : 'Exam conditions · Results at the end'}`
+        }</div>
       </div>
       <div class="mode-arrow">›</div>
     </div>`;
   }
   if (s.hasWritten) {
     const count2 = s.getWritten ? s.getWritten(pickerFilters).length : 0;
-    html += `<div class="mode-card" onclick="startQuiz('written')">
-      <div class="mode-icon">✍️</div>
-      <div class="mode-info">
-        <div class="mode-name">Written Response</div>
-        <div class="mode-desc">${count2} questions · Model answers</div>
-      </div>
-      <div class="mode-arrow">›</div>
-    </div>`;
+    if (inTrial) {
+      html += `<div class="mode-card" style="opacity:0.45;cursor:not-allowed">
+        <div class="mode-icon">&#128274;</div>
+        <div class="mode-info">
+          <div class="mode-name">Written Response</div>
+          <div class="mode-desc">Unlocks with subscription &middot; ${count2} questions</div>
+        </div>
+        <div class="mode-arrow" style="color:var(--muted)">›</div>
+      </div>`;
+    } else {
+      html += `<div class="mode-card" onclick="startQuiz('written')">
+        <div class="mode-icon">&#9999;&#65039;</div>
+        <div class="mode-info">
+          <div class="mode-name">Written Response</div>
+          <div class="mode-desc">${count2} questions · Model answers</div>
+        </div>
+        <div class="mode-arrow">›</div>
+      </div>`;
+    }
   }
 
   document.getElementById('picker-body').innerHTML = html;
