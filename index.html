@@ -4710,21 +4710,36 @@ const hmsWrittenQuestions = [
       q:"Explain the difference between direct and indirect sports injuries, providing one example of each. (4 marks)",
       answer:`<p><strong>Direct injuries</strong> are caused by external forces applied to the body from outside. They result from physical contact such as a tackle, collision, or impact from an object. Examples include fractures, dislocations, sprains and bruises. For instance, a fractured collarbone from a rugby tackle is a direct injury.</p>
               <p><strong>Indirect injuries</strong> are caused by forces generated within the body itself, rather than from external contact. They occur as a result of inadequate warm-up, ballistic (explosive) movements, or excessive strain placed on muscles and tendons. For example, a hamstring tear from sprinting without warming up is an indirect injury.</p>`,
-      keywords:["direct","external","outside","indirect","internal","warm-up","ballistic","strain","example"], maxMark:4 },
+      keywords:["direct","external","outside","indirect","internal","warm-up","ballistic","strain","example"], maxMark:4,
+      bandDescriptors:{
+        full:    "4/4 — Accurately defines BOTH direct (external force applied to the body) AND indirect (force generated within the body), plus provides a specific correct example of each — e.g. fracture from a tackle (direct) and hamstring tear from sprinting without warm-up (indirect).",
+        partial: "2–3/4 — Defines both types but one or both examples are vague or absent. Or only one type is fully defined with a correct example.",
+        minimal: "1/4 — Superficial reference to direct or indirect injuries without clear definitions and no examples, or examples only without definitions."
+      } },
 
     { topic:"classification",
       q:"Compare soft tissue and hard tissue injuries, explaining why chronic soft tissue injuries require long rehabilitation. (5 marks)",
       answer:`<p><strong>Soft tissue injuries</strong> damage muscles, tendons, ligaments, cartilage or skin through overstretching, impact or twisting. A <strong>sprain</strong> injures the ligaments and joint capsule; a <strong>strain</strong> injures the muscles or tendons. They can be acute (sudden onset) or chronic (prolonged/overuse).</p>
               <p><strong>Hard tissue injuries</strong> damage bones and teeth — including fractures, breaks and dislocations. They are frequently more serious than soft tissue injuries and require careful examination and immobilisation due to bone's structural support role.</p>
               <p>Chronic soft tissue injuries require long rehabilitation because repeated microtrauma leads to <strong>scar tissue formation</strong>, which shortens the muscle and increases re-injury risk. The scar tissue must be carefully broken down through progressive mobilisation and stretching to restore full function.</p>`,
-      keywords:["soft","hard","sprain","strain","ligament","tendon","bone","teeth","chronic","scar","acute","rehabilitation"], maxMark:5 },
+      keywords:["soft","hard","sprain","strain","ligament","tendon","bone","teeth","chronic","scar","acute","rehabilitation"], maxMark:5,
+      bandDescriptors:{
+        full:    "5/5 — Correctly defines both soft tissue (muscles, tendons, ligaments — sprains/strains) and hard tissue (bones, teeth — fractures/dislocations). Distinguishes acute vs chronic. Explains why chronic soft tissue injuries need long rehab — specifically scar tissue formation shortens the muscle and must be progressively broken down.",
+        partial: "3–4/5 — Defines both injury types correctly but the chronic rehabilitation explanation is incomplete — may mention scar tissue without explaining its consequences, or omit the acute/chronic distinction.",
+        minimal: "1–2/5 — Vague description of soft and/or hard tissue injuries without clear definitions. Little or no explanation of why chronic injuries require extended rehabilitation."
+      } },
 
     { topic:"classification",
       q:"Describe overuse injuries, identifying two examples and explaining the cycle by which they develop. (4 marks)",
       answer:`<p><strong>Overuse injuries</strong> result from intense or unreasonable repetitive use of joints or body areas. They are provoked by repetitive, low-impact exercise such as jogging, cycling or stepping, causing pain and inflammation at the injury site.</p>
               <p>Two examples are: (1) <strong>Anterior shin splints</strong> — irritation to the front of the shinbone from running; and (2) <strong>Achilles tendinitis</strong> — irritation and inflammation of the Achilles tendon from repetitive loading.</p>
               <p>The overuse cycle is: repetitive musculoskeletal activity → tissue overload → tissue fatigue and decreasing strength → tissue failure (microtrauma) → inadequate tissue repair → overuse injury (stress fractures, tendinitis) → major loss of strength and flexibility → back to repetitive activity.</p>`,
-      keywords:["overuse","repetitive","shin splints","tendinitis","stress fracture","inflammation","cycle","fatigue","microtrauma"], maxMark:4 },
+      keywords:["overuse","repetitive","shin splints","tendinitis","stress fracture","inflammation","cycle","fatigue","microtrauma"], maxMark:4,
+      bandDescriptors:{
+        full:    "4/4 — Accurately defines overuse injuries (repetitive low-impact activity causing microtrauma). Names two specific examples (e.g. shin splints, Achilles tendinitis, stress fracture). Describes the overuse cycle: repetitive activity → tissue overload → fatigue → microtrauma → inadequate repair → injury.",
+        partial: "2–3/4 — Defines overuse injuries and names examples, but the cycle is incomplete or described vaguely. Or the cycle is explained but only one example provided.",
+        minimal: "1/4 — Mentions overuse injuries superficially. Examples given without definition, or definition without examples. No cycle described."
+      } },
 
     // ── ASSESSMENT ──────────────────────────────────────────────────────────────
 
@@ -4740,13 +4755,23 @@ const hmsWrittenQuestions = [
                 <li><strong>Skill Test</strong> — sport-specific skills test to confirm full, pain-free movement.</li>
               </ul>
               <p>You stop the assessment at any step the athlete cannot complete without pain and treat the injury immediately. This prevents further damage by not forcing movement beyond the body's pain threshold.</p>`,
-      keywords:["talk","observe","touch","active","passive","skill","stop","pain","DRSABCD","six","steps"], maxMark:6 },
+      keywords:["talk","observe","touch","active","passive","skill","stop","pain","DRSABCD","six","steps"], maxMark:6,
+      bandDescriptors:{
+        full:    "5–6/6 — Names all six steps (Talk, Observe, Touch, Active Movement, Passive Movement, Skill Test) with a brief but accurate explanation of each. Correctly states you stop at any step the athlete cannot complete without pain, and explains this prevents further damage.",
+        partial: "3–4/6 — Names most steps with some explanation but misses one or two, confuses Active and Passive Movement, or fails to explain when and why to stop.",
+        minimal: "1–2/6 — Names only a few steps without adequate explanation, or describes the purpose of TOTAPS generally without listing the individual steps."
+      } },
 
     { topic:"assessment",
       q:"Explain the difference between the primary and secondary injury assessment tools and when each is used. (4 marks)",
       answer:`<p>The <strong>primary assessment tool</strong> is <strong>DRSABCD</strong> (Danger, Response, Send for help, Airway, Breathing, Compressions, Defibrillation). It is used first for any injured person to identify and manage life-threatening emergencies. It must always be completed before any other assessment.</p>
               <p>The <strong>secondary assessment tool</strong> is <strong>TOTAPS</strong>, which is used on the sporting field after DRSABCD confirms the athlete is not in a life-threatening condition. TOTAPS specifically assesses the nature and severity of a sports injury through a six-step process to determine whether the athlete can safely return to play.</p>`,
-      keywords:["primary","DRSABCD","secondary","TOTAPS","life-threatening","sporting field","difference"], maxMark:4 },
+      keywords:["primary","DRSABCD","secondary","TOTAPS","life-threatening","sporting field","difference"], maxMark:4,
+      bandDescriptors:{
+        full:    "4/4 — Correctly identifies DRSABCD as the primary tool (life-threatening emergencies, always used first) and TOTAPS as the secondary tool (sports-specific, used on the field after DRSABCD confirms no life threat). Explains the purpose and timing of each.",
+        partial: "2–3/4 — Names both tools correctly but the explanation of when and why each is used is incomplete. May describe one tool well but not the other.",
+        minimal: "1/4 — Names only one tool, or confuses primary and secondary. Explanation is vague or absent."
+      } },
 
     // ── MANAGEMENT ──────────────────────────────────────────────────────────────
 
@@ -4761,13 +4786,23 @@ const hmsWrittenQuestions = [
                 <li><strong>Referral</strong> — refer to a qualified professional (doctor/physiotherapist) for diagnosis and treatment.</li>
               </ul>
               <p><strong>Caution:</strong> While ice reduces inflammation in the early stages, prolonged use can reduce blood flow and cause nerve damage — ice should never be applied continuously or directly to skin.</p>`,
-      keywords:["rest","ice","compression","elevation","referral","towel","20 minutes","prolonged","nerve","swelling"], maxMark:5 },
+      keywords:["rest","ice","compression","elevation","referral","towel","20 minutes","prolonged","nerve","swelling"], maxMark:5,
+      bandDescriptors:{
+        full:    "5/5 — Correctly defines all five RICER steps (Rest, Ice, Compression, Elevation, Referral) with an accurate explanation of what each achieves. Includes a specific caution about ice — e.g. do not apply directly to skin or continuously; prolonged use can cause nerve damage.",
+        partial: "3–4/5 — Defines most RICER steps correctly but misses one step or the explanation of one step is inaccurate. The ice caution may be absent or vague.",
+        minimal: "1–2/5 — Names some RICER letters without adequate explanation. May only list the acronym with no detail about what each step does."
+      } },
 
     { topic:"management",
       q:"Outline the management of hard tissue injuries, distinguishing between the management of fractures and dislocations. (6 marks)",
       answer:`<p><strong>Fracture management</strong> requires: using DRSABCD, controlling bleeding, treating shock, using a splint and bandage to immobilise the area, and seeking immediate medical assistance. Medical attention is required when there is obvious deformity, uncontrolled bleeding, or the casualty cannot complete TOTAPS. Simple (closed) fractures keep bone beneath skin; compound (open) fractures involve bone protruding through skin and are more serious.</p>
               <p><strong>Dislocation management</strong> requires: never attempting to relocate the displaced bone (this risks further damage), securing the joint with a splint for full immobilisation, applying ice and elevation, using a supportive bandage, and seeking immediate medical attention. A subluxation — where the bone briefly pops out and returns — also requires rehabilitation and possibly surgery.</p>`,
-      keywords:["fracture","dislocation","DRSABCD","splint","immobilise","medical","compound","simple","never relocate","ice"], maxMark:6 },
+      keywords:["fracture","dislocation","DRSABCD","splint","immobilise","medical","compound","simple","never relocate","ice"], maxMark:6,
+      bandDescriptors:{
+        full:    "5–6/6 — Describes management of BOTH fractures (DRSABCD, splint and bandage to immobilise, control bleeding, seek medical assistance) AND dislocations (never attempt to relocate, splint, ice, elevation, immediate medical attention). Distinguishes simple from compound fractures and/or mentions subluxation.",
+        partial: "3–4/6 — Describes both fracture and dislocation management but with incomplete detail on one. May omit the critical 'never relocate' rule for dislocations, or not distinguish fracture types.",
+        minimal: "1–2/6 — Describes only one type of hard tissue injury, or provides only a general management approach without distinguishing fractures from dislocations."
+      } },
 
     // ── REHABILITATION ──────────────────────────────────────────────────────────
 
@@ -4775,27 +4810,47 @@ const hmsWrittenQuestions = [
       q:"Explain progressive mobilisation and the rules that must be followed when applying it after injury. (4 marks)",
       answer:`<p><strong>Progressive mobilisation</strong> is the gradual reintroduction of movement to an injured area after RICER has been applied and the acute inflammatory phase has passed. It involves gradually extending the range of movement through light stretches and rotations to reduce scar tissue build-up and restore mobility.</p>
               <p>Mobilisation can be <strong>active</strong> (performed by the athlete) or <strong>passive</strong> (the injured part is manipulated by another person). Rules that must be followed include: (1) confirm no fracture is present — an X-ray may be needed; (2) do not begin during the acute inflammatory phase; (3) movements must be slow and progressive, not sharp or rapid; and (4) movements must remain within a pain-free range at all times.</p>`,
-      keywords:["progressive","mobilisation","RICER","range","scar tissue","active","passive","pain-free","slow","inflammatory"], maxMark:4 },
+      keywords:["progressive","mobilisation","RICER","range","scar tissue","active","passive","pain-free","slow","inflammatory"], maxMark:4,
+      bandDescriptors:{
+        full:    "4/4 — Defines progressive mobilisation (gradual reintroduction of movement after the acute phase), mentions both active and passive forms, and states at least two rules: no fracture present, not during the acute inflammatory phase, movements slow and progressive, within a pain-free range at all times.",
+        partial: "2–3/4 — Defines progressive mobilisation correctly but only states one rule, the active/passive distinction is missing, or the timing (after RICER/acute phase) is not mentioned.",
+        minimal: "1/4 — Vague description of 'moving the injury carefully' without defining progressive mobilisation or listing the rules that apply."
+      } },
 
     { topic:"rehabilitation",
       q:"Describe how graduated exercise, including stretching and conditioning, is used in rehabilitation. (6 marks)",
       answer:`<p><strong>Graduated exercise</strong> encompasses stretching and conditioning to rebuild fitness after injury.</p>
               <p><strong>Stretching:</strong> Stretching the injured area ensures healing without scarring. Scarring shortens muscle, making it prone to re-injury. The most appropriate methods are <strong>static stretching</strong> and <strong>PNF (Proprioceptive Neuromuscular Facilitation)</strong> stretching, which reduce muscle tension, increase circulation and restore range of motion. Movements initially stay within pain barriers and gradually increase as strength improves.</p>
               <p><strong>Conditioning:</strong> Uses the <strong>overload principle</strong> to progressively increase physical stress and build adaptation. The program targets cardiorespiratory fitness plus strength, power and local muscular endurance around the injured area (specificity). It is designed to prevent <strong>muscle atrophy</strong>. As strength returns, further resistance is applied and weight-bearing exercises are introduced if the area can support them.</p>`,
-      keywords:["graduated","stretching","conditioning","static","PNF","scar","overload","specificity","atrophy","resistance","cardiorespiratory"], maxMark:6 },
+      keywords:["graduated","stretching","conditioning","static","PNF","scar","overload","specificity","atrophy","resistance","cardiorespiratory"], maxMark:6,
+      bandDescriptors:{
+        full:    "5–6/6 — Explains BOTH stretching (static and PNF methods, prevents scarring, restores range of motion) AND conditioning (overload principle, specificity, prevents muscle atrophy, progressive resistance). Describes how each component is applied in rehabilitation.",
+        partial: "3–4/6 — Addresses both stretching and conditioning but with incomplete detail on one. May name PNF without explaining it, or describe overload without linking to specificity or atrophy prevention.",
+        minimal: "1–2/6 — Describes only one component (stretching or conditioning) or provides only a general statement about 'exercise during rehab' without explaining the principles or methods involved."
+      } },
 
     { topic:"rehabilitation",
       q:"Explain the use of heat and cold therapy in rehabilitation, including when each should and should not be used. (5 marks)",
       answer:`<p><strong>Cold therapy</strong> is used for the <em>immediate treatment</em> of injury as it prevents swelling by constricting blood vessels and limiting internal bleeding. It is also useful after exercise during rehabilitation when the injured area has been through a workout. Methods include ice packs, ice massage, cold water immersion and topical cold spray. <strong>Caution:</strong> prolonged cold use reduces blood flow and can cause nerve damage.</p>
               <p><strong>Heat therapy</strong> should <em>not</em> be used in the early (acute) stage while bleeding is still occurring, as it promotes blood flow and would worsen swelling. Heat is used in <em>later rehabilitation</em> for chronic injuries to promote circulation, relax muscles, decrease muscle spasm and tightness, and reduce pain. Methods include heat packs, hydrotherapy, infra-red lamps, ultrasound and shortwave machines.</p>`,
-      keywords:["cold","ice","acute","immediate","swelling","heat","chronic","later","bleeding","muscle spasm","blood flow","not early"], maxMark:5 },
+      keywords:["cold","ice","acute","immediate","swelling","heat","chronic","later","bleeding","muscle spasm","blood flow","not early"], maxMark:5,
+      bandDescriptors:{
+        full:    "5/5 — Accurately describes BOTH cold therapy (immediate/acute phase, constricts blood vessels, prevents swelling; caution: prolonged use causes nerve damage) AND heat therapy (later rehabilitation/chronic phase, promotes blood flow, relaxes muscles; not in acute phase while bleeding is occurring). Names at least one method for each.",
+        partial: "3–4/5 — Describes both therapies but the timing distinction (cold = acute/immediate, heat = later/chronic) is incomplete. May fail to include a caution for one therapy.",
+        minimal: "1–2/5 — Describes only one therapy, or confuses when each should be used. No cautions provided."
+      } },
 
     { topic:"rehabilitation",
       q:"Explain how total body fitness is maintained and restored during a rehabilitation program. (5 marks)",
       answer:`<p><strong>Total body fitness</strong> in rehabilitation means regaining full pre-injury fitness by targeting all muscle groups and energy systems — not just the injured area. The program must apply all principles of training, particularly <strong>progressive overload</strong>.</p>
               <p>Activities used to promote total body fitness include treadmill work, rowing or cycling ergometers, swimming and water-resistance activities, weight training, and walking/light jogging. Adaptations to aim for include: strengthening of ligaments and tendons, complete absence of pain, and full confidence in the injured area.</p>
               <p>Flexibility, strength and endurance are maintained through activities <strong>specific to the sport</strong> that do not endanger recovery. The program is complete when the athlete can participate in all elements of a full training session — warm-up, skills, drills, match play and cool-down — without pain.</p>`,
-      keywords:["total body","all muscle groups","energy systems","overload","progressive","treadmill","swimming","sport-specific","pain-free","full training"], maxMark:5 },
+      keywords:["total body","all muscle groups","energy systems","overload","progressive","treadmill","swimming","sport-specific","pain-free","full training"], maxMark:5,
+      bandDescriptors:{
+        full:    "5/5 — Explains that total body fitness targets all muscle groups and energy systems (not just the injury). Describes at least two appropriate activities (e.g. treadmill, swimming, cycling, weight training). Links to the progressive overload principle. States the program is complete when the athlete can participate pain-free in all elements of a full training session.",
+        partial: "3–4/5 — Addresses total body fitness and mentions activities, but the overload/progressive principle is absent or the completion criteria is not stated clearly.",
+        minimal: "1–2/5 — Vague description of 'keeping fit during rehab' without addressing all muscle groups, specific activities, or training principles."
+      } },
 
     // ── RETURN TO PLAY & ETHICS ─────────────────────────────────────────────────
 
@@ -4810,7 +4865,12 @@ const hmsWrittenQuestions = [
                 <li><strong>Balance</strong> — able to balance on the injured limb alone</li>
               </ul>
               <p>These are confirmed through sport-specific skill tests. Only when all criteria are met can the athlete return to competition.</p>`,
-      keywords:["elasticity","strength","mobility","pain-free","balance","ankle","skill test","all five"], maxMark:3 },
+      keywords:["elasticity","strength","mobility","pain-free","balance","ankle","skill test","all five"], maxMark:3,
+      bandDescriptors:{
+        full:    "3/3 — Names all five indicators of readiness (Elasticity, Strength, Mobility, Pain-free, Balance) with a brief explanation of each. States that ALL five must be met before return and applies them to an ankle sprain context.",
+        partial: "2/3 — Names at least three indicators correctly with some explanation, but not all five are listed or applied to the ankle sprain context.",
+        minimal: "1/3 — Names one or two indicators only, or provides only a vague description of 'the athlete must be healthy' without listing specific criteria."
+      } },
 
     { topic:"returnplay",
       q:"How are skill and physical tests used to indicate an athlete's readiness to return to play after injury? (8 marks)",
@@ -4819,7 +4879,12 @@ const hmsWrittenQuestions = [
               <p><strong>Strength and flexibility testing</strong> involves comparison between the injured and uninjured limb. This ensures the athlete has recovered full mobility and strength to prevent recurrence or a secondary injury, and ensures optimal performance upon return. The athlete must perform exercises related to their sport — e.g. kicking a football with both legs. If the athlete demonstrates <strong>90–95% of strength and range of motion</strong> returned to the injured limb, they are determined fit to play.</p>
               <p>Generic skill tests can also compare an athlete pre-injury to post-injury — for example, using the vertical jump to test muscular power in a basketball player provides comparable statistics to judge readiness for activities like jump shots and slam dunks.</p>
               <p><strong>Game-specific skill tests</strong> assess fitness to return by putting athletes through sport-specific drills (running, pivoting, passing, throwing). Athletes should be assessed by qualified staff to confirm they can complete game-related skills to an acceptable competitive level.</p>`,
-      keywords:["pain-free","range of motion","mobility","circumduction","Illinois","agility","strength","flexibility","90-95","injured","uninjured","game-specific","drills","qualified","pre-injury"], maxMark:8 },
+      keywords:["pain-free","range of motion","mobility","circumduction","Illinois","agility","strength","flexibility","90-95","injured","uninjured","game-specific","drills","qualified","pre-injury"], maxMark:8,
+      bandDescriptors:{
+        full:    "6–8/8 — Explains how both skill tests AND physical tests indicate readiness. Covers pain-free full range of motion, strength comparison between injured and uninjured limb (90–95% benchmark), mobility/agility tests (e.g. Illinois Agility Test, circumduction test), and game-specific skill tests. Uses sport-specific examples. Explains why each test type matters for safe return.",
+        partial: "3–5/8 — Covers both skill and physical tests but with limited depth. Examples are generic or one type of test is explained in detail while the other is superficial. The 90–95% strength benchmark or injured/uninjured comparison may be missing.",
+        minimal: "1–2/8 — Vague description of 'doing tests before returning' without distinguishing skill from physical tests or providing meaningful detail about what the tests involve."
+      } },
 
     { topic:"returnplay",
       q:"Discuss the ethical issues to consider before an athlete returns to play following an injury. (5 marks)",
@@ -4827,7 +4892,12 @@ const hmsWrittenQuestions = [
               <p>Painkilling injections mask pain — the body's warning signal — so the athlete cannot feel further damage occurring. This desensitises the injured tissue, setting up an environment for additional rupturing and potentially permanent injury. Even oral painkillers like paracetamol mask symptoms that indicate healing is incomplete.</p>
               <p>Pressure to return early can come from coaches, parents, contracts or fear of losing a position on the team. In children and young athletes, inexperienced coaches or parents can cause additional damage by pushing athletes to play before full recovery. This pressure breaches duty of care.</p>
               <p>Policies requiring <strong>final medical clearance from a qualified doctor</strong> help prevent these ethical breaches by removing the decision from non-medical parties.</p>`,
-      keywords:["painkillers","mask","pressure","coaches","contracts","ethical","medical clearance","duty of care","damage","warning"], maxMark:5 },
+      keywords:["painkillers","mask","pressure","coaches","contracts","ethical","medical clearance","duty of care","damage","warning"], maxMark:5,
+      bandDescriptors:{
+        full:    "5/5 — Identifies and explains BOTH major ethical issues: (1) painkiller use — masks pain signals, desensitises injured tissue, sets up further damage and permanent injury risk; AND (2) pressure to return — from coaches, contracts, or fear of losing team position. Mentions that final medical clearance from a qualified doctor removes the decision from non-medical parties.",
+        partial: "3–4/5 — Discusses both issues but the explanation of one is incomplete. May mention painkillers or pressure without fully explaining the mechanism by which each causes harm.",
+        minimal: "1–2/5 — Identifies one ethical issue only, or lists both without any substantive explanation of why they are harmful."
+      } },
 
     { topic:"returnplay",
       q:"Evaluate policies and procedures that address the ethical considerations in determining when an athlete returns to play from injury. (12 marks)",
@@ -4836,7 +4906,12 @@ const hmsWrittenQuestions = [
               <p>These policies prevent premature return driven by financial contracts, fear of losing team position, or parental and coach pressure. Painkilling injections are especially dangerous because they mask the body's warning signal, allowing further tissue damage and potentially permanent injury without the athlete's awareness.</p>
               <p>By placing the decision solely with medical professionals, these policies uphold duty of care and remove pressure from coaches, managers and athletes themselves. However, not all sports have such policies, creating inequity in athlete protection.</p>
               <p>Overall, these policies are effective in minimising ethical breaches and ensuring athletes return to <strong>sustained movement and performance</strong> safely (HM-12-09 / HM-12-10).</p>`,
-      keywords:["NRL","Netball","Boxing","11-day","14 days","symptom-free","30","medical clearance","pressure","painkillers","duty of care","policies","evaluate"], maxMark:12 },
+      keywords:["NRL","Netball","Boxing","11-day","14 days","symptom-free","30","medical clearance","pressure","painkillers","duty of care","policies","evaluate"], maxMark:12,
+      bandDescriptors:{
+        full:    "9–12/12 — Names at least two specific policies with accurate detail (NRL 11-day stand-down, Netball Australia 14 days symptom-free + 21-day minimum, Boxing 30–90-day suspension + neurological review). Links each policy to the ethical issue it addresses — painkillers masking pain signals and pressure from coaches, contracts or fear of losing position. Makes a reasoned evaluative judgment on whether these policies effectively protect athlete welfare.",
+        partial: "5–8/12 — Identifies policies with some correct detail but evaluation is limited to description rather than critical judgment. Ethical issues addressed but analysis lacks depth. More descriptive than evaluative.",
+        minimal: "1–4/12 — Vague reference to return-to-play policies without naming specific sports or stand-down periods. Mentions ethical issues superficially. No evaluative judgment."
+      } },
 
     // ── CONCUSSION ──────────────────────────────────────────────────────────────
 
@@ -4845,7 +4920,12 @@ const hmsWrittenQuestions = [
       answer:`<p>Netball Australia's GRTP requires the player to be <strong>completely symptom-free for 14 days</strong> before beginning any graduated activity. The overall minimum return period for community-level players is <strong>21 days</strong>.</p>
               <p>The graduated steps are: (1) Complete rest until symptom-free → (2) Light aerobic exercise (walking, swimming) → (3) Sport-specific exercise (running drills, no contact) → (4) Non-contact training drills → (5) Medical clearance from a qualified doctor → (6) Return to full contact competition.</p>
               <p>If symptoms return at any stage, the player must immediately return to the previous step and remain there until symptom-free. <strong>Final medical clearance</strong> is mandatory before full return to play.</p>`,
-      keywords:["GRTP","symptom-free","14 days","21 days","graduated","steps","medical clearance","netball","aerobic","contact"], maxMark:6 },
+      keywords:["GRTP","symptom-free","14 days","21 days","graduated","steps","medical clearance","netball","aerobic","contact"], maxMark:6,
+      bandDescriptors:{
+        full:    "5–6/6 — States Netball Australia requires 14 days completely symptom-free before beginning graduated activity, with a minimum 21-day overall return period. Lists graduated steps in correct sequence. States that symptoms returning means stepping back, and that final medical clearance is mandatory before return.",
+        partial: "3–4/6 — Describes the graduated steps with some accuracy but omits or confuses the 14/21-day timing, misses the 'step back if symptoms return' rule, or omits mandatory medical clearance.",
+        minimal: "1–2/6 — Describes a general graduated return process without Netball-specific details or timelines. May only say 'rest and gradually return to play'."
+      } },
 
     { topic:"concussion",
       q:"Compare the concussion return-to-play protocols for NRL, Netball and Boxing, explaining why the differences exist. (8 marks)",
@@ -4854,7 +4934,12 @@ const hmsWrittenQuestions = [
               <p><strong>Netball Australia</strong> follows a more conservative approach: 14 days completely symptom-free before full contact training, with an overall minimum of 21 days for community-level players.</p>
               <p><strong>Boxing</strong> has the strictest protocol: after a knockout, the boxer faces an automatic 30–90 day suspension (longer for repeated KOs), plus mandatory specialist neurological review before clearance.</p>
               <p>All three protocols require final medical clearance from a qualified doctor. The differences in stand-down periods reflect the varying levels of head trauma risk. Boxing's extended suspension acknowledges the direct targeting of the head and the high risk of cumulative brain damage from repeated knockouts. The NRL's shorter period reflects that concussions occur incidentally rather than by design, though the sport is still high contact.</p>`,
-      keywords:["NRL","11-day","Netball","14 days","21 days","Boxing","30","90","medical clearance","neurological","risk","cumulative","compare"], maxMark:8 }
+      keywords:["NRL","11-day","Netball","14 days","21 days","Boxing","30","90","medical clearance","neurological","risk","cumulative","compare"], maxMark:8,
+      bandDescriptors:{
+        full:    "6–8/8 — Accurately states all three protocols: NRL (11-day), Netball Australia (14 days symptom-free + 21-day minimum), Boxing (30–90-day suspension + specialist neurological review). Notes all require final medical clearance. Explains WHY the differences exist — links stand-down length to head trauma risk level in each sport; notes Boxing targets the head directly and carries the highest cumulative brain damage risk.",
+        partial: "3–5/8 — States most protocols with some correct numbers but one or two details are missing or slightly wrong. Explains differences exist due to varying risk levels but without specific reasoning per sport.",
+        minimal: "1–2/8 — Names some sports without accurate stand-down details. Comparison is vague — 'some sports have longer rest periods' without specific figures or explanation of why."
+      } }
 
 ];
 
@@ -6329,7 +6414,12 @@ const multimediaWrittenQuestions = [
         q:"Outline how motion capture technology works.",
         answer:`Optical motion capture systems use reflective markers placed on key points of an actor's body (joints, limbs, face). Multiple infrared cameras track the position of each marker in 3D space simultaneously. The captured positional data is transmitted to a computer, which assembles it into a skeleton model that approximates the character's movements in real time. This data is then mapped onto a digital 3D character model during post-production, producing natural, realistic animation that would be extremely difficult to achieve by hand.`,
         keywords:["optical","markers","track","movements","3d","computer","data","cameras","skeleton"],
-        minKeywords:4
+        minKeywords:4,
+        bandDescriptors:{
+            full:    "2/2 — Explains that optical markers are placed on a performer's body, tracked by multiple infrared cameras in 3D space, and the positional data is used to animate a digital character model.",
+            partial: "1/2 — Mentions markers and cameras or refers to capturing movement data, but the link to animating a digital character is missing or vague.",
+            minimal: "0/2 — Describes motion capture only as 'recording movement' with no explanation of how it works technically."
+        }
     },
     {
         year:2020, marks:3, section:"II", qNum:13,
@@ -6339,21 +6429,36 @@ Black toner: 15,000 ÷ 2,000 = 7.5 → 8 cartridges × $45.00 = $360.00
 Colour toner: 15,000 ÷ 650 = 23.07 → 24 cartridges × $65.00 = $1,560.00
 Total cost: $750 + $360 + $1,560 = $2,670.00`,
         keywords:["2670","750","360","1560"],
-        minKeywords:3
+        minKeywords:3,
+        bandDescriptors:{
+            full:    "3/3 — Correct method applied for all three cost components (paper: 30 reams × $25 = $750; black toner: 8 cartridges × $45 = $360; colour toner: 24 cartridges × $65 = $1,560) with rounding up applied where needed, arriving at total of $2,670. Working shown.",
+            partial: "1–2/3 — Correct method for most components but one arithmetic error or one rounding error (e.g. 7.5 cartridges not rounded up to 8) leads to an incorrect total.",
+            minimal: "0/3 — Incorrect method for two or more components, or answer only with no working shown."
+        }
     },
     {
         year:2020, marks:4, section:"II", qNum:14,
         q:"Describe how large MP4 files can be reduced in size when authoring for DVD media.",
         answer:`Large MP4 files can be reduced in size through several techniques. First, reducing the bit rate forces less data to be stored per second of video, directly decreasing file size, though some quality loss may result. Second, lowering the video resolution (e.g., from 1920×1080 to 1280×720) reduces the number of pixels per frame, significantly cutting file size. Third, reducing the frame rate (e.g., from 60fps to 25fps) means fewer frames are stored per second. Fourth, trimming unwanted sections of the video using editing software removes unnecessary data. Finally, converting to a more efficient codec (such as H.265/HEVC instead of H.264) can achieve smaller file sizes at the same visual quality, making the file more suitable for DVD authoring.`,
         keywords:["bit rate","resolution","frame rate","trim","compress","codec","convert","format"],
-        minKeywords:3
+        minKeywords:3,
+        bandDescriptors:{
+            full:    "4/4 — Describes at least four distinct techniques: reducing bit rate (less data per second), lowering resolution (fewer pixels per frame), reducing frame rate (fewer frames per second), trimming unnecessary footage, and/or converting to a more efficient codec (e.g. H.265). Acknowledges the quality trade-off.",
+            partial: "2–3/4 — Describes two or three techniques with reasonable explanation. May repeat the same idea differently rather than identifying genuinely distinct methods.",
+            minimal: "1/4 — Names only one method (e.g. 'compress the file') with vague or no explanation of how it reduces file size."
+        }
     },
     {
         year:2020, marks:5, section:"II", qNum:15,
         q:"Describe the features that should be included on a company's website homepage.",
         answer:`A company's homepage should include the following key features to be effective. A clear, prominent logo and company name immediately identify the brand and build trust. A concise headline or tagline communicates the company's purpose to visitors within seconds. Complete contact details — including address, phone number and email — make the business accessible. Navigation links (including a site map) allow users to easily locate all services and return to the homepage at any point. High-quality photos or graphics illustrating the company's products or services create visual appeal and convey professionalism. A search function enables visitors to quickly locate specific information. Social proof elements such as client testimonials, reviews or awards build credibility. Calls to action (e.g., "Contact us", "Get a quote") guide users toward desired outcomes. Special offers or subscription options encourage user engagement and return visits.`,
         keywords:["logo","navigation","links","contact","search","site map","testimonial","call to action","headline"],
-        minKeywords:4
+        minKeywords:4,
+        bandDescriptors:{
+            full:    "5/5 — Identifies and explains at least five distinct homepage features — e.g. logo/branding, headline/tagline, contact details, navigation links/site map, quality imagery, search function, calls to action, testimonials. Explains the purpose of each feature, not just listing it.",
+            partial: "3–4/5 — Identifies multiple features but explanations are brief or some features are listed without explaining why they matter.",
+            minimal: "1–2/5 — Lists only one or two features (e.g. 'logo and contact') without meaningful explanation of why each feature is important."
+        }
     },
     {
         year:2021, marks:1, section:"II", qNum:11,
@@ -6369,7 +6474,12 @@ Step 2 — Total bits: 2,073,600 × 32 bits = 66,355,200 bits
 Step 3 — Convert to bytes: 66,355,200 ÷ 8 = 8,294,400 bytes
 Step 4 — Convert to MB: 8,294,400 ÷ 1,048,576 (1024²) = 7.91 MB`,
         keywords:["7.91","7.9","8","2073600","66355200"],
-        minKeywords:1
+        minKeywords:1,
+        bandDescriptors:{
+            full:    "3/3 — All four steps shown with correct values: total pixels (1920 × 1080 = 2,073,600), total bits (× 32 = 66,355,200), bytes (÷ 8 = 8,294,400), megabytes (÷ 1,048,576 = 7.91 MB). Final answer 7.91 MB (or 7.9 MB accepted).",
+            partial: "1–2/3 — Correct method applied but one conversion step is wrong (e.g. dividing by 1,000,000 instead of 1,048,576 for MB). Working shown.",
+            minimal: "0/3 — Incorrect method, missing steps, or answer given with no working."
+        }
     },
     {
         year:2021, marks:4, section:"II", qNum:14,
@@ -6382,7 +6492,12 @@ Lossless compression (e.g., RAW video, ProRes) preserves all original image data
 
 High-end video cameras that shoot in raw lossless formats produce extremely large files that typically require post-processing before distribution. Most streaming platforms and consumer devices use lossy codecs, which use algorithms to remove redundant data (such as unchanged pixels between frames) to balance quality against manageable file sizes.`,
         keywords:["lossy","lossless","quality","file size","storage","compression","codec","algorithm","pixels"],
-        minKeywords:4
+        minKeywords:4,
+        bandDescriptors:{
+            full:    "4/4 — Distinguishes between lossy (e.g. MP4/H.264 — permanently discards data, smaller files, quality loss at high compression ratios) and lossless compression (e.g. ProRes/RAW — preserves all original data, full quality, very large files). Addresses BOTH image quality AND data storage effects for each type.",
+            partial: "2–3/4 — Discusses compression effects on file size or quality but does not clearly distinguish lossy from lossless, or only addresses one of the two required impacts (quality OR storage, not both).",
+            minimal: "1/4 — Vague description of 'compression makes files smaller but reduces quality' without explaining how or distinguishing compression types."
+        }
     },
     {
         year:2021, marks:5, section:"II", qNum:15,
@@ -6397,21 +6512,36 @@ Privacy must also be considered when using images, audio recordings or video foo
 
 Finally, consumers themselves have ethical obligations. Illegally copying, sharing or distributing copyrighted multimedia content — even for personal use — violates Australian copyright law and undermines the creative industry. Adhering to fair use guidelines and purchasing legitimate licences are both ethical and legal requirements.`,
         keywords:["copyright","licensing","permission","classification","intellectual property","legal","consent","privacy","fair use"],
-        minKeywords:4
+        minKeywords:4,
+        bandDescriptors:{
+            full:    "5/5 — Identifies and explains at least three distinct ethical/legal issues: copyright and licensing (obtaining permission and payment for third-party content), content classification (G/PG/M/MA15+ ratings for audience appropriateness), privacy and consent (using individuals' likenesses), and/or consumer obligations (illegal copying, fair use). Explains both the issue and why it matters.",
+            partial: "3–4/5 — Identifies two or three issues correctly but the explanation of the consequences or obligations is incomplete for one or more. May focus heavily on copyright alone.",
+            minimal: "1–2/5 — Mentions copyright only in general terms, or lists issues without explaining what the specific obligation or legal consequence actually is."
+        }
     },
     {
         year:2022, marks:1, section:"II", qNum:11,
         q:"Identify an advantage of using PDF files.",
         answer:"PDF files maintain consistent formatting across different operating systems, devices and software applications. They can also be password-protected to prevent unauthorised editing.",
         keywords:["formatting","maintained","platform","consistent","prevent editing","cross-platform","password"],
-        minKeywords:1
+        minKeywords:1,
+        bandDescriptors:{
+            full:    "1/1 — States a valid, specific advantage — e.g. PDF maintains consistent formatting across different devices and operating systems, or PDFs can be password-protected to prevent unauthorised editing.",
+            partial: "0/1 — Too vague to award the mark (e.g. 'they are easy to use') or states an advantage that applies equally to most other file types.",
+            minimal: "0/1 — Incorrect or irrelevant advantage stated."
+        }
     },
     {
         year:2022, marks:2, section:"II", qNum:12,
         q:"Outline the purpose of an online thumbnail.",
         answer:`A thumbnail is a small, reduced-resolution copy of a larger image or video. Its primary purpose on a web page is to reduce download time and bandwidth usage, since loading a small preview is far faster than loading the full-resolution file. Thumbnails also allow users to visually browse and preview content — such as images in a gallery or videos in a playlist — without needing to download the full file, improving the user experience and navigation efficiency.`,
         keywords:["smaller","preview","reduce","download","time","bandwidth","browse","gallery"],
-        minKeywords:2
+        minKeywords:2,
+        bandDescriptors:{
+            full:    "2/2 — Explains that thumbnails are small preview images that (1) reduce download time and bandwidth usage, AND (2) allow users to visually browse and preview content without loading the full file.",
+            partial: "1/2 — States only one purpose (e.g. 'they load faster') without explaining the browsing/preview function, or vice versa.",
+            minimal: "0/2 — Incorrect or irrelevant description — e.g. confuses thumbnails with icons or bookmarks."
+        }
     },
     {
         year:2022, marks:3, section:"II", qNum:13,
@@ -6419,7 +6549,12 @@ Finally, consumers themselves have ethical obligations. Illegally copying, shari
         answer:`Step 1 — Convert megabytes to megabits: 550 MB × 8 = 4,400 megabits
 Step 2 — Divide by transfer rate: 4,400 Mb ÷ 80 Mbps = 55 seconds`,
         keywords:["55","4400","8"],
-        minKeywords:1
+        minKeywords:1,
+        bandDescriptors:{
+            full:    "3/3 — Correctly converts 550 MB to megabits (× 8 = 4,400 Mb) then divides by 80 Mbps to arrive at 55 seconds. Both steps shown with working.",
+            partial: "1–2/3 — Method correct but arithmetic error leads to wrong final answer. Or correct answer of 55 seconds without showing the MB-to-Mb conversion step.",
+            minimal: "0/3 — No conversion from MB to Mb attempted, or incorrect formula used entirely."
+        }
     },
     {
         year:2022, marks:4, section:"II", qNum:14,
@@ -6428,7 +6563,12 @@ Step 2 — Divide by transfer rate: 4,400 Mb ÷ 80 Mbps = 55 seconds`,
 
 Disadvantage: Virtual reality requires expensive specialist hardware (headsets, motion controllers, high-performance computers) and sophisticated software, making it costly to implement and maintain, particularly at scale. Additionally, some users experience adverse physical effects such as motion sickness, eye strain or disorientation after extended use, which limits the duration and accessibility of VR experiences.`,
         keywords:["advantage","disadvantage","safe","training","immersive","expensive","hardware","motion sickness","interactive"],
-        minKeywords:4
+        minKeywords:4,
+        bandDescriptors:{
+            full:    "4/4 — Clearly explains ONE substantial advantage (e.g. safe training for dangerous scenarios, immersive/interactive learning, cost-effective simulation) AND ONE substantial disadvantage (e.g. expensive specialist hardware, motion sickness or eye strain, limited accessibility on lower-end devices). Both explained with reasoning.",
+            partial: "2–3/4 — Identifies both an advantage and disadvantage but the explanation of one is superficial or the example is not developed.",
+            minimal: "1/4 — States only an advantage or only a disadvantage, or both stated with no explanation of why they are significant."
+        }
     },
     {
         year:2022, marks:5, section:"II", qNum:15,
@@ -6439,7 +6579,12 @@ Each mouth shape is matched to its corresponding phoneme at the correct point on
 
 The animator then plays back the sequence to check that the mouth movements feel natural and are precisely synchronised with the audio track, making adjustments to timing as necessary. This approach ensures the final dialogue appears convincing and professional, significantly improving the perceived quality of the animation.`,
         keywords:["tweening","morphing","timeline","synchronis","audio","match","phoneme","lip","waveform","playback"],
-        minKeywords:4
+        minKeywords:4,
+        bandDescriptors:{
+            full:    "5/5 — Explains that mouth shapes (phonemes) are matched to the audio waveform on the timeline (lip-syncing). Mentions tweening to generate smooth in-between frames and morphing to blend between shapes fluently. Describes the playback/review process to verify synchronisation.",
+            partial: "3–4/5 — Explains the general lip-sync process and mentions the timeline but omits tweening/morphing techniques, or does not describe waveform analysis or the review step.",
+            minimal: "1–2/5 — Describes matching mouths to words generally without any technical terminology (tweening, morphing, waveform, timeline, phoneme)."
+        }
     },
     {
         year:2023, marks:1, section:"II", qNum:11,
@@ -6452,7 +6597,12 @@ The animator then plays back the sequence to check that the mouth movements feel
         q:"Outline ONE disadvantage of using high-resolution graphics when creating a multimedia product.",
         answer:`A significant disadvantage of using high-resolution graphics in a multimedia product is that they substantially increase file size. Larger files require more storage space and take longer to load, which can result in poor user experience — particularly for web-based products where slow load times may cause users to abandon the content. High-resolution graphics also demand greater processing power to render and display, which can cause performance issues or lag on lower-end devices, limiting the product's accessibility.`,
         keywords:["file size","large","loading","storage","processing","performance","slow","bandwidth"],
-        minKeywords:3
+        minKeywords:3,
+        bandDescriptors:{
+            full:    "2/2 — Identifies increased file size as the disadvantage AND explains at least one consequence: slower loading times for web users, more storage space required, or greater processing demands causing performance issues on lower-end devices.",
+            partial: "1/2 — States 'large file size' without explaining why this is a problem in context, or mentions slow loading without linking it to file size.",
+            minimal: "0/2 — Vague response (e.g. 'they look too good') or states an advantage instead of a disadvantage."
+        }
     },
     {
         year:2023, marks:3, section:"II", qNum:13,
@@ -6462,7 +6612,12 @@ Gloss finish: 800 × $0.10 = $80.00
 Custom design: $60.00 (flat fee)
 Total cost: $680 + $80 + $60 = $820.00`,
         keywords:["820","680","80","60"],
-        minKeywords:2
+        minKeywords:2,
+        bandDescriptors:{
+            full:    "3/3 — Correctly applies unit price of $0.85 per card for the 500–999 range (800 × $0.85 = $680), adds gloss finish (800 × $0.10 = $80) and flat design fee ($60), arriving at total of $820. Working shown.",
+            partial: "1–2/3 — Correct method for most components but one arithmetic error, or the correct pricing tier is not used for the card quantity.",
+            minimal: "0/3 — Incorrect pricing method, significantly wrong total, or no working shown."
+        }
     },
     {
         year:2023, marks:4, section:"II", qNum:14,
@@ -6471,7 +6626,12 @@ Total cost: $680 + $80 + $60 = $820.00`,
 
 The volume of the sound effect is adjusted to sit naturally within the overall audio mix, ensuring it does not overpower dialogue or background music. Fade-in and fade-out effects are applied at the beginning and end of the audio clip to avoid abrupt, unnatural cuts that would be jarring to the viewer. The filmmaker then scrubs through the timeline or uses playback to review the placement and timing of each effect, making adjustments as needed to ensure synchronisation with the corresponding on-screen action. This process is repeated for each sound effect until the audio design is complete.`,
         keywords:["timeline","fade","volume","editing software","library","place","synchron","import","playback","audio track"],
-        minKeywords:4
+        minKeywords:4,
+        bandDescriptors:{
+            full:    "4/4 — Describes the full process: import audio file into the software's media library, place it on a dedicated audio track on the timeline at the correct frame, adjust volume level, apply fade-in/fade-out to avoid abrupt cuts, then review via playback and adjust timing for synchronisation with on-screen action.",
+            partial: "2–3/4 — Describes the general process of placing audio on a timeline and adjusting volume or fades, but misses the synchronisation review step or does not mention importing the file first.",
+            minimal: "1/4 — Vague description such as 'drag the sound onto the video' without explaining volume adjustment, fading, or synchronisation."
+        }
     },
     {
         year:2023, marks:5, section:"II", qNum:15,
@@ -6486,7 +6646,12 @@ Trademark law must also be considered — using registered logos, brand names or
 
 Finally, proper attribution should be given to all creators whose work is used, even when licensing permits it — this is both an ethical obligation and, in many cases, a legal requirement of the licence agreement. Failure to address these issues can expose the team and organisation to significant legal liability and reputational damage.`,
         keywords:["copyright","permission","license","intellectual property","legal","attribution","trademark","privacy","fair use","creative commons"],
-        minKeywords:5
+        minKeywords:5,
+        bandDescriptors:{
+            full:    "5/5 — Identifies and explains at least three distinct issues: copyright infringement (obtaining licences/permission before using third-party content), Creative Commons/fair use provisions, trademark law (logos and brand names), privacy rights (consent for individuals' likenesses), and attribution requirements. Explains both the issue and the consequence of ignoring it.",
+            partial: "3–4/5 — Addresses copyright thoroughly but covers other issues (trademark, privacy, attribution) only briefly. Or covers multiple issues but the explanation of each is minimal.",
+            minimal: "1–2/5 — Focuses only on copyright in general terms without addressing other legal issues or explaining specific obligations."
+        }
     },
     {
         year:2024, marks:1, section:"II", qNum:11,
@@ -6499,7 +6664,12 @@ Finally, proper attribution should be given to all creators whose work is used, 
         q:"Outline TWO advantages of using a serif font.",
         answer:`First, serif fonts improve readability in print at small sizes because the small strokes (serifs) at the ends of letterforms help guide the reader's eye along the line of text, making it easier to track and distinguish individual characters quickly. Second, serif fonts convey a sense of authority, tradition and professionalism, making them well-suited to formal documents, newspapers, books and corporate communications where credibility is important.`,
         keywords:["easier to read","distinguish","print","track","recogni","guide","readability","professional","small"],
-        minKeywords:3
+        minKeywords:3,
+        bandDescriptors:{
+            full:    "2/2 — States TWO distinct advantages with explanation: (1) the serifs guide the eye along the line of text, improving readability in print at small sizes; AND (2) conveys professionalism, authority or tradition, making them well-suited to formal documents.",
+            partial: "1/2 — States one clear advantage with explanation, but the second advantage is absent, vague, or repeats the same idea differently.",
+            minimal: "0/2 — States only 'they look professional' with no explanation, or names one advantage with no reasoning."
+        }
     },
     {
         year:2024, marks:3, section:"II", qNum:13,
@@ -6510,7 +6680,12 @@ Vector images, by contrast, are defined by mathematical equations that describe 
 
 Bitmap images are better suited to complex photographic content with subtle colour gradations, while vector images are preferred for logos, icons and illustrations that need to be reproduced at multiple sizes.`,
         keywords:["pixel","equation","grainy","scale","quality","smooth","resolution","enlarge","mathematical"],
-        minKeywords:4
+        minKeywords:4,
+        bandDescriptors:{
+            full:    "3/3 — Correctly defines bitmap (fixed pixel grid, resolution-dependent, becomes pixelated/blurry when enlarged) AND vector (mathematical equations defining shapes, resolution-independent, scales to any size without quality loss). Identifies which type suits different use cases (photos vs logos/icons).",
+            partial: "2/3 — Defines both types but the reason why one is resolution-dependent and the other is not is missing or inaccurate. Use cases may be omitted.",
+            minimal: "1/3 — Describes only one image type, or describes both but without explaining what makes each technically distinct."
+        }
     },
     {
         year:2024, marks:4, section:"II", qNum:14,
@@ -6523,7 +6698,12 @@ Low-angle shots — where the camera points upward at a subject — are used to 
 
 Tracking shots follow a subject as they move, maintaining engagement and creating a sense of dynamic action. Together, these different shot types form the visual language of the production and work in combination to create effective visual storytelling.`,
         keywords:["close-up","wide","low angle","tracking","shot","establish","emotion","medium","high angle"],
-        minKeywords:4
+        minKeywords:4,
+        bandDescriptors:{
+            full:    "4/4 — Explains at least three different shot types (e.g. wide/establishing, close-up, medium, low-angle, high-angle, tracking) with an explanation of the purpose or emotional effect of each, and at least one specific example demonstrating how a director would use it.",
+            partial: "2–3/4 — Identifies multiple shot types but the explanation of their purpose is incomplete for some, or examples are absent or too generic.",
+            minimal: "1/4 — Names shot types with no explanation of their effect or purpose, or describes only one shot type with an example."
+        }
     },
     {
         year:2024, marks:5, section:"II", qNum:15,
@@ -6536,7 +6716,12 @@ During production, practical techniques are prepared. For live-action sequences 
 
 In post-production, digital assets — including 3D models, textures, particle effects and digital environments — are created or sourced and composited into the footage. New effect layers are added frame by frame and blended with the live-action material to achieve realism. For example, computer-generated imagery (CGI) is used in Marvel films to create photorealistic creatures, robots and large-scale destruction that would be physically impossible or prohibitively dangerous to film practically. Final colour grading, lighting adjustments and rendering complete the integration, producing a seamless final product.`,
         keywords:["storyboard","green screen","chroma key","cgi","post-production","3d","pre-production","composit","render","vfx"],
-        minKeywords:5
+        minKeywords:5,
+        bandDescriptors:{
+            full:    "5/5 — Describes the process across all three stages: pre-production (storyboard, software/hardware planning, budget), production (green screen/chroma key setup, actor coordination with VFX markers), and post-production (compositing digital assets, CGI integration, colour grading, rendering). Uses at least one specific example (e.g. Marvel CGI creatures).",
+            partial: "3–4/5 — Covers two of the three production stages in reasonable detail, or covers all three but one stage is significantly underdeveloped. May focus entirely on post-production.",
+            minimal: "1–2/5 — Describes special effects only as 'adding CGI in editing' without explaining the production pipeline stages or the planning and on-set work involved."
+        }
     },
 
     // ── 2025 WRITTEN QUESTIONS ────────────────────────────────────────────────
@@ -6546,21 +6731,36 @@ In post-production, digital assets — including 3D models, textures, particle e
         q:"Why would a PNG file format be used instead of a JPEG file format?",
         answer:`PNG (Portable Network Graphics) would be used instead of JPEG for two key reasons. First, PNG uses lossless compression — all original image data is preserved exactly and image quality is not compromised during compression, unlike JPEG which permanently discards data using lossy compression. Second, PNG supports transparent backgrounds, which is essential for web design and graphic work where images need to be layered over different backgrounds without a visible rectangular border. PNG is therefore preferred for logos, icons, graphics and any image requiring exact colour fidelity or transparency.`,
         keywords:["lossless","quality","transparent","background","lossy","compression","png","jpeg","layering"],
-        minKeywords:3
+        minKeywords:3,
+        bandDescriptors:{
+            full:    "2/2 — Identifies TWO reasons to choose PNG over JPEG: (1) lossless compression preserves full image quality with no data discarded; AND (2) PNG supports transparent backgrounds, making it suitable for layering over different backgrounds.",
+            partial: "1/2 — States one correct reason with explanation but the second reason is absent or vague.",
+            minimal: "0/2 — States only 'PNG is better quality' without explaining lossless compression, or confuses PNG and JPEG characteristics."
+        }
     },
     {
         year:2025, marks:2, section:"II", qNum:12,
         q:"The home page of a website includes a banner image that needs to be adjusted to match the site's overall colour scheme and style guide. Outline steps to manipulate the banner image to ensure that it aligns with the website design.",
         answer:`To align the banner image with the website's colour scheme and style guide: (1) Open the image in image editing software (e.g. Photoshop, GIMP). (2) Adjust the hue, saturation and colour balance to match the site's palette — for example, shifting dominant colours to align with the brand's primary and secondary colours. (3) Apply contrast and brightness adjustments to ensure text placed over the banner remains legible. (4) Ensure the banner is the correct aspect ratio and dimensions for the website layout (e.g. 1920×400px for a full-width header). (5) Optimise the image for fast loading by exporting at an appropriate file size and format (e.g. JPEG for photographs, PNG for graphics with transparency). (6) Test the banner across different screen sizes to confirm responsiveness and visual consistency with the overall design.`,
         keywords:["colour","hue","saturation","contrast","aspect ratio","optimise","export","responsive","dimensions","format"],
-        minKeywords:3
+        minKeywords:3,
+        bandDescriptors:{
+            full:    "2/2 — Outlines at least three meaningful steps using appropriate terminology — e.g. adjust hue/saturation/colour balance to match the site's palette, set correct dimensions and aspect ratio for the layout, then export in an optimised format at an appropriate file size for web delivery.",
+            partial: "1/2 — Mentions adjusting colours and/or resizing but without specific technical steps, or ignores the web optimisation/export step.",
+            minimal: "0/2 — Vague ('edit it in Photoshop') with no specific steps or technical detail."
+        }
     },
     {
         year:2025, marks:2, section:"II", qNum:13,
         q:"How do analogue and digital video types differ?",
         answer:`Analogue video uses continuous signals — a smooth, uninterrupted variation in electrical voltage — to represent video information. This produces natural, smooth transitions but is susceptible to quality degradation over time and through copying. Digital video uses discrete signals represented as binary data (0s and 1s). Digital formats allow for higher and more consistent quality, easier editing and post-production processing, error correction, and lossless copying without generational quality loss. Digital video can also be compressed more efficiently and distributed via the internet, making it far more practical for modern production and distribution.`,
         keywords:["continuous","discrete","analogue","digital","binary","quality","editing","compression","signal","degradation"],
-        minKeywords:3
+        minKeywords:3,
+        bandDescriptors:{
+            full:    "2/2 — Correctly explains that analogue uses continuous electrical signals (smooth but degrades over time and through copying) while digital uses discrete binary data (consistent quality, easy editing, lossless copying, efficient compression for distribution).",
+            partial: "1/2 — Correctly describes one type but does not clearly contrast it with the other, or only states 'analogue is older and digital is better' without explaining the underlying signal difference.",
+            minimal: "0/2 — Confuses the two types or provides no technical distinction whatsoever."
+        }
     },
     {
         year:2025, marks:4, section:"II", qNum:14,
@@ -6575,7 +6775,12 @@ Third, captured MoCap data is reusable across multiple projects or scenes. The s
 
 Finally, for complex action sequences or crowd scenes in a short film, MoCap makes technically demanding animation achievable within a smaller budget, balancing quality and cost-effectiveness and making the final product more engaging and marketable.`,
         keywords:["realistic","fluid","movement","keyframing","efficiency","reusable","expression","natural","production","cost"],
-        minKeywords:4
+        minKeywords:4,
+        bandDescriptors:{
+            full:    "4/4 — Explains at least three distinct advantages with reasoning: (1) produces highly realistic, fluid movement including subtle expressions — difficult to replicate by manual keyframing; (2) production efficiency — captures complex animation data far faster than manual methods; (3) MoCap data is reusable across multiple scenes or characters; (4) makes technically demanding sequences achievable within smaller budgets.",
+            partial: "2–3/4 — Identifies multiple advantages but explanations are brief or some overlap (e.g. 'realistic' and 'natural movement' treated as separate points when they are the same idea).",
+            minimal: "1/4 — States only one advantage (e.g. 'it makes animation more realistic') without elaborating or identifying other distinct benefits."
+        }
     },
     {
         year:2025, marks:5, section:"II", qNum:15,
@@ -6594,7 +6799,12 @@ On the positive side, ethical image enhancement exists — for example, pixelati
 
 Ethical image manipulation should balance creative expression with honesty and transparency, particularly in advertising and journalism where audiences expect authenticity.`,
         keywords:["authenticity","misinformation","journalism","beauty standards","mental health","privacy","consent","copyright","transparency","advertising"],
-        minKeywords:5
+        minKeywords:5,
+        bandDescriptors:{
+            full:    "5/5 — Identifies and explains at least four distinct ethical concerns: authenticity/misinformation (journalism, fabricating events), beauty standards and mental health (advertising, unrealistic ideals for young people), privacy and consent (using individuals' likenesses without permission), and copyright/ownership. Notes that some image enhancement is ethical (e.g. blurring victims' faces to protect privacy).",
+            partial: "3–4/5 — Addresses three concerns with reasonable depth, or four concerns but one or more lacks explanation of why it is an ethical problem.",
+            minimal: "1–2/5 — Focuses only on one concern (typically 'making images look fake') or lists concerns without explaining the ethical dimension of each."
+        }
     }
 
 ];
