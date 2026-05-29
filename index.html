@@ -149,12 +149,13 @@
     /* Show the letter label above the image — not every image has it baked in */
     .option-btn-img .option-label { display: block; margin-bottom: 8px; }
     /* object-fit:contain keeps aspect ratio at any screen size — never stretches */
-    .option-img { display: block; width: 100%; height: clamp(150px, 28vh, 280px); object-fit: contain; object-position: center; border-radius: 6px; margin-bottom: 4px; cursor: zoom-in; }
+    .option-img { display: block; width: 100%; height: clamp(150px, 28vh, 280px); object-fit: contain; object-position: center; border-radius: 6px; margin-bottom: 4px; cursor: pointer; }
     .option-img-desc { font-size: 11px; color: var(--muted); font-style: italic; }
     /* 2×2 grid layout for questions where all 4 options are images (A|B on top, C|D below) */
     .options-grid-2x2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-    /* In the grid, buttons are half-width — slightly shorter image height looks better */
-    .options-grid-2x2 .option-img { height: clamp(120px, 22vh, 220px); }
+    /* In the 2×2 grid let images size naturally — no fixed height box, no whitespace padding
+       for short/wide images (e.g. table rows). Tall graph images are fine at natural size too. */
+    .options-grid-2x2 .option-img { height: auto; object-fit: unset; }
     /* Collapse to single column on very narrow screens (≤380px) */
     @media (max-width: 380px) { .options-grid-2x2 { grid-template-columns: 1fr; } }
 
@@ -485,7 +486,7 @@ const mathsQuestions = [
 <div class="step"><span class="step-number">9.</span> Uniform flat.</div>
 <div class="step"><span class="step-number">10.</span> Correct: Tail on right.</div>`},
 
-    {year:2020,category:'S1S2',q:"Relative to the rest of the class, which row of the table shows John's strongest subject and his weakest subject?",options:["French","Commerce","Music","All equal"],answer:1, image:"/diagrams/mathematics-standard-2_2020_Q8_stimulus.jpg",optionImages:["/diagrams/mathematics-standard-2_2020_Q8_A.jpg","/diagrams/mathematics-standard-2_2020_Q8_B.jpg","/diagrams/mathematics-standard-2_2020_Q8_C.jpg","/diagrams/mathematics-standard-2_2020_Q8_D.jpg"],solution:`<div class="step"><span class="step-number">1.</span> Z-score measures standard deviations from mean.</div>
+    {year:2020,category:'S1S2',q:"Relative to the rest of the class, which row of the table shows John's strongest subject and his weakest subject?",hideQ:true,options:["French","Commerce","Music","All equal"],answer:1, image:"/diagrams/mathematics-standard-2_2020_Q8_stimulus.jpg",optionImages:["/diagrams/mathematics-standard-2_2020_Q8_A.jpg","/diagrams/mathematics-standard-2_2020_Q8_B.jpg","/diagrams/mathematics-standard-2_2020_Q8_C.jpg","/diagrams/mathematics-standard-2_2020_Q8_D.jpg"],solution:`<div class="step"><span class="step-number">1.</span> Z-score measures standard deviations from mean.</div>
 <div class="step"><span class="step-number">2.</span> Higher z-score = better performance relative to class mean.</div>
 <div class="step"><span class="step-number">3.</span> Positive z-score = above mean.</div>
 <div class="step"><span class="step-number">4.</span> Compare values: French 1.5, Music 2.0, Commerce 3.0.</div>
@@ -3342,7 +3343,8 @@ function renderQuestion() {
     if (imgUrl) {
       html += `<div class="q-image-wrap"><img src="${imgUrl}" alt="Question diagram" loading="lazy" onclick="openLightbox(this.src)"/></div>`;
     }
-    html += `<div class="q-text">${q.q || q.text || ''}</div>`;
+    // hideQ: true means the stimulus image already contains the full question text — skip rendering it again
+    if (!q.hideQ) html += `<div class="q-text">${q.q || q.text || ''}</div>`;
     // Use 2x2 grid when all options are images — mirrors how NESA lays out option diagrams
     const hasImgOpts = q.optionImages && q.optionImages.length >= 4 && q.optionImages.every(Boolean);
     html += `<div class="options-list${hasImgOpts ? ' options-grid-2x2' : ''}">`;
@@ -3370,7 +3372,7 @@ function renderQuestion() {
         cls += ' option-btn-img';
         html += `<button class="${cls}" onclick="selectAnswer(${i})">
           <span class="option-label">${LETTERS[i]}.</span>
-          <img src="${q.optionImages[i]}" alt="${opt}" class="option-img" loading="lazy" onclick="event.stopPropagation();openLightbox(this.src)"/>
+          <img src="${q.optionImages[i]}" alt="${opt}" class="option-img" loading="lazy"/>
           <span class="option-img-desc">${opt}</span>${exp}
         </button>`;
       } else {
