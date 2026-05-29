@@ -226,3 +226,21 @@ grant select, insert, update, delete    on public.subject_selections to service_
 grant select                            on public.pricing_config     to anon;
 grant select                            on public.pricing_config     to authenticated;
 grant select, insert, update, delete    on public.pricing_config     to service_role;
+
+
+-- ── 9. AI MARKING QUOTA — Migration (run once) ─────────────────
+-- Add AI quota columns to subscriptions table.
+-- Run this in Supabase SQL Editor → Dashboard → SQL Editor.
+
+alter table public.subscriptions
+  add column if not exists ai_marks_used    integer     not null default 0,
+  add column if not exists ai_marks_reset_at timestamptz default now();
+
+-- Safe increment RPC (avoids race conditions when concurrent tabs submit answers)
+create or replace function public.increment_ai_marks(p_user_id uuid)
+returns void language sql security definer as $$
+  update public.subscriptions
+  set    ai_marks_used = ai_marks_used + 1,
+         updated_at    = now()
+  where  user_id = p_user_id;
+$$;
