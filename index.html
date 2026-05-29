@@ -7172,8 +7172,10 @@ function renderQuestion() {
         if (q.acceptableAnswers && q.acceptableAnswers.length) {
           // 1-mark recall question (e.g. Multimedia "What does RTSP stand for?")
           const correct = q.acceptableAnswers.some(a => sa.includes(a.toLowerCase()));
+          const descriptor = q.bandDescriptors ? (correct ? q.bandDescriptors.full : q.bandDescriptors.minimal) : '';
           feedbackHtml = `<div class="written-feedback ${correct ? 'correct' : 'wrong'}">
             ${correct ? '✅ Correct!' : '❌ Not quite — see model answer below.'}
+            ${descriptor ? `<br><span style="font-size:12px;font-weight:400;margin-top:4px;display:block;opacity:0.85">${descriptor}</span>` : ''}
           </div>`;
         } else if (q.keywords && q.keywords.length) {
           // Keyword-scored question (HMS, Multimedia extended, VET)
@@ -7186,18 +7188,23 @@ function renderQuestion() {
             // Guard: if below minKeywords threshold, cap at half marks
             if (matched.length < minKw) marksEarned = Math.min(marksEarned, Math.floor(maxMark / 2));
             const grade = marksEarned >= maxMark * 0.7 ? 'correct' : marksEarned > 0 ? 'partial' : 'wrong';
+            const tier  = grade === 'correct' ? 'full' : grade === 'partial' ? 'partial' : 'minimal';
+            const descriptor = q.bandDescriptors ? q.bandDescriptors[tier] : '';
             feedbackHtml = `<div class="written-feedback ${grade}">
               <strong>${marksEarned}/${maxMark} marks</strong> — ${matched.length} of ${q.keywords.length} key concepts matched.
               ${matched.length > 0 ? `<br><span style="font-size:11px;opacity:0.8">Found: ${matched.join(', ')}</span>` : ''}
+              ${descriptor ? `<br><span style="font-size:12px;font-weight:400;margin-top:6px;display:block;opacity:0.9;line-height:1.55">${descriptor}</span>` : ''}
             </div>`;
           }
         }
       }
       const ans = q.answer || q.modelAnswer || q.sampleAnswer || '';
+      // Preserve line breaks in plain-text answers (calculation steps etc.)
+      const ansHtml = ans.includes('<') ? ans : ans.replace(/\n/g, '<br>');
       html += feedbackHtml;
       html += `<div class="model-answer show">
         <div class="model-answer-label">Model Answer</div>
-        ${ans}
+        ${ansHtml}
       </div>`;
     } else {
       html += `<textarea class="written-area" id="written-input" placeholder="Write your answer here…" rows="5"></textarea>`;
