@@ -7010,13 +7010,18 @@ function renderPicker() {
                color:${!isExt ? 'white' : 'var(--text)'}">
         HSC 90
       </button>
-      <button onclick="mathsQuestionSet='extended';renderPicker()"
-        style="flex:1;padding:10px;border-radius:10px;font-family:var(--font-display);font-size:13px;font-weight:700;cursor:pointer;transition:all 0.15s;
-               border:1.5px solid ${isExt ? 'var(--accent)' : 'var(--border)'};
-               background:${isExt ? 'var(--accent)' : 'var(--surface)'};
-               color:${isExt ? 'white' : 'var(--text)'}">
-        Extended 318
-      </button>
+      ${inTrial
+        ? `<button style="flex:1;padding:10px;border-radius:10px;font-family:var(--font-display);font-size:13px;font-weight:700;background:var(--surface);color:var(--muted);border:1.5px solid var(--border);opacity:0.4;cursor:not-allowed;line-height:1.3">
+            Extended 318<br><span style="font-size:9px;font-weight:500">&#128274; Subscription</span>
+           </button>`
+        : `<button onclick="mathsQuestionSet='extended';renderPicker()"
+            style="flex:1;padding:10px;border-radius:10px;font-family:var(--font-display);font-size:13px;font-weight:700;cursor:pointer;transition:all 0.15s;
+                   border:1.5px solid ${isExt ? 'var(--accent)' : 'var(--border)'};
+                   background:${isExt ? 'var(--accent)' : 'var(--surface)'};
+                   color:${isExt ? 'white' : 'var(--text)'}">
+            Extended 318
+           </button>`
+      }
     </div>
     <div style="font-size:11px;color:var(--muted);margin-bottom:18px;line-height:1.5">
       ${!isExt
@@ -7044,12 +7049,16 @@ function renderPicker() {
     s.categories.forEach(c => {
       if (c !== 'all') {
         const n = qsForCounts.filter(q => q.category === c).length;
-        if (n === 0) return; // hide categories with no questions for selected year
+        if (n === 0) return;
       }
       const active = (pickerFilters.category || 'all') === c ? 'active' : '';
       const count = c === 'all' ? qsForCounts.length : qsForCounts.filter(q => q.category === c).length;
       const label = c === 'all' ? `All (${count})` : `${c} (${count})`;
-      html += `<div class="filter-chip ${active}" onclick="setFilter('category','${c}');renderPicker()">${label}</div>`;
+      if (inTrial && c !== 'all') {
+        html += `<div class="filter-chip" style="opacity:0.35;cursor:not-allowed" title="Unlocks with subscription">${label}</div>`;
+      } else {
+        html += `<div class="filter-chip ${active}" onclick="setFilter('category','${c}');renderPicker()">${label}</div>`;
+      }
     });
     html += '</div>';
   }
