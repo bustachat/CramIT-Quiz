@@ -253,6 +253,11 @@
     /* Written response */
     .written-area { width: 100%; min-height: 120px; background: var(--surface2); border: 1px solid var(--border); border-radius: 11px; padding: 14px; color: var(--text); font-family: var(--font-body); font-size: 14px; resize: vertical; margin-top: 16px; line-height: 1.6; }
     .written-area:focus { outline: none; border-color: var(--accent); }
+    .written-area.shake { animation: wShake 0.35s ease; border-color: #F43F5E; }
+    @keyframes wShake { 0%,100%{transform:translateX(0)} 20%,60%{transform:translateX(-6px)} 40%,80%{transform:translateX(6px)} }
+    .student-answer-box { background: var(--surface2); border: 1px solid var(--border); border-radius: 10px; padding: 12px 14px; margin-bottom: 14px; margin-top: 4px; }
+    .student-answer-label { font-size: 10px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin-bottom: 6px; }
+    .student-answer-text { font-size: 13px; color: var(--text); line-height: 1.6; white-space: pre-wrap; }
     .marks-badge { display: inline-block; padding: 3px 10px; background: rgba(193,125,60,0.12); border: 1px solid var(--accent); border-radius: 20px; font-size: 11px; font-weight: 600; color: var(--accent); margin-bottom: 12px; }
     .model-answer { background: var(--surface2); border: 1px solid var(--border); border-left: 3px solid var(--accent3); border-radius: 11px; padding: 14px; margin-top: 14px; font-size: 13px; line-height: 1.6; color: var(--text); display: none; }
     .model-answer.show { display: block; animation: fadeUp 0.25s ease; }
@@ -7199,6 +7204,12 @@ function renderQuestion() {
       const studentAns = typeof answers[currentIdx] === 'string' ? answers[currentIdx] : '';
       let feedbackHtml = '';
 
+      // Show student's own typed answer so they can compare against model answer
+      if (studentAns) {
+        const saDisplay = studentAns.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/\n/g,'<br>');
+        html += `<div class="student-answer-box"><div class="student-answer-label">Your answer</div><div class="student-answer-text">${saDisplay}</div></div>`;
+      }
+
       // ── AI result / loading spinner ────────────────────────────────────
       if (aiMarkingPending.has(currentIdx)) {
         feedbackHtml = `<div class="ai-marking-loader">
@@ -7351,6 +7362,24 @@ function clearWrittenAnswer() {
   setTimeout(() => { const inp = document.getElementById('written-input'); if (inp) inp.focus(); }, 50);
 }
 
+// ── KEYWORD HIT — stem matching ──────────────────────────────────────
+// Handles word variations: "slow" matches "slower", "loading" matches "loads"
+function keywordHit(kw, sa) {
+  // Direct substring (catches multi-word keywords like "file size")
+  if (sa.includes(kw)) return true;
+  // Word-level stem matching — split student answer into words
+  const words = sa.split(/\W+/);
+  for (const word of words) {
+    if (!word) continue;
+    // One starts with the other (plural/suffix: slow→slower, load→loading/loads)
+    if (word.startsWith(kw) || kw.startsWith(word)) return true;
+    // Shared 4-char stem (load/loading/loads all share "load")
+    const stemLen = Math.min(4, word.length, kw.length);
+    if (stemLen >= 4 && word.substring(0, stemLen) === kw.substring(0, stemLen)) return true;
+  }
+  return false;
+}
+
 // ── BUILD KEYWORD FEEDBACK (immediate self-assessment) ───────────────
 function buildKeywordFeedback(q, studentAns) {
   const sa = studentAns.toLowerCase();
@@ -7373,7 +7402,7 @@ function buildKeywordFeedback(q, studentAns) {
   if (q.keywords && q.keywords.length) {
     const maxMark  = q.maxMark || q.marks || 0;
     const minKw    = q.minKeywords || Math.ceil(q.keywords.length / 2);
-    const kwResults = q.keywords.map(kw => ({ label: kw, hit: sa.includes(kw.toLowerCase()) }));
+    const kwResults = q.keywords.map(kw => ({ label: kw, hit: keywordHit(kw.toLowerCase(), sa) }));
     const matched   = kwResults.filter(r => r.hit).length;
     const percentage = Math.round((matched / q.keywords.length) * 100);
     if (maxMark > 0) {
@@ -7445,7 +7474,19 @@ async function tryAiMarking(questionIdx, q, studentAnswer) {
 function nextQuestion() {
   if (currentMode === 'written' && !answered) {
     const input = document.getElementById('written-input');
-    answers[currentIdx] = input ? input.value.trim() : '';
+    const val = input ? input.value.trim() : '';
+    if (!val) {
+      // Empty submission — shake the textarea and bail
+      if (input) {
+        input.classList.remove('shake');
+        void input.offsetWidth; // force reflow to restart animation
+        input.classList.add('shake');
+        input.focus();
+        setTimeout(() => input.classList.remove('shake'), 400);
+      }
+      return;
+    }
+    answers[currentIdx] = val;
     answered = true;
     renderQuestion();
     // Fire AI marking in the background (non-blocking, silent fallback)
