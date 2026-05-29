@@ -7356,7 +7356,7 @@ function prevQuestion() {
 function clearWrittenAnswer() {
   aiResults[currentIdx] = null;
   aiMarkingPending.delete(currentIdx);
-  answers[currentIdx] = '';
+  answers[currentIdx] = null;  // null = unanswered; '' would make renderQuestion() treat it as answered
   answered = false;
   renderQuestion();
   setTimeout(() => { const inp = document.getElementById('written-input'); if (inp) inp.focus(); }, 50);
