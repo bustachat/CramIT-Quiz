@@ -336,8 +336,8 @@ The standalone HTML files in the project are the **gold standard** for quiz func
 | Responsive/mobile | `clamp()` font sizing, safe area insets, touch targets ≥ 48px | ✅ In reference |
 | Correct/incorrect colours | Green `#10B981` / Red `#F43F5E` highlight on options | ✅ In reference |
 | Written response mode | Text input, keyword scoring, band descriptor, model answer reveal | ✅ HMS + VET files |
-| Diagram support | `image` field → stimulus above question. `optionImages` array → per-option images inside each button. Paths point to `/diagrams/` (Netlify). | ⚠️ Extractor ✅ done — wiring in Stage 3 |
-| NESA band marking (AI) | AI marks written responses via `/.netlify/functions/mark-written` | ⬜ Planned |
+| Diagram support | `image` field → stimulus above question. `optionImages` array → per-option images inside each button. Paths point to `/diagrams/` (Netlify). | ✅ Done Stage 3 |
+| NESA band marking (AI) | AI marks written responses via `/.netlify/functions/mark-written` | ✅ Done Stage 5 |
 
 ### Question data structure (JS object)
 ```js
@@ -379,7 +379,7 @@ All diagram images are committed to the git repo under `diagrams/` and served by
 
 **Do NOT use Supabase Storage for exam diagrams.** The `exam-images` bucket in Supabase is retired — it contained old unsplit images (one image per question). The new images are split into stimulus + per-option files.
 
-**Do NOT use `MATHS_IMG` lookup table** — this is being retired in Stage 3. Images are referenced directly on each question object via `image` and `optionImages` fields.
+**Do NOT use `MATHS_IMG` lookup table** — retired in Stage 3. Images are referenced directly on each question object via `image` and `optionImages` fields.
 
 **VET questions** currently use `VET_IMG` with Imgur URLs — keep these until VET diagram extraction is built (post Stage 4).
 
@@ -464,8 +464,8 @@ When the nightly agent detects a new exam paper:
 4. Netlify auto-deploys — images immediately available at `/diagrams/filename.jpg`
 
 ### Adding diagram support to other subjects
-- **VET Construction**: Questions reference `VET_IMG` Imgur URLs — migrate to `/diagrams/` in Stage 4
-- **HMS / Multimedia**: No image questions currently — add as needed in Stage 4
+- **VET Construction**: Questions reference `VET_IMG` Imgur URLs — migrate to `/diagrams/` post-launch (low priority)
+- **HMS / Multimedia**: No image questions currently — add if needed post-launch
 - **New subjects via agent**: Agent uses `--detect` mode (Claude Vision) for automatic extraction
 
 ---
@@ -516,6 +516,10 @@ GitHub Actions triggers → agent.js runs →
 - Google login working after redirect URL fix
 - `SUPABASE_ANON` and `APP_URL` filled in `index.html`
 - **Stage 1 complete** — progress bar glow, year/topic badges on questions, reset confirmation modal, touch targets 52px, safe-area-inset for notched phones
+- **Stage 2 complete** — diagram extractor v3, 76 images in `/diagrams/`, calibration mode, stimulus/options split
+- **Stage 3 complete** — images wired into quiz renderer (`image` + `optionImages`), `MATHS_IMG` retired, category filter with live counts, HSC 90/Extended 318 toggle
+- **Stage 4 complete** — Multimedia + HMS ported into `index.html` with full MC + written question sets
+- **Stage 5 complete** — keyword scoring + bandDescriptors on all 42 written questions, upgraded written UI (keyword grid, score heading, colour pills), AI marking via `/.netlify/functions/mark-written` with monthly quota by plan (Free=0, Base=50, Unlimited/Flex=100), student answer display, stem keyword matching, try-again fix, `ANTHROPIC_API_KEY` added to Netlify, SQL migration run in Supabase
 
 ### Staged Implementation Roadmap
 
@@ -523,10 +527,10 @@ GitHub Actions triggers → agent.js runs →
 |---|---|---|
 | **Stage 1** | Quick wins: reset modal, year/topic badges, progress bar glow, touch targets, safe-area-inset | ✅ **DONE** |
 | **Stage 2** | Diagram extractor v3 — stimulus/options split, calibration mode, 76 images committed to repo | ✅ **DONE** |
-| **Stage 3** | Wire images into quiz renderer (`image` + `optionImages` on question objects, retire `MATHS_IMG`). Category filter + dynamic counts + HSC 90/Extended 318 toggle | ⬜ Next |
-| **Stage 4** | Port Multimedia + HMS subjects into index.html | ⬜ |
-| **Stage 5** | Written response + NESA band engine (keyword scoring → Band 1–6 feedback + band-tiered model answers) | ⬜ |
-| **Stage 6** | Pricing model update — 10-question trial replaces 1-free-subject | ⬜ |
+| **Stage 3** | Wire images into quiz renderer (`image` + `optionImages` on question objects, retire `MATHS_IMG`). Category filter + dynamic counts + HSC 90/Extended 318 toggle | ✅ **DONE** |
+| **Stage 4** | Port Multimedia + HMS subjects into index.html | ✅ **DONE** |
+| **Stage 5** | Written response + NESA band engine (keyword scoring → Band 1–6 feedback + band-tiered model answers) + AI marking via `/.netlify/functions/mark-written` | ✅ **DONE** |
+| **Stage 6** | Pricing model update — 10-question trial replaces 1-free-subject | ⬜ Next |
 | **Stage 7** | Agent infrastructure (QA/Testing, Content, Analytics) — separate project | ⬜ |
 
 ### ⬜ Still to do (non-staged)
@@ -548,16 +552,17 @@ GitHub Actions triggers → agent.js runs →
 
 The biggest priority is bringing `index.html` (the hosted Netlify app) up to the standard of the reference standalone HTML files. Here is the exact feature gap:
 
-### Features the reference has that index.html is missing or has weaker versions of:
+### Quiz engine feature parity — all complete ✅
 
-1. **Practice vs Test mode toggle** — reference has a clean segmented control; index.html version needs verification
-2. **Step-by-step solutions** — reference uses numbered `<div class="step">` blocks; must be preserved exactly
-3. **Category/topic filter with live counts** — reference dynamically rebuilds the dropdown with `(n)` counts per topic; index.html needs this (Stage 3)
-4. **Question set toggle (HSC 90 vs Extended 318)** — maths-specific; reference has `setQuestionSet('original'|'extended')`; variant questions have `variant: true` on the object (Stage 3)
-5. **Option shuffle per render** — `questionWithShuffledOptions()` shuffles options array and adjusts `answer` index to match; ensures same answer isn't always in position C
-6. **Correct answer behaviour** — in Practice mode after Check: correct option turns green, wrong option turns red, all other options muted, explanation box animates in
-7. **Results screen** — score %, correct/total count, scrollable per-question review list showing question text + what student picked + correct answer
-8. **Year + topic badge** — ✅ DONE in Stage 1 — amber pills above each question showing year and topic code
+1. **Practice vs Test mode toggle** — ✅ Done
+2. **Step-by-step solutions** — ✅ Done — numbered `<div class="step">` blocks
+3. **Category/topic filter with live counts** — ✅ Done Stage 3
+4. **Question set toggle (HSC 90 vs Extended 318)** — ✅ Done Stage 3
+5. **Option shuffle per render** — ✅ Done
+6. **Correct answer behaviour** — ✅ Done — green/red highlights, explanation animates in
+7. **Results screen** — ✅ Done — score %, correct/total, per-question breakdown
+8. **Year + topic badge** — ✅ Done Stage 1
+9. **Written response + AI marking** — ✅ Done Stage 5
 
 ### When upgrading index.html, preserve:
 - The warm earth-tone design system (`--accent: #C17D3C`, Syne + DM Sans fonts)
@@ -579,10 +584,17 @@ The biggest priority is bringing `index.html` (the hosted Netlify app) up to the
 - The nightly `agent.js` handles this automatically once `ANTHROPIC_API_KEY` is set in GitHub Secrets
 - Agent commits directly to `main` → Netlify auto-deploys
 
+### Current subjects (all live in index.html):
+- **Mathematics Standard 2** — 90 HSC + 318 extended variants, diagrams wired ✅
+- **Multimedia** — MC + written, ported Stage 4 ✅
+- **HMS** — MC + written, ported Stage 4 ✅
+- **VET Construction** — MC + written, ported Stage 4 ✅
+
 ### Subjects in the pipeline (next to add):
-- **Multimedia** — standalone file ready, port in Stage 4 (`CLAUDE.AI - HSC_Multimedia_Quiz (v19 - with 2025 exam).html`)
-- **HMS** — standalone file ready, port in Stage 4 (`CLAUDE.AI - HMS_In_Depth_Study_YR12_quiz.html`)
-- **VET Construction** — standalone file ready, port in Stage 4 (`VET_Construction_Quiz_v6 (Includes Updated code and HSC 2025).html`)
+- Mathematics Advanced
+- English Advanced / Standard
+- Biology, Chemistry, Physics
+- Legal Studies, Business Studies, Economics
 - Mathematics Advanced
 - English Advanced / Standard
 - Biology, Chemistry, Physics
@@ -620,8 +632,8 @@ The biggest priority is bringing `index.html` (the hosted Netlify app) up to the
 | Google OAuth is in Testing mode | ⬜ Todo | Submit for verification |
 | `APP_URL` and `SUPABASE_ANON_KEY` were placeholders | ✅ Fixed | Owner filled these in |
 | Edge Function named `clever-action` not `stripe-webhook` | ✅ Known, working | Do not rename — webhook registered to this URL |
-| Diagram images not rendering in hosted quiz | ⬜ Stage 3 | Extractor done (76 images in `/diagrams/`). Need to: add `image`/`optionImages` to question objects, retire `MATHS_IMG`, update `renderQuestion()` |
-| Written response AI marking not yet built | ⬜ Parked | Keyword matching is active in the meantime |
+| Diagram images not rendering in hosted quiz | ✅ Fixed Stage 3 | Images wired via `image`/`optionImages` on question objects. `MATHS_IMG` retired. |
+| Written response AI marking not yet built | ✅ Built Stage 5 | `/.netlify/functions/mark-written` live. Quota by plan. Keyword grid fallback. |
 
 ---
 
@@ -749,6 +761,6 @@ The current home screen is student-centric. A general-public-facing landing page
 
 ---
 
-*CLAUDE.md — CramIT Project — Last updated: May 2026*
+*CLAUDE.md — CramIT Project — Last updated: May 2026 — Stages 1–5 complete*
 *Repo: https://github.com/bustachat/CramIT-Quiz*
 *Supabase: https://ohqtefjawaphtsebnaxg.supabase.co*
