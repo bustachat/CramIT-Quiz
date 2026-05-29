@@ -4858,42 +4858,6 @@ const hmsWrittenQuestions = [
 
 ];
 
-// ── VET QUESTION IMAGE MAP ─────────────────────────────────────
-const VET_IMG = {
-  "2021-q1":   "https://i.imgur.com/GR5sjtX.png",
-  "2021-q6":   "https://i.imgur.com/LUNA1qr.png",
-  "2021-q8":   "https://i.imgur.com/EsptBgA.png",
-  "2021-q10":  "https://i.imgur.com/q43Qxez.png",
-  "2021-q14":  "https://i.imgur.com/1JpLWIb.png",
-  "2021-q15":  "https://i.imgur.com/jHIIrbk.png",
-  "2021-q16":  "https://i.imgur.com/RPyszE0.png",
-  "2021-q18":  "https://i.imgur.com/1LEB15y.png",
-  "2022-q7":   "https://i.imgur.com/RHJcqaf.png",
-  "2022-q8":   "https://i.imgur.com/iaXIH6H.png",
-  "2022-q9":   "https://i.imgur.com/rbFEPiL.png",
-  "2022-q13":  "https://i.imgur.com/wld4f0s.png",
-  "2022-q15":  "https://i.imgur.com/spbE2pQ.png",
-  "2022-q16a": "https://i.imgur.com/d1JuYgy.png",
-  "2022-q17c": "https://i.imgur.com/O5DNnXR.png",
-  "2022-q19a": "https://i.imgur.com/g6Zpya0.png",
-  "2023-q6":   "https://i.imgur.com/uiiLoDW.png",
-  "2023-q16a": "https://i.imgur.com/0pcinIk.png",
-  "2023-q18b": "https://i.imgur.com/QaatyM6.png",
-  "2023-q19b": "https://i.imgur.com/jFUjJWP.png",
-  "2024-q5":   "https://i.imgur.com/JRouw2J.png",
-  "2024-q11":  "https://i.imgur.com/v5nyalp.png",
-  "2024-q16a": "https://i.imgur.com/HJYvTTm.png",
-  "2024-q16b": "https://i.imgur.com/YBZIivJ.png",
-  "2024-q19a": "https://i.imgur.com/V0XahE0.png",
-  "2024-q19b": "https://i.imgur.com/ONIvH1Y.png",
-  "2025-q1":   "https://i.imgur.com/K4tLP9S.png",
-  "2025-q4":   "https://i.imgur.com/sH9365W.png",
-  "2025-q6":   "https://i.imgur.com/NcCGkYV.png",
-  "2025-q9":   "https://i.imgur.com/pRdvB18.png",
-  "2025-q15":  "https://i.imgur.com/VO36VBh.png",
-  "2025-q16":  "https://i.imgur.com/DH9GfzV.jpeg",
-  "2025-q18b": "https://i.imgur.com/t14TvlO.png"
-};
 
 // MATHS_IMG retired — Maths questions now use q.image / q.optionImages pointing to /diagrams/
 
@@ -4902,7 +4866,7 @@ const vetMcQuestions = [
 
     // ── 2021 ──────────────────────────────────────────────────────────────────
     {year:2021, q:"A diagram of a plane is shown. What type of plane is this?",
-     options:["Jack","Trying","Electric","Smoothing"], answer:3, img:"2021-q1",
+     options:["Jack","Trying","Electric","Smoothing"], answer:3, image:"/diagrams/vet-construction_2021_Q1_stimulus.jpg",
      optionExplanations:[
        "A jack plane is a general-purpose bench plane used for initial stock removal. It has a longer body (around 380mm) and is used before the trying plane.",
        "A trying plane (jointer) is the longest bench plane, used to flatten and straighten long boards. It is longer than the plane shown.",
@@ -4947,7 +4911,7 @@ const vetMcQuestions = [
      ]},
 
     {year:2021, q:"A diagram of a wall is shown with two window sills at 8m width. Which tool should be used to make sure these two window sills are at the same height?",
-     options:["Plumb bob","Spirit level","Water level","Four fold rule"], answer:2, img:"2021-q6",
+     options:["Plumb bob","Spirit level","Water level","Four fold rule"], answer:2, image:"/diagrams/vet-construction_2021_Q6_stimulus.jpg",
      optionExplanations:[
        "A plumb bob establishes vertical lines (plumb), not horizontal levels. It would not be used to compare heights across an 8-metre distance.",
        "A spirit level establishes horizontal level over short distances (typically up to 1.8 m). Across 8 metres it would accumulate error and would not be reliable.",
@@ -4965,7 +4929,7 @@ const vetMcQuestions = [
      ]},
 
     {year:2021, q:"A 150 mm steel rule is shown. To what level of accuracy can this rule measure?",
-     options:["0.1 mm","1 mm","10 mm","150 mm"], answer:1, img:"2021-q8",
+     options:["0.1 mm","1 mm","10 mm","150 mm"], answer:1, image:"/diagrams/vet-construction_2021_Q8_stimulus.jpg",
      optionExplanations:[
        "0.1 mm accuracy requires a micrometer or vernier caliper, not a standard steel rule. Steel rules cannot reliably measure to 0.1 mm.",
        "✓ Correct. A standard 150 mm steel rule has graduations at 1 mm intervals and can measure to an accuracy of 1 mm. Some rules also have 0.5 mm divisions, but the standard accuracy is 1 mm.",
@@ -4983,7 +4947,7 @@ const vetMcQuestions = [
      ]},
 
     {year:2021, q:"An emergency information sign is shown. What colours would be used on this sign?",
-     options:["Red and white","Blue and white","Green and white","Black and yellow"], answer:2, img:"2021-q10",
+     options:["Red and white","Blue and white","Green and white","Black and yellow"], answer:2, image:"/diagrams/vet-construction_2021_Q10_stimulus.jpg",
      optionExplanations:[
        "Red and white is used for fire safety signs (fire extinguishers, fire exits from specific directions) and prohibition signs. Not emergency information.",
        "Blue and white is used for mandatory action signs (PPE requirements, must-do instructions). Not emergency information.",
@@ -5019,7 +4983,7 @@ const vetMcQuestions = [
      ]},
 
     {year:2021, q:"A garden area is shown: 4m × 3m with 8m base. What is the area of the garden?",
-     options:["15 m²","16 m²","18 m²","24 m²"], answer:2, img:"2021-q14",
+     options:["15 m²","16 m²","18 m²","24 m²"], answer:2, image:"/diagrams/vet-construction_2021_Q14_stimulus.jpg",
      optionExplanations:[
        "15 m² does not correspond to the correct calculation for this shape. Check the formula and dimensions again.",
        "16 m² does not correspond to the correct calculation for this shape.",
@@ -5028,7 +4992,7 @@ const vetMcQuestions = [
      ]},
 
     {year:2021, q:"The following site plan indicates the contours. Which best represents the cross-section Z-Z?",
-     options:["Flat","Slope up","Slope down","Valley"], answer:0, img:"2021-q15",
+     options:["Flat","Slope up","Slope down","Valley"], answer:0, image:"/diagrams/vet-construction_2021_Q15_stimulus.jpg",
      optionExplanations:[
        "✓ Correct. Reading the contour lines along the Z-Z section line on the site plan shows evenly spaced parallel contours indicating a flat terrain profile at that cross-section.",
        "Slope up would be shown by contour lines getting closer together in one direction along the section, with increasing elevation values.",
@@ -5092,7 +5056,7 @@ const vetMcQuestions = [
      ]},
 
     {year:2022, q:"A workshop wall diagram is shown. Which is the best position for a safety sign?",
-     options:["W - low corner","X - middle","Y - high corner","Z - door height"], answer:1, img:"2022-q7",
+     options:["W - low corner","X - middle","Y - high corner","Z - door height"], answer:1, image:"/diagrams/vet-construction_2022_Q7_stimulus.jpg",
      optionExplanations:[
        "Position W (low corner) is too low to be easily visible to workers passing through the area and could be obscured by stored materials or equipment.",
        "✓ Correct. Position X (middle height, central location) provides the best visibility for safety signs — at eye level and in a prominent position where workers will naturally look. Signs should be placed where they are easily noticed.",
@@ -5101,7 +5065,7 @@ const vetMcQuestions = [
      ]},
 
     {year:2022, q:"A fence around a construction site is shown. What is the purpose of this fence?",
-     options:["Reduce dust","Indicate site boundary","Control sediment escape","Reduce rainwater run-off"], answer:2, img:"2022-q8",
+     options:["Reduce dust","Indicate site boundary","Control sediment escape","Reduce rainwater run-off"], answer:2, image:"/diagrams/vet-construction_2022_Q8_stimulus.jpg",
      optionExplanations:[
        "Dust control requires specific dust suppression measures such as water spraying or dust screens. A standard site fence does not effectively reduce airborne dust.",
        "Indicating the site boundary is a function of security fencing, not the specific type of fence shown. The fence shown has a specific environmental control purpose.",
@@ -5110,7 +5074,7 @@ const vetMcQuestions = [
      ]},
 
     {year:2022, q:"A diagram shows an area to be fenced. Calculate the perimeter.",
-     options:["13","17","18","24"], answer:2, img:"2022-q9",
+     options:["13","17","18","24"], answer:2, image:"/diagrams/vet-construction_2022_Q9_stimulus.jpg",
      optionExplanations:[
        "13 m is too small — this does not account for all sides of the shape shown.",
        "17 m does not correctly total all sides of the shape — check the calculation again.",
@@ -5146,7 +5110,7 @@ const vetMcQuestions = [
      ]},
 
     {year:2022, q:"A selection of drill bits is shown. Which bit for drilling a masonry anchor?",
-     options:["W - twist bit","X - spade bit","Y - masonry bit","Z - hole saw"], answer:2, img:"2022-q13",
+     options:["W - twist bit","X - spade bit","Y - masonry bit","Z - hole saw"], answer:2, image:"/diagrams/vet-construction_2022_Q13_stimulus.jpg",
      optionExplanations:[
        "A twist bit (W) is designed for drilling metal and timber. It would be damaged quickly and be ineffective when used on masonry materials like brick or concrete.",
        "A spade bit (X) is used for drilling large-diameter holes in timber. Its flat paddle shape is not designed for masonry and would fail quickly.",
@@ -5164,7 +5128,7 @@ const vetMcQuestions = [
      ]},
 
     {year:2022, q:"A paved area plan is shown. A 50mm sand layer is required. Calculate sand volume.",
-     options:["5.58 m³","7.50 m³","11.50 m³","150.00 m³"], answer:1, img:"2022-q15",
+     options:["5.58 m³","7.50 m³","11.50 m³","150.00 m³"], answer:1, image:"/diagrams/vet-construction_2022_Q15_stimulus.jpg",
      optionExplanations:[
        "5.58 m³ does not correspond to the correct calculation for the area shown × 0.05 m depth.",
        "✓ Correct. Calculate the area from the plan dimensions, then multiply by the sand depth (50 mm = 0.05 m). Area × 0.05 = 7.50 m³.",
@@ -5219,7 +5183,7 @@ const vetMcQuestions = [
      ]},
 
     {year:2023, q:"An image of a sign is shown. Where should this sign be placed?",
-     options:["On notice board","Outside lunch room","On all vehicles","On fence where you enter site"], answer:3, img:"2023-q6",
+     options:["On notice board","Outside lunch room","On all vehicles","On fence where you enter site"], answer:3, image:"/diagrams/vet-construction_2023_Q6_stimulus.jpg",
      optionExplanations:[
        "Placing on a notice board means workers must seek it out — it is not visible to all who need to see it, including visitors and new workers.",
        "Outside the lunch room limits visibility to workers only — visitors, delivery drivers and contractors may not see it.",
@@ -5347,7 +5311,7 @@ const vetMcQuestions = [
      ]},
 
     {year:2024, q:"A construction detail drawing (450mm) is shown. What scale is most suited?",
-     options:["1:10","1:50","1:100","1:200"], answer:0, img:"2024-q5",
+     options:["1:10","1:50","1:100","1:200"], answer:0, image:"/diagrams/vet-construction_2024_Q5_stimulus.jpg",
      optionExplanations:[
        "✓ Correct. A scale of 1:10 is most suited for detail drawings showing small construction elements. At 1:10, a 450 mm element would be drawn as 45 mm — large enough to clearly show all details, connections and dimensions that would be illegible at smaller scales.",
        "1:50 would produce a 9 mm drawing of the 450 mm element — too small to show construction details clearly.",
@@ -5401,7 +5365,7 @@ const vetMcQuestions = [
      ]},
 
     {year:2024, q:"A site plan (Smith Street) is shown. What is the eastern setback?",
-     options:["2600","2900","4000","4600"], answer:1, img:"2024-q11",
+     options:["2600","2900","4000","4600"], answer:1, image:"/diagrams/vet-construction_2024_Q11_stimulus.jpg",
      optionExplanations:[
        "2600 is another dimension shown on the plan — read the dimension specifically labelled for the eastern boundary setback.",
        "✓ Correct. Reading the site plan carefully, the dimension shown for the eastern setback (distance from the building to the eastern boundary) is 2900 mm. Always identify which boundary is east by using the North point on the plan.",
@@ -5447,7 +5411,7 @@ const vetMcQuestions = [
 
     // ── 2025 ──────────────────────────────────────────────────────────────────
     {year:2025, q:"A fire extinguisher with a blue band is shown. This fire extinguisher would be most suitable to use on which type of fire?",
-     options:["Clothing","Flammable gas","Flammable liquid","Electrical equipment"], answer:3, img:"2025-q1",
+     options:["Clothing","Flammable gas","Flammable liquid","Electrical equipment"], answer:3, image:"/diagrams/vet-construction_2025_Q1_stimulus.jpg",
      optionExplanations:[
        "Clothing fires are most safely extinguished with a fire blanket — chemical extinguishers of any type should not be directed at a burning person.",
        "Flammable gas fires (Class C) require a dry chemical (BE) or clean agent extinguisher. Blue band extinguishers (dry powder) can handle gas but are specifically coded for electrical fires.",
@@ -5474,7 +5438,7 @@ const vetMcQuestions = [
      ]},
 
     {year:2025, q:"A drawing of a house is shown. What type of roof is on this house?",
-     options:["Gable","Skillion","Dutch gable","Hip and valley"], answer:1, img:"2025-q4",
+     options:["Gable","Skillion","Dutch gable","Hip and valley"], answer:1, image:"/diagrams/vet-construction_2025_Q4_stimulus.jpg",
      optionExplanations:[
        "A gable roof has two sloping sides meeting at a central ridge, with triangular gable ends at each end of the building. The image shows a different roof profile.",
        "✓ Correct. A skillion roof (also called a mono-pitch or lean-to roof) has a single sloping plane that spans the full width of the building from a higher wall to a lower wall. The drawing shows this single-plane sloping roof characteristic.",
@@ -5492,7 +5456,7 @@ const vetMcQuestions = [
      ]},
 
     {year:2025, q:"Which of the following images shows a cross-cut saw?",
-     options:["A","B","C","D"], answer:0, img:"2025-q6",
+     options:["A","B","C","D"], answer:0, image:"/diagrams/vet-construction_2025_Q6_stimulus.jpg",
      optionExplanations:[
        "✓ Correct. Image A shows a cross-cut saw, identified by its fine teeth angled in alternating directions designed to cut across the wood grain cleanly. Cross-cut saws produce smooth cuts perpendicular to the grain direction.",
        "Image B shows a different saw type — examine the tooth pattern and configuration to identify it.",
@@ -5519,7 +5483,7 @@ const vetMcQuestions = [
      ]},
 
     {year:2025, q:"The dimensions of a room are shown (3.4m × 6m).",
-     options:["18.80 m","20.40 m","20.74 m","26.08 m"], answer:2, img:"2025-q9",
+     options:["18.80 m","20.40 m","20.74 m","26.08 m"], answer:2, image:"/diagrams/vet-construction_2025_Q9_stimulus.jpg",
      optionExplanations:[
        "18.80 m — Perimeter = 2 × (3.4 + 6) = 2 × 9.4 = 18.8 m. This calculation is correct for a simple rectangular room but the image shows the room has a non-rectangular shape — additional wall sections affect the total perimeter.",
        "20.40 m does not account for the correct room dimensions shown in the diagram.",
@@ -5573,7 +5537,7 @@ const vetMcQuestions = [
      ]},
 
     {year:2025, q:"The table shows hourly rates for apprentices. A second year apprentice works a standard week (38 hours) and 4 hours overtime on a Saturday (first 2 hours at ×1.5, after at ×2.0). What is the wage?",
-     options:["$570.00","$615.00","$630.00","$675.00"], answer:3, img:"2025-q15",
+     options:["$570.00","$615.00","$630.00","$675.00"], answer:3, image:"/diagrams/vet-construction_2025_Q15_stimulus.jpg",
      optionExplanations:[
        "$570.00 = 38 × $15.00 = $570. This calculation omits the overtime payments entirely.",
        "$615.00 = $570 + (4 × $15.00 × 1.5) = $570 + $90 = $660. This appears to apply incorrect overtime rates.",
@@ -5589,7 +5553,7 @@ const vetWrittenQuestions = [
      q:"Name the tool shown.",
      answer:"Chisel (Firmer chisel, Bevelled-edge chisel, or Mortice chisel are all acceptable answers).",
      acceptableAnswers:["chisel","firmer","bevelled","mortice","mortise"],
-     img:"2021-q16"},
+     image:"/diagrams/vet-construction_2021_Q16_stimulus.jpg"},
 
     {year:2021, marks:2, section:"II", qNum:"16(b)",
      q:"Describe TWO suitable uses for the chisel shown.",
@@ -5602,26 +5566,26 @@ const vetWrittenQuestions = [
      answer:`The tool shown is a plumb bob. Its function is to establish a true vertical (plumb) line from a fixed overhead point. When suspended freely on a line, gravity causes the weighted bob to hang directly below the attachment point, creating a precise vertical reference. It is used to transfer vertical datum points, check the plumb of walls and columns, and set out vertical lines in building construction.`,
      keywords:["plumb","vertical","gravity","bob","hang","datum","line","check","wall"],
      minKeywords:3,
-     img:"2022-q16a"},
+     image:"/diagrams/vet-construction_2022_Q16a_stimulus.jpg"},
 
     {year:2022, marks:2, section:"II", qNum:"17(c)",
      q:"Identify the meaning of the symbols shown (RWT and tree symbol).",
      answer:`RWT = Rainwater Tank (an underground or above-ground tank collecting rainwater from roof downpipes for reuse). The tree symbol with a circle = Tree to be removed during construction (indicated by the specific marking on the plan).`,
      keywords:["rainwater","tank","tree","removed","water","collection"],
      minKeywords:3,
-     img:"2022-q17c"},
+     image:"/diagrams/vet-construction_2022_Q17c_stimulus.jpg"},
 
     {year:2022, marks:1, section:"II", qNum:"19(a)",
      q:"Using the delivery cost table shown, calculate the cost to deliver 3700 kg of sand from 54 km away.",
      answer:"$450. From the table: 3700 kg falls in the 3001–4000 kg range, and 54 km falls in the 51–60 km distance range, giving a delivery cost of $450.",
      acceptableAnswers:["450","$450"],
-     img:"2022-q19a"},
+     image:"/diagrams/vet-construction_2022_Q19a_stimulus.jpg"},
 
     {year:2023, marks:1, section:"II", qNum:"16(a)(i)",
      q:"What type of saw is shown?",
      answer:"Drop saw (also acceptable: mitre saw, compound mitre saw, cut-off saw). A drop saw is a power saw mounted on a pivot arm that drops down to make precise cross cuts and mitre cuts in timber.",
      acceptableAnswers:["drop saw","mitre","compound","cut-off","chop saw"],
-     img:"2023-q16a"},
+     image:"/diagrams/vet-construction_2023_Q16a_stimulus.jpg"},
 
     {year:2023, marks:3, section:"II", qNum:"18(b)",
      q:"Identify the meaning of the symbols numbered 1–5 on the floor plan shown.",
@@ -5632,7 +5596,7 @@ const vetWrittenQuestions = [
 5. Sliding door (shown by a line with a track symbol parallel to the wall)`,
      keywords:["window","sink","stove","toilet","sliding","door","cooktop"],
      minKeywords:4,
-     img:"2023-q18b"},
+     image:"/diagrams/vet-construction_2023_Q18b_stimulus.jpg"},
 
     {year:2023, marks:5, section:"II", qNum:"19(b)(i)",
      q:"Calculate the volume of concrete required for the footings of an 8.5m × 6m shed with 300mm × 300mm perimeter beam footings.",
@@ -5645,21 +5609,21 @@ Volume of footing = Perimeter × Width × Depth
 Note: Some calculations account for corners (overlap) giving approximately 2.61–2.99 m³ depending on method. Show all working for full marks.`,
      keywords:["29","perimeter","0.3","volume","2.61","2.99","footing","width","depth"],
      minKeywords:3,
-     img:"2023-q19b"},
+     image:"/diagrams/vet-construction_2023_Q19b_stimulus.jpg"},
 
     {year:2024, marks:3, section:"II", qNum:"16(a)",
      q:"Name this hand tool and describe TWO suitable uses for it on a construction site.",
      answer:`The tool is a spirit level. Uses: (1) Checking that horizontal surfaces (floors, window sills, formwork) are level — the bubble in the horizontal vial sits centred between the lines when the surface is true level. (2) Checking that vertical elements (walls, door frames, columns) are plumb — the bubble in the vertical vial sits centred when the surface is truly vertical. Can also be used as a straight edge for marking lines across flat surfaces.`,
      keywords:["spirit level","level","plumb","horizontal","vertical","bubble","wall","frame","floor"],
      minKeywords:4,
-     img:"2024-q16a"},
+     image:"/diagrams/vet-construction_2024_Q16a_stimulus.jpg"},
 
     {year:2024, marks:3, section:"II", qNum:"16(b)",
      q:"Describe THREE pre-operation safety checks for a 240V belt sander before use.",
      answer:`Pre-operation safety checks for a 240V belt sander include: (1) Inspect the power cord for cuts, fraying, kinking or damage to the insulation — damaged cords must be removed from service. (2) Check the current test-and-tag label to confirm the tool has been recently inspected and is electrically safe for use. (3) Ensure all guards are correctly in place and secure — particularly the belt guard that covers the sanding belt in motion. (4) Check the sanding belt for correct installation, damage and tension — an incorrectly fitted belt can break and cause injury. (5) Inspect the dust bag/extraction port and ensure it is connected and functioning to control dust hazards.`,
      keywords:["cord","tag","guard","belt","dust","bag","inspection","damage","safe","electrical"],
      minKeywords:4,
-     img:"2024-q16b"},
+     image:"/diagrams/vet-construction_2024_Q16b_stimulus.jpg"},
 
     {year:2024, marks:2, section:"II", qNum:"19(a)",
      q:"Calculate the perimeter of the shape shown (which includes a right-angle triangle section).",
@@ -5670,7 +5634,7 @@ Sum all sides: 8 + 6 + 3 + 4 + 5 = 26 m
 (Dimensions vary with plan — show all working including Pythagoras theorem)`,
      keywords:["pythagoras","26","hypotenuse","5","perimeter","sides"],
      minKeywords:2,
-     img:"2024-q19a"},
+     image:"/diagrams/vet-construction_2024_Q19a_stimulus.jpg"},
 
     {year:2024, marks:3, section:"II", qNum:"19(b)",
      q:"Calculate the volume of concrete for a slab 8m × 6m × 150mm thick, minus a 1-metre radius circular hole.",
@@ -5681,7 +5645,7 @@ Circular hole volume = π × r² × depth = π × 1² × 0.15 = 0.471 m³
 Net concrete volume = 7.2 − 0.471 = 6.729 m³ ≈ 6.73 m³`,
      keywords:["7.2","0.471","6.73","pi","radius","circle","slab","0.15"],
      minKeywords:3,
-     img:"2024-q19b"},
+     image:"/diagrams/vet-construction_2024_Q19b_stimulus.jpg"},
 
     // 2025 Written Questions
     {year:2025, marks:2, section:"II", qNum:"16(a)",
@@ -5689,7 +5653,7 @@ Net concrete volume = 7.2 − 0.471 = 6.729 m³ ≈ 6.73 m³`,
      answer:`The tool shown is a router. A suitable use for this tool is to create a rebate (a step-shaped recess) along the edge of a timber board for joint construction, such as a rebate joint used when making drawers or cabinets. Other suitable uses include: edge profiling (decorative shaping of timber edges), cutting grooves and housings in timber, flush/pattern cutting using a template, and mortising.`,
      keywords:["router","rebate","groove","housing","edge","profile","joint","mortise","pattern","timber"],
      minKeywords:3,
-     img:"2025-q16"},
+     image:"/diagrams/vet-construction_2025_Q16_stimulus.jpg"},
 
     {year:2025, marks:3, section:"II", qNum:"16(b)",
      q:"Describe TWO settings or adjustments that may be required before using the router shown. (3 marks)",
@@ -5740,7 +5704,7 @@ RWP = Rainwater Pipe (the vertical downpipe that carries rainwater from the roof
 Horizontal sliding window symbol (two rectangles with arrows pointing toward each other) = a window where the sashes slide horizontally past each other to open`,
      keywords:["hot water","HW","rainwater pipe","RWP","sliding","window","horizontal","downpipe"],
      minKeywords:4,
-     img:"2025-q18b"},
+     image:"/diagrams/vet-construction_2025_Q18b_stimulus.jpg"},
 
     {year:2025, marks:4, section:"II", qNum:"18(c)",
      q:"Describe the range of information that can be found on a floor plan. (4 marks)",
@@ -6927,8 +6891,7 @@ function renderQuestion() {
     if (q.year)              badges.push(`<span class="year-badge">${q.year}</span>`);
     if (q.category || q.topic) badges.push(`<span class="topic-badge">${q.category || q.topic}</span>`);
     if (badges.length)       html += `<div class="q-meta-row">${badges.join('')}</div>`;
-    // Show stimulus image above question text (q.image). VET questions keep using VET_IMG.
-    const imgUrl = q.image || (q.img && VET_IMG[q.img]);
+    const imgUrl = q.image;
     if (imgUrl) {
       html += `<div class="q-image-wrap"><img src="${imgUrl}" alt="Question diagram" loading="lazy" onclick="openLightbox(this.src)"/></div>`;
     }
@@ -6986,7 +6949,7 @@ function renderQuestion() {
     if (q.year)  wBadges.push(`<span class="year-badge">${q.year}</span>`);
     if (q.topic) wBadges.push(`<span class="topic-badge">${q.topic}</span>`);
     if (wBadges.length) html += `<div class="q-meta-row">${wBadges.join('')}</div>`;
-    const imgUrl2 = q.image || (q.img && VET_IMG[q.img]);
+    const imgUrl2 = q.image;
     if (imgUrl2) {
       html += `<div class="q-image-wrap"><img src="${imgUrl2}" alt="Question diagram" loading="lazy" onclick="openLightbox(this.src)"/></div>`;
     }
