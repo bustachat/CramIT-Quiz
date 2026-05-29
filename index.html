@@ -7372,11 +7372,9 @@ function selectAnswer(chosen) {
     currentStreak = 0;
   }
   if (currentUser) {
-    localStorage.setItem('hsc_streak', currentStreak);
-    const total = parseInt(localStorage.getItem('hsc_total') || '0') + 1;
-    const corr  = parseInt(localStorage.getItem('hsc_correct') || '0') + (chosen === correctIdx ? 1 : 0);
-    localStorage.setItem('hsc_total', total);
-    localStorage.setItem('hsc_correct', corr);
+    localStorage.setItem(statKey('streak'), currentStreak);
+    localStorage.setItem(statKey(`${currentSubjectKey}_total`),   getStatInt(statKey(`${currentSubjectKey}_total`))   + 1);
+    localStorage.setItem(statKey(`${currentSubjectKey}_correct`), getStatInt(statKey(`${currentSubjectKey}_correct`)) + (chosen === correctIdx ? 1 : 0));
   }
   renderQuestion();
 }
@@ -7396,11 +7394,9 @@ function checkAnswer() {
     currentStreak = 0;
   }
   if (currentUser) {
-    localStorage.setItem('hsc_streak', currentStreak);
-    const total = parseInt(localStorage.getItem('hsc_total') || '0') + 1;
-    const corr  = parseInt(localStorage.getItem('hsc_correct') || '0') + (chosen === correctIdx ? 1 : 0);
-    localStorage.setItem('hsc_total', total);
-    localStorage.setItem('hsc_correct', corr);
+    localStorage.setItem(statKey('streak'), currentStreak);
+    localStorage.setItem(statKey(`${currentSubjectKey}_total`),   getStatInt(statKey(`${currentSubjectKey}_total`))   + 1);
+    localStorage.setItem(statKey(`${currentSubjectKey}_correct`), getStatInt(statKey(`${currentSubjectKey}_correct`)) + (chosen === correctIdx ? 1 : 0));
   }
   renderQuestion();
 }
@@ -7664,11 +7660,15 @@ function updateStats() {
     document.getElementById('stat-streak').textContent  = '0';
     return;
   }
-  const total   = parseInt(localStorage.getItem('hsc_total')   || '0');
-  const correct = parseInt(localStorage.getItem('hsc_correct') || '0');
-  const streak  = parseInt(localStorage.getItem('hsc_streak')  || '0');
-  document.getElementById('stat-total').textContent   = total;
-  document.getElementById('stat-correct').textContent = total ? Math.round(correct / total * 100) + '%' : '0%';
+  // Aggregate across all subjects for the bottom row
+  let totalAll = 0, correctAll = 0;
+  Object.keys(SUBJECTS).forEach(key => {
+    totalAll   += getStatInt(statKey(`${key}_total`));
+    correctAll += getStatInt(statKey(`${key}_correct`));
+  });
+  const streak = getStatInt(statKey('streak'));
+  document.getElementById('stat-total').textContent   = totalAll;
+  document.getElementById('stat-correct').textContent = totalAll ? Math.round(correctAll / totalAll * 100) + '%' : '0%';
   document.getElementById('stat-streak').textContent  = streak;
 }
 
@@ -7912,6 +7912,8 @@ async function loadUserState() {
     ]);
     userSub      = subRes.data ?? { plan: 'free', subject_count: 1, status: 'active' };
     userSubjects = (selRes.data ?? []).map(s => s.subject_id);
+    // Restore streak from user-scoped key now that currentUser is known
+    currentStreak = getStatInt(statKey('streak'));
     console.log('[CramIT] loadUserState — plan:', userSub.plan, 'subjects:', userSubjects);
   } catch(e) {
     console.warn('Could not load user state:', e);
@@ -7942,6 +7944,17 @@ function incrementTrialCount(subjectId) {
   if (n < TRIAL_LIMIT) {
     localStorage.setItem('cramit_trial_' + subjectId, String(n + 1));
   }
+}
+
+// ── PROGRESS STAT HELPERS ─────────────────────────────────────
+// Keys: cramit_{userId}_{subjectKey}_total / _correct   cramit_{userId}_streak
+function statKey(type) {
+  if (!currentUser) return null;
+  return `cramit_${currentUser.id}_${type}`;
+}
+function getStatInt(key) {
+  if (!key) return 0;
+  return parseInt(localStorage.getItem(key) || '0');
 }
 
 // ── CAN ACCESS SUBJECT? ───────────────────────────────────────
@@ -8064,22 +8077,33 @@ function renderSubjectList() {
     const card = document.createElement('div');
     card.className = `subject-card ${isComing ? 'coming' : cardClass}`;
 
-    let trialBadge = '';
-    if (!isComing && currentUser && !canAccessViaSubscription(s.id)) {
-      const tc = getTrialCount(s.id);
-      if (tc === 0) {
-        trialBadge = `<div style="font-size:10px;color:var(--muted);text-align:center;margin-top:6px;font-weight:600">${TRIAL_LIMIT} free trial questions</div>`;
-      } else if (tc < TRIAL_LIMIT) {
-        trialBadge = `<div style="font-size:10px;color:var(--muted);text-align:center;margin-top:6px;font-weight:600">${tc}/${TRIAL_LIMIT} trial used &middot; ${TRIAL_LIMIT - tc} left</div>`;
-      } else {
-        trialBadge = `<div style="font-size:10px;color:var(--accent);text-align:center;margin-top:6px;font-weight:700">Trial ended &middot; Subscribe to continue</div>`;
+    let cardBadge = '';
+    if (!isComing && currentUser) {
+      if (canAccessViaSubscription(s.id) && s.quizKey) {
+        // Subscribed — show per-subject progress
+        const subTotal   = getStatInt(statKey(`${s.quizKey}_total`));
+        const subCorrect = getStatInt(statKey(`${s.quizKey}_correct`));
+        if (subTotal > 0) {
+          const subPct = Math.round(subCorrect / subTotal * 100);
+          cardBadge = `<div style="font-size:10px;color:rgba(255,255,255,0.85);text-align:center;margin-top:6px;font-weight:700">${subTotal} answered &middot; ${subPct}%</div>`;
+        }
+      } else if (!canAccessViaSubscription(s.id)) {
+        // Trial — show trial progress
+        const tc = getTrialCount(s.id);
+        if (tc === 0) {
+          cardBadge = `<div style="font-size:10px;color:var(--muted);text-align:center;margin-top:6px;font-weight:600">${TRIAL_LIMIT} free trial questions</div>`;
+        } else if (tc < TRIAL_LIMIT) {
+          cardBadge = `<div style="font-size:10px;color:var(--muted);text-align:center;margin-top:6px;font-weight:600">${tc}/${TRIAL_LIMIT} trial used &middot; ${TRIAL_LIMIT - tc} left</div>`;
+        } else {
+          cardBadge = `<div style="font-size:10px;color:var(--accent);text-align:center;margin-top:6px;font-weight:700">Trial ended &middot; Subscribe to continue</div>`;
+        }
       }
     }
 
     card.innerHTML = `
       <div class="subject-name">${s.name}</div>
       <div class="subject-art">${art}</div>
-      ${trialBadge}`;
+      ${cardBadge}`;
 
     if (!isComing) {
       card.onclick = () => handleSubjectTap(s, isSelected, atCap);
@@ -8475,7 +8499,7 @@ window.addEventListener('orientationchange', () => setTimeout(updateDeviceClass,
 document.addEventListener('DOMContentLoaded', async () => {
   console.log('[CramIT] Page loaded. URL:', window.location.href);
   console.log('[CramIT] Search params:', window.location.search);
-  currentStreak = parseInt(localStorage.getItem('hsc_streak') || '0');
+  currentStreak = 0; // restored from user-scoped key after auth resolves in loadUserState()
   updateStats();
   goHome();
   await initSupabase();   // sets up sbClient and auth state
