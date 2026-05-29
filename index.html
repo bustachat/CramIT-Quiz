@@ -79,6 +79,25 @@
     .written-feedback.correct { background: rgba(123,158,107,0.15); color: #3A5C2E; border: 1px solid #7B9E6B; }
     .written-feedback.partial { background: rgba(193,125,60,0.12); color: #6B4012; border: 1px solid #C17D3C; }
     .written-feedback.wrong   { background: rgba(193,90,60,0.10);  color: #7A2E10; border: 1px solid #C15A3C; }
+    /* Written answer scoring v2 — keyword grid (matches standalone design) */
+    .written-score-box { margin-bottom: 14px; }
+    .score-summary { display:flex; align-items:center; gap:10px; flex-wrap:wrap; margin-bottom:8px; }
+    .score-big { font-size:20px; font-weight:800; color:var(--text); font-family:var(--font-display); }
+    .score-pct-pill { padding:4px 12px; border-radius:20px; font-size:12px; font-weight:700; }
+    .pill-excellent { background:#D1FAE5; color:#065F46; }
+    .pill-good { background:#FEF3C7; color:#92400E; }
+    .pill-developing { background:rgba(193,90,60,0.12); color:#7A2E10; }
+    .score-feedback-text { font-size:12px; color:var(--muted); margin-bottom:4px; line-height:1.55; }
+    .concepts-heading { font-size:10px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:var(--muted); margin:12px 0 8px; }
+    .keyword-checklist { display:grid; grid-template-columns:repeat(auto-fill,minmax(155px,1fr)); gap:6px; margin-bottom:12px; }
+    .kw-item { display:flex; align-items:center; gap:7px; padding:6px 10px; border-radius:8px; font-size:12px; font-weight:600; line-height:1.3; }
+    .kw-item.kw-hit { background:#DCFCE7; color:#166534; border:1px solid #86EFAC; }
+    .kw-item.kw-miss { background:rgba(193,90,60,0.08); color:#7A2E10; border:1px solid rgba(193,90,60,0.25); }
+    .kw-icon { font-size:12px; flex-shrink:0; font-weight:900; }
+    .kw-label { text-transform:capitalize; }
+    .written-clear-btn { background:none; border:1px solid var(--border); color:var(--muted); border-radius:8px; padding:6px 16px; font-size:12px; font-weight:600; cursor:pointer; margin-top:4px; }
+    .written-clear-btn:hover { background:var(--surface2); color:var(--text); }
+    @media (max-width:380px) { .keyword-checklist { grid-template-columns:1fr 1fr; } .score-big { font-size:17px; } }
     .subject-name { font-size: 14px; font-weight: 700; color: #fff; padding: 14px 14px 0; z-index: 2; position: relative; text-shadow: 0 1px 3px rgba(0,0,0,0.2); line-height: 1.35; }
     .subject-card.coming .subject-name { color: rgba(44,36,32,0.65); text-shadow: none; }
     .subject-art { flex: 1; display: flex; align-items: center; justify-content: center; padding: 6px 12px 14px; }
@@ -7170,30 +7189,54 @@ function renderQuestion() {
       if (studentAns) {
         const sa = studentAns.toLowerCase();
         if (q.acceptableAnswers && q.acceptableAnswers.length) {
-          // 1-mark recall question (e.g. Multimedia "What does RTSP stand for?")
+          // 1-mark recall question
+          const maxMark = q.maxMark || q.marks || 1;
           const correct = q.acceptableAnswers.some(a => sa.includes(a.toLowerCase()));
-          const descriptor = q.bandDescriptors ? (correct ? q.bandDescriptors.full : q.bandDescriptors.minimal) : '';
-          feedbackHtml = `<div class="written-feedback ${correct ? 'correct' : 'wrong'}">
-            ${correct ? '✅ Correct!' : '❌ Not quite — see model answer below.'}
-            ${descriptor ? `<br><span style="font-size:11px;font-weight:700;margin-top:8px;display:block;opacity:0.7;text-transform:uppercase;letter-spacing:0.04em">Self-assess</span><span style="font-size:12px;font-weight:400;display:block;margin-top:2px;opacity:0.85;line-height:1.55">${descriptor}</span>` : ''}
+          const pillClass = correct ? 'pill-excellent' : 'pill-developing';
+          const feedbackText = q.bandDescriptors
+              ? (correct ? q.bandDescriptors.full : q.bandDescriptors.minimal)
+              : (correct ? 'Correct!' : 'Check the model answer for the correct response.');
+          feedbackHtml = `<div class="written-score-box">
+            <div class="score-summary">
+              <span class="score-big">Score: ${correct ? maxMark : 0} / ${maxMark} mark${maxMark > 1 ? 's' : ''}</span>
+              <span class="score-pct-pill ${pillClass}">${correct ? '\u2713 Correct' : '\u2717 Incorrect'}</span>
+            </div>
+            ${feedbackText ? `<div class="score-feedback-text">${feedbackText}</div>` : ''}
+            <button class="written-clear-btn" onclick="clearWrittenAnswer()">\u21a9 Try again</button>
           </div>`;
         } else if (q.keywords && q.keywords.length) {
-          // Keyword-scored question (HMS, Multimedia extended, VET)
-          const maxMark = q.maxMark || q.marks || 0;
-          const minKw   = q.minKeywords || Math.ceil(q.keywords.length / 2);
-          const matched = q.keywords.filter(kw => sa.includes(kw.toLowerCase()));
+          // Keyword-scored question (HMS, Multimedia, VET)
+          const maxMark  = q.maxMark || q.marks || 0;
+          const minKw    = q.minKeywords || Math.ceil(q.keywords.length / 2);
+          const kwResults = q.keywords.map(kw => ({ label: kw, hit: sa.includes(kw.toLowerCase()) }));
+          const matched   = kwResults.filter(r => r.hit).length;
+          const percentage = Math.round((matched / q.keywords.length) * 100);
           if (maxMark > 0) {
-            const rawPct     = matched.length / q.keywords.length;
-            let marksEarned  = Math.round(rawPct * maxMark);
+            let marksEarned = Math.round((matched / q.keywords.length) * maxMark);
             // Guard: if below minKeywords threshold, cap at half marks
-            if (matched.length < minKw) marksEarned = Math.min(marksEarned, Math.floor(maxMark / 2));
-            const grade = marksEarned >= maxMark * 0.7 ? 'correct' : marksEarned > 0 ? 'partial' : 'wrong';
-            const tier  = grade === 'correct' ? 'full' : grade === 'partial' ? 'partial' : 'minimal';
-            const descriptor = q.bandDescriptors ? q.bandDescriptors[tier] : '';
-            feedbackHtml = `<div class="written-feedback ${grade}">
-              <strong>${marksEarned}/${maxMark} marks</strong> — ${matched.length} of ${q.keywords.length} key concepts matched.
-              ${matched.length > 0 ? `<br><span style="font-size:11px;opacity:0.8">Found: ${matched.join(', ')}</span>` : ''}
-              ${descriptor ? `<br><span style="font-size:11px;font-weight:700;margin-top:8px;display:block;opacity:0.7;text-transform:uppercase;letter-spacing:0.04em">Self-assess</span><span style="font-size:12px;font-weight:400;display:block;margin-top:2px;opacity:0.9;line-height:1.55">${descriptor}</span>` : ''}
+            if (matched < minKw) marksEarned = Math.min(marksEarned, Math.floor(maxMark / 2));
+            const grade     = marksEarned >= maxMark * 0.7 ? 'correct' : marksEarned > 0 ? 'partial' : 'wrong';
+            const tier      = grade === 'correct' ? 'full' : grade === 'partial' ? 'partial' : 'minimal';
+            const pillClass = grade === 'correct' ? 'pill-excellent' : grade === 'partial' ? 'pill-good' : 'pill-developing';
+            const feedbackText = q.bandDescriptors ? q.bandDescriptors[tier]
+                : grade === 'correct' ? 'Excellent \u2014 demonstrates detailed knowledge with key terminology.'
+                : grade === 'partial' ? 'Good \u2014 solid understanding, could include more specific detail.'
+                : 'Developing \u2014 key concepts partially covered, review the model answer.';
+            const checklistHTML = kwResults.map((r, i) =>
+                `<div class="kw-item ${r.hit ? 'kw-hit' : 'kw-miss'}">
+                  <span class="kw-icon">${r.hit ? '\u2713' : '\u2717'}</span>
+                  <span class="kw-label">${i + 1}. ${r.label}</span>
+                </div>`
+            ).join('');
+            feedbackHtml = `<div class="written-score-box">
+              <div class="score-summary">
+                <span class="score-big">Score: ${marksEarned} / ${maxMark} marks</span>
+                <span class="score-pct-pill ${pillClass}">${percentage}% matched</span>
+              </div>
+              <div class="score-feedback-text">${feedbackText}</div>
+              <div class="concepts-heading">Key Concepts</div>
+              <div class="keyword-checklist">${checklistHTML}</div>
+              <button class="written-clear-btn" onclick="clearWrittenAnswer()">\u21a9 Try again</button>
             </div>`;
           }
         }
@@ -7301,6 +7344,13 @@ function prevQuestion() {
     answered = answers[currentIdx] !== null;
     renderQuestion();
   }
+}
+
+function clearWrittenAnswer() {
+  answers[currentIdx] = '';
+  answered = false;
+  renderQuestion();
+  setTimeout(() => { const inp = document.getElementById('written-input'); if (inp) inp.focus(); }, 50);
 }
 
 function nextQuestion() {
