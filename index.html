@@ -8354,6 +8354,7 @@ async function handleSignOut() {
   localStorage.removeItem('hsc_total');
   localStorage.removeItem('hsc_correct');
   localStorage.removeItem('hsc_streak');
+  updateStats();
   renderHomeAuth();
 }
 
