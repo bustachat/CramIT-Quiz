@@ -7913,6 +7913,8 @@ async function loadUserState() {
     userSubjects = (selRes.data ?? []).map(s => s.subject_id);
     // Restore streak from user-scoped key now that currentUser is known
     currentStreak = getStatInt(statKey('streak'));
+    // Pull per-question progress from Supabase so stats are correct on any device
+    await loadProgressFromSupabase();
     console.log('[CramIT] loadUserState — plan:', userSub.plan, 'subjects:', userSubjects);
   } catch(e) {
     console.warn('Could not load user state:', e);
@@ -7992,6 +7994,66 @@ function recordAnswer(subjectKey, mode, question, isCorrect) {
   const progress = getProgress(subjectKey, mode);
   progress[idx] = isCorrect ? 1 : 0;
   localStorage.setItem(key, JSON.stringify(progress));
+  syncAnswerToSupabase(subjectKey, mode, idx, isCorrect); // fire-and-forget
+}
+
+// ── SUPABASE PROGRESS SYNC (Stage 7B) ────────────────────────
+// Write one answer to Supabase — called after every localStorage write.
+// Non-blocking: quiz never waits for the network round-trip.
+async function syncAnswerToSupabase(subjectKey, mode, questionIdx, isCorrect) {
+  if (!sbClient || !currentUser) return;
+  try {
+    const { error } = await sbClient.from('user_progress').upsert({
+      user_id:      currentUser.id,
+      subject_key:  subjectKey,
+      question_idx: questionIdx,
+      mode:         mode,
+      is_correct:   isCorrect,
+      answered_at:  new Date().toISOString(),
+    }, { onConflict: 'user_id,subject_key,question_idx,mode' });
+    if (error) console.warn('[CramIT] sync error:', error.message);
+  } catch (e) {
+    console.warn('[CramIT] sync exception:', e.message);
+  }
+}
+
+// On login: pull all progress rows from Supabase and merge into localStorage.
+// Supabase wins on conflict — it is the cross-device source of truth.
+// Any offline answers (in localStorage but not yet in Supabase) are preserved.
+async function loadProgressFromSupabase() {
+  if (!sbClient || !currentUser) return;
+  try {
+    const { data, error } = await sbClient
+      .from('user_progress')
+      .select('subject_key, question_idx, mode, is_correct')
+      .eq('user_id', currentUser.id);
+    if (error) { console.warn('[CramIT] loadProgress error:', error.message); return; }
+    if (!data || !data.length) return;
+
+    // Group rows into per-subject-mode maps: { 'maths_mc': {5:1, 12:0, ...}, ... }
+    const serverMaps = {};
+    data.forEach(({ subject_key, mode, question_idx, is_correct }) => {
+      const mapKey = `${subject_key}_${mode}`;
+      if (!serverMaps[mapKey]) serverMaps[mapKey] = {};
+      serverMaps[mapKey][question_idx] = is_correct ? 1 : 0;
+    });
+
+    // Merge into localStorage: local data first, server overwrites on conflict
+    Object.entries(serverMaps).forEach(([mapKey, serverProgress]) => {
+      // mapKey = e.g. 'maths_mc' — split on last underscore to get subjectKey + mode
+      const split      = mapKey.lastIndexOf('_');
+      const subjectKey = mapKey.substring(0, split);
+      const mode       = mapKey.substring(split + 1);
+      const lsKey      = statKey(`${subjectKey}_${mode}_progress`);
+      if (!lsKey) return;
+      const existing = getProgress(subjectKey, mode);
+      const merged   = { ...existing, ...serverProgress }; // server wins on conflict
+      localStorage.setItem(lsKey, JSON.stringify(merged));
+    });
+    console.log('[CramIT] Progress synced from Supabase:', data.length, 'questions');
+  } catch (e) {
+    console.warn('[CramIT] loadProgress exception:', e.message);
+  }
 }
 
 // Aggregate unique questions seen + correct for a subject (MC)
