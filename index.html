@@ -4169,6 +4169,1131 @@ const mathsQuestions = [
 <div class="step"><span class="step-number">10.</span> Correct: 1/15.</div>`},
     ];
 
+// ── MATHS STANDARD 2 — SECTION II WRITTEN QUESTIONS (Stage 8) ─────────────────────────────
+// Text-solvable extended-response questions from 2020–2025 HSC papers.
+// Questions requiring diagrams/graphs that cannot be rendered in text are excluded.
+const mathsWrittenQuestions = [
+
+  // ── 2020 ─────────────────────────────────────────────────────────
+  {
+    year:2020, marks:2, section:"II", qNum:"17", category:"M7",
+    q:"Ayla wishes to estimate the number of trees on a square block of land measuring 1000 m by 1000 m. She counts the number of trees on a 5 m by 5 m section of the block and finds there are 8 trees. Based on this, estimate the number of trees on the entire square block of land.",
+    answer:`Area of block = 1000 × 1000 = 1 000 000 m²
+Area of sample = 5 × 5 = 25 m²
+Number of sample sections = 1 000 000 ÷ 25 = 40 000
+Estimated trees = 8 × 40 000 = 320 000`,
+    keywords:["320000","320 000"],
+    minKeywords:1,
+    bandDescriptors:{
+      full:"2/2 — Correct method: finds block area (1 000 000 m²), sample area (25 m²), ratio (40 000) and multiplies by 8 to get 320 000 trees.",
+      partial:"1/2 — Correctly calculates the area of the block, sets up the correct ratio, or equivalent merit.",
+      minimal:"0/2 — Incorrect method."
+    }
+  },
+
+  {
+    year:2020, marks:3, section:"II", qNum:"20", category:"F1",
+    q:`For the 2019–2020 financial year, Wally had a taxable income of $122 680. During the year, he paid $3000 per month in PAYG tax.
+
+Tax rates:
+• $0 – $18 200: Nil
+• $18 201 – $37 000: 19c per $1 over $18 200
+• $37 001 – $90 000: $3572 + 32.5c per $1 over $37 000
+• $90 001 – $180 000: $20 797 + 37c per $1 over $90 000
+• $180 001+: $54 097 + 45c per $1 over $180 000
+
+Calculate Wally's tax refund, ignoring the Medicare levy.`,
+    answer:`Tax = $20 797 + 0.37 × ($122 680 − $90 000)
+     = $20 797 + 0.37 × $32 680
+     = $20 797 + $12 091.60
+     = $32 888.60
+
+PAYG tax paid = $3000 × 12 = $36 000
+
+Refund = $36 000 − $32 888.60 = $3 111.40`,
+    keywords:["32888","36000","3111"],
+    minKeywords:2,
+    bandDescriptors:{
+      full:"3/3 — Correct tax ($32 888.60), PAYG ($36 000) and refund ($3 111.40).",
+      partial:"2/3 — Correct tax calculation ($32 888.60), or equivalent merit.",
+      minimal:"1/3 — Starts calculation using the 37c rate bracket."
+    }
+  },
+
+  {
+    year:2020, marks:2, section:"II", qNum:"21", category:"F4",
+    q:"The inflation rate from January 2019 to January 2020 was 2%. The cost of a school jumper in January 2020 was $122. Calculate the cost of the jumper in January 2019, assuming the only change in cost was due to inflation.",
+    answer:`$122 ÷ 1.02 = $119.61 (to nearest cent)`,
+    acceptableAnswers:["119.61","$119.61"],
+    bandDescriptors:{
+      full:"2/2 — Divides $122 by 1.02 to get $119.61.",
+      partial:"1/2 — Attempts to use the compound interest formula or reverses inflation correctly.",
+      minimal:"0/2 — Multiplies by 0.98 instead of dividing by 1.02."
+    }
+  },
+
+  {
+    year:2020, marks:3, section:"II", qNum:"22", category:"F4",
+    q:"Nisa's credit card charges 17% per annum, compounded daily, on the amount owing. At the start of the month she owes $500. Fifteen days later, she repays $250 (interest is charged for those 15 days). Calculate the amount owing immediately after the $250 repayment.",
+    answer:`Amount after 15 days = $500 × (1 + 0.17/365)^15
+= $500 × 1.006998...
+≈ $503.50
+
+Amount after $250 repayment = $503.50 − $250 = $253.50`,
+    keywords:["253.50","253.5"],
+    minKeywords:1,
+    bandDescriptors:{
+      full:"3/3 — Correct compound interest formula (daily rate, 15 days) giving ~$503.50, then $253.50 after repayment.",
+      partial:"2/3 — Correctly applies compound interest formula with correct rate and periods.",
+      minimal:"1/3 — Attempts to apply the compound interest formula."
+    }
+  },
+
+  {
+    year:2020, marks:2, section:"II", qNum:"23(a)", category:"M7",
+    q:"In a tropical drink, the ratio of pineapple juice to mango juice to orange juice is 15 : 9 : 4. How much orange juice is needed if the drink is to contain 3 litres of pineapple juice?",
+    answer:`1 part pineapple = 3/15 = 0.2 L
+4 parts orange juice = 4 × 0.2 = 0.8 L`,
+    acceptableAnswers:["0.8","800 ml","800ml","0.8 l","0.8 litre"],
+    bandDescriptors:{
+      full:"2/2 — Correct: 0.8 L (or 800 mL).",
+      partial:"1/2 — Identifies a relevant ratio.",
+      minimal:"0/2 — Incorrect ratio applied."
+    }
+  },
+
+  {
+    year:2020, marks:3, section:"II", qNum:"23(b)", category:"M7",
+    q:"In a tropical drink, the ratio of pineapple juice to mango juice to orange juice is 15 : 9 : 4. A container (rectangular prism, internal dimensions 40 cm × 20 cm × 35 cm) is to be filled with the tropical drink. How many litres of mango juice are required to fill it? (1 L = 1000 cm³)",
+    answer:`Volume = 40 × 20 × 35 = 28 000 cm³ = 28 L
+Total parts = 15 + 9 + 4 = 28
+Mango juice = 9/28 × 28 = 9 litres`,
+    keywords:["28000","9 l","9 litre","9 liter"],
+    minKeywords:1,
+    bandDescriptors:{
+      full:"3/3 — Correct volume (28 000 cm³ = 28 L), correct ratio (9/28), mango juice = 9 L.",
+      partial:"2/3 — Correct volume of container and attempts to calculate mango juice.",
+      minimal:"1/3 — Correct volume of container (28 000 cm³)."
+    }
+  },
+
+  {
+    year:2020, marks:4, section:"II", qNum:"28", category:"S1",
+    q:`Dataset: 1, 5, 9, 10, 15
+
+A new value x is added (x > 15), giving: 1, 5, 9, 10, 15, x
+
+The difference between the means of the two datasets equals ten times the difference between the medians.
+
+Calculate the value of x.`,
+    answer:`Mean of first dataset = (1 + 5 + 9 + 10 + 15) / 5 = 8
+Median of first dataset = 9
+
+Mean of second dataset = (40 + x) / 6
+Median of second dataset = (9 + 10) / 2 = 9.5  [since x > 15]
+
+(40 + x)/6 − 8 = 10 × (9.5 − 9) = 5
+(40 + x)/6 = 13
+40 + x = 78
+x = 38`,
+    acceptableAnswers:["38","x = 38","x=38"],
+    bandDescriptors:{
+      full:"4/4 — Identifies both medians (9 and 9.5), both means, forms and solves equation to get x = 38.",
+      partial:"2–3/4 — Calculates mean and median of first dataset and mean of second dataset.",
+      minimal:"1/4 — Correctly calculates the median of the first dataset (9)."
+    }
+  },
+
+  {
+    year:2020, marks:3, section:"II", qNum:"29", category:"F4",
+    q:`Jana's share portfolio at 30 June 2020:
+• Company ABC: 200 shares, dividend yield 6.0% p.a., market price $5.50/share
+• Company XYZ: ? shares, dividend yield 4.0% p.a., market price $6.00/share
+
+Jana received a total annual dividend of $149.52.
+
+Calculate the number of shares Jana has in company XYZ.`,
+    answer:`ABC dividend = 200 × 0.06 × $5.50 = $66.00
+XYZ dividend = $149.52 − $66.00 = $83.52
+XYZ shares = $83.52 ÷ (0.04 × $6.00) = $83.52 ÷ $0.24 = 348 shares`,
+    acceptableAnswers:["348","348 shares"],
+    bandDescriptors:{
+      full:"3/3 — Correct ABC dividend ($66), XYZ dividend ($83.52), number of XYZ shares (348).",
+      partial:"2/3 — Correctly calculates XYZ dividend ($83.52), or equivalent merit.",
+      minimal:"1/3 — Calculates ABC dividend ($66)."
+    }
+  },
+
+  {
+    year:2020, marks:2, section:"II", qNum:"34(a)", category:"F5",
+    q:`Tina invests $60 000 at 0.5% per month. Each month, after interest is paid, she withdraws $800.
+
+Recurrence relation: Aₙ = Aₙ₋₁ × 1.005 − 800, where A₀ = $60 000
+
+Find the amount in the account immediately after the third withdrawal.`,
+    answer:`A₁ = 60 000 × 1.005 − 800 = $59 500
+A₂ = 59 500 × 1.005 − 800 = $58 997.50
+A₃ = 58 997.50 × 1.005 − 800 = $58 492.49`,
+    keywords:["59500","58997","58492"],
+    minKeywords:2,
+    bandDescriptors:{
+      full:"2/2 — All three iterations correct: A₁=$59 500, A₂=$58 997.50, A₃=$58 492.49.",
+      partial:"1/2 — Finds A₁ = $59 500 correctly.",
+      minimal:"0/2 — Incorrect recurrence relation application."
+    }
+  },
+
+  {
+    year:2020, marks:2, section:"II", qNum:"34(b)", category:"F5",
+    q:"Using the recurrence relation result: after 3 months Tina's account balance is $58 492.49 (started at $60 000, withdrew $800/month). Calculate the amount of interest earned in the first three months.",
+    answer:`Total withdrawals = 3 × $800 = $2400
+Balance reduced by = $60 000 − $58 492.49 = $1507.51
+Interest earned = $2400 − $1507.51 = $892.49`,
+    acceptableAnswers:["892.49","$892.49"],
+    bandDescriptors:{
+      full:"2/2 — Total withdrawals $2400, balance reduction $1507.51, interest = $892.49.",
+      partial:"1/2 — Correctly finds the balance reduction ($1507.51).",
+      minimal:"0/2 — Incorrect approach."
+    }
+  },
+
+  {
+    year:2020, marks:2, section:"II", qNum:"35(a)", category:"S5",
+    q:"The IQ scores for adults in City A are normally distributed with mean 108 and standard deviation 10. Yin has an IQ of 128. What percentage of adults in City A have an IQ score higher than Yin's?",
+    answer:`z = (128 − 108) / 10 = 2
+Yin is 2 standard deviations above the mean.
+By the 95% rule: 5% are beyond ±2 SDs → 2.5% are above.
+∴ 2.5% of adults have a higher IQ than Yin.`,
+    acceptableAnswers:["2.5%","2.5"],
+    bandDescriptors:{
+      full:"2/2 — z = 2, correct use of 95% rule → 2.5%.",
+      partial:"1/2 — Demonstrates 97.5% is within 2 SDs above the mean, or equivalent merit.",
+      minimal:"0/2 — Incorrect z-score or rule."
+    }
+  },
+
+  {
+    year:2020, marks:2, section:"II", qNum:"35(b)", category:"S5",
+    q:"City B IQ scores are normally distributed with mean 112 and standard deviation 16. There are 1 000 000 adults in City B. Yin (IQ = 128) has moved to City B. Calculate the expected number of adults in City B with an IQ lower than Yin's.",
+    answer:`z for Yin in City B = (128 − 112) / 16 = 1
+Yin is 1 SD above City B's mean.
+P(IQ < 128) = 50% + 34% = 84% [68% rule → 34% between mean and +1SD]
+Expected number = 0.84 × 1 000 000 = 840 000`,
+    acceptableAnswers:["840000","840 000"],
+    bandDescriptors:{
+      full:"2/2 — z = 1 in City B, P = 84%, expected = 840 000.",
+      partial:"1/2 — Demonstrates Yin is 1 SD above City B mean.",
+      minimal:"0/2 — Incorrect z-score in City B."
+    }
+  },
+
+  {
+    year:2020, marks:3, section:"II", qNum:"35(c)", category:"S5",
+    q:"Simon lives in City A (mean 108, SD 10). He moves to City B (mean 112, SD 16). His z-score is the same in both cities. By forming an equation, calculate Simon's IQ score to one decimal place.",
+    answer:`(x − 108)/10 = (x − 112)/16
+16(x − 108) = 10(x − 112)
+16x − 1728 = 10x − 1120
+6x = 608
+x = 101.3`,
+    acceptableAnswers:["101.3"],
+    bandDescriptors:{
+      full:"3/3 — Forms correct equation, solves to get x = 101.3.",
+      partial:"2/3 — Forms the correct equation linking both z-scores.",
+      minimal:"1/3 — Correct z-score expression for either city."
+    }
+  },
+
+  {
+    year:2020, marks:3, section:"II", qNum:"37", category:"F5",
+    q:`Wilma deposited a lump sum in a bank account at 2% p.a. compound interest, then made these withdrawals:
+• $1000 at the end of each year for 20 years (starting year 1)
+• $3000 per year for 10 years starting year 21
+
+Present value interest factors (annuity of $1 at 2%):
+• N=10: 8.983  • N=20: 16.351  • N=30: 22.396
+
+Calculate the minimum lump sum Wilma must have deposited.`,
+    answer:`PV of $1000 for 20 years = 16.351 × $1000 = $16 351
+PV of $3000 for 30 years = 22.396 × $3000 = $67 188
+PV of $3000 for 20 years = 16.351 × $3000 = $49 053
+PV of last 10 years = $67 188 − $49 053 = $18 135
+Total lump sum = $16 351 + $18 135 = $34 486`,
+    keywords:["16351","49053","67188","34486"],
+    minKeywords:3,
+    bandDescriptors:{
+      full:"3/3 — Correct PV of $1000 annuity, correct $3000 annuity components, total $34 486.",
+      partial:"2/3 — Correctly calculates the PV of the $1000 annuity for 20 years ($16 351).",
+      minimal:"1/3 — Identifies an appropriate annuity factor from the table."
+    }
+  },
+
+  // ── 2021 ─────────────────────────────────────────────────────────
+
+  {
+    year:2021, marks:2, section:"II", qNum:"17", category:"S1",
+    q:`Five-number summary of a dataset: Lowest=1, Q₁=4, Median=7, Q₃=10, Highest=20.
+
+Is 20 an outlier? Justify your answer with calculations.`,
+    answer:`IQR = Q₃ − Q₁ = 10 − 4 = 6
+Upper fence = Q₃ + 1.5 × IQR = 10 + 9 = 19
+Since 20 > 19, yes — 20 IS an outlier.`,
+    keywords:["19","1.5","iqr","outlier"],
+    minKeywords:2,
+    bandDescriptors:{
+      full:"2/2 — IQR = 6, upper fence = 19, correctly identifies 20 as an outlier.",
+      partial:"1/2 — Attempts Q₃ + 1.5 × IQR or correctly calculates IQR.",
+      minimal:"0/2 — Uses range instead of IQR."
+    }
+  },
+
+  {
+    year:2021, marks:2, section:"II", qNum:"18", category:"M7",
+    q:"A car's fuel consumption is 6.7 L/100 km. On a road trip of 1560 km, fuel costs $1.45 per litre. What is the total fuel cost for this trip?",
+    answer:`Fuel used = (1560/100) × 6.7 = 104.52 litres
+Total cost = 104.52 × $1.45 = $151.55`,
+    acceptableAnswers:["151.55","$151.55"],
+    bandDescriptors:{
+      full:"2/2 — Correct fuel (104.52 L) and cost ($151.55).",
+      partial:"1/2 — Correctly calculates amount of fuel used.",
+      minimal:"0/2 — Incorrect method."
+    }
+  },
+
+  {
+    year:2021, marks:2, section:"II", qNum:"19", category:"F4",
+    q:"Adam bought office furniture 5 years ago. It depreciated by $2300 per year (straight-line method). The salvage value is now $7500. Find the initial value of the office furniture.",
+    answer:`Initial value = Salvage + (Rate × Years)
+= $7500 + ($2300 × 5) = $7500 + $11 500 = $19 000`,
+    acceptableAnswers:["19000","$19000","$19 000"],
+    bandDescriptors:{
+      full:"2/2 — Correct: $7500 + 5 × $2300 = $19 000.",
+      partial:"1/2 — Correct substitution into S = V₀ − Dn.",
+      minimal:"0/2 — Incorrect method."
+    }
+  },
+
+  {
+    year:2021, marks:3, section:"II", qNum:"20", category:"M7",
+    q:`City A in Sweden is at (58°N, 16°E). Sydney is at (33°S, 151°E).
+
+Robert must give an online presentation to City A at 5:00 pm Thursday (City A local time).
+
+What time and day should Robert be ready in Sydney? (15° = 1 hour time difference. Ignore daylight saving.)`,
+    answer:`Both cities are East. Longitude difference = 151° − 16° = 135°
+Time difference = 135 ÷ 15 = 9 hours
+Sydney is 9 hours ahead of City A.
+5:00 pm Thursday (City A) + 9 hours = 2:00 am Friday (Sydney)`,
+    keywords:["9 hours","135","2 am","2:00 am","friday"],
+    minKeywords:2,
+    bandDescriptors:{
+      full:"3/3 — Longitude diff (135°), time diff (9 hours), Sydney time (2:00 am Friday).",
+      partial:"2/3 — Correctly calculates the time difference (9 hours).",
+      minimal:"1/3 — Correctly calculates the longitude difference (135°)."
+    }
+  },
+
+  {
+    year:2021, marks:3, section:"II", qNum:"21", category:"F4",
+    q:`Julie invests $12 500 in a savings account. Interest is paid at a fixed monthly rate, then she deposits $500 each month. Month 1: opening $12 500, interest $18.75, deposit $500, end balance $13 018.75. Month 6 end balance: $15 624.20.
+
+Find the monthly interest rate and complete Month 7: opening balance, monthly interest, deposit ($500), and end balance.`,
+    answer:`Monthly rate = $18.75 / $12 500 = 0.15% per month
+
+Month 7:
+Opening balance = $15 624.20
+Interest = $15 624.20 × 0.0015 = $23.44 (rounded)
+Deposit = $500
+End balance = $15 624.20 + $23.44 + $500 = $16 147.64`,
+    keywords:["0.15","23.44","16147"],
+    minKeywords:2,
+    bandDescriptors:{
+      full:"3/3 — Rate 0.15%, Month 7 interest $23.44, end balance $16 147.64.",
+      partial:"2/3 — Correctly calculates the monthly rate (0.15%).",
+      minimal:"1/3 — Identifies monthly rate."
+    }
+  },
+
+  {
+    year:2021, marks:3, section:"II", qNum:"22", category:"F1",
+    q:`William: gross salary $84 000, tax deductions $900 (home office) + $474 (union fees), Medicare Levy 2% of taxable income.
+
+2020–2021 Tax rates:
+• $0 – $18 200: Nil  • $18 201 – $45 000: 19c per $1 over $18 200
+• $45 001 – $120 000: $5092 + 32.5c per $1 over $45 000
+• $120 001 – $180 000: $29 467 + 37c per $1 over $120 000
+
+Calculate total tax payable including Medicare Levy.`,
+    answer:`Taxable income = $84 000 − $900 − $474 = $82 626
+Income tax = $5092 + 0.325 × ($82 626 − $45 000) = $5092 + $12 228.45 = $17 320.45
+Medicare Levy = 0.02 × $82 626 = $1652.52
+Total = $17 320.45 + $1652.52 = $18 972.97`,
+    keywords:["82626","17320","1652","18972"],
+    minKeywords:2,
+    bandDescriptors:{
+      full:"3/3 — Taxable income $82 626, tax $17 320.45, levy $1652.52, total $18 972.97.",
+      partial:"2/3 — Correctly calculates income tax payable.",
+      minimal:"1/3 — Correctly calculates taxable income ($82 626)."
+    }
+  },
+
+  {
+    year:2021, marks:2, section:"II", qNum:"26(a)", category:"F4",
+    q:"Nina invests $35 000 for 1 year at 6% per annum compounded monthly (Option A). Calculate the future value of Nina's investment.",
+    answer:`Monthly rate = 6%/12 = 0.5%
+FV = $35 000 × (1.005)^12 = $35 000 × 1.06168... = $37 158.72`,
+    acceptableAnswers:["37158.72","37158","$37 158"],
+    bandDescriptors:{
+      full:"2/2 — Monthly rate 0.5%, 12 periods, FV = $37 158.72.",
+      partial:"1/2 — Attempts compound interest formula with correct rate or periods.",
+      minimal:"0/2 — Uses simple interest or annual compounding."
+    }
+  },
+
+  {
+    year:2021, marks:2, section:"II", qNum:"26(b)", category:"F4",
+    q:"Nina's Option A gives a future value of $37 158.72 on a $35 000 investment. Option B pays r% per annum simple interest. Find the value of r that gives the same future value after 1 year. Give your answer to two decimal places.",
+    answer:`Interest in Option A = $37 158.72 − $35 000 = $2158.72
+Simple interest: I = Prt
+$2158.72 = $35 000 × (r/100) × 1
+r = $2158.72 / $35 000 × 100 = 6.17%`,
+    acceptableAnswers:["6.17","r = 6.17","6.17%"],
+    bandDescriptors:{
+      full:"2/2 — Interest = $2158.72, simple interest equation gives r = 6.17%.",
+      partial:"1/2 — Correct substitution into the simple interest formula.",
+      minimal:"0/2 — Incorrect method."
+    }
+  },
+
+  {
+    year:2021, marks:2, section:"II", qNum:"27(a)", category:"M7",
+    q:`Two televisions are used 3 hours per day. Electricity costs 25c/kWh.
+• TV A: 176 W, annual cost $48.18
+• TV B: 160 W
+
+What is the difference in annual electricity cost between TV A and TV B?`,
+    answer:`TV B energy = 160 × 3 × 365 / 1000 = 175.2 kWh/year
+TV B cost = 175.2 × $0.25 = $43.80
+Difference = $48.18 − $43.80 = $4.38`,
+    acceptableAnswers:["4.38","$4.38"],
+    bandDescriptors:{
+      full:"2/2 — TV B energy (175.2 kWh), cost ($43.80), difference ($4.38).",
+      partial:"1/2 — Finds TV B annual energy (175.2 kWh).",
+      minimal:"0/2 — Incorrect method."
+    }
+  },
+
+  {
+    year:2021, marks:2, section:"II", qNum:"27(b)", category:"M7",
+    q:`TV A costs $900 (annual electricity $48.18/yr). TV B costs $921.90 (annual electricity $43.80/yr). In how many years will the total cost of buying and running TV A equal the total cost of TV B?`,
+    answer:`Extra purchase cost of TV B = $921.90 − $900 = $21.90
+Annual electricity saving with TV B = $48.18 − $43.80 = $4.38
+Years to break even = $21.90 ÷ $4.38 = 5 years`,
+    acceptableAnswers:["5","5 years"],
+    bandDescriptors:{
+      full:"2/2 — Extra cost $21.90, saving $4.38/yr, 5 years to break even.",
+      partial:"1/2 — Correctly calculates $21.90 or $4.38.",
+      minimal:"0/2 — Incorrect approach."
+    }
+  },
+
+  {
+    year:2021, marks:2, section:"II", qNum:"29", category:"A1",
+    q:"Solve: x + (x − 1)/2 = 9",
+    answer:`Multiply both sides by 2:
+2x + (x − 1) = 18
+3x − 1 = 18
+3x = 19
+x = 19/3`,
+    acceptableAnswers:["19/3","6.33","6⅓","6.3"],
+    bandDescriptors:{
+      full:"2/2 — Correct: x = 19/3.",
+      partial:"1/2 — Correctly writes with a common denominator.",
+      minimal:"0/2 — Incorrect algebra."
+    }
+  },
+
+  {
+    year:2021, marks:2, section:"II", qNum:"30", category:"F4",
+    q:"Ariana owns 1500 shares at $27 each. Her total dividend is $810. Calculate the dividend yield.",
+    answer:`Dividend per share = $810 ÷ 1500 = $0.54
+Dividend yield = ($0.54/$27) × 100 = 2%`,
+    acceptableAnswers:["2%","2","two percent"],
+    bandDescriptors:{
+      full:"2/2 — Dividend/share ($0.54), dividend yield (2%).",
+      partial:"1/2 — Calculates dividend per share ($0.54).",
+      minimal:"0/2 — Incorrect method."
+    }
+  },
+
+  {
+    year:2021, marks:2, section:"II", qNum:"31", category:"F5",
+    q:`Martina borrows $500 000 at 1.5% p.a. compounded monthly, to be repaid over 30 years in equal monthly payments.
+
+Present value interest factors (annuity of $1):
+• N=360, r=0.00125: 289.75411
+
+How much should the monthly payment be? Answer to the nearest cent.`,
+    answer:`Monthly rate = 1.5%/12 = 0.125% = 0.00125
+Periods = 360
+Monthly payment = $500 000 ÷ 289.75411 = $1725.60`,
+    acceptableAnswers:["1725.60","$1725.60","$1,725.60"],
+    bandDescriptors:{
+      full:"2/2 — Correct factor (289.75411), monthly payment $1725.60.",
+      partial:"1/2 — Identifies the correct PV interest factor.",
+      minimal:"0/2 — Incorrect method."
+    }
+  },
+
+  // ── 2022 ─────────────────────────────────────────────────────────
+
+  {
+    year:2022, marks:1, section:"II", qNum:"16(a)", category:"M7",
+    q:"Tom is 25 years old. Maximum heart rate (bpm) = 220 − age. Find Tom's maximum heart rate.",
+    answer:"Maximum heart rate = 220 − 25 = 195 bpm",
+    acceptableAnswers:["195","195 bpm"],
+  },
+
+  {
+    year:2022, marks:2, section:"II", qNum:"16(b)", category:"M7",
+    q:"Tom's maximum heart rate is 195 bpm. He gets the most exercise benefit when his heart rate is between 50% and 85% of his maximum. Between what two heart rates should Tom aim for?",
+    answer:`50% of 195 = 97.5 bpm
+85% of 195 = 165.75 bpm
+Aim for 97.5 to 165.75 bpm.`,
+    keywords:["97.5","165.75","165.8"],
+    minKeywords:1,
+    bandDescriptors:{
+      full:"2/2 — Both values correct: 97.5 bpm and 165.75 bpm.",
+      partial:"1/2 — One correct percentage.",
+      minimal:"0/2 — Incorrect calculations."
+    }
+  },
+
+  {
+    year:2022, marks:2, section:"II", qNum:"18", category:"S5",
+    q:"Test marks are normally distributed with mean 60 and standard deviation 15. What percentage of marks are higher than 90?",
+    answer:`z = (90 − 60) / 15 = 2
+A score of 90 is 2 standard deviations above the mean.
+By the 95% rule: 2.5% of marks are higher than 90.`,
+    acceptableAnswers:["2.5%","2.5"],
+    bandDescriptors:{
+      full:"2/2 — z = 2, 2.5% higher than 90.",
+      partial:"1/2 — Correctly finds z = 2.",
+      minimal:"0/2 — Incorrect z-score."
+    }
+  },
+
+  {
+    year:2022, marks:2, section:"II", qNum:"19(a)", category:"S1",
+    q:`A business received 200 complaints. Cumulative frequency table:
+Stock shortage: freq 98, cum. freq 98, cum. % 49%
+Delivery fee: freq 62, cum. freq A, cum. % 80%
+Damaged item: cum. freq 192, cum. % B%
+
+What are the values of A and B?`,
+    answer:`A = 98 + 62 = 160
+B = 192/200 × 100 = 96%`,
+    keywords:["160","96"],
+    minKeywords:2,
+    bandDescriptors:{
+      full:"2/2 — A = 160, B = 96%.",
+      partial:"1/2 — Correct A or B.",
+      minimal:"0/2 — Incorrect values."
+    }
+  },
+
+  {
+    year:2022, marks:2, section:"II", qNum:"21", category:"F1",
+    q:"A real estate agent earns 2% commission for the first $800 000 of a sale price, and 1.5% for any amount over $800 000. Calculate the commission on a house sold for $1 500 000.",
+    answer:`2% × $800 000 = $16 000
+1.5% × ($1 500 000 − $800 000) = 1.5% × $700 000 = $10 500
+Total commission = $16 000 + $10 500 = $26 500`,
+    acceptableAnswers:["26500","$26500","$26 500"],
+    bandDescriptors:{
+      full:"2/2 — Correct: $16 000 + $10 500 = $26 500.",
+      partial:"1/2 — One commission component correct.",
+      minimal:"0/2 — Applies single rate to full price."
+    }
+  },
+
+  {
+    year:2022, marks:1, section:"II", qNum:"22(a)", category:"A1",
+    q:"Production cost formula: C = 100n + b (C = cost in $, n = laptops, b = fixed cost). Find C when n = 1943 and b = $20 180.",
+    answer:"C = 100 × 1943 + 20 180 = $214 480",
+    acceptableAnswers:["214480","$214480","$214 480"],
+  },
+
+  {
+    year:2022, marks:2, section:"II", qNum:"22(b)", category:"A1",
+    q:"For laptops with extra features: C = 100n + an + 20 180. Find n (number of laptops) when a = $26/laptop and total cost C = $97 040.",
+    answer:`97 040 = (100 + 26)n + 20 180
+97 040 = 126n + 20 180
+126n = 76 860
+n = 610 laptops`,
+    acceptableAnswers:["610","610 laptops"],
+    bandDescriptors:{
+      full:"2/2 — Correct setup and solution: n = 610.",
+      partial:"1/2 — Correct substitution into formula.",
+      minimal:"0/2 — Incorrect setup."
+    }
+  },
+
+  {
+    year:2022, marks:2, section:"II", qNum:"24(a)", category:"A4",
+    q:"The time M minutes for an ice cube to melt varies inversely with room temperature T °C. At T = 15°C, M = 12 minutes. Find the equation relating M and T.",
+    answer:`M = k/T
+12 = k/15 → k = 180
+M = 180/T`,
+    keywords:["180","m = 180/t","180/t","k = 180"],
+    minKeywords:1,
+    bandDescriptors:{
+      full:"2/2 — k = 180, equation M = 180/T.",
+      partial:"1/2 — Sets up M = k/T (inverse variation).",
+      minimal:"0/2 — Treats as direct variation."
+    }
+  },
+
+  {
+    year:2022, marks:2, section:"II", qNum:"25(a)", category:"F5",
+    q:`Zal wants to save $15 000 in 4 years. His account earns 3% p.a. compounded annually.
+
+Future value interest factors (annuity of $1):
+• 4 years at 3%: 4.184
+
+How much must Zal deposit every year?`,
+    answer:"Annual deposit = $15 000 ÷ 4.184 = $3585.09",
+    acceptableAnswers:["3585.09","$3585.09","3585"],
+    bandDescriptors:{
+      full:"2/2 — $15 000 ÷ 4.184 = $3585.09.",
+      partial:"1/2 — Identifies the correct interest factor (4.184).",
+      minimal:"0/2 — Multiplies instead of divides."
+    }
+  },
+
+  {
+    year:2022, marks:1, section:"II", qNum:"27(a)(i)", category:"F4",
+    q:"A machine's declining-balance salvage value is given by S = V₀ × (0.80)ⁿ. What is the annual rate of depreciation?",
+    answer:"Annual rate = 1 − 0.80 = 0.20 = 20% per year.",
+    acceptableAnswers:["20%","20","0.2","twenty percent"],
+  },
+
+  {
+    year:2022, marks:3, section:"II", qNum:"29", category:"M7",
+    q:`Sydney is UTC+10. New York is UTC−5. Tony's plane leaves Sydney at 8:20 pm Wednesday, flies non-stop for 20 hours 24 minutes to New York.
+
+What time and day is it in New York when the plane lands?`,
+    answer:`Time difference = 10 − (−5) = 15 hours (Sydney is 15 hours ahead)
+Sydney arrival = 8:20 pm Wed + 20h 24min = 4:44 pm Thursday
+New York time = 4:44 pm − 15 hours = 1:44 am Thursday`,
+    keywords:["15 hours","1:44","thursday","1:44 am"],
+    minKeywords:2,
+    bandDescriptors:{
+      full:"3/3 — Time difference 15h, Sydney arrival 4:44 pm Thu, NY time 1:44 am Thursday.",
+      partial:"2/3 — Correctly finds time in Sydney when plane lands.",
+      minimal:"1/3 — Correctly finds the 15-hour time difference."
+    }
+  },
+
+  {
+    year:2022, marks:2, section:"II", qNum:"30(a)", category:"F4",
+    q:"Eli deposits $40 000 at 1.2% p.a. compounded monthly. What is the value after 10 years?",
+    answer:`Monthly rate = 0.1%, periods = 120
+FV = $40 000 × (1.001)^120 = $40 000 × 1.12743... = $45 097.17`,
+    acceptableAnswers:["45097.17","45097","$45 097"],
+    bandDescriptors:{
+      full:"2/2 — Monthly rate 0.1%, 120 periods, FV = $45 097.17.",
+      partial:"1/2 — Some correct elements in FV expression.",
+      minimal:"0/2 — Incorrect method."
+    }
+  },
+
+  {
+    year:2022, marks:2, section:"II", qNum:"36(a)", category:"F5",
+    q:`Frankie's loan: $200 000 at 7.2% p.a. compounded monthly, monthly repayment $1485.
+Month 1: Principal $200 000, Interest $1200, Balance $199 715.
+Month 2: Principal $199 715, Interest A, Balance $199 428.29.
+Month 3: Principal $199 428.29, Interest $1196.57, Balance B.
+
+Find A and B.`,
+    answer:`Monthly rate = 7.2%/12 = 0.6%
+A = $199 715 × 0.006 = $1198.29
+B = $199 428.29 + $1196.57 − $1485 = $199 139.86`,
+    keywords:["1198.29","1198","199139"],
+    minKeywords:2,
+    bandDescriptors:{
+      full:"2/2 — A = $1198.29, B = $199 139.86.",
+      partial:"1/2 — One of A or B correct.",
+      minimal:"0/2 — Incorrect rate or method."
+    }
+  },
+
+  {
+    year:2022, marks:3, section:"II", qNum:"37", category:"S5",
+    q:`Battery life is normally distributed: mean 840h, SD 80h. Statistical tables show 60% of batteries have life < 860h.
+
+What percentage of batteries have a life between 820 and 920 hours?`,
+    answer:`60% below 860 → 10% between 840 and 860 (since 50% below mean).
+By symmetry: 10% between 820 and 840.
+68% within 1 SD (760–920) → 34% between 840 and 920.
+Total between 820 and 920 = 10% + 34% = 44%.`,
+    acceptableAnswers:["44%","44"],
+    bandDescriptors:{
+      full:"3/3 — Correctly identifies 10% in [840,860], 34% in [840,920], total 44%.",
+      partial:"2/3 — Identifies 34% between 840 and 920 and attempts to use 60% information.",
+      minimal:"1/3 — Recognises 68% fall within 1 SD of mean (760–920)."
+    }
+  },
+
+  {
+    year:2022, marks:3, section:"II", qNum:"38", category:"M7",
+    q:"A container holds 4.8 L of cordial and water in the ratio 1:3. After removing 1.2 L of the mixture, more water is added to refill the container. What is the ratio of cordial to water in the final mixture?",
+    answer:`Initial: cordial = 1.2 L, water = 3.6 L
+Remove 1.2 L (1:3): remove 0.3 L cordial, 0.9 L water
+Remaining: 0.9 L cordial, 2.7 L water
+Add 1.2 L water: water total = 3.9 L
+Final ratio = 0.9 : 3.9 = 3 : 13`,
+    acceptableAnswers:["3:13","3 : 13","3 to 13"],
+    bandDescriptors:{
+      full:"3/3 — Correct cordial (0.9 L) and water (3.9 L), ratio 3:13.",
+      partial:"2/3 — Correct cordial (0.9 L) and water (2.7 L) after removing 1.2 L.",
+      minimal:"1/3 — Attempts to apply ratio 1:3 to the remaining mixture."
+    }
+  },
+
+  // ── 2023 ─────────────────────────────────────────────────────────
+
+  {
+    year:2023, marks:3, section:"II", qNum:"21(c,d)", category:"A2",
+    q:`Provider A charges 25c/kWh plus $40 fixed monthly charge: C_A = 0.25k + 40.
+Provider B charges 35c/kWh, no fixed charge: C_B = 0.35k.
+
+(c) At how many kWh/month do both providers charge the same amount?
+(d) A customer uses 800 kWh/month. Which provider is cheaper, and by how much?`,
+    answer:`(c) 0.25k + 40 = 0.35k
+40 = 0.10k
+k = 400 kWh
+
+(d) Provider A at 800 kWh: 0.25 × 800 + 40 = $240
+Provider B at 800 kWh: 0.35 × 800 = $280
+Provider A is cheaper by $40.`,
+    keywords:["400","240","280","40"],
+    minKeywords:3,
+    bandDescriptors:{
+      full:"3/3 — Break-even 400 kWh, A=$240, B=$280, A cheaper by $40.",
+      partial:"2/3 — Two of the three parts correct.",
+      minimal:"1/3 — One part correct (e.g. break-even at 400 kWh)."
+    }
+  },
+
+  {
+    year:2023, marks:3, section:"II", qNum:"22", category:"A4",
+    q:`Braking distance (m) = k × speed² (km/h).
+(a) At 50 km/h, braking distance = 20 m. Find k.
+(b) What is the braking distance at 90 km/h?`,
+    answer:`(a) 20 = k × 50² = k × 2500 → k = 0.008
+
+(b) Braking distance = 0.008 × 90² = 0.008 × 8100 = 64.8 m`,
+    keywords:["0.008","64.8"],
+    minKeywords:2,
+    bandDescriptors:{
+      full:"3/3 — k = 0.008, braking distance = 64.8 m.",
+      partial:"2/3 — Correct k = 0.008.",
+      minimal:"1/3 — Correct substitution for part (a)."
+    }
+  },
+
+  {
+    year:2023, marks:2, section:"II", qNum:"23", category:"S2",
+    q:"100 raffle tickets. Hazel has 5. One ticket drawn for 1st prize, then another from remaining 99 for 2nd prize. What is the probability Hazel wins both prizes?",
+    answer:`P(both) = (5/100) × (4/99) = 20/9900 = 1/495`,
+    acceptableAnswers:["1/495","20/9900","0.00202"],
+    bandDescriptors:{
+      full:"2/2 — Correct: (5/100) × (4/99) = 1/495.",
+      partial:"1/2 — Shows understanding of dependent events (without replacement).",
+      minimal:"0/2 — Treats as independent events."
+    }
+  },
+
+  {
+    year:2023, marks:3, section:"II", qNum:"24(b)", category:"M1",
+    q:"A creek wall has a cross-sectional area of 18 m² (found using the trapezoidal rule). The wall is 0.80 m thick. 1 m³ of concrete weighs 3.52 tonnes. How many tonnes of concrete are in the wall? Give your answer to 2 significant figures.",
+    answer:`Volume = 18 × 0.80 = 14.4 m³
+Weight = 14.4 × 3.52 = 50.688 tonnes ≈ 51 tonnes (2 s.f.)`,
+    acceptableAnswers:["51","51 tonnes"],
+    bandDescriptors:{
+      full:"3/3 — Volume 14.4 m³, weight 50.688 t, rounded to 51 t.",
+      partial:"2/3 — Correct volume and unrounded weight.",
+      minimal:"1/3 — Correct volume (14.4 m³)."
+    }
+  },
+
+  {
+    year:2023, marks:2, section:"II", qNum:"25(a)", category:"F5",
+    q:`Micky saves $450 000 over 10 years at 6% p.a. compounded annually.
+
+Future value interest factors (annuity of $1):
+• 10 years at 6%: 13.181
+
+How much should Micky contribute each year? (nearest dollar)`,
+    answer:"Annual contribution = $450 000 ÷ 13.181 = $34 140",
+    acceptableAnswers:["34140","$34 140","$34140"],
+    bandDescriptors:{
+      full:"2/2 — $450 000 ÷ 13.181 = $34 140.",
+      partial:"1/2 — Identifies the correct factor (13.181).",
+      minimal:"0/2 — Multiplies instead of divides."
+    }
+  },
+
+  {
+    year:2023, marks:3, section:"II", qNum:"25(b)", category:"F5",
+    q:`Micky instead contributes $8535 every 3 months for 10 years at 6% p.a. compounding quarterly.
+
+Future value interest factors (annuity of $1):
+• 40 periods at 1.5%: 54.268
+
+How much will Micky have at the end of 10 years?`,
+    answer:`Quarterly rate = 6%/4 = 1.5%, periods = 40
+FV = $8535 × 54.268 = $463 177.38`,
+    acceptableAnswers:["463177","463177.38","$463 177"],
+    bandDescriptors:{
+      full:"3/3 — Rate 1.5%, 40 periods, FV = $463 177.38.",
+      partial:"2/3 — Correct rate and period, or multiplied $8535 by a factor.",
+      minimal:"1/3 — Rate 1.5% or 40 periods."
+    }
+  },
+
+  {
+    year:2023, marks:3, section:"II", qNum:"26(b)", category:"M7",
+    q:"Kim needs 2.1 tonnes of concrete mix in ratio crushed rock : sand : cement = 4 : 2 : 1 by weight. How many 15 kg bags of cement does Kim need to buy?",
+    answer:`Cement = 1/7 × 2.1 tonnes = 0.3 tonnes = 300 kg
+Number of bags = 300 ÷ 15 = 20 bags`,
+    acceptableAnswers:["20","20 bags"],
+    bandDescriptors:{
+      full:"3/3 — Cement = 300 kg, bags = 20.",
+      partial:"2/3 — Correctly calculates cement needed (300 kg).",
+      minimal:"1/3 — Identifies cement proportion (1/7)."
+    }
+  },
+
+  // ── 2024 ─────────────────────────────────────────────────────────
+
+  {
+    year:2024, marks:2, section:"II", qNum:"17", category:"M7",
+    q:"Electricity costs 30.13 cents per kWh. Calculate the cost of using a 650 W air conditioner for 6 hours.",
+    answer:`Energy = 650/1000 × 6 = 3.9 kWh
+Cost = 3.9 × 30.13 = 117.507 cents = $1.18 (nearest cent)`,
+    acceptableAnswers:["1.18","$1.18","117.5 cents"],
+    bandDescriptors:{
+      full:"2/2 — Correct energy (3.9 kWh), cost $1.18.",
+      partial:"1/2 — Correct energy conversion (3.9 kWh).",
+      minimal:"0/2 — Fails to convert W to kW."
+    }
+  },
+
+  {
+    year:2024, marks:1, section:"II", qNum:"20(a)", category:"F5",
+    q:`Ken invests $200 at the start of each year for 8 years at 5% p.a.
+
+Future value interest factor: 8 years at 5% = 10.0266
+
+Calculate the future value of Ken's investment.`,
+    answer:"FV = $200 × 10.0266 = $2005.32",
+    acceptableAnswers:["2005.32","$2005.32","2005"],
+  },
+
+  {
+    year:2024, marks:2, section:"II", qNum:"20(b)", category:"F5",
+    q:`Shay needs $4500 for a holiday in 3 years. She makes six-monthly payments at 4% p.a. compounding six-monthly.
+
+Future value factor: 6 periods at 2% = 6.4343
+
+What is the minimum six-monthly payment? (nearest $10)`,
+    answer:`Rate = 4%/2 = 2%, periods = 6
+Payment = $4500 ÷ 6.4343 = $699.37 ≈ $700 (nearest $10)`,
+    acceptableAnswers:["700","$700"],
+    bandDescriptors:{
+      full:"2/2 — Rate 2%, 6 periods, payment = $700.",
+      partial:"1/2 — Identifies correct rate (2%) for six-monthly periods.",
+      minimal:"0/2 — Incorrect method."
+    }
+  },
+
+  {
+    year:2024, marks:3, section:"II", qNum:"21", category:"F4",
+    q:`William owes $5590 on a reducing-balance loan at 24% p.a. compounded monthly. He repays $110/month.
+
+Month 1: Principal $5590, Interest $111.80, Repayment $110, Balance owing $5591.80.
+
+(a) Find the Month 2 interest charged and balance owing.
+(b) Explain why the loan will never be repaid at $110/month.`,
+    answer:`Monthly rate = 24%/12 = 2%
+
+(a) Month 2 interest = $5591.80 × 0.02 = $111.84
+Month 2 balance = $5591.80 + $111.84 − $110 = $5593.64
+
+(b) The monthly interest charged ($111.80, $111.84...) exceeds the monthly repayment of $110, so the balance increases each month and the loan will never be repaid.`,
+    keywords:["111.84","5593.64","interest","repayment","balance","increases"],
+    minKeywords:3,
+    bandDescriptors:{
+      full:"3/3 — Month 2 interest $111.84, balance $5593.64, and correct explanation.",
+      partial:"2/3 — Correct Month 2 entries or correct explanation (not both).",
+      minimal:"1/3 — One correct entry for Month 2."
+    }
+  },
+
+  {
+    year:2024, marks:3, section:"II", qNum:"22", category:"A4",
+    q:`Two animal populations since 1985 (x = years since 1985):
+• Population W: y = 34 × (1.055)^x
+• Population K: y = B × (0.97)^x, and when x = 50, population K = 61
+
+Complete the table: B (K's 1985 population), yearly % change for W, yearly % change for K, and W's predicted population when x = 50.`,
+    answer:`B: when x=50, 61 = B × (0.97)^50 → (0.97)^50 ≈ 0.2181 → B ≈ 280
+
+W yearly change: 1.055 − 1 = 0.055 = +5.5% per year
+K yearly change: 1 − 0.97 = 0.03 = −3% per year
+
+W at x=50: 34 × (1.055)^50 = 34 × 14.542 ≈ 494`,
+    keywords:["280","5.5%","3%","494"],
+    minKeywords:3,
+    bandDescriptors:{
+      full:"3/3 — B ≈ 280, W rate 5.5%, K rate −3%, W at x=50 ≈ 494.",
+      partial:"2/3 — Two correct entries.",
+      minimal:"1/3 — One correct entry."
+    }
+  },
+
+  {
+    year:2024, marks:3, section:"II", qNum:"23", category:"F1",
+    q:"Zazu works 38 hours/week at $45/hour. Overtime is paid at time-and-a-half. In a particular week, Zazu worked 38 regular hours plus overtime, earning $2790 total. How many overtime hours did Zazu work?",
+    answer:`Normal earnings = 38 × $45 = $1710
+Overtime pay = $2790 − $1710 = $1080
+Overtime rate = $45 × 1.5 = $67.50/hr
+Overtime hours = $1080 ÷ $67.50 = 16 hours`,
+    acceptableAnswers:["16","16 hours"],
+    bandDescriptors:{
+      full:"3/3 — Normal pay $1710, overtime pay $1080, 16 hours.",
+      partial:"2/3 — Normal earnings ($1710) and overtime pay ($1080) correctly found.",
+      minimal:"1/3 — Normal earnings ($1710) correct."
+    }
+  },
+
+  {
+    year:2024, marks:2, section:"II", qNum:"24(a)", category:"F1",
+    q:`Sarah (60 kg female) drinks 3 glasses of wine over 2.5 hours. Each glass = 1.2 standard drinks.
+
+BAC_female = (10N − 7.5H) / (5.5M), where N = standard drinks, H = hours, M = mass (kg).
+
+Calculate Sarah's BAC at the end of the dinner, to 3 decimal places.`,
+    answer:`N = 3 × 1.2 = 3.6, H = 2.5, M = 60
+BAC = (10 × 3.6 − 7.5 × 2.5) / (5.5 × 60)
+    = (36 − 18.75) / 330
+    = 17.25 / 330
+    = 0.052`,
+    acceptableAnswers:["0.052","0.0522"],
+    bandDescriptors:{
+      full:"2/2 — N = 3.6, correct substitution, BAC = 0.052.",
+      partial:"1/2 — Correct N (3.6) or correct substitution but arithmetic error.",
+      minimal:"0/2 — Incorrect formula application."
+    }
+  },
+
+  {
+    year:2024, marks:3, section:"II", qNum:"25", category:"F4",
+    q:`Alex and Jun both invest $1800 for 5 years.
+• Alex: simple interest at 7.5% p.a.
+• Jun: compound interest at 6.0% p.a. compounded quarterly.
+
+By calculating interest earned, determine who has the greater amount at the end of 5 years.`,
+    answer:`Alex: I = $1800 × 0.075 × 5 = $675
+
+Jun: quarterly rate = 1.5%, 20 periods
+FV = $1800 × (1.015)^20 = $1800 × 1.34686 = $2424.34
+Interest = $2424.34 − $1800 = $624.34
+
+Alex earns more interest ($675 > $624.34).`,
+    keywords:["675","624","alex","more"],
+    minKeywords:2,
+    bandDescriptors:{
+      full:"3/3 — Alex $675, Jun ~$624.34, correct conclusion (Alex earns more).",
+      partial:"2/3 — One person's interest calculated correctly.",
+      minimal:"1/3 — Correct method for one person."
+    }
+  },
+
+  {
+    year:2024, marks:3, section:"II", qNum:"27", category:"F5",
+    q:`A couple borrows $30 000, repaid over 10 years at $280/month. After 5 years, they reduce repayments to $250/month, requiring 7 additional years (instead of 5) to repay.
+
+How much more will they repay in total by making this change?`,
+    answer:`Original total = 10 × 12 × $280 = $33 600
+
+New plan: 5 years at $280 + 7 years at $250
+= (5 × 12 × $280) + (7 × 12 × $250)
+= $16 800 + $21 000 = $37 800
+
+Extra repaid = $37 800 − $33 600 = $4200`,
+    acceptableAnswers:["4200","$4200"],
+    bandDescriptors:{
+      full:"3/3 — Original $33 600, new $37 800, extra = $4200.",
+      partial:"2/3 — Original or new total correctly calculated.",
+      minimal:"1/3 — First 5 years repayments ($16 800) correct."
+    }
+  },
+
+  // ── 2025 ─────────────────────────────────────────────────────────
+
+  {
+    year:2025, marks:2, section:"II", qNum:"16", category:"M7",
+    q:`Paint is sold as:
+• 4-litre cans at $90 each
+• 10-litre cans at $205 each
+
+Mina needs 80 litres. How much does she save by buying only 10-litre cans instead of only 4-litre cans?`,
+    answer:`4-litre cans: 80 ÷ 4 = 20 cans × $90 = $1800
+10-litre cans: 80 ÷ 10 = 8 cans × $205 = $1640
+Savings = $1800 − $1640 = $160`,
+    acceptableAnswers:["160","$160"],
+    bandDescriptors:{
+      full:"2/2 — 4L cost $1800, 10L cost $1640, savings $160.",
+      partial:"1/2 — Correct cost for 10-litre cans ($1640).",
+      minimal:"0/2 — Incorrect number of cans."
+    }
+  },
+
+  {
+    year:2025, marks:2, section:"II", qNum:"18", category:"F5",
+    q:`A lottery prize is an annuity of $5000 per year for 10 years, invested at 4.5% p.a. compounding annually.
+
+Future value interest factors (annuity of $1):
+• 10 years at 4.5%: 12.288
+
+What is the value of the prize at the end of 10 years?`,
+    answer:"FV = $5000 × 12.288 = $61 440",
+    acceptableAnswers:["61440","$61 440","$61440"],
+    bandDescriptors:{
+      full:"2/2 — $5000 × 12.288 = $61 440.",
+      partial:"1/2 — Identifies the correct factor (12.288).",
+      minimal:"0/2 — Incorrect factor or method."
+    }
+  },
+
+  {
+    year:2025, marks:2, section:"II", qNum:"20(a)", category:"A4",
+    q:"For the quadratic h = t² − 8t + 12, find the values of t and h at the turning point.",
+    answer:`t = −(−8)/(2 × 1) = 8/2 = 4
+h = 4² − 8(4) + 12 = 16 − 32 + 12 = −4
+Turning point: (4, −4)`,
+    keywords:["t = 4","h = -4","(4, -4)","4 and -4","t=4"],
+    minKeywords:1,
+    bandDescriptors:{
+      full:"2/2 — Turning point at t = 4, h = −4.",
+      partial:"1/2 — Correct t value (4) using axis of symmetry or completion of square.",
+      minimal:"0/2 — Incorrect method."
+    }
+  },
+
+  {
+    year:2025, marks:1, section:"II", qNum:"20(b)", category:"A4",
+    q:"For h = t² − 8t + 12, the graph shows h = 12 when t = 0. What is the other value of t for which h = 12?",
+    answer:`t² − 8t + 12 = 12
+t² − 8t = 0
+t(t − 8) = 0
+t = 0 or t = 8
+The other value is t = 8.`,
+    acceptableAnswers:["8","t = 8"],
+  },
+
+  {
+    year:2025, marks:1, section:"II", qNum:"21(a)", category:"M7",
+    q:"An air conditioner uses 2.5 kW for cooling. Electricity costs 29c/kWh. Find the cost of cooling the house for 6 hours.",
+    answer:"Cost = 2.5 × 6 × $0.29 = $4.35",
+    acceptableAnswers:["4.35","$4.35"],
+  },
+
+  {
+    year:2025, marks:2, section:"II", qNum:"21(b)", category:"M7",
+    q:"An air conditioner uses 3.2 kW for heating at 29c/kWh. During winter (92 days) the total heating cost was $640. Find the average hours of heating per day (to 1 decimal place).",
+    answer:`Cost per hour = 3.2 × $0.29 = $0.928/hr
+Total hours = $640 ÷ $0.928 = 689.66...
+Daily average = 689.66... ÷ 92 = 7.49... ≈ 7.5 hours`,
+    acceptableAnswers:["7.5","7.5 hours"],
+    bandDescriptors:{
+      full:"2/2 — Hourly rate $0.928, daily average 7.5 hours.",
+      partial:"1/2 — Correct hourly rate ($0.928).",
+      minimal:"0/2 — Incorrect method."
+    }
+  },
+
+  {
+    year:2025, marks:2, section:"II", qNum:"23", category:"F4",
+    q:`Two companies issue annual dividends:
+• Company A: share price $25.43, dividend per share $4.92
+• Company B: share price $2.13, dividend per share $0.45
+
+Based on dividend yield, which company is the better investment?`,
+    answer:`Company A yield = $4.92/$25.43 × 100 ≈ 19%
+Company B yield = $0.45/$2.13 × 100 ≈ 21%
+Company B has the higher dividend yield → better investment.`,
+    keywords:["company b","21%","21","b is better","19%"],
+    minKeywords:1,
+    bandDescriptors:{
+      full:"2/2 — Both yields calculated (A ≈ 19%, B ≈ 21%), Company B identified as better.",
+      partial:"1/2 — One yield correctly calculated.",
+      minimal:"0/2 — Incorrect method."
+    }
+  },
+
+  {
+    year:2025, marks:2, section:"II", qNum:"24", category:"S2",
+    q:"A garden has about 90 snails. Bobbie catches and tags 18, then releases them. The next night, 20 snails are caught. Approximately how many tagged snails are expected in the second sample?",
+    answer:`Expected tagged = (18/90) × 20 = 0.2 × 20 = 4`,
+    acceptableAnswers:["4","4 snails"],
+    bandDescriptors:{
+      full:"2/2 — (18/90) × 20 = 4.",
+      partial:"1/2 — Identifies proportion 18/90.",
+      minimal:"0/2 — Incorrect method."
+    }
+  },
+
+  {
+    year:2025, marks:3, section:"II", qNum:"25(b,c)", category:"S4",
+    q:`Regression line: y = 64.3 − 0.7x (x = avg minutes/day watching TV, y = avg minutes/day exercising).
+
+(b) Interpret the slope (−0.7) and y-intercept (64.3) in context.
+(c) Jo watches 42 minutes of TV per day. Predict her daily exercise time.`,
+    answer:`(b) Slope (−0.7): For each additional minute of TV per day, expected exercise time decreases by 0.7 minutes/day.
+
+y-intercept (64.3): If someone watches no TV, they are expected to exercise 64.3 minutes/day.
+
+(c) y = 64.3 − 0.7 × 42 = 64.3 − 29.4 = 34.9 minutes`,
+    keywords:["0.7 minute","decreases","64.3","34.9"],
+    minKeywords:2,
+    bandDescriptors:{
+      full:"3/3 — Correct slope interpretation, y-intercept interpretation, and prediction (34.9 min).",
+      partial:"2/3 — Correct interpretation of slope and y-intercept, or correct prediction.",
+      minimal:"1/3 — Correct y-intercept interpretation or prediction (34.9)."
+    }
+  },
+
+  {
+    year:2025, marks:3, section:"II", qNum:"27", category:"F4",
+    q:`Concert tickets cost $392 on a credit card with a 45-day interest-free period. After that, interest is charged at 13.74% p.a. compounded daily. Full payment was made on day 68.
+
+Calculate the total interest charged.`,
+    answer:`Interest days = 68 − 45 = 23 days
+Daily rate = 13.74%/365
+Amount = $392 × (1 + 0.1374/365)^23 = $395.41
+Interest = $395.41 − $392 = $3.41`,
+    acceptableAnswers:["3.41","$3.41"],
+    bandDescriptors:{
+      full:"3/3 — 23 days interest, correct daily rate, interest = $3.41.",
+      partial:"2/3 — Correctly uses compound interest formula with correct rate.",
+      minimal:"1/3 — Identifies 23 days of interest charged."
+    }
+  },
+
+];
+
 const hmsMcQuestions = [
 
     // ── CLASSIFICATION OF INJURIES ────────────────────────────────────────────
@@ -6881,12 +8006,18 @@ const SUBJECTS = {
     name: 'Mathematics Standard 2',
     icon: '📐',
     accent: '#C17D3C',
-    hasMC: true, hasWritten: false,
+    hasMC: true, hasWritten: true,
     getMC: (filters) => {
       // Respect the HSC 90 / Extended 318 toggle
       let qs = mathsQuestionSet === 'original'
         ? mathsQuestions.filter(q => !q.variant)   // HSC 90: original 90 exam questions only
         : [...mathsQuestions];                       // Extended 318: all 318 incl. variants
+      if (filters.year && filters.year !== 'all') qs = qs.filter(q => String(q.year) === filters.year);
+      if (filters.category && filters.category !== 'all') qs = qs.filter(q => q.category === filters.category);
+      return shuffle(qs);
+    },
+    getWritten: (filters) => {
+      let qs = [...mathsWrittenQuestions];
       if (filters.year && filters.year !== 'all') qs = qs.filter(q => String(q.year) === filters.year);
       if (filters.category && filters.category !== 'all') qs = qs.filter(q => q.category === filters.category);
       return shuffle(qs);
@@ -7963,6 +9094,7 @@ function getStatInt(key) {
 // indexOf() on this gives a stable ID regardless of filters or shuffle.
 function getMasterArray(subjectKey, mode) {
   if (mode === 'written') {
+    if (subjectKey === 'maths')      return mathsWrittenQuestions;
     if (subjectKey === 'hms')        return hmsWrittenQuestions;
     if (subjectKey === 'multimedia') return multimediaWrittenQuestions;
     if (subjectKey === 'vet')        return vetWrittenQuestions;
