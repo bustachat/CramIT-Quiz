@@ -6965,10 +6965,10 @@ function goHome() {
   document.getElementById('picker').style.display = 'none';
   document.getElementById('quiz').style.display = 'none';
   document.getElementById('results').style.display = 'none';
+  document.getElementById('trial-wall').style.display = 'none';
   document.getElementById('upgrade-prompt-home').style.display = 'none';
   document.getElementById('swap-prompt-home').style.display = 'none';
-  updateStats();
-  renderSubjectList();
+  renderHomeAuth(); // refreshes auth buttons + stats + subject list
 }
 
 // ── PICKER ──
@@ -8081,22 +8081,22 @@ function renderSubjectList() {
     let cardBadge = '';
     if (!isComing && currentUser) {
       if (canAccessViaSubscription(s.id) && s.quizKey) {
-        // Subscribed — show per-subject progress
+        // Subscribed — show per-subject progress pinned to card bottom
         const subTotal   = getStatInt(statKey(`${s.quizKey}_total`));
         const subCorrect = getStatInt(statKey(`${s.quizKey}_correct`));
         if (subTotal > 0) {
           const subPct = Math.round(subCorrect / subTotal * 100);
-          cardBadge = `<div style="font-size:10px;color:rgba(255,255,255,0.85);text-align:center;margin-top:6px;font-weight:700">${subTotal} answered &middot; ${subPct}%</div>`;
+          cardBadge = `<div style="position:absolute;bottom:8px;left:0;right:0;font-size:10px;color:rgba(255,255,255,0.85);text-align:center;font-weight:700">${subTotal} answered &middot; ${subPct}%</div>`;
         }
       } else if (!canAccessViaSubscription(s.id)) {
-        // Trial — show trial progress
+        // Trial — show trial progress pinned to card bottom
         const tc = getTrialCount(s.id);
         if (tc === 0) {
-          cardBadge = `<div style="font-size:10px;color:var(--muted);text-align:center;margin-top:6px;font-weight:600">${TRIAL_LIMIT} free trial questions</div>`;
+          cardBadge = `<div style="position:absolute;bottom:8px;left:0;right:0;font-size:10px;color:rgba(255,255,255,0.7);text-align:center;font-weight:600">${TRIAL_LIMIT} free trial questions</div>`;
         } else if (tc < TRIAL_LIMIT) {
-          cardBadge = `<div style="font-size:10px;color:var(--muted);text-align:center;margin-top:6px;font-weight:600">${tc}/${TRIAL_LIMIT} trial used &middot; ${TRIAL_LIMIT - tc} left</div>`;
+          cardBadge = `<div style="position:absolute;bottom:8px;left:0;right:0;font-size:10px;color:rgba(255,255,255,0.7);text-align:center;font-weight:600">${tc}/${TRIAL_LIMIT} trial used &middot; ${TRIAL_LIMIT - tc} left</div>`;
         } else {
-          cardBadge = `<div style="font-size:10px;color:var(--accent);text-align:center;margin-top:6px;font-weight:700">Trial ended &middot; Subscribe to continue</div>`;
+          cardBadge = `<div style="position:absolute;bottom:8px;left:0;right:0;font-size:10px;color:rgba(255,220,150,0.95);text-align:center;font-weight:700">Trial ended &middot; Subscribe to continue</div>`;
         }
       }
     }
