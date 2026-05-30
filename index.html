@@ -168,10 +168,10 @@
       text-align: center;
     }
     .q-image-wrap img {
-      /* Scale by width only — height follows naturally, full image always visible */
+      /* Fill container width — height follows aspect ratio, never overflows on mobile */
       display: block;
-      max-width: min(100%, 600px); /* never wider than card, cap at 600px on large screens */
-      width: auto;
+      width: 100%;
+      max-width: min(100%, 600px); /* cap at 600px on large screens */
       height: auto;
       margin: 0 auto;
       border-radius: 10px;
