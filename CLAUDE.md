@@ -162,6 +162,7 @@ Tables live in Supabase. RLS is enabled on all tables.
 | `subscriptions` | Plan status, Stripe IDs | `user_id`, `plan`, `status`, `subject_count`, `stripe_subscription_id`, `stripe_customer_id` |
 | `subject_selections` | Which subjects each user selected | `user_id`, `subject_id`, `added_at` |
 | `pricing_config` | Pricing constants — edit here to change prices | `key`, `value` |
+| `user_progress` | Per-question answer history — cross-device sync | `user_id`, `subject_key`, `question_idx`, `mode`, `is_correct`, `answered_at` — UNIQUE(user_id, subject_key, question_idx, mode) |
 
 **Agent coordination tables** (from Blueprint V3 — to be deployed):
 `agent_tasks`, `agent_logs`, `escalations`, `agent_config`, `content_issues`, `known_issues`, `analytics_snapshots`, `band_descriptors`, `marking_criteria`, `band_mapping`, `written_submissions`
@@ -174,7 +175,8 @@ Full schema in `schema.sql` in the repo root.
 
 ```
 cramit-quiz/
-├── index.html                  ← Entire PWA app — all quiz logic + billing UI
+├── index.html                  ← Mobile PWA app — all quiz logic + billing UI
+├── portal.html                 ← Desktop web portal (planned Stage 10) — sidebar nav, dashboard, history
 ├── manifest.json               ← PWA manifest (CramIT branding)
 ├── sw.js                       ← Service worker for offline caching
 ├── agent.js                    ← Nightly NESA monitor + AI question generator
@@ -382,7 +384,7 @@ All diagram images are committed to the git repo under `diagrams/` and served by
 
 **Do NOT use `MATHS_IMG` lookup table** — retired in Stage 3. Images are referenced directly on each question object via `image` and `optionImages` fields.
 
-**VET questions** currently use `VET_IMG` with Imgur URLs — keep these until VET diagram extraction is built (post Stage 4).
+**VET questions** now use `/diagrams/vet-construction_{year}_Q{n}_stimulus.jpg` paths — migrated from Imgur in Stage 4. All VET images are served from Netlify at `/diagrams/`.
 
 **Path convention:**
 ```
@@ -465,7 +467,7 @@ When the nightly agent detects a new exam paper:
 4. Netlify auto-deploys — images immediately available at `/diagrams/filename.jpg`
 
 ### Adding diagram support to other subjects
-- **VET Construction**: Questions reference `VET_IMG` Imgur URLs — migrate to `/diagrams/` post-launch (low priority)
+- **VET Construction**: Already migrated to `/diagrams/` paths ✅
 - **HMS / Multimedia**: No image questions currently — add if needed post-launch
 - **New subjects via agent**: Agent uses `--detect` mode (Claude Vision) for automatic extraction
 
@@ -539,6 +541,7 @@ GitHub Actions triggers → agent.js runs →
 | **Stage 7B** | Cross-device sync — Supabase `user_progress` table; `syncAnswerToSupabase()` fire-and-forget, `loadProgressFromSupabase()` on login | ✅ **DONE** |
 | **Stage 8** | Maths Section II written questions — extract + add extended response questions from 2020–2025 HSC papers | ⬜ **Next** |
 | **Stage 9** | Agent infrastructure (QA/Testing, Content, Analytics) — separate project | ⬜ |
+| **Stage 10** | Desktop web portal (`portal.html`) — sidebar nav, subject dashboard, progress history, split-panel written response | ⬜ |
 
 ### ⬜ Still to do (non-staged)
 
@@ -598,10 +601,6 @@ The biggest priority is bringing `index.html` (the hosted Netlify app) up to the
 - **VET Construction** — MC + written, ported Stage 4 ✅
 
 ### Subjects in the pipeline (next to add):
-- Mathematics Advanced
-- English Advanced / Standard
-- Biology, Chemistry, Physics
-- Legal Studies, Business Studies, Economics
 - Mathematics Advanced
 - English Advanced / Standard
 - Biology, Chemistry, Physics
@@ -766,8 +765,30 @@ The Maths Standard 2 standalone file (v5.4) was expanded from 90 to 318 question
 ### Landing page (deferred)
 The current home screen is student-centric. A general-public-facing landing page is needed before launch — but this is deferred until end-to-end quiz and billing functionality is complete.
 
+### Two-track product architecture (decided May 2026)
+CramIT has two distinct experiences that should NOT be merged into one file:
+
+| | Mobile PWA (`index.html`) | Desktop Web Portal (`portal.html`) |
+|---|---|---|
+| **Purpose** | Student installs on phone, quick quiz sessions | Deeper study sessions on laptop/desktop |
+| **Layout** | Single column, full-screen, tap targets 52px+ | Sidebar nav + main content canvas |
+| **Navigation** | Card-based home → picker → quiz | Left sidebar: Dashboard, Study, History, Written |
+| **Design** | Same warm earth-tone tokens | Same tokens — denser info, hover states |
+| **Auth** | Same Supabase `sbClient` | Same Supabase `sbClient` |
+| **Progress data** | Reads/writes `user_progress` table | Reads `user_progress` table for history/dashboard |
+
+**Competitor reference:** Studitory (`studitory.app`) — take the sidebar + split-panel patterns, ignore their Exam Builder / Flashcards / Classrooms scope.
+
+**Planned portal pages:**
+1. **Dashboard** — per-subject progress rings, streak, recent activity (from `user_progress` Supabase table)
+2. **Study** — three-column picker: subject params + topics + year/difficulty config → start quiz
+3. **History** — every question answered, filterable by subject/date/correct/incorrect
+4. **Written Response** — split panel: question left, answer right, AI feedback below
+
+**Key rule:** `portal.html` uses the same Supabase auth (`sbClient`), same `user_progress` table, same pricing logic — but its own layout and CSS. Do NOT modify `index.html` when building the portal.
+
 ---
 
-*CLAUDE.md — CramIT Project — Last updated: May 2026 — Stages 1–6 complete*
+*CLAUDE.md — CramIT Project — Last updated: May 2026 — Stages 1–7B complete*
 *Repo: https://github.com/bustachat/CramIT-Quiz*
 *Supabase: https://ohqtefjawaphtsebnaxg.supabase.co*
