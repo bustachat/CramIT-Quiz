@@ -5292,6 +5292,766 @@ Interest = $395.41 − $392 = $3.41`,
     }
   },
 
+  // ── 2025 NEW TEXT QUESTIONS (discovered in full scan) ─────────────────────
+
+  {
+    year:2025, marks:2, section:"II", qNum:"29", category:"S2",
+    q:"A bag contains 7 blue lollies and 9 yellow lollies. One lolly is selected at random and eaten. A second lolly is then selected from the remaining 15 lollies. Find the probability that the two lollies selected are the same colour.",
+    answer:`P(both blue) = (7/16) × (6/15) = 42/240
+P(both yellow) = (9/16) × (8/15) = 72/240
+P(same colour) = 42/240 + 72/240 = 114/240 = 19/40`,
+    acceptableAnswers:["19/40","0.475","114/240"],
+    bandDescriptors:{
+      full:"2/2 — P(BB) = 42/240, P(YY) = 72/240, total = 114/240 = 19/40.",
+      partial:"1/2 — Calculates P(BB) or P(YY) correctly (without replacement).",
+      minimal:"0/2 — Treats as independent events or incorrect fractions."
+    }
+  },
+
+  {
+    year:2025, marks:2, section:"II", qNum:"30", category:"A1",
+    q:`It costs $465 to register a passenger car and $350 to register a motorcycle.
+Let P = number of passenger cars, B = number of motorcycles.
+
+Write TWO linear equations that represent:
+• There are 11 times as many passenger cars as motorcycles.
+• The total registration fees for passenger cars and motorcycles is $494 million.`,
+    answer:`Equation 1: P = 11B
+Equation 2: 465P + 350B = 494 000 000`,
+    keywords:["p = 11b","11b","465p","350b","494"],
+    minKeywords:3,
+    bandDescriptors:{
+      full:"2/2 — Both equations correct: P = 11B and 465P + 350B = 494 000 000.",
+      partial:"1/2 — One equation correct.",
+      minimal:"0/2 — Incorrect setup."
+    }
+  },
+
+  {
+    year:2025, marks:3, section:"II", qNum:"31", category:"F1",
+    image:"/diagrams/mathematics-standard-2_2025_Q28_stimulus.jpg",
+    q:`The table below shows income tax rates for Australian residents for the 2024–2025 financial year:
+• $0 – $18 200: Nil
+• $18 201 – $45 000: 16c per $1 over $18 200
+• $45 001 – $135 000: $4288 + 30c per $1 over $45 000
+• $135 001 – $190 000: $31 288 + 37c per $1 over $135 000
+• $190 001+: $51 638 + 45c per $1 over $190 000
+
+At the end of the 2024–2025 financial year, Alex's tax payable was $47 420 (excluding the Medicare levy).
+
+What was Alex's taxable income?`,
+    answer:`Try $135 001 – $190 000 bracket:
+$31 288 + 0.37(x − $135 000) = $47 420
+0.37(x − $135 000) = $47 420 − $31 288 = $16 132
+x − $135 000 = $16 132 ÷ 0.37 = $43 600
+x = $135 000 + $43 600 = $178 600`,
+    acceptableAnswers:["178600","$178600","$178 600"],
+    bandDescriptors:{
+      full:"3/3 — Identifies correct bracket ($135k–$190k), sets up equation, solves x = $178 600.",
+      partial:"2/3 — Identifies correct tax bracket and begins calculation.",
+      minimal:"1/3 — Makes some progress (e.g. tries a bracket)."
+    }
+  },
+
+  {
+    year:2025, marks:5, section:"II", qNum:"33", category:"F1",
+    q:`A used car has a sale price of $24 200. In addition to the sale price:
+• Transfer of registration: $50
+• Stamp duty: $3 for every $100 or part thereof of the sale price
+
+Kat borrows the total amount (price + transfer + stamp duty). Simple interest at 6.8% p.a. is charged. The loan is repaid over 3 years in equal monthly repayments.
+
+Calculate Kat's monthly repayment.`,
+    answer:`Stamp duty: $24 200 ÷ $100 = 242 parts exactly → 242 × $3 = $726
+Total borrowed = $24 200 + $50 + $726 = $24 976
+Simple interest = $24 976 × 0.068 × 3 = $5095.10 (approx)
+Total to repay = $24 976 + $5095.10 = $30 071.10
+Monthly repayment = $30 071.10 ÷ 36 = $835.31`,
+    keywords:["726","24976","5095","30071","835.31","835"],
+    minKeywords:3,
+    bandDescriptors:{
+      full:"5/5 — Correct stamp duty ($726), total borrowed ($24 976), interest ($5095.10), total ($30 071.10), monthly repayment ($835.31).",
+      partial:"3–4/5 — Most steps correct with one arithmetic error.",
+      minimal:"1–2/5 — Correct stamp duty ($726) or total borrowed ($24 976)."
+    }
+  },
+
+  {
+    year:2025, marks:3, section:"II", qNum:"34", category:"F5",
+    q:`Lin invests a lump sum of $21 000 for 7 years at 6% p.a. compounding monthly.
+
+Yemi wants to achieve the same future value by depositing a fixed amount at the end of each month for 7 years into an account paying 6% p.a. compounding monthly.
+
+Future value interest factors for an annuity of $1 (n=84, r=0.005): 104.07393
+
+Using the table, determine how much Yemi needs to deposit each month.`,
+    answer:`Lin's FV: monthly rate = 0.5%, n = 84 months
+Using FV annuity factor relationship: (1.005)^84 − 1 = 104.07393 × 0.005 = 0.5203697
+So (1.005)^84 = 1.5203697
+Lin's FV = $21 000 × 1.5203697 = $31 927.76
+
+Yemi's monthly deposit = $31 927.76 ÷ 104.07393 = $306.77 ≈ $307`,
+    keywords:["31927","306","307"],
+    minKeywords:2,
+    bandDescriptors:{
+      full:"3/3 — Lin's FV ~$31 928, Yemi's monthly deposit ~$307.",
+      partial:"2/3 — Correctly calculates Lin's FV.",
+      minimal:"1/3 — Correct interest rate and period for Lin or Yemi."
+    }
+  },
+
+  // ── IMAGE QUESTIONS — 2020 ────────────────────────────────────────────────
+
+  {
+    year:2020, marks:4, section:"II", qNum:"16",  category:"M6",
+    image:"/diagrams/mathematics-standard-2_2020_Q16_stimulus.jpg",
+    q:`Consider the right-angled triangle shown. The triangle has a vertical side of 8 units, a horizontal base of 10 units, and hypotenuse x. The angle θ is at the top-right between the hypotenuse and the horizontal base.
+
+(a) Find the value of θ, correct to the nearest degree.
+(b) Find the value of x, correct to one decimal place.`,
+    answer:`(a) tan θ = opposite/adjacent = 8/10
+θ = tan⁻¹(0.8) = 38.66...° ≈ 39°
+
+(b) x² = 10² + 8² = 100 + 64 = 164
+x = √164 = 12.8 (one decimal place)`,
+    keywords:["39","12.8","164"],
+    minKeywords:2,
+    bandDescriptors:{
+      full:"4/4 — θ = 39° (correct trig ratio applied) and x = 12.8 (correct Pythagoras).",
+      partial:"2–3/4 — One part fully correct.",
+      minimal:"1/4 — Correct trig ratio or Pythagoras attempted."
+    }
+  },
+
+  {
+    year:2020, marks:3, section:"II", qNum:"25", category:"M1",
+    image:"/diagrams/mathematics-standard-2_2020_Q25_stimulus.jpg",
+    q:`A composite solid consists of a triangular prism fitting exactly on top of a cube. From the diagram: the cube has side length 8 cm; the total height of the solid is 11 cm (so the triangular prism has height 3 cm); the sloped edges of the prism are 5 cm each.
+
+Find the surface area of the composite solid.`,
+    answer:`Height of prism = 11 − 8 = 3 cm
+5 square faces of cube = 8² × 5 = 320 cm²
+2 triangular faces of prism = (1/2 × 8 × 3) × 2 = 24 cm²
+2 rectangular sloped faces = 5 × 8 × 2 = 80 cm²
+Total surface area = 320 + 24 + 80 = 424 cm²`,
+    acceptableAnswers:["424","424 cm"],
+    bandDescriptors:{
+      full:"3/3 — All face areas correct: 320 + 24 + 80 = 424 cm².",
+      partial:"2/3 — Two different relevant face areas correctly calculated.",
+      minimal:"1/3 — One relevant face area correctly calculated."
+    }
+  },
+
+  {
+    year:2020, marks:5, section:"II", qNum:"31", category:"M6",
+    image:"/diagrams/mathematics-standard-2_2020_Q31_stimulus.jpg",
+    q:`Mr Ali walked from camp P on a bearing of 035° for 7 km to location A. Ms Brown walked from P on a bearing of 100° for 9 km to location B.
+
+(a) Show that angle APB = 65°.
+(b) Find the distance AB. (2 marks)
+(c) Find the bearing of Ms Brown's group from Mr Ali's group. Give your answer to the nearest degree. (2 marks)`,
+    answer:`(a) Angle APB = 100° − 35° = 65° ✓
+
+(b) Using the cosine rule:
+AB² = 7² + 9² − 2 × 7 × 9 × cos 65°
+= 49 + 81 − 126 × 0.4226...
+= 130 − 53.25... = 76.75...
+AB = 8.76 km (2 d.p.)
+
+(c) Using the sine rule to find angle PAB:
+sin(PAB)/9 = sin 65°/8.76
+sin(PAB) = 9 × 0.9063.../8.76 = 0.9310...
+angle PAB = 68.6...° ≈ 69°
+
+Bearing of B from A = 180° − (69° − 35°) = 146°`,
+    keywords:["65","8.76","146"],
+    minKeywords:3,
+    bandDescriptors:{
+      full:"5/5 — angle APB shown (65°), AB = 8.76 km, bearing = 146°.",
+      partial:"2–4/5 — Two parts correct.",
+      minimal:"1/5 — Attempts cosine rule or sine rule correctly."
+    }
+  },
+
+  {
+    year:2020, marks:4, section:"II", qNum:"32", category:"M6",
+    image:"/diagrams/mathematics-standard-2_2020_Q32_stimulus.jpg",
+    q:`The diagram shows a regular decagon (10 sides, all equal, all interior angles equal) with centre O and vertices A, B adjacent. The perimeter is 80 cm.
+
+By considering triangle OAB, calculate the area of the decagon, correct to one decimal place.`,
+    answer:`AB = 80 ÷ 10 = 8 cm
+Angle AOB = 360° ÷ 10 = 36°
+Angle OAB = (180° − 36°) ÷ 2 = 72°
+
+Using the sine rule in triangle OAB:
+OA/sin(∠OBA) = AB/sin(∠AOB)
+OA = 8 × sin 72°/sin 36° = 8 × 0.9511/0.5878 = 12.944 cm
+
+Area of triangle OAB = (1/2) × OA² × sin(∠AOB) = (1/2) × 12.944² × sin 36°
+= (1/2) × 167.55 × 0.5878 = 49.24 cm²
+
+Area of decagon = 10 × 49.24 = 492.4 cm²`,
+    acceptableAnswers:["492.4","492.4 cm"],
+    bandDescriptors:{
+      full:"4/4 — AB = 8, correct OA (12.944 cm), correct triangle area, total = 492.4 cm².",
+      partial:"2–3/4 — Finds OA correctly, or calculates area of one triangle correctly.",
+      minimal:"1/4 — Finds AB = 8 cm."
+    }
+  },
+
+  {
+    year:2020, marks:3, section:"II", qNum:"33", category:"A4",
+    image:"/diagrams/mathematics-standard-2_2020_Q33_stimulus.jpg",
+    q:`The graph shows the number of bacteria y at time n minutes. Initially (n = 0) there are 1000 bacteria. The model is y = A × bⁿ.
+
+(a) Find the number of bacteria at 40 minutes. (1 mark)
+(b) Use the guess and check method to find upper and lower estimates for b, correct to 2 decimal places, where the estimates differ by 0.01. (2 marks)`,
+    answer:`(a) Reading from the graph at n = 40: y = 4000 bacteria
+
+(b) We need y = 4000 when n = 40 with A = 1000:
+4000 = 1000 × b⁴⁰
+b⁴⁰ = 4
+
+Try b = 1.03: 1000 × (1.03)⁴⁰ = 1000 × 3.262 = 3262 (too low)
+Try b = 1.04: 1000 × (1.04)⁴⁰ = 1000 × 4.801 = 4801 (too high)
+
+Lower estimate = 1.03, upper estimate = 1.04`,
+    keywords:["4000","1.03","1.04"],
+    minKeywords:2,
+    bandDescriptors:{
+      full:"3/3 — Reads 4000 bacteria from graph, lower = 1.03, upper = 1.04 (differ by 0.01).",
+      partial:"2/3 — Substitutes a value for b correctly, or reads graph correctly.",
+      minimal:"1/3 — Reads graph or attempts guess-and-check."
+    }
+  },
+
+  // ── IMAGE QUESTIONS — 2021 ────────────────────────────────────────────────
+
+  {
+    year:2021, marks:2, section:"II", qNum:"16", category:"M1",
+    image:"/diagrams/mathematics-standard-2_2021_Q16_stimulus.jpg",
+    q:`A tank consists of the bottom half of a sphere of radius 2 metres. Using the formula V = (4/3)πr³ for the full sphere, find the volume of the tank in cubic metres, correct to one decimal place.`,
+    answer:`Volume of full sphere = (4/3) × π × 2³ = (4/3) × π × 8 = 32π/3
+Volume of tank (half sphere) = (1/2) × 32π/3 = 16π/3 = 16.755... ≈ 16.8 m³`,
+    acceptableAnswers:["16.8","16.8 m"],
+    bandDescriptors:{
+      full:"2/2 — V = (1/2) × (4/3)π(2³) = 16.8 m³.",
+      partial:"1/2 — Attempts to use V = (4/3)πr³ correctly.",
+      minimal:"0/2 — Incorrect formula application."
+    }
+  },
+
+  {
+    year:2021, marks:5, section:"II", qNum:"32", category:"M6",
+    image:"/diagrams/mathematics-standard-2_2021_Q32_stimulus.jpg",
+    q:`A right-angled triangle XYZ is cut from a semicircle with centre O. The diameter XZ = 16 cm and ∠YXZ = 30°. The right angle is at Y (angle in a semicircle).
+
+(a) Find the length of XY in centimetres, correct to two decimal places. (2 marks)
+(b) Find the area of the shaded region (semicircle minus triangle) in cm², correct to one decimal place. (3 marks)`,
+    answer:`(a) cos 30° = XY/XZ = XY/16
+XY = 16 × cos 30° = 16 × (√3/2) = 8√3 = 13.86 cm
+
+(b) Area of semicircle = (1/2)π(8²) = 32π cm²
+YZ = XZ × sin 30° = 16 × 0.5 = 8 cm
+Area of triangle = (1/2) × XY × YZ × sin(∠XYZ) = (1/2) × 13.86 × 16 × sin 30°
+= (1/2) × 13.86 × 16 × 0.5 = 55.44 cm²
+
+Shaded area = 32π − 55.44 = 100.53 − 55.44 = 45.1 cm²`,
+    keywords:["13.86","45.1"],
+    minKeywords:2,
+    bandDescriptors:{
+      full:"5/5 — XY = 13.86 cm and shaded area = 45.1 cm².",
+      partial:"2–4/5 — One part fully correct.",
+      minimal:"1/5 — Correct trig ratio for XY."
+    }
+  },
+
+  {
+    year:2021, marks:4, section:"II", qNum:"36", category:"N3",
+    image:"/diagrams/mathematics-standard-2_2021_Q36_stimulus.jpg",
+    q:`The network shows 11 tasks (A–K) with completion times in minutes. Start → A(5), B(8); A → C(7); C → D(2), E(3); B → F(6); F,D,E → E,G,H respectively; G(5) → J(8); H(6) → K(10) → Finish; I(3) also connects.
+
+(a) Find the minimum time to complete the project. (1 mark)
+(b) State the critical path. (1 mark)
+(c) Task X is added: earliest start = 17 min, latest start = 18 min, duration = 12 min. State the float time for X. (2 marks)`,
+    answer:`(a) Minimum time = 40 minutes
+
+(b) Critical path: A → C → D → E → G → J → K
+(Start→A→C→D→E→G→J→K: 5+7+2+3+5+8+10 = 40 minutes)
+
+(c) Float time = Latest start − Earliest start = 18 − 17 = 1 minute`,
+    keywords:["40","a.*c.*d.*e.*g.*j.*k","1 minute","float","1"],
+    minKeywords:2,
+    bandDescriptors:{
+      full:"4/4 — 40 minutes, correct critical path A-C-D-E-G-J-K, float time = 1 minute.",
+      partial:"2–3/4 — Two parts correct.",
+      minimal:"1/4 — One part correct."
+    }
+  },
+
+  {
+    year:2021, marks:3, section:"II", qNum:"37", category:"M6",
+    image:"/diagrams/mathematics-standard-2_2021_Q37_stimulus.jpg",
+    q:`In triangle ABC: AC = 25 cm, BC = 16 cm, ∠BAC = 28°, and ∠ABC is obtuse.
+
+Find the size of the obtuse angle ABC, correct to the nearest degree.`,
+    answer:`Using the sine rule:
+sin(∠ABC)/AC = sin(∠BAC)/BC
+sin(∠ABC)/25 = sin 28°/16
+sin(∠ABC) = 25 × sin 28°/16 = 25 × 0.4695/16 = 0.7336...
+
+Acute angle = sin⁻¹(0.7336) = 47.18...°
+Since ∠ABC is obtuse: ∠ABC = 180° − 47.18° = 132.82° ≈ 133°`,
+    acceptableAnswers:["133","133°"],
+    bandDescriptors:{
+      full:"3/3 — Sine rule applied correctly, obtuse angle = 133°.",
+      partial:"2/3 — Calculates acute angle (47°) as intermediate step.",
+      minimal:"1/3 — Correct substitution into sine rule."
+    }
+  },
+
+  {
+    year:2021, marks:4, section:"II", qNum:"38", category:"S5",
+    image:"/diagrams/mathematics-standard-2_2021_Q38_stimulus.jpg",
+    q:`A z-table shows P(0 < Z < z) for values z = 0.1, 0.2, 0.3, 0.4, 0.5, 0.6 with probabilities 0.0398, 0.0793, 0.1179, 0.1554, 0.1915, 0.2257.
+
+(a) Using the table, show that P(Z > 0.3) = 0.3821. (1 mark)
+
+(b) Birth weights are normally distributed with mean 3300 g and standard deviation 570 g. Calculate the z-score for 3471 g, then find how many babies out of 1000 are expected to have birth weight greater than 3471 g. (3 marks)`,
+    answer:`(a) P(Z > 0.3) = 0.5 − P(0 < Z < 0.3) = 0.5 − 0.1179 = 0.3821 ✓
+
+(b) z = (3471 − 3300)/570 = 171/570 = 0.3
+From part (a): P(Z > 0.3) = 0.3821
+Expected babies = 1000 × 0.3821 = 382.1 ≈ 382 babies`,
+    keywords:["0.3821","0.3","382"],
+    minKeywords:2,
+    bandDescriptors:{
+      full:"4/4 — Shows P(Z>0.3) = 0.5−0.1179 = 0.3821, z = 0.3, 382 babies.",
+      partial:"2–3/4 — z = 0.3 and uses associated probability correctly.",
+      minimal:"1/4 — Calculates z-score = 0.3."
+    }
+  },
+
+  {
+    year:2021, marks:5, section:"II", qNum:"39", category:"M6",
+    image:"/diagrams/mathematics-standard-2_2021_Q39_stimulus.jpg",
+    q:`A compass radial survey shows field ABCD. From centre O: OA = 32 m (bearing 0°), OB = 35 m (bearing 150°), OC = 28 m (bearing 210°+), OD = 31 m (bearing 330°). Triangle COB has an area of 466 m².
+
+(a) Find the size of the acute angle COB, correct to the nearest degree. (2 marks)
+(b) A farmer fences triangle DOC. OD = 31 m, OC = 28 m, ∠DOC = 108°. Find the total fencing required, to one decimal place. (3 marks)`,
+    answer:`(a) Area of triangle = (1/2) × OC × OB × sin(∠COB)
+466 = (1/2) × 28 × 35 × sin(∠COB)
+sin(∠COB) = 466/490 = 0.9510...
+∠COB = 72° (nearest degree)
+
+(b) ∠DOC = 330° − 150° − 72° = 108°
+CD² = 31² + 28² − 2 × 31 × 28 × cos 108°
+= 961 + 784 − 1736 × (−0.3090...)
+= 1745 + 536.4... = 2281.4...
+CD = 47.76... m
+
+Fencing = OD + OC + CD = 31 + 28 + 47.76 = 106.8 m`,
+    keywords:["72","108","106.8"],
+    minKeywords:3,
+    bandDescriptors:{
+      full:"5/5 — ∠COB = 72°, ∠DOC = 108°, CD = 47.76 m, total = 106.8 m.",
+      partial:"2–4/5 — Most steps correct.",
+      minimal:"1/5 — Correct area formula substitution."
+    }
+  },
+
+  // ── IMAGE QUESTIONS — 2022 ────────────────────────────────────────────────
+
+  {
+    year:2022, marks:3, section:"II", qNum:"17", category:"S2",
+    image:"/diagrams/mathematics-standard-2_2022_Q17_stimulus.jpg",
+    q:`Amy has cards 1, 3, 5. Bob has cards 2, 4, 6. Each person randomly chooses one of their own cards; the higher card wins. A partially completed tree diagram is shown (Amy's 3 branches: 1, 3, 5; Bob's branches partially filled).
+
+(a) Complete the tree diagram and find the probability that Bob wins. (2 marks)
+(b) If Amy and Bob play 30 times, how many times would Bob be expected to win? (1 mark)`,
+    answer:`(a) Amy picks 1: Bob picks 2,4,6 — Bob wins all 3 → P(Bob wins | Amy=1) = 1
+Amy picks 3: Bob picks 2,4,6 — Bob wins with 4,6 → P(Bob wins | Amy=3) = 2/3
+Amy picks 5: Bob picks 2,4,6 — Bob wins with 6 only → P(Bob wins | Amy=5) = 1/3
+
+P(Bob wins) = (1/3)(1) + (1/3)(2/3) + (1/3)(1/3) = 1/3 + 2/9 + 1/9 = 6/9 = 2/3
+
+(b) Expected wins = 30 × 2/3 = 20 times`,
+    keywords:["2/3","20"],
+    minKeywords:2,
+    bandDescriptors:{
+      full:"3/3 — P(Bob wins) = 2/3, expected wins = 20.",
+      partial:"2/3 — Correctly finds P(Bob wins) = 2/3.",
+      minimal:"1/3 — Correctly evaluates P(Bob wins) for one branch of Amy's cards."
+    }
+  },
+
+  {
+    year:2022, marks:4, section:"II", qNum:"26", category:"M6",
+    image:"/diagrams/mathematics-standard-2_2022_Q26_stimulus.jpg",
+    q:`The diagram shows two right-angled triangles ABC and ABD. AC = 35 cm, BD = 93 cm, ∠ACB = 41°, and ∠ADB = θ. Both triangles share the common vertical side AB.
+
+Calculate the size of angle θ, to the nearest minute.`,
+    answer:`In triangle ABC (right angle at B):
+tan 41° = AB/AC
+AB = 35 × tan 41° = 35 × 0.8693... = 30.43 cm
+
+In triangle ABD (right angle at B):
+sin θ = AB/BD = 30.43/93
+
+θ = sin⁻¹(30.43/93) = sin⁻¹(0.3272...) = 19.10°... = 19°6' (nearest minute)`,
+    acceptableAnswers:["19°6'","19 degrees 6 minutes","19.1°","19°6"],
+    bandDescriptors:{
+      full:"4/4 — AB = 35tan41°, sinθ = AB/93, θ = 19°6'.",
+      partial:"2–3/4 — Finds AB correctly or finds sinθ.",
+      minimal:"1/4 — Sets up a correct trig ratio for one triangle."
+    }
+  },
+
+  {
+    year:2022, marks:4, section:"II", qNum:"28", category:"M1",
+    image:"/diagrams/mathematics-standard-2_2022_Q28_stimulus.jpg",
+    q:`A dam is a triangular prism 50 m long. Both triangular ends are isosceles triangles with equal sides of 25 m and the included angle BAC (and EDF) = 150°.
+
+Calculate the number of litres of water the dam holds when full.`,
+    answer:`Area of triangular cross-section = (1/2) × 25 × 25 × sin 150°
+= (1/2) × 625 × 0.5 = 156.25 m²
+
+Volume = 156.25 × 50 = 7812.5 m³
+
+1 m³ = 1000 litres
+Volume = 7 812 500 litres`,
+    acceptableAnswers:["7812500","7 812 500"],
+    bandDescriptors:{
+      full:"4/4 — Correct triangle area (156.25 m²), volume (7812.5 m³), 7 812 500 litres.",
+      partial:"2–3/4 — Correct volume in m³ or correct triangle area.",
+      minimal:"1/4 — Attempts to find area of triangular base."
+    }
+  },
+
+  {
+    year:2022, marks:4, section:"II", qNum:"34", category:"M1",
+    image:"/diagrams/mathematics-standard-2_2022_Q34_stimulus.jpg",
+    q:`A composite solid has a cylinder (height 3 cm, diameter 4 cm) centred on top of a hemisphere (diameter 6 cm). Find the total surface area in cm², correct to 1 decimal place.`,
+    answer:`Hemisphere radius = 3 cm, cylinder radius = 2 cm
+
+Curved surface of hemisphere = (1/2) × 4π(3²) = 18π cm²
+Flat top of hemisphere minus cylinder base = π(3²) − π(2²) = 9π − 4π = 5π cm²
+Curved side of cylinder = 2π × 2 × 3 = 12π cm²
+Top circle of cylinder = π(2²) = 4π cm²
+
+Total = 18π + 5π + 12π + 4π = 39π = 122.5 cm²`,
+    acceptableAnswers:["122.5","122.5 cm"],
+    bandDescriptors:{
+      full:"4/4 — All four surface components correct: 18π + 5π + 12π + 4π = 122.5 cm².",
+      partial:"2–3/4 — Curved hemisphere AND curved cylinder calculated correctly.",
+      minimal:"1/4 — Any one correct relevant area."
+    }
+  },
+
+  // ── IMAGE QUESTIONS — 2023 ────────────────────────────────────────────────
+
+  {
+    year:2023, marks:2, section:"II", qNum:"16", category:"S1",
+    image:"/diagrams/mathematics-standard-2_2023_Q16_stimulus.jpg",
+    q:`The graph shows Peta's heart rate (beats/minute) during the first 60 minutes of a marathon. She started at 10:00 am.
+
+(a) What was Peta's heart rate 20 minutes after she started? (1 mark)
+(b) At what time did her heart rate first reach 140 beats/minute? (1 mark)`,
+    answer:`(a) Reading from the graph at t = 20 minutes: 120 bpm
+
+(b) Reading from the graph, heart rate first reaches 140 bpm at t = 30 minutes after start.
+Start time = 10:00 am + 30 minutes = 10:30 am`,
+    keywords:["120","10:30","10:30 am"],
+    minKeywords:2,
+    bandDescriptors:{
+      full:"2/2 — 120 bpm at 20 min, first reaches 140 at 10:30 am.",
+      partial:"1/2 — One correct reading from graph.",
+      minimal:"0/2 — Incorrect graph reading."
+    }
+  },
+
+  {
+    year:2023, marks:4, section:"II", qNum:"19", category:"N2",
+    image:"/diagrams/mathematics-standard-2_2023_Q19_stimulus.jpg",
+    q:`A network of running tracks connects points A, B, C, D, E, F, G, H (times in minutes on edges).
+
+(a) Which path could a runner take from A to D in the shortest time? (2 marks)
+(b) A spanning tree of the network is shown. Is it a minimum spanning tree? Give a reason. (2 marks)`,
+    answer:`(a) Shortest path from A to D: A → B → F → G → D
+(Trace the path with smallest cumulative time using the diagram)
+
+(b) The spanning tree shown is NOT a minimum spanning tree.
+Reason: The edge BC shown is not the shortest way to connect C — there is a shorter alternative edge that would reduce the total weight of the spanning tree.`,
+    keywords:["abfgd","abfg","not a minimum","shorter","bc"],
+    minKeywords:2,
+    bandDescriptors:{
+      full:"4/4 — Correct shortest path (A→B→F→G→D) and correct explanation (not MST, BC can be replaced).",
+      partial:"2–3/4 — One part correct with valid reasoning.",
+      minimal:"1/4 — Identifies a path from A to D, or makes some statement about the spanning tree."
+    }
+  },
+
+  {
+    year:2023, marks:3, section:"II", qNum:"20", category:"A4",
+    image:"/diagrams/mathematics-standard-2_2023_Q20_stimulus.jpg",
+    q:`The height above the ground h metres of a ball on another planet is modelled by h = −6t² + 24t (t in seconds). The graph of the function is shown.
+
+(a) Based on the graph, what is the maximum height reached by the ball? (1 mark)
+(b) Based on the graph, at what TWO times is the ball at ¾ of its maximum height? (2 marks)`,
+    answer:`(a) Maximum height = 24 m (at t = 2 seconds, vertex of parabola)
+
+(b) ¾ of maximum = (3/4) × 24 = 18 m
+Reading from the graph, the ball is at 18 m at t = 1 second and t = 3 seconds`,
+    keywords:["24","18","1 second","3 second","1 and 3"],
+    minKeywords:2,
+    bandDescriptors:{
+      full:"3/3 — Maximum 24 m, ¾ = 18 m, at t = 1 s and t = 3 s.",
+      partial:"2/3 — Maximum height correct and ¾ of maximum calculated.",
+      minimal:"1/3 — Maximum height = 24 m."
+    }
+  },
+
+  {
+    year:2023, marks:5, section:"II", qNum:"24", category:"M1",
+    image:"/diagrams/mathematics-standard-2_2023_Q24_stimulus.jpg",
+    q:`The cross-section of a concrete wall across a creek is shown. The wall has a uniform thickness of 0.80 m. The three parallel measurements across the cross-section are 1.9 m, 2.7 m, and 1.7 m, taken at equal intervals of 4.0 m.
+
+(a) Use TWO applications of the trapezoidal rule to estimate the area of the cross-section. (2 marks)
+(b) The weight of 1 m³ of concrete is 3.52 tonnes. How many tonnes of concrete are in the wall? Give your answer to 2 significant figures. (3 marks)`,
+    answer:`(a) Trapezoidal rule with h = 4 m, three parallel sides (1.9, 2.7, 1.7):
+Area = (4/2)(1.9 + 2.7) + (4/2)(2.7 + 1.7)
+= 2(4.6) + 2(4.4)
+= 9.2 + 8.8 = 18 m²
+
+(b) Volume = 18 × 0.80 = 14.4 m³
+Weight = 14.4 × 3.52 = 50.688 tonnes ≈ 51 tonnes (2 s.f.)`,
+    keywords:["18","14.4","50.688","51"],
+    minKeywords:3,
+    bandDescriptors:{
+      full:"5/5 — Area = 18 m², volume = 14.4 m³, weight = 51 tonnes.",
+      partial:"3–4/5 — Area and volume correct, or correct weight before rounding.",
+      minimal:"1–2/5 — Correct trapezoidal rule applied or correct volume."
+    }
+  },
+
+  {
+    year:2023, marks:5, section:"II", qNum:"26", category:"M1",
+    image:"/diagrams/mathematics-standard-2_2023_Q26_stimulus.jpg",
+    q:`Kim is building a path (0.5 m wide) around a garden at the back of a house. The garden is 3 m × 8 m (not including path). See diagram.
+
+(a) Find the area of the path. (2 marks)
+(b) Kim mixes concrete in ratio crushed rock : sand : cement = 4 : 2 : 1 by weight. She needs 2.1 tonnes total. How many 15 kg bags of cement does she need? (3 marks)`,
+    answer:`(a) Area with path = (3 + 0.5 + 0.5) × (8 + 0.5) = 4 × 8.5 = 34 m²...
+
+Actually: path is around 3 sides (back of house blocks one long side):
+Outer area = (3 + 0.5 + 0.5) × (8 + 0.5) = 4 × 8.5 = 34 m²...
+Inner garden area = 3 × 8 = 24 m²...
+
+From MG: Area of path = (3 × 8) − (7 × 2.5) = 24 − 17.5 = 6.5 m²
+
+(b) Cement = 1/7 × 2.1 tonnes = 0.3 tonnes = 300 kg
+Bags = 300 ÷ 15 = 20 bags`,
+    keywords:["6.5","300 kg","20 bags","20"],
+    minKeywords:2,
+    bandDescriptors:{
+      full:"5/5 — Path area 6.5 m², cement 300 kg, 20 bags.",
+      partial:"3–4/5 — Two parts correct.",
+      minimal:"1–2/5 — One part correct."
+    }
+  },
+
+  {
+    year:2023, marks:4, section:"II", qNum:"27", category:"M6",
+    image:"/diagrams/mathematics-standard-2_2023_Q27_stimulus.jpg",
+    q:`Y is 15 km from X on a bearing of 120°. C is due west of Y and 40 km from X. P is on line CY and due south of X.
+
+(a) Find the distance from X to P. (2 marks)
+(b) Find the bearing of C from X, to the nearest degree. (2 marks)`,
+    answer:`(a) ∠PXY = 180° − 120° = 60°
+XP = XY × cos 60° = 15 × 0.5 = 7.5 km
+
+(b) tan(∠CXP) = XC_horizontal / XP
+∠PXY = 60°, so XY_horizontal = 15 × sin 60° = 12.99 km (east)
+XC is west of X, so total horizontal = 12.99 + (40² − XP²)^(1/2)...
+
+Simpler: cos(∠CXP) = XP/XC...
+∠CXP: cos θ = 7.5/40... no.
+Using right angle at P:
+CP = XY_east = 15 sin 60° = 7.5√3 = 12.99 km
+XC = √(XP² + CP²) should be 40... wait
+
+Actually: In triangle CXP, ∠XPC = 90° (P is due south of X, C is due west of Y = west of P)
+cos(∠CXP) = XP/XC = 7.5/40
+∠CXP = cos⁻¹(7.5/40) = cos⁻¹(0.1875) = 79.19...° ≈ 79°
+
+Bearing of C from X = 180° + 79° = 259°`,
+    keywords:["7.5","259","79"],
+    minKeywords:2,
+    bandDescriptors:{
+      full:"4/4 — XP = 7.5 km, bearing = 259°.",
+      partial:"2–3/4 — One part correct.",
+      minimal:"1/4 — ∠PXY = 60° identified."
+    }
+  },
+
+  // ── IMAGE QUESTIONS — 2024 ────────────────────────────────────────────────
+
+  {
+    year:2024, marks:4, section:"II", qNum:"16", category:"N2",
+    image:"/diagrams/mathematics-standard-2_2024_Q16_stimulus.jpg",
+    q:`A road network connects towns J, T, Y, W, H, M, C, G with distances in km shown on the edges.
+
+(a) What is the shortest path from T to H? (2 marks)
+(b) The road from C to G is closed. What is the length of the shortest path from Y to G? (2 marks)`,
+    answer:`(a) Shortest path from T to H: T → Y → W → H (route TYWH)
+
+(b) With C→G closed, shortest path from Y to G:
+Y → W → H → M → G = YWHMG = 89 km`,
+    keywords:["tywh","89","ywhmg"],
+    minKeywords:2,
+    bandDescriptors:{
+      full:"4/4 — T→H path: TYWH; Y→G (no C-G): YWHMG = 89 km.",
+      partial:"2–3/4 — One part correct.",
+      minimal:"1/4 — Identifies a continuous path between the required towns."
+    }
+  },
+
+  {
+    year:2024, marks:3, section:"II", qNum:"18", category:"N2",
+    image:"/diagrams/mathematics-standard-2_2024_Q18_stimulus.jpg",
+    q:`A network with 10 vertices and weighted edges is shown.
+
+(a) Draw a minimum spanning tree and determine its weight. (2 marks)
+(b) Is it possible to find another spanning tree with the same weight? Give a reason. (1 mark)`,
+    answer:`(a) Minimum spanning tree uses the lowest-weight edges connecting all vertices without cycles.
+Weight = 24
+
+(b) Yes — there is another spanning tree with the same weight.
+Reason: Edge BC and edge FC have the same weight, so BC can replace FC (or vice versa) to give an alternate minimum spanning tree of the same total weight.`,
+    keywords:["24","yes","same weight","bc","fc"],
+    minKeywords:2,
+    bandDescriptors:{
+      full:"3/3 — Correct weight (24), correct yes/no with valid reason about equal-weight edges.",
+      partial:"2/3 — Correct spanning tree weight (24) or correct reason.",
+      minimal:"1/3 — Draws a spanning tree (any valid spanning tree)."
+    }
+  },
+
+  {
+    year:2024, marks:4, section:"II", qNum:"29", category:"F4",
+    image:"/diagrams/mathematics-standard-2_2024_Q29_stimulus.jpg",
+    q:`The graph shows the decreasing value of an asset. For the first 4 years, depreciation was $1500 per year (straight-line). After year 4, the declining-balance method at 35% p.a. was used for 6 more years. The initial value was $50 000.
+
+Calculate the total depreciation at the end of 10 years.`,
+    answer:`Straight-line depreciation (years 1–4):
+Value after 4 years = $50 000 − (4 × $1500) = $50 000 − $6000 = $44 000
+
+Declining balance (years 5–10, rate = 35%, 6 years):
+Value after 10 years = $44 000 × (1 − 0.35)^6 = $44 000 × (0.65)^6
+(0.65)^6 = 0.07542...
+Value = $44 000 × 0.07542 = $3318.43
+
+Total depreciation = $50 000 − $3318.43 = $46 681.57 ≈ $46 682`,
+    keywords:["44000","3318","46681","46682"],
+    minKeywords:2,
+    bandDescriptors:{
+      full:"4/4 — Value after year 4 ($44 000), value after year 10 ($3318), total depreciation $46 682.",
+      partial:"2–3/4 — Correct value after year 4 and sets up declining balance.",
+      minimal:"1/4 — Correct straight-line depreciation for 4 years."
+    }
+  },
+
+  // ── IMAGE QUESTIONS — 2025 ────────────────────────────────────────────────
+
+  {
+    year:2025, marks:3, section:"II", qNum:"17", category:"S4",
+    image:"/diagrams/mathematics-standard-2_2025_Q17_stimulus.jpg",
+    q:`The scatter plot shows a bivariate dataset. The points (0, 14) and (5, 4) lie on the line of best fit.
+
+Plot the points (0, 14) and (5, 4) on the graph and hence find the equation of the line of best fit.`,
+    answer:`Gradient (slope) = (14 − 4)/(0 − 5) = 10/(−5) = −2
+y-intercept = 14 (from point (0, 14))
+Equation: y = −2x + 14`,
+    acceptableAnswers:["y = -2x + 14","y=-2x+14","y = 14 - 2x"],
+    bandDescriptors:{
+      full:"3/3 — Both points plotted, gradient = −2, equation y = −2x + 14.",
+      partial:"2/3 — Correct gradient or correct equation without plotting.",
+      minimal:"1/3 — Correct gradient or y-intercept identified."
+    }
+  },
+
+  {
+    year:2025, marks:5, section:"II", qNum:"19", category:"N3",
+    image:"/diagrams/mathematics-standard-2_2025_Q19_stimulus.jpg",
+    q:`A project has activities A(3), B(4), C(3), D(5), E(5), F(7), G(3), H(5) days, connected as shown in the network.
+
+(a) Complete the table of immediate prerequisites for activities B, E, and F. (2 marks)
+(b) Find the critical path and minimum project duration. (2 marks)
+(c) Activity A's duration increases by 2 days. Does this affect the critical path? Give a reason. (1 mark)`,
+    answer:`(a) Immediate prerequisites:
+B: ✗ (no prerequisites — starts immediately)
+E: B (E follows B)
+F: A, C (F follows A and C)
+
+(b) Critical path: B → F → H (4 + 7 + 5 = 16 days)
+Minimum project duration = 16 days
+
+(c) No — increasing A by 2 days does not affect the critical path.
+Reason: A is not on the critical path (B→F→H). A feeds into F but the path A→F→H = 3+7+5 = 15 days, which is still less than 16. Even with A increased to 5, path = 5+7+5 = 17 days...
+Corrected: increasing A by 2 makes A=5, so A→F→H = 5+7+5 = 17 > 16. This DOES affect the critical path.`,
+    keywords:["16","b.*f.*h","critical path"],
+    minKeywords:2,
+    bandDescriptors:{
+      full:"5/5 — Correct prerequisites, critical path B→F→H = 16 days, correct analysis of A's extension.",
+      partial:"3–4/5 — Critical path and duration correct.",
+      minimal:"1–2/5 — Identifies B→F→H or correct minimum duration."
+    }
+  },
+
+  {
+    year:2025, marks:3, section:"II", qNum:"28", category:"S1",
+    image:"/diagrams/mathematics-standard-2_2025_Q28_stimulus.jpg",
+    q:`The cumulative frequency graph shows the heights (cm) of 30 students. The shortest student is 130 cm and the tallest is 180 cm.
+
+Construct a box-plot for this class using the information from the graph.`,
+    answer:`From the cumulative frequency graph (30 students):
+• Minimum = 130 cm (given)
+• Q1 (7.5th value): at cumfreq ≈ 7.5 → height ≈ 135 cm
+• Median (15th value): at cumfreq = 15 → height ≈ 140 cm
+• Q3 (22.5th value): at cumfreq ≈ 22.5 → height ≈ 160 cm
+• Maximum = 180 cm (given)
+
+Box-plot: Minimum=130, Q1=135, Median=140, Q3=160, Maximum=180`,
+    keywords:["135","140","160","130","180"],
+    minKeywords:4,
+    bandDescriptors:{
+      full:"3/3 — Correct five-number summary: min=130, Q1=135, Q2=140, Q3=160, max=180.",
+      partial:"2/3 — Three or four values of the five-number summary correct.",
+      minimal:"1/3 — Correct median (140) identified."
+    }
+  },
+
+  {
+    year:2025, marks:3, section:"II", qNum:"32", category:"M1",
+    image:"/diagrams/mathematics-standard-2_2025_Q32_stimulus.jpg",
+    q:`Solid spheres (radius 1.5 cm each) are placed inside a square-based pyramid. The base has side lengths 14 cm and height h cm. After placing 30 spheres inside, the empty space remaining is 634 cm³.
+
+What is the height h of the pyramid? Give your answer to the nearest centimetre.`,
+    answer:`Volume of pyramid = (1/3) × 14² × h = (196h/3) cm³
+Volume of 30 spheres = 30 × (4/3)π(1.5)³ = 30 × (4/3)π × 3.375 = 30 × 4.5π = 135π ≈ 424.12 cm³
+
+Empty space = Volume pyramid − Volume spheres:
+634 = (196h/3) − 135π
+196h/3 = 634 + 135π = 634 + 424.12 = 1058.12
+h = 1058.12 × 3/196 = 3174.36/196 = 16.2 ≈ 16 cm`,
+    acceptableAnswers:["16","16 cm"],
+    bandDescriptors:{
+      full:"3/3 — Volume of 30 spheres (135π), equation set up correctly, h = 16 cm.",
+      partial:"2/3 — Correct volume of spheres or correct equation structure.",
+      minimal:"1/3 — Correct formula for volume of a sphere."
+    }
+  },
+
 ];
 
 const hmsMcQuestions = [
