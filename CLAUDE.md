@@ -526,6 +526,7 @@ GitHub Actions triggers → agent.js runs →
 - **Stage 6 complete** — 10-question trial per subject replaces permanent free tier; trial counter in localStorage; mid-quiz trial wall with score + CTA; picker locks year/category/Extended 318/Test Mode/Written Response during trial; stats only tracked for logged-in users; upgrade prompt handles both logged-in and logged-out states
 - **Stage 7A complete** — Per-question progress tracking via localStorage JSON map `{questionIdx: 0|1}` keyed by stable position in master array. Last-attempt-wins (re-answering overwrites, never inflates total). `getMasterArray()` returns unfiltered master array so `indexOf()` is shuffle/filter-safe. `getSubjectStats()` derives seen/correct/pct. Card badges show "X seen · Y%". Aggregate totals on home screen. Data structure ready for Phase B Supabase sync.
 - **Stage 7B complete** — Cross-device progress sync via Supabase `user_progress` table. `syncAnswerToSupabase()` fire-and-forget UPSERT after every answer (quiz never waits on network). `loadProgressFromSupabase()` called on login — fetches all rows, merges into localStorage (server wins on conflict). Offline answers preserved until next sync. Table has UNIQUE(user_id, subject_key, question_idx, mode) — re-answers update one row, never duplicate. RLS enabled.
+- **Stage 8 complete** — Maths Section II written questions fully added. 101 written questions covering 2020–2025 HSC papers. Stage 8A: 68 text-only questions with keywords, band descriptors, model answers. Stage 8B: 33 additional questions with diagram images (`image:` field), 47 JPG images extracted from exam PDFs via PyMuPDF and committed to `/diagrams/`. Images audited and re-cropped (15 fixed: wrong page numbers, text bleeding, edge clipping). Key Concepts grid hidden for Maths (numerical keywords are scoring markers, not display concepts). Known limitation: some images have minor text label clipping ("NOT TO SCALE" etc.) — root cause is `auto_bbox` detecting vectors only, not text. Fix: rebuild extractor with Claude Vision `--detect` mode + full-width crop (x0=30, x1=565) before automation goes live.
 
 ### Staged Implementation Roadmap
 
@@ -539,7 +540,8 @@ GitHub Actions triggers → agent.js runs →
 | **Stage 6** | Pricing model update — 10-question trial replaces 1-free-subject | ✅ **DONE** |
 | **Stage 7A** | Per-user per-subject progress tracking — localStorage JSON map `{questionIdx: 0\|1}`, stable IDs via `indexOf()` on master array, last-attempt-wins, card badges | ✅ **DONE** |
 | **Stage 7B** | Cross-device sync — Supabase `user_progress` table; `syncAnswerToSupabase()` fire-and-forget, `loadProgressFromSupabase()` on login | ✅ **DONE** |
-| **Stage 8** | Maths Section II written questions — extract + add extended response questions from 2020–2025 HSC papers | ⬜ **Next** |
+| **Stage 8** | Maths Section II written questions — 101 questions (2020–2025), 47 diagram images, image audit + re-crop, Key Concepts hidden for Maths | ✅ **DONE** |
+| **Stage 8.5** | Rebuild written question image extractor — Claude Vision `--detect` mode + full-width crop (x0=30, x1=565) to fix text label clipping at scale. **Must complete before agent automation goes live.** | ⬜ **Pre-automation** |
 | **Stage 9** | Agent infrastructure (QA/Testing, Content, Analytics) — separate project | ⬜ |
 | **Stage 10** | Desktop web portal (`portal.html`) — sidebar nav, subject dashboard, progress history, split-panel written response | ⬜ |
 
@@ -789,6 +791,6 @@ CramIT has two distinct experiences that should NOT be merged into one file:
 
 ---
 
-*CLAUDE.md — CramIT Project — Last updated: May 2026 — Stages 1–7B complete*
+*CLAUDE.md — CramIT Project — Last updated: May 2026 — Stages 1–8 complete*
 *Repo: https://github.com/bustachat/CramIT-Quiz*
 *Supabase: https://ohqtefjawaphtsebnaxg.supabase.co*
