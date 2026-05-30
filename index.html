@@ -7373,8 +7373,7 @@ function selectAnswer(chosen) {
   }
   if (currentUser) {
     localStorage.setItem(statKey('streak'), currentStreak);
-    localStorage.setItem(statKey(`${currentSubjectKey}_total`),   getStatInt(statKey(`${currentSubjectKey}_total`))   + 1);
-    localStorage.setItem(statKey(`${currentSubjectKey}_correct`), getStatInt(statKey(`${currentSubjectKey}_correct`)) + (chosen === correctIdx ? 1 : 0));
+    recordAnswer(currentSubjectKey, 'mc', activeQuestions[currentIdx], chosen === correctIdx);
   }
   renderQuestion();
 }
@@ -7395,8 +7394,7 @@ function checkAnswer() {
   }
   if (currentUser) {
     localStorage.setItem(statKey('streak'), currentStreak);
-    localStorage.setItem(statKey(`${currentSubjectKey}_total`),   getStatInt(statKey(`${currentSubjectKey}_total`))   + 1);
-    localStorage.setItem(statKey(`${currentSubjectKey}_correct`), getStatInt(statKey(`${currentSubjectKey}_correct`)) + (chosen === correctIdx ? 1 : 0));
+    recordAnswer(currentSubjectKey, 'mc', activeQuestions[currentIdx], chosen === correctIdx);
   }
   renderQuestion();
 }
@@ -7660,11 +7658,12 @@ function updateStats() {
     document.getElementById('stat-streak').textContent  = '0';
     return;
   }
-  // Aggregate across all subjects for the bottom row
+  // Aggregate unique questions seen + correct across all subjects
   let totalAll = 0, correctAll = 0;
   Object.keys(SUBJECTS).forEach(key => {
-    totalAll   += getStatInt(statKey(`${key}_total`));
-    correctAll += getStatInt(statKey(`${key}_correct`));
+    const s = getSubjectStats(key);
+    totalAll   += s.seen;
+    correctAll += s.correct;
   });
   const streak = getStatInt(statKey('streak'));
   document.getElementById('stat-total').textContent   = totalAll;
@@ -7947,7 +7946,8 @@ function incrementTrialCount(subjectId) {
 }
 
 // ── PROGRESS STAT HELPERS ─────────────────────────────────────
-// Keys: cramit_{userId}_{subjectKey}_total / _correct   cramit_{userId}_streak
+// Keys: cramit_{userId}_{subjectKey}_mc_progress  → JSON {idx:0|1}
+//       cramit_{userId}_streak
 function statKey(type) {
   if (!currentUser) return null;
   return `cramit_${currentUser.id}_${type}`;
@@ -7955,6 +7955,52 @@ function statKey(type) {
 function getStatInt(key) {
   if (!key) return 0;
   return parseInt(localStorage.getItem(key) || '0');
+}
+
+// Returns the unfiltered master question array for a subject + mode.
+// indexOf() on this gives a stable ID regardless of filters or shuffle.
+function getMasterArray(subjectKey, mode) {
+  if (mode === 'written') {
+    if (subjectKey === 'hms')        return hmsWrittenQuestions;
+    if (subjectKey === 'multimedia') return multimediaWrittenQuestions;
+    if (subjectKey === 'vet')        return vetWrittenQuestions;
+    return [];
+  }
+  if (subjectKey === 'maths')      return mathsQuestions;
+  if (subjectKey === 'hms')        return hmsMcQuestions;
+  if (subjectKey === 'multimedia') return multimediaMcQuestions;
+  if (subjectKey === 'vet')        return vetMcQuestions;
+  return [];
+}
+
+// Read the progress map {idx: 1|0} for a subject + mode from localStorage
+function getProgress(subjectKey, mode) {
+  const key = statKey(`${subjectKey}_${mode}_progress`);
+  if (!key) return {};
+  try { return JSON.parse(localStorage.getItem(key) || '{}'); } catch { return {}; }
+}
+
+// Record an answer — overwrites any prior result for this exact question.
+// Same question answered twice does NOT inflate the total (last-attempt wins).
+function recordAnswer(subjectKey, mode, question, isCorrect) {
+  if (!currentUser) return;
+  const key = statKey(`${subjectKey}_${mode}_progress`);
+  if (!key) return;
+  const masterArr = getMasterArray(subjectKey, mode);
+  const idx = masterArr.indexOf(question);
+  if (idx === -1) return;
+  const progress = getProgress(subjectKey, mode);
+  progress[idx] = isCorrect ? 1 : 0;
+  localStorage.setItem(key, JSON.stringify(progress));
+}
+
+// Aggregate unique questions seen + correct for a subject (MC)
+function getSubjectStats(subjectKey) {
+  const mc   = getProgress(subjectKey, 'mc');
+  const vals = Object.values(mc);
+  const seen    = vals.length;
+  const correct = vals.filter(v => v === 1).length;
+  return { seen, correct, pct: seen > 0 ? Math.round(correct / seen * 100) : 0 };
 }
 
 // ── CAN ACCESS SUBJECT? ───────────────────────────────────────
@@ -8081,12 +8127,10 @@ function renderSubjectList() {
     let cardBadge = '';
     if (!isComing && currentUser) {
       if (canAccessViaSubscription(s.id) && s.quizKey) {
-        // Subscribed — show per-subject progress pinned to card bottom
-        const subTotal   = getStatInt(statKey(`${s.quizKey}_total`));
-        const subCorrect = getStatInt(statKey(`${s.quizKey}_correct`));
-        if (subTotal > 0) {
-          const subPct = Math.round(subCorrect / subTotal * 100);
-          cardBadge = `<div style="position:absolute;bottom:8px;left:0;right:0;font-size:10px;color:rgba(255,255,255,0.85);text-align:center;font-weight:700">${subTotal} answered &middot; ${subPct}%</div>`;
+        // Subscribed — show per-subject unique questions seen + accuracy
+        const subStats = getSubjectStats(s.quizKey);
+        if (subStats.seen > 0) {
+          cardBadge = `<div style="position:absolute;bottom:8px;left:0;right:0;font-size:10px;color:rgba(255,255,255,0.85);text-align:center;font-weight:700">${subStats.seen} seen &middot; ${subStats.pct}%</div>`;
         }
       } else if (!canAccessViaSubscription(s.id)) {
         // Trial — show trial progress pinned to card bottom
