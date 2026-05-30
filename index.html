@@ -8017,12 +8017,49 @@ async function syncAnswerToSupabase(subjectKey, mode, questionIdx, isCorrect) {
   }
 }
 
-// On login: pull all progress rows from Supabase and merge into localStorage.
-// Supabase wins on conflict — it is the cross-device source of truth.
-// Any offline answers (in localStorage but not yet in Supabase) are preserved.
+// On login: push any existing local progress to Supabase (one-time backfill),
+// then pull the full cloud dataset and merge into localStorage.
+// This ensures pre-7B data and data from other devices both converge correctly.
 async function loadProgressFromSupabase() {
   if (!sbClient || !currentUser) return;
   try {
+    // ── Step 1: One-time backfill ──────────────────────────────
+    // Push all local progress to Supabase once per device so pre-7B data
+    // and offline answers become part of the cross-device source of truth.
+    const backfillKey = `cramit_${currentUser.id}_progress_backfilled`;
+    if (!localStorage.getItem(backfillKey)) {
+      const localRows = [];
+      Object.keys(SUBJECTS).forEach(subjectKey => {
+        ['mc', 'written'].forEach(mode => {
+          const local = getProgress(subjectKey, mode);
+          Object.entries(local).forEach(([idx, val]) => {
+            localRows.push({
+              user_id:      currentUser.id,
+              subject_key:  subjectKey,
+              question_idx: parseInt(idx),
+              mode,
+              is_correct:   val === 1,
+              answered_at:  new Date().toISOString(),
+            });
+          });
+        });
+      });
+      if (localRows.length > 0) {
+        const { error: bErr } = await sbClient
+          .from('user_progress')
+          .upsert(localRows, { onConflict: 'user_id,subject_key,question_idx,mode' });
+        if (bErr) {
+          console.warn('[CramIT] backfill error:', bErr.message);
+        } else {
+          localStorage.setItem(backfillKey, '1');
+          console.log('[CramIT] Backfilled', localRows.length, 'rows to Supabase');
+        }
+      } else {
+        localStorage.setItem(backfillKey, '1'); // nothing local to backfill
+      }
+    }
+
+    // ── Step 2: Pull full cloud dataset and merge into localStorage ──
     const { data, error } = await sbClient
       .from('user_progress')
       .select('subject_key, question_idx, mode, is_correct')
@@ -8040,7 +8077,6 @@ async function loadProgressFromSupabase() {
 
     // Merge into localStorage: local data first, server overwrites on conflict
     Object.entries(serverMaps).forEach(([mapKey, serverProgress]) => {
-      // mapKey = e.g. 'maths_mc' — split on last underscore to get subjectKey + mode
       const split      = mapKey.lastIndexOf('_');
       const subjectKey = mapKey.substring(0, split);
       const mode       = mapKey.substring(split + 1);
