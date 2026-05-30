@@ -9372,8 +9372,7 @@ function buildKeywordFeedback(q, studentAns) {
           <span class="score-pct-pill ${pillClass}">${percentage}% matched</span>
         </div>
         <div class="score-feedback-text">${feedbackText}</div>
-        <div class="concepts-heading">Key Concepts</div>
-        <div class="keyword-checklist">${checklistHTML}</div>
+        ${currentSubjectKey !== 'maths' ? `<div class="concepts-heading">Key Concepts</div><div class="keyword-checklist">${checklistHTML}</div>` : ''}
         <button class="written-clear-btn" onclick="clearWrittenAnswer()">\u21a9 Try again</button>
       </div>`;
     }
