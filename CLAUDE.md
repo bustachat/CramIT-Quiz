@@ -523,6 +523,7 @@ GitHub Actions triggers → agent.js runs →
 - **Stage 5 complete** — keyword scoring + bandDescriptors on all 42 written questions, upgraded written UI (keyword grid, score heading, colour pills), AI marking via `/.netlify/functions/mark-written` with monthly quota by plan (Free=0, Base=50, Unlimited/Flex=100), student answer display, stem keyword matching, try-again fix, `ANTHROPIC_API_KEY` added to Netlify, SQL migration run in Supabase
 - **Stage 6 complete** — 10-question trial per subject replaces permanent free tier; trial counter in localStorage; mid-quiz trial wall with score + CTA; picker locks year/category/Extended 318/Test Mode/Written Response during trial; stats only tracked for logged-in users; upgrade prompt handles both logged-in and logged-out states
 - **Stage 7A complete** — Per-question progress tracking via localStorage JSON map `{questionIdx: 0|1}` keyed by stable position in master array. Last-attempt-wins (re-answering overwrites, never inflates total). `getMasterArray()` returns unfiltered master array so `indexOf()` is shuffle/filter-safe. `getSubjectStats()` derives seen/correct/pct. Card badges show "X seen · Y%". Aggregate totals on home screen. Data structure ready for Phase B Supabase sync.
+- **Stage 7B complete** — Cross-device progress sync via Supabase `user_progress` table. `syncAnswerToSupabase()` fire-and-forget UPSERT after every answer (quiz never waits on network). `loadProgressFromSupabase()` called on login — fetches all rows, merges into localStorage (server wins on conflict). Offline answers preserved until next sync. Table has UNIQUE(user_id, subject_key, question_idx, mode) — re-answers update one row, never duplicate. RLS enabled.
 
 ### Staged Implementation Roadmap
 
@@ -535,7 +536,7 @@ GitHub Actions triggers → agent.js runs →
 | **Stage 5** | Written response + NESA band engine (keyword scoring → Band 1–6 feedback + band-tiered model answers) + AI marking via `/.netlify/functions/mark-written` | ✅ **DONE** |
 | **Stage 6** | Pricing model update — 10-question trial replaces 1-free-subject | ✅ **DONE** |
 | **Stage 7A** | Per-user per-subject progress tracking — localStorage JSON map `{questionIdx: 0\|1}`, stable IDs via `indexOf()` on master array, last-attempt-wins, card badges | ✅ **DONE** |
-| **Stage 7B** | Cross-device sync — Supabase `user_progress` table; Phase A data structure maps directly to `(user_id, subject_key, question_idx, is_correct)` rows | ⬜ |
+| **Stage 7B** | Cross-device sync — Supabase `user_progress` table; `syncAnswerToSupabase()` fire-and-forget, `loadProgressFromSupabase()` on login | ✅ **DONE** |
 | **Stage 8** | Maths Section II written questions — extract + add extended response questions from 2020–2025 HSC papers | ⬜ **Next** |
 | **Stage 9** | Agent infrastructure (QA/Testing, Content, Analytics) — separate project | ⬜ |
 
