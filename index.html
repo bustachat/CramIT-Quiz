@@ -9546,22 +9546,14 @@ function backToPicker() {
 // ══════════════════════════════════════════════════════════════════════════════
 // FORMULA TIP WIDGET — Practice mode only, Maths MC questions only
 // ══════════════════════════════════════════════════════════════════════════════
-// Returns the formula tip for a question, with variant fallback.
-// Variants (q.variant===true) inherit the tip of the first HSC question
-// with the same category, so all 318 questions get coverage.
+// Returns the formula tip for a question.
+// Only returns a tip if there is an explicit entry in mathsQuestionTips
+// for this exact question index. Category-based fallbacks are NOT used
+// because categories span multiple topics and produce wrong hints.
 function getTipForQuestion(q) {
   const masterIdx = mathsQuestions.indexOf(q);
   if (masterIdx < 0) return null;
-  if (mathsQuestionTips[masterIdx]) return mathsQuestionTips[masterIdx];
-  // Variant fallback — find a base HSC question with same category that has a tip
-  if (q.variant && q.category) {
-    for (let i = 0; i < 90; i++) {
-      if (mathsQuestions[i] && mathsQuestions[i].category === q.category && mathsQuestionTips[i]) {
-        return mathsQuestionTips[i];
-      }
-    }
-  }
-  return null;
+  return mathsQuestionTips[masterIdx] || null;
 }
 
 function openTip() {
