@@ -49,7 +49,7 @@ git add <specific files>
 git commit -m "feat: <short description>"
 git push origin main
 ```
-Netlify auto-deploys on every push to `main`. Remind the owner of this.
+Cloudflare Pages auto-deploys on every push to `main`. Remind the owner of this.
 
 ---
 
@@ -58,14 +58,14 @@ Netlify auto-deploys on every push to `main`. Remind the owner of this.
 | Layer | Technology | Notes |
 |---|---|---|
 | Frontend | Single `index.html` — vanilla HTML/CSS/JS | No React, no Vue, no frameworks |
-| Hosting | Netlify (free tier) | Functions at `/.netlify/functions/` — NEVER `/api/` |
+| Hosting | Cloudflare Pages (free tier) | Functions at `/functions/` folder → served at `/{name}` — NEVER `/.netlify/functions/` |
 | Auth | Supabase Auth — email/password + Google OAuth | |
 | Database | Supabase (Postgres) — RLS enabled | Client always uses `sbClient` |
 | Payments | Stripe — subscription billing | Webhooks verified server-side |
 | Webhook handler | Supabase Edge Function named `clever-action` | NOT `stripe-webhook` — this was auto-named |
 | AI Agent | Node.js + Anthropic Claude API | Runs via GitHub Actions nightly |
 | Repo | GitHub — `bustachat/CramIT-Quiz` | Public repo, main branch |
-| Diagram images | Netlify static files at `/diagrams/` | Served from git repo — NOT Supabase Storage. 100GB/mo free vs Supabase's 2GB/mo. Agent auto-deploys new images via git commit. |
+| Diagram images | Cloudflare Pages static files at `/diagrams/` | Served from git repo — NOT Supabase Storage. Unlimited bandwidth free. Agent auto-deploys new images via git commit. |
 
 ---
 
@@ -95,20 +95,27 @@ Never commit API keys to GitHub. All keys go in environment variables. This file
 | `STRIPE_WEBHOOK_SECRET` | Stripe → Webhooks → Click endpoint → Signing secret |
 | `SUPABASE_SERVICE_ROLE_KEY` | Auto-injected by Supabase |
 
-### 4.2 Netlify
+### 4.2 Cloudflare Pages
 | Setting | Value |
 |---|---|
-| Build command | None — static site |
-| Publish directory | `/` (root) |
-| Functions directory | `netlify/functions` |
+| Project name | `cramit-quiz` |
+| Live URL | `https://cramit-quiz.pages.dev` |
+| Build command | `npm install` |
+| Build output directory | `/` (root) |
+| Functions directory | `functions/` (auto-detected by Cloudflare) |
 | Node version | 22 |
 
-**Netlify Environment Variables** (set in Netlify Dashboard → Site → Environment variables):
-| Variable | Source |
+**Cloudflare Secrets** (Cloudflare → Workers & Pages → cramit-quiz → Settings → Environment variables → Add secret):
+| Secret | Source |
 |---|---|
-| `STRIPE_SECRET_KEY` | Stripe → Developers → API keys |
-| `SUPABASE_URL` | Supabase → Settings → API → Project URL |
+| `STRIPE_SECRET_KEY` | Stripe → **Sandbox** → Developers → API keys (use the Sandbox sk_test_ key — NOT the main test mode key) |
+| `SUPABASE_URL` | `https://ohqtefjawaphtsebnaxg.supabase.co` |
 | `SUPABASE_SERVICE_ROLE_KEY` | Supabase → Settings → API → Legacy → service_role |
+| `ANTHROPIC_API_KEY` | console.anthropic.com → API Keys |
+| `STRIPE_PRICE_CAP` | `price_1TEdW3Pvnbx5MPYykHvvk7gf` |
+| `STRIPE_PRICE_FLEX_BASE` | `price_1TEdZRPvnbx5MPYylioNhNQI` |
+
+⚠️ **Stripe Sandbox gotcha:** Stripe has two test environments — "Test mode" and "Sandbox". The customer/subscription data lives in the **Sandbox**. Always use the Sandbox API key in Cloudflare, not the plain test mode key. They look the same (`sk_test_...`) but have different prefixes after `51T`.
 
 ### 4.3 Stripe
 | Setting | Value |
@@ -182,24 +189,25 @@ cramit-quiz/
 ├── agent.js                    ← Nightly NESA monitor + AI question generator
 ├── billing.js                  ← Client-side billing module (auth, checkout, pricing calc)
 ├── subject-selector.html       ← Subject selection UI component
-├── package.json                ← { "dependencies": { "stripe": "^14.0.0" } }
+├── package.json                ← { "type": "module", "dependencies": { "stripe": "^14.0.0" } }
 ├── extract_maths_diagrams.py   ← PDF diagram extractor v3 (PyMuPDF + Pillow + calibration)
 ├── diagram_registry.json       ← Crop coordinates for all 76 diagram images (2020–2025)
 ├── process_maths_backlog.js    ← Backlog processor for question generation
 ├── schema.sql                  ← Supabase table definitions + RLS policies
 ├── supabase_min.js             ← Local Supabase JS client (loaded via script tag)
-├── diagrams/                   ← Exam diagram images — served by Netlify at /diagrams/
+├── diagrams/                   ← Exam diagram images — served by Cloudflare Pages at /diagrams/
 │   ├── .gitignore              ← Excludes _debug/ folder from git
 │   └── mathematics-standard-2_{year}_Q{n}_{suffix}.jpg
 │       suffix = stimulus | A | B | C | D
 ├── subjects/
 │   ├── index.json              ← List of all available subject files
 │   └── mathematics-advanced-2024.json
-└── netlify/
-    └── functions/
-        ├── create-checkout.js       ← Creates Stripe Checkout Session
-        ├── update-subscription.js   ← Updates Stripe when subjects change
-        └── customer-portal.js       ← Opens Stripe billing portal
+└── functions/                  ← Cloudflare Pages Functions — served at /{name} (NOT /functions/{name})
+    ├── create-checkout.js      ← POST /create-checkout — creates Stripe Checkout Session
+    ├── update-subscription.js  ← POST /update-subscription — updates Stripe when subjects change
+    ├── customer-portal.js      ← POST /customer-portal — opens Stripe billing portal
+    ├── upgrade-flex.js         ← POST /upgrade-flex — upgrades cap → flex plan
+    └── mark-written.js         ← POST /mark-written — AI marking via Claude API
 ```
 
 ---
@@ -257,14 +265,19 @@ The permanent 1-subject free tier has been replaced with a 10-question trial per
 
 ## 9. Key Code Patterns — Always Follow These
 
-### Netlify function path
+### Cloudflare Pages function path
 ```js
-// ✅ CORRECT
-fetch('/.netlify/functions/create-checkout', { method: 'POST', ... })
+// ✅ CORRECT — Cloudflare Pages Functions in functions/ folder are served at /{name}
+fetch('/create-checkout', { method: 'POST', ... })
+fetch('/customer-portal', { method: 'POST', ... })
+fetch('/mark-written', { method: 'POST', ... })
 
-// ❌ WRONG — never use /api/
-fetch('/api/create-checkout', ...)
+// ❌ WRONG — these are dead, Netlify is gone
+fetch('/.netlify/functions/create-checkout', ...)
+fetch('/functions/create-checkout', ...)  // also wrong — /functions/ is NOT the URL prefix
 ```
+
+⚠️ **Critical Cloudflare routing rule:** A file at `functions/create-checkout.js` is served at `/create-checkout` — NOT `/functions/create-checkout`. The `functions/` folder name is invisible in the URL.
 
 ### Supabase client init
 ```js
@@ -279,7 +292,7 @@ const { data, error } = await sbClient.from('profiles').select('*');
 ### Google OAuth redirect
 ```js
 // Always use APP_URL constant — never window.location.origin
-const APP_URL = 'https://YOUR-SITE.netlify.app'; // filled in by owner
+const APP_URL = 'https://cramit-quiz.pages.dev'; // Cloudflare Pages URL
 sbClient.auth.signInWithOAuth({
   provider: 'google',
   options: { redirectTo: APP_URL }
@@ -339,8 +352,8 @@ The standalone HTML files in the project are the **gold standard** for quiz func
 | Responsive/mobile | `clamp()` font sizing, safe area insets, touch targets ≥ 48px | ✅ In reference |
 | Correct/incorrect colours | Green `#10B981` / Red `#F43F5E` highlight on options | ✅ In reference |
 | Written response mode | Text input, keyword scoring, band descriptor, model answer reveal | ✅ HMS + VET files |
-| Diagram support | `image` field → stimulus above question. `optionImages` array → per-option images inside each button. Paths point to `/diagrams/` (Netlify). | ✅ Done Stage 3 |
-| NESA band marking (AI) | AI marks written responses via `/.netlify/functions/mark-written` | ✅ Done Stage 5 |
+| Diagram support | `image` field → stimulus above question. `optionImages` array → per-option images inside each button. Paths point to `/diagrams/` (Cloudflare Pages). | ✅ Done Stage 3 |
+| NESA band marking (AI) | AI marks written responses via `/mark-written` (Cloudflare Pages Function) | ✅ Done Stage 5 |
 
 ### Question data structure (JS object)
 ```js
@@ -377,14 +390,14 @@ The standalone HTML files in the project are the **gold standard** for quiz func
 }
 ```
 
-### Image hosting — Netlify `/diagrams/` (NOT Supabase Storage)
-All diagram images are committed to the git repo under `diagrams/` and served by Netlify.
+### Image hosting — Cloudflare Pages `/diagrams/` (NOT Supabase Storage)
+All diagram images are committed to the git repo under `diagrams/` and served by Cloudflare Pages.
 
 **Do NOT use Supabase Storage for exam diagrams.** The `exam-images` bucket in Supabase is retired — it contained old unsplit images (one image per question). The new images are split into stimulus + per-option files.
 
 **Do NOT use `MATHS_IMG` lookup table** — retired in Stage 3. Images are referenced directly on each question object via `image` and `optionImages` fields.
 
-**VET questions** now use `/diagrams/vet-construction_{year}_Q{n}_stimulus.jpg` paths — migrated from Imgur in Stage 4. All VET images are served from Netlify at `/diagrams/`.
+**VET questions** now use `/diagrams/vet-construction_{year}_Q{n}_stimulus.jpg` paths — migrated from Imgur in Stage 4. All VET images are served from Cloudflare Pages at `/diagrams/`.
 
 **Path convention:**
 ```
@@ -464,7 +477,7 @@ When the nightly agent detects a new exam paper:
 1. `agent.js` downloads the PDF
 2. Runs `python extract_maths_diagrams.py --calibrate --year {year}`
 3. Commits new images to `diagrams/` folder
-4. Netlify auto-deploys — images immediately available at `/diagrams/filename.jpg`
+4. Cloudflare Pages auto-deploys — images immediately available at `/diagrams/filename.jpg`
 
 ### Adding diagram support to other subjects
 - **VET Construction**: Already migrated to `/diagrams/` paths ✅
@@ -486,7 +499,7 @@ GitHub Actions triggers → agent.js runs →
   5. Quiz Builder: Claude generates MC questions + explanations
   6. Code Writer: creates subjects/new-subject.json
   7. Updates subjects/index.json
-  8. Commits + pushes → Netlify auto-deploys
+  8. Commits + pushes → Cloudflare Pages auto-deploys
 ```
 
 **Agent environment:**
@@ -495,7 +508,7 @@ GitHub Actions triggers → agent.js runs →
 - Must have `contents: write` permission to commit files
 - Claude model to use: `claude-opus-4-5` for quality (or `claude-sonnet-4-6` for speed/cost)
 
-**Written response AI marking** (planned — `/.netlify/functions/mark-written`):
+**Written response AI marking** (live — `/mark-written` Cloudflare Pages Function):
 - Student submits written answer via POST
 - Function calls Claude API with NESA marking criteria in system prompt
 - Returns: band (1–6), marks awarded, specific feedback, model answer at next band up
@@ -511,10 +524,10 @@ GitHub Actions triggers → agent.js runs →
 - Google OAuth configured (testing mode — approved test users only)
 - Stripe products created (sandbox/test mode)
 - GitHub repo set up (`bustachat/CramIT-Quiz`)
-- Netlify deployed and building from `main`
+- Cloudflare Pages deployed at `https://cramit-quiz.pages.dev`
 - Supabase Edge Function `clever-action` deployed
 - Stripe webhook registered pointing to Edge Function
-- All secrets added to Netlify and Supabase
+- All secrets added to Cloudflare and Supabase
 - Billing UI wired into `index.html`
 - Google login working after redirect URL fix
 - `SUPABASE_ANON` and `APP_URL` filled in `index.html`
@@ -522,7 +535,7 @@ GitHub Actions triggers → agent.js runs →
 - **Stage 2 complete** — diagram extractor v3, 76 images in `/diagrams/`, calibration mode, stimulus/options split
 - **Stage 3 complete** — images wired into quiz renderer (`image` + `optionImages`), `MATHS_IMG` retired, category filter with live counts, HSC 90/Extended 318 toggle
 - **Stage 4 complete** — Multimedia + HMS ported into `index.html` with full MC + written question sets
-- **Stage 5 complete** — keyword scoring + bandDescriptors on all 42 written questions, upgraded written UI (keyword grid, score heading, colour pills), AI marking via `/.netlify/functions/mark-written` with monthly quota by plan (Free=0, Base=50, Unlimited/Flex=100), student answer display, stem keyword matching, try-again fix, `ANTHROPIC_API_KEY` added to Netlify, SQL migration run in Supabase
+- **Stage 5 complete** — keyword scoring + bandDescriptors on all 42 written questions, upgraded written UI (keyword grid, score heading, colour pills), AI marking via `/mark-written` (Cloudflare Pages Function) with monthly quota by plan (Free=0, Base=50, Unlimited/Flex=100), student answer display, stem keyword matching, try-again fix, `ANTHROPIC_API_KEY` added to Cloudflare, SQL migration run in Supabase
 - **Stage 6 complete** — 10-question trial per subject replaces permanent free tier; trial counter in localStorage; mid-quiz trial wall with score + CTA; picker locks year/category/Extended 318/Test Mode/Written Response during trial; stats only tracked for logged-in users; upgrade prompt handles both logged-in and logged-out states
 - **Stage 7A complete** — Per-question progress tracking via localStorage JSON map `{questionIdx: 0|1}` keyed by stable position in master array. Last-attempt-wins (re-answering overwrites, never inflates total). `getMasterArray()` returns unfiltered master array so `indexOf()` is shuffle/filter-safe. `getSubjectStats()` derives seen/correct/pct. Card badges show "X seen · Y%". Aggregate totals on home screen. Data structure ready for Phase B Supabase sync.
 - **Stage 7B complete** — Cross-device progress sync via Supabase `user_progress` table. `syncAnswerToSupabase()` fire-and-forget UPSERT after every answer (quiz never waits on network). `loadProgressFromSupabase()` called on login — fetches all rows, merges into localStorage (server wins on conflict). Offline answers preserved until next sync. Table has UNIQUE(user_id, subject_key, question_idx, mode) — re-answers update one row, never duplicate. RLS enabled.
@@ -537,7 +550,7 @@ GitHub Actions triggers → agent.js runs →
 | **Stage 2** | Diagram extractor v3 — stimulus/options split, calibration mode, 76 images committed to repo | ✅ **DONE** |
 | **Stage 3** | Wire images into quiz renderer (`image` + `optionImages` on question objects, retire `MATHS_IMG`). Category filter + dynamic counts + HSC 90/Extended 318 toggle | ✅ **DONE** |
 | **Stage 4** | Port Multimedia + HMS subjects into index.html | ✅ **DONE** |
-| **Stage 5** | Written response + NESA band engine (keyword scoring → Band 1–6 feedback + band-tiered model answers) + AI marking via `/.netlify/functions/mark-written` | ✅ **DONE** |
+| **Stage 5** | Written response + NESA band engine (keyword scoring → Band 1–6 feedback + band-tiered model answers) + AI marking via `/mark-written` Cloudflare Pages Function | ✅ **DONE** |
 | **Stage 6** | Pricing model update — 10-question trial replaces 1-free-subject | ✅ **DONE** |
 | **Stage 7A** | Per-user per-subject progress tracking — localStorage JSON map `{questionIdx: 0\|1}`, stable IDs via `indexOf()` on master array, last-attempt-wins, card badges | ✅ **DONE** |
 | **Stage 7B** | Cross-device sync — Supabase `user_progress` table; `syncAnswerToSupabase()` fire-and-forget, `loadProgressFromSupabase()` on login | ✅ **DONE** |
@@ -546,7 +559,7 @@ GitHub Actions triggers → agent.js runs →
 | **Stage 8.5** | Rebuild written question image extractor — Claude Vision `--detect` mode + full-width crop (x0=30, x1=565) to fix text label clipping at scale. **Must complete before agent automation goes live.** | ⬜ **Pre-automation** |
 | **Stage 9** | Agent infrastructure (QA/Testing, Content, Analytics) — separate project | ⬜ |
 | **Stage 10** | Desktop web portal (`portal.html`) — sidebar nav, subject dashboard, progress history, split-panel written response | ⬜ |
-| **Stage 11** | Migrate hosting from Netlify → Cloudflare Pages + Workers + R2 (see §21 for full spec) | ⬜ |
+| **Stage 11** | Migrate hosting from Netlify → Cloudflare Pages + Workers (completed May 2026) | ✅ **DONE** |
 
 ### ⬜ Still to do (non-staged)
 
@@ -555,9 +568,9 @@ GitHub Actions triggers → agent.js runs →
 | Fix remaining billing UI issues | `billing.js`, `index.html` | Test full flow end-to-end in Stripe sandbox |
 | Test full payment flow | Stripe sandbox | Use test card `4242 4242 4242 4242` |
 | Set `ANTHROPIC_API_KEY` in GitHub Secrets | GitHub Settings | Enables nightly agent |
-| Switch Stripe to live mode | Stripe dashboard + Netlify + Supabase secrets | Update all 3 key locations |
+| Switch Stripe to live mode | Stripe dashboard + Cloudflare + Supabase secrets | Update all 3 key locations |
 | Submit Google OAuth for verification | Google Console | Required for public launch |
-| Add custom domain `cramit.com.au` | Netlify → Domain management | Update DNS, update `APP_URL` |
+| Add custom domain `cramit.com.au` | Cloudflare Pages → Custom domains | Update DNS, update `APP_URL` in index.html, update Supabase redirect URLs |
 | Deploy agent coordination tables | Supabase SQL editor | From Blueprint V3 Appendix |
 | Launch | — | — |
 
@@ -565,7 +578,7 @@ GitHub Actions triggers → agent.js runs →
 
 ## 14. What a "Complete Quiz Engine Upgrade" Means
 
-The biggest priority is bringing `index.html` (the hosted Netlify app) up to the standard of the reference standalone HTML files. Here is the exact feature gap:
+The biggest priority is bringing `index.html` (the hosted Cloudflare Pages app) up to the standard of the reference standalone HTML files. Here is the exact feature gap:
 
 ### Quiz engine feature parity — all complete ✅
 
@@ -593,11 +606,11 @@ The biggest priority is bringing `index.html` (the hosted Netlify app) up to the
 1. Create `subjects/{subject-id}-{year}.json` following the question data structure in §10
 2. Add the filename to `subjects/index.json`
 3. Add a subject card to `index.html`
-4. Commit and push — Netlify deploys within ~30 seconds
+4. Commit and push — Cloudflare Pages deploys within ~60 seconds
 
 ### Agent method (automatic):
 - The nightly `agent.js` handles this automatically once `ANTHROPIC_API_KEY` is set in GitHub Secrets
-- Agent commits directly to `main` → Netlify auto-deploys
+- Agent commits directly to `main` → Cloudflare Pages auto-deploys
 
 ### Current subjects (all live in index.html):
 - **Mathematics Standard 2** — 90 HSC + 318 extended variants, diagrams wired ✅
@@ -644,7 +657,7 @@ The biggest priority is bringing `index.html` (the hosted Netlify app) up to the
 | `APP_URL` and `SUPABASE_ANON_KEY` were placeholders | ✅ Fixed | Owner filled these in |
 | Edge Function named `clever-action` not `stripe-webhook` | ✅ Known, working | Do not rename — webhook registered to this URL |
 | Diagram images not rendering in hosted quiz | ✅ Fixed Stage 3 | Images wired via `image`/`optionImages` on question objects. `MATHS_IMG` retired. |
-| Written response AI marking not yet built | ✅ Built Stage 5 | `/.netlify/functions/mark-written` live. Quota by plan. Keyword grid fallback. |
+| Written response AI marking not yet built | ✅ Built Stage 5 | `/mark-written` Cloudflare Pages Function live. Quota by plan. Keyword grid fallback. |
 
 ---
 
@@ -672,13 +685,13 @@ const response = await fetch('https://api.anthropic.com/v1/messages', {
 });
 ```
 
-### In `mark-written.js` (planned Netlify function)
+### In `mark-written.js` (Cloudflare Pages Function — live)
 ```js
 // Never expose ANTHROPIC_API_KEY in browser code
-// Always proxy through a Netlify function
-// POST /.netlify/functions/mark-written
-// Body: { questionId, studentAnswer, maxMarks, markingCriteria }
-// Response: { band, marksAwarded, feedback, nextBandModelAnswer }
+// Always proxy through the Cloudflare Pages Function
+// POST /mark-written
+// Body: { userId, question, maxMarks, keywords, studentAnswer, bandDescriptors, subject }
+// Response: { aiMarked, marksAwarded, grade, feedback, improvement, keyConceptsFound, marksRemaining }
 ```
 
 ### Diagram extraction (planned upgrade)
@@ -696,7 +709,7 @@ client = anthropic.Anthropic(api_key=os.environ['ANTHROPIC_API_KEY'])
 | Service | Free Tier | Your Current Cost |
 |---|---|---|
 | Supabase | 50,000 users, 500MB DB | $0 |
-| Netlify | 100GB bandwidth/mo | $0 |
+| Cloudflare Pages | Unlimited bandwidth, 100K function requests/day | $0 |
 | GitHub | Unlimited public repos | $0 |
 | Stripe | No monthly fee | 1.75% + 30¢/txn of revenue only |
 | Claude API (agent) | Pay per use | ~$2–5/mo |
@@ -796,132 +809,62 @@ CramIT has two distinct experiences that should NOT be merged into one file:
 
 ---
 
-## 21. Stage 11 — Netlify → Cloudflare Migration Spec
+## 21. Stage 11 — Cloudflare Migration (✅ COMPLETE — May 2026)
 
-### Why migrating
-Netlify switched to credit-based pricing (Sep 2025). 300 credits/month free — each deploy costs 15 credits, each GB bandwidth costs 20 credits. Costs unpredictable and free tier runs out mid-month under real traffic.
+Netlify is gone. CramIT now runs entirely on Cloudflare Pages.
 
-### New stack
-| Layer | From | To |
+### What was migrated
+| Layer | Before | After |
 |---|---|---|
-| Hosting + Functions | Netlify | Cloudflare Pages + Workers |
-| Exam image storage | Netlify static files | Cloudflare R2 |
-| Database + Auth | Supabase | Supabase (**unchanged**) |
-| Payments | Stripe | Stripe (**unchanged**) |
-| Webhook handler | Supabase Edge Function `clever-action` | (**unchanged**) |
-| Agent runner | GitHub Actions | GitHub Actions (**unchanged**) |
+| Hosting + static files | Netlify | Cloudflare Pages (`cramit-quiz.pages.dev`) |
+| Serverless functions | `netlify/functions/` (CommonJS) | `functions/` (ESM Cloudflare Pages Functions) |
+| Function URLs | `/.netlify/functions/{name}` | `/{name}` (the `functions/` folder name is NOT in the URL) |
+| Env vars | Netlify Dashboard | Cloudflare Pages → Settings → Secrets |
 
-**Do NOT touch Supabase, Stripe, Google OAuth, `clever-action`, or any question data during this migration.**
-
-### Why Cloudflare wins
-- Unlimited bandwidth on free tier
-- 100,000 Worker requests/day (resets daily) vs Netlify's 125K/month
-- R2: 10GB free + **$0 egress always** (exam images served to students = lots of egress)
-- Workers + Pages in same dashboard, same deploy
-
-### What changes vs what stays the same
-
-**Zero changes needed:**
-- `index.html` — except two find-replace operations on function URLs (see below)
-- `billing.js` — except one find-replace on function URLs
-- `manifest.json`, `sw.js`, `agent.js`, `subjects/`, `supabase.min.js` — untouched
-
-**Files being rewritten (same logic, Cloudflare wrapper):**
-All 5 Netlify functions → 5 Cloudflare Pages Functions in new `functions/` folder at repo root:
-
-| Old path | New path | URL changes from |
-|---|---|---|
-| `netlify/functions/create-checkout.js` | `functions/create-checkout.js` | `/.netlify/functions/create-checkout` → `/functions/create-checkout` |
-| `netlify/functions/update-subscription.js` | `functions/update-subscription.js` | `/.netlify/functions/update-subscription` → `/functions/update-subscription` |
-| `netlify/functions/customer-portal.js` | `functions/customer-portal.js` | `/.netlify/functions/customer-portal` → `/functions/customer-portal` |
-| `netlify/functions/upgrade-flex.js` | `functions/upgrade-flex.js` | `/.netlify/functions/upgrade-flex` → `/functions/upgrade-flex` |
-| `netlify/functions/mark-written.js` | `functions/mark-written.js` | `/.netlify/functions/mark-written` → `/functions/mark-written` |
-
-**New file:** `wrangler.toml` at repo root
-
-**Deleted after migration confirmed working:** `netlify/` folder
-
-### Key code differences: Netlify → Cloudflare
-
+### Cloudflare Pages Function pattern (ESM — always use this)
 ```js
-// NETLIFY (CommonJS)
-const Stripe = require('stripe');
-exports.handler = async (event) => {
-  if (event.httpMethod !== 'POST') return { statusCode: 405, body: 'Not allowed' };
-  const body = JSON.parse(event.body);
-  const key = process.env.STRIPE_SECRET_KEY;
-  const header = event.headers['x-user-email'];
-  return { statusCode: 200, headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(result) };
+import Stripe from 'stripe';
+
+const CORS = {
+  'Access-Control-Allow-Origin':  '*',
+  'Access-Control-Allow-Methods': 'POST, OPTIONS',
+  'Access-Control-Allow-Headers': 'Content-Type',
 };
 
-// CLOUDFLARE (ESM — must use import, not require)
-import Stripe from 'stripe';
-export async function onRequestOptions() { return new Response(null, { status: 204, headers: CORS }); }
+export async function onRequestOptions() {
+  return new Response(null, { status: 204, headers: CORS });
+}
+
 export async function onRequestPost(context) {
   const { request, env } = context;
+  const stripe = new Stripe(env.STRIPE_SECRET_KEY);  // env.VAR not process.env.VAR
   const body = await request.json();
-  const key = env.STRIPE_SECRET_KEY;
-  const header = request.headers.get('x-user-email');
-  return new Response(JSON.stringify(result), { status: 200, headers: { 'Content-Type': 'application/json', ...CORS } });
+  // ... business logic ...
+  return new Response(JSON.stringify(result), {
+    status: 200,
+    headers: { 'Content-Type': 'application/json', ...CORS },
+  });
 }
 ```
 
-All business logic (Price IDs, plan type calculations, quota logic) is **identical** — only the wrapper changes.
+### Lessons learned (do not repeat these mistakes)
+- **No `wrangler.toml`** — for a git-connected Pages project, `wrangler.toml` blocks the dashboard from managing secrets. Delete it.
+- **No `require()`** — Cloudflare Workers are ESM only. Always `import`.
+- **No `process.env`** — use `env.VARIABLE_NAME` from the `context` parameter.
+- **Function URL routing** — `functions/customer-portal.js` → served at `/customer-portal`. Never `/functions/customer-portal`.
+- **UTF-8 encoding** — when doing find-replace on `index.html` in PowerShell 5.1, always use `[System.IO.File]::ReadAllText(path, UTF8NoBOM)` and `WriteAllText`. Never `Get-Content | Set-Content` — it corrupts UTF-8.
+- **Stripe Sandbox vs Test mode** — Stripe has two separate test environments. Customer data lives in the **Sandbox**. Use the Sandbox `sk_test_` key in Cloudflare, not the plain Test mode key. They look identical but are different accounts.
+- **Build command** — set to `npm install` so Cloudflare installs the `stripe` npm package before compiling functions.
 
-### wrangler.toml content
-```toml
-name = "cramit"
-compatibility_date = "2024-09-23"
-pages_build_output_dir = "/"
-```
-
-### Environment variables to add in Cloudflare dashboard
-(Cloudflare → Workers & Pages → cramit-quiz → Settings → Environment variables)
-
-| Variable | Source | Used by |
-|---|---|---|
-| `STRIPE_SECRET_KEY` | Stripe → Developers → API keys | create-checkout, update-subscription, customer-portal, upgrade-flex |
-| `SUPABASE_URL` | Supabase → Settings → API → Project URL | mark-written |
-| `SUPABASE_SERVICE_ROLE_KEY` | Supabase → Settings → API → Legacy → service_role | mark-written |
-| `ANTHROPIC_API_KEY` | console.anthropic.com → API Keys | mark-written |
-| `STRIPE_PRICE_CAP` | `price_1TEdW3Pvnbx5MPYykHvvk7gf` | upgrade-flex |
-| `STRIPE_PRICE_FLEX_BASE` | `price_1TEdZRPvnbx5MPYylioNhNQI` | upgrade-flex |
-
-Set all for both **Production** and **Preview** environments.
-
-### Step-by-step order (do not skip steps)
-1. Create Cloudflare account at cloudflare.com (free)
-2. Workers & Pages → Create → Pages → Connect to Git → `bustachat/CramIT-Quiz`
-   - Build command: *(leave empty)*
-   - Build output directory: `/`
-3. Add all 6 environment variables to Cloudflare (both Production + Preview)
-4. Add `wrangler.toml` to repo root
-5. Create `functions/` folder with all 5 rewritten function files (ESM, `env.VAR` not `process.env.VAR`)
-6. Find-replace in `index.html` and `billing.js`: `/.netlify/functions/` → `/functions/`
-7. Push to GitHub — Cloudflare auto-deploys
-8. Test at the `*.pages.dev` URL: login, Stripe checkout, payment, subject unlock, customer portal
-9. Update `APP_URL` constant in `index.html` to the new Cloudflare Pages URL
-10. *(Optional later)* Set up R2 bucket `cramit-assets`, upload `diagrams/` folder, add `IMAGE_BASE_URL` constant, update `renderQuestion()` to use it
-11. *(After testing passes)* Delete Netlify site → `git rm -r netlify/` → commit → push
-12. *(When ready)* Add custom domain `cramit.com.au` in Cloudflare Pages → update `APP_URL` → update Google OAuth redirect in Supabase
-
-### R2 image storage (Phase 2 — after functions migrate cleanly)
-- Create R2 bucket named `cramit-assets` (Cloudflare Dashboard → R2 → Create bucket)
-- Enable public access → note the `https://pub-XXXXXXXXXXXXXXXX.r2.dev` URL
-- Upload `diagrams/` folder to bucket
-- Add `const IMAGE_BASE_URL = 'https://pub-XXXXXXXXXXXXXXXX.r2.dev';` to `index.html`
-- In `renderQuestion()`, images are already stored as full paths like `/diagrams/file.jpg` on the question objects — prefix with `IMAGE_BASE_URL` when rendering
-- Requires credit card on file for R2 (free at $0 usage, card just for identity)
-
-### Known gotchas
-- Cloudflare Workers: **no `require()`** — must use ESM `import`
-- Cloudflare Workers: **no `process.env`** — use `env.VARIABLE_NAME` from `context`
-- CORS: add `onRequestOptions()` export to each function for preflight requests
-- `upgrade-flex.js` reads `STRIPE_PRICE_CAP` and `STRIPE_PRICE_FLEX_BASE` from env vars (not hardcoded) — must add both to Cloudflare env vars
-- Supabase free tier pauses after 1 week of inactivity — upgrade to Pro ($25/mo) before launch
+### Still to do (R2 image storage — Phase 2)
+Images are currently served from git repo via Cloudflare Pages static files — this works fine. R2 migration is optional and only needed if the `diagrams/` folder becomes too large for git.
+- Create R2 bucket `cramit-assets`, enable public access
+- Upload `diagrams/` folder
+- Add `const IMAGE_BASE_URL = 'https://pub-XXXX.r2.dev'` to `index.html`
+- Prefix image paths in `renderQuestion()` with `IMAGE_BASE_URL`
 
 ---
 
-*CLAUDE.md — CramIT Project — Last updated: May 2026 — Stages 1–8 + 8.9 complete*
+*CLAUDE.md — CramIT Project — Last updated: May 2026 — Stages 1–8, 8.9 + 11 complete*
 *Repo: https://github.com/bustachat/CramIT-Quiz*
 *Supabase: https://ohqtefjawaphtsebnaxg.supabase.co*
