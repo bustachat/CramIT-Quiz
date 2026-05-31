@@ -9658,8 +9658,7 @@ function selectTipChoice(idx) {
 
 function checkTipAnswer() {
   const q = activeQuestions[currentIdx];
-  const masterIdx = mathsQuestions.indexOf(q);
-  const tip = mathsQuestionTips[masterIdx];
+  const tip = getTipForQuestion(q);
   if (!tip) return;
 
   const selected = document.querySelector('input[name="tip-radio"]:checked');
