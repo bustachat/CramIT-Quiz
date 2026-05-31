@@ -1,7 +1,11 @@
 {
   "name": "cramit-quiz",
   "version": "1.0.0",
-  "description": "CramIT HSC Quiz — Netlify Functions",
+  "description": "CramIT HSC Quiz — Cloudflare Pages Functions",
+  "type": "module",
+  "scripts": {
+    "build": "echo 'No build step required'"
+  },
   "dependencies": {
     "stripe": "^14.0.0"
   }
