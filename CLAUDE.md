@@ -546,6 +546,7 @@ GitHub Actions triggers → agent.js runs →
 | **Stage 8.5** | Rebuild written question image extractor — Claude Vision `--detect` mode + full-width crop (x0=30, x1=565) to fix text label clipping at scale. **Must complete before agent automation goes live.** | ⬜ **Pre-automation** |
 | **Stage 9** | Agent infrastructure (QA/Testing, Content, Analytics) — separate project | ⬜ |
 | **Stage 10** | Desktop web portal (`portal.html`) — sidebar nav, subject dashboard, progress history, split-panel written response | ⬜ |
+| **Stage 11** | Migrate hosting from Netlify → Cloudflare Pages + Workers + R2 (see §21 for full spec) | ⬜ |
 
 ### ⬜ Still to do (non-staged)
 
@@ -790,6 +791,134 @@ CramIT has two distinct experiences that should NOT be merged into one file:
 4. **Written Response** — split panel: question left, answer right, AI feedback below
 
 **Key rule:** `portal.html` uses the same Supabase auth (`sbClient`), same `user_progress` table, same pricing logic — but its own layout and CSS. Do NOT modify `index.html` when building the portal.
+
+---
+
+---
+
+## 21. Stage 11 — Netlify → Cloudflare Migration Spec
+
+### Why migrating
+Netlify switched to credit-based pricing (Sep 2025). 300 credits/month free — each deploy costs 15 credits, each GB bandwidth costs 20 credits. Costs unpredictable and free tier runs out mid-month under real traffic.
+
+### New stack
+| Layer | From | To |
+|---|---|---|
+| Hosting + Functions | Netlify | Cloudflare Pages + Workers |
+| Exam image storage | Netlify static files | Cloudflare R2 |
+| Database + Auth | Supabase | Supabase (**unchanged**) |
+| Payments | Stripe | Stripe (**unchanged**) |
+| Webhook handler | Supabase Edge Function `clever-action` | (**unchanged**) |
+| Agent runner | GitHub Actions | GitHub Actions (**unchanged**) |
+
+**Do NOT touch Supabase, Stripe, Google OAuth, `clever-action`, or any question data during this migration.**
+
+### Why Cloudflare wins
+- Unlimited bandwidth on free tier
+- 100,000 Worker requests/day (resets daily) vs Netlify's 125K/month
+- R2: 10GB free + **$0 egress always** (exam images served to students = lots of egress)
+- Workers + Pages in same dashboard, same deploy
+
+### What changes vs what stays the same
+
+**Zero changes needed:**
+- `index.html` — except two find-replace operations on function URLs (see below)
+- `billing.js` — except one find-replace on function URLs
+- `manifest.json`, `sw.js`, `agent.js`, `subjects/`, `supabase.min.js` — untouched
+
+**Files being rewritten (same logic, Cloudflare wrapper):**
+All 5 Netlify functions → 5 Cloudflare Pages Functions in new `functions/` folder at repo root:
+
+| Old path | New path | URL changes from |
+|---|---|---|
+| `netlify/functions/create-checkout.js` | `functions/create-checkout.js` | `/.netlify/functions/create-checkout` → `/functions/create-checkout` |
+| `netlify/functions/update-subscription.js` | `functions/update-subscription.js` | `/.netlify/functions/update-subscription` → `/functions/update-subscription` |
+| `netlify/functions/customer-portal.js` | `functions/customer-portal.js` | `/.netlify/functions/customer-portal` → `/functions/customer-portal` |
+| `netlify/functions/upgrade-flex.js` | `functions/upgrade-flex.js` | `/.netlify/functions/upgrade-flex` → `/functions/upgrade-flex` |
+| `netlify/functions/mark-written.js` | `functions/mark-written.js` | `/.netlify/functions/mark-written` → `/functions/mark-written` |
+
+**New file:** `wrangler.toml` at repo root
+
+**Deleted after migration confirmed working:** `netlify/` folder
+
+### Key code differences: Netlify → Cloudflare
+
+```js
+// NETLIFY (CommonJS)
+const Stripe = require('stripe');
+exports.handler = async (event) => {
+  if (event.httpMethod !== 'POST') return { statusCode: 405, body: 'Not allowed' };
+  const body = JSON.parse(event.body);
+  const key = process.env.STRIPE_SECRET_KEY;
+  const header = event.headers['x-user-email'];
+  return { statusCode: 200, headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(result) };
+};
+
+// CLOUDFLARE (ESM — must use import, not require)
+import Stripe from 'stripe';
+export async function onRequestOptions() { return new Response(null, { status: 204, headers: CORS }); }
+export async function onRequestPost(context) {
+  const { request, env } = context;
+  const body = await request.json();
+  const key = env.STRIPE_SECRET_KEY;
+  const header = request.headers.get('x-user-email');
+  return new Response(JSON.stringify(result), { status: 200, headers: { 'Content-Type': 'application/json', ...CORS } });
+}
+```
+
+All business logic (Price IDs, plan type calculations, quota logic) is **identical** — only the wrapper changes.
+
+### wrangler.toml content
+```toml
+name = "cramit"
+compatibility_date = "2024-09-23"
+pages_build_output_dir = "/"
+```
+
+### Environment variables to add in Cloudflare dashboard
+(Cloudflare → Workers & Pages → cramit-quiz → Settings → Environment variables)
+
+| Variable | Source | Used by |
+|---|---|---|
+| `STRIPE_SECRET_KEY` | Stripe → Developers → API keys | create-checkout, update-subscription, customer-portal, upgrade-flex |
+| `SUPABASE_URL` | Supabase → Settings → API → Project URL | mark-written |
+| `SUPABASE_SERVICE_ROLE_KEY` | Supabase → Settings → API → Legacy → service_role | mark-written |
+| `ANTHROPIC_API_KEY` | console.anthropic.com → API Keys | mark-written |
+| `STRIPE_PRICE_CAP` | `price_1TEdW3Pvnbx5MPYykHvvk7gf` | upgrade-flex |
+| `STRIPE_PRICE_FLEX_BASE` | `price_1TEdZRPvnbx5MPYylioNhNQI` | upgrade-flex |
+
+Set all for both **Production** and **Preview** environments.
+
+### Step-by-step order (do not skip steps)
+1. Create Cloudflare account at cloudflare.com (free)
+2. Workers & Pages → Create → Pages → Connect to Git → `bustachat/CramIT-Quiz`
+   - Build command: *(leave empty)*
+   - Build output directory: `/`
+3. Add all 6 environment variables to Cloudflare (both Production + Preview)
+4. Add `wrangler.toml` to repo root
+5. Create `functions/` folder with all 5 rewritten function files (ESM, `env.VAR` not `process.env.VAR`)
+6. Find-replace in `index.html` and `billing.js`: `/.netlify/functions/` → `/functions/`
+7. Push to GitHub — Cloudflare auto-deploys
+8. Test at the `*.pages.dev` URL: login, Stripe checkout, payment, subject unlock, customer portal
+9. Update `APP_URL` constant in `index.html` to the new Cloudflare Pages URL
+10. *(Optional later)* Set up R2 bucket `cramit-assets`, upload `diagrams/` folder, add `IMAGE_BASE_URL` constant, update `renderQuestion()` to use it
+11. *(After testing passes)* Delete Netlify site → `git rm -r netlify/` → commit → push
+12. *(When ready)* Add custom domain `cramit.com.au` in Cloudflare Pages → update `APP_URL` → update Google OAuth redirect in Supabase
+
+### R2 image storage (Phase 2 — after functions migrate cleanly)
+- Create R2 bucket named `cramit-assets` (Cloudflare Dashboard → R2 → Create bucket)
+- Enable public access → note the `https://pub-XXXXXXXXXXXXXXXX.r2.dev` URL
+- Upload `diagrams/` folder to bucket
+- Add `const IMAGE_BASE_URL = 'https://pub-XXXXXXXXXXXXXXXX.r2.dev';` to `index.html`
+- In `renderQuestion()`, images are already stored as full paths like `/diagrams/file.jpg` on the question objects — prefix with `IMAGE_BASE_URL` when rendering
+- Requires credit card on file for R2 (free at $0 usage, card just for identity)
+
+### Known gotchas
+- Cloudflare Workers: **no `require()`** — must use ESM `import`
+- Cloudflare Workers: **no `process.env`** — use `env.VARIABLE_NAME` from `context`
+- CORS: add `onRequestOptions()` export to each function for preflight requests
+- `upgrade-flex.js` reads `STRIPE_PRICE_CAP` and `STRIPE_PRICE_FLEX_BASE` from env vars (not hardcoded) — must add both to Cloudflare env vars
+- Supabase free tier pauses after 1 week of inactivity — upgrade to Pro ($25/mo) before launch
 
 ---
 
