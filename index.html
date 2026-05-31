@@ -11011,7 +11011,6 @@ async function handleManageBilling() {
       body: JSON.stringify({ customer_id: data.stripe_customer_id, return_url: window.location.origin })
     });
     const json = await res.json();
-    console.log('[CramIT] customer-portal response:', JSON.stringify(json));
     if (!json.url) { alert('Billing error: ' + (json.error || 'No URL returned')); return; }
     window.location.href = json.url;
   } catch(e) { console.error(e); }
