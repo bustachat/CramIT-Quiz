@@ -150,6 +150,35 @@
     .q-meta-row { display: flex; align-items: center; gap: 6px; margin-bottom: 10px; flex-wrap: wrap; }
     .year-badge { display: inline-flex; align-items: center; padding: 3px 10px; background: var(--accent); color: white; border-radius: 20px; font-family: var(--font-display); font-size: 11px; font-weight: 700; letter-spacing: 0.3px; }
     .topic-badge { display: inline-flex; align-items: center; padding: 3px 10px; background: rgba(193,125,60,0.12); color: var(--accent); border: 1px solid rgba(193,125,60,0.3); border-radius: 20px; font-family: var(--font-display); font-size: 11px; font-weight: 600; }
+    /* ── Formula Tip Widget ─────────────────────────────────────────────── */
+    .tip-icon-btn { display: inline-flex; align-items: center; gap: 5px; margin-left: auto; background: var(--accent2); color: white; border: none; border-radius: 20px; padding: 4px 12px 4px 8px; font-family: var(--font-display); font-size: 12px; font-weight: 700; cursor: pointer; transition: background 0.15s, transform 0.1s; flex-shrink: 0; }
+    .tip-icon-btn:hover { background: #6b8d5c; transform: scale(1.03); }
+    .tip-card { background: white; border: 2px solid rgba(123,158,107,0.35); border-radius: 14px; padding: 18px; margin-bottom: 18px; animation: tipSlideIn 0.2s ease; }
+    @keyframes tipSlideIn { from { opacity: 0; transform: translateY(-8px); } to { opacity: 1; transform: translateY(0); } }
+    .tip-card-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px; }
+    .tip-card-title { font-family: var(--font-display); font-size: 12px; font-weight: 700; color: var(--accent2); text-transform: uppercase; letter-spacing: 0.6px; }
+    .tip-close-btn { background: none; border: none; color: var(--muted); cursor: pointer; font-size: 18px; line-height: 1; padding: 0 2px; }
+    .tip-prompt { font-family: var(--font-display); font-size: 15px; font-weight: 600; color: var(--text); margin: 0 0 13px 0; line-height: 1.4; }
+    .tip-choices { display: flex; flex-direction: column; gap: 8px; margin-bottom: 12px; }
+    .tip-choice { display: flex; align-items: flex-start; gap: 10px; padding: 10px 14px; border: 2px solid var(--border); border-radius: 10px; cursor: pointer; transition: border-color 0.15s, background 0.15s; font-family: var(--font-body); font-size: 13px; color: var(--text); line-height: 1.4; }
+    .tip-choice:hover { border-color: var(--accent2); background: rgba(123,158,107,0.06); }
+    .tip-choice input[type="radio"] { accent-color: var(--accent2); width: 16px; height: 16px; flex-shrink: 0; margin-top: 1px; }
+    .tip-choice.tc-selected { border-color: var(--accent2); background: rgba(123,158,107,0.08); }
+    .tip-choice.tc-correct { border-color: #10B981; background: rgba(16,185,129,0.08); }
+    .tip-choice.tc-wrong { border-color: #F43F5E; background: rgba(244,63,94,0.07); }
+    .tip-why { font-size: 12px; color: var(--muted); margin-top: 5px; display: none; font-style: italic; line-height: 1.4; }
+    .tip-why.show { display: block; }
+    .tip-check-btn { width: 100%; padding: 11px; background: var(--accent2); color: white; border: none; border-radius: 10px; font-family: var(--font-display); font-size: 14px; font-weight: 700; cursor: pointer; transition: background 0.15s, opacity 0.15s; }
+    .tip-check-btn:disabled { opacity: 0.4; cursor: not-allowed; }
+    .tip-check-btn:not(:disabled):hover { background: #6b8d5c; }
+    .tip-result { margin-top: 12px; }
+    .tip-result-msg { font-family: var(--font-display); font-size: 14px; font-weight: 700; margin-bottom: 8px; }
+    .tip-result-msg.correct { color: #10B981; }
+    .tip-result-msg.wrong { color: #F43F5E; }
+    .tip-action-btn { width: 100%; padding: 11px; border-radius: 10px; border: none; font-family: var(--font-display); font-size: 13px; font-weight: 700; cursor: pointer; }
+    .tip-action-btn.correct { background: #10B981; color: white; }
+    .tip-action-btn.wrong { background: var(--surface2); color: var(--text); border: 1px solid var(--border); }
+    /* ─────────────────────────────────────────────────────────────────── */
     .q-text { font-family: var(--font-display); font-size: 18px; font-weight: 600; line-height: 1.45; margin-bottom: 22px; }
     .options-list { display: flex; flex-direction: column; gap: 9px; }
     .option-btn { background: var(--surface); border: 1px solid var(--border); border-radius: 11px; padding: 14px 16px; color: var(--text); font-family: var(--font-body); font-size: 14px; text-align: left; cursor: pointer; transition: all 0.15s; line-height: 1.4; }
@@ -4168,6 +4197,452 @@ const mathsQuestions = [
 <div class="step"><span class="step-number">9.</span> Check: 40/100 + 9×(1/15) = 2/5 + 3/5 = 1 ✓</div>
 <div class="step"><span class="step-number">10.</span> Correct: 1/15.</div>`},
     ];
+
+// ══════════════════════════════════════════════════════════════════════════════
+// FORMULA TIP HINTS — keyed by index in mathsQuestions (HSC 90, indices 0-89)
+// Only formula-based questions get a tip. Visual/conceptual questions are omitted.
+// Each tip has: prompt (string), choices (array of {label, correct, why})
+// ══════════════════════════════════════════════════════════════════════════════
+const mathsQuestionTips = {
+  // 1 — Scientific notation + significant figures
+  1: { prompt: "To express a number in standard form with two significant figures, where do you start counting sig figs?", choices: [
+    { label: "From the first non-zero digit — write in a × 10ⁿ form (1 ≤ a < 10), then round a to 2 sig figs", correct: true, why: "Correct — move the decimal after the first non-zero digit to get the mantissa a, then round to 2 sig figs using normal rounding rules." },
+    { label: "Count all digits including leading zeros, then round", correct: false, why: "Leading zeros are never significant. Sig figs always start from the first non-zero digit." },
+    { label: "Round to 2 decimal places, then convert to scientific notation", correct: false, why: "Decimal places ≠ significant figures. Convert to scientific notation first, then round the mantissa." }
+  ]},
+  // 2 — Speed / Distance / Time
+  2: { prompt: "Which formula connects speed, distance and time?", choices: [
+    { label: "Speed = Distance ÷ Time  (and rearrangements: D = S×T,  T = D÷S)", correct: true, why: "Correct — use the DST triangle: cover the quantity you want. T = D÷S here." },
+    { label: "Speed = Time ÷ Distance", correct: false, why: "Inverted. Higher speed → less time, so divide distance by time." },
+    { label: "Distance = Speed ÷ Time", correct: false, why: "D = S÷T gives units of m/s² (acceleration), not metres. Multiply: D = S×T." }
+  ]},
+  // 3 — Compound Interest A = P(1+r/n)^nt
+  3: { prompt: "Which formula gives the future value of a compound interest investment?", choices: [
+    { label: "A = P(1 + r/n)^(nt) — where r/n is the rate per period and nt is total periods", correct: true, why: "Correct — for monthly compounding: n=12. Each period, the balance grows by factor (1 + r/n)." },
+    { label: "A = P + P×r×t — add the same fixed interest each year", correct: false, why: "That's simple interest (I = Prt). Compound interest re-invests each period's earnings, so the base grows." },
+    { label: "A = P × r^t — multiply principal by the rate raised to years", correct: false, why: "The base should be (1 + r), not just r. If r = 0.03, using 0.03^t would almost zero the investment!" }
+  ]},
+  // 4 — Percentage Error
+  4: { prompt: "Which formula calculates the percentage error of a measurement?", choices: [
+    { label: "% Error = (absolute error ÷ measurement) × 100%", correct: true, why: "Correct — absolute error = half the rounding precision (e.g. rounded to 0.1 → error = 0.05). Divide by the measurement, × 100." },
+    { label: "% Error = (measurement ÷ absolute error) × 100%", correct: false, why: "Inverted. A large error on a small measurement = large %. The error goes in the numerator." },
+    { label: "% Error = absolute error × measurement × 100", correct: false, why: "Multiplying gives units of cm², not a percentage. Divide (not multiply) then scale by 100." }
+  ]},
+  // 5 — Linear slope Δy = m × Δx
+  5: { prompt: "In a linear equation y = mx + c, when x increases by a fixed amount, how does y change?", choices: [
+    { label: "Δy = m × Δx — the slope scales the change in x", correct: true, why: "Correct — slope m tells you the change in y per unit change in x. Negative m means y decreases." },
+    { label: "Δy = c × Δx — the y-intercept scales the change", correct: false, why: "The intercept c is a constant that shifts the line — it doesn't affect how steeply y changes." },
+    { label: "Δy = Δx — y always changes by the same as x", correct: false, why: "Only true if m = 1. In general the slope m scales the change: Δy = m × Δx." }
+  ]},
+  // 9 — Linear formula with unit conversion (plumber)
+  9: { prompt: "A tradesperson charges a fixed call-out fee plus a per-minute rate for t hours of work. What's the formula structure?", choices: [
+    { label: "C = fixed fee + (rate per min × 60) × t  — convert per-minute rate to per-hour first", correct: true, why: "Correct — t is in hours but the rate is per minute, so multiply rate by 60 to get hourly variable cost." },
+    { label: "C = fixed fee + rate per min × t  — use t in hours directly", correct: false, why: "Units clash: $/min × hours ≠ $. You must convert: 1 hour = 60 minutes, so multiply rate by 60." },
+    { label: "C = fixed fee × t + rate per min  — the fixed fee multiplies by time", correct: false, why: "The call-out fee is a one-off charge — it doesn't grow with time. Only the variable rate multiplies by time." }
+  ]},
+  // 10 — Declining-balance depreciation V = P(1−r)^n
+  10: { prompt: "An asset loses a fixed percentage of its current value each period. Which formula gives its value after n periods?", choices: [
+    { label: "V = P × (1 − r)ⁿ — original value × (1 minus rate), raised to number of periods", correct: true, why: "Correct — each period the asset keeps (1−r) of its current value. Multiply the original by this factor n times." },
+    { label: "V = P − P×r×n — subtract the same fixed dollar amount each period", correct: false, why: "That's straight-line depreciation. Declining-balance applies the % to the remaining value, so dollar drops shrink each period." },
+    { label: "V = P × (1 + r)ⁿ — compound growth formula", correct: false, why: "This grows value. For depreciation use (1−r) not (1+r)." }
+  ]},
+  // 12 — Rate × time = change (BAC)
+  12: { prompt: "A quantity decreases at a constant rate. Which formula finds the time for a specific drop?", choices: [
+    { label: "Time = Change needed ÷ Rate of change", correct: true, why: "Correct — rearrange 'Change = Rate × Time' → Time = Change ÷ Rate. E.g. drop of 0.034 at 0.015/hr = 2.25 hrs." },
+    { label: "Time = Rate × Change needed", correct: false, why: "Multiplying rate by change gives wrong units. Divide: how many rate-periods fit into the change?" },
+    { label: "Time = Change + Rate", correct: false, why: "Adding a rate to a quantity gives meaningless units. Use division." }
+  ]},
+  // 13 — Annuity PV vs FV concept
+  13: { prompt: "For an annuity with regular payments, which ordering of PV, total nominal payments, and FV is always true?", choices: [
+    { label: "PV < total payments < FV — discounting reduces PV, compounding increases FV", correct: true, why: "Correct — PV brings future cash flows back to today (smaller), FV accumulates with interest (larger), total nominal is in between." },
+    { label: "FV < total payments < PV", correct: false, why: "Reversed — discounting makes PV smaller, not larger. Compounding makes FV larger, not smaller." },
+    { label: "PV = FV when the interest rate is constant", correct: false, why: "They're measured at different times. They'd only be equal at 0% interest." }
+  ]},
+  // 14 — Probability multiplication principle
+  14: { prompt: "For two independent events (a die and a spinner), how many equally likely outcomes are there in total?", choices: [
+    { label: "Outcomes = die faces × spinner sections — the multiplication principle", correct: true, why: "Correct — each die face pairs with every spinner section. Then P(event) = favourable ÷ total." },
+    { label: "Outcomes = die faces + spinner sections — add them", correct: false, why: "Addition applies when events are mutually exclusive (A or B). For two simultaneous independent events, multiply." },
+    { label: "Outcomes = the larger of die faces or spinner sections", correct: false, why: "Taking the max has no basis. Always multiply for combined independent experiments." }
+  ]},
+  // 15 — Perimeter formulas
+  15: { prompt: "Which set of perimeter formulas is correct?", choices: [
+    { label: "Rectangle: 2(l+w)  |  Square: 4s  |  Triangle: a+b+c  |  Circle: πd", correct: true, why: "Correct — these are the standard perimeter/circumference formulas. Remember C = πd = 2πr." },
+    { label: "Rectangle: l×w  |  Square: s²  |  Triangle: ½bh  |  Circle: πr²", correct: false, why: "Those are AREA formulas. Perimeter measures the boundary length, not the enclosed surface." },
+    { label: "Rectangle: 2l + w  |  Square: 2s  |  Circle: 2πr²", correct: false, why: "Rectangle should be 2(l+w). Square is 4s (not 2s). Circle circumference is 2πr (not 2πr²)." }
+  ]},
+  // 16 — Handshaking lemma
+  16: { prompt: "For any network, the sum of all vertex degrees equals:", choices: [
+    { label: "2 × number of edges — each edge contributes 1 to each of its two endpoint degrees", correct: true, why: "Correct — the handshaking lemma. Every edge adds 1 to two vertices. Sum of degrees = 2E." },
+    { label: "Number of vertices + number of edges", correct: false, why: "That's related to Euler's formula (V + F = E + 2) for planar graphs, not the degree-sum formula." },
+    { label: "Number of edges × number of vertices", correct: false, why: "V×E has no standard graph theory meaning. Degree sum is simply 2 × edges." }
+  ]},
+  // 18 — Declining-balance depreciation (same formula as 10)
+  18: { prompt: "An appliance depreciates at a fixed annual percentage. Which formula gives its value after n years?", choices: [
+    { label: "V = P × (1 − r)ⁿ — where r is the decimal rate and n is the number of years", correct: true, why: "Correct — multiply original by (1−r) once per year. The dollar amount lost shrinks each year because the base is smaller." },
+    { label: "V = P − P×r×n — lose the same dollar amount every year", correct: false, why: "That's straight-line depreciation. Declining-balance applies the percentage to the current (shrinking) value." },
+    { label: "V = P × (1 + r)ⁿ — compound growth formula", correct: false, why: "Growth uses (1+r). For depreciation (value falling), use (1−r)." }
+  ]},
+  // 19 — Compound growth (wage)
+  19: { prompt: "A quantity grows by a fixed percentage each year. Which expression shows its value after t years?", choices: [
+    { label: "New value = Original × (1 + r)^t — where r is the decimal rate per year", correct: true, why: "Correct — the growth factor (1+r) is applied t times. For 2.1%: factor = 1.021. This is the compound growth formula." },
+    { label: "New value = Original + Original × r × t — same dollar increase each year", correct: false, why: "That's simple (linear) growth. Compound growth re-applies the percentage to the growing balance each period." },
+    { label: "New value = Original × r^t — use the rate as the base", correct: false, why: "The base must be (1+r), not just r. If r = 0.021, then 0.021^4 ≈ 0.000000194 — the wage would almost vanish!" }
+  ]},
+  // 20 — Significant figures rounding
+  20: { prompt: "When rounding to a given number of significant figures, where do you start counting?", choices: [
+    { label: "From the first non-zero digit — leading zeros are not significant", correct: true, why: "Correct — count from the leftmost non-zero digit. Then round at the required position using the digit to its right." },
+    { label: "From the decimal point, counting all digits after it", correct: false, why: "That describes decimal places, not significant figures. Sig figs span across the decimal point." },
+    { label: "From the last digit on the right, working backwards", correct: false, why: "Work from left (most significant) to right. The leading significant digit carries the most information." }
+  ]},
+  // 22 — Word problem to equation
+  22: { prompt: "When translating 'subtract 8, then multiply by 3' into an equation, which grouping is correct?", choices: [
+    { label: "3(x − 8) — use brackets to show the subtraction happens before the multiplication", correct: true, why: "Correct — 'subtract 8 then multiply by 3' means multiply the whole of (x−8) by 3. Brackets preserve this order." },
+    { label: "3x − 8 — multiply first, then subtract", correct: false, why: "This reverses the order: it subtracts 8 after multiplying by 3. The word problem says subtract first." },
+    { label: "x − 8 × 3 = x − 24 — the subtraction is applied to 8×3", correct: false, why: "Without brackets, × binds tighter than −. This gives x minus 24, not (x−8)×3." }
+  ]},
+  // 23 — Exponential decay identification
+  23: { prompt: "For y = a × bˣ, what determines whether the graph shows growth or decay?", choices: [
+    { label: "If 0 < b < 1 → decay (value shrinks each step). If b > 1 → growth.", correct: true, why: "Correct — the base b drives it. Here b = 0.8 < 1, so each step multiplies by 0.8 (shrinks). Growth needs b > 1." },
+    { label: "If a is negative → decay; if a is positive → growth", correct: false, why: "The coefficient a sets the starting value (y-intercept), not the trend. It's the base b that determines growth vs decay." },
+    { label: "If x is negative → decay; if x is positive → growth", correct: false, why: "The sign of x shifts which direction you move on the curve, but growth vs decay is fixed by the base b." }
+  ]},
+  // 24 — Conditional probability without replacement
+  24: { prompt: "Selecting without replacement, P(two people choose different types) = ?", choices: [
+    { label: "P(A picks type 1 AND B picks type 2) + P(A picks type 2 AND B picks type 1) — sum both orderings", correct: true, why: "Correct — 'different' allows two orderings. Calculate each (adjusting denominator after first pick) and add since they're mutually exclusive." },
+    { label: "P(type 1) × P(type 2) — multiply the simple probabilities directly", correct: false, why: "Without replacement: after the first pick, one item is gone. The second probability must use the reduced pool." },
+    { label: "1 − P(both pick the same type) — complement rule", correct: true, why: "Also correct — complement rule works: P(different) = 1 − P(both peppermint) − P(both caramel). Either method gives the same answer." }
+  ]},
+  // 25 — Trapezoidal rule
+  25: { prompt: "Which formula applies the trapezoidal rule with 2 strips (2 applications)?", choices: [
+    { label: "Area ≈ (h/2)(y₀ + 2y₁ + y₂) — strip width h, three height readings y₀, y₁, y₂", correct: true, why: "Correct — 2 strips needs 3 y-values. First and last get weight 1; the middle (shared) value gets weight 2." },
+    { label: "Area ≈ h(y₀ + y₁ + y₂) — sum all heights times the width", correct: false, why: "Missing the ÷2 and the double-weighting of interior points. The formula comes from averaging adjacent trapezoids." },
+    { label: "Area ≈ (h/2)(y₁ + y₂) — only use the two outer heights", correct: false, why: "Two-strip trapezoidal rule needs three y-values, not two. Dropping y₁ ignores the middle measurement." }
+  ]},
+  // 26 — Inverse variation
+  26: { prompt: "For inverse variation (more workers → less time), which relationship holds?", choices: [
+    { label: "x₁ × y₁ = x₂ × y₂ = constant k — the product stays fixed", correct: true, why: "Correct — the 'total work' stays constant. Workers × days = constant. Double workers → half the days." },
+    { label: "x₁/y₁ = x₂/y₂ — the ratio stays fixed (direct proportion)", correct: false, why: "Equal ratios mean direct variation (more workers → more time). Inverse variation uses equal products." },
+    { label: "y₂ = y₁ − (x₂ − x₁) — a fixed decrease per extra worker", correct: false, why: "Inverse variation is multiplicative (hyperbolic), not linear. Use the constant product k = x×y." }
+  ]},
+  // 27 — True bearings
+  27: { prompt: "True bearings are measured clockwise from North (000° to 360°). A bearing shown as 25° west of north gives:", choices: [
+    { label: "360° − 25° = 335° — bearings in the NW quadrant are between 270° and 360°", correct: true, why: "Correct — 'west of north' means go anticlockwise from 360°/0°. Equivalently 360° − 25° = 335°." },
+    { label: "25° — just use the angle directly", correct: false, why: "25° is the bearing for N25°E (east of north). West of north is in the 270°–360° range: 335°." },
+    { label: "180° + 25° = 205° — add to south", correct: false, why: "Adding to south gives a southerly bearing. N25°W is north-west (270°–360° range)." }
+  ]},
+  // 28 — Ratio → actual counts
+  28: { prompt: "From a ratio and a total, how do you find each group's actual count?", choices: [
+    { label: "Group count = (group's parts ÷ total parts) × total quantity", correct: true, why: "Correct — find each group's fraction (parts/total parts) then scale by the actual total." },
+    { label: "Group count = group's parts × total quantity (multiply directly)", correct: false, why: "The ratio number is a proportion, not a direct multiplier. Divide by total parts first." },
+    { label: "Group count = total quantity ÷ number of different groups", correct: false, why: "Equal division only works for equal ratios. Unequal ratios require weighting by each group's part value." }
+  ]},
+  // 29 — Z-score to raw score
+  29: { prompt: "Given z = (x − mean) / SD, how do you find the raw score x from a z-score?", choices: [
+    { label: "x = mean + z × SD — rearrange by multiplying SD across and adding mean", correct: true, why: "Correct — isolate x: multiply both sides by SD (→ z×SD = x − mean), then add mean to both sides." },
+    { label: "x = z ÷ SD + mean", correct: false, why: "Dividing z by SD gives the wrong result. Rearranging z = (x−mean)/SD correctly gives x = mean + z×SD." },
+    { label: "x = (mean − SD) × z", correct: false, why: "This isn't a rearrangement of the z-score formula. Always start from z = (x−mean)/SD and isolate x." }
+  ]},
+  // 31 — Slope-intercept reading
+  31: { prompt: "For a straight-line equation y = mx + c, what do m and c represent on the graph?", choices: [
+    { label: "m = slope (rise/run, negative if line falls left to right), c = y-intercept (value when x=0)", correct: true, why: "Correct — negative m → line descends. c is where the line crosses the y-axis." },
+    { label: "m = y-intercept, c = slope", correct: false, why: "Swapped — m is the coefficient of x (slope) and c is the constant term (y-intercept)." },
+    { label: "m = x-intercept (where line crosses x-axis), c = y-intercept", correct: false, why: "The x-intercept is found by setting y = 0 (giving x = −c/m), not read directly from the equation." }
+  ]},
+  // 33 — Mark-recapture
+  33: { prompt: "In mark-recapture, which proportion gives the population estimate N?", choices: [
+    { label: "tagged recaptured / 2nd sample size = originally tagged / N → cross-multiply to find N", correct: true, why: "Correct — set up the proportion. Cross-multiplying: N = (originally tagged × 2nd sample) ÷ recaptured." },
+    { label: "N = first capture + second capture", correct: false, why: "Adding both samples double-counts the tagged fish and doesn't use the recapture proportion." },
+    { label: "N = first capture × recaptured / second capture", correct: false, why: "Slightly off — the Lincoln-Petersen formula is N = (M × n) / m, where n is the 2nd sample size, not recaptured over it." }
+  ]},
+  // 34 — Mean vs median when adding a value
+  34: { prompt: "When a new data value is added to a dataset, which measure is definitely affected?", choices: [
+    { label: "The mean always changes (new sum ÷ new count). The median may or may not change (depends on position).", correct: true, why: "Correct — mean uses every value, so any addition changes it. Median is positional — a new value below the current median may leave it unchanged." },
+    { label: "Both mean and median always change", correct: false, why: "Median can stay unchanged if the new value doesn't move the middle position (e.g., here 5 is added below the median 17, which stays 17)." },
+    { label: "Neither changes unless the new value equals the current mean", correct: false, why: "The mean changes unless the new value exactly equals the old mean. The median changes independently of the mean." }
+  ]},
+  // 35 — Unit conversion for ratios
+  35: { prompt: "To find the ratio of 20 minutes to one-third of a day, what must you do first?", choices: [
+    { label: "Convert both to the same unit — one-third of a day = 480 minutes, then simplify 20:480", correct: true, why: "Correct — ratios require the same unit. 24 hrs ÷ 3 = 8 hrs = 480 min. Then 20:480 simplifies to 1:24." },
+    { label: "Divide 20 by ⅓ directly without converting", correct: false, why: "You can't form a ratio between minutes and fractions-of-a-day without converting to the same unit." },
+    { label: "Convert both to hours: 20 min = 0.333... hrs — then divide", correct: true, why: "Also works — 0.333/8 = 1/24, same answer. Converting either to the other's unit gives 1:24." }
+  ]},
+  // 36 — Total pay (wages + allowance)
+  36: { prompt: "Total pay = hourly rate × hours × days + daily allowance × days. Which expression is correct?", choices: [
+    { label: "Total = (hourly rate × hours/day × days) + (allowance/day × days)", correct: true, why: "Correct — calculate wages and allowances separately, then add. They have different units ($/hr vs $/day)." },
+    { label: "Total = (hourly rate + allowance) × hours × days", correct: false, why: "You can't add $/hr + $/day — different units. Keep them separate and combine at the end." },
+    { label: "Total = hourly rate × (hours + allowance) × days", correct: false, why: "The allowance is per day, not per hour. Mixing them inside the bracket gives a meaningless product." }
+  ]},
+  // 37 — Compass to true bearing
+  37: { prompt: "To convert S48°W to a true bearing, which calculation applies?", choices: [
+    { label: "South = 180°. Moving west adds clockwise degrees: 180° + 48° = 228°", correct: true, why: "Correct — bearings go clockwise from North. South is 180°; going further towards West (clockwise) adds degrees → 228°." },
+    { label: "S48°W = 48° — use the angle directly", correct: false, why: "48° is N48°E. The S and W letters determine the quadrant: south-west is the 180°–270° range." },
+    { label: "S48°W = 180° − 48° = 132°", correct: false, why: "Subtracting gives 132°, which is south-east (SE). S48°W is south-west, so add: 180° + 48° = 228°." }
+  ]},
+  // 38 — Quadratic inequality for time interval
+  38: { prompt: "To find the duration when h ≥ 300 in a quadratic equation, what's the key approach?", choices: [
+    { label: "Set h = 300, solve the quadratic for t to get two times t₁ and t₂. Duration = t₂ − t₁.", correct: true, why: "Correct — the parabola equals 300 at two moments. Between them, h ≥ 300. Subtract to find the duration." },
+    { label: "Solve h = 0 to find the flight time, then subtract 300", correct: false, why: "h = 0 tells you when the object lands — not when it's at height 300. Set h = 300 to find those two moments." },
+    { label: "Find the maximum height (set derivative = 0) then compare to 300", correct: false, why: "The maximum tells you the peak — but you need the time span above 300, not just the peak. Solve h = 300." }
+  ]},
+  // 39 — Shares profit
+  39: { prompt: "Profit from a share transaction equals:", choices: [
+    { label: "Profit = (sell price − buy price) × number of shares − brokerage fees", correct: true, why: "Correct — gross profit from price rise × shares. Subtract transaction fees for net profit." },
+    { label: "Profit = sell price − buy price (per share only)", correct: false, why: "This is per-share profit only. Multiply by number of shares and subtract fees for total profit." },
+    { label: "Profit = total sell − total buy + fees (add fees back)", correct: false, why: "Fees are a cost — subtract them. Adding fees would overstate profit." }
+  ]},
+  // 40 — Present value
+  40: { prompt: "Which formula finds the Present Value (PV) of a known Future Value (FV) with compound interest?", choices: [
+    { label: "PV = FV ÷ (1 + r/n)^(nt) — divide FV by the compound growth factor", correct: true, why: "Correct — you're working backwards. Dividing by (1+r/n)^(nt) reverses the compounding." },
+    { label: "PV = FV × (1 + r/n)^(nt) — multiply by the growth factor", correct: false, why: "Multiplying grows PV to an even larger FV. To go backward (FV→PV), divide." },
+    { label: "PV = FV − FV×r×t — subtract simple interest", correct: false, why: "Subtracting simple interest is not the inverse of compound interest. Reverse the compound formula by dividing." }
+  ]},
+  // 41 — Regression line interpretation
+  41: { prompt: "In the regression line M = 20 + 3H, what does the 20 represent?", choices: [
+    { label: "The predicted mark when H = 0 (the y-intercept — the starting value before any hours)", correct: true, why: "Correct — substitute H = 0: M = 20 + 3(0) = 20. The intercept is the baseline prediction with zero study." },
+    { label: "The rate of change — how many marks improve per hour of study", correct: false, why: "The rate of change is the slope (3) — the coefficient of H. Not the intercept." },
+    { label: "The average mark across all students", correct: false, why: "The regression line passes through (H̄, M̄) but the intercept 20 is not the average mark — it's the predicted value at H = 0." }
+  ]},
+  // 42 — Normal distribution P between two z-values
+  42: { prompt: "To find P(0 < Z < 1.94) given that P(Z < 1.94) = 0.9738, which calculation applies?", choices: [
+    { label: "P(0 < Z < 1.94) = P(Z < 1.94) − P(Z < 0) = 0.9738 − 0.5 = 0.4738", correct: true, why: "Correct — by symmetry of the normal distribution, P(Z < 0) = 0.5. Subtract to isolate the area between 0 and 1.94." },
+    { label: "P(0 < Z < 1.94) = P(Z < 1.94) − 1 = 0.9738 − 1", correct: false, why: "Subtracting 1 gives a negative probability. Subtract P(Z < 0) = 0.5, not 1." },
+    { label: "P(0 < Z < 1.94) = 1 − P(Z < 1.94) = 1 − 0.9738", correct: false, why: "1 − P(Z < 1.94) gives the upper tail P(Z > 1.94). You want the area between 0 and 1.94." }
+  ]},
+  // 43 — Rearranging y = (ax−b)/2
+  43: { prompt: "To make x the subject of y = (ax − b)/2, in what order should you 'undo' the operations?", choices: [
+    { label: "1. Multiply both sides by 2  →  2. Add b to both sides  →  3. Divide both sides by a", correct: true, why: "Correct — reverse BODMAS: the ÷2 is the outermost operation, so multiply first. Then clear −b (add b). Finally isolate x (÷a)." },
+    { label: "1. Add b first  →  2. Multiply by 2  →  3. Divide by a", correct: false, why: "You can't add b while it's inside the fraction. Clear the denominator (×2) first to remove the fraction." },
+    { label: "1. Divide both sides by a  →  2. Add b  →  3. Multiply by 2", correct: false, why: "a multiplies x inside the bracket/fraction — divide by a last, after clearing the fraction and constant." }
+  ]},
+  // 45 — Simple Interest
+  45: { prompt: "Which formula calculates simple interest?", choices: [
+    { label: "I = P × r × t — principal × decimal rate × time in years", correct: true, why: "Correct — simple interest earns the same dollar amount each year. No compounding." },
+    { label: "I = P(1 + r)^t − P — compound interest minus principal", correct: false, why: "That gives compound interest. Simple interest uses multiplication (Prt), not exponentiation." },
+    { label: "I = P ÷ (r × t) — divide principal by rate and time", correct: false, why: "Dividing inverts the relationship. Interest increases with rate and time — multiply, don't divide." }
+  ]},
+  // 46 — Empirical rule 68-95-99.7
+  46: { prompt: "In a normal distribution, approximately what percentage falls within 1 standard deviation of the mean?", choices: [
+    { label: "68% within ±1 SD → 34% in each half → P(z < 1) = 50% + 34% = 84%", correct: true, why: "Correct — the empirical rule: 68% within 1 SD (34% each side). P(z < 1) adds the left 50% plus 34% above the mean." },
+    { label: "95% within ±1 SD", correct: false, why: "95% applies to ±2 SD. The three-part rule is 68% (±1), 95% (±2), 99.7% (±3)." },
+    { label: "50% within ±1 SD", correct: false, why: "50% is below the mean (0 SDs). Within ±1 SD captures 68% — significantly more than half." }
+  ]},
+  // 47 — Pearson r sign and strength
+  47: { prompt: "Pearson's r for a scatterplot showing a positive trend — what sign and magnitude is expected?", choices: [
+    { label: "Positive r (upward trend) with magnitude close to 1 if the trend is strong", correct: true, why: "Correct — positive r means as one variable increases, so does the other. |r| close to 1 = stronger linear relationship." },
+    { label: "Negative r — because correlation coefficients are negative for trending data", correct: false, why: "Negative r means an inverse (downward) trend. Positive trend → positive r." },
+    { label: "r = 0 — a positive trend means the variables are independent", correct: false, why: "r = 0 means no linear relationship. A clear positive trend gives r significantly above 0 (e.g. 0.7–0.95)." }
+  ]},
+  // 48 — Linear depreciation (per km)
+  48: { prompt: "For flat-rate (linear) depreciation based on distance driven, which formula applies?", choices: [
+    { label: "Salvage value = original value − (depreciation rate per km × km driven)", correct: true, why: "Correct — linear depreciation loses a fixed dollar amount per km. Multiply rate by distance, then subtract from original." },
+    { label: "Salvage value = original value × (1 − rate)^km", correct: false, why: "That's declining-balance — for percentage-per-period. Per-km depreciation is linear: simply subtract the total loss." },
+    { label: "Salvage value = original value ÷ km driven", correct: false, why: "Dividing gives average cost per km, not the depreciated value. Subtract the accumulated loss from original." }
+  ]},
+  // 49 — Unit rate comparison (best value)
+  49: { prompt: "To find 'best value' when comparing different amounts at different prices, what should you calculate?", choices: [
+    { label: "Cost per litre (÷ quantity) for each option — the lowest $/L is best value", correct: true, why: "Correct — unit price lets you compare on the same basis. Lowest cost per unit regardless of quantity bought." },
+    { label: "The option with the most litres — more volume is always better value", correct: false, why: "More volume at a much higher price could be worse value. Divide price by quantity to compare fairly." },
+    { label: "The smallest price difference between options", correct: false, why: "Price difference ignores quantity. $2 more for 10 extra litres is very different from $2 more for 1 extra litre." }
+  ]},
+  // 50 — GST extraction (price includes GST)
+  50: { prompt: "A price already includes 10% GST. To find the GST component, which method is correct?", choices: [
+    { label: "Pre-GST = total ÷ 1.10.  GST = total − pre-GST.  (Equivalently: GST = total ÷ 11)", correct: true, why: "Correct — total = pre-GST × 1.10, so pre-GST = total/1.10. GST is the difference. Or: divide total by 11." },
+    { label: "GST = total × 0.10 — take 10% of the total", correct: false, why: "10% of the total (which already includes GST) overcounts. Try: $110 total → GST = $10 (not $11). Divide by 11 instead." },
+    { label: "GST = total × 0.10 ÷ 1.10 — apply the GST fraction of the total", correct: true, why: "Also correct — this simplifies to total/11, which is the same as the first method." }
+  ]},
+  // 51 — Latitude / Longitude
+  51: { prompt: "Moving 72° north from 34°S — what's the resulting latitude?", choices: [
+    { label: "34°S + 72°N: first 34° gets you to 0° (equator), remaining 38° continues north → 38°N", correct: true, why: "Correct — cross the equator and keep counting. 72° − 34° = 38° past the equator into the northern hemisphere." },
+    { label: "34°S + 72°N = 106°N — add directly", correct: false, why: "Latitude only goes to 90°N. When you cross the equator, the label switches from S to N. 34°S + 72° = 38°N." },
+    { label: "The latitude can't cross 0° — stay at 0° (equator)", correct: false, why: "Latitude runs continuously from 90°S through 0° to 90°N. You keep counting into the northern hemisphere." }
+  ]},
+  // 52 — Probability with multiplication principle
+  52: { prompt: "Rolling a die AND spinning a spinner simultaneously — total equally likely outcomes = ?", choices: [
+    { label: "Die faces × spinner sections — the multiplication principle for independent events", correct: true, why: "Correct — for combined independent experiments, multiply. Then P(event) = favourable / total." },
+    { label: "Die faces + spinner sections — add the outcomes", correct: false, why: "Addition applies to mutually exclusive outcomes (or). For two simultaneous experiments, multiply." },
+    { label: "Maximum of (die faces, spinner sections)", correct: false, why: "Taking the max has no statistical basis. Independent combined events: multiply the outcome counts." }
+  ]},
+  // 53 — Error bounds for area
+  53: { prompt: "A rectangle measured to the nearest cm has sides 8cm and 5cm. What are the bounds for the area?", choices: [
+    { label: "Each dimension ±0.5 cm. Min area = 7.5 × 4.5. Max area = 8.5 × 5.5.", correct: true, why: "Correct — 'nearest cm' → absolute error = ±0.5 cm for each measurement. Multiply the extreme values for area extremes." },
+    { label: "Area bounds = nominal area ± 0.5 cm²", correct: false, why: "The area error propagates from both dimensions. Calculate (l±0.5)(w±0.5) separately — it's not simply ±0.5 cm²." },
+    { label: "Area bounds = (l±1)(w±1) — use the full unit as error", correct: false, why: "Measured to nearest cm → error = half the unit = ±0.5 cm (not ±1 cm)." }
+  ]},
+  // 54 — Compound interest quarterly
+  54: { prompt: "For compound interest at 8% p.a. compounded quarterly over 6 years, how do you adjust the formula A = P(1+r/n)^(nt)?", choices: [
+    { label: "n = 4 (quarters per year). Rate per period = 0.08/4 = 0.02. Total periods = 4×6 = 24. So A = P(1.02)²⁴.", correct: true, why: "Correct — quarterly means 4 compounding periods per year. Split the annual rate by 4 and multiply years by 4." },
+    { label: "Use the annual rate 0.08 and keep t = 6. Quarterly doesn't change the formula.", correct: false, why: "Compounding frequency matters significantly. Quarterly earns more than annual at the same stated rate." },
+    { label: "n = 4. Rate per period = 0.08 × 4 = 0.32. Total periods = 6.", correct: false, why: "Multiply the rate by n would be wrong — divide the annual rate by n: 0.08/4 = 0.02 per quarter." }
+  ]},
+  // 55 — Ratio calculation (jelly beans)
+  55: { prompt: "Bag has 150 jelly beans in ratio red:blue = 2:3. How many red beans are there?", choices: [
+    { label: "Red = (2 ÷ 5) × 150 = 60 — group parts divided by total parts, times total quantity", correct: true, why: "Correct — 2+3=5 total parts. Red fraction = 2/5. Then 150 × 2/5 = 60." },
+    { label: "Red = 2 × 150 = 300 — multiply the ratio number by total", correct: false, why: "The ratio number 2 is a proportion, not a direct multiplier. Divide by total parts (5) first." },
+    { label: "Red = 150 ÷ 2 = 75 — divide total by ratio number", correct: false, why: "Dividing by 2 gives 75, which ignores the total number of parts (5). The fraction is 2/5, not 1/2." }
+  ]},
+  // 56 — Pythagoras in a circle (chord depth)
+  56: { prompt: "A chord of width 20cm sits inside a circle of radius 12.5cm. How do you find the depth of water?", choices: [
+    { label: "Draw a perpendicular from centre to the chord — it bisects the chord. Use Pythagoras: r² = (half-chord)² + d², where d is distance from centre to chord.", correct: true, why: "Correct — perpendicular from centre to chord bisects it (10cm each side). Right triangle: 12.5² = 10² + d². Depth = r − d." },
+    { label: "Depth = radius − half the chord length = 12.5 − 10 = 2.5 cm", correct: false, why: "You can't subtract perpendicular measurements directly. The chord (horizontal) and depth (vertical) are at right angles — use Pythagoras." },
+    { label: "Depth = chord length × sin(angle subtended)", correct: false, why: "Trig works but requires knowing an angle. Use Pythagoras when you have the chord and radius." }
+  ]},
+  // 57 — Successive/compound discounts
+  57: { prompt: "Two successive discounts of 30% then 20% — what's the total discount?", choices: [
+    { label: "Pay 70% after first discount, then 80% of that. Overall paid: 0.70 × 0.80 = 56%. Total discount = 44%.", correct: true, why: "Correct — the second discount applies to the already-reduced price. 30+20 = 50% is wrong because the base is smaller." },
+    { label: "Total discount = 30% + 20% = 50%", correct: false, why: "Adding only works if both discounts apply to the original price. The 20% applies to the post-30% price, giving less than 50% total." },
+    { label: "Total discount = 30% × 20% = 6%", correct: false, why: "Multiplying rates gives the compounding effect on the discount amount — not the total discount. Multiply the 'keep' fractions: 70%×80%=56% paid, so 44% discount." }
+  ]},
+  // 59 — Working backwards from desired mean
+  59: { prompt: "Ashan needs a mean of 80 after 6 tests. He scored 90 on the 6th. What was his mean after 5 tests?", choices: [
+    { label: "Total needed (6 tests) = 80×6 = 480. First 5 total = 480−90 = 390. Mean after 5 = 390÷5 = 78.", correct: true, why: "Correct — work with totals (mean × count = sum). Subtract the known 6th score to find the previous total." },
+    { label: "Previous mean = desired mean − new score / tests = 80 − 90/6", correct: false, why: "This doesn't correctly separate the two periods. Work with totals: desired mean × 6 = 480, then subtract 90." },
+    { label: "Previous mean = (80 × 6 + 90) / 5", correct: false, why: "Adding the new score to the desired total overcounts. Subtract it: 480 − 90 = 390, then ÷5." }
+  ]},
+  // 60 — Squaring a negative number
+  60: { prompt: "What is (−2.531)² ?", choices: [
+    { label: "Positive — squaring any real number gives a non-negative result. (−2.531)² = 6.406...", correct: true, why: "Correct — negative × negative = positive. Then round 6.406061 to 2 d.p. → 6.41." },
+    { label: "Negative — because the base is negative", correct: false, why: "Squaring removes the sign. (−a)² = a². The result is always ≥ 0." },
+    { label: "Same as −(2.531²) = −6.406", correct: false, why: "−2.531² would negate after squaring. But (−2.531)² squares the whole negative number → positive." }
+  ]},
+  // 61 — Slope-intercept from graph
+  61: { prompt: "From a graph showing a line falling left to right through (0, 3), which equation applies?", choices: [
+    { label: "y = −2x + 3 — negative slope (falls left to right), y-intercept +3", correct: true, why: "Correct — falling line → negative m. Crosses y-axis at 3 → c = +3. Equation: y = −2x + 3." },
+    { label: "y = 2x + 3 — positive slope, same y-intercept", correct: false, why: "Positive slope means the line rises from left to right. This line falls — slope must be negative." },
+    { label: "y = −2x − 3 — negative slope but negative y-intercept", correct: false, why: "The graph passes through (0, 3), so c = +3, not −3." }
+  ]},
+  // 65 — SOH-CAH-TOA
+  65: { prompt: "In a right triangle with hypotenuse 20 and angle 40°, which expression gives the opposite side?", choices: [
+    { label: "opposite = hypotenuse × sin θ = 20 sin 40°  (SOH: sin = opposite/hypotenuse)", correct: true, why: "Correct — SOH: sin 40° = opposite/20. Rearrange: opposite = 20 × sin 40°." },
+    { label: "opposite = hypotenuse × cos θ = 20 cos 40°  (CAH: cos = adjacent/hypotenuse)", correct: false, why: "Cosine uses the side adjacent to the angle, not opposite. Use sine for the opposite side." },
+    { label: "opposite = hypotenuse × tan θ = 20 tan 40°  (TOA: tan = opposite/adjacent)", correct: false, why: "Tangent uses opposite/adjacent — not the hypotenuse. When hypotenuse is involved, use sin or cos." }
+  ]},
+  // 66 — Compound growth (uniform price increase)
+  66: { prompt: "A price of $180 increases by 2.5% annually for 3 years. Which formula gives the new price?", choices: [
+    { label: "New price = 180 × (1.025)³ — compound growth at 2.5% per year", correct: true, why: "Correct — the factor (1+r) = 1.025 is applied 3 times. This is the same structure as compound interest." },
+    { label: "New price = 180 + 180 × 0.025 × 3 = 180 + 13.50 — simple annual increase", correct: false, why: "That's simple (linear) growth — same dollar amount each year. Compound growth re-applies the % to the growing base." },
+    { label: "New price = 180 × (1 + 0.025 × 3) = 180 × 1.075", correct: false, why: "Adding total rate×time is simple growth. Compound uses exponentiation: (1.025)³ ≠ 1.075." }
+  ]},
+  // 67 — GST with mixed included/excluded components
+  67: { prompt: "A bill has parts GST-included and parts GST-excluded. How is total GST calculated?", choices: [
+    { label: "GST from included part: total÷1.1 then subtract. GST from excluded: ×0.10. Add both amounts.", correct: true, why: "Correct — each component handled separately. GST-included: extract via /1.1. GST-excluded: add 10%. Sum them." },
+    { label: "Apply 10% to the combined total of both components", correct: false, why: "The included component already has GST — applying 10% again would double-count." },
+    { label: "Only the excluded component has GST; the included part doesn't", correct: false, why: "The included part still has GST — you just extract it differently (price/1.1 to find base, then subtract)." }
+  ]},
+  // 68 — Inverse variation (painters)
+  68: { prompt: "6 painters take 20 days. Using inverse variation, how long for 15 painters?", choices: [
+    { label: "T₁×N₁ = T₂×N₂. So 6×20 = 15×T₂. T₂ = 120÷15 = 8 days.", correct: true, why: "Correct — total painter-days (work) stays constant. More painters → fewer days proportionally." },
+    { label: "T₂ = T₁ × (N₂/N₁) = 20 × (15/6) = 50 days — more painters, more days", correct: false, why: "More painters reduce time, not increase it. Inverse: multiply by the RECIPROCAL ratio: T₂ = 20 × (6/15) = 8." },
+    { label: "T₂ = T₁ − (N₂ − N₁) = 20 − 9 = 11 days — subtract extra painters", correct: false, why: "Inverse variation is multiplicative (constant product), not additive (constant difference)." }
+  ]},
+  // 69 — Rearranging s = wt + p/2
+  69: { prompt: "To make p the subject of s = wt + p/2, which sequence of steps is correct?", choices: [
+    { label: "1. Subtract wt from both sides → s−wt = p/2  2. Multiply both sides by 2 → p = 2s − 2wt", correct: true, why: "Correct — reverse BODMAS: undo addition of wt (subtract), then undo division by 2 (multiply). Result: p = 2(s−wt)." },
+    { label: "1. Multiply both sides by 2 first → 2s = 2wt + p  2. Subtract 2wt → p = 2s − 2wt", correct: true, why: "Also correct — multiplying by 2 first distributes across both terms on the right. Same answer either way." },
+    { label: "Divide both sides by 2 to isolate p: p = s/2 − wt", correct: false, why: "Dividing s by 2 makes p/4 (not p). You need to MULTIPLY by 2 (not divide) to clear the denominator." }
+  ]},
+  // 70 — Average speed
+  70: { prompt: "Train departs 6:42am, arrives 8:04am, travels 61km. What's the average speed?", choices: [
+    { label: "Step 1: Time = 82 minutes = 82/60 hours. Step 2: Speed = 61 ÷ (82/60) ≈ 45 km/h.", correct: true, why: "Correct — convert time to hours first. 6:42 to 8:04 = 82 minutes. Speed = distance ÷ time in hours." },
+    { label: "Speed = 61 ÷ 2 = 30.5 km/h — just use the hour difference", correct: false, why: "The journey is 1 hour 22 minutes (82 min), not 2 hours. Always convert to decimal hours accurately." },
+    { label: "Speed = 61 × 60 ÷ 82 — multiply distance by 60", correct: true, why: "Also correct — this converts km/min to km/h: (61/82) km/min × 60 min/h ≈ 44.6 km/h ≈ 45 km/h." }
+  ]},
+  // 71 — Percentage of a subgroup
+  71: { prompt: "To find the % of over-30s (157 total) who watch Anime (34 do), which calculation applies?", choices: [
+    { label: "% = (34 ÷ 157) × 100 ≈ 22% — part of subgroup ÷ total in subgroup", correct: true, why: "Correct — use the subgroup totals only (157 over-30s). The overall 370 is irrelevant here." },
+    { label: "% = (34 ÷ 370) × 100 — divide by overall survey total", correct: false, why: "This gives % of all respondents who are over-30 Anime watchers — not the % within the over-30 subgroup." },
+    { label: "% = (157 ÷ 34) × 100 — total over-30s ÷ Anime watchers", correct: false, why: "Inverted — part goes in the numerator. % = part/whole × 100 = 34/157 × 100." }
+  ]},
+  // 72 — Simple interest rate (reverse)
+  72: { prompt: "Loan $9000, repay $300/month for 4 years. Using I = Prt, what is the annual interest rate?", choices: [
+    { label: "Total repaid = 300×48 = $14,400. Interest I = 14,400−9,000 = $5,400. r = I÷(P×t) = 5400÷(9000×4) = 15%.", correct: true, why: "Correct — rearrange I = Prt to find r. First calculate total interest paid, then divide by P×t." },
+    { label: "r = monthly payment ÷ principal = 300 ÷ 9000 ≈ 3.3% per month", correct: false, why: "This gives a monthly rate that doesn't account for the loan term. Use total interest over total time." },
+    { label: "r = total repaid ÷ principal ÷ time = 14,400 ÷ 9,000 ÷ 4 = 0.4 = 40%", correct: false, why: "Dividing total repaid by principal gives 1 + total rate (not just the rate). Subtract principal first to get interest." }
+  ]},
+  // 73 — Marginal profit
+  73: { prompt: "Cost C = 2.5x + 6, Revenue R = 8x. How much does profit increase per additional item sold?", choices: [
+    { label: "Marginal profit = revenue per item − variable cost per item = 8 − 2.5 = $5.50 (fixed cost doesn't affect per-item change)", correct: true, why: "Correct — Profit = R−C = 5.5x − 6. The slope 5.5 is the marginal profit. Fixed cost $6 is a one-off and doesn't repeat per item." },
+    { label: "Profit per item = revenue per item = $8", correct: false, why: "Revenue ignores the $2.50 variable cost of making each item. Profit = Revenue − Cost." },
+    { label: "Profit per item = 8 − 2.5 − 6 = −0.5 (subtract everything including fixed cost)", correct: false, why: "The fixed cost $6 is not per-item — it doesn't repeat with each sale. Only the variable cost (2.5) reduces each item's profit." }
+  ]},
+  // 76 — Exponential growth graph y=4^x
+  76: { prompt: "For y = 4ˣ where the base is 4 (greater than 1), what does the graph look like?", choices: [
+    { label: "Exponential growth: passes through (0,1), rises steeply for positive x, approaches 0 for negative x", correct: true, why: "Correct — base > 1 means growth. At x=0: y=1. As x→−∞, y→0 (horizontal asymptote). Rises rapidly for large x." },
+    { label: "Exponential decay: starts high and decreases toward 0", correct: false, why: "Decay requires 0 < base < 1. Base = 4 > 1 → growth." },
+    { label: "Parabola: symmetric U-shape", correct: false, why: "Parabolas come from quadratic functions (x²). Exponential functions have x as the exponent → J-shaped curve." }
+  ]},
+  // 77 — Minimum spanning tree
+  77: { prompt: "To find the minimum spanning tree (MST) of a network, which algorithm applies?", choices: [
+    { label: "Kruskal's: sort edges by weight (cheapest first), add each if it doesn't form a cycle. Stop when all vertices connected.", correct: true, why: "Correct — the MST connects all vertices with minimum total edge weight and no cycles. The last edge added is the heaviest in the MST." },
+    { label: "Find the longest path and remove it from the network", correct: false, why: "MST builds up from the cheapest edges. You don't remove the longest path." },
+    { label: "Start at any vertex, always go to the nearest unvisited vertex (nearest-neighbour)", correct: false, why: "Nearest-neighbour is a heuristic for the Travelling Salesman Problem — not MST. Use Kruskal's or Prim's for MST." }
+  ]},
+  // 78 — Leave loading
+  78: { prompt: "Annual leave loading of 17.5% is calculated on which base amount?", choices: [
+    { label: "17.5% of the normal pay for the leave period (not the whole year)", correct: true, why: "Correct — loading applies to ordinary leave pay only. Here: 4 weeks × $350/week = $1400 base. Loading = 17.5% of $1400 = $245." },
+    { label: "17.5% of the annual salary", correct: false, why: "Loading applies to the leave period only (e.g. 4 weeks), not the full year." },
+    { label: "17.5% on top of an already-loaded amount (compound)", correct: false, why: "Loading is a simple percentage of ordinary pay. No compounding — just 17.5% × leave pay." }
+  ]},
+  // 79 — Scientific notation ordering
+  79: { prompt: "To order 6.2×10⁻³, 4.5×10⁻⁴, and 3.2×10⁻¹ from largest to smallest, what's the quickest approach?", choices: [
+    { label: "Compare exponents first — less negative = larger. 10⁻¹ > 10⁻³ > 10⁻⁴, so order: 3.2×10⁻¹, 6.2×10⁻³, 4.5×10⁻⁴", correct: true, why: "Correct — the exponent determines the order of magnitude. Only compare mantissas if exponents are equal." },
+    { label: "Compare mantissas only — 6.2 > 4.5 > 3.2, so 6.2×10⁻³ is largest", correct: false, why: "Mantissas only matter when exponents are equal. 3.2×10⁻¹ = 0.32 is far larger than 6.2×10⁻³ = 0.0062." },
+    { label: "More negative exponent = larger value (10⁻⁴ > 10⁻¹)", correct: false, why: "Opposite — more negative exponent = smaller value. 10⁻⁴ = 0.0001, while 10⁻¹ = 0.1. Less negative = larger." }
+  ]},
+  // 80 — Rearranging n = (m−p)/q
+  80: { prompt: "To make p the subject of n = (m − p)/q, which steps are correct?", choices: [
+    { label: "1. Multiply both sides by q → nq = m − p  2. Subtract m from both sides → nq − m = −p  3. Multiply by −1 → p = m − nq", correct: true, why: "Correct — clear the denominator first (×q), then isolate p by rearranging." },
+    { label: "Divide both sides by q → n/q = m − p → p = m − n/q", correct: false, why: "Dividing by q (already the denominator) doesn't clear it — multiply by q to clear the fraction." },
+    { label: "p = nq + m — add nq and m", correct: false, why: "From nq = m − p, rearranging gives p = m − nq (subtract nq from both sides of nq + p = m)." }
+  ]},
+  // 81 — Stratified sampling
+  81: { prompt: "In stratified random sampling, how many from a subgroup are selected?", choices: [
+    { label: "Subgroup sample = (subgroup size ÷ total population) × total sample size", correct: true, why: "Correct — maintain proportional representation. E.g. 200/960 × 240 = 50 Year 12 students." },
+    { label: "Subgroup sample = total sample ÷ number of subgroups (equal splits)", correct: false, why: "Equal splits ignore group sizes. Stratified sampling matches each group's proportion in the population." },
+    { label: "Subgroup sample = subgroup size − sample size", correct: false, why: "Subtraction gives those NOT sampled. Use the proportion formula: fraction × sample size." }
+  ]},
+  // 83 — Scale ratio
+  83: { prompt: "A scale model has ratio 1:64 (model:actual). The real car is 4.9m. What is the model length?", choices: [
+    { label: "Convert 4.9m to cm (= 490cm), then model = 490 ÷ 64 ≈ 7.7cm", correct: true, why: "Correct — scale 1:64 means model is 64 times smaller. Convert units to match desired answer, then divide." },
+    { label: "Model = 4.9 × 64 = 313.6m — multiply by the scale factor", correct: false, why: "Multiplying by 64 makes it 64× larger than real life. The model is smaller: divide by 64." },
+    { label: "Model = 4.9 − 64 — subtract the scale factor", correct: false, why: "Subtracting a unitless scale factor from metres makes no sense dimensionally. Divide to apply a scale ratio." }
+  ]},
+  // 84 — Formula from word context (electricity)
+  84: { prompt: "Electricity: 37¢/kWh used (U), 5¢/kWh produced (P), 71¢/day fixed fee. What's the daily cost C?", choices: [
+    { label: "C = 71 + 37U − 5P — fixed fee + charge for use − credit for production", correct: true, why: "Correct — costs add, credits subtract. The daily fee is independent of U and P." },
+    { label: "C = 71 + 37U + 5P — add production credit (it's income)", correct: false, why: "Production earns a credit that REDUCES the bill. Subtract 5P, don't add it." },
+    { label: "C = (71 + 37 − 5) × (U + P) — combine rates then multiply by units", correct: false, why: "U and P are different quantities (used vs produced). The fixed fee is per day, not per unit. Keep them separate." }
+  ]},
+  // 85 — Inverse variation with surface area (balloon)
+  85: { prompt: "If thickness t varies inversely with surface area A, and radius doubles (area becomes 4A), what happens to thickness?", choices: [
+    { label: "t is divided by 4 — area quadrupled (A = 4πr², doubling r gives ×4), so t becomes t/4", correct: true, why: "Correct — surface area scales as r², so doubling r → ×4 area. Since t ∝ 1/A, thickness becomes t/4." },
+    { label: "t is divided by 2 — because radius doubled", correct: false, why: "The area (not radius) drives the inverse. Area grows as r², so doubling r gives 4× area → t divides by 4." },
+    { label: "t is multiplied by 4 — larger surface needs thicker skin", correct: false, why: "Inverse variation: more area → less thickness. The material spreads thinner as the balloon expands." }
+  ]},
+  // 86 — Time zone conversion
+  86: { prompt: "Game starts 3:40pm Tuesday in Quito (UTC−5). What time is it in Sydney (UTC+10)?", choices: [
+    { label: "Difference = UTC+10 − (UTC−5) = +15 hours. 3:40pm + 15h = 6:40am Wednesday.", correct: true, why: "Correct — Sydney is 15 hours ahead of Quito. Add 15h: 3:40pm + 15h crosses midnight into Wednesday." },
+    { label: "Difference = 10 − 5 = 5 hours. 3:40pm + 5h = 8:40pm Tuesday.", correct: false, why: "One zone is −5, not +5. The difference is 10 − (−5) = 15 hours, not 5." },
+    { label: "Sydney is behind Quito — subtract 15 hours: 3:40pm − 15h = 12:40am Tuesday.", correct: false, why: "Sydney (UTC+10) is ahead of Quito (UTC−5). Add hours, don't subtract." }
+  ]},
+  // 87 — Probability estimation (biased die)
+  87: { prompt: "A biased 10-sided die: P(1) > P(2)=P(3)=...=P(10). Rolled 153 times, got 72 ones. Best estimate for P(10)?", choices: [
+    { label: "Non-ones = 153−72 = 81 rolls shared equally among faces 2-10 (9 faces). P(10) ≈ 81/(9×153) = 1/17.", correct: true, why: "Correct — experimental probability: 81 non-one rolls spread across 9 equally-likely faces → 9 rolls each. P(10) ≈ 9/153 = 1/17." },
+    { label: "P(10) = 1/10 — fair die probability", correct: false, why: "The die is biased. Use experimental data, not the theoretical fair-die probability." },
+    { label: "P(10) = 72/153 — fraction of one-rolls", correct: false, why: "72/153 estimates P(1). For face 10, use the non-one rolls: 81 non-ones ÷ 9 faces = 9, so P(10) ≈ 9/153 = 1/17." }
+  ]},
+  // 88 — Bearing and isosceles triangle
+  88: { prompt: "M and P are equidistant from R. Bearing M from R = 017°, bearing P from R = 107°. Triangle MRP is:", choices: [
+    { label: "Isosceles right triangle — RM=RP (equal distances), angle at R = 107°−17° = 90°, so base angles = 45° each", correct: true, why: "Correct — equal distances → isosceles. Angle at R equals difference in bearings: 90°. Base angles (at M and P) each = 45°." },
+    { label: "Equilateral — all sides and angles equal", correct: false, why: "Equilateral requires all angles 60°. The angle at R is 90° (from the bearing difference), so it's right-isosceles, not equilateral." },
+    { label: "Scalene — no relationship between bearings and triangle shape", correct: false, why: "The angle at R is precisely determined by the bearing difference (90°), and RM=RP makes it isosceles." }
+  ]},
+  // 89 — Empirical rule applied (min temp distribution)
+  89: { prompt: "Minimum daily temperature is normally distributed with mean = SD. Zero is exactly 1 SD below the mean. What % of days are above zero?", choices: [
+    { label: "84% — P(above μ−σ) = P(Z > −1) = 50% + 34% = 84% (empirical rule)", correct: true, why: "Correct — 68% within ±1 SD means 34% in each half. Above zero (=above μ−σ=above Z=−1): 50%+34% = 84%." },
+    { label: "68% — within one standard deviation", correct: false, why: "68% is the total within ±1 SD (both sides of mean). Above zero includes everything from Z=−1 upward = 84%." },
+    { label: "16% — because zero is at the 16th percentile", correct: false, why: "16% is BELOW zero (i.e., below μ−σ). ABOVE zero = 100%−16% = 84%." }
+  ]}
+};
 
 // ── MATHS STANDARD 2 — SECTION II WRITTEN QUESTIONS (Stage 8) ─────────────────────────────
 // Text-solvable extended-response questions from 2020–2025 HSC papers.
@@ -9068,6 +9543,106 @@ function backToPicker() {
   }
 }
 
+// ══════════════════════════════════════════════════════════════════════════════
+// FORMULA TIP WIDGET — Practice mode only, Maths MC questions only
+// ══════════════════════════════════════════════════════════════════════════════
+function openTip() {
+  const q = activeQuestions[currentIdx];
+  const masterIdx = mathsQuestions.indexOf(q);
+  const tip = mathsQuestionTips[masterIdx];
+  if (!tip) return;
+
+  const choicesHtml = tip.choices.map((c, i) => `
+    <label class="tip-choice" id="tip-choice-${i}" onclick="selectTipChoice(${i})">
+      <input type="radio" name="tip-radio" value="${i}" id="tip-radio-${i}">
+      <div>
+        <div>${c.label}</div>
+        <div class="tip-why" id="tip-why-${i}">${c.why}</div>
+      </div>
+    </label>`).join('');
+
+  document.getElementById('tip-slot').innerHTML = `
+    <div class="tip-card">
+      <div class="tip-card-header">
+        <span class="tip-card-title">Formula Hint</span>
+        <button class="tip-close-btn" onclick="closeTip()" aria-label="Close hint">✕</button>
+      </div>
+      <p class="tip-prompt">${tip.prompt}</p>
+      <div class="tip-choices">${choicesHtml}</div>
+      <button class="tip-check-btn" id="tip-check-btn" onclick="checkTipAnswer()" disabled>Check my answer</button>
+      <div id="tip-result" class="tip-result" style="display:none"></div>
+    </div>`;
+}
+
+function selectTipChoice(idx) {
+  document.querySelectorAll('.tip-choice').forEach((el, i) => {
+    el.classList.toggle('tc-selected', i === idx);
+  });
+  if (document.getElementById(`tip-radio-${idx}`)) {
+    document.getElementById(`tip-radio-${idx}`).checked = true;
+  }
+  const btn = document.getElementById('tip-check-btn');
+  if (btn) btn.disabled = false;
+}
+
+function checkTipAnswer() {
+  const q = activeQuestions[currentIdx];
+  const masterIdx = mathsQuestions.indexOf(q);
+  const tip = mathsQuestionTips[masterIdx];
+  if (!tip) return;
+
+  const selected = document.querySelector('input[name="tip-radio"]:checked');
+  if (!selected) return;
+  const idx = parseInt(selected.value);
+  const isCorrect = tip.choices[idx].correct;
+
+  // Show feedback styling on all choices
+  tip.choices.forEach((c, i) => {
+    const el = document.getElementById(`tip-choice-${i}`);
+    const why = document.getElementById(`tip-why-${i}`);
+    if (!el) return;
+    el.classList.remove('tc-selected');
+    if (c.correct) { el.classList.add('tc-correct'); if (why) why.classList.add('show'); }
+    else if (i === idx && !isCorrect) { el.classList.add('tc-wrong'); if (why) why.classList.add('show'); }
+  });
+
+  // Disable check button
+  const checkBtn = document.getElementById('tip-check-btn');
+  if (checkBtn) checkBtn.disabled = true;
+
+  // Show result + action button
+  const result = document.getElementById('tip-result');
+  if (!result) return;
+  if (isCorrect) {
+    result.innerHTML = `
+      <div class="tip-result-msg correct">✓ Correct! Now apply that formula to answer the question.</div>
+      <button class="tip-action-btn correct" onclick="closeTip()">Got it — let me answer →</button>`;
+  } else {
+    result.innerHTML = `
+      <div class="tip-result-msg wrong">✗ Not quite — check the explanations above.</div>
+      <button class="tip-action-btn wrong" onclick="resetTipAnswer()">Try again</button>`;
+  }
+  result.style.display = 'block';
+}
+
+function resetTipAnswer() {
+  document.querySelectorAll('.tip-choice').forEach(el => {
+    el.classList.remove('tc-selected', 'tc-correct', 'tc-wrong');
+  });
+  document.querySelectorAll('.tip-why').forEach(el => el.classList.remove('show'));
+  document.querySelectorAll('input[name="tip-radio"]').forEach(el => { el.checked = false; });
+  const btn = document.getElementById('tip-check-btn');
+  if (btn) btn.disabled = true;
+  const result = document.getElementById('tip-result');
+  if (result) result.style.display = 'none';
+}
+
+function closeTip() {
+  const slot = document.getElementById('tip-slot');
+  if (slot) slot.innerHTML = '';
+}
+// ──────────────────────────────────────────────────────────────────────────────
+
 function renderQuestion() {
   const q = activeQuestions[currentIdx];
   const total = activeQuestions.length;
@@ -9083,13 +9658,19 @@ function renderQuestion() {
     const badges = [];
     if (q.year)              badges.push(`<span class="year-badge">${q.year}</span>`);
     if (q.category || q.topic) badges.push(`<span class="topic-badge">${q.category || q.topic}</span>`);
-    if (badges.length)       html += `<div class="q-meta-row">${badges.join('')}</div>`;
+    // Tip button — shown in Practice mode when this question has a formula hint and hasn't been answered yet
+    const masterIdx = (subjectKey === 'maths') ? mathsQuestions.indexOf(q) : -1;
+    const hasTip = isPracticeMode && masterIdx >= 0 && !!mathsQuestionTips[masterIdx] && !answered;
+    const tipBtn = hasTip ? `<button class="tip-icon-btn" onclick="openTip()" aria-label="Formula hint"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/></svg> Hint</button>` : '';
+    if (badges.length || tipBtn) html += `<div class="q-meta-row">${badges.join('')}${tipBtn}</div>`;
     const imgUrl = q.image;
     if (imgUrl) {
       html += `<div class="q-image-wrap"><img src="${imgUrl}" alt="Question diagram" loading="lazy" onclick="openLightbox(this.src)"/></div>`;
     }
     // hideQ: true means the stimulus image already contains the full question text — skip rendering it again
     if (!q.hideQ) html += `<div class="q-text">${q.q || q.text || ''}</div>`;
+    // Tip card slot — openTip() injects content here when the Hint button is pressed
+    html += `<div id="tip-slot"></div>`;
     // Use 2x2 grid when all options are images — mirrors how NESA lays out option diagrams
     const hasImgOpts = q.optionImages && q.optionImages.length >= 4 && q.optionImages.every(Boolean);
     html += `<div class="options-list${hasImgOpts ? ' options-grid-2x2' : ''}">`;
