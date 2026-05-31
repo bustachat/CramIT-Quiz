@@ -9659,7 +9659,7 @@ function renderQuestion() {
     if (q.year)              badges.push(`<span class="year-badge">${q.year}</span>`);
     if (q.category || q.topic) badges.push(`<span class="topic-badge">${q.category || q.topic}</span>`);
     // Tip button — shown in Practice mode when this question has a formula hint and hasn't been answered yet
-    const masterIdx = (subjectKey === 'maths') ? mathsQuestions.indexOf(q) : -1;
+    const masterIdx = (currentSubjectKey === 'maths') ? mathsQuestions.indexOf(q) : -1;
     const hasTip = isPracticeMode && masterIdx >= 0 && !!mathsQuestionTips[masterIdx] && !answered;
     const tipBtn = hasTip ? `<button class="tip-icon-btn" onclick="openTip()" aria-label="Formula hint"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/></svg> Hint</button>` : '';
     if (badges.length || tipBtn) html += `<div class="q-meta-row">${badges.join('')}${tipBtn}</div>`;
