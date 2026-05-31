@@ -1,12 +1,12 @@
-﻿  // billing.js
-// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-//  HSC Quiz â€” Billing & Subject Access Module
+  // billing.js
+// ──────────────────────────────────────────────────────────────
+//  HSC Quiz — Billing & Subject Access Module
 //  Drop this alongside index.html and import it.
 //
 //  Requires:
 //    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
 //  Set your keys below.
-// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ──────────────────────────────────────────────────────────────
 
 const SUPABASE_URL  = 'https://YOUR_PROJECT.supabase.co';
 const SUPABASE_ANON = 'YOUR_ANON_KEY';
@@ -14,7 +14,7 @@ const SUPABASE_ANON = 'YOUR_ANON_KEY';
 const { createClient } = supabase;
 const db = createClient(SUPABASE_URL, SUPABASE_ANON);
 
-// â”€â”€ PRICING CONSTANTS (must match schema pricing_config) â”€â”€â”€â”€â”€â”€
+// ── PRICING CONSTANTS (must match schema pricing_config) ──────
 const PRICING = {
   BASE_PRICE:      7.99,
   EXTRA_PRICE:     2.99,
@@ -24,23 +24,23 @@ const PRICING = {
   FREE_SUBJECTS:   1,
 };
 
-// â”€â”€ STRIPE PUBLISHABLE KEY â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ── STRIPE PUBLISHABLE KEY ────────────────────────────────────
 const STRIPE_PK = 'pk_live_YOUR_PUBLISHABLE_KEY';
 
-// â”€â”€ PRICE IDs from your Stripe dashboard â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-// Create these in Stripe â†’ Products â†’ Add product
+// ── PRICE IDs from your Stripe dashboard ─────────────────────
+// Create these in Stripe → Products → Add product
 const STRIPE_PRICES = {
-  base:      'price_1TEdRbPvnbx5MPYyExQIlaBK',   // $7.99/mo â€” 2 subjects
+  base:      'price_1TEdRbPvnbx5MPYyExQIlaBK',   // $7.99/mo — 2 subjects
   extra:     'price_1TEdUJPvnbx5MPYy6luOiFjv',   // $2.99/mo per unit (metered add-on)
-  cap:       'price_1TEdW3Pvnbx5MPYykHvvk7gf',   // $19.99/mo â€” unlimited (up to 7)
-  flex_base: 'price_1TEdZRPvnbx5MPYylioNhNQI',   // $19.99/mo â€” flex base
+  cap:       'price_1TEdW3Pvnbx5MPYykHvvk7gf',   // $19.99/mo — unlimited (up to 7)
+  flex_base: 'price_1TEdZRPvnbx5MPYylioNhNQI',   // $19.99/mo — flex base
   flex_extra:'price_1TEdUJPvnbx5MPYy6luOiFjv',   // $2.99/mo per unit above 7
 };
 
 
-// â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+// ════════════════════════════════════════════════════════════════
 //  AUTH
-// â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+// ════════════════════════════════════════════════════════════════
 
 export async function signUp(email, password, fullName) {
   const { data, error } = await db.auth.signUp({
@@ -83,9 +83,9 @@ export function onAuthStateChange(callback) {
 }
 
 
-// â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+// ════════════════════════════════════════════════════════════════
 //  SUBSCRIPTION & SUBJECT STATE
-// â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+// ════════════════════════════════════════════════════════════════
 
 export async function getSubscription(userId) {
   const { data, error } = await db
@@ -124,10 +124,10 @@ export async function canAccessSubject(userId, subjectId) {
 }
 
 
-// â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+// ════════════════════════════════════════════════════════════════
 //  SUBJECT SELECTION LOGIC (enforces billing rules client-side)
-//  Server enforces the same rules via the webhook â€” belt and braces.
-// â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+//  Server enforces the same rules via the webhook — belt and braces.
+// ════════════════════════════════════════════════════════════════
 
 export async function addSubject(userId, subjectId) {
   const sub      = await getSubscription(userId);
@@ -179,7 +179,7 @@ export async function removeSubject(userId, subjectId) {
 }
 
 export async function swapSubject(userId, removeId, addId) {
-  // Atomic swap for unlimited plan â€” price doesn't change
+  // Atomic swap for unlimited plan — price doesn't change
   const { error: delErr } = await db
     .from('subject_selections')
     .delete()
@@ -202,9 +202,9 @@ export async function swapSubject(userId, removeId, addId) {
 }
 
 
-// â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+// ════════════════════════════════════════════════════════════════
 //  PRICING CALCULATIONS
-// â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+// ════════════════════════════════════════════════════════════════
 
 export function calculatePrice(nSubjects, planMode = 'swap') {
   const { BASE_PRICE, EXTRA_PRICE, CAP_PRICE, CAP_LIMIT, BASE_INCLUDES } = PRICING;
@@ -219,7 +219,7 @@ export function calculatePrice(nSubjects, planMode = 'swap') {
     return {
       price:     parseFloat(raw.toFixed(2)),
       plan:      'base_plus',
-      breakdown: `$${BASE_PRICE} + ${extras} Ã— $${EXTRA_PRICE}`
+      breakdown: `$${BASE_PRICE} + ${extras} × $${EXTRA_PRICE}`
     };
   }
 
@@ -227,13 +227,13 @@ export function calculatePrice(nSubjects, planMode = 'swap') {
     return { price: CAP_PRICE, plan: 'unlimited', breakdown: `$${CAP_PRICE} cap (${nSubjects} subjects)` };
   }
 
-  // Flex plan â€” above cap limit
+  // Flex plan — above cap limit
   const flexExtras = nSubjects - CAP_LIMIT;
   const flexPrice  = parseFloat((CAP_PRICE + flexExtras * EXTRA_PRICE).toFixed(2));
   return {
     price:     flexPrice,
     plan:      'flex',
-    breakdown: `$${CAP_PRICE} + ${flexExtras} Ã— $${EXTRA_PRICE} flex`
+    breakdown: `$${CAP_PRICE} + ${flexExtras} × $${EXTRA_PRICE} flex`
   };
 }
 
@@ -241,7 +241,7 @@ function validateSubjectAdd(sub, currentCount, newCount) {
   const { CAP_LIMIT } = PRICING;
   const planMode = sub.plan === 'flex' ? 'flex' : 'swap';
 
-  // Free â†’ needs upgrade to add 2nd subject
+  // Free → needs upgrade to add 2nd subject
   if (sub.plan === 'free' && newCount > 1) {
     return {
       allowed: true,
@@ -250,7 +250,7 @@ function validateSubjectAdd(sub, currentCount, newCount) {
     };
   }
 
-  // On swap/unlimited plan â€” block above cap limit
+  // On swap/unlimited plan — block above cap limit
   if (sub.plan === 'unlimited' && planMode === 'swap' && newCount > CAP_LIMIT) {
     return {
       allowed: false,
@@ -271,9 +271,9 @@ function validateSubjectAdd(sub, currentCount, newCount) {
 }
 
 
-// â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+// ════════════════════════════════════════════════════════════════
 //  STRIPE CHECKOUT
-// â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+// ════════════════════════════════════════════════════════════════
 
 export async function createCheckoutSession(userId, nSubjects, planMode = 'swap') {
   const pricing = calculatePrice(nSubjects, planMode);
@@ -331,9 +331,9 @@ async function updateStripeSubjectCount(userId, newCount, sub) {
 }
 
 
-// â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+// ════════════════════════════════════════════════════════════════
 //  UPGRADE TO FLEX PLAN
-// â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+// ════════════════════════════════════════════════════════════════
 
 export async function upgradeToFlex(userId) {
   const sub = await getSubscription(userId);
@@ -348,4 +348,3 @@ export async function upgradeToFlex(userId) {
     })
   });
 }
-
