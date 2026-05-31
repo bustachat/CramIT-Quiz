@@ -10040,7 +10040,7 @@ async function tryAiMarking(questionIdx, q, studentAnswer) {
   if (questionIdx === currentIdx) renderQuestion(); // show spinner immediately
 
   try {
-    const res = await fetch('/functions/mark-written', {
+    const res = await fetch('/mark-written', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
@@ -10904,7 +10904,7 @@ async function handleTrialCheckout() {
     return;
   }
   try {
-    const res = await fetch('/functions/create-checkout', {
+    const res = await fetch('/create-checkout', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', 'x-user-email': currentUser.email },
       body: JSON.stringify({
@@ -10935,7 +10935,7 @@ async function addSubject(subjectId) {
 
     // If on a paid plan, update Stripe subscription to reflect new subject count
     if (userSub.plan !== 'free' && userSub.stripe_subscription_id) {
-      await fetch('/functions/update-subscription', {
+      await fetch('/update-subscription', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -10968,7 +10968,7 @@ async function handleCheckout() {
   const newCount = userSubjects.length + 1;
   const { price } = calcPrice(newCount, 'swap');
   try {
-    const res = await fetch('/functions/create-checkout', {
+    const res = await fetch('/create-checkout', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', 'x-user-email': currentUser.email },
       body: JSON.stringify({
@@ -11005,7 +11005,7 @@ async function handleManageBilling() {
   const { data } = await sbClient.from('subscriptions').select('stripe_customer_id').eq('user_id', currentUser.id).single();
   if (!data?.stripe_customer_id) { alert('No active subscription found.'); return; }
   try {
-    const res = await fetch('/functions/customer-portal', {
+    const res = await fetch('/customer-portal', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ customer_id: data.stripe_customer_id, return_url: window.location.origin })
