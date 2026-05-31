@@ -9546,14 +9546,76 @@ function backToPicker() {
 // ══════════════════════════════════════════════════════════════════════════════
 // FORMULA TIP WIDGET — Practice mode only, Maths MC questions only
 // ══════════════════════════════════════════════════════════════════════════════
-// Returns the formula tip for a question.
-// Only returns a tip if there is an explicit entry in mathsQuestionTips
-// for this exact question index. Category-based fallbacks are NOT used
-// because categories span multiple topics and produce wrong hints.
+// Returns the formula tip for a question, covering both HSC originals and
+// Extended 318 variants. Variants use range tables (F1/F2/M1) or
+// keyword matching (S1S2/T2/A2/N1/P1) — never a wrong category-level guess.
 function getTipForQuestion(q) {
   const masterIdx = mathsQuestions.indexOf(q);
   if (masterIdx < 0) return null;
-  return mathsQuestionTips[masterIdx] || null;
+
+  // 1 — Direct lookup for HSC originals (indices 0–89)
+  if (mathsQuestionTips[masterIdx]) return mathsQuestionTips[masterIdx];
+  if (!q.variant) return null;
+
+  // 2 — F1 variants (indices 90–113, 8 groups × 3)
+  const F1 = [[90,92,5],[93,95,9],[96,98,22],[99,101,43],
+              [102,104,69],[105,107,73],[108,110,80],[111,113,84]];
+  // 3 — F2 variants (indices 114–164, 17 groups × 3)
+  const F2 = [[114,116,3],[117,119,10],[120,122,13],[123,125,18],[126,128,19],
+              [129,131,36],[132,134,39],[135,137,40],[138,140,45],[141,143,48],
+              [144,146,50],[147,149,54],[150,152,57],[153,155,66],[156,158,67],
+              [159,161,72],[162,164,78]];
+  // 4 — M1 variants (indices 165–206, 14 groups × 3 — file comment says 11 but has 14)
+  const M1 = [[165,167,1],[168,170,4],[171,173,15],[174,176,20],[177,179,33],
+              [180,182,37],[183,185,51],[186,188,53],[189,191,56],[192,194,60],
+              [195,197,65],[198,200,79],[201,203,86],[204,206,88]];
+
+  for (const [s,e,k] of [...F1,...F2,...M1]) {
+    if (masterIdx >= s && masterIdx <= e) return mathsQuestionTips[k] || null;
+  }
+
+  // 5 — S1S2/T2/A2/N1/P1 variants (indices 207–317)
+  // Keyword matching only — returns null if no confident match (never a wrong hint).
+  const q_ = q.q;
+  if (q.category === 'S1S2') {
+    if (/x = mean \+ z|z-score.*raw|actual mark/i.test(q_))                     return mathsQuestionTips[29]||null;
+    if (/adding.*value.*dataset|new.*value.*mean|median.*stays/i.test(q_))       return mathsQuestionTips[34]||null;
+    if (/P\(z < 1\)|68%.*1 standard|84%.*above mean/i.test(q_))                 return mathsQuestionTips[46]||null;
+    if (/mean.*tests.*6th|desired mean|total marks needed/i.test(q_))            return mathsQuestionTips[59]||null;
+    if (/P\(0 < Z|P\(between.*Z.*1\.\d\d\)/i.test(q_))                         return mathsQuestionTips[42]||null;
+    if (/% of.*over-30|percentage.*anime|subgroup.*watch/i.test(q_))             return mathsQuestionTips[71]||null;
+    if (/stratified.*sampling|proportional.*sample|Year 12.*sample/i.test(q_))  return mathsQuestionTips[81]||null;
+    if (/above zero|minimum.*temperature|mean = SD/i.test(q_))                  return mathsQuestionTips[89]||null;
+  }
+  if (q.category === 'T2') {
+    if (/speed.*distance.*time|km\/h|journey.*take/i.test(q_))                  return mathsQuestionTips[2]||null;
+    if (/BAC|blood alcohol|0\.015/i.test(q_))                                    return mathsQuestionTips[12]||null;
+    if (/inverse.*cleaners|inverse.*warehouse|n_1.*y_1/i.test(q_))              return mathsQuestionTips[26]||null;
+    if (/ratio.*professional.*amateur|pro.*am.*finish/i.test(q_))               return mathsQuestionTips[28]||null;
+    if (/20 minutes.*day|minutes.*ratio.*day|1:24/i.test(q_))                   return mathsQuestionTips[35]||null;
+    if (/jelly beans|ratio red.*blue|Sophie eats/i.test(q_))                    return mathsQuestionTips[55]||null;
+    if (/painters|paint.*school|inverse.*days.*painters/i.test(q_))             return mathsQuestionTips[68]||null;
+    if (/average speed|train.*departs|train.*arrives/i.test(q_))                return mathsQuestionTips[70]||null;
+    if (/scale.*ratio.*1:|model.*car|actual.*4\.9|1:64/i.test(q_))             return mathsQuestionTips[83]||null;
+    if (/balloon.*thickness|surface area.*radius doubles|varies inversely.*area/i.test(q_)) return mathsQuestionTips[85]||null;
+  }
+  if (q.category === 'A2') {
+    if (/\(0\.\d+\)\^x|\(0\.8\)\^x|decay.*base/i.test(q_))                     return mathsQuestionTips[23]||null;
+    if (/h ≥ \d+|height.*≥|duration.*above|−5t²/i.test(q_))                    return mathsQuestionTips[38]||null;
+    if (/regression.*M =|M = \d+|study hours|predicted mark/i.test(q_))         return mathsQuestionTips[41]||null;
+    if (/scatterplot.*positive|positive.*trend|correlation.*bees/i.test(q_))    return mathsQuestionTips[47]||null;
+  }
+  if (q.category === 'N1') {
+    if (/sum of.*degrees|degree.*vertex|handshaking/i.test(q_))                  return mathsQuestionTips[16]||null;
+    if (/minimum spanning tree|largest.*edge.*MST|Kruskal/i.test(q_))           return mathsQuestionTips[77]||null;
+  }
+  if (q.category === 'P1') {
+    if (/biased.*die|10-sided.*die|estimate.*P\(10\)/i.test(q_))                return mathsQuestionTips[87]||null;
+    if (/without replacement|peppermint|caramel|different centres/i.test(q_))   return mathsQuestionTips[24]||null;
+    if (/die.*spinner|spinner.*die|score =.*×|score of 7/i.test(q_))           return mathsQuestionTips[52]||null;
+  }
+
+  return null;
 }
 
 function openTip() {
