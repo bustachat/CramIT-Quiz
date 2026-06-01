@@ -1,0 +1,168 @@
+{
+  "version": "1",
+  "subject": "mathematics-standard-2",
+  "papers": {
+    "2020": [
+      {
+        "question": 33,
+        "page_idx": 33,
+        "x0": 30,
+        "y0": 125,
+        "x1": 565,
+        "y1": 470,
+        "description": "bacteria exponential growth graph",
+        "source": "hardcoded"
+      }
+    ],
+    "2021": [
+      {
+        "question": 16,
+        "page_idx": 13,
+        "x0": 30,
+        "y0": 250,
+        "x1": 565,
+        "y1": 500,
+        "description": "sphere/tank bowl diagram",
+        "source": "hardcoded"
+      },
+      {
+        "question": 32,
+        "page_idx": 26,
+        "x0": 30,
+        "y0": 145,
+        "x1": 565,
+        "y1": 420,
+        "description": "semicircle shaded area",
+        "source": "hardcoded"
+      },
+      {
+        "question": 36,
+        "page_idx": 36,
+        "x0": 30,
+        "y0": 80,
+        "x1": 565,
+        "y1": 400,
+        "description": "critical path network",
+        "source": "hardcoded"
+      },
+      {
+        "question": 37,
+        "page_idx": 37,
+        "x0": 30,
+        "y0": 150,
+        "x1": 565,
+        "y1": 440,
+        "description": "obtuse triangle (sine rule)",
+        "source": "hardcoded"
+      },
+      {
+        "question": 38,
+        "page_idx": 38,
+        "x0": 30,
+        "y0": 75,
+        "x1": 565,
+        "y1": 445,
+        "description": "z-table + normal distribution curve",
+        "source": "hardcoded"
+      },
+      {
+        "question": 39,
+        "page_idx": 39,
+        "x0": 30,
+        "y0": 100,
+        "x1": 565,
+        "y1": 520,
+        "description": "compass radial survey",
+        "source": "hardcoded"
+      }
+    ],
+    "2022": [
+      {
+        "question": 26,
+        "page_idx": 20,
+        "x0": 30,
+        "y0": 155,
+        "x1": 565,
+        "y1": 345,
+        "description": "two right-angled triangles",
+        "source": "hardcoded"
+      },
+      {
+        "question": 28,
+        "page_idx": 22,
+        "x0": 30,
+        "y0": 80,
+        "x1": 565,
+        "y1": 240,
+        "description": "3D dam volume shape",
+        "source": "hardcoded"
+      }
+    ],
+    "2023": [
+      {
+        "question": 16,
+        "page_idx": 10,
+        "x0": 30,
+        "y0": 140,
+        "x1": 565,
+        "y1": 460,
+        "description": "heart rate sigmoid graph",
+        "source": "hardcoded"
+      },
+      {
+        "question": 24,
+        "page_idx": 19,
+        "x0": 30,
+        "y0": 100,
+        "x1": 565,
+        "y1": 330,
+        "description": "trapezoidal concrete wall cross-section",
+        "source": "hardcoded"
+      }
+    ],
+    "2024": [
+      {
+        "question": 28,
+        "page_idx": 21,
+        "x0": 30,
+        "y0": 80,
+        "x1": 565,
+        "y1": 240,
+        "description": "parallel box-plots (Garden A / Garden B)",
+        "source": "hardcoded"
+      },
+      {
+        "question": 29,
+        "page_idx": 22,
+        "x0": 30,
+        "y0": 125,
+        "x1": 565,
+        "y1": 435,
+        "description": "depreciation graph",
+        "source": "hardcoded"
+      }
+    ],
+    "2025": [
+      {
+        "question": 17,
+        "page_idx": 10,
+        "x0": 30,
+        "y0": 150,
+        "x1": 565,
+        "y1": 470,
+        "description": "TV/exercise scatterplot",
+        "source": "hardcoded"
+      },
+      {
+        "question": 28,
+        "page_idx": 24,
+        "x0": 30,
+        "y0": 130,
+        "x1": 565,
+        "y1": 445,
+        "description": "cumulative frequency histogram + box-plot template",
+        "source": "hardcoded"
+      }
+    ]
+  }
+}
