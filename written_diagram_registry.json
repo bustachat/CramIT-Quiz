@@ -4,98 +4,558 @@
   "papers": {
     "2020": [
       {
+        "question": 16,
+        "page_idx": 9,
+        "x0": 30,
+        "y0": 46,
+        "x1": 565,
+        "y1": 148,
+        "description": "Right triangle with vertical side 8, hypotenuse 10, angle \u03b8 at top right, and side x opposite to the right angle, marked NOT TO SCALE",
+        "source": "claude-vision"
+      },
+      {
+        "question": 18,
+        "page_idx": 11,
+        "x0": 30,
+        "y0": 59,
+        "x1": 565,
+        "y1": 170,
+        "description": "Network graph with 8 vertices (A through H) connected by weighted edges, showing various path weights between nodes",
+        "source": "claude-vision"
+      },
+      {
+        "question": 18,
+        "page_idx": 12,
+        "x0": 30,
+        "y0": 74,
+        "x1": 565,
+        "y1": 270,
+        "description": "Network graph showing vertices A, B, C, D, E, F, G, H, K connected by weighted edges, with K connected to A (weight 12) and C (weight 10)",
+        "source": "claude-vision"
+      },
+      {
+        "question": 19,
+        "page_idx": 13,
+        "x0": 30,
+        "y0": 84,
+        "x1": 565,
+        "y1": 418,
+        "description": "Diagram showing rectangular paddock with internal fence, dimensions x and y metres, followed by a parabolic graph of A = 450x - 1.5x\u00b2 showing area in square metres vs x in metres, with maximum around 33750 m\u00b2 at approximately x = 150",
+        "source": "claude-vision"
+      },
+      {
+        "question": 20,
+        "page_idx": 15,
+        "x0": 30,
+        "y0": 46,
+        "x1": 565,
+        "y1": 142,
+        "description": "Table showing income tax rates for 2019-2020 financial year with taxable income brackets and corresponding tax on this income",
+        "source": "claude-vision"
+      },
+      {
+        "question": 23,
+        "page_idx": 18,
+        "x0": 30,
+        "y0": 244,
+        "x1": 565,
+        "y1": 378,
+        "description": "3D rectangular prism container with dimensions labeled: 40 cm length, 20 cm width, 35 cm height, marked NOT TO SCALE",
+        "source": "claude-vision"
+      },
+      {
+        "question": 24,
+        "page_idx": 19,
+        "x0": 30,
+        "y0": 84,
+        "x1": 565,
+        "y1": 548,
+        "description": "Empty coordinate grid with V (litres) on y-axis ranging from 0 to 1100, and t (minutes) on x-axis ranging from 0 to 55, for plotting Tank A water volume model",
+        "source": "claude-vision"
+      },
+      {
+        "question": 25,
+        "page_idx": 21,
+        "x0": 30,
+        "y0": 64,
+        "x1": 565,
+        "y1": 232,
+        "description": "3D composite solid showing a triangular prism on top of a cube, with dimensions labeled: 5 cm for prism sides, 8 cm and 11 cm for cube dimensions, and 8 cm base",
+        "source": "claude-vision"
+      },
+      {
+        "question": 26,
+        "page_idx": 22,
+        "x0": 30,
+        "y0": 69,
+        "x1": 565,
+        "y1": 216,
+        "description": "Network diagram showing activities A through J with completion times in minutes, starting from Start node and ending at Finish node",
+        "source": "claude-vision"
+      },
+      {
+        "question": 27,
+        "page_idx": 23,
+        "x0": 30,
+        "y0": 48,
+        "x1": 565,
+        "y1": 165,
+        "description": "Grid diagram showing a shaded region representing a garden with a curved boundary, scale 1 cm = 5 m",
+        "source": "claude-vision"
+      },
+      {
+        "question": 29,
+        "page_idx": 29,
+        "x0": 30,
+        "y0": 64,
+        "x1": 565,
+        "y1": 154,
+        "description": "Table showing Jana's share portfolio with columns for Company name, Number of shares, Dividend yield (per annum), and Market price per share, with data for ABC (200 shares, 6.0%, $5.50) and XYZ (? shares, 4.0%, $6.00)",
+        "source": "claude-vision"
+      },
+      {
+        "question": 30,
+        "page_idx": 30,
+        "x0": 30,
+        "y0": 84,
+        "x1": 565,
+        "y1": 232,
+        "description": "Network diagram showing water channels connecting six ponds labeled A, B, C, D, E, and F with edge capacities marked as numbers (350, 150, 50, 200, 75, 50, 125, 100, 300, 50, 350)",
+        "source": "claude-vision"
+      },
+      {
+        "question": 31,
+        "page_idx": 31,
+        "x0": 30,
+        "y0": 84,
+        "x1": 565,
+        "y1": 232,
+        "description": "Triangle diagram showing points P, A, and B with north arrow, PA=7km on bearing 035\u00b0, PB=9km on bearing 100\u00b0, marked NOT TO SCALE",
+        "source": "claude-vision"
+      },
+      {
+        "question": 32,
+        "page_idx": 32,
+        "x0": 30,
+        "y0": 64,
+        "x1": 565,
+        "y1": 216,
+        "description": "Regular decagon (ten-sided shape) with center O, vertices A and B labeled at top, showing triangle OAB with dashed lines from center to vertices",
+        "source": "claude-vision"
+      },
+      {
         "question": 33,
         "page_idx": 33,
         "x0": 30,
-        "y0": 125,
+        "y0": 59,
         "x1": 565,
-        "y1": 470,
-        "description": "bacteria exponential growth graph",
-        "source": "hardcoded"
+        "y1": 328,
+        "description": "exponential growth curve showing number of bacteria (y) versus time in minutes (n), with y-axis from 0 to 6000 and x-axis from 0 to 80 minutes",
+        "source": "claude-vision"
+      },
+      {
+        "question": 36,
+        "page_idx": 39,
+        "x0": 30,
+        "y0": 91,
+        "x1": 565,
+        "y1": 216,
+        "description": "Box-plot showing temperature data in degrees Celsius, ranging from 13 to 28 on the x-axis",
+        "source": "claude-vision"
+      },
+      {
+        "question": 37,
+        "page_idx": 41,
+        "x0": 30,
+        "y0": 94,
+        "x1": 565,
+        "y1": 191,
+        "description": "Table of present value interest factors showing interest rate per period as a decimal for various numbers of periods (N=10,20,30) and interest rates (r=0.01,0.015,0.02,0.025)",
+        "source": "claude-vision"
+      },
+      {
+        "question": null,
+        "page_idx": 44,
+        "x0": 30,
+        "y0": 351,
+        "x1": 565,
+        "y1": 510,
+        "description": "Normal distribution curve showing z-scores from -3 to 3 on horizontal axis, with annotations indicating approximately 68% of scores between -1 and 1, 95% between -2 and 2, and 99.7% between -3 and 3",
+        "source": "claude-vision"
       }
     ],
     "2021": [
       {
+        "question": 14,
+        "page_idx": 8,
+        "x0": 30,
+        "y0": 34,
+        "x1": 565,
+        "y1": 165,
+        "description": "Diagram showing point A with North direction, East direction, and point B at 25 degrees angle from North, with NOT TO SCALE notation",
+        "source": "claude-vision"
+      },
+      {
         "question": 16,
         "page_idx": 13,
         "x0": 30,
-        "y0": 250,
+        "y0": 111,
         "x1": 565,
-        "y1": 500,
-        "description": "sphere/tank bowl diagram",
-        "source": "hardcoded"
+        "y1": 270,
+        "description": "Cross-section diagram of a hemispherical tank showing the bottom half of a sphere with radius 2 metres indicated at the top",
+        "source": "claude-vision"
+      },
+      {
+        "question": 21,
+        "page_idx": 16,
+        "x0": 30,
+        "y0": 94,
+        "x1": 565,
+        "y1": 282,
+        "description": "spreadsheet table showing 7 months of savings account activity with columns for Month, Amount in account at beginning of month, Monthly interest, Deposit, and Amount in account at end of month",
+        "source": "claude-vision"
+      },
+      {
+        "question": 22,
+        "page_idx": 17,
+        "x0": 30,
+        "y0": 47,
+        "x1": 565,
+        "y1": 154,
+        "description": "Table showing income tax rates for 2020-2021 financial year with taxable income brackets and corresponding tax payable amounts",
+        "source": "claude-vision"
+      },
+      {
+        "question": 23,
+        "page_idx": 18,
+        "x0": 30,
+        "y0": 48,
+        "x1": 565,
+        "y1": 232,
+        "description": "Network diagram showing travel times in minutes along roads connecting towns: Underwood, Kingsville, Queentown, Minertown, Walltown, Parktown, Citadel, and Fernville with various edge weights",
+        "source": "claude-vision"
+      },
+      {
+        "question": 24,
+        "page_idx": 19,
+        "x0": 30,
+        "y0": 314,
+        "x1": 565,
+        "y1": 518,
+        "description": "Empty coordinate axes with P on vertical axis and t on horizontal axis for plotting population against time",
+        "source": "claude-vision"
+      },
+      {
+        "question": 25,
+        "page_idx": 20,
+        "x0": 30,
+        "y0": 64,
+        "x1": 565,
+        "y1": 226,
+        "description": "rectangular sportsground drawn to scale on a 1-cm grid, showing an L-shaped or rectangular figure on graph paper",
+        "source": "claude-vision"
+      },
+      {
+        "question": 27,
+        "page_idx": 22,
+        "x0": 30,
+        "y0": 72,
+        "x1": 565,
+        "y1": 142,
+        "description": "Table comparing Television A and Television B with price and power consumption data",
+        "source": "claude-vision"
+      },
+      {
+        "question": 28,
+        "page_idx": 23,
+        "x0": 30,
+        "y0": 84,
+        "x1": 565,
+        "y1": 394,
+        "description": "Scatter plot with least-squares regression line showing relationship between number of hours of sunshine (x-axis, 0-10) and number of bottles sold (y-axis, 0-32)",
+        "source": "claude-vision"
+      },
+      {
+        "question": 31,
+        "page_idx": 25,
+        "x0": 30,
+        "y0": 74,
+        "x1": 565,
+        "y1": 192,
+        "description": "Table of present value interest factors for an annuity of $1 for various interest rates (r) and numbers of periods (N)",
+        "source": "claude-vision"
       },
       {
         "question": 32,
         "page_idx": 26,
         "x0": 30,
-        "y0": 145,
+        "y0": 74,
         "x1": 565,
-        "y1": 420,
-        "description": "semicircle shaded area",
-        "source": "hardcoded"
+        "y1": 205,
+        "description": "Right-angled triangle XYZ cut from a semicircle with centre O, diameter XZ = 16 cm, angle YXZ = 30\u00b0, with NOT TO SCALE label",
+        "source": "claude-vision"
+      },
+      {
+        "question": 33,
+        "page_idx": 27,
+        "x0": 30,
+        "y0": 72,
+        "x1": 565,
+        "y1": 295,
+        "description": "Scatter plot with regression line showing average maximum daily temperature (y-axis, \u00b0C) versus height above sea level (x-axis, metres) for 17 inland Australian towns",
+        "source": "claude-vision"
+      },
+      {
+        "question": 33,
+        "page_idx": 28,
+        "x0": 30,
+        "y0": 74,
+        "x1": 565,
+        "y1": 282,
+        "description": "Scatter plot with regression line showing relationship between latitude (x degrees south) and average maximum daily temperature (\u00b0C) for 17 towns",
+        "source": "claude-vision"
+      },
+      {
+        "question": 34,
+        "page_idx": 34,
+        "x0": 30,
+        "y0": 34,
+        "x1": 565,
+        "y1": 465,
+        "description": "Empty coordinate grid with x-axis labeled from 0 to 35 and y-axis labeled from 0 to 40, for plotting number of goannas and emus",
+        "source": "claude-vision"
+      },
+      {
+        "question": 35,
+        "page_idx": 35,
+        "x0": 30,
+        "y0": 170,
+        "x1": 565,
+        "y1": 329,
+        "description": "quadratic graph showing revenue R versus price increase x, with dashed portions indicating non-relevant values, x-axis from -10 to 100, parabola opening downward",
+        "source": "claude-vision"
       },
       {
         "question": 36,
         "page_idx": 36,
         "x0": 30,
-        "y0": 80,
+        "y0": 74,
         "x1": 565,
-        "y1": 400,
-        "description": "critical path network",
-        "source": "hardcoded"
+        "y1": 244,
+        "description": "Network diagram showing project tasks A through K with completion times, starting from Start node and ending at Finish node",
+        "source": "claude-vision"
       },
       {
         "question": 37,
         "page_idx": 37,
         "x0": 30,
-        "y0": 150,
+        "y0": 61,
         "x1": 565,
-        "y1": 440,
-        "description": "obtuse triangle (sine rule)",
-        "source": "hardcoded"
+        "y1": 212,
+        "description": "Triangle ABC with AC = 25 cm, BC = 16 cm, angle BAC = 28\u00b0, marked NOT TO SCALE",
+        "source": "claude-vision"
       },
       {
         "question": 38,
         "page_idx": 38,
         "x0": 30,
-        "y0": 75,
+        "y0": 129,
         "x1": 565,
-        "y1": 445,
-        "description": "z-table + normal distribution curve",
-        "source": "hardcoded"
+        "y1": 280,
+        "description": "Standard normal distribution curve with shaded area between 0 and z, showing the probability represented in the table",
+        "source": "claude-vision"
       },
       {
         "question": 39,
         "page_idx": 39,
         "x0": 30,
-        "y0": 100,
+        "y0": 31,
         "x1": 565,
-        "y1": 520,
-        "description": "compass radial survey",
-        "source": "hardcoded"
+        "y1": 344,
+        "description": "Compass radial survey diagram of field ABCD showing points A, B, C, D connected to central point O with bearings (080\u00b0, 150\u00b0, 330\u00b0) and distances (31m, 32m, 28m, 35m), with triangle COB area marked as 466 m\u00b2",
+        "source": "claude-vision"
+      },
+      {
+        "question": 40,
+        "page_idx": 41,
+        "x0": 30,
+        "y0": 72,
+        "x1": 565,
+        "y1": 205,
+        "description": "Table of future value interest factors for an annuity of $1, showing values for different numbers of periods (2, 4, 6, 8, 10) and interest rates (0.25%, 0.5%, 0.75%, 1%, 1.25%)",
+        "source": "claude-vision"
+      },
+      {
+        "question": 41,
+        "page_idx": 42,
+        "x0": 30,
+        "y0": 84,
+        "x1": 565,
+        "y1": 366,
+        "description": "Two tables showing height data for females and a normal distribution curve. Table 1 shows height, gender, and percentage data for females. Table 2 shows mean and standard deviation for females and males.",
+        "source": "claude-vision"
+      },
+      {
+        "question": null,
+        "page_idx": 44,
+        "x0": 30,
+        "y0": 394,
+        "x1": 565,
+        "y1": 531,
+        "description": "Normal distribution curve showing bell curve with z-scores marked from -3 to 3 on horizontal axis, with annotations about percentages of scores within different z-score ranges",
+        "source": "claude-vision"
       }
     ],
     "2022": [
       {
+        "question": 17,
+        "page_idx": 11,
+        "x0": 30,
+        "y0": 94,
+        "x1": 565,
+        "y1": 378,
+        "description": "Tree diagram showing Amy's cards (1, 3, 5) branching to Bob's cards (2, 4, 6) with probability branches for game outcomes",
+        "source": "claude-vision"
+      },
+      {
+        "question": 19,
+        "page_idx": 13,
+        "x0": 30,
+        "y0": 42,
+        "x1": 565,
+        "y1": 216,
+        "description": "Table showing types of customer complaints with columns for Type of complaint, Frequency, Cumulative frequency, and Cumulative percentage",
+        "source": "claude-vision"
+      },
+      {
+        "question": 20,
+        "page_idx": 14,
+        "x0": 30,
+        "y0": 34,
+        "x1": 565,
+        "y1": 146,
+        "description": "Table showing distances in kilometres between towns: Snowtown (S), Clairville (C), Yuma (Y), Bosten (B), and Morrella (M)",
+        "source": "claude-vision"
+      },
+      {
+        "question": 23,
+        "page_idx": 17,
+        "x0": 30,
+        "y0": 74,
+        "x1": 565,
+        "y1": 320,
+        "description": "scatterplot showing relationship between average hours of phone use per day (x-axis, 0-10) and average hours of sleep per day (y-axis, 4-11) with data points showing negative correlation",
+        "source": "claude-vision"
+      },
+      {
+        "question": 24,
+        "page_idx": 18,
+        "x0": 30,
+        "y0": 266,
+        "x1": 565,
+        "y1": 548,
+        "description": "Table with T values (5, 15, 30) and empty M row, plus a coordinate grid graph with y-axis labeled 'Time (M minutes)' ranging 0-40 and x-axis labeled 'Temperature (T\u00b0C)' ranging 0-40",
+        "source": "claude-vision"
+      },
+      {
+        "question": 25,
+        "page_idx": 19,
+        "x0": 30,
+        "y0": 72,
+        "x1": 565,
+        "y1": 173,
+        "description": "Table showing future values of an annuity of $1 with columns for Years (4, 5, 6) and Interest Rate Per Annum (1%, 2%, 3%, 4%)",
+        "source": "claude-vision"
+      },
+      {
         "question": 26,
         "page_idx": 20,
         "x0": 30,
-        "y0": 155,
+        "y0": 84,
         "x1": 565,
-        "y1": 345,
-        "description": "two right-angled triangles",
-        "source": "hardcoded"
+        "y1": 232,
+        "description": "Two right-angled triangles ABC and ABD sharing vertex B, with AC = 35 cm, BD = 93 cm, angle ACB = 41\u00b0, and angle ADB = \u03b8",
+        "source": "claude-vision"
       },
       {
-        "question": 28,
-        "page_idx": 22,
+        "question": 30,
+        "page_idx": 24,
         "x0": 30,
-        "y0": 80,
+        "y0": 135,
         "x1": 565,
-        "y1": 240,
-        "description": "3D dam volume shape",
-        "source": "hardcoded"
+        "y1": 265,
+        "description": "Table of future value interest factors for an annuity of $1, showing values for different periods (N=10,20,30,40) and interest rates per period (0.002 to 0.240)",
+        "source": "claude-vision"
+      },
+      {
+        "question": 31,
+        "page_idx": 25,
+        "x0": 30,
+        "y0": 48,
+        "x1": 565,
+        "y1": 190,
+        "description": "Network flow diagram showing a wildlife park with 5 attractions (A, B, C, D, E) connected by directional paths from Source to Sink, with capacity values labeled on each edge",
+        "source": "claude-vision"
+      },
+      {
+        "question": 31,
+        "page_idx": 26,
+        "x0": 30,
+        "y0": 50,
+        "x1": 565,
+        "y1": 205,
+        "description": "Network flow diagram with Source and Sink nodes, intermediate nodes A, B, C, D, E, and directed edges with capacity values ranging from 10 to 20",
+        "source": "claude-vision"
+      },
+      {
+        "question": 32,
+        "page_idx": 27,
+        "x0": 30,
+        "y0": 94,
+        "x1": 565,
+        "y1": 270,
+        "description": "Diagram of a park consisting of a rectangle and semicircle, showing a lake at the top and grassed section at the bottom, with measurements of 100m, 160m, 150m, 250m, and 200m marked, labeled NOT TO SCALE",
+        "source": "claude-vision"
+      },
+      {
+        "question": 33,
+        "page_idx": 28,
+        "x0": 30,
+        "y0": 84,
+        "x1": 565,
+        "y1": 270,
+        "description": "Diagram showing flight path with point O, airport A at 20km on bearing 135\u00b0T, and airport B directly south of O at 50km distance",
+        "source": "claude-vision"
+      },
+      {
+        "question": 34,
+        "page_idx": 29,
+        "x0": 30,
+        "y0": 74,
+        "x1": 565,
+        "y1": 232,
+        "description": "Composite solid showing a cylinder (4 cm diameter, 3 cm height) on top of a hemisphere (6 cm diameter), with the cylinder centered on the flat surface of the hemisphere",
+        "source": "claude-vision"
+      },
+      {
+        "question": 35,
+        "page_idx": 30,
+        "x0": 30,
+        "y0": 94,
+        "x1": 565,
+        "y1": 280,
+        "description": "scatterplot showing relationship between age of character (x years) and age of actor (y years) with line of best fit y = -7.51 + 1.85x",
+        "source": "claude-vision"
+      },
+      {
+        "question": null,
+        "page_idx": 36,
+        "x0": 30,
+        "y0": 465,
+        "x1": 565,
+        "y1": 635,
+        "description": "Normal distribution curve showing z-scores from -3 to 3 on horizontal axis, with bell-shaped curve centered at 0",
+        "source": "claude-vision"
       }
     ],
     "2023": [
@@ -103,43 +563,373 @@
         "question": 16,
         "page_idx": 10,
         "x0": 30,
-        "y0": 140,
+        "y0": 48,
         "x1": 565,
-        "y1": 460,
-        "description": "heart rate sigmoid graph",
-        "source": "hardcoded"
+        "y1": 270,
+        "description": "Line graph showing Peta's heart rate (beats/minute) on y-axis ranging from 60-160, versus Time (minutes) on x-axis ranging from 0-60, showing heart rate increasing rapidly at first then leveling off around 140-150 beats/minute",
+        "source": "claude-vision"
+      },
+      {
+        "question": 17,
+        "page_idx": 11,
+        "x0": 30,
+        "y0": 46,
+        "x1": 565,
+        "y1": 179,
+        "description": "Table showing flight distances in km between Australian cities: Adelaide, Brisbane, Darwin, Hobart, Perth, and Sydney",
+        "source": "claude-vision"
+      },
+      {
+        "question": 18,
+        "page_idx": 12,
+        "x0": 30,
+        "y0": 59,
+        "x1": 565,
+        "y1": 270,
+        "description": "histogram showing frequency distribution of test scores with bars at intervals 19.5, 29.5, 39.5, 49.5, 59.5, 69.5, 79.5",
+        "source": "claude-vision"
+      },
+      {
+        "question": 19,
+        "page_idx": 13,
+        "x0": 30,
+        "y0": 64,
+        "x1": 565,
+        "y1": 240,
+        "description": "Network graph with vertices A, B, C, D, E, F, G, H connected by edges with numerical weights representing running times in minutes",
+        "source": "claude-vision"
+      },
+      {
+        "question": 20,
+        "page_idx": 14,
+        "x0": 30,
+        "y0": 84,
+        "x1": 565,
+        "y1": 265,
+        "description": "Graph showing parabola h = -6t\u00b2 + 24t representing height above ground (m) vs time (s), with maximum height around 24m at t=2s",
+        "source": "claude-vision"
+      },
+      {
+        "question": 21,
+        "page_idx": 15,
+        "x0": 30,
+        "y0": 222,
+        "x1": 565,
+        "y1": 458,
+        "description": "Line graph showing Provider B's charges, with x-axis showing Electricity used in a month (kWh) from 0 to 1000, and y-axis showing Total charge ($) from 0 to 400",
+        "source": "claude-vision"
       },
       {
         "question": 24,
         "page_idx": 19,
         "x0": 30,
-        "y0": 100,
+        "y0": 59,
         "x1": 565,
-        "y1": 330,
-        "description": "trapezoidal concrete wall cross-section",
-        "source": "hardcoded"
+        "y1": 178,
+        "description": "Cross-section diagram of a wall across a creek showing a trapezoidal shape with measurements: 8.0m top width, 2.7m bottom width, 1.9m left height, 1.7m right height, marked NOT TO SCALE",
+        "source": "claude-vision"
+      },
+      {
+        "question": 25,
+        "page_idx": 20,
+        "x0": 30,
+        "y0": 59,
+        "x1": 565,
+        "y1": 148,
+        "description": "Table showing future value interest factors for an annuity of $1, with periods (5, 10, 20, 40) in rows and interest rates (1.5%, 3%, 4.5%, 6%) in columns",
+        "source": "claude-vision"
+      },
+      {
+        "question": 26,
+        "page_idx": 21,
+        "x0": 30,
+        "y0": 59,
+        "x1": 565,
+        "y1": 195,
+        "description": "Diagram showing a garden with a 0.5m wide path around three sides, with dimensions 8m width and 3m height for the garden area, adjacent to a house",
+        "source": "claude-vision"
+      },
+      {
+        "question": 27,
+        "page_idx": 22,
+        "x0": 30,
+        "y0": 94,
+        "x1": 565,
+        "y1": 244,
+        "description": "Diagram showing locations of three places X, Y and C with bearings and distances. Y is on a bearing of 120\u00b0 and 15 km from X. C is 40 km from X and lies due west of Y. P lies on the line joining C and Y and is due south of X. Includes North arrow and NOT TO SCALE notation.",
+        "source": "claude-vision"
+      },
+      {
+        "question": 28,
+        "page_idx": 23,
+        "x0": 30,
+        "y0": 84,
+        "x1": 565,
+        "y1": 148,
+        "description": "Table showing two methods of depreciation (Straight-line method at $3500 per annum and Declining-balance method at 12% per annum) with their respective rates of depreciation",
+        "source": "claude-vision"
+      },
+      {
+        "question": 29,
+        "page_idx": 24,
+        "x0": 30,
+        "y0": 46,
+        "x1": 565,
+        "y1": 182,
+        "description": "Monthly repayment table showing Principal and Interest per $1000 borrowed, with columns for Interest rate, and Term of loan in years (5, 10, 15, 20, 25, 30) with corresponding repayment values for rates 6.5%, 7.0%, 7.5%, and 8.0%",
+        "source": "claude-vision"
+      },
+      {
+        "question": 31,
+        "page_idx": 26,
+        "x0": 30,
+        "y0": 84,
+        "x1": 565,
+        "y1": 270,
+        "description": "Network diagram showing nodes connected by edges with activity labels (A-K) and durations in hours",
+        "source": "claude-vision"
+      },
+      {
+        "question": 33,
+        "page_idx": 28,
+        "x0": 30,
+        "y0": 84,
+        "x1": 565,
+        "y1": 212,
+        "description": "Rectangle ABCD with arc PQ on side AB, showing circle center O with radius 2.1m, angle POQ = 110\u00b0, BC = 3.6m, CD = 8.0m, marked NOT TO SCALE",
+        "source": "claude-vision"
+      },
+      {
+        "question": 34,
+        "page_idx": 29,
+        "x0": 30,
+        "y0": 298,
+        "x1": 565,
+        "y1": 548,
+        "description": "Grid/graph with y-axis labeled 'Daily gas usage (MW)' ranging from 0-240 and x-axis labeled 'Average daily outside temperature (\u00b0C)' ranging from 0-10",
+        "source": "claude-vision"
+      },
+      {
+        "question": 35,
+        "page_idx": 31,
+        "x0": 30,
+        "y0": 48,
+        "x1": 565,
+        "y1": 148,
+        "description": "Triangle ABC with angle A = 60\u00b0, angle B = 25\u00b0, and side AC = 12 m",
+        "source": "claude-vision"
+      },
+      {
+        "question": 37,
+        "page_idx": 33,
+        "x0": 30,
+        "y0": 74,
+        "x1": 565,
+        "y1": 195,
+        "description": "Tax table showing taxable income brackets and corresponding tax payable amounts, with 5 rows of data",
+        "source": "claude-vision"
+      },
+      {
+        "question": 38,
+        "page_idx": 34,
+        "x0": 30,
+        "y0": 184,
+        "x1": 565,
+        "y1": 320,
+        "description": "Normal distribution curve with shaded area to the left of z, showing the standard normal distribution bell curve",
+        "source": "claude-vision"
+      },
+      {
+        "question": null,
+        "page_idx": 40,
+        "x0": 30,
+        "y0": 444,
+        "x1": 565,
+        "y1": 551,
+        "description": "Normal distribution curve showing z-scores from -3 to 3 with annotations about percentages of scores within standard deviations",
+        "source": "claude-vision"
       }
     ],
     "2024": [
       {
-        "question": 28,
-        "page_idx": 21,
+        "question": 16,
+        "page_idx": 9,
         "x0": 30,
-        "y0": 80,
+        "y0": 48,
         "x1": 565,
         "y1": 240,
-        "description": "parallel box-plots (Garden A / Garden B)",
-        "source": "hardcoded"
+        "description": "Network diagram showing towns T, Y, W, H, J, C, G, and M connected by roads with distances in kilometres labeled on each edge",
+        "source": "claude-vision"
+      },
+      {
+        "question": 18,
+        "page_idx": 11,
+        "x0": 30,
+        "y0": 50,
+        "x1": 565,
+        "y1": 260,
+        "description": "Network graph with weighted edges connecting vertices A through J, showing various edge weights including 1, 2, 3, 4, 5, and 6",
+        "source": "claude-vision"
+      },
+      {
+        "question": 19,
+        "page_idx": 12,
+        "x0": 30,
+        "y0": 74,
+        "x1": 565,
+        "y1": 270,
+        "description": "scatter plot with least-squares regression line showing relationship between assignment marks (x-axis, 0-10) and test marks (y-axis, 0-24) for five students",
+        "source": "claude-vision"
+      },
+      {
+        "question": 20,
+        "page_idx": 13,
+        "x0": 30,
+        "y0": 59,
+        "x1": 565,
+        "y1": 240,
+        "description": "Table showing future value for an annuity of $1 for varying interest rates (1% to 5%) and periods (1 to 8)",
+        "source": "claude-vision"
+      },
+      {
+        "question": 21,
+        "page_idx": 14,
+        "x0": 30,
+        "y0": 129,
+        "x1": 565,
+        "y1": 232,
+        "description": "Spreadsheet table showing loan repayment schedule with columns for Month, Principal, Interest charged, Amount repaid, and Balance owing",
+        "source": "claude-vision"
+      },
+      {
+        "question": 22,
+        "page_idx": 15,
+        "x0": 30,
+        "y0": 84,
+        "x1": 565,
+        "y1": 365,
+        "description": "Line graph showing two population curves W and K over time (number of years since 1985 on x-axis, population on y-axis from 0-400), with curves intersecting around x=35",
+        "source": "claude-vision"
+      },
+      {
+        "question": 26,
+        "page_idx": 19,
+        "x0": 30,
+        "y0": 64,
+        "x1": 565,
+        "y1": 184,
+        "description": "3D diagram of a rectangular gutter cross-section with width w and height h",
+        "source": "claude-vision"
       },
       {
         "question": 29,
         "page_idx": 22,
         "x0": 30,
-        "y0": 125,
+        "y0": 46,
         "x1": 565,
-        "y1": 435,
-        "description": "depreciation graph",
-        "source": "hardcoded"
+        "y1": 252,
+        "description": "Line graph showing decreasing value of an asset over time, with y-axis labeled 'Value of asset ($)' ranging from 0 to 50000, and x-axis labeled 'Number of years' ranging from 0 to 10, with 'NOT TO SCALE' notation",
+        "source": "claude-vision"
+      },
+      {
+        "question": 30,
+        "page_idx": 23,
+        "x0": 30,
+        "y0": 84,
+        "x1": 565,
+        "y1": 388,
+        "description": "Scatterplot showing anaconda length (cm) vs age (years) with separate markers for female (squares) and male (dots) anacondas, including key",
+        "source": "claude-vision"
+      },
+      {
+        "question": 32,
+        "page_idx": 25,
+        "x0": 30,
+        "y0": 84,
+        "x1": 565,
+        "y1": 280,
+        "description": "Regular pentagon ABCDE inscribed in a circle with center O and radius 30 cm, with a 72\u00b0 angle marked at center O, shaded region between pentagon and circle",
+        "source": "claude-vision"
+      },
+      {
+        "question": 34,
+        "page_idx": 27,
+        "x0": 30,
+        "y0": 42,
+        "x1": 565,
+        "y1": 142,
+        "description": "Cylindrical container with hemispherical ends containing three soccer balls, with height labeled as 23 cm",
+        "source": "claude-vision"
+      },
+      {
+        "question": 35,
+        "page_idx": 28,
+        "x0": 30,
+        "y0": 44,
+        "x1": 565,
+        "y1": 280,
+        "description": "Standard normal distribution curve with shaded area from 0 to z, along with probability table for z-values from 0.6 to 1.4",
+        "source": "claude-vision"
+      },
+      {
+        "question": 36,
+        "page_idx": 29,
+        "x0": 30,
+        "y0": 59,
+        "x1": 565,
+        "y1": 232,
+        "description": "Diagram showing two vertical flagpoles BE and CD on sloping ground, with measurements including 20m horizontal distance at top, 53.8m sloped distance, angles of 106\u00b0 and 27\u00b0 at point A, and points X and C marked along the slope",
+        "source": "claude-vision"
+      },
+      {
+        "question": 38,
+        "page_idx": 31,
+        "x0": 30,
+        "y0": 48,
+        "x1": 565,
+        "y1": 232,
+        "description": "3D diagram of a cake constructed using a cylinder with a cone-shaped top",
+        "source": "claude-vision"
+      },
+      {
+        "question": 39,
+        "page_idx": 32,
+        "x0": 30,
+        "y0": 59,
+        "x1": 565,
+        "y1": 280,
+        "description": "Network diagram showing nine activities (A through I) with nodes and directed edges, followed by a table showing EST and LST values for activities A, C, and I",
+        "source": "claude-vision"
+      },
+      {
+        "question": 40,
+        "page_idx": 33,
+        "x0": 30,
+        "y0": 46,
+        "x1": 565,
+        "y1": 282,
+        "description": "Compass radial survey diagram showing points A, B, C, D connected to central point O, with North direction indicated, distances labeled (67.5m, 42m, 38m, 40m), and bearings (285\u00b0, 110\u00b0)",
+        "source": "claude-vision"
+      },
+      {
+        "question": 41,
+        "page_idx": 34,
+        "x0": 30,
+        "y0": 84,
+        "x1": 565,
+        "y1": 216,
+        "description": "Table showing present value interest factors for an annuity of $1 for various interest rates (r) from 0.001 to 0.004 and periods (n) from 60 to 300",
+        "source": "claude-vision"
+      },
+      {
+        "question": null,
+        "page_idx": 40,
+        "x0": 30,
+        "y0": 524,
+        "x1": 565,
+        "y1": 655,
+        "description": "Normal distribution curve showing z-scores from -3 to 3 on horizontal axis with percentages labeled for standard deviation intervals",
+        "source": "claude-vision"
       }
     ],
     "2025": [
@@ -147,21 +937,181 @@
         "question": 17,
         "page_idx": 10,
         "x0": 30,
-        "y0": 150,
+        "y0": 59,
         "x1": 565,
-        "y1": 470,
-        "description": "TV/exercise scatterplot",
-        "source": "hardcoded"
+        "y1": 294,
+        "description": "scatter plot showing bivariate dataset with x as independent variable (0-6) and y as dependent variable (0-18), containing approximately 15 data points",
+        "source": "claude-vision"
+      },
+      {
+        "question": 18,
+        "page_idx": 11,
+        "x0": 30,
+        "y0": 64,
+        "x1": 565,
+        "y1": 166,
+        "description": "Table showing future value interest factors for an annuity of $1, with Period (5, 10, 20, 40) in rows and Rate (1.5%, 3%, 4.5%, 6%) in columns",
+        "source": "claude-vision"
+      },
+      {
+        "question": 19,
+        "page_idx": 12,
+        "x0": 30,
+        "y0": 46,
+        "x1": 565,
+        "y1": 170,
+        "description": "Network diagram showing project activities A through H with corresponding durations in days, with nodes connected by directed arrows",
+        "source": "claude-vision"
+      },
+      {
+        "question": 20,
+        "page_idx": 13,
+        "x0": 30,
+        "y0": 64,
+        "x1": 565,
+        "y1": 205,
+        "description": "Graph of quadratic function h = t\u00b2 - 8t + 12 showing parabola with vertex at turning point, y-intercept at h = 12, and x-intercepts at t = 2 and t = 6",
+        "source": "claude-vision"
+      },
+      {
+        "question": 22,
+        "page_idx": 15,
+        "x0": 30,
+        "y0": 59,
+        "x1": 565,
+        "y1": 244,
+        "description": "Network diagram showing pipes connecting nodes A through G with capacities in L/min labeled on each edge, with a cut line shown",
+        "source": "claude-vision"
+      },
+      {
+        "question": 22,
+        "page_idx": 16,
+        "x0": 30,
+        "y0": 48,
+        "x1": 565,
+        "y1": 195,
+        "description": "Network diagram showing pipes connecting nodes A, B, C, D, E, F, G with flow values labeled on edges (18, 5, x, 23, 8, 13, 22, 1, 12, 15, 11)",
+        "source": "claude-vision"
+      },
+      {
+        "question": 23,
+        "page_idx": 17,
+        "x0": 30,
+        "y0": 59,
+        "x1": 565,
+        "y1": 146,
+        "description": "Table showing Company A and B with their current share prices ($25.43 and $2.13) and annual dividend per share ($4.92 and 45c)",
+        "source": "claude-vision"
+      },
+      {
+        "question": 25,
+        "page_idx": 19,
+        "x0": 30,
+        "y0": 74,
+        "x1": 565,
+        "y1": 270,
+        "description": "Scatterplot showing relationship between average minutes per day watching television (x-axis, 0-60) and average minutes per day exercising (y-axis, 0-80)",
+        "source": "claude-vision"
+      },
+      {
+        "question": 26,
+        "page_idx": 21,
+        "x0": 30,
+        "y0": 50,
+        "x1": 565,
+        "y1": 232,
+        "description": "Cross-section diagram of a toy with curved surface on top, showing dimensions: 6.0 cm height, 3.8 cm internal height, 10.2 cm base width, and 40.0 cm curved surface length, marked NOT TO SCALE",
+        "source": "claude-vision"
       },
       {
         "question": 28,
         "page_idx": 24,
         "x0": 30,
-        "y0": 130,
+        "y0": 84,
         "x1": 565,
-        "y1": 445,
-        "description": "cumulative frequency histogram + box-plot template",
-        "source": "hardcoded"
+        "y1": 290,
+        "description": "cumulative frequency graph showing heights of students in a class, with height (cm) on x-axis ranging from 135-175 and number of students on y-axis ranging from 0-35",
+        "source": "claude-vision"
+      },
+      {
+        "question": 31,
+        "page_idx": 26,
+        "x0": 30,
+        "y0": 74,
+        "x1": 565,
+        "y1": 182,
+        "description": "Table showing income tax rates for Australian residents for 2024-2025, with taxable income brackets and corresponding tax calculations",
+        "source": "claude-vision"
+      },
+      {
+        "question": 32,
+        "page_idx": 27,
+        "x0": 30,
+        "y0": 48,
+        "x1": 565,
+        "y1": 232,
+        "description": "Square-based pyramid with solid spheres placed inside, showing height h cm and base side length 14 cm, with NOT TO SCALE label",
+        "source": "claude-vision"
+      },
+      {
+        "question": 34,
+        "page_idx": 29,
+        "x0": 30,
+        "y0": 46,
+        "x1": 565,
+        "y1": 155,
+        "description": "Table showing future value interest factors for an annuity of $1, with periods (n) of 7, 28, 56, 84 and rates (r) of 0.005, 0.01, 0.015, 0.02, 0.03, 0.06",
+        "source": "claude-vision"
+      },
+      {
+        "question": 35,
+        "page_idx": 30,
+        "x0": 30,
+        "y0": 84,
+        "x1": 565,
+        "y1": 189,
+        "description": "Triangle PTA with PT = 51 m, PA = 75 m, right angle at A, showing angle of depression from T to A",
+        "source": "claude-vision"
+      },
+      {
+        "question": 36,
+        "page_idx": 31,
+        "x0": 30,
+        "y0": 50,
+        "x1": 565,
+        "y1": 270,
+        "description": "Line graph showing salvage value of a car over 5 years, with Value ($) on y-axis ranging from 0 to 55,000 and Time (years) on x-axis ranging from 0 to 5, depicting declining-balance depreciation",
+        "source": "claude-vision"
+      },
+      {
+        "question": 37,
+        "page_idx": 32,
+        "x0": 30,
+        "y0": 50,
+        "x1": 565,
+        "y1": 270,
+        "description": "Two equilateral triangles forming a park with a shaded triangular grassed section, measurements of 3 and 9 metres marked on various sides, labeled NOT TO SCALE",
+        "source": "claude-vision"
+      },
+      {
+        "question": 39,
+        "page_idx": 34,
+        "x0": 30,
+        "y0": 84,
+        "x1": 565,
+        "y1": 314,
+        "description": "Graph showing exponential decay of medication remaining in a person (mg) vs number of hours after taking a dose of medication, with two points plotted and a curve passing through them",
+        "source": "claude-vision"
+      },
+      {
+        "question": null,
+        "page_idx": 40,
+        "x0": 30,
+        "y0": 351,
+        "x1": 565,
+        "y1": 506,
+        "description": "Normal distribution bell curve with z-scores marked from -3 to 3 on x-axis, showing standard deviations and percentage ranges",
+        "source": "claude-vision"
       }
     ]
   }

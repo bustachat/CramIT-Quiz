@@ -42,6 +42,8 @@ import os, sys, json, base64, io, argparse
 import fitz
 from PIL import Image
 
+sys.stdout.reconfigure(encoding='utf-8')
+
 
 # -- PATHS ---------------------------------------------------------------------
 
@@ -143,34 +145,40 @@ BOOTSTRAP = {
 DETECTION_PROMPT = """\
 This is a rendered page from an HSC Mathematics Standard 2 exam, Section II (Written Response).
 
-Page structure: "Question N" heading at top, question text, possibly a DIAGRAM or GRAPH, then dotted answer lines at the bottom where students write their response.
+TASK: Find the VISUAL ELEMENT (graph, diagram, table, figure, or chart) on this page and return its exact pixel bounding box — diagram only, nothing else.
 
-TASK: Determine if this page contains a diagram, graph, chart, table, or mathematical figure that a student needs to refer to in order to answer the question.
+THE CROP MUST:
+  - Start BELOW the last line of introductory/question text (paragraphs describing the scenario)
+  - Start BELOW the "Question N (X marks)" heading
+  - END ABOVE any "(a)", "(b)", "(c)" sub-question labels
+  - END ABOVE any dotted answer lines where students write
+  - Include ALL parts of the visual: axes, axis labels (including rotated y-axis text), tick marks,
+    data points, measurement annotations, "NOT TO SCALE" text, border of diagrams/tables
 
-DO NOT include in the bounding box:
-- "Question N" heading text
-- Question text / instructions (paragraphs of text)
-- Dotted ruled answer lines (where students write)
-- Page numbers, NESA logos, headers, footers
+COMMON MISTAKES TO AVOID:
+  - Do NOT start the crop at the top of the page — skip past the question heading and all text paragraphs
+  - Do NOT cut off the bottom of the diagram before the x-axis label or lowest measurement
+  - Do NOT include "(a) Find..." style sub-questions at the bottom
+  - Do NOT include dotted lines (answer lines) at the bottom
 
-If a diagram IS present, return the pixel y-coordinates of the diagram region within this image (y=0 is the top edge of the image). Add 15px padding above and below the visible diagram content.
+If a visual element IS present, add 20px padding on all sides beyond the outermost visible element.
 
-Return ONLY this JSON (no markdown fences, no extra text):
+Return ONLY this JSON (no markdown fences, no explanation):
 {
   "question_number": 28,
   "has_diagram": true,
-  "y_start": 340,
-  "y_end": 890,
-  "description": "parallel box-plots comparing Garden A and Garden B"
+  "y_start": 580,
+  "y_end": 1040,
+  "description": "parallel box-plots comparing Garden A and Garden B flower heights"
 }
 
-If no diagram is present:
+If no visual element (the page is text only, or only has answer lines):
 {
   "question_number": 19,
   "has_diagram": false
 }
 
-If the question number is not readable in the image, set question_number to null.
+If question number is not readable, set question_number to null.
 Return ONLY raw JSON."""
 
 
