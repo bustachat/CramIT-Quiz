@@ -761,8 +761,10 @@ def detect_page(client, page_img, page_num):
     """
     img_b64 = pil_to_jpeg_b64(page_img)
 
+    # claude-sonnet-4-6: 3x cheaper than Opus, sufficient for bounding-box detection.
+    # Switch to claude-opus-4-5 only if detection accuracy becomes a problem.
     response = client.messages.create(
-        model='claude-opus-4-5',
+        model='claude-sonnet-4-6',
         max_tokens=1536,
         messages=[{
             'role': 'user',

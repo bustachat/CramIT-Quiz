@@ -215,12 +215,19 @@ async function callClaude(systemPrompt, userPrompt, apiKey) {
       'Content-Type':      'application/json',
       'x-api-key':         apiKey,
       'anthropic-version': '2023-06-01',
+      // Prompt caching: system prompt is identical on every call — cache it.
+      // Cache TTL = 5 min. Saves ~90% of system prompt tokens on cache hits.
+      // Cost: cache write = 1.25x input price; cache read = 0.1x input price.
+      'anthropic-beta':    'prompt-caching-2024-07-31',
     },
     body: JSON.stringify({
-      model:      'claude-sonnet-4-6',
+      // claude-haiku-4-5: 10x cheaper than sonnet, sufficient for structured JSON marking.
+      // Switch back to claude-sonnet-4-6 if marking quality complaints arise.
+      model:      'claude-haiku-4-5',
       max_tokens: 512,
-      system:     systemPrompt,
-      messages:   [{ role: 'user', content: userPrompt }],
+      // Cache the system prompt — it never changes between calls.
+      system: [{ type: 'text', text: systemPrompt, cache_control: { type: 'ephemeral' } }],
+      messages: [{ role: 'user', content: userPrompt }],
     }),
   });
 
@@ -230,6 +237,15 @@ async function callClaude(systemPrompt, userPrompt, apiKey) {
   }
 
   const data    = await res.json();
+
+  // Token usage logging — visible in Cloudflare Pages function logs.
+  const u = data.usage || {};
+  console.log(
+    `mark-written: in=${u.input_tokens} out=${u.output_tokens} ` +
+    `cache_write=${u.cache_creation_input_tokens || 0} ` +
+    `cache_read=${u.cache_read_input_tokens || 0}`
+  );
+
   const raw     = data.content[0].text.trim();
   const cleaned = raw.replace(/^```(?:json)?\s*/i, '').replace(/\s*```$/i, '').trim();
 

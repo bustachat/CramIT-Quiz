@@ -79,31 +79,58 @@ function makeFilename(subjectName, year) {
     .replace(/^-|-$/g, '') + '-' + year + '.json';
 }
 
+// ── CACHED SYSTEM PROMPTS ────────────────────────────────────────────────────
+// Prompt caching: static system prompts are sent with cache_control so the
+// second+ call within the 5-min TTL pays only 0.1x the input token price.
+// Cache write = 1.25x; cache read = 0.1x. Saves ~80% cost on repeat runs.
+
+const SYSTEM_DISCOVER = `You are an agent that monitors the NESA NSW education website for new HSC exam papers.
+Return ONLY valid JSON arrays — no prose, no markdown fences. If you cannot find new papers, return [].`;
+
+const SYSTEM_GENERATE = `You are an expert HSC question writer for NSW students.
+You generate high-quality multiple-choice quiz questions directly from HSC exam papers.
+Follow NESA syllabus terminology precisely. Return ONLY valid JSON arrays — no prose, no markdown fences.`;
+
+// Token usage logger — prints to GitHub Actions log for cost tracking.
+function logUsage(label, usage = {}) {
+  console.log(
+    `[tokens] ${label}: in=${usage.input_tokens || 0} out=${usage.output_tokens || 0} ` +
+    `cache_write=${usage.cache_creation_input_tokens || 0} ` +
+    `cache_read=${usage.cache_read_input_tokens || 0}`
+  );
+}
+
 /**
  * Step 1: Ask Claude to scan NESA and find new exam papers.
- * Claude uses web search to discover papers we haven't processed yet.
+ * Uses claude-sonnet-4-6 — web search + simple JSON output, no need for Opus.
  */
 async function discoverNewPapers(state) {
   console.log('\n🔍 Scanning NESA for new exam papers...');
 
   const response = await client.messages.create({
-    model: 'claude-opus-4-5',
-    max_tokens: 2000,
+    // claude-sonnet-4-6: sufficient for web search + JSON extraction (3x cheaper than Opus)
+    model:      'claude-sonnet-4-6',
+    max_tokens: 1024,
+    // Cache the static system prompt — identical on every nightly run.
+    system: [{ type: 'text', text: SYSTEM_DISCOVER, cache_control: { type: 'ephemeral' } }],
     tools: [{ type: 'web_search_20250305', name: 'web_search' }],
     messages: [{
       role: 'user',
-      content: `Search the NESA NSW website (educationstandards.nsw.edu.au) for HSC exam papers 
-      that have been published recently (2023 or 2024). 
-      
+      content: `Search the NESA NSW website (educationstandards.nsw.edu.au) for HSC exam papers
+      that have been published recently (2023 or 2024).
+
       Find the direct PDF download URLs for exam papers.
       Already processed papers (skip these): ${JSON.stringify(state.processed)}
-      
+
       Return a JSON array of objects like:
       [{ "subject": "Mathematics Advanced", "year": "2024", "pdfUrl": "https://..." }]
-      
+
       Return ONLY the JSON array, nothing else. If no new papers found, return [].`
-    }]
+    }],
+    betas: ['prompt-caching-2024-07-31'],
   });
+
+  logUsage('discoverNewPapers', response.usage);
 
   // Extract text from response (may have tool_use blocks)
   const text = response.content
@@ -113,7 +140,6 @@ async function discoverNewPapers(state) {
 
   try {
     const clean = text.replace(/```json|```/g, '').trim();
-    // Extract JSON array from the text
     const match = clean.match(/\[[\s\S]*\]/);
     if (!match) return [];
     return JSON.parse(match[0]);
@@ -126,6 +152,7 @@ async function discoverNewPapers(state) {
 /**
  * Step 2: For a given paper, download the PDF and ask Claude to
  * extract questions and generate quiz items with explanations.
+ * Uses claude-opus-4-5 — question quality is critical here.
  */
 async function generateQuizFromPaper(paper) {
   console.log(`\n📄 Processing: ${paper.subject} ${paper.year}`);
@@ -151,7 +178,7 @@ async function generateQuizFromPaper(paper) {
   }
   content.push({
     type: 'text',
-    text: `${pdfBase64 ? 'From this HSC exam paper PDF' : 'Based on your knowledge of past HSC ' + paper.subject + ' ' + paper.year + ' exams'}, 
+    text: `${pdfBase64 ? 'From this HSC exam paper PDF' : 'Based on your knowledge of past HSC ' + paper.subject + ' ' + paper.year + ' exams'},
     generate 10 multiple-choice quiz questions for HSC students.
 
     Rules:
@@ -174,10 +201,16 @@ async function generateQuizFromPaper(paper) {
   });
 
   const response = await client.messages.create({
-    model: 'claude-opus-4-5',
+    // claude-opus-4-5: keep for question generation — quality matters here.
+    model:      'claude-opus-4-5',
     max_tokens: 4000,
-    messages: [{ role: 'user', content }]
+    // Cache the static system prompt — identical for every subject/year.
+    system: [{ type: 'text', text: SYSTEM_GENERATE, cache_control: { type: 'ephemeral' } }],
+    messages: [{ role: 'user', content }],
+    betas: ['prompt-caching-2024-07-31'],
   });
+
+  logUsage(`generateQuizFromPaper(${paper.subject} ${paper.year})`, response.usage);
 
   const text = response.content.filter(b => b.type === 'text').map(b => b.text).join('');
 

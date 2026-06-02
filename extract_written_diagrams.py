@@ -274,8 +274,10 @@ def detect_page(client, img, page_num):
     Returns the parsed JSON dict from Claude.
     """
     img_b64  = pil_to_jpeg_b64(img)
+    # claude-sonnet-4-6: 3x cheaper than Opus, sufficient for diagram region detection.
+    # Switch to claude-opus-4-5 only if detection accuracy becomes a problem.
     response = client.messages.create(
-        model='claude-opus-4-5',
+        model='claude-sonnet-4-6',
         max_tokens=512,
         messages=[{
             'role': 'user',
