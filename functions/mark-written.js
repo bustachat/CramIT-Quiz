@@ -51,10 +51,21 @@ export async function onRequestPost(context) {
     return new Response(JSON.stringify({ error: 'Could not verify subscription' }), { status: 500, headers: CORS });
   }
 
-  const plan  = (sub && sub.plan) || 'free';
+  // ── 2. Quota check ─────────────────────────────────────────────────────
+  // If no subscription row was found, show a connection-issue message rather
+  // than the misleading "upgrade" message (the user may well be a paying customer).
+  if (!sub) {
+    return new Response(JSON.stringify({
+      quotaExceeded: true,
+      reason: 'sub_not_found',
+      message: 'Could not verify your subscription — please refresh the page. If this continues, contact support.',
+      marksRemaining: 0,
+    }), { status: 200, headers: { 'Content-Type': 'application/json', ...CORS } });
+  }
+
+  const plan  = sub.plan || 'free';
   const quota = QUOTA[plan] ?? 0;
 
-  // ── 2. Quota check ─────────────────────────────────────────────────────
   if (quota === 0) {
     return new Response(JSON.stringify({
       quotaExceeded: true,
