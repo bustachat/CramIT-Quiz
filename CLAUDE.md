@@ -541,6 +541,10 @@ GitHub Actions triggers → agent.js runs →
 - **Stage 7B complete** — Cross-device progress sync via Supabase `user_progress` table. `syncAnswerToSupabase()` fire-and-forget UPSERT after every answer (quiz never waits on network). `loadProgressFromSupabase()` called on login — fetches all rows, merges into localStorage (server wins on conflict). Offline answers preserved until next sync. Table has UNIQUE(user_id, subject_key, question_idx, mode) — re-answers update one row, never duplicate. RLS enabled.
 - **Stage 8 complete** — Maths Section II written questions fully added. 101 written questions covering 2020–2025 HSC papers. Stage 8A: 68 text-only questions with keywords, band descriptors, model answers. Stage 8B: 33 additional questions with diagram images (`image:` field), 47 JPG images extracted from exam PDFs via PyMuPDF and committed to `/diagrams/`. Images audited and re-cropped (15 fixed: wrong page numbers, text bleeding, edge clipping). Key Concepts grid hidden for Maths (numerical keywords are scoring markers, not display concepts). Known limitation: some images have minor text label clipping ("NOT TO SCALE" etc.) — root cause is `auto_bbox` detecting vectors only, not text. Fix: rebuild extractor with Claude Vision `--detect` mode + full-width crop (x0=30, x1=565) before automation goes live.
 - **Stage 8.9 complete** — Formula Hint widget for Maths MC questions in Practice mode. Green lightbulb "Hint" button appears in the question header for formula-based questions. Pressing it reveals a tip card: a prompt asking which formula applies, 3 radio button choices (1 correct, 2 plausible wrong), per-choice explanations, correct/wrong colour feedback, Try Again resets, "Got it →" closes the card. Does NOT appear in Test mode. Does NOT count against the trial limit. Covers 73 of 90 HSC questions (non-formula/image-only questions skipped). Full Extended 318 coverage: F1/F2/M1 variants use exact index range lookup (`mathsQuestionTips` keys 1–89, variant indices 90–206 mapped via range table); S1S2/T2/A2/N1/P1 variants use keyword matching on question text (returns null on no match — never shows a wrong hint). Key implementation: `getTipForQuestion(q)` is the single lookup function used by `openTip()`, `checkTipAnswer()`, and `renderQuestion()` — all three must call this function, not `mathsQuestionTips[masterIdx]` directly.
+- **Stage 8.5 complete** — Written question diagram extractor rebuilt as `extract_written_diagrams.py`. Replaces 4 one-off fix scripts. CROP mode bootstraps 15 hard-coded entries (2020–2025) using PyMuPDF clip at x0=30, x1=565 (full-width). DETECT mode (`--detect`) uses Claude Vision (`claude-sonnet-4-6`) to scan Section II pages. PyMuPDF-based coordinate detection finds y_start (topmost vector drawing filtered for borders) and y_end (first `(a)` text or instruction verb near left margin). Registry stored in `written_diagram_registry.json` (version 1).
+- **API cost optimisation complete** — Prompt caching + token logging added to all API-calling files. `mark-written.js`: model → `claude-haiku-4-5`, system prompt cached, token usage logged to Cloudflare dashboard. `agent.js`: `SYSTEM_DISCOVER` + `SYSTEM_GENERATE` constants extracted, `logUsage()` helper added, `discoverNewPapers` model → `claude-sonnet-4-6`. `extract_maths_diagrams.py` + `extract_written_diagrams.py`: vision model → `claude-sonnet-4-6`. Patterns saved to global `~/.claude/CLAUDE.md`.
+- **Question text accuracy pass complete (partial)** — 25 of 90 HSC Section I MC question texts updated to exact NESA wording using `verify_question_text.py` (PyMuPDF extraction) + `apply_question_text_fixes.py` (quality-filtered apply). 39 questions skipped — PDF extraction returned garbled text (image-based questions). Those need manual review pre-launch. `question_text_diff.txt` in repo root has the full list.
+- **Bug fixes (Session 5)** — `mark-written.js`: subscription-not-found now returns `sub_not_found` reason instead of misleading "upgrade" message. `index.html` 2024 Q15 histogram: added `hideQ:true` (NESA embedded question text inside stimulus image). 2022 Q13 normal distribution: restored exact NESA question wording.
 
 ### Staged Implementation Roadmap
 
@@ -556,7 +560,7 @@ GitHub Actions triggers → agent.js runs →
 | **Stage 7B** | Cross-device sync — Supabase `user_progress` table; `syncAnswerToSupabase()` fire-and-forget, `loadProgressFromSupabase()` on login | ✅ **DONE** |
 | **Stage 8** | Maths Section II written questions — 101 questions (2020–2025), 47 diagram images, image audit + re-crop, Key Concepts hidden for Maths | ✅ **DONE** |
 | **Stage 8.9** | Formula Hint widget — green Hint button in Practice mode for formula-based Maths MC questions; radio-button formula selector; correct/wrong feedback with explanations; full HSC 90 + Extended 318 coverage via `getTipForQuestion(q)` | ✅ **DONE** |
-| **Stage 8.5** | Rebuild written question image extractor — Claude Vision `--detect` mode + full-width crop (x0=30, x1=565) to fix text label clipping at scale. **Must complete before agent automation goes live.** | ⬜ **Pre-automation** |
+| **Stage 8.5** | Rebuild written question image extractor — Claude Vision `--detect` mode + full-width crop (x0=30, x1=565) to fix text label clipping at scale. | ✅ **DONE** |
 | **Stage 9** | Agent infrastructure (QA/Testing, Content, Analytics) — separate project | ⬜ |
 | **Stage 10** | Desktop web portal (`portal.html`) — sidebar nav, subject dashboard, progress history, split-panel written response | ⬜ |
 | **Stage 11** | Migrate hosting from Netlify → Cloudflare Pages + Workers (completed May 2026) | ✅ **DONE** |
@@ -567,6 +571,8 @@ GitHub Actions triggers → agent.js runs →
 |---|---|---|
 | Fix remaining billing UI issues | `billing.js`, `index.html` | Test full flow end-to-end in Stripe sandbox |
 | Test full payment flow | Stripe sandbox | Use test card `4242 4242 4242 4242` |
+| Fix remaining 39 MC question texts | `index.html` | PDF extraction returned garbled text for image-heavy questions. See `question_text_diff.txt` for full list. Manual copy-paste from NESA PDFs. Pre-launch QA task. |
+| Re-crop 2024 Q15 stimulus image | `diagrams/mathematics-standard-2_2024_Q15_stimulus.jpg` | Remove NESA question text from image — show only the box plot. `hideQ:true` is the current workaround. Manual crop in any image editor. |
 | Set `ANTHROPIC_API_KEY` in GitHub Secrets | GitHub Settings | Enables nightly agent |
 | Switch Stripe to live mode | Stripe dashboard + Cloudflare + Supabase secrets | Update all 3 key locations |
 | Submit Google OAuth for verification | Google Console | Required for public launch |
@@ -865,6 +871,6 @@ Images are currently served from git repo via Cloudflare Pages static files — 
 
 ---
 
-*CLAUDE.md — CramIT Project — Last updated: May 2026 — Stages 1–8, 8.9 + 11 complete*
+*CLAUDE.md — CramIT Project — Last updated: June 2026 — Stages 1–8, 8.5, 8.9 + 11 complete*
 *Repo: https://github.com/bustachat/CramIT-Quiz*
 *Supabase: https://ohqtefjawaphtsebnaxg.supabase.co*
