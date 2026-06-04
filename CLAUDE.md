@@ -3,6 +3,8 @@
 > **Strategy for every task: Explore → Plan → Code → Commit**
 > Before touching a single line of code, read the relevant files. Then write a plan in plain English. Only then write code. When done, provide exact commit instructions.
 
+> **Global rules (API cost optimisation, file safety, security, git, communication) also apply — see `~/.claude/CLAUDE.md`**
+
 ---
 
 ## 1. What CramIT Is
@@ -57,7 +59,7 @@ Cloudflare Pages auto-deploys on every push to `main`. Remind the owner of this.
 
 | Layer | Technology | Notes |
 |---|---|---|
-| Frontend | Single `index.html` — vanilla HTML/CSS/JS | No React, no Vue, no frameworks |
+| Frontend | Three HTML files — vanilla HTML/CSS/JS | No React, no Vue, no frameworks. See §22 for three-file architecture. |
 | Hosting | Cloudflare Pages (free tier) | Functions at `/functions/` folder → served at `/{name}` — NEVER `/.netlify/functions/` |
 | Auth | Supabase Auth — email/password + Google OAuth | |
 | Database | Supabase (Postgres) — RLS enabled | Client always uses `sbClient` |
@@ -136,7 +138,7 @@ Never commit API keys to GitHub. All keys go in environment variables. This file
 | Quiz Unlimited | `cap` | $19.99/mo | Up to 7 subjects |
 | Quiz Flex — Power | `flex_base` | $19.99/mo | Base for 7+ subjects |
 
-Price IDs are stored as constants in `billing.js`, `create-checkout.js`, and `update-subscription.js`. When Stripe switches to live mode, create new Price objects and update all three files.
+Price IDs are stored as constants in `create-checkout.js` and `update-subscription.js`. **`billing.js` is dead code — do not update it.** When Stripe switches to live mode, create new Price objects and update `create-checkout.js` and `update-subscription.js` only.
 
 ### 4.4 GitHub Actions
 | Setting | Value |
@@ -172,7 +174,9 @@ Tables live in Supabase. RLS is enabled on all tables.
 | `user_progress` | Per-question answer history — cross-device sync | `user_id`, `subject_key`, `question_idx`, `mode`, `is_correct`, `answered_at` — UNIQUE(user_id, subject_key, question_idx, mode) |
 
 **Agent coordination tables** (from Blueprint V3 — to be deployed):
-`agent_tasks`, `agent_logs`, `escalations`, `agent_config`, `content_issues`, `known_issues`, `analytics_snapshots`, `band_descriptors`, `marking_criteria`, `band_mapping`, `written_submissions`
+`agent_tasks`, `agent_logs`, `escalations`, `agent_config` (includes `autonomy_level INT DEFAULT 0` — 0=notify, 1=propose, 2=act+notify, 3=autonomous), `content_issues`, `known_issues`, `analytics_snapshots`, `band_descriptors`, `marking_criteria`, `band_mapping`, `written_submissions`
+
+**Staging Supabase project** (to be created — separate free-tier project for agent testing and staging environment)
 
 Full schema in `schema.sql` in the repo root.
 
@@ -182,12 +186,13 @@ Full schema in `schema.sql` in the repo root.
 
 ```
 cramit-quiz/
-├── index.html                  ← Mobile PWA app — all quiz logic + billing UI
-├── portal.html                 ← Desktop web portal (planned Stage 10) — sidebar nav, dashboard, history
+├── index.html                  ← Mobile PWA — student quiz experience (logged-in students)
+├── landing.html                ← ⬜ PLANNED — Public marketing/landing page (pre-signup visitors)
+├── portal.html                 ← ⬜ PLANNED Stage 10 — Desktop web portal (logged-in students)
 ├── manifest.json               ← PWA manifest (CramIT branding)
 ├── sw.js                       ← Service worker for offline caching
 ├── agent.js                    ← Nightly NESA monitor + AI question generator
-├── billing.js                  ← Client-side billing module (auth, checkout, pricing calc)
+├── billing.js                  ← ⚠️ DEAD CODE — placeholder keys, not imported by index.html. To be deleted.
 ├── subject-selector.html       ← Subject selection UI component
 ├── package.json                ← { "type": "module", "dependencies": { "stripe": "^14.0.0" } }
 ├── extract_maths_diagrams.py   ← PDF diagram extractor v3 (PyMuPDF + Pillow + calibration)
@@ -199,16 +204,28 @@ cramit-quiz/
 │   ├── .gitignore              ← Excludes _debug/ folder from git
 │   └── mathematics-standard-2_{year}_Q{n}_{suffix}.jpg
 │       suffix = stimulus | A | B | C | D
-├── subjects/
+├── subjects/                   ← ⬜ MIGRATION IN PROGRESS — questions moving here from index.html
 │   ├── index.json              ← List of all available subject files
-│   └── mathematics-advanced-2024.json
+│   ├── mathematics-standard-2.json    ← ⬜ To be created (migrated from index.html)
+│   ├── pdhpe-hms.json                 ← ⬜ To be created (migrated from index.html)
+│   ├── multimedia.json                ← ⬜ To be created (migrated from index.html)
+│   ├── vet-construction.json          ← ⬜ To be created (migrated from index.html)
+│   └── mathematics-advanced-2024.json ← Agent-generated (existing)
 └── functions/                  ← Cloudflare Pages Functions — served at /{name} (NOT /functions/{name})
     ├── create-checkout.js      ← POST /create-checkout — creates Stripe Checkout Session
     ├── update-subscription.js  ← POST /update-subscription — updates Stripe when subjects change
     ├── customer-portal.js      ← POST /customer-portal — opens Stripe billing portal
-    ├── upgrade-flex.js         ← POST /upgrade-flex — upgrades cap → flex plan
+    ├── upgrade-flex.js         ← POST /upgrade-flex — upgrades cap → flex plan (stub — replaced by Billing Agent)
     └── mark-written.js         ← POST /mark-written — AI marking via Claude API
 ```
+
+**Branch structure:**
+```
+main          → cramit-quiz.pages.dev         (LIVE — students, protected, PR required)
+staging       → staging.cramit-quiz.pages.dev  (TEST — you only, agents can self-merge)
+agent/*       → auto-preview URLs              (AGENT SANDBOX — agents commit here first)
+```
+**Rule: No agent ever commits directly to main. All agent commits go to `agent/*` branch → PR → staging → main.**
 
 ---
 
@@ -499,7 +516,10 @@ GitHub Actions triggers → agent.js runs →
   5. Quiz Builder: Claude generates MC questions + explanations
   6. Code Writer: creates subjects/new-subject.json
   7. Updates subjects/index.json
-  8. Commits + pushes → Cloudflare Pages auto-deploys
+  8. Commits to agent/content-{date} branch (NOT main)
+  9. Creates PR → staging branch
+  10. Cloudflare Pages preview URL auto-created for review
+  11. Human approves PR → merges to staging → merges to main → live deploy
 ```
 
 **Agent environment:**
@@ -507,6 +527,17 @@ GitHub Actions triggers → agent.js runs →
 - Uses `ANTHROPIC_API_KEY` secret from GitHub Settings → Secrets
 - Must have `contents: write` permission to commit files
 - Claude model to use: `claude-opus-4-5` for quality (or `claude-sonnet-4-6` for speed/cost)
+- **Agents NEVER commit directly to `main`** — always commit to `agent/*` branch first
+
+**Agent safety — every agent must implement:**
+```js
+const config = await getAgentConfig(agentName);
+if (!config.enabled) return;                          // kill switch
+if (todaySpend >= config.max_daily_spend) { await escalate(...); return; } // spend limit
+const DRY_RUN = config.autonomy_level === 0;          // level 0 = notify only
+if (DRY_RUN) { await notify(action); return; }        // email owner instead of acting
+await logAction(agentName, action, payload);           // log before acting
+```
 
 **Written response AI marking** (live — `/mark-written` Cloudflare Pages Function):
 - Student submits written answer via POST
@@ -567,18 +598,38 @@ GitHub Actions triggers → agent.js runs →
 
 ### ⬜ Still to do (non-staged)
 
+#### Pre-launch — blocking
 | Task | File(s) | Notes |
 |---|---|---|
-| Fix remaining billing UI issues | `billing.js`, `index.html` | Test full flow end-to-end in Stripe sandbox |
-| Test full payment flow | Stripe sandbox | Use test card `4242 4242 4242 4242` |
+| Fix `handleUpgradeFlex()` | `index.html` | Currently just shows an alert. Redirect to Customer Portal as stopgap until Billing Agent is built. Low priority — only triggered at 8+ subjects. |
+| Fix `plan_type: flex` in `handleCheckout()` | `index.html` | Currently maps to `'unlimited'` for 8+ subjects — should be `'flex'` |
+| Delete `billing.js` | `billing.js` | Dead code — placeholder keys, not imported by index.html. Safe to delete. |
+| Test full payment flow end-to-end | Stripe sandbox | Use test card `4242 4242 4242 4242`. Test: trial → subscribe → add subject → remove subject → cancel |
 | ~~Fix remaining 39 MC question texts~~ | ~~`index.html`~~ | ✅ Done — 60 question texts updated to exact NESA wording from PDFs (2020–2025). Also fixed 2021 Q8–15 one-position shift, bearing diagram image, and chocolates optionImages. |
-| Re-crop 2024 Q15 stimulus image | `diagrams/mathematics-standard-2_2024_Q15_stimulus.jpg` | Remove NESA question text from image — show only the box plot. `hideQ:true` is the current workaround. Manual crop in any image editor. |
-| Set `ANTHROPIC_API_KEY` in GitHub Secrets | GitHub Settings | Enables nightly agent |
-| Switch Stripe to live mode | Stripe dashboard + Cloudflare + Supabase secrets | Update all 3 key locations |
+| ~~Re-crop 2024 Q15 stimulus image~~ | ~~`diagrams/`~~ | ✅ Done — manually cropped, `hideQ:true` removed |
+| Set `ANTHROPIC_API_KEY` in GitHub Secrets | GitHub Settings | Enables nightly Content Agent |
 | Submit Google OAuth for verification | Google Console | Required for public launch |
 | Add custom domain `cramit.com.au` | Cloudflare Pages → Custom domains | Update DNS, update `APP_URL` in index.html, update Supabase redirect URLs |
-| Deploy agent coordination tables | Supabase SQL editor | From Blueprint V3 Appendix |
-| Launch | — | — |
+| Switch Stripe to live mode | Stripe dashboard + Cloudflare + Supabase secrets | Create new live Price objects, update `create-checkout.js` + `update-subscription.js` |
+
+#### Pre-launch — infrastructure (required before any agent goes live)
+| Task | File(s) | Notes |
+|---|---|---|
+| Create staging Supabase project | Supabase dashboard | Free tier. Separate from production. Used by all agents during testing. |
+| Create `staging` branch + Cloudflare preview | GitHub + Cloudflare | Agents deploy here first. Preview URL auto-created by Cloudflare Pages. |
+| Enable branch protection on `main` | GitHub Settings → Branches | Require PR + 1 approval. No direct pushes — not even from owner. |
+| Add `autonomy_level` column to `agent_config` | Supabase SQL editor | `ALTER TABLE agent_config ADD COLUMN autonomy_level INT DEFAULT 0;` |
+| Deploy all Blueprint V3 agent coordination tables | Supabase SQL editor | See §23 for full table list |
+| Build shared agent safety wrapper | New file `agents/lib/safety.js` | Kill switch + spend limit + dry-run + action logging. Used by all agents. |
+
+#### Post-launch roadmap
+| Task | Notes |
+|---|---|
+| Migrate questions from `index.html` → `subjects/*.json` | See §25 for migration plan. Reduces index.html by ~60%. |
+| Build `landing.html` — public marketing page | See §22. Needed for organic traffic + conversion. |
+| Build `portal.html` — desktop web portal | See §22 Stage 10. |
+| Build agent fleet per Blueprint V3 phasing | See §24 for revised agent build order. |
+| Launch | — |
 
 ---
 
@@ -650,7 +701,7 @@ The biggest priority is bringing `index.html` (the hosted Cloudflare Pages app) 
 - [ ] Upgrade modal shows correct price calculation
 - [ ] Stripe Checkout opens (test mode: use card `4242 4242 4242 4242`)
 - [ ] After payment, subject unlocks without page reload (or with clear reload instruction)
-- [ ] Customer portal opens via `/.netlify/functions/customer-portal`
+- [ ] Customer portal opens via `/customer-portal` (NOT `/.netlify/functions/customer-portal`)
 
 ---
 
@@ -664,6 +715,10 @@ The biggest priority is bringing `index.html` (the hosted Cloudflare Pages app) 
 | Edge Function named `clever-action` not `stripe-webhook` | ✅ Known, working | Do not rename — webhook registered to this URL |
 | Diagram images not rendering in hosted quiz | ✅ Fixed Stage 3 | Images wired via `image`/`optionImages` on question objects. `MATHS_IMG` retired. |
 | Written response AI marking not yet built | ✅ Built Stage 5 | `/mark-written` Cloudflare Pages Function live. Quota by plan. Keyword grid fallback. |
+| `billing.js` has placeholder credentials | ⬜ Delete it | Not imported by index.html — dead code. Safe to delete. |
+| `handleUpgradeFlex()` is a stub | ⬜ Fix pending | Just shows alert. Fix: redirect to Customer Portal. Billing Agent will replace this properly. |
+| `handleCheckout()` plan_type missing flex case | ⬜ Fix pending | Maps 8+ subjects to `'unlimited'` — should be `'flex'` |
+| Blueprint V3 references Netlify in 7 places | ⬜ Docx update needed | Hosting migrated to Cloudflare Pages in May 2026. Blueprint .docx not yet updated. |
 
 ---
 
@@ -729,15 +784,38 @@ At 1,000 active subscribers: ~$105/mo in AI + infra costs (≈1.3% of revenue).
 
 ## 20. Blueprint V3 — Agent Roster Summary
 
-The Autonomous Operations Blueprint V3 defines 22 agents across 5 clusters. These are **not yet built** — they're the roadmap. Claude should be aware of them when asked about future features:
+The Autonomous Operations Blueprint V3 defines 22 agents across 5 clusters. Full specs in `CramIT_Autonomous_Operations_Blueprint_V3.docx`. See §24 for the revised build order and decisions.
 
-**Operations (blue):** Content Agent, Incident & Monitoring Agent, Service Desk Agent
-**Revenue & Finance (green):** Billing & Subscription Agent, Accounts / Finance Agent
-**Growth & Marketing (orange):** Marketing Agent, Notification Agent, Referral Agent, Analytics Agent, SEO Agent, Feedback Synthesis Agent, Onboarding Agent
-**Quality & Improvement (purple):** QA / Testing Agent, Development Agent, UX / Design Agent
-**Compliance & Strategy (teal):** Compliance Agent, Data Protection Agent, Competitor Intelligence Agent, Pricing Optimisation Agent, Database & Infrastructure Agent, Syllabus & Standards Agent, Security & Threat Agent
+**Revised status per agent (June 2026 review):**
 
-All agents communicate through `agent_tasks` table in Supabase. Each has a kill switch in `agent_config` table. Full specs in `CramIT_Autonomous_Operations_Blueprint_V3.docx`.
+| # | Agent | Decision | Reason |
+|---|-------|----------|--------|
+| 1 | Content Agent | ✅ Build Phase 1 | Already 80% built as `agent.js` |
+| 2 | Incident & Monitoring | ⚡ Replace uptime with UptimeRobot (free) | Custom logic only needed for Supabase/Stripe health checks |
+| 3 | Service Desk | ✅ Build Phase 2 | Scales support without owner time |
+| 4 | Billing & Subscription | ✅ Build Phase 2 | Replaces `handleUpgradeFlex()` stub, handles churn |
+| 5 | Accounts / Finance | ✅ Build Phase 3 | Manual is fine until 500+ subscribers |
+| 6 | Marketing | ⚠️ Build Phase 4 — draft-only mode first | $15–60/mo AI cost. Start at autonomy_level=0 |
+| 7 | Notification & Engagement | ✅ Build Phase 3 | Needs `user_progress` data — can't replace with generic SaaS |
+| 8 | Referral & Partnerships | ⏳ Defer | Needs contact list. Build after 50+ students |
+| 9 | Analytics & Insights | ✅ Build Phase 3 | Needs Supabase data — PostHog can't replace |
+| 10 | QA / Testing | ✅ Build Phase 1 | Catches regressions before students see them |
+| 11 | Development Agent | ⚡ Replaced by Claude Code | This is the Development Agent |
+| 12 | Compliance | ✅ Build Phase 5 | Monthly, low urgency pre-launch |
+| 13 | Data Protection | ✅ Build Phase 5 | Monthly audit + deletion requests |
+| 14 | Competitor Intelligence | ⏳ Defer Phase 5 | Nice-to-have, manual weekly browse is fine early |
+| 15 | Onboarding | ✅ Build Phase 2 | Trial → paid conversion. Highest revenue impact |
+| 16 | Pricing Optimisation | ✅ Build Phase 5 | Proposals only — never changes prices autonomously |
+| 17 | SEO & Content Marketing | ⏳ Defer | Needs blog infrastructure + `cramit.com.au` domain first |
+| 18 | Feedback Synthesis | ✅ Build Phase 5 | Weekly aggregation of content_issues + feature_requests |
+| 19 | UX / Design | ⚡ Replaced by Claude Code | Proposals on-demand via Claude Code |
+| 20 | Database & Infrastructure | ✅ Build Phase 1 | Daily capacity monitoring, SSL cert checks |
+| 21 | Syllabus & Standards | ✅ Build Phase 3 | Core differentiator — NESA band descriptors |
+| 22 | Security & Threat | ✅ Build Phase 2 | Student data, Australian Privacy Act exposure |
+
+**Effective agent count: ~19 custom agents** (3 replaced: Development, UX/Design = Claude Code; uptime monitoring = UptimeRobot)
+
+All agents communicate through `agent_tasks` table in Supabase. Each has a kill switch + `autonomy_level` in `agent_config` table.
 
 ---
 
@@ -786,30 +864,46 @@ The Maths Standard 2 standalone file (v5.4) was expanded from 90 to 318 question
 - Check button: pulse animation on appear (`checkPulse` keyframe)
 - All design decisions must translate to native mobile app (same hex values usable in React Native/Flutter)
 
-### Landing page (deferred)
-The current home screen is student-centric. A general-public-facing landing page is needed before launch — but this is deferred until end-to-end quiz and billing functionality is complete.
+### Three-track product architecture (FUNDAMENTAL — June 2026)
 
-### Two-track product architecture (decided May 2026)
-CramIT has two distinct experiences that should NOT be merged into one file:
+CramIT has **three distinct HTML files** serving three different audiences. These must NEVER be merged:
 
-| | Mobile PWA (`index.html`) | Desktop Web Portal (`portal.html`) |
-|---|---|---|
-| **Purpose** | Student installs on phone, quick quiz sessions | Deeper study sessions on laptop/desktop |
-| **Layout** | Single column, full-screen, tap targets 52px+ | Sidebar nav + main content canvas |
-| **Navigation** | Card-based home → picker → quiz | Left sidebar: Dashboard, Study, History, Written |
-| **Design** | Same warm earth-tone tokens | Same tokens — denser info, hover states |
-| **Auth** | Same Supabase `sbClient` | Same Supabase `sbClient` |
-| **Progress data** | Reads/writes `user_progress` table | Reads `user_progress` table for history/dashboard |
+| | Landing Page (`landing.html`) | Mobile PWA (`index.html`) | Desktop Portal (`portal.html`) |
+|---|---|---|---|
+| **Audience** | Public — not yet a student | Logged-in student on phone | Logged-in student on laptop |
+| **Purpose** | Convert visitors → trial signups | Quick quiz sessions, installed on phone | Deep study sessions, progress history |
+| **Auth required** | ❌ None — fully public | ✅ Supabase `sbClient` | ✅ Supabase `sbClient` |
+| **Layout** | Marketing-focused, hero + features + CTA | Single column, full-screen, tap targets 52px+ | Sidebar nav + main content canvas |
+| **Navigation** | Scrolling sections + sign up CTA | Card-based home → picker → quiz | Left sidebar: Dashboard, Study, History, Written |
+| **Design** | Same warm earth-tone tokens | Same tokens — mobile-first | Same tokens — denser, hover states |
+| **Status** | ⬜ Planned — build before launch | ✅ Live | ⬜ Planned Stage 10 |
 
-**Competitor reference:** Studitory (`studitory.app`) — take the sidebar + split-panel patterns, ignore their Exam Builder / Flashcards / Classrooms scope.
+**Why the landing page is fundamental:**
+- `index.html` home screen is student-centric — assumes auth already exists
+- Organic traffic (Google, social) hits a dead-end without a public conversion page
+- Trial signups without a landing page = no organic growth
+- `landing.html` is NOT the same as `index.html` — they serve different audiences and must be separate files
 
-**Planned portal pages:**
-1. **Dashboard** — per-subject progress rings, streak, recent activity (from `user_progress` Supabase table)
-2. **Study** — three-column picker: subject params + topics + year/difficulty config → start quiz
-3. **History** — every question answered, filterable by subject/date/correct/incorrect
+**Landing page must include:**
+- Hero: what CramIT is, who it's for
+- Subject list with sample questions (no auth needed)
+- Pricing table
+- "Start free trial" CTA → redirects to `index.html` (triggers auth + trial flow)
+- Social proof (results, student quotes when available)
+- SEO-targeted content (HSC, NESA, past papers)
+
+**Desktop Portal planned pages:**
+1. **Dashboard** — per-subject progress rings, streak, recent activity
+2. **Study** — three-column picker: subject + topics + year → start quiz
+3. **History** — every question answered, filterable by subject/date/result
 4. **Written Response** — split panel: question left, answer right, AI feedback below
 
-**Key rule:** `portal.html` uses the same Supabase auth (`sbClient`), same `user_progress` table, same pricing logic — but its own layout and CSS. Do NOT modify `index.html` when building the portal.
+**Competitor reference for portal:** Studitory (`studitory.app`) — take sidebar + split-panel patterns only.
+
+**Key rules:**
+- `portal.html` uses the same `sbClient`, same `user_progress` table, same pricing logic — its own layout only
+- `landing.html` has NO `sbClient` dependency — fully static, no auth code
+- Do NOT modify `index.html` when building either the portal or the landing page
 
 ---
 
@@ -871,6 +965,173 @@ Images are currently served from git repo via Cloudflare Pages static files — 
 
 ---
 
-*CLAUDE.md — CramIT Project — Last updated: June 2026 — Stages 1–8, 8.5, 8.9 + 11 complete. MC question texts updated to exact NESA wording (60 fixes, 2020–2025).*
+---
+
+## 23. Staging Environment & Release Strategy
+
+### Environment architecture
+```
+main branch          → cramit-quiz.pages.dev          (LIVE — real students)
+staging branch       → staging.cramit-quiz.pages.dev   (TEST — owner only)
+agent/* branches     → auto-preview URLs               (AGENT SANDBOX)
+```
+Cloudflare Pages auto-creates preview URLs for every branch — no extra config needed.
+
+### Branch protection rules (set on GitHub before any agent work)
+- `main`: Require PR + 1 approval (owner). No direct pushes — not even from owner.
+- `staging`: Require PR. No approval needed (agents can self-merge here after passing tests).
+- `agent/*`: No restrictions — agents commit freely here.
+
+### Staging Supabase project
+- Separate free-tier Supabase project — NOT the production database
+- Same schema as production (copy `schema.sql`)
+- Seeded with test accounts and test subscription data
+- All agents run against staging Supabase during development and Level 0–1 testing
+
+### Agent release pipeline (for every new agent)
+```
+1. Build agent → commit to agent/{name} branch
+2. Test against staging Supabase + staging Cloudflare preview
+3. Set autonomy_level = 0 (notify only) — run for 2 weeks
+4. Review email notifications — confirm actions are correct
+5. Promote to autonomy_level = 1 (propose) — run for 1 week
+6. Review proposals — confirm all are approved without changes
+7. Promote to autonomy_level = 2 (act + notify) — run for 2 weeks
+8. Review action logs — confirm no surprises
+9. Promote to autonomy_level = 3 (fully autonomous)
+```
+Total: ~5–6 weeks from build to fully autonomous. Live app is protected throughout.
+
+### Agent autonomy levels
+| Level | Name | Behaviour |
+|-------|------|-----------|
+| 0 | Notify | Runs, emails owner "I would do X", does nothing |
+| 1 | Propose | Creates PR or `agent_tasks` entry, waits for approval |
+| 2 | Act + Notify | Acts immediately, emails owner what it did |
+| 3 | Autonomous | Acts, logs, escalates only on exception |
+
+### Risk ratings by agent
+| Agent | Risk if buggy | Max autonomy_level at launch |
+|-------|--------------|------------------------------|
+| Content Agent | Commits wrong questions | Level 1 (PR only — human reviews questions) |
+| Billing & Subscription | Wrong Stripe charge | Level 1 until Stripe is live mode |
+| Security & Threat | Locks out real students | Level 1 always — never auto-ban |
+| Service Desk | Wrong email to student | Level 0/1 for first month |
+| Onboarding | Spam to students | Hard limit: max 1 email per student per 24h in code |
+| Development | Merges bad code | Level 1 always — PR only, never auto-merges to main |
+
+### Shared agent safety wrapper
+Every agent imports from `agents/lib/safety.js`:
+```js
+export async function agentGuard(agentName, action, payload, executeFn) {
+  const config = await getAgentConfig(agentName);        // from agent_config table
+  if (!config.enabled) return { skipped: 'disabled' };  // kill switch
+  if (await exceedsDailySpend(agentName, config.max_daily_spend)) {
+    await escalate(agentName, 'Daily spend limit reached', payload);
+    return { skipped: 'spend_limit' };
+  }
+  await logAction(agentName, action, payload);            // always log before acting
+  if (config.autonomy_level === 0) {
+    await notifyOwner(agentName, action, payload);        // notify only
+    return { skipped: 'notify_only' };
+  }
+  return await executeFn();                               // act
+}
+```
+
+---
+
+## 24. Agent Build Order — Revised (June 2026)
+
+Build sequence based on business impact and dependency order:
+
+### Phase 1 — Before launch (core stability)
+| Agent | What it does | Why now |
+|-------|-------------|---------|
+| Content Agent (expand `agent.js`) | NESA monitoring + question generation | Already 80% built |
+| QA / Testing Agent | Playwright tests on every deploy | Catches regressions before students |
+| Database & Infrastructure Agent | Daily Supabase/CF capacity checks | Prevents surprise outages |
+| UptimeRobot (not custom) | HTTP uptime monitoring | Free, 2-minute setup |
+
+### Phase 2 — First students (student-facing automation)
+| Agent | What it does | Why now |
+|-------|-------------|---------|
+| Onboarding Agent | Day 0/1/3/7/14 email sequence | Trial → paid conversion |
+| Billing & Subscription Agent | Payment events, churn prevention | Replaces handleUpgradeFlex() stub |
+| Service Desk Agent | Classify + auto-resolve student queries | Scale support without owner time |
+| Security & Threat Agent | Hourly suspicious login scan | Australian Privacy Act obligation |
+
+### Phase 3 — Growing (business intelligence)
+| Agent | What it does | Why now |
+|-------|-------------|---------|
+| Analytics & Insights Agent | Daily KPI briefing from Supabase data | Need visibility on what's working |
+| Notification & Engagement Agent | Re-engagement emails, new content alerts | Retention = revenue |
+| Accounts / Finance Agent | Weekly P&L from Stripe + costs | Understand unit economics |
+| Syllabus & Standards Agent | Maintain NESA band descriptors | Core product differentiator |
+
+### Phase 4 — Scaling (growth engine)
+| Agent | What it does | Why now |
+|-------|-------------|---------|
+| Marketing Agent | Social content — draft-only mode first | $15–60/mo AI cost, start cautiously |
+| SEO & Content Marketing Agent | Blog posts targeting HSC keywords | Needs `cramit.com.au` domain first |
+| Referral & Partnerships Agent | Tutor outreach | Needs 50+ students for social proof |
+
+### Phase 5 — Full automation
+| Agent | What it does |
+|-------|-------------|
+| Feedback Synthesis Agent | Weekly aggregation of all feedback |
+| Compliance Agent | Monthly NESA terms + Privacy Act check |
+| Data Protection Agent | Monthly audit + deletion request handling |
+| Competitor Intelligence Agent | Weekly competitor pricing/feature scan |
+| Pricing Optimisation Agent | Monthly pricing proposals (never autonomous) |
+
+**Permanently replaced by Claude Code (not built):** Development Agent, UX/Design Agent
+
+---
+
+## 25. Question JSON Migration Plan
+
+### Decision (June 2026)
+All question data currently hardcoded in `index.html` will be migrated to individual JSON files in `subjects/`. This reduces `index.html` size by ~60% and lets the agent manage all subjects consistently.
+
+### File structure
+One JSON file per subject (all years combined):
+```
+subjects/
+├── index.json                     ← list of all subject files
+├── mathematics-standard-2.json    ← all years, MC + written + variants
+├── pdhpe-hms.json                 ← all years, MC + written
+├── multimedia.json                ← all years, MC + written
+├── vet-construction.json          ← all years, MC + written
+└── mathematics-advanced-2024.json ← agent-generated (existing)
+```
+
+**Why one file per subject (not per subject+year):**
+- Year filter already works client-side from the `year:` field on each question — no need to split files
+- Maths at full size (~409 questions) is only ~300–400KB — fast on mobile
+- Agent appends new year's questions to the existing subject file
+- Simple loading: one fetch per subject
+
+### Migration steps
+1. Extract each subject's `mcQuestions[]` + `writtenQuestions[]` from `index.html`
+2. Write to `subjects/{subject-id}.json` using the question data structure in §10
+3. Update `subjects/index.json` to list all 4 subjects
+4. Replace hardcoded arrays in `index.html` with `loadSubject(id)` async fetch
+5. Test on staging branch before merging to main
+
+### Impact on index.html
+- Questions replaced by a `loadSubject()` function that fetches JSON on demand
+- Subject data cached in memory once loaded — no re-fetching on quiz reset
+- Loading state shown while JSON fetches (fast — Cloudflare edge serves instantly)
+- All existing quiz logic (filters, shuffle, progress tracking) unchanged
+
+### Agent compatibility
+- New subjects generated by the agent already use the JSON format
+- After migration, all subjects are consistently JSON — agent can update any subject
+- `subjects/index.json` is the single source of truth for what subjects exist
+
+---
+
+*CLAUDE.md — CramIT Project — Last updated: 2026-06-04 — Major update: three-track architecture (landing+PWA+portal), staging environment strategy, agent build order, JSON migration plan, agent autonomy levels, revised blueprint agent roster. Stages 1–8, 8.5, 8.9 + 11 complete.*
 *Repo: https://github.com/bustachat/CramIT-Quiz*
 *Supabase: https://ohqtefjawaphtsebnaxg.supabase.co*
