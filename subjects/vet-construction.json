@@ -1,0 +1,1790 @@
+{
+  "id": "vet-construction",
+  "name": "VET Construction",
+  "icon": "🔨",
+  "accentColor": "#f7c46a",
+  "mcQuestions": [
+    {
+      "year": 2021,
+      "q": "A diagram of a plane is shown. What type of plane is this?",
+      "options": [
+        "Jack",
+        "Trying",
+        "Electric",
+        "Smoothing"
+      ],
+      "answer": 3,
+      "image": "/diagrams/vet-construction_2021_Q1_stimulus.jpg",
+      "optionExplanations": [
+        "A jack plane is a general-purpose bench plane used for initial stock removal. It has a longer body (around 380mm) and is used before the trying plane.",
+        "A trying plane (jointer) is the longest bench plane, used to flatten and straighten long boards. It is longer than the plane shown.",
+        "An electric plane uses a motor and rotating cutter head — it looks entirely different from a traditional hand plane.",
+        "✓ Correct. A smoothing plane is the shortest bench plane, used for final surface finishing. Its compact size and fine mouth setting produce a very smooth surface ready for finishing."
+      ]
+    },
+    {
+      "year": 2021,
+      "q": "Employment on any worksite should be based on",
+      "options": [
+        "Age",
+        "Merit",
+        "Gender",
+        "Union membership"
+      ],
+      "answer": 1,
+      "optionExplanations": [
+        "Age-based employment decisions are illegal under Australian anti-discrimination law. Employment must be based on ability to perform the role, not on age.",
+        "✓ Correct. Employment decisions must be based on merit — the skills, qualifications and ability of the candidate to perform the required tasks. This is a fundamental principle of fair and lawful employment practice.",
+        "Gender-based employment decisions are illegal under the Sex Discrimination Act 1984. Employers cannot discriminate based on gender.",
+        "Union membership cannot be a condition of employment. Workers have the right to join or not join a union under the Fair Work Act."
+      ]
+    },
+    {
+      "year": 2021,
+      "q": "Which of the following is an example of environmentally sustainable development practices on a construction site?",
+      "options": [
+        "All waste material is buried on site",
+        "Construction and labour costs are minimised",
+        "Enough materials are ordered and accessible",
+        "Work practices have minimal impact on the surrounding area"
+      ],
+      "answer": 3,
+      "optionExplanations": [
+        "Burying waste on site is illegal and highly environmentally damaging. It contaminates soil and groundwater and violates environmental protection legislation.",
+        "Minimising costs alone is not a sustainability practice — cost reduction does not necessarily reduce environmental impact.",
+        "Ordering enough materials is efficient practice but does not specifically address environmental sustainability unless waste minimisation is included.",
+        "✓ Correct. Sustainable development means conducting work practices that have minimal impact on the surrounding area — including managing waste properly, controlling erosion, reducing pollution and preserving vegetation."
+      ]
+    },
+    {
+      "year": 2021,
+      "q": "A large construction site requires different trades. To plan all tasks in a logical sequence and to a timeframe, which organisational tool would be the most effective?",
+      "options": [
+        "Pie chart",
+        "Gantt chart",
+        "Diary entries",
+        "Trade sequence memo"
+      ],
+      "answer": 1,
+      "optionExplanations": [
+        "A pie chart shows proportional data (e.g. budget breakdown) but cannot display task sequencing or timelines. It is not suitable for project planning.",
+        "✓ Correct. A Gantt chart is a bar chart that displays project tasks on a timeline, showing start and end dates, dependencies between tasks and overall project progress. It is the industry standard tool for construction project scheduling.",
+        "Diary entries are informal personal records and are not suitable for coordinating multiple trades across a large construction site.",
+        "A trade sequence memo is a written document but lacks the visual timeline and dependency mapping needed to effectively coordinate complex multi-trade construction programs."
+      ]
+    },
+    {
+      "year": 2021,
+      "q": "A brick wall measuring 13.7 metres is drawn on a plan using a scale of 1:100. What is the length of the line drawn on the plan?",
+      "options": [
+        "1.37 mm",
+        "1.37 cm",
+        "137 mm",
+        "137 cm"
+      ],
+      "answer": 2,
+      "optionExplanations": [
+        "1.37 mm would result from dividing 13.7 by 10,000 — an incorrect scale calculation.",
+        "1.37 cm = 13.7 mm — this would only be correct for a scale of 1:1000, not 1:100.",
+        "✓ Correct. At 1:100, every 1 mm on the plan represents 100 mm (10 cm) in reality. 13.7 m ÷ 100 = 0.137 m = 137 mm. The line is 137 mm long on the plan.",
+        "137 cm = 1.37 m — this would be the real-world distance, not the plan distance. At 1:100 the drawing must be smaller, not larger."
+      ]
+    },
+    {
+      "year": 2021,
+      "q": "A diagram of a wall is shown with two window sills at 8m width. Which tool should be used to make sure these two window sills are at the same height?",
+      "options": [
+        "Plumb bob",
+        "Spirit level",
+        "Water level",
+        "Four fold rule"
+      ],
+      "answer": 2,
+      "image": "/diagrams/vet-construction_2021_Q6_stimulus.jpg",
+      "optionExplanations": [
+        "A plumb bob establishes vertical lines (plumb), not horizontal levels. It would not be used to compare heights across an 8-metre distance.",
+        "A spirit level establishes horizontal level over short distances (typically up to 1.8 m). Across 8 metres it would accumulate error and would not be reliable.",
+        "✓ Correct. A water level uses the principle that water always finds its own level regardless of distance. It can accurately transfer a level point across large distances — perfect for comparing the height of two window sills 8 metres apart.",
+        "A four-fold rule is a measuring device for lengths, not a levelling tool. It cannot establish or compare heights."
+      ]
+    },
+    {
+      "year": 2021,
+      "q": "What is the best way to prevent soil erosion from a construction site?",
+      "options": [
+        "Work only on dry days",
+        "Monitor site rainfall records",
+        "Report environmental hazards",
+        "Build a sediment control fence"
+      ],
+      "answer": 3,
+      "optionExplanations": [
+        "Working only on dry days is impractical and would halt construction for extended periods. It does not prevent erosion from rain events that may occur.",
+        "Monitoring rainfall records provides data but does not physically prevent soil erosion. Recording information is not a control measure.",
+        "Reporting environmental hazards is important but reactive — it does not actively prevent erosion from occurring.",
+        "✓ Correct. A sediment control fence (silt fence) is the most effective preventive measure — it physically contains soil and sediment on site, preventing it from flowing into stormwater systems and surrounding areas during rain events."
+      ]
+    },
+    {
+      "year": 2021,
+      "q": "A 150 mm steel rule is shown. To what level of accuracy can this rule measure?",
+      "options": [
+        "0.1 mm",
+        "1 mm",
+        "10 mm",
+        "150 mm"
+      ],
+      "answer": 1,
+      "image": "/diagrams/vet-construction_2021_Q8_stimulus.jpg",
+      "optionExplanations": [
+        "0.1 mm accuracy requires a micrometer or vernier caliper, not a standard steel rule. Steel rules cannot reliably measure to 0.1 mm.",
+        "✓ Correct. A standard 150 mm steel rule has graduations at 1 mm intervals and can measure to an accuracy of 1 mm. Some rules also have 0.5 mm divisions, but the standard accuracy is 1 mm.",
+        "10 mm accuracy is too coarse for a steel rule — that level of accuracy would only be suitable for rough measurement with a tape measure.",
+        "150 mm is the total length of the rule, not its measurement accuracy. Accuracy refers to the smallest increment it can reliably measure."
+      ]
+    },
+    {
+      "year": 2021,
+      "q": "According to the Work Health and Safety Act, when is a workplace required to set up a WHS committee?",
+      "options": [
+        "After an accident has occurred",
+        "At the beginning of the financial year",
+        "If a business has a turnover of over $200,000",
+        "When a workplace employs 20 or more employees"
+      ],
+      "answer": 3,
+      "optionExplanations": [
+        "A WHS committee is a proactive preventive measure, not a reactive response to accidents. Waiting for an accident to occur would violate the proactive duty of care requirements under the WHS Act.",
+        "The financial year has no bearing on WHS committee requirements. The trigger is the number of employees, not the calendar.",
+        "Business turnover is irrelevant to WHS committee requirements. The WHS Act bases the requirement on workforce size, not financial performance.",
+        "✓ Correct. Under the Work Health and Safety Act 2011, a workplace must establish a WHS committee when requested by a Health and Safety Representative or when the workforce reaches 20 or more employees."
+      ]
+    },
+    {
+      "year": 2021,
+      "q": "An emergency information sign is shown. What colours would be used on this sign?",
+      "options": [
+        "Red and white",
+        "Blue and white",
+        "Green and white",
+        "Black and yellow"
+      ],
+      "answer": 2,
+      "image": "/diagrams/vet-construction_2021_Q10_stimulus.jpg",
+      "optionExplanations": [
+        "Red and white is used for fire safety signs (fire extinguishers, fire exits from specific directions) and prohibition signs. Not emergency information.",
+        "Blue and white is used for mandatory action signs (PPE requirements, must-do instructions). Not emergency information.",
+        "✓ Correct. Emergency information signs (showing emergency exits, first aid, emergency equipment locations) use green and white under Australian Standard AS 1319. Green indicates safe conditions and directions.",
+        "Black and yellow is used for hazard/caution signs indicating potential dangers in the area. Not emergency information signs."
+      ]
+    },
+    {
+      "year": 2021,
+      "q": "Who should a member of the community contact to report that a construction site is operating outside permitted hours?",
+      "options": [
+        "Unions NSW",
+        "Local council",
+        "SafeWork NSW",
+        "Industrial Relations Commission"
+      ],
+      "answer": 1,
+      "optionExplanations": [
+        "Unions NSW represents workers' interests and handles industrial relations matters. Operating outside permitted hours is a noise/planning matter, not a union issue.",
+        "✓ Correct. Local councils issue development approvals and set permitted construction hours. A community member should contact the local council to report a site operating outside its approved hours — the council can investigate and issue warnings or stop-work notices.",
+        "SafeWork NSW handles workplace health and safety matters, not noise or operating hours complaints from the community.",
+        "The Industrial Relations Commission handles employment disputes between employers and workers, not community complaints about construction hours."
+      ]
+    },
+    {
+      "year": 2021,
+      "q": "With reference to the risk control hierarchy, which should be the first course of action when operating power tools in a damp area?",
+      "options": [
+        "Wear correct PPE",
+        "Tape all electrical plugs",
+        "Suspend power cords on stands",
+        "Use rechargeable battery driven tools"
+      ],
+      "answer": 3,
+      "optionExplanations": [
+        "Wearing PPE is the lowest level of the hierarchy of hazard controls (administrative/PPE). It should only be used when higher-order controls are not practicable.",
+        "Taping electrical plugs is an administrative control and does not address the fundamental risk of electricity in a damp environment.",
+        "Suspending power cords on stands reduces trip hazards and keeps cords drier, but does not eliminate the risk of operating corded 240V tools in a damp environment.",
+        "✓ Correct. Using battery-powered tools eliminates the risk of 240V electric shock in a damp environment — this is a substitution control, which is near the top of the hierarchy. Eliminating the hazard (240V electricity) is the preferred approach."
+      ]
+    },
+    {
+      "year": 2021,
+      "q": "A worker's clothing catches fire. What would be the best method to extinguish the fire?",
+      "options": [
+        "A fire blanket",
+        "Call emergency services",
+        "A dry chemical fire extinguisher",
+        "A carbon dioxide fire extinguisher"
+      ],
+      "answer": 0,
+      "optionExplanations": [
+        "✓ Correct. A fire blanket is the safest method to extinguish burning clothing — wrap the person in the blanket to cut off oxygen to the flames. It is safe for use on a person, unlike chemical extinguishers which could cause injury.",
+        "Calling emergency services is important but should be done in addition to extinguishing the fire, not instead of it. Seconds count when clothing is on fire.",
+        "A dry chemical extinguisher would cause significant injury if directed at a burning person — the chemical discharge pressure and residue make it entirely unsuitable for use on a person.",
+        "A carbon dioxide extinguisher would cause cryogenic burns if directed at a person due to the extremely cold discharge (-78°C). It is not suitable for extinguishing burning clothing on a person."
+      ]
+    },
+    {
+      "year": 2021,
+      "q": "A garden area is shown: 4m × 3m with 8m base. What is the area of the garden?",
+      "options": [
+        "15 m²",
+        "16 m²",
+        "18 m²",
+        "24 m²"
+      ],
+      "answer": 2,
+      "image": "/diagrams/vet-construction_2021_Q14_stimulus.jpg",
+      "optionExplanations": [
+        "15 m² does not correspond to the correct calculation for this shape. Check the formula and dimensions again.",
+        "16 m² does not correspond to the correct calculation for this shape.",
+        "✓ Correct. The garden area is calculated as 18 m². Use the appropriate formula for the shape shown — for a trapezoid: Area = ½ × (sum of parallel sides) × height = ½ × (4+8) × 3 = ½ × 12 × 3 = 18 m².",
+        "24 m² would result from multiplying 8 × 3 = 24 — this ignores the shape of the garden and does not account for the triangular section."
+      ]
+    },
+    {
+      "year": 2021,
+      "q": "The following site plan indicates the contours. Which best represents the cross-section Z-Z?",
+      "options": [
+        "Flat",
+        "Slope up",
+        "Slope down",
+        "Valley"
+      ],
+      "answer": 0,
+      "image": "/diagrams/vet-construction_2021_Q15_stimulus.jpg",
+      "optionExplanations": [
+        "✓ Correct. Reading the contour lines along the Z-Z section line on the site plan shows evenly spaced parallel contours indicating a flat terrain profile at that cross-section.",
+        "Slope up would be shown by contour lines getting closer together in one direction along the section, with increasing elevation values.",
+        "Slope down would be shown by contour lines with decreasing elevation values along the section line.",
+        "A valley would be shown by contour lines forming a V-shape or U-shape pointing toward higher elevations on the section."
+      ]
+    },
+    {
+      "year": 2022,
+      "q": "What type of level can be used to determine both level and plumb?",
+      "options": [
+        "Line",
+        "Spirit",
+        "Water",
+        "Automatic"
+      ],
+      "answer": 1,
+      "optionExplanations": [
+        "A line level is a small lightweight level that clips onto a string line. It can only check horizontal level along the string — it cannot check plumb.",
+        "✓ Correct. A spirit level (also called a builder's level) contains both a horizontal vial (for checking level) and a vertical vial (for checking plumb). This dual function makes it the most versatile common levelling tool on site.",
+        "A water level uses connected tubes of water to transfer levels between two points. It can only check horizontal level, not vertical plumb.",
+        "An automatic (optical) level uses a compensator to maintain horizontal sighting. It checks level but requires a separate plumb bob or plumb level for vertical work."
+      ]
+    },
+    {
+      "year": 2022,
+      "q": "Which trade is responsible for erecting temporary work platforms during multistorey construction?",
+      "options": [
+        "Roofer",
+        "Dogger",
+        "Steel fixer",
+        "Scaffolder"
+      ],
+      "answer": 3,
+      "optionExplanations": [
+        "Roofers install roofing materials and systems. While they work at height, they do not erect temporary scaffolding platforms — they use scaffolding that others have erected.",
+        "A dogger is a licensed worker who attaches loads to cranes using slings, chains and hooks. They work with lifting equipment, not scaffolding.",
+        "A steel fixer (reinforcing steel fixer) places and ties reinforcing steel in formwork before concrete is poured. They do not erect scaffolding.",
+        "✓ Correct. Scaffolders are the licensed trade responsible for erecting, altering and dismantling temporary work platforms (scaffolding) on construction sites. In NSW, scaffolding work requires a specific high-risk work licence."
+      ]
+    },
+    {
+      "year": 2022,
+      "q": "What would be the most effective tool to remove a 75 mm-long nail from timber?",
+      "options": [
+        "Pincers",
+        "Side cutters",
+        "Claw hammer",
+        "Long-nose pliers"
+      ],
+      "answer": 2,
+      "optionExplanations": [
+        "Pincers can grip nail heads but lack the leverage needed to pull out a 75 mm nail cleanly without damaging the timber surface significantly.",
+        "Side cutters are designed for cutting wire and small fasteners, not for extracting long nails from timber. They lack the leverage and claw design required.",
+        "✓ Correct. A claw hammer has a split claw specifically designed to grip nail heads and use the curved claw head as a lever against the timber to extract nails. For a 75 mm nail, a timber block under the head increases leverage without damaging the surface.",
+        "Long-nose pliers can grip nail heads but provide insufficient mechanical advantage to extract a 75 mm nail efficiently — they would deform before pulling the nail fully."
+      ]
+    },
+    {
+      "year": 2022,
+      "q": "A new brick veneer residence on a concrete slab. Which building material should be first delivered?",
+      "options": [
+        "Formwork",
+        "Timber frame",
+        "Bearers and joists",
+        "Particleboard flooring"
+      ],
+      "answer": 0,
+      "optionExplanations": [
+        "✓ Correct. For a brick veneer residence on a concrete slab, formwork is required first — it is used to contain the concrete pour for the slab foundation. The slab must be poured and cured before any other construction can proceed.",
+        "Timber framing is delivered and erected after the concrete slab has been poured and cured. Delivering it first would mean it would need to be stored and may be damaged or warp.",
+        "Bearers and joists are used in timber subfloor construction, not for slab-on-ground construction. This is not applicable to a concrete slab residence.",
+        "Particleboard flooring is installed late in the construction sequence, after structural work is complete. It would be damaged if delivered first."
+      ]
+    },
+    {
+      "year": 2022,
+      "q": "What is the first action required when providing first aid?",
+      "options": [
+        "Check airways",
+        "Check for danger",
+        "Check for response",
+        "Check for breathing"
+      ],
+      "answer": 1,
+      "optionExplanations": [
+        "Checking airways is the third step (A in DRSABCD — Airway). Before approaching and assessing a casualty, the area must first be checked for danger to the responder.",
+        "✓ Correct. The first action in first aid is to check for DANGER (D in DRSABCD). A responder who rushes to help without checking for danger may become a casualty themselves, creating additional victims and worsening the situation.",
+        "Checking for response is the second step (R in DRSABCD). You can only check for response after confirming the area is safe for you to approach.",
+        "Checking for breathing comes after danger, response and airway checks (B in DRSABCD). It is the fifth step, not the first."
+      ]
+    },
+    {
+      "year": 2022,
+      "q": "Holding a valid SafeWork NSW White Card means that a worker",
+      "options": [
+        "Is a licensed builder",
+        "Will be entitled to higher pay",
+        "Has completed site induction training",
+        "Is eligible to enter a construction site with permission"
+      ],
+      "answer": 3,
+      "optionExplanations": [
+        "A White Card is a general construction induction card, not a builder's licence. A builder's licence is a separate, more advanced qualification requiring demonstrated skills and knowledge.",
+        "A White Card does not entitle a worker to higher pay. Pay rates are determined by awards, enterprise agreements and experience level.",
+        "✓ Correct. The White Card (previously called a Blue Card) confirms that the holder has completed General Construction Induction training (SafeWork NSW recognised training). It demonstrates awareness of construction site safety requirements.",
+        "A White Card is a necessary prerequisite to enter a construction site, but 'eligible to enter with permission' undersells its meaning — it confirms completed safety training, not just eligibility."
+      ]
+    },
+    {
+      "year": 2022,
+      "q": "A workshop wall diagram is shown. Which is the best position for a safety sign?",
+      "options": [
+        "W - low corner",
+        "X - middle",
+        "Y - high corner",
+        "Z - door height"
+      ],
+      "answer": 1,
+      "image": "/diagrams/vet-construction_2022_Q7_stimulus.jpg",
+      "optionExplanations": [
+        "Position W (low corner) is too low to be easily visible to workers passing through the area and could be obscured by stored materials or equipment.",
+        "✓ Correct. Position X (middle height, central location) provides the best visibility for safety signs — at eye level and in a prominent position where workers will naturally look. Signs should be placed where they are easily noticed.",
+        "Position Y (high corner) is too high — workers are unlikely to look up to a high corner for safety information, reducing its effectiveness as a warning.",
+        "Position Z (door height) may be too high and is often obscured when doors are open. Central, eye-level placement is more effective."
+      ]
+    },
+    {
+      "year": 2022,
+      "q": "A fence around a construction site is shown. What is the purpose of this fence?",
+      "options": [
+        "Reduce dust",
+        "Indicate site boundary",
+        "Control sediment escape",
+        "Reduce rainwater run-off"
+      ],
+      "answer": 2,
+      "image": "/diagrams/vet-construction_2022_Q8_stimulus.jpg",
+      "optionExplanations": [
+        "Dust control requires specific dust suppression measures such as water spraying or dust screens. A standard site fence does not effectively reduce airborne dust.",
+        "Indicating the site boundary is a function of security fencing, not the specific type of fence shown. The fence shown has a specific environmental control purpose.",
+        "✓ Correct. The fence shown is a silt/sediment fence — a geotextile fabric fence designed to trap sediment and soil particles in runoff water, preventing them from escaping the site and entering stormwater systems or adjacent properties.",
+        "Reducing rainwater run-off requires grading, berms or detention basins. A sediment fence does not reduce the volume of rainwater but controls sediment carried within that runoff."
+      ]
+    },
+    {
+      "year": 2022,
+      "q": "A diagram shows an area to be fenced. Calculate the perimeter.",
+      "options": [
+        "13",
+        "17",
+        "18",
+        "24"
+      ],
+      "answer": 2,
+      "image": "/diagrams/vet-construction_2022_Q9_stimulus.jpg",
+      "optionExplanations": [
+        "13 m is too small — this does not account for all sides of the shape shown.",
+        "17 m does not correctly total all sides of the shape — check the calculation again.",
+        "✓ Correct. Reading the dimensions from the diagram and summing all sides gives a perimeter of 18 m. Ensure you include all sides including any that require calculation using the given dimensions.",
+        "24 m results from incorrectly doubling dimensions or including incorrect measurements."
+      ]
+    },
+    {
+      "year": 2022,
+      "q": "What is the trade union that represents construction workers?",
+      "options": [
+        "HIA",
+        "PCBU",
+        "AMWU",
+        "CFMEU"
+      ],
+      "answer": 3,
+      "optionExplanations": [
+        "HIA (Housing Industry Association) is an industry body representing builders and developers — it is an employer association, not a trade union.",
+        "PCBU (Person Conducting a Business or Undertaking) is a legal term in WHS legislation referring to businesses that have duties of care — it is not a union.",
+        "AMWU (Australian Manufacturing Workers' Union) represents workers in manufacturing industries such as metalworking, printing and textiles — not construction.",
+        "✓ Correct. The CFMEU (Construction, Forestry and Maritime Employees Union) is the primary trade union representing construction workers in Australia, including carpenters, concreters, labourers and other building trades."
+      ]
+    },
+    {
+      "year": 2022,
+      "q": "Information about internal subfloor and roof structure would be found on which drawing?",
+      "options": [
+        "Section",
+        "Site plan",
+        "Elevation",
+        "Construction detail"
+      ],
+      "answer": 0,
+      "optionExplanations": [
+        "✓ Correct. A section drawing cuts through a building to show internal construction details including subfloor structure (bearers, joists), wall framing, ceiling construction and roof framing — all hidden elements not visible in external views.",
+        "A site plan shows the building's position on the block, setbacks, levels and site features. It does not show internal structural details.",
+        "An elevation drawing shows the external face of a building from a specific direction. It shows external finishes and openings but not internal structural elements.",
+        "A construction detail drawing shows a specific element in large scale, but the section drawing is the primary drawing type showing overall internal structure."
+      ]
+    },
+    {
+      "year": 2022,
+      "q": "In the hierarchy of hazard control, which is an engineering control?",
+      "options": [
+        "Erecting a fence around excavation",
+        "Providing training",
+        "Testing and tagging equipment",
+        "Using water-based finish"
+      ],
+      "answer": 0,
+      "optionExplanations": [
+        "✓ Correct. Erecting a fence around an excavation is an engineering control — it physically separates workers from the hazard using a barrier. Engineering controls modify the work environment to reduce exposure to a hazard without relying on human behaviour.",
+        "Providing training is an administrative control — it relies on people following instructions and retaining knowledge. It is lower in the hierarchy than engineering controls.",
+        "Testing and tagging electrical equipment is an administrative control — it involves a procedure to check safety, but relies on human action and compliance.",
+        "Using water-based finish instead of solvent-based is a substitution control — replacing a hazardous product with a less hazardous one. Substitution sits above engineering controls in the hierarchy."
+      ]
+    },
+    {
+      "year": 2022,
+      "q": "A selection of drill bits is shown. Which bit for drilling a masonry anchor?",
+      "options": [
+        "W - twist bit",
+        "X - spade bit",
+        "Y - masonry bit",
+        "Z - hole saw"
+      ],
+      "answer": 2,
+      "image": "/diagrams/vet-construction_2022_Q13_stimulus.jpg",
+      "optionExplanations": [
+        "A twist bit (W) is designed for drilling metal and timber. It would be damaged quickly and be ineffective when used on masonry materials like brick or concrete.",
+        "A spade bit (X) is used for drilling large-diameter holes in timber. Its flat paddle shape is not designed for masonry and would fail quickly.",
+        "✓ Correct. A masonry bit (Y) has a specially hardened tungsten carbide tip designed to drill through concrete, brick, stone and other masonry materials. It is used with a hammer drill to chip and drill simultaneously.",
+        "A hole saw (Z) is used for cutting large circular holes in timber, plasterboard or thin metal. It is not suitable for drilling anchor holes in masonry."
+      ]
+    },
+    {
+      "year": 2022,
+      "q": "Concrete ratio is 3:2:1 (aggregate:sand:cement). Calculate sand for 4.2 m³ concrete.",
+      "options": [
+        "0.6 m³",
+        "0.7 m³",
+        "1.4 m³",
+        "2.1 m³"
+      ],
+      "answer": 2,
+      "optionExplanations": [
+        "0.6 m³ would represent 1/7 of the total — this would be the cement portion (1 part of 6 total parts), not the sand.",
+        "0.7 m³ would represent the cement portion in a 3:2:1 mix: 4.2 ÷ 6 × 1 = 0.7 m³. This is cement, not sand.",
+        "✓ Correct. In a 3:2:1 mix, the total parts = 3+2+1 = 6. Sand = 2/6 of total = 4.2 ÷ 6 × 2 = 1.4 m³.",
+        "2.1 m³ represents half of 4.2 — this would be the aggregate portion: 4.2 ÷ 6 × 3 = 2.1 m³. This is aggregate, not sand."
+      ]
+    },
+    {
+      "year": 2022,
+      "q": "A paved area plan is shown. A 50mm sand layer is required. Calculate sand volume.",
+      "options": [
+        "5.58 m³",
+        "7.50 m³",
+        "11.50 m³",
+        "150.00 m³"
+      ],
+      "answer": 1,
+      "image": "/diagrams/vet-construction_2022_Q15_stimulus.jpg",
+      "optionExplanations": [
+        "5.58 m³ does not correspond to the correct calculation for the area shown × 0.05 m depth.",
+        "✓ Correct. Calculate the area from the plan dimensions, then multiply by the sand depth (50 mm = 0.05 m). Area × 0.05 = 7.50 m³.",
+        "11.50 m³ would result from an incorrect area calculation or using the wrong depth conversion.",
+        "150.00 m³ would result from not converting 50 mm to metres — a common calculation error."
+      ]
+    },
+    {
+      "year": 2023,
+      "q": "A 205 metre land block is measured. Which tool was most likely used?",
+      "options": [
+        "String line",
+        "Four fold rule",
+        "Trundle wheel",
+        "Retractable tape"
+      ],
+      "answer": 2,
+      "optionExplanations": [
+        "A string line is used for alignment and checking straight lines in construction — it is not a measuring tool for distances.",
+        "A four-fold rule is a rigid folding rule typically 1 metre in length — it cannot measure 205 metres.",
+        "✓ Correct. A trundle wheel (surveyor's wheel) is designed for measuring long distances such as land boundaries. Each revolution of the wheel counts a set distance (typically 1 metre), making it ideal for measuring 205-metre land boundaries accurately and efficiently.",
+        "A retractable tape measure typically extends to 8 metres maximum — it cannot measure a 205-metre land block in a single measurement."
+      ]
+    },
+    {
+      "year": 2023,
+      "q": "Which construction plan contains a North symbol?",
+      "options": [
+        "Site",
+        "Detail",
+        "Elevation",
+        "Longitudinal"
+      ],
+      "answer": 0,
+      "optionExplanations": [
+        "✓ Correct. Site plans always include a North symbol (north point) because they show the building's orientation on the land in relation to the compass. This is essential for understanding solar access, prevailing winds and legal property boundaries.",
+        "Detail drawings show enlarged construction details of specific elements (joints, connections) — they do not need orientation as they show construction methods, not site positioning.",
+        "Elevation drawings show the external faces of a building — they use labels (North elevation, South elevation) rather than a compass symbol.",
+        "Longitudinal section drawings show an internal cut through the building length — they do not require a North symbol as they are not orientation-dependent."
+      ]
+    },
+    {
+      "year": 2023,
+      "q": "What is the primary purpose of workers wearing 'high vis' clothing?",
+      "options": [
+        "Keep warm",
+        "Advertise company",
+        "Be seen easily",
+        "Show team membership"
+      ],
+      "answer": 2,
+      "optionExplanations": [
+        "High visibility clothing provides no thermal insulation — it is lightweight fluorescent fabric. Keeping warm requires additional layers underneath.",
+        "While some companies put logos on high vis vests, this is secondary. The primary purpose is safety — making workers visible to prevent accidents.",
+        "✓ Correct. High visibility (fluorescent/reflective) clothing is worn to make workers easily visible to plant operators, vehicle drivers and other workers — particularly in low-light conditions or areas where mobile plant operates. It is a mandatory PPE requirement on most Australian construction sites.",
+        "Team membership may be indicated by coloured hard hats or vest colours (supervisors vs workers), but this is not the primary purpose of high vis clothing."
+      ]
+    },
+    {
+      "year": 2023,
+      "q": "When ordering timber in metres but plans in millimetres. Which length equals 330 mm?",
+      "options": [
+        "0.033 m",
+        "0.330 m",
+        "3.30 m",
+        "33.0 m"
+      ],
+      "answer": 1,
+      "optionExplanations": [
+        "0.033 m = 33 mm — this is 10 times smaller than 330 mm. This would result from dividing by 10,000 instead of 1,000.",
+        "✓ Correct. To convert millimetres to metres, divide by 1,000. 330 mm ÷ 1,000 = 0.330 m. When ordering timber, you would specify 0.330 m or more commonly round up to account for cutting allowances.",
+        "3.30 m = 3,300 mm — this is 10 times larger than 330 mm. This would result from multiplying rather than dividing.",
+        "33.0 m = 33,000 mm — this is 100 times larger than 330 mm and clearly incorrect."
+      ]
+    },
+    {
+      "year": 2023,
+      "q": "Most appropriate method to manage dust on recently demolished site?",
+      "options": [
+        "Damping the area",
+        "Using hessian fencing",
+        "Covering with matting",
+        "Wearing breathing apparatus"
+      ],
+      "answer": 0,
+      "optionExplanations": [
+        "✓ Correct. Damping (watering) the demolished area suppresses dust at the source by wetting loose particles so they cannot become airborne. This is the most effective dust management method — it eliminates the hazard rather than just protecting individuals.",
+        "Hessian fencing helps control some airborne particles but is primarily used for wind screening and does not suppress dust as effectively as wetting.",
+        "Covering with matting can help contain some dust but is impractical across a large demolished site and does not eliminate existing airborne particles.",
+        "Wearing breathing apparatus (PPE) is the lowest level of the hierarchy of hazard controls. It protects the wearer but does not reduce dust for everyone on or near the site."
+      ]
+    },
+    {
+      "year": 2023,
+      "q": "An image of a sign is shown. Where should this sign be placed?",
+      "options": [
+        "On notice board",
+        "Outside lunch room",
+        "On all vehicles",
+        "On fence where you enter site"
+      ],
+      "answer": 3,
+      "image": "/diagrams/vet-construction_2023_Q6_stimulus.jpg",
+      "optionExplanations": [
+        "Placing on a notice board means workers must seek it out — it is not visible to all who need to see it, including visitors and new workers.",
+        "Outside the lunch room limits visibility to workers only — visitors, delivery drivers and contractors may not see it.",
+        "On all vehicles is appropriate for some specific signs, but not for a general site safety/entry sign.",
+        "✓ Correct. The sign shown relates to site entry requirements (safety/induction requirements). It must be placed at the point of entry to the site — on the fence at the entry point — so that everyone entering the site sees it before they enter."
+      ]
+    },
+    {
+      "year": 2023,
+      "q": "A jackhammer could be used for which task?",
+      "options": [
+        "Breaking up brick walls",
+        "Attaching masonry anchors",
+        "Removing tree stumps",
+        "Connecting frames to slabs"
+      ],
+      "answer": 0,
+      "optionExplanations": [
+        "✓ Correct. A jackhammer (electric or pneumatic demolition hammer) is designed for breaking up hard materials such as brick walls, concrete slabs, pavement and masonry. Its high-impact chisel action is ideal for demolition work.",
+        "Attaching masonry anchors requires a hammer drill with an appropriate bit — the jackhammer is too large and uncontrolled for precision anchor installation.",
+        "Removing tree stumps requires a stump grinder or excavator. A jackhammer could break up concrete around a stump but is not used for actual stump removal.",
+        "Connecting frames to slabs uses specialised fasteners, powder-actuated tools or masonry anchors — not a jackhammer."
+      ]
+    },
+    {
+      "year": 2023,
+      "q": "What is the purpose of a residual current device (RCD)?",
+      "options": [
+        "Save electricity",
+        "Read power usage",
+        "Allow multiple machines",
+        "Isolate power if electrical fault"
+      ],
+      "answer": 3,
+      "optionExplanations": [
+        "An RCD does not save electricity — it is a safety device that monitors current, not a power-saving device.",
+        "Reading power usage is the function of a power meter or energy monitoring device, not an RCD.",
+        "Allowing multiple machines to run simultaneously is the function of a power board or distribution board, not an RCD.",
+        "✓ Correct. An RCD (Residual Current Device) continuously monitors the current flowing in and out of a circuit. If it detects a current leakage to earth (such as through a person receiving a shock), it trips the circuit within milliseconds, potentially saving a life."
+      ]
+    },
+    {
+      "year": 2023,
+      "q": "What is ACM an abbreviation for?",
+      "options": [
+        "Asbestos Containing Material",
+        "Australian Consumer Mission",
+        "Australian Concrete Marketing",
+        "Asbestos Construction Manufacturer"
+      ],
+      "answer": 0,
+      "optionExplanations": [
+        "✓ Correct. ACM stands for Asbestos Containing Material — any material or product that contains asbestos. Identifying ACM is critical in construction, renovation and demolition work in older buildings, as disturbing asbestos fibres creates serious health risks.",
+        "Australian Consumer Mission is not a relevant construction industry term or organisation.",
+        "Australian Concrete Marketing is not an industry acronym — concrete organisations have different abbreviations.",
+        "Asbestos Construction Manufacturer is not a recognised industry term — ACM specifically refers to the presence of asbestos in materials."
+      ]
+    },
+    {
+      "year": 2023,
+      "q": "Why are pictorial drawings used in construction?",
+      "options": [
+        "Quick to produce",
+        "Provide safety info",
+        "Provide 3D representation",
+        "Show setting-out dimensions"
+      ],
+      "answer": 2,
+      "optionExplanations": [
+        "Pictorial drawings (isometric, perspective) are actually more time-consuming to produce than standard orthographic drawings — they require additional drafting skill.",
+        "Safety information is conveyed through safety signs, SWMS and induction documents — not pictorial construction drawings.",
+        "✓ Correct. Pictorial drawings provide a three-dimensional representation of a building or component, helping clients, workers and contractors visualise how the finished product will look. They are particularly useful for communicating complex spatial relationships.",
+        "Setting-out dimensions are shown on orthographic plan drawings (floor plans, elevations, sections) — pictorial drawings are used for visualisation, not precise dimensioning."
+      ]
+    },
+    {
+      "year": 2023,
+      "q": "What would a surveyor use to outline the initial external perimeter?",
+      "options": [
+        "Fences and stays",
+        "String lines and profiles",
+        "Star pickets and string lines",
+        "Painted pegs and ground spray"
+      ],
+      "answer": 1,
+      "optionExplanables": [
+        "a",
+        "b",
+        "c",
+        "d"
+      ],
+      "optionExplanations": [
+        "Fences and stays are used for site security and boundary marking, not for precise survey set-out of building positions.",
+        "✓ Correct. Surveyors use profiles (horizontal boards on pegs set back from the building line) and string lines to mark the exact perimeter of a building. Profile boards allow the string lines to be removed and repositioned accurately during excavation and construction.",
+        "Star pickets and string lines are used for rough site fencing and general alignment but lack the precision required for building set-out — star pickets move too easily.",
+        "Painted pegs and ground spray are used for marking approximate excavation boundaries or services — not for the precise surveyed building perimeter."
+      ]
+    },
+    {
+      "year": 2023,
+      "q": "What does a lock-out tag on an electric plane mean?",
+      "options": [
+        "In dangerous condition",
+        "Only for supervisor",
+        "New cutting blade fitted",
+        "Ready for use and serviced"
+      ],
+      "answer": 0,
+      "optionExplanations": [
+        "✓ Correct. A lock-out/tag-out (LOTO) tag on a tool means it has been identified as faulty, damaged or dangerous and must not be used. The tag requires the tool to be removed from service until it has been inspected, repaired and re-tested by a competent person.",
+        "A lock-out tag is not a designation for supervisor use only — it is a prohibition notice that applies to all workers.",
+        "A new cutting blade being fitted would not require a lock-out tag — a lock-out tag indicates a fault or safety hazard, not a routine maintenance activity.",
+        "A tag indicating 'ready for use and serviced' would be a test-and-tag compliance label (green tag). A lock-out tag has the opposite meaning — do not use."
+      ]
+    },
+    {
+      "year": 2023,
+      "q": "Correct manual handling technique to move 10 lots of 20 kg cement bags?",
+      "options": [
+        "Wide stance, straight back, lift with arms",
+        "Narrow stance, straight back, lift with legs",
+        "Wide stance, looking forward, lift with legs",
+        "Narrow stance, looking forward, lift with arms"
+      ],
+      "answer": 2,
+      "optionExplanations": [
+        "Lifting with arms (bicep curl technique) puts stress on the arms and upper back rather than using the stronger leg muscles. This increases injury risk for heavy loads.",
+        "A narrow stance reduces stability and balance — a wider stance provides a more stable base for lifting heavy loads.",
+        "✓ Correct. The correct technique is: wide stance for stability, look forward (keeping the neck in neutral position), bend at the knees, and lift using leg muscles (the strongest muscles in the body). Keep the load close to the body and avoid twisting.",
+        "A narrow stance with arm lifting is the worst combination — reduced stability and using weak muscles. This would significantly increase injury risk with 20 kg bags."
+      ]
+    },
+    {
+      "year": 2023,
+      "q": "A trench 3m × 1.5m × 0.2m deep needs excavating. Total soil to be excavated?",
+      "options": [
+        "0.09 m³",
+        "0.9 m³",
+        "9 m³",
+        "90 m³"
+      ],
+      "answer": 1,
+      "optionExplanations": [
+        "0.09 m³ would result from 3 × 1.5 × 0.02 — using 20 mm instead of 200 mm for the depth.",
+        "✓ Correct. Volume = Length × Width × Depth = 3 m × 1.5 m × 0.2 m = 0.9 m³.",
+        "9 m³ would result from 3 × 1.5 × 2.0 — converting 0.2 m to 2.0 m incorrectly.",
+        "90 m³ would result from 3 × 1.5 × 20 — a significant error in unit conversion."
+      ]
+    },
+    {
+      "year": 2023,
+      "q": "Which plan drawing would show the pitch of the roof?",
+      "options": [
+        "Site",
+        "Floor",
+        "Detail",
+        "Elevation"
+      ],
+      "answer": 3,
+      "optionExplanations": [
+        "A site plan shows the building's position on the land and site features. It does not show roof pitch as it is a top-down view that does not show vertical elements in section.",
+        "A floor plan shows the internal layout of rooms and spaces. It is a horizontal cut through the building and does not show roof pitch.",
+        "A construction detail drawing may show specific roof connections and components but is not the primary drawing type for showing overall roof pitch.",
+        "✓ Correct. Elevation drawings show the external vertical faces of a building. The roof pitch (angle of slope) is clearly visible and dimensioned on elevation drawings — particularly the gable end or eave elevation where the triangular roof profile is seen."
+      ]
+    },
+    {
+      "year": 2024,
+      "q": "Why are blue and white safety signs used on construction sites?",
+      "options": [
+        "Show danger",
+        "Highlight prohibited actions",
+        "Indicate mandatory requirements",
+        "Signify caution needed"
+      ],
+      "answer": 2,
+      "optionExplanations": [
+        "Danger is indicated by red and white signs (prohibition) or yellow/black signs (warning/caution). Blue and white does not indicate danger.",
+        "Prohibition signs (showing what must not be done) use red circles with diagonal lines — not blue and white.",
+        "✓ Correct. Blue and white signs indicate mandatory requirements — actions that MUST be done, such as 'Must wear hard hat', 'Must wear safety boots', 'Eye protection must be worn'. Blue is the international colour code for mandatory actions under AS 1319.",
+        "Caution signs use yellow/black or amber to indicate potential hazards. Blue and white has a distinctly different meaning — mandatory requirements, not caution."
+      ]
+    },
+    {
+      "year": 2024,
+      "q": "What type of hammer should be used to remove nails from timber?",
+      "options": [
+        "Claw",
+        "Lump",
+        "Sledge",
+        "Warrington"
+      ],
+      "answer": 0,
+      "optionExplanations": [
+        "✓ Correct. A claw hammer has a V-shaped split claw at the back of the head specifically designed to grip nail heads and use lever action to pull nails from timber. It is the standard tool for nail removal in carpentry.",
+        "A lump hammer (club hammer) is used for driving cold chisels, demolition work and masonry — it has no nail-removal capability.",
+        "A sledgehammer is a large demolition tool for breaking concrete, driving posts and heavy striking work. It has no nail-removal capability.",
+        "A Warrington (or cross-pein) hammer is a joiner's/cabinetmaker's hammer for starting small nails — it has no claw for nail removal."
+      ]
+    },
+    {
+      "year": 2024,
+      "q": "A hacksaw is primarily used for cutting",
+      "options": [
+        "Glass panels",
+        "Metal rods",
+        "Curves in manufactured boards",
+        "Rubber flooring"
+      ],
+      "answer": 1,
+      "optionExplanations": [
+        "Glass requires specialist glass cutting tools (glass cutters, diamond wheels). A hacksaw would shatter glass and is completely unsuitable.",
+        "✓ Correct. A hacksaw is designed primarily for cutting metal — its fine-toothed, replaceable blade (18–32 TPI) is hardened to cut through metal rods, pipes, bolts and angle iron efficiently. The blade teeth are designed for metal cutting.",
+        "Cutting curves in manufactured boards requires a jigsaw or coping saw — tools designed for curved cutting in timber-based materials. A hacksaw cuts in straight lines and is not suited for boards.",
+        "Rubber flooring would be cut with a sharp utility knife or scissors — the hacksaw's teeth would tear and grab the rubber rather than cutting cleanly."
+      ]
+    },
+    {
+      "year": 2024,
+      "q": "Most appropriate tool to measure vertical distance floor to ceiling of 2.4m wall?",
+      "options": [
+        "1-metre rule",
+        "Tape measure",
+        "Trundle wheel",
+        "Builder's square"
+      ],
+      "answer": 1,
+      "optionExplanations": [
+        "A 1-metre rule cannot extend to 2.4 metres — it is too short for floor-to-ceiling measurements without being repositioned, introducing measurement error.",
+        "✓ Correct. A tape measure is the most appropriate tool for measuring a 2.4-metre floor-to-ceiling height. It extends well beyond 2.4 m, is flexible enough to measure vertical distances accurately, and can be easily read at that length.",
+        "A trundle wheel is designed for measuring horizontal distances over long runs (roads, boundaries) — it is completely unsuitable for vertical measurements in a room.",
+        "A builder's square (try square or framing square) is used for checking right angles and marking perpendicular lines — not for measuring distances."
+      ]
+    },
+    {
+      "year": 2024,
+      "q": "A construction detail drawing (450mm) is shown. What scale is most suited?",
+      "options": [
+        "1:10",
+        "1:50",
+        "1:100",
+        "1:200"
+      ],
+      "answer": 0,
+      "image": "/diagrams/vet-construction_2024_Q5_stimulus.jpg",
+      "optionExplanations": [
+        "✓ Correct. A scale of 1:10 is most suited for detail drawings showing small construction elements. At 1:10, a 450 mm element would be drawn as 45 mm — large enough to clearly show all details, connections and dimensions that would be illegible at smaller scales.",
+        "1:50 would produce a 9 mm drawing of the 450 mm element — too small to show construction details clearly.",
+        "1:100 would produce a 4.5 mm drawing — far too small for a construction detail.",
+        "1:200 would produce a 2.25 mm drawing — completely impractical for showing any detail whatsoever."
+      ]
+    },
+    {
+      "year": 2024,
+      "q": "When electrical safety tag on power tool is missing, what action must be taken?",
+      "options": [
+        "Report to supervisor",
+        "Assume tag fell off and continue",
+        "Remove other safety features",
+        "Use more cautiously"
+      ],
+      "answer": 0,
+      "optionExplanations": [
+        "✓ Correct. A missing test-and-tag label means there is no current evidence of the tool's electrical safety compliance. The correct action is to immediately remove the tool from service and report it to the supervisor so it can be inspected, tested and tagged by a competent person before use.",
+        "Assuming the tag fell off and continuing is an extremely dangerous approach. The tag may be missing because the tool has been identified as faulty or overdue for inspection.",
+        "Removing other safety features is never an appropriate response — safety guards, switches and RCDs must remain in place at all times.",
+        "Using more cautiously does nothing to address the fundamental issue — without a current test-and-tag, you have no way of knowing if the tool is electrically safe."
+      ]
+    },
+    {
+      "year": 2024,
+      "q": "In communication process, the first role of sender is to",
+      "options": [
+        "Receive feedback",
+        "Filter the message",
+        "Decode the message",
+        "Transmit the message"
+      ],
+      "answer": 3,
+      "optionExplanations": [
+        "Receiving feedback is the final stage in the communication cycle — it is the sender's role after the message has been sent and the receiver has responded.",
+        "Filtering the message involves removing unnecessary information — this is part of encoding, but it is not the first role in the communication process.",
+        "Decoding the message is the receiver's role — interpreting the message that has been sent. The sender encodes, the receiver decodes.",
+        "✓ Correct. The first role of the sender in the communication process is to transmit the message — formulating the idea, encoding it into words/actions and delivering it to the receiver through an appropriate channel."
+      ]
+    },
+    {
+      "year": 2024,
+      "q": "Recommended method for extinguishing small flammable liquid fire on clothing?",
+      "options": [
+        "Fire blanket",
+        "Bucket of sand",
+        "Bucket of water",
+        "Foam fire extinguisher"
+      ],
+      "answer": 0,
+      "optionExplanations": [
+        "✓ Correct. A fire blanket is the recommended method for extinguishing burning clothing — wrap it tightly around the person to cut off oxygen to the flames. It is safe for use on a person and smothers the fire without causing additional injury.",
+        "A bucket of sand could smother a small fire on the ground but is impractical and potentially dangerous when applied to a person wearing burning clothing.",
+        "Water on flammable liquid fires can spread the burning liquid and make the fire worse. Water should not be used on flammable liquid fires.",
+        "A foam fire extinguisher is used for flammable liquid fires on the ground — it should not be directed at a burning person due to the pressure and chemical content of the foam."
+      ]
+    },
+    {
+      "year": 2024,
+      "q": "Trench dimensions: 4.2m length, 0.9m width, 1600mm depth. Volume of soil to remove?",
+      "options": [
+        "0.0648 m³",
+        "6.048 m³",
+        "6048 m³",
+        "60480 m³"
+      ],
+      "answer": 1,
+      "optionExplanations": [
+        "0.0648 m³ would result from not converting 1600 mm to metres — using 1600 mm in a metres calculation.",
+        "✓ Correct. Convert depth: 1600 mm = 1.6 m. Volume = 4.2 × 0.9 × 1.6 = 6.048 m³.",
+        "6048 m³ would result from using 1600 m as the depth — an obvious unit conversion error.",
+        "60480 m³ is 10,000 times the correct answer — a gross calculation error."
+      ]
+    },
+    {
+      "year": 2024,
+      "q": "How does recycled concrete contribute to sustainability?",
+      "options": [
+        "Adds to costs",
+        "Reduces demand for new raw materials",
+        "Increases demand for raw materials",
+        "Renewable material with no impact"
+      ],
+      "answer": 1,
+      "optionExplanations": [
+        "Recycled concrete actually reduces costs by lowering the need to quarry and process new aggregate. Using recycled materials is typically more cost-effective than virgin materials for appropriate applications.",
+        "✓ Correct. Recycled concrete (crushed demolished concrete reused as aggregate or fill) reduces the demand for new quarried materials, decreasing energy use, transportation impacts and habitat disruption from mining. It also reduces landfill waste.",
+        "Recycled concrete reduces demand for raw materials — not increases it. Using recycled aggregate replaces the need for virgin quarried rock.",
+        "Concrete is not a renewable material — it is made from cement (limestone), aggregate (rock) and water. However, recycling it is a sustainable practice even if the material itself is not renewable."
+      ]
+    },
+    {
+      "year": 2024,
+      "q": "A site plan (Smith Street) is shown. What is the eastern setback?",
+      "options": [
+        "2600",
+        "2900",
+        "4000",
+        "4600"
+      ],
+      "answer": 1,
+      "image": "/diagrams/vet-construction_2024_Q11_stimulus.jpg",
+      "optionExplanations": [
+        "2600 is another dimension shown on the plan — read the dimension specifically labelled for the eastern boundary setback.",
+        "✓ Correct. Reading the site plan carefully, the dimension shown for the eastern setback (distance from the building to the eastern boundary) is 2900 mm. Always identify which boundary is east by using the North point on the plan.",
+        "4000 is another dimension on the plan, likely a setback to a different boundary.",
+        "4600 is another dimension on the plan — not the eastern setback."
+      ]
+    },
+    {
+      "year": 2024,
+      "q": "What is the primary role of trade unions in Australian construction?",
+      "options": [
+        "Determine construction designs",
+        "Set project timelines",
+        "Advocate for worker rights",
+        "Represent company interests"
+      ],
+      "answer": 2,
+      "optionExplanations": [
+        "Determining construction designs is the role of architects, engineers and designers. Unions have no role in design decisions.",
+        "Setting project timelines is the role of project managers and construction schedulers. Unions negotiate working conditions but do not set construction schedules.",
+        "✓ Correct. Trade unions (such as the CFMEU) primarily advocate for worker rights — negotiating wages and conditions through enterprise bargaining, providing representation in workplace disputes, campaigning for improved safety standards and supporting workers' legal rights.",
+        "Representing company interests is the role of employer associations (such as the HIA or Master Builders Association). Unions represent worker interests, not company interests."
+      ]
+    },
+    {
+      "year": 2024,
+      "q": "Before entering confined space, what is the first step?",
+      "options": [
+        "Eliminate air leaks",
+        "Reduce dust particles",
+        "Apply additional PPE",
+        "Obtain a permit for entry"
+      ],
+      "answer": 3,
+      "optionExplanations": [
+        "Eliminating air leaks may be part of making a confined space safe, but it is not the first required step — the entry permit process must be completed first.",
+        "Reducing dust particles is part of atmospheric testing and control but comes after the permit-to-enter has been issued.",
+        "Applying PPE is part of preparing to enter, but the permit process — which includes atmospheric testing, risk assessment and approval — must be completed before any PPE is donned and entry is attempted.",
+        "✓ Correct. Under WHS Regulations, obtaining a valid permit to enter is the mandatory first step before any confined space entry. The permit process includes atmospheric testing, risk assessment, emergency procedures and authorisation by a competent person."
+      ]
+    },
+    {
+      "year": 2024,
+      "q": "In construction, what does the term 'datum' refer to?",
+      "options": [
+        "North orientation on plans",
+        "Point where contour lines intersect",
+        "Reference point or base line for measurements",
+        "Maximum calculated load"
+      ],
+      "answer": 2,
+      "optionExplanations": [
+        "North orientation is shown by the north point symbol on site plans. It is not related to the term 'datum'.",
+        "Contour lines on site plans show lines of equal elevation — they do not intersect in normal terrain. Datum is the reference level from which elevations are measured, not where contours meet.",
+        "✓ Correct. In construction, 'datum' refers to a fixed reference point or baseline from which all measurements and levels on a project are taken. It may be a physical benchmark (e.g. a concrete nail in the road) tied to Australian Height Datum or a project-specific level.",
+        "Maximum calculated load is a structural engineering term (design load). This has no relationship to the term 'datum'."
+      ]
+    },
+    {
+      "year": 2024,
+      "q": "What is the primary function of a compressor regulator?",
+      "options": [
+        "Add lubrication",
+        "Manage air temperature",
+        "Filter contaminants",
+        "Allow air receiver pressure to be reduced"
+      ],
+      "answer": 3,
+      "optionExplanations": [
+        "Lubrication in pneumatic systems is handled by an in-line oiler/lubricator, not a regulator. The regulator has no lubrication function.",
+        "Air temperature management is handled by aftercoolers and dryers in the air supply system. The regulator controls pressure, not temperature.",
+        "Filtering contaminants is the function of an air filter/separator. Many compressor systems use a filter-regulator-lubricator (FRL) unit, but the regulator's specific function is pressure control.",
+        "✓ Correct. A compressor regulator (pressure regulator) allows the air pressure from the receiver tank to be reduced and set to the correct working pressure for the tool or application being used. This protects equipment and ensures safe, consistent operation."
+      ]
+    },
+    {
+      "year": 2025,
+      "q": "A fire extinguisher with a blue band is shown. This fire extinguisher would be most suitable to use on which type of fire?",
+      "options": [
+        "Clothing",
+        "Flammable gas",
+        "Flammable liquid",
+        "Electrical equipment"
+      ],
+      "answer": 3,
+      "image": "/diagrams/vet-construction_2025_Q1_stimulus.jpg",
+      "optionExplanations": [
+        "Clothing fires are most safely extinguished with a fire blanket — chemical extinguishers of any type should not be directed at a burning person.",
+        "Flammable gas fires (Class C) require a dry chemical (BE) or clean agent extinguisher. Blue band extinguishers (dry powder) can handle gas but are specifically coded for electrical fires.",
+        "Flammable liquid fires (Class B) are handled by foam, dry chemical (ABE) or CO₂ extinguishers — not specifically by the blue-banded type.",
+        "✓ Correct. A blue band on a fire extinguisher indicates a dry powder (ABE) type, which is most suitable for electrical fires (Class E). The dry powder does not conduct electricity, making it safe to use on electrical equipment. Always isolate power first where possible."
+      ]
+    },
+    {
+      "year": 2025,
+      "q": "A workplace is required to implement a health and safety committee when employee numbers reach what number?",
+      "options": [
+        "10",
+        "20",
+        "30",
+        "40"
+      ],
+      "answer": 1,
+      "optionExplanations": [
+        "10 employees does not trigger the mandatory WHS committee requirement under the Work Health and Safety Act 2011.",
+        "✓ Correct. Under the Work Health and Safety Act 2011, a workplace must establish a WHS committee when requested by workers or a Health and Safety Representative, and when the business employs 20 or more workers. This threshold ensures worker representation in safety decisions.",
+        "30 is not the correct threshold — by the time 30 workers are employed, the committee should already have been established at the 20-employee trigger.",
+        "40 employees is well above the threshold — waiting until 40 employees would violate the WHS Act requirement."
+      ]
+    },
+    {
+      "year": 2025,
+      "q": "A safe work method statement is mandatory for which of the following construction activities?",
+      "options": [
+        "Mixing concrete",
+        "Using a nail gun",
+        "Painting and decorating",
+        "Working at a height above two metres"
+      ],
+      "answer": 3,
+      "optionExplanations": [
+        "Mixing concrete is a routine construction task that requires risk management but does not specifically mandate a Safe Work Method Statement (SWMS) under WHS Regulations.",
+        "Using a nail gun requires safe operating procedures but is not a 'high-risk construction work' activity that mandates an SWMS under WHS Regulations.",
+        "Painting and decorating is not classified as high-risk construction work under the WHS Regulations and does not require a mandatory SWMS.",
+        "✓ Correct. Working at heights above 2 metres is classified as 'high-risk construction work' under the Work Health and Safety Regulation 2017. A Safe Work Method Statement (SWMS) is legally mandatory for all high-risk construction work activities."
+      ]
+    },
+    {
+      "year": 2025,
+      "q": "A drawing of a house is shown. What type of roof is on this house?",
+      "options": [
+        "Gable",
+        "Skillion",
+        "Dutch gable",
+        "Hip and valley"
+      ],
+      "answer": 1,
+      "image": "/diagrams/vet-construction_2025_Q4_stimulus.jpg",
+      "optionExplanations": [
+        "A gable roof has two sloping sides meeting at a central ridge, with triangular gable ends at each end of the building. The image shows a different roof profile.",
+        "✓ Correct. A skillion roof (also called a mono-pitch or lean-to roof) has a single sloping plane that spans the full width of the building from a higher wall to a lower wall. The drawing shows this single-plane sloping roof characteristic.",
+        "A Dutch gable combines a hip roof with a small gable at the ridge — a more complex profile not shown in this drawing.",
+        "A hip and valley roof has all sides sloping toward the walls with hips at the corners and valleys where roof planes meet — clearly not the simple single-pitch roof shown."
+      ]
+    },
+    {
+      "year": 2025,
+      "q": "What type of material would a nibbler be best suited to cut?",
+      "options": [
+        "Sheet metal",
+        "Plasterboard",
+        "Fibre cement",
+        "Plywood sheet"
+      ],
+      "answer": 0,
+      "optionExplanations": [
+        "✓ Correct. A nibbler is a power tool that cuts sheet metal by punching a series of small 'nibbles' from the material. It can cut curves, straight lines and complex profiles in steel sheet, aluminium, and other thin metal sheet materials without distortion.",
+        "Plasterboard is cut with a sharp utility knife and straight edge (score and snap method) or a plasterboard saw. A nibbler would damage and crumble plasterboard.",
+        "Fibre cement sheet is cut with a score-and-snap method, fibre cement shears or a diamond-tipped circular saw blade. A nibbler is not designed for brittle sheet materials.",
+        "Plywood is a timber-based sheet product cut with a circular saw, jigsaw or handsaw. A nibbler is specifically designed for metal sheet — using it on plywood would be ineffective."
+      ]
+    },
+    {
+      "year": 2025,
+      "q": "Which of the following images shows a cross-cut saw?",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "answer": 0,
+      "image": "/diagrams/vet-construction_2025_Q6_stimulus.jpg",
+      "optionExplanations": [
+        "✓ Correct. Image A shows a cross-cut saw, identified by its fine teeth angled in alternating directions designed to cut across the wood grain cleanly. Cross-cut saws produce smooth cuts perpendicular to the grain direction.",
+        "Image B shows a different saw type — examine the tooth pattern and configuration to identify it.",
+        "Image C shows a different saw type — compare the tooth shape, spacing and angle with that of a cross-cut saw.",
+        "Image D shows a different saw type — cross-cut saws have a distinctive tooth configuration different from rip saws and other hand saws."
+      ]
+    },
+    {
+      "year": 2025,
+      "q": "Which sector of the construction industry is responsible for building warehouses?",
+      "options": [
+        "Civil",
+        "Industrial",
+        "Residential",
+        "Institutional"
+      ],
+      "answer": 1,
+      "optionExplanations": [
+        "The civil sector covers infrastructure such as roads, bridges, tunnels, dams and utilities — not commercial or industrial buildings.",
+        "✓ Correct. The industrial sector of the construction industry is responsible for building warehouses, factories, distribution centres and industrial facilities. These structures are designed for manufacturing, storage and industrial operations.",
+        "The residential sector constructs houses, townhouses, apartments and other dwellings. Warehouses are commercial/industrial buildings, not residential.",
+        "The institutional sector constructs buildings for public services such as hospitals, schools, government buildings and community facilities — not warehouses."
+      ]
+    },
+    {
+      "year": 2025,
+      "q": "A ten-metre long retaining wall is to be built. Which of the following is best suited to assist in constructing a straight wall?",
+      "options": [
+        "String line",
+        "Laser level",
+        "Spirit level",
+        "Tape measure"
+      ],
+      "answer": 0,
+      "optionExplanations": [
+        "✓ Correct. A string line stretched tightly between two fixed points at each end of the 10-metre wall provides a continuous straight reference line that workers can build to. It is the traditional and most practical method for constructing a long straight wall.",
+        "A laser level projects a horizontal or vertical laser beam — useful for setting heights across the wall but does not specifically help with maintaining straightness in the horizontal plane.",
+        "A spirit level checks whether a surface is level or plumb over a short distance (typically up to 1.8 m). Over 10 metres it would need to be repositioned many times and would not provide a continuous straight-line reference.",
+        "A tape measure measures distances but does not establish a straight line. You would need to check measurements from multiple reference points to verify straightness."
+      ]
+    },
+    {
+      "year": 2025,
+      "q": "The dimensions of a room are shown (3.4m × 6m).",
+      "options": [
+        "18.80 m",
+        "20.40 m",
+        "20.74 m",
+        "26.08 m"
+      ],
+      "answer": 2,
+      "image": "/diagrams/vet-construction_2025_Q9_stimulus.jpg",
+      "optionExplanations": [
+        "18.80 m — Perimeter = 2 × (3.4 + 6) = 2 × 9.4 = 18.8 m. This calculation is correct for a simple rectangular room but the image shows the room has a non-rectangular shape — additional wall sections affect the total perimeter.",
+        "20.40 m does not account for the correct room dimensions shown in the diagram.",
+        "✓ Correct. Reading the dimensions from the room diagram carefully and summing all wall lengths gives 20.74 m. The room has an irregular shape — ensure all wall sections including returns and offsets are included in the calculation.",
+        "26.08 m results from an over-calculation or incorrect reading of the room dimensions."
+      ]
+    },
+    {
+      "year": 2025,
+      "q": "Which set of tools would be most appropriate for excavating a footing by hand?",
+      "options": [
+        "Spade, pick and rake",
+        "Shovel, axe and garden fork",
+        "Mattock, crowbar and shovel",
+        "Steel rake, mattock, and crowbar"
+      ],
+      "answer": 2,
+      "optionExplanations": [
+        "A rake is a garden/landscaping tool not suited for footing excavation — it cannot break ground or move soil effectively in excavation work.",
+        "An axe is used for cutting wood, not excavating soil. A garden fork is more suited to loosening garden soil than excavating hard footing trenches.",
+        "✓ Correct. A mattock is used to break up hard and compacted soil, a crowbar helps dislodge rocks and compacted material, and a shovel moves loose soil out of the trench. Together they cover all aspects of hand excavation for footings.",
+        "A steel rake is used for levelling and spreading loose material — it cannot break up or remove compacted soil from footings effectively."
+      ]
+    },
+    {
+      "year": 2025,
+      "q": "All workers on a construction site need to be informed about an urgent change. What is the most effective way to communicate this information to all workers?",
+      "options": [
+        "Email",
+        "Memo",
+        "Phone call",
+        "Site meeting"
+      ],
+      "answer": 3,
+      "optionExplanations": [
+        "Email requires workers to have site access to electronic devices and check their messages. On a construction site, many workers may not have immediate access to email during work hours.",
+        "A memo (written notice) requires time to distribute to all workers and relies on them reading and seeing it — not appropriate for urgent information requiring immediate action.",
+        "Phone calls would need to be made to each worker individually, making it time-consuming and impossible to ensure all workers receive the message simultaneously.",
+        "✓ Correct. A site meeting (toolbox talk) gathers all workers in one place at the same time, ensuring the urgent information is communicated consistently to everyone simultaneously. Workers can ask questions and supervisors can confirm understanding — the most reliable method for urgent site-wide communication."
+      ]
+    },
+    {
+      "year": 2025,
+      "q": "Which of the following lists contains the correct sequence in the construction of a residential building?",
+      "options": [
+        "Painting, plumbing, concreting, scaffolding",
+        "Excavation, plumbing, carpentry, surveying",
+        "Surveying, carpentry, electrical, landscaping",
+        "Scaffolding, concreting, excavation, painting"
+      ],
+      "answer": 2,
+      "optionExplanations": [
+        "This sequence is completely out of order — painting occurs near the end of construction, not the beginning. Concreting must occur after excavation and setting out.",
+        "Plumbing rough-in occurs after the frame is erected and before lining — placing it before carpentry (framing) is incorrect. Surveying must occur first.",
+        "✓ Correct. Surveying (setting out the site) must occur first. Carpentry (framing) follows after concrete work. Electrical rough-in occurs after framing. Landscaping is one of the final activities. This represents a logical construction sequence.",
+        "This sequence is completely backwards — excavation must occur at the beginning, not after scaffolding and concreting. Painting occurs at the end, not before excavation."
+      ]
+    },
+    {
+      "year": 2025,
+      "q": "A characteristic of biodegradable construction materials is that they",
+      "options": [
+        "are expensive to dispose of.",
+        "require sunlight and water to decompose.",
+        "require the addition of chemicals to break down.",
+        "are broken down by bacteria and microorganisms."
+      ],
+      "answer": 3,
+      "optionExplanations": [
+        "Biodegradable materials are often cheaper to dispose of because they can be composted or allowed to break down naturally — they do not require expensive hazardous waste processing.",
+        "Some biodegradable materials require sunlight and water, but this is not the defining characteristic. The key feature is biological breakdown by living organisms.",
+        "Requiring chemicals to break down describes chemical degradation, not biodegradation. Biodegradation is specifically the breakdown by biological organisms.",
+        "✓ Correct. Biodegradable materials are defined by their ability to be broken down by bacteria and microorganisms through natural biological processes. This occurs in soil or composting conditions without requiring chemicals or specific environmental conditions."
+      ]
+    },
+    {
+      "year": 2025,
+      "q": "Which of the following documents would be found in a building contract?",
+      "options": [
+        "Work schedule and materials list",
+        "Itemised quote and payment schedule",
+        "Waste management and erosion control plans",
+        "National Construction Code and WHS regulations"
+      ],
+      "answer": 1,
+      "optionExplanations": [
+        "A work schedule and materials list may be attached to a contract but are typically working documents used during construction rather than core components of the formal building contract.",
+        "✓ Correct. A building contract contains an itemised quote (the agreed price for the work broken down by trade/component) and a payment schedule (agreed milestones and amounts to be paid). These are the core financial and legal components of any building contract.",
+        "Waste management and erosion control plans are environmental management documents required by development approval conditions — they are separate management plans, not contract documents.",
+        "The National Construction Code and WHS regulations are legislation and regulatory codes — they apply to all construction regardless of contract. They are referenced in contracts but are not themselves part of the contract documents."
+      ]
+    },
+    {
+      "year": 2025,
+      "q": "The table shows hourly rates for apprentices. A second year apprentice works a standard week (38 hours) and 4 hours overtime on a Saturday (first 2 hours at ×1.5, after at ×2.0). What is the wage?",
+      "options": [
+        "$570.00",
+        "$615.00",
+        "$630.00",
+        "$675.00"
+      ],
+      "answer": 3,
+      "image": "/diagrams/vet-construction_2025_Q15_stimulus.jpg",
+      "optionExplanations": [
+        "$570.00 = 38 × $15.00 = $570. This calculation omits the overtime payments entirely.",
+        "$615.00 = $570 + (4 × $15.00 × 1.5) = $570 + $90 = $660. This appears to apply incorrect overtime rates.",
+        "$630.00 = $570 + (2 × $15.00 × 1.5) + (2 × $15.00) = $570 + $45 + $30 = $645. Incorrect calculation.",
+        "✓ Correct. Standard week: 38 × $15.00 = $570.00. First 2 overtime hours: 2 × $15.00 × 1.5 = $45.00. Next 2 overtime hours: 2 × $15.00 × 2.0 = $60.00. Total: $570 + $45 + $60 = $675.00."
+      ]
+    }
+  ],
+  "writtenQuestions": [
+    {
+      "year": 2021,
+      "marks": 1,
+      "section": "II",
+      "qNum": "16(a)",
+      "q": "Name the tool shown.",
+      "answer": "Chisel (Firmer chisel, Bevelled-edge chisel, or Mortice chisel are all acceptable answers).",
+      "acceptableAnswers": [
+        "chisel",
+        "firmer",
+        "bevelled",
+        "mortice",
+        "mortise"
+      ],
+      "image": "/diagrams/vet-construction_2021_Q16_stimulus.jpg"
+    },
+    {
+      "year": 2021,
+      "marks": 2,
+      "section": "II",
+      "qNum": "16(b)",
+      "q": "Describe TWO suitable uses for the chisel shown.",
+      "answer": "A chisel can be used to: (1) Cut joints such as rebates, housings, mortices and dovetails by paring or chopping timber with a mallet. (2) Clean out recesses for hinges, locks and strike plates to ensure they sit flush with the timber surface. Other acceptable uses include: fitting and trimming joints in timber framing, removing glue squeeze-out from joints, or paring end grain for a clean fit.",
+      "keywords": [
+        "joint",
+        "rebate",
+        "housing",
+        "mortice",
+        "hinge",
+        "lock",
+        "pare",
+        "trim",
+        "cut",
+        "timber"
+      ],
+      "minKeywords": 3
+    },
+    {
+      "year": 2022,
+      "marks": 2,
+      "section": "II",
+      "qNum": "16(a)",
+      "q": "Identify the tool shown and outline its function.",
+      "answer": "The tool shown is a plumb bob. Its function is to establish a true vertical (plumb) line from a fixed overhead point. When suspended freely on a line, gravity causes the weighted bob to hang directly below the attachment point, creating a precise vertical reference. It is used to transfer vertical datum points, check the plumb of walls and columns, and set out vertical lines in building construction.",
+      "keywords": [
+        "plumb",
+        "vertical",
+        "gravity",
+        "bob",
+        "hang",
+        "datum",
+        "line",
+        "check",
+        "wall"
+      ],
+      "minKeywords": 3,
+      "image": "/diagrams/vet-construction_2022_Q16a_stimulus.jpg"
+    },
+    {
+      "year": 2022,
+      "marks": 2,
+      "section": "II",
+      "qNum": "17(c)",
+      "q": "Identify the meaning of the symbols shown (RWT and tree symbol).",
+      "answer": "RWT = Rainwater Tank (an underground or above-ground tank collecting rainwater from roof downpipes for reuse). The tree symbol with a circle = Tree to be removed during construction (indicated by the specific marking on the plan).",
+      "keywords": [
+        "rainwater",
+        "tank",
+        "tree",
+        "removed",
+        "water",
+        "collection"
+      ],
+      "minKeywords": 3,
+      "image": "/diagrams/vet-construction_2022_Q17c_stimulus.jpg"
+    },
+    {
+      "year": 2022,
+      "marks": 1,
+      "section": "II",
+      "qNum": "19(a)",
+      "q": "Using the delivery cost table shown, calculate the cost to deliver 3700 kg of sand from 54 km away.",
+      "answer": "$450. From the table: 3700 kg falls in the 3001–4000 kg range, and 54 km falls in the 51–60 km distance range, giving a delivery cost of $450.",
+      "acceptableAnswers": [
+        "450",
+        "$450"
+      ],
+      "image": "/diagrams/vet-construction_2022_Q19a_stimulus.jpg"
+    },
+    {
+      "year": 2023,
+      "marks": 1,
+      "section": "II",
+      "qNum": "16(a)(i)",
+      "q": "What type of saw is shown?",
+      "answer": "Drop saw (also acceptable: mitre saw, compound mitre saw, cut-off saw). A drop saw is a power saw mounted on a pivot arm that drops down to make precise cross cuts and mitre cuts in timber.",
+      "acceptableAnswers": [
+        "drop saw",
+        "mitre",
+        "compound",
+        "cut-off",
+        "chop saw"
+      ],
+      "image": "/diagrams/vet-construction_2023_Q16a_stimulus.jpg"
+    },
+    {
+      "year": 2023,
+      "marks": 3,
+      "section": "II",
+      "qNum": "18(b)",
+      "q": "Identify the meaning of the symbols numbered 1–5 on the floor plan shown.",
+      "answer": "1. Window (shown by a break in the wall with a line through it)\n2. Sink (shown by a rectangular symbol with a circle or oval)\n3. Stove/Cooktop (shown by a rectangular symbol with burner circles)\n4. Toilet (shown by a D-shape or oval attached to the wall)\n5. Sliding door (shown by a line with a track symbol parallel to the wall)",
+      "keywords": [
+        "window",
+        "sink",
+        "stove",
+        "toilet",
+        "sliding",
+        "door",
+        "cooktop"
+      ],
+      "minKeywords": 4,
+      "image": "/diagrams/vet-construction_2023_Q18b_stimulus.jpg"
+    },
+    {
+      "year": 2023,
+      "marks": 5,
+      "section": "II",
+      "qNum": "19(b)(i)",
+      "q": "Calculate the volume of concrete required for the footings of an 8.5m × 6m shed with 300mm × 300mm perimeter beam footings.",
+      "answer": "Perimeter of shed = 2 × (8.5 + 6) = 2 × 14.5 = 29 m\n\nVolume of footing = Perimeter × Width × Depth\n= 29 m × 0.3 m × 0.3 m\n= 2.61 m³\n\nNote: Some calculations account for corners (overlap) giving approximately 2.61–2.99 m³ depending on method. Show all working for full marks.",
+      "keywords": [
+        "29",
+        "perimeter",
+        "0.3",
+        "volume",
+        "2.61",
+        "2.99",
+        "footing",
+        "width",
+        "depth"
+      ],
+      "minKeywords": 3,
+      "image": "/diagrams/vet-construction_2023_Q19b_stimulus.jpg"
+    },
+    {
+      "year": 2024,
+      "marks": 3,
+      "section": "II",
+      "qNum": "16(a)",
+      "q": "Name this hand tool and describe TWO suitable uses for it on a construction site.",
+      "answer": "The tool is a spirit level. Uses: (1) Checking that horizontal surfaces (floors, window sills, formwork) are level — the bubble in the horizontal vial sits centred between the lines when the surface is true level. (2) Checking that vertical elements (walls, door frames, columns) are plumb — the bubble in the vertical vial sits centred when the surface is truly vertical. Can also be used as a straight edge for marking lines across flat surfaces.",
+      "keywords": [
+        "spirit level",
+        "level",
+        "plumb",
+        "horizontal",
+        "vertical",
+        "bubble",
+        "wall",
+        "frame",
+        "floor"
+      ],
+      "minKeywords": 4,
+      "image": "/diagrams/vet-construction_2024_Q16a_stimulus.jpg"
+    },
+    {
+      "year": 2024,
+      "marks": 3,
+      "section": "II",
+      "qNum": "16(b)",
+      "q": "Describe THREE pre-operation safety checks for a 240V belt sander before use.",
+      "answer": "Pre-operation safety checks for a 240V belt sander include: (1) Inspect the power cord for cuts, fraying, kinking or damage to the insulation — damaged cords must be removed from service. (2) Check the current test-and-tag label to confirm the tool has been recently inspected and is electrically safe for use. (3) Ensure all guards are correctly in place and secure — particularly the belt guard that covers the sanding belt in motion. (4) Check the sanding belt for correct installation, damage and tension — an incorrectly fitted belt can break and cause injury. (5) Inspect the dust bag/extraction port and ensure it is connected and functioning to control dust hazards.",
+      "keywords": [
+        "cord",
+        "tag",
+        "guard",
+        "belt",
+        "dust",
+        "bag",
+        "inspection",
+        "damage",
+        "safe",
+        "electrical"
+      ],
+      "minKeywords": 4,
+      "image": "/diagrams/vet-construction_2024_Q16b_stimulus.jpg"
+    },
+    {
+      "year": 2024,
+      "marks": 2,
+      "section": "II",
+      "qNum": "19(a)",
+      "q": "Calculate the perimeter of the shape shown (which includes a right-angle triangle section).",
+      "answer": "Calculate the hypotenuse using Pythagoras: √(3² + 4²) = √(9 + 16) = √25 = 5 m\n\nSum all sides: 8 + 6 + 3 + 4 + 5 = 26 m\n\n(Dimensions vary with plan — show all working including Pythagoras theorem)",
+      "keywords": [
+        "pythagoras",
+        "26",
+        "hypotenuse",
+        "5",
+        "perimeter",
+        "sides"
+      ],
+      "minKeywords": 2,
+      "image": "/diagrams/vet-construction_2024_Q19a_stimulus.jpg"
+    },
+    {
+      "year": 2024,
+      "marks": 3,
+      "section": "II",
+      "qNum": "19(b)",
+      "q": "Calculate the volume of concrete for a slab 8m × 6m × 150mm thick, minus a 1-metre radius circular hole.",
+      "answer": "Slab volume = 8 × 6 × 0.15 = 7.2 m³\n\nCircular hole volume = π × r² × depth = π × 1² × 0.15 = 0.471 m³\n\nNet concrete volume = 7.2 − 0.471 = 6.729 m³ ≈ 6.73 m³",
+      "keywords": [
+        "7.2",
+        "0.471",
+        "6.73",
+        "pi",
+        "radius",
+        "circle",
+        "slab",
+        "0.15"
+      ],
+      "minKeywords": 3,
+      "image": "/diagrams/vet-construction_2024_Q19b_stimulus.jpg"
+    },
+    {
+      "year": 2025,
+      "marks": 2,
+      "section": "II",
+      "qNum": "16(a)",
+      "q": "A tool is shown. Outline a suitable use for this tool. (2 marks)",
+      "answer": "The tool shown is a router. A suitable use for this tool is to create a rebate (a step-shaped recess) along the edge of a timber board for joint construction, such as a rebate joint used when making drawers or cabinets. Other suitable uses include: edge profiling (decorative shaping of timber edges), cutting grooves and housings in timber, flush/pattern cutting using a template, and mortising.",
+      "keywords": [
+        "router",
+        "rebate",
+        "groove",
+        "housing",
+        "edge",
+        "profile",
+        "joint",
+        "mortise",
+        "pattern",
+        "timber"
+      ],
+      "minKeywords": 3,
+      "image": "/diagrams/vet-construction_2025_Q16_stimulus.jpg"
+    },
+    {
+      "year": 2025,
+      "marks": 3,
+      "section": "II",
+      "qNum": "16(b)",
+      "q": "Describe TWO settings or adjustments that may be required before using the router shown. (3 marks)",
+      "answer": "Two settings or adjustments required before using a router are:\n\n1. Depth of cut: The depth gauge on the router is adjusted to set how deeply the cutter will enter the timber. This determines the depth of the rebate, groove or profile being cut and must be set precisely before beginning the cut.\n\n2. Width of cut: The side fence (parallel guide) position is adjusted to control the distance from the edge of the timber to the cutting position, determining the width of the cut. Other acceptable adjustments include: selecting the appropriate cutter profile/shape for the operation, and setting the spindle speed (RPM) to suit the material and cutter diameter being used.",
+      "keywords": [
+        "depth",
+        "gauge",
+        "width",
+        "fence",
+        "speed",
+        "rpm",
+        "cutter",
+        "profile",
+        "adjust",
+        "setting"
+      ],
+      "minKeywords": 4
+    },
+    {
+      "year": 2025,
+      "marks": 2,
+      "section": "II",
+      "qNum": "17(a)",
+      "q": "Outline considerations when selecting an abrasive for use with electric sanders. (2 marks)",
+      "answer": "When selecting an abrasive for an electric sander, key considerations include: the grit size — coarser grits (e.g. 40–80 grit) for initial material removal and fine grits (e.g. 180–240 grit) for final finishing; the material being sanded — hardwoods require different abrasives to softwoods; the abrasive type — silicon carbide, aluminium oxide or garnet each suit different materials and applications; and the backing type — paper, cloth or Velcro/hook-and-loop backing depending on the sander type and the required durability of the abrasive sheet.",
+      "keywords": [
+        "grit",
+        "coarse",
+        "fine",
+        "material",
+        "timber",
+        "aluminium oxide",
+        "silicon carbide",
+        "backing",
+        "cloth",
+        "paper"
+      ],
+      "minKeywords": 3
+    },
+    {
+      "year": 2025,
+      "marks": 3,
+      "section": "II",
+      "qNum": "17(b)",
+      "q": "Describe TWO indicators which show that a tool is not performing efficiently, or has a fault. (3 marks)",
+      "answer": "Two indicators that a tool is not performing efficiently or has a fault are:\n\n1. Smoke or burning smell: If a power tool produces smoke or a burning smell during operation, this indicates the motor is overloading, overheating, or that there is an electrical fault. This is a serious safety indicator and the tool must be immediately switched off and removed from service.\n\n2. Excessive vibration or unusual noise: A tool that vibrates more than normal, produces grinding noises, rattles or makes unfamiliar sounds indicates worn bearings, a loose or damaged component, or an unbalanced cutting tool. These symptoms indicate a fault that could lead to failure or injury. Other valid indicators include: slower operation than normal, poor results/finish quality, failure to start, blockages, or excessive heat.",
+      "keywords": [
+        "smoke",
+        "vibration",
+        "noise",
+        "overheating",
+        "bearing",
+        "fault",
+        "slow",
+        "poor",
+        "heat",
+        "burning"
+      ],
+      "minKeywords": 4
+    },
+    {
+      "year": 2025,
+      "marks": 5,
+      "section": "II",
+      "qNum": "17(c)",
+      "q": "Explain how builders can protect their tools and equipment from theft and damage on site. (5 marks)",
+      "answer": "Builders can implement a range of strategies to protect their tools and equipment from both theft and physical damage on site.\n\nTo prevent theft, builders should use secure, lockable storage such as purpose-built toolboxes, steel job site boxes or shipping containers with heavy-duty padlocks and hasp-and-staple fixings. A sign-in/sign-out register should be maintained so tool location is always known. The site perimeter should be secured with fencing, gates and padlocks to restrict unauthorised access, and security lighting and CCTV cameras installed to deter theft and provide evidence if items are stolen. High-value items such as laser levels and power tools should be engraved with identification numbers or asset tags.\n\nTo prevent damage, tools should be stored in dedicated racks or cases to prevent them from being knocked or dropped. Power tools must be stored away from moisture, dust and extreme temperatures that can damage electronics and motors. Tools should be returned to storage after each use rather than left lying on site where they can be driven over or stepped on. Protective covers and blade guards should always be in place during storage and transport.",
+      "keywords": [
+        "lockable",
+        "secure",
+        "container",
+        "sign-in",
+        "fence",
+        "lighting",
+        "camera",
+        "cctv",
+        "rack",
+        "cover",
+        "guard",
+        "identify",
+        "register",
+        "storage"
+      ],
+      "minKeywords": 6
+    },
+    {
+      "year": 2025,
+      "marks": 2,
+      "section": "II",
+      "qNum": "18(a)",
+      "q": "List the type of information that can be found in a building specification. (2 marks)",
+      "answer": "A building specification contains detailed written information that complements the drawings, including: the species and grade of timber to be used; brick type, mortar mix ratios and quality; the composition and strength of concrete in footings and slabs; paint colours, brands and number of coats; PC (Prime Cost) items such as hot water systems, tapware, baths, appliances and light fittings; floor and wall tile types and fixing methods; roofing material types and fixing requirements; and waterproofing membrane specifications.",
+      "keywords": [
+        "timber",
+        "concrete",
+        "brick",
+        "mortar",
+        "paint",
+        "pc items",
+        "tapware",
+        "appliance",
+        "specification",
+        "material",
+        "colour",
+        "finish"
+      ],
+      "minKeywords": 4
+    },
+    {
+      "year": 2025,
+      "marks": 3,
+      "section": "II",
+      "qNum": "18(b)",
+      "q": "Identify the meaning of the following symbols or abbreviations found on construction drawings: HW, RWP, and the horizontal sliding window symbol shown. (3 marks)",
+      "answer": "HW = Hot Water (refers to the hot water supply pipe or hot water service connection on plumbing/services drawings)\nRWP = Rainwater Pipe (the vertical downpipe that carries rainwater from the roof gutters to the stormwater drainage system)\nHorizontal sliding window symbol (two rectangles with arrows pointing toward each other) = a window where the sashes slide horizontally past each other to open",
+      "keywords": [
+        "hot water",
+        "HW",
+        "rainwater pipe",
+        "RWP",
+        "sliding",
+        "window",
+        "horizontal",
+        "downpipe"
+      ],
+      "minKeywords": 4,
+      "image": "/diagrams/vet-construction_2025_Q18b_stimulus.jpg"
+    },
+    {
+      "year": 2025,
+      "marks": 4,
+      "section": "II",
+      "qNum": "18(c)",
+      "q": "Describe the range of information that can be found on a floor plan. (4 marks)",
+      "answer": "A floor plan provides a comprehensive range of information about the internal layout and dimensions of a building. It shows the overall building footprint and dimensions, including the layout and names of all rooms and spaces (bedrooms, kitchen, bathroom, living areas). Wall locations and thicknesses are shown, along with the positions of all doors (and their swing direction) and windows. Structural elements such as columns and loadbearing walls are identified. Fixed appliances and fixtures are shown including kitchens (sink, stove, dishwasher), bathrooms (bath, shower, toilet, vanity) and laundries. Staircase location and direction of travel (with step count) are indicated. Built-in joinery such as wardrobes, pantries and linen cupboards are shown. Some floor plans also indicate floor coverings, ceiling heights, roof outline and eaves overhang, and the locations of downpipes.",
+      "keywords": [
+        "room",
+        "dimension",
+        "wall",
+        "door",
+        "window",
+        "fixture",
+        "toilet",
+        "kitchen",
+        "stair",
+        "footprint",
+        "layout",
+        "appliance",
+        "structure"
+      ],
+      "minKeywords": 6
+    },
+    {
+      "year": 2025,
+      "marks": 5,
+      "section": "III",
+      "qNum": "20(a)",
+      "q": "Describe the control measures that can be used to minimise soil erosion on a construction site. (5 marks)",
+      "answer": "Soil erosion on a construction site can be minimised through a combination of physical barriers, vegetation management and site management practices.\n\nSediment control fences (silt fences) made from geotextile fabric are installed along site boundaries and drainage lines to intercept sediment-laden runoff and trap soil particles before they leave the site. Similarly, silt socks (sediment-filled tubes) can be placed around stormwater drain inlets to prevent sediment from entering the drainage system.\n\nErosion control blankets or mats made from jute, coir or synthetic materials are laid over exposed soil surfaces and steep areas to stabilise the soil, protect it from raindrop impact and reduce surface runoff velocity.\n\nMaintaining or establishing temporary vegetation (such as a cover crop or hydroseeding) on disturbed areas that will not be worked immediately helps bind soil with root systems and protect the surface from rain impact.\n\nThe site should be graded to direct stormwater runoff to designated detention areas or sediment basins where sediment can settle before water is discharged. Limiting the area of disturbed ground at any one time and establishing temporary site driveways using coarse gravel aggregate prevents vehicles from tracking mud onto public roads.\n\nVehicle wash bays at site exits and restricting vehicle access to designated areas further reduces sediment transport off-site.",
+      "keywords": [
+        "silt fence",
+        "sediment",
+        "erosion blanket",
+        "vegetation",
+        "grading",
+        "detention",
+        "drain",
+        "gravel",
+        "wash bay",
+        "vehicle",
+        "runoff",
+        "soil",
+        "protect"
+      ],
+      "minKeywords": 6
+    },
+    {
+      "year": 2025,
+      "marks": 10,
+      "section": "III",
+      "qNum": "20(b)",
+      "q": "Explain techniques that could be used to minimise the risk of harm to workers when manually handling materials. Support your answer with relevant workplace examples. (10 marks)",
+      "answer": "Manual handling is one of the leading causes of injury in the construction industry, with back injuries, muscle strains and crush injuries being the most common outcomes. A range of techniques can be employed to minimise harm.\n\nRisk assessment and task planning are the foundation of safe manual handling. Before any lifting or carrying task, workers should assess the weight of the load, the distance to be moved, the working posture required, and the frequency of the task. For example, moving 20 kg cement bags across a site requires planning the route, identifying rest points and considering team lifting.\n\nMechanical aids significantly reduce the physical demands of manual handling. Trolleys, sackbarrows, pallet jacks, forklifts, hoists and materials lifts should be used whenever the load weight or distance makes manual carrying impractical or hazardous. A bricklayer using a brick trolley to move a pack of bricks rather than carrying individual loads eliminates repeated bending and lifting strain.\n\nCorrect manual lifting technique must be trained and consistently applied. Workers should adopt a wide, stable stance, keep the load close to the body, bend at the knees (not the waist), keep the back in a neutral (straight) position, look forward (neutral neck position), and lift smoothly using leg muscles. Twisting the torso while carrying a load is a major cause of back injury and must be avoided.\n\nTeam lifting should be employed for heavy or awkward loads that exceed safe single-person limits (typically 20–25 kg for repeated lifts). Communication between team members (agreed signals and commands) is essential. For example, two workers carrying a door frame must coordinate their movements to prevent unexpected weight transfers.\n\nErgonomic workplace design reduces the need for hazardous postures. Storing materials at waist height where possible, pre-positioning materials close to the installation point, and breaking large deliveries into smaller manageable loads minimises extreme bending, reaching and carrying distances.\n\nRegular breaks and job rotation allow fatigued muscles to recover, significantly reducing the risk of cumulative strain injuries. PPE such as steel-capped boots and gloves also supports safe manual handling.",
+      "keywords": [
+        "assess",
+        "mechanical",
+        "trolley",
+        "technique",
+        "knee",
+        "back",
+        "team",
+        "ergonomic",
+        "training",
+        "rotation",
+        "plan",
+        "posture",
+        "weight",
+        "strain"
+      ],
+      "minKeywords": 8
+    },
+    {
+      "year": 2025,
+      "marks": 15,
+      "section": "IV",
+      "qNum": "21",
+      "q": "Explain a range of strategies that can be used to improve resource efficiency in the construction industry. (15 marks)",
+      "answer": "Resource efficiency in the construction industry refers to maximising the value obtained from all inputs — materials, labour, equipment, time and money — while minimising waste in all its forms.\n\nMaterials management is one of the most impactful strategies. Accurate calculation of material quantities using take-off schedules and material lists prevents over-ordering (which leads to waste and unnecessary cost) and under-ordering (which causes project delays). Designing structures to suit standard material sizes — for example, designing wall heights to equal full plasterboard sheet widths (3000 mm) — eliminates unnecessary cutting and the resulting off-cuts, reducing both material waste and the labour time spent cutting and disposing of waste.\n\nJust-in-time delivery sequencing improves resource efficiency by arranging for materials to arrive on site only when they are needed for the next stage of construction. This reduces damage to materials stored on site, frees up workspace for productive activity, and minimises double-handling of materials.\n\nLabour resource efficiency depends on correct trade sequencing and workforce planning. Using Gantt charts and construction programs ensures trades can access the site to perform their work without interference from preceding trades. Having the right number of workers for each stage — not too few (creating bottlenecks) or too many (causing congestion and under-utilisation) — maximises productivity.\n\nTechnology and modern construction methods improve efficiency. CAD/CAM design allows more precise planning, reducing errors and rework. Prefabricated components (manufactured off-site to precise dimensions) arrive ready to install, reducing on-site labour time, waste and weather delays.\n\nTool and equipment maintenance ensures that plant and tools operate at their designed efficiency. A poorly maintained concrete mixer, compressor or power tool uses more energy, produces inferior results and requires more time to complete a task.\n\nSustainable practices such as recycling construction waste (crushed concrete for fill, timber offcuts for formwork), using recycled materials where appropriate, and minimising packaging waste all contribute to material resource efficiency while reducing environmental impact.\n\nEffective supervision, clear work instructions and appropriate training ensure workers understand the expected standard of work, reducing errors, rework and the waste of materials and time associated with correcting mistakes.",
+      "keywords": [
+        "material",
+        "quantity",
+        "design",
+        "standard",
+        "delivery",
+        "sequencing",
+        "gantt",
+        "labour",
+        "trade",
+        "prefabric",
+        "maintenance",
+        "recycle",
+        "training",
+        "cad",
+        "efficiency",
+        "waste",
+        "cost"
+      ],
+      "minKeywords": 9
+    }
+  ]
+}
