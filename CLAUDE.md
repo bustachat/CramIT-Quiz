@@ -599,18 +599,19 @@ await logAction(agentName, action, payload);           // log before acting
 ### ⬜ Still to do (non-staged)
 
 #### Pre-launch — blocking
-| Task | File(s) | Notes |
-|---|---|---|
-| Fix `handleUpgradeFlex()` | `index.html` | Currently just shows an alert. Redirect to Customer Portal as stopgap until Billing Agent is built. Low priority — only triggered at 8+ subjects. |
-| Fix `plan_type: flex` in `handleCheckout()` | `index.html` | Currently maps to `'unlimited'` for 8+ subjects — should be `'flex'` |
-| Delete `billing.js` | `billing.js` | Dead code — placeholder keys, not imported by index.html. Safe to delete. |
-| Test full payment flow end-to-end | Stripe sandbox | Use test card `4242 4242 4242 4242`. Test: trial → subscribe → add subject → remove subject → cancel |
-| ~~Fix remaining 39 MC question texts~~ | ~~`index.html`~~ | ✅ Done — 60 question texts updated to exact NESA wording from PDFs (2020–2025). Also fixed 2021 Q8–15 one-position shift, bearing diagram image, and chocolates optionImages. |
-| ~~Re-crop 2024 Q15 stimulus image~~ | ~~`diagrams/`~~ | ✅ Done — manually cropped, `hideQ:true` removed |
-| Set `ANTHROPIC_API_KEY` in GitHub Secrets | GitHub Settings | Enables nightly Content Agent |
-| Submit Google OAuth for verification | Google Console | Required for public launch |
-| Add custom domain `cramit.com.au` | Cloudflare Pages → Custom domains | Update DNS, update `APP_URL` in index.html, update Supabase redirect URLs |
-| Switch Stripe to live mode | Stripe dashboard + Cloudflare + Supabase secrets | Create new live Price objects, update `create-checkout.js` + `update-subscription.js` |
+| # | Task | File(s) | Notes |
+|---|---|---|---|
+| **1** | **Migrate questions → `subjects/*.json`** | `index.html`, `subjects/` | ⚠️ DO THIS FIRST. See §25 for full plan. Reduces index.html ~60%, enables Content Agent to function, required by landing.html + portal.html. One file per subject, all years combined. |
+| 2 | Fix `handleUpgradeFlex()` | `index.html` | Currently just shows an alert. Redirect to Customer Portal as stopgap until Billing Agent is built. |
+| 3 | Fix `plan_type: flex` in `handleCheckout()` | `index.html` | Currently maps to `'unlimited'` for 8+ subjects — should be `'flex'` |
+| 4 | Delete `billing.js` | `billing.js` | Dead code — placeholder keys, not imported by index.html. Safe to delete. |
+| 5 | Test full payment flow end-to-end | Stripe sandbox | Use test card `4242 4242 4242 4242`. Test: trial → subscribe → add subject → remove subject → cancel |
+| ~~6~~ | ~~Fix remaining 39 MC question texts~~ | ~~`index.html`~~ | ✅ Done — 60 question texts updated to exact NESA wording from PDFs (2020–2025). Also fixed 2021 Q8–15 one-position shift, bearing diagram image, and chocolates optionImages. |
+| ~~7~~ | ~~Re-crop 2024 Q15 stimulus image~~ | ~~`diagrams/`~~ | ✅ Done — manually cropped, `hideQ:true` removed |
+| 8 | Set `ANTHROPIC_API_KEY` in GitHub Secrets | GitHub Settings | Enables nightly Content Agent |
+| 9 | Submit Google OAuth for verification | Google Console | Required for public launch |
+| 10 | Add custom domain `cramit.com.au` | Cloudflare Pages → Custom domains | Update DNS, update `APP_URL` in index.html, update Supabase redirect URLs |
+| 11 | Switch Stripe to live mode | Stripe dashboard + Cloudflare + Supabase secrets | Create new live Price objects, update `create-checkout.js` + `update-subscription.js` |
 
 #### Pre-launch — infrastructure (required before any agent goes live)
 | Task | File(s) | Notes |
@@ -1132,6 +1133,6 @@ subjects/
 
 ---
 
-*CLAUDE.md — CramIT Project — Last updated: 2026-06-04 — Major update: three-track architecture (landing+PWA+portal), staging environment strategy, agent build order, JSON migration plan, agent autonomy levels, revised blueprint agent roster. Stages 1–8, 8.5, 8.9 + 11 complete.*
+*CLAUDE.md — CramIT Project — Last updated: 2026-06-05 — JSON migration promoted to #1 pre-launch priority. Three-track architecture, staging environment strategy, agent build order, autonomy levels, revised blueprint agent roster all documented. Stages 1–8, 8.5, 8.9 + 11 complete.*
 *Repo: https://github.com/bustachat/CramIT-Quiz*
 *Supabase: https://ohqtefjawaphtsebnaxg.supabase.co*
