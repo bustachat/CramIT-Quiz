@@ -571,7 +571,7 @@ GitHub Actions triggers → agent.js runs →
 |---|---|---|
 | Fix remaining billing UI issues | `billing.js`, `index.html` | Test full flow end-to-end in Stripe sandbox |
 | Test full payment flow | Stripe sandbox | Use test card `4242 4242 4242 4242` |
-| Fix remaining 39 MC question texts | `index.html` | PDF extraction returned garbled text for image-heavy questions. See `question_text_diff.txt` for full list. Manual copy-paste from NESA PDFs. Pre-launch QA task. |
+| ~~Fix remaining 39 MC question texts~~ | ~~`index.html`~~ | ✅ Done — 60 question texts updated to exact NESA wording from PDFs (2020–2025). Also fixed 2021 Q8–15 one-position shift, bearing diagram image, and chocolates optionImages. |
 | Re-crop 2024 Q15 stimulus image | `diagrams/mathematics-standard-2_2024_Q15_stimulus.jpg` | Remove NESA question text from image — show only the box plot. `hideQ:true` is the current workaround. Manual crop in any image editor. |
 | Set `ANTHROPIC_API_KEY` in GitHub Secrets | GitHub Settings | Enables nightly agent |
 | Switch Stripe to live mode | Stripe dashboard + Cloudflare + Supabase secrets | Update all 3 key locations |
@@ -871,6 +871,6 @@ Images are currently served from git repo via Cloudflare Pages static files — 
 
 ---
 
-*CLAUDE.md — CramIT Project — Last updated: June 2026 — Stages 1–8, 8.5, 8.9 + 11 complete*
+*CLAUDE.md — CramIT Project — Last updated: June 2026 — Stages 1–8, 8.5, 8.9 + 11 complete. MC question texts updated to exact NESA wording (60 fixes, 2020–2025).*
 *Repo: https://github.com/bustachat/CramIT-Quiz*
 *Supabase: https://ohqtefjawaphtsebnaxg.supabase.co*
