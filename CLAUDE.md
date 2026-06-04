@@ -53,6 +53,30 @@ git push origin main
 ```
 Cloudflare Pages auto-deploys on every push to `main`. Remind the owner of this.
 
+### Step 5 — UPDATE DOCS (mandatory after every task)
+After every commit, update both living documents:
+
+**1. `CLAUDE.md` (this file — in the repo)**
+- Mark completed tasks as `✅ Done (YYYY-MM-DD)`
+- Update the relevant section with actual implementation details
+- Update the footer timestamp
+- Commit and push CLAUDE.md in the same session — never leave it stale
+
+**2. Blueprint V4 (Word doc — NOT in the repo)**
+Location: `C:\Claude Code Space\CRAMIT QUIZ Code Folder\Documents\CramIT_Autonomous_Operations_Blueprint_V4.docx`
+
+Update Blueprint V4 after any change that affects:
+- Agent architecture or behaviour
+- Database schema
+- Infrastructure or hosting
+- Billing or pricing logic
+- New stages completed or major features shipped
+
+Use the `/docx` skill to read and edit it. Add a version note at the top of the changed section:
+`[Updated YYYY-MM-DD — <one-line summary of what changed>]`
+
+If a change is minor (bug fix, wording, small refactor) — CLAUDE.md only is sufficient. Use judgement: would a new developer need to read the Blueprint to understand the system? If yes, update it.
+
 ---
 
 ## 3. Tech Stack — Never Suggest Alternatives
@@ -173,7 +197,7 @@ Tables live in Supabase. RLS is enabled on all tables.
 | `pricing_config` | Pricing constants — edit here to change prices | `key`, `value` |
 | `user_progress` | Per-question answer history — cross-device sync | `user_id`, `subject_key`, `question_idx`, `mode`, `is_correct`, `answered_at` — UNIQUE(user_id, subject_key, question_idx, mode) |
 
-**Agent coordination tables** (from Blueprint V3 — to be deployed):
+**Agent coordination tables** (from Blueprint V4 — to be deployed):
 `agent_tasks`, `agent_logs`, `escalations`, `agent_config` (includes `autonomy_level INT DEFAULT 0` — 0=notify, 1=propose, 2=act+notify, 3=autonomous), `content_issues`, `known_issues`, `analytics_snapshots`, `band_descriptors`, `marking_criteria`, `band_mapping`, `written_submissions`
 
 **Staging Supabase project** (to be created — separate free-tier project for agent testing and staging environment)
@@ -620,7 +644,7 @@ await logAction(agentName, action, payload);           // log before acting
 | Create `staging` branch + Cloudflare preview | GitHub + Cloudflare | Agents deploy here first. Preview URL auto-created by Cloudflare Pages. |
 | Enable branch protection on `main` | GitHub Settings → Branches | Require PR + 1 approval. No direct pushes — not even from owner. |
 | Add `autonomy_level` column to `agent_config` | Supabase SQL editor | `ALTER TABLE agent_config ADD COLUMN autonomy_level INT DEFAULT 0;` |
-| Deploy all Blueprint V3 agent coordination tables | Supabase SQL editor | See §23 for full table list |
+| Deploy all Blueprint V4 agent coordination tables | Supabase SQL editor | See §23 for full table list |
 | Build shared agent safety wrapper | New file `agents/lib/safety.js` | Kill switch + spend limit + dry-run + action logging. Used by all agents. |
 
 #### Post-launch roadmap
@@ -629,7 +653,7 @@ await logAction(agentName, action, payload);           // log before acting
 | ~~Migrate questions from `index.html` → `subjects/*.json`~~ | ✅ Done 2026-06-05 |
 | Build `landing.html` — public marketing page | See §22. Needed for organic traffic + conversion. |
 | Build `portal.html` — desktop web portal | See §22 Stage 10. |
-| Build agent fleet per Blueprint V3 phasing | See §24 for revised agent build order. |
+| Build agent fleet per Blueprint V4 phasing | See §24 for revised agent build order. |
 | Launch | — |
 
 ---
@@ -719,7 +743,7 @@ The biggest priority is bringing `index.html` (the hosted Cloudflare Pages app) 
 | `billing.js` has placeholder credentials | ⬜ Delete it | Not imported by index.html — dead code. Safe to delete. |
 | `handleUpgradeFlex()` is a stub | ⬜ Fix pending | Just shows alert. Fix: redirect to Customer Portal. Billing Agent will replace this properly. |
 | `handleCheckout()` plan_type missing flex case | ⬜ Fix pending | Maps 8+ subjects to `'unlimited'` — should be `'flex'` |
-| Blueprint V3 references Netlify in 7 places | ⬜ Docx update needed | Hosting migrated to Cloudflare Pages in May 2026. Blueprint .docx not yet updated. |
+| Blueprint V4 Netlify references | ⬜ Docx update needed | Hosting migrated to Cloudflare Pages in May 2026. Blueprint V4 may still contain Netlify references — verify and update using `/docx` skill. |
 
 ---
 
@@ -783,9 +807,9 @@ At 1,000 active subscribers: ~$105/mo in AI + infra costs (≈1.3% of revenue).
 
 ---
 
-## 20. Blueprint V3 — Agent Roster Summary
+## 20. Blueprint V4 — Agent Roster Summary
 
-The Autonomous Operations Blueprint V3 defines 22 agents across 5 clusters. Full specs in `CramIT_Autonomous_Operations_Blueprint_V3.docx`. See §24 for the revised build order and decisions.
+The Autonomous Operations Blueprint V4 defines 22 agents across 5 clusters. Full specs in `CramIT_Autonomous_Operations_Blueprint_V4.docx` at `C:\Claude Code Space\CRAMIT QUIZ Code Folder\Documents\`. See §24 for the revised build order and decisions.
 
 **Revised status per agent (June 2026 review):**
 
@@ -1139,6 +1163,6 @@ JSON format: `{ id, name, icon, accentColor, mcQuestions[], writtenQuestions[], 
 
 ---
 
-*CLAUDE.md — CramIT Project — Last updated: 2026-06-05 — JSON migration COMPLETE. All question data in subjects/*.json. index.html 11,195 → 2,502 lines. Stages 1–8, 8.5, 8.9, 11 + JSON migration complete.*
+*CLAUDE.md — CramIT Project — Last updated: 2026-06-05 — JSON migration COMPLETE. All question data in subjects/*.json. index.html 11,195 → 2,502 lines. Blueprint V4 location + update rule added to Step 4→5 workflow. All V3 references updated to V4. Stages 1–8, 8.5, 8.9, 11 + JSON migration complete.*
 *Repo: https://github.com/bustachat/CramIT-Quiz*
 *Supabase: https://ohqtefjawaphtsebnaxg.supabase.co*
