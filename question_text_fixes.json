@@ -1,0 +1,450 @@
+[
+  {
+    "year": 2020,
+    "q_num": 3,
+    "line": 522,
+    "old_q": "The distance between Bricktown and Koala Creek is 75 km. A person travels at an average speed of 50 km/h. How long does the journey take?",
+    "new_q": "4"
+  },
+  {
+    "year": 2020,
+    "q_num": 5,
+    "line": 544,
+    "old_q": "A plant stem is measured to be 16.0 cm, correct to one decimal place. What is the percentage error?",
+    "new_q": "6"
+  },
+  {
+    "year": 2020,
+    "q_num": 6,
+    "line": 555,
+    "old_q": "Suppose y = –1 – 2x. When the value of x increases by 5, the value of y decreases by",
+    "new_q": "© 2020 NSW Education Standards Authority"
+  },
+  {
+    "year": 2020,
+    "q_num": 7,
+    "line": 566,
+    "old_q": "Which histogram best represents a dataset that is positively skewed?",
+    "new_q": "8"
+  },
+  {
+    "year": 2020,
+    "q_num": 8,
+    "line": 577,
+    "old_q": "Relative to the rest of the class, which row of the table shows John's strongest subject and his weakest subject?",
+    "new_q": "1 D."
+  },
+  {
+    "year": 2020,
+    "q_num": 9,
+    "line": 588,
+    "old_q": "Team A (3 members) and Team B (3 members) play chess. Each member of Team A must play each member of Team B once. Which network diagram represents this?",
+    "new_q": "Team A and Team B have entered a chess competition. Team A and Team B have three members each. Each member of Team A must play each member of Team B once. Which of the following network diagrams could represent the chess games to be played? mul tip le choice networks"
+  },
+  {
+    "year": 2020,
+    "q_num": 12,
+    "line": 621,
+    "old_q": "For bivariate data, Pearson's correlation coefficient is –1. Which graph best represents this?",
+    "new_q": "1 C."
+  },
+  {
+    "year": 2020,
+    "q_num": 13,
+    "line": 632,
+    "old_q": "Jake stops drinking at 10:30 pm with BAC of 0.08375. Time to reach zero BAC = BAC/0.015. When will his BAC be 0.05?",
+    "new_q": "When Jake stops drinking alcohol at 10:30 pm, he has a blood alcohol content (BAC) of 0.08375. The number of hours required for a person to reach zero BAC after they stop consuming alcohol is given by the formula BAC Time = . 0.015 At what time on the next day should Jake expect his BAC to be 0.05?"
+  },
+  {
+    "year": 2020,
+    "q_num": 14,
+    "line": 643,
+    "old_q": "An annuity has ten $1000 payments from 2021-2030, at 5% p.a. PV calculated at June 2020, FV at June 2030. Which statement is true?",
+    "new_q": "An annuity consists of ten payments, each equal to $1000. Each payment is made on 30 June each year from 2021 through to 2030 inclusive. The rate of compound interest is 5% per annum. The present value of the annuity is calculated at 30 June 2020. The future value of the annuity is calculated at 30 June 2030. Without performing any calculations, which of the following statements is true?"
+  },
+  {
+    "year": 2020,
+    "q_num": 15,
+    "line": 654,
+    "old_q": "A die (1-6) lands on a table divided into 8 equal sections (1-8). Score = die value × section number. What is P(score = 6)?",
+    "new_q": "The top of a rectangular table is divided into 8 equal sections as shown."
+  },
+  {
+    "year": 2021,
+    "q_num": 1,
+    "line": 667,
+    "old_q": "Which shape has the largest perimeter? Rectangle 8×10, Square side 11, Triangle 9-3-4, Circle diameter 9",
+    "new_q": "5"
+  },
+  {
+    "year": 2021,
+    "q_num": 2,
+    "line": 678,
+    "old_q": "For a network with 5 vertices and 8 edges, what is the sum of all degrees?",
+    "new_q": "4"
+  },
+  {
+    "year": 2021,
+    "q_num": 3,
+    "line": 689,
+    "old_q": "Stem-and-leaf plot shows: 0|6 8, 1|2 4 5, 2|1 5 5 9, 3|5. What is the mode?",
+    "new_q": "5 What is the mode of this dataset?"
+  },
+  {
+    "year": 2021,
+    "q_num": 4,
+    "line": 700,
+    "old_q": "An appliance valued at $2467 three years ago depreciates 15% annually by declining-balance. What is today's salvage value?",
+    "new_q": "Three years ago an appliance was valued at $2467. Its value has depreciated by 15% each year, based on the declining-balance method. What is its salvage value today, to the nearest dollar?"
+  },
+  {
+    "year": 2021,
+    "q_num": 5,
+    "line": 711,
+    "old_q": "Peter earns $21.50/hour with 2.1% annual compound increase for 4 years. Which expression gives his wage after 4 years?",
+    "new_q": "Peter currently earns $21.50 per hour. His hourly wage will increase by 2.1% compounded each year for the next four years. What will his hourly wage be after four years?"
+  },
+  {
+    "year": 2021,
+    "q_num": 6,
+    "line": 722,
+    "old_q": "What is 22/7 correct to three significant figures?",
+    "new_q": "b Suppose a = , where b = 22."
+  },
+  {
+    "year": 2021,
+    "q_num": 7,
+    "line": 733,
+    "old_q": "For the cumulative frequency graph showing 100 downloads, which box-plot matches the data?",
+    "new_q": "The number of downloads of a song on each of twenty consecutive days is shown in the following graph. G r a ph Which of the following graphs best shows the cumulative number of downloads up to and including each day? Mu l t i ple ch oic e g r a p h s"
+  },
+  {
+    "year": 2021,
+    "q_num": 8,
+    "line": 744,
+    "old_q": "A student thinks of x. When subtracting 8 and multiplying by 3, the result is 2 more than x. Which equation?",
+    "new_q": "On a test, Zac’s mark corresponded to a z-score of 2. The test scores had a mean of 63 and a standard deviation of 8. What was Zac’s actual mark on the test?"
+  },
+  {
+    "year": 2021,
+    "q_num": 10,
+    "line": 766,
+    "old_q": "Box has 3 peppermint (P) and 5 caramel (C) chocolates. Kim chooses one, Sam chooses another. P(different centres)?",
+    "new_q": "Which of the following best represents the graph of y = 10 (0.8) x ? M u l t i pl e c ho i c e gr ap hs"
+  },
+  {
+    "year": 2021,
+    "q_num": 11,
+    "line": 777,
+    "old_q": "Block of land shown. Using trapezoidal rule with 2 applications, approximate area in km²?",
+    "new_q": "There are 8 chocolates in a box. Three have peppermint centres (P) and five have caramel centres (C). Kim randomly chooses a chocolate from the box and eats it. Sam then randomly chooses and eats one of the remaining chocolates."
+  },
+  {
+    "year": 2021,
+    "q_num": 14,
+    "line": 810,
+    "old_q": "11,400 people race. Ratio professional:amateur = 3:16. All professionals finish, 600 amateurs don't. For finishers, what's the ratio professional:amateur in simplest form?",
+    "new_q": "Consider the diagram below. Bearin g dia gra m What is the true bearing of A from B?"
+  },
+  {
+    "year": 2022,
+    "q_num": 2,
+    "line": 845,
+    "old_q": "Which could be the graph of y = −2x + 2?",
+    "new_q": "3"
+  },
+  {
+    "year": 2022,
+    "q_num": 3,
+    "line": 856,
+    "old_q": "Network diagram shows project with critical path marked. What is the critical path?",
+    "new_q": "2 100"
+  },
+  {
+    "year": 2022,
+    "q_num": 4,
+    "line": 867,
+    "old_q": "Lily captures and tags 30 fish, releases them. Later captures 40 fish, 12 are tagged. Estimate total fish in lake?",
+    "new_q": "5"
+  },
+  {
+    "year": 2022,
+    "q_num": 5,
+    "line": 878,
+    "old_q": "Dataset: 13,16,17,17,21,24. Adding 5 affects median and mean how?",
+    "new_q": "Consider the following dataset. 13 16 17 17 21 24 Which row of the table shows how the median and mean are affected when a score of 5 is added to the dataset?"
+  },
+  {
+    "year": 2022,
+    "q_num": 6,
+    "line": 889,
+    "old_q": "20 minutes is what ratio to one-third of a day, in simplest form?",
+    "new_q": "7"
+  },
+  {
+    "year": 2022,
+    "q_num": 7,
+    "line": 900,
+    "old_q": "Tian earns $20.45/hour + $16.20/day meal allowance. Total for 9 hours/day for 5 days?",
+    "new_q": "Tian is paid $20.45 per hour, as well as a meal allowance of $16.20 per day. What are Tian’s total earnings if she works 9 hours per day for 5 days?"
+  },
+  {
+    "year": 2022,
+    "q_num": 8,
+    "line": 911,
+    "old_q": "Which true bearing is the same as S48°W?",
+    "new_q": "9 Number of downloads Number of downloads"
+  },
+  {
+    "year": 2022,
+    "q_num": 9,
+    "line": 922,
+    "old_q": "Object projected vertically: h = −5t² + 80t. For how long is it at 300m or more?",
+    "new_q": "An object is projected vertically into the air. Its height, h metres, above the ground after t seconds is given by h = −5t2 + 80t . Gr aph t h = −5t2 + 80t"
+  },
+  {
+    "year": 2022,
+    "q_num": 10,
+    "line": 933,
+    "old_q": "Alex buys 800 shares at $2.60, sells at $3.40, pays $24.95 fee. What profit?",
+    "new_q": "Alex purchased 800 shares. The total cost was $2.60 per share. Alex sold the shares one year later for $3.40 each and paid a fee of $24.95 for selling the shares. What profit did Alex make on these shares?"
+  },
+  {
+    "year": 2022,
+    "q_num": 11,
+    "line": 944,
+    "old_q": "Future value $150,000 in 10 years at 4% p.a. compounded half-yearly. Which equation gives present value?",
+    "new_q": "In ten years, the future value of an investment will be $150 000. The interest rate is 4% per annum, compounded half-yearly. Which equation will give the present value (PV ) of the investment? 150 000"
+  },
+  {
+    "year": 2022,
+    "q_num": 12,
+    "line": 955,
+    "old_q": "Regression line M = 20 + 3H relates study hours to marks. Which statement is correct?",
+    "new_q": "For a particular course, the recorded data show a relationship between the number of hours of study per week and the marks achieved out of 100."
+  },
+  {
+    "year": 2022,
+    "q_num": 14,
+    "line": 977,
+    "old_q": "Which correctly expresses x as subject of y = (ax − b)/(2)?",
+    "new_q": "Which of the 2y . x = a y + b B. x = 2a 2y C. x = + b a y D. x = + b 2a following correctly expresses x as the subject of y = ?"
+  },
+  {
+    "year": 2022,
+    "q_num": 15,
+    "line": 988,
+    "old_q": "Cumulative frequency graph for 100 people's movie downloads. Which box-plot matches?",
+    "new_q": "The cumulative frequency graph shows the distribution of the number of movie downloads made by 100 people in one month. e frequency Cumulativ"
+  },
+  {
+    "year": 2023,
+    "q_num": 2,
+    "line": 1011,
+    "old_q": "In normal distribution, what % of scores have z-score less than 1?",
+    "new_q": "3"
+  },
+  {
+    "year": 2023,
+    "q_num": 3,
+    "line": 1022,
+    "old_q": "Scatterplot of bees leaving hive vs time shows positive trend. Which correlation coefficient?",
+    "new_q": "5"
+  },
+  {
+    "year": 2023,
+    "q_num": 4,
+    "line": 1033,
+    "old_q": "Truck valued at $65,000 depreciates at 22 cents/km. Value after 132,600 km?",
+    "new_q": "5 C."
+  },
+  {
+    "year": 2023,
+    "q_num": 5,
+    "line": 1044,
+    "old_q": "Four petrol pumps shown. Which represents best value?",
+    "new_q": "Four petrol pumps are shown, each with the amount of petrol purchased and its cost. Which one represents the best value? 24 L $46.70"
+  },
+  {
+    "year": 2023,
+    "q_num": 6,
+    "line": 1055,
+    "old_q": "Item costs $880 including 10% GST. What is the GST amount?",
+    "new_q": "1 B."
+  },
+  {
+    "year": 2023,
+    "q_num": 7,
+    "line": 1066,
+    "old_q": "City A at 34°S, 151°E. City B is 72° north and 25° west of A. What are B's coordinates?",
+    "new_q": "5"
+  },
+  {
+    "year": 2023,
+    "q_num": 9,
+    "line": 1088,
+    "old_q": "Rectangle 8cm×5cm measured to nearest cm. What are bounds for area?",
+    "new_q": "The length and width of a rectangle are measured to be 8 cm and 5 cm respectively, to the nearest centimetre. What are the lower and upper bounds for the area of the rectangle?"
+  },
+  {
+    "year": 2023,
+    "q_num": 10,
+    "line": 1099,
+    "old_q": "$25,000 invested for 6 years at 8% p.a. compounding quarterly. Which expression?",
+    "new_q": "An amount of $25 000 is invested for six years. Interest is earned at a rate of 8% per annum, compounding quarterly. Which expression gives the value of the investment after 6 years, in dollars?"
+  },
+  {
+    "year": 2023,
+    "q_num": 13,
+    "line": 1132,
+    "old_q": "Item discounted 30%, then further 20% on reduced price. Total % discount?",
+    "new_q": "An item is discounted by 30% and then a further discount of 20% is applied to the reduced price. What is the total percentage discount?"
+  },
+  {
+    "year": 2023,
+    "q_num": 15,
+    "line": 1154,
+    "old_q": "After 5 tests, Ashan needs 90 on 6th test for mean of 80. What was his mean after 5 tests?",
+    "new_q": "Ashan’s mathematics class needs to complete six tests, each worth 100 marks. After completing the first five tests, Ashan calculated that he would need a mark of 90 in the final test in order to have a mean mark of 80 for the six tests. What was Ashan’s mean mark after completing the first five tests?"
+  },
+  {
+    "year": 2024,
+    "q_num": 3,
+    "line": 1188,
+    "old_q": "Shoppers invited to complete online survey. What type of sampling?",
+    "new_q": "4"
+  },
+  {
+    "year": 2024,
+    "q_num": 4,
+    "line": 1199,
+    "old_q": "Map shows 6 regions. How many edges in network diagram? (edges = shared borders)",
+    "new_q": "© 2024 NSW Education Standards Authority"
+  },
+  {
+    "year": 2024,
+    "q_num": 5,
+    "line": 1210,
+    "old_q": "Pia's z-scores: English 2.0, Maths 0.9, Science 0.47, History 1.44. Which subject did she perform best?",
+    "new_q": "Pia’s marks in Year 10 assessments are shown. The scores for each subject were normally distributed. Pia’s mark Year 10 mean Year 10 standard deviation English"
+  },
+  {
+    "year": 2024,
+    "q_num": 6,
+    "line": 1221,
+    "old_q": "Right triangle, hypotenuse 20, angle 40°. Which expression for opposite side x?",
+    "new_q": "Consider the diagram shown."
+  },
+  {
+    "year": 2024,
+    "q_num": 7,
+    "line": 1232,
+    "old_q": "Uniform was $180 three years ago. Price increased 2.5% annually. Current price?",
+    "new_q": "Three years ago, the price of a uniform was $180. Due to inflation, the price increased annually by 2.5%. What is the price of this uniform now?"
+  },
+  {
+    "year": 2024,
+    "q_num": 8,
+    "line": 1243,
+    "old_q": "Car service bill: $242 parts (inc GST), $100 labour (ex GST). Add 10% GST to labour. Total GST paid?",
+    "new_q": "C. 15.5 D."
+  },
+  {
+    "year": 2024,
+    "q_num": 9,
+    "line": 1254,
+    "old_q": "Time to paint school varies inversely with painters. 6 painters take 20 days. How long for 15 painters?",
+    "new_q": "The time taken to paint a school varies inversely with the number of painters completing the task. It takes 6 painters a total of 20 days to paint a school. How many days would it take 15 painters to paint the same school?"
+  },
+  {
+    "year": 2024,
+    "q_num": 10,
+    "line": 1265,
+    "old_q": "Which correctly shows p as subject of s = wt + p/2?",
+    "new_q": "Science"
+  },
+  {
+    "year": 2024,
+    "q_num": 13,
+    "line": 1298,
+    "old_q": "$9000 loan, simple interest, repay $300/month for 4 years. What % p.a. interest rate?",
+    "new_q": "José takes out a loan of $9000. Simple interest is charged on the loan. The loan and the interest charged will be repaid by making monthly repayments of $300 over 4 years. What simple interest rate per annum, to the nearest percent, is charged on the loan?"
+  },
+  {
+    "year": 2024,
+    "q_num": 14,
+    "line": 1309,
+    "old_q": "Cost C = 2.5x + 6, Revenue R = 8x. How much does profit increase per additional item?",
+    "new_q": "Year 11 is making pizzas to raise money for a charity. The cost (C ) and revenue (R ) in dollars, when x pizzas are sold are represented by the equations C = 2.5x + 6 R = 8x. Enough pizzas are sold so that a profit is made. By how much does the profit increase for each additional pizza sold?"
+  },
+  {
+    "year": 2024,
+    "q_num": 15,
+    "line": 1320,
+    "old_q": "Box plot shown. Which histogram is NOT possible?",
+    "new_q": "Some data are used to create a box plot shown."
+  },
+  {
+    "year": 2025,
+    "q_num": 2,
+    "line": 1343,
+    "old_q": "Which graph could represent y = 4^x?",
+    "new_q": "What is Frankie’s total pay for this period of annual leave?"
+  },
+  {
+    "year": 2025,
+    "q_num": 3,
+    "line": 1354,
+    "old_q": "Network shows distances between towns. What is largest edge weight in minimum spanning tree?",
+    "new_q": "The network shows the distances, in kilometres, along a series of roads that connect towns."
+  },
+  {
+    "year": 2025,
+    "q_num": 4,
+    "line": 1365,
+    "old_q": "Frankie takes 4 weeks leave. Weekly pay $350, leave loading 17.5% of 4 weeks. Total pay?",
+    "new_q": "B."
+  },
+  {
+    "year": 2025,
+    "q_num": 5,
+    "line": 1376,
+    "old_q": "Arrange from largest to smallest: 6.2×10⁻³, 4.5×10⁻⁴, 3.2×10⁻¹",
+    "new_q": "C."
+  },
+  {
+    "year": 2025,
+    "q_num": 7,
+    "line": 1398,
+    "old_q": "960 students total, 200 in Year 12. Using stratified sampling of 240 students, how many Year 12?",
+    "new_q": "There are 960 students at a high school. Using stratified sampling, 240 students from the whole school are to be chosen for a survey. If there are 200 students in Year 12, how many Year 12 students should be chosen?"
+  },
+  {
+    "year": 2025,
+    "q_num": 9,
+    "line": 1420,
+    "old_q": "Model car ratio 1:64. Actual car 4.9m. Model length in cm?",
+    "new_q": "14 Points M and P are the same distance from a third point R. The bearing of M from R is 017° and the bearing of P from R is 107°. Which of the following best describes the bearing of P from M ?"
+  },
+  {
+    "year": 2025,
+    "q_num": 10,
+    "line": 1431,
+    "old_q": "Electricity: 37¢/kWh used (U), pays 5¢/kWh produced (P), plus 71¢/day fee. Daily cost C?",
+    "new_q": "1 D."
+  },
+  {
+    "year": 2025,
+    "q_num": 11,
+    "line": 1442,
+    "old_q": "Balloon skin thickness varies inversely with surface area. If radius doubles, thickness is?",
+    "new_q": "1 C."
+  },
+  {
+    "year": 2025,
+    "q_num": 15,
+    "line": 1486,
+    "old_q": "Min daily temp normally distributed, mean = SD. What % above zero?",
+    "new_q": "The minimum daily temperature, in degrees, of a town each year follows a normal distribution with its mean equal to its standard deviation. The minimum daily temperature was recorded over one year. What percentage of the recorded minimum daily temperatures was above zero degrees?"
+  }
+]

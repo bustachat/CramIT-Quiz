@@ -1,0 +1,315 @@
+========================================================================
+NESA QUESTION TEXT ACCURACY REPORT — Maths Standard 2
+========================================================================
+
+⚠️  2020 Q01  PDF text not extracted (may be image-only in PDF)
+✅ 2020 Q02  MATCH
+
+❌ 2020 Q03  MISMATCH  (index.html line ~522)
+  NESA: 4
+  APP:  The distance between Bricktown and Koala Creek is 75 km. A person travels at an average speed of 50 km/h. How long does the journey take?
+
+🔶 2020 Q04  CLOSE  (index.html line ~533)
+  NESA: Joan invests $200. She earns interest at 3% per annum, compounded monthly. What is the future value of Joan’s investment after 1.5 years?
+  APP:  Joan invests $200. She earns interest at 3% per annum, compounded monthly. What is the future value after 1.5 years?
+
+❌ 2020 Q05  MISMATCH  (index.html line ~544)
+  NESA: 6
+  APP:  A plant stem is measured to be 16.0 cm, correct to one decimal place. What is the percentage error?
+
+❌ 2020 Q06  MISMATCH  (index.html line ~555)
+  NESA: © 2020 NSW Education Standards Authority
+  APP:  Suppose y = –1 – 2x. When the value of x increases by 5, the value of y decreases by
+
+❌ 2020 Q07  MISMATCH  (index.html line ~566)
+  NESA: 8
+  APP:  Which histogram best represents a dataset that is positively skewed?
+
+❌ 2020 Q08  MISMATCH  (index.html line ~577)
+  NESA: 1 D.
+  APP:  Relative to the rest of the class, which row of the table shows John's strongest subject and his weakest subject?
+
+❌ 2020 Q09  MISMATCH  (index.html line ~588)
+  NESA: Team A and Team B have entered a chess competition. Team A and Team B have three members each. Each member of Team A must play each member of Team B once. Which of the following network diagrams could represent the chess games to be played? mul tip le choice networks
+  APP:  Team A (3 members) and Team B (3 members) play chess. Each member of Team A must play each member of Team B once. Which network diagram represents this?
+⚠️  2020 Q10  PDF text not extracted (may be image-only in PDF)
+
+🔶 2020 Q11  CLOSE  (index.html line ~610)
+  NESA: An asset is depreciated using the declining-balance method with a rate of depreciation of 8% per half year. The asset was bought for $10 000. What is the salvage value of the asset after 5 years?
+  APP:  An asset bought for $10,000 depreciates at 8% per half-year using declining-balance method. What is the salvage value after 5 years?
+
+❌ 2020 Q12  MISMATCH  (index.html line ~621)
+  NESA: 1 C.
+  APP:  For bivariate data, Pearson's correlation coefficient is –1. Which graph best represents this?
+
+❌ 2020 Q13  MISMATCH  (index.html line ~632)
+  NESA: When Jake stops drinking alcohol at 10:30 pm, he has a blood alcohol content (BAC) of 0.08375. The number of hours required for a person to reach zero BAC after they stop consuming alcohol is given by the formula BAC Time = . 0.015 At what time on the next day should Jake expect his BAC to be 0.05?
+  APP:  Jake stops drinking at 10:30 pm with BAC of 0.08375. Time to reach zero BAC = BAC/0.015. When will his BAC be 0.05?
+
+❌ 2020 Q14  MISMATCH  (index.html line ~643)
+  NESA: An annuity consists of ten payments, each equal to $1000. Each payment is made on 30 June each year from 2021 through to 2030 inclusive. The rate of compound interest is 5% per annum. The present value of the annuity is calculated at 30 June 2020. The future value of the annuity is calculated at 30 June 2030. Without performing any calculations, which of the following statements is true?
+  APP:  An annuity has ten $1000 payments from 2021-2030, at 5% p.a. PV calculated at June 2020, FV at June 2030. Which statement is true?
+
+❌ 2020 Q15  MISMATCH  (index.html line ~654)
+  NESA: The top of a rectangular table is divided into 8 equal sections as shown.
+  APP:  A die (1-6) lands on a table divided into 8 equal sections (1-8). Score = die value × section number. What is P(score = 6)?
+
+❌ 2021 Q01  MISMATCH  (index.html line ~667)
+  NESA: 5
+  APP:  Which shape has the largest perimeter? Rectangle 8×10, Square side 11, Triangle 9-3-4, Circle diameter 9
+
+❌ 2021 Q02  MISMATCH  (index.html line ~678)
+  NESA: 4
+  APP:  For a network with 5 vertices and 8 edges, what is the sum of all degrees?
+
+❌ 2021 Q03  MISMATCH  (index.html line ~689)
+  NESA: 5 What is the mode of this dataset?
+  APP:  Stem-and-leaf plot shows: 0|6 8, 1|2 4 5, 2|1 5 5 9, 3|5. What is the mode?
+
+❌ 2021 Q04  MISMATCH  (index.html line ~700)
+  NESA: Three years ago an appliance was valued at $2467. Its value has depreciated by 15% each year, based on the declining-balance method. What is its salvage value today, to the nearest dollar?
+  APP:  An appliance valued at $2467 three years ago depreciates 15% annually by declining-balance. What is today's salvage value?
+
+❌ 2021 Q05  MISMATCH  (index.html line ~711)
+  NESA: Peter currently earns $21.50 per hour. His hourly wage will increase by 2.1% compounded each year for the next four years. What will his hourly wage be after four years?
+  APP:  Peter earns $21.50/hour with 2.1% annual compound increase for 4 years. Which expression gives his wage after 4 years?
+
+❌ 2021 Q06  MISMATCH  (index.html line ~722)
+  NESA: b Suppose a = , where b = 22.
+  APP:  What is 22/7 correct to three significant figures?
+
+❌ 2021 Q07  MISMATCH  (index.html line ~733)
+  NESA: The number of downloads of a song on each of twenty consecutive days is shown in the following graph. G r a ph Which of the following graphs best shows the cumulative number of downloads up to and including each day? Mu l t i ple ch oic e g r a p h s
+  APP:  For the cumulative frequency graph showing 100 downloads, which box-plot matches the data?
+
+❌ 2021 Q08  MISMATCH  (index.html line ~744)
+  NESA: On a test, Zac’s mark corresponded to a z-score of 2. The test scores had a mean of 63 and a standard deviation of 8. What was Zac’s actual mark on the test?
+  APP:  A student thinks of x. When subtracting 8 and multiplying by 3, the result is 2 more than x. Which equation?
+⚠️  2021 Q09  PDF text not extracted (may be image-only in PDF)
+
+❌ 2021 Q10  MISMATCH  (index.html line ~766)
+  NESA: Which of the following best represents the graph of y = 10 (0.8) x ? M u l t i pl e c ho i c e gr ap hs
+  APP:  Box has 3 peppermint (P) and 5 caramel (C) chocolates. Kim chooses one, Sam chooses another. P(different centres)?
+
+❌ 2021 Q11  MISMATCH  (index.html line ~777)
+  NESA: There are 8 chocolates in a box. Three have peppermint centres (P) and five have caramel centres (C). Kim randomly chooses a chocolate from the box and eats it. Sam then randomly chooses and eats one of the remaining chocolates.
+  APP:  Block of land shown. Using trapezoidal rule with 2 applications, approximate area in km²?
+⚠️  2021 Q12  PDF text not extracted (may be image-only in PDF)
+⚠️  2021 Q13  PDF text not extracted (may be image-only in PDF)
+
+❌ 2021 Q14  MISMATCH  (index.html line ~810)
+  NESA: Consider the diagram below. Bearin g dia gra m What is the true bearing of A from B?
+  APP:  11,400 people race. Ratio professional:amateur = 3:16. All professionals finish, 600 amateurs don't. For finishers, what's the ratio professional:amateur in simplest form?
+⚠️  2021 Q15  PDF text not extracted (may be image-only in PDF)
+✅ 2022 Q01  MATCH
+
+❌ 2022 Q02  MISMATCH  (index.html line ~845)
+  NESA: 3
+  APP:  Which could be the graph of y = −2x + 2?
+
+❌ 2022 Q03  MISMATCH  (index.html line ~856)
+  NESA: 2 100
+  APP:  Network diagram shows project with critical path marked. What is the critical path?
+
+❌ 2022 Q04  MISMATCH  (index.html line ~867)
+  NESA: 5
+  APP:  Lily captures and tags 30 fish, releases them. Later captures 40 fish, 12 are tagged. Estimate total fish in lake?
+
+❌ 2022 Q05  MISMATCH  (index.html line ~878)
+  NESA: Consider the following dataset. 13 16 17 17 21 24 Which row of the table shows how the median and mean are affected when a score of 5 is added to the dataset?
+  APP:  Dataset: 13,16,17,17,21,24. Adding 5 affects median and mean how?
+
+❌ 2022 Q06  MISMATCH  (index.html line ~889)
+  NESA: 7
+  APP:  20 minutes is what ratio to one-third of a day, in simplest form?
+
+❌ 2022 Q07  MISMATCH  (index.html line ~900)
+  NESA: Tian is paid $20.45 per hour, as well as a meal allowance of $16.20 per day. What are Tian’s total earnings if she works 9 hours per day for 5 days?
+  APP:  Tian earns $20.45/hour + $16.20/day meal allowance. Total for 9 hours/day for 5 days?
+
+❌ 2022 Q08  MISMATCH  (index.html line ~911)
+  NESA: 9 Number of downloads Number of downloads
+  APP:  Which true bearing is the same as S48°W?
+
+❌ 2022 Q09  MISMATCH  (index.html line ~922)
+  NESA: An object is projected vertically into the air. Its height, h metres, above the ground after t seconds is given by h = −5t2 + 80t . Gr aph t h = −5t2 + 80t
+  APP:  Object projected vertically: h = −5t² + 80t. For how long is it at 300m or more?
+
+❌ 2022 Q10  MISMATCH  (index.html line ~933)
+  NESA: Alex purchased 800 shares. The total cost was $2.60 per share. Alex sold the shares one year later for $3.40 each and paid a fee of $24.95 for selling the shares. What profit did Alex make on these shares?
+  APP:  Alex buys 800 shares at $2.60, sells at $3.40, pays $24.95 fee. What profit?
+
+❌ 2022 Q11  MISMATCH  (index.html line ~944)
+  NESA: In ten years, the future value of an investment will be $150 000. The interest rate is 4% per annum, compounded half-yearly. Which equation will give the present value (PV ) of the investment? 150 000
+  APP:  Future value $150,000 in 10 years at 4% p.a. compounded half-yearly. Which equation gives present value?
+
+❌ 2022 Q12  MISMATCH  (index.html line ~955)
+  NESA: For a particular course, the recorded data show a relationship between the number of hours of study per week and the marks achieved out of 100.
+  APP:  Regression line M = 20 + 3H relates study hours to marks. Which statement is correct?
+🖼️  2022 Q13  IMAGE — text in image, not comparable
+
+❌ 2022 Q14  MISMATCH  (index.html line ~977)
+  NESA: Which of the 2y . x = a y + b B. x = 2a 2y C. x = + b a y D. x = + b 2a following correctly expresses x as the subject of y = ?
+  APP:  Which correctly expresses x as subject of y = (ax − b)/(2)?
+
+❌ 2022 Q15  MISMATCH  (index.html line ~988)
+  NESA: The cumulative frequency graph shows the distribution of the number of movie downloads made by 100 people in one month. e frequency Cumulativ
+  APP:  Cumulative frequency graph for 100 people's movie downloads. Which box-plot matches?
+⚠️  2023 Q01  PDF text not extracted (may be image-only in PDF)
+
+❌ 2023 Q02  MISMATCH  (index.html line ~1011)
+  NESA: 3
+  APP:  In normal distribution, what % of scores have z-score less than 1?
+
+❌ 2023 Q03  MISMATCH  (index.html line ~1022)
+  NESA: 5
+  APP:  Scatterplot of bees leaving hive vs time shows positive trend. Which correlation coefficient?
+
+❌ 2023 Q04  MISMATCH  (index.html line ~1033)
+  NESA: 5 C.
+  APP:  Truck valued at $65,000 depreciates at 22 cents/km. Value after 132,600 km?
+
+❌ 2023 Q05  MISMATCH  (index.html line ~1044)
+  NESA: Four petrol pumps are shown, each with the amount of petrol purchased and its cost. Which one represents the best value? 24 L $46.70
+  APP:  Four petrol pumps shown. Which represents best value?
+
+❌ 2023 Q06  MISMATCH  (index.html line ~1055)
+  NESA: 1 B.
+  APP:  Item costs $880 including 10% GST. What is the GST amount?
+
+❌ 2023 Q07  MISMATCH  (index.html line ~1066)
+  NESA: 5
+  APP:  City A at 34°S, 151°E. City B is 72° north and 25° west of A. What are B's coordinates?
+🖼️  2023 Q08  IMAGE — text in image, not comparable
+
+❌ 2023 Q09  MISMATCH  (index.html line ~1088)
+  NESA: The length and width of a rectangle are measured to be 8 cm and 5 cm respectively, to the nearest centimetre. What are the lower and upper bounds for the area of the rectangle?
+  APP:  Rectangle 8cm×5cm measured to nearest cm. What are bounds for area?
+
+❌ 2023 Q10  MISMATCH  (index.html line ~1099)
+  NESA: An amount of $25 000 is invested for six years. Interest is earned at a rate of 8% per annum, compounding quarterly. Which expression gives the value of the investment after 6 years, in dollars?
+  APP:  $25,000 invested for 6 years at 8% p.a. compounding quarterly. Which expression?
+⚠️  2023 Q11  PDF text not extracted (may be image-only in PDF)
+🖼️  2023 Q12  IMAGE — text in image, not comparable
+
+❌ 2023 Q13  MISMATCH  (index.html line ~1132)
+  NESA: An item is discounted by 30% and then a further discount of 20% is applied to the reduced price. What is the total percentage discount?
+  APP:  Item discounted 30%, then further 20% on reduced price. Total % discount?
+🖼️  2023 Q14  IMAGE — text in image, not comparable
+
+❌ 2023 Q15  MISMATCH  (index.html line ~1154)
+  NESA: Ashan’s mathematics class needs to complete six tests, each worth 100 marks. After completing the first five tests, Ashan calculated that he would need a mark of 90 in the final test in order to have a mean mark of 80 for the six tests. What was Ashan’s mean mark after completing the first five tests?
+  APP:  After 5 tests, Ashan needs 90 on 6th test for mean of 80. What was his mean after 5 tests?
+
+🔶 2024 Q01  CLOSE  (index.html line ~1166)
+  NESA: 2
+  APP:  If x = -2.531, what is x² rounded to 2 decimal places?
+
+🔶 2024 Q02  CLOSE  (index.html line ~1177)
+  NESA: 3
+  APP:  Which could be equation of function shown? (graph shows negative slope through (0,3))
+
+❌ 2024 Q03  MISMATCH  (index.html line ~1188)
+  NESA: 4
+  APP:  Shoppers invited to complete online survey. What type of sampling?
+
+❌ 2024 Q04  MISMATCH  (index.html line ~1199)
+  NESA: © 2024 NSW Education Standards Authority
+  APP:  Map shows 6 regions. How many edges in network diagram? (edges = shared borders)
+
+❌ 2024 Q05  MISMATCH  (index.html line ~1210)
+  NESA: Pia’s marks in Year 10 assessments are shown. The scores for each subject were normally distributed. Pia’s mark Year 10 mean Year 10 standard deviation English
+  APP:  Pia's z-scores: English 2.0, Maths 0.9, Science 0.47, History 1.44. Which subject did she perform best?
+
+❌ 2024 Q06  MISMATCH  (index.html line ~1221)
+  NESA: Consider the diagram shown.
+  APP:  Right triangle, hypotenuse 20, angle 40°. Which expression for opposite side x?
+
+❌ 2024 Q07  MISMATCH  (index.html line ~1232)
+  NESA: Three years ago, the price of a uniform was $180. Due to inflation, the price increased annually by 2.5%. What is the price of this uniform now?
+  APP:  Uniform was $180 three years ago. Price increased 2.5% annually. Current price?
+
+❌ 2024 Q08  MISMATCH  (index.html line ~1243)
+  NESA: C. 15.5 D.
+  APP:  Car service bill: $242 parts (inc GST), $100 labour (ex GST). Add 10% GST to labour. Total GST paid?
+
+❌ 2024 Q09  MISMATCH  (index.html line ~1254)
+  NESA: The time taken to paint a school varies inversely with the number of painters completing the task. It takes 6 painters a total of 20 days to paint a school. How many days would it take 15 painters to paint the same school?
+  APP:  Time to paint school varies inversely with painters. 6 painters take 20 days. How long for 15 painters?
+
+❌ 2024 Q10  MISMATCH  (index.html line ~1265)
+  NESA: Science
+  APP:  Which correctly shows p as subject of s = wt + p/2?
+⚠️  2024 Q11  PDF text not extracted (may be image-only in PDF)
+⚠️  2024 Q12  PDF text not extracted (may be image-only in PDF)
+
+❌ 2024 Q13  MISMATCH  (index.html line ~1298)
+  NESA: José takes out a loan of $9000. Simple interest is charged on the loan. The loan and the interest charged will be repaid by making monthly repayments of $300 over 4 years. What simple interest rate per annum, to the nearest percent, is charged on the loan?
+  APP:  $9000 loan, simple interest, repay $300/month for 4 years. What % p.a. interest rate?
+
+❌ 2024 Q14  MISMATCH  (index.html line ~1309)
+  NESA: Year 11 is making pizzas to raise money for a charity. The cost (C ) and revenue (R ) in dollars, when x pizzas are sold are represented by the equations C = 2.5x + 6 R = 8x. Enough pizzas are sold so that a profit is made. By how much does the profit increase for each additional pizza sold?
+  APP:  Cost C = 2.5x + 6, Revenue R = 8x. How much does profit increase per additional item?
+
+❌ 2024 Q15  MISMATCH  (index.html line ~1320)
+  NESA: Some data are used to create a box plot shown.
+  APP:  Box plot shown. Which histogram is NOT possible?
+🖼️  2025 Q01  IMAGE — text in image, not comparable
+
+❌ 2025 Q02  MISMATCH  (index.html line ~1343)
+  NESA: What is Frankie’s total pay for this period of annual leave?
+  APP:  Which graph could represent y = 4^x?
+
+❌ 2025 Q03  MISMATCH  (index.html line ~1354)
+  NESA: The network shows the distances, in kilometres, along a series of roads that connect towns.
+  APP:  Network shows distances between towns. What is largest edge weight in minimum spanning tree?
+
+❌ 2025 Q04  MISMATCH  (index.html line ~1365)
+  NESA: B.
+  APP:  Frankie takes 4 weeks leave. Weekly pay $350, leave loading 17.5% of 4 weeks. Total pay?
+
+❌ 2025 Q05  MISMATCH  (index.html line ~1376)
+  NESA: C.
+  APP:  Arrange from largest to smallest: 6.2×10⁻³, 4.5×10⁻⁴, 3.2×10⁻¹
+
+🔶 2025 Q06  CLOSE  (index.html line ~1387)
+  NESA: m − p Consider the formula n = . q Which of the following correctly shows p as the subject of the formula?
+  APP:  Which correctly shows p as subject of n = (m − p)/q?
+
+❌ 2025 Q07  MISMATCH  (index.html line ~1398)
+  NESA: There are 960 students at a high school. Using stratified sampling, 240 students from the whole school are to be chosen for a survey. If there are 200 students in Year 12, how many Year 12 students should be chosen?
+  APP:  960 students total, 200 in Year 12. Using stratified sampling of 240 students, how many Year 12?
+🖼️  2025 Q08  IMAGE — text in image, not comparable
+
+❌ 2025 Q09  MISMATCH  (index.html line ~1420)
+  NESA: 14 Points M and P are the same distance from a third point R. The bearing of M from R is 017° and the bearing of P from R is 107°. Which of the following best describes the bearing of P from M ?
+  APP:  Model car ratio 1:64. Actual car 4.9m. Model length in cm?
+
+❌ 2025 Q10  MISMATCH  (index.html line ~1431)
+  NESA: 1 D.
+  APP:  Electricity: 37¢/kWh used (U), pays 5¢/kWh produced (P), plus 71¢/day fee. Daily cost C?
+
+❌ 2025 Q11  MISMATCH  (index.html line ~1442)
+  NESA: 1 C.
+  APP:  Balloon skin thickness varies inversely with surface area. If radius doubles, thickness is?
+⚠️  2025 Q12  PDF text not extracted (may be image-only in PDF)
+⚠️  2025 Q13  PDF text not extracted (may be image-only in PDF)
+⚠️  2025 Q14  PDF text not extracted (may be image-only in PDF)
+
+❌ 2025 Q15  MISMATCH  (index.html line ~1486)
+  NESA: The minimum daily temperature, in degrees, of a town each year follows a normal distribution with its mean equal to its standard deviation. The minimum daily temperature was recorded over one year. What percentage of the recorded minimum daily temperatures was above zero degrees?
+  APP:  Min daily temp normally distributed, mean = SD. What % above zero?
+
+========================================================================
+SUMMARY
+========================================================================
+  CLOSE          : 5
+  IMAGE_ONLY     : 6
+  MATCH          : 2
+  MISMATCH       : 64
+  NOT_IN_HTML    : 0
+  PDF_NO_TEXT    : 13
+  TOTAL          : 90
+
+64 questions need text updates (MISMATCH only).
+CLOSE matches may be acceptable — review individually.
