@@ -58,7 +58,27 @@
     * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
 
     body { font-family: var(--font-body); background: var(--bg); color: var(--text); min-height: 100dvh; overflow-x: hidden; }
-    #home { display: flex; flex-direction: column; min-height: 100dvh; padding: 52px 24px 32px; position: relative; max-width: 1200px; margin: 0 auto; width: 100%; }
+    #home { display: flex; flex-direction: column; min-height: 100dvh; padding: 0 24px 32px; position: relative; max-width: 1200px; margin: 0 auto; width: 100%; }
+
+    /* ── HOME HEADER ── */
+    .home-header { display: flex; align-items: center; justify-content: space-between; padding: 52px 0 16px; }
+    .home-logo { width: 120px; height: auto; display: block; }
+    .profile-avatar { width: 36px; height: 36px; border-radius: 50%; background: var(--accent); color: white; font-family: var(--font-display); font-weight: 700; font-size: 15px; display: flex; align-items: center; justify-content: center; cursor: pointer; border: none; flex-shrink: 0; transition: transform 0.15s, box-shadow 0.15s; box-shadow: 0 2px 8px rgba(193,125,60,0.3); }
+    .profile-avatar:active { transform: scale(0.92); }
+
+    /* ── PROFILE SHEET ── */
+    .sheet-backdrop { position: fixed; inset: 0; background: rgba(44,36,32,0.35); z-index: 200; opacity: 0; pointer-events: none; transition: opacity 0.25s; }
+    .sheet-backdrop.open { opacity: 1; pointer-events: all; }
+    .profile-sheet { position: fixed; left: 0; right: 0; bottom: 0; background: var(--surface); border-radius: 22px 22px 0 0; padding: 8px 24px 40px; z-index: 201; transform: translateY(100%); transition: transform 0.3s cubic-bezier(.4,0,.2,1); max-width: 540px; margin: 0 auto; }
+    .profile-sheet.open { transform: translateY(0); }
+    .sheet-handle { width: 36px; height: 4px; background: var(--border); border-radius: 2px; margin: 12px auto 20px; }
+    .sheet-email { font-family: var(--font-display); font-size: 14px; font-weight: 700; color: var(--text); margin-bottom: 3px; }
+    .sheet-plan { font-size: 12px; color: var(--muted); margin-bottom: 20px; }
+    .sheet-btn { display: flex; align-items: center; gap: 12px; width: 100%; background: var(--surface2); border: 1px solid var(--border); border-radius: 13px; padding: 14px 16px; font-family: var(--font-display); font-size: 14px; font-weight: 600; color: var(--text); cursor: pointer; margin-bottom: 10px; transition: background 0.15s; text-align: left; }
+    .sheet-btn:active { background: var(--border); }
+    .sheet-btn-icon { font-size: 18px; width: 24px; text-align: center; }
+    .sheet-btn.danger { color: #C15A3C; }
+    .sheet-btn.danger .sheet-btn-icon { filter: none; }
     #picker, #quiz, #results { max-width: 1200px; margin: 0 auto; width: 100%; }
     .home-glow { display: none; }
     .app-title { font-family: var(--font-display); font-size: 38px; font-weight: 800; letter-spacing: -1px; line-height: 1; margin-bottom: 4px; }
@@ -364,21 +384,35 @@
 </head>
 <body>
 
+<!-- PROFILE SHEET -->
+<div class="sheet-backdrop" id="sheet-backdrop" onclick="closeProfileSheet()"></div>
+<div class="profile-sheet" id="profile-sheet">
+  <div class="sheet-handle"></div>
+  <div class="sheet-email" id="sheet-email"></div>
+  <div class="sheet-plan" id="sheet-plan"></div>
+  <button class="sheet-btn" onclick="closeProfileSheet();handleManageBilling()">
+    <span class="sheet-btn-icon">💳</span> Billing &amp; subscription
+  </button>
+  <button class="sheet-btn danger" onclick="closeProfileSheet();handleSignOut()">
+    <span class="sheet-btn-icon">↩︎</span> Sign out
+  </button>
+</div>
+
 <!-- HOME -->
 <div id="home">
   <div class="home-glow"></div>
-  <img src="CramIT_Logo_Transparent.png" alt="CramIT" style="width:200px;height:auto;display:block;margin-bottom:24px;"/>
 
-  <div class="section-label">Your subjects</div>
-
-  <!-- Auth buttons — shown when logged out (hidden until Supabase loads) -->
-  <div id="auth-buttons" style="display:none;flex-direction:column;gap:8px;margin-bottom:16px">
-    <button onclick="handleGoogleSignIn()" style="background:#fff;color:#333;border:1px solid #ddd;border-radius:12px;padding:13px 16px;font-family:var(--font-display);font-size:14px;font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:10px">
-      <span style="font-size:16px">G</span> Continue with Google
-    </button>
-    <button onclick="showEmailAuth()" style="background:var(--surface);color:var(--text);border:1px solid var(--border);border-radius:12px;padding:13px 16px;font-family:var(--font-display);font-size:14px;font-weight:600;cursor:pointer">
-      Continue with email
-    </button>
+  <!-- Header row: logo left, avatar right -->
+  <div class="home-header">
+    <img src="CramIT_Logo_Transparent.png" alt="CramIT" class="home-logo"/>
+    <!-- Avatar shown when logged in -->
+    <button class="profile-avatar" id="profile-avatar" style="display:none" onclick="openProfileSheet()" aria-label="Account"></button>
+    <!-- Auth buttons shown when logged out -->
+    <div id="auth-buttons" style="display:none;gap:8px">
+      <button onclick="handleGoogleSignIn()" style="background:#fff;color:#333;border:1px solid #ddd;border-radius:12px;padding:9px 14px;font-family:var(--font-display);font-size:13px;font-weight:700;cursor:pointer;display:flex;align-items:center;gap:8px">
+        <span style="font-size:15px">G</span> Sign in
+      </button>
+    </div>
   </div>
 
   <!-- Email auth form — hidden by default -->
@@ -392,17 +426,7 @@
     <p id="auth-error" style="color:#C15A3C;font-size:12px;margin-top:8px;display:none"></p>
   </div>
 
-  <!-- User bar — shown when logged in -->
-  <div id="user-bar" style="display:none;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:12px 14px;margin-bottom:14px;flex-direction:row;align-items:center;justify-content:space-between">
-    <div>
-      <div style="font-family:var(--font-display);font-size:13px;font-weight:700" id="user-email-display"></div>
-      <div style="font-size:11px;color:var(--muted)" id="plan-display">Free plan</div>
-    </div>
-    <div style="display:flex;gap:8px">
-      <button onclick="handleManageBilling()" style="background:var(--surface2);border:1px solid var(--border);border-radius:8px;padding:6px 10px;color:var(--text);font-size:11px;font-family:var(--font-display);font-weight:600;cursor:pointer">Billing</button>
-      <button onclick="handleSignOut()" style="background:var(--surface2);border:1px solid var(--border);border-radius:8px;padding:6px 10px;color:var(--muted);font-size:11px;cursor:pointer">Sign out</button>
-    </div>
-  </div>
+  <div class="section-label">Your subjects</div>
 
   <!-- Subject list — always visible -->
   <div id="subject-list-billing" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:14px;margin-bottom:8px"></div>
@@ -2083,28 +2107,42 @@ function calcPrice(n, mode) {
 
 // ── RENDER HOME AUTH STATE ────────────────────────────────────
 function renderHomeAuth() {
-  const authBtns  = document.getElementById('auth-buttons');
-  const userBar   = document.getElementById('user-bar');
+  const authBtns = document.getElementById('auth-buttons');
+  const avatar   = document.getElementById('profile-avatar');
   const emailAuth = document.getElementById('email-auth');
 
   if (!currentUser) {
-    if (authBtns)  authBtns.style.display  = 'flex';
-    if (userBar)   userBar.style.display   = 'none';
+    if (authBtns) authBtns.style.display = 'flex';
+    if (avatar)   avatar.style.display   = 'none';
     if (emailAuth) emailAuth.style.display = 'none';
   } else {
-    if (authBtns)  authBtns.style.display  = 'none';
-    if (userBar)   userBar.style.display   = 'flex';
+    if (authBtns) authBtns.style.display = 'none';
+    if (avatar) {
+      avatar.style.display = 'flex';
+      // Show first letter of email as avatar initial
+      avatar.textContent = (currentUser.email || '?')[0].toUpperCase();
+    }
     if (emailAuth) emailAuth.style.display = 'none';
-    const emailEl = document.getElementById('user-email-display');
-    const planEl  = document.getElementById('plan-display');
-    if (emailEl) emailEl.textContent = currentUser.email;
-    if (planEl) {
+    // Populate sheet details
+    const sheetEmail = document.getElementById('sheet-email');
+    const sheetPlan  = document.getElementById('sheet-plan');
+    if (sheetEmail) sheetEmail.textContent = currentUser.email;
+    if (sheetPlan) {
       const { price, label } = calcPrice(userSubjects.length || 1, userSub.plan);
-      planEl.textContent = price === 0 ? 'Free plan · 1 subject' : `${label} · ${userSubjects.length} subjects`;
+      sheetPlan.textContent = price === 0 ? 'Free plan · 1 subject' : `${label} · ${userSubjects.length} subject${userSubjects.length !== 1 ? 's' : ''}`;
     }
   }
   updateStats();
   renderSubjectList();
+}
+
+function openProfileSheet() {
+  document.getElementById('sheet-backdrop').classList.add('open');
+  document.getElementById('profile-sheet').classList.add('open');
+}
+function closeProfileSheet() {
+  document.getElementById('sheet-backdrop').classList.remove('open');
+  document.getElementById('profile-sheet').classList.remove('open');
 }
 
 // ── RENDER SUBJECT LIST ───────────────────────────────────────
