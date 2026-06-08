@@ -600,6 +600,7 @@ await logAction(agentName, action, payload);           // log before acting
 - **API cost optimisation complete** — Prompt caching + token logging added to all API-calling files. `mark-written.js`: model → `claude-haiku-4-5`, system prompt cached, token usage logged to Cloudflare dashboard. `agent.js`: `SYSTEM_DISCOVER` + `SYSTEM_GENERATE` constants extracted, `logUsage()` helper added, `discoverNewPapers` model → `claude-sonnet-4-6`. `extract_maths_diagrams.py` + `extract_written_diagrams.py`: vision model → `claude-sonnet-4-6`. Patterns saved to global `~/.claude/CLAUDE.md`.
 - **Question text accuracy pass complete (partial)** — 25 of 90 HSC Section I MC question texts updated to exact NESA wording using `verify_question_text.py` (PyMuPDF extraction) + `apply_question_text_fixes.py` (quality-filtered apply). 39 questions skipped — PDF extraction returned garbled text (image-based questions). Those need manual review pre-launch. `question_text_diff.txt` in repo root has the full list.
 - **Bug fixes (Session 5)** — `mark-written.js`: subscription-not-found now returns `sub_not_found` reason instead of misleading "upgrade" message. `index.html` 2024 Q15 histogram: added `hideQ:true` (NESA embedded question text inside stimulus image). 2022 Q13 normal distribution: restored exact NESA question wording.
+- **UX — Sliding segmented filter controls (Session 6, 2026-06-08)** — Replaced `.filter-chip` pill buttons with animated sliding segmented controls. Amber pill slides smoothly to selected option via `transform: translateX()` (GPU-accelerated, no layout reflow). Mobile: full-width, horizontal scroll, `flex: 0 0 auto` buttons. Desktop: `inline-flex fit-content` — never sprawls across wide screens. `applyFilter()` updates only the tapped control — no full DOM rebuild, no cross-slider flash. Year change resets category to All and rebuilds only the category control via `rebuildCategoryControl()`. `updateModeCounts()` patches mc-count and written-count spans after every filter tap. Categories and topics set to `null` when no questions have those fields (prevents solo "All" rendering for VET/Multimedia/Maths). All controls scroll horizontally on mobile.
 
 ### Staged Implementation Roadmap
 
@@ -1163,6 +1164,6 @@ JSON format: `{ id, name, icon, accentColor, mcQuestions[], writtenQuestions[], 
 
 ---
 
-*CLAUDE.md — CramIT Project — Last updated: 2026-06-05 — JSON migration COMPLETE. All question data in subjects/*.json. index.html 11,195 → 2,502 lines. Blueprint V4 location + update rule added to Step 4→5 workflow. All V3 references updated to V4. Stages 1–8, 8.5, 8.9, 11 + JSON migration complete.*
+*CLAUDE.md — CramIT Project — Last updated: 2026-06-08 — Sliding segmented filter controls complete. All filter chips replaced with animated seg-controls. applyFilter() pattern documented. Categories/topics null-guard in place.*
 *Repo: https://github.com/bustachat/CramIT-Quiz*
 *Supabase: https://ohqtefjawaphtsebnaxg.supabase.co*
