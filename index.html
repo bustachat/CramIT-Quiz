@@ -61,7 +61,7 @@
     #home { display: flex; flex-direction: column; min-height: 100dvh; padding: 0 24px 32px; position: relative; max-width: 1200px; margin: 0 auto; width: 100%; }
 
     /* ── HOME HEADER ── */
-    .home-header { display: flex; align-items: center; justify-content: space-between; padding: 52px 0 16px; }
+    .home-header { display: flex; align-items: center; justify-content: space-between; padding: max(16px, env(safe-area-inset-top)) 0 12px; }
     .home-logo { width: 120px; height: auto; display: block; }
     .profile-avatar { width: 36px; height: 36px; border-radius: 50%; background: var(--accent); color: white; font-family: var(--font-display); font-weight: 700; font-size: 15px; display: flex; align-items: center; justify-content: center; cursor: pointer; border: none; flex-shrink: 0; transition: transform 0.15s, box-shadow 0.15s; box-shadow: 0 2px 8px rgba(193,125,60,0.3); }
     .profile-avatar:active { transform: scale(0.92); }
