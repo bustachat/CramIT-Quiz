@@ -601,6 +601,7 @@ await logAction(agentName, action, payload);           // log before acting
 - **Question text accuracy pass complete (partial)** — 25 of 90 HSC Section I MC question texts updated to exact NESA wording using `verify_question_text.py` (PyMuPDF extraction) + `apply_question_text_fixes.py` (quality-filtered apply). 39 questions skipped — PDF extraction returned garbled text (image-based questions). Those need manual review pre-launch. `question_text_diff.txt` in repo root has the full list.
 - **Bug fixes (Session 5)** — `mark-written.js`: subscription-not-found now returns `sub_not_found` reason instead of misleading "upgrade" message. `index.html` 2024 Q15 histogram: added `hideQ:true` (NESA embedded question text inside stimulus image). 2022 Q13 normal distribution: restored exact NESA question wording.
 - **UX — Sliding segmented filter controls (Session 6, 2026-06-08)** — Replaced `.filter-chip` pill buttons with animated sliding segmented controls. Amber pill slides smoothly to selected option via `transform: translateX()` (GPU-accelerated, no layout reflow). Mobile: full-width, horizontal scroll, `flex: 0 0 auto` buttons. Desktop: `inline-flex fit-content` — never sprawls across wide screens. `applyFilter()` updates only the tapped control — no full DOM rebuild, no cross-slider flash. Year change resets category to All and rebuilds only the category control via `rebuildCategoryControl()`. `updateModeCounts()` patches mc-count and written-count spans after every filter tap. Categories and topics set to `null` when no questions have those fields (prevents solo "All" rendering for VET/Multimedia/Maths). All controls scroll horizontally on mobile.
+- **UX — Profile avatar + bottom sheet (Session 6, 2026-06-08)** — Replaced full-width user bar with compact amber avatar circle (user initial) in top-right of home header. Tapping opens a bottom sheet with email, plan summary, Billing and Sign out actions. Sheet slides up with backdrop dismiss. Logo reduced 200px → 120px. Header top padding uses `env(safe-area-inset-top)` — respects notch on iPhone, minimal on Android. Auth state: logged-out shows compact Google Sign in button in header row.
 
 ### Staged Implementation Roadmap
 
@@ -1164,6 +1165,6 @@ JSON format: `{ id, name, icon, accentColor, mcQuestions[], writtenQuestions[], 
 
 ---
 
-*CLAUDE.md — CramIT Project — Last updated: 2026-06-08 — Sliding segmented filter controls complete. All filter chips replaced with animated seg-controls. applyFilter() pattern documented. Categories/topics null-guard in place.*
+*CLAUDE.md — CramIT Project — Last updated: 2026-06-08 — Sliding segmented filter controls + profile avatar bottom sheet complete. applyFilter() pattern, null-guard for categories/topics, profile sheet replaces user bar.*
 *Repo: https://github.com/bustachat/CramIT-Quiz*
 *Supabase: https://ohqtefjawaphtsebnaxg.supabase.co*
