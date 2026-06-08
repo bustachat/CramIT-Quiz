@@ -749,9 +749,9 @@ function renderPicker() {
       const active = (pickerFilters.year || 'all') === y ? 'active' : '';
       const label = y === 'all' ? 'All' : y;
       if (inTrial && y !== 'all') {
-        html += `<button class="seg-btn locked" disabled title="Unlocks with subscription">${label}</button>`;
+        html += `<button class="seg-btn locked" disabled data-val="${y}" title="Unlocks with subscription">${label}</button>`;
       } else {
-        html += `<button class="seg-btn ${active}" onclick="setFilter('year','${y}');renderPicker()">${label}</button>`;
+        html += `<button class="seg-btn ${active}" data-val="${y}" onclick="applyFilter('year','${y}')">${label}</button>`;
       }
     });
     html += '</div></div>';
@@ -768,9 +768,9 @@ function renderPicker() {
       const count = c === 'all' ? qsForCounts.length : qsForCounts.filter(q => q.category === c).length;
       const label = c === 'all' ? `All (${count})` : `${c} (${count})`;
       if (inTrial && c !== 'all') {
-        html += `<button class="seg-btn locked" disabled title="Unlocks with subscription">${label}</button>`;
+        html += `<button class="seg-btn locked" disabled data-val="${c}" title="Unlocks with subscription">${label}</button>`;
       } else {
-        html += `<button class="seg-btn ${active}" onclick="setFilter('category','${c}');renderPicker()">${label}</button>`;
+        html += `<button class="seg-btn ${active}" data-val="${c}" onclick="applyFilter('category','${c}')">${label}</button>`;
       }
     });
     html += '</div></div>';
@@ -779,8 +779,8 @@ function renderPicker() {
     html += '<div class="section-label" style="margin-top:16px">Topic</div><div class="filter-row"><div class="seg-control" id="seg-topic"><div class="seg-slider"></div>';
     s.topics.forEach(t => {
       const active = (pickerFilters.topic || 'all') === t ? 'active' : '';
-      const label = t === 'all' ? 'All topics' : t.replace(/_/g,' ').replace(/\b\w/g, l => l.toUpperCase());
-      html += `<button class="seg-btn ${active}" onclick="setFilter('topic','${t}');renderPicker()">${label}</button>`;
+      const label = t === 'all' ? 'All' : t.replace(/_/g,' ').replace(/\b\w/g, l => l.toUpperCase());
+      html += `<button class="seg-btn ${active}" data-val="${t}" onclick="applyFilter('topic','${t}')">${label}</button>`;
     });
     html += '</div></div>';
   }
@@ -846,18 +846,70 @@ function renderPicker() {
   }
 
   document.getElementById('picker-body').innerHTML = html;
-  // Position sliding pills after DOM update
-  requestAnimationFrame(() => {
-    ['seg-year','seg-cat','seg-topic'].forEach(id => {
-      const ctrl = document.getElementById(id);
-      if (!ctrl) return;
-      const active = ctrl.querySelector('.seg-btn.active');
-      const slider = ctrl.querySelector('.seg-slider');
-      if (!active || !slider) return;
-      slider.style.width = active.offsetWidth + 'px';
-      slider.style.transform = `translateX(${active.offsetLeft}px)`;
-    });
+  // Position all sliders after initial render (no animation on first paint)
+  requestAnimationFrame(() => positionAllSliders(false));
+}
+
+function positionAllSliders(animate) {
+  ['seg-year','seg-cat','seg-topic'].forEach(id => slideToActive(id, animate));
+}
+
+function slideToActive(ctrlId, animate = true) {
+  const ctrl = document.getElementById(ctrlId);
+  if (!ctrl) return;
+  const active = ctrl.querySelector('.seg-btn.active');
+  const slider = ctrl.querySelector('.seg-slider');
+  if (!active || !slider) return;
+  if (!animate) slider.style.transition = 'none';
+  slider.style.width = active.offsetWidth + 'px';
+  slider.style.transform = `translateX(${active.offsetLeft}px)`;
+  if (!animate) requestAnimationFrame(() => { slider.style.transition = ''; });
+}
+
+function applyFilter(key, val) {
+  if (pickerFilters[key] === val) return; // already selected, do nothing
+  pickerFilters[key] = val;
+
+  // Update active class within the touched control and slide
+  const idMap = { year: 'seg-year', category: 'seg-cat', topic: 'seg-topic' };
+  const ctrl = document.getElementById(idMap[key]);
+  if (ctrl) {
+    ctrl.querySelectorAll('.seg-btn').forEach(b => b.classList.toggle('active', b.dataset.val === val));
+    slideToActive(idMap[key]);
+  }
+
+  // Year change: reset category → 'all' and rebuild category counts
+  if (key === 'year') {
+    pickerFilters.category = 'all';
+    rebuildCategoryControl();
+  }
+}
+
+function rebuildCategoryControl() {
+  const ctrl = document.getElementById('seg-cat');
+  if (!ctrl) return;
+  const s = SUBJECTS[currentSubjectKey];
+  if (!s?.categories) return;
+  const _trialId = SUBJECT_CATALOGUE.find(sub => sub.quizKey === currentSubjectKey)?.id;
+  const inTrial  = _trialId ? !canAccessViaSubscription(_trialId) : false;
+  const qsForCounts = s.getMC({ year: pickerFilters.year || 'all', category: 'all' });
+
+  let html = '<div class="seg-slider"></div>';
+  s.categories.forEach(c => {
+    if (c !== 'all') {
+      if (qsForCounts.filter(q => q.category === c).length === 0) return;
+    }
+    const count = c === 'all' ? qsForCounts.length : qsForCounts.filter(q => q.category === c).length;
+    const label = c === 'all' ? `All (${count})` : `${c} (${count})`;
+    const active = c === 'all' ? 'active' : ''; // always reset to All
+    if (inTrial && c !== 'all') {
+      html += `<button class="seg-btn locked" disabled data-val="${c}" title="Unlocks with subscription">${label}</button>`;
+    } else {
+      html += `<button class="seg-btn ${active}" data-val="${c}" onclick="applyFilter('category','${c}')">${label}</button>`;
+    }
   });
+  ctrl.innerHTML = html;
+  requestAnimationFrame(() => slideToActive('seg-cat', false));
 }
 
 function setFilter(key, val) {
