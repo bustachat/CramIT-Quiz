@@ -173,9 +173,19 @@
     }
     .seg-btn.active { color: white; }
     .seg-btn.locked { opacity: 0.35; cursor: not-allowed; }
+    /* Scrollable variant — category has too many items for equal-width slots */
+    .seg-scroll {
+      overflow-x: auto;
+      scrollbar-width: none;
+      -webkit-overflow-scrolling: touch;
+    }
+    .seg-scroll::-webkit-scrollbar { display: none; }
+    .seg-scroll .seg-btn { flex: 0 0 auto; padding: 6px 11px; }
     @media (max-width: 600px) {
       .seg-control { display: flex; width: 100%; }
       .seg-btn { flex: 1; padding: 7px 4px; text-align: center; }
+      /* scrollable override — natural width, never forced equal */
+      .seg-scroll .seg-btn { flex: 0 0 auto; padding: 7px 11px; }
     }
 
     /* ── QUIZ ── */
@@ -562,8 +572,8 @@ async function loadSubjectData(key) {
       s.categories = ['all', ...cats];
     }
     if (!s.topics && data.mcQuestions) {
-      const t = ['all', ...new Set(data.mcQuestions.map(q => q.topic).filter(Boolean))];
-      s.topics = t.slice(0, 12);
+      const topicVals = [...new Set(data.mcQuestions.map(q => q.topic).filter(Boolean))];
+      s.topics = topicVals.length > 0 ? ['all', ...topicVals].slice(0, 12) : null;
     }
   }
   return data;
@@ -757,7 +767,7 @@ function renderPicker() {
     html += '</div></div>';
   }
   if (s.categories) {
-    html += '<div class="section-label" style="margin-top:16px">Category</div><div class="filter-row"><div class="seg-control" id="seg-cat"><div class="seg-slider"></div>';
+    html += '<div class="section-label" style="margin-top:16px">Category</div><div class="filter-row"><div class="seg-control seg-scroll" id="seg-cat"><div class="seg-slider"></div>';
     const qsForCounts = s.getMC({ year: pickerFilters.year || 'all', category: 'all' });
     s.categories.forEach(c => {
       if (c !== 'all') {
