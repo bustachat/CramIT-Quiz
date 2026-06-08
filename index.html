@@ -173,19 +173,10 @@
     }
     .seg-btn.active { color: white; }
     .seg-btn.locked { opacity: 0.35; cursor: not-allowed; }
-    /* Scrollable variant — category has too many items for equal-width slots */
-    .seg-scroll {
-      overflow-x: auto;
-      scrollbar-width: none;
-      -webkit-overflow-scrolling: touch;
-    }
-    .seg-scroll::-webkit-scrollbar { display: none; }
-    .seg-scroll .seg-btn { flex: 0 0 auto; padding: 6px 11px; }
     @media (max-width: 600px) {
-      .seg-control { display: flex; width: 100%; }
-      .seg-btn { flex: 1; padding: 7px 4px; text-align: center; }
-      /* scrollable override — natural width, never forced equal */
-      .seg-scroll .seg-btn { flex: 0 0 auto; padding: 7px 11px; }
+      .seg-control { display: flex; width: 100%; overflow-x: auto; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
+      .seg-control::-webkit-scrollbar { display: none; }
+      .seg-btn { flex: 0 0 auto; padding: 7px 11px; }
     }
 
     /* ── QUIZ ── */
@@ -568,8 +559,8 @@ async function loadSubjectData(key) {
   const s = SUBJECTS[key];
   if (s) {
     if (!s.categories && data.mcQuestions) {
-      const cats = [...new Set(data.mcQuestions.map(q => q.category).filter(Boolean))];
-      s.categories = ['all', ...cats];
+      const catVals = [...new Set(data.mcQuestions.map(q => q.category).filter(Boolean))];
+      s.categories = catVals.length > 0 ? ['all', ...catVals] : null;
     }
     if (!s.topics && data.mcQuestions) {
       const topicVals = [...new Set(data.mcQuestions.map(q => q.topic).filter(Boolean))];
@@ -767,7 +758,7 @@ function renderPicker() {
     html += '</div></div>';
   }
   if (s.categories) {
-    html += '<div class="section-label" style="margin-top:16px">Category</div><div class="filter-row"><div class="seg-control seg-scroll" id="seg-cat"><div class="seg-slider"></div>';
+    html += '<div class="section-label" style="margin-top:16px">Category</div><div class="filter-row"><div class="seg-control" id="seg-cat"><div class="seg-slider"></div>';
     const qsForCounts = s.getMC({ year: pickerFilters.year || 'all', category: 'all' });
     s.categories.forEach(c => {
       if (c !== 'all') {
