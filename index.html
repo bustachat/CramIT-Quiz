@@ -815,9 +815,9 @@ function renderPicker() {
       <div class="mode-icon">🎯</div>
       <div class="mode-info">
         <div class="mode-name">Start${isPracticeMode ? ' Practice' : ' Test'}</div>
-        <div class="mode-desc">${inTrial
+        <div class="mode-desc" id="mc-count-desc">${inTrial
           ? `${trialLeft > 0 ? trialLeft + ' trial questions remaining' : 'Trial complete'} &middot; Subscribe to unlock all ${count}`
-          : `${count} questions &middot; ${isPracticeMode ? 'Instant feedback · Step-by-step solutions' : 'Exam conditions · Results at the end'}`
+          : `<span id="mc-count">${count}</span> questions &middot; ${isPracticeMode ? 'Instant feedback · Step-by-step solutions' : 'Exam conditions · Results at the end'}`
         }</div>
       </div>
       <div class="mode-arrow">›</div>
@@ -839,7 +839,7 @@ function renderPicker() {
         <div class="mode-icon">&#9999;&#65039;</div>
         <div class="mode-info">
           <div class="mode-name">Written Response</div>
-          <div class="mode-desc">${count2} questions · Model answers</div>
+          <div class="mode-desc"><span id="written-count">${count2}</span> questions · Model answers</div>
         </div>
         <div class="mode-arrow">›</div>
       </div>`;
@@ -884,6 +884,17 @@ function applyFilter(key, val) {
     pickerFilters.category = 'all';
     rebuildCategoryControl();
   }
+
+  updateModeCounts();
+}
+
+function updateModeCounts() {
+  const s = SUBJECTS[currentSubjectKey];
+  if (!s) return;
+  const mcEl = document.getElementById('mc-count');
+  if (mcEl) mcEl.textContent = s.getMC(pickerFilters).length;
+  const wrEl = document.getElementById('written-count');
+  if (wrEl && s.getWritten) wrEl.textContent = s.getWritten(pickerFilters).length;
 }
 
 function rebuildCategoryControl() {
