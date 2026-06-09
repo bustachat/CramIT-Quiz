@@ -64,13 +64,19 @@ export async function onRequestPost(context) {
   }
 
   const plan  = sub.plan || 'free';
-  const quota = QUOTA[plan] ?? 0;
+  let quota = QUOTA[plan] ?? 0;
+
+  // If quota is 0 but subscription is active/trialing, treat as base plan.
+  // Handles Stripe webhook sync delays where plan field hasn't updated yet.
+  if (quota === 0 && (sub.status === 'active' || sub.status === 'trialing')) {
+    quota = QUOTA['base']; // 50 marks
+  }
 
   if (quota === 0) {
     return new Response(JSON.stringify({
       quotaExceeded: true,
       reason: 'no_plan',
-      message: 'AI marking is available on Base plan and above.',
+      message: 'AI marking is not available on your current plan.',
       marksRemaining: 0,
     }), { status: 200, headers: { 'Content-Type': 'application/json', ...CORS } });
   }

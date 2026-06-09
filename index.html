@@ -154,7 +154,8 @@
     .mode-info .mode-desc { font-size: 12px; color: var(--muted); line-height: 1.4; }
     .mode-arrow { margin-left: auto; color: var(--muted); font-size: 16px; }
     /* ── SEGMENTED FILTER CONTROLS ── */
-    .filter-row { margin-bottom: 16px; }
+    .filter-row { margin-bottom: 16px; overflow-x: auto; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
+    .filter-row::-webkit-scrollbar { display: none; }
     .seg-control {
       position: relative;
       display: inline-flex;
@@ -639,12 +640,24 @@ const SUBJECTS = {
     accent: '#7B9E6B',
     hasMC: true, hasWritten: true,
     getMC: (filters) => {
+      const FA1 = ['classification','assessment','management','rehabilitation','returnplay','concussion'];
+      const FA2 = ['fa2_assessment','fa2_methods','fa2_principles','fa2_adaptations','fa2_periodisation','fa2_nutrition'];
       let qs = [...(subjectCache.hms?.mcQuestions ?? [])];
+      if (filters.assessment && filters.assessment !== 'all') {
+        const group = filters.assessment === 'fa1' ? FA1 : FA2;
+        qs = qs.filter(q => group.includes(q.topic));
+      }
       if (filters.topic && filters.topic !== 'all') qs = qs.filter(q => q.topic === filters.topic);
       return shuffle(qs);
     },
     getWritten: (filters) => {
+      const FA1 = ['classification','assessment','management','rehabilitation','returnplay','concussion'];
+      const FA2 = ['fa2_assessment','fa2_methods','fa2_principles','fa2_adaptations','fa2_periodisation','fa2_nutrition'];
       let qs = [...(subjectCache.hms?.writtenQuestions ?? [])];
+      if (filters.assessment && filters.assessment !== 'all') {
+        const group = filters.assessment === 'fa1' ? FA1 : FA2;
+        qs = qs.filter(q => group.includes(q.topic));
+      }
       if (filters.topic && filters.topic !== 'all') qs = qs.filter(q => q.topic === filters.topic);
       return shuffle(qs);
     },
@@ -709,7 +722,7 @@ let mathsQuestionSet = 'original'; // 'original' = HSC 90, 'extended' = all 318 
 
 async function openPicker(subjectKey) {
   currentSubjectKey = subjectKey;
-  pickerFilters = { year: 'all', topic: 'all', category: 'all' };
+  pickerFilters = { year: 'all', topic: 'all', category: 'all', assessment: 'all' };
   const s = SUBJECTS[subjectKey];
   document.getElementById('picker-title').textContent = s.icon + ' ' + s.name;
   document.getElementById('home').style.display = 'none';
@@ -801,10 +814,33 @@ function renderPicker() {
     html += '</div></div>';
   }
   if (s.topics) {
+    const FA1 = ['classification','assessment','management','rehabilitation','returnplay','concussion'];
+    const FA2 = ['fa2_assessment','fa2_methods','fa2_principles','fa2_adaptations','fa2_periodisation','fa2_nutrition'];
+    const activeAssessment = pickerFilters.assessment || 'all';
+
+    // Assessment toggle — HMS only
+    if (currentSubjectKey === 'hms') {
+      html += '<div class="section-label">Assessment</div><div class="filter-row"><div class="seg-control" id="seg-assess"><div class="seg-slider"></div>';
+      [{ val:'all', label:'All' },{ val:'fa1', label:'FA1 — Injury' },{ val:'fa2', label:'FA2 — Training' }].forEach(opt => {
+        const active = activeAssessment === opt.val ? 'active' : '';
+        html += `<button class="seg-btn ${active}" data-val="${opt.val}" onclick="applyFilter('assessment','${opt.val}')">${opt.label}</button>`;
+      });
+      html += '</div></div>';
+    }
+
+    // Topic filter — filtered by active assessment for HMS
+    const visibleTopics = s.topics.filter(t => {
+      if (t === 'all') return true;
+      if (activeAssessment === 'fa1') return FA1.includes(t);
+      if (activeAssessment === 'fa2') return FA2.includes(t);
+      return true;
+    });
     html += '<div class="section-label" style="margin-top:16px">Topic</div><div class="filter-row"><div class="seg-control" id="seg-topic"><div class="seg-slider"></div>';
-    s.topics.forEach(t => {
+    visibleTopics.forEach(t => {
       const active = (pickerFilters.topic || 'all') === t ? 'active' : '';
-      const label = t === 'all' ? 'All' : t.replace(/_/g,' ').replace(/\b\w/g, l => l.toUpperCase());
+      const label = t === 'all' ? 'All'
+        : t === 'returnplay' ? 'Return to Play'
+        : t.replace(/^fa2_/, '').replace(/_/g,' ').replace(/\b\w/g, l => l.toUpperCase());
       html += `<button class="seg-btn ${active}" data-val="${t}" onclick="applyFilter('topic','${t}')">${label}</button>`;
     });
     html += '</div></div>';
@@ -896,7 +932,7 @@ function applyFilter(key, val) {
   pickerFilters[key] = val;
 
   // Update active class within the touched control and slide
-  const idMap = { year: 'seg-year', category: 'seg-cat', topic: 'seg-topic' };
+  const idMap = { year: 'seg-year', category: 'seg-cat', topic: 'seg-topic', assessment: 'seg-assess' };
   const ctrl = document.getElementById(idMap[key]);
   if (ctrl) {
     ctrl.querySelectorAll('.seg-btn').forEach(b => b.classList.toggle('active', b.dataset.val === val));
@@ -907,6 +943,12 @@ function applyFilter(key, val) {
   if (key === 'year') {
     pickerFilters.category = 'all';
     rebuildCategoryControl();
+  }
+
+  // Assessment change: reset topic → 'all' and rebuild topic control
+  if (key === 'assessment') {
+    pickerFilters.topic = 'all';
+    rebuildTopicControl();
   }
 
   updateModeCounts();
@@ -946,6 +988,32 @@ function rebuildCategoryControl() {
   });
   ctrl.innerHTML = html;
   requestAnimationFrame(() => slideToActive('seg-cat', false));
+}
+
+function rebuildTopicControl() {
+  const ctrl = document.getElementById('seg-topic');
+  if (!ctrl) return;
+  const s = SUBJECTS[currentSubjectKey];
+  if (!s?.topics) return;
+  const FA1 = ['classification','assessment','management','rehabilitation','returnplay','concussion'];
+  const FA2 = ['fa2_assessment','fa2_methods','fa2_principles','fa2_adaptations','fa2_periodisation','fa2_nutrition'];
+  const activeAssessment = pickerFilters.assessment || 'all';
+  const visible = s.topics.filter(t => {
+    if (t === 'all') return true;
+    if (activeAssessment === 'fa1') return FA1.includes(t);
+    if (activeAssessment === 'fa2') return FA2.includes(t);
+    return true;
+  });
+  let html = '<div class="seg-slider"></div>';
+  visible.forEach(t => {
+    const active = (pickerFilters.topic || 'all') === t ? 'active' : '';
+    const label = t === 'all' ? 'All'
+      : t === 'returnplay' ? 'Return to Play'
+      : t.replace(/^fa2_/, '').replace(/_/g,' ').replace(/\b\w/g, l => l.toUpperCase());
+    html += `<button class="seg-btn ${active}" data-val="${t}" onclick="applyFilter('topic','${t}')">${label}</button>`;
+  });
+  ctrl.innerHTML = html;
+  requestAnimationFrame(() => slideToActive('seg-topic', false));
 }
 
 function setFilter(key, val) {
@@ -1577,9 +1645,9 @@ function showResults() {
   document.getElementById('result-title').textContent = t;
   document.getElementById('result-msg').textContent = m;
 
-  // In Test Mode, show per-question breakdown with correct answers
+  // Show per-question breakdown in both Practice and Test mode
   const breakdown = document.getElementById('results-breakdown');
-  if (currentMode === 'mc' && !isPracticeMode && breakdown) {
+  if (currentMode === 'mc' && breakdown) {
     const LETTERS = ['A','B','C','D','E'];
     let bhtml = '<div style="text-align:left;margin-top:16px;max-height:360px;overflow-y:auto">';
     bhtml += '<div style="font-family:var(--font-display);font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:10px">Question Breakdown</div>';
