@@ -912,7 +912,7 @@ function renderPicker() {
 }
 
 function positionAllSliders(animate) {
-  ['seg-year','seg-cat','seg-topic'].forEach(id => slideToActive(id, animate));
+  ['seg-year','seg-cat','seg-topic','seg-assess'].forEach(id => slideToActive(id, animate));
 }
 
 function slideToActive(ctrlId, animate = true) {
@@ -1631,19 +1631,24 @@ function nextQuestion() {
 
 function showResults() {
   const total = activeQuestions.length;
-  const pct = currentMode === 'mc' ? Math.round(score / total * 100) : 100;
-  document.getElementById('score-ring').style.setProperty('--ring-pct', pct + '%');
+  const pct = currentMode === 'mc' ? Math.round(score / total * 100) : 0;
+  document.getElementById('score-ring').style.setProperty('--ring-pct', currentMode === 'mc' ? pct + '%' : '100%');
   document.getElementById('score-num').textContent = currentMode === 'mc' ? score : '✓';
   document.getElementById('score-denom').textContent = currentMode === 'mc' ? `/ ${total}` : 'Done';
-  const msgs = [
-    [80, 'Excellent! 🎉', 'Outstanding — you are well prepared.'],
-    [60, 'Good effort! 💪', 'Review the questions you missed.'],
-    [40, 'Keep going 📚', 'Focus on the explanations.'],
-    [0,  "Don't give up! 🌱", 'Every attempt builds your knowledge.']
-  ];
-  const [, t, m] = msgs.find(([min]) => pct >= min);
-  document.getElementById('result-title').textContent = t;
-  document.getElementById('result-msg').textContent = m;
+  if (currentMode === 'written') {
+    document.getElementById('result-title').textContent = 'Session complete! 📝';
+    document.getElementById('result-msg').textContent = 'Review your model answers and band descriptors above.';
+  } else {
+    const msgs = [
+      [80, 'Excellent! 🎉', 'Outstanding — you are well prepared.'],
+      [60, 'Good effort! 💪', 'Review the questions you missed.'],
+      [40, 'Keep going 📚', 'Focus on the explanations.'],
+      [0,  "Don't give up! 🌱", 'Every attempt builds your knowledge.']
+    ];
+    const [, t, m] = msgs.find(([min]) => pct >= min);
+    document.getElementById('result-title').textContent = t;
+    document.getElementById('result-msg').textContent = m;
+  }
 
   // Show per-question breakdown in both Practice and Test mode
   const breakdown = document.getElementById('results-breakdown');
