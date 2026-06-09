@@ -589,7 +589,7 @@ async function loadSubjectData(key) {
     }
     if (!s.topics && data.mcQuestions) {
       const topicVals = [...new Set(data.mcQuestions.map(q => q.topic).filter(Boolean))];
-      s.topics = topicVals.length > 0 ? ['all', ...topicVals].slice(0, 12) : null;
+      s.topics = topicVals.length > 0 ? ['all', ...topicVals] : null;
     }
   }
   return data;
@@ -641,7 +641,7 @@ const SUBJECTS = {
     hasMC: true, hasWritten: true,
     getMC: (filters) => {
       const FA1 = ['classification','assessment','management','rehabilitation','returnplay','concussion'];
-      const FA2 = ['fa2_assessment','fa2_methods','fa2_principles','fa2_adaptations','fa2_periodisation','fa2_nutrition'];
+      const FA2 = ['fa2_assessment','fa2_methods','fa2_principles','fa2_adaptations','fa2_periodisation','fa2_nutrition','fa2_psychology','fa2_individual_group','fa2_sleep'];
       let qs = [...(subjectCache.hms?.mcQuestions ?? [])];
       if (filters.assessment && filters.assessment !== 'all') {
         const group = filters.assessment === 'fa1' ? FA1 : FA2;
@@ -652,7 +652,7 @@ const SUBJECTS = {
     },
     getWritten: (filters) => {
       const FA1 = ['classification','assessment','management','rehabilitation','returnplay','concussion'];
-      const FA2 = ['fa2_assessment','fa2_methods','fa2_principles','fa2_adaptations','fa2_periodisation','fa2_nutrition'];
+      const FA2 = ['fa2_assessment','fa2_methods','fa2_principles','fa2_adaptations','fa2_periodisation','fa2_nutrition','fa2_psychology','fa2_individual_group','fa2_sleep'];
       let qs = [...(subjectCache.hms?.writtenQuestions ?? [])];
       if (filters.assessment && filters.assessment !== 'all') {
         const group = filters.assessment === 'fa1' ? FA1 : FA2;
@@ -815,7 +815,7 @@ function renderPicker() {
   }
   if (s.topics) {
     const FA1 = ['classification','assessment','management','rehabilitation','returnplay','concussion'];
-    const FA2 = ['fa2_assessment','fa2_methods','fa2_principles','fa2_adaptations','fa2_periodisation','fa2_nutrition'];
+    const FA2 = ['fa2_assessment','fa2_methods','fa2_principles','fa2_adaptations','fa2_periodisation','fa2_nutrition','fa2_psychology','fa2_individual_group','fa2_sleep'];
     const activeAssessment = pickerFilters.assessment || 'all';
 
     // Assessment toggle — HMS only
@@ -840,6 +840,8 @@ function renderPicker() {
       const active = (pickerFilters.topic || 'all') === t ? 'active' : '';
       const label = t === 'all' ? 'All'
         : t === 'returnplay' ? 'Return to Play'
+        : t === 'fa2_individual_group' ? 'Indiv vs Group'
+        : t === 'fa2_sleep' ? 'Sleep & Hydration'
         : t.replace(/^fa2_/, '').replace(/_/g,' ').replace(/\b\w/g, l => l.toUpperCase());
       html += `<button class="seg-btn ${active}" data-val="${t}" onclick="applyFilter('topic','${t}')">${label}</button>`;
     });
@@ -996,7 +998,7 @@ function rebuildTopicControl() {
   const s = SUBJECTS[currentSubjectKey];
   if (!s?.topics) return;
   const FA1 = ['classification','assessment','management','rehabilitation','returnplay','concussion'];
-  const FA2 = ['fa2_assessment','fa2_methods','fa2_principles','fa2_adaptations','fa2_periodisation','fa2_nutrition'];
+  const FA2 = ['fa2_assessment','fa2_methods','fa2_principles','fa2_adaptations','fa2_periodisation','fa2_nutrition','fa2_psychology','fa2_individual_group','fa2_sleep'];
   const activeAssessment = pickerFilters.assessment || 'all';
   const visible = s.topics.filter(t => {
     if (t === 'all') return true;

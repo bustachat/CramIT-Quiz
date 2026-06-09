@@ -2073,6 +2073,762 @@
         "Drinking 1 litre at the start then nothing causes progressive dehydration throughout the session — fluid must be replaced continuously as it is lost through sweat.",
         "Drinking excessively without regard to sweat rate risks hyponatraemia (dangerously low blood sodium) — over-drinking plain water during exercise is a medical risk, not a performance strategy."
       ]
+    },
+    {
+      "topic": "fa2_psychology",
+      "q": "Arousal in sport is BEST described as:",
+      "options": [
+        "A purely psychological state of fear before competition",
+        "A physiological state of activation and readiness to perform",
+        "The ability to concentrate under pressure",
+        "A strategy used to reduce anxiety before a game"
+      ],
+      "answer": 1,
+      "explanation": "Arousal is a physiological process — a level of physical and mental activation. It differs from anxiety, which is primarily psychological.",
+      "optionExplanations": [
+        "Fear before competition describes anxiety, not arousal. Anxiety is psychological; arousal is physiological.",
+        "Correct. Arousal is a physiological process — the body's state of activation and readiness. It can help or hinder performance depending on the level relative to the task.",
+        "Concentration under pressure describes attention/focus skills — a separate psychological strategy.",
+        "Reducing anxiety describes relaxation techniques, not the definition of arousal."
+      ]
+    },
+    {
+      "topic": "fa2_psychology",
+      "q": "The inverted U hypothesis describes the relationship between:",
+      "options": [
+        "Heart rate and stroke volume during training",
+        "Volume and intensity across a training year",
+        "Arousal level and athletic performance",
+        "Trait anxiety and state anxiety"
+      ],
+      "answer": 2,
+      "explanation": "The inverted U hypothesis shows that performance improves as arousal rises to an optimal point, then declines if arousal becomes excessive.",
+      "optionExplanations": [
+        "Heart rate and stroke volume describe physiological adaptations — not the inverted U hypothesis.",
+        "Volume and intensity across a training year describe periodisation — not the inverted U.",
+        "Correct. The inverted U hypothesis plots arousal (x-axis) against performance (y-axis), showing an optimal middle zone where performance peaks.",
+        "Trait vs state anxiety are types of anxiety — the inverted U does not describe their relationship."
+      ]
+    },
+    {
+      "topic": "fa2_psychology",
+      "q": "An athlete at point A on the inverted U curve is MOST likely experiencing:",
+      "options": [
+        "Optimal arousal — performing at their best",
+        "Over-arousal — excessive muscular tension reducing precision",
+        "Under-arousal — lack of motivation and poor concentration",
+        "State anxiety — fear specific to the competition"
+      ],
+      "answer": 2,
+      "explanation": "Point A is on the left (low arousal) side of the curve — the athlete is under-aroused, showing low motivation, poor concentration and difficulty coping with distractions.",
+      "optionExplanations": [
+        "Optimal arousal is at the peak (point B) of the curve, not point A on the left side.",
+        "Over-arousal describes point C on the right side — excessive tension and anxiety. Not point A.",
+        "Correct. Point A represents under-arousal — the athlete lacks drive and focus. Performance suffers from disinterest, poor concentration and inability to handle distractions.",
+        "State anxiety is a type of anxiety, not a position on the inverted U curve."
+      ]
+    },
+    {
+      "topic": "fa2_psychology",
+      "q": "At point C on the inverted U curve, an athlete's performance declines because:",
+      "options": [
+        "They are not motivated enough to compete",
+        "Excessive arousal causes muscular tension and mental confusion",
+        "They have not completed adequate warm-up",
+        "Their arousal level is perfectly matched to the task"
+      ],
+      "answer": 1,
+      "explanation": "Point C represents over-arousal — the athlete is excessively tense and anxious, which disrupts skill execution and decision-making.",
+      "optionExplanations": [
+        "Lack of motivation describes under-arousal (point A). At point C the athlete is over-stimulated, not disinterested.",
+        "Correct. Excessive arousal at point C causes increased muscular tension and mental confusion during skill execution, leading to poorer performance despite high drive.",
+        "Inadequate warm-up is a physical preparation issue — not related to arousal position on the inverted U.",
+        "Perfect match to the task describes optimal arousal at point B — the peak of the curve, not point C."
+      ]
+    },
+    {
+      "topic": "fa2_psychology",
+      "q": "Which activity requires the HIGHEST level of arousal for optimal performance?",
+      "options": [
+        "Archery — high precision, fine motor control",
+        "Putting in golf — requires delicate touch",
+        "Weightlifting — large muscle groups, explosive force",
+        "Snooker — concentration and fine control"
+      ],
+      "answer": 2,
+      "explanation": "Tasks involving large muscle groups and gross movements (like weightlifting) require higher arousal than fine motor tasks like archery or golf putting.",
+      "optionExplanations": [
+        "Archery requires fine motor precision — low arousal is optimal. High arousal would cause trembling.",
+        "Putting in golf requires delicate touch and concentration — low arousal prevents excessive muscular tension.",
+        "Correct. Weightlifting uses large muscle groups and requires explosive force — higher arousal increases muscle recruitment and power output, making it beneficial.",
+        "Snooker requires precision, concentration and fine motor control — lower arousal is optimal, similar to archery."
+      ]
+    },
+    {
+      "topic": "fa2_psychology",
+      "q": "Trait anxiety is BEST described as:",
+      "options": [
+        "Heightened emotion in response to a specific threatening situation",
+        "A general tendency to feel anxious across many situations",
+        "Anxiety caused by the pressure of a grand final only",
+        "Physical symptoms of nerves immediately before competition"
+      ],
+      "answer": 1,
+      "explanation": "Trait anxiety is a stable personality characteristic — a person's general tendency to experience anxiety across many everyday situations.",
+      "optionExplanations": [
+        "Heightened emotion in response to a specific situation describes state anxiety, not trait anxiety.",
+        "Correct. Trait anxiety is a personality trait — a general, stable tendency to feel anxious in many situations. An athlete who feels sick before every single game has high trait anxiety.",
+        "Anxiety specific to a grand final describes state anxiety — a response to a particular high-pressure event.",
+        "Physical symptoms immediately before competition can reflect either trait or state anxiety — this is not specific enough to define trait anxiety."
+      ]
+    },
+    {
+      "topic": "fa2_psychology",
+      "q": "A soccer player only feels sick and anxious before the grand final, not regular season games. This is an example of:",
+      "options": [
+        "Trait anxiety — a stable personality characteristic",
+        "State anxiety — a specific response to a threatening situation",
+        "Under-arousal — insufficient motivation",
+        "Overtraining — physical and mental exhaustion"
+      ],
+      "answer": 1,
+      "explanation": "State anxiety is specific to a particular situation perceived as threatening. The grand final triggers heightened anxiety not present in normal games.",
+      "optionExplanations": [
+        "Trait anxiety would cause anxiety before every game, not just the grand final.",
+        "Correct. State anxiety is context-specific — it develops in response to a situation perceived as threatening or important. The grand final creates heightened pressure not felt in regular games.",
+        "Under-arousal is about lack of drive and motivation — the opposite of what this anxious player experiences.",
+        "Overtraining involves physical and mental fatigue from excessive training loads — unrelated to situational pre-game anxiety."
+      ]
+    },
+    {
+      "topic": "fa2_psychology",
+      "q": "Mental rehearsal (visualisation) is MOST useful for an athlete because it:",
+      "options": [
+        "Replaces the need for physical practice sessions",
+        "Provides extra practice and narrows focus to the task, reducing anxiety",
+        "Increases arousal levels before a game",
+        "Strengthens muscles through imagined contraction"
+      ],
+      "answer": 1,
+      "explanation": "Mental rehearsal provides additional practice opportunities, helps achieve optimal arousal, and narrows thoughts to the task — reducing anxiety and improving concentration.",
+      "optionExplanations": [
+        "Mental rehearsal supplements physical practice — it cannot replace it.",
+        "Correct. Mental rehearsal narrows thoughts to the task, provides extra practice (especially when physical training is not possible), improves concentration and reduces anxiety by creating a clear performance blueprint.",
+        "Goal setting and other strategies optimise arousal — mental rehearsal's primary role is focus and anxiety management.",
+        "Imagined contractions do not produce meaningful muscle strength gains in the way actual resistance training does."
+      ]
+    },
+    {
+      "topic": "fa2_psychology",
+      "q": "A netball team meditates together before a grand final to stay calm. This is an example of:",
+      "options": [
+        "Goal setting",
+        "Mental rehearsal",
+        "A relaxation technique",
+        "Concentration/attention skills"
+      ],
+      "answer": 2,
+      "explanation": "Meditation is a relaxation technique used to reduce over-arousal and manage anxiety before competition.",
+      "optionExplanations": [
+        "Goal setting involves setting specific performance targets — not calming the mind before competition.",
+        "Mental rehearsal involves picturing the performance or skill in the mind — not group meditation.",
+        "Correct. Meditation is a relaxation technique. It involves narrowing thoughts using simple repetitive images and sounds to reduce anxiety and prevent over-arousal before a big game.",
+        "Concentration/attention skills involve focusing on task execution during performance — not pre-game calming."
+      ]
+    },
+    {
+      "topic": "fa2_psychology",
+      "q": "SMART goal setting means goals must be Specific, Measurable, Achievable, Relevant and:",
+      "options": [
+        "Repeatable",
+        "Realistic",
+        "Time-bound",
+        "Recorded"
+      ],
+      "answer": 2,
+      "explanation": "SMART = Specific, Measurable, Achievable, Relevant, Time-bound. Time-bound means there is a clear timeframe linked to the sporting season.",
+      "optionExplanations": [
+        "Repeatable is not part of the SMART framework.",
+        "Realistic is used in some frameworks but in NESA HMS the T stands for Time-bound.",
+        "Correct. Time-bound means there is a clear deadline or timeframe — for example, achieving a goal by the end of the track and field season.",
+        "Recorded is not part of the SMART framework."
+      ]
+    },
+    {
+      "topic": "fa2_psychology",
+      "q": "An 800 m runner aims to run 1:59 by the end of the track season. This goal is SMART because it is:",
+      "options": [
+        "Set by the coach, not the athlete",
+        "Specific, measurable and time-bound — linked to the athlete's event and season",
+        "Focused on team outcomes rather than individual performance",
+        "Based on beating the world record, not personal improvement"
+      ],
+      "answer": 1,
+      "explanation": "The goal meets all SMART criteria — specific (1:59), measurable (time recorded), achievable (based on current PB of 2:01), relevant (800 m runner) and time-bound (end of season).",
+      "optionExplanations": [
+        "SMART goals work best when athletes have responsibility in setting them — this increases commitment.",
+        "Correct. The goal meets all SMART criteria — specific (exact time), measurable (can be tracked), achievable (small improvement on current PB), relevant (directly linked to her event), and time-bound (end of season).",
+        "This is an individual performance goal — not focused on team outcomes.",
+        "Setting a world record goal would not be achievable and therefore not a SMART goal."
+      ]
+    },
+    {
+      "topic": "fa2_psychology",
+      "q": "Concentration/attention skills help athletes manage anxiety primarily by:",
+      "options": [
+        "Increasing arousal to optimal levels before competition",
+        "Physically relaxing muscle groups to reduce tension",
+        "Focusing thoughts on task execution rather than the outcome or result",
+        "Setting short-term and long-term performance targets"
+      ],
+      "answer": 2,
+      "explanation": "Concentration skills shift focus to the process (how to execute the skill) rather than the outcome (the result), narrowing thoughts and reducing anxiety.",
+      "optionExplanations": [
+        "Increasing arousal is the role of goal setting and motivation strategies — not concentration skills.",
+        "Physically relaxing muscle groups describes progressive muscular relaxation — a separate technique.",
+        "Correct. Concentration means focusing on the process of execution — what to do — rather than worrying about the result. This narrows thoughts and reduces anxiety during performance.",
+        "Setting targets describes goal setting, not concentration/attention skills."
+      ]
+    },
+    {
+      "topic": "fa2_individual_group",
+      "q": "The acronym H-O-W-S-C-S-E represents the key components of a training session. What does the 'H' stand for?",
+      "options": [
+        "Hydration and fluid replacement",
+        "Health and safety considerations",
+        "High-intensity conditioning",
+        "Heart rate monitoring"
+      ],
+      "answer": 1,
+      "explanation": "H = Health and safety considerations — covering injury prevention, equipment, apparel and environmental hazards.",
+      "optionExplanations": [
+        "Hydration is important but is not what H stands for in the H-O-W-S-C-S-E acronym.",
+        "Correct. H = Health and safety considerations. This includes injury prevention, protective equipment, general equipment checks, rules for safety, apparel and environmental hazards.",
+        "High-intensity conditioning is part of conditioning (C) in the acronym, not H.",
+        "Heart rate monitoring may occur during conditioning but is not what H stands for."
+      ]
+    },
+    {
+      "topic": "fa2_individual_group",
+      "q": "The Overview/Aim component (O) at the start of a training session is important because it:",
+      "options": [
+        "Replaces the warm-up to save time",
+        "Focuses athletes and coaches on specific goals and expectations for the session",
+        "Provides the cool-down protocol for the end of the session",
+        "Is only relevant for group sports, not individual athletes"
+      ],
+      "answer": 1,
+      "explanation": "The overview ensures both coaches and athletes are aligned on session goals, expectations, injuries, attendance and performance feedback — applicable to individual and group sports.",
+      "optionExplanations": [
+        "The overview does not replace the warm-up. Both serve different purposes.",
+        "Correct. The overview ensures intentions of the coach and expectations of players are focused in the right direction. It covers attendance, injuries, previous performance and specific goals.",
+        "Cool-down protocol is addressed in the warm-up/cool-down component (W), not the overview.",
+        "The overview is applicable to both individual and group sports."
+      ]
+    },
+    {
+      "topic": "fa2_individual_group",
+      "q": "In the four-phase warm-up model, Phase 1 involves:",
+      "options": [
+        "Dynamic stretching to increase range of motion",
+        "Skill rehearsal specific to the sport",
+        "General body activity (e.g. jogging) to elevate heart rate and body temperature",
+        "Callisthenics and sport-specific exercises"
+      ],
+      "answer": 2,
+      "explanation": "Phase 1 is a general body warm-up — activities like jogging or skipping for 5–10 minutes to elevate heart rate and body temperature.",
+      "optionExplanations": [
+        "Dynamic stretching occurs in Phase 2 — after the body has already elevated in temperature.",
+        "Skill rehearsal specific to the sport is Phase 4 — the final warm-up phase.",
+        "Correct. Phase 1 is a general body warm-up such as jogging or skipping for 5–10 minutes. The goal is to raise core temperature and heart rate before stretching or skill work.",
+        "Callisthenics and sport-specific exercises are Phase 3 — after stretching in Phase 2."
+      ]
+    },
+    {
+      "topic": "fa2_individual_group",
+      "q": "A strategy is BEST described as:",
+      "options": [
+        "A specific play or set move used in one moment of a game",
+        "The overall method or plan used to achieve a goal",
+        "A training drill designed to improve fitness",
+        "An athlete's individual technique for a skill"
+      ],
+      "answer": 1,
+      "explanation": "A strategy is the overall plan or method used to achieve a goal. Tactics are how you implement that strategy to gain advantage over the opposition.",
+      "optionExplanations": [
+        "A specific play in one moment describes a tactic — the short-term implementation of a strategy.",
+        "Correct. A strategy is the overall method used to achieve a goal. Tactics are the specific ways players execute the strategy in different situations.",
+        "A training drill improves fitness or skill — this is conditioning or skill instruction, not strategy.",
+        "Individual technique describes biomechanics — not strategy."
+      ]
+    },
+    {
+      "topic": "fa2_individual_group",
+      "q": "Athlete reflection and coach evaluation at the END of a training session should:",
+      "options": [
+        "Only focus on what the athletes did wrong",
+        "Be skipped if the session went well",
+        "Address performance outcomes, behavioural outcomes, and plan the next session",
+        "Be completed before the cool-down to save time"
+      ],
+      "answer": 2,
+      "explanation": "Evaluation addresses whether performance goals were met, behavioural outcomes like punctuality, athlete opinions, and logistics for the next session — conducted during or after the cool-down.",
+      "optionExplanations": [
+        "Effective evaluation focuses on both positives (goals achieved) and areas for improvement — not only negatives.",
+        "Evaluation is important regardless of session quality. A good session still needs feedback and planning for continuity.",
+        "Correct. Evaluation addresses performance goals, behavioural outcomes, athlete reflections and logistics (next training date/venue). It is conducted during and after the cool-down.",
+        "Evaluation occurs during and after the cool-down — not before it."
+      ]
+    },
+    {
+      "topic": "fa2_individual_group",
+      "q": "A macrocycle in a yearly training program BEST refers to:",
+      "options": [
+        "A single training session planned in detail",
+        "A 7–10 day training block with specific objectives",
+        "A 4–8 week training block targeting specific fitness goals",
+        "The overall annual training plan including all phases"
+      ],
+      "answer": 3,
+      "explanation": "A macrocycle is the long-term planning framework — the entire annual plan identifying all phases, competitions and training specifics over the year.",
+      "optionExplanations": [
+        "A single training session is not a macrocycle — it is the smallest planning unit.",
+        "A 7–10 day block describes a microcycle — the shortest planning period.",
+        "A 4–8 week block describes a mesocycle — the medium-term planning unit.",
+        "Correct. A macrocycle is the overarching annual plan — it encompasses the full preparation time before a major competition and identifies all lead-up events, competition dates and long-term training direction."
+      ]
+    },
+    {
+      "topic": "fa2_individual_group",
+      "q": "Microcycles in a training program are typically:",
+      "options": [
+        "Annual plans covering all phases of competition",
+        "4–8 week blocks targeting specific fitness components",
+        "7–10 day detailed training blocks specifying intensity and frequency",
+        "Monthly rest and recovery periods"
+      ],
+      "answer": 2,
+      "explanation": "Microcycles are 7–10 days — the most detailed planning unit, specifying frequency, intensity and activities for each training day.",
+      "optionExplanations": [
+        "Annual plans are macrocycles — the broadest planning level.",
+        "4–8 week blocks describe mesocycles — the medium-term planning unit.",
+        "Correct. Microcycles are 7–10 day detailed blocks containing specific daily training plans with frequency, intensity, volume and recovery information.",
+        "Monthly rest periods describe aspects of the off-season phase — not a microcycle."
+      ]
+    },
+    {
+      "topic": "fa2_individual_group",
+      "q": "A key difference between tapering for an individual endurance athlete vs a group sport (e.g. soccer) is that:",
+      "options": [
+        "Group sport athletes never need to taper",
+        "Individual athletes taper for 1 day; group athletes taper for 2 weeks",
+        "Individual endurance athletes may taper for 2 weeks; group sport athletes typically use a 1-day rest as a mini-taper",
+        "Both use identical 2-week tapering periods before competition"
+      ],
+      "answer": 2,
+      "explanation": "Individual endurance athletes (e.g. marathon runners) may taper for 2 weeks. Team sports play weekly and cannot afford long tapers — a 1-day rest before each game is the practical approach.",
+      "optionExplanations": [
+        "Group sport athletes do taper — but they use shorter rest periods rather than extended tapers.",
+        "This is reversed — individual endurance athletes use the longer taper (2 weeks), not group athletes.",
+        "Correct. A marathon runner may taper for 2 weeks to rebuild glycogen and tissue. A soccer team playing weekly uses only a rest day before each game as a mini-taper.",
+        "Both using identical 2-week tapers is incorrect — weekly competition makes a 2-week taper impractical for group sports."
+      ]
+    },
+    {
+      "topic": "fa2_individual_group",
+      "q": "Rain is forecast for a soccer match. A coach MOST likely adjusts tactics by:",
+      "options": [
+        "Increasing the number of long passes to exploit wet outfield space",
+        "Simplifying attacking plays and minimising passes to reduce errors with a slippery ball",
+        "Reducing all physical effort to prevent injury on wet ground",
+        "Replacing all players with better wet-weather performers"
+      ],
+      "answer": 1,
+      "explanation": "Rain increases ball handling errors. Simplifying attack and reducing passes is a tactical response to wet conditions — minimising the risk of turnovers with a slippery ball.",
+      "optionExplanations": [
+        "Long passes in wet conditions are high-risk — a wet ball is harder to control and harder to deliver accurately.",
+        "Correct. In wet conditions, coaches simplify attack and reduce passes to minimise errors caused by a slippery ball — a common tactical adjustment in soccer, NRL and similar sports.",
+        "Reducing all physical effort is not a practical tactical response. Athletes still compete at full intensity; only the game plan changes.",
+        "Replacing all players is not a tactical adjustment — and most teams have limited substitutions."
+      ]
+    },
+    {
+      "topic": "fa2_individual_group",
+      "q": "When designing a training session for a GROUP sport compared to an INDIVIDUAL sport, a coach MUST additionally consider:",
+      "options": [
+        "Nutrition and hydration — which is only needed for team sports",
+        "Team strategies, tactics, roles within formations, and collective decision-making",
+        "Warm-up and cool-down — which only applies to group sports",
+        "Fitness testing — which is never used in individual sport training"
+      ],
+      "answer": 1,
+      "explanation": "Group sports require planning around team strategies, formations, player roles and collective decision-making — elements that do not exist in individual sport training.",
+      "optionExplanations": [
+        "Nutrition and hydration is equally important for individual and group sport athletes.",
+        "Correct. Group sport training must address team strategies and tactics, player roles within formations, collective decision-making and small-sided games — none of which apply to individual sport training in the same way.",
+        "Warm-up and cool-down apply to all sports — individual and group alike.",
+        "Fitness testing is used in both individual and group sport training programs."
+      ]
+    },
+    {
+      "topic": "fa2_individual_group",
+      "q": "The MAIN advantage of subphases within a yearly training program is that they allow:",
+      "options": [
+        "Athletes to rest for extended periods during the season",
+        "Coaches to target specific individual weaknesses and fitness components in focused blocks",
+        "All athletes in a team to follow the exact same training plan",
+        "Competition dates to be changed to suit the training program"
+      ],
+      "answer": 1,
+      "explanation": "Subphases allow specific areas — such as one athlete's aerobic fitness or another's skill development — to be targeted in focused training blocks.",
+      "optionExplanations": [
+        "Extended rest periods are a feature of the off-season phase — not the purpose of subphases.",
+        "Correct. Subphases allow individualised targeting — a soccer midfielder may focus on aerobic fitness while a goalkeeper focuses on skill development in the same subphase.",
+        "Subphases enable individualisation, not uniform training for all athletes.",
+        "Competition dates are set by governing bodies — training programs are planned around them, not the reverse."
+      ]
+    },
+    {
+      "topic": "fa2_individual_group",
+      "q": "In group sports like soccer, a key purpose of small-sided games (e.g. 3 vs 3) in training is to:",
+      "options": [
+        "Replace full fitness conditioning sessions entirely",
+        "Simulate game pressure and develop strategic and tactical decision-making",
+        "Focus exclusively on individual technical skills",
+        "Allow injured players to return to full training"
+      ],
+      "answer": 1,
+      "explanation": "Small-sided games replicate performance-like pressure, allowing players to practise strategies and tactics, improve decision-making, and condition fitness simultaneously.",
+      "optionExplanations": [
+        "Small-sided games complement conditioning — they do not replace dedicated fitness sessions.",
+        "Correct. Small-sided games (3v3, 4v3, 3v2) simulate game-like pressure and develop tactical decision-making within a training environment — a key games-centred approach used in group sports.",
+        "Small-sided games emphasise tactical and collective decision-making — not individual technical skills in isolation.",
+        "Return to training for injured players requires gradual progressive rehabilitation — not immediate small-sided games."
+      ]
+    },
+    {
+      "topic": "fa2_sleep",
+      "q": "The recommended amount of sleep per night for athletes to allow optimal rest and recovery is:",
+      "options": [
+        "5–6 hours",
+        "6–7 hours",
+        "8–10 hours",
+        "11–12 hours"
+      ],
+      "answer": 2,
+      "explanation": "Athletes should aim for 8–10 hours per night to allow muscle repair, tissue growth and recovery from training and competition demands.",
+      "optionExplanations": [
+        "5–6 hours is insufficient and impairs muscle protein synthesis, reaction time and performance.",
+        "6–7 hours is below the recommended amount — associated with increased injury risk and reduced performance.",
+        "Correct. Athletes should aim for 8–10 hours. Sleep allows growth hormone secretion, muscle repair, protein synthesis and ATP restoration — all critical for training adaptation.",
+        "11–12 hours is generally excessive. More than 10 hours has not been shown to provide additional performance benefits."
+      ]
+    },
+    {
+      "topic": "fa2_sleep",
+      "q": "During deep sleep, the body secretes growth hormone primarily to:",
+      "options": [
+        "Increase arousal and motivation for competition",
+        "Replenish glycogen stores in the liver",
+        "Stimulate protein synthesis for muscle repair and growth",
+        "Regulate hydration and electrolyte balance"
+      ],
+      "answer": 2,
+      "explanation": "Growth hormone secreted during deep sleep drives protein synthesis — building new proteins to repair and grow muscle tissue damaged during training.",
+      "optionExplanations": [
+        "Growth hormone is not responsible for arousal or motivation — these are linked to cortisol and adrenaline.",
+        "Glycogen replenishment is driven by carbohydrate intake after exercise — not directly by growth hormone.",
+        "Correct. Growth hormone stimulates protein synthesis — the process that repairs micro-tears in muscle tissue and builds new muscle, enabling adaptation to training loads.",
+        "Hydration and electrolyte balance are regulated through fluid intake and kidney function — not by growth hormone."
+      ]
+    },
+    {
+      "topic": "fa2_sleep",
+      "q": "Research shows that basketball players sleeping 10 hours per night improved their shooting accuracy by at least:",
+      "options": [
+        "2–3%",
+        "5–6%",
+        "9%",
+        "20%"
+      ],
+      "answer": 2,
+      "explanation": "Studies found basketball players sleeping 10 hours improved free throw and three-point shooting accuracy by at least 9% — directly demonstrating sleep's performance benefit.",
+      "optionExplanations": [
+        "2–3% understates the research finding. The improvement was at least 9%.",
+        "5–6% understates the finding. Basketball players saw at least 9% improvement.",
+        "Correct. Players sleeping 10 hours per night improved free throw and three-point shooting by at least 9%, while also running faster during sprints.",
+        "20% is an overstatement of the research finding."
+      ]
+    },
+    {
+      "topic": "fa2_sleep",
+      "q": "Elevated cortisol levels caused by insufficient sleep can harm athletic performance by:",
+      "options": [
+        "Increasing protein synthesis and muscle growth",
+        "Improving recovery speed after hard training sessions",
+        "Interfering with recovery, increasing inflammation and raising injury risk",
+        "Boosting glycogen storage and energy availability"
+      ],
+      "answer": 2,
+      "explanation": "Insufficient sleep raises cortisol (the stress hormone), which interferes with recovery, increases inflammation and makes tissues more susceptible to injury.",
+      "optionExplanations": [
+        "Elevated cortisol actually inhibits protein synthesis — the opposite of promoting muscle growth.",
+        "Elevated cortisol impairs recovery — it does not improve it. Cortisol is catabolic.",
+        "Correct. Sleep deprivation raises cortisol, which interferes with recovery, increases systemic inflammation and makes muscles, tendons and ligaments more susceptible to injury.",
+        "Elevated cortisol does not boost glycogen storage — it can impair carbohydrate metabolism."
+      ]
+    },
+    {
+      "topic": "fa2_sleep",
+      "q": "Dehydration is defined as:",
+      "options": [
+        "Consuming excess fluid before competition",
+        "An excessive loss of water from the body",
+        "The process of replacing lost electrolytes",
+        "Reduced blood glucose from prolonged exercise"
+      ],
+      "answer": 1,
+      "explanation": "Dehydration is an excessive loss of water from the body, causing headaches, fatigue, dizziness, muscle cramps and reduced reaction time.",
+      "optionExplanations": [
+        "Consuming excess fluid is not dehydration — it is pre-hydration or, if extreme, overhydration.",
+        "Correct. Dehydration is an excessive loss of water. Even mild dehydration (1–2% body weight) affects motor control, decision-making and concentration.",
+        "Replacing lost electrolytes describes rehydration — the solution to dehydration.",
+        "Reduced blood glucose describes glycogen depletion — caused by carbohydrate insufficiency, not fluid loss."
+      ]
+    },
+    {
+      "topic": "fa2_sleep",
+      "q": "During exercise, the recommended fluid intake guideline is approximately:",
+      "options": [
+        "50–100 mL every 30–40 minutes",
+        "500 mL immediately before exercise only",
+        "200–300 mL every 15–20 minutes",
+        "1 litre at the end of each training session"
+      ],
+      "answer": 2,
+      "explanation": "Athletes should consume 200–300 mL of fluid every 15–20 minutes during exercise to maintain hydration and prevent dehydration.",
+      "optionExplanations": [
+        "50–100 mL every 30–40 minutes is insufficient — cannot replace sweat losses, especially in hot conditions.",
+        "500 mL before exercise only does not account for ongoing fluid losses during the session.",
+        "Correct. The recommendation is 200–300 mL (preferably a sports drink) every 15–20 minutes during exercise. A runner may lose 0.5–1.5 L per hour at moderate intensity.",
+        "Rehydrating only at the end allows significant dehydration to develop during exercise."
+      ]
+    },
+    {
+      "topic": "fa2_sleep",
+      "q": "Dehydration impairs athletic movement primarily because:",
+      "options": [
+        "It increases red blood cell production, thickening the blood",
+        "It decreases blood volume, reducing oxygen delivery to muscles and causing fatigue",
+        "It accelerates glycogen storage, causing early muscle cramps",
+        "It increases muscle elasticity beyond optimal levels"
+      ],
+      "answer": 1,
+      "explanation": "Dehydration reduces blood volume, meaning less oxygen is delivered to working muscles — causing early fatigue, reduced motor control and impaired technique.",
+      "optionExplanations": [
+        "Dehydration reduces (not increases) blood volume. Thickened blood makes the heart work harder.",
+        "Correct. Dehydration decreases blood volume, so each heartbeat delivers less oxygen to muscles. Fatigue sets in earlier, motor control declines, and poor technique increases injury risk.",
+        "Dehydration does not accelerate glycogen storage — glycogen synthesis is driven by carbohydrate intake.",
+        "Dehydration reduces (not increases) muscle and tissue elasticity — dehydrated muscles are more prone to tears."
+      ]
+    },
+    {
+      "topic": "fa2_sleep",
+      "q": "The BEST indicator that an athlete is adequately hydrated is:",
+      "options": [
+        "Absence of muscle cramps during training",
+        "Feeling no thirst during exercise",
+        "Pale yellow urine colour",
+        "Drinking 2 litres of water every hour"
+      ],
+      "answer": 2,
+      "explanation": "Pale yellow urine is a reliable indicator of good hydration. Thirst is a poor indicator — by the time an athlete feels thirsty, dehydration has already begun.",
+      "optionExplanations": [
+        "Absence of cramps can reflect adequate electrolytes but is not a reliable overall hydration indicator.",
+        "Thirst is a poor hydration indicator. Dehydration is already occurring by the time thirst is felt.",
+        "Correct. Pale yellow urine indicates adequate water — not too concentrated (dark = dehydrated) and not over-diluted (colourless = overhydrated).",
+        "2 litres per hour is excessive and could cause hyponatraemia (dangerously low sodium)."
+      ]
+    },
+    {
+      "topic": "fa2_nutrition",
+      "q": "Carbohydrate loading is MOST beneficial for athletes competing in:",
+      "options": [
+        "Short sprint events lasting under 10 seconds",
+        "Strength events such as powerlifting",
+        "High-intensity endurance events lasting more than 90 minutes",
+        "Events where skill and technique are the primary determinants"
+      ],
+      "answer": 2,
+      "explanation": "Carbohydrate loading maximises glycogen stores and is most beneficial for endurance events over 90 minutes where glycogen depletion would otherwise limit performance.",
+      "optionExplanations": [
+        "Sprint events use the ATP-PCr system — glycogen stores are not a limiting factor. Carbohydrate loading provides no meaningful benefit.",
+        "Powerlifting relies on ATP-PCr and anaerobic systems for short maximal efforts — not sustained glycogen use.",
+        "Correct. Carbohydrate loading benefits endurance events over 90 minutes — marathons, triathlons, cycling and endurance swimming. It can improve performance by 2–3% and delay glycogen depletion by up to 20%.",
+        "Skill and technique are not primarily limited by glycogen availability in short or moderate duration events."
+      ]
+    },
+    {
+      "topic": "fa2_nutrition",
+      "q": "The recommended carbohydrate intake target for effective carbohydrate loading is:",
+      "options": [
+        "2–4 g per kg of body weight per day",
+        "4–6 g per kg of body weight per day",
+        "7–12 g per kg of body weight per day",
+        "15–20 g per kg of body weight per day"
+      ],
+      "answer": 2,
+      "explanation": "Well-trained athletes should aim for 7–12 g of carbohydrate per kg of body weight per day over 36–72 hours to achieve optimal glycogen loading.",
+      "optionExplanations": [
+        "2–4 g/kg is a standard everyday maintenance intake — not sufficient to achieve carbohydrate loading.",
+        "4–6 g/kg is moderate — above everyday needs but below the loading target.",
+        "Correct. Evidence shows 7–12 g per kg per day over 36–72 hours achieves optimal muscle glycogen when combined with exercise tapering.",
+        "15–20 g/kg is unrealistically high and would cause severe gastrointestinal distress."
+      ]
+    },
+    {
+      "topic": "fa2_nutrition",
+      "q": "For carbohydrate loading to be EFFECTIVE, athletes must also:",
+      "options": [
+        "Increase training intensity in the week before competition",
+        "Taper (reduce) their training load to allow glycogen to accumulate",
+        "Eliminate all protein from their diet during loading",
+        "Avoid fluid intake to prevent weight gain from water retention"
+      ],
+      "answer": 1,
+      "explanation": "Tapering reduces glycogen expenditure, allowing the body to accumulate supranormal glycogen stores. Continued high-intensity training depletes glycogen and makes carbohydrate loading ineffective.",
+      "optionExplanations": [
+        "Increasing training intensity during loading depletes glycogen as fast as it is consumed — counteracting the loading strategy.",
+        "Correct. Tapering (reducing training load) is essential for carbohydrate loading. Without tapering, glycogen stores are continuously used and cannot accumulate above normal levels.",
+        "Protein should be maintained during loading for muscle repair. Only carbohydrate intake is significantly increased.",
+        "Adequate fluid intake is essential — each gram of glycogen is stored with 2.6 g of water, which is normal and expected."
+      ]
+    },
+    {
+      "topic": "fa2_nutrition",
+      "q": "High GI (glycaemic index) carbohydrates are MOST appropriate for an athlete:",
+      "options": [
+        "3–4 hours before competition, as a pre-match meal",
+        "As the foundation of their everyday training diet",
+        "During competition or immediately after, for rapid energy replenishment",
+        "Only during the off-season recovery phase"
+      ],
+      "answer": 2,
+      "explanation": "High GI carbohydrates (sports gels, bananas, white bread) are rapidly digested — ideal during competition or immediately post-performance for rapid glycogen restoration.",
+      "optionExplanations": [
+        "Pre-match meals 3–4 hours out should be low GI for sustained energy. High GI eaten too early causes a blood glucose spike then crash.",
+        "Everyday training diet should be built on low-to-moderate GI foods. High GI foods cause rapid spikes and are not ideal as a dietary foundation.",
+        "Correct. High GI carbohydrates (lollies, sports gels, bananas, sports drinks) are ideal during competition for rapid glucose delivery and immediately post-performance for fast glycogen resynthesis.",
+        "High GI food timing is not restricted to off-season. Their timing relative to competition is the key consideration."
+      ]
+    },
+    {
+      "topic": "fa2_nutrition",
+      "q": "Electrolytes are BEST described as:",
+      "options": [
+        "Vitamins and minerals stored in muscle tissue",
+        "Salts and minerals (e.g. sodium, potassium) essential for nerve conduction and muscle function",
+        "Carbohydrate supplements that replace glycogen during exercise",
+        "Protein building blocks for muscle repair"
+      ],
+      "answer": 1,
+      "explanation": "Electrolytes are salts and minerals — including sodium, potassium, calcium and magnesium — essential for nerve conduction, muscle contractions, fluid balance and preventing cramps.",
+      "optionExplanations": [
+        "Vitamins are micronutrients — not electrolytes. Electrolytes specifically carry electrical charges in body fluids.",
+        "Correct. Electrolytes include sodium, potassium, calcium and magnesium. Lost through sweat, they cause fatigue, cramps and confusion if not replaced.",
+        "Carbohydrate supplements replace glycogen — not electrolytes. Sports drinks often contain both.",
+        "Protein building blocks are amino acids — not electrolytes."
+      ]
+    },
+    {
+      "topic": "fa2_nutrition",
+      "q": "Iron deficiency impairs athletic performance primarily by:",
+      "options": [
+        "Reducing muscle size and strength through poor protein absorption",
+        "Decreasing haemoglobin levels and limiting oxygen transport to working muscles",
+        "Depleting glycogen stores faster during endurance events",
+        "Causing joint inflammation and reduced range of motion"
+      ],
+      "answer": 1,
+      "explanation": "Iron is a component of haemoglobin — deficiency reduces oxygen delivery to muscles, compromising aerobic capacity and causing earlier fatigue.",
+      "optionExplanations": [
+        "Iron deficiency does not directly impair protein absorption — that is linked to protein intake and anabolic hormones.",
+        "Correct. Iron is crucial for haemoglobin production. Iron deficiency reduces haemoglobin, limiting oxygen-carrying capacity. Muscles receive insufficient oxygen, aerobic capacity falls and early-onset fatigue occurs.",
+        "Iron deficiency does not directly deplete glycogen. Glycogen stores are determined by carbohydrate intake.",
+        "Joint inflammation is associated with overtraining, injury or inflammatory conditions — not iron deficiency."
+      ]
+    },
+    {
+      "topic": "fa2_nutrition",
+      "q": "RED-S (Relative Energy Deficiency in Sport) occurs when:",
+      "options": [
+        "Athletes consume too many carbohydrates before competition",
+        "Energy intake is insufficient to meet the demands of training and daily bodily functions",
+        "Athletes overtrain without adequate rest days",
+        "Protein intake exceeds recommended levels during strength training"
+      ],
+      "answer": 1,
+      "explanation": "RED-S occurs when energy intake falls short of the energy required for both training and basic physiological functions — disrupting hormones, bone health, metabolism and muscle function.",
+      "optionExplanations": [
+        "Excessive carbohydrate intake is the opposite of RED-S — RED-S is caused by insufficient energy.",
+        "Correct. RED-S occurs when energy available for bodily functions is reduced because intake cannot match training demands. It disrupts metabolism, menstrual function, bone health and muscle capacity.",
+        "Overtraining can contribute to RED-S but is a separate syndrome. RED-S is specifically an energy availability problem.",
+        "Excessive protein intake does not cause RED-S — insufficient energy alongside inadequate protein worsens it."
+      ]
+    },
+    {
+      "topic": "fa2_nutrition",
+      "q": "Low GI (glycaemic index) carbohydrates are MOST appropriate in an athlete's diet because they:",
+      "options": [
+        "Provide rapid glucose release — ideal for use during competition",
+        "Require no digestion — passing directly to muscles as fuel",
+        "Release energy slowly — supporting sustained energy for training and daily function",
+        "Are only useful for athletes with diabetes"
+      ],
+      "answer": 2,
+      "explanation": "Low GI foods (oats, lentils, grainy bread) release glucose slowly, providing sustained energy — ideal for pre-match meals 3–4 hours out and as the foundation of an everyday training diet.",
+      "optionExplanations": [
+        "Rapid glucose release is the characteristic of high GI foods — not low GI.",
+        "All carbohydrates must be digested before absorption — low GI foods are simply digested more slowly.",
+        "Correct. Low GI carbohydrates release glucose slowly, providing sustained energy for training and performance. They are ideal for pre-performance meals 3–4 hours before competition.",
+        "Low GI foods benefit all athletes — the concept applies to timing and sustained energy delivery."
+      ]
+    },
+    {
+      "topic": "fa2_periodisation",
+      "q": "The step taper involves:",
+      "options": [
+        "A gradual, equal reduction in training volume across the full taper period",
+        "A greater volume reduction at the beginning, levelling at 40–50% of original load",
+        "A 33% reduction in training volume in week 1, followed by a further 33% reduction in week 2",
+        "A rapid reduction to 20–30% of training load at the start of the taper"
+      ],
+      "answer": 2,
+      "explanation": "The step taper uses two defined steps — a 33% reduction in week 1, followed by another 33% in week 2. Research suggests this works best for resistance/weightlifting athletes.",
+      "optionExplanations": [
+        "A gradual equal reduction describes the linear taper — not the step taper.",
+        "Levelling at 40–50% describes the exponential slow decay taper.",
+        "Correct. The step taper reduces volume by 33% in week 1, then by a further 33% in week 2 — creating clear stepped reductions.",
+        "Reducing to 20–30% rapidly describes the exponential fast decay taper — not the step taper."
+      ]
+    },
+    {
+      "topic": "fa2_periodisation",
+      "q": "Exponential decay tapering is MOST effective for:",
+      "options": [
+        "Strength athletes such as powerlifters who benefit most from the step taper",
+        "Team sport athletes who use a one-day rest as a mini-taper",
+        "Endurance athletes, where aerobic adaptations decline slowly allowing a large early reduction",
+        "All athletes equally — there is no sport-specific difference"
+      ],
+      "answer": 2,
+      "explanation": "Exponential decay tapering works best for endurance athletes because aerobic adaptations (capillary density, haemoglobin, mitochondria) decline slowly — a large early reduction is safe without significant detraining.",
+      "optionExplanations": [
+        "Strength/resistance athletes benefit most from the step taper — not exponential decay.",
+        "Team sport athletes use a rest day mini-taper — not the full exponential decay protocol.",
+        "Correct. Endurance adaptations decline slowly due to the reversibility principle — making exponential decay safe. Aerobic fitness is maintained even with a large early training reduction.",
+        "Different taper types suit different sports and training loads — there is clear sport-specific evidence."
+      ]
     }
   ],
   "writtenQuestions": [
@@ -2716,6 +3472,125 @@
         "full": "10–12/12 — EVALUATES key differences (not just lists them). Addresses all three areas: phases, peaking/tapering AND psychological strategies. Links differences to the underlying reason (team vs individual interdependence). Uses specific examples for both soccer and swimming. Conclusion synthesises the structural reason for the differences rather than just summarising content.",
         "partial": "6–9/12 — Covers most content areas but evaluation is weak — describes differences without explaining their implications or underlying cause. OR one of the three content areas (phases, peaking, psychology) is missing or superficial.",
         "minimal": "1–5/12 — Describes one sport only. OR confuses phase roles (e.g. off-season described as competition phase). OR no psychological strategies content. OR entirely descriptive with no comparison or evaluation between the two sports."
+      }
+    },
+    {
+      "topic": "fa2_psychology",
+      "q": "Define arousal and explain how the inverted U hypothesis describes the relationship between arousal and performance. (3 marks)",
+      "answer": "Arousal is a physiological state of activation and readiness to perform — a level of physical and mental stimulation. The inverted U hypothesis shows that as arousal increases from low to moderate levels, performance improves toward an optimal point (peak of the curve). If arousal rises beyond this optimal level, performance declines due to excessive muscular tension and mental confusion. This means each athlete has an ideal arousal level — too low causes disinterest and poor focus; too high causes over-tension and errors.",
+      "keywords": [
+        "arousal",
+        "physiological",
+        "inverted U",
+        "optimal",
+        "performance",
+        "under-aroused",
+        "over-aroused"
+      ],
+      "maxMark": 3,
+      "bandDescriptors": {
+        "full": "Defines arousal as a physiological state AND explains both sides of the inverted U — under-aroused (left) and over-aroused (right) — with reference to optimal performance at the peak.",
+        "partial": "Defines arousal OR explains part of the inverted U (e.g. optimal point only), but does not address both sides of the curve.",
+        "minimal": "Basic reference to arousal affecting performance, with little or no explanation of the inverted U shape."
+      }
+    },
+    {
+      "topic": "fa2_psychology",
+      "q": "Explain how a soccer player and a netball team can each apply psychological strategies to manage stress and anxiety and improve performance. (5 marks)",
+      "answer": "A soccer player may use mental rehearsal (visualisation) to manage pre-game anxiety — imagining successful passes, positioning and scoring at performance speed. This creates a clear blueprint that narrows focus and reduces anxious thoughts. They may also practise centred breathing before penalties to control over-arousal and prevent muscular tension disrupting technique. SMART goal setting can help the player focus on controllable short-term outcomes (e.g. making 5 successful tackles) rather than worrying about the result, reducing anxiety.\n\nA netball team may use group meditation or progressive muscular relaxation before a grand final to manage collective over-arousal — calming physiological state and reducing tension. The coach may use concentration/attention skills, asking players to focus on process (e.g. leading into space, executing set plays) rather than the outcome (winning), helping the team stay calm and perform effectively under pressure.",
+      "keywords": [
+        "mental rehearsal",
+        "visualisation",
+        "centred breathing",
+        "SMART goals",
+        "relaxation",
+        "concentration",
+        "arousal",
+        "anxiety",
+        "individual",
+        "group"
+      ],
+      "maxMark": 5,
+      "bandDescriptors": {
+        "full": "Identifies and explains at least TWO psychological strategies, applying one to the individual (soccer player) and one to the group sport (netball team), with clear links to managing anxiety AND improving performance.",
+        "partial": "Identifies strategies but applies to only one sport, OR identifies strategies without explaining HOW they manage anxiety and improve performance.",
+        "minimal": "Names a psychological strategy with minimal or no explanation of its application or effect."
+      }
+    },
+    {
+      "topic": "fa2_individual_group",
+      "q": "Compare training session design for an athlete in an individual sport and an athlete in a group sport. Refer to at least THREE components of a training session in your response. (5 marks)",
+      "answer": "Both individual and group sport athletes require similar training session structures — health and safety, warm-up/cool-down, skill instruction, conditioning and evaluation.\n\nHowever, key differences exist. In health and safety, group sports must address contact rules and opposed drill supervision (e.g. refereed training games in rugby league), while individual athletes focus on personal technique safety. In strategies and tactics, group sport sessions must allocate time to team formations, collective decision-making and small-sided games (e.g. 3v3 in soccer to simulate game pressure) — none of which apply to individual athletes who focus on personal race strategies (e.g. sit and kick). In conditioning, group sports often use game-based drills that simultaneously develop fitness and tactical skills, while individual athletes use isolated methods (e.g. interval running) tailored to their energy system demands.",
+      "keywords": [
+        "health and safety",
+        "warm-up",
+        "conditioning",
+        "strategies",
+        "tactics",
+        "individual",
+        "group",
+        "small-sided games",
+        "evaluation",
+        "skill instruction"
+      ],
+      "maxMark": 5,
+      "bandDescriptors": {
+        "full": "Compares at least THREE components, clearly identifying similarities AND differences between individual and group sport design with relevant sport examples for each.",
+        "partial": "Compares TWO components OR identifies differences without comparison, OR lacks specific sport examples.",
+        "minimal": "Lists components with no comparison, or describes one sport only."
+      }
+    },
+    {
+      "topic": "fa2_individual_group",
+      "q": "A periodisation chart is being developed for a soccer team and an elite marathon runner. Analyse why the fitness and skill-specific requirements change during each phase of competition, and how the yearly training program differs between the two athletes. (12 marks)",
+      "answer": "INTRODUCTION: A yearly training program divides into three phases — pre-season, in-season and off-season — with sub-phases (macrocycles, mesocycles, microcycles) enabling detailed planning. These phases differ significantly for a soccer team (group sport) and a marathon runner (individual) due to differences in fitness demands, competition frequency and skill requirements.\n\nPRE-SEASON: Both athletes use pre-season to build a fitness base at high volume and moderate intensity. For the marathon runner, pre-season involves continuous training and fartlek to build aerobic capacity, VO2 max and running economy — directly linked to solo endurance demands. For the soccer team, pre-season also involves aerobic base work but adds team strategies, set plays and collective decision-making — because group sport performance requires team cohesion alongside individual fitness.\n\nIN-SEASON: Both athletes shift to higher intensity and reduced volume — specificity applied more rigorously. The marathon runner undergoes speed work (anaerobic intervals) at race-specific pace. However, the soccer team faces weekly games — requiring peaking for each match, not one annual peak. The soccer team uses mini-tapers (one rest day before each game) compared to the marathon runner's 2-week pre-race taper. Fitness components become increasingly sport-specific — the marathon runner focuses on lactate threshold and fat utilisation; the soccer team develops agility, power and tactical execution.\n\nOFF-SEASON: Both enter recovery — one week total rest followed by active rest. The marathon runner uses this to address technical weaknesses individually; the soccer team focuses on individual player rehabilitation and general maintenance.\n\nEVALUATION: The major structural difference is competition frequency and peaking strategy. A marathon runner peaks 1–2 times per year with a full 2-week taper. A soccer team must perform at near-peak weekly — making extended tapering impractical and requiring ongoing fatigue management through sub-phases and mini-tapers.\n\nCONCLUSION: Both programs manipulate volume and intensity to optimise performance at the right time, but differ significantly in tapering, peaking frequency and the integration of skill/tactical development — reflecting the fundamental differences between individual endurance and group sport demands.",
+      "keywords": [
+        "pre-season",
+        "in-season",
+        "off-season",
+        "volume",
+        "intensity",
+        "tapering",
+        "peaking",
+        "macrocycle",
+        "sub-phases",
+        "specificity",
+        "individual",
+        "group",
+        "aerobic",
+        "mini-taper",
+        "fitness components"
+      ],
+      "maxMark": 12,
+      "bandDescriptors": {
+        "full": "Analyses ALL THREE phases for BOTH athlete types, explains how fitness and skill requirements CHANGE across phases AND identifies key structural differences between individual and group programs (tapering, peaking frequency, skill/tactical development). Uses accurate terminology. Evaluative conclusion present.",
+        "partial": "Covers most phases for both athletes but explanation of WHY requirements change is limited, OR comparison between individual and group is incomplete.",
+        "minimal": "Describes phases without analysis of changing requirements, or focuses on only one athlete type."
+      }
+    },
+    {
+      "topic": "fa2_sleep",
+      "q": "Explain how sleep and hydration can be used to reduce fatigue and positively influence movement and injury prevention in athletes. (5 marks)",
+      "answer": "Sleep is essential for reducing fatigue. During deep sleep, growth hormone is secreted, stimulating protein synthesis — repairing muscle tissue damaged during training. Athletes require 8–10 hours per night. Insufficient sleep elevates cortisol, increasing inflammation and slowing recovery, predisposing athletes to injury. Adequate sleep also restores the nervous system, improving reaction time and decision-making — reducing the risk of technique errors that cause injury. For example, well-rested soccer players execute correct tackling technique, reducing contact injuries.\n\nAdequate hydration prevents dehydration, which reduces blood volume and limits oxygen delivery to working muscles — causing early-onset fatigue. Well-hydrated athletes maintain synovial fluid in joints, allowing smoother movement and reducing friction injuries. Hydration also maintains muscle elasticity — dehydrated muscles are more prone to strains and tears. Athletes should consume 200–300 mL every 15–20 minutes during exercise, using pale yellow urine as an indicator of adequate hydration.",
+      "keywords": [
+        "sleep",
+        "growth hormone",
+        "protein synthesis",
+        "cortisol",
+        "fatigue",
+        "hydration",
+        "blood volume",
+        "oxygen",
+        "synovial fluid",
+        "muscle elasticity",
+        "dehydration",
+        "injury prevention"
+      ],
+      "maxMark": 5,
+      "bandDescriptors": {
+        "full": "Explains BOTH sleep AND hydration, linking each to fatigue reduction, movement and injury prevention using accurate physiological mechanisms. Relevant examples provided.",
+        "partial": "Explains one factor well (sleep OR hydration) but the other is superficial or missing, OR mechanisms are stated without explanation.",
+        "minimal": "Basic statement that sleep and hydration are important with no physiological explanation."
       }
     }
   ]
