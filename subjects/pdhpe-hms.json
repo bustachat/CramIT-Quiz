@@ -2829,6 +2829,150 @@
         "Correct. Endurance adaptations decline slowly due to the reversibility principle — making exponential decay safe. Aerobic fitness is maintained even with a large early training reduction.",
         "Different taper types suit different sports and training loads — there is clear sport-specific evidence."
       ]
+    },
+    {
+      "topic": "fa2_adaptations",
+      "q": "A soccer player applies progressive overload for 12 weeks of aerobic training. Which adaptation DIRECTLY results, improving their 90-minute match endurance?",
+      "options": [
+        "Increased fast-twitch fibre density from explosive sprint efforts",
+        "Cardiac hypertrophy — increasing stroke volume so more blood is pumped per beat",
+        "Reduced haemoglobin concentration from lower training loads",
+        "Decreased lung capacity from sustained aerobic effort"
+      ],
+      "answer": 1,
+      "explanation": "Progressive overload stresses the heart → cardiac hypertrophy → stroke volume increases → more O₂ delivered per beat → sustained high-intensity running for 90 minutes.",
+      "optionExplanations": [
+        "Fast-twitch fibre development requires anaerobic/plyometric training, not progressive aerobic overload.",
+        "Correct. Progressive aerobic overload → cardiac hypertrophy (stronger heart muscle) → stroke volume increases → cardiac output rises → more O₂ to working muscles throughout the match.",
+        "Haemoglobin increases (not decreases) with aerobic training — improving O₂ carrying capacity.",
+        "Lung capacity increases with training — not decreases. Aerobic training improves oxygen uptake and utilisation."
+      ]
+    },
+    {
+      "topic": "fa2_adaptations",
+      "q": "After a season of aerobic training, a marathon runner's haemoglobin level increases. How does this DIRECTLY improve performance?",
+      "options": [
+        "It reduces lactic acid production during high-intensity sprints",
+        "More oxygen is carried in the blood to working muscles, improving aerobic capacity",
+        "It increases muscle cross-sectional area for greater force production",
+        "It lowers resting heart rate by reducing cardiac output"
+      ],
+      "answer": 1,
+      "explanation": "Haemoglobin is the protein in red blood cells that carries oxygen. Higher haemoglobin = more O₂ transported = greater aerobic capacity = sustained performance.",
+      "optionExplanations": [
+        "Lactic acid buffering is related to anaerobic adaptations and lactate threshold — not directly to haemoglobin levels.",
+        "Correct. Haemoglobin carries O₂ from lungs to muscles. Increased haemoglobin → more O₂ delivered per unit of blood → aerobic capacity improves → the marathon runner can sustain pace for longer.",
+        "Muscle cross-sectional area is increased by hypertrophy — a muscular adaptation, not a haemoglobin adaptation.",
+        "Resting HR decreases due to cardiac hypertrophy (stronger heart pumps more blood per beat), not from haemoglobin changes."
+      ]
+    },
+    {
+      "topic": "fa2_adaptations",
+      "q": "The principle of specificity applied to a soccer midfielder means their training should PRIMARILY develop:",
+      "options": [
+        "Maximal strength only through heavy resistance training",
+        "Aerobic capacity and agility — matching the mixed-intensity demands of 90 minutes of field play",
+        "Static flexibility only through daily stretching routines",
+        "Anaerobic power without aerobic base development"
+      ],
+      "answer": 1,
+      "explanation": "Specificity = train the energy systems and muscles used in competition. A midfielder covers 10–13km per game at varied intensities — aerobic base + agility = specific demands.",
+      "optionExplanations": [
+        "Maximal strength is primarily relevant for power positions (e.g. defenders, goalkeepers under physical challenge) — not the primary demand for a midfielder.",
+        "Correct. A soccer midfielder's role requires sustained aerobic capacity (covering large distances) and agility (changing direction rapidly). Specificity dictates training must match these exact demands.",
+        "Static flexibility is a recovery tool — it is not the primary physiological demand for a midfielder's performance.",
+        "Pure anaerobic training without aerobic base would cause premature fatigue — midfielders need both systems, with aerobic being dominant."
+      ]
+    },
+    {
+      "topic": "fa2_adaptations",
+      "q": "Slow-twitch muscle fibre adaptation is BEST stimulated by:",
+      "options": [
+        "Plyometric training with maximal explosive jumps",
+        "1RM resistance training with maximal loads",
+        "Aerobic methods — continuous, fartlek and aerobic interval training",
+        "Sprint Interval Training (SIT) with all-out maximal efforts"
+      ],
+      "answer": 2,
+      "explanation": "Slow-twitch fibres are oxidative endurance fibres. They are recruited during sustained moderate-intensity aerobic work — continuous, fartlek and aerobic interval training.",
+      "optionExplanations": [
+        "Plyometrics targets fast-twitch fibres through explosive, rapid contractions — not the slow-twitch oxidative system.",
+        "1RM resistance training primarily develops fast-twitch fibres and muscle hypertrophy through maximal anaerobic effort.",
+        "Correct. Slow-twitch fibres are recruited during sustained aerobic activity. Continuous, fartlek and aerobic interval training challenge these fibres repeatedly, improving their oxidative capacity, mitochondrial density and endurance.",
+        "SIT uses all-out maximal sprints, primarily recruiting fast-twitch fibres — not slow-twitch endurance fibres."
+      ]
+    },
+    {
+      "topic": "fa2_adaptations",
+      "q": "A soccer player stops training for 6 weeks. The principle of reversibility predicts they will experience:",
+      "options": [
+        "Continued improvement due to muscle memory from previous training",
+        "Reduced stroke volume and VO₂ max as cardiovascular adaptations decline",
+        "Increased haemoglobin from rest and recovery",
+        "No measurable change for the first 6 weeks"
+      ],
+      "answer": 1,
+      "explanation": "Reversibility = use it or lose it. Cardiovascular adaptations (stroke volume, VO₂ max, cardiac output) begin to decline within 2–4 weeks of training cessation.",
+      "optionExplanations": [
+        "Muscle memory assists in skill relearning but does NOT prevent physiological detraining. Cardiovascular adaptations decline without training stimulus.",
+        "Correct. Reversibility means physiological adaptations are lost without continued training. Stroke volume reduces, VO₂ max declines and cardiac output decreases within weeks — significantly impacting match performance.",
+        "Haemoglobin levels actually decline without the stimulus of aerobic training — rest alone does not increase haemoglobin.",
+        "Measurable cardiovascular detraining begins within 2–4 weeks of cessation — 6 weeks would produce significant performance decline."
+      ]
+    },
+    {
+      "topic": "fa2_adaptations",
+      "q": "The chain linking aerobic training → cardiac output → soccer performance is BEST described as:",
+      "options": [
+        "Aerobic training → ↓ stroke volume → ↓ cardiac output → less fatigue",
+        "Aerobic training → cardiac hypertrophy → ↑ stroke volume → ↑ cardiac output → more O₂ to muscles → sustained running",
+        "Aerobic training → fast-twitch hypertrophy → explosive sprints only",
+        "Aerobic training → ↑ resting HR → more O₂ delivered per minute"
+      ],
+      "answer": 1,
+      "explanation": "The full chain: training stimulus → cardiac hypertrophy → ↑ stroke volume → ↑ cardiac output (HR × SV) → more O₂ delivered → sustained high-intensity performance.",
+      "optionExplanations": [
+        "Stroke volume INCREASES (not decreases) with aerobic training — cardiac hypertrophy makes the heart more efficient.",
+        "Correct. This is the complete physiological chain: aerobic training stresses the heart → hypertrophy develops → each beat ejects more blood (↑ stroke volume) → cardiac output rises → working muscles receive more O₂ → a soccer player maintains high intensity for 90 minutes.",
+        "Fast-twitch hypertrophy results from anaerobic/resistance training, not aerobic training.",
+        "Resting HR DECREASES with training (more efficient heart) — it does not increase. Cardiac output rises because stroke volume increases, not because HR rises at rest."
+      ]
+    },
+    {
+      "topic": "fa2_adaptations",
+      "q": "A trained soccer player has a resting HR of 52 bpm. An untrained player has 75 bpm. The trained player's lower resting HR indicates:",
+      "options": [
+        "Their heart is weaker and beats less frequently",
+        "Cardiac hypertrophy — the heart pumps more blood per beat so fewer beats are needed at rest",
+        "They have lower haemoglobin and need less oxygen at rest",
+        "Their aerobic training has reduced their lung capacity"
+      ],
+      "answer": 1,
+      "explanation": "Cardiac hypertrophy from aerobic training increases stroke volume — so the heart delivers the same cardiac output with fewer beats. Lower resting HR = more efficient, stronger heart.",
+      "optionExplanations": [
+        "A lower resting HR reflects a stronger, not weaker, heart. It indicates the heart can pump the same volume of blood in fewer beats.",
+        "Correct. Aerobic training → cardiac hypertrophy → stroke volume increases → the heart achieves the same cardiac output in fewer beats → resting HR drops. A 52 bpm resting HR in a trained player vs 75 bpm in untrained demonstrates this adaptation clearly.",
+        "Lower haemoglobin would impair O₂ delivery and increase fatigue — trained athletes have higher, not lower, haemoglobin.",
+        "Aerobic training increases lung capacity and oxygen uptake — it does not reduce them."
+      ]
+    },
+    {
+      "topic": "fa2_adaptations",
+      "q": "Which combination BEST explains why a soccer midfielder can maintain high-intensity running in the 85th minute when an untrained player cannot?",
+      "options": [
+        "Higher fast-twitch fibre density only",
+        "Higher VO₂ max, greater haemoglobin, increased mitochondrial density and lower resting HR",
+        "Greater muscle hypertrophy from resistance training",
+        "Superior static flexibility from stretching routines"
+      ],
+      "answer": 1,
+      "explanation": "Sustained late-match performance requires a combination of aerobic adaptations working together: higher VO₂ max (uses more O₂), haemoglobin (carries more O₂), mitochondria (produces more ATP aerobically) and cardiac efficiency.",
+      "optionExplanations": [
+        "Fast-twitch fibres provide explosive power for short bursts — they fatigue quickly and don't explain sustained 85th-minute performance.",
+        "Correct. Sustained late-match intensity requires multiple aerobic adaptations working together: ↑ VO₂ max (more O₂ used), ↑ haemoglobin (more O₂ carried), ↑ mitochondrial density (more aerobic ATP produced), ↓ resting HR (more efficient cardiac output). No single adaptation explains it alone.",
+        "Muscle hypertrophy increases force production for strength tasks — not endurance performance in the 85th minute.",
+        "Flexibility improves range of motion and reduces injury risk — it does not determine aerobic endurance capacity."
+      ]
     }
   ],
   "writtenQuestions": [
@@ -3591,6 +3735,79 @@
         "full": "Explains BOTH sleep AND hydration, linking each to fatigue reduction, movement and injury prevention using accurate physiological mechanisms. Relevant examples provided.",
         "partial": "Explains one factor well (sleep OR hydration) but the other is superficial or missing, OR mechanisms are stated without explanation.",
         "minimal": "Basic statement that sleep and hydration are important with no physiological explanation."
+      }
+    },
+    {
+      "topic": "fa2_nutrition",
+      "q": "Analyse the dietary requirements before, during and after performance for a marathon runner and a soccer player. (5 marks)",
+      "answer": "Before performance, both athletes require a meal 3–4 hours prior, rich in low GI carbohydrates (e.g. oats, pasta) for sustained energy release, with moderate protein and minimal fat and fibre to avoid digestive discomfort. The marathon runner may also carb load (7–12g/kg/day for 36–72 hours) before their race to maximise glycogen stores — essential for an event exceeding 90 minutes. The soccer player does not typically carb load but ensures adequate glycogen stores through pre-match meals.\n\nDuring performance, both require high GI carbohydrates for rapid energy. The marathon runner needs 30–60g of carbohydrate per hour (gels, sports drinks) and 200–300mL fluid every 15–20 minutes to maintain hydration and replace electrolytes lost through sweat. The soccer player consumes high GI foods at half-time (bananas, gels, sports drinks) to replenish blood glucose.\n\nPost-performance, both athletes need high GI carbohydrates combined with lean protein to replenish glycogen stores and repair muscle micro-tears — for example, pasta with chicken or a protein shake with banana. Rehydration is critical: replacing 125–150% of fluid lost over 4–6 hours.",
+      "keywords": [
+        "pre-performance",
+        "low GI",
+        "carbohydrate",
+        "carb loading",
+        "during",
+        "high GI",
+        "electrolytes",
+        "fluid",
+        "post-performance",
+        "protein",
+        "glycogen",
+        "marathon",
+        "soccer"
+      ],
+      "maxMark": 5,
+      "bandDescriptors": {
+        "full": "Analyses pre/during/post dietary requirements for BOTH athletes, identifies key differences (e.g. carb loading for marathon; half-time fuelling for soccer), references specific foods, timing, GI index and fluid intake for each sport.",
+        "partial": "Covers pre/during/post for one sport well OR covers all three stages without differentiating between the two sports OR lacks specific examples.",
+        "minimal": "Basic listing of food types without timing, sport-specific differences or analysis."
+      }
+    },
+    {
+      "topic": "fa2_individual_group",
+      "q": "Discuss the factors that influence how strategies and tactics are applied to individual and group sports. Refer to at least TWO factors in your response. (5 marks)",
+      "answer": "Environmental conditions significantly influence strategies and tactics for both individual and group sport athletes. In wet conditions, a soccer team may simplify their attacking play — reducing passes to minimise handling errors with a slippery ball. An individual cyclist may take corners more cautiously to avoid slipping. Wind can cause an individual 1500m runner to use a 'sit and kick' strategy, avoiding the front to conserve energy, while an AFL team may choose shorter kicks to maintain possession.\n\nGroup strengths and weaknesses also shape tactical decisions. A soccer team with fast wingers may use a counter-attacking strategy — absorbing pressure then exploiting pace on the break. Conversely, if a known weakness is aerial defending, the coach may instruct players to defend set pieces with a zonal system to compensate. In individual sports, the athlete focuses on their own strengths — for example, a 1500m runner with a strong finishing kick will position themselves to maximise their sprint in the final 200 metres rather than leading from the front.",
+      "keywords": [
+        "environmental conditions",
+        "rain",
+        "wind",
+        "strategies",
+        "tactics",
+        "strengths",
+        "weaknesses",
+        "individual",
+        "group",
+        "adjust"
+      ],
+      "maxMark": 5,
+      "bandDescriptors": {
+        "full": "Discusses at least TWO factors (e.g. environmental conditions + group strengths/weaknesses), applying each to BOTH individual and group sport with specific examples showing HOW tactics are adjusted.",
+        "partial": "Discusses one factor well with examples OR discusses two factors without applying to both sports.",
+        "minimal": "Names factors without explaining how they influence tactical application."
+      }
+    },
+    {
+      "topic": "fa2_adaptations",
+      "q": "Examine the relationship between the principles of training, physiological adaptations and improved performance for a soccer player. (5 marks)",
+      "answer": "The principles of training drive physiological adaptations that directly improve soccer performance. Progressive overload applied through increasing aerobic training loads stimulates cardiac hypertrophy — the heart muscle grows stronger, increasing stroke volume. This raises cardiac output (heart rate × stroke volume), delivering more oxygen to working muscles, allowing a soccer midfielder to maintain high-intensity running for 90 minutes rather than fatiguing in the second half.\n\nSpecificity ensures training targets the energy systems and muscles used in competition. A soccer player who trains with fartlek and aerobic interval methods — mimicking the variable intensity of match play — develops slow-twitch muscle fibres and mitochondrial density specific to their demands. This means the player uses oxygen more efficiently during sustained efforts.\n\nReversibility highlights that these adaptations are temporary — if a player stops training, stroke volume and VO₂ max decline within weeks. This underpins why consistent year-round training, even in the off-season, is necessary to maintain performance gains.",
+      "keywords": [
+        "progressive overload",
+        "cardiac hypertrophy",
+        "stroke volume",
+        "cardiac output",
+        "specificity",
+        "slow-twitch",
+        "VO2 max",
+        "oxygen",
+        "performance",
+        "reversibility",
+        "adaptations"
+      ],
+      "maxMark": 5,
+      "bandDescriptors": {
+        "full": "Examines the CHAIN from at least TWO principles → specific physiological adaptations → named performance outcomes, with soccer-specific examples. Uses correct terminology throughout.",
+        "partial": "Links one principle to an adaptation OR names adaptations without connecting to principles OR states performance outcomes without explaining the physiological mechanism.",
+        "minimal": "Lists principles and adaptations separately with no connection or performance link."
       }
     }
   ]

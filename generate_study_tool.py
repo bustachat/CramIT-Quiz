@@ -459,6 +459,14 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
           </div>
         </div>
       </div>
+      <div class="note-box" style="margin-top:12px">
+        <h4>Why tapering works — metabolic adaptation</h4>
+        <ul>
+          <li>Aerobic adaptations (mitochondrial density, haemoglobin, capillary density) <b>decline slowly</b> after training stops</li>
+          <li>This means a large early reduction in volume is safe — fitness is maintained</li>
+          <li>Anaerobic adaptations decline faster — strength athletes use shorter tapers</li>
+        </ul>
+      </div>
       <div class="exam-tip" style="background:#F5F3FF;border-left:3px solid var(--periodisation)">
         <strong>⚡ KEY for 12-marker</strong>
         Soccer team = 1-day rest mini-taper (plays every week). Marathon runner = 2-week full taper (one annual race). This difference is the most commonly tested point in the compare question.
@@ -1004,8 +1012,31 @@ function toggleModel(id) {
 }
 
 // ── MOCK EXAM ─────────────────────────────────────────────────────────
+// ── KEYWORD MARKING ───────────────────────────────────────────────────
+function markWrittenAnswer(answer, question) {
+  if (!answer || answer.trim().length < 15) {
+    return { band: 'No answer written', color: '#F3F4F6', borderColor: '#D1D5DB',
+      descriptor: 'No answer was provided.', found: [], missing: question.keywords || [] };
+  }
+  const text = answer.toLowerCase();
+  const kws = question.keywords || [];
+  const found = kws.filter(k => text.includes(k.toLowerCase()));
+  const missing = kws.filter(k => !text.includes(k.toLowerCase()));
+  const pct = kws.length > 0 ? found.length / kws.length : 0;
+  if (pct >= 0.55) return { band: 'Strong response ✅',
+    descriptor: question.bandDescriptors?.full || 'Addresses key concepts well.',
+    found, missing, color: '#DCFCE7', borderColor: '#10B981' };
+  if (pct >= 0.3) return { band: 'Developing response ⚡',
+    descriptor: question.bandDescriptors?.partial || 'Some key concepts present but gaps remain.',
+    found, missing, color: '#FEF3C7', borderColor: '#F59E0B' };
+  return { band: 'Needs more detail ⚠️',
+    descriptor: question.bandDescriptors?.minimal || 'Key concepts missing or unclear.',
+    found, missing, color: '#FEE2E2', borderColor: '#EF4444' };
+}
+
+// ── MOCK EXAM ─────────────────────────────────────────────────────────
 let mockTimer, mockTimeLeft = 50*60;
-let mockQs = [], mockAnswers = {};
+let mockQs = [], mockAnswers = {}, mockWrittenQs = [];
 
 function startMock() {
   document.getElementById('mock-start').style.display = 'none';
@@ -1018,38 +1049,35 @@ function startMock() {
     mockTimeLeft--;
     const m = Math.floor(mockTimeLeft/60), s = mockTimeLeft%60;
     const disp = document.getElementById('timer-display');
-    disp.textContent = `${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;
+    disp.textContent = String(m).padStart(2,'0') + ':' + String(s).padStart(2,'0');
     disp.classList.toggle('urgent', mockTimeLeft <= 300);
     if (mockTimeLeft <= 0) { clearInterval(mockTimer); submitMock(); }
   }, 1000);
 }
 
 function renderMockQuestions() {
-  const written3 = WRITTEN_Q.filter(q=>q.maxMark===3).sort(()=>Math.random()-0.5)[0];
-  const written5 = WRITTEN_Q.filter(q=>q.maxMark===5).sort(()=>Math.random()-0.5)[0];
-  const written12 = WRITTEN_Q.filter(q=>q.maxMark===12).sort(()=>Math.random()-0.5)[0];
+  const w3  = WRITTEN_Q.filter(q=>q.maxMark===3).sort(()=>Math.random()-0.5)[0];
+  const w5  = WRITTEN_Q.filter(q=>q.maxMark===5).sort(()=>Math.random()-0.5)[0];
+  const w12 = WRITTEN_Q.filter(q=>q.maxMark===12).sort(()=>Math.random()-0.5)[0];
+  mockWrittenQs = [w3, w5, w12].filter(Boolean);
   let html = '<p style="font-size:13px;color:#6B7280;margin-bottom:16px;font-weight:600">SECTION I — Multiple Choice (10 marks)</p>';
   mockQs.forEach((q,i) => {
-    const shuffled = q.options.map((o,idx)=>({text:o,idx})).sort(()=>Math.random()-0.5);
-    html += `<div class="mock-q-card">
-      <div class="mock-q-num">Question ${i+1}</div>
-      <div class="q-text">${q.q}</div>
-      ${shuffled.map(o=>`<button class="mock-opt" id="mq${i}_${o.idx}" onclick="selectMockOpt(${i},${o.idx},this)">${o.text}</button>`).join('')}
-    </div>`;
+    const sh = q.options.map((o,idx)=>({text:o,idx})).sort(()=>Math.random()-0.5);
+    html += '<div class="mock-q-card"><div class="mock-q-num">Question ' + (i+1) + '</div><div class="q-text">' + q.q + '</div>' +
+      sh.map(o=>'<button class="mock-opt" id="mq' + i + '_' + o.idx + '" onclick="selectMockOpt(' + i + ',' + o.idx + ',this)">' + o.text + '</button>').join('') + '</div>';
   });
   html += '<p style="font-size:13px;color:#6B7280;margin:24px 0 16px;font-weight:600">SECTION II — Written Response</p>';
-  if(written3) html += `<div class="written-section"><h3>${written3.q}</h3><div class="marks">3 marks — approx. 4 minutes</div><textarea placeholder="Write your answer here..." rows="5"></textarea></div>`;
-  if(written5) html += `<div class="written-section"><h3>${written5.q}</h3><div class="marks">5 marks — approx. 8 minutes</div><textarea placeholder="Write your answer here..." rows="8"></textarea></div>`;
-  if(written12) html += `<div class="written-section" id="written12"><h3>${written12.q}</h3><div class="marks">12 marks — approx. 20 minutes</div><textarea placeholder="Write your answer here..." rows="16"></textarea><div style="font-size:12px;color:#9CA3AF;margin-top:6px">Tip: Use the Written Help tab scaffold — INTRO → PRE-SEASON → IN-SEASON → OFF-SEASON → EVALUATE → CONCLUSION</div></div>`;
+  if(w3)  html += '<div class="written-section"><h3>'  + w3.q  + '</h3><div class="marks">3 marks — approx. 4 minutes</div><textarea id="wans_0" placeholder="Write your answer here..." rows="5"></textarea></div>';
+  if(w5)  html += '<div class="written-section"><h3>'  + w5.q  + '</h3><div class="marks">5 marks — approx. 8 minutes</div><textarea id="wans_1" placeholder="Write your answer here..." rows="8"></textarea></div>';
+  if(w12) html += '<div class="written-section"><h3>' + w12.q + '</h3><div class="marks">12 marks — approx. 20 minutes</div><textarea id="wans_2" placeholder="Write your answer here..." rows="16"></textarea><div style="font-size:12px;color:#9CA3AF;margin-top:6px">Tip: INTRO → PRE-SEASON → IN-SEASON → OFF-SEASON → EVALUATE → CONCLUSION</div></div>';
   document.getElementById('mock-questions').innerHTML = html;
 }
 
 function selectMockOpt(qIdx, optIdx, btn) {
-  const q = mockQs[qIdx];
-  document.querySelectorAll(`[id^="mq${qIdx}_"]`).forEach(b => b.classList.remove('selected'));
+  document.querySelectorAll('[id^="mq' + qIdx + '_"]').forEach(b => b.classList.remove('selected'));
   btn.classList.add('selected');
   mockAnswers[qIdx] = optIdx;
-  document.getElementById('mock-progress-label').textContent = `${Object.keys(mockAnswers).length} of 10 answered`;
+  document.getElementById('mock-progress-label').textContent = Object.keys(mockAnswers).length + ' of 10 answered';
 }
 
 function submitMock() {
@@ -1060,20 +1088,37 @@ function submitMock() {
   let correct = 0;
   mockQs.forEach((q,i) => { if(mockAnswers[i]===q.answer) correct++; });
   const pct = Math.round(correct/10*100);
-  document.getElementById('mock-score-title').textContent = `MC: ${correct}/10 (${pct}%)`;
-  document.getElementById('mock-score-sub').textContent = pct>=80?'Excellent MC performance! Check your written answers against the scaffolds.':pct>=60?'Good — review the questions you missed.':'Revisit the Study tab for the topics you found hard.';
+  document.getElementById('mock-score-title').textContent = 'MC: ' + correct + '/10 (' + pct + '%)';
+  document.getElementById('mock-score-sub').textContent = pct>=80 ? 'Strong MC result! Review your written feedback below.' : pct>=60 ? 'Good — review the MC questions you missed.' : 'Revisit the Study tab for the topics you found hard.';
+
+  // Written keyword marking
+  let writtenHtml = '<p style="font-weight:800;font-size:15px;margin:24px 0 12px;text-align:left">✍️ Written Answer Feedback</p>';
+  mockWrittenQs.forEach((q, i) => {
+    if (!q) return;
+    const ta = document.getElementById('wans_' + i);
+    const answer = ta ? ta.value : '';
+    const r = markWrittenAnswer(answer, q);
+    const foundChips  = r.found.map(k=>'<span style="background:#10B981;color:#fff;padding:2px 8px;border-radius:12px;font-size:12px;margin:2px;display:inline-block">' + k + '</span>').join('');
+    const missChips   = r.missing.map(k=>'<span style="background:#EF4444;color:#fff;padding:2px 8px;border-radius:12px;font-size:12px;margin:2px;display:inline-block">' + k + '</span>').join('');
+    writtenHtml += '<div style="background:' + r.color + ';border:2px solid ' + r.borderColor + ';border-radius:14px;padding:16px;margin-bottom:16px;text-align:left">' +
+      '<div style="font-weight:800;font-size:15px;margin-bottom:4px">' + q.maxMark + '-mark — ' + r.band + '</div>' +
+      '<div style="font-size:13px;color:#374151;margin-bottom:12px;line-height:1.5"><strong>To reach full marks:</strong> ' + r.descriptor + '</div>' +
+      (r.found.length > 0 ? '<div style="margin-bottom:10px"><div style="font-size:11px;font-weight:700;text-transform:uppercase;color:#065F46;margin-bottom:4px">✅ Keywords found in your answer</div>' + foundChips + '</div>' : '') +
+      (r.missing.length > 0 ? '<div><div style="font-size:11px;font-weight:700;text-transform:uppercase;color:#7F1D1D;margin-bottom:4px">❌ Missing keywords — add these</div>' + missChips + '</div>' : '<div style="font-size:13px;color:#065F46;font-weight:600">All key terms covered \U0001f389</div>') +
+      '</div>';
+  });
+
   let reviewHtml = '<p style="font-weight:700;font-size:14px;margin-bottom:12px;text-align:left">MC Review:</p>';
   mockQs.forEach((q,i) => {
-    const userAns = mockAnswers[i];
-    const isCorrect = userAns === q.answer;
-    reviewHtml += `<div class="review-item" style="background:${isCorrect?'#DCFCE7':'#FEE2E2'}">
-      <div class="ri-q">Q${i+1}: ${q.q.substring(0,80)}${q.q.length>80?'...':''}</div>
-      <div class="ri-ans">${isCorrect?'✓ Correct':'✗ Your answer: '+(userAns!==undefined?q.options[userAns]:'Not answered')+' | Correct: '+q.options[q.answer]}</div>
-      <div style="font-size:12px;margin-top:4px;opacity:0.8">${q.explanation||''}</div>
-    </div>`;
+    const ua = mockAnswers[i];
+    const ok = ua === q.answer;
+    reviewHtml += '<div class="review-item" style="background:' + (ok ? '#DCFCE7' : '#FEE2E2') + '">' +
+      '<div class="ri-q">Q' + (i+1) + ': ' + q.q.substring(0,80) + (q.q.length>80?'...':'') + '</div>' +
+      '<div class="ri-ans">' + (ok ? '✓ Correct' : '✗ Your answer: ' + (ua!==undefined?q.options[ua]:'Not answered') + ' | Correct: ' + q.options[q.answer]) + '</div>' +
+      '<div style="font-size:12px;margin-top:4px;opacity:0.8">' + (q.explanation||'') + '</div></div>';
   });
-  reviewHtml += '<p style="font-weight:700;font-size:14px;margin:20px 0 8px;text-align:left">Written: Self-mark using the Written Help tab ✍️</p>';
-  document.getElementById('mock-review').innerHTML = reviewHtml;
+
+  document.getElementById('mock-review').innerHTML = writtenHtml + reviewHtml;
 }
 
 function resetMock() {
