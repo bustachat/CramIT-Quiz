@@ -840,6 +840,7 @@ function renderPicker() {
       const active = (pickerFilters.topic || 'all') === t ? 'active' : '';
       const label = t === 'all' ? 'All'
         : t === 'returnplay' ? 'Return to Play'
+        : t === 'fa2_assessment' ? 'Exercise Assessment'
         : t === 'fa2_individual_group' ? 'Indiv vs Group'
         : t === 'fa2_sleep' ? 'Sleep & Hydration'
         : t.replace(/^fa2_/, '').replace(/_/g,' ').replace(/\b\w/g, l => l.toUpperCase());
