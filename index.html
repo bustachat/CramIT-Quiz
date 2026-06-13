@@ -2752,16 +2752,13 @@ async function handleEmailSignUp() {
 
 async function handleSignOut() {
   if (!sbClient) return;
-  await sbClient.auth.signOut();
-  userSubjects = [];
-  userSub = { plan: 'free', subject_count: 1, status: 'active' };
-  currentUser = null;
-  // Clear per-user progress stats (trial counters intentionally kept to prevent gaming)
+  // Clear per-user stats (trial counters kept intentionally to prevent gaming)
   localStorage.removeItem('hsc_total');
   localStorage.removeItem('hsc_correct');
   localStorage.removeItem('hsc_streak');
-  updateStats();
-  renderHomeAuth();
+  goHome();
+  await sbClient.auth.signOut();
+  // Auth listener handles state reset and renderHomeAuth() on SIGNED_OUT event
 }
 
 // ── HANDLE PAYMENT SUCCESS REDIRECT ──────────────────────────
