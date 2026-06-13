@@ -2692,18 +2692,25 @@ async function handleUpgradeFlex() {
 
 async function handleManageBilling() {
   if (!currentUser || !sbClient) return;
-  const { data } = await sbClient.from('subscriptions').select('stripe_customer_id').eq('user_id', currentUser.id).single();
-  if (!data?.stripe_customer_id) { alert('No active subscription found.'); return; }
+  const { data, error: dbErr } = await sbClient.from('subscriptions').select('stripe_customer_id').eq('user_id', currentUser.id).single();
+  if (dbErr) { console.error('Billing DB error:', dbErr); alert('Could not load subscription: ' + dbErr.message); return; }
+  if (!data?.stripe_customer_id) { alert('No billing account found. Please contact support.'); return; }
   try {
     const res = await fetch('/customer-portal', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ customer_id: data.stripe_customer_id, return_url: window.location.origin })
     });
-    const json = await res.json();
+    const text = await res.text();
+    let json;
+    try { json = JSON.parse(text); } catch { console.error('Portal response not JSON:', text); alert('Billing error — please try again.'); return; }
+    console.log('[CramIT] Customer portal response:', json);
     if (!json.url) { alert('Billing error: ' + (json.error || 'No URL returned')); return; }
     window.location.href = json.url;
-  } catch(e) { console.error(e); }
+  } catch(e) {
+    console.error('handleManageBilling threw:', e);
+    alert('Could not open billing portal: ' + e.message);
+  }
 }
 
 // ── AUTH HANDLERS ─────────────────────────────────────────────
