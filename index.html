@@ -385,6 +385,35 @@
 </head>
 <body>
 
+<!-- SUBSCRIBE MODAL -->
+<div id="subscribe-modal" style="display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:var(--bg);z-index:300;overflow-y:auto;box-sizing:border-box">
+  <div style="max-width:460px;margin:0 auto;padding:20px 20px 40px">
+    <!-- Header row -->
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:28px;padding-top:8px">
+      <div>
+        <div style="font-family:var(--font-display);font-size:22px;font-weight:800;color:var(--text)">Choose your subjects</div>
+        <div style="font-size:12px;color:var(--muted);margin-top:3px">10 free trial questions per subject &middot; cancel anytime</div>
+      </div>
+      <button onclick="closeSubscribeModal()" style="background:var(--surface2);border:1px solid var(--border);border-radius:50%;width:36px;height:36px;font-size:18px;cursor:pointer;color:var(--muted);flex-shrink:0;display:flex;align-items:center;justify-content:center;line-height:1">&times;</button>
+    </div>
+
+    <!-- Subject checklist -->
+    <div id="subscribe-subject-list" style="display:flex;flex-direction:column;gap:10px;margin-bottom:28px"></div>
+
+    <!-- Live price summary -->
+    <div style="background:var(--surface2);border:1px solid var(--border);border-radius:16px;padding:18px 20px;margin-bottom:16px">
+      <div style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:4px">
+        <div id="subscribe-count-label" style="font-family:var(--font-display);font-size:14px;font-weight:700;color:var(--text)">0 subjects selected</div>
+        <div id="subscribe-price-label" style="font-family:var(--font-display);font-size:26px;font-weight:800;color:var(--accent)">Free</div>
+      </div>
+      <div id="subscribe-price-note" style="font-size:11px;color:var(--muted)">Select at least 2 subjects to subscribe</div>
+    </div>
+
+    <button id="subscribe-cta-btn" onclick="handleSubscribeModal()" style="background:var(--accent);color:white;border:none;border-radius:14px;padding:16px;width:100%;font-family:var(--font-display);font-size:16px;font-weight:700;cursor:pointer;min-height:54px;opacity:0.4;pointer-events:none">Select subjects above →</button>
+    <div style="text-align:center;font-size:11px;color:var(--muted);margin-top:10px">Secure payment via Stripe &middot; cancel anytime</div>
+  </div>
+</div>
+
 <!-- PROFILE SHEET -->
 <div class="sheet-backdrop" id="sheet-backdrop" onclick="closeProfileSheet()"></div>
 <div class="profile-sheet" id="profile-sheet">
@@ -406,13 +435,17 @@
   <!-- Header row: logo left, avatar right -->
   <div class="home-header">
     <img src="CramIT_Logo_Transparent.png" alt="CramIT" class="home-logo"/>
-    <!-- Avatar shown when logged in -->
-    <button class="profile-avatar" id="profile-avatar" style="display:none" onclick="openProfileSheet()" aria-label="Account"></button>
-    <!-- Auth buttons shown when logged out -->
-    <div id="auth-buttons" style="display:none;gap:8px">
-      <button onclick="handleGoogleSignIn()" style="background:#fff;color:#333;border:1px solid #ddd;border-radius:12px;padding:9px 14px;font-family:var(--font-display);font-size:13px;font-weight:700;cursor:pointer;display:flex;align-items:center;gap:8px">
-        <span style="font-size:15px">G</span> Sign in
-      </button>
+    <div style="display:flex;align-items:center;gap:10px">
+      <!-- Subscribe link — visible to non-subscribers only -->
+      <button id="header-subscribe-btn" onclick="openSubscribeModal()" style="display:none;background:var(--accent);color:white;border:none;border-radius:20px;padding:8px 16px;font-family:var(--font-display);font-size:12px;font-weight:700;cursor:pointer;white-space:nowrap">Subscribe</button>
+      <!-- Avatar shown when logged in -->
+      <button class="profile-avatar" id="profile-avatar" style="display:none" onclick="openProfileSheet()" aria-label="Account"></button>
+      <!-- Auth buttons shown when logged out -->
+      <div id="auth-buttons" style="display:none;gap:8px">
+        <button onclick="handleGoogleSignIn()" style="background:#fff;color:#333;border:1px solid #ddd;border-radius:12px;padding:9px 14px;font-family:var(--font-display);font-size:13px;font-weight:700;cursor:pointer;display:flex;align-items:center;gap:8px">
+          <span style="font-size:15px">G</span> Sign in
+        </button>
+      </div>
     </div>
   </div>
 
@@ -432,18 +465,12 @@
   <!-- Subject list — always visible -->
   <div id="subject-list-billing" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:14px;margin-bottom:8px"></div>
 
-  <!-- Subscribe pill — visible to non-subscribers, hidden by renderHomeAuth for paying users -->
-  <div id="subscribe-pill" style="display:block;text-align:center;margin-bottom:12px">
-    <button onclick="handleSubscribePill()" style="background:var(--accent);color:white;border:none;border-radius:20px;padding:11px 24px;font-family:var(--font-display);font-size:13px;font-weight:700;cursor:pointer;letter-spacing:0.01em">Subscribe from $7.99/mo →</button>
-    <div style="font-size:11px;color:var(--muted);margin-top:5px">Includes 2 subjects &middot; cancel anytime</div>
-  </div>
-
   <!-- Upgrade prompt -->
   <div id="upgrade-prompt-home" style="display:none;background:var(--surface2);border:1px solid var(--accent);border-radius:14px;padding:16px;margin-bottom:8px;text-align:center">
     <div style="font-family:var(--font-display);font-size:15px;font-weight:700;margin-bottom:4px" id="upgrade-title">Unlock this subject</div>
     <div style="font-size:26px;font-weight:800;color:var(--accent);font-family:var(--font-display);margin:8px 0" id="upgrade-price">$7.99/mo</div>
     <div style="font-size:12px;color:var(--muted);margin-bottom:12px" id="upgrade-desc">Subscribe to access all your HSC subjects.</div>
-    <button onclick="handleCheckout()" style="background:var(--accent);color:white;border:none;border-radius:11px;padding:14px;width:100%;font-family:var(--font-display);font-size:14px;font-weight:700;cursor:pointer">Subscribe now →</button>
+    <button onclick="openSubscribeModal(pendingSubject?.id)" style="background:var(--accent);color:white;border:none;border-radius:11px;padding:14px;width:100%;font-family:var(--font-display);font-size:14px;font-weight:700;cursor:pointer">Choose subjects &amp; subscribe →</button>
   </div>
 
   <!-- Swap prompt (at 7-subject cap) -->
@@ -508,9 +535,8 @@
     <div id="trial-wall-subject" style="font-size:13px;color:var(--muted);margin-bottom:24px;line-height:1.5"></div>
     <div style="background:var(--surface2);border:1px solid var(--accent);border-radius:16px;padding:20px;margin-bottom:20px">
       <div id="trial-wall-unlock-text" style="font-family:var(--font-display);font-size:13px;font-weight:700;color:var(--text);margin-bottom:6px"></div>
-      <div style="font-size:30px;font-weight:800;color:var(--accent);font-family:var(--font-display);margin:10px 0">$7.99<span style="font-size:14px;font-weight:600">/mo</span></div>
-      <div style="font-size:11px;color:var(--muted);margin-bottom:16px">Includes a 2nd subject at no extra cost &middot; cancel anytime</div>
-      <button onclick="handleTrialCheckout()" style="background:var(--accent);color:white;border:none;border-radius:12px;padding:15px;width:100%;font-family:var(--font-display);font-size:15px;font-weight:700;cursor:pointer;min-height:52px">Subscribe &mdash; $7.99/mo &rarr;</button>
+      <div style="font-size:11px;color:var(--muted);margin-bottom:16px">Pick your subjects &middot; cancel anytime</div>
+      <button onclick="closeTrialWall();openSubscribeModal()" style="background:var(--accent);color:white;border:none;border-radius:12px;padding:15px;width:100%;font-family:var(--font-display);font-size:15px;font-weight:700;cursor:pointer;min-height:52px">Choose subjects &amp; subscribe &rarr;</button>
     </div>
     <button onclick="closeTrialWall()" style="background:none;border:none;color:var(--muted);font-size:13px;cursor:pointer;padding:10px">&larr; Back to home</button>
   </div>
@@ -2237,11 +2263,11 @@ function renderHomeAuth() {
       sheetPlan.textContent = price === 0 ? 'Free plan · 1 subject' : `${label} · ${userSubjects.length} subject${userSubjects.length !== 1 ? 's' : ''}`;
     }
   }
-  // Subscribe pill — show only to non-subscribers (no active stripe sub)
-  const pill = document.getElementById('subscribe-pill');
-  if (pill) {
+  // Header subscribe button — show only to non-subscribers
+  const headerSubBtn = document.getElementById('header-subscribe-btn');
+  if (headerSubBtn) {
     const isSubscribed = userSub.stripe_subscription_id && (userSub.status === 'active' || userSub.status === 'trialing');
-    pill.style.display = isSubscribed ? 'none' : 'block';
+    headerSubBtn.style.display = isSubscribed ? 'none' : 'block';
   }
 
   updateStats();
@@ -2383,18 +2409,17 @@ async function handleSubjectTap(subject, isSelected, atCap) {
     const currentPrice = calcPrice(userSubjects.length, 'swap').price;
     const newPrice     = calcPrice(userSubjects.length + 1, 'swap').price;
     if (newPrice > currentPrice) {
-      pendingSubject = subject;
-      showUpgradePrompt(subject, userSubjects.length + 1);
+      openSubscribeModal(subject.id);
       return;
     }
     await addSubject(subject.id);
     return;
   }
 
-  // Trial exhausted — show upgrade prompt (handles both logged-in and logged-out)
+  // Trial exhausted — open subscribe modal
   if (isTrialExhausted(subject.id)) {
     pendingSubject = subject;
-    showUpgradePrompt(subject, 2);
+    openSubscribeModal(subject.id);
     return;
   }
 
@@ -2460,64 +2485,127 @@ function closeTrialWall() {
   goHome();
 }
 
-async function handleSubscribePill() {
-  // No subject context — subscribe to base plan with first available subject
-  if (!currentUser) {
-    document.getElementById('auth-buttons').style.display = 'flex';
-    document.getElementById('auth-buttons').scrollIntoView({ behavior: 'smooth' });
-    return;
-  }
-  try {
-    const res = await fetch('/create-checkout', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json', 'x-user-email': currentUser.email },
-      body: JSON.stringify({
-        user_id:       currentUser.id,
-        subject_count: 2,
-        plan_type:     'base',
-        plan_mode:     'swap',
-        success_url:   `${window.location.origin}?payment=success`,
-        cancel_url:    window.location.origin,
-      })
-    });
-    const { url, error } = await res.json();
-    if (error) { alert('Could not start checkout: ' + error); return; }
-    window.location.href = url;
-  } catch(e) {
-    alert('Could not start checkout. Please try again.');
-    console.error(e);
-  }
-}
+// ── SUBSCRIBE MODAL ───────────────────────────────────────────
+let _subscribeSelected = new Set();
 
-async function handleTrialCheckout() {
-  if (!pendingSubject) return;
+function openSubscribeModal(preselectedId) {
   if (!currentUser) {
-    // Not signed in — close wall and show login
+    // Not signed in — show login first
     document.getElementById('trial-wall').style.display = 'none';
     document.getElementById('home').style.display = 'flex';
     document.getElementById('auth-buttons').style.display = 'flex';
     document.getElementById('auth-buttons').scrollIntoView({ behavior: 'smooth' });
     return;
   }
+
+  // Pre-select: subjects already subscribed + any preselected subject
+  _subscribeSelected = new Set(userSubjects);
+  if (preselectedId) _subscribeSelected.add(preselectedId);
+
+  _renderSubscribeModal();
+  document.getElementById('subscribe-modal').style.display = 'block';
+  document.body.style.overflow = 'hidden';
+}
+
+function closeSubscribeModal() {
+  document.getElementById('subscribe-modal').style.display = 'none';
+  document.body.style.overflow = '';
+}
+
+function _renderSubscribeModal() {
+  const list = document.getElementById('subscribe-subject-list');
+  list.innerHTML = '';
+
+  SUBJECT_CATALOGUE.filter(s => s.available).forEach(s => {
+    const checked = _subscribeSelected.has(s.id);
+    const alreadyOwned = canAccessViaSubscription(s.id);
+    const item = document.createElement('label');
+    item.style.cssText = `display:flex;align-items:center;gap:14px;background:${checked ? 'var(--surface2)' : 'var(--surface)'};border:1.5px solid ${checked ? 'var(--accent)' : 'var(--border)'};border-radius:14px;padding:14px 16px;cursor:pointer;transition:all 0.15s`;
+    item.innerHTML = `
+      <input type="checkbox" data-id="${s.id}" ${checked ? 'checked' : ''} ${alreadyOwned ? 'disabled' : ''}
+        style="width:20px;height:20px;accent-color:var(--accent);flex-shrink:0;cursor:${alreadyOwned ? 'default' : 'pointer'}">
+      <div style="flex:1;min-width:0">
+        <div style="font-family:var(--font-display);font-size:14px;font-weight:700;color:var(--text)">${s.name}</div>
+        <div style="font-size:11px;color:var(--muted);margin-top:2px">${s.meta}${alreadyOwned ? ' &middot; <span style="color:var(--accent2)">already included</span>' : ''}</div>
+      </div>`;
+    item.querySelector('input').addEventListener('change', e => {
+      if (e.target.checked) _subscribeSelected.add(s.id);
+      else _subscribeSelected.delete(s.id);
+      _renderSubscribeModal();
+    });
+    list.appendChild(item);
+  });
+
+  _updateSubscribePrice();
+}
+
+function _updateSubscribePrice() {
+  const n = _subscribeSelected.size;
+  const { price, label } = calcPrice(n, 'swap');
+  const countEl = document.getElementById('subscribe-count-label');
+  const priceEl = document.getElementById('subscribe-price-label');
+  const noteEl  = document.getElementById('subscribe-price-note');
+  const btn     = document.getElementById('subscribe-cta-btn');
+
+  countEl.textContent = `${n} subject${n !== 1 ? 's' : ''} selected`;
+  priceEl.textContent = price === 0 ? 'Free' : label;
+
+  if (n < 2) {
+    noteEl.textContent = 'Select at least 2 subjects to subscribe';
+    btn.style.opacity = '0.4';
+    btn.style.pointerEvents = 'none';
+    btn.textContent = 'Select subjects above →';
+  } else {
+    noteEl.textContent = n <= PRICING_CFG.CAP_LIMIT
+      ? `Billed ${label} · swap subjects anytime`
+      : `Billed ${label} · swap subjects anytime`;
+    btn.style.opacity = '1';
+    btn.style.pointerEvents = 'auto';
+    btn.textContent = `Subscribe ${label} →`;
+  }
+}
+
+async function handleSubscribeModal() {
+  const n = _subscribeSelected.size;
+  if (n < 2) return;
+
+  const { price } = calcPrice(n, 'swap');
+  const planType = n > PRICING_CFG.CAP_LIMIT ? 'flex'
+    : price >= PRICING_CFG.CAP ? 'unlimited'
+    : n <= PRICING_CFG.BASE_INCLUDES ? 'base'
+    : 'base_plus';
+
+  // Save all selected subject IDs for post-payment unlock
+  const selectedIds = [..._subscribeSelected].filter(id => !canAccessViaSubscription(id));
+  if (selectedIds.length) localStorage.setItem('cramit_pending_subject', selectedIds[0]);
+
+  const btn = document.getElementById('subscribe-cta-btn');
+  btn.textContent = 'Redirecting to checkout…';
+  btn.style.opacity = '0.7';
+  btn.style.pointerEvents = 'none';
+
   try {
     const res = await fetch('/create-checkout', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', 'x-user-email': currentUser.email },
       body: JSON.stringify({
         user_id:       currentUser.id,
-        subject_count: 2,
-        plan_type:     'base',
+        subject_count: n,
+        plan_type:     planType,
         plan_mode:     'swap',
-        success_url:   `${window.location.origin}?payment=success&subject=${pendingSubject.id}`,
+        success_url:   `${window.location.origin}?payment=success&subject=${selectedIds[0] || ''}`,
         cancel_url:    window.location.origin,
       })
     });
-    const { url } = await res.json();
-    localStorage.setItem('cramit_pending_subject', pendingSubject.id);
+    const { url, error } = await res.json();
+    if (error) { alert('Checkout error: ' + error); return; }
     window.location.href = url;
   } catch(e) {
     alert('Could not start checkout. Please try again.');
     console.error(e);
+    btn.textContent = `Subscribe →`;
+    btn.style.opacity = '1';
+    btn.style.pointerEvents = 'auto';
   }
 }
 
