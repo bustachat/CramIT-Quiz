@@ -2579,8 +2579,9 @@ async function handleSubscribeModal() {
     : n <= PRICING_CFG.BASE_INCLUDES ? 'base'
     : 'base_plus';
 
-  // Save all selected subject IDs for post-payment unlock
+  // Save ALL selected subject IDs to localStorage for post-payment unlock
   const selectedIds = [..._subscribeSelected].filter(id => !canAccessViaSubscription(id));
+  localStorage.setItem('cramit_pending_subjects', JSON.stringify([..._subscribeSelected]));
   if (selectedIds.length) localStorage.setItem('cramit_pending_subject', selectedIds[0]);
 
   const btn = document.getElementById('subscribe-cta-btn');
@@ -2769,9 +2770,12 @@ async function handlePaymentReturn() {
 
   console.log('[CramIT] Payment return detected. Subject:', subjectId, 'User:', currentUser?.email);
 
-  // Clean URL and localStorage
+  // Clean URL and localStorage — collect ALL subjects to insert
   window.history.replaceState({}, '', window.location.pathname);
+  const pendingSubjectsRaw = localStorage.getItem('cramit_pending_subjects');
+  const allPendingSubjects = pendingSubjectsRaw ? JSON.parse(pendingSubjectsRaw) : (subjectId ? [subjectId] : []);
   localStorage.removeItem('cramit_pending_subject');
+  localStorage.removeItem('cramit_pending_subjects');
 
   // Wait for webhook to write subscription to Supabase
   // Poll instead of fixed wait — webhook can take 2-15 seconds
@@ -2793,9 +2797,10 @@ async function handlePaymentReturn() {
     console.warn('[CramIT] Subscription not confirmed after polling — may still be processing');
   }
 
-  // Add the subject to subject_selections
-  if (subjectId && currentUser && sbClient) {
-    console.log('[CramIT] Inserting subject:', subjectId, 'for user:', currentUser.id);
+  // Insert ALL selected subjects into subject_selections
+  if (allPendingSubjects.length && currentUser && sbClient) {
+    console.log('[CramIT] Inserting subjects:', allPendingSubjects, 'for user:', currentUser.id);
+    for (const subjectId of allPendingSubjects) {
     try {
       // Check if already exists first
       const { data: existing } = await sbClient.from('subject_selections')
@@ -2805,7 +2810,7 @@ async function handlePaymentReturn() {
         .maybeSingle();
 
       if (existing) {
-        console.log('[CramIT] Subject already in subject_selections');
+        console.log('[CramIT] Subject already in subject_selections:', subjectId);
       } else {
         const { data: inserted, error: insertErr } = await sbClient.from('subject_selections')
           .insert({ user_id: currentUser.id, subject_id: subjectId })
@@ -2819,8 +2824,7 @@ async function handlePaymentReturn() {
     } catch(e) {
       console.error('[CramIT] Subject insert threw:', e);
     }
-  } else {
-    console.warn('[CramIT] Missing data for subject insert — subjectId:', subjectId, 'currentUser:', !!currentUser, 'sbClient:', !!sbClient);
+    } // end for loop
   }
 
   // Reload fresh state from Supabase
