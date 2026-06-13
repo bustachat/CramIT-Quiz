@@ -2538,23 +2538,30 @@ function _renderSubscribeModal() {
 
 function _updateSubscribePrice() {
   const n = _subscribeSelected.size;
-  const { price, label } = calcPrice(n, 'swap');
   const countEl = document.getElementById('subscribe-count-label');
   const priceEl = document.getElementById('subscribe-price-label');
   const noteEl  = document.getElementById('subscribe-price-note');
   const btn     = document.getElementById('subscribe-cta-btn');
 
   countEl.textContent = `${n} subject${n !== 1 ? 's' : ''} selected`;
-  priceEl.textContent = price === 0 ? 'Free' : label;
 
-  if (n < 2) {
-    noteEl.textContent = 'Select at least 2 subjects to subscribe';
+  if (n === 0) {
+    priceEl.textContent = '';
+    noteEl.textContent = 'Select at least 2 subjects to continue';
     btn.style.opacity = '0.4';
     btn.style.pointerEvents = 'none';
     btn.textContent = 'Select subjects above →';
+  } else if (n === 1) {
+    priceEl.textContent = '$7.99/mo';
+    noteEl.textContent = 'Add 1 more subject — plans start from $7.99/mo';
+    btn.style.opacity = '0.4';
+    btn.style.pointerEvents = 'none';
+    btn.textContent = 'Select 1 more subject →';
   } else {
-    noteEl.textContent = n <= PRICING_CFG.CAP_LIMIT
-      ? `Billed ${label} · swap subjects anytime`
+    const { label } = calcPrice(n, 'swap');
+    priceEl.textContent = label;
+    noteEl.textContent = n >= PRICING_CFG.CAP_LIMIT
+      ? `Unlimited plan · swap subjects anytime`
       : `Billed ${label} · swap subjects anytime`;
     btn.style.opacity = '1';
     btn.style.pointerEvents = 'auto';
