@@ -432,6 +432,12 @@
   <!-- Subject list — always visible -->
   <div id="subject-list-billing" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:14px;margin-bottom:8px"></div>
 
+  <!-- Subscribe pill — visible to non-subscribers, hidden by renderHomeAuth for paying users -->
+  <div id="subscribe-pill" style="display:block;text-align:center;margin-bottom:12px">
+    <button onclick="handleSubscribePill()" style="background:var(--accent);color:white;border:none;border-radius:20px;padding:11px 24px;font-family:var(--font-display);font-size:13px;font-weight:700;cursor:pointer;letter-spacing:0.01em">Subscribe from $7.99/mo →</button>
+    <div style="font-size:11px;color:var(--muted);margin-top:5px">Includes 2 subjects &middot; cancel anytime</div>
+  </div>
+
   <!-- Upgrade prompt -->
   <div id="upgrade-prompt-home" style="display:none;background:var(--surface2);border:1px solid var(--accent);border-radius:14px;padding:16px;margin-bottom:8px;text-align:center">
     <div style="font-family:var(--font-display);font-size:15px;font-weight:700;margin-bottom:4px" id="upgrade-title">Unlock this subject</div>
@@ -485,6 +491,7 @@
   </div>
   <div class="quiz-filters" id="quiz-filters"></div>
   <div class="question-area" id="question-area"></div>
+  <div id="trial-countdown" style="display:none;text-align:center;padding:6px 16px 0;font-size:12px;color:var(--muted)"></div>
   <div class="quiz-footer">
     <button class="prev-btn" id="prev-btn" onclick="prevQuestion()" disabled>← Prev</button>
     <button class="check-btn" id="check-btn" onclick="checkAnswer()">Check Answer</button>
@@ -1244,6 +1251,25 @@ function renderQuestion() {
 
   document.getElementById('progress-fill').style.width = (currentIdx / total * 100) + '%';
   document.getElementById('quiz-counter').textContent = `${currentIdx + 1} / ${total}`;
+
+  // Trial countdown — show from Q6 onward for non-subscribers
+  const _trialCountdownEl = document.getElementById('trial-countdown');
+  if (_trialCountdownEl) {
+    const _tcSubjectId = SUBJECT_CATALOGUE.find(s => s.quizKey === currentSubjectKey)?.id;
+    const _inTrial = _tcSubjectId && !canAccessViaSubscription(_tcSubjectId);
+    if (_inTrial) {
+      const _used = getTrialCount(_tcSubjectId);
+      const _left = Math.max(0, TRIAL_LIMIT - _used);
+      if (_used >= 5 && _left > 0) {
+        _trialCountdownEl.style.display = 'block';
+        _trialCountdownEl.innerHTML = `<span style="color:var(--accent);font-weight:700">${_left}</span> trial question${_left !== 1 ? 's' : ''} left &middot; <button onclick="handleSubscribePill()" style="background:none;border:none;color:var(--accent);font-size:12px;font-weight:700;cursor:pointer;padding:0;text-decoration:underline">Subscribe $7.99/mo</button>`;
+      } else {
+        _trialCountdownEl.style.display = 'none';
+      }
+    } else {
+      _trialCountdownEl.style.display = 'none';
+    }
+  }
 
   const LETTERS = ['A','B','C','D','E'];
   let html = '';
@@ -2211,6 +2237,13 @@ function renderHomeAuth() {
       sheetPlan.textContent = price === 0 ? 'Free plan · 1 subject' : `${label} · ${userSubjects.length} subject${userSubjects.length !== 1 ? 's' : ''}`;
     }
   }
+  // Subscribe pill — show only to non-subscribers (no active stripe sub)
+  const pill = document.getElementById('subscribe-pill');
+  if (pill) {
+    const isSubscribed = userSub.stripe_subscription_id && (userSub.status === 'active' || userSub.status === 'trialing');
+    pill.style.display = isSubscribed ? 'none' : 'block';
+  }
+
   updateStats();
   renderSubjectList();
 }
@@ -2427,6 +2460,35 @@ function closeTrialWall() {
   goHome();
 }
 
+async function handleSubscribePill() {
+  // No subject context — subscribe to base plan with first available subject
+  if (!currentUser) {
+    document.getElementById('auth-buttons').style.display = 'flex';
+    document.getElementById('auth-buttons').scrollIntoView({ behavior: 'smooth' });
+    return;
+  }
+  try {
+    const res = await fetch('/create-checkout', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'x-user-email': currentUser.email },
+      body: JSON.stringify({
+        user_id:       currentUser.id,
+        subject_count: 2,
+        plan_type:     'base',
+        plan_mode:     'swap',
+        success_url:   `${window.location.origin}?payment=success`,
+        cancel_url:    window.location.origin,
+      })
+    });
+    const { url, error } = await res.json();
+    if (error) { alert('Could not start checkout: ' + error); return; }
+    window.location.href = url;
+  } catch(e) {
+    alert('Could not start checkout. Please try again.');
+    console.error(e);
+  }
+}
+
 async function handleTrialCheckout() {
   if (!pendingSubject) return;
   if (!currentUser) {
@@ -2462,10 +2524,11 @@ async function handleTrialCheckout() {
 // ── ADD SUBJECT ───────────────────────────────────────────────
 async function addSubject(subjectId) {
   if (!currentUser || !sbClient) return;
+  // Optimistically update local state immediately so any follow-up tap sees the correct count
+  if (!userSubjects.includes(subjectId)) userSubjects.push(subjectId);
   try {
     // Insert into subject_selections
     await sbClient.from('subject_selections').insert({ user_id: currentUser.id, subject_id: subjectId });
-    userSubjects.push(subjectId);
 
     // If on a paid plan, update Stripe subscription to reflect new subject count
     if (userSub.plan !== 'free' && userSub.stripe_subscription_id) {
@@ -2508,7 +2571,7 @@ async function handleCheckout() {
       body: JSON.stringify({
         user_id:       currentUser.id,
         subject_count: newCount,
-        plan_type:     price >= PRICING_CFG.CAP ? 'unlimited' : newCount <= PRICING_CFG.BASE_INCLUDES ? 'base' : 'base_plus',
+        plan_type:     newCount > PRICING_CFG.CAP_LIMIT ? 'flex' : price >= PRICING_CFG.CAP ? 'unlimited' : newCount <= PRICING_CFG.BASE_INCLUDES ? 'base' : 'base_plus',
         plan_mode:     'swap',
         success_url:   `${window.location.origin}?payment=success&subject=${pendingSubject.id}`,
         cancel_url:    window.location.origin,
@@ -2531,7 +2594,7 @@ async function handleCheckout() {
 }
 
 async function handleUpgradeFlex() {
-  alert('To upgrade to the Flex plan please contact support or manage your billing below.');
+  await handleManageBilling();
 }
 
 async function handleManageBilling() {
