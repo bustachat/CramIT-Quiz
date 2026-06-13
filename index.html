@@ -1288,7 +1288,7 @@ function renderQuestion() {
       const _left = Math.max(0, TRIAL_LIMIT - _used);
       if (_used >= 5 && _left > 0) {
         _trialCountdownEl.style.display = 'block';
-        _trialCountdownEl.innerHTML = `<span style="color:var(--accent);font-weight:700">${_left}</span> trial question${_left !== 1 ? 's' : ''} left &middot; <button onclick="handleSubscribePill()" style="background:none;border:none;color:var(--accent);font-size:12px;font-weight:700;cursor:pointer;padding:0;text-decoration:underline">Subscribe $7.99/mo</button>`;
+        _trialCountdownEl.innerHTML = `<span style="color:var(--accent);font-weight:700">${_left}</span> trial question${_left !== 1 ? 's' : ''} left &middot; <button onclick="openSubscribeModal()" style="background:none;border:none;color:var(--accent);font-size:12px;font-weight:700;cursor:pointer;padding:0;text-decoration:underline">Subscribe from $7.99/mo</button>`;
       } else {
         _trialCountdownEl.style.display = 'none';
       }
