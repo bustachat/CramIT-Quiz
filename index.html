@@ -668,13 +668,13 @@ const SUBJECTS = {
         ? qs0.filter(q => !q.variant)
         : [...qs0];
       if (filters.year && filters.year !== 'all') qs = qs.filter(q => String(q.year) === filters.year);
-      if (filters.category && filters.category !== 'all') qs = qs.filter(q => q.category === filters.category);
+      if (filters.categories?.length) qs = qs.filter(q => filters.categories.includes(q.category));
       return shuffle(qs);
     },
     getWritten: (filters) => {
       let qs = [...(subjectCache.maths?.writtenQuestions ?? [])];
       if (filters.year && filters.year !== 'all') qs = qs.filter(q => String(q.year) === filters.year);
-      if (filters.category && filters.category !== 'all') qs = qs.filter(q => q.category === filters.category);
+      if (filters.categories?.length) qs = qs.filter(q => filters.categories.includes(q.category));
       return shuffle(qs);
     },
     years: ['all','2020','2021','2022','2023','2024','2025'],
@@ -768,7 +768,7 @@ let mathsQuestionSet = 'original'; // 'original' = HSC 90, 'extended' = all 318 
 
 async function openPicker(subjectKey) {
   currentSubjectKey = subjectKey;
-  pickerFilters = { year: 'all', topic: 'all', category: 'all', assessment: 'all' };
+  pickerFilters = { year: 'all', topic: 'all', categories: [], assessment: 'all' };
   const s = SUBJECTS[subjectKey];
   document.getElementById('picker-title').textContent = s.icon + ' ' + s.name;
   document.getElementById('home').style.display = 'none';
@@ -841,20 +841,21 @@ function renderPicker() {
     html += '</div></div>';
   }
   if (s.categories) {
-    html += '<div class="section-label" style="margin-top:16px">Category</div><div class="filter-row"><div class="seg-control" id="seg-cat"><div class="seg-slider"></div>';
-    const qsForCounts = s.getMC({ year: pickerFilters.year || 'all', category: 'all' });
+    html += '<div class="section-label" style="margin-top:16px">Category <span style="font-size:10px;font-weight:400;color:var(--muted)">— select one or more</span></div><div class="filter-row"><div class="seg-control" id="seg-cat">';
+    const qsForCounts = s.getMC({ year: pickerFilters.year || 'all', categories: [] });
     s.categories.forEach(c => {
       if (c !== 'all') {
         const n = qsForCounts.filter(q => q.category === c).length;
         if (n === 0) return;
       }
-      const active = (pickerFilters.category || 'all') === c ? 'active' : '';
+      const selCats = pickerFilters.categories || [];
+      const active = c === 'all' ? selCats.length === 0 : selCats.includes(c);
       const count = c === 'all' ? qsForCounts.length : qsForCounts.filter(q => q.category === c).length;
       const label = c === 'all' ? `All (${count})` : `${NESA_CAT_LABELS[c] || c} (${count})`;
       if (inTrial && c !== 'all') {
         html += `<button class="seg-btn locked" disabled data-val="${c}" title="Unlocks with subscription">${label}</button>`;
       } else {
-        html += `<button class="seg-btn ${active}" data-val="${c}" onclick="applyFilter('category','${c}')">${label}</button>`;
+        html += `<button class="seg-btn ${active ? 'active' : ''}" data-val="${c}" onclick="toggleCategory('${c}')">${label}</button>`;
       }
     });
     html += '</div></div>';
@@ -961,7 +962,7 @@ function renderPicker() {
 }
 
 function positionAllSliders(animate) {
-  ['seg-year','seg-cat','seg-topic','seg-assess'].forEach(id => slideToActive(id, animate));
+  ['seg-year','seg-topic','seg-assess'].forEach(id => slideToActive(id, animate));
 }
 
 function slideToActive(ctrlId, animate = true) {
@@ -981,16 +982,16 @@ function applyFilter(key, val) {
   pickerFilters[key] = val;
 
   // Update active class within the touched control and slide
-  const idMap = { year: 'seg-year', category: 'seg-cat', topic: 'seg-topic', assessment: 'seg-assess' };
+  const idMap = { year: 'seg-year', topic: 'seg-topic', assessment: 'seg-assess' };
   const ctrl = document.getElementById(idMap[key]);
   if (ctrl) {
     ctrl.querySelectorAll('.seg-btn').forEach(b => b.classList.toggle('active', b.dataset.val === val));
     slideToActive(idMap[key]);
   }
 
-  // Year change: reset category → 'all' and rebuild category counts
+  // Year change: reset categories → [] and rebuild category counts
   if (key === 'year') {
-    pickerFilters.category = 'all';
+    pickerFilters.categories = [];
     rebuildCategoryControl();
   }
 
@@ -1019,24 +1020,48 @@ function rebuildCategoryControl() {
   if (!s?.categories) return;
   const _trialId = SUBJECT_CATALOGUE.find(sub => sub.quizKey === currentSubjectKey)?.id;
   const inTrial  = _trialId ? !canAccessViaSubscription(_trialId) : false;
-  const qsForCounts = s.getMC({ year: pickerFilters.year || 'all', category: 'all' });
+  const qsForCounts = s.getMC({ year: pickerFilters.year || 'all', categories: [] });
+  const selCats = pickerFilters.categories || [];
 
-  let html = '<div class="seg-slider"></div>';
+  let html = '';
   s.categories.forEach(c => {
     if (c !== 'all') {
       if (qsForCounts.filter(q => q.category === c).length === 0) return;
     }
     const count = c === 'all' ? qsForCounts.length : qsForCounts.filter(q => q.category === c).length;
     const label = c === 'all' ? `All (${count})` : `${NESA_CAT_LABELS[c] || c} (${count})`;
-    const active = c === 'all' ? 'active' : ''; // always reset to All
+    const active = c === 'all' ? selCats.length === 0 : selCats.includes(c);
     if (inTrial && c !== 'all') {
       html += `<button class="seg-btn locked" disabled data-val="${c}" title="Unlocks with subscription">${label}</button>`;
     } else {
-      html += `<button class="seg-btn ${active}" data-val="${c}" onclick="applyFilter('category','${c}')">${label}</button>`;
+      html += `<button class="seg-btn ${active ? 'active' : ''}" data-val="${c}" onclick="toggleCategory('${c}')">${label}</button>`;
     }
   });
   ctrl.innerHTML = html;
-  requestAnimationFrame(() => slideToActive('seg-cat', false));
+}
+
+function toggleCategory(c) {
+  if (c === 'all') {
+    pickerFilters.categories = [];
+  } else {
+    const arr = pickerFilters.categories || [];
+    const idx = arr.indexOf(c);
+    if (idx === -1) {
+      pickerFilters.categories = [...arr, c];
+    } else {
+      pickerFilters.categories = arr.filter(x => x !== c);
+    }
+  }
+  // Reflect active state on buttons without rebuilding
+  const ctrl = document.getElementById('seg-cat');
+  if (ctrl) {
+    const selCats = pickerFilters.categories;
+    ctrl.querySelectorAll('.seg-btn').forEach(b => {
+      const val = b.dataset.val;
+      b.classList.toggle('active', val === 'all' ? selCats.length === 0 : selCats.includes(val));
+    });
+  }
+  updateModeCounts();
 }
 
 function rebuildTopicControl() {
