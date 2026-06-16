@@ -7599,6 +7599,88 @@
     },
     {
       "year": 2021,
+      "marks": 4,
+      "section": "II",
+      "qNum": "23",
+      "category": "N2",
+      "image": "/diagrams/mathematics-standard-2_2021_Q23_stimulus.jpg",
+      "q": "A network shows travel times (in minutes) between towns: Queentown, Kingsville, Underwood, Minertown, Walltown, Fernville, Parktown, Citadel.\n\nEdge weights: Queentown-Kingsville=30, Queentown-Minertown=25 (via Kingsville), Kingsville-Underwood=20, Kingsville-Minertown=25, Underwood-Citadel=40, Minertown-Walltown=10, Walltown-Parktown=15, Walltown-Fernville=20, Parktown-Citadel=40, Fernville=20.\n\n(a) List the edges of a minimum spanning tree and find its total length. (3 marks)\n\n(b) Find the shortest travel time from Queentown to Fernville along the minimum spanning tree. (1 mark)",
+      "answer": "(a) Using Kruskal's algorithm (select cheapest edges without cycles):\nMinertown-Walltown=10, Walltown-Parktown=15, Kingsville-Underwood=20, Walltown-Fernville=20, Queentown-Kingsville=30\nTotal length = 10+15+20+20+30+... \nMinimum spanning tree length = 160 minutes\n\n(b) Queentown → Kingsville → Minertown → Walltown → Fernville\n= 30 + 25 + 10 + 20 = 65 minutes\n\nOR shortest path via MST = 45 + 20 = 65 minutes",
+      "keywords": [
+        "160",
+        "65"
+      ],
+      "minKeywords": 2,
+      "bandDescriptors": {
+        "full": "4/4 - MST length = 160 and shortest time = 65 minutes.",
+        "partial": "2-3/4 - Correct MST (160) or correct shortest path (65).",
+        "minimal": "1/4 - Lists a valid spanning tree or partial path."
+      }
+    },
+    {
+      "year": 2021,
+      "marks": 4,
+      "section": "II",
+      "qNum": "24",
+      "category": "A4",
+      "image": "/diagrams/mathematics-standard-2_2021_Q24_stimulus.jpg",
+      "q": "A population, P, is to be modelled using the function P = 2000(1.2)^t, where t is the time in years.\n\n(a) What is the initial population? (1 mark)\n\n(b) Find the population after 5 years. (1 mark)\n\n(c) On the axes provided, draw the graph of the population against time, showing the points at t = 0 and at t = 5. Describe the key features of this graph. (2 marks)",
+      "answer": "(a) When t = 0: P = 2000(1.2)^0 = 2000\n\n(b) When t = 5: P = 2000(1.2)^5 = 4977 (nearest integer)\n\n(c) The graph is an exponential growth curve.\nKey points: (0, 2000) and (5, 4977).\nThe graph starts at P = 2000 and increases at an increasing rate (concave up).",
+      "keywords": [
+        "2000",
+        "4977"
+      ],
+      "minKeywords": 2,
+      "bandDescriptors": {
+        "full": "4/4 - Initial population = 2000, population after 5 years = 4977, correct graph description with both key points.",
+        "partial": "2-3/4 - Both numerical answers correct, or correct graph with one point.",
+        "minimal": "1/4 - Initial population correct or population after 5 years correct."
+      }
+    },
+    {
+      "year": 2021,
+      "marks": 4,
+      "section": "II",
+      "qNum": "25",
+      "category": "M1",
+      "image": "/diagrams/mathematics-standard-2_2021_Q25_stimulus.jpg",
+      "q": "A rectangular sportsground has been drawn to scale on a 1-cm grid as shown. The scale used is 1:3000.\n\nKerry took 12 minutes to walk around the perimeter of this sportsground.\n\nWhat was Kerry's average speed in kilometres per hour?",
+      "answer": "Perimeter of diagram = 2 × (8 + 5) = 26 cm\n\nActual perimeter = 26 × 3000 cm = 78 000 cm = 780 m\n\nSpeed = 780/12 = 65 m/minute\n\n= (65 × 60)/1000 km/hour\n\n= 3.9 km/hour",
+      "keywords": [
+        "780",
+        "65",
+        "3.9"
+      ],
+      "minKeywords": 2,
+      "bandDescriptors": {
+        "full": "4/4 - Speed = 3.9 km/hour with full working.",
+        "partial": "2-3/4 - Correct perimeter (780 m) or correct speed in m/min (65).",
+        "minimal": "1/4 - Correct perimeter of diagram (26 cm) or equivalent merit."
+      }
+    },
+    {
+      "year": 2021,
+      "marks": 3,
+      "section": "II",
+      "qNum": "28",
+      "category": "S5",
+      "image": "/diagrams/mathematics-standard-2_2021_Q28_stimulus.jpg",
+      "q": "A salesperson is interested in the relationship between the number of bottles of lemonade sold per day (y) and the number of hours of sunshine in the day (x).\n\nThe diagram shows the dataset used in the investigation and the least-squares regression line.\n\n(a) Find the equation of the least-squares regression line relating to the dataset. (2 marks)\n\n(b) Suppose a sixth data point was collected on a day which had 10 hours of sunshine. On that day 45 bottles of lemonade were sold.\n\nWhat would happen to the gradient found in part (a)? (1 mark)",
+      "answer": "(a) From the graph, the regression line passes through (0, 2) and (5, 18).\nGradient = (18 - 2)/(5 - 0) = 16/5 = 3.2\nEquation: y = 2 + 3.2x\n\n(b) The new point (10, 45) is above the current line.\nThe gradient would increase.",
+      "keywords": [
+        "3.2",
+        "y = 2 + 3.2x",
+        "increase"
+      ],
+      "minKeywords": 2,
+      "bandDescriptors": {
+        "full": "3/3 - Correct equation y = 2 + 3.2x and states gradient would increase.",
+        "partial": "2/3 - Correct equation or correct gradient only, or correct conclusion for part (b).",
+        "minimal": "1/3 - Correct gradient (3.2) or correct intercept (2) found."
+      }
+    },
+    {
+      "year": 2021,
       "marks": 5,
       "section": "II",
       "qNum": "32",
@@ -7615,6 +7697,69 @@
         "full": "5/5 — XY = 13.86 cm and shaded area = 45.1 cm².",
         "partial": "2–4/5 — One part fully correct.",
         "minimal": "1/5 — Correct trig ratio for XY."
+      }
+    },
+    {
+      "year": 2021,
+      "marks": 4,
+      "section": "II",
+      "qNum": "33",
+      "category": "S5",
+      "image": "/diagrams/mathematics-standard-2_2021_Q33_stimulus.jpg",
+      "q": "For a sample of 17 inland towns in Australia, the height above sea level, x (metres), and the average maximum daily temperature, y (degrees C), were recorded.\n\nThe regression line is y = 29.2 - 0.011x. The correlation coefficient is r = -0.494.\n\n(a)(i) By using the equation of the regression line, predict the average maximum daily temperature for a town that is 540 m above sea level. Give your answer correct to one decimal place. (1 mark)\n\n(a)(ii) The gradient of the regression line is -0.011. Interpret the value of this gradient in the given context. (2 marks)\n\n(b) The graph below shows the relationship between the latitude, x (degrees south), and the average maximum daily temperature, y (degrees C), for the same 17 towns. The regression line is y = 45.6 - 0.683x, r = -0.897.\n\nAnother inland town is 540 m above sea level and its latitude is 28 degrees south. Which measurement, height above sea level or latitude, would be better to use to predict this town's average maximum daily temperature? Give a reason. (1 mark)",
+      "answer": "(a)(i) y = 29.2 - 0.011 × 540 = 29.2 - 5.94 = 23.3 degrees C\n\n(a)(ii) For a one metre increase in height above sea level, the average maximum daily temperature is expected to decrease by 0.011 degrees C.\n\n(b) Latitude is better to use.\nThe correlation coefficient for latitude (r = -0.897) is stronger (closer to -1) than for height above sea level (r = -0.494), so latitude is a better predictor of temperature.",
+      "keywords": [
+        "23.3",
+        "0.011",
+        "latitude",
+        "-0.897"
+      ],
+      "minKeywords": 2,
+      "bandDescriptors": {
+        "full": "4/4 - 23.3 degrees C, correct gradient interpretation, and latitude with reason citing r values.",
+        "partial": "2-3/4 - Two parts correct.",
+        "minimal": "1/4 - Temperature prediction correct or correct interpretation of gradient."
+      }
+    },
+    {
+      "year": 2021,
+      "marks": 4,
+      "section": "II",
+      "qNum": "34",
+      "category": "A1",
+      "q": "In a park the only animals are goannas and emus. Let x be the number of goannas and let y be the number of emus.\n\nThe number of goannas plus the number of emus in the park is 31. Hence x + y = 31.\n\nEach goanna has four legs and each emu has two legs. In total the emus and goannas have 76 legs.\n\n(a) Write another equation relating x and y based on the total number of legs. (1 mark)\n\n(b) Solve the two simultaneous equations to find the number of goannas and the number of emus. Show your working. (3 marks)",
+      "answer": "(a) 4x + 2y = 76, which simplifies to 2x + y = 38\n\n(b) Simultaneous equations:\nx + y = 31  ... (1)\n2x + y = 38  ... (2)\n\n(2) - (1): x = 7\nSubstitute into (1): 7 + y = 31, so y = 24\n\nThere are 7 goannas and 24 emus.",
+      "keywords": [
+        "2x + y = 38",
+        "7",
+        "24"
+      ],
+      "minKeywords": 2,
+      "bandDescriptors": {
+        "full": "4/4 - Correct equation, 7 goannas and 24 emus with working.",
+        "partial": "2-3/4 - Correct second equation or correct solution to simultaneous equations.",
+        "minimal": "1/4 - Correct second equation (4x + 2y = 76 or 2x + y = 38)."
+      }
+    },
+    {
+      "year": 2021,
+      "marks": 3,
+      "section": "II",
+      "qNum": "35",
+      "category": "A4",
+      "image": "/diagrams/mathematics-standard-2_2021_Q35_stimulus.jpg",
+      "q": "A publisher sells a book for $10. At this price, 5000 copies will be sold and revenue = $50 000.\n\nFor every dollar the price increases, 50 fewer copies are sold. If the publisher charges (10 + x) dollars, the revenue model is:\nR = -50x^2 + 4500x + 50 000\n\nA graph of this model is shown with x-intercepts at x = -10 and x = 100.\n\n(a) By first finding a suitable value of x, find the price the publisher should charge for each book to maximise the revenue raised from sales. (2 marks)\n\n(b) Find the value of the intercept of the parabola with the vertical axis. (1 mark)",
+      "answer": "(a) By symmetry, the maximum is at the midpoint of the x-intercepts:\nx = (-10 + 100)/2 = 45\n\nOptimal price = 10 + 45 = $55\n\n(b) When x = 0: R = -50(0)^2 + 4500(0) + 50 000 = 50 000\nThe vertical intercept is 50 000.",
+      "keywords": [
+        "45",
+        "55",
+        "50000"
+      ],
+      "minKeywords": 2,
+      "bandDescriptors": {
+        "full": "3/3 - x = 45, price = $55, and vertical intercept = 50 000.",
+        "partial": "2/3 - Correct x value (45) or correct price ($55), and vertical intercept.",
+        "minimal": "1/3 - x = 45 found or vertical intercept = 50 000."
       }
     },
     {
