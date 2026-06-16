@@ -7788,7 +7788,7 @@
       "qNum": "18",
       "category": "N2",
       "image": "/diagrams/mathematics-standard-2_2024_Q18_stimulus.jpg",
-      "q": "A network with 10 vertices and weighted edges is shown.\n\n(a) Draw a minimum spanning tree and determine its weight. (2 marks)\n(b) Is it possible to find another spanning tree with the same weight? Give a reason. (1 mark)",
+      "q": "A network with 10 vertices and weighted edges is shown.\n\n(a) List the edges of a minimum spanning tree and determine its total weight. (2 marks)\n(b) Is it possible to find another spanning tree with the same weight? Give a reason. (1 mark)",
       "answer": "(a) Minimum spanning tree uses the lowest-weight edges connecting all vertices without cycles.\nWeight = 24\n\n(b) Yes — there is another spanning tree with the same weight.\nReason: Edge BC and edge FC have the same weight, so BC can replace FC (or vice versa) to give an alternate minimum spanning tree of the same total weight.",
       "keywords": [
         "24",
