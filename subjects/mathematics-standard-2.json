@@ -8818,6 +8818,53 @@
     },
     {
       "year": 2025,
+      "marks": 5,
+      "section": "II",
+      "qNum": "22",
+      "category": "N2",
+      "image": "/diagrams/mathematics-standard-2_2025_Q22_stimulus.jpg",
+      "q": "A network of pipes with one cut is shown. The number on each edge gives the capacity of that pipe in L/min.\n\n(a) What is the capacity of the cut shown? (1 mark)\n\n(b) A second diagram shows a possible flow for this network. Flow values: A→B=18, A→C=x, B→C=5, B→D=23, D→E=8, C→E=13, E→F=1, C→F=12, D→G=15, E→G=22, F→G=11.\n(i) What is the value of x? Give a reason for your answer. (2 marks)\n(ii) Which of the pipes in the flow are at full capacity? (1 mark)\n(iii) The maximum flow for this network is 50 L/min. Which path of pipes could have an increase in flow of 2 L/min to achieve the maximum flow? (1 mark)",
+      "answer": "(a) The cut crosses edges B→D (26), E→G (24), and C→F (12).\nCapacity of cut = 26 + 24 + 12 = 62 L/min\n\n(b)(i) x = 30\nReason: Outflow from C = 5 + 13 + 12 = 30 L/min. By conservation of flow, inflow to C must equal outflow, so x = 30.\n\n(b)(ii) Pipes at full capacity: DE (capacity 8, flow 8), CF (capacity 12, flow 12), DG (capacity 15, flow 15), FG (capacity 11, flow 11).\n\n(b)(iii) Path ACEG. The path A→C→E→G has spare capacity: A→C has capacity 35, flow 30 (spare 5); C→E has capacity 17, flow 13 (spare 4); E→G has capacity 24, flow 22 (spare 2). An increase of 2 L/min along ACEG is possible.",
+      "keywords": [
+        "62",
+        "30",
+        "DE",
+        "CF",
+        "DG",
+        "FG",
+        "ACEG"
+      ],
+      "minKeywords": 3,
+      "bandDescriptors": {
+        "high": "Correctly finds cut capacity 62 L/min, solves x=30 with conservation of flow reasoning, identifies all 4 full-capacity pipes, and names correct path ACEG with justification.",
+        "mid": "Finds cut capacity and value of x correctly. Identifies most full-capacity pipes. Attempts path for maximum flow.",
+        "low": "Attempts to calculate cut capacity or uses conservation of flow principle."
+      }
+    },
+    {
+      "year": 2025,
+      "marks": 6,
+      "section": "II",
+      "qNum": "26",
+      "category": "M4",
+      "image": "/diagrams/mathematics-standard-2_2025_Q26_stimulus.jpg",
+      "q": "A toy has a curved surface on the top which has been shaded as shown. The toy has a uniform cross-section and a rectangular base. The cross-section has heights: 6.0 cm at one edge, 3.8 cm at the midpoint (5.1 cm from each edge), and 0 cm at the other edge. The base is 10.2 cm wide and the toy is 40.0 cm long.\n\n(a) Use two applications of the trapezoidal rule to find an approximate area of the cross-section of the toy. (2 marks)\n\n(b) The total surface area of the plastic toy is 1300 cm². What is the approximate area of the curved surface? (2 marks)\n\n(c) The measurements shown on the diagram are given to the nearest millimetre. What is the percentage error of the measurement of 10.2 cm? Give your answer correct to 3 significant figures. (2 marks)",
+      "answer": "(a) Using two applications of the trapezoidal rule with h = 5.1 cm:\nA ≈ (5.1/2)(6 + 3.8) + (5.1/2)(3.8 + 0)\n= 2.55 × 9.8 + 2.55 × 3.8\n= 24.99 + 9.69\n≈ 34.68 cm²\n\n(b) The total surface area consists of:\n• Two cross-section ends: 2 × 34.68 = 69.36 cm²\n• Base (rectangular bottom): 10.2 × 40 = 408 cm²\n• Two side faces: 2 × (6.0 × 40) = 480 cm∂... \nUsing MG: 1300 = (2 × 34.68) + (10.2 × 40) + (6 × 40) + curved surface\n1300 = 69.36 + 408 + 240 + curved surface\n1300 ≈ 717.36 + curved surface\nCurved surface ≈ 582.64 cm²\n\n(c) Absolute error = ½ × 0.1 cm = 0.05 cm\nPercentage error = (0.05 / 10.2) × 100%\n= 0.4902...×\n≈ 0.490% (3 significant figures)",
+      "keywords": [
+        "34.68",
+        "582.64",
+        "582",
+        "0.490"
+      ],
+      "minKeywords": 2,
+      "bandDescriptors": {
+        "high": "Correctly applies trapezoidal rule to get ~34.68 cm², finds curved surface ~582.64 cm², and calculates percentage error as 0.490%.",
+        "mid": "Correctly applies trapezoidal rule and attempts surface area calculation. Shows understanding of percentage error formula.",
+        "low": "Attempts trapezoidal rule with correct formula, or calculates absolute error of 0.05 cm."
+      }
+    },
+    {
+      "year": 2025,
       "marks": 3,
       "section": "II",
       "qNum": "28",
@@ -8856,6 +8903,93 @@
         "full": "3/3 — Volume of 30 spheres (135π), equation set up correctly, h = 16 cm.",
         "partial": "2/3 — Correct volume of spheres or correct equation structure.",
         "minimal": "1/3 — Correct formula for volume of a sphere."
+      }
+    },
+    {
+      "year": 2025,
+      "marks": 3,
+      "section": "II",
+      "qNum": "35",
+      "category": "M6",
+      "image": "/diagrams/mathematics-standard-2_2025_Q35_stimulus.jpg",
+      "q": "The triangle PTA is shown. The length of PA is 75 m and the length of PT is 51 m.\n\nThe angle of depression from T to A is 36°, and the angle PTA is obtuse.\n\nFind the length of TA. Give your answer correct to 2 decimal places.",
+      "answer": "Since the angle of depression from T to A is 36°, the angle TAP (alternate angle) = 36° (since TA is horizontal from T’s perspective, but actually ∠TAP = 36° from the horizontal at A).\n\nUsing the sine rule to find ∠PTA:\nsin(θ) / 75 = sin(36°) / 51\nsin(θ) = (sin 36° × 75) / 51 = 0.8660...\nθ = 59.81° ≈ 60°\n\nSince ∠PTA is obtuse: ∠PTA = 180° − 60° = 120°\n\nTherefore: ∠TPA = 180° − 120° − 36° = 24°\n\nUsing the sine rule:\nTA / sin 24° = 51 / sin 36°\nTA = (51 × sin 24°) / sin 36°\nTA ≈ 35.29 m",
+      "keywords": [
+        "35.29",
+        "24",
+        "120"
+      ],
+      "minKeywords": 2,
+      "bandDescriptors": {
+        "high": "Correctly identifies obtuse angle PTA = 120°, finds angle TPA = 24°, and uses sine rule to obtain TA ≈ 35.29 m.",
+        "mid": "Uses sine rule correctly and identifies the obtuse angle condition. May make a minor arithmetic error.",
+        "low": "Attempts to use the sine rule with the given information."
+      }
+    },
+    {
+      "year": 2025,
+      "marks": 4,
+      "section": "II",
+      "qNum": "36",
+      "category": "F1",
+      "image": "/diagrams/mathematics-standard-2_2025_Q36_stimulus.jpg",
+      "q": "The graph shows the salvage value of a car over 5 years. The salvage values are based on the declining-balance method. The initial value is $55 000 and the value after 1 year is $44 000.\n\nBy what amount will the car’s value depreciate during the 10th year?",
+      "answer": "Step 1: Find the depreciation rate r.\n$44 000 = $55 000 × (1 − r)\n44/55 = 1 − r\nr = 1 − 44/55 = 11/55 = 0.2 = 20%\n\nStep 2: Find the value at the end of year 9 (after 9 years of depreciation from $55 000).\nValue after 9 years = $55 000 × (1 − 0.2)⁹\n= $55 000 × (0.8)⁹\n= $55 000 × 0.134218\n= $7 381.98\n\nStep 3: Depreciation during year 10 = value at start of year 10 × r\n= $7 381.98 × 0.2\n= $1 476.40\n\nThe car will depreciate by $1 476.40 during the 10th year.",
+      "keywords": [
+        "1476.40",
+        "1476",
+        "20%",
+        "0.2"
+      ],
+      "minKeywords": 2,
+      "bandDescriptors": {
+        "high": "Correctly identifies rate r = 20%, calculates value after 9 years as $7381.98, and finds depreciation in 10th year as $1476.40.",
+        "mid": "Correctly finds the depreciation rate of 20% and attempts to calculate depreciation in the 10th year.",
+        "low": "Uses the declining-balance formula or identifies the depreciation rate from the graph."
+      }
+    },
+    {
+      "year": 2025,
+      "marks": 4,
+      "section": "II",
+      "qNum": "37",
+      "category": "M7",
+      "image": "/diagrams/mathematics-standard-2_2025_Q37_stimulus.jpg",
+      "q": "The diagram shows a park consisting of two equilateral triangles. The shaded triangle is a grassed section. All measurements on the diagram are in metres.\n\nThe outer equilateral triangle has side length 9 m. Each vertex of the inner (shaded) triangle is located 3 m along each side of the outer triangle from a vertex.\n\nHow long will it take to mow the grassed section if it takes 5 minutes to mow 20 m²? Give your answer to the nearest minute.",
+      "answer": "Step 1: Find the side length c of the shaded triangle using the cosine rule.\nIn the triangle formed by sides 9 m and 3 m with included angle 60° (equilateral triangle angle):\nc² = 9² + 3² − 2 × 9 × 3 × cos 60°\nc² = 81 + 9 − 2 × 9 × 3 × 0.5\nc² = 90 − 27 = 63\nc = √63 ≈ 7.937 m\n\nStep 2: Find the area of the shaded triangle.\nArea = ½ × c × c × sin 60°\n= ½ × 7.937 × 7.937 × sin 60°\n= ½ × 63 × (√3/2)\n≈ 27.28 m²\n\nStep 3: Calculate time to mow.\nRate = 5 min per 20 m² = 0.25 min/m²\nTime = 27.28 × 0.25 ≈ 6.81 minutes\n≈ 7 minutes (to the nearest minute)",
+      "keywords": [
+        "7",
+        "27.28",
+        "27.2",
+        "7.937"
+      ],
+      "minKeywords": 2,
+      "bandDescriptors": {
+        "high": "Uses cosine rule correctly to find side c ≈ 7.937 m, calculates area of shaded triangle ≈ 27.28 m², and determines mowing time ≈ 7 minutes.",
+        "mid": "Correctly applies the cosine rule to find the side length and calculates the area. Minor error in final step.",
+        "low": "Identifies that the cosine rule is needed or identifies the 60° angle in the equilateral triangle."
+      }
+    },
+    {
+      "year": 2025,
+      "marks": 3,
+      "section": "II",
+      "qNum": "39",
+      "category": "A4",
+      "image": "/diagrams/mathematics-standard-2_2025_Q39_stimulus.jpg",
+      "q": "After a dose of a medication, the amount of the medication remaining in a person can be modelled by the equation y = kaˣ, where x is the number of hours after taking the dose, and y is the amount remaining in milligrams (mg).\n\nThe graph shows the amount of the medication remaining in a person after x hours. Two points are shown: at x = 0, y = 15 and at x = 2, y = 9.\n\nUsing the information provided, find the amount of medication that remains in a person when x = 4.",
+      "answer": "Step 1: Find k.\nAt x = 0: y = ka⁰ = k × 1 = k\nSince y = 15 when x = 0: k = 15\n\nStep 2: Find a.\nAt x = 2, y = 9:\n9 = 15 × a²\na² = 9/15 = 0.6\na = √0.6 ≈ 0.7746\n\nStep 3: Find y when x = 4.\ny = 15 × (0.7746...)⁴\n= 15 × 0.36\n= 5.4 mg",
+      "keywords": [
+        "5.4",
+        "0.7746",
+        "15",
+        "0.6"
+      ],
+      "minKeywords": 2,
+      "bandDescriptors": {
+        "high": "Correctly identifies k = 15, finds a = √0.6 ≈ 0.7746, and calculates y = 5.4 mg when x = 4.",
+        "mid": "Correctly finds k = 15 and sets up the equation to find a. Minor error in final calculation.",
+        "low": "Recognises that k = 15 from the y-intercept or attempts to substitute given points into the equation."
       }
     }
   ]
