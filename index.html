@@ -630,7 +630,7 @@ async function loadSubjectData(key) {
   const s = SUBJECTS[key];
   if (s) {
     if (!s.categories && data.mcQuestions) {
-      const catVals = [...new Set(data.mcQuestions.map(q => q.category).filter(Boolean))];
+      const catVals = [...new Set(data.mcQuestions.map(q => q.category).filter(Boolean))].sort();
       s.categories = catVals.length > 0 ? ['all', ...catVals] : null;
     }
     if (!s.topics && data.mcQuestions) {
