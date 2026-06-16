@@ -1,0 +1,19 @@
+# Student/personal documents — copyright, never commit
+*.pdf
+*.docx
+*.doc
+
+# Unpacked DOCX folder from analysis tooling
+workbook_unpacked/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Node
+node_modules/
+
+# OS
+.DS_Store
+Thumbs.db

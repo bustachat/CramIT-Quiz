@@ -1,2 +1,3 @@
 # Debug layout images generated during calibration analysis — local only
 _debug/
+_debug_*.png
