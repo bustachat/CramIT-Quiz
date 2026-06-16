@@ -1009,7 +1009,7 @@
     {
       "year": 2024,
       "category": "S4",
-      "q": "A survey of 370 people was conducted to investigate the association between watching Anime and the age of the person. The two-way table shows the responses collected. Approximately what percentage of the over 30-year-olds watch Anime?",
+      "q": "A survey of 370 people was conducted to investigate the association between watching Anime and the age of the person. The two-way table shows the responses collected.\n\n<table class=\"nesa-table\"><thead><tr><th rowspan=\"2\">Age</th><th colspan=\"2\">Watching</th><th rowspan=\"2\">TOTAL</th></tr><tr><th>Watches Anime</th><th>Does not watch Anime</th></tr></thead><tbody><tr><td>30 years old and under</td><td>152</td><td>61</td><td>213</td></tr><tr><td>Over 30 years old</td><td>34</td><td>123</td><td>157</td></tr><tr><td><strong>TOTAL</strong></td><td><strong>186</strong></td><td><strong>184</strong></td><td><strong>370</strong></td></tr></tbody></table>\n\nApproximately what percentage of the over 30-year-olds watch Anime?",
       "options": [
         "9%",
         "18%",
@@ -3925,7 +3925,7 @@
       "year": 2021,
       "category": "S4",
       "variant": true,
-      "q": "For bivariate data, Pearson's correlation coefficient is +1. Which graph best represents this?",
+      "q": "For bivariate data, Pearson's correlation coefficient is +1. Which description best represents this data?",
       "options": [
         "Random scatter",
         "Perfect upward line",
@@ -3939,7 +3939,7 @@
       "year": 2021,
       "category": "S4",
       "variant": true,
-      "q": "For bivariate data, Pearson's correlation coefficient is 0.85. Which graph best represents this?",
+      "q": "For bivariate data, Pearson's correlation coefficient is 0.85. Which description best represents this data?",
       "options": [
         "Random scatter",
         "Strong positive trend",
@@ -3953,7 +3953,7 @@
       "year": 2021,
       "category": "S4",
       "variant": true,
-      "q": "For bivariate data, Pearson's correlation coefficient is −0.3. Which graph best represents this?",
+      "q": "For bivariate data, Pearson's correlation coefficient is −0.3. Which description best represents this data?",
       "options": [
         "Weak negative trend",
         "Strong negative trend",
