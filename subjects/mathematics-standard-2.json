@@ -235,15 +235,21 @@
     {
       "year": 2021,
       "category": "M1",
-      "q": "Which shape has the largest perimeter? Rectangle 8×10, Square side 11, Triangle 9-3-4, Circle diameter 9",
+      "q": "Which of the following shapes has the largest perimeter?",
       "options": [
-        "Rectangle",
-        "Square",
-        "Triangle",
-        "Circle"
+        "A",
+        "B",
+        "C",
+        "D"
       ],
-      "answer": 1,
-      "solution": "<div class=\"step\"><span class=\"step-number\">1.</span> Identify each shape and its dimensions.</div>\n<div class=\"step\"><span class=\"step-number\">2.</span> Rectangle: length 10, width 8.</div>\n<div class=\"step\"><span class=\"step-number\">3.</span> Rectangle perimeter = 2(10 + 8) = 36.</div>\n<div class=\"step\"><span class=\"step-number\">4.</span> Square: side 11, perimeter = 4 × 11 = 44.</div>\n<div class=\"step\"><span class=\"step-number\">5.</span> Triangle: sides 9, 3, 4, perimeter = 9 + 3 + 4 = 16.</div>\n<div class=\"step\"><span class=\"step-number\">6.</span> Circle: diameter 9, radius 4.5.</div>\n<div class=\"step\"><span class=\"step-number\">7.</span> Circumference = π × 9 ≈ 3.1416 × 9 ≈ 28.27.</div>\n<div class=\"step\"><span class=\"step-number\">8.</span> Compare: 36, 44, 16, 28.27.</div>\n<div class=\"step\"><span class=\"step-number\">9.</span> Largest is 44.</div>\n<div class=\"step\"><span class=\"step-number\">10.</span> Correct: Square.</div>"
+      "answer": 0,
+      "solution": "<div class=\"step\"><span class=\"step-number\">1.</span> Identify each shape and its dimensions.</div>\n<div class=\"step\"><span class=\"step-number\">2.</span> Rectangle: length 10, width 8.</div>\n<div class=\"step\"><span class=\"step-number\">3.</span> Rectangle perimeter = 2(10 + 8) = 36.</div>\n<div class=\"step\"><span class=\"step-number\">4.</span> Square: side 11, perimeter = 4 × 11 = 44.</div>\n<div class=\"step\"><span class=\"step-number\">5.</span> Triangle: sides 9, 3, 4, perimeter = 9 + 3 + 4 = 16.</div>\n<div class=\"step\"><span class=\"step-number\">6.</span> Circle: diameter 9, radius 4.5.</div>\n<div class=\"step\"><span class=\"step-number\">7.</span> Circumference = π × 9 ≈ 3.1416 × 9 ≈ 28.27.</div>\n<div class=\"step\"><span class=\"step-number\">8.</span> Compare: 36, 44, 16, 28.27.</div>\n<div class=\"step\"><span class=\"step-number\">9.</span> Largest is 44.</div>\n<div class=\"step\"><span class=\"step-number\">10.</span> Correct: Square.</div>",
+      "optionImages": [
+        "/diagrams/mathematics-standard-2_2021_Q1_A.jpg",
+        "/diagrams/mathematics-standard-2_2021_Q1_B.jpg",
+        "/diagrams/mathematics-standard-2_2021_Q1_C.jpg",
+        "/diagrams/mathematics-standard-2_2021_Q1_D.jpg"
+      ]
     },
     {
       "year": 2021,
@@ -350,13 +356,19 @@
       "category": "A4",
       "q": "Which of the following best represents the graph of y = 10(0.8)^x?",
       "options": [
-        "Exponential decay from 10",
-        "Exponential growth from 10",
-        "Linear decay",
-        "Parabola"
+        "A",
+        "B",
+        "C",
+        "D"
       ],
       "answer": 0,
-      "solution": "<div class=\"step\"><span class=\"step-number\">1.</span> Equation: y = 10 × (0.8)^x.</div>\n<div class=\"step\"><span class=\"step-number\">2.</span> Standard exponential form y = a × b^x.</div>\n<div class=\"step\"><span class=\"step-number\">3.</span> a = 10 (initial value).</div>\n<div class=\"step\"><span class=\"step-number\">4.</span> Base b = 0.8.</div>\n<div class=\"step\"><span class=\"step-number\">5.</span> Since 0 < b < 1, exponential decay.</div>\n<div class=\"step\"><span class=\"step-number\">6.</span> When x = 0, y = 10 (y-intercept 10).</div>\n<div class=\"step\"><span class=\"step-number\">7.</span> As x increases, y decreases towards 0.</div>\n<div class=\"step\"><span class=\"step-number\">8.</span> Not growth (would require b > 1).</div>\n<div class=\"step\"><span class=\"step-number\">9.</span> Not linear or parabolic.</div>\n<div class=\"step\"><span class=\"step-number\">10.</span> Correct: Exponential decay from 10.</div>"
+      "solution": "<div class=\"step\"><span class=\"step-number\">1.</span> Equation: y = 10 × (0.8)^x.</div>\n<div class=\"step\"><span class=\"step-number\">2.</span> Standard exponential form y = a × b^x.</div>\n<div class=\"step\"><span class=\"step-number\">3.</span> a = 10 (initial value).</div>\n<div class=\"step\"><span class=\"step-number\">4.</span> Base b = 0.8.</div>\n<div class=\"step\"><span class=\"step-number\">5.</span> Since 0 < b < 1, exponential decay.</div>\n<div class=\"step\"><span class=\"step-number\">6.</span> When x = 0, y = 10 (y-intercept 10).</div>\n<div class=\"step\"><span class=\"step-number\">7.</span> As x increases, y decreases towards 0.</div>\n<div class=\"step\"><span class=\"step-number\">8.</span> Not growth (would require b > 1).</div>\n<div class=\"step\"><span class=\"step-number\">9.</span> Not linear or parabolic.</div>\n<div class=\"step\"><span class=\"step-number\">10.</span> Correct: Exponential decay from 10.</div>",
+      "optionImages": [
+        "/diagrams/mathematics-standard-2_2021_Q10_A.jpg",
+        "/diagrams/mathematics-standard-2_2021_Q10_B.jpg",
+        "/diagrams/mathematics-standard-2_2021_Q10_C.jpg",
+        "/diagrams/mathematics-standard-2_2021_Q10_D.jpg"
+      ]
     },
     {
       "year": 2021,
