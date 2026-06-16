@@ -6,7 +6,7 @@
   "mcQuestions": [
     {
       "year": 2020,
-      "category": "A2",
+      "category": "A4",
       "q": "Which of the following could represent the graph of y = −x² + 1?",
       "options": [
         "Parabola opening upward, y-intercept at 1",
@@ -38,7 +38,7 @@
     },
     {
       "year": 2020,
-      "category": "T2",
+      "category": "M4",
       "q": "The distance between Bricktown and Koala Creek is 75 km. A person travels from Bricktown to Koala Creek at an average speed of 50 km/h. How long does it take the person to complete the journey?",
       "options": [
         "40 minutes",
@@ -77,7 +77,7 @@
     },
     {
       "year": 2020,
-      "category": "F1",
+      "category": "A2",
       "q": "Suppose y = –1 – 2x. When the value of x increases by 5, the value of y decreases by",
       "options": [
         "1",
@@ -90,7 +90,7 @@
     },
     {
       "year": 2020,
-      "category": "S1S2",
+      "category": "S1",
       "q": "Which histogram best represents a dataset that is positively skewed?",
       "options": [
         "Tail on left",
@@ -109,7 +109,7 @@
     },
     {
       "year": 2020,
-      "category": "S1S2",
+      "category": "S5",
       "q": "John recently did a class test in each of three subjects. The class scores on each test were normally distributed. The table shows John's scores as well as the mean and standard deviation of the class scores on each test. Relative to the rest of the class, which row of the table below shows John's strongest subject and his weakest subject?",
       "hideQ": true,
       "options": [
@@ -130,7 +130,7 @@
     },
     {
       "year": 2020,
-      "category": "N1",
+      "category": "N2",
       "q": "Team A and Team B have entered a chess competition. Team A and Team B have three members each. Each member of Team A must play each member of Team B once. Which of the following network diagrams could represent the chess games to be played?",
       "options": [
         "Complete graph K₆",
@@ -149,7 +149,7 @@
     },
     {
       "year": 2020,
-      "category": "F1",
+      "category": "A2",
       "q": "A plumber charges a call-out fee of $90 as well as $2 per minute while working. Suppose the plumber works for t hours. Which equation expresses the amount the plumber charges ($C) as a function of time (t hours)?",
       "options": [
         "C = 2 + 90t",
@@ -162,7 +162,7 @@
     },
     {
       "year": 2020,
-      "category": "F2",
+      "category": "F4",
       "q": "An asset is depreciated using the declining-balance method with a rate of depreciation of 8% per half year. The asset was bought for $10 000. What is the salvage value of the asset after 5 years?",
       "options": [
         "$1749.01",
@@ -175,7 +175,7 @@
     },
     {
       "year": 2020,
-      "category": "A2",
+      "category": "S4",
       "q": "For a set of bivariate data, Pearson's correlation coefficient is –1. Which graph could best represent this set of bivariate data?",
       "options": [
         "Random scatter",
@@ -194,7 +194,7 @@
     },
     {
       "year": 2020,
-      "category": "T2",
+      "category": "M4",
       "q": "When Jake stops drinking alcohol at 10:30 pm, he has a blood alcohol content (BAC) of 0.08375. The number of hours required for a person to reach zero BAC after they stop consuming alcohol is given by the formula Time = BAC ÷ 0.015. At what time on the next day should Jake expect his BAC to be 0.05?",
       "options": [
         "12:45 am",
@@ -207,7 +207,7 @@
     },
     {
       "year": 2020,
-      "category": "F2",
+      "category": "F5",
       "q": "An annuity consists of ten payments, each equal to $1000. Each payment is made on 30 June each year from 2021 through to 2030 inclusive. The rate of compound interest is 5% per annum. The present value of the annuity is calculated at 30 June 2020. The future value of the annuity is calculated at 30 June 2030. Without performing any calculations, which of the following statements is true?",
       "options": [
         "PV < $10,000 < FV",
@@ -220,7 +220,7 @@
     },
     {
       "year": 2020,
-      "category": "P1",
+      "category": "S2",
       "q": "The top of a rectangular table is divided into 8 equal sections as shown. A standard die with faces labelled 1 to 6 is rolled onto the table. A score is calculated by multiplying the value shown on the top face of the die by the number shown in the section of the table where the die lands. What is the probability of getting a score of 6?",
       "options": [
         "1/48",
@@ -261,7 +261,7 @@
     },
     {
       "year": 2021,
-      "category": "S1S2",
+      "category": "S1",
       "q": "The stem-and-leaf plot shows the number of goals scored by a team in each of ten netball games. What is the mode of this dataset?",
       "options": [
         "5",
@@ -275,7 +275,7 @@
     },
     {
       "year": 2021,
-      "category": "F2",
+      "category": "F4",
       "q": "Three years ago an appliance was valued at $2467. Its value has depreciated by 15% each year, based on the declining-balance method. What is its salvage value today, to the nearest dollar?",
       "options": [
         "$952",
@@ -314,7 +314,7 @@
     },
     {
       "year": 2021,
-      "category": "S1S2",
+      "category": "S1",
       "q": "The number of downloads of a song on each of twenty consecutive days is shown in the following graph. Which of the following graphs best shows the cumulative number of downloads up to and including each day?",
       "options": [
         "Box-plot A",
@@ -334,7 +334,7 @@
     },
     {
       "year": 2021,
-      "category": "F1",
+      "category": "A1",
       "q": "A student is thinking of a number. Let the number be x. When the student subtracts 8 from this number and multiplies the result by 3, the answer is 2 more than x. Which equation can be used to find x?",
       "options": [
         "3(x − 8) = 2x",
@@ -347,7 +347,7 @@
     },
     {
       "year": 2021,
-      "category": "A2",
+      "category": "A4",
       "q": "Which of the following best represents the graph of y = 10(0.8)^x?",
       "options": [
         "Exponential decay from 10",
@@ -360,7 +360,7 @@
     },
     {
       "year": 2021,
-      "category": "P1",
+      "category": "S2",
       "q": "There are 8 chocolates in a box. Three have peppermint centres (P) and five have caramel centres (C). Kim randomly chooses a chocolate from the box and eats it. Sam then randomly chooses and eats one of the remaining chocolates. A partially completed probability tree is shown. What is the probability that Kim and Sam choose chocolates with different centres?",
       "image": "/diagrams/mathematics-standard-2_2021_Q11_stimulus.jpg",
       "options": [
@@ -388,7 +388,7 @@
     },
     {
       "year": 2021,
-      "category": "T2",
+      "category": "A4",
       "q": "The time taken to clean a warehouse varies inversely with the number of cleaners employed. It takes 8 cleaners 60 hours to clean a warehouse. Working at the same rate, how many hours would it take 10 cleaners to clean the same warehouse?",
       "options": [
         "45",
@@ -401,7 +401,7 @@
     },
     {
       "year": 2021,
-      "category": "T2",
+      "category": "M5",
       "q": "Consider the diagram below. What is the true bearing of A from B?",
       "image": "/diagrams/mathematics-standard-2_2021_Q14_stimulus.jpg",
       "options": [
@@ -415,7 +415,7 @@
     },
     {
       "year": 2021,
-      "category": "M1",
+      "category": "M7",
       "q": "A total of 11 400 people entered a running race. The ratio of professional runners to amateurs was 3 : 16. All the professional runners completed the race while 600 of the amateurs did not complete the race. For those who completed the race, what is the ratio, in simplest form, of professional runners to amateurs?",
       "options": [
         "1:2",
@@ -428,7 +428,7 @@
     },
     {
       "year": 2021,
-      "category": "S1S2",
+      "category": "S5",
       "q": "On a test, Zac's mark corresponded to a z-score of 2. The test scores had a mean of 63 and a standard deviation of 8. What was Zac's actual mark on the test?",
       "options": [
         "65",
@@ -441,7 +441,7 @@
     },
     {
       "year": 2022,
-      "category": "S1S2",
+      "category": "S1",
       "q": "Which graph represents a negatively skewed distribution?",
       "options": [
         "Tail on left",
@@ -479,7 +479,7 @@
     },
     {
       "year": 2022,
-      "category": "N1",
+      "category": "N3",
       "q": "The network diagram shows the time needed for each step in order to complete a project. What is the critical path to complete the project?",
       "options": [
         "ACI",
@@ -506,7 +506,7 @@
     },
     {
       "year": 2022,
-      "category": "S1S2",
+      "category": "S1",
       "q": "Consider the following dataset. 13 16 17 17 21 24 Which row of the table shows how the median and mean are affected when a score of 5 is added to the dataset?",
       "options": [
         "Both change",
@@ -519,7 +519,7 @@
     },
     {
       "year": 2022,
-      "category": "T2",
+      "category": "M7",
       "q": "What is 20 minutes to one-third of a day, expressed as a ratio in simplest form?",
       "options": [
         "1:8",
@@ -532,7 +532,7 @@
     },
     {
       "year": 2022,
-      "category": "F2",
+      "category": "F1",
       "q": "Tian is paid $20.45 per hour, as well as a meal allowance of $16.20 per day. What are Tian's total earnings if she works 9 hours per day for 5 days?",
       "options": [
         "$329.85",
@@ -545,7 +545,7 @@
     },
     {
       "year": 2022,
-      "category": "M1",
+      "category": "M5",
       "q": "Which true bearing is the same as S48°W?",
       "options": [
         "132°",
@@ -558,7 +558,7 @@
     },
     {
       "year": 2022,
-      "category": "A2",
+      "category": "A4",
       "q": "An object is projected vertically into the air. Its height, h metres, above the ground after t seconds is given by h = −5t² + 80t. For how long is the object at a height of 300 metres or more above the ground?",
       "options": [
         "4 seconds",
@@ -571,7 +571,7 @@
     },
     {
       "year": 2022,
-      "category": "F2",
+      "category": "F1",
       "q": "Alex purchased 800 shares. The total cost was $2.60 per share. Alex sold the shares one year later for $3.40 each and paid a fee of $24.95 for selling the shares. What profit did Alex make on these shares?",
       "options": [
         "$590.10",
@@ -584,7 +584,7 @@
     },
     {
       "year": 2022,
-      "category": "F2",
+      "category": "F4",
       "q": "In ten years, the future value of an investment will be $150 000. The interest rate is 4% per annum, compounded half-yearly. Which equation will give the present value (PV) of the investment?",
       "options": [
         "150,000/(1+0.04)¹⁰",
@@ -597,7 +597,7 @@
     },
     {
       "year": 2022,
-      "category": "A2",
+      "category": "S4",
       "q": "For a particular course, the recorded data show a relationship between the number of hours of study per week and the marks achieved out of 100. A least-squares regression line is fitted to this dataset. The equation of this line is given by M = 20 + 3H, where M is the predicted mark and H is the number of hours of study per week. Based on this regression equation, which of the following is correct regarding the predicted mark of a student?",
       "options": [
         "Mark is 3 for zero study",
@@ -610,7 +610,7 @@
     },
     {
       "year": 2022,
-      "category": "S1S2",
+      "category": "S5",
       "q": "A random variable is normally distributed with mean 0 and standard deviation 1. The table gives the probability that this random variable lies below z. What is the probability that this random variable lies between 0 and 1.94?",
       "options": [
         "0.0262",
@@ -624,7 +624,7 @@
     },
     {
       "year": 2022,
-      "category": "F1",
+      "category": "A1",
       "q": "Which of the following correctly expresses x as the subject of y = (ax − b)/2?",
       "options": [
         "x = (2y + b)/a",
@@ -637,7 +637,7 @@
     },
     {
       "year": 2022,
-      "category": "S1S2",
+      "category": "S1",
       "q": "The cumulative frequency graph shows the distribution of the number of movie downloads made by 100 people in one month. Which box-plot best represents the same data as displayed in the cumulative frequency graph?",
       "options": [
         "Box-plot A",
@@ -670,7 +670,7 @@
     },
     {
       "year": 2023,
-      "category": "S1S2",
+      "category": "S5",
       "q": "In a normal distribution, what is the approximate percentage of scores with a z-score less than 1?",
       "options": [
         "50%",
@@ -683,7 +683,7 @@
     },
     {
       "year": 2023,
-      "category": "A2",
+      "category": "A4",
       "q": "The number of bees leaving a hive was observed and recorded over 14 days at different times of the day. Which Pearson's correlation coefficient best describes the observations?",
       "options": [
         "-0.8",
@@ -696,7 +696,7 @@
     },
     {
       "year": 2023,
-      "category": "F2",
+      "category": "F4",
       "q": "A delivery truck was valued at $65 000 when new. The value of the truck depreciates at a rate of 22 cents per kilometre travelled. What is the value of the truck after it has travelled a total distance of 132 600 km?",
       "options": [
         "$35,828",
@@ -709,7 +709,7 @@
     },
     {
       "year": 2023,
-      "category": "T2",
+      "category": "M7",
       "q": "Four petrol pumps are shown, each with the amount of petrol purchased and its cost. Which one represents the best value?",
       "options": [
         "24L for $46.70",
@@ -728,7 +728,7 @@
     },
     {
       "year": 2023,
-      "category": "F2",
+      "category": "F1",
       "q": "An item was purchased for a price of $880, including 10% GST. What is the amount of GST included in the price?",
       "options": [
         "$8.00",
@@ -741,7 +741,7 @@
     },
     {
       "year": 2023,
-      "category": "M1",
+      "category": "M5",
       "q": "City A is at latitude 34°S and longitude 151°E. City B is 72° north of City A and 25° west of City A. What are the latitude and longitude of City B?",
       "options": [
         "16°N, 126°E",
@@ -754,7 +754,7 @@
     },
     {
       "year": 2023,
-      "category": "P1",
+      "category": "S2",
       "q": "A game involves throwing a die and spinning a spinner. The sum of the two numbers obtained is the score. What is the probability of getting a score of 7 or more?",
       "options": [
         "1/6",
@@ -781,7 +781,7 @@
     },
     {
       "year": 2023,
-      "category": "F2",
+      "category": "F4",
       "q": "An amount of $25 000 is invested for six years. Interest is earned at a rate of 8% per annum, compounding quarterly. Which expression gives the value of the investment after 6 years, in dollars?",
       "options": [
         "25,000×1.02²⁴",
@@ -794,7 +794,7 @@
     },
     {
       "year": 2023,
-      "category": "T2",
+      "category": "M7",
       "q": "A bag contains 150 jelly beans. Some of them are red and the rest are blue. The ratio of red to blue jelly beans is 2 : 3. Sophie eats 10 of each colour. What is the new ratio of red to blue jelly beans?",
       "options": [
         "2:3",
@@ -821,7 +821,7 @@
     },
     {
       "year": 2023,
-      "category": "F2",
+      "category": "F1",
       "q": "An item is discounted by 30% and then a further discount of 20% is applied to the reduced price. What is the total percentage discount?",
       "options": [
         "25%",
@@ -834,7 +834,7 @@
     },
     {
       "year": 2023,
-      "category": "N1",
+      "category": "N2",
       "q": "A network with source A and sink B is shown. The capacities of two paths are labelled. The cut shown on the diagram has a capacity of 30. Which of the following statements is correct?",
       "options": [
         "Max flow is 30",
@@ -848,7 +848,7 @@
     },
     {
       "year": 2023,
-      "category": "S1S2",
+      "category": "S1",
       "q": "Ashan's mathematics class needs to complete six tests, each worth 100 marks. After completing the first five tests, Ashan calculated that he would need a mark of 90 in the final test in order to have a mean mark of 80 for the six tests. What was Ashan's mean mark after completing the first five tests?",
       "options": [
         "78",
@@ -874,7 +874,7 @@
     },
     {
       "year": 2024,
-      "category": "A2",
+      "category": "A4",
       "q": "Consider the function shown. Which of the following could be the equation of this function?",
       "options": [
         "y = 2x + 3",
@@ -888,7 +888,7 @@
     },
     {
       "year": 2024,
-      "category": "S1S2",
+      "category": "S1",
       "q": "Shoppers are invited to complete an online survey. What type of sampling is this?",
       "options": [
         "Self-selecting",
@@ -915,7 +915,7 @@
     },
     {
       "year": 2024,
-      "category": "S1S2",
+      "category": "S5",
       "q": "Pia's marks in Year 10 assessments are shown. The scores for each subject were normally distributed. In which subject did Pia perform best in comparison with the rest of Year 10?",
       "options": [
         "English",
@@ -943,7 +943,7 @@
     },
     {
       "year": 2024,
-      "category": "F2",
+      "category": "F4",
       "q": "Three years ago, the price of a uniform was $180. Due to inflation, the price increased annually by 2.5%. What is the price of this uniform now?",
       "options": [
         "$180.14",
@@ -956,7 +956,7 @@
     },
     {
       "year": 2024,
-      "category": "F2",
+      "category": "F1",
       "q": "A bill for servicing a car is made up of: $242 for parts, which includes 10% GST; $100 for labour, excluding GST. The mechanic needs to add 10% GST onto the labour charge. How much GST does the customer pay in total?",
       "options": [
         "$22.00",
@@ -969,7 +969,7 @@
     },
     {
       "year": 2024,
-      "category": "T2",
+      "category": "A4",
       "q": "The time taken to paint a school varies inversely with the number of painters completing the task. It takes 6 painters a total of 20 days to paint a school. How many days would it take 15 painters to paint the same school?",
       "options": [
         "4.5",
@@ -982,7 +982,7 @@
     },
     {
       "year": 2024,
-      "category": "F1",
+      "category": "A1",
       "q": "Consider the formula s = wt + p/2. Which of the following correctly shows p as the subject of the formula?",
       "options": [
         "p = 2wt − s",
@@ -995,7 +995,7 @@
     },
     {
       "year": 2024,
-      "category": "T2",
+      "category": "M4",
       "q": "A train left Richmond at 6:42 am and arrived at Central Station at 8:04 am. The distance travelled by the train from Richmond to Central was 61 km. What was the average speed of this train, correct to the nearest km/h?",
       "options": [
         "38 km/h",
@@ -1008,7 +1008,7 @@
     },
     {
       "year": 2024,
-      "category": "S1S2",
+      "category": "S4",
       "q": "A survey of 370 people was conducted to investigate the association between watching Anime and the age of the person. The two-way table shows the responses collected. Approximately what percentage of the over 30-year-olds watch Anime?",
       "options": [
         "9%",
@@ -1021,7 +1021,7 @@
     },
     {
       "year": 2024,
-      "category": "F2",
+      "category": "F4",
       "q": "José takes out a loan of $9000. Simple interest is charged on the loan. The loan and the interest charged will be repaid by making monthly repayments of $300 over 4 years. What simple interest rate per annum, to the nearest percent, is charged on the loan?",
       "options": [
         "15%",
@@ -1034,7 +1034,7 @@
     },
     {
       "year": 2024,
-      "category": "F1",
+      "category": "A2",
       "q": "Year 11 is making pizzas to raise money for a charity. The cost (C ) and revenue (R ) in dollars, when x pizzas are sold are represented by the equations C = 2.5x + 6 R = 8x. Enough pizzas are sold so that a profit is made. By how much does the profit increase for each additional pizza sold?",
       "options": [
         "$2.50",
@@ -1047,7 +1047,7 @@
     },
     {
       "year": 2024,
-      "category": "S1S2",
+      "category": "S1",
       "q": "Some data are used to create a box plot shown. A histogram is created from the same set of data. Which of these histograms is NOT possible for the given box plot?",
       "options": [
         "Histogram A",
@@ -1081,7 +1081,7 @@
     },
     {
       "year": 2025,
-      "category": "A2",
+      "category": "A4",
       "q": "Which graph could represent y = 4x?",
       "options": [
         "Exponential decay",
@@ -1114,7 +1114,7 @@
     },
     {
       "year": 2025,
-      "category": "F2",
+      "category": "F1",
       "q": "Frankie takes four weeks of annual leave. His weekly pay is $350 and his annual leave loading is 17½% of four weeks pay. What is Frankie’s total pay for this period of annual leave?",
       "options": [
         "$245.00",
@@ -1140,7 +1140,7 @@
     },
     {
       "year": 2025,
-      "category": "F1",
+      "category": "A1",
       "q": "Consider the formula n = (m − p)/q. Which of the following correctly shows p as the subject of the formula?",
       "options": [
         "p = nq − m",
@@ -1153,7 +1153,7 @@
     },
     {
       "year": 2025,
-      "category": "S1S2",
+      "category": "S1",
       "q": "There are 960 students at a high school. Using stratified sampling, 240 students from the whole school are to be chosen for a survey. If there are 200 students in Year 12, how many Year 12 students should be chosen?",
       "options": [
         "4",
@@ -1166,7 +1166,7 @@
     },
     {
       "year": 2025,
-      "category": "P1",
+      "category": "S2",
       "q": "A spinner made up of 4 colours is spun 100 times. The frequency histogram shows the results. Which of these spinners is most likely to give the results shown?",
       "options": [
         "Equal quarters",
@@ -1186,7 +1186,7 @@
     },
     {
       "year": 2025,
-      "category": "T2",
+      "category": "M7",
       "q": "The ratio of the dimensions of a model car to the dimensions of an actual car is 1 : 64. The actual car has a length of 4.9 m. What is the length of the model car in cm, correct to 1 decimal place?",
       "options": [
         "3.1",
@@ -1212,7 +1212,7 @@
     },
     {
       "year": 2025,
-      "category": "T2",
+      "category": "A4",
       "q": "The thickness of the skin of a spherical balloon varies inversely with the surface area of the balloon. What would be the effect on the thickness of the skin if the radius of the balloon is doubled?",
       "options": [
         "Divided by 2",
@@ -1225,7 +1225,7 @@
     },
     {
       "year": 2025,
-      "category": "M1",
+      "category": "M2",
       "q": "A football game is being played in Quito (UTC −5) starting at 3:40 pm on Tuesday. What is the time in Sydney (UTC +10) when the game starts in Quito?",
       "options": [
         "10:40am Tuesday",
@@ -1238,7 +1238,7 @@
     },
     {
       "year": 2025,
-      "category": "P1",
+      "category": "S2",
       "q": "A ten-sided die has faces numbered 1 to 10. The die is constructed so that the probability of obtaining the number 1 is greater than the probability of obtaining any of the other numbers. The numbers 2 to 10 are equally likely to occur. When the die is rolled 153 times, a 1 is obtained 72 times. By using the relative frequency of rolling a 1, which of the following is the best estimate for the probability of rolling a 10?",
       "options": [
         "1/17",
@@ -1251,7 +1251,7 @@
     },
     {
       "year": 2025,
-      "category": "M1",
+      "category": "M5",
       "q": "Points M and P are the same distance from a third point R. The bearing of M from R is 017° and the bearing of P from R is 107°. Which of the following best describes the bearing of P from M?",
       "options": [
         "000°-090°",
@@ -1264,7 +1264,7 @@
     },
     {
       "year": 2025,
-      "category": "S1S2",
+      "category": "S5",
       "q": "The minimum daily temperature, in degrees, of a town each year follows a normal distribution with its mean equal to its standard deviation. The minimum daily temperature was recorded over one year. What percentage of the recorded minimum daily temperatures was above zero degrees?",
       "options": [
         "16%",
@@ -1277,7 +1277,7 @@
     },
     {
       "year": 2020,
-      "category": "F1",
+      "category": "A2",
       "variant": true,
       "q": "Suppose y = 3 − 5x. When the value of x increases by 1, the value of y decreases by",
       "options": [
@@ -1291,7 +1291,7 @@
     },
     {
       "year": 2020,
-      "category": "F1",
+      "category": "A2",
       "variant": true,
       "q": "Suppose y = 4 − 2x. When the value of x increases by 1, the value of y decreases by",
       "options": [
@@ -1305,7 +1305,7 @@
     },
     {
       "year": 2020,
-      "category": "F1",
+      "category": "A2",
       "variant": true,
       "q": "Suppose y = 7 − x. When the value of x increases by 1, the value of y decreases by",
       "options": [
@@ -1319,7 +1319,7 @@
     },
     {
       "year": 2020,
-      "category": "F1",
+      "category": "A2",
       "variant": true,
       "q": "A sparkie charges a $50 call-out fee plus $3 per minute. For t hours of work, which equation expresses the total charge C?",
       "options": [
@@ -1333,7 +1333,7 @@
     },
     {
       "year": 2020,
-      "category": "F1",
+      "category": "A2",
       "variant": true,
       "q": "A tradie charges a $75 call-out fee plus $4 per minute. For t hours of work, which equation expresses the total charge C?",
       "options": [
@@ -1347,7 +1347,7 @@
     },
     {
       "year": 2020,
-      "category": "F1",
+      "category": "A2",
       "variant": true,
       "q": "A locksmith charges a $120 call-out fee plus $1 per minute. For t hours of work, which equation expresses the total charge C?",
       "options": [
@@ -1361,7 +1361,7 @@
     },
     {
       "year": 2021,
-      "category": "F1",
+      "category": "A1",
       "variant": true,
       "q": "A student thinks of x. When subtracting 5 and multiplying by 4, the result is 3 more than x. Which equation?",
       "options": [
@@ -1375,7 +1375,7 @@
     },
     {
       "year": 2021,
-      "category": "F1",
+      "category": "A1",
       "variant": true,
       "q": "A student thinks of x. When subtracting 3 and multiplying by 2, the result is 6 more than x. Which equation?",
       "options": [
@@ -1389,7 +1389,7 @@
     },
     {
       "year": 2021,
-      "category": "F1",
+      "category": "A1",
       "variant": true,
       "q": "A student thinks of x. When subtracting 6 and multiplying by 5, the result is 4 more than x. Which equation?",
       "options": [
@@ -1403,7 +1403,7 @@
     },
     {
       "year": 2022,
-      "category": "F1",
+      "category": "A1",
       "variant": true,
       "q": "Which correctly expresses x as the subject of y = (ax + b)/3?",
       "options": [
@@ -1417,7 +1417,7 @@
     },
     {
       "year": 2022,
-      "category": "F1",
+      "category": "A1",
       "variant": true,
       "q": "Which correctly expresses x as the subject of y = (bx − a)/4?",
       "options": [
@@ -1431,7 +1431,7 @@
     },
     {
       "year": 2022,
-      "category": "F1",
+      "category": "A1",
       "variant": true,
       "q": "Which correctly expresses x as the subject of y = (cx + d)/5?",
       "options": [
@@ -1445,7 +1445,7 @@
     },
     {
       "year": 2024,
-      "category": "F1",
+      "category": "A1",
       "variant": true,
       "q": "Which correctly shows p as the subject of r = mn + p/3?",
       "options": [
@@ -1459,7 +1459,7 @@
     },
     {
       "year": 2024,
-      "category": "F1",
+      "category": "A1",
       "variant": true,
       "q": "Which correctly shows q as the subject of t = uv + q/4?",
       "options": [
@@ -1473,7 +1473,7 @@
     },
     {
       "year": 2024,
-      "category": "F1",
+      "category": "A1",
       "variant": true,
       "q": "Which correctly shows k as the subject of h = fg + k/5?",
       "options": [
@@ -1487,7 +1487,7 @@
     },
     {
       "year": 2024,
-      "category": "F1",
+      "category": "A2",
       "variant": true,
       "q": "Cost C = 3x + 10, Revenue R = 9x. How much does profit increase per additional item sold?",
       "options": [
@@ -1501,7 +1501,7 @@
     },
     {
       "year": 2024,
-      "category": "F1",
+      "category": "A2",
       "variant": true,
       "q": "Cost C = 5.5x + 4, Revenue R = 8x. How much does profit increase per additional item sold?",
       "options": [
@@ -1515,7 +1515,7 @@
     },
     {
       "year": 2024,
-      "category": "F1",
+      "category": "A2",
       "variant": true,
       "q": "Cost C = x + 5, Revenue R = 9x. How much does profit increase per additional item sold?",
       "options": [
@@ -1529,7 +1529,7 @@
     },
     {
       "year": 2025,
-      "category": "F1",
+      "category": "A1",
       "variant": true,
       "q": "Which correctly shows r as the subject of s = (t − r)/u?",
       "options": [
@@ -1543,7 +1543,7 @@
     },
     {
       "year": 2025,
-      "category": "F1",
+      "category": "A1",
       "variant": true,
       "q": "Which correctly shows a as the subject of b = (c − a)/d?",
       "options": [
@@ -1557,7 +1557,7 @@
     },
     {
       "year": 2025,
-      "category": "F1",
+      "category": "A1",
       "variant": true,
       "q": "Which correctly shows x as the subject of y = (z − x)/w?",
       "options": [
@@ -1613,7 +1613,7 @@
     },
     {
       "year": 2020,
-      "category": "F2",
+      "category": "F4",
       "variant": true,
       "q": "Sarah invests $500. She earns interest at 4% per annum, compounded monthly. What is the future value after 2 years?",
       "options": [
@@ -1627,7 +1627,7 @@
     },
     {
       "year": 2020,
-      "category": "F2",
+      "category": "F4",
       "variant": true,
       "q": "Marcus invests $1000. He earns interest at 6% per annum, compounded monthly. What is the future value after 1 year?",
       "options": [
@@ -1641,7 +1641,7 @@
     },
     {
       "year": 2020,
-      "category": "F2",
+      "category": "F4",
       "variant": true,
       "q": "Priya invests $300. She earns interest at 5% per annum, compounded monthly. What is the future value after 2 years?",
       "options": [
@@ -1655,7 +1655,7 @@
     },
     {
       "year": 2020,
-      "category": "F2",
+      "category": "F4",
       "variant": true,
       "q": "An asset bought for $8000 depreciates at 10% per half-year using declining-balance. What is the value after 3 years?",
       "options": [
@@ -1669,7 +1669,7 @@
     },
     {
       "year": 2020,
-      "category": "F2",
+      "category": "F4",
       "variant": true,
       "q": "An asset bought for $15,000 depreciates at 5% per quarter using declining-balance. What is the value after 2 years?",
       "options": [
@@ -1683,7 +1683,7 @@
     },
     {
       "year": 2020,
-      "category": "F2",
+      "category": "F4",
       "variant": true,
       "q": "An asset bought for $20,000 depreciates at 12% per annum using declining-balance. What is the value after 4 years?",
       "options": [
@@ -1697,7 +1697,7 @@
     },
     {
       "year": 2020,
-      "category": "F2",
+      "category": "F5",
       "variant": true,
       "q": "An annuity has eight $500 payments from 2022–2029, at 4% p.a. PV calculated at Jan 2022, FV at Jan 2029. Which is true?",
       "options": [
@@ -1711,7 +1711,7 @@
     },
     {
       "year": 2020,
-      "category": "F2",
+      "category": "F5",
       "variant": true,
       "q": "An annuity has twelve $200 payments from 2023–2034, at 3% p.a. PV calculated at Jan 2023, FV at Jan 2034. Which is true?",
       "options": [
@@ -1725,7 +1725,7 @@
     },
     {
       "year": 2020,
-      "category": "F2",
+      "category": "F5",
       "variant": true,
       "q": "An annuity has six $750 payments from 2024–2029, at 6% p.a. PV calculated at Jan 2024, FV at Jan 2029. Which is true?",
       "options": [
@@ -1739,7 +1739,7 @@
     },
     {
       "year": 2021,
-      "category": "F2",
+      "category": "F4",
       "variant": true,
       "q": "An appliance valued at $3200 four years ago depreciates 10% annually by declining-balance. What is today's salvage value?",
       "options": [
@@ -1753,7 +1753,7 @@
     },
     {
       "year": 2021,
-      "category": "F2",
+      "category": "F4",
       "variant": true,
       "q": "An appliance valued at $5000 three years ago depreciates 20% annually by declining-balance. What is today's salvage value?",
       "options": [
@@ -1767,7 +1767,7 @@
     },
     {
       "year": 2021,
-      "category": "F2",
+      "category": "F4",
       "variant": true,
       "q": "An appliance valued at $1800 five years ago depreciates 12% annually by declining-balance. What is today's salvage value?",
       "options": [
@@ -1823,7 +1823,7 @@
     },
     {
       "year": 2022,
-      "category": "F2",
+      "category": "F1",
       "variant": true,
       "q": "Sam earns $18.60/hour plus a $12.50/day meal allowance. Total pay for 8 hours/day for 4 days?",
       "options": [
@@ -1837,7 +1837,7 @@
     },
     {
       "year": 2022,
-      "category": "F2",
+      "category": "F1",
       "variant": true,
       "q": "Alex earns $22.30/hour plus an $18.40/day meal allowance. Total pay for 7 hours/day for 6 days?",
       "options": [
@@ -1851,7 +1851,7 @@
     },
     {
       "year": 2022,
-      "category": "F2",
+      "category": "F1",
       "variant": true,
       "q": "Riley earns $25.00/hour plus a $14.80/day meal allowance. Total pay for 10 hours/day for 3 days?",
       "options": [
@@ -1865,7 +1865,7 @@
     },
     {
       "year": 2022,
-      "category": "F2",
+      "category": "F1",
       "variant": true,
       "q": "Jake buys 600 shares at $4.20, sells at $5.50, pays a $19.95 brokerage fee. What is the profit?",
       "options": [
@@ -1879,7 +1879,7 @@
     },
     {
       "year": 2022,
-      "category": "F2",
+      "category": "F1",
       "variant": true,
       "q": "Emma buys 1200 shares at $1.80, sells at $2.30, pays a $34.95 brokerage fee. What is the profit?",
       "options": [
@@ -1893,7 +1893,7 @@
     },
     {
       "year": 2022,
-      "category": "F2",
+      "category": "F1",
       "variant": true,
       "q": "Chloe buys 500 shares at $6.40, sells at $8.10, pays a $29.95 brokerage fee. What is the profit?",
       "options": [
@@ -1907,7 +1907,7 @@
     },
     {
       "year": 2022,
-      "category": "F2",
+      "category": "F4",
       "variant": true,
       "q": "Future value $200,000 in 8 years at 6% p.a. compounded half-yearly. Which equation gives present value?",
       "options": [
@@ -1921,7 +1921,7 @@
     },
     {
       "year": 2022,
-      "category": "F2",
+      "category": "F4",
       "variant": true,
       "q": "Future value $80,000 in 5 years at 8% p.a. compounded half-yearly. Which equation gives present value?",
       "options": [
@@ -1935,7 +1935,7 @@
     },
     {
       "year": 2022,
-      "category": "F2",
+      "category": "F4",
       "variant": true,
       "q": "Future value $50,000 in 6 years at 10% p.a. compounded half-yearly. Which equation gives present value?",
       "options": [
@@ -1991,7 +1991,7 @@
     },
     {
       "year": 2023,
-      "category": "F2",
+      "category": "F4",
       "variant": true,
       "q": "A truck valued at $45,000 depreciates at 18 cents/km. What is its value after 95,000 km?",
       "options": [
@@ -2005,7 +2005,7 @@
     },
     {
       "year": 2023,
-      "category": "F2",
+      "category": "F4",
       "variant": true,
       "q": "A truck valued at $72,000 depreciates at 25 cents/km. What is its value after 148,000 km?",
       "options": [
@@ -2019,7 +2019,7 @@
     },
     {
       "year": 2023,
-      "category": "F2",
+      "category": "F4",
       "variant": true,
       "q": "A truck valued at $38,000 depreciates at 15 cents/km. What is its value after 112,000 km?",
       "options": [
@@ -2033,7 +2033,7 @@
     },
     {
       "year": 2023,
-      "category": "F2",
+      "category": "F1",
       "variant": true,
       "q": "An item costs $440 including 10% GST. What is the GST amount?",
       "options": [
@@ -2047,7 +2047,7 @@
     },
     {
       "year": 2023,
-      "category": "F2",
+      "category": "F1",
       "variant": true,
       "q": "An item costs $1320 including 10% GST. What is the GST amount?",
       "options": [
@@ -2061,7 +2061,7 @@
     },
     {
       "year": 2023,
-      "category": "F2",
+      "category": "F1",
       "variant": true,
       "q": "An item costs $660 including 10% GST. What is the GST amount?",
       "options": [
@@ -2075,7 +2075,7 @@
     },
     {
       "year": 2023,
-      "category": "F2",
+      "category": "F4",
       "variant": true,
       "q": "$40,000 invested for 4 years at 12% p.a. compounding quarterly. Which expression gives the future value?",
       "options": [
@@ -2089,7 +2089,7 @@
     },
     {
       "year": 2023,
-      "category": "F2",
+      "category": "F4",
       "variant": true,
       "q": "$10,000 invested for 3 years at 8% p.a. compounding quarterly. Which expression gives the future value?",
       "options": [
@@ -2103,7 +2103,7 @@
     },
     {
       "year": 2023,
-      "category": "F2",
+      "category": "F4",
       "variant": true,
       "q": "$60,000 invested for 5 years at 4% p.a. compounding quarterly. Which expression gives the future value?",
       "options": [
@@ -2117,7 +2117,7 @@
     },
     {
       "year": 2023,
-      "category": "F2",
+      "category": "F1",
       "variant": true,
       "q": "An item is discounted 20%, then a further 25% off the reduced price. What is the total percentage discount?",
       "options": [
@@ -2131,7 +2131,7 @@
     },
     {
       "year": 2023,
-      "category": "F2",
+      "category": "F1",
       "variant": true,
       "q": "An item is discounted 15%, then a further 10% off the reduced price. What is the total percentage discount?",
       "options": [
@@ -2145,7 +2145,7 @@
     },
     {
       "year": 2023,
-      "category": "F2",
+      "category": "F1",
       "variant": true,
       "q": "An item is discounted 25%, then a further 20% off the reduced price. What is the total percentage discount?",
       "options": [
@@ -2201,7 +2201,7 @@
     },
     {
       "year": 2024,
-      "category": "F2",
+      "category": "F1",
       "variant": true,
       "q": "A repair bill: $330 parts (inc GST), $150 labour (ex GST). Add 10% GST to labour. Total GST paid?",
       "options": [
@@ -2215,7 +2215,7 @@
     },
     {
       "year": 2024,
-      "category": "F2",
+      "category": "F1",
       "variant": true,
       "q": "A repair bill: $176 parts (inc GST), $80 labour (ex GST). Add 10% GST to labour. Total GST paid?",
       "options": [
@@ -2229,7 +2229,7 @@
     },
     {
       "year": 2024,
-      "category": "F2",
+      "category": "F1",
       "variant": true,
       "q": "A repair bill: $440 parts (inc GST), $200 labour (ex GST). Add 10% GST to labour. Total GST paid?",
       "options": [
@@ -2285,7 +2285,7 @@
     },
     {
       "year": 2025,
-      "category": "F2",
+      "category": "F1",
       "variant": true,
       "q": "Jess takes 3 weeks leave. Weekly pay $420, leave loading 17.5% of 3 weeks' pay. Total pay for this period?",
       "options": [
@@ -2299,7 +2299,7 @@
     },
     {
       "year": 2025,
-      "category": "F2",
+      "category": "F1",
       "variant": true,
       "q": "Marco takes 2 weeks leave. Weekly pay $480, leave loading 17.5% of 2 weeks' pay. Total pay for this period?",
       "options": [
@@ -2313,7 +2313,7 @@
     },
     {
       "year": 2025,
-      "category": "F2",
+      "category": "F1",
       "variant": true,
       "q": "Nina takes 4 weeks leave. Weekly pay $560, leave loading 17.5% of 4 weeks' pay. Total pay for this period?",
       "options": [
@@ -2537,7 +2537,7 @@
     },
     {
       "year": 2022,
-      "category": "M1",
+      "category": "M5",
       "variant": true,
       "q": "Which true bearing is the same as N35°E?",
       "options": [
@@ -2551,7 +2551,7 @@
     },
     {
       "year": 2022,
-      "category": "M1",
+      "category": "M5",
       "variant": true,
       "q": "Which true bearing is the same as S62°E?",
       "options": [
@@ -2565,7 +2565,7 @@
     },
     {
       "year": 2022,
-      "category": "M1",
+      "category": "M5",
       "variant": true,
       "q": "Which true bearing is the same as N72°W?",
       "options": [
@@ -2579,7 +2579,7 @@
     },
     {
       "year": 2023,
-      "category": "M1",
+      "category": "M5",
       "variant": true,
       "q": "City A is at 28°S, 142°E. City B is 45° north and 18° east of A. What are B's coordinates?",
       "options": [
@@ -2593,7 +2593,7 @@
     },
     {
       "year": 2023,
-      "category": "M1",
+      "category": "M5",
       "variant": true,
       "q": "City A is at 40°S, 138°E. City B is 55° north and 12° west of A. What are B's coordinates?",
       "options": [
@@ -2607,7 +2607,7 @@
     },
     {
       "year": 2023,
-      "category": "M1",
+      "category": "M5",
       "variant": true,
       "q": "City A is at 20°S, 148°E. City B is 35° north and 30° west of A. What are B's coordinates?",
       "options": [
@@ -2831,7 +2831,7 @@
     },
     {
       "year": 2025,
-      "category": "M1",
+      "category": "M2",
       "variant": true,
       "q": "A game in London (UTC+0) starts at 2:15pm Monday. What is the start time in Tokyo (UTC+9)?",
       "options": [
@@ -2845,7 +2845,7 @@
     },
     {
       "year": 2025,
-      "category": "M1",
+      "category": "M2",
       "variant": true,
       "q": "A game in New York (UTC−5) starts at 8:30am Wednesday. What is the start time in Dubai (UTC+4)?",
       "options": [
@@ -2859,7 +2859,7 @@
     },
     {
       "year": 2025,
-      "category": "M1",
+      "category": "M2",
       "variant": true,
       "q": "A game in Los Angeles (UTC−8) starts at 10:45pm Friday. What is the start time in Paris (UTC+1)?",
       "options": [
@@ -2873,7 +2873,7 @@
     },
     {
       "year": 2025,
-      "category": "M1",
+      "category": "M5",
       "variant": true,
       "q": "M and P are the same distance from R. Bearing of M from R is 025°, bearing of P from R is 115°. What is the range for bearing of P from M?",
       "options": [
@@ -2887,7 +2887,7 @@
     },
     {
       "year": 2025,
-      "category": "M1",
+      "category": "M5",
       "variant": true,
       "q": "M and P are the same distance from R. Bearing of M from R is 040°, bearing of P from R is 130°. What is the range for bearing of P from M?",
       "options": [
@@ -2901,7 +2901,7 @@
     },
     {
       "year": 2025,
-      "category": "M1",
+      "category": "M5",
       "variant": true,
       "q": "M and P are the same distance from R. Bearing of M from R is 350°, bearing of P from R is 080°. What is the range for bearing of P from M?",
       "options": [
@@ -2915,7 +2915,7 @@
     },
     {
       "year": 2020,
-      "category": "S1S2",
+      "category": "S5",
       "variant": true,
       "q": "Sam's z-scores: English 0.8, Mathematics 2.4, Science 1.9. Which is his strongest subject relative to his class?",
       "options": [
@@ -2929,7 +2929,7 @@
     },
     {
       "year": 2020,
-      "category": "S1S2",
+      "category": "S5",
       "variant": true,
       "q": "Olivia's z-scores: Art 3.1, Drama 1.6, Sport −0.5. Which is her strongest subject relative to her class?",
       "options": [
@@ -2943,7 +2943,7 @@
     },
     {
       "year": 2020,
-      "category": "S1S2",
+      "category": "S5",
       "variant": true,
       "q": "Tom's z-scores: History 2.2, Geography 2.8, Economics 1.1. Which is his strongest subject relative to his class?",
       "options": [
@@ -2957,7 +2957,7 @@
     },
     {
       "year": 2021,
-      "category": "S1S2",
+      "category": "S1",
       "variant": true,
       "q": "Stem-and-leaf plot shows: 1|2 4 7 7, 2|3 5 8, 3|1. What is the mode?",
       "options": [
@@ -2971,7 +2971,7 @@
     },
     {
       "year": 2021,
-      "category": "S1S2",
+      "category": "S1",
       "variant": true,
       "q": "Stem-and-leaf plot shows: 1|3 5 5, 2|0 4 8, 3|1 7, 4|2. What is the mode?",
       "options": [
@@ -2985,7 +2985,7 @@
     },
     {
       "year": 2021,
-      "category": "S1S2",
+      "category": "S1",
       "variant": true,
       "q": "Stem-and-leaf plot shows: 2|1 5, 3|2 2 8, 4|0 6 9. What is the mode?",
       "options": [
@@ -2999,7 +2999,7 @@
     },
     {
       "year": 2021,
-      "category": "S1S2",
+      "category": "S5",
       "variant": true,
       "q": "In a normal distribution with mean 50 and SD 10, a student's z-score is 1.5. What was her actual mark?",
       "options": [
@@ -3013,7 +3013,7 @@
     },
     {
       "year": 2021,
-      "category": "S1S2",
+      "category": "S5",
       "variant": true,
       "q": "In a normal distribution with mean 72 and SD 6, a student's z-score is 3. What was his actual mark?",
       "options": [
@@ -3027,7 +3027,7 @@
     },
     {
       "year": 2021,
-      "category": "S1S2",
+      "category": "S5",
       "variant": true,
       "q": "In a normal distribution with mean 45 and SD 12, a student's z-score is 2.5. What was her actual mark?",
       "options": [
@@ -3041,7 +3041,7 @@
     },
     {
       "year": 2022,
-      "category": "S1S2",
+      "category": "S1",
       "variant": true,
       "q": "Dataset: 10, 14, 16, 16, 20, 24. The value 5 is added. How does this affect the mean and median?",
       "options": [
@@ -3055,7 +3055,7 @@
     },
     {
       "year": 2022,
-      "category": "S1S2",
+      "category": "S1",
       "variant": true,
       "q": "Dataset: 6, 9, 11, 11, 15, 20. The value 4 is added. How does this affect the mean and median?",
       "options": [
@@ -3069,7 +3069,7 @@
     },
     {
       "year": 2022,
-      "category": "S1S2",
+      "category": "S1",
       "variant": true,
       "q": "Dataset: 5, 8, 12, 12, 17, 22. The value 3 is added. How does this affect the mean and median?",
       "options": [
@@ -3083,7 +3083,7 @@
     },
     {
       "year": 2022,
-      "category": "S1S2",
+      "category": "S5",
       "variant": true,
       "q": "Normal distribution, mean 0, SD 1. P(Z < 2.33) = 0.9901. What is P(0 < Z < 2.33)?",
       "options": [
@@ -3097,7 +3097,7 @@
     },
     {
       "year": 2022,
-      "category": "S1S2",
+      "category": "S5",
       "variant": true,
       "q": "Normal distribution, mean 0, SD 1. P(Z < 1.28) = 0.8997. What is P(0 < Z < 1.28)?",
       "options": [
@@ -3111,7 +3111,7 @@
     },
     {
       "year": 2022,
-      "category": "S1S2",
+      "category": "S5",
       "variant": true,
       "q": "Normal distribution, mean 0, SD 1. P(Z < 1.65) = 0.9505. What is P(0 < Z < 1.65)?",
       "options": [
@@ -3125,7 +3125,7 @@
     },
     {
       "year": 2023,
-      "category": "S1S2",
+      "category": "S5",
       "variant": true,
       "q": "In a normal distribution, what percentage of scores have a z-score less than 2?",
       "options": [
@@ -3139,7 +3139,7 @@
     },
     {
       "year": 2023,
-      "category": "S1S2",
+      "category": "S5",
       "variant": true,
       "q": "In a normal distribution, what percentage of scores have a z-score less than 0?",
       "options": [
@@ -3153,7 +3153,7 @@
     },
     {
       "year": 2023,
-      "category": "S1S2",
+      "category": "S5",
       "variant": true,
       "q": "In a normal distribution, what percentage of scores have a z-score less than −1?",
       "options": [
@@ -3167,7 +3167,7 @@
     },
     {
       "year": 2023,
-      "category": "S1S2",
+      "category": "S1",
       "variant": true,
       "q": "After 6 tests, Bella needs 85 on her 7th test to achieve a mean of 75. What was her mean score after 6 tests?",
       "options": [
@@ -3181,7 +3181,7 @@
     },
     {
       "year": 2023,
-      "category": "S1S2",
+      "category": "S1",
       "variant": true,
       "q": "After 7 tests, Marcus needs 95 on his 8th test to achieve a mean of 70. What was his mean score after 7 tests?",
       "options": [
@@ -3195,7 +3195,7 @@
     },
     {
       "year": 2023,
-      "category": "S1S2",
+      "category": "S1",
       "variant": true,
       "q": "After 4 tests, Zoe needs 60 on her 5th test to achieve a mean of 72. What was her mean score after 4 tests?",
       "options": [
@@ -3209,7 +3209,7 @@
     },
     {
       "year": 2024,
-      "category": "S1S2",
+      "category": "S2",
       "variant": true,
       "q": "A radio station asks listeners to call in to share their opinion on a new policy. What type of sampling is this?",
       "options": [
@@ -3223,7 +3223,7 @@
     },
     {
       "year": 2024,
-      "category": "S1S2",
+      "category": "S2",
       "variant": true,
       "q": "A website displays a pop-up asking visitors to complete a satisfaction survey. What type of sampling is this?",
       "options": [
@@ -3237,7 +3237,7 @@
     },
     {
       "year": 2024,
-      "category": "S1S2",
+      "category": "S2",
       "variant": true,
       "q": "A newspaper publishes a phone number for readers to call and vote on a local issue. What type of sampling is this?",
       "options": [
@@ -3251,7 +3251,7 @@
     },
     {
       "year": 2024,
-      "category": "S1S2",
+      "category": "S5",
       "variant": true,
       "q": "Lena's z-scores: Music 1.8, Art 3.2, Drama 0.5, PE 2.7. Which subject did she perform best in relative to her class?",
       "options": [
@@ -3265,7 +3265,7 @@
     },
     {
       "year": 2024,
-      "category": "S1S2",
+      "category": "S5",
       "variant": true,
       "q": "Kai's z-scores: Biology 1.6, Chemistry 2.4, Physics 1.9, Earth Science 0.8. Which subject did he perform best in relative to his class?",
       "options": [
@@ -3279,7 +3279,7 @@
     },
     {
       "year": 2024,
-      "category": "S1S2",
+      "category": "S5",
       "variant": true,
       "q": "Nina's z-scores: French 3.0, Chinese 2.1, Spanish 1.5, Italian 2.8. Which subject did she perform best in relative to her class?",
       "options": [
@@ -3293,7 +3293,7 @@
     },
     {
       "year": 2024,
-      "category": "S1S2",
+      "category": "S4",
       "variant": true,
       "q": "In a survey of 350 people, 120 were under 25. Of those, 28 watch a streaming service. What percentage of under-25s watch it?",
       "options": [
@@ -3307,7 +3307,7 @@
     },
     {
       "year": 2024,
-      "category": "S1S2",
+      "category": "S4",
       "variant": true,
       "q": "In a survey of 480 people, 200 were over 40. Of those, 45 prefer reading over TV. What percentage of over-40s prefer reading?",
       "options": [
@@ -3321,7 +3321,7 @@
     },
     {
       "year": 2024,
-      "category": "S1S2",
+      "category": "S4",
       "variant": true,
       "q": "In a survey of 250 people, 96 were aged 18–25. Of those, 18 had never voted. What percentage of 18–25s had never voted?",
       "options": [
@@ -3335,7 +3335,7 @@
     },
     {
       "year": 2025,
-      "category": "S1S2",
+      "category": "S1",
       "variant": true,
       "q": "A school has 800 students, including 120 in Year 11. A stratified sample of 200 students is taken. How many should be Year 11?",
       "options": [
@@ -3349,7 +3349,7 @@
     },
     {
       "year": 2025,
-      "category": "S1S2",
+      "category": "S1",
       "variant": true,
       "q": "A school has 600 students, including 150 in Year 10. A stratified sample of 80 students is taken. How many should be Year 10?",
       "options": [
@@ -3363,7 +3363,7 @@
     },
     {
       "year": 2025,
-      "category": "S1S2",
+      "category": "S1",
       "variant": true,
       "q": "A school has 500 students, including 75 in Year 12. A stratified sample of 160 students is taken. How many should be Year 12?",
       "options": [
@@ -3377,7 +3377,7 @@
     },
     {
       "year": 2025,
-      "category": "S1S2",
+      "category": "S5",
       "variant": true,
       "q": "Minimum daily temperature is normally distributed with mean equal to twice the standard deviation. What percentage of days have a minimum temperature above 0°C?",
       "options": [
@@ -3391,7 +3391,7 @@
     },
     {
       "year": 2025,
-      "category": "S1S2",
+      "category": "S5",
       "variant": true,
       "q": "Minimum daily temperature is normally distributed with mean equal to the standard deviation. What percentage of days have a minimum temperature BELOW 0°C?",
       "options": [
@@ -3405,7 +3405,7 @@
     },
     {
       "year": 2025,
-      "category": "S1S2",
+      "category": "S5",
       "variant": true,
       "q": "Minimum daily temperature is normally distributed with mean equal to the standard deviation. What percentage of days have temperature between 0°C and twice the mean?",
       "options": [
@@ -3419,7 +3419,7 @@
     },
     {
       "year": 2020,
-      "category": "T2",
+      "category": "M4",
       "variant": true,
       "q": "The distance between two towns is 100 km. A driver travels at an average speed of 80 km/h. How long does the journey take?",
       "options": [
@@ -3433,7 +3433,7 @@
     },
     {
       "year": 2020,
-      "category": "T2",
+      "category": "M4",
       "variant": true,
       "q": "The distance between two towns is 130 km. A driver travels at an average speed of 60 km/h. How long does the journey take?",
       "options": [
@@ -3447,7 +3447,7 @@
     },
     {
       "year": 2020,
-      "category": "T2",
+      "category": "M4",
       "variant": true,
       "q": "The distance between two towns is 48 km. A driver travels at an average speed of 64 km/h. How long does the journey take?",
       "options": [
@@ -3461,7 +3461,7 @@
     },
     {
       "year": 2021,
-      "category": "T2",
+      "category": "M4",
       "variant": true,
       "q": "Jake stops drinking at 11:00 pm with BAC of 0.105. His BAC decreases at 0.015 per hour. When will his BAC reach 0.030?",
       "options": [
@@ -3475,7 +3475,7 @@
     },
     {
       "year": 2021,
-      "category": "T2",
+      "category": "M4",
       "variant": true,
       "q": "Jake stops drinking at 9:30 pm with BAC of 0.075. His BAC decreases at 0.015 per hour. When will his BAC reach zero?",
       "options": [
@@ -3489,7 +3489,7 @@
     },
     {
       "year": 2021,
-      "category": "T2",
+      "category": "M4",
       "variant": true,
       "q": "Jake stops drinking at 11:45 pm with BAC of 0.060. His BAC decreases at 0.015 per hour. When will his BAC reach 0.015?",
       "options": [
@@ -3503,7 +3503,7 @@
     },
     {
       "year": 2021,
-      "category": "T2",
+      "category": "A4",
       "variant": true,
       "q": "Time to complete a project varies inversely with the number of workers. 12 workers take 15 days. How long would 9 workers take?",
       "options": [
@@ -3517,7 +3517,7 @@
     },
     {
       "year": 2021,
-      "category": "T2",
+      "category": "A4",
       "variant": true,
       "q": "Time to complete a task varies inversely with the number of machines. 5 machines take 8 hours. How long would 4 machines take?",
       "options": [
@@ -3531,7 +3531,7 @@
     },
     {
       "year": 2021,
-      "category": "T2",
+      "category": "A4",
       "variant": true,
       "q": "Time to process orders varies inversely with the number of staff. 4 staff take 6 hours. How long would 8 staff take?",
       "options": [
@@ -3545,7 +3545,7 @@
     },
     {
       "year": 2021,
-      "category": "T2",
+      "category": "M7",
       "variant": true,
       "q": "5,600 people enter a race. Ratio professional:amateur = 1:6. All professionals finish, 400 amateurs don't. For finishers, what is the ratio professional:amateur in simplest form?",
       "options": [
@@ -3559,7 +3559,7 @@
     },
     {
       "year": 2021,
-      "category": "T2",
+      "category": "M7",
       "variant": true,
       "q": "4,200 people enter a race. Ratio professional:amateur = 2:5. All professionals finish, 200 amateurs don't. For finishers, what is the ratio professional:amateur in simplest form?",
       "options": [
@@ -3573,7 +3573,7 @@
     },
     {
       "year": 2021,
-      "category": "T2",
+      "category": "M7",
       "variant": true,
       "q": "2,200 people enter a race. Ratio professional:amateur = 1:10. All professionals finish, 400 amateurs don't. For finishers, what is the ratio professional:amateur in simplest form?",
       "options": [
@@ -3587,7 +3587,7 @@
     },
     {
       "year": 2022,
-      "category": "T2",
+      "category": "M7",
       "variant": true,
       "q": "30 minutes is in what ratio to one-quarter of a day, in simplest form?",
       "options": [
@@ -3601,7 +3601,7 @@
     },
     {
       "year": 2022,
-      "category": "T2",
+      "category": "M7",
       "variant": true,
       "q": "45 minutes is in what ratio to one-half of a day, in simplest form?",
       "options": [
@@ -3615,7 +3615,7 @@
     },
     {
       "year": 2022,
-      "category": "T2",
+      "category": "M7",
       "variant": true,
       "q": "1 hour is in what ratio to one-quarter of a day, in simplest form?",
       "options": [
@@ -3629,7 +3629,7 @@
     },
     {
       "year": 2022,
-      "category": "T2",
+      "category": "M7",
       "variant": true,
       "q": "Four petrol pumps are shown. Which pump represents the best value?",
       "options": [
@@ -3643,7 +3643,7 @@
     },
     {
       "year": 2022,
-      "category": "T2",
+      "category": "M7",
       "variant": true,
       "q": "Four petrol pumps are shown. Which pump represents the best value?",
       "options": [
@@ -3657,7 +3657,7 @@
     },
     {
       "year": 2022,
-      "category": "T2",
+      "category": "M7",
       "variant": true,
       "q": "Four petrol pumps are shown. Which pump represents the best value?",
       "options": [
@@ -3671,7 +3671,7 @@
     },
     {
       "year": 2023,
-      "category": "T2",
+      "category": "M7",
       "variant": true,
       "q": "A bag has 120 jelly beans with ratio red:blue = 3:5. Sophie eats 5 of each colour. What is the new ratio red:blue?",
       "options": [
@@ -3685,7 +3685,7 @@
     },
     {
       "year": 2023,
-      "category": "T2",
+      "category": "M7",
       "variant": true,
       "q": "A bag has 180 jelly beans with ratio red:blue = 2:7. Sophie eats 10 of each colour. What is the new ratio red:blue?",
       "options": [
@@ -3699,7 +3699,7 @@
     },
     {
       "year": 2023,
-      "category": "T2",
+      "category": "M7",
       "variant": true,
       "q": "A bag has 90 jelly beans with ratio red:blue = 1:2. Sophie eats 6 of each colour. What is the new ratio red:blue?",
       "options": [
@@ -3713,7 +3713,7 @@
     },
     {
       "year": 2024,
-      "category": "T2",
+      "category": "A4",
       "variant": true,
       "q": "Time to harvest a crop varies inversely with the number of workers. 9 workers take 12 days. How long would 6 workers take?",
       "options": [
@@ -3727,7 +3727,7 @@
     },
     {
       "year": 2024,
-      "category": "T2",
+      "category": "A4",
       "variant": true,
       "q": "Time to lay a road varies inversely with the number of machines. 4 machines take 15 days. How long would 10 machines take?",
       "options": [
@@ -3741,7 +3741,7 @@
     },
     {
       "year": 2024,
-      "category": "T2",
+      "category": "A4",
       "variant": true,
       "q": "Time to deliver packages varies inversely with the number of vans. 8 vans take 9 hours. How long would 12 vans take?",
       "options": [
@@ -3755,7 +3755,7 @@
     },
     {
       "year": 2024,
-      "category": "T2",
+      "category": "M4",
       "variant": true,
       "q": "A bus departs at 9:15 am and arrives at 10:42 am, travelling 86 km. What is its average speed?",
       "options": [
@@ -3769,7 +3769,7 @@
     },
     {
       "year": 2024,
-      "category": "T2",
+      "category": "M4",
       "variant": true,
       "q": "A bus departs at 7:20 am and arrives at 9:05 am, travelling 98 km. What is its average speed?",
       "options": [
@@ -3783,7 +3783,7 @@
     },
     {
       "year": 2024,
-      "category": "T2",
+      "category": "M4",
       "variant": true,
       "q": "A bus departs at 2:48 pm and arrives at 4:18 pm, travelling 75 km. What is its average speed?",
       "options": [
@@ -3797,7 +3797,7 @@
     },
     {
       "year": 2025,
-      "category": "T2",
+      "category": "M7",
       "variant": true,
       "q": "A model car is built at a scale of 1:50. The actual car is 3.2 m long. What is the model length in cm?",
       "options": [
@@ -3811,7 +3811,7 @@
     },
     {
       "year": 2025,
-      "category": "T2",
+      "category": "M7",
       "variant": true,
       "q": "A model building is built at a scale of 1:25. The actual building is 0.8 m wide. What is the model width in cm?",
       "options": [
@@ -3825,7 +3825,7 @@
     },
     {
       "year": 2025,
-      "category": "T2",
+      "category": "M7",
       "variant": true,
       "q": "A scale model of a bridge is built at 1:200. The actual bridge is 15 m long. What is the model length in cm?",
       "options": [
@@ -3839,7 +3839,7 @@
     },
     {
       "year": 2025,
-      "category": "T2",
+      "category": "A4",
       "variant": true,
       "q": "A balloon's skin thickness varies inversely with its surface area. If the radius of the balloon triples, what happens to the thickness?",
       "options": [
@@ -3853,7 +3853,7 @@
     },
     {
       "year": 2025,
-      "category": "T2",
+      "category": "A4",
       "variant": true,
       "q": "A balloon's skin thickness varies inversely with its surface area. If the radius of the balloon is halved, what happens to the thickness?",
       "options": [
@@ -3867,7 +3867,7 @@
     },
     {
       "year": 2025,
-      "category": "T2",
+      "category": "A4",
       "variant": true,
       "q": "The volume of a cube varies directly with the cube of its side length. If the side length doubles, by what factor does the volume increase?",
       "options": [
@@ -3881,7 +3881,7 @@
     },
     {
       "year": 2020,
-      "category": "A2",
+      "category": "A4",
       "variant": true,
       "q": "Which of the following could represent the graph of y = −x² − 3?",
       "options": [
@@ -3895,7 +3895,7 @@
     },
     {
       "year": 2020,
-      "category": "A2",
+      "category": "A4",
       "variant": true,
       "q": "Which of the following could represent the graph of y = x² − 2?",
       "options": [
@@ -3909,7 +3909,7 @@
     },
     {
       "year": 2020,
-      "category": "A2",
+      "category": "A4",
       "variant": true,
       "q": "Which of the following could represent the graph of y = −2x² + 4?",
       "options": [
@@ -3923,7 +3923,7 @@
     },
     {
       "year": 2021,
-      "category": "A2",
+      "category": "S4",
       "variant": true,
       "q": "For bivariate data, Pearson's correlation coefficient is +1. Which graph best represents this?",
       "options": [
@@ -3937,7 +3937,7 @@
     },
     {
       "year": 2021,
-      "category": "A2",
+      "category": "S4",
       "variant": true,
       "q": "For bivariate data, Pearson's correlation coefficient is 0.85. Which graph best represents this?",
       "options": [
@@ -3951,7 +3951,7 @@
     },
     {
       "year": 2021,
-      "category": "A2",
+      "category": "S4",
       "variant": true,
       "q": "For bivariate data, Pearson's correlation coefficient is −0.3. Which graph best represents this?",
       "options": [
@@ -3965,7 +3965,7 @@
     },
     {
       "year": 2021,
-      "category": "A2",
+      "category": "A4",
       "variant": true,
       "q": "Which graph best represents y = 5(1.3)^x?",
       "options": [
@@ -3979,7 +3979,7 @@
     },
     {
       "year": 2021,
-      "category": "A2",
+      "category": "A4",
       "variant": true,
       "q": "Which graph best represents y = 3(0.5)^x?",
       "options": [
@@ -3993,7 +3993,7 @@
     },
     {
       "year": 2021,
-      "category": "A2",
+      "category": "A4",
       "variant": true,
       "q": "Which graph best represents y = 2^x?",
       "options": [
@@ -4049,7 +4049,7 @@
     },
     {
       "year": 2023,
-      "category": "A2",
+      "category": "A4",
       "variant": true,
       "q": "An object is projected: h = −4t² + 64t. For how long is it at 240 m or more?",
       "options": [
@@ -4063,7 +4063,7 @@
     },
     {
       "year": 2023,
-      "category": "A2",
+      "category": "A4",
       "variant": true,
       "q": "An object is projected: h = −5t² + 60t. For how long is it at 175 m or more?",
       "options": [
@@ -4077,7 +4077,7 @@
     },
     {
       "year": 2023,
-      "category": "A2",
+      "category": "A4",
       "variant": true,
       "q": "An object is projected: h = −5t² + 75t. For how long is it at 250 m or more?",
       "options": [
@@ -4091,7 +4091,7 @@
     },
     {
       "year": 2023,
-      "category": "A2",
+      "category": "S4",
       "variant": true,
       "q": "A regression line W = 60 + 0.5A relates age (A, years) to weight (W, kg). Which statement is correct?",
       "options": [
@@ -4105,7 +4105,7 @@
     },
     {
       "year": 2023,
-      "category": "A2",
+      "category": "S4",
       "variant": true,
       "q": "A regression line C = 5 + 2.5n relates items sold (n) to total cost (C, $). Which statement is correct?",
       "options": [
@@ -4119,7 +4119,7 @@
     },
     {
       "year": 2023,
-      "category": "A2",
+      "category": "S4",
       "variant": true,
       "q": "A regression line T = 100 − 4d relates distance driven (d, km) to time remaining in journey (T, minutes). Which statement is correct?",
       "options": [
@@ -4133,7 +4133,7 @@
     },
     {
       "year": 2024,
-      "category": "A2",
+      "category": "S4",
       "variant": true,
       "q": "A scatterplot shows height versus shoe size with a strong upward trend. Which correlation coefficient best describes this?",
       "options": [
@@ -4147,7 +4147,7 @@
     },
     {
       "year": 2024,
-      "category": "A2",
+      "category": "S4",
       "variant": true,
       "q": "A scatterplot of hours studied versus exam errors shows a moderate downward trend. Which correlation coefficient best describes this?",
       "options": [
@@ -4161,7 +4161,7 @@
     },
     {
       "year": 2024,
-      "category": "A2",
+      "category": "S4",
       "variant": true,
       "q": "A scatterplot of daily temperature versus ice cream sales shows a very weak positive trend. Which correlation coefficient best describes this?",
       "options": [
@@ -4217,7 +4217,7 @@
     },
     {
       "year": 2025,
-      "category": "A2",
+      "category": "A4",
       "variant": true,
       "q": "Which graph could represent y = 3^x?",
       "options": [
@@ -4231,7 +4231,7 @@
     },
     {
       "year": 2025,
-      "category": "A2",
+      "category": "A4",
       "variant": true,
       "q": "Which graph could represent y = (0.4)^x?",
       "options": [
@@ -4245,7 +4245,7 @@
     },
     {
       "year": 2025,
-      "category": "A2",
+      "category": "A4",
       "variant": true,
       "q": "Which graph could represent y = 10^x?",
       "options": [
@@ -4259,7 +4259,7 @@
     },
     {
       "year": 2020,
-      "category": "N1",
+      "category": "N2",
       "variant": true,
       "q": "Team A (4 members) and Team B (4 members) play chess. Each member of Team A must play each member of Team B once. Which network diagram represents this?",
       "options": [
@@ -4273,7 +4273,7 @@
     },
     {
       "year": 2020,
-      "category": "N1",
+      "category": "N2",
       "variant": true,
       "q": "Team A (2 members) and Team B (5 members) play tennis. Each member of Team A must play each member of Team B once. Which network diagram represents this?",
       "options": [
@@ -4287,7 +4287,7 @@
     },
     {
       "year": 2020,
-      "category": "N1",
+      "category": "N2",
       "variant": true,
       "q": "Five people meet at a party and everyone shakes hands with everyone else exactly once. What is the total number of handshakes?",
       "options": [
@@ -4343,7 +4343,7 @@
     },
     {
       "year": 2020,
-      "category": "P1",
+      "category": "S2",
       "variant": true,
       "q": "A die (numbered 1–6) lands on a table divided into 8 equal sections (numbered 1–8). The score equals the die value multiplied by the section number. What is P(score = 4)?",
       "options": [
@@ -4357,7 +4357,7 @@
     },
     {
       "year": 2020,
-      "category": "P1",
+      "category": "S2",
       "variant": true,
       "q": "A die (numbered 1–6) lands on a table divided into 8 equal sections (numbered 1–8). The score equals the die value multiplied by the section number. What is P(score = 8)?",
       "options": [
@@ -4371,7 +4371,7 @@
     },
     {
       "year": 2020,
-      "category": "P1",
+      "category": "S2",
       "variant": true,
       "q": "A die (numbered 1–6) lands on a table divided into 8 equal sections (numbered 1–8). The score equals the die value multiplied by the section number. What is P(score = 2)?",
       "options": [
@@ -4385,7 +4385,7 @@
     },
     {
       "year": 2021,
-      "category": "P1",
+      "category": "S2",
       "variant": true,
       "q": "A box has 4 mint and 6 vanilla chocolates. Kim chooses one, then Sam chooses one (without replacement). What is the probability they choose different flavours?",
       "options": [
@@ -4399,7 +4399,7 @@
     },
     {
       "year": 2021,
-      "category": "P1",
+      "category": "S2",
       "variant": true,
       "q": "A box has 2 mint and 7 toffee chocolates. Kim chooses one, then Sam chooses one (without replacement). What is the probability they choose different flavours?",
       "options": [
@@ -4413,7 +4413,7 @@
     },
     {
       "year": 2021,
-      "category": "P1",
+      "category": "S2",
       "variant": true,
       "q": "A box has 5 dark and 4 white chocolates. Kim chooses one, then Sam chooses one (without replacement). What is the probability they choose different flavours?",
       "options": [
@@ -4427,7 +4427,7 @@
     },
     {
       "year": 2025,
-      "category": "P1",
+      "category": "S2",
       "variant": true,
       "q": "A 10-sided die is biased. P(1) is greater than P(2) = P(3) = ... = P(10). It is rolled 96 times and lands on 1 exactly 42 times. What is the best estimate for P(10)?",
       "options": [
@@ -4441,7 +4441,7 @@
     },
     {
       "year": 2025,
-      "category": "P1",
+      "category": "S2",
       "variant": true,
       "q": "A 10-sided die is biased. P(1) is greater than P(2) = P(3) = ... = P(10). It is rolled 110 times and lands on 1 exactly 55 times. What is the best estimate for P(10)?",
       "options": [
@@ -4455,7 +4455,7 @@
     },
     {
       "year": 2025,
-      "category": "P1",
+      "category": "S2",
       "variant": true,
       "q": "A 10-sided die is biased. P(1) is greater than P(2) = P(3) = ... = P(10). It is rolled 100 times and lands on 1 exactly 40 times. What is the best estimate for P(10)?",
       "options": [

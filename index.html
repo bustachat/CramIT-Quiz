@@ -605,6 +605,19 @@ const SUBJECT_ID_MAP = {
 
 const subjectCache = {};
 
+const NESA_CAT_LABELS = {
+  A1: 'A1 — Formulae & Equations',   A2: 'A2 — Linear Relationships',
+  A4: 'A4 — Non-linear Relationships', F1: 'F1 — Money Matters',
+  F2: 'F2 — Investment',              F4: 'F4 — Investments & Loans',
+  F5: 'F5 — Annuities',               M1: 'M1 — Measurement',
+  M2: 'M2 — Working with Time',       M4: 'M4 — Rates',
+  M5: 'M5 — Bearings & Scale',        M7: 'M7 — Rates & Ratios',
+  N1: 'N1 — Networks & Paths',        N2: 'N2 — Network Concepts',
+  N3: 'N3 — Critical Path Analysis',  S1: 'S1 — Data Analysis',
+  S2: 'S2 — Probability',             S4: 'S4 — Bivariate Data',
+  S5: 'S5 — Normal Distribution',
+};
+
 async function loadSubjectData(key) {
   if (subjectCache[key]) return subjectCache[key];
   const id = SUBJECT_ID_MAP[key];
@@ -837,7 +850,7 @@ function renderPicker() {
       }
       const active = (pickerFilters.category || 'all') === c ? 'active' : '';
       const count = c === 'all' ? qsForCounts.length : qsForCounts.filter(q => q.category === c).length;
-      const label = c === 'all' ? `All (${count})` : `${c} (${count})`;
+      const label = c === 'all' ? `All (${count})` : `${NESA_CAT_LABELS[c] || c} (${count})`;
       if (inTrial && c !== 'all') {
         html += `<button class="seg-btn locked" disabled data-val="${c}" title="Unlocks with subscription">${label}</button>`;
       } else {
@@ -1014,7 +1027,7 @@ function rebuildCategoryControl() {
       if (qsForCounts.filter(q => q.category === c).length === 0) return;
     }
     const count = c === 'all' ? qsForCounts.length : qsForCounts.filter(q => q.category === c).length;
-    const label = c === 'all' ? `All (${count})` : `${c} (${count})`;
+    const label = c === 'all' ? `All (${count})` : `${NESA_CAT_LABELS[c] || c} (${count})`;
     const active = c === 'all' ? 'active' : ''; // always reset to All
     if (inTrial && c !== 'all') {
       html += `<button class="seg-btn locked" disabled data-val="${c}" title="Unlocks with subscription">${label}</button>`;
