@@ -8129,6 +8129,50 @@
     },
     {
       "year": 2023,
+      "marks": 3,
+      "section": "II",
+      "qNum": "17",
+      "category": "N2",
+      "image": "/diagrams/mathematics-standard-2_2023_Q17_stimulus.jpg",
+      "q": "The table shows some of the flight distances (rounded to the nearest 10 km) between various Australian cities: Adelaide (A), Brisbane (B), Darwin (D), Hobart (H), Perth (P), Sydney (S).\n\n(a) Use the information in the table to complete the network diagram where the edges are labelled with distances.\n\n(b) Mahsa wants to travel from Hobart to Darwin. She wants to change planes only once. Using the network diagram, calculate how many kilometres she will travel by plane.",
+      "answer": "(a) The completed network diagram includes edges:\n- P–D = 2650 km\n- D–B = 2850 km\n- D–S = 3150 km\n- P–A = 2120 km\n- A–H = 1170 km\n- H–S = 1040 km\n- B–S = 750 km\n- P–S = 3270 km\n\n(b) Hobart to Darwin with one stopover:\nPath H → S → D = 1040 + 3150 = **4190 km**\n\n(Other paths require more than one change: H→A→P→D requires two changes.)",
+      "keywords": [
+        "4190",
+        "1040",
+        "3150"
+      ],
+      "minKeywords": 1,
+      "bandDescriptors": {
+        "high": "Correctly completes the network diagram with all edges labelled and calculates 4190 km for Hobart to Darwin via Sydney.",
+        "mid": "Correctly completes the network diagram OR identifies the correct path and calculates the distance.",
+        "low": "Correctly plots some edges or identifies a relevant path from the table."
+      }
+    },
+    {
+      "year": 2023,
+      "marks": 2,
+      "section": "II",
+      "qNum": "18",
+      "category": "S2",
+      "image": "/diagrams/mathematics-standard-2_2023_Q18_stimulus.jpg",
+      "q": "The histogram shows a summary of scores on a test. Provide TWO features of the histogram that indicate that the data comes from a normal distribution.",
+      "answer": "Two features that indicate a normal distribution:\n\n1. **The histogram is symmetrical** — the bars are approximately mirror images on either side of the centre (around score 49.5).\n\n2. **The histogram is unimodal** — there is one clear peak (at the 49.5 class interval), with frequencies decreasing on both sides.\n\n(Also acceptable: bell-shaped curve, the mean ≈ median ≈ mode, frequencies taper off evenly in both directions.)",
+      "keywords": [
+        "symmetrical",
+        "unimodal",
+        "bell",
+        "symmetric",
+        "one peak"
+      ],
+      "minKeywords": 1,
+      "bandDescriptors": {
+        "high": "Identifies two correct features: symmetrical AND unimodal (or bell-shaped).",
+        "mid": "Identifies one correct feature with a clear explanation.",
+        "low": "Makes a relevant observation about the shape of the histogram."
+      }
+    },
+    {
+      "year": 2023,
       "marks": 4,
       "section": "II",
       "qNum": "19",
@@ -8236,6 +8280,178 @@
         "full": "4/4 — XP = 7.5 km, bearing = 259°.",
         "partial": "2–3/4 — One part correct.",
         "minimal": "1/4 — ∠PXY = 60° identified."
+      }
+    },
+    {
+      "year": 2023,
+      "marks": 3,
+      "section": "II",
+      "qNum": "28",
+      "category": "F1",
+      "q": "A plumber leases equipment which is valued at $60 000. The salvage value of the equipment at any time can be calculated using either of the two methods of depreciation shown in the table:\n- Straight-line method: $3500 per annum\n- Declining-balance method: 12% per annum\n\nUnder which method of depreciation would the salvage value of the equipment be lower at the end of 3 years? Justify your answer with appropriate mathematical calculations.",
+      "answer": "**Straight-line method** (S = V₀ − Dn):\nS = $60 000 − $3500 × 3\nS = $60 000 − $10 500\nS = **$49 500**\n\n**Declining-balance method** (S = V₀(1 − r)ⁿ):\nS = $60 000 × (1 − 12%)³\nS = $60 000 × (0.88)³\nS = $60 000 × 0.681472\nS = **$40 888.32**\n\n∴ The **declining-balance method** would provide a lower salvage value ($40 888.32 < $49 500).",
+      "keywords": [
+        "declining",
+        "40888",
+        "40 888",
+        "49500",
+        "49 500"
+      ],
+      "minKeywords": 2,
+      "bandDescriptors": {
+        "high": "Correctly calculates both salvage values ($49 500 and $40 888.32) and concludes declining-balance gives the lower value.",
+        "mid": "Correctly calculates the salvage value using the declining-balance method.",
+        "low": "Attempts to calculate the salvage value using the declining-balance method with some correct substitution."
+      }
+    },
+    {
+      "year": 2023,
+      "marks": 4,
+      "section": "II",
+      "qNum": "29",
+      "category": "F4",
+      "image": "/diagrams/mathematics-standard-2_2023_Q29_stimulus.jpg",
+      "q": "The table shows monthly repayments for each $1000 borrowed at various interest rates and loan terms.\n\n(a) A couple borrows $520 000 to buy a house at 8% per annum over 25 years. How much does the couple repay in total for this loan?\n\n(b) Chris borrows some money at 7% per annum. Chris will repay the loan over 15 years, paying $3596 per month. How much money does Chris borrow?",
+      "answer": "(a) Monthly repayment per $1000 at 8%, 25 years = $7.72\nAmount repaid per month = ($520 000 ÷ 1000) × $7.72\n= 520 × $7.72\n= $4014.40\n\nTotal amount repaid = $4014.40 × 12 × 25\n= **$1 204 320**\n\n(b) Monthly repayment per $1000 at 7%, 15 years = $8.99\nAmount borrowed = ($3596 ÷ $8.99) × 1000\n= 400 × 1000\n= **$400 000**",
+      "keywords": [
+        "1204320",
+        "1 204 320",
+        "400000",
+        "400 000",
+        "4014"
+      ],
+      "minKeywords": 2,
+      "bandDescriptors": {
+        "high": "Correctly calculates total repayment of $1 204 320 and amount borrowed of $400 000.",
+        "mid": "Correctly calculates the monthly repayment OR correctly identifies the factor from the table.",
+        "low": "Identifies the correct factor from the table for part (a) or (b)."
+      }
+    },
+    {
+      "year": 2023,
+      "marks": 4,
+      "section": "II",
+      "qNum": "31",
+      "category": "N2",
+      "image": "/diagrams/mathematics-standard-2_2023_Q31_stimulus.jpg",
+      "q": "A function centre employs staff so that all necessary tasks can be completed between the end of one function and the beginning of the next. The network diagram shows the time taken in hours for the tasks that need to be completed (A=6, B=4, C=4, D=4, E=2, F=2, G=4, H=2, I=7, J=12, K=8).\n\n(a) Find the TWO critical paths.\n\n(b) The function centre wants to decrease the length of each critical path by 3 hours. They can do this by hiring more staff to do ONE of the tasks so it takes less time. For which task should the centre hire more staff, and how long should that task take to ensure all tasks can be completed in 14 hours?",
+      "answer": "(a) The two critical paths are:\n- **H, I, G, C** (total: 2 + 7 + 4 + 4 = 17 hours)\n- **H, I, K** (total: 2 + 7 + 8 = 17 hours)\n\n(b) Both critical paths share tasks H and I.\n- H takes only 2 hours — cannot be reduced by 3 hours.\n- I takes 7 hours. Reducing I by 3 hours gives I = 4 hours.\n- New critical path length = 2 + 4 + 8 = 14 hours ✓\n\n∴ Hire more staff for **task I**, and it should take **4 hours**.",
+      "keywords": [
+        "H, I, G, C",
+        "H, I, K",
+        "task I",
+        "4 hours",
+        "4"
+      ],
+      "minKeywords": 2,
+      "bandDescriptors": {
+        "high": "Correctly identifies both critical paths (H,I,G,C and H,I,K) and determines task I should take 4 hours.",
+        "mid": "Correctly identifies at least one critical path and identifies task I on the critical path.",
+        "low": "Identifies a critical path or correctly identifies tasks H and I as common to both paths."
+      }
+    },
+    {
+      "year": 2023,
+      "marks": 4,
+      "section": "II",
+      "qNum": "33",
+      "category": "M1",
+      "image": "/diagrams/mathematics-standard-2_2023_Q33_stimulus.jpg",
+      "q": "The diagram shows a shape APQBCD. The shape consists of a rectangle ABCD with an arc PQ on side AB and with side lengths BC = 3.6 m and CD = 8.0 m. The arc PQ is an arc of a circle with centre O and radius 2.1 m and angle POQ = 110°. What is the perimeter of the shape APQBCD? Give your answer correct to one decimal place.",
+      "answer": "The perimeter of APQBCD consists of:\n- Two sides BC = 3.6 m (×2 = 7.2 m)\n- Side CD = 8.0 m\n- Two segments AP and QB = AB − PQ chord = (8.0 − chord PQ)\n- Arc PQ\n\n**Arc length PQ:**\n= (110/360) × 2π × 2.1\n= 4.0317... m\n\n**Chord length PQ** (using cosine rule):\nPQ = √(2.1² + 2.1² − 2 × 2.1 × 2.1 × cos110°)\n= √(4.41 + 4.41 − 8.82 × (−0.342))\n= √(8.82 + 3.017)\n= √11.837\n= 3.4404... m\n\n**Segments AP + QB** = 8.0 − 3.4404 = 4.5596 m\n\n**Total perimeter** = 7.2 + 8.0 + 4.5596 + 4.0317\n= 23.7913\n= **23.8 m**",
+      "keywords": [
+        "23.8"
+      ],
+      "minKeywords": 1,
+      "bandDescriptors": {
+        "high": "Correctly calculates arc length (4.03 m) AND chord PQ (3.44 m), giving total perimeter of 23.8 m.",
+        "mid": "Correctly calculates the arc length OR the chord length PQ.",
+        "low": "Attempts to calculate the perimeter by adding some appropriate portions of the shape."
+      }
+    },
+    {
+      "year": 2023,
+      "marks": 6,
+      "section": "II",
+      "qNum": "34",
+      "category": "S5",
+      "image": "/diagrams/mathematics-standard-2_2023_Q34_stimulus.jpg",
+      "q": "A university uses gas to heat its buildings. Over 10 weekdays in winter, the gas used (y MW) and average outside temperature (x °C) were recorded. The regression line predicts that when the temperature is 0°C, the daily gas usage is 236 MW. The ten temperatures measured were: 0°, 0°, 0°, 2°, 5°, 7°, 8°, 9°, 9°, 10°. The total gas usage for the ten weekdays was 1840 MW.\n\n(a) Calculate the sample means x̄ and ȳ, and plot the point (x̄, ȳ) and the y-intercept of the least-squares regression line on the grid.\n\n(b) What is the equation of the regression line?\n\n(c) In the context of the dataset, identify ONE problem with using the regression line to predict gas usage when the average outside temperature is 23°C.",
+      "answer": "(a) x̄ = (0+0+0+2+5+7+8+9+9+10)/10 = 50/10 = **5**\nȳ = 1840/10 = **184**\nPlot (x̄, ȳ) = (5, 184) on the grid. y-intercept at (0, 236).\n\n(b) Slope = (ȳ − y-intercept) / (x̄ − 0)\n= (184 − 236) / (5 − 0)\n= −52/5\n= −10.4\n\nEquation: **y = 236 − 10.4x**\n\n(c) When temperature = 23°C:\ny = 236 − 10.4 × 23 = 236 − 239.2 = −3.2 MW\n\nThis gives a **negative gas usage**, which is not physically possible. Also, 23°C is well outside the range of the data (0–10°C), making it an extrapolation — the regression line may not apply outside this range.",
+      "keywords": [
+        "236",
+        "-10.4",
+        "10.4",
+        "184",
+        "negative",
+        "extrapolation",
+        "outside"
+      ],
+      "minKeywords": 2,
+      "bandDescriptors": {
+        "high": "Correctly calculates x̄=5, ȳ=184, derives equation y=236−10.4x, and identifies negative/impossible prediction or extrapolation at 23°C.",
+        "mid": "Correctly calculates x̄ and ȳ and derives the regression equation, or correctly identifies a problem with using the equation at 23°C.",
+        "low": "Correctly calculates x̄ or ȳ."
+      }
+    },
+    {
+      "year": 2023,
+      "marks": 3,
+      "section": "II",
+      "qNum": "35",
+      "category": "M6",
+      "image": "/diagrams/mathematics-standard-2_2023_Q35_stimulus.jpg",
+      "q": "The diagram shows triangle ABC. Side AC = 12 m, angle A = 60°, angle B = 25°. Calculate the area of the triangle, to the nearest square metre.",
+      "answer": "Angle C = 180° − 60° − 25° = **95°**\n\n**Find side CB (x) using the sine rule:**\nx/sin60° = 12/sin25°\nx = 12 × sin60°/sin25°\nx = 12 × 0.8660/0.4226\nx = **24.59 m**\n\n**Calculate area** using Area = ½ab sinC:\nArea = ½ × AC × CB × sinA (using included angle approach)\nor Area = ½ × 12 × 24.59 × sin95°\n= ½ × 12 × 24.59 × 0.9962\n= 146.98\n= **147 m²** (to nearest m²)",
+      "keywords": [
+        "147"
+      ],
+      "minKeywords": 1,
+      "bandDescriptors": {
+        "high": "Correctly uses sine rule to find CB = 24.59 m, then calculates area = 147 m².",
+        "mid": "Correctly uses the sine rule to find a missing side.",
+        "low": "Attempts to use the sine rule with some appropriate substitution."
+      }
+    },
+    {
+      "year": 2023,
+      "marks": 3,
+      "section": "II",
+      "qNum": "37",
+      "category": "F5",
+      "image": "/diagrams/mathematics-standard-2_2023_Q37_stimulus.jpg",
+      "q": "The table shows personal income tax rates for different taxable incomes for a particular country:\n- $0–$11 000: Nil\n- $11 001–$42 400: 20 cents per $1 over $11 000\n- $42 401–$78 800: $6280 plus 33 cents per $1 over $42 400\n- $78 801–$108 400: $18 292 plus X cents per $1 over $78 800\n- $108 401 and over: $31 316 plus 48 cents per $1 over $108 400\n\nA person with a taxable income of $90 000 pays 25.8% of that income in tax (excluding any levies). What is the value of X in the table?",
+      "answer": "Total tax paid = $90 000 × 25.8% = **$23 220**\n\nAmount over $78 800 = $90 000 − $78 800 = **$11 200**\n\nAdditional tax on amount over $78 800:\n= Total tax − base tax for this bracket\n= $23 220 − $18 292\n= **$4928**\n\nX cents per dollar:\n$11 200 × (X/100) = $4928\nX = $4928 × 100 ÷ $11 200\nX = **44**\n\n∴ X = 44 cents",
+      "keywords": [
+        "44"
+      ],
+      "minKeywords": 1,
+      "bandDescriptors": {
+        "high": "Correctly calculates total tax ($23 220), finds the amount to which X applies ($11 200), and determines X = 44.",
+        "mid": "Correctly finds the amount to which X cents applies ($11 200) or finds the additional tax ($4928).",
+        "low": "Correctly calculates 25.8% of $90 000 = $23 220."
+      }
+    },
+    {
+      "year": 2023,
+      "marks": 4,
+      "section": "II",
+      "qNum": "38",
+      "category": "S4",
+      "image": "/diagrams/mathematics-standard-2_2023_Q38_stimulus.jpg",
+      "q": "A random variable is normally distributed with a mean of 0 and a standard deviation of 1. The table gives the probability that this variable lies below z for positive values of z (z=1.30→0.9032, z=1.31→0.9049, z=1.32→0.9066, z=1.33→0.9082, z=1.34→0.9099, z=1.35→0.9115, z=1.36→0.9131, z=1.37→0.9147, z=1.38→0.9162, z=1.39→0.9177).\n\nThe weights of adult male koalas form a normal distribution with mean μ = 10.40 kg and standard deviation σ = 1.15 kg. In a group of 400 adult male koalas, how many would be expected to weigh more than 11.93 kg?",
+      "answer": "**Calculate z-score:**\nz = (x − μ)/σ\n= (11.93 − 10.40)/1.15\n= 1.53/1.15\n= **1.33** (to 2 decimal places)\n\n**Find probability from table:**\nP(z < 1.33) = 0.9082\n\n**P(weight > 11.93 kg):**\nP(more than 11.93) = 1 − 0.9082\n= **0.0918**\n\n**Number of koalas:**\n= 0.0918 × 400\n= 36.72\n= **36** koalas (accept 37)",
+      "keywords": [
+        "36",
+        "37",
+        "0.0918",
+        "1.33"
+      ],
+      "minKeywords": 1,
+      "bandDescriptors": {
+        "high": "Correctly calculates z=1.33, finds P=0.0918, and determines 36 (or 37) koalas.",
+        "mid": "Correctly finds the proportion of koalas (0.0918) or correctly reads the probability from the table.",
+        "low": "Correctly calculates the z-score of 1.33."
       }
     },
     {
