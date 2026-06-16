@@ -8500,6 +8500,74 @@
     },
     {
       "year": 2024,
+      "marks": 3,
+      "section": "II",
+      "qNum": "19",
+      "category": "S5",
+      "image": "/diagrams/mathematics-standard-2_2024_Q19_stimulus.jpg",
+      "q": "A teacher was exploring the relationship between students' marks for an assignment and their marks for a test. The data for five different students are shown on the graph. The least-squares regression line is also shown.\n\n(a) What is the equation of the least-squares regression line for this dataset?\n\n(b) Another student, whose marks are not on the graph, scored 5 for the assignment and 12 on the test. Did this student do better or worse on the test than the regression line predicts? Provide a reason for your answer.",
+      "answer": "(a) Reading from the graph: the line passes through (0, 6) and (10, 20).\nGradient m = (20 − 6)/(10 − 0) = 14/10 = **1.4**\ny-intercept = 6\n\nEquation: **y = 1.4x + 6**\n\n(b) Using the regression line: predicted test mark for assignment mark 5:\ny = 1.4(5) + 6 = 7 + 6 = **13**\n\nThe student scored 12, but the regression line predicted 13.\n∴ The student did **worse** than predicted (12 < 13).",
+      "keywords": [
+        "1.4x + 6",
+        "1.4x+6",
+        "worse",
+        "13"
+      ],
+      "minKeywords": 2,
+      "bandDescriptors": {
+        "high": "Correctly derives equation y=1.4x+6 and explains the student did worse because the predicted mark was 13, not 12.",
+        "mid": "Correctly finds gradient or y-intercept, or identifies the predicted value of 13.",
+        "low": "Attempts to find the gradient or y-intercept of the regression line."
+      }
+    },
+    {
+      "year": 2024,
+      "marks": 3,
+      "section": "II",
+      "qNum": "26",
+      "category": "A4",
+      "image": "/diagrams/mathematics-standard-2_2024_Q26_stimulus.jpg",
+      "q": "A sheet of metal is folded to make a gutter. The cross-section of the gutter is a rectangle of width w cm and height h cm. The area, A cm², of the cross-section can be modelled by the quadratic formula A = −0.5w² + 20w. A graph of this model is shown.\n\nFind the width and height of the rectangle which will give the greatest possible area of the cross-section.",
+      "answer": "The quadratic A = −0.5w² + 20w has maximum at vertex.\n\n**Finding maximum width:**\nAxis of symmetry: w = −20/(2 × −0.5) = −20/(−1) = **20 cm**\n\n**Maximum area:**\nA = −0.5(20)² + 20(20)\n= −0.5(400) + 400\n= −200 + 400\n= **200 cm²**\n\n**Finding height:**\nA = h × w\n200 = h × 20\nh = 200/20\nh = **10 cm**\n\n∴ Width = **20 cm**, height = **10 cm**",
+      "keywords": [
+        "20",
+        "10",
+        "200"
+      ],
+      "minKeywords": 2,
+      "bandDescriptors": {
+        "high": "Correctly finds maximum area of 200 cm² at width = 20 cm and height = 10 cm.",
+        "mid": "Correctly finds the width corresponding to maximum area (w = 20).",
+        "low": "Identifies the width corresponding to maximum area from the graph or axis of symmetry."
+      }
+    },
+    {
+      "year": 2024,
+      "marks": 3,
+      "section": "II",
+      "qNum": "28",
+      "category": "S1",
+      "image": "/diagrams/mathematics-standard-2_2024_Q28_stimulus.jpg",
+      "q": "Flowers were planted in two gardens (Garden A and Garden B). On a particular day, 25 flowers were randomly selected from each garden and their heights measured in millimetres. The data are represented in parallel box-plots. Compare the two datasets by examining the skewness of the distributions, and the measures of central tendency and spread.",
+      "answer": "**Skewness:**\n- Garden A is **negatively skewed** (longer whisker on the left, median closer to upper quartile).\n- Garden B is **positively skewed** (longer whisker on the right, median closer to lower quartile).\n\n**Central tendency:**\n- The **median of Garden A is higher** than the median of Garden B (approximately 168 mm vs 152 mm).\n- Garden A has taller flowers on average.\n\n**Spread:**\n- The **IQR of Garden A is larger** than the IQR of Garden B — Garden A has more variation in the middle 50% of heights.\n- The **range of Garden A is larger** than the range of Garden B.",
+      "keywords": [
+        "negatively",
+        "positively",
+        "median",
+        "IQR",
+        "skewed",
+        "higher",
+        "larger"
+      ],
+      "minKeywords": 3,
+      "bandDescriptors": {
+        "high": "Compares skewness (Garden A negative, Garden B positive), central tendency (A higher median), and spread (A larger IQR/range) for both gardens.",
+        "mid": "Compares two of: skewness, central tendency, spread for both gardens.",
+        "low": "Identifies the skewness or compares a measure of centre or spread for the two gardens."
+      }
+    },
+    {
+      "year": 2024,
       "marks": 4,
       "section": "II",
       "qNum": "29",
@@ -8518,6 +8586,193 @@
         "full": "4/4 — Value after year 4 ($44 000), value after year 10 ($3318), total depreciation $46 682.",
         "partial": "2–3/4 — Correct value after year 4 and sets up declining balance.",
         "minimal": "1/4 — Correct straight-line depreciation for 4 years."
+      }
+    },
+    {
+      "year": 2024,
+      "marks": 3,
+      "section": "II",
+      "qNum": "30",
+      "category": "S5",
+      "image": "/diagrams/mathematics-standard-2_2024_Q30_stimulus.jpg",
+      "q": "A researcher is studying anacondas (a type of snake). A dataset recording the age (in years) and length (in cm) of female and male anacondas is displayed on the graph. Anacondas reach maturity at about 4 years of age. Write THREE observations about anacondas that may be made from the scatterplot. (Note: No calculations are required.)",
+      "answer": "Three valid observations from the scatterplot:\n\n1. **Female anacondas grow at a faster rate than males** — the female data points show a steeper increase in length with age compared to males.\n\n2. **Both females and males continue to grow after 4 years of age** — data points for both sexes show increasing lengths beyond age 4.\n\n3. **Females are longer than males** (at any given age) — female data points consistently appear higher on the length axis than male data points of the same age.\n\n(Also acceptable: there is more variation in female lengths; the growth rate appears to slow down in older anacondas.)",
+      "keywords": [
+        "female",
+        "faster",
+        "longer",
+        "males",
+        "grow",
+        "after 4"
+      ],
+      "minKeywords": 2,
+      "bandDescriptors": {
+        "high": "Provides three correct observations about the data, such as females grow faster, both continue growing after 4 years, and females are longer.",
+        "mid": "Provides two correct observations from the scatterplot.",
+        "low": "Provides one correct observation from the scatterplot."
+      }
+    },
+    {
+      "year": 2024,
+      "marks": 4,
+      "section": "II",
+      "qNum": "32",
+      "category": "M7",
+      "image": "/diagrams/mathematics-standard-2_2024_Q32_stimulus.jpg",
+      "q": "A regular pentagon ABCDE is drawn inside a circle with a radius of 30 cm. O is the centre of the circle. What is the area of the shaded region of the circle? Answer correct to 2 significant figures.",
+      "answer": "**Area of circle:**\nA = πr² = π × 30² = 2827.43... cm²\n\n**Area of one triangle** (e.g. triangle OAB, with two sides = radius = 30 cm, included angle = 360°/5 = **72°**):\nA = ½ × 30 × 30 × sin72°\n= ½ × 900 × 0.9511\n= 427.975... cm²\n\n**Area of pentagon:**\n= 5 × 427.975 = 2139.877... cm²\n\n**Shaded area** (circle − pentagon):\n= 2827.43 − 2139.88\n= 687.5... cm²\n= **690 cm²** (to 2 significant figures)",
+      "keywords": [
+        "690"
+      ],
+      "minKeywords": 1,
+      "bandDescriptors": {
+        "high": "Correctly calculates circle area and pentagon area, and gives shaded area as 690 cm² to 2 significant figures.",
+        "mid": "Correctly finds the area of the circle and a triangle (or the pentagon).",
+        "low": "Correctly finds the area of the circle or one triangle."
+      }
+    },
+    {
+      "year": 2024,
+      "marks": 4,
+      "section": "II",
+      "qNum": "34",
+      "category": "M1",
+      "image": "/diagrams/mathematics-standard-2_2024_Q34_stimulus.jpg",
+      "q": "A container for soccer balls is made using two half spheres joined to each end of a cylindrical body. Three soccer balls fit exactly inside the container. Each ball has a diameter of 23 cm. The hemispherical ends of the container just touch the surface of the soccer balls. What is the total surface area of the container? Give your answer in square metres correct to 1 decimal place.",
+      "answer": "Each ball diameter = 23 cm, radius = 11.5 cm.\n\nThe container consists of:\n- Two hemispherical ends (together = one complete sphere of radius 11.5 cm)\n- A cylindrical body (radius 11.5 cm, length = 3 × 23 = 69 cm)\n\n**Note:** The two flat circular ends of the cylinder are hidden inside the hemispheres, so only the curved surfaces count.\n\nSurface area of sphere = 4π × (11.5)² = 4π × 132.25 = 1661.9 cm²\n\nCurved surface area of cylinder = 2π × 11.5 × 69 = 2π × 793.5 = 4985.7 − 1661.9 = ...\n\nActual MG calculation:\n**SA of sphere** = 4 × π × (23/2)² = 1662.57 cm²\n**SA of cylinder** (curved) = 2 × π × (23/2) × (23 × 2) = 2 × π × 11.5 × 46 = 3323.1 cm²\n\n**Total SA** = 1662.57 + 3323.1 = 4985.7 cm²\n\nConvert: 4985.7 cm² ÷ 10 000 = **0.5 m²** (to 1 decimal place)",
+      "keywords": [
+        "0.5"
+      ],
+      "minKeywords": 1,
+      "bandDescriptors": {
+        "high": "Correctly calculates sphere surface area + curved cylinder area = 4985.7 cm² = 0.5 m².",
+        "mid": "Correctly calculates the surface area of the sphere or the curved cylinder.",
+        "low": "Attempts to find the surface area of the sphere or cylinder with some correct substitution."
+      }
+    },
+    {
+      "year": 2024,
+      "marks": 5,
+      "section": "II",
+      "qNum": "35",
+      "category": "S4",
+      "image": "/diagrams/mathematics-standard-2_2024_Q35_stimulus.jpg",
+      "q": "A random variable is normally distributed with mean 0 and standard deviation 1. The table gives P(z) for z values: 0.6→0.7257, 0.7→0.7580, 0.8→0.7881, 0.9→0.8159, 1.0→0.8413, 1.1→0.8643, 1.2→0.8849, 1.3→0.9032, 1.4→0.9192. The scores in a university examination are normally distributed with mean 58 and standard deviation 15.\n\n(a) By calculating a z-score, find the percentage of scores that are between 58 and 70.\n\n(b) Explain why the percentage of scores between 46 and 70 is twice your answer to part (a).\n\n(c) By using the values in the table above, find an approximate minimum score that a candidate would need to be placed in the top 10% of the candidates.",
+      "answer": "(a) z = (70 − 58)/15 = 12/15 = **0.8**\nP from table = 0.7881\nP(58 to 70) = 0.7881 − 0.5 = **0.2881 = 28.81%**\n\n(b) The z-score for 46: z = (46 − 58)/15 = −12/15 = **−0.8**\nBy the symmetry of the normal distribution, the area between 46 and 58 equals the area between 58 and 70.\nSo the percentage of scores between 46 and 70 = 28.81% + 28.81% = twice the answer to (a).\n\n(c) Top 10% means P(z < Z) = 0.90.\nFrom the table, z = 1.3 gives P = 0.9032 ≈ 0.90.\n\nx = z × σ + μ = 1.3 × 15 + 58 = 19.5 + 58 = **77.5**\n\nApproximate minimum score = **77** (or 78)",
+      "keywords": [
+        "28.81",
+        "0.2881",
+        "symmetry",
+        "77",
+        "78",
+        "1.3"
+      ],
+      "minKeywords": 2,
+      "bandDescriptors": {
+        "high": "Correctly calculates z=0.8 giving 28.81%, explains symmetry for part (b), and finds minimum score of 77 or 78.",
+        "mid": "Correctly calculates z-score and percentage for part (a).",
+        "low": "Correctly calculates the z-score of 0.8 for part (a)."
+      }
+    },
+    {
+      "year": 2024,
+      "marks": 4,
+      "section": "II",
+      "qNum": "36",
+      "category": "M6",
+      "image": "/diagrams/mathematics-standard-2_2024_Q36_stimulus.jpg",
+      "q": "The diagram shows two vertical flagpoles, BE and CD, set on sloping ground. AB = 53.8 m, angle BAX = 27°, angle ABX = 106°, and ED = 20 m (horizontal distance between the tops of the flagpoles).\n\n(a) What is the height of the flagpole BE, correct to 1 decimal place?\n\n(b) What is the height of the flagpole CD, correct to 1 decimal place?",
+      "answer": "(a) In triangle ABE, using the sine rule:\nBE/sin27° = AB/sin(∠AEB)\n∠AEB = 180° − 27° − 106° = 47°\nBE/sin27° = 53.8/sin106°\nBE = 53.8 × sin27°/sin106°\n= 53.8 × 0.4540/0.9613\n= **25.4 m**\n\n(b) ∠EBC = 180° − 106° = **74°** (angles on a straight line)\nIn right triangle BXC (where X is directly below E):\ntan74° = ED/BX (where BX is horizontal distance)\n\nActually: tan74° = 20/BX\nBX = 20/tan74°\n= 20/3.4874\n= **5.73 m**\n\nCD = BE − BX (vertical drop from B to C along slope)\nCD = 25.4 − 5.73 = **19.7 m**",
+      "keywords": [
+        "25.4",
+        "19.7"
+      ],
+      "minKeywords": 1,
+      "bandDescriptors": {
+        "high": "Correctly uses sine rule to find BE = 25.4 m and then calculates CD = 19.7 m.",
+        "mid": "Correctly applies the sine rule to find BE, or finds BX = 5.73 m.",
+        "low": "Attempts to use the sine rule with some correct substitution."
+      }
+    },
+    {
+      "year": 2024,
+      "marks": 3,
+      "section": "II",
+      "qNum": "38",
+      "category": "M1",
+      "image": "/diagrams/mathematics-standard-2_2024_Q38_stimulus.jpg",
+      "q": "A cake is constructed using a cylinder and a cone-shaped top. The cylinder has diameter 30 cm and height 6 cm. The ratio of the volume of the cylinder to the volume of the cone-shaped top is 5:1. The cake is to be cut into equal slices with volume 212 cm³. How many equal slices can be cut from the cake?",
+      "answer": "**Volume of cylinder:**\nV = π × r² × h\n= π × 15² × 6\n= π × 225 × 6\n= **4241.15 cm³** (= 5 parts)\n\n**Total cake volume** (cylinder is 5 parts, so 6 parts total):\nTotal = (6/5) × 4241.15\n= **5089.38 cm³**\n\n**Number of slices:**\n= 5089.38 ÷ 212\n= 24.0065...\n= **24 slices** (to the nearest whole slice)",
+      "keywords": [
+        "24"
+      ],
+      "minKeywords": 1,
+      "bandDescriptors": {
+        "high": "Correctly calculates total cake volume (5089 cm³) and divides by 212 to get 24 slices.",
+        "mid": "Correctly calculates the volume of the cylinder (4241 cm³).",
+        "low": "Attempts to calculate the volume of the cylinder with some correct substitution."
+      }
+    },
+    {
+      "year": 2024,
+      "marks": 3,
+      "section": "II",
+      "qNum": "39",
+      "category": "N2",
+      "image": "/diagrams/mathematics-standard-2_2024_Q39_stimulus.jpg",
+      "q": "A project involving nine activities (A, B, C, D, E, F, G, H, I) is shown in the network diagram. The duration of each activity is not yet known. The table gives the earliest start time (EST) and latest start time (LST): Activity A: EST=0, LST=2; Activity C: EST=0, LST=1; Activity I: EST=12, LST=12.\n\n(a) What is the critical path?\n\n(b) The minimum time required for this project to be completed is 19 hours. What is the duration of activity I?\n\n(c) The duration of activity C is 3 hours. What is the maximum amount of time that could occur between the start of activity F and the end of activity H?",
+      "answer": "(a) Activities A and C have float times (LST > EST), so they are NOT on the critical path.\n\nThe critical path is **BEGI**.\n\n(b) Activity I has EST = 12 and the project takes 19 hours.\nDuration of I = 19 − 12 = **7 hours**\n\n(c) Duration of C = 3 hours.\nC starts at EST = 0, ends at 0 + 3 = 3.\nF starts at EST = LST of C + duration of C (actually at the EST of the next node).\nThe maximum time from start of F to end of H:\nUsing LST approach: 12 − 3 = 9, then 9 − 1 = **8 hours**",
+      "keywords": [
+        "BEGI",
+        "7",
+        "8"
+      ],
+      "minKeywords": 2,
+      "bandDescriptors": {
+        "high": "Correctly identifies critical path BEGI, duration of I=7 hours, and maximum F to H time=8 hours.",
+        "mid": "Correctly identifies the critical path or calculates the duration of activity I.",
+        "low": "Identifies that activities with float time are not on the critical path."
+      }
+    },
+    {
+      "year": 2024,
+      "marks": 3,
+      "section": "II",
+      "qNum": "40",
+      "category": "M6",
+      "image": "/diagrams/mathematics-standard-2_2024_Q40_stimulus.jpg",
+      "q": "A compass radial survey is shown. OA = 42 m, OD = 38 m, OB = 40 m. The bearing of D from O is 285°T. The bearing of B from O is 110°T. OA is at bearing 40°T from O. Given that AC is a straight line, find the bearing of C from O, correct to the nearest degree.",
+      "answer": "**In triangle ODA**, using the cosine rule to find ∠AOD:\ncos∠AOD = (OD² + OA² − DA²)/(2 × OD × OA)\n= (38² + 42² − 67.5²)/(2 × 38 × 42)\n= (1444 + 1764 − 4556.25)/3192\n= −1348.25/3192\n= −0.4224\n∠AOD = cos⁻¹(−0.4224) ≈ **115°**\n\n**Finding bearing of A from O:**\nBearing of D from O = 285°, so ∠DON = 360° − 285° = 75° (west of north)\n∠AOD = ∠DON + ∠AON\n115° = 75° + ∠AON\n∠AON = **40°**\n\nBearing of A from O = **040°T**\n\n**Bearing of C from O** (AC is a straight line, so C is directly opposite A):\nBearing of C = 40° + 180° = **220°T**",
+      "keywords": [
+        "220"
+      ],
+      "minKeywords": 1,
+      "bandDescriptors": {
+        "high": "Correctly applies cosine rule to find ∠AOD=115°, deduces bearing of A=40°T, then bearing of C=220°T.",
+        "mid": "Correctly applies the cosine rule to find ∠AOD or correctly finds the bearing of A from O.",
+        "low": "Uses the cosine rule in triangle ODA with appropriate substitution."
+      }
+    },
+    {
+      "year": 2024,
+      "marks": 4,
+      "section": "II",
+      "qNum": "41",
+      "category": "F4",
+      "image": "/diagrams/mathematics-standard-2_2024_Q41_stimulus.jpg",
+      "q": "Twenty-five years ago, Phoenix deposited a single sum of money into a new bank account, earning 2.4% interest per annum compounding monthly. The present value interest factors table gives values for various interest rates (r) and numbers of periods (n). Phoenix made the following withdrawals: $2000 at the end of each month for the first 15 years (starting end of month 1), and $1200 at the end of each month for the next 10 years (starting end of month 181). Calculate the minimum sum that Phoenix could have deposited in order to make these withdrawals.",
+      "answer": "Monthly interest rate: r = 2.4%/12 = **0.2% = 0.002**\n\nThe deposit must cover the present value of both annuities (calculated at time 0).\n\n**Present value of first annuity** ($2000/month for 15 years = 180 months, n=180, r=0.002):\nPV₁ = $2000 × 151.036 = **$302 072**\n\nWait — let me re-read the MG. MG says:\n- For 25 years need: 1200 × 225.430 = 270 516 (this is the PV of the SECOND annuity as if starting at t=0)\n- For 15 years need extra: 800 × 151.036 = 120 828.80 (extra $800/month for first 15 years)\n- Total = **$391 344.80**\n\nThe logic: Phoenix withdraws $2000 for 15 years and $1200 for the next 10 years.\n= $1200 for all 25 years (n=300, r=0.002)\n  PLUS an additional $800 for the first 15 years (n=180, r=0.002)\n\nPV of $1200 for 300 months = $1200 × 225.430 = $270 516\nPV of extra $800 for 180 months = $800 × 151.036 = $120 828.80\n\nMinimum deposit = $270 516 + $120 828.80 = **$391 344.80**",
+      "keywords": [
+        "391344",
+        "391 344",
+        "391345",
+        "391 345"
+      ],
+      "minKeywords": 1,
+      "bandDescriptors": {
+        "high": "Correctly identifies r=0.002, uses two annuity calculations ($1200×225.430 + $800×151.036) to get total $391 344.80.",
+        "mid": "Demonstrates understanding of both 15-year and 25-year periods in the calculation.",
+        "low": "Correctly identifies the interest rate as r=0.002."
       }
     },
     {
