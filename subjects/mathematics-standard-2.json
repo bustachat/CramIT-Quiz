@@ -6211,6 +6211,158 @@
       }
     },
     {
+      "year": 2020,
+      "marks": 4,
+      "section": "II",
+      "qNum": "18",
+      "category": "N2",
+      "image": "/diagrams/mathematics-standard-2_2020_Q18_stimulus.jpg",
+      "q": "The diagram represents a network with weighted edges.\n\n(a) List the edges of a minimum spanning tree for this network and determine its total length. (3 marks)\n\n(b) The network is revised by adding another vertex K. Edges AK and CK have weights of 12 and 10 respectively.\n\nWhat is the length of the minimum spanning tree for this revised network? (1 mark)",
+      "answer": "(a) MST edges (Kruskal algorithm - select cheapest edges without cycles):\nGH=1, AB=2, BE=2, CF=2, DE=2, FG=2, BC=3\nTotal length = 1+2+2+2+2+2+3 = 14\n\n(b) CK=10 is cheaper than AK=12, so K connects via CK.\nNew MST length = 14 + 10 = 24",
+      "keywords": [
+        "14",
+        "24"
+      ],
+      "minKeywords": 2,
+      "bandDescriptors": {
+        "full": "4/4 - MST length = 14 and revised MST = 24.",
+        "partial": "2-3/4 - Correct MST (14) or correct method for part (b).",
+        "minimal": "1/4 - Lists a valid spanning tree."
+      }
+    },
+    {
+      "year": 2020,
+      "marks": 4,
+      "section": "II",
+      "qNum": "19",
+      "category": "A4",
+      "image": "/diagrams/mathematics-standard-2_2020_Q19_stimulus.jpg",
+      "q": "A fence is to be built around a rectangular paddock with side lengths x and y metres. Total fencing 900 m: 3x + 2y = 900. Area: A = 450x - 1.5x^2.\n\n(a) If the area is 30 000 m2, what is the largest possible value of x? (1 mark)\n\n(b) Find x and y so that the area is as large as possible. (2 marks)\n\n(c) Using your values from part (b), find the largest possible area. (1 mark)",
+      "answer": "(a) 450x - 1.5x^2 = 30000\nx^2 - 300x + 20000 = 0, (x-100)(x-200) = 0\nLargest x = 200\n\n(b) Maximum at vertex: x = 450 / (2 x 1.5) = 150\n3(150) + 2y = 900, y = 225\n\n(c) A = 150 x 225 = 33 750 m2",
+      "keywords": [
+        "200",
+        "150",
+        "225",
+        "33750"
+      ],
+      "minKeywords": 3,
+      "bandDescriptors": {
+        "full": "4/4 - x=200, then x=150, y=225, area=33 750.",
+        "partial": "2-3/4 - Part (a) correct or parts (b) and (c) correct.",
+        "minimal": "1/4 - Correct method for one part."
+      }
+    },
+    {
+      "year": 2020,
+      "marks": 3,
+      "section": "II",
+      "qNum": "24",
+      "category": "A1",
+      "image": "/diagrams/mathematics-standard-2_2020_Q24_stimulus.jpg",
+      "q": "Two tanks: Tank A starts with 1000 L and loses water at 20 L/min (V = 1000 - 20t). Tank B is empty until t = 15, then fills at 30 L/min.\n\n(b) Find t when both tanks contain the same volume. (2 marks)\n\n(c) Find t (where t > 0) when the total volume in both tanks is 1000 litres. (1 mark)",
+      "answer": "(b) Tank A: V_A = 1000 - 20t\nTank B (t >= 15): V_B = 30(t - 15)\nSet equal: 1000 - 20t = 30t - 450\n1450 = 50t, t = 29 minutes\n\n(c) Total = (1000 - 20t) + 30(t - 15) = 550 + 10t\nSet = 1000: 10t = 450, t = 45 minutes",
+      "keywords": [
+        "29",
+        "45"
+      ],
+      "minKeywords": 2,
+      "bandDescriptors": {
+        "full": "3/3 - t = 29 and t = 45.",
+        "partial": "2/3 - One correct answer.",
+        "minimal": "1/3 - Correct equation set up for one part."
+      }
+    },
+    {
+      "year": 2020,
+      "marks": 5,
+      "section": "II",
+      "qNum": "26",
+      "category": "N2",
+      "image": "/diagrams/mathematics-standard-2_2020_Q26_stimulus.jpg",
+      "q": "Preparing a meal requires ten activities A to J. The network shows activities and completion times (minutes): A(14), B(6), C(8), D(12), E(6), F(10), G(9), H(8), I(2), J(7).\n\n(a) What is the minimum time needed to prepare the meal? (1 mark)\n\n(b) List the activities which make up the critical path. (2 marks)\n\n(c) State the earliest start time and float time for activities A and G. (2 marks)",
+      "answer": "(a) Minimum time = 46 minutes\n\n(b) Critical path: C - D - E - F - H - I\n(8 + 12 + 6 + 10 + 8 + 2 = 46)\n\n(c) Activity A: EST = 0, Float = 12\nActivity G: EST = 20, Float = 15",
+      "keywords": [
+        "46",
+        "c",
+        "d",
+        "e",
+        "f",
+        "h",
+        "i",
+        "12",
+        "15"
+      ],
+      "minKeywords": 3,
+      "bandDescriptors": {
+        "full": "5/5 - Min time 46, critical path C-D-E-F-H-I, all EST/float values correct.",
+        "partial": "3-4/5 - Critical path correct or table values correct.",
+        "minimal": "1-2/5 - Minimum time correct or partial critical path."
+      }
+    },
+    {
+      "year": 2020,
+      "marks": 5,
+      "section": "II",
+      "qNum": "27",
+      "category": "M4",
+      "image": "/diagrams/mathematics-standard-2_2020_Q27_stimulus.jpg",
+      "q": "The shaded region on the diagram represents a garden. Scale: 1 cm = 5 m.\n\n(a) Use two applications of the trapezoidal rule to calculate the approximate area of the garden. (3 marks)\n\n(b) Should the answer to part (a) be more than, equal to, or less than the actual area? Refer to the diagram and explain. (2 marks)",
+      "answer": "(a) Each strip h = 4 cm = 20 m. Three parallel sides: 25 m, 20 m, 20 m.\nArea = (20/2)(25 + 20) + (20/2)(20 + 20)\n     = 10 x 45 + 10 x 40\n     = 450 + 400 = 850 m2\n\n(b) MORE than the actual area.\nThe curved lower boundary is concave, so each trapezium includes area outside the garden.",
+      "keywords": [
+        "850",
+        "more"
+      ],
+      "minKeywords": 2,
+      "bandDescriptors": {
+        "full": "5/5 - 850 m2 with working and correct answer for part (b) with reason.",
+        "partial": "3-4/5 - 850 m2 correct or correct reasoning for part (b).",
+        "minimal": "1-2/5 - One trapezoid calculation correct."
+      }
+    },
+    {
+      "year": 2020,
+      "marks": 3,
+      "section": "II",
+      "qNum": "30",
+      "category": "N2",
+      "image": "/diagrams/mathematics-standard-2_2020_Q30_stimulus.jpg",
+      "q": "A network shows water channels connecting ponds A to F with maximum capacities shown.\n\n(a) Determine the maximum flow of the network. (2 marks)\n\n(b) A cut is shown in the diagram passing through edges AC (200), BE (75) and BD (50).\n\nIs the cut shown a minimum cut? Give a reason. (1 mark)",
+      "answer": "(a) Minimum cut passes through BD(50), BE(75), EC(100), CF(50).\nMaximum flow = 50 + 75 + 100 + 50 = 275\n\n(b) Weight of shown cut = 200 + 75 + 50 = 325.\nNot a minimum cut because 325 does not equal the maximum flow of 275.",
+      "keywords": [
+        "275",
+        "not",
+        "325"
+      ],
+      "minKeywords": 2,
+      "bandDescriptors": {
+        "full": "3/3 - Max flow = 275 and correct reasoning (325 is not minimum cut).",
+        "partial": "2/3 - Max flow correct or correct cut weight with conclusion.",
+        "minimal": "1/3 - Identifies a valid cut or correct attempt at max flow."
+      }
+    },
+    {
+      "year": 2020,
+      "marks": 5,
+      "section": "II",
+      "qNum": "36",
+      "category": "S5",
+      "image": "/diagrams/mathematics-standard-2_2020_Q36_stimulus.jpg",
+      "q": "A scientist records temperature (x degrees C) and cricket chirps per 15 seconds (y) over 20 days.\n- Box-plot of temperature shown (median = 22 degrees C)\n- Mean temperature is 0.525 degrees C below the median\n- Total of 684 chirps across 20 data points\n- Regression line: y = -10.6063 + bx, passing through (x-bar, y-bar)\n\nCalculate the expected number of chirps in 15 seconds when the temperature is 19 degrees C. Give your answer to the nearest whole number.",
+      "answer": "Step 1: x-bar = 22 - 0.525 = 21.475\nStep 2: y-bar = 684 / 20 = 34.2\nStep 3: Substitute into regression line:\n34.2 = -10.6063 + b(21.475)\nb = 44.8063 / 21.475 = 2.0864\nStep 4: At x = 19:\ny = -10.6063 + 2.0864 x 19 = 29.03, rounded to 29 chirps",
+      "keywords": [
+        "21.475",
+        "34.2",
+        "2.08",
+        "29"
+      ],
+      "minKeywords": 2,
+      "bandDescriptors": {
+        "full": "5/5 - x-bar and y-bar correct, b found, final answer 29 chirps.",
+        "partial": "3-4/5 - x-bar and y-bar correct, or b found and substituted.",
+        "minimal": "1-2/5 - x-bar or y-bar found correctly."
+      }
+    },
+    {
       "year": 2021,
       "marks": 2,
       "section": "II",
