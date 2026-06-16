@@ -98,7 +98,7 @@
         "Tail on right",
         "Uniform"
       ],
-      "answer": 2,
+      "answer": 0,
       "optionImages": [
         "/diagrams/mathematics-standard-2_2020_Q7_A.jpg",
         "/diagrams/mathematics-standard-2_2020_Q7_B.jpg",
@@ -113,12 +113,12 @@
       "q": "John recently did a class test in each of three subjects. The class scores on each test were normally distributed. The table shows John's scores as well as the mean and standard deviation of the class scores on each test. Relative to the rest of the class, which row of the table below shows John's strongest subject and his weakest subject?",
       "hideQ": true,
       "options": [
-        "French",
-        "Commerce",
-        "Music",
-        "All equal"
+        "A",
+        "B",
+        "C",
+        "D"
       ],
-      "answer": 1,
+      "answer": 0,
       "image": "/diagrams/mathematics-standard-2_2020_Q8_stimulus.jpg",
       "optionImages": [
         "/diagrams/mathematics-standard-2_2020_Q8_A.jpg",
@@ -126,7 +126,7 @@
         "/diagrams/mathematics-standard-2_2020_Q8_C.jpg",
         "/diagrams/mathematics-standard-2_2020_Q8_D.jpg"
       ],
-      "solution": "<div class=\"step\"><span class=\"step-number\">1.</span> Z-score measures standard deviations from mean.</div>\n<div class=\"step\"><span class=\"step-number\">2.</span> Higher z-score = better performance relative to class mean.</div>\n<div class=\"step\"><span class=\"step-number\">3.</span> Positive z-score = above mean.</div>\n<div class=\"step\"><span class=\"step-number\">4.</span> Compare values: French 1.5, Music 2.0, Commerce 3.0.</div>\n<div class=\"step\"><span class=\"step-number\">5.</span> Highest is 3.0 (Commerce).</div>\n<div class=\"step\"><span class=\"step-number\">6.</span> 3.0 is 3 SD above mean.</div>\n<div class=\"step\"><span class=\"step-number\">7.</span> 2.0 is 2 SD, 1.5 is 1.5 SD.</div>\n<div class=\"step\"><span class=\"step-number\">8.</span> Assuming same scale (different subjects, but z-scores comparable).</div>\n<div class=\"step\"><span class=\"step-number\">9.</span> Strongest relative = highest z-score.</div>\n<div class=\"step\"><span class=\"step-number\">10.</span> Correct: Commerce.</div>"
+      "solution": "<div class=\"step\"><span class=\"step-number\">1.</span> Calculate a z-score for each subject: z = (score − mean) ÷ standard deviation.</div>\n<div class=\"step\"><span class=\"step-number\">2.</span> From the table: Commerce z = (score − mean) ÷ SD → z ≈ 3.0; Music z ≈ 2.0; French z ≈ 1.5.</div>\n<div class=\"step\"><span class=\"step-number\">3.</span> Highest z-score = best relative performance. Commerce (z≈3.0) is the strongest subject.</div>\n<div class=\"step\"><span class=\"step-number\">4.</span> Lowest z-score = weakest relative performance. French (z≈1.5) is the weakest subject.</div>\n<div class=\"step\"><span class=\"step-number\">5.</span> The correct row shows: Strongest = Commerce, Weakest = French.</div>\n<div class=\"step\"><span class=\"step-number\">6.</span> This matches option A.</div>"
     },
     {
       "year": 2020,
@@ -183,7 +183,7 @@
         "Perfect downward line",
         "Curved pattern"
       ],
-      "answer": 2,
+      "answer": 3,
       "optionImages": [
         "/diagrams/mathematics-standard-2_2020_Q12_A.jpg",
         "/diagrams/mathematics-standard-2_2020_Q12_B.jpg",
@@ -323,12 +323,12 @@
       "category": "S1",
       "q": "The number of downloads of a song on each of twenty consecutive days is shown in the following graph. Which of the following graphs best shows the cumulative number of downloads up to and including each day?",
       "options": [
-        "Box-plot A",
-        "Box-plot B",
-        "Box-plot C",
-        "Box-plot D"
+        "A",
+        "B",
+        "C",
+        "D"
       ],
-      "answer": 3,
+      "answer": 2,
       "image": "/diagrams/mathematics-standard-2_2021_Q7_stimulus.jpg",
       "optionImages": [
         "/diagrams/mathematics-standard-2_2021_Q7_A.jpg",
@@ -336,7 +336,7 @@
         "/diagrams/mathematics-standard-2_2021_Q7_C.jpg",
         "/diagrams/mathematics-standard-2_2021_Q7_D.jpg"
       ],
-      "solution": "<div class=\"step\"><span class=\"step-number\">1.</span> Cumulative frequency graph rises to 100 (total observations).</div>\n<div class=\"step\"><span class=\"step-number\">2.</span> Find quartiles: Q1 at 25, median at 50, Q3 at 75 on y-axis.</div>\n<div class=\"step\"><span class=\"step-number\">3.</span> Read corresponding x-values from the curve.</div>\n<div class=\"step\"><span class=\"step-number\">4.</span> Also note minimum and maximum for whiskers.</div>\n<div class=\"step\"><span class=\"step-number\">5.</span> Box-plot shows min, Q1, median, Q3, max.</div>\n<div class=\"step\"><span class=\"step-number\">6.</span> Compare the positions of these five points.</div>\n<div class=\"step\"><span class=\"step-number\">7.</span> Check symmetry and spread.</div>\n<div class=\"step\"><span class=\"step-number\">8.</span> Eliminate box-plots with mismatched quartiles.</div>\n<div class=\"step\"><span class=\"step-number\">9.</span> Based on the graph (not visible here), matches option D.</div>\n<div class=\"step\"><span class=\"step-number\">10.</span> Correct: Box-plot D.</div>"
+      "solution": "<div class=\"step\"><span class=\"step-number\">1.</span> A cumulative frequency graph totals all values up to each day.</div>\n<div class=\"step\"><span class=\"step-number\">2.</span> The histogram shows downloads peaking around day 10 then declining.</div>\n<div class=\"step\"><span class=\"step-number\">3.</span> Because downloads increase quickly then slowly, the cumulative total rises steeply at first then levels off.</div>\n<div class=\"step\"><span class=\"step-number\">4.</span> This produces an S-shaped (ogive) curve that always increases but at a decreasing rate after the peak.</div>\n<div class=\"step\"><span class=\"step-number\">5.</span> The cumulative total can never decrease (each day adds more downloads).</div>\n<div class=\"step\"><span class=\"step-number\">6.</span> Option C shows the correct S-shaped cumulative curve.</div>"
     },
     {
       "year": 2021,
@@ -461,7 +461,7 @@
         "Tail on right",
         "Uniform"
       ],
-      "answer": 0,
+      "answer": 2,
       "optionImages": [
         "/diagrams/mathematics-standard-2_2022_Q1_A.jpg",
         "/diagrams/mathematics-standard-2_2022_Q1_B.jpg",
@@ -480,7 +480,7 @@
         "Parabola",
         "Horizontal line"
       ],
-      "answer": 1,
+      "answer": 0,
       "optionImages": [
         "/diagrams/mathematics-standard-2_2022_Q2_A.jpg",
         "/diagrams/mathematics-standard-2_2022_Q2_B.jpg",
@@ -499,9 +499,9 @@
         "BEH",
         "BEFG"
       ],
-      "answer": 2,
+      "answer": 1,
       "image": "/diagrams/mathematics-standard-2_2022_Q3_stimulus.jpg",
-      "solution": "<div class=\"step\"><span class=\"step-number\">1.</span> The critical path is the longest path through the network.</div>\n<div class=\"step\"><span class=\"step-number\">2.</span> It determines the minimum project duration.</div>\n<div class=\"step\"><span class=\"step-number\">3.</span> Any delay on the critical path delays the whole project.</div>\n<div class=\"step\"><span class=\"step-number\">4.</span> Examine the diagram (not visible here, but marked).</div>\n<div class=\"step\"><span class=\"step-number\">5.</span> Compare total durations of each path.</div>\n<div class=\"step\"><span class=\"step-number\">6.</span> Path ACI: sum of activity times.</div>\n<div class=\"step\"><span class=\"step-number\">7.</span> Path ADG: sum of activity times.</div>\n<div class=\"step\"><span class=\"step-number\">8.</span> Path BEH: sum of activity times (longest).</div>\n<div class=\"step\"><span class=\"step-number\">9.</span> Path BEFG: sum of activity times.</div>\n<div class=\"step\"><span class=\"step-number\">10.</span> Correct: BEH (marked as critical).</div>"
+      "solution": "<div class=\"step\"><span class=\"step-number\">1.</span> The critical path is the longest path through the network (sets minimum project duration).</div>\n<div class=\"step\"><span class=\"step-number\">2.</span> Identify all paths from start to finish and sum their activity times.</div>\n<div class=\"step\"><span class=\"step-number\">3.</span> Path ACI: A(3) + C(13) + I(2) = 18.</div>\n<div class=\"step\"><span class=\"step-number\">4.</span> Path ADG: A(3) + D(16) + G(3) = 22.</div>\n<div class=\"step\"><span class=\"step-number\">5.</span> Path BEH: B(2) + E(9) + H(6) = 17.</div>\n<div class=\"step\"><span class=\"step-number\">6.</span> Path BEFG: B(2) + E(9) + F(2) + G(3) = 16.</div>\n<div class=\"step\"><span class=\"step-number\">7.</span> Longest path = ADG = 22 (also confirmed by node labels: [0|0] → [3|3] → [19|19] → [22|22] all have EST = LST).</div>\n<div class=\"step\"><span class=\"step-number\">8.</span> Critical path: ADG.</div>"
     },
     {
       "year": 2022,
@@ -565,7 +565,7 @@
         "228°",
         "312°"
       ],
-      "answer": 1,
+      "answer": 2,
       "solution": "<div class=\"step\"><span class=\"step-number\">1.</span> S48°W means 48° west of south.</div>\n<div class=\"step\"><span class=\"step-number\">2.</span> South is 180° on true bearing (clockwise from north).</div>\n<div class=\"step\"><span class=\"step-number\">3.</span> West of south: add 48° towards west.</div>\n<div class=\"step\"><span class=\"step-number\">4.</span> From south, west is further clockwise.</div>\n<div class=\"step\"><span class=\"step-number\">5.</span> So 180° + 48° = 228°.</div>\n<div class=\"step\"><span class=\"step-number\">6.</span> Alternative: from north, go south then 48° towards west.</div>\n<div class=\"step\"><span class=\"step-number\">7.</span> Standard conversion confirms 228°.</div>\n<div class=\"step\"><span class=\"step-number\">8.</span> 222° would be slightly different.</div>\n<div class=\"step\"><span class=\"step-number\">9.</span> Check diagram if provided, but calculation consistent.</div>\n<div class=\"step\"><span class=\"step-number\">10.</span> Correct: 222°.</div>"
     },
     {
@@ -716,7 +716,7 @@
         "$14,872",
         "$14,300"
       ],
-      "answer": 1,
+      "answer": 0,
       "solution": "<div class=\"step\"><span class=\"step-number\">1.</span> Linear depreciation at 22 cents per km.</div>\n<div class=\"step\"><span class=\"step-number\">2.</span> Rate = $0.22 per km.</div>\n<div class=\"step\"><span class=\"step-number\">3.</span> Distance driven = 132,600 km.</div>\n<div class=\"step\"><span class=\"step-number\">4.</span> Total depreciation = 0.22 × 132,600.</div>\n<div class=\"step\"><span class=\"step-number\">5.</span> First: 0.22 × 132,600 = 29,172.</div>\n<div class=\"step\"><span class=\"step-number\">6.</span> Or 22 × 132,600 = 2,917,200 cents = $29,172.</div>\n<div class=\"step\"><span class=\"step-number\">7.</span> Initial value = $65,000.</div>\n<div class=\"step\"><span class=\"step-number\">8.</span> Salvage value = 65,000 − 29,172.</div>\n<div class=\"step\"><span class=\"step-number\">9.</span> 65,000 − 29,172 = 35,828.</div>\n<div class=\"step\"><span class=\"step-number\">10.</span> Correct: $35,828.</div>"
     },
     {
@@ -827,9 +827,9 @@
         "7.5 cm",
         "12.5 cm"
       ],
-      "answer": 2,
+      "answer": 1,
       "image": "/diagrams/mathematics-standard-2_2023_Q12_stimulus.jpg",
-      "solution": "<div class=\"step\"><span class=\"step-number\">1.</span> Cross-section is circle radius r = 12.5 cm.</div>\n<div class=\"step\"><span class=\"step-number\">2.</span> Water forms chord of width 20 cm (surface).</div>\n<div class=\"step\"><span class=\"step-number\">3.</span> Chord length = 20 cm, half = 10 cm.</div>\n<div class=\"step\"><span class=\"step-number\">4.</span> Distance from centre to chord = d (sagitta related).</div>\n<div class=\"step\"><span class=\"step-number\">5.</span> Use Pythagoras in segment: half-chord² + (r − depth)² = r².</div>\n<div class=\"step\"><span class=\"step-number\">6.</span> Let h = depth (from bottom to surface).</div>\n<div class=\"step\"><span class=\"step-number\">7.</span> Distance from centre to chord = r − h.</div>\n<div class=\"step\"><span class=\"step-number\">8.</span> 10² + (12.5 − h)² = 12.5².</div>\n<div class=\"step\"><span class=\"step-number\">9.</span> Solve: 100 + (12.5 − h)² = 156.25 → (12.5 − h)² = 56.25 → 12.5 − h = ±7.5 → h = 12.5 − 7.5 = 5 or 20 (not possible).</div>\n<div class=\"step\"><span class=\"step-number\">10.</span> Correct: 7.5 cm (wait, standard answer is 7.5 cm for depth from bottom in such problems).</div>"
+      "solution": "<div class=\"step\"><span class=\"step-number\">1.</span> Cross-section is circle radius r = 12.5 cm.</div>\n<div class=\"step\"><span class=\"step-number\">2.</span> Water forms a chord of width 20 cm (the surface).</div>\n<div class=\"step\"><span class=\"step-number\">3.</span> Half the chord length = 10 cm.</div>\n<div class=\"step\"><span class=\"step-number\">4.</span> Let h = depth of water from bottom of pipe.</div>\n<div class=\"step\"><span class=\"step-number\">5.</span> Distance from centre to chord = r − h = 12.5 − h.</div>\n<div class=\"step\"><span class=\"step-number\">6.</span> By Pythagoras: 10² + (12.5 − h)² = 12.5².</div>\n<div class=\"step\"><span class=\"step-number\">7.</span> 100 + (12.5 − h)² = 156.25.</div>\n<div class=\"step\"><span class=\"step-number\">8.</span> (12.5 − h)² = 56.25 → 12.5 − h = 7.5 → h = 5.0.</div>\n<div class=\"step\"><span class=\"step-number\">9.</span> (h = 20 is rejected as it exceeds the diameter.)</div>\n<div class=\"step\"><span class=\"step-number\">10.</span> Depth of water = 5.0 cm.</div>"
     },
     {
       "year": 2023,
@@ -854,7 +854,7 @@
         "Max flow is 30 or less",
         "Max flow is 30 or more"
       ],
-      "answer": 3,
+      "answer": 2,
       "image": "/diagrams/mathematics-standard-2_2023_Q14_stimulus.jpg",
       "solution": "<div class=\"step\"><span class=\"step-number\">1.</span> Max-flow min-cut theorem.</div>\n<div class=\"step\"><span class=\"step-number\">2.</span> Maximum flow ≤ capacity of any cut.</div>\n<div class=\"step\"><span class=\"step-number\">3.</span> A cut with capacity 30 exists.</div>\n<div class=\"step\"><span class=\"step-number\">4.</span> Therefore, max flow ≤ 30.</div>\n<div class=\"step\"><span class=\"step-number\">5.</span> There may be a flow of 30 achieving it.</div>\n<div class=\"step\"><span class=\"step-number\">6.</span> But cannot exceed cut capacity.</div>\n<div class=\"step\"><span class=\"step-number\">7.</span> So max flow is at most 30.</div>\n<div class=\"step\"><span class=\"step-number\">8.</span> Often equal to min cut.</div>\n<div class=\"step\"><span class=\"step-number\">9.</span> Statement: max flow is 30 or less (true), but option is \"30 or more\" for lower bound.</div>\n<div class=\"step\"><span class=\"step-number\">10.</span> Correct: Max flow is 30 or more (if achievable, but cut gives lower bound? Wait, cut gives upper bound; standard is max flow ≤ cut).</div>"
     },
@@ -921,9 +921,9 @@
         "6",
         "5"
       ],
-      "answer": 0,
+      "answer": 1,
       "image": "/diagrams/mathematics-standard-2_2024_Q4_stimulus.jpg",
-      "solution": "<div class=\"step\"><span class=\"step-number\">1.</span> Network: vertices = regions, edges = shared borders.</div>\n<div class=\"step\"><span class=\"step-number\">2.</span> Count each shared border once (undirected graph).</div>\n<div class=\"step\"><span class=\"step-number\">3.</span> Examine map (planar graph).</div>\n<div class=\"step\"><span class=\"step-number\">4.</span> Identify adjacent pairs.</div>\n<div class=\"step\"><span class=\"step-number\">5.</span> Typical 6-region map (e.g., Australia states style).</div>\n<div class=\"step\"><span class=\"step-number\">6.</span> Count visible shared boundaries.</div>\n<div class=\"step\"><span class=\"step-number\">7.</span> No triple junctions create extra edges.</div>\n<div class=\"step\"><span class=\"step-number\">8.</span> Total shared borders = 8 (from diagram).</div>\n<div class=\"step\"><span class=\"step-number\">9.</span> Matches planar map properties.</div>\n<div class=\"step\"><span class=\"step-number\">10.</span> Correct: 8.</div>"
+      "solution": "<div class=\"step\"><span class=\"step-number\">1.</span> Each region is a vertex; each shared border is an edge.</div>\n<div class=\"step\"><span class=\"step-number\">2.</span> Identify every pair of regions that share a border.</div>\n<div class=\"step\"><span class=\"step-number\">3.</span> Forest – Swamp (1).</div>\n<div class=\"step\"><span class=\"step-number\">4.</span> Forest – Mountains (2).</div>\n<div class=\"step\"><span class=\"step-number\">5.</span> Swamp – Mountains (3).</div>\n<div class=\"step\"><span class=\"step-number\">6.</span> Swamp – Desert (4).</div>\n<div class=\"step\"><span class=\"step-number\">7.</span> Mountains – Desert (5).</div>\n<div class=\"step\"><span class=\"step-number\">8.</span> Mountains – Woods (6).</div>\n<div class=\"step\"><span class=\"step-number\">9.</span> Desert – Coast (7).</div>\n<div class=\"step\"><span class=\"step-number\">10.</span> Total edges = 7.</div>"
     },
     {
       "year": 2024,
@@ -949,9 +949,9 @@
         "20/cos 40°",
         "20/sin 40°"
       ],
-      "answer": 1,
+      "answer": 0,
       "image": "/diagrams/mathematics-standard-2_2024_Q6_stimulus.jpg",
-      "solution": "<div class=\"step\"><span class=\"step-number\">1.</span> Right triangle, hypotenuse = 20.</div>\n<div class=\"step\"><span class=\"step-number\">2.</span> Angle = 40° (one acute angle).</div>\n<div class=\"step\"><span class=\"step-number\">3.</span> Opposite side x to the 40° angle.</div>\n<div class=\"step\"><span class=\"step-number\">4.</span> Trigonometric ratio: sin θ = opposite / hypotenuse.</div>\n<div class=\"step\"><span class=\"step-number\">5.</span> sin 40° = x / 20.</div>\n<div class=\"step\"><span class=\"step-number\">6.</span> Solve: x = 20 × sin 40°.</div>\n<div class=\"step\"><span class=\"step-number\">7.</span> Cosine is adjacent/hypotenuse.</div>\n<div class=\"step\"><span class=\"step-number\">8.</span> 1/sin = cosecant, not needed.</div>\n<div class=\"step\"><span class=\"step-number\">9.</span> Standard SOH-CAH-TOA.</div>\n<div class=\"step\"><span class=\"step-number\">10.</span> Correct: 20 sin 40°.</div>"
+      "solution": "<div class=\"step\"><span class=\"step-number\">1.</span> The right angle is at the top-right corner.</div>\n<div class=\"step\"><span class=\"step-number\">2.</span> The 40° angle is at the bottom-left corner.</div>\n<div class=\"step\"><span class=\"step-number\">3.</span> The side opposite the right angle (hypotenuse) is the bottom side = 20.</div>\n<div class=\"step\"><span class=\"step-number\">4.</span> x is the left side, which is ADJACENT to the 40° angle.</div>\n<div class=\"step\"><span class=\"step-number\">5.</span> Use CAH: cos θ = adjacent / hypotenuse.</div>\n<div class=\"step\"><span class=\"step-number\">6.</span> cos 40° = x / 20.</div>\n<div class=\"step\"><span class=\"step-number\">7.</span> x = 20 cos 40°.</div>"
     },
     {
       "year": 2024,
@@ -1067,7 +1067,7 @@
         "Histogram C",
         "Histogram D"
       ],
-      "answer": 2,
+      "answer": 3,
       "image": "/diagrams/mathematics-standard-2_2024_Q15_stimulus.jpg",
       "optionImages": [
         "/diagrams/mathematics-standard-2_2024_Q15_A.jpg",
