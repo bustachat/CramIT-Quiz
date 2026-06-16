@@ -7550,6 +7550,29 @@
       }
     },
     {
+      "year": 2021,
+      "marks": 4,
+      "section": "II",
+      "qNum": "41",
+      "category": "S3",
+      "image": "/diagrams/mathematics-standard-2_2021_Q41_stimulus.jpg",
+      "q": "In a particular city, the heights of adult females and adult males are each normally distributed.\n\nInformation relating to two females from that city is given in Table 1.\n\n<table class=\"nesa-table\"><thead><tr><th>Height</th><th>Gender</th><th>Percentage of females in this city shorter than this person</th></tr></thead><tbody><tr><td>175 cm</td><td>Female</td><td>97.5%</td></tr><tr><td>160.6 cm</td><td>Female</td><td>16%</td></tr></tbody></table>\n\nThe means and standard deviations of adult females and males are given in Table 2.\n\n<table class=\"nesa-table\"><thead><tr><th></th><th>Mean</th><th>Standard deviation</th></tr></thead><tbody><tr><td>Females</td><td>μ</td><td>σ</td></tr><tr><td>Males</td><td>1.05μ</td><td>1.1σ</td></tr></tbody></table>\n\nA selected male is taller than 84% of the population of adult males in this city.\n\nUsing the information in Tables 1 and 2, calculate the height of the selected male, in centimetres, correct to two decimal places.",
+      "answer": "Step 1 — Find σ using 97.5th percentile (z = +2): μ + 2σ = 175\nStep 2 — Find σ using 16th percentile (z = −1): μ − σ = 160.6\nStep 3 — Subtract: 3σ = 14.4 → σ = 4.8\nStep 4 — Find μ: μ = 160.6 + 4.8 = 165.4\nStep 5 — Male mean = 1.05 × 165.4 = 173.67\nStep 6 — Male SD = 1.1 × 4.8 = 5.28\nStep 7 — Taller than 84% → z = +1: height = 173.67 + 5.28 = 178.95 cm",
+      "keywords": [
+        "4.8",
+        "165.4",
+        "173.67",
+        "5.28",
+        "178.95"
+      ],
+      "minKeywords": 3,
+      "bandDescriptors": {
+        "full": "4/4 — σ = 4.8, μ = 165.4, male mean and SD correct, final answer 178.95 cm.",
+        "partial": "2–3/4 — σ and μ found correctly, or male statistics correct but final answer wrong.",
+        "minimal": "1/4 — Sets up one correct equation from z-score/percentile relationship."
+      }
+    },
+    {
       "year": 2022,
       "marks": 3,
       "section": "II",
