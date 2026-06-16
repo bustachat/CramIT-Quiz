@@ -7551,6 +7551,28 @@
     },
     {
       "year": 2021,
+      "marks": 3,
+      "section": "II",
+      "qNum": "40",
+      "category": "F4",
+      "image": "/diagrams/mathematics-standard-2_2021_Q40_stimulus.jpg",
+      "q": "Simone deposits $1000 into a savings account at the end of each year for 8 years. The interest rate for these 8 years is 0.75% per annum, compounded annually.\n\nAfter the 8th deposit, Simone stops making deposits but leaves the money in the savings account. The money in her savings account then earns interest at 1.25% per annum, compounded annually, for a further two years.\n\nUse the table of future value interest factors shown to find the amount of money in Simone's savings account at the end of ten years.",
+      "answer": "Phase 1 — Annuity: 000 per year for 8 years at 0.75%\nFV = 1000 × 8.2132 = 213.20\n\nPhase 2 — Compound interest: 213.20 at 1.25% for 2 years (no further deposits)\nFV = 8213.20 × (1.0125)²\n    = 8213.20 × 1.02515625\n    = 419.81",
+      "keywords": [
+        "8213.20",
+        "8213",
+        "8419.81",
+        "8419"
+      ],
+      "minKeywords": 2,
+      "bandDescriptors": {
+        "full": "3/3 — Phase 1 correct (213.20) and Phase 2 correct (419.81).",
+        "partial": "2/3 — Phase 1 correct using table factor (8.2132) or Phase 2 method correct.",
+        "minimal": "1/3 — Uses future value interest factor from table for annuity calculation."
+      }
+    },
+    {
+      "year": 2021,
       "marks": 4,
       "section": "II",
       "qNum": "41",
