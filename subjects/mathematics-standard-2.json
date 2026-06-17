@@ -7215,7 +7215,7 @@
       "section": "II",
       "qNum": "18",
       "category": "F5",
-      "q": "A lottery prize is an annuity of $5000 per year for 10 years, invested at 4.5% p.a. compounding annually.\n\nFuture value interest factors (annuity of $1):\n• 10 years at 4.5%: 12.288\n\nWhat is the value of the prize at the end of 10 years?",
+      "q": "A table of future value interest factors for an annuity of $1 is shown.\n\n| Period | 1.5% | 3% | 4.5% | 6% |\n|---|---|---|---|---|\n| 5 | 5.152 | 5.309 | 5.471 | 5.637 |\n| 10 | 10.703 | 11.464 | 12.288 | 13.181 |\n| 20 | 23.124 | 26.870 | 31.371 | 36.786 |\n| 40 | 54.268 | 75.401 | 107.030 | 154.762 |\n\nThe prize in a lottery is an annuity of $5000 a year for 10 years, invested at 4.5% per annum compounding annually.\n\nWhat will be the value of the prize at the end of 10 years? (2 marks)",
       "answer": "FV = $5000 × 12.288 = $61 440",
       "acceptableAnswers": [
         "61440",
@@ -7226,72 +7226,49 @@
         "full": "2/2 — $5000 × 12.288 = $61 440.",
         "partial": "1/2 — Identifies the correct factor (12.288).",
         "minimal": "0/2 — Incorrect factor or method."
+      },
+      "image": null
+    },
+    {
+      "year": 2025,
+      "marks": 3,
+      "section": "II",
+      "qNum": "20",
+      "category": "A2",
+      "image": "/diagrams/mathematics-standard-2_2025_Q20_stimulus.jpg",
+      "q": "The graph of a quadratic function represented by the equation h = t² − 8t + 12 is shown.\n\n(a) Find the values of t and h at the turning point of the graph. (2 marks)\n\n(b) The graph shows h = 12 when t = 0. What is the other value of t for which h = 12? (1 mark)",
+      "answer": "(a) Turning point:\nt = −(−8)/(2 × 1) = 8/2 = 4\nh = 4² − 8(4) + 12 = 16 − 32 + 12 = −4\nTurning point: (4, −4)\n\n(b) Set h = 12:\nt² − 8t + 12 = 12\nt² − 8t = 0\nt(t − 8) = 0\nt = 0 or t = 8\nThe other value is t = 8.",
+      "keywords": [
+        "4",
+        "-4",
+        "8",
+        "turning point"
+      ],
+      "minKeywords": 2,
+      "bandDescriptors": {
+        "high": "Correctly finds turning point (4, −4) using axis of symmetry formula, and solves to get t = 8.",
+        "mid": "Correctly finds the turning point OR correctly solves for the second t value.",
+        "low": "Identifies the axis of symmetry formula t = −b/(2a) or correctly substitutes h = 12."
       }
     },
     {
       "year": 2025,
-      "marks": 2,
+      "marks": 3,
       "section": "II",
-      "qNum": "20(a)",
-      "category": "A4",
-      "q": "For the quadratic h = t² − 8t + 12, find the values of t and h at the turning point.",
-      "answer": "t = −(−8)/(2 × 1) = 8/2 = 4\nh = 4² − 8(4) + 12 = 16 − 32 + 12 = −4\nTurning point: (4, −4)",
+      "qNum": "21",
+      "category": "F1",
+      "image": null,
+      "q": "A house has a reverse-cycle air conditioner which uses 2.5 kW of power for cooling and 3.2 kW of power for heating. The cost of electricity is 29 cents per kWh.\n\n(a) Find the cost, in dollars and cents, of cooling the house for 6 hours. (1 mark)\n\n(b) The cost of operating the air conditioner to heat the house during winter last year was $640. There are 92 days in winter.\nFind the number of hours, to 1 decimal place, that the air conditioner was used on average per day. (2 marks)",
+      "answer": "(a) Cost = power × time × rate\n= 2.5 kW × 6 h × $0.29/kWh\n= **$4.35**\n\n(b) Total hours = $640 ÷ (3.2 kW × $0.29/kWh)\n= $640 ÷ $0.928/h\n= 689.655... hours\nAverage per day = 689.655 ÷ 92\n= **7.5 hours** (to 1 d.p.)",
       "keywords": [
-        "t = 4",
-        "h = -4",
-        "(4, -4)",
-        "4 and -4",
-        "t=4"
+        "4.35",
+        "7.5"
       ],
       "minKeywords": 1,
       "bandDescriptors": {
-        "full": "2/2 — Turning point at t = 4, h = −4.",
-        "partial": "1/2 — Correct t value (4) using axis of symmetry or completion of square.",
-        "minimal": "0/2 — Incorrect method."
-      }
-    },
-    {
-      "year": 2025,
-      "marks": 1,
-      "section": "II",
-      "qNum": "20(b)",
-      "category": "A4",
-      "q": "For h = t² − 8t + 12, the graph shows h = 12 when t = 0. What is the other value of t for which h = 12?",
-      "answer": "t² − 8t + 12 = 12\nt² − 8t = 0\nt(t − 8) = 0\nt = 0 or t = 8\nThe other value is t = 8.",
-      "acceptableAnswers": [
-        "8",
-        "t = 8"
-      ]
-    },
-    {
-      "year": 2025,
-      "marks": 1,
-      "section": "II",
-      "qNum": "21(a)",
-      "category": "M7",
-      "q": "An air conditioner uses 2.5 kW for cooling. Electricity costs 29c/kWh. Find the cost of cooling the house for 6 hours.",
-      "answer": "Cost = 2.5 × 6 × $0.29 = $4.35",
-      "acceptableAnswers": [
-        "4.35",
-        "$4.35"
-      ]
-    },
-    {
-      "year": 2025,
-      "marks": 2,
-      "section": "II",
-      "qNum": "21(b)",
-      "category": "M7",
-      "q": "An air conditioner uses 3.2 kW for heating at 29c/kWh. During winter (92 days) the total heating cost was $640. Find the average hours of heating per day (to 1 decimal place).",
-      "answer": "Cost per hour = 3.2 × $0.29 = $0.928/hr\nTotal hours = $640 ÷ $0.928 = 689.66...\nDaily average = 689.66... ÷ 92 = 7.49... ≈ 7.5 hours",
-      "acceptableAnswers": [
-        "7.5",
-        "7.5 hours"
-      ],
-      "bandDescriptors": {
-        "full": "2/2 — Hourly rate $0.928, daily average 7.5 hours.",
-        "partial": "1/2 — Correct hourly rate ($0.928).",
-        "minimal": "0/2 — Incorrect method."
+        "high": "Correctly calculates $4.35 for cooling and 7.5 hours/day for heating.",
+        "mid": "Correctly calculates one part or shows correct method for both.",
+        "low": "Uses Power × Time × Rate formula with some values correct."
       }
     },
     {
@@ -7336,23 +7313,26 @@
     },
     {
       "year": 2025,
-      "marks": 3,
+      "marks": 6,
       "section": "II",
-      "qNum": "25(b,c)",
-      "category": "S4",
-      "q": "Regression line: y = 64.3 − 0.7x (x = avg minutes/day watching TV, y = avg minutes/day exercising).\n\n(b) Interpret the slope (−0.7) and y-intercept (64.3) in context.\n(c) Jo watches 42 minutes of TV per day. Predict her daily exercise time.",
-      "answer": "(b) Slope (−0.7): For each additional minute of TV per day, expected exercise time decreases by 0.7 minutes/day.\n\ny-intercept (64.3): If someone watches no TV, they are expected to exercise 64.3 minutes/day.\n\n(c) y = 64.3 − 0.7 × 42 = 64.3 − 29.4 = 34.9 minutes",
+      "qNum": "25",
+      "category": "S5",
+      "image": "/diagrams/mathematics-standard-2_2025_Q25_stimulus.jpg",
+      "q": "In a research study, participants were asked to record the number of minutes they spent watching television and the number of minutes they spent exercising each day over a period of 3 months. The averages for each participant were recorded and graphed (scatterplot shown, x = average minutes/day watching TV, y = average minutes/day exercising).\n\nThe equation of the least-squares regression line for this dataset is y = 64.3 − 0.7x.\n\n(a) Describe the bivariate dataset in terms of its form and direction. (2 marks)\n\n(b) Interpret the values of the slope and y-intercept of the regression line in the context of this dataset. (2 marks)\n\n(c) Jo spends an average of 42 minutes per day watching television. Use the equation of the regression line to determine how many minutes on average Jo is expected to exercise each day. (1 mark)\n\n(d) Explain why it is NOT appropriate to extrapolate the regression line to predict the average number of minutes of exercise per day for someone who watches an average of 2 hours of television per day. (1 mark)",
+      "answer": "(a) Form: linear (the data points follow an approximately straight-line pattern)\nDirection: negative (as TV time increases, exercise time decreases)\n\n(b) Slope = −0.7: for each additional minute of TV watched per day, the average exercise time decreases by 0.7 minutes per day.\ny-intercept = 64.3: a person who watches 0 minutes of TV per day is predicted to exercise 64.3 minutes per day.\n\n(c) y = 64.3 − 0.7 × 42 = 64.3 − 29.4 = **34.9 minutes per day**\n\n(d) 2 hours = 120 minutes, which is well beyond the range of the data (maximum ~60 minutes). Extrapolating outside the data range is unreliable as the linear relationship may not hold.",
       "keywords": [
-        "0.7 minute",
-        "decreases",
+        "linear",
+        "negative",
+        "0.7",
         "64.3",
-        "34.9"
+        "34.9",
+        "extrapolat"
       ],
-      "minKeywords": 2,
+      "minKeywords": 3,
       "bandDescriptors": {
-        "full": "3/3 — Correct slope interpretation, y-intercept interpretation, and prediction (34.9 min).",
-        "partial": "2/3 — Correct interpretation of slope and y-intercept, or correct prediction.",
-        "minimal": "1/3 — Correct y-intercept interpretation or prediction (34.9)."
+        "high": "Correctly describes form and direction, interprets both slope and intercept in context, calculates 34.9 min, and gives valid extrapolation reason.",
+        "mid": "Correctly completes 3–4 of the 4 parts with mostly correct reasoning.",
+        "low": "Identifies negative direction or calculates Jo's exercise time."
       }
     },
     {
@@ -7420,8 +7400,8 @@
       "section": "II",
       "qNum": "31",
       "category": "F1",
-      "image": "/diagrams/mathematics-standard-2_2025_Q28_stimulus.jpg",
-      "q": "The table below shows income tax rates for Australian residents for the 2024–2025 financial year:\n• $0 – $18 200: Nil\n• $18 201 – $45 000: 16c per $1 over $18 200\n• $45 001 – $135 000: $4288 + 30c per $1 over $45 000\n• $135 001 – $190 000: $31 288 + 37c per $1 over $135 000\n• $190 001+: $51 638 + 45c per $1 over $190 000\n\nAt the end of the 2024–2025 financial year, Alex's tax payable was $47 420 (excluding the Medicare levy).\n\nWhat was Alex's taxable income?",
+      "image": null,
+      "q": "The table shows the income tax rate for Australian residents for the 2024−2025 financial year:\n\n| Taxable income | Tax on this income |\n|---|---|\n| $0 – $18 200 | Nil |\n| $18 201 – $45 000 | 16 cents for each $1 over $18 200 |\n| $45 001 – $135 000 | $4288 plus 30 cents for each $1 over $45 000 |\n| $135 001 – $190 000 | $31 288 plus 37 cents for each $1 over $135 000 |\n| $190 001 and over | $51 638 plus 45 cents for each $1 over $190 000 |\n\nAt the end of the 2024−2025 financial year, Alex's tax payable was $47 420, excluding the Medicare levy.\n\nWhat was Alex's taxable income? (3 marks)",
       "answer": "Try $135 001 – $190 000 bracket:\n$31 288 + 0.37(x − $135 000) = $47 420\n0.37(x − $135 000) = $47 420 − $31 288 = $16 132\nx − $135 000 = $16 132 ÷ 0.37 = $43 600\nx = $135 000 + $43 600 = $178 600",
       "acceptableAnswers": [
         "178600",
@@ -7463,7 +7443,7 @@
       "section": "II",
       "qNum": "34",
       "category": "F5",
-      "q": "Lin invests a lump sum of $21 000 for 7 years at 6% p.a. compounding monthly.\n\nYemi wants to achieve the same future value by depositing a fixed amount at the end of each month for 7 years into an account paying 6% p.a. compounding monthly.\n\nFuture value interest factors for an annuity of $1 (n=84, r=0.005): 104.07393\n\nUsing the table, determine how much Yemi needs to deposit each month.",
+      "q": "The table shows future value interest factors for an annuity of $1:\n\n| Period (n) | r = 0.005 | r = 0.01 | r = 0.015 | r = 0.02 | r = 0.03 | r = 0.06 |\n|---|---|---|---|---|---|---|\n| 7 | 7.10588 | 7.21354 | 7.32300 | 7.43428 | 7.66246 | 8.39384 |\n| 28 | 29.97452 | 32.12910 | 34.48148 | 37.05121 | 42.93092 | 68.52811 |\n| 56 | 64.44140 | 74.58098 | 86.79754 | 101.55826 | 141.15377 | 418.82235 |\n| 84 | 104.07393 | 130.67227 | 166.17264 | 213.86661 | 365.88054 | 2209.41674 |\n\nLin invests a lump sum of $21 000 for 7 years at an interest rate of 6% per annum, compounding monthly.\n\nYemi wants to achieve the same future value as Lin by using an annuity. Yemi plans to deposit a fixed amount into an investment account at the end of each month for 7 years. The investment account pays 6% per annum, compounding monthly.\n\nUsing the table provided, determine how much Yemi needs to deposit each month. (3 marks)",
       "answer": "Lin's FV: monthly rate = 0.5%, n = 84 months\nUsing FV annuity factor relationship: (1.005)^84 − 1 = 104.07393 × 0.005 = 0.5203697\nSo (1.005)^84 = 1.5203697\nLin's FV = $21 000 × 1.5203697 = $31 927.76\n\nYemi's monthly deposit = $31 927.76 ÷ 104.07393 = $306.77 ≈ $307",
       "keywords": [
         "31927",
@@ -7475,7 +7455,8 @@
         "full": "3/3 — Lin's FV ~$31 928, Yemi's monthly deposit ~$307.",
         "partial": "2/3 — Correctly calculates Lin's FV.",
         "minimal": "1/3 — Correct interest rate and period for Lin or Yemi."
-      }
+      },
+      "image": null
     },
     {
       "year": 2020,
@@ -8311,7 +8292,7 @@
       "qNum": "29",
       "category": "F4",
       "image": null,
-      "q": "The table shows monthly repayments for each $1000 borrowed (Principal and Interest per $1000 borrowed):\n\n| Interest rate (p.a.) | 5 yrs | 10 yrs | 15 yrs | 20 yrs | 25 yrs | 30 yrs |\n|---|---|---|---|---|---|---|\n| 6.5% | 19.57 | 11.35 | 8.71 | 7.46 | 6.75 | 6.32 |\n| 7.0% | 19.80 | 11.61 | 8.99 | 7.75 | 7.07 | 6.65 |\n| 7.5% | 20.04 | 11.87 | 9.27 | 8.06 | 7.39 | 6.99 |\n| 8.0% | 20.28 | 12.13 | 9.56 | 8.36 | 7.72 | 7.34 |\n\n(a) A couple borrows $520 000 to buy a house at 8% per annum over 25 years. How much does the couple repay in total for this loan? (3 marks)\n\n(b) Chris borrows some money at 7% per annum. Chris will repay the loan over 15 years, paying $3596 per month. How much money does Chris borrow? (1 mark)",
+      "q": "A plumber leases equipment which is valued at $60 000. The salvage value of the equipment at any time can be calculated using either of the two methods of depreciation shown in the table:\n\n| Method of depreciation | Rate of depreciation |\n|---|---|\n| Straight-line method | $3500 per annum |\n| Declining-balance method | 12% per annum |\n\nUnder which method of depreciation would the salvage value of the equipment be lower at the end of 3 years? Justify your answer with appropriate mathematical calculations. (3 marks)",
       "answer": "(a) Monthly repayment per $1000 at 8%, 25 years = $7.72\nAmount repaid per month = ($520 000 ÷ 1000) × $7.72\n= 520 × $7.72\n= $4014.40\n\nTotal amount repaid = $4014.40 × 12 × 25\n= **$1 204 320**\n\n(b) Monthly repayment per $1000 at 7%, 15 years = $8.99\nAmount borrowed = ($3596 ÷ $8.99) × 1000\n= 400 × 1000\n= **$400 000**",
       "keywords": [
         "1204320",
@@ -8990,6 +8971,48 @@
         "high": "Correctly identifies k = 15, finds a = √0.6 ≈ 0.7746, and calculates y = 5.4 mg when x = 4.",
         "mid": "Correctly finds k = 15 and sets up the equation to find a. Minor error in final calculation.",
         "low": "Recognises that k = 15 from the y-intercept or attempts to substitute given points into the equation."
+      }
+    },
+    {
+      "year": 2025,
+      "marks": 3,
+      "section": "II",
+      "qNum": "38",
+      "category": "M1",
+      "image": null,
+      "q": "A car's fuel efficiency is 30 miles per US gallon.\n\n1 US gallon = 3.8 litres (correct to 2 significant figures)\n1 mile = 1.6 km (correct to 2 significant figures)\n\nCalculate the car's fuel efficiency in litres per 100 km, correct to 1 decimal place. (3 marks)",
+      "answer": "Convert 30 miles/gallon to km/litre first:\n\n30 miles/gallon × 1.6 km/mile ÷ 3.8 litres/gallon\n= 30 × 1.6 ÷ 3.8\n= 48 ÷ 3.8\n= 12.6315... km/litre\n\nConvert to litres/100 km:\n= 100 ÷ 12.6315...\n= **7.9 litres/100 km** (to 1 d.p.)",
+      "keywords": [
+        "7.9"
+      ],
+      "minKeywords": 1,
+      "bandDescriptors": {
+        "high": "Correctly converts to get 7.9 L/100 km.",
+        "mid": "Converts miles to km or gallons to litres correctly in chain.",
+        "low": "Sets up the conversion using given factors."
+      }
+    },
+    {
+      "year": 2025,
+      "marks": 5,
+      "section": "II",
+      "qNum": "40",
+      "category": "S4",
+      "image": null,
+      "q": "(a) In a flock of 12 600 sheep, the ratio of males to females is 1 : 20. The weights of the male sheep are normally distributed with a mean of 76.2 kg and a standard deviation of 6.8 kg. In the flock, 15 of the male sheep each weigh more than x kg. Find the value of x. (4 marks)\n\n(b) The weights of the female sheep are also normally distributed but have a smaller mean and smaller standard deviation than the weights of male sheep. Explain whether it could be expected that 300 of the females from the flock each weigh more than x kg, where x is the value found in part (a). (1 mark)",
+      "answer": "(a) Total sheep = 12 600, ratio males:females = 1:20\nNumber of male sheep = 12 600 × (1/21) = 600 males\n\n15 out of 600 weigh more than x kg:\nProportion = 15/600 = 0.025 → P(Z > z) = 0.025 → z = 1.96\n\nx = μ + z × σ = 76.2 + 1.96 × 6.8\n= 76.2 + 13.328\n= **89.528... ≈ 89.5 kg**\n\n(b) Number of females = 12 600 × (20/21) = 12 000\n300 out of 12 000 = 0.025 (2.5%) would need to weigh more than 89.5 kg.\nBut females have SMALLER mean and SMALLER standard deviation than males.\nSo x = 89.5 kg is even further into the upper tail for females.\nLess than 2.5% of females would weigh more than x kg.\nTherefore it could NOT be expected that 300 females weigh more than x kg.",
+      "keywords": [
+        "600",
+        "1.96",
+        "89.5",
+        "smaller",
+        "could not"
+      ],
+      "minKeywords": 2,
+      "bandDescriptors": {
+        "high": "Correctly finds 600 males, uses z=1.96, calculates x≈89.5 kg, and correctly explains females cannot reach 300.",
+        "mid": "Finds number of males and sets up z-score calculation, or correctly explains part (b).",
+        "low": "Identifies number of males (600) or states the proportion 15/600 = 0.025."
       }
     }
   ]
