@@ -1,0 +1,61 @@
+<svg viewBox="0 0 360 320" xmlns="http://www.w3.org/2000/svg" style="background:white;font-family:Arial,sans-serif;">
+  <!-- Regular pentagon ABCDE in circle, O=centre, radius=30cm, angle=72° -->
+  <!-- Pentagon vertices at 72° intervals. A at top (90° from horizontal = -90° in SVG) -->
+  <!-- Angles from top: A=270°, B=270+72=342°, C=342+72=54°, D=54+72=126°, E=126+72=198° -->
+  <!-- cx=180, cy=160, r=120px (for display) -->
+
+  <defs>
+    <style>.lbl{font-size:14px;font-style:italic;fill:#1a1a1a;}</style>
+  </defs>
+
+  <!-- cx=180, cy=162, r=120 -->
+  <!-- A: 270° => (180, 42) -->
+  <!-- B: 342° => (180+120*cos(342°*π/180), 162+120*sin(342°*π/180)) -->
+  <!--    cos(342°)=0.951, sin(342°)=-0.309 => (294, 125) -->
+  <!-- C: 54°  => cos=0.588, sin=0.809  => (251, 259) -->
+  <!-- D: 126° => cos=-0.588, sin=0.809 => (109, 259) -->
+  <!-- E: 198° => cos=-0.951, sin=-0.309 => (66, 125) -->
+
+  <!-- Circle -->
+  <circle cx="180" cy="162" r="120" fill="none" stroke="#1a1a1a" stroke-width="1.5"/>
+
+  <!-- Shaded segments (between pentagon sides and circle arcs) -->
+  <!-- Shade each of the 5 segments using path: arc + chord back -->
+  <!-- Segment A-B -->
+  <path d="M 180,42 A 120,120 0 0 1 294,125 L 180,42 Z" fill="#cccccc" stroke="none"/>
+  <!-- Segment B-C -->
+  <path d="M 294,125 A 120,120 0 0 1 251,259 L 294,125 Z" fill="#cccccc" stroke="none"/>
+  <!-- Segment C-D -->
+  <path d="M 251,259 A 120,120 0 0 1 109,259 L 251,259 Z" fill="#cccccc" stroke="none"/>
+  <!-- Segment D-E -->
+  <path d="M 109,259 A 120,120 0 0 1 66,125 L 109,259 Z" fill="#cccccc" stroke="none"/>
+  <!-- Segment E-A -->
+  <path d="M 66,125 A 120,120 0 0 1 180,42 L 66,125 Z" fill="#cccccc" stroke="none"/>
+
+  <!-- Pentagon (white fill over shading) -->
+  <polygon points="180,42 294,125 251,259 109,259 66,125" fill="white" stroke="#1a1a1a" stroke-width="1.5"/>
+
+  <!-- Radii from O to all vertices -->
+  <line x1="180" y1="162" x2="180" y2="42" stroke="#1a1a1a" stroke-width="1" stroke-dasharray="none"/>
+  <line x1="180" y1="162" x2="294" y2="125" stroke="#1a1a1a" stroke-width="1"/>
+  <line x1="180" y1="162" x2="251" y2="259" stroke="#1a1a1a" stroke-width="1"/>
+  <line x1="180" y1="162" x2="109" y2="259" stroke="#1a1a1a" stroke-width="1"/>
+  <line x1="180" y1="162" x2="66" y2="125" stroke="#1a1a1a" stroke-width="1"/>
+
+  <!-- Centre O -->
+  <circle cx="180" cy="162" r="2.5" fill="#1a1a1a"/>
+
+  <!-- 72° angle arc at O between OA and OB -->
+  <path d="M 180,132 A 30,30 0 0 1 209,153" fill="none" stroke="#1a1a1a" stroke-width="1.2"/>
+  <text x="187" y="152" font-size="12" fill="#1a1a1a">72°</text>
+
+  <!-- Vertex labels -->
+  <text x="174" y="32" class="lbl">A</text>
+  <text x="300" y="124" class="lbl">B</text>
+  <text x="254" y="275" class="lbl">C</text>
+  <text x="97" y="275" class="lbl">D</text>
+  <text x="50" y="124" class="lbl">E</text>
+
+  <!-- O label -->
+  <text x="186" y="170" font-size="13" font-style="italic" fill="#1a1a1a">O</text>
+</svg>

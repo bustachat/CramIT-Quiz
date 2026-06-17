@@ -1,0 +1,32 @@
+<svg viewBox="0 0 360 260" xmlns="http://www.w3.org/2000/svg" style="background:white;font-family:Arial,sans-serif;">
+  <!-- Triangle ABC: A bottom-left (60°), B bottom-right (25°), C top -->
+  <!-- Side AC = 12 m -->
+  <defs>
+    <marker id="dot" markerWidth="4" markerHeight="4" refX="2" refY="2">
+      <circle cx="2" cy="2" r="1.5" fill="#1a1a1a"/>
+    </marker>
+  </defs>
+
+  <!-- Triangle vertices: A(50,210), C(110,50), B(300,210) -->
+  <polygon points="50,210 300,210 110,50" fill="none" stroke="#1a1a1a" stroke-width="1.8"/>
+
+  <!-- Labels -->
+  <text x="32" y="224" font-size="15" font-style="italic" fill="#1a1a1a">A</text>
+  <text x="303" y="224" font-size="15" font-style="italic" fill="#1a1a1a">B</text>
+  <text x="100" y="38" font-size="15" font-style="italic" fill="#1a1a1a">C</text>
+
+  <!-- Angle arc at A (60°) -->
+  <path d="M 70,210 A 20,20 0 0 1 58,192" fill="none" stroke="#1a1a1a" stroke-width="1.2"/>
+  <text x="55" y="208" font-size="13" fill="#1a1a1a">60°</text>
+
+  <!-- Angle arc at B (25°) -->
+  <path d="M 282,210 A 20,20 0 0 0 289,192" fill="none" stroke="#1a1a1a" stroke-width="1.2"/>
+  <text x="268" y="207" font-size="13" fill="#1a1a1a">25°</text>
+
+  <!-- Side AC = 12 m (left side, label midpoint) -->
+  <text x="54" y="140" font-size="13" fill="#1a1a1a">12 m</text>
+
+  <!-- NOT TO SCALE -->
+  <text x="245" y="110" font-size="11" fill="#555">NOT TO</text>
+  <text x="248" y="124" font-size="11" fill="#555">SCALE</text>
+</svg>

@@ -1,0 +1,65 @@
+<svg viewBox="0 0 560 280" xmlns="http://www.w3.org/2000/svg" style="background:white;font-family:Arial,sans-serif;">
+  <defs>
+    <marker id="arr" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L6,3 L0,6 L1.5,3 Z" fill="#1a1a1a"/>
+    </marker>
+  </defs>
+  <!-- Function centre critical path network -->
+  <!-- Activities: A(6), B(4), C(4), D(4), E(2), F(2), G(4), H(2), I(7), J(12), K(8) -->
+  <!-- Node positions -->
+  <!-- N0(start)=(45,140), N1=(165,75), N2=(165,145), N3=(165,215), N4=(305,105), N5=(305,200), N6(end)=(460,140) -->
+
+  <!-- Edges -->
+  <!-- N0→N1: A,6 -->
+  <line x1="49" y1="135" x2="158" y2="80" stroke="#1a1a1a" stroke-width="1.5" marker-end="url(#arr)"/>
+  <text x="80" y="97" font-size="12" font-style="italic" fill="#1a1a1a">A, 6</text>
+
+  <!-- N0→N2: D,4 -->
+  <line x1="51" y1="140" x2="158" y2="144" stroke="#1a1a1a" stroke-width="1.5" marker-end="url(#arr)"/>
+  <text x="88" y="137" font-size="12" font-style="italic" fill="#1a1a1a">D, 4</text>
+
+  <!-- N0→N3: H,2 -->
+  <line x1="49" y1="145" x2="158" y2="210" stroke="#1a1a1a" stroke-width="1.5" marker-end="url(#arr)"/>
+  <text x="74" y="192" font-size="12" font-style="italic" fill="#1a1a1a">H, 2</text>
+
+  <!-- N1→N4: B,4 -->
+  <line x1="171" y1="73" x2="298" y2="100" stroke="#1a1a1a" stroke-width="1.5" marker-end="url(#arr)"/>
+  <text x="218" y="77" font-size="12" font-style="italic" fill="#1a1a1a">B, 4</text>
+
+  <!-- N1→N4: E,2 (slightly offset) -->
+  <line x1="172" y1="82" x2="298" y2="108" stroke="#1a1a1a" stroke-width="1.5" marker-end="url(#arr)"/>
+  <text x="218" y="104" font-size="12" font-style="italic" fill="#1a1a1a">E, 2</text>
+
+  <!-- N2→N4: F,2 -->
+  <line x1="172" y1="140" x2="298" y2="113" stroke="#1a1a1a" stroke-width="1.5" marker-end="url(#arr)"/>
+  <text x="222" y="133" font-size="12" font-style="italic" fill="#1a1a1a">F, 2</text>
+
+  <!-- N3→N5: I,7 -->
+  <line x1="171" y1="215" x2="298" y2="200" stroke="#1a1a1a" stroke-width="1.5" marker-end="url(#arr)"/>
+  <text x="215" y="215" font-size="12" font-style="italic" fill="#1a1a1a">I, 7</text>
+
+  <!-- N4→N6: G,4 -->
+  <line x1="311" y1="103" x2="453" y2="136" stroke="#1a1a1a" stroke-width="1.5" marker-end="url(#arr)"/>
+  <text x="363" y="107" font-size="12" font-style="italic" fill="#1a1a1a">G, 4</text>
+
+  <!-- N4→N6: C,4 (slightly offset) -->
+  <line x1="311" y1="112" x2="453" y2="142" stroke="#1a1a1a" stroke-width="1.5" marker-end="url(#arr)"/>
+  <text x="363" y="138" font-size="12" font-style="italic" fill="#1a1a1a">C, 4</text>
+
+  <!-- N5→N6: K,8 -->
+  <line x1="311" y1="197" x2="453" y2="148" stroke="#1a1a1a" stroke-width="1.5" marker-end="url(#arr)"/>
+  <text x="360" y="185" font-size="12" font-style="italic" fill="#1a1a1a">K, 8</text>
+
+  <!-- N5→N6: J,12 (lower arc) -->
+  <path d="M 311,205 Q 400,250 453,152" fill="none" stroke="#1a1a1a" stroke-width="1.5" marker-end="url(#arr)"/>
+  <text x="370" y="245" font-size="12" font-style="italic" fill="#1a1a1a">J, 12</text>
+
+  <!-- Nodes -->
+  <circle cx="45" cy="140" r="7" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+  <circle cx="165" cy="75" r="6" fill="#1a1a1a"/>
+  <circle cx="165" cy="145" r="6" fill="#1a1a1a"/>
+  <circle cx="165" cy="215" r="6" fill="#1a1a1a"/>
+  <circle cx="305" cy="107" r="6" fill="#1a1a1a"/>
+  <circle cx="305" cy="200" r="6" fill="#1a1a1a"/>
+  <circle cx="460" cy="140" r="7" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+</svg>

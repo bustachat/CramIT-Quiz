@@ -1,0 +1,42 @@
+<svg viewBox="0 0 400 260" xmlns="http://www.w3.org/2000/svg" style="background:white;font-family:Arial,sans-serif;">
+  <!-- Triangle PTA: T at top, P bottom-left, A bottom-right -->
+  <!-- PT=51m, PA=75m, right angle at foot of perpendicular from T -->
+  <!-- T is above the base PA, perpendicular foot on PA -->
+
+  <!-- Vertices: P(40,210), A(310,210), T(200,60) -->
+  <!-- Foot of perpendicular from T to PA: at (200,210) -->
+
+  <!-- Triangle sides -->
+  <line x1="40" y1="210" x2="310" y2="210" stroke="#1a1a1a" stroke-width="1.8"/>
+  <line x1="40" y1="210" x2="200" y2="60" stroke="#1a1a1a" stroke-width="1.8"/>
+  <line x1="310" y1="210" x2="200" y2="60" stroke="#1a1a1a" stroke-width="1.8"/>
+
+  <!-- Perpendicular from T to PA (dashed) -->
+  <line x1="200" y1="60" x2="200" y2="210" stroke="#1a1a1a" stroke-width="1.2" stroke-dasharray="5,3"/>
+
+  <!-- Right angle mark at foot (200,210) -->
+  <rect x="192" y="200" width="10" height="10" fill="none" stroke="#1a1a1a" stroke-width="1.2"/>
+
+  <!-- Labels -->
+  <text x="23" y="224" font-size="15" font-style="italic" fill="#1a1a1a">P</text>
+  <text x="314" y="224" font-size="15" font-style="italic" fill="#1a1a1a">A</text>
+  <text x="195" y="48" font-size="15" font-style="italic" fill="#1a1a1a">T</text>
+
+  <!-- PT = 51 m (left side label) -->
+  <text x="95" y="135" font-size="13" fill="#1a1a1a">51 m</text>
+
+  <!-- PA = 75 m (bottom, with arrows) -->
+  <line x1="40" y1="228" x2="310" y2="228" stroke="#1a1a1a" stroke-width="1" marker-start="url(#arr)" marker-end="url(#arr)"/>
+  <text x="155" y="244" font-size="13" fill="#1a1a1a">75 m</text>
+
+  <!-- Arrow markers for dimension line -->
+  <defs>
+    <marker id="arr" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
+      <path d="M0,0 L6,3 L0,6" fill="none" stroke="#1a1a1a" stroke-width="1"/>
+    </marker>
+  </defs>
+
+  <!-- NOT TO SCALE -->
+  <text x="305" y="100" font-size="11" fill="#555">NOT TO</text>
+  <text x="308" y="114" font-size="11" fill="#555">SCALE</text>
+</svg>

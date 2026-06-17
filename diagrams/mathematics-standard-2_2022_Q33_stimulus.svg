@@ -1,0 +1,47 @@
+<svg viewBox="0 0 360 300" xmlns="http://www.w3.org/2000/svg" style="background:white;font-family:Arial,sans-serif;">
+  <!-- Bearing diagram: O at top, N arrow up, A to right (20km), B directly south (50km) -->
+  <!-- Aeroplane flying toward A at bearing 135°T, diverts at O south to B -->
+
+  <!-- O at (160, 80) -->
+  <!-- N arrow straight up from O -->
+  <!-- A is to the RIGHT of O (east = 20km east of O): A at (240, 80) -->
+  <!-- B is SOUTH of O (50km south): B at (160, 210) -->
+
+  <!-- Aeroplane symbol above-left of O -->
+  <!-- ✈ at (100, 40) -->
+  <text x="92" y="56" font-size="22" fill="#1a1a1a">✈</text>
+
+  <!-- N arrow (north from O) -->
+  <line x1="160" y1="80" x2="160" y2="18" stroke="#1a1a1a" stroke-width="1.5"/>
+  <polygon points="160,12 155,24 165,24" fill="#1a1a1a"/>
+  <text x="165" y="20" font-size="14" font-weight="bold" fill="#1a1a1a">N</text>
+
+  <!-- Horizontal line east from O (to show A direction) -->
+  <line x1="160" y1="80" x2="260" y2="80" stroke="#1a1a1a" stroke-width="1"/>
+
+  <!-- O point -->
+  <circle cx="160" cy="80" r="3" fill="#1a1a1a"/>
+  <text x="145" y="90" font-size="14" font-style="italic" fill="#1a1a1a">O</text>
+
+  <!-- A point (east of O, 20km) -->
+  <circle cx="248" cy="80" r="3" fill="#1a1a1a"/>
+  <text x="253" y="85" font-size="14" font-style="italic" fill="#1a1a1a">A</text>
+  <!-- 20 km label -->
+  <text x="190" y="72" font-size="12" fill="#1a1a1a">20 km</text>
+
+  <!-- B point (south of O, 50km) -->
+  <circle cx="160" cy="210" r="3" fill="#1a1a1a"/>
+  <text x="165" y="218" font-size="14" font-style="italic" fill="#1a1a1a">B</text>
+
+  <!-- Line O to B (south) -->
+  <line x1="160" y1="80" x2="160" y2="210" stroke="#1a1a1a" stroke-width="1.5"/>
+  <!-- 50 km label -->
+  <text x="118" y="155" font-size="12" fill="#1a1a1a">50 km</text>
+
+  <!-- Line A to B -->
+  <line x1="248" y1="80" x2="160" y2="210" stroke="#1a1a1a" stroke-width="1.5"/>
+
+  <!-- NOT TO SCALE -->
+  <text x="248" y="175" font-size="11" fill="#555">NOT TO</text>
+  <text x="251" y="189" font-size="11" fill="#555">SCALE</text>
+</svg>

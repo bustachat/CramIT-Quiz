@@ -7917,8 +7917,8 @@
       "section": "II",
       "qNum": "20",
       "category": "N2",
-      "image": "/diagrams/mathematics-standard-2_2022_Q20_stimulus.jpg",
-      "q": "The table shows the distances, in kilometres, between towns Snowtown (S), Clairville (C), Yuma (Y), Bosten (B), and Morrella (M).\n\n(a) Describe the edges of a weighted network diagram that represents the information in the table.\n\n(b) A tourist wishes to visit each town. Determine the minimum spanning tree and its total length.",
+      "image": null,
+      "q": "The table shows the distances (in kilometres) between towns Snowtown (S), Clairville (C), Yuma (Y), Bosten (B), and Morrella (M):\n\n| | S | C | Y | B | M |\n|---|---|---|---|---|---|\n| S | – | – | 280 | 275 | – |\n| C | – | – | 60 | 150 | – |\n| Y | 280 | 60 | – | – | 530 |\n| B | 275 | 150 | – | – | 790 |\n| M | – | – | 530 | 790 | – |\n\n(a) Draw a weighted network diagram to represent the information shown in the table, using the five towns as vertices. (2 marks)\n\n(b) A tourist wishes to visit each town. Draw the minimum spanning tree which will allow for this AND determine its length. (3 marks)",
       "answer": "(a) The weighted network has edges: S–Y = 280 km, S–B = 275 km, C–Y = 60 km, C–B = 150 km, Y–M = 530 km, B–M = 790 km.\n\n(b) Minimum spanning tree uses Kruskal's algorithm:\n1. Shortest edge: C–Y = 60 km ✓\n2. Next: S–B = 275 km ✓\n3. Next: C–B = 150 km ✓ (connects C–Y cluster to S–B cluster)\n4. Next: S–Y = 280 km ✗ (would form a cycle)\n5. Next: Y–M = 530 km ✓ (connects M to tree)\n\nMinimum spanning tree edges: C–Y (60), C–B (150), S–B (275), Y–M (530)\nTotal length = 60 + 150 + 275 + 530 = **1015 km**",
       "keywords": [
         "1015",
@@ -8001,7 +8001,7 @@
       "section": "II",
       "qNum": "31",
       "category": "N2",
-      "image": "/diagrams/mathematics-standard-2_2022_Q31_stimulus.jpg",
+      "image": "/diagrams/mathematics-standard-2_2022_Q31_stimulus.svg",
       "q": "A wildlife park has 5 main attractions (A, B, C, D, E) connected by directional paths. A network represents flow through the park's paths. The number of visitors who can access each path at any one time is shown.\n\n(a) What is the flow capacity of the cut shown in the diagram?\n\n(b) By identifying a suitable cut, explain why the network's current maximum flow capacity is less than 40 visitors.\n\n(c) One path is to be increased in capacity so that the overall maximum flow will be 40 visitors at any one time. Which path could be increased and by how much?",
       "answer": "(a) The cut shown passes through edges: Source→A (10), Source→C (10), D→Sink (20). Cut capacity = 10 + 10 + 20 = **40**.\n\n(b) A cut through E→Sink (20) and B→Sink (20) minus back-flow gives a cut capacity of **35**. Since 35 < 40, by the max-flow min-cut theorem, the maximum flow cannot exceed 35 visitors.\n\n(c) The path C→B (currently 10) could be increased by **5** to give a capacity of 15, which would allow the maximum flow to reach 40. (Also acceptable: A→E or D→E increased by 5.)",
       "keywords": [
@@ -8046,7 +8046,7 @@
       "section": "II",
       "qNum": "33",
       "category": "M6",
-      "image": "/diagrams/mathematics-standard-2_2022_Q33_stimulus.jpg",
+      "image": "/diagrams/mathematics-standard-2_2022_Q33_stimulus.svg",
       "q": "The diagram shows an aeroplane that was flying towards an airport at A on a bearing of 135°T. When it was at point O, 20 km away from the airport at A, the flight course was changed. The aeroplane landed at an airport at B directly south of O. The distance from O to B is 50 km.\n\n(a) Show that the distance between the airport at A and the airport at B is 38.5 km, correct to 1 decimal place.\n\n(b) Use the sine rule to find the angle OBA to the nearest degree.\n\n(c) What is the bearing of the airport at B from the airport at A?",
       "answer": "(a) Angle AOB = 135° − 90° = 45° (bearing 135° means A is south-east of O, so angle between north and OA is 135°, angle AOB = 135° − 90° = 45°)\nUsing cosine rule:\nAB² = OA² + OB² − 2 × OA × OB × cos(∠AOB)\n= 20² + 50² − 2 × 20 × 50 × cos(45°)\n= 400 + 2500 − 2000 × 0.7071...\n= 2900 − 1414.2...\n= 1485.8...\nAB = √1485.8 = 38.5 km ✓\n\n(b) Using sine rule:\nsin(∠OBA)/OA = sin(∠AOB)/AB\nsin(∠OBA)/20 = sin(45°)/38.5\nsin(∠OBA) = 20 × sin(45°)/38.5 = 0.3675...\n∠OBA = sin⁻¹(0.3675) ≈ **22°**\n\n(c) O is due north of B. Bearing of A from B:\n∠OBA = 22°, so A is 22° east of north from B.\nBearing of A from B = **022°T**\n\nBearing of B from A: A is north-west of B, so bearing = 180° + 22° = **202°T**",
       "keywords": [
@@ -8133,8 +8133,8 @@
       "section": "II",
       "qNum": "17",
       "category": "N2",
-      "image": "/diagrams/mathematics-standard-2_2023_Q17_stimulus.jpg",
-      "q": "The table shows some of the flight distances (rounded to the nearest 10 km) between various Australian cities: Adelaide (A), Brisbane (B), Darwin (D), Hobart (H), Perth (P), Sydney (S).\n\n(a) Use the information in the table to complete the network diagram where the edges are labelled with distances.\n\n(b) Mahsa wants to travel from Hobart to Darwin. She wants to change planes only once. Using the network diagram, calculate how many kilometres she will travel by plane.",
+      "image": null,
+      "q": "The table shows some of the flight distances (rounded to the nearest 10 km) between various Australian cities: Adelaide (A), Brisbane (B), Darwin (D), Hobart (H), Perth (P), Sydney (S).\n\n| City | A | B | D | H | P | S |\n|---|---|---|---|---|---|---|\n| Adelaide (A) | – | – | 1170 | – | 2120 | – |\n| Brisbane (B) | – | – | 2850 | – | – | 750 |\n| Darwin (D) | 1170 | 2850 | – | – | 2650 | 3150 |\n| Hobart (H) | – | – | – | – | – | 1040 |\n| Perth (P) | 2120 | – | 2650 | – | – | 3270 |\n| Sydney (S) | – | 750 | 3150 | 1040 | 3270 | – |\n\n(a) Use the information in the table to complete the network diagram where the edges are labelled with distances. The network has nodes A, B, D, H, P, S with edge D–P = 2650 already shown. Add all remaining edges from the table. (2 marks)\n\n(b) Mahsa wants to travel from Hobart to Darwin. She wants to change planes only once. Using the network diagram, calculate how many kilometres she will travel by plane. (1 mark)",
       "answer": "(a) The completed network diagram includes edges:\n- P–D = 2650 km\n- D–B = 2850 km\n- D–S = 3150 km\n- P–A = 2120 km\n- A–H = 1170 km\n- H–S = 1040 km\n- B–S = 750 km\n- P–S = 3270 km\n\n(b) Hobart to Darwin with one stopover:\nPath H → S → D = 1040 + 3150 = **4190 km**\n\n(Other paths require more than one change: H→A→P→D requires two changes.)",
       "keywords": [
         "4190",
@@ -8310,8 +8310,8 @@
       "section": "II",
       "qNum": "29",
       "category": "F4",
-      "image": "/diagrams/mathematics-standard-2_2023_Q29_stimulus.jpg",
-      "q": "The table shows monthly repayments for each $1000 borrowed at various interest rates and loan terms.\n\n(a) A couple borrows $520 000 to buy a house at 8% per annum over 25 years. How much does the couple repay in total for this loan?\n\n(b) Chris borrows some money at 7% per annum. Chris will repay the loan over 15 years, paying $3596 per month. How much money does Chris borrow?",
+      "image": null,
+      "q": "The table shows monthly repayments for each $1000 borrowed (Principal and Interest per $1000 borrowed):\n\n| Interest rate (p.a.) | 5 yrs | 10 yrs | 15 yrs | 20 yrs | 25 yrs | 30 yrs |\n|---|---|---|---|---|---|---|\n| 6.5% | 19.57 | 11.35 | 8.71 | 7.46 | 6.75 | 6.32 |\n| 7.0% | 19.80 | 11.61 | 8.99 | 7.75 | 7.07 | 6.65 |\n| 7.5% | 20.04 | 11.87 | 9.27 | 8.06 | 7.39 | 6.99 |\n| 8.0% | 20.28 | 12.13 | 9.56 | 8.36 | 7.72 | 7.34 |\n\n(a) A couple borrows $520 000 to buy a house at 8% per annum over 25 years. How much does the couple repay in total for this loan? (3 marks)\n\n(b) Chris borrows some money at 7% per annum. Chris will repay the loan over 15 years, paying $3596 per month. How much money does Chris borrow? (1 mark)",
       "answer": "(a) Monthly repayment per $1000 at 8%, 25 years = $7.72\nAmount repaid per month = ($520 000 ÷ 1000) × $7.72\n= 520 × $7.72\n= $4014.40\n\nTotal amount repaid = $4014.40 × 12 × 25\n= **$1 204 320**\n\n(b) Monthly repayment per $1000 at 7%, 15 years = $8.99\nAmount borrowed = ($3596 ÷ $8.99) × 1000\n= 400 × 1000\n= **$400 000**",
       "keywords": [
         "1204320",
@@ -8333,7 +8333,7 @@
       "section": "II",
       "qNum": "31",
       "category": "N2",
-      "image": "/diagrams/mathematics-standard-2_2023_Q31_stimulus.jpg",
+      "image": "/diagrams/mathematics-standard-2_2023_Q31_stimulus.svg",
       "q": "A function centre employs staff so that all necessary tasks can be completed between the end of one function and the beginning of the next. The network diagram shows the time taken in hours for the tasks that need to be completed (A=6, B=4, C=4, D=4, E=2, F=2, G=4, H=2, I=7, J=12, K=8).\n\n(a) Find the TWO critical paths.\n\n(b) The function centre wants to decrease the length of each critical path by 3 hours. They can do this by hiring more staff to do ONE of the tasks so it takes less time. For which task should the centre hire more staff, and how long should that task take to ensure all tasks can be completed in 14 hours?",
       "answer": "(a) The two critical paths are:\n- **H, I, G, C** (total: 2 + 7 + 4 + 4 = 17 hours)\n- **H, I, K** (total: 2 + 7 + 8 = 17 hours)\n\n(b) Both critical paths share tasks H and I.\n- H takes only 2 hours — cannot be reduced by 3 hours.\n- I takes 7 hours. Reducing I by 3 hours gives I = 4 hours.\n- New critical path length = 2 + 4 + 8 = 14 hours ✓\n\n∴ Hire more staff for **task I**, and it should take **4 hours**.",
       "keywords": [
@@ -8356,7 +8356,7 @@
       "section": "II",
       "qNum": "33",
       "category": "M1",
-      "image": "/diagrams/mathematics-standard-2_2023_Q33_stimulus.jpg",
+      "image": "/diagrams/mathematics-standard-2_2023_Q33_stimulus.svg",
       "q": "The diagram shows a shape APQBCD. The shape consists of a rectangle ABCD with an arc PQ on side AB and with side lengths BC = 3.6 m and CD = 8.0 m. The arc PQ is an arc of a circle with centre O and radius 2.1 m and angle POQ = 110°. What is the perimeter of the shape APQBCD? Give your answer correct to one decimal place.",
       "answer": "The perimeter of APQBCD consists of:\n- Two sides BC = 3.6 m (×2 = 7.2 m)\n- Side CD = 8.0 m\n- Two segments AP and QB = AB − PQ chord = (8.0 − chord PQ)\n- Arc PQ\n\n**Arc length PQ:**\n= (110/360) × 2π × 2.1\n= 4.0317... m\n\n**Chord length PQ** (using cosine rule):\nPQ = √(2.1² + 2.1² − 2 × 2.1 × 2.1 × cos110°)\n= √(4.41 + 4.41 − 8.82 × (−0.342))\n= √(8.82 + 3.017)\n= √11.837\n= 3.4404... m\n\n**Segments AP + QB** = 8.0 − 3.4404 = 4.5596 m\n\n**Total perimeter** = 7.2 + 8.0 + 4.5596 + 4.0317\n= 23.7913\n= **23.8 m**",
       "keywords": [
@@ -8400,7 +8400,7 @@
       "section": "II",
       "qNum": "35",
       "category": "M6",
-      "image": "/diagrams/mathematics-standard-2_2023_Q35_stimulus.jpg",
+      "image": "/diagrams/mathematics-standard-2_2023_Q35_stimulus.svg",
       "q": "The diagram shows triangle ABC. Side AC = 12 m, angle A = 60°, angle B = 25°. Calculate the area of the triangle, to the nearest square metre.",
       "answer": "Angle C = 180° − 60° − 25° = **95°**\n\n**Find side CB (x) using the sine rule:**\nx/sin60° = 12/sin25°\nx = 12 × sin60°/sin25°\nx = 12 × 0.8660/0.4226\nx = **24.59 m**\n\n**Calculate area** using Area = ½ab sinC:\nArea = ½ × AC × CB × sinA (using included angle approach)\nor Area = ½ × 12 × 24.59 × sin95°\n= ½ × 12 × 24.59 × 0.9962\n= 146.98\n= **147 m²** (to nearest m²)",
       "keywords": [
@@ -8419,7 +8419,7 @@
       "section": "II",
       "qNum": "37",
       "category": "F5",
-      "image": "/diagrams/mathematics-standard-2_2023_Q37_stimulus.jpg",
+      "image": null,
       "q": "The table shows personal income tax rates for different taxable incomes for a particular country:\n- $0–$11 000: Nil\n- $11 001–$42 400: 20 cents per $1 over $11 000\n- $42 401–$78 800: $6280 plus 33 cents per $1 over $42 400\n- $78 801–$108 400: $18 292 plus X cents per $1 over $78 800\n- $108 401 and over: $31 316 plus 48 cents per $1 over $108 400\n\nA person with a taxable income of $90 000 pays 25.8% of that income in tax (excluding any levies). What is the value of X in the table?",
       "answer": "Total tax paid = $90 000 × 25.8% = **$23 220**\n\nAmount over $78 800 = $90 000 − $78 800 = **$11 200**\n\nAdditional tax on amount over $78 800:\n= Total tax − base tax for this bracket\n= $23 220 − $18 292\n= **$4928**\n\nX cents per dollar:\n$11 200 × (X/100) = $4928\nX = $4928 × 100 ÷ $11 200\nX = **44**\n\n∴ X = 44 cents",
       "keywords": [
@@ -8547,7 +8547,7 @@
       "section": "II",
       "qNum": "28",
       "category": "S1",
-      "image": "/diagrams/mathematics-standard-2_2024_Q28_stimulus.jpg",
+      "image": "/diagrams/mathematics-standard-2_2024_Q28_stimulus.svg",
       "q": "Flowers were planted in two gardens (Garden A and Garden B). On a particular day, 25 flowers were randomly selected from each garden and their heights measured in millimetres. The data are represented in parallel box-plots. Compare the two datasets by examining the skewness of the distributions, and the measures of central tendency and spread.",
       "answer": "**Skewness:**\n- Garden A is **negatively skewed** (longer whisker on the left, median closer to upper quartile).\n- Garden B is **positively skewed** (longer whisker on the right, median closer to lower quartile).\n\n**Central tendency:**\n- The **median of Garden A is higher** than the median of Garden B (approximately 168 mm vs 152 mm).\n- Garden A has taller flowers on average.\n\n**Spread:**\n- The **IQR of Garden A is larger** than the IQR of Garden B — Garden A has more variation in the middle 50% of heights.\n- The **range of Garden A is larger** than the range of Garden B.",
       "keywords": [
@@ -8618,7 +8618,7 @@
       "section": "II",
       "qNum": "32",
       "category": "M7",
-      "image": "/diagrams/mathematics-standard-2_2024_Q32_stimulus.jpg",
+      "image": "/diagrams/mathematics-standard-2_2024_Q32_stimulus.svg",
       "q": "A regular pentagon ABCDE is drawn inside a circle with a radius of 30 cm. O is the centre of the circle. What is the area of the shaded region of the circle? Answer correct to 2 significant figures.",
       "answer": "**Area of circle:**\nA = πr² = π × 30² = 2827.43... cm²\n\n**Area of one triangle** (e.g. triangle OAB, with two sides = radius = 30 cm, included angle = 360°/5 = **72°**):\nA = ½ × 30 × 30 × sin72°\n= ½ × 900 × 0.9511\n= 427.975... cm²\n\n**Area of pentagon:**\n= 5 × 427.975 = 2139.877... cm²\n\n**Shaded area** (circle − pentagon):\n= 2827.43 − 2139.88\n= 687.5... cm²\n= **690 cm²** (to 2 significant figures)",
       "keywords": [
@@ -8680,7 +8680,7 @@
       "section": "II",
       "qNum": "36",
       "category": "M6",
-      "image": "/diagrams/mathematics-standard-2_2024_Q36_stimulus.jpg",
+      "image": "/diagrams/mathematics-standard-2_2024_Q36_stimulus.svg",
       "q": "The diagram shows two vertical flagpoles, BE and CD, set on sloping ground. AB = 53.8 m, angle BAX = 27°, angle ABX = 106°, and ED = 20 m (horizontal distance between the tops of the flagpoles).\n\n(a) What is the height of the flagpole BE, correct to 1 decimal place?\n\n(b) What is the height of the flagpole CD, correct to 1 decimal place?",
       "answer": "(a) In triangle ABE, using the sine rule:\nBE/sin27° = AB/sin(∠AEB)\n∠AEB = 180° − 27° − 106° = 47°\nBE/sin27° = 53.8/sin106°\nBE = 53.8 × sin27°/sin106°\n= 53.8 × 0.4540/0.9613\n= **25.4 m**\n\n(b) ∠EBC = 180° − 106° = **74°** (angles on a straight line)\nIn right triangle BXC (where X is directly below E):\ntan74° = ED/BX (where BX is horizontal distance)\n\nActually: tan74° = 20/BX\nBX = 20/tan74°\n= 20/3.4874\n= **5.73 m**\n\nCD = BE − BX (vertical drop from B to C along slope)\nCD = 25.4 − 5.73 = **19.7 m**",
       "keywords": [
@@ -8719,7 +8719,7 @@
       "section": "II",
       "qNum": "39",
       "category": "N2",
-      "image": "/diagrams/mathematics-standard-2_2024_Q39_stimulus.jpg",
+      "image": "/diagrams/mathematics-standard-2_2024_Q39_stimulus.svg",
       "q": "A project involving nine activities (A, B, C, D, E, F, G, H, I) is shown in the network diagram. The duration of each activity is not yet known. The table gives the earliest start time (EST) and latest start time (LST): Activity A: EST=0, LST=2; Activity C: EST=0, LST=1; Activity I: EST=12, LST=12.\n\n(a) What is the critical path?\n\n(b) The minimum time required for this project to be completed is 19 hours. What is the duration of activity I?\n\n(c) The duration of activity C is 3 hours. What is the maximum amount of time that could occur between the start of activity F and the end of activity H?",
       "answer": "(a) Activities A and C have float times (LST > EST), so they are NOT on the critical path.\n\nThe critical path is **BEGI**.\n\n(b) Activity I has EST = 12 and the project takes 19 hours.\nDuration of I = 19 − 12 = **7 hours**\n\n(c) Duration of C = 3 hours.\nC starts at EST = 0, ends at 0 + 3 = 3.\nF starts at EST = LST of C + duration of C (actually at the EST of the next node).\nThe maximum time from start of F to end of H:\nUsing LST approach: 12 − 3 = 9, then 9 − 1 = **8 hours**",
       "keywords": [
@@ -8740,7 +8740,7 @@
       "section": "II",
       "qNum": "40",
       "category": "M6",
-      "image": "/diagrams/mathematics-standard-2_2024_Q40_stimulus.jpg",
+      "image": "/diagrams/mathematics-standard-2_2024_Q40_stimulus.svg",
       "q": "A compass radial survey is shown. OA = 42 m, OD = 38 m, OB = 40 m. The bearing of D from O is 285°T. The bearing of B from O is 110°T. OA is at bearing 40°T from O. Given that AC is a straight line, find the bearing of C from O, correct to the nearest degree.",
       "answer": "**In triangle ODA**, using the cosine rule to find ∠AOD:\ncos∠AOD = (OD² + OA² − DA²)/(2 × OD × OA)\n= (38² + 42² − 67.5²)/(2 × 38 × 42)\n= (1444 + 1764 − 4556.25)/3192\n= −1348.25/3192\n= −0.4224\n∠AOD = cos⁻¹(−0.4224) ≈ **115°**\n\n**Finding bearing of A from O:**\nBearing of D from O = 285°, so ∠DON = 360° − 285° = 75° (west of north)\n∠AOD = ∠DON + ∠AON\n115° = 75° + ∠AON\n∠AON = **40°**\n\nBearing of A from O = **040°T**\n\n**Bearing of C from O** (AC is a straight line, so C is directly opposite A):\nBearing of C = 40° + 180° = **220°T**",
       "keywords": [
@@ -8759,8 +8759,8 @@
       "section": "II",
       "qNum": "41",
       "category": "F4",
-      "image": "/diagrams/mathematics-standard-2_2024_Q41_stimulus.jpg",
-      "q": "Twenty-five years ago, Phoenix deposited a single sum of money into a new bank account, earning 2.4% interest per annum compounding monthly. The present value interest factors table gives values for various interest rates (r) and numbers of periods (n). Phoenix made the following withdrawals: $2000 at the end of each month for the first 15 years (starting end of month 1), and $1200 at the end of each month for the next 10 years (starting end of month 181). Calculate the minimum sum that Phoenix could have deposited in order to make these withdrawals.",
+      "image": null,
+      "q": "Twenty-five years ago, Phoenix deposited a single sum of money into a new bank account, earning 2.4% interest per annum compounding monthly.\n\nPresent value interest factors for an annuity of $1 for various interest rates (r) and numbers of periods (n):\n\n| n \\ r | 0.001 | 0.002 | 0.003 | 0.004 |\n|---|---|---|---|---|\n| 60 | 58.207 | 56.487 | 54.835 | 53.249 |\n| 120 | 113.026 | 106.592 | 100.649 | 95.156 |\n| 180 | 164.655 | 151.036 | 138.927 | 128.137 |\n| 240 | 213.278 | 190.460 | 170.908 | 154.093 |\n| 300 | 259.071 | 225.430 | 197.627 | 174.521 |\n\nPhoenix made the following withdrawals:\n• $2000 at the end of each month for the first 15 years (starting end of month 1)\n• $1200 at the end of each month for the next 10 years (starting end of month 181)\n\nCalculate the minimum sum that Phoenix could have deposited in order to make these withdrawals. (4 marks)",
       "answer": "Monthly interest rate: r = 2.4%/12 = **0.2% = 0.002**\n\nThe deposit must cover the present value of both annuities (calculated at time 0).\n\n**Present value of first annuity** ($2000/month for 15 years = 180 months, n=180, r=0.002):\nPV₁ = $2000 × 151.036 = **$302 072**\n\nWait — let me re-read the MG. MG says:\n- For 25 years need: 1200 × 225.430 = 270 516 (this is the PV of the SECOND annuity as if starting at t=0)\n- For 15 years need extra: 800 × 151.036 = 120 828.80 (extra $800/month for first 15 years)\n- Total = **$391 344.80**\n\nThe logic: Phoenix withdraws $2000 for 15 years and $1200 for the next 10 years.\n= $1200 for all 25 years (n=300, r=0.002)\n  PLUS an additional $800 for the first 15 years (n=180, r=0.002)\n\nPV of $1200 for 300 months = $1200 × 225.430 = $270 516\nPV of extra $800 for 180 months = $800 × 151.036 = $120 828.80\n\nMinimum deposit = $270 516 + $120 828.80 = **$391 344.80**",
       "keywords": [
         "391344",
@@ -8822,7 +8822,7 @@
       "section": "II",
       "qNum": "22",
       "category": "N2",
-      "image": "/diagrams/mathematics-standard-2_2025_Q22_stimulus.jpg",
+      "image": "/diagrams/mathematics-standard-2_2025_Q22_stimulus.svg",
       "q": "A network of pipes with one cut is shown. The number on each edge gives the capacity of that pipe in L/min.\n\n(a) What is the capacity of the cut shown? (1 mark)\n\n(b) A second diagram shows a possible flow for this network. Flow values: A→B=18, A→C=x, B→C=5, B→D=23, D→E=8, C→E=13, E→F=1, C→F=12, D→G=15, E→G=22, F→G=11.\n(i) What is the value of x? Give a reason for your answer. (2 marks)\n(ii) Which of the pipes in the flow are at full capacity? (1 mark)\n(iii) The maximum flow for this network is 50 L/min. Which path of pipes could have an increase in flow of 2 L/min to achieve the maximum flow? (1 mark)",
       "answer": "(a) The cut crosses edges B→D (26), E→G (24), and C→F (12).\nCapacity of cut = 26 + 24 + 12 = 62 L/min\n\n(b)(i) x = 30\nReason: Outflow from C = 5 + 13 + 12 = 30 L/min. By conservation of flow, inflow to C must equal outflow, so x = 30.\n\n(b)(ii) Pipes at full capacity: DE (capacity 8, flow 8), CF (capacity 12, flow 12), DG (capacity 15, flow 15), FG (capacity 11, flow 11).\n\n(b)(iii) Path ACEG. The path A→C→E→G has spare capacity: A→C has capacity 35, flow 30 (spare 5); C→E has capacity 17, flow 13 (spare 4); E→G has capacity 24, flow 22 (spare 2). An increase of 2 L/min along ACEG is possible.",
       "keywords": [
@@ -8911,7 +8911,7 @@
       "section": "II",
       "qNum": "35",
       "category": "M6",
-      "image": "/diagrams/mathematics-standard-2_2025_Q35_stimulus.jpg",
+      "image": "/diagrams/mathematics-standard-2_2025_Q35_stimulus.svg",
       "q": "The triangle PTA is shown. The length of PA is 75 m and the length of PT is 51 m.\n\nThe angle of depression from T to A is 36°, and the angle PTA is obtuse.\n\nFind the length of TA. Give your answer correct to 2 decimal places.",
       "answer": "Since the angle of depression from T to A is 36°, the angle TAP (alternate angle) = 36° (since TA is horizontal from T’s perspective, but actually ∠TAP = 36° from the horizontal at A).\n\nUsing the sine rule to find ∠PTA:\nsin(θ) / 75 = sin(36°) / 51\nsin(θ) = (sin 36° × 75) / 51 = 0.8660...\nθ = 59.81° ≈ 60°\n\nSince ∠PTA is obtuse: ∠PTA = 180° − 60° = 120°\n\nTherefore: ∠TPA = 180° − 120° − 36° = 24°\n\nUsing the sine rule:\nTA / sin 24° = 51 / sin 36°\nTA = (51 × sin 24°) / sin 36°\nTA ≈ 35.29 m",
       "keywords": [
@@ -8954,7 +8954,7 @@
       "section": "II",
       "qNum": "37",
       "category": "M7",
-      "image": "/diagrams/mathematics-standard-2_2025_Q37_stimulus.jpg",
+      "image": "/diagrams/mathematics-standard-2_2025_Q37_stimulus.svg",
       "q": "The diagram shows a park consisting of two equilateral triangles. The shaded triangle is a grassed section. All measurements on the diagram are in metres.\n\nThe outer equilateral triangle has side length 9 m. Each vertex of the inner (shaded) triangle is located 3 m along each side of the outer triangle from a vertex.\n\nHow long will it take to mow the grassed section if it takes 5 minutes to mow 20 m²? Give your answer to the nearest minute.",
       "answer": "Step 1: Find the side length c of the shaded triangle using the cosine rule.\nIn the triangle formed by sides 9 m and 3 m with included angle 60° (equilateral triangle angle):\nc² = 9² + 3² − 2 × 9 × 3 × cos 60°\nc² = 81 + 9 − 2 × 9 × 3 × 0.5\nc² = 90 − 27 = 63\nc = √63 ≈ 7.937 m\n\nStep 2: Find the area of the shaded triangle.\nArea = ½ × c × c × sin 60°\n= ½ × 7.937 × 7.937 × sin 60°\n= ½ × 63 × (√3/2)\n≈ 27.28 m²\n\nStep 3: Calculate time to mow.\nRate = 5 min per 20 m² = 0.25 min/m²\nTime = 27.28 × 0.25 ≈ 6.81 minutes\n≈ 7 minutes (to the nearest minute)",
       "keywords": [
