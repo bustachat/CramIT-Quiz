@@ -1177,6 +1177,6 @@ JSON format: `{ id, name, icon, accentColor, mcQuestions[], writtenQuestions[], 
 
 ---
 
-*CLAUDE.md — CramIT Project — Last updated: 2026-06-17 — 2022–2024 written question audit complete: 21 issues fixed (split entries merged, missing questions added, wrong content corrected). All 2022–2025 questions now PDF-verified. writtenQuestions total: 151.*
+*CLAUDE.md — CramIT Project — Last updated: 2026-06-17 — 2022 Q31/Q33 stimulus images replaced: inaccurate SVGs swapped for manually corrected JPGs (network flow + bearing diagrams). Full cross-year written question audit complete (2022–2025). writtenQuestions total: 151.*
 *Repo: https://github.com/bustachat/CramIT-Quiz*
 *Supabase: https://ohqtefjawaphtsebnaxg.supabase.co*
