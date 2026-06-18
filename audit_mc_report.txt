@@ -1,0 +1,870 @@
+================================================================================
+CRAMIT — Mathematics Standard 2 MC Question Audit
+Comparing subjects/mathematics-standard-2.json against NESA PDFs
+================================================================================
+
+
+============================================================
+  2020 — Extracting from PDF...
+============================================================
+  PDF extraction: found 15 question boundaries
+
+Q 1 (A4) — ❌ ISSUE
+  Text:    ❌ MISMATCH — JSON: "Which of the following could represent the graph of y = -x² + 1?..." vs PDF: "Which of the following could represent the graph of y = - x + 1? mul t i ple c h..."
+  Options: N/A (image options)
+  Answer:  ✅ answer=C (index 2)
+  Image:   ✅ option images present (4 files)
+  Format:  ℹ️  PDF italic: y, x, t, r
+  JSON q:  Which of the following could represent the graph of y = -x² + 1?
+  PDF  q:  Which of the following could represent the graph of y = - x + 1? mul t i ple c ho ic e g r a p h s
+
+Q 2 (M1) — ❌ ISSUE
+  Text:    ❌ MISMATCH — JSON: "What is 0.002073 expressed in standard form with two significant figures?..." vs PDF: "What is 0.002073 expressed in standard form with two significant figures? -2 A. ..."
+  Options: ⚠️  PDF options not extracted
+  Answer:  ✅ answer=D (index 3)
+  Image:   ⚠️  PDF page has graphics but JSON has no image — may need stimulus
+  Format:  —
+  JSON q:  What is 0.002073 expressed in standard form with two significant figures?
+  PDF  q:  What is 0.002073 expressed in standard form with two significant figures? -2 A. 2.07 × 10 -2 B. 2.1 × 10 -3 C. 2.07 × 10
+
+Q 3 (M4) — ❌ ISSUE
+  Text:    ❌ MISMATCH — JSON: "The distance between Bricktown and Koala Creek is 75 km. A person travels from B..." vs PDF: "The distance between Bricktown and Koala Creek is 75 km. A person travels from B..."
+  Options: ⚠️  PDF options not extracted
+  Answer:  ✅ answer=C (index 2)
+  Image:   N/A (text-only question)
+  Format:  —
+  JSON q:  The distance between Bricktown and Koala Creek is 75 km. A person travels from Bricktown to Koala Creek at an average sp
+  PDF  q:  The distance between Bricktown and Koala Creek is 75 km. A person travels from Bricktown to Koala Creek at an average sp
+
+Q 4 (F2) — ❌ ISSUE
+  Text:    ❌ MISMATCH — JSON: "Joan invests $200. She earns interest at 3% per annum, compounded monthly. What ..." vs PDF: "Joan invests $200. She earns interest at 3% per annum, compounded monthly. What ..."
+  Options: ⚠️  PDF options not extracted
+  Answer:  ✅ answer=B (index 1)
+  Image:   N/A (text-only question)
+  Format:  —
+  JSON q:  Joan invests $200. She earns interest at 3% per annum, compounded monthly. What is the future value of Joan's investment
+  PDF  q:  Joan invests $200. She earns interest at 3% per annum, compounded monthly. What is the future value of Joan's investment
+
+Q 5 (M1) — ❌ ISSUE
+  Text:    ❌ MISMATCH — JSON: "A plant stem is measured to be 16.0 cm, correct to one decimal place. What is th..." vs PDF: "A plant stem is measured to be 16.0 cm, correct to one decimal place. What is th..."
+  Options: ⚠️  PDF options not extracted
+  Answer:  ✅ answer=A (index 0)
+  Image:   N/A (text-only question)
+  Format:  —
+  JSON q:  A plant stem is measured to be 16.0 cm, correct to one decimal place. What is the percentage error in this measurement?
+  PDF  q:  A plant stem is measured to be 16.0 cm, correct to one decimal place. What is the percentage error in this measurement? 
+
+Q 6 (A2) — ❌ ISSUE
+  Text:    ❌ MISMATCH — JSON: "Suppose y = -1 - 2x. When the value of x increases by 5, the value of y decrease..." vs PDF: "Suppose y = - 1 - 2 x . When the value of x increases by 5, the value of y decre..."
+  Options: ⚠️  PDF options not extracted
+  Answer:  ✅ answer=D (index 3)
+  Image:   N/A (text-only question)
+  Format:  ℹ️  PDF italic: y, x, x, y
+  JSON q:  Suppose y = -1 - 2x. When the value of x increases by 5, the value of y decreases by
+  PDF  q:  Suppose y = - 1 - 2 x . When the value of x increases by 5, the value of y decreases by A. 1. B. 2. C. 5. D. 10. - 3 -
+
+Q 7 (S1) — ❌ ISSUE
+  Text:    ❌ MISMATCH — JSON: "Which histogram best represents a dataset that is positively skewed?..." vs PDF: "Which histogram best represents a dataset that is positively skewed? mul tip le ..."
+  Options: N/A (image options)
+  Answer:  ✅ answer=A (index 0)
+  Image:   ✅ option images present (4 files)
+  Format:  —
+  JSON q:  Which histogram best represents a dataset that is positively skewed?
+  PDF  q:  Which histogram best represents a dataset that is positively skewed? mul tip le graphs
+
+Q 8 (S5) — ✅ PASS
+  Text:    N/A (hideQ=true — text embedded in image)
+  Options: N/A (image options)
+  Answer:  ✅ answer=A (index 0)
+  Image:   ✅ stimulus exists (89KB): mathematics-standard-2_2020_Q8_stimulus.jpg
+  Format:  ℹ️  PDF italic: Subject, John’s score, Mean, Standard deviation
+
+Q 9 (N2) — ❌ ISSUE
+  Text:    ❌ MISMATCH — JSON: "Team A and Team B have entered a chess competition. Team A and Team B have three..." vs PDF: "Team..."
+  Options: N/A (image options)
+  Answer:  ✅ answer=B (index 1)
+  Image:   ✅ option images present (4 files)
+  Format:  —
+  JSON q:  Team A and Team B have entered a chess competition. Team A and Team B have three members each. Each member of Team A mus
+  PDF  q:  Team
+
+Q10 (A2) — ❌ ISSUE
+  Text:    ❌ MISMATCH — JSON: "A plumber charges a call-out fee of $90 as well as $2 per minute while working. ..." vs PDF: "A plumber charges a call-out fee of $90 as well as $2 per minute while working. ..."
+  Options: ⚠️  C: JSON: "C = 120 + 90t..." vs PDF: "= 90 + 120 t - 5 -..."
+  Answer:  ✅ answer=D (index 3)
+  Image:   ⚠️  PDF page has graphics but JSON has no image — may need stimulus
+  Format:  ℹ️  PDF italic: t, C, t
+  JSON q:  A plumber charges a call-out fee of $90 as well as $2 per minute while working. Suppose the plumber works for t hours. W
+  PDF  q:  A plumber charges a call-out fee of $90 as well as $2 per minute while working. Suppose the plumber works for t hours. W
+
+Q11 (F4) — ❌ ISSUE
+  Text:    ❌ MISMATCH — JSON: "An asset is depreciated using the declining-balance method with a rate of deprec..." vs PDF: "An asset is depreciated using the declining-balance method with a rate of deprec..."
+  Options: ⚠️  PDF options not extracted
+  Answer:  ✅ answer=C (index 2)
+  Image:   ⚠️  PDF page has graphics but JSON has no image — may need stimulus
+  Format:  —
+  JSON q:  An asset is depreciated using the declining-balance method with a rate of depreciation of 8% per half year. The asset wa
+  PDF  q:  An asset is depreciated using the declining-balance method with a rate of depreciation of 8% per half year. The asset wa
+
+Q12 (S4) — ❌ ISSUE
+  Text:    ❌ MISMATCH — JSON: "For a set of bivariate data, Pearson's correlation coefficient is -1. Which grap..." vs PDF: "For a set of bivariate data, Pearson's correlation coefficient is -1. Which grap..."
+  Options: N/A (image options)
+  Answer:  ✅ answer=D (index 3)
+  Image:   ✅ option images present (4 files)
+  Format:  ℹ️  PDF italic: m, i, u, p
+  JSON q:  For a set of bivariate data, Pearson's correlation coefficient is -1. Which graph could best represent this set of bivar
+  PDF  q:  For a set of bivariate data, Pearson's correlation coefficient is -1. Which graph could best represent this set of bivar
+
+Q13 (M4) — ❌ ISSUE
+  Text:    ❌ MISMATCH — JSON: "When Jake stops drinking alcohol at 10:30 pm, he has a blood alcohol content (BA..." vs PDF: "When Jake stops drinking alcohol at 10:30 pm, he has a blood alcohol content (BA..."
+  Options: ⚠️  PDF options not extracted
+  Answer:  ✅ answer=A (index 0)
+  Image:   N/A (text-only question)
+  Format:  —
+  JSON q:  When Jake stops drinking alcohol at 10:30 pm, he has a blood alcohol content (BAC) of 0.08375. The number of hours requi
+  PDF  q:  When Jake stops drinking alcohol at 10:30 pm, he has a blood alcohol content (BAC) of 0.08375. The number of hours requi
+
+Q14 (F5) — ❌ ISSUE
+  Text:    ❌ MISMATCH — JSON: "An annuity consists of ten payments, each equal to $1000. Each payment is made o..." vs PDF: "An annuity consists of ten payments, each equal to $1000. Each payment is made o..."
+  Options: ⚠️  PDF options not extracted
+  Answer:  ✅ answer=A (index 0)
+  Image:   N/A (text-only question)
+  Format:  —
+  JSON q:  An annuity consists of ten payments, each equal to $1000. Each payment is made on 30 June each year from 2021 through to
+  PDF  q:  An annuity consists of ten payments, each equal to $1000. Each payment is made on 30 June each year from 2021 through to
+
+Q15 (S2) — ❌ ISSUE
+  Text:    ❌ MISMATCH — JSON: "The top of a rectangular table is divided into 8 equal sections as shown. A stan..." vs PDF: "The top of a rectangular table is divided into 8 equal sections as shown. 1 2 3 ..."
+  Options: ⚠️  PDF options not extracted
+  Answer:  ✅ answer=B (index 1)
+  Image:   ✅ stimulus exists (8KB): mathematics-standard-2_2020_Q15_stimulus.jpg
+  Format:  —
+  JSON q:  The top of a rectangular table is divided into 8 equal sections as shown. A standard die with faces labelled 1 to 6 is r
+  PDF  q:  The top of a rectangular table is divided into 8 equal sections as shown. 1 2 3 4 5 6 7 8 A standard die with faces labe
+
+
+============================================================
+  2021 — Extracting from PDF...
+============================================================
+  PDF extraction: found 15 question boundaries
+
+Q 1 (M1) — ❌ ISSUE
+  Text:    ❌ MISMATCH — JSON: "Which of the following shapes has the largest perimeter?..." vs PDF: "Which of the following shapes has the largest perimeter? ul pl apes choi ti e ce..."
+  Options: N/A (image options)
+  Answer:  ✅ answer=A (index 0)
+  Image:   ✅ option images present (4 files)
+  Format:  —
+  JSON q:  Which of the following shapes has the largest perimeter?
+  PDF  q:  Which of the following shapes has the largest perimeter? ul pl apes choi ti e ce sh M - 2 -
+
+Q 2 (N1) — ❌ ISSUE
+  Text:    ❌ MISMATCH — JSON: "Consider the network diagram. What is the sum of the degrees of all the vertices..." vs PDF: "Consider the network diagram. N e t ork diagram w What is the sum of the degrees..."
+  Options: ⚠️  PDF options not extracted
+  Answer:  ✅ answer=D (index 3)
+  Image:   ✅ stimulus exists (12KB): mathematics-standard-2_2021_Q2_stimulus.jpg
+  Format:  ℹ️  PDF italic: N, e, t, ork diagram
+  JSON q:  Consider the network diagram. What is the sum of the degrees of all the vertices in this network?
+  PDF  q:  Consider the network diagram. N e t ork diagram w What is the sum of the degrees of all the vertices in this network? A.
+
+Q 3 (S1) — ❌ ISSUE
+  Text:    ❌ MISMATCH — JSON: "The stem-and-leaf plot shows the number of goals scored by a team in each of ten..." vs PDF: "The stem-and-leaf plot shows the number of goals scored by a team in each of ten..."
+  Options: ⚠️  PDF options not extracted
+  Answer:  ✅ answer=C (index 2)
+  Image:   ✅ stimulus exists (8KB): mathematics-standard-2_2021_Q3_stimulus.jpg
+  Format:  —
+  JSON q:  The stem-and-leaf plot shows the number of goals scored by a team in each of ten netball games. What is the mode of this
+  PDF  q:  The stem-and-leaf plot shows the number of goals scored by a team in each of ten netball games. 0 6 8 1 2 4 5 2 1 5 5 9 
+
+Q 4 (F4) — ❌ ISSUE
+  Text:    ❌ MISMATCH — JSON: "Three years ago an appliance was valued at $2467. Its value has depreciated by 1..." vs PDF: "Three years ago an appliance was valued at $2467. Its value has depreciated by 1..."
+  Options: ⚠️  PDF options not extracted
+  Answer:  ✅ answer=D (index 3)
+  Image:   N/A (text-only question)
+  Format:  —
+  JSON q:  Three years ago an appliance was valued at $2467. Its value has depreciated by 15% each year, based on the declining-bal
+  PDF  q:  Three years ago an appliance was valued at $2467. Its value has depreciated by 15% each year, based on the declining-bal
+
+Q 5 (F2) — ❌ ISSUE
+  Text:    ❌ MISMATCH — JSON: "Peter currently earns $21.50 per hour. His hourly wage will increase by 2.1% com..." vs PDF: "Peter currently earns $21.50 per hour. His hourly wage will increase by 2.1% com..."
+  Options: ⚠️  PDF options not extracted
+  Answer:  ✅ answer=A (index 0)
+  Image:   N/A (text-only question)
+  Format:  ℹ️  PDF italic: b
+  JSON q:  Peter currently earns $21.50 per hour. His hourly wage will increase by 2.1% compounded each year for the next four year
+  PDF  q:  Peter currently earns $21.50 per hour. His hourly wage will increase by 2.1% compounded each year for the next four year
+
+Q 6 (M1) — ❌ ISSUE
+  Text:    ❌ MISMATCH — JSON: "Suppose a = b/7, where b = 22. What is the value of a, correct to three signific..." vs PDF: "Suppose a = , where b = 22 . 7 What is the value of a , correct to three signifi..."
+  Options: ⚠️  PDF options not extracted
+  Answer:  ✅ answer=A (index 0)
+  Image:   N/A (text-only question)
+  Format:  ℹ️  PDF italic: a, b, ., a
+  JSON q:  Suppose a = b/7, where b = 22. What is the value of a, correct to three significant figures?
+  PDF  q:  Suppose a = , where b = 22 . 7 What is the value of a , correct to three significant figures? A. 3.14 B. 3.15 C. 3.142 D
+
+Q 7 (S1) — ❌ ISSUE
+  Text:    ❌ MISMATCH — JSON: "The number of downloads of a song on each of twenty consecutive days is shown in..." vs PDF: "The number of downloads of a song on each of twenty consecutive days is shown in..."
+  Options: N/A (image options)
+  Answer:  ✅ answer=C (index 2)
+  Image:   ✅ stimulus exists (39KB): mathematics-standard-2_2021_Q7_stimulus.jpg
+  Format:  —
+  JSON q:  The number of downloads of a song on each of twenty consecutive days is shown in the following graph. Which of the follo
+  PDF  q:  The number of downloads of a song on each of twenty consecutive days is shown in the following graph. ph a G r Which of 
+
+Q 8 (A1) — ❌ ISSUE
+  Text:    ❌ MISMATCH — JSON: "A student is thinking of a number. Let the number be x. When the student subtrac..." vs PDF: "On a test, Zac's mark corresponded to a z -score of 2. The test scores had a mea..."
+  Options: ⚠️  PDF options not extracted
+  Answer:  ✅ answer=C (index 2)
+  Image:   ⚠️  PDF page has graphics but JSON has no image — may need stimulus
+  Format:  ℹ️  PDF italic: z
+  JSON q:  A student is thinking of a number. Let the number be x. When the student subtracts 8 from this number and multiplies the
+  PDF  q:  On a test, Zac's mark corresponded to a z -score of 2. The test scores had a mean of 63 and a standard deviation of 8. W
+
+Q 9 (A4) — ❌ ISSUE
+  Text:    ❌ MISMATCH — JSON: "Which of the following best represents the graph of y = 10(0.8)^x?..." vs PDF: "A student is thinking of a number. Let the number be x . When the student subtra..."
+  Options: N/A (image options)
+  Answer:  ✅ answer=A (index 0)
+  Image:   ✅ option images present (4 files)
+  Format:  ℹ️  PDF italic: x, x, x, x
+  JSON q:  Which of the following best represents the graph of y = 10(0.8)^x?
+  PDF  q:  A student is thinking of a number. Let the number be x . When the student subtracts 8 from this number and multiplies th
+
+Q10 (S2) — ❌ ISSUE
+  Text:    ❌ MISMATCH — JSON: "There are 8 chocolates in a box. Three have peppermint centres (P) and five have..." vs PDF: "Which of the following best represents the graph of y = 10 ( 0.8 ) ? t M ho gr p..."
+  Options: ⚠️  PDF options not extracted
+  Answer:  ✅ answer=D (index 3)
+  Image:   ✅ stimulus exists (14KB): mathematics-standard-2_2021_Q11_stimulus.jpg
+  Format:  ℹ️  PDF italic: y, t, M, i
+  JSON q:  There are 8 chocolates in a box. Three have peppermint centres (P) and five have caramel centres (C). Kim randomly choos
+  PDF  q:  Which of the following best represents the graph of y = 10 ( 0.8 ) ? t M ho gr pl l i u i e ap hs e c c - 6 -
+
+Q11 (M1) — ❌ ISSUE
+  Text:    ❌ MISMATCH — JSON: "A block of land is represented by the shaded region on the number plane. All mea..." vs PDF: "There are 8 chocolates in a box. Three have peppermint centres (P) and five have..."
+  Options: ⚠️  PDF options not extracted
+  Answer:  ✅ answer=B (index 1)
+  Image:   ✅ stimulus exists (14KB): mathematics-standard-2_2021_Q11_stimulus.jpg
+  Format:  —
+  JSON q:  A block of land is represented by the shaded region on the number plane. All measurements are in kilometres. Which of th
+  PDF  q:  There are 8 chocolates in a box. Three have peppermint centres (P) and five have caramel centres (C). Kim randomly choos
+
+Q12 (A4) — ❌ ISSUE
+  Text:    ❌ MISMATCH — JSON: "The time taken to clean a warehouse varies inversely with the number of cleaners..." vs PDF: "A block of land is represented by the shaded region on the number plane. All mea..."
+  Options: ⚠️  PDF options not extracted
+  Answer:  ✅ answer=B (index 1)
+  Image:   ⚠️  PDF page has graphics but JSON has no image — may need stimulus
+  Format:  ℹ️  PDF italic: l
+  JSON q:  The time taken to clean a warehouse varies inversely with the number of cleaners employed. It takes 8 cleaners 60 hours 
+  PDF  q:  A block of land is represented by the shaded region on the number plane. All measurements are in kilometres. l a nd s ho
+
+Q13 (M5) — ❌ ISSUE
+  Text:    ❌ MISMATCH — JSON: "Consider the diagram below. What is the true bearing of A from B?..." vs PDF: "The time taken to clean a warehouse varies inversely with the number of cleaners..."
+  Options: ⚠️  PDF options not extracted
+  Answer:  ✅ answer=D (index 3)
+  Image:   ✅ stimulus exists (14KB): mathematics-standard-2_2021_Q14_stimulus.jpg
+  Format:  —
+  JSON q:  Consider the diagram below. What is the true bearing of A from B?
+  PDF  q:  The time taken to clean a warehouse varies inversely with the number of cleaners employed. It takes 8 cleaners 60 hours 
+
+Q14 (M7) — ❌ ISSUE
+  Text:    ❌ MISMATCH — JSON: "A total of 11 400 people entered a running race. The ratio of professional runne..." vs PDF: "Consider the diagram below. m Bearin gra g dia What is the true bearing of A fro..."
+  Options: ⚠️  PDF options not extracted
+  Answer:  ✅ answer=B (index 1)
+  Image:   ⚠️  PDF page has graphics but JSON has no image — may need stimulus
+  Format:  ℹ️  PDF italic: A, B
+  JSON q:  A total of 11 400 people entered a running race. The ratio of professional runners to amateurs was 3 : 16. All the profe
+  PDF  q:  Consider the diagram below. m Bearin gra g dia What is the true bearing of A from B ? A. 025° B. 065° C. 115° D. 295°
+
+Q15 (S5) — ❌ ISSUE
+  Text:    ❌ MISMATCH — JSON: "On a test, Zac's mark corresponded to a z-score of 2. The test scores had a mean..." vs PDF: "A total of 11 400 people entered a running race. The ratio of professional runne..."
+  Options: ⚠️  PDF options not extracted
+  Answer:  ✅ answer=D (index 3)
+  Image:   ⚠️  PDF page has graphics but JSON has no image — may need stimulus
+  Format:  —
+  JSON q:  On a test, Zac's mark corresponded to a z-score of 2. The test scores had a mean of 63 and a standard deviation of 8. Wh
+  PDF  q:  A total of 11 400 people entered a running race. The ratio of professional runners to amateurs was 3 : 16. All the profe
+
+
+============================================================
+  2022 — Extracting from PDF...
+============================================================
+  PDF extraction: found 15 question boundaries
+
+Q 1 (S1) — ❌ ISSUE
+  Text:    ❌ MISMATCH — JSON: "Which graph represents a negatively skewed distribution?..." vs PDF: "Which graph represents a negatively skewed distribution? A. B. Frequency Frequen..."
+  Options: N/A (image options)
+  Answer:  ✅ answer=C (index 2)
+  Image:   ✅ option images present (4 files)
+  Format:  —
+  JSON q:  Which graph represents a negatively skewed distribution?
+  PDF  q:  Which graph represents a negatively skewed distribution? A. B. Frequency Frequency Score Score C. D. Frequency Frequency
+
+Q 2 (A2) — ❌ ISSUE
+  Text:    ❌ MISMATCH — JSON: "Which could be the graph of y = -2x + 2?..." vs PDF: "Which of the following could be the graph of y = - 2 x + 2? tiple choice diagram..."
+  Options: N/A (image options)
+  Answer:  ✅ answer=A (index 0)
+  Image:   ✅ option images present (4 files)
+  Format:  ℹ️  PDF italic: y, x, tiple choice diagrams, y
+  JSON q:  Which could be the graph of y = -2x + 2?
+  PDF  q:  Which of the following could be the graph of y = - 2 x + 2? tiple choice diagrams y Mul B. O x O x y y C. D. O x O x - 2
+
+Q 3 (N3) — ❌ ISSUE
+  Text:    ❌ MISMATCH — JSON: "The network diagram shows the time needed for each step in order to complete a p..." vs PDF: "The network diagram shows the time needed for each step in order to complete a p..."
+  Options: ⚠️  PDF options not extracted
+  Answer:  ✅ answer=B (index 1)
+  Image:   ✅ stimulus exists (39KB): mathematics-standard-2_2022_Q3_stimulus.jpg
+  Format:  ℹ️  PDF italic: C, I, A, D
+  JSON q:  The network diagram shows the time needed for each step in order to complete a project. What is the critical path to com
+  PDF  q:  The network diagram shows the time needed for each step in order to complete a project. 16 20 C , 13 3 3 I , 2 A , 3 D ,
+
+Q 4 (M1) — ❌ ISSUE
+  Text:    ❌ MISMATCH — JSON: "Lily wanted to estimate the number of fish in a lake. She randomly captured 30 f..." vs PDF: "Lily wanted to estimate the number of fish in a lake. She randomly captured 30 f..."
+  Options: ⚠️  PDF options not extracted
+  Answer:  ✅ answer=D (index 3)
+  Image:   ⚠️  PDF page has graphics but JSON has no image — may need stimulus
+  Format:  —
+  JSON q:  Lily wanted to estimate the number of fish in a lake. She randomly captured 30 fish, then tagged and released them. One 
+  PDF  q:  Lily wanted to estimate the number of fish in a lake. She randomly captured 30 fish, then tagged and released them. One 
+
+Q 5 (S1) — ⚠️  WARN
+  Text:    ⚠️  minor diff — PDF has "Median"; PDF has "Mean"
+  Options: ⚠️  A: JSON: "Both change..." vs PDF: ". Changes Changes B. Stays the same Stays the same C. Changes Stays the same D. ..."
+  Answer:  ✅ answer=D (index 3)
+  Image:   ⚠️  PDF page has graphics but JSON has no image — may need stimulus
+  Format:  ℹ️  PDF italic: Median, Mean
+  JSON q:  Consider the following dataset. 13 16 17 17 21 24 Which row of the table shows how the median and mean are affected when
+  PDF  q:  Consider the following dataset. 13 16 17 17 21 24 Which row of the table shows how the median and mean are affected when
+
+Q 6 (M7) — ❌ ISSUE
+  Text:    ❌ MISMATCH — JSON: "What is 20 minutes to one-third of a day, expressed as a ratio in simplest form?..." vs PDF: "What is 20 minutes to one-third of a day, expressed as a ratio in simplest form?..."
+  Options: ⚠️  B: JSON: "1:24..." vs PDF: ". 1 : 24..." | C: JSON: "60:1..." vs PDF: ". 60 : 1..." | D: JSON: "72:1..." vs PDF: ". 72 : 1..."
+  Answer:  ✅ answer=B (index 1)
+  Image:   ⚠️  PDF page has graphics but JSON has no image — may need stimulus
+  Format:  —
+  JSON q:  What is 20 minutes to one-third of a day, expressed as a ratio in simplest form?
+  PDF  q:  What is 20 minutes to one-third of a day, expressed as a ratio in simplest form? A. 1 : 8
+
+Q 7 (F1) — ❌ ISSUE
+  Text:    ❌ MISMATCH — JSON: "Tian is paid $20.45 per hour, as well as a meal allowance of $16.20 per day. Wha..." vs PDF: "Tian is paid $20.45 per hour, as well as a meal allowance of $16.20 per day. Wha..."
+  Options: ⚠️  PDF options not extracted
+  Answer:  ✅ answer=C (index 2)
+  Image:   ⚠️  PDF page has graphics but JSON has no image — may need stimulus
+  Format:  —
+  JSON q:  Tian is paid $20.45 per hour, as well as a meal allowance of $16.20 per day. What are Tian's total earnings if she works
+  PDF  q:  Tian is paid $20.45 per hour, as well as a meal allowance of $16.20 per day. What are Tian's total earnings if she works
+
+Q 8 (M5) — ❌ ISSUE
+  Text:    ❌ MISMATCH — JSON: "Which true bearing is the same as S48°W?..." vs PDF: "Which true bearing is the same as S48°W? A. 132° B. 222° C. 228° D. 312° - 4 -..."
+  Options: ⚠️  PDF options not extracted
+  Answer:  ✅ answer=C (index 2)
+  Image:   ⚠️  PDF page has graphics but JSON has no image — may need stimulus
+  Format:  —
+  JSON q:  Which true bearing is the same as S48°W?
+  PDF  q:  Which true bearing is the same as S48°W? A. 132° B. 222° C. 228° D. 312° - 4 -
+
+Q 9 (A4) — ❌ ISSUE
+  Text:    ❌ MISMATCH — JSON: "An object is projected vertically into the air. Its height, h metres, above the ..." vs PDF: "An object is projected vertically into the air. Its height, h metres, above the ..."
+  Options: ⚠️  PDF options not extracted
+  Answer:  ✅ answer=A (index 0)
+  Image:   ⚠️  PDF page has graphics but JSON has no image — may need stimulus
+  Format:  ℹ️  PDF italic: h, t, h, t
+  JSON q:  An object is projected vertically into the air. Its height, h metres, above the ground after t seconds is given by h = -
+  PDF  q:  An object is projected vertically into the air. Its height, h metres, above the ground after 2 t seconds is given by h =
+
+Q10 (F1) — ❌ ISSUE
+  Text:    ❌ MISMATCH — JSON: "Alex purchased 800 shares. The total cost was $2.60 per share. Alex sold the sha..." vs PDF: "Alex purchased 800 shares. The total cost was $2.60 per share. Alex sold the sha..."
+  Options: ⚠️  PDF options not extracted
+  Answer:  ✅ answer=B (index 1)
+  Image:   ⚠️  PDF page has graphics but JSON has no image — may need stimulus
+  Format:  —
+  JSON q:  Alex purchased 800 shares. The total cost was $2.60 per share. Alex sold the shares one year later for $3.40 each and pa
+  PDF  q:  Alex purchased 800 shares. The total cost was $2.60 per share. Alex sold the shares one year later for $3.40 each and pa
+
+Q11 (F4) — ❌ ISSUE
+  Text:    ❌ MISMATCH — JSON: "In ten years, the future value of an investment will be $150 000. The interest r..." vs PDF: "In ten years, the future value of an investment will be $150 000. The interest r..."
+  Options: ⚠️  PDF options not extracted
+  Answer:  ✅ answer=D (index 3)
+  Image:   N/A (text-only question)
+  Format:  ℹ️  PDF italic: PV, PV, PV, PV
+  JSON q:  In ten years, the future value of an investment will be $150 000. The interest rate is 4% per annum, compounded half-yea
+  PDF  q:  In ten years, the future value of an investment will be $150 000. The interest rate is 4% per annum, compounded half-yea
+
+Q12 (S4) — ❌ ISSUE
+  Text:    ❌ MISMATCH — JSON: "For a particular course, the recorded data show a relationship between the numbe..." vs PDF: "For a particular course, the recorded data show a relationship between the numbe..."
+  Options: ⚠️  PDF options not extracted
+  Answer:  ✅ answer=B (index 1)
+  Image:   N/A (text-only question)
+  Format:  ℹ️  PDF italic: M, H, M, H
+  JSON q:  For a particular course, the recorded data show a relationship between the number of hours of study per week and the mar
+  PDF  q:  For a particular course, the recorded data show a relationship between the number of hours of study per week and the mar
+
+Q13 (S5) — ❌ ISSUE
+  Text:    ❌ MISMATCH — JSON: "A random variable is normally distributed with mean 0 and standard deviation 1. ..." vs PDF: "A random variable is normally distributed with mean 0 and standard deviation 1. ..."
+  Options: ⚠️  PDF options not extracted
+  Answer:  ✅ answer=B (index 1)
+  Image:   ✅ stimulus exists (65KB): mathematics-standard-2_2022_Q13_stimulus.jpg
+  Format:  ℹ️  PDF italic: z, z, z, z
+  JSON q:  A random variable is normally distributed with mean 0 and standard deviation 1. The table gives the probability that thi
+  PDF  q:  A random variable is normally distributed with mean 0 and standard deviation 1. The table gives the probability that thi
+
+Q14 (A1) — ❌ ISSUE
+  Text:    ❌ MISMATCH — JSON: "Which of the following correctly expresses x as the subject of y = (ax - b)/2?..." vs PDF: "Which of the following correctly expresses x as the subject of y = ? 2 2 y + b..."
+  Options: ⚠️  A: JSON: "x = (2y + b)/a..." vs PDF: ". x = a y + b B. x = 2 a 2 y C. x = + b a y D. x = + b 2 a - 7 -..."
+  Answer:  ✅ answer=A (index 0)
+  Image:   ⚠️  PDF page has graphics but JSON has no image — may need stimulus
+  Format:  ℹ️  PDF italic: x, y, y, b
+  JSON q:  Which of the following correctly expresses x as the subject of y = (ax - b)/2?
+  PDF  q:  Which of the following correctly expresses x as the subject of y = ? 2 2 y + b
+
+Q15 (S1) — ❌ ISSUE
+  Text:    ❌ MISMATCH — JSON: "The cumulative frequency graph shows the distribution of the number of movie dow..." vs PDF: "The cumulative frequency graph shows the distribution of the number of movie dow..."
+  Options: N/A (image options)
+  Answer:  ✅ answer=C (index 2)
+  Image:   ✅ stimulus exists (61KB): mathematics-standard-2_2022_Q15_stimulus.jpg
+  Format:  —
+  JSON q:  The cumulative frequency graph shows the distribution of the number of movie downloads made by 100 people in one month. 
+  PDF  q:  The cumulative frequency graph shows the distribution of the number of movie downloads made by 100 people in one month. 
+
+
+============================================================
+  2023 — Extracting from PDF...
+============================================================
+  PDF extraction: found 15 question boundaries
+
+Q 1 (F2) — ❌ ISSUE
+  Text:    ❌ MISMATCH — JSON: "An amount of $2500 is invested at a simple interest rate of 3% per annum. How mu..." vs PDF: "An amount of $2500 is invested at a simple interest rate of 3% per annum. How mu..."
+  Options: ⚠️  PDF options not extracted
+  Answer:  ✅ answer=B (index 1)
+  Image:   N/A (text-only question)
+  Format:  —
+  JSON q:  An amount of $2500 is invested at a simple interest rate of 3% per annum. How much interest is earned in the first two y
+  PDF  q:  An amount of $2500 is invested at a simple interest rate of 3% per annum. How much interest is earned in the first two y
+
+Q 2 (S5) — ❌ ISSUE
+  Text:    ❌ MISMATCH — JSON: "In a normal distribution, what is the approximate percentage of scores with a z-..." vs PDF: "In a normal distribution, what is the approximate percentage of scores with a z ..."
+  Options: ⚠️  PDF options not extracted
+  Answer:  ✅ answer=C (index 2)
+  Image:   N/A (text-only question)
+  Format:  ℹ️  PDF italic: z
+  JSON q:  In a normal distribution, what is the approximate percentage of scores with a z-score less than 1?
+  PDF  q:  In a normal distribution, what is the approximate percentage of scores with a z -score less than 1? A. 50% B. 68% C. 84%
+
+Q 3 (A4) — ❌ ISSUE
+  Text:    ❌ MISMATCH — JSON: "The number of bees leaving a hive was observed and recorded over 14 days at diff..." vs PDF: "The number of bees leaving a hive was observed and recorded over 14 days at diff..."
+  Options: ⚠️  PDF options not extracted
+  Answer:  ✅ answer=D (index 3)
+  Image:   ⚠️  PDF page has graphics but JSON has no image — may need stimulus
+  Format:  —
+  JSON q:  The number of bees leaving a hive was observed and recorded over 14 days at different times of the day. Which Pearson's 
+  PDF  q:  The number of bees leaving a hive was observed and recorded over 14 days at different times of the day. 80 70 60 50 40 3
+
+Q 4 (F4) — ❌ ISSUE
+  Text:    ❌ MISMATCH — JSON: "A delivery truck was valued at $65 000 when new. The value of the truck deprecia..." vs PDF: "A delivery truck was valued at $65 000 when new. The value of the truck deprecia..."
+  Options: ⚠️  PDF options not extracted
+  Answer:  ✅ answer=A (index 0)
+  Image:   ⚠️  PDF page has graphics but JSON has no image — may need stimulus
+  Format:  —
+  JSON q:  A delivery truck was valued at $65 000 when new. The value of the truck depreciates at a rate of 22 cents per kilometre 
+  PDF  q:  A delivery truck was valued at $65 000 when new. The value of the truck depreciates at a rate of 22 cents per kilometre 
+
+Q 5 (M7) — ❌ ISSUE
+  Text:    ❌ MISMATCH — JSON: "Four petrol pumps are shown, each with the amount of petrol purchased and its co..." vs PDF: "Four petrol pumps are shown, each with the amount of petrol purchased and its co..."
+  Options: N/A (image options)
+  Answer:  ✅ answer=B (index 1)
+  Image:   ✅ option images present (4 files)
+  Format:  ℹ️  PDF bold: 24 L, 25 L, $46.70, $48.50
+  JSON q:  Four petrol pumps are shown, each with the amount of petrol purchased and its cost. Which one represents the best value?
+  PDF  q:  Four petrol pumps are shown, each with the amount of petrol purchased and its cost. Which one represents the best value?
+
+Q 6 (F1) — ❌ ISSUE
+  Text:    ❌ MISMATCH — JSON: "An item was purchased for a price of $880, including 10% GST. What is the amount..." vs PDF: "An item was purchased for a price of $880, including 10% GST. What is the amount..."
+  Options: ⚠️  PDF options not extracted
+  Answer:  ✅ answer=C (index 2)
+  Image:   ⚠️  PDF page has graphics but JSON has no image — may need stimulus
+  Format:  —
+  JSON q:  An item was purchased for a price of $880, including 10% GST. What is the amount of GST included in the price?
+  PDF  q:  An item was purchased for a price of $880, including 10% GST. What is the amount of GST included in the price? A. $8.00 
+
+Q 7 (M5) — ❌ ISSUE
+  Text:    ❌ MISMATCH — JSON: "City A is at latitude 34°S and longitude 151°E. City B is 72° north of City A an..." vs PDF: "City..."
+  Options: ⚠️  A: JSON: "16°N, 126°E..." vs PDF: "is at latitude 34°S and longitude 151°E. City B is 72° north of City A and 25° w..."
+  Answer:  ✅ answer=C (index 2)
+  Image:   ⚠️  PDF page has graphics but JSON has no image — may need stimulus
+  Format:  —
+  JSON q:  City A is at latitude 34°S and longitude 151°E. City B is 72° north of City A and 25° west of City A. What are the latit
+  PDF  q:  City
+
+Q 8 (S2) — ❌ ISSUE
+  Text:    ❌ MISMATCH — JSON: "A game involves throwing a die and spinning a spinner. The sum of the two number..." vs PDF: "A game involves throwing a die and spinning a spinner. 1 2 4 3 The sum of the tw..."
+  Options: ⚠️  PDF options not extracted
+  Answer:  ✅ answer=D (index 3)
+  Image:   ✅ stimulus exists (61KB): mathematics-standard-2_2023_Q8_stimulus.jpg
+  Format:  ℹ️  PDF bold: 1, 2, 4, 3
+  JSON q:  A game involves throwing a die and spinning a spinner. The sum of the two numbers obtained is the score. What is the pro
+  PDF  q:  A game involves throwing a die and spinning a spinner. 1 2 4 3 The sum of the two numbers obtained is the score. The tab
+
+Q 9 (M1) — ❌ ISSUE
+  Text:    ❌ MISMATCH — JSON: "The length and width of a rectangle are measured to be 8 cm and 5 cm respectivel..." vs PDF: "The length and width of a rectangle are measured to be 8 cm and 5 cm respectivel..."
+  Options: ⚠️  PDF options not extracted
+  Answer:  ✅ answer=D (index 3)
+  Image:   N/A (text-only question)
+  Format:  —
+  JSON q:  The length and width of a rectangle are measured to be 8 cm and 5 cm respectively, to the nearest centimetre. What are t
+  PDF  q:  The length and width of a rectangle are measured to be 8 cm and 5 cm respectively, to the nearest centimetre. What are t
+
+Q10 (F4) — ❌ ISSUE
+  Text:    ❌ MISMATCH — JSON: "An amount of $25 000 is invested for six years. Interest is earned at a rate of ..." vs PDF: "An amount of $25 000 is invested for six years. Interest is earned at a rate of ..."
+  Options: ⚠️  PDF options not extracted
+  Answer:  ✅ answer=A (index 0)
+  Image:   N/A (text-only question)
+  Format:  —
+  JSON q:  An amount of $25 000 is invested for six years. Interest is earned at a rate of 8% per annum, compounding quarterly. Whi
+  PDF  q:  An amount of $25 000 is invested for six years. Interest is earned at a rate of 8% per annum, compounding quarterly. Whi
+
+Q11 (M7) — ❌ ISSUE
+  Text:    ❌ MISMATCH — JSON: "A bag contains 150 jelly beans. Some of them are red and the rest are blue. The ..." vs PDF: "A bag contains 150 jelly beans. Some of them are red and the rest are blue. The ..."
+  Options: ⚠️  PDF options not extracted
+  Answer:  ✅ answer=C (index 2)
+  Image:   N/A (text-only question)
+  Format:  —
+  JSON q:  A bag contains 150 jelly beans. Some of them are red and the rest are blue. The ratio of red to blue jelly beans is 2 : 
+  PDF  q:  A bag contains 150 jelly beans. Some of them are red and the rest are blue. The ratio of red to blue jelly beans is 2 : 
+
+Q12 (M1) — ❌ ISSUE
+  Text:    ❌ MISMATCH — JSON: "A cylindrical pipe with a radius of 12.5 cm is filled with water to a depth, d c..." vs PDF: "A cylindrical pipe with a radius of 12.5 cm is filled with water to a depth, d c..."
+  Options: ⚠️  PDF options not extracted
+  Answer:  ✅ answer=B (index 1)
+  Image:   ✅ stimulus exists (30KB): mathematics-standard-2_2023_Q12_stimulus.jpg
+  Format:  ℹ️  PDF italic: d, d
+  JSON q:  A cylindrical pipe with a radius of 12.5 cm is filled with water to a depth, d cm, as shown. The surface of the water ha
+  PDF  q:  A cylindrical pipe with a radius of 12.5 cm is filled with water to a depth, d cm, as shown. The surface of the water ha
+
+Q13 (F1) — ❌ ISSUE
+  Text:    ❌ MISMATCH — JSON: "An item is discounted by 30% and then a further discount of 20% is applied to th..." vs PDF: "An item is discounted by 30% and then a further discount of 20% is applied to th..."
+  Options: ⚠️  PDF options not extracted
+  Answer:  ✅ answer=B (index 1)
+  Image:   ⚠️  PDF page has graphics but JSON has no image — may need stimulus
+  Format:  —
+  JSON q:  An item is discounted by 30% and then a further discount of 20% is applied to the reduced price. What is the total perce
+  PDF  q:  An item is discounted by 30% and then a further discount of 20% is applied to the reduced price. What is the total perce
+
+Q14 (N2) — ❌ ISSUE
+  Text:    ❌ MISMATCH — JSON: "A network with source A and sink B is shown. The capacities of two paths are lab..." vs PDF: "A network with source A and sink B is shown. The capacities of two paths are lab..."
+  Options: ⚠️  PDF options not extracted
+  Answer:  ✅ answer=C (index 2)
+  Image:   ✅ stimulus exists (24KB): mathematics-standard-2_2023_Q14_stimulus.jpg
+  Format:  ℹ️  PDF italic: A, B, A, B
+  JSON q:  A network with source A and sink B is shown. The capacities of two paths are labelled. The cut shown on the diagram has 
+  PDF  q:  A network with source A and sink B is shown. The capacities of two paths are labelled. The cut shown on the diagram has 
+
+Q15 (S1) — ❌ ISSUE
+  Text:    ❌ MISMATCH — JSON: "Ashan's mathematics class needs to complete six tests, each worth 100 marks. Aft..." vs PDF: "Ashan's mathematics class needs to complete six tests, each worth 100 marks. Aft..."
+  Options: ⚠️  PDF options not extracted
+  Answer:  ✅ answer=A (index 0)
+  Image:   ⚠️  PDF page has graphics but JSON has no image — may need stimulus
+  Format:  —
+  JSON q:  Ashan's mathematics class needs to complete six tests, each worth 100 marks. After completing the first five tests, Asha
+  PDF  q:  Ashan's mathematics class needs to complete six tests, each worth 100 marks. After completing the first five tests, Asha
+
+
+============================================================
+  2024 — Extracting from PDF...
+============================================================
+  PDF extraction: found 15 question boundaries
+
+Q 1 (M1) — ❌ ISSUE
+  Text:    ❌ MISMATCH — JSON: "If x = -2.531, what is x² rounded to 2 decimal places?..." vs PDF: "If x = - 2.531, what is the value of x rounded to 2 decimal places? A. - 6.41 B...."
+  Options: ⚠️  PDF options not extracted
+  Answer:  ✅ answer=D (index 3)
+  Image:   ⚠️  PDF page has graphics but JSON has no image — may need stimulus
+  Format:  ℹ️  PDF italic: x, x
+  JSON q:  If x = -2.531, what is x² rounded to 2 decimal places?
+  PDF  q:  If x = - 2.531, what is the value of x rounded to 2 decimal places? A. - 6.41 B. - 6.40 C. 6.40 D. 6.41
+
+Q 2 (A4) — ❌ ISSUE
+  Text:    ❌ MISMATCH — JSON: "Consider the function shown. Which of the following could be the equation of thi..." vs PDF: "Consider the function shown. y NOT TO SCALE O x Which of the following could be ..."
+  Options: ⚠️  PDF options not extracted
+  Answer:  ✅ answer=C (index 2)
+  Image:   ✅ stimulus exists (13KB): mathematics-standard-2_2024_Q2_stimulus.jpg
+  Format:  ℹ️  PDF italic: y, O, x, y
+  JSON q:  Consider the function shown. Which of the following could be the equation of this function?
+  PDF  q:  Consider the function shown. y NOT TO SCALE O x Which of the following could be the equation of this function? A. y = 2 
+
+Q 3 (S1) — ❌ ISSUE
+  Text:    ❌ MISMATCH — JSON: "Shoppers are invited to complete an online survey. What type of sampling is this..." vs PDF: "Shoppers are invited to complete an online survey. What type of sampling is this..."
+  Options: ⚠️  PDF options not extracted
+  Answer:  ✅ answer=A (index 0)
+  Image:   ⚠️  PDF page has graphics but JSON has no image — may need stimulus
+  Format:  —
+  JSON q:  Shoppers are invited to complete an online survey. What type of sampling is this?
+  PDF  q:  Shoppers are invited to complete an online survey. What type of sampling is this? A. Self-selecting B. Simple random C. 
+
+Q 4 (N1) — ❌ ISSUE
+  Text:    ❌ MISMATCH — JSON: "The map shows regions within a country. A network diagram is to be drawn to repr..." vs PDF: "The map shows regions within a country. Forest Swamp Mountains Coast Desert Wood..."
+  Options: ⚠️  PDF options not extracted
+  Answer:  ✅ answer=B (index 1)
+  Image:   ✅ stimulus exists (44KB): mathematics-standard-2_2024_Q4_stimulus.jpg
+  Format:  —
+  JSON q:  The map shows regions within a country. A network diagram is to be drawn to represent this map. Vertices will be used to
+  PDF  q:  The map shows regions within a country. Forest Swamp Mountains Coast Desert Woods A network diagram is to be drawn to re
+
+Q 5 (S5) — ❌ ISSUE
+  Text:    ❌ MISMATCH — JSON: "Pia's marks in Year 10 assessments are shown. The scores for each subject were n..." vs PDF: "Pia's marks in Year 10 assessments are shown. The scores for each subject were n..."
+  Options: ⚠️  PDF options not extracted
+  Answer:  ✅ answer=A (index 0)
+  Image:   ✅ stimulus exists (36KB): mathematics-standard-2_2024_Q5_stimulus.jpg
+  Format:  ℹ️  PDF italic: Pia’s mark, Year 10 mean, Year 10 standard, deviation
+  JSON q:  Pia's marks in Year 10 assessments are shown. The scores for each subject were normally distributed. In which subject di
+  PDF  q:  Pia's marks in Year 10 assessments are shown. The scores for each subject were normally distributed. Pia's mark Year 10 
+
+Q 6 (M1) — ❌ ISSUE
+  Text:    ❌ MISMATCH — JSON: "Consider the diagram shown. Which of the following is the correct expression for..." vs PDF: "Consider the diagram shown. x 40° 20 Which of the following is the correct expre..."
+  Options: ⚠️  PDF options not extracted
+  Answer:  ✅ answer=A (index 0)
+  Image:   ✅ stimulus exists (8KB): mathematics-standard-2_2024_Q6_stimulus.jpg
+  Format:  ℹ️  PDF italic: x, x
+  JSON q:  Consider the diagram shown. Which of the following is the correct expression for the length of x?
+  PDF  q:  Consider the diagram shown. x 40° 20 Which of the following is the correct expression for the length of x ? A. 20 cos 40
+
+Q 7 (F4) — ❌ ISSUE
+  Text:    ❌ MISMATCH — JSON: "Three years ago, the price of a uniform was $180. Due to inflation, the price in..." vs PDF: "Three years ago, the price of a uniform was $180. Due to inflation, the price in..."
+  Options: ⚠️  PDF options not extracted
+  Answer:  ✅ answer=D (index 3)
+  Image:   N/A (text-only question)
+  Format:  —
+  JSON q:  Three years ago, the price of a uniform was $180. Due to inflation, the price increased annually by 2.5%. What is the pr
+  PDF  q:  Three years ago, the price of a uniform was $180. Due to inflation, the price increased annually by 2.5%. What is the pr
+
+Q 8 (F1) — ❌ ISSUE
+  Text:    ❌ MISMATCH — JSON: "A bill for servicing a car is made up of: $242 for parts, which includes 10% GST..." vs PDF: "A bill for servicing a car is made up of: • $242 for parts, which includes 10% G..."
+  Options: ⚠️  PDF options not extracted
+  Answer:  ✅ answer=C (index 2)
+  Image:   N/A (text-only question)
+  Format:  —
+  JSON q:  A bill for servicing a car is made up of: $242 for parts, which includes 10% GST; $100 for labour, excluding GST. The me
+  PDF  q:  A bill for servicing a car is made up of: • $242 for parts, which includes 10% GST • $100 for labour, excluding GST. The
+
+Q 9 (A4) — ❌ ISSUE
+  Text:    ❌ MISMATCH — JSON: "The time taken to paint a school varies inversely with the number of painters co..." vs PDF: "The time taken to paint a school varies inversely with the number of painters co..."
+  Options: ⚠️  PDF options not extracted
+  Answer:  ✅ answer=B (index 1)
+  Image:   N/A (text-only question)
+  Format:  ℹ️  PDF italic: p
+  JSON q:  The time taken to paint a school varies inversely with the number of painters completing the task. It takes 6 painters a
+  PDF  q:  The time taken to paint a school varies inversely with the number of painters completing the task. It takes 6 painters a
+
+Q10 (A1) — ❌ ISSUE
+  Text:    ❌ MISMATCH — JSON: "Consider the formula s = wt + p/2. Which of the following correctly shows p as t..." vs PDF: "Consider the formula s = wt + . 2 Which of the following correctly shows p as th..."
+  Options: ⚠️  PDF options not extracted
+  Answer:  ✅ answer=D (index 3)
+  Image:   N/A (text-only question)
+  Format:  ℹ️  PDF italic: s, wt, p, p
+  JSON q:  Consider the formula s = wt + p/2. Which of the following correctly shows p as the subject of the formula?
+  PDF  q:  Consider the formula s = wt + . 2 Which of the following correctly shows p as the subject of the formula? A. p = 2 wt - 
+
+Q11 (M4) — ❌ ISSUE
+  Text:    ❌ MISMATCH — JSON: "A train left Richmond at 6:42 am and arrived at Central Station at 8:04 am. The ..." vs PDF: "A train left Richmond at 6:42 am and arrived at Central Station at 8:04 am. The ..."
+  Options: ⚠️  PDF options not extracted
+  Answer:  ✅ answer=B (index 1)
+  Image:   N/A (text-only question)
+  Format:  —
+  JSON q:  A train left Richmond at 6:42 am and arrived at Central Station at 8:04 am. The distance travelled by the train from Ric
+  PDF  q:  A train left Richmond at 6:42 am and arrived at Central Station at 8:04 am. The distance travelled by the train from Ric
+
+Q12 (S4) — ❌ ISSUE
+  Text:    ❌ MISMATCH — JSON: "A survey of 370 people was conducted to investigate the association between watc..." vs PDF: "A survey of 370 people was conducted to investigate the association between watc..."
+  Options: ⚠️  PDF options not extracted
+  Answer:  ✅ answer=C (index 2)
+  Image:   ⚠️  PDF page has graphics but JSON has no image — may need stimulus
+  Format:  ℹ️  PDF italic: Anime, Anime, Anime, Anime
+  JSON q:  A survey of 370 people was conducted to investigate the association between watching Anime and the age of the person. Th
+  PDF  q:  A survey of 370 people was conducted to investigate the association between watching Anime and the age of the person. Th
+
+Q13 (F4) — ❌ ISSUE
+  Text:    ❌ MISMATCH — JSON: "José takes out a loan of $9000. Simple interest is charged on the loan. The loan..." vs PDF: "José takes out a loan of $9000. Simple interest is charged on the loan. The loan..."
+  Options: ⚠️  PDF options not extracted
+  Answer:  ✅ answer=A (index 0)
+  Image:   ⚠️  PDF page has graphics but JSON has no image — may need stimulus
+  Format:  —
+  JSON q:  José takes out a loan of $9000. Simple interest is charged on the loan. The loan and the interest charged will be repaid
+  PDF  q:  José takes out a loan of $9000. Simple interest is charged on the loan. The loan and the interest charged will be repaid
+
+Q14 (A2) — ❌ ISSUE
+  Text:    ❌ MISMATCH — JSON: "Year 11 is making pizzas to raise money for a charity. The cost (C ) and revenue..." vs PDF: "Year 11 is making pizzas to raise money for a charity. The cost ( C ) and revenu..."
+  Options: ⚠️  PDF options not extracted
+  Answer:  ✅ answer=B (index 1)
+  Image:   ⚠️  PDF page has graphics but JSON has no image — may need stimulus
+  Format:  ℹ️  PDF italic: C, R, x, C
+  JSON q:  Year 11 is making pizzas to raise money for a charity. The cost (C ) and revenue (R ) in dollars, when x pizzas are sold
+  PDF  q:  Year 11 is making pizzas to raise money for a charity. The cost ( C ) and revenue ( R ) in dollars, when x pizzas are so
+
+Q15 (S1) — ❌ ISSUE
+  Text:    ❌ MISMATCH — JSON: "Some data are used to create a box plot shown. A histogram is created from the s..." vs PDF: "Some data are used to create a box plot shown. A histogram is created from the s..."
+  Options: N/A (image options)
+  Answer:  ✅ answer=D (index 3)
+  Image:   ✅ stimulus exists (30KB): mathematics-standard-2_2024_Q15_stimulus.jpg
+  Format:  —
+  JSON q:  Some data are used to create a box plot shown. A histogram is created from the same set of data. Which of these histogra
+  PDF  q:  Some data are used to create a box plot shown. A histogram is created from the same set of data. Which of these histogra
+
+
+============================================================
+  2025 — Extracting from PDF...
+============================================================
+  PDF extraction: found 15 question boundaries
+
+Q 1 (N1) — ❌ ISSUE
+  Text:    ❌ MISMATCH — JSON: "Consider the network diagram. Which vertex has degree 4?..." vs PDF: "Consider the network diagram. A B C D E F Which vertex has degree 4? A...."
+  Options: ⚠️  A: JSON: "A..." vs PDF: "B...." | B: JSON: "B..." vs PDF: "C...." | C: JSON: "C..." vs PDF: "D...."
+  Answer:  ✅ answer=C (index 2)
+  Image:   ✅ stimulus exists (11KB): mathematics-standard-2_2025_Q1_stimulus.jpg
+  Format:  ℹ️  PDF italic: A, B, C, D
+  JSON q:  Consider the network diagram. Which vertex has degree 4?
+  PDF  q:  Consider the network diagram. A B C D E F Which vertex has degree 4? A.
+
+Q 2 (A4) — ❌ ISSUE
+  Text:    ❌ MISMATCH — JSON: "Which graph could represent y = 4x?..." vs PDF: "Which graph could represent y = 4 ? A. y B. y x x C. y D. y x x - 2 -..."
+  Options: N/A (image options)
+  Answer:  ✅ answer=B (index 1)
+  Image:   ✅ option images present (4 files)
+  Format:  ℹ️  PDF italic: y, y, y, x
+  JSON q:  Which graph could represent y = 4x?
+  PDF  q:  Which graph could represent y = 4 ? A. y B. y x x C. y D. y x x - 2 -
+
+Q 3 (N1) — ❌ ISSUE
+  Text:    ❌ MISMATCH — JSON: "The network shows the distances, in kilometres, along a series of roads that con..." vs PDF: "The network shows the distances, in kilometres, along a series of roads that con..."
+  Options: ⚠️  PDF options not extracted
+  Answer:  ✅ answer=A (index 0)
+  Image:   ✅ stimulus exists (18KB): mathematics-standard-2_2025_Q3_stimulus.jpg
+  Format:  —
+  JSON q:  The network shows the distances, in kilometres, along a series of roads that connect towns. What is the value of the lar
+  PDF  q:  The network shows the distances, in kilometres, along a series of roads that connect towns. 10 9 NOT TO SCALE 8 7 4 5 5 
+
+Q 4 (F1) — ❌ ISSUE
+  Text:    ❌ MISMATCH — JSON: "Frankie takes four weeks of annual leave. His weekly pay is $350 and his annual ..." vs PDF: "Frankie takes four weeks of annual leave. His weekly pay is $350 and his annual ..."
+  Options: ⚠️  PDF options not extracted
+  Answer:  ✅ answer=D (index 3)
+  Image:   ⚠️  PDF page has graphics but JSON has no image — may need stimulus
+  Format:  —
+  JSON q:  Frankie takes four weeks of annual leave. His weekly pay is $350 and his annual leave loading is 17½% of four weeks pay.
+  PDF  q:  Frankie takes four weeks of annual leave. His weekly pay is $350 and his annual leave 1 loading is 17 % of four weeks pa
+
+Q 5 (M1) — ❌ ISSUE
+  Text:    ❌ MISMATCH — JSON: "Which of the following is arranged from largest to smallest?..." vs PDF: "Which of the following is arranged from largest to smallest? -3 -4 -1 A. 6.2 × 1..."
+  Options: ⚠️  PDF options not extracted
+  Answer:  ✅ answer=D (index 3)
+  Image:   N/A (text-only question)
+  Format:  ℹ️  PDF italic: m, p
+  JSON q:  Which of the following is arranged from largest to smallest?
+  PDF  q:  Which of the following is arranged from largest to smallest? -3 -4 -1 A. 6.2 × 10 , 4.5 × 10 , 3.2 × 10 -4 -3 -1 B. 4.5 
+
+Q 6 (A1) — ❌ ISSUE
+  Text:    ❌ MISMATCH — JSON: "Consider the formula n = (m - p)/q. Which of the following correctly shows p as ..." vs PDF: "Consider the formula n = . q Which of the following correctly shows p as the sub..."
+  Options: ⚠️  PDF options not extracted
+  Answer:  ✅ answer=B (index 1)
+  Image:   N/A (text-only question)
+  Format:  ℹ️  PDF italic: n, q, p, p
+  JSON q:  Consider the formula n = (m - p)/q. Which of the following correctly shows p as the subject of the formula?
+  PDF  q:  Consider the formula n = . q Which of the following correctly shows p as the subject of the formula? A. p = nq - m B. p 
+
+Q 7 (S1) — ❌ ISSUE
+  Text:    ❌ MISMATCH — JSON: "There are 960 students at a high school. Using stratified sampling, 240 students..." vs PDF: "There are 960 students at a high school. Using stratified sampling, 240 students..."
+  Options: ⚠️  PDF options not extracted
+  Answer:  ✅ answer=C (index 2)
+  Image:   N/A (text-only question)
+  Format:  —
+  JSON q:  There are 960 students at a high school. Using stratified sampling, 240 students from the whole school are to be chosen 
+  PDF  q:  There are 960 students at a high school. Using stratified sampling, 240 students from the whole school are to be chosen 
+
+Q 8 (S2) — ❌ ISSUE
+  Text:    ❌ MISMATCH — JSON: "A spinner made up of 4 colours is spun 100 times. The frequency histogram shows ..." vs PDF: "A spinner made up of 4 colours is spun 100 times. The frequency histogram shows ..."
+  Options: N/A (image options)
+  Answer:  ✅ answer=B (index 1)
+  Image:   ✅ stimulus exists (23KB): mathematics-standard-2_2025_Q8_stimulus.jpg
+  Format:  —
+  JSON q:  A spinner made up of 4 colours is spun 100 times. The frequency histogram shows the results. Which of these spinners is 
+  PDF  q:  A spinner made up of 4 colours is spun 100 times. The frequency histogram shows the results. 60 50 40 30 20 Frequency 10
+
+Q 9 (M7) — ❌ ISSUE
+  Text:    ❌ MISMATCH — JSON: "The ratio of the dimensions of a model car to the dimensions of an actual car is..." vs PDF: "The ratio of the dimensions of a model car to the dimensions of an actual car is..."
+  Options: ⚠️  PDF options not extracted
+  Answer:  ✅ answer=B (index 1)
+  Image:   N/A (text-only question)
+  Format:  —
+  JSON q:  The ratio of the dimensions of a model car to the dimensions of an actual car is 1 : 64. The actual car has a length of 
+  PDF  q:  The ratio of the dimensions of a model car to the dimensions of an actual car is 1 : 64. The actual car has a length of 
+
+Q10 (F1) — ⚠️  WARN
+  Text:    ⚠️  minor diff — JSON has "U,"; JSON has "P."; JSON has "C,"; PDF has "U"; PDF has ","
+  Options: ⚠️  C: JSON: "C = 71 - 37U - 5P..." vs PDF: "= 71 - 37 U + 5 P..."
+  Answer:  ✅ answer=A (index 0)
+  Image:   N/A (text-only question)
+  Format:  ℹ️  PDF italic: U, P, C
+  JSON q:  An electricity company charges customers 37 cents per kWh for electricity used, U, and pays customers 5 cents per kWh fo
+  PDF  q:  An electricity company charges customers 37 cents per kWh for electricity used, U , and pays customers 5 cents per kWh f
+
+Q11 (A4) — ❌ ISSUE
+  Text:    ❌ MISMATCH — JSON: "The thickness of the skin of a spherical balloon varies inversely with the surfa..." vs PDF: "The thickness of the skin of a spherical balloon varies inversely with the surfa..."
+  Options: ⚠️  PDF options not extracted
+  Answer:  ✅ answer=C (index 2)
+  Image:   N/A (text-only question)
+  Format:  —
+  JSON q:  The thickness of the skin of a spherical balloon varies inversely with the surface area of the balloon. What would be th
+  PDF  q:  The thickness of the skin of a spherical balloon varies inversely with the surface area of the balloon. What would be th
+
+Q12 (M2) — ❌ ISSUE
+  Text:    ❌ MISMATCH — JSON: "A football game is being played in Quito (UTC -5) starting at 3:40 pm on Tuesday..." vs PDF: "A football game is being played in Quito (UTC - 5) starting at 3:40 pm on Tuesda..."
+  Options: ⚠️  PDF options not extracted
+  Answer:  ✅ answer=D (index 3)
+  Image:   N/A (text-only question)
+  Format:  —
+  JSON q:  A football game is being played in Quito (UTC -5) starting at 3:40 pm on Tuesday. What is the time in Sydney (UTC +10) w
+  PDF  q:  A football game is being played in Quito (UTC - 5) starting at 3:40 pm on Tuesday. What is the time in Sydney (UTC + 10)
+
+Q13 (S2) — ⚠️  WARN
+  Text:    ⚠️  minor diff — PDF has "A."; PDF has "17"; PDF has "B."; PDF has "11"; PDF has "C."
+  Options: ⚠️  PDF options not extracted
+  Answer:  ✅ answer=D (index 3)
+  Image:   N/A (text-only question)
+  Format:  —
+  JSON q:  A ten-sided die has faces numbered 1 to 10. The die is constructed so that the probability of obtaining the number 1 is 
+  PDF  q:  A ten-sided die has faces numbered 1 to 10. The die is constructed so that the probability of obtaining the number 1 is 
+
+Q14 (M5) — ❌ ISSUE
+  Text:    ❌ MISMATCH — JSON: "Points M and P are the same distance from a third point R. The bearing of M from..." vs PDF: "Points M and P are the same distance from a third point R . The bearing of M fro..."
+  Options: ⚠️  PDF options not extracted
+  Answer:  ✅ answer=C (index 2)
+  Image:   N/A (text-only question)
+  Format:  ℹ️  PDF italic: M, P, R, M
+  JSON q:  Points M and P are the same distance from a third point R. The bearing of M from R is 017° and the bearing of P from R i
+  PDF  q:  Points M and P are the same distance from a third point R . The bearing of M from R is 017° and the bearing of P from R 
+
+Q15 (S5) — ❌ ISSUE
+  Text:    ❌ MISMATCH — JSON: "The minimum daily temperature, in degrees, of a town each year follows a normal ..." vs PDF: "The minimum daily temperature, in degrees, of a town each year follows a normal ..."
+  Options: ⚠️  PDF options not extracted
+  Answer:  ✅ answer=D (index 3)
+  Image:   N/A (text-only question)
+  Format:  —
+  JSON q:  The minimum daily temperature, in degrees, of a town each year follows a normal distribution with its mean equal to its 
+  PDF  q:  The minimum daily temperature, in degrees, of a town each year follows a normal distribution with its mean equal to its 
+
+============================================================
+SUMMARY
+============================================================
+Total MC questions audited:    90
+Passing (no issues):           1
+With issues:                   89
+
+Issue breakdown:
+  Question text diffs:         89
+  Option text diffs:           7
+  Answer index errors:         0
+  Image file missing/corrupt:  0
+  Possible missing images:     27
+  Formatting (bold/italic):    0
+
+NOTE: PDF text extraction is imperfect for image-heavy or scanned pages.
+Questions marked '⚠️ PDF extraction empty' require manual PDF review.
+Correct answer verification requires the marking guidelines PDF.
+
+Marking guidelines location:
+  C:/Claude Code Space/CRAMIT QUIZ Code Folder/NESA Exams Folder/Maths Standard 2/
