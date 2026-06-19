@@ -521,10 +521,10 @@
       "category": "S1",
       "q": "Consider the following dataset. 13 16 17 17 21 24 Which row of the table shows how the median and mean are affected when a score of 5 is added to the dataset?",
       "options": [
-        "Both change",
-        "Both stay same",
-        "Median changes, mean stays",
-        "Mean changes, median stays"
+        "Median: changes, Mean: changes",
+        "Median: does not change, Mean: does not change",
+        "Median: changes, Mean: does not change",
+        "Median: does not change, Mean: changes"
       ],
       "answer": 3,
       "solution": "<div class=\"step\"><span class=\"step-number\">1.</span> Original data: 13, 16, 17, 17, 21, 24 (6 values, even).</div>\n<div class=\"step\"><span class=\"step-number\">2.</span> Order: already sorted.</div>\n<div class=\"step\"><span class=\"step-number\">3.</span> Median: average of 3rd and 4th values → (17 + 17)/2 = 17.</div>\n<div class=\"step\"><span class=\"step-number\">4.</span> Mean: sum = 108, mean = 108/6 = 18.</div>\n<div class=\"step\"><span class=\"step-number\">5.</span> Add 5: new data 5,13,16,17,17,21,24 (7 values, odd).</div>\n<div class=\"step\"><span class=\"step-number\">6.</span> New order: 5,13,16,17,17,21,24.</div>\n<div class=\"step\"><span class=\"step-number\">7.</span> New median: 4th value = 17 (still 17).</div>\n<div class=\"step\"><span class=\"step-number\">8.</span> New sum = 108 + 5 = 113, new mean = 113/7 ≈ 16.14 (decreases).</div>\n<div class=\"step\"><span class=\"step-number\">9.</span> Median unchanged, mean decreases.</div>\n<div class=\"step\"><span class=\"step-number\">10.</span> Correct: Mean changes, median stays.</div>"
