@@ -340,6 +340,19 @@
     },
     {
       "year": 2021,
+      "category": "S5",
+      "q": "On a test, Zac's mark corresponded to a z-score of 2. The test scores had a mean of 63 and a standard deviation of 8. What was Zac's actual mark on the test?",
+      "options": [
+        "65",
+        "67",
+        "73",
+        "79"
+      ],
+      "answer": 3,
+      "solution": "<div class=\"step\"><span class=\"step-number\">1.</span> Z-score formula: z = (x − mean) / SD.</div>\n<div class=\"step\"><span class=\"step-number\">2.</span> Given z = 2, mean = 63, SD = 8.</div>\n<div class=\"step\"><span class=\"step-number\">3.</span> Rearrange: x = mean + z × SD.</div>\n<div class=\"step\"><span class=\"step-number\">4.</span> x = 63 + 2 × 8.</div>\n<div class=\"step\"><span class=\"step-number\">5.</span> 2 × 8 = 16.</div>\n<div class=\"step\"><span class=\"step-number\">6.</span> x = 63 + 16 = 79.</div>\n<div class=\"step\"><span class=\"step-number\">7.</span> Positive z-score means above mean.</div>\n<div class=\"step\"><span class=\"step-number\">8.</span> 2 standard deviations above mean.</div>\n<div class=\"step\"><span class=\"step-number\">9.</span> Quick check: (79 − 63)/8 = 16/8 = 2.</div>\n<div class=\"step\"><span class=\"step-number\">10.</span> Correct: 79.</div>"
+    },
+    {
+      "year": 2021,
       "category": "A1",
       "q": "A student is thinking of a number. Let the number be x. When the student subtracts 8 from this number and multiplies the result by 3, the answer is 2 more than x. Which equation can be used to find x?",
       "options": [
@@ -439,19 +452,6 @@
       "solution": "<div class=\"step\"><span class=\"step-number\">1.</span> Total parts in ratio: 3 + 16 = 19.</div>\n<div class=\"step\"><span class=\"step-number\">2.</span> Total runners: 11,400.</div>\n<div class=\"step\"><span class=\"step-number\">3.</span> Professionals: (3/19) × 11,400 = 1,800.</div>\n<div class=\"step\"><span class=\"step-number\">4.</span> Amateurs: (16/19) × 11,400 = 9,600.</div>\n<div class=\"step\"><span class=\"step-number\">5.</span> All 1,800 professionals finish.</div>\n<div class=\"step\"><span class=\"step-number\">6.</span> 600 amateurs do not finish.</div>\n<div class=\"step\"><span class=\"step-number\">7.</span> Amateurs who finish: 9,600 − 600 = 9,000.</div>\n<div class=\"step\"><span class=\"step-number\">8.</span> Finishers ratio pro:am = 1,800 : 9,000.</div>\n<div class=\"step\"><span class=\"step-number\">9.</span> Simplify divide by 1,800: 1 : 5.</div>\n<div class=\"step\"><span class=\"step-number\">10.</span> Correct: 1:5.</div>"
     },
     {
-      "year": 2021,
-      "category": "S5",
-      "q": "On a test, Zac's mark corresponded to a z-score of 2. The test scores had a mean of 63 and a standard deviation of 8. What was Zac's actual mark on the test?",
-      "options": [
-        "65",
-        "67",
-        "73",
-        "79"
-      ],
-      "answer": 3,
-      "solution": "<div class=\"step\"><span class=\"step-number\">1.</span> Z-score formula: z = (x − mean) / SD.</div>\n<div class=\"step\"><span class=\"step-number\">2.</span> Given z = 2, mean = 63, SD = 8.</div>\n<div class=\"step\"><span class=\"step-number\">3.</span> Rearrange: x = mean + z × SD.</div>\n<div class=\"step\"><span class=\"step-number\">4.</span> x = 63 + 2 × 8.</div>\n<div class=\"step\"><span class=\"step-number\">5.</span> 2 × 8 = 16.</div>\n<div class=\"step\"><span class=\"step-number\">6.</span> x = 63 + 16 = 79.</div>\n<div class=\"step\"><span class=\"step-number\">7.</span> Positive z-score means above mean.</div>\n<div class=\"step\"><span class=\"step-number\">8.</span> 2 standard deviations above mean.</div>\n<div class=\"step\"><span class=\"step-number\">9.</span> Quick check: (79 − 63)/8 = 16/8 = 2.</div>\n<div class=\"step\"><span class=\"step-number\">10.</span> Correct: 79.</div>"
-    },
-    {
       "year": 2022,
       "category": "S1",
       "q": "Which graph represents a negatively skewed distribution?",
@@ -473,7 +473,7 @@
     {
       "year": 2022,
       "category": "A2",
-      "q": "Which could be the graph of y = −2x + 2?",
+      "q": "Which of the following could be the graph of y = −2x + 2?",
       "options": [
         "Line with positive slope",
         "Line with negative slope through (0,2)",
@@ -969,7 +969,7 @@
     {
       "year": 2024,
       "category": "F1",
-      "q": "A bill for servicing a car is made up of: $242 for parts, which includes 10% GST; $100 for labour, excluding GST. The mechanic needs to add 10% GST onto the labour charge. How much GST does the customer pay in total?",
+      "q": "A bill for servicing a car is made up of:\n• $242 for parts, which includes 10% GST\n• $100 for labour, excluding GST\nThe mechanic needs to add 10% GST onto the labour charge. How much GST does the customer pay in total?",
       "options": [
         "$22.00",
         "$24.20",
@@ -1047,7 +1047,7 @@
     {
       "year": 2024,
       "category": "A2",
-      "q": "Year 11 is making pizzas to raise money for a charity. The cost (C ) and revenue (R ) in dollars, when x pizzas are sold are represented by the equations C = 2.5x + 6 R = 8x. Enough pizzas are sold so that a profit is made. By how much does the profit increase for each additional pizza sold?",
+      "q": "Year 11 is making pizzas to raise money for a charity. The cost (C ) and revenue (R ) in dollars, when x pizzas are sold are represented by the equations:\nC = 2.5x + 6\nR = 8x\nEnough pizzas are sold so that a profit is made. By how much does the profit increase for each additional pizza sold?",
       "options": [
         "$2.50",
         "$5.50",
@@ -1216,7 +1216,7 @@
       "options": [
         "C = 71 + 37U − 5P",
         "C = 71 + 37U + 5P",
-        "C = 71 − 37U − 5P",
+        "C = 71 − 37U + 5P",
         "C = 71 − 37U + 5P"
       ],
       "answer": 0,
@@ -6943,8 +6943,8 @@
       "section": "II",
       "qNum": "21",
       "category": "A2",
-      "q": "Electricity provider A charges 25 cents per kilowatt hour (kWh) for electricity, plus a fixed monthly charge of $40.\n\n(a) Complete the table showing Provider A's monthly charges for different levels of electricity usage.  (1 mark)\n\n| Electricity used (kWh) | 0 | 200 | 400 | 600 |\n|---|---|---|---|---|\n| Monthly charge ($) | 40 | | | |\n\nProvider B charges 35 cents per kWh, with no fixed monthly charge.\n\n(b) On a grid, graph Provider A's charges from the table above. (Provider B's line is already plotted on the grid in the exam.)  (2 marks)\n\n(c) Use the two graphs to determine the number of kilowatt hours per month for which Provider A and Provider B charge the same amount.  (1 mark)\n\n(d) A customer uses an average of 800 kWh per month.\nWhich provider, A or B, would be the cheaper option and by how much?  (1 mark)",
-      "answer": "(a) 200 kWh: $90; 400 kWh: $140; 600 kWh: $190\n\n(b) Graph Provider A from (0, 40) to (600, 190) — straight line\n\n(c) Equate: 0.25k + 40 = 0.35k → 40 = 0.10k → k = 400 kWh\n\n(d) Provider A at 800 kWh: 0.25 × 800 + 40 = $240\nProvider B at 800 kWh: 0.35 × 800 = $280\nProvider A is cheaper by $40.",
+      "q": "Electricity provider A charges 25 cents per kilowatt hour (kWh) for electricity, plus a fixed monthly charge of $40.\n\n(a) Complete the table showing Provider A's monthly charges for different levels of electricity usage.  (1 mark)\n\n| Electricity used (kWh) | 0 | 400 | 1000 |\n|---|---|---|---|\n| Monthly charge ($) | $40 | | $290 |\n\nProvider B charges 35 cents per kWh, with no fixed monthly charge.\n\n(b) On a grid, graph Provider A's charges from the table above. (Provider B's line is already plotted on the grid in the exam.)  (2 marks)\n\n(c) Use the two graphs to determine the number of kilowatt hours per month for which Provider A and Provider B charge the same amount.  (1 mark)\n\n(d) A customer uses an average of 800 kWh per month.\nWhich provider, A or B, would be the cheaper option and by how much?  (1 mark)",
+      "answer": "(a) 400 kWh: $140 (i.e. 0.25 × 400 + 40 = $140)\n\n(b) Graph Provider A from (0, $40) to (1000, $290) — straight line\n\n(c) Equate: 0.25k + 40 = 0.35k → 40 = 0.10k → k = 400 kWh\n\n(d) Provider A at 800 kWh: 0.25 × 800 + 40 = $240\nProvider B at 800 kWh: 0.35 × 800 = $280\nProvider A is cheaper by $40.",
       "keywords": [
         "400 kWh",
         "400",
@@ -8143,7 +8143,7 @@
       "qNum": "17",
       "category": "N2",
       "image": null,
-      "q": "The table shows some of the flight distances (rounded to the nearest 10 km) between various Australian cities: Adelaide (A), Brisbane (B), Darwin (D), Hobart (H), Perth (P), Sydney (S).\n\n| City | A | B | D | H | P | S |\n|---|---|---|---|---|---|---|\n| Adelaide (A) | – | – | 1170 | – | 2120 | – |\n| Brisbane (B) | – | – | 2850 | – | – | 750 |\n| Darwin (D) | 1170 | 2850 | – | – | 2650 | 3150 |\n| Hobart (H) | – | – | – | – | – | 1040 |\n| Perth (P) | 2120 | – | 2650 | – | – | 3270 |\n| Sydney (S) | – | 750 | 3150 | 1040 | 3270 | – |\n\n(a) Use the information in the table to complete the network diagram where the edges are labelled with distances. The network has nodes A, B, D, H, P, S with edge D–P = 2650 already shown. Add all remaining edges from the table. (2 marks)\n\n(b) Mahsa wants to travel from Hobart to Darwin. She wants to change planes only once. Using the network diagram, calculate how many kilometres she will travel by plane. (1 mark)",
+      "q": "The table shows some of the flight distances (rounded to the nearest 10 km) between various Australian cities: Adelaide (A), Brisbane (B), Darwin (D), Hobart (H), Perth (P), Sydney (S).\n\n| City | A | B | D | H | P | S |\n|---|---|---|---|---|---|---|\n| Adelaide (A) | – | – | – | 1170 | 2120 | – |\n| Brisbane (B) | – | – | 2850 | – | – | 750 |\n| Darwin (D) | – | 2850 | – | – | 2650 | 3150 |\n| Hobart (H) | – | – | – | – | – | 1040 |\n| Perth (P) | 2120 | – | 2650 | – | – | 3270 |\n| Sydney (S) | – | 750 | 3150 | 1040 | 3270 | – |\n\n(a) Use the information in the table to complete the network diagram where the edges are labelled with distances. The network has nodes A, B, D, H, P, S with edge D–P = 2650 already shown. Add all remaining edges from the table. (2 marks)\n\n(b) Mahsa wants to travel from Hobart to Darwin. She wants to change planes only once. Using the network diagram, calculate how many kilometres she will travel by plane. (1 mark)",
       "answer": "(a) The completed network diagram includes edges:\n- P–D = 2650 km\n- D–B = 2850 km\n- D–S = 3150 km\n- P–A = 2120 km\n- A–H = 1170 km\n- H–S = 1040 km\n- B–S = 750 km\n- P–S = 3270 km\n\n(b) Hobart to Darwin with one stopover:\nPath H → S → D = 1040 + 3150 = **4190 km**\n\n(Other paths require more than one change: H→A→P→D requires two changes.)",
       "keywords": [
         "4190",
