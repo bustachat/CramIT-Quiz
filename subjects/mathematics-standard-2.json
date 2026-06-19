@@ -7,10 +7,10 @@
     {
       "year": 2020,
       "category": "A4",
-      "q": "Which of the following could represent the graph of y = −x² + 1?",
+      "q": "Which of the following could represent the graph of <em>y</em> = −<em>x</em>² + 1?",
       "options": [
-        "Parabola opening upward, y-intercept at 1",
-        "Parabola opening upward, y-intercept at -1",
+        "Parabola opening upward, <em>y</em>-intercept at 1",
+        "Parabola opening upward, <em>y</em>-intercept at -1",
         "Parabola opening downward, vertex at (0,1)",
         "Parabola opening downward, vertex at (1,0)"
       ],
@@ -78,7 +78,7 @@
     {
       "year": 2020,
       "category": "A2",
-      "q": "Suppose y = –1 – 2x. When the value of x increases by 5, the value of y decreases by",
+      "q": "Suppose <em>y</em> = –1 – 2<em>x</em>. When the value of <em>x</em> increases by 5, the value of <em>y</em> decreases by",
       "options": [
         "1",
         "2",
@@ -150,12 +150,12 @@
     {
       "year": 2020,
       "category": "A2",
-      "q": "A plumber charges a call-out fee of $90 as well as $2 per minute while working. Suppose the plumber works for t hours. Which equation expresses the amount the plumber charges ($C) as a function of time (t hours)?",
+      "q": "A plumber charges a call-out fee of $90 as well as $2 per minute while working. Suppose the plumber works for <em>t</em> hours. Which equation expresses the amount the plumber charges ($C) as a function of time (<em>t</em> hours)?",
       "options": [
-        "C = 2 + 90t",
-        "C = 90 + 2t",
-        "C = 120 + 90t",
-        "C = 90 + 120t"
+        "<em>C</em> = 2 + 90<em>t</em>",
+        "<em>C</em> = 90 + 2<em>t</em>",
+        "<em>C</em> = 120 + 90<em>t</em>",
+        "<em>C</em> = 90 + 120<em>t</em>"
       ],
       "answer": 3,
       "solution": "<div class=\"step\"><span class=\"step-number\">1.</span> Charge per minute: $2.</div>\n<div class=\"step\"><span class=\"step-number\">2.</span> t hours = t × 60 minutes.</div>\n<div class=\"step\"><span class=\"step-number\">3.</span> Minutes worked: 60t.</div>\n<div class=\"step\"><span class=\"step-number\">4.</span> Variable cost: 2 × 60t = 120t.</div>\n<div class=\"step\"><span class=\"step-number\">5.</span> Fixed call-out: $90.</div>\n<div class=\"step\"><span class=\"step-number\">6.</span> Total C = fixed + variable.</div>\n<div class=\"step\"><span class=\"step-number\">7.</span> C = 90 + 120t.</div>\n<div class=\"step\"><span class=\"step-number\">8.</span> Units: t in hours, C in dollars.</div>\n<div class=\"step\"><span class=\"step-number\">9.</span> Check option: matches 90 + 120t.</div>\n<div class=\"step\"><span class=\"step-number\">10.</span> Correct: C = 90 + 120t.</div>"
@@ -308,7 +308,7 @@
     {
       "year": 2021,
       "category": "M1",
-      "q": "Suppose a = b/7, where b = 22. What is the value of a, correct to three significant figures?",
+      "q": "Suppose a = <em>b</em>/7, where <em>b</em> = 22. What is the value of a, correct to three significant figures?",
       "options": [
         "3.14",
         "3.15",
@@ -341,7 +341,7 @@
     {
       "year": 2021,
       "category": "S5",
-      "q": "On a test, Zac's mark corresponded to a z-score of 2. The test scores had a mean of 63 and a standard deviation of 8. What was Zac's actual mark on the test?",
+      "q": "On a test, Zac's mark corresponded to a <em>z</em>-score of 2. The test scores had a mean of 63 and a standard deviation of 8. What was Zac's actual mark on the test?",
       "options": [
         "65",
         "67",
@@ -354,12 +354,12 @@
     {
       "year": 2021,
       "category": "A1",
-      "q": "A student is thinking of a number. Let the number be x. When the student subtracts 8 from this number and multiplies the result by 3, the answer is 2 more than x. Which equation can be used to find x?",
+      "q": "A student is thinking of a number. Let the number be <em>x</em>. When the student subtracts 8 from this number and multiplies the result by 3, the answer is 2 more than <em>x</em>. Which equation can be used to find <em>x</em>?",
       "options": [
-        "3(x − 8) = 2x",
-        "3x − 8 = 2x",
-        "3(x − 8) = x + 2",
-        "3x − 8 = x + 2"
+        "3(<em>x</em> − 8) = 2<em>x</em>",
+        "3<em>x</em> − 8 = 2<em>x</em>",
+        "3(<em>x</em> − 8) = <em>x</em> + 2",
+        "3<em>x</em> − 8 = <em>x</em> + 2"
       ],
       "answer": 2,
       "solution": "<div class=\"step\"><span class=\"step-number\">1.</span> Let the thought number be x.</div>\n<div class=\"step\"><span class=\"step-number\">2.</span> Subtract 8: x − 8.</div>\n<div class=\"step\"><span class=\"step-number\">3.</span> Multiply by 3: 3(x − 8).</div>\n<div class=\"step\"><span class=\"step-number\">4.</span> This equals 2 more than x: x + 2.</div>\n<div class=\"step\"><span class=\"step-number\">5.</span> Equation: 3(x − 8) = x + 2.</div>\n<div class=\"step\"><span class=\"step-number\">6.</span> Parentheses preserve order of operations.</div>\n<div class=\"step\"><span class=\"step-number\">7.</span> Other options misplace operations or constants.</div>\n<div class=\"step\"><span class=\"step-number\">8.</span> Expanding gives 3x − 24 = x + 2 (correct).</div>\n<div class=\"step\"><span class=\"step-number\">9.</span> Translates word problem accurately.</div>\n<div class=\"step\"><span class=\"step-number\">10.</span> Correct: 3(x − 8) = x + 2.</div>"
@@ -367,7 +367,7 @@
     {
       "year": 2021,
       "category": "A4",
-      "q": "Which of the following best represents the graph of y = 10(0.8)^x?",
+      "q": "Which of the following best represents the graph of <em>y</em> = 10(0.8)^<em>x</em>?",
       "options": [
         "A",
         "B",
@@ -386,7 +386,7 @@
     {
       "year": 2021,
       "category": "S2",
-      "q": "There are 8 chocolates in a box. Three have peppermint centres (P) and five have caramel centres (C). Kim randomly chooses a chocolate from the box and eats it. Sam then randomly chooses and eats one of the remaining chocolates. A partially completed probability tree is shown. What is the probability that Kim and Sam choose chocolates with different centres?",
+      "q": "There are 8 chocolates in a box. Three have peppermint centres (<em>P</em>) and five have caramel centres (<em>C</em>). Kim randomly chooses a chocolate from the box and eats it. Sam then randomly chooses and eats one of the remaining chocolates. A partially completed probability tree is shown. What is the probability that Kim and Sam choose chocolates with different centres?",
       "image": "/diagrams/mathematics-standard-2_2021_Q11_stimulus.jpg",
       "options": [
         "15/64",
@@ -473,7 +473,7 @@
     {
       "year": 2022,
       "category": "A2",
-      "q": "Which of the following could be the graph of y = −2x + 2?",
+      "q": "Which of the following could be the graph of <em>y</em> = −2<em>x</em> + 2?",
       "options": [
         "Line with positive slope",
         "Line with negative slope through (0,2)",
@@ -571,7 +571,7 @@
     {
       "year": 2022,
       "category": "A4",
-      "q": "An object is projected vertically into the air. Its height, h metres, above the ground after t seconds is given by h = −5t² + 80t. For how long is the object at a height of 300 metres or more above the ground?",
+      "q": "An object is projected vertically into the air. Its height, h metres, above the ground after <em>t</em> seconds is given by h = −5<em>t</em>² + 80<em>t</em>. For how long is the object at a height of 300 metres or more above the ground?",
       "options": [
         "4 seconds",
         "6 seconds",
@@ -610,7 +610,7 @@
     {
       "year": 2022,
       "category": "S4",
-      "q": "For a particular course, the recorded data show a relationship between the number of hours of study per week and the marks achieved out of 100. A least-squares regression line is fitted to this dataset. The equation of this line is given by M = 20 + 3H, where M is the predicted mark and H is the number of hours of study per week. Based on this regression equation, which of the following is correct regarding the predicted mark of a student?",
+      "q": "For a particular course, the recorded data show a relationship between the number of hours of study per week and the marks achieved out of 100. A least-squares regression line is fitted to this dataset. The equation of this line is given by <em>M</em> = 20 + 3H, where <em>M</em> is the predicted mark and <em>H</em> is the number of hours of study per week. Based on this regression equation, which of the following is correct regarding the predicted mark of a student?",
       "options": [
         "It will be 3 for zero hours of study per week.",
         "It will be 20 for zero hours of study per week.",
@@ -637,12 +637,12 @@
     {
       "year": 2022,
       "category": "A1",
-      "q": "Which of the following correctly expresses x as the subject of y = (ax − b)/2?",
+      "q": "Which of the following correctly expresses <em>x</em> as the subject of <em>y</em> = (ax − <em>b</em>)/2?",
       "options": [
-        "x = (2y + b)/a",
-        "x = (a/2y) + b",
-        "x = (y/2) + b",
-        "x = (y/a) + b"
+        "<em>x</em> = (2<em>y</em> + <em>b</em>)/a",
+        "<em>x</em> = (a/2<em>y</em>) + <em>b</em>",
+        "<em>x</em> = (<em>y</em>/2) + <em>b</em>",
+        "<em>x</em> = (<em>y</em>/a) + <em>b</em>"
       ],
       "answer": 0,
       "solution": "<div class=\"step\"><span class=\"step-number\">1.</span> Start with y = (ax − b)/2.</div>\n<div class=\"step\"><span class=\"step-number\">2.</span> Multiply both sides by 2: 2y = ax − b.</div>\n<div class=\"step\"><span class=\"step-number\">3.</span> Add b to both sides: 2y + b = ax.</div>\n<div class=\"step\"><span class=\"step-number\">4.</span> Divide both sides by a: x = (2y + b)/a.</div>\n<div class=\"step\"><span class=\"step-number\">5.</span> This isolates x correctly.</div>\n<div class=\"step\"><span class=\"step-number\">6.</span> Other options have incorrect rearrangements.</div>\n<div class=\"step\"><span class=\"step-number\">7.</span> No inverse operations misused.</div>\n<div class=\"step\"><span class=\"step-number\">8.</span> Brackets preserved.</div>\n<div class=\"step\"><span class=\"step-number\">9.</span> Algebraic steps balanced.</div>\n<div class=\"step\"><span class=\"step-number\">10.</span> Correct: x = (2y + b)/a.</div>"
@@ -683,7 +683,7 @@
     {
       "year": 2023,
       "category": "S5",
-      "q": "In a normal distribution, what is the approximate percentage of scores with a z-score less than 1?",
+      "q": "In a normal distribution, what is the approximate percentage of scores with a <em>z</em>-score less than 1?",
       "options": [
         "50%",
         "68%",
@@ -821,7 +821,7 @@
     {
       "year": 2023,
       "category": "M1",
-      "q": "A cylindrical pipe with a radius of 12.5 cm is filled with water to a depth, d cm, as shown. The surface of the water has a width of 20 cm. What is the depth of water in the pipe?",
+      "q": "A cylindrical pipe with a radius of 12.5 cm is filled with water to a depth, <em>d</em> cm, as shown. The surface of the water has a width of 20 cm. What is the depth of water in the pipe?",
       "options": [
         "2.5 cm",
         "5.0 cm",
@@ -875,7 +875,7 @@
     {
       "year": 2024,
       "category": "M1",
-      "q": "If x = -2.531, what is x² rounded to 2 decimal places?",
+      "q": "If <em>x</em> = -2.531, what is <em>x</em>² rounded to 2 decimal places?",
       "options": [
         "-6.41",
         "-6.40",
@@ -890,10 +890,10 @@
       "category": "A4",
       "q": "Consider the function shown. Which of the following could be the equation of this function?",
       "options": [
-        "y = 2x + 3",
-        "y = 2x − 3",
-        "y = −2x + 3",
-        "y = −2x − 3"
+        "<em>y</em> = 2<em>x</em> + 3",
+        "<em>y</em> = 2<em>x</em> − 3",
+        "<em>y</em> = −2<em>x</em> + 3",
+        "<em>y</em> = −2<em>x</em> − 3"
       ],
       "answer": 2,
       "image": "/diagrams/mathematics-standard-2_2024_Q2_stimulus.jpg",
@@ -943,7 +943,7 @@
     {
       "year": 2024,
       "category": "M1",
-      "q": "Consider the diagram shown. Which of the following is the correct expression for the length of x?",
+      "q": "Consider the diagram shown. Which of the following is the correct expression for the length of <em>x</em>?",
       "options": [
         "20 cos 40°",
         "20 sin 40°",
@@ -996,12 +996,12 @@
     {
       "year": 2024,
       "category": "A1",
-      "q": "Consider the formula s = wt + p/2. Which of the following correctly shows p as the subject of the formula?",
+      "q": "Consider the formula s = wt + <em>p</em>/2. Which of the following correctly shows <em>p</em> as the subject of the formula?",
       "options": [
-        "p = 2wt − s",
-        "p = 2wt − 2s",
-        "p = 2s − wt",
-        "p = 2s − 2wt"
+        "<em>p</em> = 2wt − s",
+        "<em>p</em> = 2wt − 2s",
+        "<em>p</em> = 2s − wt",
+        "<em>p</em> = 2s − 2wt"
       ],
       "answer": 3,
       "solution": "<div class=\"step\"><span class=\"step-number\">1.</span> Start: s = wt + p/2.</div>\n<div class=\"step\"><span class=\"step-number\">2.</span> Subtract wt: s − wt = p/2.</div>\n<div class=\"step\"><span class=\"step-number\">3.</span> Multiply both sides by 2: 2(s − wt) = p.</div>\n<div class=\"step\"><span class=\"step-number\">4.</span> Distribute: p = 2s − 2wt.</div>\n<div class=\"step\"><span class=\"step-number\">5.</span> Isolate p correctly.</div>\n<div class=\"step\"><span class=\"step-number\">6.</span> Other options have wrong signs or factors.</div>\n<div class=\"step\"><span class=\"step-number\">7.</span> No division errors.</div>\n<div class=\"step\"><span class=\"step-number\">8.</span> Balanced equation.</div>\n<div class=\"step\"><span class=\"step-number\">9.</span> Matches algebraic rearrangement.</div>\n<div class=\"step\"><span class=\"step-number\">10.</span> Correct: p = 2s − 2wt.</div>"
@@ -1048,7 +1048,7 @@
     {
       "year": 2024,
       "category": "A2",
-      "q": "Year 11 is making pizzas to raise money for a charity. The cost (C ) and revenue (R ) in dollars, when x pizzas are sold are represented by the equations:\nC = 2.5x + 6\nR = 8x\nEnough pizzas are sold so that a profit is made. By how much does the profit increase for each additional pizza sold?",
+      "q": "Year 11 is making pizzas to raise money for a charity. The cost (<em>C</em> ) and revenue (<em>R</em> ) in dollars, when <em>x</em> pizzas are sold are represented by the equations:\n<em>C</em> = 2.5<em>x</em> + 6\n<em>R</em> = 8<em>x</em>\nEnough pizzas are sold so that a profit is made. By how much does the profit increase for each additional pizza sold?",
       "options": [
         "$2.50",
         "$5.50",
@@ -1095,7 +1095,7 @@
     {
       "year": 2025,
       "category": "A4",
-      "q": "Which graph could represent y = 4x?",
+      "q": "Which graph could represent <em>y</em> = 4<em>x</em>?",
       "options": [
         "Exponential decay",
         "Exponential growth from 1",
@@ -1154,12 +1154,12 @@
     {
       "year": 2025,
       "category": "A1",
-      "q": "Consider the formula n = (m − p)/q. Which of the following correctly shows p as the subject of the formula?",
+      "q": "Consider the formula <em>n</em> = (m − <em>p</em>)/<em>q</em>. Which of the following correctly shows <em>p</em> as the subject of the formula?",
       "options": [
-        "p = nq − m",
-        "p = m − nq",
-        "p = n + q − m",
-        "p = m − n − q"
+        "<em>p</em> = nq − m",
+        "<em>p</em> = m − nq",
+        "<em>p</em> = <em>n</em> + <em>q</em> − m",
+        "<em>p</em> = m − <em>n</em> − <em>q</em>"
       ],
       "answer": 1,
       "solution": "<div class=\"step\"><span class=\"step-number\">1.</span> Start: n = (m − p)/q.</div>\n<div class=\"step\"><span class=\"step-number\">2.</span> Multiply both sides by q: nq = m − p.</div>\n<div class=\"step\"><span class=\"step-number\">3.</span> Subtract m from both sides: nq − m = −p.</div>\n<div class=\"step\"><span class=\"step-number\">4.</span> Multiply by −1: p = m − nq.</div>\n<div class=\"step\"><span class=\"step-number\">5.</span> Or directly rearrange.</div>\n<div class=\"step\"><span class=\"step-number\">6.</span> Isolate p term.</div>\n<div class=\"step\"><span class=\"step-number\">7.</span> Signs correct.</div>\n<div class=\"step\"><span class=\"step-number\">8.</span> No division errors.</div>\n<div class=\"step\"><span class=\"step-number\">9.</span> Balanced steps.</div>\n<div class=\"step\"><span class=\"step-number\">10.</span> Correct: p = m − nq.</div>"
@@ -1215,10 +1215,10 @@
       "category": "F1",
       "q": "An electricity company charges customers 37 cents per kWh for electricity used, U, and pays customers 5 cents per kWh for electricity produced, P. The electricity company also charges customers a fee of 71 cents per day. Which formula should be used to calculate a customer’s daily cost of electricity, C, in cents?",
       "options": [
-        "C = 71 + 37U − 5P",
-        "C = 71 + 37U + 5P",
-        "C = 71 − 37U − 5P",
-        "C = 71 − 37U + 5P"
+        "<em>C</em> = 71 + 37U − 5P",
+        "<em>C</em> = 71 + 37U + 5P",
+        "<em>C</em> = 71 − 37U − 5P",
+        "<em>C</em> = 71 − 37U + 5P"
       ],
       "answer": 0,
       "solution": "<div class=\"step\"><span class=\"step-number\">1.</span> Daily fixed fee: 71 cents.</div>\n<div class=\"step\"><span class=\"step-number\">2.</span> Charge for usage: 37 cents per kWh used (U).</div>\n<div class=\"step\"><span class=\"step-number\">3.</span> Credit for production: 5 cents per kWh produced (P).</div>\n<div class=\"step\"><span class=\"step-number\">4.</span> Net energy cost: charge usage minus credit production.</div>\n<div class=\"step\"><span class=\"step-number\">5.</span> Variable part: 37U − 5P.</div>\n<div class=\"step\"><span class=\"step-number\">6.</span> Total cost adds fixed fee.</div>\n<div class=\"step\"><span class=\"step-number\">7.</span> C = 71 + 37U − 5P.</div>\n<div class=\"step\"><span class=\"step-number\">8.</span> Production reduces bill (solar feed-in style).</div>\n<div class=\"step\"><span class=\"step-number\">9.</span> Signs correct.</div>\n<div class=\"step\"><span class=\"step-number\">10.</span> Correct: C = 71 + 37U − 5P.</div>"
@@ -1265,7 +1265,7 @@
     {
       "year": 2025,
       "category": "M5",
-      "q": "Points M and P are the same distance from a third point R. The bearing of M from R is 017° and the bearing of P from R is 107°. Which of the following best describes the bearing of P from M?",
+      "q": "Points <em>M</em> and <em>P</em> are the same distance from a third point R. The bearing of <em>M</em> from <em>R</em> is 017° and the bearing of <em>P</em> from <em>R</em> is 107°. Which of the following best describes the bearing of <em>P</em> from M?",
       "options": [
         "Between 000° and 090°",
         "Exactly 090°",
@@ -6068,7 +6068,7 @@
       "section": "II",
       "qNum": "28",
       "category": "S1",
-      "q": "Dataset: 1, 5, 9, 10, 15\n\nA new value x is added (x > 15), giving: 1, 5, 9, 10, 15, x\n\nThe difference between the means of the two datasets equals ten times the difference between the medians.\n\nCalculate the value of x.",
+      "q": "Dataset: 1, 5, 9, 10, 15\n\nA new value <em>x</em> is added (<em>x</em> > 15), giving: 1, 5, 9, 10, 15, <em>x</em>\n\nThe difference between the means of the two datasets equals ten times the difference between the medians.\n\nCalculate the value of <em>x</em>.",
       "answer": "Mean of first dataset = (1 + 5 + 9 + 10 + 15) / 5 = 8\nMedian of first dataset = 9\n\nMean of second dataset = (40 + x) / 6\nMedian of second dataset = (9 + 10) / 2 = 9.5  [since x > 15]\n\n(40 + x)/6 − 8 = 10 × (9.5 − 9) = 5\n(40 + x)/6 = 13\n40 + x = 78\nx = 38",
       "acceptableAnswers": [
         "38",
@@ -6179,7 +6179,7 @@
       "section": "II",
       "qNum": "35(c)",
       "category": "S5",
-      "q": "Simon lives in City A (mean 108, SD 10). He moves to City B (mean 112, SD 16). His z-score is the same in both cities. By forming an equation, calculate Simon's IQ score to one decimal place.",
+      "q": "Simon lives in City A (mean 108, SD 10). He moves to City B (mean 112, SD 16). His <em>z</em>-score is the same in both cities. By forming an equation, calculate Simon's IQ score to one decimal place.",
       "answer": "(x − 108)/10 = (x − 112)/16\n16(x − 108) = 10(x − 112)\n16x − 1728 = 10x − 1120\n6x = 608\nx = 101.3",
       "acceptableAnswers": [
         "101.3"
@@ -6196,7 +6196,7 @@
       "section": "II",
       "qNum": "37",
       "category": "F5",
-      "q": "Wilma deposited a lump sum in a bank account at 2% p.a. compound interest, then made these withdrawals:\n• $1000 at the end of each year for 20 years (starting year 1)\n• $3000 per year for 10 years starting year 21\n\nPresent value interest factors (annuity of $1 at 2%):\n• N=10: 8.983  • N=20: 16.351  • N=30: 22.396\n\nCalculate the minimum lump sum Wilma must have deposited.",
+      "q": "Wilma deposited a lump sum in a bank account at 2% p.a. compound interest, then made these withdrawals:\n• $1000 at the end of each year for 20 years (starting year 1)\n• $3000 per year for 10 years starting year 21\n\nPresent value interest factors (annuity of $1 at 2%):\n• <em>N</em>=10: 8.983  • <em>N</em>=20: 16.351  • <em>N</em>=30: 22.396\n\nCalculate the minimum lump sum Wilma must have deposited.",
       "answer": "PV of $1000 for 20 years = 16.351 × $1000 = $16 351\nPV of $3000 for 30 years = 22.396 × $3000 = $67 188\nPV of $3000 for 20 years = 16.351 × $3000 = $49 053\nPV of last 10 years = $67 188 − $49 053 = $18 135\nTotal lump sum = $16 351 + $18 135 = $34 486",
       "keywords": [
         "16351",
@@ -6238,7 +6238,7 @@
       "qNum": "19",
       "category": "A4",
       "image": "/diagrams/mathematics-standard-2_2020_Q19_stimulus.jpg",
-      "q": "A fence is to be built around a rectangular paddock with side lengths x and y metres. Total fencing 900 m: 3x + 2y = 900. Area: A = 450x - 1.5x^2.\n\n(a) If the area is 30 000 m2, what is the largest possible value of x? (1 mark)\n\n(b) Find x and y so that the area is as large as possible. (2 marks)\n\n(c) Using your values from part (b), find the largest possible area. (1 mark)",
+      "q": "A fence is to be built around a rectangular paddock with side lengths <em>x</em> and <em>y</em> metres. Total fencing 900 m: 3<em>x</em> + 2<em>y</em> = 900. Area: A = 450<em>x</em> - 1.5<em>x</em>^2.\n\n(a) If the area is 30 000 m2, what is the largest possible value of <em>x</em>? (1 mark)\n\n(b) Find <em>x</em> and <em>y</em> so that the area is as large as possible. (2 marks)\n\n(c) Using your values from part (b), find the largest possible area. (1 mark)",
       "answer": "(a) 450x - 1.5x^2 = 30000\nx^2 - 300x + 20000 = 0, (x-100)(x-200) = 0\nLargest x = 200\n\n(b) Maximum at vertex: x = 450 / (2 x 1.5) = 150\n3(150) + 2y = 900, y = 225\n\n(c) A = 150 x 225 = 33 750 m2",
       "keywords": [
         "200",
@@ -6260,7 +6260,7 @@
       "qNum": "24",
       "category": "A1",
       "image": "/diagrams/mathematics-standard-2_2020_Q24_stimulus.jpg",
-      "q": "Two tanks: Tank A starts with 1000 L and loses water at 20 L/min (V = 1000 - 20t). Tank B is empty until t = 15, then fills at 30 L/min.\n\n(b) Find t when both tanks contain the same volume. (2 marks)\n\n(c) Find t (where t > 0) when the total volume in both tanks is 1000 litres. (1 mark)",
+      "q": "Two tanks: Tank A starts with 1000 L and loses water at 20 L/min (V = 1000 - 20<em>t</em>). Tank B is empty until <em>t</em> = 15, then fills at 30 L/min.\n\n(b) Find <em>t</em> when both tanks contain the same volume. (2 marks)\n\n(c) Find <em>t</em> (where <em>t</em> > 0) when the total volume in both tanks is 1000 litres. (1 mark)",
       "answer": "(b) Tank A: V_A = 1000 - 20t\nTank B (t >= 15): V_B = 30(t - 15)\nSet equal: 1000 - 20t = 30t - 450\n1450 = 50t, t = 29 minutes\n\n(c) Total = (1000 - 20t) + 30(t - 15) = 550 + 10t\nSet = 1000: 10t = 450, t = 45 minutes",
       "keywords": [
         "29",
@@ -6348,7 +6348,7 @@
       "qNum": "36",
       "category": "S5",
       "image": "/diagrams/mathematics-standard-2_2020_Q36_stimulus.jpg",
-      "q": "A scientist records temperature (x degrees C) and cricket chirps per 15 seconds (y) over 20 days.\n- Box-plot of temperature shown (median = 22 degrees C)\n- Mean temperature is 0.525 degrees C below the median\n- Total of 684 chirps across 20 data points\n- Regression line: y = -10.6063 + bx, passing through (x-bar, y-bar)\n\nCalculate the expected number of chirps in 15 seconds when the temperature is 19 degrees C. Give your answer to the nearest whole number.",
+      "q": "A scientist records temperature (<em>x</em> degrees <em>C</em>) and cricket chirps per 15 seconds (<em>y</em>) over 20 days.\n- Box-plot of temperature shown (median = 22 degrees <em>C</em>)\n- Mean temperature is 0.525 degrees <em>C</em> below the median\n- Total of 684 chirps across 20 data points\n- Regression line: <em>y</em> = -10.6063 + bx, passing through (<em>x</em>-bar, <em>y</em>-bar)\n\nCalculate the expected number of chirps in 15 seconds when the temperature is 19 degrees C. Give your answer to the nearest whole number.",
       "answer": "Step 1: x-bar = 22 - 0.525 = 21.475\nStep 2: y-bar = 684 / 20 = 34.2\nStep 3: Substitute into regression line:\n34.2 = -10.6063 + b(21.475)\nb = 44.8063 / 21.475 = 2.0864\nStep 4: At x = 19:\ny = -10.6063 + 2.0864 x 19 = 29.03, rounded to 29 chirps",
       "keywords": [
         "21.475",
@@ -6509,7 +6509,7 @@
       "section": "II",
       "qNum": "26(b)",
       "category": "F4",
-      "q": "Nina's Option A gives a future value of $37 158.72 on a $35 000 investment. Option B pays r% per annum simple interest. Find the value of r that gives the same future value after 1 year. Give your answer to two decimal places.",
+      "q": "Nina's Option A gives a future value of $37 158.72 on a $35 000 investment. Option B pays <em>r</em>% per annum simple interest. Find the value of <em>r</em> that gives the same future value after 1 year. Give your answer to two decimal places.",
       "answer": "Interest in Option A = $37 158.72 − $35 000 = $2158.72\nSimple interest: I = Prt\n$2158.72 = $35 000 × (r/100) × 1\nr = $2158.72 / $35 000 × 100 = 6.17%",
       "acceptableAnswers": [
         "6.17",
@@ -6564,7 +6564,7 @@
       "section": "II",
       "qNum": "29",
       "category": "A1",
-      "q": "Solve: x + (x − 1)/2 = 9",
+      "q": "Solve: <em>x</em> + (<em>x</em> − 1)/2 = 9",
       "answer": "Multiply both sides by 2:\n2x + (x − 1) = 18\n3x − 1 = 18\n3x = 19\nx = 19/3",
       "acceptableAnswers": [
         "19/3",
@@ -6603,7 +6603,7 @@
       "section": "II",
       "qNum": "31",
       "category": "F5",
-      "q": "Martina borrows $500 000 at 1.5% p.a. compounded monthly, to be repaid over 30 years in equal monthly payments.\n\nPresent value interest factors (annuity of $1):\n• N=360, r=0.00125: 289.75411\n\nHow much should the monthly payment be? Answer to the nearest cent.",
+      "q": "Martina borrows $500 000 at 1.5% p.a. compounded monthly, to be repaid over 30 years in equal monthly payments.\n\nPresent value interest factors (annuity of $1):\n• <em>N</em>=360, <em>r</em>=0.00125: 289.75411\n\nHow much should the monthly payment be? Answer to the nearest cent.",
       "answer": "Monthly rate = 1.5%/12 = 0.125% = 0.00125\nPeriods = 360\nMonthly payment = $500 000 ÷ 289.75411 = $1725.60",
       "acceptableAnswers": [
         "1725.60",
@@ -6709,7 +6709,7 @@
       "section": "II",
       "qNum": "22",
       "category": "A1",
-      "q": "The formula C = 100n + b is used to calculate the cost of producing laptops, where C is the cost in dollars, n is the number of laptops produced and b is the fixed cost in dollars.\n\n(a) Find the cost when 1943 laptops are produced and the fixed cost is $20 180.  (1 mark)\n\n(b) Some laptops have extra features added. The formula to calculate the production cost for these is:\nC = 100n + an + 20 180\nwhere a is the additional cost in dollars per laptop produced.\nFind the number of laptops produced if the additional cost is $26 per laptop and the total production cost is $97 040.  (2 marks)",
+      "q": "The formula <em>C</em> = 100<em>n</em> + <em>b</em> is used to calculate the cost of producing laptops, where <em>C</em> is the cost in dollars, <em>n</em> is the number of laptops produced and <em>b</em> is the fixed cost in dollars.\n\n(a) Find the cost when 1943 laptops are produced and the fixed cost is $20 180.  (1 mark)\n\n(b) Some laptops have extra features added. The formula to calculate the production cost for these is:\n<em>C</em> = 100<em>n</em> + an + 20 180\nwhere a is the additional cost in dollars per laptop produced.\nFind the number of laptops produced if the additional cost is $26 per laptop and the total production cost is $97 040.  (2 marks)",
       "answer": "(a) C = 100 × 1943 + 20 180 = 194 300 + 20 180 = $214 480\n\n(b) 97 040 = 100n + 26n + 20 180\n97 040 − 20 180 = 126n\n76 860 = 126n\nn = 610 laptops",
       "acceptableAnswers": [
         "610",
@@ -6736,7 +6736,7 @@
       "section": "II",
       "qNum": "24",
       "category": "A4",
-      "q": "A student believes that the time it takes for an ice cube to melt (M minutes) varies inversely with the room temperature (T °C). The student observes that at a room temperature of 15°C it takes 12 minutes for an ice cube to melt.\n\n(a) Find the equation relating M and T.  (2 marks)\n\n(b) By first completing this table of values, graph the relationship between temperature and time from T = 5°C to T = 30°C.  (2 marks)\n\n| T | 5 | 15 | 30 |\n|---|---|---|---|\n| M | | 12 | |",
+      "q": "A student believes that the time it takes for an ice cube to melt (<em>M</em> minutes) varies inversely with the room temperature (T °C). The student observes that at a room temperature of 15°C it takes 12 minutes for an ice cube to melt.\n\n(a) Find the equation relating <em>M</em> and T.  (2 marks)\n\n(b) By first completing this table of values, graph the relationship between temperature and time from T = 5°C to T = 30°C.  (2 marks)\n\n| T | 5 | 15 | 30 |\n|---|---|---|---|\n| <em>M</em> | | 12 | |",
       "answer": "(a) M = k/T; at T = 15, M = 12: 12 = k/15 → k = 180\nEquation: M = 180/T\n\n(b) T = 5: M = 180/5 = 36; T = 30: M = 180/30 = 6\nGraph: decreasing hyperbola through (5, 36), (15, 12), (30, 6).",
       "keywords": [
         "M = 180/T",
@@ -6793,7 +6793,7 @@
       "section": "II",
       "qNum": "27",
       "category": "F4",
-      "q": "A company purchases a machine for $50 000. The two methods of depreciation being considered are the declining-balance method and the straight-line method.\n\n(a) For the declining-balance method, the salvage value of the machine after n years is given by the formula:\nS = V₀ × (0.80)ⁿ\nwhere S is the salvage value and V₀ is the initial value of the asset.\n\n(i) What is the annual rate of depreciation used in this formula?  (1 mark)\n\n(ii) Calculate the salvage value of the machine after 3 years, based on the given formula.  (1 mark)\n\n(b) For the straight-line method, the value of the machine is depreciated at a rate of 12.2% of the purchase price each year.\nWhen will the value of the machine, using this method, be equal to the salvage value found in part (a)(ii)?  (2 marks)",
+      "q": "A company purchases a machine for $50 000. The two methods of depreciation being considered are the declining-balance method and the straight-line method.\n\n(a) For the declining-balance method, the salvage value of the machine after <em>n</em> years is given by the formula:\nS = V₀ × (0.80)ⁿ\nwhere S is the salvage value and V₀ is the initial value of the asset.\n\n(i) What is the annual rate of depreciation used in this formula?  (1 mark)\n\n(ii) Calculate the salvage value of the machine after 3 years, based on the given formula.  (1 mark)\n\n(b) For the straight-line method, the value of the machine is depreciated at a rate of 12.2% of the purchase price each year.\nWhen will the value of the machine, using this method, be equal to the salvage value found in part (a)(ii)?  (2 marks)",
       "answer": "(a)(i) Annual rate of depreciation = 20% (since 0.80 = 1 − 0.20)\n\n(a)(ii) S = 50 000 × (0.80)³ = 50 000 × 0.512 = $25 600\n\n(b) Straight-line annual depreciation = 12.2% × $50 000 = $6100\nValue after n years = 50 000 − 6100n\nSet equal to $25 600: 50 000 − 6100n = 25 600\n6100n = 24 400 → n = 4 years",
       "acceptableAnswers": [
         "20%",
@@ -6846,7 +6846,7 @@
       "section": "II",
       "qNum": "30",
       "category": "F4",
-      "q": "Eli is choosing between two investment options.\nOption 1: Depositing a single amount of $40 000 today, earning interest of 1.2% per annum, compounded monthly.\nOption 2: Depositing $1000 at the end of each quarter, earning interest of 2.4% per annum, compounded quarterly.\n\nA table of future value interest factors for an annuity of $1 is shown.\n\n| N \\ r | 0.002 | 0.006 | 0.020 | 0.024 | 0.060 | 0.240 |\n|---|---|---|---|---|---|---|\n| 10 | 10.09048 | 10.27437 | 10.94972 | 11.15211 | 13.18079 | 31.64344 |\n| 20 | 20.38460 | 21.18211 | 24.29737 | 25.28909 | 36.78559 | 303.60062 |\n| 30 | 30.88646 | 32.76227 | 40.56808 | 43.20983 | 79.05819 | 2640.91639 |\n| 40 | 41.60026 | 45.05630 | 60.40198 | 65.92708 | 154.76197 | 22728.80260 |\n\n(a) What is the value of Eli's investment after 10 years using Option 1?  (2 marks)\n\n(b) What is the difference between the future values after 10 years using Option 1 and Option 2?  (2 marks)",
+      "q": "Eli is choosing between two investment options.\nOption 1: Depositing a single amount of $40 000 today, earning interest of 1.2% per annum, compounded monthly.\nOption 2: Depositing $1000 at the end of each quarter, earning interest of 2.4% per annum, compounded quarterly.\n\nA table of future value interest factors for an annuity of $1 is shown.\n\n| <em>N</em> \\ <em>r</em> | 0.002 | 0.006 | 0.020 | 0.024 | 0.060 | 0.240 |\n|---|---|---|---|---|---|---|\n| 10 | 10.09048 | 10.27437 | 10.94972 | 11.15211 | 13.18079 | 31.64344 |\n| 20 | 20.38460 | 21.18211 | 24.29737 | 25.28909 | 36.78559 | 303.60062 |\n| 30 | 30.88646 | 32.76227 | 40.56808 | 43.20983 | 79.05819 | 2640.91639 |\n| 40 | 41.60026 | 45.05630 | 60.40198 | 65.92708 | 154.76197 | 22728.80260 |\n\n(a) What is the value of Eli's investment after 10 years using Option 1?  (2 marks)\n\n(b) What is the difference between the future values after 10 years using Option 1 and Option 2?  (2 marks)",
       "answer": "(a) Option 1: A = 40 000 × (1 + 0.001)^120 = 40 000 × (1.001)^120 ≈ $45 093.59\n\n(b) Option 2: rate per quarter = 0.6% = 0.006, periods = 40\nFV = 1000 × 45.056 = $45 056.30\nDifference = $45 093.59 − $45 056.30 ≈ $37.29 (Option 1 gives more)",
       "acceptableAnswers": [
         "45097.17",
@@ -6973,7 +6973,7 @@
       "section": "II",
       "qNum": "22",
       "category": "A4",
-      "q": "Braking distance (m) = k × speed² (km/h).\n(a) At 50 km/h, braking distance = 20 m. Find k.\n(b) What is the braking distance at 90 km/h?",
+      "q": "Braking distance (m) = <em>k</em> × speed² (km/h).\n(a) At 50 km/h, braking distance = 20 m. Find <em>k</em>.\n(b) What is the braking distance at 90 km/h?",
       "answer": "(a) 20 = k × 50² = k × 2500 → k = 0.008\n\n(b) Braking distance = 0.008 × 90² = 0.008 × 8100 = 64.8 m",
       "keywords": [
         "0.008",
@@ -7011,7 +7011,7 @@
       "section": "II",
       "qNum": "25",
       "category": "F5",
-      "q": "A table of future value interest factors for an annuity of $1 is shown.\n\n| Period (n) | 1.5% | 3% | 4.5% | 6% |\n|---|---|---|---|---|\n| 5 | 5.152 | 5.309 | 5.471 | 5.637 |\n| 10 | 10.703 | 11.464 | 12.288 | 13.181 |\n| 20 | 23.124 | 26.870 | 31.371 | 36.786 |\n| 40 | 54.268 | 75.401 | 107.030 | 154.762 |\n\n(a) Micky wants to save $450 000 over the next 10 years.\nIf the interest rate is 6% per annum compounding annually, how much should Micky contribute each year? Give your answer to the nearest dollar.  (2 marks)\n\n(b) Instead, Micky decides to contribute $8535 every three months for 10 years to an annuity paying 6% per annum, compounding quarterly.\nHow much will Micky have at the end of 10 years?  (3 marks)",
+      "q": "A table of future value interest factors for an annuity of $1 is shown.\n\n| Period (<em>n</em>) | 1.5% | 3% | 4.5% | 6% |\n|---|---|---|---|---|\n| 5 | 5.152 | 5.309 | 5.471 | 5.637 |\n| 10 | 10.703 | 11.464 | 12.288 | 13.181 |\n| 20 | 23.124 | 26.870 | 31.371 | 36.786 |\n| 40 | 54.268 | 75.401 | 107.030 | 154.762 |\n\n(a) Micky wants to save $450 000 over the next 10 years.\nIf the interest rate is 6% per annum compounding annually, how much should Micky contribute each year? Give your answer to the nearest dollar.  (2 marks)\n\n(b) Instead, Micky decides to contribute $8535 every three months for 10 years to an annuity paying 6% per annum, compounding quarterly.\nHow much will Micky have at the end of 10 years?  (3 marks)",
       "answer": "(a) FV factor: n = 10, r = 6% → 13.181\nAnnual deposit = $450 000 / 13.181 = $34 140 (nearest dollar)\n\n(b) Quarterly rate = 6%/4 = 1.5%, periods = 10 × 4 = 40\nFV factor: n = 40, r = 1.5% → 54.268\nFV = $8535 × 54.268 = $463 177.38",
       "acceptableAnswers": [
         "463177",
@@ -7117,7 +7117,7 @@
       "section": "II",
       "qNum": "22",
       "category": "A4",
-      "q": "Two animal populations since 1985 (x = years since 1985):\n• Population W: y = 34 × (1.055)^x\n• Population K: y = B × (0.97)^x, and when x = 50, population K = 61\n\nComplete the table: B (K's 1985 population), yearly % change for W, yearly % change for K, and W's predicted population when x = 50.",
+      "q": "Two animal populations since 1985 (<em>x</em> = years since 1985):\n• Population W: <em>y</em> = 34 × (1.055)^<em>x</em>\n• Population K: <em>y</em> = B × (0.97)^<em>x</em>, and when <em>x</em> = 50, population K = 61\n\nComplete the table: B (K's 1985 population), yearly % change for W, yearly % change for K, and W's predicted population when <em>x</em> = 50.",
       "answer": "B: when x=50, 61 = B × (0.97)^50 → (0.97)^50 ≈ 0.2181 → B ≈ 280\n\nW yearly change: 1.055 − 1 = 0.055 = +5.5% per year\nK yearly change: 1 − 0.97 = 0.03 = −3% per year\n\nW at x=50: 34 × (1.055)^50 = 34 × 14.542 ≈ 494",
       "keywords": [
         "280",
@@ -7156,7 +7156,7 @@
       "section": "II",
       "qNum": "24",
       "category": "F1",
-      "q": "Sarah, a 60 kg female, consumes 3 glasses of wine at a family dinner over 2.5 hours.\nNote: there are 1.2 standard drinks in one glass of wine.\n\nThe blood alcohol content (BAC) for females can be estimated by:\nBAC_female = (10N − 7.5H) / (5.5M)\n\nwhere N = number of standard drinks, H = number of hours drinking, M = mass in kilograms.\n\n(a) Calculate Sarah's BAC at the end of the dinner, correct to 3 decimal places.  (2 marks)\n\n(b) The time it takes a person's BAC to reach zero is given by:\nTime = BAC / 0.015\n\nCalculate the time it takes for Sarah's BAC to return to zero, assuming she stopped drinking after 2.5 hours. Give your answer to the nearest minute.  (2 marks)",
+      "q": "Sarah, a 60 kg female, consumes 3 glasses of wine at a family dinner over 2.5 hours.\nNote: there are 1.2 standard drinks in one glass of wine.\n\nThe blood alcohol content (BAC) for females can be estimated by:\nBAC_female = (10N − 7.5H) / (5.5M)\n\nwhere <em>N</em> = number of standard drinks, <em>H</em> = number of hours drinking, <em>M</em> = mass in kilograms.\n\n(a) Calculate Sarah's BAC at the end of the dinner, correct to 3 decimal places.  (2 marks)\n\n(b) The time it takes a person's BAC to reach zero is given by:\nTime = BAC / 0.015\n\nCalculate the time it takes for Sarah's BAC to return to zero, assuming she stopped drinking after 2.5 hours. Give your answer to the nearest minute.  (2 marks)",
       "answer": "(a) N = 3 × 1.2 = 3.6 standard drinks; H = 2.5; M = 60\nBAC = (10 × 3.6 − 7.5 × 2.5) / (5.5 × 60) = (36 − 18.75) / 330 = 17.25/330 ≈ 0.052\n\n(b) Time = 0.052 / 0.015 = 3.47 hours = 3 hours 28 minutes",
       "acceptableAnswers": [
         "0.052",
@@ -7265,7 +7265,7 @@
       "qNum": "20",
       "category": "A2",
       "image": "/diagrams/mathematics-standard-2_2025_Q20_stimulus.jpg",
-      "q": "The graph of a quadratic function represented by the equation h = t² − 8t + 12 is shown.\n\n(a) Find the values of t and h at the turning point of the graph. (2 marks)\n\n(b) The graph shows h = 12 when t = 0. What is the other value of t for which h = 12? (1 mark)",
+      "q": "The graph of a quadratic function represented by the equation h = <em>t</em>² − 8<em>t</em> + 12 is shown.\n\n(a) Find the values of <em>t</em> and h at the turning point of the graph. (2 marks)\n\n(b) The graph shows h = 12 when <em>t</em> = 0. What is the other value of <em>t</em> for which h = 12? (1 mark)",
       "answer": "(a) Turning point:\nt = −(−8)/(2 × 1) = 8/2 = 4\nh = 4² − 8(4) + 12 = 16 − 32 + 12 = −4\nTurning point: (4, −4)\n\n(b) Set h = 12:\nt² − 8t + 12 = 12\nt² − 8t = 0\nt(t − 8) = 0\nt = 0 or t = 8\nThe other value is t = 8.",
       "keywords": [
         "4",
@@ -7347,7 +7347,7 @@
       "qNum": "25",
       "category": "S5",
       "image": "/diagrams/mathematics-standard-2_2025_Q25_stimulus.jpg",
-      "q": "In a research study, participants were asked to record the number of minutes they spent watching television and the number of minutes they spent exercising each day over a period of 3 months. The averages for each participant were recorded and graphed (scatterplot shown, x = average minutes/day watching TV, y = average minutes/day exercising).\n\nThe equation of the least-squares regression line for this dataset is y = 64.3 − 0.7x.\n\n(a) Describe the bivariate dataset in terms of its form and direction. (2 marks)\n\n(b) Interpret the values of the slope and y-intercept of the regression line in the context of this dataset. (2 marks)\n\n(c) Jo spends an average of 42 minutes per day watching television. Use the equation of the regression line to determine how many minutes on average Jo is expected to exercise each day. (1 mark)\n\n(d) Explain why it is NOT appropriate to extrapolate the regression line to predict the average number of minutes of exercise per day for someone who watches an average of 2 hours of television per day. (1 mark)",
+      "q": "In a research study, participants were asked to record the number of minutes they spent watching television and the number of minutes they spent exercising each day over a period of 3 months. The averages for each participant were recorded and graphed (scatterplot shown, <em>x</em> = average minutes/day watching TV, <em>y</em> = average minutes/day exercising).\n\nThe equation of the least-squares regression line for this dataset is <em>y</em> = 64.3 − 0.7<em>x</em>.\n\n(a) Describe the bivariate dataset in terms of its form and direction. (2 marks)\n\n(b) Interpret the values of the slope and <em>y</em>-intercept of the regression line in the context of this dataset. (2 marks)\n\n(c) Jo spends an average of 42 minutes per day watching television. Use the equation of the regression line to determine how many minutes on average Jo is expected to exercise each day. (1 mark)\n\n(d) Explain why it is NOT appropriate to extrapolate the regression line to predict the average number of minutes of exercise per day for someone who watches an average of 2 hours of television per day. (1 mark)",
       "answer": "(a) Form: linear (the data points follow an approximately straight-line pattern)\nDirection: negative (as TV time increases, exercise time decreases)\n\n(b) Slope = −0.7: for each additional minute of TV watched per day, the average exercise time decreases by 0.7 minutes per day.\ny-intercept = 64.3: a person who watches 0 minutes of TV per day is predicted to exercise 64.3 minutes per day.\n\n(c) y = 64.3 − 0.7 × 42 = 64.3 − 29.4 = **34.9 minutes per day**\n\n(d) 2 hours = 120 minutes, which is well beyond the range of the data (maximum ~60 minutes). Extrapolating outside the data range is unreliable as the linear relationship may not hold.",
       "keywords": [
         "linear",
@@ -7407,7 +7407,7 @@
       "section": "II",
       "qNum": "30",
       "category": "A1",
-      "q": "It costs $465 to register a passenger car and $350 to register a motorcycle.\nLet P = number of passenger cars, B = number of motorcycles.\n\nWrite TWO linear equations that represent:\n• There are 11 times as many passenger cars as motorcycles.\n• The total registration fees for passenger cars and motorcycles is $494 million.",
+      "q": "It costs $465 to register a passenger car and $350 to register a motorcycle.\nLet <em>P</em> = number of passenger cars, B = number of motorcycles.\n\nWrite TWO linear equations that represent:\n• There are 11 times as many passenger cars as motorcycles.\n• The total registration fees for passenger cars and motorcycles is $494 million.",
       "answer": "Equation 1: P = 11B\nEquation 2: 465P + 350B = 494 000 000",
       "keywords": [
         "p = 11b",
@@ -7472,7 +7472,7 @@
       "section": "II",
       "qNum": "34",
       "category": "F5",
-      "q": "The table shows future value interest factors for an annuity of $1:\n\n| Period (n) | r = 0.005 | r = 0.01 | r = 0.015 | r = 0.02 | r = 0.03 | r = 0.06 |\n|---|---|---|---|---|---|---|\n| 7 | 7.10588 | 7.21354 | 7.32300 | 7.43428 | 7.66246 | 8.39384 |\n| 28 | 29.97452 | 32.12910 | 34.48148 | 37.05121 | 42.93092 | 68.52811 |\n| 56 | 64.44140 | 74.58098 | 86.79754 | 101.55826 | 141.15377 | 418.82235 |\n| 84 | 104.07393 | 130.67227 | 166.17264 | 213.86661 | 365.88054 | 2209.41674 |\n\nLin invests a lump sum of $21 000 for 7 years at an interest rate of 6% per annum, compounding monthly.\n\nYemi wants to achieve the same future value as Lin by using an annuity. Yemi plans to deposit a fixed amount into an investment account at the end of each month for 7 years. The investment account pays 6% per annum, compounding monthly.\n\nUsing the table provided, determine how much Yemi needs to deposit each month. (3 marks)",
+      "q": "The table shows future value interest factors for an annuity of $1:\n\n| Period (<em>n</em>) | <em>r</em> = 0.005 | <em>r</em> = 0.01 | <em>r</em> = 0.015 | <em>r</em> = 0.02 | <em>r</em> = 0.03 | <em>r</em> = 0.06 |\n|---|---|---|---|---|---|---|\n| 7 | 7.10588 | 7.21354 | 7.32300 | 7.43428 | 7.66246 | 8.39384 |\n| 28 | 29.97452 | 32.12910 | 34.48148 | 37.05121 | 42.93092 | 68.52811 |\n| 56 | 64.44140 | 74.58098 | 86.79754 | 101.55826 | 141.15377 | 418.82235 |\n| 84 | 104.07393 | 130.67227 | 166.17264 | 213.86661 | 365.88054 | 2209.41674 |\n\nLin invests a lump sum of $21 000 for 7 years at an interest rate of 6% per annum, compounding monthly.\n\nYemi wants to achieve the same future value as Lin by using an annuity. Yemi plans to deposit a fixed amount into an investment account at the end of each month for 7 years. The investment account pays 6% per annum, compounding monthly.\n\nUsing the table provided, determine how much Yemi needs to deposit each month. (3 marks)",
       "answer": "Lin's FV: monthly rate = 0.5%, n = 84 months\nUsing FV annuity factor relationship: (1.005)^84 − 1 = 104.07393 × 0.005 = 0.5203697\nSo (1.005)^84 = 1.5203697\nLin's FV = $21 000 × 1.5203697 = $31 927.76\n\nYemi's monthly deposit = $31 927.76 ÷ 104.07393 = $306.77 ≈ $307",
       "keywords": [
         "31927",
@@ -7494,7 +7494,7 @@
       "qNum": "16",
       "category": "M6",
       "image": "/diagrams/mathematics-standard-2_2020_Q16_stimulus.jpg",
-      "q": "Consider the right-angled triangle shown. The triangle has a vertical side of 8 units, a horizontal base of 10 units, and hypotenuse x. The angle θ is at the top-right between the hypotenuse and the horizontal base.\n\n(a) Find the value of θ, correct to the nearest degree.\n(b) Find the value of x, correct to one decimal place.",
+      "q": "Consider the right-angled triangle shown. The triangle has a vertical side of 8 units, a horizontal base of 10 units, and hypotenuse <em>x</em>. The angle θ is at the top-right between the hypotenuse and the horizontal base.\n\n(a) Find the value of θ, correct to the nearest degree.\n(b) Find the value of <em>x</em>, correct to one decimal place.",
       "answer": "(a) tan θ = opposite/adjacent = 8/10\nθ = tan⁻¹(0.8) = 38.66...° ≈ 39°\n\n(b) x² = 10² + 8² = 100 + 64 = 164\nx = √164 = 12.8 (one decimal place)",
       "keywords": [
         "39",
@@ -7534,7 +7534,7 @@
       "qNum": "31",
       "category": "M6",
       "image": "/diagrams/mathematics-standard-2_2020_Q31_stimulus.jpg",
-      "q": "Mr Ali walked from camp P on a bearing of 035° for 7 km to location A. Ms Brown walked from P on a bearing of 100° for 9 km to location B.\n\n(a) Show that angle APB = 65°.\n(b) Find the distance AB. (2 marks)\n(c) Find the bearing of Ms Brown's group from Mr Ali's group. Give your answer to the nearest degree. (2 marks)",
+      "q": "Mr Ali walked from camp <em>P</em> on a bearing of 035° for 7 km to location A. Ms Brown walked from <em>P</em> on a bearing of 100° for 9 km to location B.\n\n(a) Show that angle APB = 65°.\n(b) Find the distance AB. (2 marks)\n(c) Find the bearing of Ms Brown's group from Mr Ali's group. Give your answer to the nearest degree. (2 marks)",
       "answer": "(a) Angle APB = 100° − 35° = 65° ✓\n\n(b) Using the cosine rule:\nAB² = 7² + 9² − 2 × 7 × 9 × cos 65°\n= 49 + 81 − 126 × 0.4226...\n= 130 − 53.25... = 76.75...\nAB = 8.76 km (2 d.p.)\n\n(c) Using the sine rule to find angle PAB:\nsin(PAB)/9 = sin 65°/8.76\nsin(PAB) = 9 × 0.9063.../8.76 = 0.9310...\nangle PAB = 68.6...° ≈ 69°\n\nBearing of B from A = 180° − (69° − 35°) = 146°",
       "keywords": [
         "65",
@@ -7574,7 +7574,7 @@
       "qNum": "33",
       "category": "A4",
       "image": "/diagrams/mathematics-standard-2_2020_Q33_stimulus.jpg",
-      "q": "The graph shows the number of bacteria y at time n minutes. Initially (n = 0) there are 1000 bacteria. The model is y = A × bⁿ.\n\n(a) Find the number of bacteria at 40 minutes. (1 mark)\n(b) Use the guess and check method to find upper and lower estimates for b, correct to 2 decimal places, where the estimates differ by 0.01. (2 marks)",
+      "q": "The graph shows the number of bacteria <em>y</em> at time <em>n</em> minutes. Initially (<em>n</em> = 0) there are 1000 bacteria. The model is <em>y</em> = A × <em>b</em>ⁿ.\n\n(a) Find the number of bacteria at 40 minutes. (1 mark)\n(b) Use the guess and check method to find upper and lower estimates for <em>b</em>, correct to 2 decimal places, where the estimates differ by 0.01. (2 marks)",
       "answer": "(a) Reading from the graph at n = 40: y = 4000 bacteria\n\n(b) We need y = 4000 when n = 40 with A = 1000:\n4000 = 1000 × b⁴⁰\nb⁴⁰ = 4\n\nTry b = 1.03: 1000 × (1.03)⁴⁰ = 1000 × 3.262 = 3262 (too low)\nTry b = 1.04: 1000 × (1.04)⁴⁰ = 1000 × 4.801 = 4801 (too high)\n\nLower estimate = 1.03, upper estimate = 1.04",
       "keywords": [
         "4000",
@@ -7595,7 +7595,7 @@
       "qNum": "16",
       "category": "M1",
       "image": "/diagrams/mathematics-standard-2_2021_Q16_stimulus.jpg",
-      "q": "A tank consists of the bottom half of a sphere of radius 2 metres. Using the formula V = (4/3)πr³ for the full sphere, find the volume of the tank in cubic metres, correct to one decimal place.",
+      "q": "A tank consists of the bottom half of a sphere of radius 2 metres. Using the formula V = (4/3)π<em>r</em>³ for the full sphere, find the volume of the tank in cubic metres, correct to one decimal place.",
       "answer": "Volume of full sphere = (4/3) × π × 2³ = (4/3) × π × 8 = 32π/3\nVolume of tank (half sphere) = (1/2) × 32π/3 = 16π/3 = 16.755... ≈ 16.8 m³",
       "acceptableAnswers": [
         "16.8",
@@ -7634,7 +7634,7 @@
       "qNum": "24",
       "category": "A4",
       "image": "/diagrams/mathematics-standard-2_2021_Q24_stimulus.jpg",
-      "q": "A population, P, is to be modelled using the function P = 2000(1.2)^t, where t is the time in years.\n\n(a) What is the initial population? (1 mark)\n\n(b) Find the population after 5 years. (1 mark)\n\n(c) On the axes provided, draw the graph of the population against time, showing the points at t = 0 and at t = 5. Describe the key features of this graph. (2 marks)",
+      "q": "A population, P, is to be modelled using the function <em>P</em> = 2000(1.2)^<em>t</em>, where <em>t</em> is the time in years.\n\n(a) What is the initial population? (1 mark)\n\n(b) Find the population after 5 years. (1 mark)\n\n(c) On the axes provided, draw the graph of the population against time, showing the points at <em>t</em> = 0 and at <em>t</em> = 5. Describe the key features of this graph. (2 marks)",
       "answer": "(a) When t = 0: P = 2000(1.2)^0 = 2000\n\n(b) When t = 5: P = 2000(1.2)^5 = 4977 (nearest integer)\n\n(c) The graph is an exponential growth curve.\nKey points: (0, 2000) and (5, 4977).\nThe graph starts at P = 2000 and increases at an increasing rate (concave up).",
       "keywords": [
         "2000",
@@ -7675,7 +7675,7 @@
       "qNum": "28",
       "category": "S5",
       "image": "/diagrams/mathematics-standard-2_2021_Q28_stimulus.jpg",
-      "q": "A salesperson is interested in the relationship between the number of bottles of lemonade sold per day (y) and the number of hours of sunshine in the day (x).\n\nThe diagram shows the dataset used in the investigation and the least-squares regression line.\n\n(a) Find the equation of the least-squares regression line relating to the dataset. (2 marks)\n\n(b) Suppose a sixth data point was collected on a day which had 10 hours of sunshine. On that day 45 bottles of lemonade were sold.\n\nWhat would happen to the gradient found in part (a)? (1 mark)",
+      "q": "A salesperson is interested in the relationship between the number of bottles of lemonade sold per day (<em>y</em>) and the number of hours of sunshine in the day (<em>x</em>).\n\nThe diagram shows the dataset used in the investigation and the least-squares regression line.\n\n(a) Find the equation of the least-squares regression line relating to the dataset. (2 marks)\n\n(b) Suppose a sixth data point was collected on a day which had 10 hours of sunshine. On that day 45 bottles of lemonade were sold.\n\nWhat would happen to the gradient found in part (a)? (1 mark)",
       "answer": "(a) From the graph, the regression line passes through (0, 2) and (5, 18).\nGradient = (18 - 2)/(5 - 0) = 16/5 = 3.2\nEquation: y = 2 + 3.2x\n\n(b) The new point (10, 45) is above the current line.\nThe gradient would increase.",
       "keywords": [
         "3.2",
@@ -7716,7 +7716,7 @@
       "qNum": "33",
       "category": "S5",
       "image": "/diagrams/mathematics-standard-2_2021_Q33_stimulus.jpg",
-      "q": "For a sample of 17 inland towns in Australia, the height above sea level, x (metres), and the average maximum daily temperature, y (degrees C), were recorded.\n\nThe regression line is y = 29.2 - 0.011x. The correlation coefficient is r = -0.494.\n\n(a)(i) By using the equation of the regression line, predict the average maximum daily temperature for a town that is 540 m above sea level. Give your answer correct to one decimal place. (1 mark)\n\n(a)(ii) The gradient of the regression line is -0.011. Interpret the value of this gradient in the given context. (2 marks)\n\n(b) The graph below shows the relationship between the latitude, x (degrees south), and the average maximum daily temperature, y (degrees C), for the same 17 towns. The regression line is y = 45.6 - 0.683x, r = -0.897.\n\nAnother inland town is 540 m above sea level and its latitude is 28 degrees south. Which measurement, height above sea level or latitude, would be better to use to predict this town's average maximum daily temperature? Give a reason. (1 mark)",
+      "q": "For a sample of 17 inland towns in Australia, the height above sea level, <em>x</em> (metres), and the average maximum daily temperature, <em>y</em> (degrees <em>C</em>), were recorded.\n\nThe regression line is <em>y</em> = 29.2 - 0.011<em>x</em>. The correlation coefficient is <em>r</em> = -0.494.\n\n(a)(i) By using the equation of the regression line, predict the average maximum daily temperature for a town that is 540 m above sea level. Give your answer correct to one decimal place. (1 mark)\n\n(a)(ii) The gradient of the regression line is -0.011. Interpret the value of this gradient in the given context. (2 marks)\n\n(b) The graph below shows the relationship between the latitude, <em>x</em> (degrees south), and the average maximum daily temperature, <em>y</em> (degrees <em>C</em>), for the same 17 towns. The regression line is <em>y</em> = 45.6 - 0.683<em>x</em>, <em>r</em> = -0.897.\n\nAnother inland town is 540 m above sea level and its latitude is 28 degrees south. Which measurement, height above sea level or latitude, would be better to use to predict this town's average maximum daily temperature? Give a reason. (1 mark)",
       "answer": "(a)(i) y = 29.2 - 0.011 × 540 = 29.2 - 5.94 = 23.3 degrees C\n\n(a)(ii) For a one metre increase in height above sea level, the average maximum daily temperature is expected to decrease by 0.011 degrees C.\n\n(b) Latitude is better to use.\nThe correlation coefficient for latitude (r = -0.897) is stronger (closer to -1) than for height above sea level (r = -0.494), so latitude is a better predictor of temperature.",
       "keywords": [
         "23.3",
@@ -7737,7 +7737,7 @@
       "section": "II",
       "qNum": "34",
       "category": "A1",
-      "q": "In a park the only animals are goannas and emus. Let x be the number of goannas and let y be the number of emus.\n\nThe number of goannas plus the number of emus in the park is 31. Hence x + y = 31.\n\nEach goanna has four legs and each emu has two legs. In total the emus and goannas have 76 legs.\n\n(a) Write another equation relating x and y based on the total number of legs. (1 mark)\n\n(b) Solve the two simultaneous equations to find the number of goannas and the number of emus. Show your working. (3 marks)",
+      "q": "In a park the only animals are goannas and emus. Let <em>x</em> be the number of goannas and let <em>y</em> be the number of emus.\n\nThe number of goannas plus the number of emus in the park is 31. Hence <em>x</em> + <em>y</em> = 31.\n\nEach goanna has four legs and each emu has two legs. In total the emus and goannas have 76 legs.\n\n(a) Write another equation relating <em>x</em> and <em>y</em> based on the total number of legs. (1 mark)\n\n(b) Solve the two simultaneous equations to find the number of goannas and the number of emus. Show your working. (3 marks)",
       "answer": "(a) 4x + 2y = 76, which simplifies to 2x + y = 38\n\n(b) Simultaneous equations:\nx + y = 31  ... (1)\n2x + y = 38  ... (2)\n\n(2) - (1): x = 7\nSubstitute into (1): 7 + y = 31, so y = 24\n\nThere are 7 goannas and 24 emus.",
       "keywords": [
         "2x + y = 38",
@@ -7758,7 +7758,7 @@
       "qNum": "35",
       "category": "A4",
       "image": "/diagrams/mathematics-standard-2_2021_Q35_stimulus.jpg",
-      "q": "A publisher sells a book for $10. At this price, 5000 copies will be sold and revenue = $50 000.\n\nFor every dollar the price increases, 50 fewer copies are sold. If the publisher charges (10 + x) dollars, the revenue model is:\nR = -50x^2 + 4500x + 50 000\n\nA graph of this model is shown with x-intercepts at x = -10 and x = 100.\n\n(a) By first finding a suitable value of x, find the price the publisher should charge for each book to maximise the revenue raised from sales. (2 marks)\n\n(b) Find the value of the intercept of the parabola with the vertical axis. (1 mark)",
+      "q": "A publisher sells a book for $10. At this price, 5000 copies will be sold and revenue = $50 000.\n\nFor every dollar the price increases, 50 fewer copies are sold. If the publisher charges (10 + <em>x</em>) dollars, the revenue model is:\n<em>R</em> = -50<em>x</em>^2 + 4500<em>x</em> + 50 000\n\nA graph of this model is shown with <em>x</em>-intercepts at <em>x</em> = -10 and <em>x</em> = 100.\n\n(a) By first finding a suitable value of <em>x</em>, find the price the publisher should charge for each book to maximise the revenue raised from sales. (2 marks)\n\n(b) Find the value of the intercept of the parabola with the vertical axis. (1 mark)",
       "answer": "(a) By symmetry, the maximum is at the midpoint of the x-intercepts:\nx = (-10 + 100)/2 = 45\n\nOptimal price = 10 + 45 = $55\n\n(b) When x = 0: R = -50(0)^2 + 4500(0) + 50 000 = 50 000\nThe vertical intercept is 50 000.",
       "keywords": [
         "45",
@@ -7779,7 +7779,7 @@
       "qNum": "36",
       "category": "N3",
       "image": "/diagrams/mathematics-standard-2_2021_Q36_stimulus.jpg",
-      "q": "The network shows 11 tasks (A–K) with completion times in minutes. Start → A(5), B(8); A → C(7); C → D(2), E(3); B → F(6); F,D,E → E,G,H respectively; G(5) → J(8); H(6) → K(10) → Finish; I(3) also connects.\n\n(a) Find the minimum time to complete the project. (1 mark)\n(b) State the critical path. (1 mark)\n(c) Task X is added: earliest start = 17 min, latest start = 18 min, duration = 12 min. State the float time for X. (2 marks)",
+      "q": "The network shows 11 tasks (A–K) with completion times in minutes. Start → A(5), B(8); A → C(7); <em>C</em> → D(2), E(3); B → F(6); F,D,E → E,G,H respectively; G(5) → J(8); H(6) → K(10) → Finish; I(3) also connects.\n\n(a) Find the minimum time to complete the project. (1 mark)\n(b) State the critical path. (1 mark)\n(c) Task X is added: earliest start = 17 min, latest start = 18 min, duration = 12 min. State the float time for X. (2 marks)",
       "answer": "(a) Minimum time = 40 minutes\n\n(b) Critical path: A → C → D → E → G → J → K\n(Start→A→C→D→E→G→J→K: 5+7+2+3+5+8+10 = 40 minutes)\n\n(c) Float time = Latest start − Earliest start = 18 − 17 = 1 minute",
       "keywords": [
         "40",
@@ -7821,7 +7821,7 @@
       "qNum": "38",
       "category": "S5",
       "image": "/diagrams/mathematics-standard-2_2021_Q38_stimulus.jpg",
-      "q": "A z-table shows P(0 < Z < z) for values z = 0.1, 0.2, 0.3, 0.4, 0.5, 0.6 with probabilities 0.0398, 0.0793, 0.1179, 0.1554, 0.1915, 0.2257.\n\n(a) Using the table, show that P(Z > 0.3) = 0.3821. (1 mark)\n\n(b) Birth weights are normally distributed with mean 3300 g and standard deviation 570 g. Calculate the z-score for 3471 g, then find how many babies out of 1000 are expected to have birth weight greater than 3471 g. (3 marks)",
+      "q": "A z-table shows P(0 < Z < z) for values z = 0.1, 0.2, 0.3, 0.4, 0.5, 0.6 with probabilities 0.0398, 0.0793, 0.1179, 0.1554, 0.1915, 0.2257.\n\n(a) Using the table, show that P(Z > 0.3) = 0.3821. (1 mark)\n\n(b) Birth weights are normally distributed with mean 3300 g and standard deviation 570 g. Calculate the <em>z</em>-score for 3471 g, then find how many babies out of 1000 are expected to have birth weight greater than 3471 g. (3 marks)",
       "answer": "(a) P(Z > 0.3) = 0.5 − P(0 < Z < 0.3) = 0.5 − 0.1179 = 0.3821 ✓\n\n(b) z = (3471 − 3300)/570 = 171/570 = 0.3\nFrom part (a): P(Z > 0.3) = 0.3821\nExpected babies = 1000 × 0.3821 = 382.1 ≈ 382 babies",
       "keywords": [
         "0.3821",
@@ -7928,7 +7928,7 @@
       "qNum": "20",
       "category": "N2",
       "image": null,
-      "q": "The table shows the distances (in kilometres) between towns Snowtown (S), Clairville (C), Yuma (Y), Bosten (B), and Morrella (M):\n\n| | S | C | Y | B | M |\n|---|---|---|---|---|---|\n| S | – | – | 280 | 275 | – |\n| C | – | – | 60 | 150 | – |\n| Y | 280 | 60 | – | – | 530 |\n| B | 275 | 150 | – | – | 790 |\n| M | – | – | 530 | 790 | – |\n\n(a) Draw a weighted network diagram to represent the information shown in the table, using the five towns as vertices. (2 marks)\n\n(b) A tourist wishes to visit each town. Draw the minimum spanning tree which will allow for this AND determine its length. (3 marks)",
+      "q": "The table shows the distances (in kilometres) between towns Snowtown (S), Clairville (<em>C</em>), Yuma (Y), Bosten (B), and Morrella (<em>M</em>):\n\n| | S | <em>C</em> | Y | B | <em>M</em> |\n|---|---|---|---|---|---|\n| S | – | – | 280 | 275 | – |\n| <em>C</em> | – | – | 60 | 150 | – |\n| Y | 280 | 60 | – | – | 530 |\n| B | 275 | 150 | – | – | 790 |\n| <em>M</em> | – | – | 530 | 790 | – |\n\n(a) Draw a weighted network diagram to represent the information shown in the table, using the five towns as vertices. (2 marks)\n\n(b) A tourist wishes to visit each town. Draw the minimum spanning tree which will allow for this AND determine its length. (3 marks)",
       "answer": "(a) The weighted network has edges: S–Y = 280 km, S–B = 275 km, C–Y = 60 km, C–B = 150 km, Y–M = 530 km, B–M = 790 km.\n\n(b) Minimum spanning tree uses Kruskal's algorithm:\n1. Shortest edge: C–Y = 60 km ✓\n2. Next: S–B = 275 km ✓\n3. Next: C–B = 150 km ✓ (connects C–Y cluster to S–B cluster)\n4. Next: S–Y = 280 km ✗ (would form a cycle)\n5. Next: Y–M = 530 km ✓ (connects M to tree)\n\nMinimum spanning tree edges: C–Y (60), C–B (150), S–B (275), Y–M (530)\nTotal length = 60 + 150 + 275 + 530 = **1015 km**",
       "keywords": [
         "1015",
@@ -8097,7 +8097,7 @@
       "qNum": "35",
       "category": "S5",
       "image": "/diagrams/mathematics-standard-2_2022_Q35_stimulus.jpg",
-      "q": "Jo is researching the relationship between the ages of teenage characters in television series and the ages of actors playing these characters. After collecting the data, Jo finds that the correlation coefficient is 0.4564. A scatterplot showing the data is drawn. The line of best fit has equation y = −7.51 + 1.85x.\n\nDescribe and interpret the data and other information provided, with reference to the context given.",
+      "q": "Jo is researching the relationship between the ages of teenage characters in television series and the ages of actors playing these characters. After collecting the data, Jo finds that the correlation coefficient is 0.4564. A scatterplot showing the data is drawn. The line of best fit has equation <em>y</em> = −7.51 + 1.85<em>x</em>.\n\nDescribe and interpret the data and other information provided, with reference to the context given.",
       "answer": "A comprehensive response includes:\n\n**Describing the data:**\n- The relationship is linear and positive/increasing.\n- The correlation coefficient of 0.4564 indicates a weak to moderate positive correlation.\n- Character ages range from approximately 14 to 17 years; actor ages range from 14 to 30 years.\n\n**Interpreting the regression equation:**\n- The gradient of 1.85 means that as character age increases by 1 year, the actor age increases by approximately 1.85 (almost 2) years.\n- For each additional year of character age, actors tend to be almost 2 years older.\n\n**Contextual interpretation:**\n- Actors playing teenage characters do not need to be teenagers themselves — actors range from 14 to 30 years old for characters aged 14–17.\n- Characters of age 15 have the widest range of actor ages (14–27).\n- Characters older than 15 tend to be played by older actors.\n- The weak correlation shows there is considerable variation — older actors can play younger characters.",
       "keywords": [
         "positive",
@@ -8144,7 +8144,7 @@
       "qNum": "17",
       "category": "N2",
       "image": null,
-      "q": "The table shows some of the flight distances (rounded to the nearest 10 km) between various Australian cities: Adelaide (A), Brisbane (B), Darwin (D), Hobart (H), Perth (P), Sydney (S).\n\n| City | A | B | D | H | P | S |\n|---|---|---|---|---|---|---|\n| Adelaide (A) | – | – | – | 1170 | 2120 | – |\n| Brisbane (B) | – | – | 2850 | – | – | 750 |\n| Darwin (D) | – | 2850 | – | – | 2650 | 3150 |\n| Hobart (H) | – | – | – | – | – | 1040 |\n| Perth (P) | 2120 | – | 2650 | – | – | 3270 |\n| Sydney (S) | – | 750 | 3150 | 1040 | 3270 | – |\n\n(a) Use the information in the table to complete the network diagram where the edges are labelled with distances. The network has nodes A, B, D, H, P, S with edge D–P = 2650 already shown. Add all remaining edges from the table. (2 marks)\n\n(b) Mahsa wants to travel from Hobart to Darwin. She wants to change planes only once. Using the network diagram, calculate how many kilometres she will travel by plane. (1 mark)",
+      "q": "The table shows some of the flight distances (rounded to the nearest 10 km) between various Australian cities: Adelaide (A), Brisbane (B), Darwin (D), Hobart (<em>H</em>), Perth (<em>P</em>), Sydney (S).\n\n| City | A | B | D | <em>H</em> | <em>P</em> | S |\n|---|---|---|---|---|---|---|\n| Adelaide (A) | – | – | – | 1170 | 2120 | – |\n| Brisbane (B) | – | – | 2850 | – | – | 750 |\n| Darwin (D) | – | 2850 | – | – | 2650 | 3150 |\n| Hobart (<em>H</em>) | – | – | – | – | – | 1040 |\n| Perth (<em>P</em>) | 2120 | – | 2650 | – | – | 3270 |\n| Sydney (S) | – | 750 | 3150 | 1040 | 3270 | – |\n\n(a) Use the information in the table to complete the network diagram where the edges are labelled with distances. The network has nodes A, B, D, H, P, S with edge D–P = 2650 already shown. Add all remaining edges from the table. (2 marks)\n\n(b) Mahsa wants to travel from Hobart to Darwin. She wants to change planes only once. Using the network diagram, calculate how many kilometres she will travel by plane. (1 mark)",
       "answer": "(a) The completed network diagram includes edges:\n- P–D = 2650 km\n- D–B = 2850 km\n- D–S = 3150 km\n- P–A = 2120 km\n- A–H = 1170 km\n- H–S = 1040 km\n- B–S = 750 km\n- P–S = 3270 km\n\n(b) Hobart to Darwin with one stopover:\nPath H → S → D = 1040 + 3150 = **4190 km**\n\n(Other paths require more than one change: H→A→P→D requires two changes.)",
       "keywords": [
         "4190",
@@ -8188,7 +8188,7 @@
       "qNum": "19",
       "category": "N2",
       "image": "/diagrams/mathematics-standard-2_2023_Q19_stimulus.jpg",
-      "q": "A network of running tracks connects points A, B, C, D, E, F, G, H (times in minutes on edges).\n\n(a) Which path could a runner take from A to D in the shortest time? (2 marks)\n(b) A spanning tree of the network is shown. Is it a minimum spanning tree? Give a reason. (2 marks)",
+      "q": "A network of running tracks connects points A, B, C, D, E, F, G, <em>H</em> (times in minutes on edges).\n\n(a) Which path could a runner take from A to D in the shortest time? (2 marks)\n(b) A spanning tree of the network is shown. Is it a minimum spanning tree? Give a reason. (2 marks)",
       "answer": "(a) Shortest path from A to D: A → B → F → G → D\n(Trace the path with smallest cumulative time using the diagram)\n\n(b) The spanning tree shown is NOT a minimum spanning tree.\nReason: The edge BC shown is not the shortest way to connect C — there is a shorter alternative edge that would reduce the total weight of the spanning tree.",
       "keywords": [
         "abfgd",
@@ -8211,7 +8211,7 @@
       "qNum": "20",
       "category": "A4",
       "image": "/diagrams/mathematics-standard-2_2023_Q20_stimulus.jpg",
-      "q": "The height above the ground h metres of a ball on another planet is modelled by h = −6t² + 24t (t in seconds). The graph of the function is shown.\n\n(a) Based on the graph, what is the maximum height reached by the ball? (1 mark)\n(b) Based on the graph, at what TWO times is the ball at ¾ of its maximum height? (2 marks)",
+      "q": "The height above the ground h metres of a ball on another planet is modelled by h = −6<em>t</em>² + 24<em>t</em> (<em>t</em> in seconds). The graph of the function is shown.\n\n(a) Based on the graph, what is the maximum height reached by the ball? (1 mark)\n(b) Based on the graph, at what TWO times is the ball at ¾ of its maximum height? (2 marks)",
       "answer": "(a) Maximum height = 24 m (at t = 2 seconds, vertex of parabola)\n\n(b) ¾ of maximum = (3/4) × 24 = 18 m\nReading from the graph, the ball is at 18 m at t = 1 second and t = 3 seconds",
       "keywords": [
         "24",
@@ -8278,7 +8278,7 @@
       "qNum": "27",
       "category": "M6",
       "image": "/diagrams/mathematics-standard-2_2023_Q27_stimulus.jpg",
-      "q": "Y is 15 km from X on a bearing of 120°. C is due west of Y and 40 km from X. P is on line CY and due south of X.\n\n(a) Find the distance from X to P. (2 marks)\n(b) Find the bearing of C from X, to the nearest degree. (2 marks)",
+      "q": "Y is 15 km from X on a bearing of 120°. <em>C</em> is due west of Y and 40 km from X. <em>P</em> is on line CY and due south of X.\n\n(a) Find the distance from X to P. (2 marks)\n(b) Find the bearing of <em>C</em> from X, to the nearest degree. (2 marks)",
       "answer": "(a) ∠PXY = 180° − 120° = 60°\nXP = XY × cos 60° = 15 × 0.5 = 7.5 km\n\n(b) tan(∠CXP) = XC_horizontal / XP\n∠PXY = 60°, so XY_horizontal = 15 × sin 60° = 12.99 km (east)\nXC is west of X, so total horizontal = 12.99 + (40² − XP²)^(1/2)...\n\nSimpler: cos(∠CXP) = XP/XC...\n∠CXP: cos θ = 7.5/40... no.\nUsing right angle at P:\nCP = XY_east = 15 sin 60° = 7.5√3 = 12.99 km\nXC = √(XP² + CP²) should be 40... wait\n\nActually: In triangle CXP, ∠XPC = 90° (P is due south of X, C is due west of Y = west of P)\ncos(∠CXP) = XP/XC = 7.5/40\n∠CXP = cos⁻¹(7.5/40) = cos⁻¹(0.1875) = 79.19...° ≈ 79°\n\nBearing of C from X = 180° + 79° = 259°",
       "keywords": [
         "7.5",
@@ -8375,7 +8375,7 @@
       "qNum": "31",
       "category": "N2",
       "image": "/diagrams/mathematics-standard-2_2023_Q31_stimulus.svg",
-      "q": "A function centre employs staff so that all necessary tasks can be completed between the end of one function and the beginning of the next. The network diagram shows the time taken in hours for the tasks that need to be completed (A=6, B=4, C=4, D=4, E=2, F=2, G=4, H=2, I=7, J=12, K=8).\n\n(a) Find the TWO critical paths.\n\n(b) The function centre wants to decrease the length of each critical path by 3 hours. They can do this by hiring more staff to do ONE of the tasks so it takes less time. For which task should the centre hire more staff, and how long should that task take to ensure all tasks can be completed in 14 hours?",
+      "q": "A function centre employs staff so that all necessary tasks can be completed between the end of one function and the beginning of the next. The network diagram shows the time taken in hours for the tasks that need to be completed (A=6, B=4, <em>C</em>=4, D=4, E=2, F=2, G=4, <em>H</em>=2, I=7, J=12, K=8).\n\n(a) Find the TWO critical paths.\n\n(b) The function centre wants to decrease the length of each critical path by 3 hours. They can do this by hiring more staff to do ONE of the tasks so it takes less time. For which task should the centre hire more staff, and how long should that task take to ensure all tasks can be completed in 14 hours?",
       "answer": "(a) The two critical paths are:\n- **H, I, G, C** (total: 2 + 7 + 4 + 4 = 17 hours)\n- **H, I, K** (total: 2 + 7 + 8 = 17 hours)\n\n(b) Both critical paths share tasks H and I.\n- H takes only 2 hours — cannot be reduced by 3 hours.\n- I takes 7 hours. Reducing I by 3 hours gives I = 4 hours.\n- New critical path length = 2 + 4 + 8 = 14 hours ✓\n\n∴ Hire more staff for **task I**, and it should take **4 hours**.",
       "keywords": [
         "H, I, G, C",
@@ -8445,7 +8445,7 @@
       "qNum": "34",
       "category": "S5",
       "image": "/diagrams/mathematics-standard-2_2023_Q34_stimulus.jpg",
-      "q": "A university uses gas to heat its buildings. Over 10 weekdays in winter, the gas used (y MW) and average outside temperature (x °C) were recorded. The regression line predicts that when the temperature is 0°C, the daily gas usage is 236 MW. The ten temperatures measured were: 0°, 0°, 0°, 2°, 5°, 7°, 8°, 9°, 9°, 10°. The total gas usage for the ten weekdays was 1840 MW.\n\n(a) Calculate the sample means x̄ and ȳ, and plot the point (x̄, ȳ) and the y-intercept of the least-squares regression line on the grid.\n\n(b) What is the equation of the regression line?\n\n(c) In the context of the dataset, identify ONE problem with using the regression line to predict gas usage when the average outside temperature is 23°C.",
+      "q": "A university uses gas to heat its buildings. Over 10 weekdays in winter, the gas used (<em>y</em> MW) and average outside temperature (<em>x</em> °C) were recorded. The regression line predicts that when the temperature is 0°C, the daily gas usage is 236 MW. The ten temperatures measured were: 0°, 0°, 0°, 2°, 5°, 7°, 8°, 9°, 9°, 10°. The total gas usage for the ten weekdays was 1840 MW.\n\n(a) Calculate the sample means <em>x</em>̄ and ȳ, and plot the point (<em>x</em>̄, ȳ) and the <em>y</em>-intercept of the least-squares regression line on the grid.\n\n(b) What is the equation of the regression line?\n\n(c) In the context of the dataset, identify ONE problem with using the regression line to predict gas usage when the average outside temperature is 23°C.",
       "answer": "(a) x̄ = (0+0+0+2+5+7+8+9+9+10)/10 = 50/10 = **5**\nȳ = 1840/10 = **184**\nPlot (x̄, ȳ) = (5, 184) on the grid. y-intercept at (0, 236).\n\n(b) Slope = (ȳ − y-intercept) / (x̄ − 0)\n= (184 − 236) / (5 − 0)\n= −52/5\n= −10.4\n\nEquation: **y = 236 − 10.4x**\n\n(c) When temperature = 23°C:\ny = 236 − 10.4 × 23 = 236 − 239.2 = −3.2 MW\n\nThis gives a **negative gas usage**, which is not physically possible. Also, 23°C is well outside the range of the data (0–10°C), making it an extrapolation — the regression line may not apply outside this range.",
       "keywords": [
         "236",
@@ -8489,7 +8489,7 @@
       "qNum": "36",
       "category": "A4",
       "image": null,
-      "q": "The following formula can be used to calculate an estimate for blood alcohol content (BAC) for males:\n\nBAC_male = (10N − 7.5H) / (6.8M)\n\nwhere N = number of standard drinks consumed, M = person's weight in kilograms, H = number of hours of drinking.\n\nCameron weighs 75 kg. His BAC was zero when he began drinking alcohol. At 9:00 pm, after consuming 3 standard drinks, his BAC was 0.02.\n\nUsing the formula, estimate at what time Cameron began drinking alcohol, to the nearest minute.",
+      "q": "The following formula can be used to calculate an estimate for blood alcohol content (BAC) for males:\n\nBAC_male = (10N − 7.5H) / (6.8M)\n\nwhere <em>N</em> = number of standard drinks consumed, <em>M</em> = person's weight in kilograms, <em>H</em> = number of hours of drinking.\n\nCameron weighs 75 kg. His BAC was zero when he began drinking alcohol. At 9:00 pm, after consuming 3 standard drinks, his BAC was 0.02.\n\nUsing the formula, estimate at what time Cameron began drinking alcohol, to the nearest minute.",
       "answer": "0.02 = (10 × 3 − 7.5H) / (6.8 × 75)\n0.02 × 510 = 30 − 7.5H\n10.2 = 30 − 7.5H\n7.5H = 19.8\nH = 2.64 hours = 2 hours 38.4 minutes ≈ 2 hours 38 minutes\n\nCameron began drinking at 9:00 pm − 2 h 38 min = 6:22 pm.",
       "keywords": [
         "6:22",
@@ -8558,7 +8558,7 @@
       "qNum": "16",
       "category": "N2",
       "image": "/diagrams/mathematics-standard-2_2024_Q16_stimulus.jpg",
-      "q": "A road network connects towns J, T, Y, W, H, M, C, G with distances in km shown on the edges.\n\n(a) What is the shortest path from T to H? (2 marks)\n(b) The road from C to G is closed. What is the length of the shortest path from Y to G? (2 marks)",
+      "q": "A road network connects towns J, T, Y, W, H, M, C, G with distances in km shown on the edges.\n\n(a) What is the shortest path from T to H? (2 marks)\n(b) The road from <em>C</em> to G is closed. What is the length of the shortest path from Y to G? (2 marks)",
       "answer": "(a) Shortest path from T to H: T → Y → W → H (route TYWH)\n\n(b) With C→G closed, shortest path from Y to G:\nY → W → H → M → G = YWHMG = 89 km",
       "keywords": [
         "tywh",
@@ -8805,7 +8805,7 @@
       "qNum": "35",
       "category": "S4",
       "image": "/diagrams/mathematics-standard-2_2024_Q35_stimulus.jpg",
-      "q": "A random variable is normally distributed with mean 0 and standard deviation 1. The table gives P(z) for z values: 0.6→0.7257, 0.7→0.7580, 0.8→0.7881, 0.9→0.8159, 1.0→0.8413, 1.1→0.8643, 1.2→0.8849, 1.3→0.9032, 1.4→0.9192. The scores in a university examination are normally distributed with mean 58 and standard deviation 15.\n\n(a) By calculating a z-score, find the percentage of scores that are between 58 and 70.\n\n(b) Explain why the percentage of scores between 46 and 70 is twice your answer to part (a).\n\n(c) By using the values in the table above, find an approximate minimum score that a candidate would need to be placed in the top 10% of the candidates.",
+      "q": "A random variable is normally distributed with mean 0 and standard deviation 1. The table gives P(z) for z values: 0.6→0.7257, 0.7→0.7580, 0.8→0.7881, 0.9→0.8159, 1.0→0.8413, 1.1→0.8643, 1.2→0.8849, 1.3→0.9032, 1.4→0.9192. The scores in a university examination are normally distributed with mean 58 and standard deviation 15.\n\n(a) By calculating a <em>z</em>-score, find the percentage of scores that are between 58 and 70.\n\n(b) Explain why the percentage of scores between 46 and 70 is twice your answer to part (a).\n\n(c) By using the values in the table above, find an approximate minimum score that a candidate would need to be placed in the top 10% of the candidates.",
       "answer": "(a) z = (70 − 58)/15 = 12/15 = **0.8**\nP from table = 0.7881\nP(58 to 70) = 0.7881 − 0.5 = **0.2881 = 28.81%**\n\n(b) The z-score for 46: z = (46 − 58)/15 = −12/15 = **−0.8**\nBy the symmetry of the normal distribution, the area between 46 and 58 equals the area between 58 and 70.\nSo the percentage of scores between 46 and 70 = 28.81% + 28.81% = twice the answer to (a).\n\n(c) Top 10% means P(z < Z) = 0.90.\nFrom the table, z = 1.3 gives P = 0.9032 ≈ 0.90.\n\nx = z × σ + μ = 1.3 × 15 + 58 = 19.5 + 58 = **77.5**\n\nApproximate minimum score = **77** (or 78)",
       "keywords": [
         "28.81",
@@ -8894,7 +8894,7 @@
       "qNum": "39",
       "category": "N2",
       "image": "/diagrams/mathematics-standard-2_2024_Q39_stimulus.svg",
-      "q": "A project involving nine activities (A, B, C, D, E, F, G, H, I) is shown in the network diagram. The duration of each activity is not yet known. The table gives the earliest start time (EST) and latest start time (LST): Activity A: EST=0, LST=2; Activity C: EST=0, LST=1; Activity I: EST=12, LST=12.\n\n(a) What is the critical path?\n\n(b) The minimum time required for this project to be completed is 19 hours. What is the duration of activity I?\n\n(c) The duration of activity C is 3 hours. What is the maximum amount of time that could occur between the start of activity F and the end of activity H?",
+      "q": "A project involving nine activities (A, B, C, D, E, F, G, H, I) is shown in the network diagram. The duration of each activity is not yet known. The table gives the earliest start time (EST) and latest start time (LST): Activity A: EST=0, LST=2; Activity C: EST=0, LST=1; Activity I: EST=12, LST=12.\n\n(a) What is the critical path?\n\n(b) The minimum time required for this project to be completed is 19 hours. What is the duration of activity I?\n\n(c) The duration of activity <em>C</em> is 3 hours. What is the maximum amount of time that could occur between the start of activity F and the end of activity H?",
       "answer": "(a) Activities A and C have float times (LST > EST), so they are NOT on the critical path.\n\nThe critical path is **BEGI**.\n\n(b) Activity I has EST = 12 and the project takes 19 hours.\nDuration of I = 19 − 12 = **7 hours**\n\n(c) Duration of C = 3 hours.\nC starts at EST = 0, ends at 0 + 3 = 3.\nF starts at EST = LST of C + duration of C (actually at the EST of the next node).\nThe maximum time from start of F to end of H:\nUsing LST approach: 12 − 3 = 9, then 9 − 1 = **8 hours**",
       "keywords": [
         "BEGI",
@@ -8915,7 +8915,7 @@
       "qNum": "40",
       "category": "M6",
       "image": "/diagrams/mathematics-standard-2_2024_Q40_stimulus.svg",
-      "q": "A compass radial survey is shown. OA = 42 m, OD = 38 m, OB = 40 m. The bearing of D from O is 285°T. The bearing of B from O is 110°T. OA is at bearing 40°T from O. Given that AC is a straight line, find the bearing of C from O, correct to the nearest degree.",
+      "q": "A compass radial survey is shown. OA = 42 m, OD = 38 m, OB = 40 m. The bearing of D from O is 285°T. The bearing of B from O is 110°T. OA is at bearing 40°T from O. Given that AC is a straight line, find the bearing of <em>C</em> from O, correct to the nearest degree.",
       "answer": "**In triangle ODA**, using the cosine rule to find ∠AOD:\ncos∠AOD = (OD² + OA² − DA²)/(2 × OD × OA)\n= (38² + 42² − 67.5²)/(2 × 38 × 42)\n= (1444 + 1764 − 4556.25)/3192\n= −1348.25/3192\n= −0.4224\n∠AOD = cos⁻¹(−0.4224) ≈ **115°**\n\n**Finding bearing of A from O:**\nBearing of D from O = 285°, so ∠DON = 360° − 285° = 75° (west of north)\n∠AOD = ∠DON + ∠AON\n115° = 75° + ∠AON\n∠AON = **40°**\n\nBearing of A from O = **040°T**\n\n**Bearing of C from O** (AC is a straight line, so C is directly opposite A):\nBearing of C = 40° + 180° = **220°T**",
       "keywords": [
         "220"
@@ -8934,7 +8934,7 @@
       "qNum": "41",
       "category": "F4",
       "image": null,
-      "q": "Twenty-five years ago, Phoenix deposited a single sum of money into a new bank account, earning 2.4% interest per annum compounding monthly.\n\nPresent value interest factors for an annuity of $1 for various interest rates (r) and numbers of periods (n):\n\n| n \\ r | 0.001 | 0.002 | 0.003 | 0.004 |\n|---|---|---|---|---|\n| 60 | 58.207 | 56.487 | 54.835 | 53.249 |\n| 120 | 113.026 | 106.592 | 100.649 | 95.156 |\n| 180 | 164.655 | 151.036 | 138.927 | 128.137 |\n| 240 | 213.278 | 190.460 | 170.908 | 154.093 |\n| 300 | 259.071 | 225.430 | 197.627 | 174.521 |\n\nPhoenix made the following withdrawals:\n• $2000 at the end of each month for the first 15 years (starting end of month 1)\n• $1200 at the end of each month for the next 10 years (starting end of month 181)\n\nCalculate the minimum sum that Phoenix could have deposited in order to make these withdrawals. (4 marks)",
+      "q": "Twenty-five years ago, Phoenix deposited a single sum of money into a new bank account, earning 2.4% interest per annum compounding monthly.\n\nPresent value interest factors for an annuity of $1 for various interest rates (<em>r</em>) and numbers of periods (<em>n</em>):\n\n| <em>n</em> \\ <em>r</em> | 0.001 | 0.002 | 0.003 | 0.004 |\n|---|---|---|---|---|\n| 60 | 58.207 | 56.487 | 54.835 | 53.249 |\n| 120 | 113.026 | 106.592 | 100.649 | 95.156 |\n| 180 | 164.655 | 151.036 | 138.927 | 128.137 |\n| 240 | 213.278 | 190.460 | 170.908 | 154.093 |\n| 300 | 259.071 | 225.430 | 197.627 | 174.521 |\n\nPhoenix made the following withdrawals:\n• $2000 at the end of each month for the first 15 years (starting end of month 1)\n• $1200 at the end of each month for the next 10 years (starting end of month 181)\n\nCalculate the minimum sum that Phoenix could have deposited in order to make these withdrawals. (4 marks)",
       "answer": "Monthly interest rate: r = 2.4%/12 = **0.2% = 0.002**\n\nThe deposit must cover the present value of both annuities (calculated at time 0).\n\n**Present value of first annuity** ($2000/month for 15 years = 180 months, n=180, r=0.002):\nPV₁ = $2000 × 151.036 = **$302 072**\n\nWait — let me re-read the MG. MG says:\n- For 25 years need: 1200 × 225.430 = 270 516 (this is the PV of the SECOND annuity as if starting at t=0)\n- For 15 years need extra: 800 × 151.036 = 120 828.80 (extra $800/month for first 15 years)\n- Total = **$391 344.80**\n\nThe logic: Phoenix withdraws $2000 for 15 years and $1200 for the next 10 years.\n= $1200 for all 25 years (n=300, r=0.002)\n  PLUS an additional $800 for the first 15 years (n=180, r=0.002)\n\nPV of $1200 for 300 months = $1200 × 225.430 = $270 516\nPV of extra $800 for 180 months = $800 × 151.036 = $120 828.80\n\nMinimum deposit = $270 516 + $120 828.80 = **$391 344.80**",
       "keywords": [
         "391344",
@@ -8997,7 +8997,7 @@
       "qNum": "22",
       "category": "N2",
       "image": "/diagrams/mathematics-standard-2_2025_Q22_stimulus.svg",
-      "q": "A network of pipes with one cut is shown. The number on each edge gives the capacity of that pipe in L/min.\n\n(a) What is the capacity of the cut shown? (1 mark)\n\n(b) A second diagram shows a possible flow for this network. Flow values: A→B=18, A→C=x, B→C=5, B→D=23, D→E=8, C→E=13, E→F=1, C→F=12, D→G=15, E→G=22, F→G=11.\n(i) What is the value of x? Give a reason for your answer. (2 marks)\n(ii) Which of the pipes in the flow are at full capacity? (1 mark)\n(iii) The maximum flow for this network is 50 L/min. Which path of pipes could have an increase in flow of 2 L/min to achieve the maximum flow? (1 mark)",
+      "q": "A network of pipes with one cut is shown. The number on each edge gives the capacity of that pipe in L/min.\n\n(a) What is the capacity of the cut shown? (1 mark)\n\n(b) A second diagram shows a possible flow for this network. Flow values: A→B=18, A→C=<em>x</em>, B→C=5, B→D=23, D→E=8, C→E=13, E→F=1, C→F=12, D→G=15, E→G=22, F→G=11.\n(i) What is the value of <em>x</em>? Give a reason for your answer. (2 marks)\n(ii) Which of the pipes in the flow are at full capacity? (1 mark)\n(iii) The maximum flow for this network is 50 L/min. Which path of pipes could have an increase in flow of 2 L/min to achieve the maximum flow? (1 mark)",
       "answer": "(a) The cut crosses edges B→D (26), E→G (24), and C→F (12).\nCapacity of cut = 26 + 24 + 12 = 62 L/min\n\n(b)(i) x = 30\nReason: Outflow from C = 5 + 13 + 12 = 30 L/min. By conservation of flow, inflow to C must equal outflow, so x = 30.\n\n(b)(ii) Pipes at full capacity: DE (capacity 8, flow 8), CF (capacity 12, flow 12), DG (capacity 15, flow 15), FG (capacity 11, flow 11).\n\n(b)(iii) Path ACEG. The path A→C→E→G has spare capacity: A→C has capacity 35, flow 30 (spare 5); C→E has capacity 17, flow 13 (spare 4); E→G has capacity 24, flow 22 (spare 2). An increase of 2 L/min along ACEG is possible.",
       "keywords": [
         "62",
@@ -9151,7 +9151,7 @@
       "qNum": "39",
       "category": "A4",
       "image": "/diagrams/mathematics-standard-2_2025_Q39_stimulus.jpg",
-      "q": "After a dose of a medication, the amount of the medication remaining in a person can be modelled by the equation y = kaˣ, where x is the number of hours after taking the dose, and y is the amount remaining in milligrams (mg).\n\nThe graph shows the amount of the medication remaining in a person after x hours. Two points are shown: at x = 0, y = 15 and at x = 2, y = 9.\n\nUsing the information provided, find the amount of medication that remains in a person when x = 4.",
+      "q": "After a dose of a medication, the amount of the medication remaining in a person can be modelled by the equation <em>y</em> = kaˣ, where <em>x</em> is the number of hours after taking the dose, and <em>y</em> is the amount remaining in milligrams (mg).\n\nThe graph shows the amount of the medication remaining in a person after <em>x</em> hours. Two points are shown: at <em>x</em> = 0, <em>y</em> = 15 and at <em>x</em> = 2, <em>y</em> = 9.\n\nUsing the information provided, find the amount of medication that remains in a person when <em>x</em> = 4.",
       "answer": "Step 1: Find k.\nAt x = 0: y = ka⁰ = k × 1 = k\nSince y = 15 when x = 0: k = 15\n\nStep 2: Find a.\nAt x = 2, y = 9:\n9 = 15 × a²\na² = 9/15 = 0.6\na = √0.6 ≈ 0.7746\n\nStep 3: Find y when x = 4.\ny = 15 × (0.7746...)⁴\n= 15 × 0.36\n= 5.4 mg",
       "keywords": [
         "5.4",
@@ -9192,7 +9192,7 @@
       "qNum": "40",
       "category": "S4",
       "image": null,
-      "q": "(a) In a flock of 12 600 sheep, the ratio of males to females is 1 : 20. The weights of the male sheep are normally distributed with a mean of 76.2 kg and a standard deviation of 6.8 kg. In the flock, 15 of the male sheep each weigh more than x kg. Find the value of x. (4 marks)\n\n(b) The weights of the female sheep are also normally distributed but have a smaller mean and smaller standard deviation than the weights of male sheep. Explain whether it could be expected that 300 of the females from the flock each weigh more than x kg, where x is the value found in part (a). (1 mark)",
+      "q": "(a) In a flock of 12 600 sheep, the ratio of males to females is 1 : 20. The weights of the male sheep are normally distributed with a mean of 76.2 kg and a standard deviation of 6.8 kg. In the flock, 15 of the male sheep each weigh more than <em>x</em> kg. Find the value of <em>x</em>. (4 marks)\n\n(b) The weights of the female sheep are also normally distributed but have a smaller mean and smaller standard deviation than the weights of male sheep. Explain whether it could be expected that 300 of the females from the flock each weigh more than <em>x</em> kg, where <em>x</em> is the value found in part (a). (1 mark)",
       "answer": "(a) Total sheep = 12 600, ratio males:females = 1:20\nNumber of male sheep = 12 600 × (1/21) = 600 males\n\n15 out of 600 weigh more than x kg:\nProportion = 15/600 = 0.025 → P(Z > z) = 0.025 → z = 1.96\n\nx = μ + z × σ = 76.2 + 1.96 × 6.8\n= 76.2 + 13.328\n= **89.528... ≈ 89.5 kg**\n\n(b) Number of females = 12 600 × (20/21) = 12 000\n300 out of 12 000 = 0.025 (2.5%) would need to weigh more than 89.5 kg.\nBut females have SMALLER mean and SMALLER standard deviation than males.\nSo x = 89.5 kg is even further into the upper tail for females.\nLess than 2.5% of females would weigh more than x kg.\nTherefore it could NOT be expected that 300 females weigh more than x kg.",
       "keywords": [
         "600",
