@@ -210,10 +210,10 @@
       "category": "F5",
       "q": "An annuity consists of ten payments, each equal to $1000. Each payment is made on 30 June each year from 2021 through to 2030 inclusive. The rate of compound interest is 5% per annum. The present value of the annuity is calculated at 30 June 2020. The future value of the annuity is calculated at 30 June 2030. Without performing any calculations, which of the following statements is true?",
       "options": [
-        "PV < $10,000 < FV",
-        "$10,000 < PV < FV",
-        "FV < $10,000 < PV",
-        "$10,000 < FV < PV"
+        "Present value of the annuity < $10 000 < future value of the annuity",
+        "$10 000 < present value of the annuity < future value of the annuity",
+        "Future value of the annuity < $10 000 < present value of the annuity",
+        "$10 000 < future value of the annuity < present value of the annuity"
       ],
       "answer": 0,
       "solution": "<div class=\"step\"><span class=\"step-number\">1.</span> Annuity: regular payments.</div>\n<div class=\"step\"><span class=\"step-number\">2.</span> PV (present value at June 2020): future payments discounted back.</div>\n<div class=\"step\"><span class=\"step-number\">3.</span> Discounting reduces value below nominal $10,000.</div>\n<div class=\"step\"><span class=\"step-number\">4.</span> FV (future value at June 2030): payments compounded forward to end.</div>\n<div class=\"step\"><span class=\"step-number\">5.</span> Last payment at end, first compounded longest.</div>\n<div class=\"step\"><span class=\"step-number\">6.</span> Compounding increases total above $10,000.</div>\n<div class=\"step\"><span class=\"step-number\">7.</span> Time value of money: money now worth more than later.</div>\n<div class=\"step\"><span class=\"step-number\">8.</span> PV < nominal total < FV.</div>\n<div class=\"step\"><span class=\"step-number\">9.</span> Nominal = $10,000.</div>\n<div class=\"step\"><span class=\"step-number\">10.</span> Correct: PV < $10,000 < FV.</div>"
@@ -297,12 +297,12 @@
       "category": "F2",
       "q": "Peter currently earns $21.50 per hour. His hourly wage will increase by 2.1% compounded each year for the next four years. What will his hourly wage be after four years?",
       "options": [
-        "21.50(1.021)⁴",
         "21.50(1.21)⁴",
+        "21.50(1.021)⁴",
         "21.50 + 21.50×0.21×4",
         "21.50 + 21.50×0.021×4"
       ],
-      "answer": 0,
+      "answer": 1,
       "solution": "<div class=\"step\"><span class=\"step-number\">1.</span> Annual compound increase of 2.1%.</div>\n<div class=\"step\"><span class=\"step-number\">2.</span> Compound growth: new amount = original × (1 + rate)^time.</div>\n<div class=\"step\"><span class=\"step-number\">3.</span> Original wage P = 21.50.</div>\n<div class=\"step\"><span class=\"step-number\">4.</span> Rate r = 2.1% = 0.021.</div>\n<div class=\"step\"><span class=\"step-number\">5.</span> Time t = 4 years.</div>\n<div class=\"step\"><span class=\"step-number\">6.</span> New wage = 21.50 × (1 + 0.021)^4.</div>\n<div class=\"step\"><span class=\"step-number\">7.</span> 1 + 0.021 = 1.021.</div>\n<div class=\"step\"><span class=\"step-number\">8.</span> Expression: 21.50(1.021)^4.</div>\n<div class=\"step\"><span class=\"step-number\">9.</span> Additive options represent simple interest, not compound.</div>\n<div class=\"step\"><span class=\"step-number\">10.</span> Correct: 21.50(1.021)⁴.</div>"
     },
     {
@@ -612,10 +612,10 @@
       "category": "S4",
       "q": "For a particular course, the recorded data show a relationship between the number of hours of study per week and the marks achieved out of 100. A least-squares regression line is fitted to this dataset. The equation of this line is given by M = 20 + 3H, where M is the predicted mark and H is the number of hours of study per week. Based on this regression equation, which of the following is correct regarding the predicted mark of a student?",
       "options": [
-        "Mark is 3 for zero study",
-        "Mark is 20 for zero study",
-        "Increases by 20 per hour",
-        "Increases by 1 per 3 hours"
+        "It will be 3 for zero hours of study per week.",
+        "It will be 20 for zero hours of study per week.",
+        "It will increase by 20 for every additional hour of study per week.",
+        "It will increase by 1 for every 3 additional hours of study per week."
       ],
       "answer": 1,
       "solution": "<div class=\"step\"><span class=\"step-number\">1.</span> Equation: M = 20 + 3H (slope-intercept form).</div>\n<div class=\"step\"><span class=\"step-number\">2.</span> Intercept = 20 (when H = 0).</div>\n<div class=\"step\"><span class=\"step-number\">3.</span> When zero study hours, predicted mark = 20.</div>\n<div class=\"step\"><span class=\"step-number\">4.</span> Slope = 3.</div>\n<div class=\"step\"><span class=\"step-number\">5.</span> For each additional hour, mark increases by 3.</div>\n<div class=\"step\"><span class=\"step-number\">6.</span> Not 20 per hour (wrong slope).</div>\n<div class=\"step\"><span class=\"step-number\">7.</span> Not 1 per 3 hours (inverse of slope).</div>\n<div class=\"step\"><span class=\"step-number\">8.</span> Intercept interpretation correct.</div>\n<div class=\"step\"><span class=\"step-number\">9.</span> Regression context supports this.</div>\n<div class=\"step\"><span class=\"step-number\">10.</span> Correct: Mark is 20 for zero study.</div>"
@@ -784,10 +784,10 @@
       "category": "M1",
       "q": "The length and width of a rectangle are measured to be 8 cm and 5 cm respectively, to the nearest centimetre. What are the lower and upper bounds for the area of the rectangle?",
       "options": [
-        "28-54 cm²",
-        "36-42 cm²",
-        "38.25-41.25 cm²",
-        "33.75-46.75 cm²"
+        "28 cm² and 54 cm²",
+        "36 cm² and 42 cm²",
+        "38.25 cm² and 41.25 cm²",
+        "33.75 cm² and 46.75 cm²"
       ],
       "answer": 3,
       "solution": "<div class=\"step\"><span class=\"step-number\">1.</span> Measured to nearest cm: actual values within ±0.5 cm.</div>\n<div class=\"step\"><span class=\"step-number\">2.</span> Length bounds: 8 − 0.5 to 8 + 0.5 → 7.5 to 8.5 cm.</div>\n<div class=\"step\"><span class=\"step-number\">3.</span> Width bounds: 5 − 0.5 to 5 + 0.5 → 4.5 to 5.5 cm.</div>\n<div class=\"step\"><span class=\"step-number\">4.</span> Area bounds: minimum and maximum products.</div>\n<div class=\"step\"><span class=\"step-number\">5.</span> Minimum area: smallest length × smallest width = 7.5 × 4.5.</div>\n<div class=\"step\"><span class=\"step-number\">6.</span> 7.5 × 4.5 = 33.75 cm².</div>\n<div class=\"step\"><span class=\"step-number\">7.</span> Maximum area: largest length × largest width = 8.5 × 5.5.</div>\n<div class=\"step\"><span class=\"step-number\">8.</span> 8.5 × 5.5 = 46.75 cm².</div>\n<div class=\"step\"><span class=\"step-number\">9.</span> Bounds: 33.75 to 46.75 cm².</div>\n<div class=\"step\"><span class=\"step-number\">10.</span> Correct: 33.75-46.75 cm².</div>"
@@ -850,10 +850,10 @@
       "category": "N2",
       "q": "A network with source A and sink B is shown. The capacities of two paths are labelled. The cut shown on the diagram has a capacity of 30. Which of the following statements is correct?",
       "options": [
-        "Max flow is 30",
-        "Max flow is 35",
-        "Max flow is 30 or less",
-        "Max flow is 30 or more"
+        "The maximum flow is 30.",
+        "The maximum flow is 35.",
+        "The maximum flow is 30 or less.",
+        "The maximum flow is 30 or more."
       ],
       "answer": 2,
       "image": "/diagrams/mathematics-standard-2_2023_Q14_stimulus.jpg",
@@ -1267,9 +1267,9 @@
       "category": "M5",
       "q": "Points M and P are the same distance from a third point R. The bearing of M from R is 017° and the bearing of P from R is 107°. Which of the following best describes the bearing of P from M?",
       "options": [
-        "000°-090°",
+        "Between 000° and 090°",
         "Exactly 090°",
-        "090°-180°",
+        "Between 090° and 180°",
         "Exactly 180°"
       ],
       "answer": 2,
