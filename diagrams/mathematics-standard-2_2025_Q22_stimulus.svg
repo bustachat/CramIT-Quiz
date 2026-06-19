@@ -75,7 +75,7 @@
   <circle cx="475" cy="145" r="7" fill="white" stroke="#1a1a1a" stroke-width="2"/>
   <text x="484" y="150" font-size="14" font-style="italic" fill="#1a1a1a">G</text>
 
-  <!-- Cut line (between D,E,F and G — cuts edges D→G, E→G, F→G) -->
-  <line x1="415" y1="18" x2="415" y2="272" stroke="#555" stroke-width="1.5" stroke-dasharray="7,4"/>
-  <text x="404" y="282" font-size="12" fill="#555">Cut</text>
+  <!-- Cut line: crosses B→D(26), E→G(24), C→F(12) = 62 L/min -->
+  <polyline points="255,10 255,50 425,160 255,250 255,280" fill="none" stroke="#555" stroke-width="1.5" stroke-dasharray="7,4"/>
+  <text x="430" y="170" font-size="12" fill="#555">Cut</text>
 </svg>
