@@ -639,8 +639,10 @@ async function loadSubjectData(key) {
   // Patch SUBJECTS config with values derived from loaded data
   const s = SUBJECTS[key];
   if (s) {
-    if (!s.categories && data.mcQuestions) {
-      const catVals = [...new Set(data.mcQuestions.map(q => q.category).filter(Boolean))].sort();
+    if (!s.categories) {
+      const mcCats = (data.mcQuestions || []).map(q => q.category).filter(Boolean);
+      const wrCats = (data.writtenQuestions || []).map(q => q.category).filter(Boolean);
+      const catVals = [...new Set([...mcCats, ...wrCats])].sort();
       s.categories = catVals.length > 0 ? ['all', ...catVals] : null;
     }
     if (!s.topics && data.mcQuestions) {
@@ -852,7 +854,9 @@ function renderPicker() {
   }
   if (s.categories) {
     html += '<div class="section-label" style="margin-top:16px">Category <span style="font-size:10px;font-weight:400;color:var(--muted)">— select one or more</span></div><div class="filter-row"><div class="seg-control" id="seg-cat">';
-    const qsForCounts = s.getMC({ year: pickerFilters.year || 'all', categories: [] });
+    const qsForCounts = currentMode === 'written' && s.getWritten
+      ? s.getWritten({ year: pickerFilters.year || 'all', categories: [] })
+      : s.getMC({ year: pickerFilters.year || 'all', categories: [] });
     s.categories.forEach(c => {
       if (c !== 'all') {
         const n = qsForCounts.filter(q => q.category === c).length;
@@ -1030,7 +1034,9 @@ function rebuildCategoryControl() {
   if (!s?.categories) return;
   const _trialId = SUBJECT_CATALOGUE.find(sub => sub.quizKey === currentSubjectKey)?.id;
   const inTrial  = _trialId ? !canAccessViaSubscription(_trialId) : false;
-  const qsForCounts = s.getMC({ year: pickerFilters.year || 'all', categories: [] });
+  const qsForCounts = currentMode === 'written' && s.getWritten
+    ? s.getWritten({ year: pickerFilters.year || 'all', categories: [] })
+    : s.getMC({ year: pickerFilters.year || 'all', categories: [] });
   const selCats = pickerFilters.categories || [];
 
   let html = '';
