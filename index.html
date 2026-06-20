@@ -854,9 +854,11 @@ function renderPicker() {
   }
   if (s.categories) {
     html += '<div class="section-label" style="margin-top:16px">Category <span style="font-size:10px;font-weight:400;color:var(--muted)">— select one or more</span></div><div class="filter-row"><div class="seg-control" id="seg-cat">';
-    const qsForCounts = currentMode === 'written' && s.getWritten
-      ? s.getWritten({ year: pickerFilters.year || 'all', categories: [] })
-      : s.getMC({ year: pickerFilters.year || 'all', categories: [] });
+    const _yearF = { year: pickerFilters.year || 'all', categories: [] };
+    const qsForCounts = [
+      ...(s.getMC ? s.getMC(_yearF) : []),
+      ...(s.getWritten ? s.getWritten(_yearF) : []),
+    ];
     s.categories.forEach(c => {
       if (c !== 'all') {
         const n = qsForCounts.filter(q => q.category === c).length;
@@ -1034,9 +1036,11 @@ function rebuildCategoryControl() {
   if (!s?.categories) return;
   const _trialId = SUBJECT_CATALOGUE.find(sub => sub.quizKey === currentSubjectKey)?.id;
   const inTrial  = _trialId ? !canAccessViaSubscription(_trialId) : false;
-  const qsForCounts = currentMode === 'written' && s.getWritten
-    ? s.getWritten({ year: pickerFilters.year || 'all', categories: [] })
-    : s.getMC({ year: pickerFilters.year || 'all', categories: [] });
+  const _yearF2 = { year: pickerFilters.year || 'all', categories: [] };
+  const qsForCounts = [
+    ...(s.getMC ? s.getMC(_yearF2) : []),
+    ...(s.getWritten ? s.getWritten(_yearF2) : []),
+  ];
   const selCats = pickerFilters.categories || [];
 
   let html = '';
