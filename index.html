@@ -1464,7 +1464,11 @@ function renderQuestion() {
       html += `<div class="q-image-wrap"><img src="${imgUrl2}" alt="Question diagram" loading="lazy" onclick="openLightbox(this.src)"/></div>`;
     }
     html += `<div class="q-text">${formatQuestionText(q.q || q.question || q.text || '')}</div>`;
-    if (answered) {
+    // In test mode, always show editable textarea (never lock to model answer view)
+    if (!isPracticeMode && currentMode === 'written') {
+      const savedVal = typeof answers[currentIdx] === 'string' ? answers[currentIdx] : '';
+      html += `<textarea class="written-area" id="written-input" placeholder="Write your answer here… (leave blank to skip)" rows="5">${savedVal.replace(/</g,'&lt;').replace(/>/g,'&gt;')}</textarea>`;
+    } else if (answered) {
       const studentAns = typeof answers[currentIdx] === 'string' ? answers[currentIdx] : '';
       let feedbackHtml = '';
 
@@ -1538,12 +1542,17 @@ function renderQuestion() {
 
   const nb = document.getElementById('next-btn');
   nb.style.display = '';
-  if (currentMode === 'written' && !answered) {
+  const isLastQ = currentIdx + 1 >= activeQuestions.length;
+  if (!isPracticeMode && currentMode === 'written') {
+    // Test mode written: always show Next/Submit — no forced answer
+    nb.className = 'next-btn next-btn-wrap show';
+    nb.textContent = isLastQ ? 'Submit test →' : 'Next →';
+  } else if (currentMode === 'written' && !answered) {
     nb.className = 'next-btn next-btn-wrap show';
     nb.textContent = 'Show model answer →';
   } else if (answered || (!isPracticeMode && currentMode === 'mc' && answers[currentIdx] !== null)) {
     nb.className = 'next-btn next-btn-wrap show';
-    nb.textContent = currentIdx + 1 < activeQuestions.length ? 'Next →' : 'See results →';
+    nb.textContent = isLastQ ? 'See results →' : 'Next →';
   } else {
     nb.className = 'next-btn next-btn-wrap';
   }
@@ -1602,10 +1611,45 @@ function checkAnswer() {
 
 function prevQuestion() {
   if (currentIdx > 0) {
+    // In written test mode, save current textarea before going back
+    if (!isPracticeMode && currentMode === 'written') {
+      const input = document.getElementById('written-input');
+      if (input) answers[currentIdx] = input.value;
+    }
     currentIdx--;
-    answered = answers[currentIdx] !== null;
+    answered = !isPracticeMode && currentMode === 'written'
+      ? typeof answers[currentIdx] === 'string'
+      : answers[currentIdx] !== null;
     renderQuestion();
   }
+}
+
+function showSubmitTestModal() {
+  const answered_count = answers.filter(a => typeof a === 'string' && a.trim() !== '').length;
+  const skipped = activeQuestions.length - answered_count;
+  const modal = document.getElementById('reset-modal');
+  const title = document.getElementById('reset-modal-title');
+  const body  = document.getElementById('reset-modal-body');
+  const okBtn = document.getElementById('reset-modal-confirm');
+  const cancelBtn = document.getElementById('reset-modal-cancel');
+  title.textContent = 'Submit test?';
+  body.textContent  = skipped > 0
+    ? `You answered ${answered_count} of ${activeQuestions.length} questions (${skipped} skipped). Once submitted you cannot go back.`
+    : `You answered all ${activeQuestions.length} questions. Once submitted you cannot go back.`;
+  okBtn.textContent = 'Submit →';
+  cancelBtn.textContent = 'Review answers';
+  modal.style.display = 'flex';
+  const onConfirm = () => { cleanup(); showResults(); };
+  const onCancel  = () => { cleanup(); };
+  function cleanup() {
+    modal.style.display = 'none';
+    okBtn.removeEventListener('click', onConfirm);
+    cancelBtn.removeEventListener('click', onCancel);
+    okBtn.textContent = 'Reset quiz';
+    cancelBtn.textContent = 'Cancel';
+  }
+  okBtn.addEventListener('click', onConfirm);
+  cancelBtn.addEventListener('click', onCancel);
 }
 
 function clearWrittenAnswer() {
@@ -1726,6 +1770,23 @@ async function tryAiMarking(questionIdx, q, studentAnswer) {
 }
 
 function nextQuestion() {
+  // Written + TEST mode: free navigation — save silently, no AI marking, submit on last Q
+  if (!isPracticeMode && currentMode === 'written') {
+    const input = document.getElementById('written-input');
+    answers[currentIdx] = input ? input.value : '';
+    const isLast = currentIdx + 1 >= activeQuestions.length;
+    if (isLast) {
+      // Show confirm modal before revealing results
+      showSubmitTestModal();
+      return;
+    }
+    currentIdx++;
+    answered = typeof answers[currentIdx] === 'string';
+    renderQuestion();
+    return;
+  }
+
+  // Written + PRACTICE mode: force answer before advancing
   if (currentMode === 'written' && !answered) {
     const input = document.getElementById('written-input');
     const val = input ? input.value.trim() : '';
@@ -1797,7 +1858,10 @@ function showResults() {
   document.getElementById('score-ring').style.setProperty('--ring-pct', currentMode === 'mc' ? pct + '%' : '100%');
   document.getElementById('score-num').textContent = currentMode === 'mc' ? score : '✓';
   document.getElementById('score-denom').textContent = currentMode === 'mc' ? `/ ${total}` : 'Done';
-  if (currentMode === 'written') {
+  if (currentMode === 'written' && !isPracticeMode) {
+    document.getElementById('result-title').textContent = 'Test complete!';
+    document.getElementById('result-msg').textContent = 'Your answers are shown below alongside the model answers.';
+  } else if (currentMode === 'written') {
     document.getElementById('result-title').textContent = 'Session complete! 📝';
     document.getElementById('result-msg').textContent = 'Review your model answers and band descriptors above.';
   } else {
@@ -1828,6 +1892,28 @@ function showResults() {
         <div style="font-weight:700;margin-bottom:4px;color:var(--text)">${i+1}. ${q.q || q.text}</div>
         <div style="color:var(--muted)">Your answer: <strong style="color:${correct?'#3A5C2E':'#7A2E10'}">${userIdx !== null ? LETTERS[userIdx]+'. '+q.options[userIdx] : '—'}</strong></div>
         ${!correct ? `<div style="color:var(--muted)">Correct: <strong style="color:#3A5C2E">${LETTERS[correctIdx]}. ${q.options[correctIdx]}</strong></div>` : ''}
+      </div>`;
+    });
+    bhtml += '</div>';
+    breakdown.innerHTML = bhtml;
+    breakdown.style.display = 'block';
+  } else if (currentMode === 'written' && !isPracticeMode && breakdown) {
+    // Written test mode: per-question breakdown with student answer + model answer
+    let bhtml = '<div style="text-align:left;margin-top:16px">';
+    bhtml += '<div style="font-family:var(--font-display);font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:10px">Your Responses</div>';
+    activeQuestions.forEach((q, i) => {
+      const studentAns = (answers[i] || '').trim();
+      const skipped = !studentAns;
+      bhtml += `<div style="border:1px solid var(--border);border-radius:12px;padding:14px 16px;margin-bottom:12px;font-size:13px;background:var(--surface)">
+        <div style="font-weight:700;margin-bottom:6px;color:var(--text)">${i+1}. ${q.q || q.text}${q.marks ? ` <span style="color:var(--muted);font-weight:400;font-size:11px">(${q.marks} marks)</span>` : ''}</div>
+        <div style="margin-bottom:8px">
+          <div style="font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--muted);margin-bottom:4px">Your answer</div>
+          <div style="background:${skipped?'#FDF6F0':'#F2EFE9'};border-radius:8px;padding:10px 12px;color:${skipped?'var(--muted)':'var(--text)'};font-style:${skipped?'italic':'normal'};white-space:pre-wrap">${skipped ? 'Skipped' : studentAns}</div>
+        </div>
+        ${q.modelAnswer ? `<div>
+          <div style="font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--muted);margin-bottom:4px">Model answer</div>
+          <div style="background:#EEF5EB;border-radius:8px;padding:10px 12px;color:var(--text);white-space:pre-wrap">${q.modelAnswer}</div>
+        </div>` : ''}
       </div>`;
     });
     bhtml += '</div>';
