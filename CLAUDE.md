@@ -1203,6 +1203,9 @@ JSON format: `{ id, name, icon, accentColor, mcQuestions[], writtenQuestions[], 
 
 ---
 
-*CLAUDE.md — CramIT Project — Last updated: 2026-06-22 — All 75 written question stimulus images audited. diagram_audit.json created as permanent reference. Zero real image issues remaining.*
+- **Written test mode overhaul (2026-06-22)** — Test mode written questions now behave like a real exam: textarea always editable, Next saves silently (blank = skipped), Prev saves before going back, last question shows "Submit test →" with confirm modal (answered count + skip count), results screen shows per-question breakdown (student answer vs model answer side by side). No AI marking, no keyword scoring, no band feedback in test mode. `showSubmitTestModal()` reuses existing reset modal DOM with temporary event listeners. Practice mode unchanged.
+- **MC table audit complete (2026-06-22)** — All 33 image-based MC questions audited. Only 2020 Q8 violated the HTML table rule (stimulus was Subject/John's score/Mean/SD table image; options A/B/C/D were Strongest/Weakest 2-column table images). Fixed: stimulus table and 4 option tables converted to inline HTML `<table>` tags in `q` and `options` fields. 5 PNG files deleted (`_2020_Q8_stimulus/A/B/C/D.png`). `hideQ:true` removed. All other image-based questions use graphs, histograms, geometric shapes, or petrol pump illustrations — all appropriate as images.
+
+*CLAUDE.md — CramIT Project — Last updated: 2026-06-22 — Written test mode complete + MC table audit complete.*
 *Repo: https://github.com/bustachat/CramIT-Quiz*
 *Supabase: https://ohqtefjawaphtsebnaxg.supabase.co*
