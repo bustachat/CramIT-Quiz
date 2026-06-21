@@ -16,10 +16,10 @@
       ],
       "answer": 2,
       "optionImages": [
-        "/diagrams/mathematics-standard-2_2020_Q1_A.jpg",
-        "/diagrams/mathematics-standard-2_2020_Q1_B.jpg",
-        "/diagrams/mathematics-standard-2_2020_Q1_C.jpg",
-        "/diagrams/mathematics-standard-2_2020_Q1_D.jpg"
+        "/diagrams/mathematics-standard-2_2020_Q1_A.png",
+        "/diagrams/mathematics-standard-2_2020_Q1_B.png",
+        "/diagrams/mathematics-standard-2_2020_Q1_C.png",
+        "/diagrams/mathematics-standard-2_2020_Q1_D.png"
       ],
       "solution": "<div class=\"step\"><span class=\"step-number\">1.</span> Identify the equation as quadratic: y = −x² + 1 (standard form y = ax² + bx + c).</div>\n<div class=\"step\"><span class=\"step-number\">2.</span> Determine the coefficient a = −1.</div>\n<div class=\"step\"><span class=\"step-number\">3.</span> Since a < 0, the parabola opens downward.</div>\n<div class=\"step\"><span class=\"step-number\">4.</span> Find the vertex form or substitute x = 0: y = −(0)² + 1 = 1.</div>\n<div class=\"step\"><span class=\"step-number\">5.</span> Vertex is at (0, 1).</div>\n<div class=\"step\"><span class=\"step-number\">6.</span> The graph is a downward-opening parabola.</div>\n<div class=\"step\"><span class=\"step-number\">7.</span> Y-intercept is at y = 1.</div>\n<div class=\"step\"><span class=\"step-number\">8.</span> Vertex x-coordinate is 0, not 1.</div>\n<div class=\"step\"><span class=\"step-number\">9.</span> Eliminate options with upward opening or wrong vertex/y-intercept.</div>\n<div class=\"step\"><span class=\"step-number\">10.</span> Correct: Parabola opening downward, vertex at (0,1).</div>",
       "qNum": 1
@@ -106,10 +106,10 @@
       ],
       "answer": 0,
       "optionImages": [
-        "/diagrams/mathematics-standard-2_2020_Q7_A.jpg",
-        "/diagrams/mathematics-standard-2_2020_Q7_B.jpg",
-        "/diagrams/mathematics-standard-2_2020_Q7_C.jpg",
-        "/diagrams/mathematics-standard-2_2020_Q7_D.jpg"
+        "/diagrams/mathematics-standard-2_2020_Q7_A.png",
+        "/diagrams/mathematics-standard-2_2020_Q7_B.png",
+        "/diagrams/mathematics-standard-2_2020_Q7_C.png",
+        "/diagrams/mathematics-standard-2_2020_Q7_D.png"
       ],
       "solution": "<div class=\"step\"><span class=\"step-number\">1.</span> Recall skewness definitions.</div>\n<div class=\"step\"><span class=\"step-number\">2.</span> Positive skew (right skew): mean > median > mode.</div>\n<div class=\"step\"><span class=\"step-number\">3.</span> Data clustered on left (lower values).</div>\n<div class=\"step\"><span class=\"step-number\">4.</span> Long tail extends to right (higher values).</div>\n<div class=\"step\"><span class=\"step-number\">5.</span> Histogram has peak on left side.</div>\n<div class=\"step\"><span class=\"step-number\">6.</span> Bulk of bars on left, tapering to right.</div>\n<div class=\"step\"><span class=\"step-number\">7.</span> Opposite of negative skew (tail on left).</div>\n<div class=\"step\"><span class=\"step-number\">8.</span> Symmetric would be bell-shaped.</div>\n<div class=\"step\"><span class=\"step-number\">9.</span> Uniform flat.</div>\n<div class=\"step\"><span class=\"step-number\">10.</span> Correct: Tail on right.</div>",
       "qNum": 7
@@ -126,12 +126,12 @@
         "D"
       ],
       "answer": 0,
-      "image": "/diagrams/mathematics-standard-2_2020_Q8_stimulus.jpg",
+      "image": "/diagrams/mathematics-standard-2_2020_Q8_stimulus.png",
       "optionImages": [
-        "/diagrams/mathematics-standard-2_2020_Q8_A.jpg",
-        "/diagrams/mathematics-standard-2_2020_Q8_B.jpg",
-        "/diagrams/mathematics-standard-2_2020_Q8_C.jpg",
-        "/diagrams/mathematics-standard-2_2020_Q8_D.jpg"
+        "/diagrams/mathematics-standard-2_2020_Q8_A.png",
+        "/diagrams/mathematics-standard-2_2020_Q8_B.png",
+        "/diagrams/mathematics-standard-2_2020_Q8_C.png",
+        "/diagrams/mathematics-standard-2_2020_Q8_D.png"
       ],
       "solution": "<div class=\"step\"><span class=\"step-number\">1.</span> Calculate a z-score for each subject: z = (score − mean) ÷ standard deviation.</div>\n<div class=\"step\"><span class=\"step-number\">2.</span> From the table: Commerce z = (score − mean) ÷ SD → z ≈ 3.0; Music z ≈ 2.0; French z ≈ 1.5.</div>\n<div class=\"step\"><span class=\"step-number\">3.</span> Highest z-score = best relative performance. Commerce (z≈3.0) is the strongest subject.</div>\n<div class=\"step\"><span class=\"step-number\">4.</span> Lowest z-score = weakest relative performance. French (z≈1.5) is the weakest subject.</div>\n<div class=\"step\"><span class=\"step-number\">5.</span> The correct row shows: Strongest = Commerce, Weakest = French.</div>\n<div class=\"step\"><span class=\"step-number\">6.</span> This matches option A.</div>",
       "qNum": 8
@@ -148,10 +148,10 @@
       ],
       "answer": 1,
       "optionImages": [
-        "/diagrams/mathematics-standard-2_2020_Q9_A.jpg",
-        "/diagrams/mathematics-standard-2_2020_Q9_B.jpg",
-        "/diagrams/mathematics-standard-2_2020_Q9_C.jpg",
-        "/diagrams/mathematics-standard-2_2020_Q9_D.jpg"
+        "/diagrams/mathematics-standard-2_2020_Q9_A.png",
+        "/diagrams/mathematics-standard-2_2020_Q9_B.png",
+        "/diagrams/mathematics-standard-2_2020_Q9_C.png",
+        "/diagrams/mathematics-standard-2_2020_Q9_D.png"
       ],
       "solution": "<div class=\"step\"><span class=\"step-number\">1.</span> This is a complete matching between two sets.</div>\n<div class=\"step\"><span class=\"step-number\">2.</span> No matches within Team A or B.</div>\n<div class=\"step\"><span class=\"step-number\">3.</span> Every A plays every B: 3 × 3 = 9 edges.</div>\n<div class=\"step\"><span class=\"step-number\">4.</span> Two disjoint sets of 3 vertices each.</div>\n<div class=\"step\"><span class=\"step-number\">5.</span> All possible edges between sets, none within.</div>\n<div class=\"step\"><span class=\"step-number\">6.</span> Definition of complete bipartite graph K_{m,n}.</div>\n<div class=\"step\"><span class=\"step-number\">7.</span> Here m=3, n=3.</div>\n<div class=\"step\"><span class=\"step-number\">8.</span> K_{3,3}.</div>\n<div class=\"step\"><span class=\"step-number\">9.</span> Not complete graph K6 (would include within teams).</div>\n<div class=\"step\"><span class=\"step-number\">10.</span> Correct: Complete bipartite K₃,₃.</div>",
       "qNum": 9
@@ -196,10 +196,10 @@
       ],
       "answer": 3,
       "optionImages": [
-        "/diagrams/mathematics-standard-2_2020_Q12_A.jpg",
-        "/diagrams/mathematics-standard-2_2020_Q12_B.jpg",
-        "/diagrams/mathematics-standard-2_2020_Q12_C.jpg",
-        "/diagrams/mathematics-standard-2_2020_Q12_D.jpg"
+        "/diagrams/mathematics-standard-2_2020_Q12_A.png",
+        "/diagrams/mathematics-standard-2_2020_Q12_B.png",
+        "/diagrams/mathematics-standard-2_2020_Q12_C.png",
+        "/diagrams/mathematics-standard-2_2020_Q12_D.png"
       ],
       "solution": "<div class=\"step\"><span class=\"step-number\">1.</span> Pearson's r measures linear correlation.</div>\n<div class=\"step\"><span class=\"step-number\">2.</span> r = −1 means perfect negative linear correlation.</div>\n<div class=\"step\"><span class=\"step-number\">3.</span> All data points lie exactly on a straight line.</div>\n<div class=\"step\"><span class=\"step-number\">4.</span> Line has negative slope.</div>\n<div class=\"step\"><span class=\"step-number\">5.</span> No scatter/deviation.</div>\n<div class=\"step\"><span class=\"step-number\">6.</span> Not random (r≈0).</div>\n<div class=\"step\"><span class=\"step-number\">7.</span> Not curved (non-linear).</div>\n<div class=\"step\"><span class=\"step-number\">8.</span> Upward would be positive r.</div>\n<div class=\"step\"><span class=\"step-number\">9.</span> Downward perfect line.</div>\n<div class=\"step\"><span class=\"step-number\">10.</span> Correct: Perfect downward line.</div>",
       "qNum": 12
@@ -243,7 +243,7 @@
         "1/6"
       ],
       "answer": 1,
-      "image": "/diagrams/mathematics-standard-2_2020_Q15_stimulus.jpg",
+      "image": "/diagrams/mathematics-standard-2_2020_Q15_stimulus.png",
       "solution": "<div class=\"step\"><span class=\"step-number\">1.</span> Independent events: die and section uniform.</div>\n<div class=\"step\"><span class=\"step-number\">2.</span> Total outcomes: 6 die × 8 sections = 48 equally likely.</div>\n<div class=\"step\"><span class=\"step-number\">3.</span> Favourable: score = die × section = 6.</div>\n<div class=\"step\"><span class=\"step-number\">4.</span> Pairs: (1,6), (2,3), (3,2), (6,1).</div>\n<div class=\"step\"><span class=\"step-number\">5.</span> Check others: (4,1.5) invalid, integers only.</div>\n<div class=\"step\"><span class=\"step-number\">6.</span> Only 4 pairs.</div>\n<div class=\"step\"><span class=\"step-number\">7.</span> No (5,something) since 6 not divisible by 5.</div>\n<div class=\"step\"><span class=\"step-number\">8.</span> P = 4/48 = 1/12.</div>\n<div class=\"step\"><span class=\"step-number\">9.</span> Simplify: divide numerator/denominator by 4.</div>\n<div class=\"step\"><span class=\"step-number\">10.</span> Correct: 1/12.</div>",
       "qNum": 15
     },
@@ -260,10 +260,10 @@
       "answer": 0,
       "solution": "<div class=\"step\"><span class=\"step-number\">1.</span> Identify each shape and its dimensions.</div>\n<div class=\"step\"><span class=\"step-number\">2.</span> Rectangle: length 10, width 8.</div>\n<div class=\"step\"><span class=\"step-number\">3.</span> Rectangle perimeter = 2(10 + 8) = 36.</div>\n<div class=\"step\"><span class=\"step-number\">4.</span> Square: side 11, perimeter = 4 × 11 = 44.</div>\n<div class=\"step\"><span class=\"step-number\">5.</span> Triangle: sides 9, 3, 4, perimeter = 9 + 3 + 4 = 16.</div>\n<div class=\"step\"><span class=\"step-number\">6.</span> Circle: diameter 9, radius 4.5.</div>\n<div class=\"step\"><span class=\"step-number\">7.</span> Circumference = π × 9 ≈ 3.1416 × 9 ≈ 28.27.</div>\n<div class=\"step\"><span class=\"step-number\">8.</span> Compare: 36, 44, 16, 28.27.</div>\n<div class=\"step\"><span class=\"step-number\">9.</span> Largest is 44.</div>\n<div class=\"step\"><span class=\"step-number\">10.</span> Correct: Square.</div>",
       "optionImages": [
-        "/diagrams/mathematics-standard-2_2021_Q1_A.jpg",
-        "/diagrams/mathematics-standard-2_2021_Q1_B.jpg",
-        "/diagrams/mathematics-standard-2_2021_Q1_C.jpg",
-        "/diagrams/mathematics-standard-2_2021_Q1_D.jpg"
+        "/diagrams/mathematics-standard-2_2021_Q1_A.png",
+        "/diagrams/mathematics-standard-2_2021_Q1_B.png",
+        "/diagrams/mathematics-standard-2_2021_Q1_C.png",
+        "/diagrams/mathematics-standard-2_2021_Q1_D.png"
       ],
       "qNum": 1
     },
@@ -278,7 +278,7 @@
         "16"
       ],
       "answer": 3,
-      "image": "/diagrams/mathematics-standard-2_2021_Q2_stimulus.jpg",
+      "image": "/diagrams/mathematics-standard-2_2021_Q2_stimulus.png",
       "solution": "<div class=\"step\"><span class=\"step-number\">1.</span> Use the handshaking lemma (fundamental theorem of graph theory).</div>\n<div class=\"step\"><span class=\"step-number\">2.</span> The sum of all vertex degrees equals twice the number of edges.</div>\n<div class=\"step\"><span class=\"step-number\">3.</span> Each edge contributes 2 to the total degree sum.</div>\n<div class=\"step\"><span class=\"step-number\">4.</span> Number of edges = 8.</div>\n<div class=\"step\"><span class=\"step-number\">5.</span> Sum of degrees = 2 × 8 = 16.</div>\n<div class=\"step\"><span class=\"step-number\">6.</span> The number of vertices (5) does not affect this calculation.</div>\n<div class=\"step\"><span class=\"step-number\">7.</span> Formula holds for simple graphs, multigraphs, and directed graphs (adjusted).</div>\n<div class=\"step\"><span class=\"step-number\">8.</span> No loops or multiple edges mentioned, but formula still applies.</div>\n<div class=\"step\"><span class=\"step-number\">9.</span> Direct application gives 16.</div>\n<div class=\"step\"><span class=\"step-number\">10.</span> Correct: 16.</div>",
       "qNum": 2
     },
@@ -293,7 +293,7 @@
         "29"
       ],
       "answer": 2,
-      "image": "/diagrams/mathematics-standard-2_2021_Q3_stimulus.jpg",
+      "image": "/diagrams/mathematics-standard-2_2021_Q3_stimulus.png",
       "solution": "<div class=\"step\"><span class=\"step-number\">1.</span> Read the stem-and-leaf plot carefully.</div>\n<div class=\"step\"><span class=\"step-number\">2.</span> Stem 0: leaves 6,8 → values 6, 8.</div>\n<div class=\"step\"><span class=\"step-number\">3.</span> Stem 1: leaves 2,4,5 → 12, 14, 15.</div>\n<div class=\"step\"><span class=\"step-number\">4.</span> Stem 2: leaves 1,5,5,9 → 21, 25, 25, 29.</div>\n<div class=\"step\"><span class=\"step-number\">5.</span> Stem 3: leaf 5 → 35.</div>\n<div class=\"step\"><span class=\"step-number\">6.</span> List all values: 6,8,12,14,15,21,25,25,29,35.</div>\n<div class=\"step\"><span class=\"step-number\">7.</span> Count frequencies: 25 appears twice.</div>\n<div class=\"step\"><span class=\"step-number\">8.</span> All other values appear once.</div>\n<div class=\"step\"><span class=\"step-number\">9.</span> Mode = most frequent value = 25.</div>\n<div class=\"step\"><span class=\"step-number\">10.</span> Correct: 25.</div>",
       "qNum": 3
     },
@@ -350,12 +350,12 @@
         "D"
       ],
       "answer": 2,
-      "image": "/diagrams/mathematics-standard-2_2021_Q7_stimulus.jpg",
+      "image": "/diagrams/mathematics-standard-2_2021_Q7_stimulus.png",
       "optionImages": [
-        "/diagrams/mathematics-standard-2_2021_Q7_A.jpg",
-        "/diagrams/mathematics-standard-2_2021_Q7_B.jpg",
-        "/diagrams/mathematics-standard-2_2021_Q7_C.jpg",
-        "/diagrams/mathematics-standard-2_2021_Q7_D.jpg"
+        "/diagrams/mathematics-standard-2_2021_Q7_A.png",
+        "/diagrams/mathematics-standard-2_2021_Q7_B.png",
+        "/diagrams/mathematics-standard-2_2021_Q7_C.png",
+        "/diagrams/mathematics-standard-2_2021_Q7_D.png"
       ],
       "solution": "<div class=\"step\"><span class=\"step-number\">1.</span> A cumulative frequency graph totals all values up to each day.</div>\n<div class=\"step\"><span class=\"step-number\">2.</span> The histogram shows downloads peaking around day 10 then declining.</div>\n<div class=\"step\"><span class=\"step-number\">3.</span> Because downloads increase quickly then slowly, the cumulative total rises steeply at first then levels off.</div>\n<div class=\"step\"><span class=\"step-number\">4.</span> This produces an S-shaped (ogive) curve that always increases but at a decreasing rate after the peak.</div>\n<div class=\"step\"><span class=\"step-number\">5.</span> The cumulative total can never decrease (each day adds more downloads).</div>\n<div class=\"step\"><span class=\"step-number\">6.</span> Option C shows the correct S-shaped cumulative curve.</div>",
       "qNum": 7
@@ -401,10 +401,10 @@
       "answer": 0,
       "solution": "<div class=\"step\"><span class=\"step-number\">1.</span> Equation: y = 10 × (0.8)^x.</div>\n<div class=\"step\"><span class=\"step-number\">2.</span> Standard exponential form y = a × b^x.</div>\n<div class=\"step\"><span class=\"step-number\">3.</span> a = 10 (initial value).</div>\n<div class=\"step\"><span class=\"step-number\">4.</span> Base b = 0.8.</div>\n<div class=\"step\"><span class=\"step-number\">5.</span> Since 0 < b < 1, exponential decay.</div>\n<div class=\"step\"><span class=\"step-number\">6.</span> When x = 0, y = 10 (y-intercept 10).</div>\n<div class=\"step\"><span class=\"step-number\">7.</span> As x increases, y decreases towards 0.</div>\n<div class=\"step\"><span class=\"step-number\">8.</span> Not growth (would require b > 1).</div>\n<div class=\"step\"><span class=\"step-number\">9.</span> Not linear or parabolic.</div>\n<div class=\"step\"><span class=\"step-number\">10.</span> Correct: Exponential decay from 10.</div>",
       "optionImages": [
-        "/diagrams/mathematics-standard-2_2021_Q10_A.jpg",
-        "/diagrams/mathematics-standard-2_2021_Q10_B.jpg",
-        "/diagrams/mathematics-standard-2_2021_Q10_C.jpg",
-        "/diagrams/mathematics-standard-2_2021_Q10_D.jpg"
+        "/diagrams/mathematics-standard-2_2021_Q10_A.png",
+        "/diagrams/mathematics-standard-2_2021_Q10_B.png",
+        "/diagrams/mathematics-standard-2_2021_Q10_C.png",
+        "/diagrams/mathematics-standard-2_2021_Q10_D.png"
       ],
       "qNum": 10
     },
@@ -412,7 +412,7 @@
       "year": 2021,
       "category": "S2",
       "q": "There are 8 chocolates in a box. Three have peppermint centres (<em>P</em>) and five have caramel centres (<em>C</em>). Kim randomly chooses a chocolate from the box and eats it. Sam then randomly chooses and eats one of the remaining chocolates. A partially completed probability tree is shown. What is the probability that Kim and Sam choose chocolates with different centres?",
-      "image": "/diagrams/mathematics-standard-2_2021_Q11_stimulus.jpg",
+      "image": "/diagrams/mathematics-standard-2_2021_Q11_stimulus.png",
       "options": [
         "15/64",
         "15/56",
@@ -434,7 +434,7 @@
         "72"
       ],
       "answer": 1,
-      "image": "/diagrams/mathematics-standard-2_2021_Q11_stimulus.jpg",
+      "image": "/diagrams/mathematics-standard-2_2021_Q11_stimulus.png",
       "solution": "<div class=\"step\"><span class=\"step-number\">1.</span> Trapezoidal rule for area under curve.</div>\n<div class=\"step\"><span class=\"step-number\">2.</span> 2 applications mean 3 strips (2 intervals).</div>\n<div class=\"step\"><span class=\"step-number\">3.</span> Formula: area ≈ (h/2) × (y0 + 2y1 + y2) where h = interval width.</div>\n<div class=\"step\"><span class=\"step-number\">4.</span> Read heights y0, y1, y2 from diagram (not visible).</div>\n<div class=\"step\"><span class=\"step-number\">5.</span> Identify interval width h in km.</div>\n<div class=\"step\"><span class=\"step-number\">6.</span> Plug values into formula.</div>\n<div class=\"step\"><span class=\"step-number\">7.</span> Perform multiplication and addition.</div>\n<div class=\"step\"><span class=\"step-number\">8.</span> Result matches one option.</div>\n<div class=\"step\"><span class=\"step-number\">9.</span> Based on typical diagram values, ≈ 19.8 km².</div>\n<div class=\"step\"><span class=\"step-number\">10.</span> Correct: 19.8.</div>",
       "qNum": 12
     },
@@ -456,7 +456,7 @@
       "year": 2021,
       "category": "M6",
       "q": "Consider the diagram below. What is the true bearing of A from B?",
-      "image": "/diagrams/mathematics-standard-2_2021_Q14_stimulus.jpg",
+      "image": "/diagrams/mathematics-standard-2_2021_Q14_stimulus.png",
       "options": [
         "025°",
         "065°",
@@ -493,10 +493,10 @@
       ],
       "answer": 2,
       "optionImages": [
-        "/diagrams/mathematics-standard-2_2022_Q1_A.jpg",
-        "/diagrams/mathematics-standard-2_2022_Q1_B.jpg",
-        "/diagrams/mathematics-standard-2_2022_Q1_C.jpg",
-        "/diagrams/mathematics-standard-2_2022_Q1_D.jpg"
+        "/diagrams/mathematics-standard-2_2022_Q1_A.png",
+        "/diagrams/mathematics-standard-2_2022_Q1_B.png",
+        "/diagrams/mathematics-standard-2_2022_Q1_C.png",
+        "/diagrams/mathematics-standard-2_2022_Q1_D.png"
       ],
       "solution": "<div class=\"step\"><span class=\"step-number\">1.</span> Recall the definition of skewness.</div>\n<div class=\"step\"><span class=\"step-number\">2.</span> Negative skew (left skew): mean < median < mode.</div>\n<div class=\"step\"><span class=\"step-number\">3.</span> The bulk of the data is on the right (higher values).</div>\n<div class=\"step\"><span class=\"step-number\">4.</span> A long tail extends to the left (lower values).</div>\n<div class=\"step\"><span class=\"step-number\">5.</span> In a histogram, the peak is towards the right.</div>\n<div class=\"step\"><span class=\"step-number\">6.</span> Most bars are on the right, tapering off to the left.</div>\n<div class=\"step\"><span class=\"step-number\">7.</span> This is the opposite of positive (right) skew.</div>\n<div class=\"step\"><span class=\"step-number\">8.</span> Symmetric distributions have no skew.</div>\n<div class=\"step\"><span class=\"step-number\">9.</span> Uniform distributions are flat.</div>\n<div class=\"step\"><span class=\"step-number\">10.</span> Correct: Tail on left.</div>",
       "qNum": 1
@@ -513,10 +513,10 @@
       ],
       "answer": 0,
       "optionImages": [
-        "/diagrams/mathematics-standard-2_2022_Q2_A.jpg",
-        "/diagrams/mathematics-standard-2_2022_Q2_B.jpg",
-        "/diagrams/mathematics-standard-2_2022_Q2_C.jpg",
-        "/diagrams/mathematics-standard-2_2022_Q2_D.jpg"
+        "/diagrams/mathematics-standard-2_2022_Q2_A.png",
+        "/diagrams/mathematics-standard-2_2022_Q2_B.png",
+        "/diagrams/mathematics-standard-2_2022_Q2_C.png",
+        "/diagrams/mathematics-standard-2_2022_Q2_D.png"
       ],
       "solution": "<div class=\"step\"><span class=\"step-number\">1.</span> Equation is in slope-intercept form y = mx + c.</div>\n<div class=\"step\"><span class=\"step-number\">2.</span> Slope m = −2 (negative value).</div>\n<div class=\"step\"><span class=\"step-number\">3.</span> Negative slope means the line falls from left to right.</div>\n<div class=\"step\"><span class=\"step-number\">4.</span> y-intercept c = 2.</div>\n<div class=\"step\"><span class=\"step-number\">5.</span> When x = 0, y = 2, so passes through (0,2).</div>\n<div class=\"step\"><span class=\"step-number\">6.</span> The graph is a straight line.</div>\n<div class=\"step\"><span class=\"step-number\">7.</span> Not a parabola (which is quadratic).</div>\n<div class=\"step\"><span class=\"step-number\">8.</span> Not horizontal (horizontal has slope 0).</div>\n<div class=\"step\"><span class=\"step-number\">9.</span> Positive slope would have m > 0.</div>\n<div class=\"step\"><span class=\"step-number\">10.</span> Correct: Line with negative slope through (0,2).</div>",
       "qNum": 2
@@ -532,7 +532,7 @@
         "BEFG"
       ],
       "answer": 1,
-      "image": "/diagrams/mathematics-standard-2_2022_Q3_stimulus.jpg",
+      "image": "/diagrams/mathematics-standard-2_2022_Q3_stimulus.png",
       "solution": "<div class=\"step\"><span class=\"step-number\">1.</span> The critical path is the longest path through the network (sets minimum project duration).</div>\n<div class=\"step\"><span class=\"step-number\">2.</span> Identify all paths from start to finish and sum their activity times.</div>\n<div class=\"step\"><span class=\"step-number\">3.</span> Path ACI: A(3) + C(13) + I(2) = 18.</div>\n<div class=\"step\"><span class=\"step-number\">4.</span> Path ADG: A(3) + D(16) + G(3) = 22.</div>\n<div class=\"step\"><span class=\"step-number\">5.</span> Path BEH: B(2) + E(9) + H(6) = 17.</div>\n<div class=\"step\"><span class=\"step-number\">6.</span> Path BEFG: B(2) + E(9) + F(2) + G(3) = 16.</div>\n<div class=\"step\"><span class=\"step-number\">7.</span> Longest path = ADG = 22 (also confirmed by node labels: [0|0] → [3|3] → [19|19] → [22|22] all have EST = LST).</div>\n<div class=\"step\"><span class=\"step-number\">8.</span> Critical path: ADG.</div>",
       "qNum": 3
     },
@@ -673,7 +673,7 @@
         "0.9738"
       ],
       "answer": 1,
-      "image": "/diagrams/mathematics-standard-2_2022_Q13_stimulus.jpg",
+      "image": "/diagrams/mathematics-standard-2_2022_Q13_stimulus.png",
       "solution": "<div class=\"step\"><span class=\"step-number\">1.</span> Standard normal distribution (z-scores).</div>\n<div class=\"step\"><span class=\"step-number\">2.</span> P(Z < 1.94) = 0.9738 (given).</div>\n<div class=\"step\"><span class=\"step-number\">3.</span> Mean = 0, so P(Z < 0) = 0.5.</div>\n<div class=\"step\"><span class=\"step-number\">4.</span> Area from 0 to 1.94 is the right half portion.</div>\n<div class=\"step\"><span class=\"step-number\">5.</span> Due to symmetry, P(0 < Z < 1.94) = P(Z < 1.94) − P(Z < 0).</div>\n<div class=\"step\"><span class=\"step-number\">6.</span> Calculation: 0.9738 − 0.5 = 0.4738.</div>\n<div class=\"step\"><span class=\"step-number\">7.</span> Positive z-value area from mean.</div>\n<div class=\"step\"><span class=\"step-number\">8.</span> Total below 1.94 includes left of mean.</div>\n<div class=\"step\"><span class=\"step-number\">9.</span> Subtract to isolate right side.</div>\n<div class=\"step\"><span class=\"step-number\">10.</span> Correct: 0.4738.</div>",
       "qNum": 13
     },
@@ -702,12 +702,12 @@
         "Box-plot D"
       ],
       "answer": 2,
-      "image": "/diagrams/mathematics-standard-2_2022_Q15_stimulus.jpg",
+      "image": "/diagrams/mathematics-standard-2_2022_Q15_stimulus.png",
       "optionImages": [
-        "/diagrams/mathematics-standard-2_2022_Q15_A.jpg",
-        "/diagrams/mathematics-standard-2_2022_Q15_B.jpg",
-        "/diagrams/mathematics-standard-2_2022_Q15_C.jpg",
-        "/diagrams/mathematics-standard-2_2022_Q15_D.jpg"
+        "/diagrams/mathematics-standard-2_2022_Q15_A.png",
+        "/diagrams/mathematics-standard-2_2022_Q15_B.png",
+        "/diagrams/mathematics-standard-2_2022_Q15_C.png",
+        "/diagrams/mathematics-standard-2_2022_Q15_D.png"
       ],
       "solution": "<div class=\"step\"><span class=\"step-number\">1.</span> Cumulative frequency graph shows running totals.</div>\n<div class=\"step\"><span class=\"step-number\">2.</span> Read off quartiles from the graph at 25%, 50%, 75% of total (100).</div>\n<div class=\"step\"><span class=\"step-number\">3.</span> Q1 at 25th value, median at 50th, Q3 at 75th.</div>\n<div class=\"step\"><span class=\"step-number\">4.</span> Also note min and max for whiskers.</div>\n<div class=\"step\"><span class=\"step-number\">5.</span> Box-plot displays these five-number summary values.</div>\n<div class=\"step\"><span class=\"step-number\">6.</span> Compare positions of box edges and whiskers.</div>\n<div class=\"step\"><span class=\"step-number\">7.</span> Identify which box-plot has matching quartile positions.</div>\n<div class=\"step\"><span class=\"step-number\">8.</span> Eliminate mismatched ones.</div>\n<div class=\"step\"><span class=\"step-number\">9.</span> Based on graph (not visible), matches option C.</div>\n<div class=\"step\"><span class=\"step-number\">10.</span> Correct: Box-plot C.</div>",
       "qNum": 15
@@ -752,7 +752,7 @@
       ],
       "answer": 3,
       "solution": "<div class=\"step\"><span class=\"step-number\">1.</span> Scatterplot shows relationship between two variables.</div>\n<div class=\"step\"><span class=\"step-number\">2.</span> Positive trend: as one increases, the other increases.</div>\n<div class=\"step\"><span class=\"step-number\">3.</span> Pearson's r positive for positive association.</div>\n<div class=\"step\"><span class=\"step-number\">4.</span> Negative r for negative association.</div>\n<div class=\"step\"><span class=\"step-number\">5.</span> Strength: closer to ±1 = stronger.</div>\n<div class=\"step\"><span class=\"step-number\">6.</span> Positive trend → positive r.</div>\n<div class=\"step\"><span class=\"step-number\">7.</span> Strong trend implied → higher absolute value.</div>\n<div class=\"step\"><span class=\"step-number\">8.</span> Between 0.2 and 0.8, 0.8 is stronger positive.</div>\n<div class=\"step\"><span class=\"step-number\">9.</span> -0.8 and -0.2 are negative.</div>\n<div class=\"step\"><span class=\"step-number\">10.</span> Correct: 0.8.</div>",
-      "image": "/diagrams/mathematics-standard-2_2023_Q3_stimulus.jpg",
+      "image": "/diagrams/mathematics-standard-2_2023_Q3_stimulus.png",
       "qNum": 3
     },
     {
@@ -781,10 +781,10 @@
       ],
       "answer": 1,
       "optionImages": [
-        "/diagrams/mathematics-standard-2_2023_Q5_A.jpg",
-        "/diagrams/mathematics-standard-2_2023_Q5_B.jpg",
-        "/diagrams/mathematics-standard-2_2023_Q5_C.jpg",
-        "/diagrams/mathematics-standard-2_2023_Q5_D.jpg"
+        "/diagrams/mathematics-standard-2_2023_Q5_A.png",
+        "/diagrams/mathematics-standard-2_2023_Q5_B.png",
+        "/diagrams/mathematics-standard-2_2023_Q5_C.png",
+        "/diagrams/mathematics-standard-2_2023_Q5_D.png"
       ],
       "solution": "<div class=\"step\"><span class=\"step-number\">1.</span> Best value = lowest price per litre.</div>\n<div class=\"step\"><span class=\"step-number\">2.</span> Calculate cost per litre for each.</div>\n<div class=\"step\"><span class=\"step-number\">3.</span> Option A: 46.70 / 24 ≈ 1.9458 $/L.</div>\n<div class=\"step\"><span class=\"step-number\">4.</span> Option B: 48.50 / 25 = 1.940 $/L.</div>\n<div class=\"step\"><span class=\"step-number\">5.</span> Option C: 52.30 / 26 ≈ 2.0115 $/L.</div>\n<div class=\"step\"><span class=\"step-number\">6.</span> Option D: 54.80 / 27 ≈ 2.0296 $/L.</div>\n<div class=\"step\"><span class=\"step-number\">7.</span> Compare: 1.9458, 1.940, 2.0115, 2.0296.</div>\n<div class=\"step\"><span class=\"step-number\">8.</span> Lowest is 1.940.</div>\n<div class=\"step\"><span class=\"step-number\">9.</span> Corresponds to 25L for $48.50.</div>\n<div class=\"step\"><span class=\"step-number\">10.</span> Correct: 25L for $48.50.</div>",
       "qNum": 5
@@ -828,7 +828,7 @@
         "5/12"
       ],
       "answer": 3,
-      "image": "/diagrams/mathematics-standard-2_2023_Q8_stimulus.jpg",
+      "image": "/diagrams/mathematics-standard-2_2023_Q8_stimulus.png",
       "solution": "<div class=\"step\"><span class=\"step-number\">1.</span> Die: faces 1–6, spinner: 1–4, independent.</div>\n<div class=\"step\"><span class=\"step-number\">2.</span> Score = die × spinner.</div>\n<div class=\"step\"><span class=\"step-number\">3.</span> Total possible outcomes: 6 × 4 = 24 (equally likely).</div>\n<div class=\"step\"><span class=\"step-number\">4.</span> Favourable: score ≥ 7.</div>\n<div class=\"step\"><span class=\"step-number\">5.</span> List: (3,3)=9, (4,2)=8, (4,3)=12, (5,2)=10, (5,3)=15, (6,2)=12, (6,3)=18, (6,4)=24, etc.</div>\n<div class=\"step\"><span class=\"step-number\">6.</span> Valid combinations: 10 outcomes (verified from past papers).</div>\n<div class=\"step\"><span class=\"step-number\">7.</span> Probability = 10/24.</div>\n<div class=\"step\"><span class=\"step-number\">8.</span> Simplify: divide numerator and denominator by 2 → 5/12.</div>\n<div class=\"step\"><span class=\"step-number\">9.</span> Cannot simplify further.</div>\n<div class=\"step\"><span class=\"step-number\">10.</span> Correct: 5/12.</div>",
       "qNum": 8
     },
@@ -885,7 +885,7 @@
         "12.5 cm"
       ],
       "answer": 1,
-      "image": "/diagrams/mathematics-standard-2_2023_Q12_stimulus.jpg",
+      "image": "/diagrams/mathematics-standard-2_2023_Q12_stimulus.png",
       "solution": "<div class=\"step\"><span class=\"step-number\">1.</span> Cross-section is circle radius r = 12.5 cm.</div>\n<div class=\"step\"><span class=\"step-number\">2.</span> Water forms a chord of width 20 cm (the surface).</div>\n<div class=\"step\"><span class=\"step-number\">3.</span> Half the chord length = 10 cm.</div>\n<div class=\"step\"><span class=\"step-number\">4.</span> Let h = depth of water from bottom of pipe.</div>\n<div class=\"step\"><span class=\"step-number\">5.</span> Distance from centre to chord = r − h = 12.5 − h.</div>\n<div class=\"step\"><span class=\"step-number\">6.</span> By Pythagoras: 10² + (12.5 − h)² = 12.5².</div>\n<div class=\"step\"><span class=\"step-number\">7.</span> 100 + (12.5 − h)² = 156.25.</div>\n<div class=\"step\"><span class=\"step-number\">8.</span> (12.5 − h)² = 56.25 → 12.5 − h = 7.5 → h = 5.0.</div>\n<div class=\"step\"><span class=\"step-number\">9.</span> (h = 20 is rejected as it exceeds the diameter.)</div>\n<div class=\"step\"><span class=\"step-number\">10.</span> Depth of water = 5.0 cm.</div>",
       "qNum": 12
     },
@@ -914,7 +914,7 @@
         "The maximum flow is 30 or more."
       ],
       "answer": 2,
-      "image": "/diagrams/mathematics-standard-2_2023_Q14_stimulus.jpg",
+      "image": "/diagrams/mathematics-standard-2_2023_Q14_stimulus.png",
       "solution": "<div class=\"step\"><span class=\"step-number\">1.</span> Max-flow min-cut theorem.</div>\n<div class=\"step\"><span class=\"step-number\">2.</span> Maximum flow ≤ capacity of any cut.</div>\n<div class=\"step\"><span class=\"step-number\">3.</span> A cut with capacity 30 exists.</div>\n<div class=\"step\"><span class=\"step-number\">4.</span> Therefore, max flow ≤ 30.</div>\n<div class=\"step\"><span class=\"step-number\">5.</span> There may be a flow of 30 achieving it.</div>\n<div class=\"step\"><span class=\"step-number\">6.</span> But cannot exceed cut capacity.</div>\n<div class=\"step\"><span class=\"step-number\">7.</span> So max flow is at most 30.</div>\n<div class=\"step\"><span class=\"step-number\">8.</span> Often equal to min cut.</div>\n<div class=\"step\"><span class=\"step-number\">9.</span> Statement: max flow is 30 or less (true), but option is \"30 or more\" for lower bound.</div>\n<div class=\"step\"><span class=\"step-number\">10.</span> Correct: Max flow is 30 or more (if achievable, but cut gives lower bound? Wait, cut gives upper bound; standard is max flow ≤ cut).</div>",
       "qNum": 14
     },
@@ -957,7 +957,7 @@
         "<em>y</em> = −2<em>x</em> − 3"
       ],
       "answer": 2,
-      "image": "/diagrams/mathematics-standard-2_2024_Q2_stimulus.jpg",
+      "image": "/diagrams/mathematics-standard-2_2024_Q2_stimulus.png",
       "solution": "<div class=\"step\"><span class=\"step-number\">1.</span> Graph is a straight line (linear function).</div>\n<div class=\"step\"><span class=\"step-number\">2.</span> Passes through y-intercept (0,3).</div>\n<div class=\"step\"><span class=\"step-number\">3.</span> Constant term = +3.</div>\n<div class=\"step\"><span class=\"step-number\">4.</span> Slope is negative (falls left to right).</div>\n<div class=\"step\"><span class=\"step-number\">5.</span> Coefficient of x must be negative.</div>\n<div class=\"step\"><span class=\"step-number\">6.</span> Eliminate options with positive slope (first two).</div>\n<div class=\"step\"><span class=\"step-number\">7.</span> Between −2x + 3 and −2x − 3.</div>\n<div class=\"step\"><span class=\"step-number\">8.</span> y-intercept +3 eliminates −3.</div>\n<div class=\"step\"><span class=\"step-number\">9.</span> Matches visible slope magnitude (approx −2).</div>\n<div class=\"step\"><span class=\"step-number\">10.</span> Correct: y = −2x + 3.</div>",
       "qNum": 2
     },
@@ -986,7 +986,7 @@
         "5"
       ],
       "answer": 1,
-      "image": "/diagrams/mathematics-standard-2_2024_Q4_stimulus.jpg",
+      "image": "/diagrams/mathematics-standard-2_2024_Q4_stimulus.png",
       "solution": "<div class=\"step\"><span class=\"step-number\">1.</span> Each region is a vertex; each shared border is an edge.</div>\n<div class=\"step\"><span class=\"step-number\">2.</span> Identify every pair of regions that share a border.</div>\n<div class=\"step\"><span class=\"step-number\">3.</span> Forest – Swamp (1).</div>\n<div class=\"step\"><span class=\"step-number\">4.</span> Forest – Mountains (2).</div>\n<div class=\"step\"><span class=\"step-number\">5.</span> Swamp – Mountains (3).</div>\n<div class=\"step\"><span class=\"step-number\">6.</span> Swamp – Desert (4).</div>\n<div class=\"step\"><span class=\"step-number\">7.</span> Mountains – Desert (5).</div>\n<div class=\"step\"><span class=\"step-number\">8.</span> Mountains – Woods (6).</div>\n<div class=\"step\"><span class=\"step-number\">9.</span> Desert – Coast (7).</div>\n<div class=\"step\"><span class=\"step-number\">10.</span> Total edges = 7.</div>",
       "qNum": 4
     },
@@ -1001,7 +1001,7 @@
         "History"
       ],
       "answer": 0,
-      "image": "/diagrams/mathematics-standard-2_2024_Q5_stimulus.jpg",
+      "image": "/diagrams/mathematics-standard-2_2024_Q5_stimulus.png",
       "solution": "<div class=\"step\"><span class=\"step-number\">1.</span> Z-scores compare performance relative to class mean/SD.</div>\n<div class=\"step\"><span class=\"step-number\">2.</span> Higher z-score = further above mean.</div>\n<div class=\"step\"><span class=\"step-number\">3.</span> All positive: above mean in all subjects.</div>\n<div class=\"step\"><span class=\"step-number\">4.</span> English: 2.0.</div>\n<div class=\"step\"><span class=\"step-number\">5.</span> History: 1.44.</div>\n<div class=\"step\"><span class=\"step-number\">6.</span> Maths: 0.9.</div>\n<div class=\"step\"><span class=\"step-number\">7.</span> Science: 0.47.</div>\n<div class=\"step\"><span class=\"step-number\">8.</span> Highest z-score = best relative performance.</div>\n<div class=\"step\"><span class=\"step-number\">9.</span> 2.0 is highest.</div>\n<div class=\"step\"><span class=\"step-number\">10.</span> Correct: English.</div>",
       "qNum": 5
     },
@@ -1016,7 +1016,7 @@
         "20/sin 40°"
       ],
       "answer": 0,
-      "image": "/diagrams/mathematics-standard-2_2024_Q6_stimulus.jpg",
+      "image": "/diagrams/mathematics-standard-2_2024_Q6_stimulus.png",
       "solution": "<div class=\"step\"><span class=\"step-number\">1.</span> The right angle is at the top-right corner.</div>\n<div class=\"step\"><span class=\"step-number\">2.</span> The 40° angle is at the bottom-left corner.</div>\n<div class=\"step\"><span class=\"step-number\">3.</span> The side opposite the right angle (hypotenuse) is the bottom side = 20.</div>\n<div class=\"step\"><span class=\"step-number\">4.</span> x is the left side, which is ADJACENT to the 40° angle.</div>\n<div class=\"step\"><span class=\"step-number\">5.</span> Use CAH: cos θ = adjacent / hypotenuse.</div>\n<div class=\"step\"><span class=\"step-number\">6.</span> cos 40° = x / 20.</div>\n<div class=\"step\"><span class=\"step-number\">7.</span> x = 20 cos 40°.</div>",
       "qNum": 6
     },
@@ -1143,12 +1143,12 @@
         "Histogram D"
       ],
       "answer": 3,
-      "image": "/diagrams/mathematics-standard-2_2024_Q15_stimulus.jpg",
+      "image": "/diagrams/mathematics-standard-2_2024_Q15_stimulus.png",
       "optionImages": [
-        "/diagrams/mathematics-standard-2_2024_Q15_A.jpg",
-        "/diagrams/mathematics-standard-2_2024_Q15_B.jpg",
-        "/diagrams/mathematics-standard-2_2024_Q15_C.jpg",
-        "/diagrams/mathematics-standard-2_2024_Q15_D.jpg"
+        "/diagrams/mathematics-standard-2_2024_Q15_A.png",
+        "/diagrams/mathematics-standard-2_2024_Q15_B.png",
+        "/diagrams/mathematics-standard-2_2024_Q15_C.png",
+        "/diagrams/mathematics-standard-2_2024_Q15_D.png"
       ],
       "solution": "<div class=\"step\"><span class=\"step-number\">1.</span> Box plot shows five-number summary.</div>\n<div class=\"step\"><span class=\"step-number\">2.</span> Quartiles, median, min/max visible.</div>\n<div class=\"step\"><span class=\"step-number\">3.</span> Histogram must reflect same quartile positions.</div>\n<div class=\"step\"><span class=\"step-number\">4.</span> Approximately 25% data in each quartile region.</div>\n<div class=\"step\"><span class=\"step-number\">5.</span> Check each histogram's distribution.</div>\n<div class=\"step\"><span class=\"step-number\">6.</span> Identify which has mismatched spread or symmetry.</div>\n<div class=\"step\"><span class=\"step-number\">7.</span> One histogram contradicts box plot shape.</div>\n<div class=\"step\"><span class=\"step-number\">8.</span> Common error: wrong skewness or outliers.</div>\n<div class=\"step\"><span class=\"step-number\">9.</span> Based on diagram, Histogram C impossible.</div>\n<div class=\"step\"><span class=\"step-number\">10.</span> Correct: Histogram C.</div>",
       "qNum": 15
@@ -1164,7 +1164,7 @@
         "D"
       ],
       "answer": 2,
-      "image": "/diagrams/mathematics-standard-2_2025_Q1_stimulus.jpg",
+      "image": "/diagrams/mathematics-standard-2_2025_Q1_stimulus.png",
       "solution": "<div class=\"step\"><span class=\"step-number\">1.</span> Degree of a vertex = number of edges connected to it.</div>\n<div class=\"step\"><span class=\"step-number\">2.</span> Examine the network diagram.</div>\n<div class=\"step\"><span class=\"step-number\">3.</span> Count edges incident on vertex A.</div>\n<div class=\"step\"><span class=\"step-number\">4.</span> Count edges incident on vertex B.</div>\n<div class=\"step\"><span class=\"step-number\">5.</span> Count edges incident on vertex C.</div>\n<div class=\"step\"><span class=\"step-number\">6.</span> Count edges incident on vertex D.</div>\n<div class=\"step\"><span class=\"step-number\">7.</span> Identify which has exactly 4 edges.</div>\n<div class=\"step\"><span class=\"step-number\">8.</span> No multiple edges or loops assumed.</div>\n<div class=\"step\"><span class=\"step-number\">9.</span> From diagram, vertex C has 4 connections.</div>\n<div class=\"step\"><span class=\"step-number\">10.</span> Correct: C.</div>",
       "qNum": 1
     },
@@ -1180,10 +1180,10 @@
       ],
       "answer": 1,
       "optionImages": [
-        "/diagrams/mathematics-standard-2_2025_Q2_A.jpg",
-        "/diagrams/mathematics-standard-2_2025_Q2_B.jpg",
-        "/diagrams/mathematics-standard-2_2025_Q2_C.jpg",
-        "/diagrams/mathematics-standard-2_2025_Q2_D.jpg"
+        "/diagrams/mathematics-standard-2_2025_Q2_A.png",
+        "/diagrams/mathematics-standard-2_2025_Q2_B.png",
+        "/diagrams/mathematics-standard-2_2025_Q2_C.png",
+        "/diagrams/mathematics-standard-2_2025_Q2_D.png"
       ],
       "solution": "<div class=\"step\"><span class=\"step-number\">1.</span> Equation y = 4^x is exponential form y = a × b^x.</div>\n<div class=\"step\"><span class=\"step-number\">2.</span> Here a = 1 (implied), base b = 4.</div>\n<div class=\"step\"><span class=\"step-number\">3.</span> Base > 1 → exponential growth.</div>\n<div class=\"step\"><span class=\"step-number\">4.</span> When x = 0, y = 4^0 = 1.</div>\n<div class=\"step\"><span class=\"step-number\">5.</span> y-intercept at 1.</div>\n<div class=\"step\"><span class=\"step-number\">6.</span> As x increases, y increases rapidly.</div>\n<div class=\"step\"><span class=\"step-number\">7.</span> As x decreases, y approaches 0.</div>\n<div class=\"step\"><span class=\"step-number\">8.</span> Not decay (base < 1).</div>\n<div class=\"step\"><span class=\"step-number\">9.</span> Not linear or parabolic.</div>\n<div class=\"step\"><span class=\"step-number\">10.</span> Correct: Exponential growth from 1.</div>",
       "qNum": 2
@@ -1199,7 +1199,7 @@
         "10"
       ],
       "answer": 0,
-      "image": "/diagrams/mathematics-standard-2_2025_Q3_stimulus.jpg",
+      "image": "/diagrams/mathematics-standard-2_2025_Q3_stimulus.png",
       "solution": "<div class=\"step\"><span class=\"step-number\">1.</span> Minimum spanning tree (MST) connects all vertices with minimum total weight.</div>\n<div class=\"step\"><span class=\"step-number\">2.</span> No cycles, uses Kruskal's or Prim's algorithm.</div>\n<div class=\"step\"><span class=\"step-number\">3.</span> Sort edges by increasing weight.</div>\n<div class=\"step\"><span class=\"step-number\">4.</span> Add smallest edges that don't form cycles.</div>\n<div class=\"step\"><span class=\"step-number\">5.</span> Continue until all towns connected.</div>\n<div class=\"step\"><span class=\"step-number\">6.</span> The last edge added is the largest in the MST.</div>\n<div class=\"step\"><span class=\"step-number\">7.</span> From diagram weights, largest included is 7.</div>\n<div class=\"step\"><span class=\"step-number\">8.</span> Higher weights avoided to keep total minimal.</div>\n<div class=\"step\"><span class=\"step-number\">9.</span> MST property confirmed.</div>\n<div class=\"step\"><span class=\"step-number\">10.</span> Correct: 7.</div>",
       "qNum": 3
     },
@@ -1270,12 +1270,12 @@
         "Mixed proportions"
       ],
       "answer": 1,
-      "image": "/diagrams/mathematics-standard-2_2025_Q8_stimulus.jpg",
+      "image": "/diagrams/mathematics-standard-2_2025_Q8_stimulus.png",
       "optionImages": [
-        "/diagrams/mathematics-standard-2_2025_Q8_A.jpg",
-        "/diagrams/mathematics-standard-2_2025_Q8_B.jpg",
-        "/diagrams/mathematics-standard-2_2025_Q8_C.jpg",
-        "/diagrams/mathematics-standard-2_2025_Q8_D.jpg"
+        "/diagrams/mathematics-standard-2_2025_Q8_A.png",
+        "/diagrams/mathematics-standard-2_2025_Q8_B.png",
+        "/diagrams/mathematics-standard-2_2025_Q8_C.png",
+        "/diagrams/mathematics-standard-2_2025_Q8_D.png"
       ],
       "solution": "<div class=\"step\"><span class=\"step-number\">1.</span> Histogram shows frequency of each color.</div>\n<div class=\"step\"><span class=\"step-number\">2.</span> Total spins = 100.</div>\n<div class=\"step\"><span class=\"step-number\">3.</span> Compare bar heights to expected.</div>\n<div class=\"step\"><span class=\"step-number\">4.</span> Equal quarters → ~25 each.</div>\n<div class=\"step\"><span class=\"step-number\">5.</span> Histogram shows one color much higher.</div>\n<div class=\"step\"><span class=\"step-number\">6.</span> Likely red section largest.</div>\n<div class=\"step\"><span class=\"step-number\">7.</span> Unequal probabilities.</div>\n<div class=\"step\"><span class=\"step-number\">8.</span> Not uniform or balanced.</div>\n<div class=\"step\"><span class=\"step-number\">9.</span> Matches \"mostly red\" spinner.</div>\n<div class=\"step\"><span class=\"step-number\">10.</span> Correct: Mostly red.</div>",
       "qNum": 8
@@ -6308,7 +6308,7 @@
       "qNum": "18",
       "category": "N2",
       "image": null,
-      "q": "The diagram represents a network with weighted edges.\n\n<img src=\"/diagrams/mathematics-standard-2_2020_Q18_stimulus.jpg\" alt=\"Diagram\" style=\"max-width:100%;margin:8px 0;\">\n\n(a) List the edges of a minimum spanning tree for this network and determine its total length. (3 marks)\n\n(b) The network is revised by adding another vertex K. Edges AK and CK have weights of 12 and 10 respectively. What is the length of the minimum spanning tree for this revised network? (1 mark)",
+      "q": "The diagram represents a network with weighted edges.\n\n<img src=\"/diagrams/mathematics-standard-2_2020_Q18_stimulus.png\" alt=\"Diagram\" style=\"max-width:100%;margin:8px 0;\">\n\n(a) List the edges of a minimum spanning tree for this network and determine its total length. (3 marks)\n\n(b) The network is revised by adding another vertex K. Edges AK and CK have weights of 12 and 10 respectively. What is the length of the minimum spanning tree for this revised network? (1 mark)",
       "answer": "(a) MST edges (Kruskal algorithm - select cheapest edges without cycles):\nGH=1, AB=2, BE=2, CF=2, DE=2, FG=2, BC=3\nTotal length = 1+2+2+2+2+2+3 = 14\n\n(b) CK=10 is cheaper than AK=12, so K connects via CK.\nNew MST length = 14 + 10 = 24",
       "keywords": [
         "14",
@@ -6328,7 +6328,7 @@
       "qNum": "19",
       "category": "A4",
       "image": null,
-      "q": "A fence is to be built around the outside of a rectangular paddock. An internal fence is also to be built. The side lengths of the paddock are <em>x</em> metres and <em>y</em> metres. A total of 900 metres of fencing is to be used, so 3<em>x</em> + 2<em>y</em> = 900. The area <em>A</em> (m²) of the rectangular paddock is given by <em>A</em> = 450<em>x</em> − 1.5<em>x</em>². The graph of this equation is shown.\n\n<img src=\"/diagrams/mathematics-standard-2_2020_Q19_stimulus.jpg\" alt=\"Diagram\" style=\"max-width:100%;margin:8px 0;\">\n\n(a) If the area of the paddock is 30 000 m², what is the largest possible value of <em>x</em>? (1 mark)\n\n(b) Find <em>x</em> and <em>y</em> so that the area is as large as possible. (2 marks)\n\n(c) Using your values from part (b), find the largest possible area. (1 mark)",
+      "q": "A fence is to be built around the outside of a rectangular paddock. An internal fence is also to be built. The side lengths of the paddock are <em>x</em> metres and <em>y</em> metres. A total of 900 metres of fencing is to be used, so 3<em>x</em> + 2<em>y</em> = 900. The area <em>A</em> (m²) of the rectangular paddock is given by <em>A</em> = 450<em>x</em> − 1.5<em>x</em>². The graph of this equation is shown.\n\n<img src=\"/diagrams/mathematics-standard-2_2020_Q19_stimulus.png\" alt=\"Diagram\" style=\"max-width:100%;margin:8px 0;\">\n\n(a) If the area of the paddock is 30 000 m², what is the largest possible value of <em>x</em>? (1 mark)\n\n(b) Find <em>x</em> and <em>y</em> so that the area is as large as possible. (2 marks)\n\n(c) Using your values from part (b), find the largest possible area. (1 mark)",
       "answer": "(a) 450x - 1.5x^2 = 30000\nx^2 - 300x + 20000 = 0, (x-100)(x-200) = 0\nLargest x = 200\n\n(b) Maximum at vertex: x = 450 / (2 x 1.5) = 150\n3(150) + 2y = 900, y = 225\n\n(c) A = 150 x 225 = 33 750 m2",
       "keywords": [
         "200",
@@ -6370,7 +6370,7 @@
       "qNum": "26",
       "category": "N3",
       "image": null,
-      "q": "The preparation of a meal requires the completion of all ten activities A to J. The network diagram shows the activities and their completion times in minutes.\n\n<img src=\"/diagrams/mathematics-standard-2_2020_Q26_stimulus.jpg\" alt=\"Diagram\" style=\"max-width:100%;margin:8px 0;\">\n\n(a) What is the minimum time needed to prepare the meal? (1 mark)\n\n(b) List the activities which make up the critical path for this network. (2 marks)\n\n(c) Complete the table below, showing the earliest start time and float time for activities A and G. (2 marks)\n\n<div style=\"overflow-x:auto;-webkit-overflow-scrolling:touch;\"><table style=\"font-size:0.68em;border-collapse:collapse;margin:8px 0;\"><thead><tr><th style=\"border:1px solid #ccc;padding:4px 10px;\">Activity</th><th style=\"border:1px solid #ccc;padding:4px 10px;\">Earliest start time (minutes)</th><th style=\"border:1px solid #ccc;padding:4px 10px;\">Float time (minutes)</th></tr></thead><tbody><tr><td style=\"border:1px solid #ccc;padding:4px 10px;\">A</td><td style=\"border:1px solid #ccc;padding:4px 10px;\"></td><td style=\"border:1px solid #ccc;padding:4px 10px;\"></td></tr><tr><td style=\"border:1px solid #ccc;padding:4px 10px;\">G</td><td style=\"border:1px solid #ccc;padding:4px 10px;\"></td><td style=\"border:1px solid #ccc;padding:4px 10px;\"></td></tr></tbody></table></div></div>",
+      "q": "The preparation of a meal requires the completion of all ten activities A to J. The network diagram shows the activities and their completion times in minutes.\n\n<img src=\"/diagrams/mathematics-standard-2_2020_Q26_stimulus.png\" alt=\"Diagram\" style=\"max-width:100%;margin:8px 0;\">\n\n(a) What is the minimum time needed to prepare the meal? (1 mark)\n\n(b) List the activities which make up the critical path for this network. (2 marks)\n\n(c) Complete the table below, showing the earliest start time and float time for activities A and G. (2 marks)\n\n<div style=\"overflow-x:auto;-webkit-overflow-scrolling:touch;\"><table style=\"font-size:0.68em;border-collapse:collapse;margin:8px 0;\"><thead><tr><th style=\"border:1px solid #ccc;padding:4px 10px;\">Activity</th><th style=\"border:1px solid #ccc;padding:4px 10px;\">Earliest start time (minutes)</th><th style=\"border:1px solid #ccc;padding:4px 10px;\">Float time (minutes)</th></tr></thead><tbody><tr><td style=\"border:1px solid #ccc;padding:4px 10px;\">A</td><td style=\"border:1px solid #ccc;padding:4px 10px;\"></td><td style=\"border:1px solid #ccc;padding:4px 10px;\"></td></tr><tr><td style=\"border:1px solid #ccc;padding:4px 10px;\">G</td><td style=\"border:1px solid #ccc;padding:4px 10px;\"></td><td style=\"border:1px solid #ccc;padding:4px 10px;\"></td></tr></tbody></table></div></div>",
       "answer": "(a) Minimum time = 46 minutes\n\n(b) Critical path: C - D - E - F - H - I\n(8 + 12 + 6 + 10 + 8 + 2 = 46)\n\n(c) Activity A: EST = 0, Float = 12\nActivity G: EST = 20, Float = 15",
       "keywords": [
         "46",
@@ -6397,7 +6397,7 @@
       "qNum": "27",
       "category": "M7",
       "image": null,
-      "q": "The shaded region on the diagram represents a garden. The scale is 1 cm = 5 m.\n\n<img src=\"/diagrams/mathematics-standard-2_2020_Q27_stimulus.jpg\" alt=\"Diagram\" style=\"max-width:100%;margin:8px 0;\">\n\n(a) Use two applications of the trapezoidal rule to calculate the approximate area of the garden. (3 marks)\n\n(b) Should the answer to part (a) be more than, equal to, or less than the actual area? Refer to the diagram and explain. (2 marks)",
+      "q": "The shaded region on the diagram represents a garden. The scale is 1 cm = 5 m.\n\n<img src=\"/diagrams/mathematics-standard-2_2020_Q27_stimulus.png\" alt=\"Diagram\" style=\"max-width:100%;margin:8px 0;\">\n\n(a) Use two applications of the trapezoidal rule to calculate the approximate area of the garden. (3 marks)\n\n(b) Should the answer to part (a) be more than, equal to, or less than the actual area? Refer to the diagram and explain. (2 marks)",
       "answer": "(a) Each strip h = 4 cm = 20 m. Three parallel sides: 25 m, 20 m, 20 m.\nArea = (20/2)(25 + 20) + (20/2)(20 + 20)\n     = 10 x 45 + 10 x 40\n     = 450 + 400 = 850 m2\n\n(b) MORE than the actual area.\nThe curved lower boundary is concave, so each trapezium includes area outside the garden.",
       "keywords": [
         "850",
@@ -6417,7 +6417,7 @@
       "qNum": "30",
       "category": "N2",
       "image": null,
-      "q": "The network diagram shows a series of water channels and ponds in a garden. The vertices A, B, C, D, E and F represent six ponds. The edges represent the water channels which connect the ponds. The numbers on the edges indicate the maximum capacity of the channels.\n\n<img src=\"/diagrams/mathematics-standard-2_2020_Q30_stimulus.jpg\" alt=\"Diagram\" style=\"max-width:100%;margin:8px 0;\">\n\n(a) Determine the maximum flow of the network. (2 marks)\n\n(b) A cut is added to the network, as shown.\n\n<img src=\"/diagrams/mathematics-standard-2_2020_Q30b_stimulus.jpg\" alt=\"Diagram\" style=\"max-width:100%;margin:8px 0;\">\n\nIs the cut shown a minimum cut? Give a reason for your answer. (1 mark)",
+      "q": "The network diagram shows a series of water channels and ponds in a garden. The vertices A, B, C, D, E and F represent six ponds. The edges represent the water channels which connect the ponds. The numbers on the edges indicate the maximum capacity of the channels.\n\n<img src=\"/diagrams/mathematics-standard-2_2020_Q30_stimulus.png\" alt=\"Diagram\" style=\"max-width:100%;margin:8px 0;\">\n\n(a) Determine the maximum flow of the network. (2 marks)\n\n(b) A cut is added to the network, as shown.\n\n<img src=\"/diagrams/mathematics-standard-2_2020_Q30b_stimulus.png\" alt=\"Diagram\" style=\"max-width:100%;margin:8px 0;\">\n\nIs the cut shown a minimum cut? Give a reason for your answer. (1 mark)",
       "answer": "(a) Minimum cut passes through BD(50), BE(75), EC(100), CF(50).\nMaximum flow = 50 + 75 + 100 + 50 = 275\n\n(b) Weight of shown cut = 200 + 75 + 50 = 325.\nNot a minimum cut because 325 does not equal the maximum flow of 275.",
       "keywords": [
         "275",
@@ -6438,7 +6438,7 @@
       "qNum": "36",
       "category": "S4",
       "image": null,
-      "q": "A cricket is an insect. The male cricket produces a chirping sound. A scientist wants to explore the relationship between the temperature in degrees Celsius and the number of cricket chirps heard in a 15-second time interval. Once a day for 20 days, the scientist collects data. Based on the 20 data points, the scientist provides the information below.\n\nA box-plot of the temperature data is shown.\n\n<img src=\"/diagrams/mathematics-standard-2_2020_Q36_stimulus.jpg\" alt=\"Diagram\" style=\"max-width:100%;margin:8px 0;\">\n\nThe mean temperature in the dataset is 0.525°C below the median temperature in the dataset. A total of 684 chirps was counted when collecting the 20 data points. The scientist fits a least-squares regression line using the data (<em>x</em>, <em>y</em>), where <em>x</em> is the temperature (°C) and <em>y</em> is the number of chirps per 15 seconds. The equation is <em>y</em> = −10.6063 + <em>bx</em>, where <em>b</em> is the slope. The line passes through the point (<em>x̄</em>, <em>ȳ</em>).\n\nCalculate the expected number of chirps in 15 seconds when the temperature is 19°C. Give your answer to the nearest whole number.",
+      "q": "A cricket is an insect. The male cricket produces a chirping sound. A scientist wants to explore the relationship between the temperature in degrees Celsius and the number of cricket chirps heard in a 15-second time interval. Once a day for 20 days, the scientist collects data. Based on the 20 data points, the scientist provides the information below.\n\nA box-plot of the temperature data is shown.\n\n<img src=\"/diagrams/mathematics-standard-2_2020_Q36_stimulus.png\" alt=\"Diagram\" style=\"max-width:100%;margin:8px 0;\">\n\nThe mean temperature in the dataset is 0.525°C below the median temperature in the dataset. A total of 684 chirps was counted when collecting the 20 data points. The scientist fits a least-squares regression line using the data (<em>x</em>, <em>y</em>), where <em>x</em> is the temperature (°C) and <em>y</em> is the number of chirps per 15 seconds. The equation is <em>y</em> = −10.6063 + <em>bx</em>, where <em>b</em> is the slope. The line passes through the point (<em>x̄</em>, <em>ȳ</em>).\n\nCalculate the expected number of chirps in 15 seconds when the temperature is 19°C. Give your answer to the nearest whole number.",
       "answer": "Step 1: x-bar = 22 - 0.525 = 21.475\nStep 2: y-bar = 684 / 20 = 34.2\nStep 3: Substitute into regression line:\n34.2 = -10.6063 + b(21.475)\nb = 44.8063 / 21.475 = 2.0864\nStep 4: At x = 19:\ny = -10.6063 + 2.0864 x 19 = 29.03, rounded to 29 chirps",
       "keywords": [
         "21.475",
@@ -7355,7 +7355,7 @@
       "qNum": "20",
       "category": "A4",
       "image": null,
-      "q": "The graph of a quadratic function represented by the equation <em>h</em> = <em>t</em>² − 8<em>t</em> + 12 is shown.\n\n<img src=\"/diagrams/mathematics-standard-2_2025_Q20_stimulus.jpg\" alt=\"Diagram\" style=\"max-width:100%;margin:8px 0;\">\n\n(a) Find the values of <em>t</em> and <em>h</em> at the turning point of the graph. (2 marks)\n\n(b) The graph shows <em>h</em> = 12 when <em>t</em> = 0. What is the other value of <em>t</em> for which <em>h</em> = 12? (1 mark)",
+      "q": "The graph of a quadratic function represented by the equation <em>h</em> = <em>t</em>² − 8<em>t</em> + 12 is shown.\n\n<img src=\"/diagrams/mathematics-standard-2_2025_Q20_stimulus.png\" alt=\"Diagram\" style=\"max-width:100%;margin:8px 0;\">\n\n(a) Find the values of <em>t</em> and <em>h</em> at the turning point of the graph. (2 marks)\n\n(b) The graph shows <em>h</em> = 12 when <em>t</em> = 0. What is the other value of <em>t</em> for which <em>h</em> = 12? (1 mark)",
       "answer": "(a) Turning point:\nt = −(−8)/(2 × 1) = 8/2 = 4\nh = 4² − 8(4) + 12 = 16 − 32 + 12 = −4\nTurning point: (4, −4)\n\n(b) Set h = 12:\nt² − 8t + 12 = 12\nt² − 8t = 0\nt(t − 8) = 0\nt = 0 or t = 8\nThe other value is t = 8.",
       "keywords": [
         "4",
@@ -7437,7 +7437,7 @@
       "qNum": "25",
       "category": "S4",
       "image": null,
-      "q": "In a research study, participants were asked to record the number of minutes they spent watching television and the number of minutes they spent exercising each day over a period of 3 months. The averages for each participant were recorded and graphed.\n\n<img src=\"/diagrams/mathematics-standard-2_2025_Q25_stimulus.jpg\" alt=\"Diagram\" style=\"max-width:100%;margin:8px 0;\">\n\nThe equation of the least-squares regression line for this dataset is <em>y</em> = 64.3 − 0.7<em>x</em>.\n\n(a) Describe the bivariate dataset in terms of its form and direction. (2 marks)\n\n(b) Interpret the values of the slope and <em>y</em>-intercept of the regression line in the context of this dataset. (2 marks)\n\n(c) Jo spends an average of 42 minutes per day watching television. Use the equation of the regression line to determine how many minutes on average Jo is expected to exercise each day. (1 mark)\n\n(d) Explain why it is NOT appropriate to extrapolate the regression line to predict the average number of minutes of exercise per day for someone who watches an average of 2 hours of television per day. (1 mark)",
+      "q": "In a research study, participants were asked to record the number of minutes they spent watching television and the number of minutes they spent exercising each day over a period of 3 months. The averages for each participant were recorded and graphed.\n\n<img src=\"/diagrams/mathematics-standard-2_2025_Q25_stimulus.png\" alt=\"Diagram\" style=\"max-width:100%;margin:8px 0;\">\n\nThe equation of the least-squares regression line for this dataset is <em>y</em> = 64.3 − 0.7<em>x</em>.\n\n(a) Describe the bivariate dataset in terms of its form and direction. (2 marks)\n\n(b) Interpret the values of the slope and <em>y</em>-intercept of the regression line in the context of this dataset. (2 marks)\n\n(c) Jo spends an average of 42 minutes per day watching television. Use the equation of the regression line to determine how many minutes on average Jo is expected to exercise each day. (1 mark)\n\n(d) Explain why it is NOT appropriate to extrapolate the regression line to predict the average number of minutes of exercise per day for someone who watches an average of 2 hours of television per day. (1 mark)",
       "answer": "(a) Form: linear (the data points follow an approximately straight-line pattern)\nDirection: negative (as TV time increases, exercise time decreases)\n\n(b) Slope = −0.7: for each additional minute of TV watched per day, the average exercise time decreases by 0.7 minutes per day.\ny-intercept = 64.3: a person who watches 0 minutes of TV per day is predicted to exercise 64.3 minutes per day.\n\n(c) y = 64.3 − 0.7 × 42 = 64.3 − 29.4 = **34.9 minutes per day**\n\n(d) 2 hours = 120 minutes, which is well beyond the range of the data (maximum ~60 minutes). Extrapolating outside the data range is unreliable as the linear relationship may not hold.",
       "keywords": [
         "linear",
@@ -7584,7 +7584,7 @@
       "qNum": "16",
       "category": "M6",
       "image": null,
-      "q": "Consider the triangle shown.\n\n<img src=\"/diagrams/mathematics-standard-2_2020_Q16_stimulus.jpg\" alt=\"Diagram\" style=\"max-width:100%;margin:8px 0;\">\n\n(a) Find the value of <em>q</em>, correct to the nearest degree. (2 marks)\n\n(b) Find the value of <em>x</em>, correct to one decimal place. (2 marks)",
+      "q": "Consider the triangle shown.\n\n<img src=\"/diagrams/mathematics-standard-2_2020_Q16_stimulus.png\" alt=\"Diagram\" style=\"max-width:100%;margin:8px 0;\">\n\n(a) Find the value of <em>q</em>, correct to the nearest degree. (2 marks)\n\n(b) Find the value of <em>x</em>, correct to one decimal place. (2 marks)",
       "answer": "(a) tan θ = opposite/adjacent = 8/10\nθ = tan⁻¹(0.8) = 38.66...° ≈ 39°\n\n(b) x² = 10² + 8² = 100 + 64 = 164\nx = √164 = 12.8 (one decimal place)",
       "keywords": [
         "39",
@@ -7605,7 +7605,7 @@
       "qNum": "25",
       "category": "M1",
       "image": null,
-      "q": "A composite solid consists of a triangular prism which fits exactly on top of a cube, as shown.\n\n<img src=\"/diagrams/mathematics-standard-2_2020_Q25_stimulus.jpg\" alt=\"Diagram\" style=\"max-width:100%;margin:8px 0;\">\n\nFind the surface area of the composite solid. (3 marks)",
+      "q": "A composite solid consists of a triangular prism which fits exactly on top of a cube, as shown.\n\n<img src=\"/diagrams/mathematics-standard-2_2020_Q25_stimulus.png\" alt=\"Diagram\" style=\"max-width:100%;margin:8px 0;\">\n\nFind the surface area of the composite solid. (3 marks)",
       "answer": "Height of prism = 11 − 8 = 3 cm\n5 square faces of cube = 8² × 5 = 320 cm²\n2 triangular faces of prism = (1/2 × 8 × 3) × 2 = 24 cm²\n2 rectangular sloped faces = 5 × 8 × 2 = 80 cm²\nTotal surface area = 320 + 24 + 80 = 424 cm²",
       "acceptableAnswers": [
         "424",
@@ -7624,7 +7624,7 @@
       "qNum": "31",
       "category": "M6",
       "image": null,
-      "q": "Mr Ali, Ms Brown and a group of students were camping at the site located at P. Mr Ali walked with some of the students on a bearing of 035° for 7 km to location A. Ms Brown, with the rest of the students, walked on a bearing of 100° for 9 km to location B.\n\n<img src=\"/diagrams/mathematics-standard-2_2020_Q31_stimulus.jpg\" alt=\"Diagram\" style=\"max-width:100%;margin:8px 0;\">\n\n(a) Show that the angle APB is 65°. (1 mark)\n\n(b) Find the distance AB. (2 marks)\n\n(c) Find the bearing of Ms Brown's group from Mr Ali's group. Give your answer to the nearest degree. (2 marks)",
+      "q": "Mr Ali, Ms Brown and a group of students were camping at the site located at P. Mr Ali walked with some of the students on a bearing of 035° for 7 km to location A. Ms Brown, with the rest of the students, walked on a bearing of 100° for 9 km to location B.\n\n<img src=\"/diagrams/mathematics-standard-2_2020_Q31_stimulus.png\" alt=\"Diagram\" style=\"max-width:100%;margin:8px 0;\">\n\n(a) Show that the angle APB is 65°. (1 mark)\n\n(b) Find the distance AB. (2 marks)\n\n(c) Find the bearing of Ms Brown's group from Mr Ali's group. Give your answer to the nearest degree. (2 marks)",
       "answer": "(a) Angle APB = 100° − 35° = 65° ✓\n\n(b) Using the cosine rule:\nAB² = 7² + 9² − 2 × 7 × 9 × cos 65°\n= 49 + 81 − 126 × 0.4226...\n= 130 − 53.25... = 76.75...\nAB = 8.76 km (2 d.p.)\n\n(c) Using the sine rule to find angle PAB:\nsin(PAB)/9 = sin 65°/8.76\nsin(PAB) = 9 × 0.9063.../8.76 = 0.9310...\nangle PAB = 68.6...° ≈ 69°\n\nBearing of B from A = 180° − (69° − 35°) = 146°",
       "keywords": [
         "65",
@@ -7645,7 +7645,7 @@
       "qNum": "32",
       "category": "M6",
       "image": null,
-      "q": "The diagram shows a regular decagon (ten-sided shape with all sides equal and all interior angles equal). The decagon has centre O.\n\n<img src=\"/diagrams/mathematics-standard-2_2020_Q32_stimulus.jpg\" alt=\"Diagram\" style=\"max-width:100%;margin:8px 0;\">\n\nThe perimeter of the shape is 80 cm. By considering triangle OAB, calculate the area of the ten-sided shape. Give your answer in square centimetres correct to one decimal place. (4 marks)",
+      "q": "The diagram shows a regular decagon (ten-sided shape with all sides equal and all interior angles equal). The decagon has centre O.\n\n<img src=\"/diagrams/mathematics-standard-2_2020_Q32_stimulus.png\" alt=\"Diagram\" style=\"max-width:100%;margin:8px 0;\">\n\nThe perimeter of the shape is 80 cm. By considering triangle OAB, calculate the area of the ten-sided shape. Give your answer in square centimetres correct to one decimal place. (4 marks)",
       "answer": "AB = 80 ÷ 10 = 8 cm\nAngle AOB = 360° ÷ 10 = 36°\nAngle OAB = (180° − 36°) ÷ 2 = 72°\n\nUsing the sine rule in triangle OAB:\nOA/sin(∠OBA) = AB/sin(∠AOB)\nOA = 8 × sin 72°/sin 36° = 8 × 0.9511/0.5878 = 12.944 cm\n\nArea of triangle OAB = (1/2) × OA² × sin(∠AOB) = (1/2) × 12.944² × sin 36°\n= (1/2) × 167.55 × 0.5878 = 49.24 cm²\n\nArea of decagon = 10 × 49.24 = 492.4 cm²",
       "acceptableAnswers": [
         "492.4",
@@ -7664,7 +7664,7 @@
       "qNum": "33",
       "category": "A4",
       "image": null,
-      "q": "The graph shows the number of bacteria, <em>y</em>, at time <em>n</em> minutes. Initially (when <em>n</em> = 0) the number of bacteria is 1000.\n\n<img src=\"/diagrams/mathematics-standard-2_2020_Q33_stimulus.jpg\" alt=\"Diagram\" style=\"max-width:100%;margin:8px 0;\">\n\n(a) Find the number of bacteria at 40 minutes. (1 mark)\n\n(b) Use the guess and check method to find upper and lower estimates for <em>b</em>, correct to 2 decimal places, where the estimates differ by 0.01. (2 marks)",
+      "q": "The graph shows the number of bacteria, <em>y</em>, at time <em>n</em> minutes. Initially (when <em>n</em> = 0) the number of bacteria is 1000.\n\n<img src=\"/diagrams/mathematics-standard-2_2020_Q33_stimulus.png\" alt=\"Diagram\" style=\"max-width:100%;margin:8px 0;\">\n\n(a) Find the number of bacteria at 40 minutes. (1 mark)\n\n(b) Use the guess and check method to find upper and lower estimates for <em>b</em>, correct to 2 decimal places, where the estimates differ by 0.01. (2 marks)",
       "answer": "(a) Reading from the graph at n = 40: y = 4000 bacteria\n\n(b) We need y = 4000 when n = 40 with A = 1000:\n4000 = 1000 × b⁴⁰\nb⁴⁰ = 4\n\nTry b = 1.03: 1000 × (1.03)⁴⁰ = 1000 × 3.262 = 3262 (too low)\nTry b = 1.04: 1000 × (1.04)⁴⁰ = 1000 × 4.801 = 4801 (too high)\n\nLower estimate = 1.03, upper estimate = 1.04",
       "keywords": [
         "4000",
@@ -7685,7 +7685,7 @@
       "qNum": "16",
       "category": "M1",
       "image": null,
-      "q": "The volume, <em>V</em>, of a sphere is given by the formula <em>V</em> = <sup>4</sup>&frasl;<sub>3</sub>π<em>r</em>³, where <em>r</em> is the radius of the sphere. A tank consists of the bottom half of a sphere of radius 2 metres, as shown.\n\n<img src=\"/diagrams/mathematics-standard-2_2021_Q16_stimulus.jpg\" alt=\"Diagram\" style=\"max-width:100%;margin:8px 0;\">\n\nFind the volume of the tank in cubic metres, correct to one decimal place. (2 marks)",
+      "q": "The volume, <em>V</em>, of a sphere is given by the formula <em>V</em> = <sup>4</sup>&frasl;<sub>3</sub>π<em>r</em>³, where <em>r</em> is the radius of the sphere. A tank consists of the bottom half of a sphere of radius 2 metres, as shown.\n\n<img src=\"/diagrams/mathematics-standard-2_2021_Q16_stimulus.png\" alt=\"Diagram\" style=\"max-width:100%;margin:8px 0;\">\n\nFind the volume of the tank in cubic metres, correct to one decimal place. (2 marks)",
       "answer": "Volume of full sphere = (4/3) × π × 2³ = (4/3) × π × 8 = 32π/3\nVolume of tank (half sphere) = (1/2) × 32π/3 = 16π/3 = 16.755... ≈ 16.8 m³",
       "acceptableAnswers": [
         "16.8",
@@ -7704,7 +7704,7 @@
       "qNum": "23",
       "category": "N2",
       "image": null,
-      "q": "The network diagram shows the travel times in minutes along roads connecting a number of different towns.\n\n<img src=\"/diagrams/mathematics-standard-2_2021_Q23_stimulus.jpg\" alt=\"Diagram\" style=\"max-width:100%;margin:8px 0;\">\n\n(a) List the edges of a minimum spanning tree for this network and find its total length. (3 marks)\n\n(b) Find the shortest travel time from Queentown to Fernville along the minimum spanning tree. (1 mark)",
+      "q": "The network diagram shows the travel times in minutes along roads connecting a number of different towns.\n\n<img src=\"/diagrams/mathematics-standard-2_2021_Q23_stimulus.png\" alt=\"Diagram\" style=\"max-width:100%;margin:8px 0;\">\n\n(a) List the edges of a minimum spanning tree for this network and find its total length. (3 marks)\n\n(b) Find the shortest travel time from Queentown to Fernville along the minimum spanning tree. (1 mark)",
       "answer": "(a) Using Kruskal's algorithm (select cheapest edges without cycles):\nMinertown-Walltown=10, Walltown-Parktown=15, Kingsville-Underwood=20, Walltown-Fernville=20, Queentown-Kingsville=30\nTotal length = 10+15+20+20+30+... \nMinimum spanning tree length = 160 minutes\n\n(b) Queentown → Kingsville → Minertown → Walltown → Fernville\n= 30 + 25 + 10 + 20 = 65 minutes\n\nOR shortest path via MST = 45 + 20 = 65 minutes",
       "keywords": [
         "160",
@@ -7724,7 +7724,7 @@
       "qNum": "24",
       "category": "A4",
       "image": null,
-      "q": "A population, <em>P</em>, is to be modelled using the function <em>P</em> = 2000(1.2)<sup><em>t</em></sup>, where <em>t</em> is the time in years.\n\n(a) What is the initial population? (1 mark)\n\n(b) Find the population after 5 years. (1 mark)\n\n(c) On the axes provided, draw the graph of the population against time for 0 ≤ <em>t</em> ≤ 5. Describe the key features of this graph. (2 marks)\n\n<img src=\"/diagrams/mathematics-standard-2_2021_Q24_stimulus.jpg\" alt=\"Diagram\" style=\"max-width:100%;margin:8px 0;\">",
+      "q": "A population, <em>P</em>, is to be modelled using the function <em>P</em> = 2000(1.2)<sup><em>t</em></sup>, where <em>t</em> is the time in years.\n\n(a) What is the initial population? (1 mark)\n\n(b) Find the population after 5 years. (1 mark)\n\n(c) On the axes provided, draw the graph of the population against time for 0 ≤ <em>t</em> ≤ 5. Describe the key features of this graph. (2 marks)\n\n<img src=\"/diagrams/mathematics-standard-2_2021_Q24_stimulus.png\" alt=\"Diagram\" style=\"max-width:100%;margin:8px 0;\">",
       "answer": "(a) When t = 0: P = 2000(1.2)^0 = 2000\n\n(b) When t = 5: P = 2000(1.2)^5 = 4977 (nearest integer)\n\n(c) The graph is an exponential growth curve.\nKey points: (0, 2000) and (5, 4977).\nThe graph starts at P = 2000 and increases at an increasing rate (concave up).",
       "keywords": [
         "2000",
@@ -7744,7 +7744,7 @@
       "qNum": "25",
       "category": "M1",
       "image": null,
-      "q": "A rectangular sportsground has been drawn to scale on a 1-cm grid as shown. The scale used is 1 : 3000.\n\n<img src=\"/diagrams/mathematics-standard-2_2021_Q25_stimulus.jpg\" alt=\"Diagram\" style=\"max-width:100%;margin:8px 0;\">\n\nKerry took 12 minutes to walk around the perimeter of this sportsground. What was Kerry's average speed in kilometres per hour? (4 marks)",
+      "q": "A rectangular sportsground has been drawn to scale on a 1-cm grid as shown. The scale used is 1 : 3000.\n\n<img src=\"/diagrams/mathematics-standard-2_2021_Q25_stimulus.png\" alt=\"Diagram\" style=\"max-width:100%;margin:8px 0;\">\n\nKerry took 12 minutes to walk around the perimeter of this sportsground. What was Kerry's average speed in kilometres per hour? (4 marks)",
       "answer": "Perimeter of diagram = 2 × (8 + 5) = 26 cm\n\nActual perimeter = 26 × 3000 cm = 78 000 cm = 780 m\n\nSpeed = 780/12 = 65 m/minute\n\n= (65 × 60)/1000 km/hour\n\n= 3.9 km/hour",
       "keywords": [
         "780",
@@ -7765,7 +7765,7 @@
       "qNum": "28",
       "category": "S4",
       "image": null,
-      "q": "A salesperson is interested in the relationship between the number of bottles of lemonade sold per day (<em>y</em>) and the number of hours of sunshine in the day (<em>x</em>). The diagram shows the dataset used in the investigation and the least-squares regression line.\n\n<img src=\"/diagrams/mathematics-standard-2_2021_Q28_stimulus.jpg\" alt=\"Diagram\" style=\"max-width:100%;margin:8px 0;\">\n\n(a) Find the equation of the least-squares regression line relating to the dataset. (2 marks)\n\n(b) Suppose a sixth data point was collected on a day which had 10 hours of sunshine. On that day 45 bottles of lemonade were sold. What would happen to the gradient found in part (a)? (1 mark)",
+      "q": "A salesperson is interested in the relationship between the number of bottles of lemonade sold per day (<em>y</em>) and the number of hours of sunshine in the day (<em>x</em>). The diagram shows the dataset used in the investigation and the least-squares regression line.\n\n<img src=\"/diagrams/mathematics-standard-2_2021_Q28_stimulus.png\" alt=\"Diagram\" style=\"max-width:100%;margin:8px 0;\">\n\n(a) Find the equation of the least-squares regression line relating to the dataset. (2 marks)\n\n(b) Suppose a sixth data point was collected on a day which had 10 hours of sunshine. On that day 45 bottles of lemonade were sold. What would happen to the gradient found in part (a)? (1 mark)",
       "answer": "(a) From the graph, the regression line passes through (0, 2) and (5, 18).\nGradient = (18 - 2)/(5 - 0) = 16/5 = 3.2\nEquation: y = 2 + 3.2x\n\n(b) The new point (10, 45) is above the current line.\nThe gradient would increase.",
       "keywords": [
         "3.2",
@@ -7786,7 +7786,7 @@
       "qNum": "32",
       "category": "M6",
       "image": null,
-      "q": "A right-angled triangle XYZ is cut out from a semicircle with centre O. The length of the diameter XZ is 16 cm and ∠YXZ = 30°, as shown on the diagram.\n\n<img src=\"/diagrams/mathematics-standard-2_2021_Q32_stimulus.jpg\" alt=\"Diagram\" style=\"max-width:100%;margin:8px 0;\">\n\n(a) Find the length of XY in centimetres, correct to two decimal places. (2 marks)\n\n(b) Hence, find the area of the shaded region (semicircle minus triangle) in cm², correct to one decimal place. (3 marks)",
+      "q": "A right-angled triangle XYZ is cut out from a semicircle with centre O. The length of the diameter XZ is 16 cm and ∠YXZ = 30°, as shown on the diagram.\n\n<img src=\"/diagrams/mathematics-standard-2_2021_Q32_stimulus.png\" alt=\"Diagram\" style=\"max-width:100%;margin:8px 0;\">\n\n(a) Find the length of XY in centimetres, correct to two decimal places. (2 marks)\n\n(b) Hence, find the area of the shaded region (semicircle minus triangle) in cm², correct to one decimal place. (3 marks)",
       "answer": "(a) cos 30° = XY/XZ = XY/16\nXY = 16 × cos 30° = 16 × (√3/2) = 8√3 = 13.86 cm\n\n(b) Area of semicircle = (1/2)π(8²) = 32π cm²\nYZ = XZ × sin 30° = 16 × 0.5 = 8 cm\nArea of triangle = (1/2) × XY × YZ × sin(∠XYZ) = (1/2) × 13.86 × 16 × sin 30°\n= (1/2) × 13.86 × 16 × 0.5 = 55.44 cm²\n\nShaded area = 32π − 55.44 = 100.53 − 55.44 = 45.1 cm²",
       "keywords": [
         "13.86",
@@ -7806,7 +7806,7 @@
       "qNum": "33",
       "category": "S4",
       "image": null,
-      "q": "For a sample of 17 inland towns in Australia, the height above sea level, <em>x</em> (metres), and the average maximum daily temperature, <em>y</em> (°C), were recorded. The graph shows the data as well as a regression line.\n\n<img src=\"/diagrams/mathematics-standard-2_2021_Q33_stimulus.jpg\" alt=\"Diagram\" style=\"max-width:100%;margin:8px 0;\">\n\nThe equation of the regression line is <em>y</em> = 29.2 − 0.00404<em>x</em>. The correlation coefficient is <em>r</em> = −0.494.\n\n(a)(i) By using the equation of the regression line, predict the average maximum daily temperature for a town that is 540 m above sea level. Give your answer correct to one decimal place. (1 mark)\n\n(a)(ii) The gradient of the regression line is −0.00404. Interpret the value of this gradient in the context of this question. (2 marks)\n\n(b) The graph below also shows the relationship between the latitude, <em>x</em> (degrees south), and the average maximum daily temperature, <em>y</em> (°C), for the same 17 towns. The regression line is <em>y</em> = 45.6 − 0.683<em>x</em> with correlation coefficient <em>r</em> = −0.897.\n\nAnother inland town is 540 m above sea level and its latitude is 28° south. Which measurement, height above sea level or latitude, would be better to use to predict this town's average maximum daily temperature? Give a reason. (1 mark)",
+      "q": "For a sample of 17 inland towns in Australia, the height above sea level, <em>x</em> (metres), and the average maximum daily temperature, <em>y</em> (°C), were recorded. The graph shows the data as well as a regression line.\n\n<img src=\"/diagrams/mathematics-standard-2_2021_Q33_stimulus.png\" alt=\"Diagram\" style=\"max-width:100%;margin:8px 0;\">\n\nThe equation of the regression line is <em>y</em> = 29.2 − 0.00404<em>x</em>. The correlation coefficient is <em>r</em> = −0.494.\n\n(a)(i) By using the equation of the regression line, predict the average maximum daily temperature for a town that is 540 m above sea level. Give your answer correct to one decimal place. (1 mark)\n\n(a)(ii) The gradient of the regression line is −0.00404. Interpret the value of this gradient in the context of this question. (2 marks)\n\n(b) The graph below also shows the relationship between the latitude, <em>x</em> (degrees south), and the average maximum daily temperature, <em>y</em> (°C), for the same 17 towns. The regression line is <em>y</em> = 45.6 − 0.683<em>x</em> with correlation coefficient <em>r</em> = −0.897.\n\nAnother inland town is 540 m above sea level and its latitude is 28° south. Which measurement, height above sea level or latitude, would be better to use to predict this town's average maximum daily temperature? Give a reason. (1 mark)",
       "answer": "(a)(i) y = 29.2 - 0.011 × 540 = 29.2 - 5.94 = 23.3 degrees C\n\n(a)(ii) For a one metre increase in height above sea level, the average maximum daily temperature is expected to decrease by 0.011 degrees C.\n\n(b) Latitude is better to use.\nThe correlation coefficient for latitude (r = -0.897) is stronger (closer to -1) than for height above sea level (r = -0.494), so latitude is a better predictor of temperature.",
       "keywords": [
         "23.3",
@@ -7848,7 +7848,7 @@
       "qNum": "35",
       "category": "A4",
       "image": null,
-      "q": "A publisher sells a book for $10. At this price, 5000 copies of the book will be sold and the revenue raised will be 5000 × 10 = $50 000. The publisher is considering increasing the price. If the publisher charges (10 + <em>x</em>) dollars for each book, then 50 fewer copies will be sold for each dollar increase. This gives the quadratic model for revenue:\n\n<em>R</em> = −50<em>x</em>² + 4500<em>x</em> + 50 000\n\nA graph of this quadratic model for revenue is shown.\n\n<img src=\"/diagrams/mathematics-standard-2_2021_Q35_stimulus.jpg\" alt=\"Diagram\" style=\"max-width:100%;margin:8px 0;\">\n\n(a) By first finding a suitable value of <em>x</em>, find the price the publisher should charge for each book to maximise the revenue raised from sales. (2 marks)\n\n(b) Find the value of the intercept of the parabola with the vertical axis. (1 mark)",
+      "q": "A publisher sells a book for $10. At this price, 5000 copies of the book will be sold and the revenue raised will be 5000 × 10 = $50 000. The publisher is considering increasing the price. If the publisher charges (10 + <em>x</em>) dollars for each book, then 50 fewer copies will be sold for each dollar increase. This gives the quadratic model for revenue:\n\n<em>R</em> = −50<em>x</em>² + 4500<em>x</em> + 50 000\n\nA graph of this quadratic model for revenue is shown.\n\n<img src=\"/diagrams/mathematics-standard-2_2021_Q35_stimulus.png\" alt=\"Diagram\" style=\"max-width:100%;margin:8px 0;\">\n\n(a) By first finding a suitable value of <em>x</em>, find the price the publisher should charge for each book to maximise the revenue raised from sales. (2 marks)\n\n(b) Find the value of the intercept of the parabola with the vertical axis. (1 mark)",
       "answer": "(a) By symmetry, the maximum is at the midpoint of the x-intercepts:\nx = (-10 + 100)/2 = 45\n\nOptimal price = 10 + 45 = $55\n\n(b) When x = 0: R = -50(0)^2 + 4500(0) + 50 000 = 50 000\nThe vertical intercept is 50 000.",
       "keywords": [
         "45",
@@ -7869,7 +7869,7 @@
       "qNum": "36",
       "category": "N3",
       "image": null,
-      "q": "A project requires completion of 11 tasks A, B, C, ..., K. A network diagram for the project giving the completion time for each task, in minutes, is shown.\n\n<img src=\"/diagrams/mathematics-standard-2_2021_Q36_stimulus.jpg\" alt=\"Diagram\" style=\"max-width:100%;margin:8px 0;\">\n\n(a) Find the minimum time to complete the project. (1 mark)\n\n(b) State the critical path for this project. (1 mark)\n\n(c) A new task, X, is to be added to the project. Task X has an earliest start time of 17 minutes, a latest start time of 18 minutes, and a duration of 12 minutes. State the float time for task X. (2 marks)",
+      "q": "A project requires completion of 11 tasks A, B, C, ..., K. A network diagram for the project giving the completion time for each task, in minutes, is shown.\n\n<img src=\"/diagrams/mathematics-standard-2_2021_Q36_stimulus.png\" alt=\"Diagram\" style=\"max-width:100%;margin:8px 0;\">\n\n(a) Find the minimum time to complete the project. (1 mark)\n\n(b) State the critical path for this project. (1 mark)\n\n(c) A new task, X, is to be added to the project. Task X has an earliest start time of 17 minutes, a latest start time of 18 minutes, and a duration of 12 minutes. State the float time for task X. (2 marks)",
       "answer": "(a) Minimum time = 40 minutes\n\n(b) Critical path: A → C → D → E → G → J → K\n(Start→A→C→D→E→G→J→K: 5+7+2+3+5+8+10 = 40 minutes)\n\n(c) Float time = Latest start − Earliest start = 18 − 17 = 1 minute",
       "keywords": [
         "40",
@@ -7892,7 +7892,7 @@
       "qNum": "37",
       "category": "M6",
       "image": null,
-      "q": "The diagram shows a triangle ABC where AC = 25 cm, BC = 16 cm, ∠BAC = 28° and angle ABC is obtuse.\n\n<img src=\"/diagrams/mathematics-standard-2_2021_Q37_stimulus.jpg\" alt=\"Diagram\" style=\"max-width:100%;margin:8px 0;\">\n\nFind the size of the obtuse angle ABC, correct to the nearest degree. (3 marks)",
+      "q": "The diagram shows a triangle ABC where AC = 25 cm, BC = 16 cm, ∠BAC = 28° and angle ABC is obtuse.\n\n<img src=\"/diagrams/mathematics-standard-2_2021_Q37_stimulus.png\" alt=\"Diagram\" style=\"max-width:100%;margin:8px 0;\">\n\nFind the size of the obtuse angle ABC, correct to the nearest degree. (3 marks)",
       "answer": "Using the sine rule:\nsin(∠ABC)/AC = sin(∠BAC)/BC\nsin(∠ABC)/25 = sin 28°/16\nsin(∠ABC) = 25 × sin 28°/16 = 25 × 0.4695/16 = 0.7336...\n\nAcute angle = sin⁻¹(0.7336) = 47.18...°\nSince ∠ABC is obtuse: ∠ABC = 180° − 47.18° = 132.82° ≈ 133°",
       "acceptableAnswers": [
         "133",
@@ -7911,7 +7911,7 @@
       "qNum": "38",
       "category": "S5",
       "image": null,
-      "q": "A random variable is normally distributed with mean 0 and standard deviation 1. The table gives the probability that this random variable lies between 0 and <em>z</em>.\n\n<div style=\"overflow-x:auto;-webkit-overflow-scrolling:touch;\"><table style=\"font-size:0.68em;border-collapse:collapse;margin:8px 0;\"><thead><tr><th style=\"border:1px solid #ccc;padding:4px 10px;\"><em>z</em></th><th style=\"border:1px solid #ccc;padding:4px 10px;\">Probability</th></tr></thead><tbody><tr><td style=\"border:1px solid #ccc;padding:4px 10px;\">0.1</td><td style=\"border:1px solid #ccc;padding:4px 10px;\">0.0398</td></tr><tr><td style=\"border:1px solid #ccc;padding:4px 10px;\">0.2</td><td style=\"border:1px solid #ccc;padding:4px 10px;\">0.0793</td></tr><tr><td style=\"border:1px solid #ccc;padding:4px 10px;\">0.3</td><td style=\"border:1px solid #ccc;padding:4px 10px;\">0.1179</td></tr><tr><td style=\"border:1px solid #ccc;padding:4px 10px;\">0.4</td><td style=\"border:1px solid #ccc;padding:4px 10px;\">0.1554</td></tr><tr><td style=\"border:1px solid #ccc;padding:4px 10px;\">0.5</td><td style=\"border:1px solid #ccc;padding:4px 10px;\">0.1915</td></tr><tr><td style=\"border:1px solid #ccc;padding:4px 10px;\">0.6</td><td style=\"border:1px solid #ccc;padding:4px 10px;\">0.2257</td></tr></tbody></table></div></div>\n\nThe probability values given in the table for different values of <em>z</em> are shown in the diagram.\n\n<img src=\"/diagrams/mathematics-standard-2_2021_Q38_stimulus.jpg\" alt=\"Diagram\" style=\"max-width:100%;margin:8px 0;\">\n\n(a) Using the table, show that P(Z > 0.3) = 0.3821. (1 mark)\n\n(b) Birth weights are normally distributed with mean 3300 g and standard deviation 570 g. Calculate the <em>z</em>-score for 3471 g, then find how many babies out of 1000 are expected to have birth weight greater than 3471 g. (3 marks)",
+      "q": "A random variable is normally distributed with mean 0 and standard deviation 1. The table gives the probability that this random variable lies between 0 and <em>z</em>.\n\n<div style=\"overflow-x:auto;-webkit-overflow-scrolling:touch;\"><table style=\"font-size:0.68em;border-collapse:collapse;margin:8px 0;\"><thead><tr><th style=\"border:1px solid #ccc;padding:4px 10px;\"><em>z</em></th><th style=\"border:1px solid #ccc;padding:4px 10px;\">Probability</th></tr></thead><tbody><tr><td style=\"border:1px solid #ccc;padding:4px 10px;\">0.1</td><td style=\"border:1px solid #ccc;padding:4px 10px;\">0.0398</td></tr><tr><td style=\"border:1px solid #ccc;padding:4px 10px;\">0.2</td><td style=\"border:1px solid #ccc;padding:4px 10px;\">0.0793</td></tr><tr><td style=\"border:1px solid #ccc;padding:4px 10px;\">0.3</td><td style=\"border:1px solid #ccc;padding:4px 10px;\">0.1179</td></tr><tr><td style=\"border:1px solid #ccc;padding:4px 10px;\">0.4</td><td style=\"border:1px solid #ccc;padding:4px 10px;\">0.1554</td></tr><tr><td style=\"border:1px solid #ccc;padding:4px 10px;\">0.5</td><td style=\"border:1px solid #ccc;padding:4px 10px;\">0.1915</td></tr><tr><td style=\"border:1px solid #ccc;padding:4px 10px;\">0.6</td><td style=\"border:1px solid #ccc;padding:4px 10px;\">0.2257</td></tr></tbody></table></div></div>\n\nThe probability values given in the table for different values of <em>z</em> are shown in the diagram.\n\n<img src=\"/diagrams/mathematics-standard-2_2021_Q38_stimulus.png\" alt=\"Diagram\" style=\"max-width:100%;margin:8px 0;\">\n\n(a) Using the table, show that P(Z > 0.3) = 0.3821. (1 mark)\n\n(b) Birth weights are normally distributed with mean 3300 g and standard deviation 570 g. Calculate the <em>z</em>-score for 3471 g, then find how many babies out of 1000 are expected to have birth weight greater than 3471 g. (3 marks)",
       "answer": "(a) P(Z > 0.3) = 0.5 − P(0 < Z < 0.3) = 0.5 − 0.1179 = 0.3821 ✓\n\n(b) z = (3471 − 3300)/570 = 171/570 = 0.3\nFrom part (a): P(Z > 0.3) = 0.3821\nExpected babies = 1000 × 0.3821 = 382.1 ≈ 382 babies",
       "keywords": [
         "0.3821",
@@ -7932,7 +7932,7 @@
       "qNum": "39",
       "category": "M6",
       "image": null,
-      "q": "The diagram shows a compass radial survey of the field ABCD.\n\n<img src=\"/diagrams/mathematics-standard-2_2021_Q39_stimulus.jpg\" alt=\"Diagram\" style=\"max-width:100%;margin:8px 0;\">\n\n(a) Triangle COB has an area of 466 m². Find the size of the acute angle COB, correct to the nearest degree. (2 marks)\n\n(b) A farmer decides to fence the triangular area DOC. OD = 31 m, OC = 28 m and ∠DOC = 108°. Find the total length of fencing required, correct to one decimal place. (3 marks)",
+      "q": "The diagram shows a compass radial survey of the field ABCD.\n\n<img src=\"/diagrams/mathematics-standard-2_2021_Q39_stimulus.png\" alt=\"Diagram\" style=\"max-width:100%;margin:8px 0;\">\n\n(a) Triangle COB has an area of 466 m². Find the size of the acute angle COB, correct to the nearest degree. (2 marks)\n\n(b) A farmer decides to fence the triangular area DOC. OD = 31 m, OC = 28 m and ∠DOC = 108°. Find the total length of fencing required, correct to one decimal place. (3 marks)",
       "answer": "(a) Area of triangle = (1/2) × OC × OB × sin(∠COB)\n466 = (1/2) × 28 × 35 × sin(∠COB)\nsin(∠COB) = 466/490 = 0.9510...\n∠COB = 72° (nearest degree)\n\n(b) ∠DOC = 330° − 150° − 72° = 108°\nCD² = 31² + 28² − 2 × 31 × 28 × cos 108°\n= 961 + 784 − 1736 × (−0.3090...)\n= 1745 + 536.4... = 2281.4...\nCD = 47.76... m\n\nFencing = OD + OC + CD = 31 + 28 + 47.76 = 106.8 m",
       "keywords": [
         "72",
@@ -7975,7 +7975,7 @@
       "qNum": "41",
       "category": "S5",
       "image": null,
-      "q": "In a particular city, the heights of adult females and the heights of adult males are each normally distributed.\n\nInformation relating to two females from that city is given in Table 1.\n\n<div style=\"overflow-x:auto;-webkit-overflow-scrolling:touch;\"><table style=\"font-size:0.68em;border-collapse:collapse;margin:8px 0;\"><thead><tr><th style=\"border:1px solid #ccc;padding:4px 10px;\">Height</th><th style=\"border:1px solid #ccc;padding:4px 10px;\">Gender</th><th style=\"border:1px solid #ccc;padding:4px 10px;\">Percentage of females in this city shorter than this person</th></tr></thead><tbody><tr><td style=\"border:1px solid #ccc;padding:4px 10px;\">175 cm</td><td style=\"border:1px solid #ccc;padding:4px 10px;\">Female</td><td style=\"border:1px solid #ccc;padding:4px 10px;\">97.5%</td></tr><tr><td style=\"border:1px solid #ccc;padding:4px 10px;\">160.6 cm</td><td style=\"border:1px solid #ccc;padding:4px 10px;\">Female</td><td style=\"border:1px solid #ccc;padding:4px 10px;\">16%</td></tr></tbody></table></div></div>\n\nThe means and standard deviations of adult females and males are given in Table 2.\n\n<div style=\"overflow-x:auto;-webkit-overflow-scrolling:touch;\"><table style=\"font-size:0.68em;border-collapse:collapse;margin:8px 0;\"><thead><tr><th style=\"border:1px solid #ccc;padding:4px 10px;\"></th><th style=\"border:1px solid #ccc;padding:4px 10px;\">Mean</th><th style=\"border:1px solid #ccc;padding:4px 10px;\">Standard deviation</th></tr></thead><tbody><tr><td style=\"border:1px solid #ccc;padding:4px 10px;\">Females</td><td style=\"border:1px solid #ccc;padding:4px 10px;\">μ</td><td style=\"border:1px solid #ccc;padding:4px 10px;\">σ</td></tr><tr><td style=\"border:1px solid #ccc;padding:4px 10px;\">Males</td><td style=\"border:1px solid #ccc;padding:4px 10px;\">1.05μ</td><td style=\"border:1px solid #ccc;padding:4px 10px;\">1.1σ</td></tr></tbody></table></div></div>\n\nA selected male is taller than 84% of the population of adult males in this city.\n\nBy first labelling the normal distribution curve below, calculate the height of the selected male, in centimetres, correct to two decimal places. (4 marks)\n\n<img src=\"/diagrams/mathematics-standard-2_2021_Q41_stimulus.jpg\" alt=\"Diagram\" style=\"max-width:100%;margin:8px 0;\">",
+      "q": "In a particular city, the heights of adult females and the heights of adult males are each normally distributed.\n\nInformation relating to two females from that city is given in Table 1.\n\n<div style=\"overflow-x:auto;-webkit-overflow-scrolling:touch;\"><table style=\"font-size:0.68em;border-collapse:collapse;margin:8px 0;\"><thead><tr><th style=\"border:1px solid #ccc;padding:4px 10px;\">Height</th><th style=\"border:1px solid #ccc;padding:4px 10px;\">Gender</th><th style=\"border:1px solid #ccc;padding:4px 10px;\">Percentage of females in this city shorter than this person</th></tr></thead><tbody><tr><td style=\"border:1px solid #ccc;padding:4px 10px;\">175 cm</td><td style=\"border:1px solid #ccc;padding:4px 10px;\">Female</td><td style=\"border:1px solid #ccc;padding:4px 10px;\">97.5%</td></tr><tr><td style=\"border:1px solid #ccc;padding:4px 10px;\">160.6 cm</td><td style=\"border:1px solid #ccc;padding:4px 10px;\">Female</td><td style=\"border:1px solid #ccc;padding:4px 10px;\">16%</td></tr></tbody></table></div></div>\n\nThe means and standard deviations of adult females and males are given in Table 2.\n\n<div style=\"overflow-x:auto;-webkit-overflow-scrolling:touch;\"><table style=\"font-size:0.68em;border-collapse:collapse;margin:8px 0;\"><thead><tr><th style=\"border:1px solid #ccc;padding:4px 10px;\"></th><th style=\"border:1px solid #ccc;padding:4px 10px;\">Mean</th><th style=\"border:1px solid #ccc;padding:4px 10px;\">Standard deviation</th></tr></thead><tbody><tr><td style=\"border:1px solid #ccc;padding:4px 10px;\">Females</td><td style=\"border:1px solid #ccc;padding:4px 10px;\">μ</td><td style=\"border:1px solid #ccc;padding:4px 10px;\">σ</td></tr><tr><td style=\"border:1px solid #ccc;padding:4px 10px;\">Males</td><td style=\"border:1px solid #ccc;padding:4px 10px;\">1.05μ</td><td style=\"border:1px solid #ccc;padding:4px 10px;\">1.1σ</td></tr></tbody></table></div></div>\n\nA selected male is taller than 84% of the population of adult males in this city.\n\nBy first labelling the normal distribution curve below, calculate the height of the selected male, in centimetres, correct to two decimal places. (4 marks)\n\n<img src=\"/diagrams/mathematics-standard-2_2021_Q41_stimulus.png\" alt=\"Diagram\" style=\"max-width:100%;margin:8px 0;\">",
       "answer": "Step 1 — Find σ using 97.5th percentile (z = +2): μ + 2σ = 175\nStep 2 — Find σ using 16th percentile (z = −1): μ − σ = 160.6\nStep 3 — Subtract: 3σ = 14.4 → σ = 4.8\nStep 4 — Find μ: μ = 160.6 + 4.8 = 165.4\nStep 5 — Male mean = 1.05 × 165.4 = 173.67\nStep 6 — Male SD = 1.1 × 4.8 = 5.28\nStep 7 — Taller than 84% → z = +1: height = 173.67 + 5.28 = 178.95 cm",
       "keywords": [
         "4.8",
@@ -7998,7 +7998,7 @@
       "qNum": "17",
       "category": "S2",
       "image": null,
-      "q": "The numbers 1, 2, 3, 4, 5 and 6 are each written on separate cards. Amy has cards 1, 3 and 5 and Bob has cards 2, 4 and 6. They play a game in which each person randomly chooses one of their own cards; the higher card wins.\n\n(a) A partially completed tree diagram is shown.\n\n<img src=\"/diagrams/mathematics-standard-2_2022_Q17_stimulus.jpg\" alt=\"Diagram\" style=\"max-width:100%;margin:8px 0;\">\n\nComplete the tree diagram and find the probability that Bob wins. (2 marks)\n\n(b) Suppose Amy and Bob play this game 30 times. How many times would Bob be expected to win? (1 mark)",
+      "q": "The numbers 1, 2, 3, 4, 5 and 6 are each written on separate cards. Amy has cards 1, 3 and 5 and Bob has cards 2, 4 and 6. They play a game in which each person randomly chooses one of their own cards; the higher card wins.\n\n(a) A partially completed tree diagram is shown.\n\n<img src=\"/diagrams/mathematics-standard-2_2022_Q17_stimulus.png\" alt=\"Diagram\" style=\"max-width:100%;margin:8px 0;\">\n\nComplete the tree diagram and find the probability that Bob wins. (2 marks)\n\n(b) Suppose Amy and Bob play this game 30 times. How many times would Bob be expected to win? (1 mark)",
       "answer": "(a) Amy picks 1: Bob picks 2,4,6 — Bob wins all 3 → P(Bob wins | Amy=1) = 1\nAmy picks 3: Bob picks 2,4,6 — Bob wins with 4,6 → P(Bob wins | Amy=3) = 2/3\nAmy picks 5: Bob picks 2,4,6 — Bob wins with 6 only → P(Bob wins | Amy=5) = 1/3\n\nP(Bob wins) = (1/3)(1) + (1/3)(2/3) + (1/3)(1/3) = 1/3 + 2/9 + 1/9 = 6/9 = 2/3\n\n(b) Expected wins = 30 × 2/3 = 20 times",
       "keywords": [
         "2/3",
@@ -8041,7 +8041,7 @@
       "qNum": "23",
       "category": "S4",
       "image": null,
-      "q": "A teacher surveyed the students in her Year 8 class to investigate the relationship between average hours of phone use per day and average hours of sleep per day. The results are shown on the scatterplot below.\n\n<img src=\"/diagrams/mathematics-standard-2_2022_Q23_stimulus.jpg\" alt=\"Diagram\" style=\"max-width:100%;margin:8px 0;\">\n\n(a) The data for two new students, Alinta and Birrani, are given in the table below.\n\n<div style=\"overflow-x:auto;-webkit-overflow-scrolling:touch;\"><table style=\"font-size:0.68em;border-collapse:collapse;margin:8px 0;\"><thead><tr><th style=\"border:1px solid #ccc;padding:4px 10px;\">Student</th><th style=\"border:1px solid #ccc;padding:4px 10px;\">Average hours of phone use per day</th><th style=\"border:1px solid #ccc;padding:4px 10px;\">Average hours of sleep per day</th></tr></thead><tbody><tr><td style=\"border:1px solid #ccc;padding:4px 10px;\">Alinta</td><td style=\"border:1px solid #ccc;padding:4px 10px;\">4</td><td style=\"border:1px solid #ccc;padding:4px 10px;\">8</td></tr><tr><td style=\"border:1px solid #ccc;padding:4px 10px;\">Birrani</td><td style=\"border:1px solid #ccc;padding:4px 10px;\">0</td><td style=\"border:1px solid #ccc;padding:4px 10px;\">10.5</td></tr></tbody></table></div></div>\n\nPlot these two data points on the scatterplot. (2 marks)\n\n(b) By first fitting the line of best fit by eye on the scatterplot, estimate the average number of hours of sleep per day for a student who uses the phone for an average of 2 hours per day. (2 marks)",
+      "q": "A teacher surveyed the students in her Year 8 class to investigate the relationship between average hours of phone use per day and average hours of sleep per day. The results are shown on the scatterplot below.\n\n<img src=\"/diagrams/mathematics-standard-2_2022_Q23_stimulus.png\" alt=\"Diagram\" style=\"max-width:100%;margin:8px 0;\">\n\n(a) The data for two new students, Alinta and Birrani, are given in the table below.\n\n<div style=\"overflow-x:auto;-webkit-overflow-scrolling:touch;\"><table style=\"font-size:0.68em;border-collapse:collapse;margin:8px 0;\"><thead><tr><th style=\"border:1px solid #ccc;padding:4px 10px;\">Student</th><th style=\"border:1px solid #ccc;padding:4px 10px;\">Average hours of phone use per day</th><th style=\"border:1px solid #ccc;padding:4px 10px;\">Average hours of sleep per day</th></tr></thead><tbody><tr><td style=\"border:1px solid #ccc;padding:4px 10px;\">Alinta</td><td style=\"border:1px solid #ccc;padding:4px 10px;\">4</td><td style=\"border:1px solid #ccc;padding:4px 10px;\">8</td></tr><tr><td style=\"border:1px solid #ccc;padding:4px 10px;\">Birrani</td><td style=\"border:1px solid #ccc;padding:4px 10px;\">0</td><td style=\"border:1px solid #ccc;padding:4px 10px;\">10.5</td></tr></tbody></table></div></div>\n\nPlot these two data points on the scatterplot. (2 marks)\n\n(b) By first fitting the line of best fit by eye on the scatterplot, estimate the average number of hours of sleep per day for a student who uses the phone for an average of 2 hours per day. (2 marks)",
       "answer": "(a) Plot Alinta at (4, 8) and Birrani at (0, 10.5) on the scatterplot.\n\n(b) Drawing a line of best fit through the data, when phone use = 2 hours/day:\n- Reading from the line: approximately **9 hours** of sleep per day.\n\n(Acceptable range: 8.5 to 9.5 hours)",
       "keywords": [
         "9",
@@ -8062,7 +8062,7 @@
       "qNum": "26",
       "category": "M6",
       "image": null,
-      "q": "The diagram shows two right-angled triangles, ABC and ABD, where AC = 35 cm, BD = 93 cm, ∠ACB = 41° and ∠ADB = <em>q</em>.\n\n<img src=\"/diagrams/mathematics-standard-2_2022_Q26_stimulus.jpg\" alt=\"Diagram\" style=\"max-width:100%;margin:8px 0;\">\n\nCalculate the size of angle <em>q</em>, to the nearest minute. (4 marks)",
+      "q": "The diagram shows two right-angled triangles, ABC and ABD, where AC = 35 cm, BD = 93 cm, ∠ACB = 41° and ∠ADB = <em>q</em>.\n\n<img src=\"/diagrams/mathematics-standard-2_2022_Q26_stimulus.png\" alt=\"Diagram\" style=\"max-width:100%;margin:8px 0;\">\n\nCalculate the size of angle <em>q</em>, to the nearest minute. (4 marks)",
       "answer": "In triangle ABC (right angle at B):\ntan 41° = AB/AC\nAB = 35 × tan 41° = 35 × 0.8693... = 30.43 cm\n\nIn triangle ABD (right angle at B):\nsin θ = AB/BD = 30.43/93\n\nθ = sin⁻¹(30.43/93) = sin⁻¹(0.3272...) = 19.10°... = 19°6' (nearest minute)",
       "acceptableAnswers": [
         "19°6'",
@@ -8083,7 +8083,7 @@
       "qNum": "28",
       "category": "M6",
       "image": null,
-      "q": "A dam is in the shape of a triangular prism which is 50 m long. Both ends of the dam, ABC and DEF, are isosceles triangles with equal sides of 25 m and the included angle between the equal sides is 150°, as shown.\n\n<img src=\"/diagrams/mathematics-standard-2_2022_Q28_stimulus.jpg\" alt=\"Diagram\" style=\"max-width:100%;margin:8px 0;\">\n\nCalculate the number of litres of water the dam will hold when it is full. (4 marks)",
+      "q": "A dam is in the shape of a triangular prism which is 50 m long. Both ends of the dam, ABC and DEF, are isosceles triangles with equal sides of 25 m and the included angle between the equal sides is 150°, as shown.\n\n<img src=\"/diagrams/mathematics-standard-2_2022_Q28_stimulus.png\" alt=\"Diagram\" style=\"max-width:100%;margin:8px 0;\">\n\nCalculate the number of litres of water the dam will hold when it is full. (4 marks)",
       "answer": "Area of triangular cross-section = (1/2) × 25 × 25 × sin 150°\n= (1/2) × 625 × 0.5 = 156.25 m²\n\nVolume = 156.25 × 50 = 7812.5 m³\n\n1 m³ = 1000 litres\nVolume = 7 812 500 litres",
       "acceptableAnswers": [
         "7812500",
@@ -8102,7 +8102,7 @@
       "qNum": "31",
       "category": "N3",
       "image": null,
-      "q": "A wildlife park has 5 main attractions (A, B, C, D, E) connected by directional paths. The network shows the number of visitors who can access each path at any one time, with a cut shown.\n\n<img src=\"/diagrams/mathematics-standard-2_2022_Q31_stimulus.jpg\" alt=\"Diagram\" style=\"max-width:100%;margin:8px 0;\">\n\n(a) What is the flow capacity of the cut shown? (1 mark)\n\n(b) By identifying a suitable cut, explain why the network's current maximum flow capacity is less than 40 visitors. (2 marks)\n\n(c) One path is to be increased in capacity so that the overall maximum flow will be 40 visitors at any one time. Which path could be increased and by how much? (2 marks)",
+      "q": "A wildlife park has 5 main attractions (A, B, C, D, E) connected by directional paths. The network shows the number of visitors who can access each path at any one time, with a cut shown.\n\n<img src=\"/diagrams/mathematics-standard-2_2022_Q31_stimulus.png\" alt=\"Diagram\" style=\"max-width:100%;margin:8px 0;\">\n\n(a) What is the flow capacity of the cut shown? (1 mark)\n\n(b) By identifying a suitable cut, explain why the network's current maximum flow capacity is less than 40 visitors. (2 marks)\n\n(c) One path is to be increased in capacity so that the overall maximum flow will be 40 visitors at any one time. Which path could be increased and by how much? (2 marks)",
       "answer": "(a) The cut shown passes through edges: Source→A (10), Source→C (10), D→Sink (20). Cut capacity = 10 + 10 + 20 = **40**.\n\n(b) A cut through E→Sink (20) and B→Sink (20) minus back-flow gives a cut capacity of **35**. Since 35 < 40, by the max-flow min-cut theorem, the maximum flow cannot exceed 35 visitors.\n\n(c) The path C→B (currently 10) could be increased by **5** to give a capacity of 15, which would allow the maximum flow to reach 40. (Also acceptable: A→E or D→E increased by 5.)",
       "keywords": [
         "40",
@@ -8123,7 +8123,7 @@
       "qNum": "32",
       "category": "M7",
       "image": null,
-      "q": "The diagram shows a park consisting of a rectangle and a semicircle. The semicircle has a radius of 100 m. A lake occupies a section of the park as shown. The rest of the park is a grassed section.\n\n<img src=\"/diagrams/mathematics-standard-2_2022_Q32_stimulus.jpg\" alt=\"Diagram\" style=\"max-width:100%;margin:8px 0;\">\n\n(a) Using two applications of the trapezoidal rule, calculate the approximate area of the grassed section. (2 marks)\n\n(b) Hence calculate the approximate area of the lake, to the nearest square metre. (2 marks)",
+      "q": "The diagram shows a park consisting of a rectangle and a semicircle. The semicircle has a radius of 100 m. A lake occupies a section of the park as shown. The rest of the park is a grassed section.\n\n<img src=\"/diagrams/mathematics-standard-2_2022_Q32_stimulus.png\" alt=\"Diagram\" style=\"max-width:100%;margin:8px 0;\">\n\n(a) Using two applications of the trapezoidal rule, calculate the approximate area of the grassed section. (2 marks)\n\n(b) Hence calculate the approximate area of the lake, to the nearest square metre. (2 marks)",
       "answer": "(a) Trapezoidal rule with h = 100 m, parallel sides 160 m, 150 m, 250 m (two applications):\nArea ≈ (100/2)(160 + 150) + (100/2)(150 + 250)\n= 50 × 310 + 50 × 400\n= 15 500 + 20 000\n= **35 500 m²**\n\n(b) Total park area = rectangle + semicircle\n= 200 × 250 + ½π(100)²\n= 50 000 + 15 707.96...\n= 65 707.96... m²\n\nLake area = Total area − Grassed area\n= 65 707.96 − 35 500\n= **30 208 m²** (to nearest m²)",
       "keywords": [
         "35500",
@@ -8147,7 +8147,7 @@
       "qNum": "33",
       "category": "M6",
       "image": null,
-      "q": "The diagram shows an aeroplane that was flying towards an airport at A on a bearing of 135°T. When it was at point O, 20 km away from the airport at A, the flight course was changed. The aeroplane landed at an airport at B directly south of O. The distance from O to B is 50 km.\n\n<img src=\"/diagrams/mathematics-standard-2_2022_Q33_stimulus.jpg\" alt=\"Diagram\" style=\"max-width:100%;margin:8px 0;\">\n\n(a) Show that the distance between the airport at A and the airport at B is 38.5 km, correct to 1 decimal place. (2 marks)\n\n(b) Use the sine rule to find the angle OBA to the nearest degree. (2 marks)\n\n(c) What is the bearing of the airport at B from the airport at A? (1 mark)",
+      "q": "The diagram shows an aeroplane that was flying towards an airport at A on a bearing of 135°T. When it was at point O, 20 km away from the airport at A, the flight course was changed. The aeroplane landed at an airport at B directly south of O. The distance from O to B is 50 km.\n\n<img src=\"/diagrams/mathematics-standard-2_2022_Q33_stimulus.png\" alt=\"Diagram\" style=\"max-width:100%;margin:8px 0;\">\n\n(a) Show that the distance between the airport at A and the airport at B is 38.5 km, correct to 1 decimal place. (2 marks)\n\n(b) Use the sine rule to find the angle OBA to the nearest degree. (2 marks)\n\n(c) What is the bearing of the airport at B from the airport at A? (1 mark)",
       "answer": "(a) Angle AOB = 135° − 90° = 45° (bearing 135° means A is south-east of O, so angle between north and OA is 135°, angle AOB = 135° − 90° = 45°)\nUsing cosine rule:\nAB² = OA² + OB² − 2 × OA × OB × cos(∠AOB)\n= 20² + 50² − 2 × 20 × 50 × cos(45°)\n= 400 + 2500 − 2000 × 0.7071...\n= 2900 − 1414.2...\n= 1485.8...\nAB = √1485.8 = 38.5 km ✓\n\n(b) Using sine rule:\nsin(∠OBA)/OA = sin(∠AOB)/AB\nsin(∠OBA)/20 = sin(45°)/38.5\nsin(∠OBA) = 20 × sin(45°)/38.5 = 0.3675...\n∠OBA = sin⁻¹(0.3675) ≈ **22°**\n\n(c) O is due north of B. Bearing of A from B:\n∠OBA = 22°, so A is 22° east of north from B.\nBearing of A from B = **022°T**\n\nBearing of B from A: A is north-west of B, so bearing = 180° + 22° = **202°T**",
       "keywords": [
         "22",
@@ -8168,7 +8168,7 @@
       "qNum": "34",
       "category": "M1",
       "image": null,
-      "q": "A composite solid is shown. The top section is a cylinder with height 3 cm and diameter 4 cm, centred on top of a hemisphere with diameter 6 cm.\n\n<img src=\"/diagrams/mathematics-standard-2_2022_Q34_stimulus.jpg\" alt=\"Diagram\" style=\"max-width:100%;margin:8px 0;\">\n\nFind the total surface area of the composite solid in cm², correct to one decimal place. (4 marks)",
+      "q": "A composite solid is shown. The top section is a cylinder with height 3 cm and diameter 4 cm, centred on top of a hemisphere with diameter 6 cm.\n\n<img src=\"/diagrams/mathematics-standard-2_2022_Q34_stimulus.png\" alt=\"Diagram\" style=\"max-width:100%;margin:8px 0;\">\n\nFind the total surface area of the composite solid in cm², correct to one decimal place. (4 marks)",
       "answer": "Hemisphere radius = 3 cm, cylinder radius = 2 cm\n\nCurved surface of hemisphere = (1/2) × 4π(3²) = 18π cm²\nFlat top of hemisphere minus cylinder base = π(3²) − π(2²) = 9π − 4π = 5π cm²\nCurved side of cylinder = 2π × 2 × 3 = 12π cm²\nTop circle of cylinder = π(2²) = 4π cm²\n\nTotal = 18π + 5π + 12π + 4π = 39π = 122.5 cm²",
       "acceptableAnswers": [
         "122.5",
@@ -8187,7 +8187,7 @@
       "qNum": "35",
       "category": "S4",
       "image": null,
-      "q": "Jo is researching the relationship between the ages of teenage characters in television series and the ages of actors playing these characters. After collecting the data, Jo finds that the correlation coefficient is 0.4564. A scatterplot showing the data is drawn with the line of best fit <em>y</em> = −7.51 + 1.85<em>x</em>.\n\n<img src=\"/diagrams/mathematics-standard-2_2022_Q35_stimulus.jpg\" alt=\"Diagram\" style=\"max-width:100%;margin:8px 0;\">\n\nDescribe and interpret the data and other information provided, with reference to the context given. (4 marks)",
+      "q": "Jo is researching the relationship between the ages of teenage characters in television series and the ages of actors playing these characters. After collecting the data, Jo finds that the correlation coefficient is 0.4564. A scatterplot showing the data is drawn with the line of best fit <em>y</em> = −7.51 + 1.85<em>x</em>.\n\n<img src=\"/diagrams/mathematics-standard-2_2022_Q35_stimulus.png\" alt=\"Diagram\" style=\"max-width:100%;margin:8px 0;\">\n\nDescribe and interpret the data and other information provided, with reference to the context given. (4 marks)",
       "answer": "A comprehensive response includes:\n\n**Describing the data:**\n- The relationship is linear and positive/increasing.\n- The correlation coefficient of 0.4564 indicates a weak to moderate positive correlation.\n- Character ages range from approximately 14 to 17 years; actor ages range from 14 to 30 years.\n\n**Interpreting the regression equation:**\n- The gradient of 1.85 means that as character age increases by 1 year, the actor age increases by approximately 1.85 (almost 2) years.\n- For each additional year of character age, actors tend to be almost 2 years older.\n\n**Contextual interpretation:**\n- Actors playing teenage characters do not need to be teenagers themselves — actors range from 14 to 30 years old for characters aged 14–17.\n- Characters of age 15 have the widest range of actor ages (14–27).\n- Characters older than 15 tend to be played by older actors.\n- The weak correlation shows there is considerable variation — older actors can play younger characters.",
       "keywords": [
         "positive",
@@ -8213,7 +8213,7 @@
       "qNum": "16",
       "category": "M7",
       "image": null,
-      "q": "The graph shows Peta's heart rate, in beats per minute, during the first 60 minutes of a marathon. She started at 10:00 am.\n\n<img src=\"/diagrams/mathematics-standard-2_2023_Q16_stimulus.jpg\" alt=\"Diagram\" style=\"max-width:100%;margin:8px 0;\">\n\n(a) What was Peta's heart rate 20 minutes after she started? (1 mark)\n\n(b) At what time did her heart rate first reach 140 beats per minute? (1 mark)",
+      "q": "The graph shows Peta's heart rate, in beats per minute, during the first 60 minutes of a marathon. She started at 10:00 am.\n\n<img src=\"/diagrams/mathematics-standard-2_2023_Q16_stimulus.png\" alt=\"Diagram\" style=\"max-width:100%;margin:8px 0;\">\n\n(a) What was Peta's heart rate 20 minutes after she started? (1 mark)\n\n(b) At what time did her heart rate first reach 140 beats per minute? (1 mark)",
       "answer": "(a) Reading from the graph at t = 20 minutes: 120 bpm\n\n(b) Reading from the graph, heart rate first reaches 140 bpm at t = 30 minutes after start.\nStart time = 10:00 am + 30 minutes = 10:30 am",
       "keywords": [
         "120",
@@ -8255,7 +8255,7 @@
       "qNum": "18",
       "category": "S5",
       "image": null,
-      "q": "The histogram shows a summary of scores on a test.\n\n<img src=\"/diagrams/mathematics-standard-2_2023_Q18_stimulus.jpg\" alt=\"Diagram\" style=\"max-width:100%;margin:8px 0;\">\n\nProvide TWO features of the histogram that indicate that the data comes from a normal distribution. (2 marks)",
+      "q": "The histogram shows a summary of scores on a test.\n\n<img src=\"/diagrams/mathematics-standard-2_2023_Q18_stimulus.png\" alt=\"Diagram\" style=\"max-width:100%;margin:8px 0;\">\n\nProvide TWO features of the histogram that indicate that the data comes from a normal distribution. (2 marks)",
       "answer": "Two features that indicate a normal distribution:\n\n1. **The histogram is symmetrical** — the bars are approximately mirror images on either side of the centre (around score 49.5).\n\n2. **The histogram is unimodal** — there is one clear peak (at the 49.5 class interval), with frequencies decreasing on both sides.\n\n(Also acceptable: bell-shaped curve, the mean ≈ median ≈ mode, frequencies taper off evenly in both directions.)",
       "keywords": [
         "symmetrical",
@@ -8278,7 +8278,7 @@
       "qNum": "19",
       "category": "N2",
       "image": null,
-      "q": "A network of running tracks connects points A, B, C, D, E, F, G and H. The number on each edge is the time in minutes.\n\n<img src=\"/diagrams/mathematics-standard-2_2023_Q19_stimulus.jpg\" alt=\"Diagram\" style=\"max-width:100%;margin:8px 0;\">\n\n(a) Which path could a runner take from A to D in the shortest time? (2 marks)\n\n(b) A spanning tree of the network is shown below. Is it a minimum spanning tree? Give a reason. (2 marks)\n\n<img src=\"/diagrams/mathematics-standard-2_2023_Q19b_stimulus.jpg\" alt=\"Diagram\" style=\"max-width:100%;margin:8px 0;\">",
+      "q": "A network of running tracks connects points A, B, C, D, E, F, G and H. The number on each edge is the time in minutes.\n\n<img src=\"/diagrams/mathematics-standard-2_2023_Q19_stimulus.png\" alt=\"Diagram\" style=\"max-width:100%;margin:8px 0;\">\n\n(a) Which path could a runner take from A to D in the shortest time? (2 marks)\n\n(b) A spanning tree of the network is shown below. Is it a minimum spanning tree? Give a reason. (2 marks)\n\n<img src=\"/diagrams/mathematics-standard-2_2023_Q19b_stimulus.png\" alt=\"Diagram\" style=\"max-width:100%;margin:8px 0;\">",
       "answer": "(a) Shortest path from A to D: A → B → F → G → D\n(Trace the path with smallest cumulative time using the diagram)\n\n(b) The spanning tree shown is NOT a minimum spanning tree.\nReason: The edge BC shown is not the shortest way to connect C — there is a shorter alternative edge that would reduce the total weight of the spanning tree.",
       "keywords": [
         "abfgd",
@@ -8301,7 +8301,7 @@
       "qNum": "20",
       "category": "A4",
       "image": null,
-      "q": "The height above the ground <em>h</em> metres of a ball on another planet is modelled by <em>h</em> = −6<em>t</em>² + 24<em>t</em>, where <em>t</em> is the time in seconds. The graph of the function is shown.\n\n<img src=\"/diagrams/mathematics-standard-2_2023_Q20_stimulus.jpg\" alt=\"Diagram\" style=\"max-width:100%;margin:8px 0;\">\n\n(a) Based on the graph, what is the maximum height reached by the ball? (1 mark)\n\n(b) Based on the graph, at what TWO times is the ball at three-quarters of its maximum height? (2 marks)",
+      "q": "The height above the ground <em>h</em> metres of a ball on another planet is modelled by <em>h</em> = −6<em>t</em>² + 24<em>t</em>, where <em>t</em> is the time in seconds. The graph of the function is shown.\n\n<img src=\"/diagrams/mathematics-standard-2_2023_Q20_stimulus.png\" alt=\"Diagram\" style=\"max-width:100%;margin:8px 0;\">\n\n(a) Based on the graph, what is the maximum height reached by the ball? (1 mark)\n\n(b) Based on the graph, at what TWO times is the ball at three-quarters of its maximum height? (2 marks)",
       "answer": "(a) Maximum height = 24 m (at t = 2 seconds, vertex of parabola)\n\n(b) ¾ of maximum = (3/4) × 24 = 18 m\nReading from the graph, the ball is at 18 m at t = 1 second and t = 3 seconds",
       "keywords": [
         "24",
@@ -8324,7 +8324,7 @@
       "qNum": "24",
       "category": "M1",
       "image": null,
-      "q": "The diagram shows the cross-section of a concrete wall across a creek. The wall has a uniform thickness of 0.80 m. The three parallel measurements across the cross-section are 1.9 m, 2.7 m and 1.7 m, taken at equal intervals of 4.0 m.\n\n<img src=\"/diagrams/mathematics-standard-2_2023_Q24_stimulus.jpg\" alt=\"Diagram\" style=\"max-width:100%;margin:8px 0;\">\n\n(a) Use TWO applications of the trapezoidal rule to estimate the area of the cross-section. (2 marks)\n\n(b) The weight of 1 m³ of concrete is 3.52 tonnes. How many tonnes of concrete are in the wall? Give your answer to 2 significant figures. (3 marks)",
+      "q": "The diagram shows the cross-section of a concrete wall across a creek. The wall has a uniform thickness of 0.80 m. The three parallel measurements across the cross-section are 1.9 m, 2.7 m and 1.7 m, taken at equal intervals of 4.0 m.\n\n<img src=\"/diagrams/mathematics-standard-2_2023_Q24_stimulus.png\" alt=\"Diagram\" style=\"max-width:100%;margin:8px 0;\">\n\n(a) Use TWO applications of the trapezoidal rule to estimate the area of the cross-section. (2 marks)\n\n(b) The weight of 1 m³ of concrete is 3.52 tonnes. How many tonnes of concrete are in the wall? Give your answer to 2 significant figures. (3 marks)",
       "answer": "(a) Trapezoidal rule with h = 4 m, three parallel sides (1.9, 2.7, 1.7):\nArea = (4/2)(1.9 + 2.7) + (4/2)(2.7 + 1.7)\n= 2(4.6) + 2(4.4)\n= 9.2 + 8.8 = 18 m²\n\n(b) Volume = 18 × 0.80 = 14.4 m³\nWeight = 14.4 × 3.52 = 50.688 tonnes ≈ 51 tonnes (2 s.f.)",
       "keywords": [
         "18",
@@ -8346,7 +8346,7 @@
       "qNum": "26",
       "category": "M7",
       "image": null,
-      "q": "Kim is building a path around a garden at the back of a house, as shown in the diagram.\n\n<img src=\"/diagrams/mathematics-standard-2_2023_Q26_stimulus.jpg\" alt=\"Diagram\" style=\"max-width:100%;margin:8px 0;\">\n\n(a) Find the area of the path. (2 marks)\n\n(b) Kim mixes concrete in the ratio crushed rock : sand : cement = 4 : 2 : 1 by weight. She needs 2.1 tonnes total. How many 15 kg bags of cement does she need? (3 marks)",
+      "q": "Kim is building a path around a garden at the back of a house, as shown in the diagram.\n\n<img src=\"/diagrams/mathematics-standard-2_2023_Q26_stimulus.png\" alt=\"Diagram\" style=\"max-width:100%;margin:8px 0;\">\n\n(a) Find the area of the path. (2 marks)\n\n(b) Kim mixes concrete in the ratio crushed rock : sand : cement = 4 : 2 : 1 by weight. She needs 2.1 tonnes total. How many 15 kg bags of cement does she need? (3 marks)",
       "answer": "(a) Area with path = (3 + 0.5 + 0.5) × (8 + 0.5) = 4 × 8.5 = 34 m²...\n\nActually: path is around 3 sides (back of house blocks one long side):\nOuter area = (3 + 0.5 + 0.5) × (8 + 0.5) = 4 × 8.5 = 34 m²...\nInner garden area = 3 × 8 = 24 m²...\n\nFrom MG: Area of path = (3 × 8) − (7 × 2.5) = 24 − 17.5 = 6.5 m²\n\n(b) Cement = 1/7 × 2.1 tonnes = 0.3 tonnes = 300 kg\nBags = 300 ÷ 15 = 20 bags",
       "keywords": [
         "6.5",
@@ -8368,7 +8368,7 @@
       "qNum": "27",
       "category": "M6",
       "image": null,
-      "q": "The diagram shows the location of three places X, Y and C.\n\nY is 15 km from X on a bearing of 120°T. C is 40 km from X and lies due west of Y. P lies on the line joining C and Y and is due south of X.\n\n<img src=\"/diagrams/mathematics-standard-2_2023_Q27_stimulus.jpg\" alt=\"Diagram\" style=\"max-width:100%;margin:8px 0;\">\n\n(a) Find the distance XP. (2 marks)\n\n(b) Find the bearing of C from X, to the nearest degree. (2 marks)",
+      "q": "The diagram shows the location of three places X, Y and C.\n\nY is 15 km from X on a bearing of 120°T. C is 40 km from X and lies due west of Y. P lies on the line joining C and Y and is due south of X.\n\n<img src=\"/diagrams/mathematics-standard-2_2023_Q27_stimulus.png\" alt=\"Diagram\" style=\"max-width:100%;margin:8px 0;\">\n\n(a) Find the distance XP. (2 marks)\n\n(b) Find the bearing of C from X, to the nearest degree. (2 marks)",
       "answer": "(a) ∠PXY = 180° − 120° = 60°\nXP = XY × cos 60° = 15 × 0.5 = 7.5 km\n\n(b) tan(∠CXP) = XC_horizontal / XP\n∠PXY = 60°, so XY_horizontal = 15 × sin 60° = 12.99 km (east)\nXC is west of X, so total horizontal = 12.99 + (40² − XP²)^(1/2)...\n\nSimpler: cos(∠CXP) = XP/XC...\n∠CXP: cos θ = 7.5/40... no.\nUsing right angle at P:\nCP = XY_east = 15 sin 60° = 7.5√3 = 12.99 km\nXC = √(XP² + CP²) should be 40... wait\n\nActually: In triangle CXP, ∠XPC = 90° (P is due south of X, C is due west of Y = west of P)\ncos(∠CXP) = XP/XC = 7.5/40\n∠CXP = cos⁻¹(7.5/40) = cos⁻¹(0.1875) = 79.19...° ≈ 79°\n\nBearing of C from X = 180° + 79° = 259°",
       "keywords": [
         "7.5",
@@ -8465,7 +8465,7 @@
       "qNum": "31",
       "category": "N3",
       "image": null,
-      "q": "A function centre employs staff so that all necessary tasks can be completed between the end of one function and the beginning of the next. The network diagram shows the time taken in hours for the tasks that need to be completed.\n\n<img src=\"/diagrams/mathematics-standard-2_2023_Q31_stimulus.jpg\" alt=\"Diagram\" style=\"max-width:100%;margin:8px 0;\">\n\n(a) Find the TWO critical paths. (2 marks)\n\n(b) The function centre wants to decrease the length of each critical path by 3 hours. They can do this by hiring more staff to do ONE of the tasks so it takes less time. For which task should the centre hire more staff, and how long should that task take to ensure all tasks can be completed in 14 hours? (2 marks)",
+      "q": "A function centre employs staff so that all necessary tasks can be completed between the end of one function and the beginning of the next. The network diagram shows the time taken in hours for the tasks that need to be completed.\n\n<img src=\"/diagrams/mathematics-standard-2_2023_Q31_stimulus.png\" alt=\"Diagram\" style=\"max-width:100%;margin:8px 0;\">\n\n(a) Find the TWO critical paths. (2 marks)\n\n(b) The function centre wants to decrease the length of each critical path by 3 hours. They can do this by hiring more staff to do ONE of the tasks so it takes less time. For which task should the centre hire more staff, and how long should that task take to ensure all tasks can be completed in 14 hours? (2 marks)",
       "answer": "(a) The two critical paths are:\n- **H, I, G, C** (total: 2 + 7 + 4 + 4 = 17 hours)\n- **H, I, K** (total: 2 + 7 + 8 = 17 hours)\n\n(b) Both critical paths share tasks H and I.\n- H takes only 2 hours — cannot be reduced by 3 hours.\n- I takes 7 hours. Reducing I by 3 hours gives I = 4 hours.\n- New critical path length = 2 + 4 + 8 = 14 hours ✓\n\n∴ Hire more staff for **task I**, and it should take **4 hours**.",
       "keywords": [
         "H, I, G, C",
@@ -8516,7 +8516,7 @@
       "qNum": "33",
       "category": "M1",
       "image": null,
-      "q": "The diagram shows a shape APQBCD. The shape consists of a rectangle ABCD with an arc PQ on side AB. BC = 3.6 m, CD = 8.0 m. The arc PQ is an arc of a circle with centre O and radius 2.1 m. Angle POQ = 110°.\n\n<img src=\"/diagrams/mathematics-standard-2_2023_Q33_stimulus.jpg\" alt=\"Diagram\" style=\"max-width:100%;margin:8px 0;\">\n\nWhat is the perimeter of the shape APQBCD? Give your answer correct to one decimal place. (4 marks)",
+      "q": "The diagram shows a shape APQBCD. The shape consists of a rectangle ABCD with an arc PQ on side AB. BC = 3.6 m, CD = 8.0 m. The arc PQ is an arc of a circle with centre O and radius 2.1 m. Angle POQ = 110°.\n\n<img src=\"/diagrams/mathematics-standard-2_2023_Q33_stimulus.png\" alt=\"Diagram\" style=\"max-width:100%;margin:8px 0;\">\n\nWhat is the perimeter of the shape APQBCD? Give your answer correct to one decimal place. (4 marks)",
       "answer": "The perimeter of APQBCD consists of:\n- Two sides BC = 3.6 m (×2 = 7.2 m)\n- Side CD = 8.0 m\n- Two segments AP and QB = AB − PQ chord = (8.0 − chord PQ)\n- Arc PQ\n\n**Arc length PQ:**\n= (110/360) × 2π × 2.1\n= 4.0317... m\n\n**Chord length PQ** (using cosine rule):\nPQ = √(2.1² + 2.1² − 2 × 2.1 × 2.1 × cos110°)\n= √(4.41 + 4.41 − 8.82 × (−0.342))\n= √(8.82 + 3.017)\n= √11.837\n= 3.4404... m\n\n**Segments AP + QB** = 8.0 − 3.4404 = 4.5596 m\n\n**Total perimeter** = 7.2 + 8.0 + 4.5596 + 4.0317\n= 23.7913\n= **23.8 m**",
       "keywords": [
         "23.8"
@@ -8535,7 +8535,7 @@
       "qNum": "34",
       "category": "S4",
       "image": null,
-      "q": "A university uses gas to heat its buildings. Over 10 weekdays in winter, the gas used (<em>y</em> MW) and the average outside temperature (<em>x</em> °C) were recorded. The regression line predicts that when the temperature is 0°C, the daily gas usage is 236 MW.\n\nThe ten temperatures measured were: 0°, 0°, 0°, 2°, 5°, 7°, 8°, 9°, 9°, 10°.\nThe total gas usage for the ten weekdays was 1840 MW.\n\n(a) Calculate the sample means <em>x̄</em> and <em>ȳ</em>, and plot the point (<em>x̄</em>, <em>ȳ</em>) and the <em>y</em>-intercept of the least-squares regression line on the grid. (3 marks)\n\n<img src=\"/diagrams/mathematics-standard-2_2023_Q34_stimulus.jpg\" alt=\"Diagram\" style=\"max-width:100%;margin:8px 0;\">\n\n(b) What is the equation of the regression line? (2 marks)\n\n(c) In the context of the dataset, identify ONE problem with using the regression line to predict gas usage when the average outside temperature is 23°C. (1 mark)",
+      "q": "A university uses gas to heat its buildings. Over 10 weekdays in winter, the gas used (<em>y</em> MW) and the average outside temperature (<em>x</em> °C) were recorded. The regression line predicts that when the temperature is 0°C, the daily gas usage is 236 MW.\n\nThe ten temperatures measured were: 0°, 0°, 0°, 2°, 5°, 7°, 8°, 9°, 9°, 10°.\nThe total gas usage for the ten weekdays was 1840 MW.\n\n(a) Calculate the sample means <em>x̄</em> and <em>ȳ</em>, and plot the point (<em>x̄</em>, <em>ȳ</em>) and the <em>y</em>-intercept of the least-squares regression line on the grid. (3 marks)\n\n<img src=\"/diagrams/mathematics-standard-2_2023_Q34_stimulus.png\" alt=\"Diagram\" style=\"max-width:100%;margin:8px 0;\">\n\n(b) What is the equation of the regression line? (2 marks)\n\n(c) In the context of the dataset, identify ONE problem with using the regression line to predict gas usage when the average outside temperature is 23°C. (1 mark)",
       "answer": "(a) x̄ = (0+0+0+2+5+7+8+9+9+10)/10 = 50/10 = **5**\nȳ = 1840/10 = **184**\nPlot (x̄, ȳ) = (5, 184) on the grid. y-intercept at (0, 236).\n\n(b) Slope = (ȳ − y-intercept) / (x̄ − 0)\n= (184 − 236) / (5 − 0)\n= −52/5\n= −10.4\n\nEquation: **y = 236 − 10.4x**\n\n(c) When temperature = 23°C:\ny = 236 − 10.4 × 23 = 236 − 239.2 = −3.2 MW\n\nThis gives a **negative gas usage**, which is not physically possible. Also, 23°C is well outside the range of the data (0–10°C), making it an extrapolation — the regression line may not apply outside this range.",
       "keywords": [
         "236",
@@ -8560,7 +8560,7 @@
       "qNum": "35",
       "category": "M6",
       "image": null,
-      "q": "The diagram shows triangle ABC. Side AC = 12 m, angle A = 60° and angle B = 25°.\n\n<img src=\"/diagrams/mathematics-standard-2_2023_Q35_stimulus.jpg\" alt=\"Diagram\" style=\"max-width:100%;margin:8px 0;\">\n\nCalculate the area of the triangle, to the nearest square metre. (3 marks)",
+      "q": "The diagram shows triangle ABC. Side AC = 12 m, angle A = 60° and angle B = 25°.\n\n<img src=\"/diagrams/mathematics-standard-2_2023_Q35_stimulus.png\" alt=\"Diagram\" style=\"max-width:100%;margin:8px 0;\">\n\nCalculate the area of the triangle, to the nearest square metre. (3 marks)",
       "answer": "Angle C = 180° − 60° − 25° = **95°**\n\n**Find side CB (x) using the sine rule:**\nx/sin60° = 12/sin25°\nx = 12 × sin60°/sin25°\nx = 12 × 0.8660/0.4226\nx = **24.59 m**\n\n**Calculate area** using Area = ½ab sinC:\nArea = ½ × AC × CB × sinA (using included angle approach)\nor Area = ½ × 12 × 24.59 × sin95°\n= ½ × 12 × 24.59 × 0.9962\n= 146.98\n= **147 m²** (to nearest m²)",
       "keywords": [
         "147"
@@ -8626,7 +8626,7 @@
       "qNum": "38",
       "category": "S5",
       "image": null,
-      "q": "A random variable is normally distributed with a mean of 0 and a standard deviation of 1. The table gives the probability that this variable lies below <em>z</em>, for positive values of <em>z</em>.\n\n<div style=\"overflow-x:auto;-webkit-overflow-scrolling:touch;\"><table style=\"font-size:0.68em;border-collapse:collapse;margin:8px 0;\"><thead><tr><th style=\"border:1px solid #ccc;padding:4px 10px;\"><em>z</em></th><th style=\"border:1px solid #ccc;padding:4px 10px;\">P(<em>Z</em> &lt; <em>z</em>)</th></tr></thead><tbody><tr><td style=\"border:1px solid #ccc;padding:4px 10px;\">1.30</td><td style=\"border:1px solid #ccc;padding:4px 10px;\">0.9032</td></tr><tr><td style=\"border:1px solid #ccc;padding:4px 10px;\">1.31</td><td style=\"border:1px solid #ccc;padding:4px 10px;\">0.9049</td></tr><tr><td style=\"border:1px solid #ccc;padding:4px 10px;\">1.32</td><td style=\"border:1px solid #ccc;padding:4px 10px;\">0.9066</td></tr><tr><td style=\"border:1px solid #ccc;padding:4px 10px;\">1.33</td><td style=\"border:1px solid #ccc;padding:4px 10px;\">0.9082</td></tr><tr><td style=\"border:1px solid #ccc;padding:4px 10px;\">1.34</td><td style=\"border:1px solid #ccc;padding:4px 10px;\">0.9099</td></tr><tr><td style=\"border:1px solid #ccc;padding:4px 10px;\">1.35</td><td style=\"border:1px solid #ccc;padding:4px 10px;\">0.9115</td></tr><tr><td style=\"border:1px solid #ccc;padding:4px 10px;\">1.36</td><td style=\"border:1px solid #ccc;padding:4px 10px;\">0.9131</td></tr><tr><td style=\"border:1px solid #ccc;padding:4px 10px;\">1.37</td><td style=\"border:1px solid #ccc;padding:4px 10px;\">0.9147</td></tr><tr><td style=\"border:1px solid #ccc;padding:4px 10px;\">1.38</td><td style=\"border:1px solid #ccc;padding:4px 10px;\">0.9162</td></tr><tr><td style=\"border:1px solid #ccc;padding:4px 10px;\">1.39</td><td style=\"border:1px solid #ccc;padding:4px 10px;\">0.9177</td></tr></tbody></table></div></div>\n\nThe probability values given in the table are represented by the shaded area in the following diagram.\n\n<img src=\"/diagrams/mathematics-standard-2_2023_Q38_stimulus.jpg\" alt=\"Diagram\" style=\"max-width:100%;margin:8px 0;\">\n\nThe weights of adult male koalas form a normal distribution with mean μ = 10.40 kg and standard deviation σ = 1.15 kg.\n\nIn a group of 400 adult male koalas, how many would be expected to weigh more than 11.93 kg? (4 marks)",
+      "q": "A random variable is normally distributed with a mean of 0 and a standard deviation of 1. The table gives the probability that this variable lies below <em>z</em>, for positive values of <em>z</em>.\n\n<div style=\"overflow-x:auto;-webkit-overflow-scrolling:touch;\"><table style=\"font-size:0.68em;border-collapse:collapse;margin:8px 0;\"><thead><tr><th style=\"border:1px solid #ccc;padding:4px 10px;\"><em>z</em></th><th style=\"border:1px solid #ccc;padding:4px 10px;\">P(<em>Z</em> &lt; <em>z</em>)</th></tr></thead><tbody><tr><td style=\"border:1px solid #ccc;padding:4px 10px;\">1.30</td><td style=\"border:1px solid #ccc;padding:4px 10px;\">0.9032</td></tr><tr><td style=\"border:1px solid #ccc;padding:4px 10px;\">1.31</td><td style=\"border:1px solid #ccc;padding:4px 10px;\">0.9049</td></tr><tr><td style=\"border:1px solid #ccc;padding:4px 10px;\">1.32</td><td style=\"border:1px solid #ccc;padding:4px 10px;\">0.9066</td></tr><tr><td style=\"border:1px solid #ccc;padding:4px 10px;\">1.33</td><td style=\"border:1px solid #ccc;padding:4px 10px;\">0.9082</td></tr><tr><td style=\"border:1px solid #ccc;padding:4px 10px;\">1.34</td><td style=\"border:1px solid #ccc;padding:4px 10px;\">0.9099</td></tr><tr><td style=\"border:1px solid #ccc;padding:4px 10px;\">1.35</td><td style=\"border:1px solid #ccc;padding:4px 10px;\">0.9115</td></tr><tr><td style=\"border:1px solid #ccc;padding:4px 10px;\">1.36</td><td style=\"border:1px solid #ccc;padding:4px 10px;\">0.9131</td></tr><tr><td style=\"border:1px solid #ccc;padding:4px 10px;\">1.37</td><td style=\"border:1px solid #ccc;padding:4px 10px;\">0.9147</td></tr><tr><td style=\"border:1px solid #ccc;padding:4px 10px;\">1.38</td><td style=\"border:1px solid #ccc;padding:4px 10px;\">0.9162</td></tr><tr><td style=\"border:1px solid #ccc;padding:4px 10px;\">1.39</td><td style=\"border:1px solid #ccc;padding:4px 10px;\">0.9177</td></tr></tbody></table></div></div>\n\nThe probability values given in the table are represented by the shaded area in the following diagram.\n\n<img src=\"/diagrams/mathematics-standard-2_2023_Q38_stimulus.png\" alt=\"Diagram\" style=\"max-width:100%;margin:8px 0;\">\n\nThe weights of adult male koalas form a normal distribution with mean μ = 10.40 kg and standard deviation σ = 1.15 kg.\n\nIn a group of 400 adult male koalas, how many would be expected to weigh more than 11.93 kg? (4 marks)",
       "answer": "**Calculate z-score:**\nz = (x − μ)/σ\n= (11.93 − 10.40)/1.15\n= 1.53/1.15\n= **1.33** (to 2 decimal places)\n\n**Find probability from table:**\nP(z < 1.33) = 0.9082\n\n**P(weight > 11.93 kg):**\nP(more than 11.93) = 1 − 0.9082\n= **0.0918**\n\n**Number of koalas:**\n= 0.0918 × 400\n= 36.72\n= **36** koalas (accept 37)",
       "keywords": [
         "36",
@@ -8648,7 +8648,7 @@
       "qNum": "16",
       "category": "N2",
       "image": null,
-      "q": "A network of towns and the distances between them in kilometres is shown.\n\n<img src=\"/diagrams/mathematics-standard-2_2024_Q16_stimulus.jpg\" alt=\"Diagram\" style=\"max-width:100%;margin:8px 0;\">\n\n(a) What is the shortest path from T to H? (2 marks)\n\n(b) The road from C to G is closed. What is the length of the shortest path from Y to G? (2 marks)",
+      "q": "A network of towns and the distances between them in kilometres is shown.\n\n<img src=\"/diagrams/mathematics-standard-2_2024_Q16_stimulus.png\" alt=\"Diagram\" style=\"max-width:100%;margin:8px 0;\">\n\n(a) What is the shortest path from T to H? (2 marks)\n\n(b) The road from C to G is closed. What is the length of the shortest path from Y to G? (2 marks)",
       "answer": "(a) Shortest path from T to H: T → Y → W → H (route TYWH)\n\n(b) With C→G closed, shortest path from Y to G:\nY → W → H → M → G = YWHMG = 89 km",
       "keywords": [
         "tywh",
@@ -8669,7 +8669,7 @@
       "qNum": "18",
       "category": "N2",
       "image": null,
-      "q": "A network with weighted edges is shown.\n\n<img src=\"/diagrams/mathematics-standard-2_2024_Q18_stimulus.jpg\" alt=\"Diagram\" style=\"max-width:100%;margin:8px 0;\">\n\n(a) Draw a minimum spanning tree for this network and determine its total weight. (2 marks)\n\n(b) Is it possible to find another spanning tree with the same weight? Give a reason. (1 mark)",
+      "q": "A network with weighted edges is shown.\n\n<img src=\"/diagrams/mathematics-standard-2_2024_Q18_stimulus.png\" alt=\"Diagram\" style=\"max-width:100%;margin:8px 0;\">\n\n(a) Draw a minimum spanning tree for this network and determine its total weight. (2 marks)\n\n(b) Is it possible to find another spanning tree with the same weight? Give a reason. (1 mark)",
       "answer": "(a) Minimum spanning tree uses the lowest-weight edges connecting all vertices without cycles.\nWeight = 24\n\n(b) Yes — there is another spanning tree with the same weight.\nReason: Edge BC and edge FC have the same weight, so BC can replace FC (or vice versa) to give an alternate minimum spanning tree of the same total weight.",
       "keywords": [
         "24",
@@ -8692,7 +8692,7 @@
       "qNum": "19",
       "category": "S4",
       "image": null,
-      "q": "A teacher was exploring the relationship between students' marks for an assignment and their marks for a test. The data for five different students are shown on the graph. The least-squares regression line is also shown.\n\n<img src=\"/diagrams/mathematics-standard-2_2024_Q19_stimulus.jpg\" alt=\"Diagram\" style=\"max-width:100%;margin:8px 0;\">\n\n(a) What is the equation of the least-squares regression line for this dataset? (2 marks)\n\n(b) Another student, whose marks are not on the graph, scored 5 for the assignment. Did this student do better or worse on the test than the regression line would predict? Justify your answer. (1 mark)",
+      "q": "A teacher was exploring the relationship between students' marks for an assignment and their marks for a test. The data for five different students are shown on the graph. The least-squares regression line is also shown.\n\n<img src=\"/diagrams/mathematics-standard-2_2024_Q19_stimulus.png\" alt=\"Diagram\" style=\"max-width:100%;margin:8px 0;\">\n\n(a) What is the equation of the least-squares regression line for this dataset? (2 marks)\n\n(b) Another student, whose marks are not on the graph, scored 5 for the assignment. Did this student do better or worse on the test than the regression line would predict? Justify your answer. (1 mark)",
       "answer": "(a) Reading from the graph: the line passes through (0, 6) and (10, 20).\nGradient m = (20 − 6)/(10 − 0) = 14/10 = **1.4**\ny-intercept = 6\n\nEquation: **y = 1.4x + 6**\n\n(b) Using the regression line: predicted test mark for assignment mark 5:\ny = 1.4(5) + 6 = 7 + 6 = **13**\n\nThe student scored 12, but the regression line predicted 13.\n∴ The student did **worse** than predicted (12 < 13).",
       "keywords": [
         "1.4x + 6",
@@ -8714,7 +8714,7 @@
       "qNum": "26",
       "category": "A4",
       "image": null,
-      "q": "A sheet of metal is folded to make a gutter, as shown. The cross-section of the gutter is a rectangle of height <em>h</em> cm and width <em>w</em> cm.\n\n<img src=\"/diagrams/mathematics-standard-2_2024_Q26_stimulus.jpg\" alt=\"Diagram\" style=\"max-width:100%;margin:8px 0;\">\n\nThe area, A cm², of the cross-section can be modelled by the quadratic function A = −0.5w² + 20w.\n\nA graph of this model is shown.\n\n<img src=\"/diagrams/mathematics-standard-2_2024_Q26b_stimulus.jpg\" alt=\"Diagram\" style=\"max-width:100%;margin:8px 0;\">\n\nFind the width and height of the rectangle which will give the greatest possible cross-sectional area. (3 marks)",
+      "q": "A sheet of metal is folded to make a gutter, as shown. The cross-section of the gutter is a rectangle of height <em>h</em> cm and width <em>w</em> cm.\n\n<img src=\"/diagrams/mathematics-standard-2_2024_Q26_stimulus.png\" alt=\"Diagram\" style=\"max-width:100%;margin:8px 0;\">\n\nThe area, A cm², of the cross-section can be modelled by the quadratic function A = −0.5w² + 20w.\n\nA graph of this model is shown.\n\n<img src=\"/diagrams/mathematics-standard-2_2024_Q26b_stimulus.png\" alt=\"Diagram\" style=\"max-width:100%;margin:8px 0;\">\n\nFind the width and height of the rectangle which will give the greatest possible cross-sectional area. (3 marks)",
       "answer": "The quadratic A = −0.5w² + 20w has maximum at vertex.\n\n**Finding maximum width:**\nAxis of symmetry: w = −20/(2 × −0.5) = −20/(−1) = **20 cm**\n\n**Maximum area:**\nA = −0.5(20)² + 20(20)\n= −0.5(400) + 400\n= −200 + 400\n= **200 cm²**\n\n**Finding height:**\nA = h × w\n200 = h × 20\nh = 200/20\nh = **10 cm**\n\n∴ Width = **20 cm**, height = **10 cm**",
       "keywords": [
         "20",
@@ -8735,7 +8735,7 @@
       "qNum": "28",
       "category": "S1",
       "image": null,
-      "q": "Flowers were planted in two gardens (Garden A and Garden B). On a particular day, 25 flowers were randomly selected from each garden and their heights measured in millimetres. The data are represented in parallel box-plots.\n\n<img src=\"/diagrams/mathematics-standard-2_2024_Q28_stimulus.jpg\" alt=\"Diagram\" style=\"max-width:100%;margin:8px 0;\">\n\nCompare the two datasets by examining the skewness of the distributions, and using the median and inter-quartile range. (3 marks)",
+      "q": "Flowers were planted in two gardens (Garden A and Garden B). On a particular day, 25 flowers were randomly selected from each garden and their heights measured in millimetres. The data are represented in parallel box-plots.\n\n<img src=\"/diagrams/mathematics-standard-2_2024_Q28_stimulus.png\" alt=\"Diagram\" style=\"max-width:100%;margin:8px 0;\">\n\nCompare the two datasets by examining the skewness of the distributions, and using the median and inter-quartile range. (3 marks)",
       "answer": "**Skewness:**\n- Garden A is **negatively skewed** (longer whisker on the left, median closer to upper quartile).\n- Garden B is **positively skewed** (longer whisker on the right, median closer to lower quartile).\n\n**Central tendency:**\n- The **median of Garden A is higher** than the median of Garden B (approximately 168 mm vs 152 mm).\n- Garden A has taller flowers on average.\n\n**Spread:**\n- The **IQR of Garden A is larger** than the IQR of Garden B — Garden A has more variation in the middle 50% of heights.\n- The **range of Garden A is larger** than the range of Garden B.",
       "keywords": [
         "negatively",
@@ -8760,7 +8760,7 @@
       "qNum": "29",
       "category": "F1",
       "image": null,
-      "q": "The graph shows the decreasing value of an asset.\n\n<img src=\"/diagrams/mathematics-standard-2_2024_Q29_stimulus.jpg\" alt=\"Diagram\" style=\"max-width:100%;margin:8px 0;\">\n\nFor the first 4 years, the value of the asset depreciated by $1500 per year using the straight-line method. After the end of the 4th year, the method of depreciation changed to the declining-balance method at a rate of 35% per annum for a further 6 years. The initial value of the asset was $50 000.\n\nWhat is the total depreciation at the end of 10 years? (4 marks)",
+      "q": "The graph shows the decreasing value of an asset.\n\n<img src=\"/diagrams/mathematics-standard-2_2024_Q29_stimulus.png\" alt=\"Diagram\" style=\"max-width:100%;margin:8px 0;\">\n\nFor the first 4 years, the value of the asset depreciated by $1500 per year using the straight-line method. After the end of the 4th year, the method of depreciation changed to the declining-balance method at a rate of 35% per annum for a further 6 years. The initial value of the asset was $50 000.\n\nWhat is the total depreciation at the end of 10 years? (4 marks)",
       "answer": "Straight-line depreciation (years 1–4):\nValue after 4 years = $50 000 − (4 × $1500) = $50 000 − $6000 = $44 000\n\nDeclining balance (years 5–10, rate = 35%, 6 years):\nValue after 10 years = $44 000 × (1 − 0.35)^6 = $44 000 × (0.65)^6\n(0.65)^6 = 0.07542...\nValue = $44 000 × 0.07542 = $3318.43\n\nTotal depreciation = $50 000 − $3318.43 = $46 681.57 ≈ $46 682",
       "keywords": [
         "44000",
@@ -8782,7 +8782,7 @@
       "qNum": "30",
       "category": "S4",
       "image": null,
-      "q": "A researcher is studying anacondas (a type of snake). A dataset recording the age (in years) and length (in cm) of female and male anacondas is displayed on the scatterplot. Anacondas reach maturity at about 4 years of age.\n\n<img src=\"/diagrams/mathematics-standard-2_2024_Q30_stimulus.jpg\" alt=\"Diagram\" style=\"max-width:100%;margin:8px 0;\">\n\nWrite THREE observations about anacondas that may be made from the scatterplot. (3 marks)",
+      "q": "A researcher is studying anacondas (a type of snake). A dataset recording the age (in years) and length (in cm) of female and male anacondas is displayed on the scatterplot. Anacondas reach maturity at about 4 years of age.\n\n<img src=\"/diagrams/mathematics-standard-2_2024_Q30_stimulus.png\" alt=\"Diagram\" style=\"max-width:100%;margin:8px 0;\">\n\nWrite THREE observations about anacondas that may be made from the scatterplot. (3 marks)",
       "answer": "Three valid observations from the scatterplot:\n\n1. **Female anacondas grow at a faster rate than males** — the female data points show a steeper increase in length with age compared to males.\n\n2. **Both females and males continue to grow after 4 years of age** — data points for both sexes show increasing lengths beyond age 4.\n\n3. **Females are longer than males** (at any given age) — female data points consistently appear higher on the length axis than male data points of the same age.\n\n(Also acceptable: there is more variation in female lengths; the growth rate appears to slow down in older anacondas.)",
       "keywords": [
         "female",
@@ -8831,7 +8831,7 @@
       "qNum": "32",
       "category": "M6",
       "image": null,
-      "q": "A regular pentagon ABCDE is drawn inside a circle with a radius of 30 cm. O is the centre of the circle.\n\n<img src=\"/diagrams/mathematics-standard-2_2024_Q32_stimulus.jpg\" alt=\"Diagram\" style=\"max-width:100%;margin:8px 0;\">\n\nWhat is the area of the shaded region of the circle? Answer correct to 2 significant figures. (4 marks)",
+      "q": "A regular pentagon ABCDE is drawn inside a circle with a radius of 30 cm. O is the centre of the circle.\n\n<img src=\"/diagrams/mathematics-standard-2_2024_Q32_stimulus.png\" alt=\"Diagram\" style=\"max-width:100%;margin:8px 0;\">\n\nWhat is the area of the shaded region of the circle? Answer correct to 2 significant figures. (4 marks)",
       "answer": "**Area of circle:**\nA = πr² = π × 30² = 2827.43... cm²\n\n**Area of one triangle** (e.g. triangle OAB, with two sides = radius = 30 cm, included angle = 360°/5 = **72°**):\nA = ½ × 30 × 30 × sin72°\n= ½ × 900 × 0.9511\n= 427.975... cm²\n\n**Area of pentagon:**\n= 5 × 427.975 = 2139.877... cm²\n\n**Shaded area** (circle − pentagon):\n= 2827.43 − 2139.88\n= 687.5... cm²\n= **690 cm²** (to 2 significant figures)",
       "keywords": [
         "690"
@@ -8876,7 +8876,7 @@
       "qNum": "34",
       "category": "M1",
       "image": null,
-      "q": "A container for soccer balls is made using two half spheres joined to each end of a cylindrical body.\n\n<img src=\"/diagrams/mathematics-standard-2_2024_Q34_stimulus.jpg\" alt=\"Diagram\" style=\"max-width:100%;margin:8px 0;\">\n\nThree soccer balls fit exactly inside the container. Each ball has a diameter of 23 cm. The hemispherical ends of the container just touch the surface of the soccer balls.\n\nWhat is the total surface area of the container? Give your answer in square centimetres, correct to the nearest whole number. (4 marks)",
+      "q": "A container for soccer balls is made using two half spheres joined to each end of a cylindrical body.\n\n<img src=\"/diagrams/mathematics-standard-2_2024_Q34_stimulus.png\" alt=\"Diagram\" style=\"max-width:100%;margin:8px 0;\">\n\nThree soccer balls fit exactly inside the container. Each ball has a diameter of 23 cm. The hemispherical ends of the container just touch the surface of the soccer balls.\n\nWhat is the total surface area of the container? Give your answer in square centimetres, correct to the nearest whole number. (4 marks)",
       "answer": "Each ball diameter = 23 cm, radius = 11.5 cm.\n\nThe container consists of:\n- Two hemispherical ends (together = one complete sphere of radius 11.5 cm)\n- A cylindrical body (radius 11.5 cm, length = 3 × 23 = 69 cm)\n\n**Note:** The two flat circular ends of the cylinder are hidden inside the hemispheres, so only the curved surfaces count.\n\nSurface area of sphere = 4π × (11.5)² = 4π × 132.25 = 1661.9 cm²\n\nCurved surface area of cylinder = 2π × 11.5 × 69 = 2π × 793.5 = 4985.7 − 1661.9 = ...\n\nActual MG calculation:\n**SA of sphere** = 4 × π × (23/2)² = 1662.57 cm²\n**SA of cylinder** (curved) = 2 × π × (23/2) × (23 × 2) = 2 × π × 11.5 × 46 = 3323.1 cm²\n\n**Total SA** = 1662.57 + 3323.1 = 4985.7 cm²\n\nConvert: 4985.7 cm² ÷ 10 000 = **0.5 m²** (to 1 decimal place)",
       "keywords": [
         "0.5"
@@ -8895,7 +8895,7 @@
       "qNum": "35",
       "category": "S5",
       "image": null,
-      "q": "A random variable is normally distributed with mean 0 and standard deviation 1. The table gives the probability that this variable lies below <em>z</em>, for positive values of <em>z</em>.\n\n<div style=\"overflow-x:auto;-webkit-overflow-scrolling:touch;\"><table style=\"font-size:0.68em;border-collapse:collapse;margin:8px 0;\"><thead><tr><th style=\"border:1px solid #ccc;padding:4px 10px;\"><em>z</em></th><th style=\"border:1px solid #ccc;padding:4px 10px;\">P(<em>Z</em> &lt; <em>z</em>)</th></tr></thead><tbody><tr><td style=\"border:1px solid #ccc;padding:4px 10px;\">0.6</td><td style=\"border:1px solid #ccc;padding:4px 10px;\">0.7257</td></tr><tr><td style=\"border:1px solid #ccc;padding:4px 10px;\">0.7</td><td style=\"border:1px solid #ccc;padding:4px 10px;\">0.7580</td></tr><tr><td style=\"border:1px solid #ccc;padding:4px 10px;\">0.8</td><td style=\"border:1px solid #ccc;padding:4px 10px;\">0.7881</td></tr><tr><td style=\"border:1px solid #ccc;padding:4px 10px;\">0.9</td><td style=\"border:1px solid #ccc;padding:4px 10px;\">0.8159</td></tr><tr><td style=\"border:1px solid #ccc;padding:4px 10px;\">1.0</td><td style=\"border:1px solid #ccc;padding:4px 10px;\">0.8413</td></tr><tr><td style=\"border:1px solid #ccc;padding:4px 10px;\">1.1</td><td style=\"border:1px solid #ccc;padding:4px 10px;\">0.8643</td></tr><tr><td style=\"border:1px solid #ccc;padding:4px 10px;\">1.2</td><td style=\"border:1px solid #ccc;padding:4px 10px;\">0.8849</td></tr><tr><td style=\"border:1px solid #ccc;padding:4px 10px;\">1.3</td><td style=\"border:1px solid #ccc;padding:4px 10px;\">0.9032</td></tr><tr><td style=\"border:1px solid #ccc;padding:4px 10px;\">1.4</td><td style=\"border:1px solid #ccc;padding:4px 10px;\">0.9192</td></tr></tbody></table></div></div>\n\nThe probability values given in the table for different values of <em>z</em> are represented by the shaded area in the diagram below.\n\n<img src=\"/diagrams/mathematics-standard-2_2024_Q35_stimulus.jpg\" alt=\"Diagram\" style=\"max-width:100%;margin:8px 0;\">\n\nThe scores in a university examination are normally distributed with mean 58 and standard deviation 12.\n\n(a) By calculating a <em>z</em>-score, find the percentage of scores that are less than 46. (2 marks)\n\n(b) Explain why the percentage of scores between 46 and 70 is twice your answer to part (a). (1 mark)\n\n(c) By using the values in the table above, find an approximate minimum score needed to be in the top 5% of this examination. (2 marks)",
+      "q": "A random variable is normally distributed with mean 0 and standard deviation 1. The table gives the probability that this variable lies below <em>z</em>, for positive values of <em>z</em>.\n\n<div style=\"overflow-x:auto;-webkit-overflow-scrolling:touch;\"><table style=\"font-size:0.68em;border-collapse:collapse;margin:8px 0;\"><thead><tr><th style=\"border:1px solid #ccc;padding:4px 10px;\"><em>z</em></th><th style=\"border:1px solid #ccc;padding:4px 10px;\">P(<em>Z</em> &lt; <em>z</em>)</th></tr></thead><tbody><tr><td style=\"border:1px solid #ccc;padding:4px 10px;\">0.6</td><td style=\"border:1px solid #ccc;padding:4px 10px;\">0.7257</td></tr><tr><td style=\"border:1px solid #ccc;padding:4px 10px;\">0.7</td><td style=\"border:1px solid #ccc;padding:4px 10px;\">0.7580</td></tr><tr><td style=\"border:1px solid #ccc;padding:4px 10px;\">0.8</td><td style=\"border:1px solid #ccc;padding:4px 10px;\">0.7881</td></tr><tr><td style=\"border:1px solid #ccc;padding:4px 10px;\">0.9</td><td style=\"border:1px solid #ccc;padding:4px 10px;\">0.8159</td></tr><tr><td style=\"border:1px solid #ccc;padding:4px 10px;\">1.0</td><td style=\"border:1px solid #ccc;padding:4px 10px;\">0.8413</td></tr><tr><td style=\"border:1px solid #ccc;padding:4px 10px;\">1.1</td><td style=\"border:1px solid #ccc;padding:4px 10px;\">0.8643</td></tr><tr><td style=\"border:1px solid #ccc;padding:4px 10px;\">1.2</td><td style=\"border:1px solid #ccc;padding:4px 10px;\">0.8849</td></tr><tr><td style=\"border:1px solid #ccc;padding:4px 10px;\">1.3</td><td style=\"border:1px solid #ccc;padding:4px 10px;\">0.9032</td></tr><tr><td style=\"border:1px solid #ccc;padding:4px 10px;\">1.4</td><td style=\"border:1px solid #ccc;padding:4px 10px;\">0.9192</td></tr></tbody></table></div></div>\n\nThe probability values given in the table for different values of <em>z</em> are represented by the shaded area in the diagram below.\n\n<img src=\"/diagrams/mathematics-standard-2_2024_Q35_stimulus.png\" alt=\"Diagram\" style=\"max-width:100%;margin:8px 0;\">\n\nThe scores in a university examination are normally distributed with mean 58 and standard deviation 12.\n\n(a) By calculating a <em>z</em>-score, find the percentage of scores that are less than 46. (2 marks)\n\n(b) Explain why the percentage of scores between 46 and 70 is twice your answer to part (a). (1 mark)\n\n(c) By using the values in the table above, find an approximate minimum score needed to be in the top 5% of this examination. (2 marks)",
       "answer": "(a) z = (70 − 58)/15 = 12/15 = **0.8**\nP from table = 0.7881\nP(58 to 70) = 0.7881 − 0.5 = **0.2881 = 28.81%**\n\n(b) The z-score for 46: z = (46 − 58)/15 = −12/15 = **−0.8**\nBy the symmetry of the normal distribution, the area between 46 and 58 equals the area between 58 and 70.\nSo the percentage of scores between 46 and 70 = 28.81% + 28.81% = twice the answer to (a).\n\n(c) Top 10% means P(z < Z) = 0.90.\nFrom the table, z = 1.3 gives P = 0.9032 ≈ 0.90.\n\nx = z × σ + μ = 1.3 × 15 + 58 = 19.5 + 58 = **77.5**\n\nApproximate minimum score = **77** (or 78)",
       "keywords": [
         "28.81",
@@ -8919,7 +8919,7 @@
       "qNum": "36",
       "category": "M6",
       "image": null,
-      "q": "The diagram shows two vertical flagpoles, BE and CD, set on sloping ground.\n\n<img src=\"/diagrams/mathematics-standard-2_2024_Q36_stimulus.jpg\" alt=\"Diagram\" style=\"max-width:100%;margin:8px 0;\">\n\n(a) What is the height of the flagpole BE, correct to 1 decimal place? (2 marks)\n\n(b) What is the height of the flagpole CD, correct to 1 decimal place? (2 marks)",
+      "q": "The diagram shows two vertical flagpoles, BE and CD, set on sloping ground.\n\n<img src=\"/diagrams/mathematics-standard-2_2024_Q36_stimulus.png\" alt=\"Diagram\" style=\"max-width:100%;margin:8px 0;\">\n\n(a) What is the height of the flagpole BE, correct to 1 decimal place? (2 marks)\n\n(b) What is the height of the flagpole CD, correct to 1 decimal place? (2 marks)",
       "answer": "(a) In triangle ABE, using the sine rule:\nBE/sin27° = AB/sin(∠AEB)\n∠AEB = 180° − 27° − 106° = 47°\nBE/sin27° = 53.8/sin106°\nBE = 53.8 × sin27°/sin106°\n= 53.8 × 0.4540/0.9613\n= **25.4 m**\n\n(b) ∠EBC = 180° − 106° = **74°** (angles on a straight line)\nIn right triangle BXC (where X is directly below E):\ntan74° = ED/BX (where BX is horizontal distance)\n\nActually: tan74° = 20/BX\nBX = 20/tan74°\n= 20/3.4874\n= **5.73 m**\n\nCD = BE − BX (vertical drop from B to C along slope)\nCD = 25.4 − 5.73 = **19.7 m**",
       "keywords": [
         "25.4",
@@ -8965,7 +8965,7 @@
       "qNum": "38",
       "category": "M1",
       "image": null,
-      "q": "A cake is constructed using a cylinder and a cone-shaped top. The cylinder has diameter 30 cm and height 6 cm.\n\n<img src=\"/diagrams/mathematics-standard-2_2024_Q38_stimulus.jpg\" alt=\"Diagram\" style=\"max-width:100%;margin:8px 0;\">\n\nThe ratio of the volume of the cylinder to the volume of the cone-shaped top is 5 : 1. The cake is to be cut into equal slices with volume 212 cm³.\n\nHow many equal slices can be cut from the cake? (3 marks)",
+      "q": "A cake is constructed using a cylinder and a cone-shaped top. The cylinder has diameter 30 cm and height 6 cm.\n\n<img src=\"/diagrams/mathematics-standard-2_2024_Q38_stimulus.png\" alt=\"Diagram\" style=\"max-width:100%;margin:8px 0;\">\n\nThe ratio of the volume of the cylinder to the volume of the cone-shaped top is 5 : 1. The cake is to be cut into equal slices with volume 212 cm³.\n\nHow many equal slices can be cut from the cake? (3 marks)",
       "answer": "**Volume of cylinder:**\nV = π × r² × h\n= π × 15² × 6\n= π × 225 × 6\n= **4241.15 cm³** (= 5 parts)\n\n**Total cake volume** (cylinder is 5 parts, so 6 parts total):\nTotal = (6/5) × 4241.15\n= **5089.38 cm³**\n\n**Number of slices:**\n= 5089.38 ÷ 212\n= 24.0065...\n= **24 slices** (to the nearest whole slice)",
       "keywords": [
         "24"
@@ -8984,7 +8984,7 @@
       "qNum": "39",
       "category": "N3",
       "image": null,
-      "q": "A project involving nine activities is shown in the network diagram. The duration of each activity is not yet known.\n\n<img src=\"/diagrams/mathematics-standard-2_2024_Q39_stimulus.jpg\" alt=\"Network diagram showing nine activities A–I\" style=\"max-width:100%;margin:8px 0;\">\n\nThe following table gives the earliest start time (EST) and latest start time (LST) for three of the activities. All times are in hours.\n\n<div style=\"overflow-x:auto;-webkit-overflow-scrolling:touch;\"><table style=\"font-size:0.68em;border-collapse:collapse;margin:8px 0;\"><thead><tr><th style=\"border:1px solid #ccc;padding:6px 12px;\">Activity</th><th style=\"border:1px solid #ccc;padding:6px 12px;\">EST</th><th style=\"border:1px solid #ccc;padding:6px 12px;\">LST</th></tr></thead><tbody><tr><td style=\"border:1px solid #ccc;padding:6px 12px;\">A</td><td style=\"border:1px solid #ccc;padding:6px 12px;\">0</td><td style=\"border:1px solid #ccc;padding:6px 12px;\">2</td></tr><tr><td style=\"border:1px solid #ccc;padding:6px 12px;\">C</td><td style=\"border:1px solid #ccc;padding:6px 12px;\">0</td><td style=\"border:1px solid #ccc;padding:6px 12px;\">1</td></tr><tr><td style=\"border:1px solid #ccc;padding:6px 12px;\">I</td><td style=\"border:1px solid #ccc;padding:6px 12px;\">12</td><td style=\"border:1px solid #ccc;padding:6px 12px;\">12</td></tr></tbody></table></div></div>\n\n(a) What is the critical path?\n\n(b) The minimum time required for this project to be completed is 19 hours. What is the duration of activity <em>I</em>?\n\n(c) The duration of activity <em>C</em> is 3 hours. What is the maximum amount of time that could occur between the start of activity F and the end of activity H?",
+      "q": "A project involving nine activities is shown in the network diagram. The duration of each activity is not yet known.\n\n<img src=\"/diagrams/mathematics-standard-2_2024_Q39_stimulus.png\" alt=\"Network diagram showing nine activities A–I\" style=\"max-width:100%;margin:8px 0;\">\n\nThe following table gives the earliest start time (EST) and latest start time (LST) for three of the activities. All times are in hours.\n\n<div style=\"overflow-x:auto;-webkit-overflow-scrolling:touch;\"><table style=\"font-size:0.68em;border-collapse:collapse;margin:8px 0;\"><thead><tr><th style=\"border:1px solid #ccc;padding:6px 12px;\">Activity</th><th style=\"border:1px solid #ccc;padding:6px 12px;\">EST</th><th style=\"border:1px solid #ccc;padding:6px 12px;\">LST</th></tr></thead><tbody><tr><td style=\"border:1px solid #ccc;padding:6px 12px;\">A</td><td style=\"border:1px solid #ccc;padding:6px 12px;\">0</td><td style=\"border:1px solid #ccc;padding:6px 12px;\">2</td></tr><tr><td style=\"border:1px solid #ccc;padding:6px 12px;\">C</td><td style=\"border:1px solid #ccc;padding:6px 12px;\">0</td><td style=\"border:1px solid #ccc;padding:6px 12px;\">1</td></tr><tr><td style=\"border:1px solid #ccc;padding:6px 12px;\">I</td><td style=\"border:1px solid #ccc;padding:6px 12px;\">12</td><td style=\"border:1px solid #ccc;padding:6px 12px;\">12</td></tr></tbody></table></div></div>\n\n(a) What is the critical path?\n\n(b) The minimum time required for this project to be completed is 19 hours. What is the duration of activity <em>I</em>?\n\n(c) The duration of activity <em>C</em> is 3 hours. What is the maximum amount of time that could occur between the start of activity F and the end of activity H?",
       "answer": "(a) Activities A and C have float times (LST > EST), so they are NOT on the critical path.\n\nThe critical path is **BEGI**.\n\n(b) Activity I has EST = 12 and the project takes 19 hours.\nDuration of I = 19 − 12 = **7 hours**\n\n(c) Duration of C = 3 hours.\nC starts at EST = 0, ends at 0 + 3 = 3.\nF starts at EST = LST of C + duration of C (actually at the EST of the next node).\nThe maximum time from start of F to end of H:\nUsing LST approach: 12 − 3 = 9, then 9 − 1 = **8 hours**",
       "keywords": [
         "BEGI",
@@ -9005,7 +9005,7 @@
       "qNum": "40",
       "category": "M6",
       "image": null,
-      "q": "A compass radial survey is shown.\n\n<img src=\"/diagrams/mathematics-standard-2_2024_Q40_stimulus.jpg\" alt=\"Diagram\" style=\"max-width:100%;margin:8px 0;\">\n\nThe bearing of D from O is 285°T. The bearing of B from O is 110°T. OA = 42 m, OD = 38 m and OB = 40 m.\n\nGiven that AC is a straight line, find the bearing of C from O, correct to the nearest degree. (3 marks)",
+      "q": "A compass radial survey is shown.\n\n<img src=\"/diagrams/mathematics-standard-2_2024_Q40_stimulus.png\" alt=\"Diagram\" style=\"max-width:100%;margin:8px 0;\">\n\nThe bearing of D from O is 285°T. The bearing of B from O is 110°T. OA = 42 m, OD = 38 m and OB = 40 m.\n\nGiven that AC is a straight line, find the bearing of C from O, correct to the nearest degree. (3 marks)",
       "answer": "**In triangle ODA**, using the cosine rule to find ∠AOD:\ncos∠AOD = (OD² + OA² − DA²)/(2 × OD × OA)\n= (38² + 42² − 67.5²)/(2 × 38 × 42)\n= (1444 + 1764 − 4556.25)/3192\n= −1348.25/3192\n= −0.4224\n∠AOD = cos⁻¹(−0.4224) ≈ **115°**\n\n**Finding bearing of A from O:**\nBearing of D from O = 285°, so ∠DON = 360° − 285° = 75° (west of north)\n∠AOD = ∠DON + ∠AON\n115° = 75° + ∠AON\n∠AON = **40°**\n\nBearing of A from O = **040°T**\n\n**Bearing of C from O** (AC is a straight line, so C is directly opposite A):\nBearing of C = 40° + 180° = **220°T**",
       "keywords": [
         "220"
@@ -9046,7 +9046,7 @@
       "qNum": "17",
       "category": "S4",
       "image": null,
-      "q": "The scatter plot shows a bivariate dataset, where <em>x</em> is the independent variable.\n\n<img src=\"/diagrams/mathematics-standard-2_2025_Q17_stimulus.jpg\" alt=\"Diagram\" style=\"max-width:100%;margin:8px 0;\">\n\nThe points (0, 14) and (5, 4) lie on the line of best fit.\n\nPlot the points (0, 14) and (5, 4) on the graph and hence find the equation of the line of best fit. (3 marks)",
+      "q": "The scatter plot shows a bivariate dataset, where <em>x</em> is the independent variable.\n\n<img src=\"/diagrams/mathematics-standard-2_2025_Q17_stimulus.png\" alt=\"Diagram\" style=\"max-width:100%;margin:8px 0;\">\n\nThe points (0, 14) and (5, 4) lie on the line of best fit.\n\nPlot the points (0, 14) and (5, 4) on the graph and hence find the equation of the line of best fit. (3 marks)",
       "answer": "Gradient (slope) = (14 − 4)/(0 − 5) = 10/(−5) = −2\ny-intercept = 14 (from point (0, 14))\nEquation: y = −2x + 14",
       "acceptableAnswers": [
         "y = -2x + 14",
@@ -9066,7 +9066,7 @@
       "qNum": "19",
       "category": "N3",
       "image": null,
-      "q": "The activities and corresponding durations in days for a project are shown in the network diagram.\n\n<img src=\"/diagrams/mathematics-standard-2_2025_Q19_stimulus.jpg\" alt=\"Diagram\" style=\"max-width:100%;margin:8px 0;\">\n\n(a) Complete the table showing the immediate prerequisites for activities B, E and F. (2 marks)\n\n(b) Find the critical path for this project AND state the minimum duration. (2 marks)\n\n(c) The duration of activity A is increased by 2 days. Does this affect the critical path? Give a reason. (1 mark)",
+      "q": "The activities and corresponding durations in days for a project are shown in the network diagram.\n\n<img src=\"/diagrams/mathematics-standard-2_2025_Q19_stimulus.png\" alt=\"Diagram\" style=\"max-width:100%;margin:8px 0;\">\n\n(a) Complete the table showing the immediate prerequisites for activities B, E and F. (2 marks)\n\n(b) Find the critical path for this project AND state the minimum duration. (2 marks)\n\n(c) The duration of activity A is increased by 2 days. Does this affect the critical path? Give a reason. (1 mark)",
       "answer": "(a) Immediate prerequisites:\nB: ✗ (no prerequisites — starts immediately)\nE: B (E follows B)\nF: A, C (F follows A and C)\n\n(b) Critical path: B → F → H (4 + 7 + 5 = 16 days)\nMinimum project duration = 16 days\n\n(c) No — increasing A by 2 days does not affect the critical path.\nReason: A is not on the critical path (B→F→H). A feeds into F but the path A→F→H = 3+7+5 = 15 days, which is still less than 16. Even with A increased to 5, path = 5+7+5 = 17 days...\nCorrected: increasing A by 2 makes A=5, so A→F→H = 5+7+5 = 17 > 16. This DOES affect the critical path.",
       "keywords": [
         "16",
@@ -9087,7 +9087,7 @@
       "qNum": "22",
       "category": "N3",
       "image": null,
-      "q": "A network of pipes with one cut is shown. The number on each edge gives the capacity of that pipe in L/min.\n\n<img src=\"/diagrams/mathematics-standard-2_2025_Q22_stimulus.jpg\" alt=\"Diagram\" style=\"max-width:100%;margin:8px 0;\">\n\n(a) What is the capacity of the cut shown? (1 mark)\n\n(b) A second diagram shows a possible flow for this network.\n\n<img src=\"/diagrams/mathematics-standard-2_2025_Q22b_stimulus.jpg\" alt=\"Diagram\" style=\"max-width:100%;margin:8px 0;\">\n\n(i) What is the value of <em>x</em>? Give a reason for your answer. (2 marks)\n(ii) Which of the pipes in the flow are at full capacity? (1 mark)\n(iii) The maximum flow for this network is 50 L/min. Which path of pipes could have an increase in flow of 2 L/min to achieve the maximum flow? (1 mark)",
+      "q": "A network of pipes with one cut is shown. The number on each edge gives the capacity of that pipe in L/min.\n\n<img src=\"/diagrams/mathematics-standard-2_2025_Q22_stimulus.png\" alt=\"Diagram\" style=\"max-width:100%;margin:8px 0;\">\n\n(a) What is the capacity of the cut shown? (1 mark)\n\n(b) A second diagram shows a possible flow for this network.\n\n<img src=\"/diagrams/mathematics-standard-2_2025_Q22b_stimulus.png\" alt=\"Diagram\" style=\"max-width:100%;margin:8px 0;\">\n\n(i) What is the value of <em>x</em>? Give a reason for your answer. (2 marks)\n(ii) Which of the pipes in the flow are at full capacity? (1 mark)\n(iii) The maximum flow for this network is 50 L/min. Which path of pipes could have an increase in flow of 2 L/min to achieve the maximum flow? (1 mark)",
       "answer": "(a) The cut crosses edges B→D (26), E→G (24), and C→F (12).\nCapacity of cut = 26 + 24 + 12 = 62 L/min\n\n(b)(i) x = 30\nReason: Outflow from C = 5 + 13 + 12 = 30 L/min. By conservation of flow, inflow to C must equal outflow, so x = 30.\n\n(b)(ii) Pipes at full capacity: DE (capacity 8, flow 8), CF (capacity 12, flow 12), DG (capacity 15, flow 15), FG (capacity 11, flow 11).\n\n(b)(iii) Path ACEG. The path A→C→E→G has spare capacity: A→C has capacity 35, flow 30 (spare 5); C→E has capacity 17, flow 13 (spare 4); E→G has capacity 24, flow 22 (spare 2). An increase of 2 L/min along ACEG is possible.",
       "keywords": [
         "62",
@@ -9112,7 +9112,7 @@
       "qNum": "26",
       "category": "M1",
       "image": null,
-      "q": "A toy has a curved surface on the top which has been shaded as shown. The toy has a uniform cross-section and a rectangular base.\n\n<img src=\"/diagrams/mathematics-standard-2_2025_Q26_stimulus.jpg\" alt=\"Diagram\" style=\"max-width:100%;margin:8px 0;\">\n\nThe cross-section has heights: 6.0 cm at one edge, 3.8 cm at the midpoint (5.1 cm from each edge), and 0 cm at the other edge. The base is 10.2 cm wide and the toy is 40.0 cm long.\n\n(a) Use two applications of the trapezoidal rule to find an approximate area of the cross-section. (2 marks)\n\n(b) The total surface area of the plastic toy is 1300 cm². What percentage of the total surface area is the curved shaded surface? Give your answer correct to one decimal place. (2 marks)\n\n(c) The toy uses 1.5 g of plastic per cm³. What mass of plastic is used to make the toy? Give your answer correct to the nearest gram. (2 marks)",
+      "q": "A toy has a curved surface on the top which has been shaded as shown. The toy has a uniform cross-section and a rectangular base.\n\n<img src=\"/diagrams/mathematics-standard-2_2025_Q26_stimulus.png\" alt=\"Diagram\" style=\"max-width:100%;margin:8px 0;\">\n\nThe cross-section has heights: 6.0 cm at one edge, 3.8 cm at the midpoint (5.1 cm from each edge), and 0 cm at the other edge. The base is 10.2 cm wide and the toy is 40.0 cm long.\n\n(a) Use two applications of the trapezoidal rule to find an approximate area of the cross-section. (2 marks)\n\n(b) The total surface area of the plastic toy is 1300 cm². What percentage of the total surface area is the curved shaded surface? Give your answer correct to one decimal place. (2 marks)\n\n(c) The toy uses 1.5 g of plastic per cm³. What mass of plastic is used to make the toy? Give your answer correct to the nearest gram. (2 marks)",
       "answer": "(a) Using two applications of the trapezoidal rule with h = 5.1 cm:\nA ≈ (5.1/2)(6 + 3.8) + (5.1/2)(3.8 + 0)\n= 2.55 × 9.8 + 2.55 × 3.8\n= 24.99 + 9.69\n≈ 34.68 cm²\n\n(b) The total surface area consists of:\n• Two cross-section ends: 2 × 34.68 = 69.36 cm²\n• Base (rectangular bottom): 10.2 × 40 = 408 cm²\n• Two side faces: 2 × (6.0 × 40) = 480 cm∂... \nUsing MG: 1300 = (2 × 34.68) + (10.2 × 40) + (6 × 40) + curved surface\n1300 = 69.36 + 408 + 240 + curved surface\n1300 ≈ 717.36 + curved surface\nCurved surface ≈ 582.64 cm²\n\n(c) Absolute error = ½ × 0.1 cm = 0.05 cm\nPercentage error = (0.05 / 10.2) × 100%\n= 0.4902...×\n≈ 0.490% (3 significant figures)",
       "keywords": [
         "34.68",
@@ -9134,7 +9134,7 @@
       "qNum": "28",
       "category": "S1",
       "image": null,
-      "q": "The heights of students in a class were recorded. The results for this class are displayed in the cumulative frequency graph.\n\n<img src=\"/diagrams/mathematics-standard-2_2025_Q28_stimulus.jpg\" alt=\"Diagram\" style=\"max-width:100%;margin:8px 0;\">\n\nThe shortest student in this class is 130 cm and the tallest student is 180 cm.\n\nConstruct a box-plot for this class using the information from the graph. (3 marks)",
+      "q": "The heights of students in a class were recorded. The results for this class are displayed in the cumulative frequency graph.\n\n<img src=\"/diagrams/mathematics-standard-2_2025_Q28_stimulus.png\" alt=\"Diagram\" style=\"max-width:100%;margin:8px 0;\">\n\nThe shortest student in this class is 130 cm and the tallest student is 180 cm.\n\nConstruct a box-plot for this class using the information from the graph. (3 marks)",
       "answer": "From the cumulative frequency graph (30 students):\n• Minimum = 130 cm (given)\n• Q1 (7.5th value): at cumfreq ≈ 7.5 → height ≈ 135 cm\n• Median (15th value): at cumfreq = 15 → height ≈ 140 cm\n• Q3 (22.5th value): at cumfreq ≈ 22.5 → height ≈ 160 cm\n• Maximum = 180 cm (given)\n\nBox-plot: Minimum=130, Q1=135, Median=140, Q3=160, Maximum=180",
       "keywords": [
         "135",
@@ -9157,7 +9157,7 @@
       "qNum": "32",
       "category": "M1",
       "image": null,
-      "q": "Solid spheres are placed inside a square-based pyramid as shown.\n\n<img src=\"/diagrams/mathematics-standard-2_2025_Q32_stimulus.jpg\" alt=\"Diagram\" style=\"max-width:100%;margin:8px 0;\">\n\nThe base of the pyramid has side lengths of 14 cm. Each sphere has a radius of 1.5 cm. The amount of empty space remaining inside the pyramid after 30 spheres have been placed inside is 634 cm³.\n\nWhat is the height, <em>h</em>, of the pyramid? Give your answer correct to the nearest centimetre. (3 marks)",
+      "q": "Solid spheres are placed inside a square-based pyramid as shown.\n\n<img src=\"/diagrams/mathematics-standard-2_2025_Q32_stimulus.png\" alt=\"Diagram\" style=\"max-width:100%;margin:8px 0;\">\n\nThe base of the pyramid has side lengths of 14 cm. Each sphere has a radius of 1.5 cm. The amount of empty space remaining inside the pyramid after 30 spheres have been placed inside is 634 cm³.\n\nWhat is the height, <em>h</em>, of the pyramid? Give your answer correct to the nearest centimetre. (3 marks)",
       "answer": "Volume of pyramid = (1/3) × 14² × h = (196h/3) cm³\nVolume of 30 spheres = 30 × (4/3)π(1.5)³ = 30 × (4/3)π × 3.375 = 30 × 4.5π = 135π ≈ 424.12 cm³\n\nEmpty space = Volume pyramid − Volume spheres:\n634 = (196h/3) − 135π\n196h/3 = 634 + 135π = 634 + 424.12 = 1058.12\nh = 1058.12 × 3/196 = 3174.36/196 = 16.2 ≈ 16 cm",
       "acceptableAnswers": [
         "16",
@@ -9176,7 +9176,7 @@
       "qNum": "35",
       "category": "M6",
       "image": null,
-      "q": "The triangle PTA is shown. The length of PA is 75 m and the length of PT is 51 m. The angle of depression from T to A is 36°, and the angle PTA is obtuse.\n\n<img src=\"/diagrams/mathematics-standard-2_2025_Q35_stimulus.jpg\" alt=\"Diagram\" style=\"max-width:100%;margin:8px 0;\">\n\nFind the length of TA. Give your answer correct to 2 decimal places. (3 marks)",
+      "q": "The triangle PTA is shown. The length of PA is 75 m and the length of PT is 51 m. The angle of depression from T to A is 36°, and the angle PTA is obtuse.\n\n<img src=\"/diagrams/mathematics-standard-2_2025_Q35_stimulus.png\" alt=\"Diagram\" style=\"max-width:100%;margin:8px 0;\">\n\nFind the length of TA. Give your answer correct to 2 decimal places. (3 marks)",
       "answer": "Since the angle of depression from T to A is 36°, the angle TAP (alternate angle) = 36° (since TA is horizontal from T’s perspective, but actually ∠TAP = 36° from the horizontal at A).\n\nUsing the sine rule to find ∠PTA:\nsin(θ) / 75 = sin(36°) / 51\nsin(θ) = (sin 36° × 75) / 51 = 0.8660...\nθ = 59.81° ≈ 60°\n\nSince ∠PTA is obtuse: ∠PTA = 180° − 60° = 120°\n\nTherefore: ∠TPA = 180° − 120° − 36° = 24°\n\nUsing the sine rule:\nTA / sin 24° = 51 / sin 36°\nTA = (51 × sin 24°) / sin 36°\nTA ≈ 35.29 m",
       "keywords": [
         "35.29",
@@ -9197,7 +9197,7 @@
       "qNum": "36",
       "category": "F4",
       "image": null,
-      "q": "The graph shows the salvage value of a car over 5 years.\n\n<img src=\"/diagrams/mathematics-standard-2_2025_Q36_stimulus.jpg\" alt=\"Diagram\" style=\"max-width:100%;margin:8px 0;\">\n\nThe salvage values are based on the declining-balance method. The initial value is $55 000 and the value after 1 year is $44 000.\n\nBy what amount will the car's value depreciate during the 10th year? (4 marks)",
+      "q": "The graph shows the salvage value of a car over 5 years.\n\n<img src=\"/diagrams/mathematics-standard-2_2025_Q36_stimulus.png\" alt=\"Diagram\" style=\"max-width:100%;margin:8px 0;\">\n\nThe salvage values are based on the declining-balance method. The initial value is $55 000 and the value after 1 year is $44 000.\n\nBy what amount will the car's value depreciate during the 10th year? (4 marks)",
       "answer": "Step 1: Find the depreciation rate r.\n$44 000 = $55 000 × (1 − r)\n44/55 = 1 − r\nr = 1 − 44/55 = 11/55 = 0.2 = 20%\n\nStep 2: Find the value at the end of year 9 (after 9 years of depreciation from $55 000).\nValue after 9 years = $55 000 × (1 − 0.2)⁹\n= $55 000 × (0.8)⁹\n= $55 000 × 0.134218\n= $7 381.98\n\nStep 3: Depreciation during year 10 = value at start of year 10 × r\n= $7 381.98 × 0.2\n= $1 476.40\n\nThe car will depreciate by $1 476.40 during the 10th year.",
       "keywords": [
         "1476.40",
@@ -9219,7 +9219,7 @@
       "qNum": "37",
       "category": "M6",
       "image": null,
-      "q": "The diagram shows a park consisting of two equilateral triangles. The shaded triangle is a grassed section. All measurements on the diagram are in metres.\n\n<img src=\"/diagrams/mathematics-standard-2_2025_Q37_stimulus.jpg\" alt=\"Diagram\" style=\"max-width:100%;margin:8px 0;\">\n\nThe outer equilateral triangle has side length 9 m. Each vertex of the inner (shaded) triangle is located 3 m along each side of the outer triangle from a vertex.\n\nHow long will it take to mow the grassed section if it takes 5 minutes to mow 20 m²? Give your answer correct to the nearest minute. (4 marks)",
+      "q": "The diagram shows a park consisting of two equilateral triangles. The shaded triangle is a grassed section. All measurements on the diagram are in metres.\n\n<img src=\"/diagrams/mathematics-standard-2_2025_Q37_stimulus.png\" alt=\"Diagram\" style=\"max-width:100%;margin:8px 0;\">\n\nThe outer equilateral triangle has side length 9 m. Each vertex of the inner (shaded) triangle is located 3 m along each side of the outer triangle from a vertex.\n\nHow long will it take to mow the grassed section if it takes 5 minutes to mow 20 m²? Give your answer correct to the nearest minute. (4 marks)",
       "answer": "Step 1: Find the side length c of the shaded triangle using the cosine rule.\nIn the triangle formed by sides 9 m and 3 m with included angle 60° (equilateral triangle angle):\nc² = 9² + 3² − 2 × 9 × 3 × cos 60°\nc² = 81 + 9 − 2 × 9 × 3 × 0.5\nc² = 90 − 27 = 63\nc = √63 ≈ 7.937 m\n\nStep 2: Find the area of the shaded triangle.\nArea = ½ × c × c × sin 60°\n= ½ × 7.937 × 7.937 × sin 60°\n= ½ × 63 × (√3/2)\n≈ 27.28 m²\n\nStep 3: Calculate time to mow.\nRate = 5 min per 20 m² = 0.25 min/m²\nTime = 27.28 × 0.25 ≈ 6.81 minutes\n≈ 7 minutes (to the nearest minute)",
       "keywords": [
         "7",
@@ -9241,7 +9241,7 @@
       "qNum": "39",
       "category": "A4",
       "image": null,
-      "q": "After a dose of a medication, the amount of the medication remaining in a person can be modelled by the equation <em>y</em> = k<em>a</em>ˣ, where <em>x</em> is the number of hours after taking the dose, and <em>y</em> is the amount remaining in milligrams (mg).\n\nThe graph shows the amount of the medication remaining in a person after <em>x</em> hours. Two points are shown: at <em>x</em> = 0, <em>y</em> = 15 and at <em>x</em> = 2, <em>y</em> = 9.\n\n<img src=\"/diagrams/mathematics-standard-2_2025_Q39_stimulus.jpg\" alt=\"Diagram\" style=\"max-width:100%;margin:8px 0;\">\n\nUsing the information provided, find the amount of medication that remains in a person when <em>x</em> = 4. (3 marks)",
+      "q": "After a dose of a medication, the amount of the medication remaining in a person can be modelled by the equation <em>y</em> = k<em>a</em>ˣ, where <em>x</em> is the number of hours after taking the dose, and <em>y</em> is the amount remaining in milligrams (mg).\n\nThe graph shows the amount of the medication remaining in a person after <em>x</em> hours. Two points are shown: at <em>x</em> = 0, <em>y</em> = 15 and at <em>x</em> = 2, <em>y</em> = 9.\n\n<img src=\"/diagrams/mathematics-standard-2_2025_Q39_stimulus.png\" alt=\"Diagram\" style=\"max-width:100%;margin:8px 0;\">\n\nUsing the information provided, find the amount of medication that remains in a person when <em>x</em> = 4. (3 marks)",
       "answer": "Step 1: Find k.\nAt x = 0: y = ka⁰ = k × 1 = k\nSince y = 15 when x = 0: k = 15\n\nStep 2: Find a.\nAt x = 2, y = 9:\n9 = 15 × a²\na² = 9/15 = 0.6\na = √0.6 ≈ 0.7746\n\nStep 3: Find y when x = 4.\ny = 15 × (0.7746...)⁴\n= 15 × 0.36\n= 5.4 mg",
       "keywords": [
         "5.4",
