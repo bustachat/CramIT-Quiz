@@ -221,10 +221,10 @@
     {
       "filename": "mathematics-standard-2_2022_Q23_stimulus.jpg",
       "year": 2022, "question": 23,
-      "description": "Scatterplot — average hours of sleep per day (x-axis) vs some health metric (y-axis). X-axis label MISSING due to tight crop.",
-      "crop_quality": "axis_missing",
-      "issue_level": "REAL",
-      "notes": "NEEDS FIX: x-axis label 'Average hours of sleep per day' is cropped off. Only the axis break symbol 'w' visible at bottom. Students cannot identify what the x-axis represents without the label. Recrop from 2022 NESA PDF to include x-axis label text."
+      "description": "Scatterplot — Average hours of sleep per day (y-axis, 4–11) vs Average hours of phone use per day (x-axis, 0–10). Negative correlation. Axis break symbol at y-axis bottom.",
+      "crop_quality": "clean",
+      "issue_level": null,
+      "notes": "FIXED 2026-06-21: manually re-cropped to include x-axis label 'Average hours of phone use per day'. Both axes now fully labelled. ~13 data points visible."
     },
     {
       "filename": "mathematics-standard-2_2022_Q26_stimulus.jpg",
@@ -618,14 +618,8 @@
     "drawing_grid_intentional": 7,
     "answer_lines_minor": 1,
     "right_edge_clip_minor": 1,
-    "axis_missing_real": 1,
-    "issues_requiring_fix": [
-      {
-        "filename": "mathematics-standard-2_2022_Q23_stimulus.jpg",
-        "issue": "X-axis label 'Average hours of sleep per day' is cropped off. Students cannot identify x-axis without the label.",
-        "fix": "Recrop from 2022 NESA PDF — extend y_end downward to include the x-axis label text."
-      }
-    ],
+    "axis_missing_real": 0,
+    "issues_requiring_fix": [],
     "drawing_grid_files": [
       "mathematics-standard-2_2020_Q30b_stimulus.jpg",
       "mathematics-standard-2_2023_Q19b_stimulus.jpg",
