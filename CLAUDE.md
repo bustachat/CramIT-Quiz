@@ -639,6 +639,7 @@ await logAction(agentName, action, payload);           // log before acting
 - **Test Mode MC re-selection bug fixed (2026-06-21)** — In Test Mode, clicking an answer immediately called `renderQuestion()` which disabled all option buttons, preventing the user from changing their answer. Fix: `selectAnswer()` in test mode now only highlights the chosen option (adds `selected-test` class) and shows the Next button — it does NOT set `answered=true` or call `renderQuestion()`. Scoring (score++, streak, `recordAnswer`) moved to `nextQuestion()` where it runs when the user confirms by clicking Next. Users can now re-click any option to change selection before advancing.
 - **Quiz footer nav buttons redesigned (2026-06-21)** — Prev button redesigned as compact 52×52px icon-only square (`←`), `2px solid var(--muted)` border. Next/Show button fills remaining width via `flex: 1`. Removed `margin: 14px 20px 28px` from `.next-btn` (was inflating row height and misaligning buttons). Footer uses `align-items: center`. Footer padding handles all outer spacing.
 - **MC image-question text audit complete (2026-06-21)** — All 33 image-based MC questions (those with `image` or `optionImages` fields) visually verified against NESA PDFs by rendering exam pages at 2x PNG via PyMuPDF and comparing using Read tool. 4 fixes applied to `subjects/mathematics-standard-2.json`: 2020 Q8 (add "the subjects and"), 2020 Q15 (add missing die-rolling rule sentence), 2022 Q13 (add "for some positive values of z", shaded area diagram sentence, full final question wording), 2023 Q8 (add "The table of scores below is partially completed."). All 90 HSC MC questions now verified against NESA PDFs (text-only questions via PyMuPDF extraction pass + this image pass).
+- **Written question stimulus image audit complete (2026-06-22)** — All 75 written question stimulus images visually verified by reading each JPG directly. Results recorded in `diagram_audit.json` (permanent reference — do not re-scan PDFs). Findings: 44 clean, 13 minor text bleed (cosmetic), 7 drawing grids (intentional — kept for haptic feature), 1 answer lines (minor), 1 right-edge clip (minor), 1 REAL issue. Real issue fixed: `2022_Q23_stimulus.jpg` re-cropped by user to include x-axis label "Average hours of phone use per day". Zero real issues remaining. 2 orphaned unreferenced images deleted (`2022_Q19_stimulus.jpg`, `2022_Q24_stimulus.jpg` — content already embedded as HTML tables).
 
 ### Staged Implementation Roadmap
 
@@ -1202,6 +1203,6 @@ JSON format: `{ id, name, icon, accentColor, mcQuestions[], writtenQuestions[], 
 
 ---
 
-*CLAUDE.md — CramIT Project — Last updated: 2026-06-21 — All 33 image-based MC questions verified vs NESA PDFs. 4 text fixes applied. All 90 HSC MC questions now fully audited.*
+*CLAUDE.md — CramIT Project — Last updated: 2026-06-22 — All 75 written question stimulus images audited. diagram_audit.json created as permanent reference. Zero real image issues remaining.*
 *Repo: https://github.com/bustachat/CramIT-Quiz*
 *Supabase: https://ohqtefjawaphtsebnaxg.supabase.co*
