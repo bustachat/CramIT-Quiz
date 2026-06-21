@@ -227,7 +227,7 @@
     {
       "year": 2020,
       "category": "S2",
-      "q": "The top of a rectangular table is divided into 8 equal sections as shown. A standard die with faces labelled 1 to 6 is rolled onto the table. A score is calculated by multiplying the value shown on the top face of the die by the number shown in the section of the table where the die lands. The die is equally likely to land in any of the 8 sections of the table. If the die does not land entirely in one section of the table, it is rolled again. What is the probability of getting a score of 6?",
+      "q": "<div style=\"overflow-x:auto;margin:8px 0 14px\"><table style=\"border-collapse:collapse;margin:0 auto;font-size:0.9em\"><tbody><tr><td style=\"border:1px solid #aaa;padding:6px 16px;text-align:center\">1</td><td style=\"border:1px solid #aaa;padding:6px 16px;text-align:center\">2</td><td style=\"border:1px solid #aaa;padding:6px 16px;text-align:center\">3</td><td style=\"border:1px solid #aaa;padding:6px 16px;text-align:center\">4</td></tr><tr><td style=\"border:1px solid #aaa;padding:6px 16px;text-align:center\">5</td><td style=\"border:1px solid #aaa;padding:6px 16px;text-align:center\">6</td><td style=\"border:1px solid #aaa;padding:6px 16px;text-align:center\">7</td><td style=\"border:1px solid #aaa;padding:6px 16px;text-align:center\">8</td></tr></tbody></table></div>The top of a rectangular table is divided into 8 equal sections as shown. A standard die with faces labelled 1 to 6 is rolled onto the table. A score is calculated by multiplying the value shown on the top face of the die by the number shown in the section of the table where the die lands. The die is equally likely to land in any of the 8 sections of the table. If the die does not land entirely in one section of the table, it is rolled again. What is the probability of getting a score of 6?",
       "options": [
         "1/48",
         "1/12",
@@ -235,7 +235,6 @@
         "1/6"
       ],
       "answer": 1,
-      "image": "/diagrams/mathematics-standard-2_2020_Q15_stimulus.png",
       "solution": "<div class=\"step\"><span class=\"step-number\">1.</span> Independent events: die and section uniform.</div>\n<div class=\"step\"><span class=\"step-number\">2.</span> Total outcomes: 6 die × 8 sections = 48 equally likely.</div>\n<div class=\"step\"><span class=\"step-number\">3.</span> Favourable: score = die × section = 6.</div>\n<div class=\"step\"><span class=\"step-number\">4.</span> Pairs: (1,6), (2,3), (3,2), (6,1).</div>\n<div class=\"step\"><span class=\"step-number\">5.</span> Check others: (4,1.5) invalid, integers only.</div>\n<div class=\"step\"><span class=\"step-number\">6.</span> Only 4 pairs.</div>\n<div class=\"step\"><span class=\"step-number\">7.</span> No (5,something) since 6 not divisible by 5.</div>\n<div class=\"step\"><span class=\"step-number\">8.</span> P = 4/48 = 1/12.</div>\n<div class=\"step\"><span class=\"step-number\">9.</span> Simplify: divide numerator/denominator by 4.</div>\n<div class=\"step\"><span class=\"step-number\">10.</span> Correct: 1/12.</div>",
       "qNum": 15
     },
