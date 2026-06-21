@@ -1944,6 +1944,8 @@ let userSubjects   = [];   // array of subject IDs they've selected
 let aiResults          = [];   // aiResults[qIdx] = AI marking result | null
 const aiMarkingPending = new Set(); // question indices where AI call is in-flight
 let pendingSubject = null; // subject waiting for payment
+let authReady      = false;  // true once initSupabase() has resolved auth state
+let authReadyResolvers = []; // callbacks queued while auth is pending
 
 // ── INIT SUPABASE ─────────────────────────────────────────────
 async function initSupabase() {
@@ -2120,6 +2122,15 @@ async function initSupabase() {
 
   await loadUserState();
   renderHomeAuth();
+  // Signal that auth state is fully resolved — replay any queued taps
+  authReady = true;
+  authReadyResolvers.forEach(fn => fn());
+  authReadyResolvers = [];
+}
+
+function waitForAuth() {
+  if (authReady) return Promise.resolve();
+  return new Promise(resolve => authReadyResolvers.push(resolve));
 }
 
 // ── LOAD USER SUBSCRIPTION + SUBJECTS ────────────────────────
@@ -2495,6 +2506,9 @@ function renderSubjectList() {
 
 // ── HANDLE SUBJECT TAP ────────────────────────────────────────
 async function handleSubjectTap(subject, isSelected, atCap) {
+  // Wait for auth to resolve before making any access decisions
+  await waitForAuth();
+
   // Already subscribed to this subject — open picker directly
   if (canAccessViaSubscription(subject.id) && subject.quizKey) {
     openPicker(subject.quizKey);
