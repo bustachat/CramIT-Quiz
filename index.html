@@ -1541,7 +1541,7 @@ function renderQuestion() {
   if (currentMode === 'written' && !answered) {
     nb.className = 'next-btn next-btn-wrap show';
     nb.textContent = 'Show model answer →';
-  } else if (answered) {
+  } else if (answered || (!isPracticeMode && currentMode === 'mc' && answers[currentIdx] !== null)) {
     nb.className = 'next-btn next-btn-wrap show';
     nb.textContent = currentIdx + 1 < activeQuestions.length ? 'Next →' : 'See results →';
   } else {
@@ -1568,22 +1568,15 @@ function selectAnswer(chosen) {
     return; // Don't mark as answered yet — wait for Check
   }
 
-  // Test mode: just record answer, move to next
-  answered = true;
-  const correctIdx = activeQuestions[currentIdx].answer !== undefined
-    ? activeQuestions[currentIdx].answer
-    : activeQuestions[currentIdx].correct;
-  if (chosen === correctIdx) {
-    score++;
-    currentStreak++;
-  } else {
-    currentStreak = 0;
-  }
-  if (currentUser) {
-    localStorage.setItem(statKey('streak'), currentStreak);
-    recordAnswer(currentSubjectKey, 'mc', activeQuestions[currentIdx], chosen === correctIdx);
-  }
-  renderQuestion();
+  // Test mode: highlight selection but allow re-selection until Next is clicked
+  document.querySelectorAll('.option-btn').forEach((b, i) => {
+    b.classList.remove('selected-test');
+    if (i === chosen) b.classList.add('selected-test');
+  });
+  // Show Next button without locking (renderQuestion would disable all buttons)
+  const nb = document.getElementById('next-btn');
+  nb.className = 'next-btn next-btn-wrap show';
+  nb.textContent = currentIdx + 1 < activeQuestions.length ? 'Next →' : 'See results →';
 }
 
 function checkAnswer() {
@@ -1757,6 +1750,26 @@ function nextQuestion() {
     }
     return;
   }
+  // Test mode MC: score the currently selected answer now (user confirmed by clicking Next)
+  if (!isPracticeMode && currentMode === 'mc' && !answered) {
+    const chosen = answers[currentIdx];
+    if (chosen === null) return; // nothing selected yet
+    answered = true;
+    const correctIdx = activeQuestions[currentIdx].answer !== undefined
+      ? activeQuestions[currentIdx].answer
+      : activeQuestions[currentIdx].correct;
+    if (chosen === correctIdx) {
+      score++;
+      currentStreak++;
+    } else {
+      currentStreak = 0;
+    }
+    if (currentUser) {
+      localStorage.setItem(statKey('streak'), currentStreak);
+      recordAnswer(currentSubjectKey, 'mc', activeQuestions[currentIdx], chosen === correctIdx);
+    }
+  }
+
   if (!answered) return; // Don't advance without answering in MC
 
   // Trial counter — increment when advancing past a question
