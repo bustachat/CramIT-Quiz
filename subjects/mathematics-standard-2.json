@@ -117,7 +117,7 @@
     {
       "year": 2020,
       "category": "S5",
-      "q": "John recently did a class test in each of three subjects. The class scores on each test were normally distributed. The table shows John's scores as well as the mean and standard deviation of the class scores on each test. Relative to the rest of the class, which row of the table below shows John's strongest subject and his weakest subject?",
+      "q": "John recently did a class test in each of three subjects. The class scores on each test were normally distributed. The table shows the subjects and John's scores as well as the mean and standard deviation of the class scores on each test. Relative to the rest of the class, which row of the table below shows John's strongest subject and his weakest subject?",
       "hideQ": true,
       "options": [
         "A",
@@ -235,7 +235,7 @@
     {
       "year": 2020,
       "category": "S2",
-      "q": "The top of a rectangular table is divided into 8 equal sections as shown. A standard die with faces labelled 1 to 6 is rolled onto the table. A score is calculated by multiplying the value shown on the top face of the die by the number shown in the section of the table where the die lands. What is the probability of getting a score of 6?",
+      "q": "The top of a rectangular table is divided into 8 equal sections as shown. A standard die with faces labelled 1 to 6 is rolled onto the table. A score is calculated by multiplying the value shown on the top face of the die by the number shown in the section of the table where the die lands. The die is equally likely to land in any of the 8 sections of the table. If the die does not land entirely in one section of the table, it is rolled again. What is the probability of getting a score of 6?",
       "options": [
         "1/48",
         "1/12",
@@ -665,7 +665,7 @@
     {
       "year": 2022,
       "category": "S5",
-      "q": "A random variable is normally distributed with mean 0 and standard deviation 1. The table gives the probability that this random variable lies below z. What is the probability that this random variable lies between 0 and 1.94?",
+      "q": "A random variable is normally distributed with mean 0 and standard deviation 1. The table gives the probability that this random variable lies below z for some positive values of z. The probability values given in the table are represented by the shaded area in the following diagram. What is the probability that a normally distributed random variable with mean 0 and standard deviation 1 lies between 0 and 1.94?",
       "options": [
         "0.0262",
         "0.4738",
@@ -820,7 +820,7 @@
     {
       "year": 2023,
       "category": "S2",
-      "q": "A game involves throwing a die and spinning a spinner. The sum of the two numbers obtained is the score. What is the probability of getting a score of 7 or more?",
+      "q": "A game involves throwing a die and spinning a spinner. The sum of the two numbers obtained is the score. The table of scores below is partially completed. What is the probability of getting a score of 7 or more?",
       "options": [
         "1/6",
         "1/4",
