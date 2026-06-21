@@ -1196,6 +1196,6 @@ JSON format: `{ id, name, icon, accentColor, mcQuestions[], writtenQuestions[], 
 
 ---
 
-*CLAUDE.md — CramIT Project — Last updated: 2026-06-17 — 2022 Q31/Q33 stimulus images replaced: inaccurate SVGs swapped for manually corrected JPGs (network flow + bearing diagrams). Full cross-year written question audit complete (2022–2025). writtenQuestions total: 151.*
+*CLAUDE.md — CramIT Project — Last updated: 2026-06-21 — All 72 written question stimulus images converted to inline `<img>` tags in q field (top-level image field → null). 2023/2024/2025 done this session; 2020/2021/2022 done previous session. All diagrams re-cropped to diagram-only bounds at 3x resolution. HTML tables used for z-tables and data tables. `written_q_extracts.json` is the permanent reference file — never re-extract from PDFs. writtenQuestions total: 151.*
 *Repo: https://github.com/bustachat/CramIT-Quiz*
 *Supabase: https://ohqtefjawaphtsebnaxg.supabase.co*
