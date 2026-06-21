@@ -1884,7 +1884,7 @@
     },
     {
       "year": 2021,
-      "category": "F2",
+      "category": "F4",
       "variant": true,
       "q": "Mia earns $18.75/hour with 3.5% annual compound increase for 3 years. Which expression gives her wage after 3 years?",
       "options": [
@@ -1898,7 +1898,7 @@
     },
     {
       "year": 2021,
-      "category": "F2",
+      "category": "F4",
       "variant": true,
       "q": "James earns $25.00/hour with 1.8% annual compound increase for 6 years. Which expression gives his wage after 6 years?",
       "options": [
@@ -1912,7 +1912,7 @@
     },
     {
       "year": 2021,
-      "category": "F2",
+      "category": "F4",
       "variant": true,
       "q": "Layla earns $32.80/hour with 4.2% annual compound increase for 5 years. Which expression gives her wage after 5 years?",
       "options": [
@@ -2052,7 +2052,7 @@
     },
     {
       "year": 2023,
-      "category": "F2",
+      "category": "F4",
       "variant": true,
       "q": "$4000 invested at 5% p.a. simple interest. How much interest is earned in the first 2 years?",
       "options": [
@@ -2066,7 +2066,7 @@
     },
     {
       "year": 2023,
-      "category": "F2",
+      "category": "F4",
       "variant": true,
       "q": "$3600 invested at 4% p.a. simple interest. How much interest is earned in the first 3 years?",
       "options": [
@@ -2080,7 +2080,7 @@
     },
     {
       "year": 2023,
-      "category": "F2",
+      "category": "F4",
       "variant": true,
       "q": "$1500 invested at 6% p.a. simple interest. How much interest is earned in the first 4 years?",
       "options": [
@@ -2262,7 +2262,7 @@
     },
     {
       "year": 2024,
-      "category": "F2",
+      "category": "F4",
       "variant": true,
       "q": "A textbook was $240 four years ago. Price increased 3% annually. Current price?",
       "options": [
@@ -2276,7 +2276,7 @@
     },
     {
       "year": 2024,
-      "category": "F2",
+      "category": "F4",
       "variant": true,
       "q": "A laptop was $150 two years ago. Price increased 4% annually. Current price?",
       "options": [
@@ -2290,7 +2290,7 @@
     },
     {
       "year": 2024,
-      "category": "F2",
+      "category": "F4",
       "variant": true,
       "q": "A course fee was $320 five years ago. Price increased 1.5% annually. Current price?",
       "options": [
@@ -2346,7 +2346,7 @@
     },
     {
       "year": 2024,
-      "category": "F2",
+      "category": "F4",
       "variant": true,
       "q": "$12,000 loan, simple interest, repay $350/month for 5 years. What % p.a. interest rate?",
       "options": [
@@ -2360,7 +2360,7 @@
     },
     {
       "year": 2024,
-      "category": "F2",
+      "category": "F4",
       "variant": true,
       "q": "$6,000 loan, simple interest, repay $200/month for 3 years. What % p.a. interest rate?",
       "options": [
@@ -2374,7 +2374,7 @@
     },
     {
       "year": 2024,
-      "category": "F2",
+      "category": "F4",
       "variant": true,
       "q": "$15,000 loan, simple interest, repay $400/month for 5 years. What % p.a. interest rate?",
       "options": [
@@ -2640,7 +2640,7 @@
     },
     {
       "year": 2022,
-      "category": "M5",
+      "category": "M6",
       "variant": true,
       "q": "Which true bearing is the same as N35°E?",
       "options": [
@@ -2654,7 +2654,7 @@
     },
     {
       "year": 2022,
-      "category": "M5",
+      "category": "M6",
       "variant": true,
       "q": "Which true bearing is the same as S62°E?",
       "options": [
@@ -2668,7 +2668,7 @@
     },
     {
       "year": 2022,
-      "category": "M5",
+      "category": "M6",
       "variant": true,
       "q": "Which true bearing is the same as N72°W?",
       "options": [
@@ -2682,7 +2682,7 @@
     },
     {
       "year": 2023,
-      "category": "M5",
+      "category": "M6",
       "variant": true,
       "q": "City A is at 28°S, 142°E. City B is 45° north and 18° east of A. What are B's coordinates?",
       "options": [
@@ -2696,7 +2696,7 @@
     },
     {
       "year": 2023,
-      "category": "M5",
+      "category": "M6",
       "variant": true,
       "q": "City A is at 40°S, 138°E. City B is 55° north and 12° west of A. What are B's coordinates?",
       "options": [
@@ -2710,7 +2710,7 @@
     },
     {
       "year": 2023,
-      "category": "M5",
+      "category": "M6",
       "variant": true,
       "q": "City A is at 20°S, 148°E. City B is 35° north and 30° west of A. What are B's coordinates?",
       "options": [
@@ -2976,7 +2976,7 @@
     },
     {
       "year": 2025,
-      "category": "M5",
+      "category": "M6",
       "variant": true,
       "q": "M and P are the same distance from R. Bearing of M from R is 025°, bearing of P from R is 115°. What is the range for bearing of P from M?",
       "options": [
@@ -2990,7 +2990,7 @@
     },
     {
       "year": 2025,
-      "category": "M5",
+      "category": "M6",
       "variant": true,
       "q": "M and P are the same distance from R. Bearing of M from R is 040°, bearing of P from R is 130°. What is the range for bearing of P from M?",
       "options": [
@@ -3004,7 +3004,7 @@
     },
     {
       "year": 2025,
-      "category": "M5",
+      "category": "M6",
       "variant": true,
       "q": "M and P are the same distance from R. Bearing of M from R is 350°, bearing of P from R is 080°. What is the range for bearing of P from M?",
       "options": [
@@ -3522,7 +3522,7 @@
     },
     {
       "year": 2020,
-      "category": "M4",
+      "category": "M7",
       "variant": true,
       "q": "The distance between two towns is 100 km. A driver travels at an average speed of 80 km/h. How long does the journey take?",
       "options": [
@@ -3536,7 +3536,7 @@
     },
     {
       "year": 2020,
-      "category": "M4",
+      "category": "M7",
       "variant": true,
       "q": "The distance between two towns is 130 km. A driver travels at an average speed of 60 km/h. How long does the journey take?",
       "options": [
@@ -3550,7 +3550,7 @@
     },
     {
       "year": 2020,
-      "category": "M4",
+      "category": "M7",
       "variant": true,
       "q": "The distance between two towns is 48 km. A driver travels at an average speed of 64 km/h. How long does the journey take?",
       "options": [
@@ -3564,7 +3564,7 @@
     },
     {
       "year": 2021,
-      "category": "M4",
+      "category": "M7",
       "variant": true,
       "q": "Jake stops drinking at 11:00 pm with BAC of 0.105. His BAC decreases at 0.015 per hour. When will his BAC reach 0.030?",
       "options": [
@@ -3578,7 +3578,7 @@
     },
     {
       "year": 2021,
-      "category": "M4",
+      "category": "M7",
       "variant": true,
       "q": "Jake stops drinking at 9:30 pm with BAC of 0.075. His BAC decreases at 0.015 per hour. When will his BAC reach zero?",
       "options": [
@@ -3592,7 +3592,7 @@
     },
     {
       "year": 2021,
-      "category": "M4",
+      "category": "M7",
       "variant": true,
       "q": "Jake stops drinking at 11:45 pm with BAC of 0.060. His BAC decreases at 0.015 per hour. When will his BAC reach 0.015?",
       "options": [
@@ -3858,7 +3858,7 @@
     },
     {
       "year": 2024,
-      "category": "M4",
+      "category": "M7",
       "variant": true,
       "q": "A bus departs at 9:15 am and arrives at 10:42 am, travelling 86 km. What is its average speed?",
       "options": [
@@ -3872,7 +3872,7 @@
     },
     {
       "year": 2024,
-      "category": "M4",
+      "category": "M7",
       "variant": true,
       "q": "A bus departs at 7:20 am and arrives at 9:05 am, travelling 98 km. What is its average speed?",
       "options": [
@@ -3886,7 +3886,7 @@
     },
     {
       "year": 2024,
-      "category": "M4",
+      "category": "M7",
       "variant": true,
       "q": "A bus departs at 2:48 pm and arrives at 4:18 pm, travelling 75 km. What is its average speed?",
       "options": [
@@ -4404,7 +4404,7 @@
     },
     {
       "year": 2021,
-      "category": "N1",
+      "category": "N2",
       "variant": true,
       "q": "For a network with 6 vertices and 9 edges, what is the sum of all the degrees?",
       "options": [
@@ -4418,7 +4418,7 @@
     },
     {
       "year": 2021,
-      "category": "N1",
+      "category": "N2",
       "variant": true,
       "q": "For a network with 4 vertices and 7 edges, what is the sum of all the degrees?",
       "options": [
@@ -4432,7 +4432,7 @@
     },
     {
       "year": 2021,
-      "category": "N1",
+      "category": "N2",
       "variant": true,
       "q": "For a network with 8 vertices and 12 edges, what is the sum of all the degrees?",
       "options": [
