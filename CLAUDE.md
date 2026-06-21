@@ -637,6 +637,7 @@ await logAction(agentName, action, payload);           // log before acting
 - **Written question table audit complete (2026-06-21)** — All 151 written questions audited for structured data rendered as plain text. 14 markdown pipe-table blocks converted to HTML `<table>` tags via `fix_pipe_tables.cjs`. 3 tax bracket questions (2021 Q22, 2020 Q20, 2023 Q37) converted from bullet-point lists to 2-column `<table>`. 2 month-data questions converted from prose sentences to tables. All 28 tables across `subjects/mathematics-standard-2.json` wrapped in `<div style="overflow-x:auto;-webkit-overflow-scrolling:touch;">` and set to `font-size:0.68em` — confirmed correct size on mobile. Zero tables missing overflow wrapper or font-size.
 - **Tool auto-approval configured (2026-06-21)** — `.claude/settings.local.json` (project) and `~/.claude/settings.json` (global) updated with `Bash(*)`, `PowerShell(*)`, `Read(*)`, `Write(*)`, `Edit(*)`, `Glob(*)`, `Grep(*)` wildcards plus all Chrome MCP and visualize MCP tools. Eliminates per-tool approval prompts for standard development operations.
 - **Test Mode MC re-selection bug fixed (2026-06-21)** — In Test Mode, clicking an answer immediately called `renderQuestion()` which disabled all option buttons, preventing the user from changing their answer. Fix: `selectAnswer()` in test mode now only highlights the chosen option (adds `selected-test` class) and shows the Next button — it does NOT set `answered=true` or call `renderQuestion()`. Scoring (score++, streak, `recordAnswer`) moved to `nextQuestion()` where it runs when the user confirms by clicking Next. Users can now re-click any option to change selection before advancing.
+- **Quiz footer nav buttons redesigned (2026-06-21)** — Prev button redesigned as compact 52×52px icon-only square (`←`), `2px solid var(--muted)` border. Next/Show button fills remaining width via `flex: 1`. Removed `margin: 14px 20px 28px` from `.next-btn` (was inflating row height and misaligning buttons). Footer uses `align-items: center`. Footer padding handles all outer spacing.
 
 ### Staged Implementation Roadmap
 
@@ -1200,6 +1201,6 @@ JSON format: `{ id, name, icon, accentColor, mcQuestions[], writtenQuestions[], 
 
 ---
 
-*CLAUDE.md — CramIT Project — Last updated: 2026-06-21 — All 28 written question tables use overflow-x:auto + font-size:0.68em. Test Mode MC re-selection bug fixed. Tool auto-approval configured. All 318 MC categories verified against NESA MGs — 33 variant codes fixed.*
+*CLAUDE.md — CramIT Project — Last updated: 2026-06-21 — All 28 tables: overflow-x:auto + font-size:0.68em. Test Mode MC re-selection fixed. Prev button compact 52px icon. Tool auto-approval configured. All 318 MC categories verified.*
 *Repo: https://github.com/bustachat/CramIT-Quiz*
 *Supabase: https://ohqtefjawaphtsebnaxg.supabase.co*
