@@ -638,6 +638,7 @@ await logAction(agentName, action, payload);           // log before acting
 - **Tool auto-approval configured (2026-06-21)** — `.claude/settings.local.json` (project) and `~/.claude/settings.json` (global) updated with `Bash(*)`, `PowerShell(*)`, `Read(*)`, `Write(*)`, `Edit(*)`, `Glob(*)`, `Grep(*)` wildcards plus all Chrome MCP and visualize MCP tools. Eliminates per-tool approval prompts for standard development operations.
 - **Test Mode MC re-selection bug fixed (2026-06-21)** — In Test Mode, clicking an answer immediately called `renderQuestion()` which disabled all option buttons, preventing the user from changing their answer. Fix: `selectAnswer()` in test mode now only highlights the chosen option (adds `selected-test` class) and shows the Next button — it does NOT set `answered=true` or call `renderQuestion()`. Scoring (score++, streak, `recordAnswer`) moved to `nextQuestion()` where it runs when the user confirms by clicking Next. Users can now re-click any option to change selection before advancing.
 - **Quiz footer nav buttons redesigned (2026-06-21)** — Prev button redesigned as compact 52×52px icon-only square (`←`), `2px solid var(--muted)` border. Next/Show button fills remaining width via `flex: 1`. Removed `margin: 14px 20px 28px` from `.next-btn` (was inflating row height and misaligning buttons). Footer uses `align-items: center`. Footer padding handles all outer spacing.
+- **MC image-question text audit complete (2026-06-21)** — All 33 image-based MC questions (those with `image` or `optionImages` fields) visually verified against NESA PDFs by rendering exam pages at 2x PNG via PyMuPDF and comparing using Read tool. 4 fixes applied to `subjects/mathematics-standard-2.json`: 2020 Q8 (add "the subjects and"), 2020 Q15 (add missing die-rolling rule sentence), 2022 Q13 (add "for some positive values of z", shaded area diagram sentence, full final question wording), 2023 Q8 (add "The table of scores below is partially completed."). All 90 HSC MC questions now verified against NESA PDFs (text-only questions via PyMuPDF extraction pass + this image pass).
 
 ### Staged Implementation Roadmap
 
@@ -1201,6 +1202,6 @@ JSON format: `{ id, name, icon, accentColor, mcQuestions[], writtenQuestions[], 
 
 ---
 
-*CLAUDE.md — CramIT Project — Last updated: 2026-06-21 — All 28 tables: overflow-x:auto + font-size:0.68em. Test Mode MC re-selection fixed. Prev button compact 52px icon. Tool auto-approval configured. All 318 MC categories verified.*
+*CLAUDE.md — CramIT Project — Last updated: 2026-06-21 — All 33 image-based MC questions verified vs NESA PDFs. 4 text fixes applied. All 90 HSC MC questions now fully audited.*
 *Repo: https://github.com/bustachat/CramIT-Quiz*
 *Supabase: https://ohqtefjawaphtsebnaxg.supabase.co*
