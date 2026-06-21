@@ -515,6 +515,25 @@ Calibration auto-detects layout from whether A and B labels share the same y pos
 
 **Current coverage: 76 images across 2020–2025 (Maths Standard 2 only)**
 
+### ⚠️ Written question stimulus images — NEVER re-extract from PDFs
+
+All NESA PDF text and block positions for the 72 written questions with stimulus images have been pre-extracted into:
+
+**`written_q_extracts.json`** (repo root) — contains for each question:
+- `text` — full raw text from the PDF page (exact NESA wording)
+- `blocks` — text block positions (`y0`, `y1`, `text`) for locating diagrams vs tables
+- `page` — PDF page index (0-based) for re-cropping if needed
+- `page_height` / `page_width` — page dimensions
+
+**Rule: Always read `written_q_extracts.json` first before any written question work. Never open a NESA PDF to extract text that is already in this file. Re-extracting wastes tokens every session.**
+
+Content structure rule for written questions (confirmed working — see 2024 Q39 pilot):
+1. **Text** → plain text in `q` field
+2. **Diagram/image** → `<img src="/diagrams/...">` tag embedded inline in `q` at the correct position; crop to diagram only (no surrounding text or tables in the image)
+3. **Table** → `<table>` HTML reconstructed from data in `written_q_extracts.json`
+4. **Top-level `image` field** → set to `null` when image is embedded inline in `q`
+5. **No SVGs** — always crop from NESA PDF as JPG
+
 ### GitHub Actions integration for diagrams
 When the nightly agent detects a new exam paper:
 1. `agent.js` downloads the PDF
