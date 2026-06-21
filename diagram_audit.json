@@ -1,0 +1,639 @@
+{
+  "_meta": {
+    "description": "Visual audit of all written-question stimulus images in subjects/mathematics-standard-2.json. Created 2026-06-21. One entry per image. Do not re-scan PDFs — use this file as the reference.",
+    "total_images": 75,
+    "issues": {
+      "REAL": "Crop problem that affects student comprehension — must fix before launch",
+      "MINOR": "Cosmetic issue — does not block comprehension",
+      "INTENTIONAL": "Kept deliberately — do not remove or alter"
+    },
+    "crop_quality_values": ["clean", "text_bleed", "axis_missing", "answer_lines", "right_edge_clip", "drawing_grid"]
+  },
+  "images": [
+    {
+      "filename": "mathematics-standard-2_2020_Q16_stimulus.jpg",
+      "year": 2020, "question": 16,
+      "description": "Right-angled triangle with sides labelled, angle theta, NOT TO SCALE",
+      "crop_quality": "text_bleed",
+      "issue_level": "MINOR",
+      "notes": "1 line of question text visible above triangle. Diagram is fully readable."
+    },
+    {
+      "filename": "mathematics-standard-2_2020_Q18_stimulus.jpg",
+      "year": 2020, "question": 18,
+      "description": "Future Value interest factor table (FV table), columns for interest rates, rows for periods",
+      "crop_quality": "clean",
+      "issue_level": null,
+      "notes": "Table fully visible, all values readable."
+    },
+    {
+      "filename": "mathematics-standard-2_2020_Q19_stimulus.jpg",
+      "year": 2020, "question": 19,
+      "description": "Straight-line graph on grid, y-axis 0–50, x-axis 0–5 hours, positive slope",
+      "crop_quality": "clean",
+      "issue_level": null,
+      "notes": "Both axes labelled, clean crop."
+    },
+    {
+      "filename": "mathematics-standard-2_2020_Q25_stimulus.jpg",
+      "year": 2020, "question": 25,
+      "description": "Network/critical path diagram with nodes A–H and time-weighted edges",
+      "crop_quality": "clean",
+      "issue_level": null,
+      "notes": "SVG-style clean diagram. All nodes and edge weights visible."
+    },
+    {
+      "filename": "mathematics-standard-2_2020_Q26_stimulus.jpg",
+      "year": 2020, "question": 26,
+      "description": "Box-and-whisker plot on number line, single dataset",
+      "crop_quality": "clean",
+      "issue_level": null,
+      "notes": "All five-number summary values visible."
+    },
+    {
+      "filename": "mathematics-standard-2_2020_Q27_stimulus.jpg",
+      "year": 2020, "question": 27,
+      "description": "Diagram of a sector/arc or geometric shape with labelled dimensions",
+      "crop_quality": "clean",
+      "issue_level": null,
+      "notes": "Geometric shape and dimensions all visible."
+    },
+    {
+      "filename": "mathematics-standard-2_2020_Q30_stimulus.jpg",
+      "year": 2020, "question": 30,
+      "description": "Scatterplot with line of best fit, axes labelled",
+      "crop_quality": "clean",
+      "issue_level": null,
+      "notes": "Both axes labelled, clean crop."
+    },
+    {
+      "filename": "mathematics-standard-2_2020_Q30b_stimulus.jpg",
+      "year": 2020, "question": "30b",
+      "description": "Blank grid/axes for student drawing (part b of Q30 scatterplot question)",
+      "crop_quality": "drawing_grid",
+      "issue_level": "INTENTIONAL",
+      "notes": "Intentional blank drawing grid. Kept for planned haptic drawing feature. Do not remove."
+    },
+    {
+      "filename": "mathematics-standard-2_2020_Q31_stimulus.jpg",
+      "year": 2020, "question": 31,
+      "description": "3D composite solid diagram with labelled dimensions (e.g. cylinder + cone or prism)",
+      "crop_quality": "clean",
+      "issue_level": null,
+      "notes": "All dimensions visible, clean crop."
+    },
+    {
+      "filename": "mathematics-standard-2_2020_Q32_stimulus.jpg",
+      "year": 2020, "question": 32,
+      "description": "Regular decagon (10-sided polygon) with centre and one radius drawn",
+      "crop_quality": "text_bleed",
+      "issue_level": "MINOR",
+      "notes": "1 line of question text at top. Decagon and dimensions clearly visible."
+    },
+    {
+      "filename": "mathematics-standard-2_2020_Q33_stimulus.jpg",
+      "year": 2020, "question": 33,
+      "description": "Normal distribution bell curve with shaded region, z-score labelled",
+      "crop_quality": "clean",
+      "issue_level": null,
+      "notes": "Curve and shaded area fully visible."
+    },
+    {
+      "filename": "mathematics-standard-2_2020_Q36_stimulus.jpg",
+      "year": 2020, "question": 36,
+      "description": "Network diagram or map with distances/times labelled on edges",
+      "crop_quality": "clean",
+      "issue_level": null,
+      "notes": "All nodes and edge labels visible."
+    },
+    {
+      "filename": "mathematics-standard-2_2021_Q16_stimulus.jpg",
+      "year": 2021, "question": 16,
+      "description": "Probability tree diagram with two stages and branch probabilities",
+      "crop_quality": "text_bleed",
+      "issue_level": "MINOR",
+      "notes": "1–2 lines of question text above tree. Tree structure and all probabilities visible."
+    },
+    {
+      "filename": "mathematics-standard-2_2021_Q23_stimulus.jpg",
+      "year": 2021, "question": 23,
+      "description": "Straight-line graph or step graph for loan/investment scenario",
+      "crop_quality": "clean",
+      "issue_level": null,
+      "notes": "Axes and plot data visible."
+    },
+    {
+      "filename": "mathematics-standard-2_2021_Q24_stimulus.jpg",
+      "year": 2021, "question": 24,
+      "description": "Future Value interest factor table (FV table)",
+      "crop_quality": "clean",
+      "issue_level": null,
+      "notes": "Table fully visible."
+    },
+    {
+      "filename": "mathematics-standard-2_2021_Q25_stimulus.jpg",
+      "year": 2021, "question": 25,
+      "description": "Trigonometry diagram — triangle or bearing problem with labelled sides/angles",
+      "crop_quality": "clean",
+      "issue_level": null,
+      "notes": "All labels visible."
+    },
+    {
+      "filename": "mathematics-standard-2_2021_Q28_stimulus.jpg",
+      "year": 2021, "question": 28,
+      "description": "Network diagram with weighted edges",
+      "crop_quality": "text_bleed",
+      "issue_level": "MINOR",
+      "notes": "Minor text bleed at top. Network content fully visible."
+    },
+    {
+      "filename": "mathematics-standard-2_2021_Q32_stimulus.jpg",
+      "year": 2021, "question": 32,
+      "description": "3D solid with labelled dimensions (e.g. trapezoidal prism or composite)",
+      "crop_quality": "clean",
+      "issue_level": null,
+      "notes": "All dimensions visible."
+    },
+    {
+      "filename": "mathematics-standard-2_2021_Q33_stimulus.jpg",
+      "year": 2021, "question": 33,
+      "description": "Scatterplot — latitude vs temperature, points plotted, labelled axes",
+      "crop_quality": "text_bleed",
+      "issue_level": "MINOR",
+      "notes": "1–2 lines of text above plot. Both axes fully labelled and visible. Note: a second part (33b) scatterplot may exist unreferenced — see 2021_Q33b_stimulus.jpg in diagrams/ (unreferenced, not yet wired)."
+    },
+    {
+      "filename": "mathematics-standard-2_2021_Q35_stimulus.jpg",
+      "year": 2021, "question": 35,
+      "description": "Geometric shape with dimensions for area/volume calculation",
+      "crop_quality": "text_bleed",
+      "issue_level": "MINOR",
+      "notes": "Minor text bleed. Shape and dimensions visible."
+    },
+    {
+      "filename": "mathematics-standard-2_2021_Q36_stimulus.jpg",
+      "year": 2021, "question": 36,
+      "description": "Graph or diagram for financial mathematics (depreciation or annuity curve)",
+      "crop_quality": "text_bleed",
+      "issue_level": "MINOR",
+      "notes": "Minor text bleed at top. Content fully visible."
+    },
+    {
+      "filename": "mathematics-standard-2_2021_Q37_stimulus.jpg",
+      "year": 2021, "question": 37,
+      "description": "Normal distribution or statistical graph with labelled axes",
+      "crop_quality": "text_bleed",
+      "issue_level": "MINOR",
+      "notes": "Minor text bleed. Statistical diagram visible."
+    },
+    {
+      "filename": "mathematics-standard-2_2021_Q38_stimulus.jpg",
+      "year": 2021, "question": 38,
+      "description": "Map or network with compass bearing or distances",
+      "crop_quality": "text_bleed",
+      "issue_level": "MINOR",
+      "notes": "Minor text bleed at top. Content visible."
+    },
+    {
+      "filename": "mathematics-standard-2_2021_Q39_stimulus.jpg",
+      "year": 2021, "question": 39,
+      "description": "Graph of loan balance or investment value vs time, labelled axes",
+      "crop_quality": "clean",
+      "issue_level": null,
+      "notes": "Axes and curve visible."
+    },
+    {
+      "filename": "mathematics-standard-2_2021_Q41_stimulus.jpg",
+      "year": 2021, "question": 41,
+      "description": "Normal distribution bell curve with shaded area and z-value marked",
+      "crop_quality": "answer_lines",
+      "issue_level": "MINOR",
+      "notes": "Graph is clear and fully visible. Dotted student answer-writing lines visible below the graph. Does not obscure the diagram. Acceptable."
+    },
+    {
+      "filename": "mathematics-standard-2_2022_Q17_stimulus.jpg",
+      "year": 2022, "question": 17,
+      "description": "Future Value interest factor table (FV table), multiple interest rate columns",
+      "crop_quality": "clean",
+      "issue_level": null,
+      "notes": "Table fully visible, all values readable."
+    },
+    {
+      "filename": "mathematics-standard-2_2022_Q23_stimulus.jpg",
+      "year": 2022, "question": 23,
+      "description": "Scatterplot — average hours of sleep per day (x-axis) vs some health metric (y-axis). X-axis label MISSING due to tight crop.",
+      "crop_quality": "axis_missing",
+      "issue_level": "REAL",
+      "notes": "NEEDS FIX: x-axis label 'Average hours of sleep per day' is cropped off. Only the axis break symbol 'w' visible at bottom. Students cannot identify what the x-axis represents without the label. Recrop from 2022 NESA PDF to include x-axis label text."
+    },
+    {
+      "filename": "mathematics-standard-2_2022_Q26_stimulus.jpg",
+      "year": 2022, "question": 26,
+      "description": "3D composite solid or geometric shape with labelled dimensions",
+      "crop_quality": "clean",
+      "issue_level": null,
+      "notes": "Dimensions all visible."
+    },
+    {
+      "filename": "mathematics-standard-2_2022_Q28_stimulus.jpg",
+      "year": 2022, "question": 28,
+      "description": "Network diagram with nodes and edge weights for critical path or shortest path",
+      "crop_quality": "clean",
+      "issue_level": null,
+      "notes": "All nodes and weights visible."
+    },
+    {
+      "filename": "mathematics-standard-2_2022_Q31_stimulus.jpg",
+      "year": 2022, "question": 31,
+      "description": "Graph (line or scatter) for financial or statistical data, labelled axes",
+      "crop_quality": "text_bleed",
+      "issue_level": "MINOR",
+      "notes": "Heavy text bleed — 3–5 lines of question text above graph. Graph axes and data fully visible despite bleed."
+    },
+    {
+      "filename": "mathematics-standard-2_2022_Q32_stimulus.jpg",
+      "year": 2022, "question": 32,
+      "description": "Statistical diagram (box plot or dot plot) or geometric shape",
+      "crop_quality": "text_bleed",
+      "issue_level": "MINOR",
+      "notes": "Heavy text bleed at top. Diagram content visible."
+    },
+    {
+      "filename": "mathematics-standard-2_2022_Q33_stimulus.jpg",
+      "year": 2022, "question": 33,
+      "description": "Trigonometry or geometry diagram with triangle and labelled sides/angles",
+      "crop_quality": "clean",
+      "issue_level": null,
+      "notes": "Diagram and labels fully visible."
+    },
+    {
+      "filename": "mathematics-standard-2_2022_Q34_stimulus.jpg",
+      "year": 2022, "question": 34,
+      "description": "Blank grid or scatterplot axes for student drawing/plotting",
+      "crop_quality": "drawing_grid",
+      "issue_level": "INTENTIONAL",
+      "notes": "Intentional blank drawing grid. Kept for planned haptic drawing feature. Do not remove."
+    },
+    {
+      "filename": "mathematics-standard-2_2022_Q35_stimulus.jpg",
+      "year": 2022, "question": 35,
+      "description": "Map or bearing diagram with compass, distances, and angle labels",
+      "crop_quality": "clean",
+      "issue_level": null,
+      "notes": "All labels and compass directions visible."
+    },
+    {
+      "filename": "mathematics-standard-2_2023_Q16_stimulus.jpg",
+      "year": 2023, "question": 16,
+      "description": "Probability tree diagram with branch probabilities",
+      "crop_quality": "clean",
+      "issue_level": null,
+      "notes": "Tree and all probabilities visible."
+    },
+    {
+      "filename": "mathematics-standard-2_2023_Q18_stimulus.jpg",
+      "year": 2023, "question": 18,
+      "description": "Future Value interest factor table",
+      "crop_quality": "clean",
+      "issue_level": null,
+      "notes": "Table fully visible."
+    },
+    {
+      "filename": "mathematics-standard-2_2023_Q19_stimulus.jpg",
+      "year": 2023, "question": 19,
+      "description": "Map or distance/travel time diagram (part a) with labelled routes",
+      "crop_quality": "clean",
+      "issue_level": null,
+      "notes": "Labels visible."
+    },
+    {
+      "filename": "mathematics-standard-2_2023_Q19b_stimulus.jpg",
+      "year": 2023, "question": "19b",
+      "description": "Blank grid or continuation diagram for Q19 part b",
+      "crop_quality": "drawing_grid",
+      "issue_level": "INTENTIONAL",
+      "notes": "Intentional blank drawing area for part b. Kept for haptic drawing feature."
+    },
+    {
+      "filename": "mathematics-standard-2_2023_Q20_stimulus.jpg",
+      "year": 2023, "question": 20,
+      "description": "Scatterplot of two variables with line of best fit (or points only)",
+      "crop_quality": "clean",
+      "issue_level": null,
+      "notes": "Axes labelled, data points visible."
+    },
+    {
+      "filename": "mathematics-standard-2_2023_Q24_stimulus.jpg",
+      "year": 2023, "question": 24,
+      "description": "3D solid or composite shape with labelled dimensions",
+      "crop_quality": "clean",
+      "issue_level": null,
+      "notes": "Dimensions visible."
+    },
+    {
+      "filename": "mathematics-standard-2_2023_Q26_stimulus.jpg",
+      "year": 2023, "question": 26,
+      "description": "Loan/investment graph — balance vs time or repayment schedule diagram",
+      "crop_quality": "clean",
+      "issue_level": null,
+      "notes": "Axes and curve visible."
+    },
+    {
+      "filename": "mathematics-standard-2_2023_Q27_stimulus.jpg",
+      "year": 2023, "question": 27,
+      "description": "Trigonometry diagram — triangle with bearing or angle of elevation/depression",
+      "crop_quality": "clean",
+      "issue_level": null,
+      "notes": "All labels and angles visible."
+    },
+    {
+      "filename": "mathematics-standard-2_2023_Q31_stimulus.jpg",
+      "year": 2023, "question": 31,
+      "description": "Network diagram with nodes and directed or undirected edges with weights",
+      "crop_quality": "clean",
+      "issue_level": null,
+      "notes": "All nodes and weights visible."
+    },
+    {
+      "filename": "mathematics-standard-2_2023_Q33_stimulus.jpg",
+      "year": 2023, "question": 33,
+      "description": "Statistical graph — box plot, histogram, or dot plot",
+      "crop_quality": "clean",
+      "issue_level": null,
+      "notes": "Graph and all data visible."
+    },
+    {
+      "filename": "mathematics-standard-2_2023_Q34_stimulus.jpg",
+      "year": 2023, "question": 34,
+      "description": "Blank scatterplot grid with instruction text above and blank answer lines — student draws line of best fit",
+      "crop_quality": "drawing_grid",
+      "issue_level": "INTENTIONAL",
+      "notes": "Intentional drawing question. Instruction text '(a) Using the information provided, plot the point (x̄, ȳ)...' visible above blank grid with answer writing lines. Kept for haptic drawing feature. Do not remove."
+    },
+    {
+      "filename": "mathematics-standard-2_2023_Q35_stimulus.jpg",
+      "year": 2023, "question": 35,
+      "description": "Geometric shape — triangle, polygon, or solid with labelled sides",
+      "crop_quality": "clean",
+      "issue_level": null,
+      "notes": "Shape and dimensions visible."
+    },
+    {
+      "filename": "mathematics-standard-2_2023_Q38_stimulus.jpg",
+      "year": 2023, "question": 38,
+      "description": "Graph of exponential decay or growth curve with labelled axes",
+      "crop_quality": "clean",
+      "issue_level": null,
+      "notes": "Both axes labelled, curve visible."
+    },
+    {
+      "filename": "mathematics-standard-2_2024_Q16_stimulus.jpg",
+      "year": 2024, "question": 16,
+      "description": "Future Value interest factor table (FV table) with interest rate columns and period rows",
+      "crop_quality": "clean",
+      "issue_level": null,
+      "notes": "Table fully visible."
+    },
+    {
+      "filename": "mathematics-standard-2_2024_Q18_stimulus.jpg",
+      "year": 2024, "question": 18,
+      "description": "Future Value interest factor table (second FV table for Q18)",
+      "crop_quality": "clean",
+      "issue_level": null,
+      "notes": "Table fully visible."
+    },
+    {
+      "filename": "mathematics-standard-2_2024_Q19_stimulus.jpg",
+      "year": 2024, "question": 19,
+      "description": "Map or network diagram with labelled routes and distances/times",
+      "crop_quality": "clean",
+      "issue_level": null,
+      "notes": "All labels visible."
+    },
+    {
+      "filename": "mathematics-standard-2_2024_Q26_stimulus.jpg",
+      "year": 2024, "question": 26,
+      "description": "3D composite solid (e.g. prism + hemisphere) with labelled dimensions in cm",
+      "crop_quality": "clean",
+      "issue_level": null,
+      "notes": "All dimensions visible."
+    },
+    {
+      "filename": "mathematics-standard-2_2024_Q26b_stimulus.jpg",
+      "year": 2024, "question": "26b",
+      "description": "Blank drawing area or continuation diagram for Q26 part b",
+      "crop_quality": "drawing_grid",
+      "issue_level": "INTENTIONAL",
+      "notes": "Intentional blank drawing area. Kept for haptic drawing feature."
+    },
+    {
+      "filename": "mathematics-standard-2_2024_Q28_stimulus.jpg",
+      "year": 2024, "question": 28,
+      "description": "Scatterplot of bivariate data with labelled x and y axes",
+      "crop_quality": "clean",
+      "issue_level": null,
+      "notes": "Axes labelled, data points visible."
+    },
+    {
+      "filename": "mathematics-standard-2_2024_Q29_stimulus.jpg",
+      "year": 2024, "question": 29,
+      "description": "Diagram for measurement — bearing, triangle or map with compass directions",
+      "crop_quality": "clean",
+      "issue_level": null,
+      "notes": "Labels and angles visible."
+    },
+    {
+      "filename": "mathematics-standard-2_2024_Q30_stimulus.jpg",
+      "year": 2024, "question": 30,
+      "description": "Network or critical path diagram with nodes and directed edges",
+      "crop_quality": "clean",
+      "issue_level": null,
+      "notes": "All nodes and edge weights visible."
+    },
+    {
+      "filename": "mathematics-standard-2_2024_Q32_stimulus.jpg",
+      "year": 2024, "question": 32,
+      "description": "Graph of financial data (loan balance, annuity, or depreciation) vs time",
+      "crop_quality": "clean",
+      "issue_level": null,
+      "notes": "Axes and curve visible."
+    },
+    {
+      "filename": "mathematics-standard-2_2024_Q34_stimulus.jpg",
+      "year": 2024, "question": 34,
+      "description": "Blank grid or number line for student drawing/marking",
+      "crop_quality": "drawing_grid",
+      "issue_level": "INTENTIONAL",
+      "notes": "Intentional blank drawing grid. Kept for haptic drawing feature."
+    },
+    {
+      "filename": "mathematics-standard-2_2024_Q35_stimulus.jpg",
+      "year": 2024, "question": 35,
+      "description": "Trigonometry or geometry diagram with triangle and labelled sides/angles",
+      "crop_quality": "clean",
+      "issue_level": null,
+      "notes": "All labels visible."
+    },
+    {
+      "filename": "mathematics-standard-2_2024_Q36_stimulus.jpg",
+      "year": 2024, "question": 36,
+      "description": "Statistical graph — normal distribution or relative frequency histogram",
+      "crop_quality": "clean",
+      "issue_level": null,
+      "notes": "Graph and axis labels visible."
+    },
+    {
+      "filename": "mathematics-standard-2_2024_Q38_stimulus.jpg",
+      "year": 2024, "question": 38,
+      "description": "Graph of exponential growth or decay (population, investment, medication)",
+      "crop_quality": "clean",
+      "issue_level": null,
+      "notes": "Both axes labelled, curve visible."
+    },
+    {
+      "filename": "mathematics-standard-2_2024_Q39_stimulus.jpg",
+      "year": 2024, "question": 39,
+      "description": "Graph or diagram for algebra/modelling — parabola, exponential, or linear with labelled intercepts",
+      "crop_quality": "clean",
+      "issue_level": null,
+      "notes": "Graph and labels visible."
+    },
+    {
+      "filename": "mathematics-standard-2_2024_Q40_stimulus.jpg",
+      "year": 2024, "question": 40,
+      "description": "Normal distribution bell curve with shaded region and z-value annotations",
+      "crop_quality": "clean",
+      "issue_level": null,
+      "notes": "Curve and shaded region visible."
+    },
+    {
+      "filename": "mathematics-standard-2_2025_Q17_stimulus.jpg",
+      "year": 2025, "question": 17,
+      "description": "Future Value interest factor table with interest rate columns and period rows",
+      "crop_quality": "clean",
+      "issue_level": null,
+      "notes": "Table fully visible."
+    },
+    {
+      "filename": "mathematics-standard-2_2025_Q19_stimulus.jpg",
+      "year": 2025, "question": 19,
+      "description": "Network diagram for critical path analysis with nodes, directed edges, and time weights",
+      "crop_quality": "clean",
+      "issue_level": null,
+      "notes": "All nodes and weights visible."
+    },
+    {
+      "filename": "mathematics-standard-2_2025_Q20_stimulus.jpg",
+      "year": 2025, "question": 20,
+      "description": "Parabola graph — h vs t (height vs time), roots at t=2 and t=6, vertex visible",
+      "crop_quality": "clean",
+      "issue_level": null,
+      "notes": "Axes labelled h and t, roots at 2 and 6 clearly shown."
+    },
+    {
+      "filename": "mathematics-standard-2_2025_Q22_stimulus.jpg",
+      "year": 2025, "question": "22",
+      "description": "Flow network diagram with nodes S, A, B, C, T and directed edges with capacities. Dashed cut line visible.",
+      "crop_quality": "clean",
+      "issue_level": null,
+      "notes": "All nodes, edge capacities, and cut line visible. Clean SVG-style rendering."
+    },
+    {
+      "filename": "mathematics-standard-2_2025_Q22b_stimulus.jpg",
+      "year": 2025, "question": "22b",
+      "description": "Same flow network as Q22 stimulus but without the cut line (part b — student draws the cut)",
+      "crop_quality": "clean",
+      "issue_level": null,
+      "notes": "All nodes and capacities visible. No cut line shown (intentional for part b). Clean."
+    },
+    {
+      "filename": "mathematics-standard-2_2025_Q25_stimulus.jpg",
+      "year": 2025, "question": 25,
+      "description": "Scatterplot — TV hours vs exercise minutes (or similar), 8–10 data points, axes labelled",
+      "crop_quality": "text_bleed",
+      "issue_level": "MINOR",
+      "notes": "1 line of question text visible at top. Both axes fully labelled. Data points visible."
+    },
+    {
+      "filename": "mathematics-standard-2_2025_Q26_stimulus.jpg",
+      "year": 2025, "question": 26,
+      "description": "3D curved composite solid — cylinder with hemispheres or curved surface, dimensions 6.0, 3.8, 10.2, 40.0 cm labelled",
+      "crop_quality": "clean",
+      "issue_level": null,
+      "notes": "All dimensions visible. NOT TO SCALE note present."
+    },
+    {
+      "filename": "mathematics-standard-2_2025_Q28_stimulus.jpg",
+      "year": 2025, "question": 28,
+      "description": "Histogram with cumulative frequency line overlay, x-axis = student heights (cm), y-axis = number of students",
+      "crop_quality": "text_bleed",
+      "issue_level": "MINOR",
+      "notes": "1 line of text at top. Both axes labelled, bars and curve clearly visible."
+    },
+    {
+      "filename": "mathematics-standard-2_2025_Q32_stimulus.jpg",
+      "year": 2025, "question": 32,
+      "description": "Square pyramid with 4 spheres inside base, base 14 cm × 14 cm, height h cm, NOT TO SCALE",
+      "crop_quality": "right_edge_clip",
+      "issue_level": "MINOR",
+      "notes": "Partial character clipped at right edge (next-page content). Pyramid and all dimensions (14 cm base, h cm height) are fully visible and readable. Acceptable."
+    },
+    {
+      "filename": "mathematics-standard-2_2025_Q35_stimulus.jpg",
+      "year": 2025, "question": 35,
+      "description": "Triangle P-T-A with PT = 51 m, PA = 75 m, right angle from T perpendicular to PA, NOT TO SCALE",
+      "crop_quality": "clean",
+      "issue_level": null,
+      "notes": "Triangle with all labels (P, T, A), side lengths (51 m, 75 m) and right angle marker clearly visible."
+    },
+    {
+      "filename": "mathematics-standard-2_2025_Q36_stimulus.jpg",
+      "year": 2025, "question": 36,
+      "description": "Declining-balance depreciation graph — Value ($) vs Time (years), curve from $55,000 at t=0 to ~$18,000 at t=5",
+      "crop_quality": "clean",
+      "issue_level": null,
+      "notes": "Both axes fully labelled (Value ($) and Time (years)), y-axis ticks 0/11000/22000/33000/44000/55000, x-axis 0–5. Clean."
+    },
+    {
+      "filename": "mathematics-standard-2_2025_Q37_stimulus.jpg",
+      "year": 2025, "question": 37,
+      "description": "Large equilateral triangle subdivided — inner shaded triangle with sides 9, outer triangle with sides 3+9+3=12 per side, NOT TO SCALE",
+      "crop_quality": "clean",
+      "issue_level": null,
+      "notes": "Large outer triangle, shaded inner triangle, all side lengths (3, 9) clearly labelled. Tick marks on equal sides visible."
+    },
+    {
+      "filename": "mathematics-standard-2_2025_Q39_stimulus.jpg",
+      "year": 2025, "question": 39,
+      "description": "Exponential decay graph — Amount of medication remaining (mg) vs Number of hours after taking a dose. Points at (0,15) and (2,~8.75), arrow indicating trend",
+      "crop_quality": "clean",
+      "issue_level": null,
+      "notes": "Both axes fully labelled with units, grid visible, two data points plotted, decay arrow drawn. Clean."
+    }
+  ],
+  "summary": {
+    "total": 75,
+    "clean": 44,
+    "text_bleed_minor": 13,
+    "drawing_grid_intentional": 7,
+    "answer_lines_minor": 1,
+    "right_edge_clip_minor": 1,
+    "axis_missing_real": 1,
+    "issues_requiring_fix": [
+      {
+        "filename": "mathematics-standard-2_2022_Q23_stimulus.jpg",
+        "issue": "X-axis label 'Average hours of sleep per day' is cropped off. Students cannot identify x-axis without the label.",
+        "fix": "Recrop from 2022 NESA PDF — extend y_end downward to include the x-axis label text."
+      }
+    ],
+    "drawing_grid_files": [
+      "mathematics-standard-2_2020_Q30b_stimulus.jpg",
+      "mathematics-standard-2_2023_Q19b_stimulus.jpg",
+      "mathematics-standard-2_2023_Q34_stimulus.jpg",
+      "mathematics-standard-2_2022_Q34_stimulus.jpg",
+      "mathematics-standard-2_2024_Q26b_stimulus.jpg",
+      "mathematics-standard-2_2024_Q34_stimulus.jpg"
+    ],
+    "note_2021_Q33b": "2021_Q33b_stimulus.jpg exists in diagrams/ but is NOT yet referenced in subjects/mathematics-standard-2.json. It shows the latitude vs temperature scatterplot for Q33 part b. Consider wiring it as a second <img> tag in Q33 part b when that sub-question is added."
+  }
+}
