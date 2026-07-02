@@ -2007,6 +2007,41 @@ window.addEventListener('beforeinstallprompt', e => {
   };
 });
 
+// iOS never fires beforeinstallprompt (Apple doesn't allow programmatic
+// install prompts) — show manual "Add to Home Screen" instructions instead.
+function maybeShowIOSInstallHint() {
+  if ((window._device || {}).os !== 'ios') return;
+  // Already installed — running from the home screen
+  const isStandalone = window.navigator.standalone === true
+    || window.matchMedia('(display-mode: standalone)').matches;
+  if (isStandalone) return;
+  if (localStorage.getItem('cramit_ios_install_dismissed')) return;
+
+  const banner = document.getElementById('install-banner');
+  const text   = banner.querySelector('.install-text');
+  const installBtn = document.getElementById('install-btn');
+  const closeBtn   = banner.querySelector('.install-close');
+  if (!banner || !text) return;
+
+  // Share glyph (square with up-arrow, like the Safari toolbar icon)
+  const shareIcon = '<svg width="13" height="15" viewBox="0 0 16 20" fill="none" stroke="var(--accent)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px"><path d="M8 12V2"/><path d="M4.5 5 8 1.5 11.5 5"/><path d="M3 9H2v9.5h12V9h-1"/></svg>';
+
+  // Chrome/Firefox/Edge on iOS and in-app browsers hide or lack Add to Home
+  // Screen — point those users to Safari first.
+  const notSafari = /CriOS|FxiOS|EdgiOS|OPiOS|Instagram|FBAN|FBAV|Snapchat|musical_ly|TikTok/i.test(navigator.userAgent || '');
+  text.innerHTML = notSafari
+    ? '<strong>Install CramIT</strong><span>Open this page in <b>Safari</b>, then tap ' + shareIcon + ' Share → <b>Add to Home Screen</b></span>'
+    : '<strong>Install CramIT</strong><span>Tap ' + shareIcon + ' <b>Share</b>, then <b>Add to Home Screen</b></span>';
+
+  if (installBtn) installBtn.style.display = 'none'; // no prompt API on iOS
+  if (closeBtn) closeBtn.onclick = () => {
+    banner.style.display = 'none';
+    localStorage.setItem('cramit_ios_install_dismissed', '1');
+  };
+  banner.style.display = 'flex';
+}
+maybeShowIOSInstallHint();
+
 // Service worker disabled
 
 // ════════════════════════════════════════════════════════════════
