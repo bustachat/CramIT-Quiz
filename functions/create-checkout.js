@@ -1,8 +1,11 @@
 // functions/create-checkout.js — Cloudflare Pages Function (ESM)
-// Creates a Stripe Checkout session for a given subject count + plan.
-// Called by billing.js → createCheckoutSession()
+// Creates a Stripe Checkout session for the AUTHENTICATED user.
+// Identity comes from the verified Supabase JWT — never from the body.
+// Plan type is derived server-side from subject_count so a tampered
+// client can't buy the base price for an unlimited subject count.
 
 import Stripe from 'stripe';
+import { corsHeaders, requireUser, unauthorized } from './_lib/auth.js';
 
 const PRICES = {
   base:      'price_1TEdRbPvnbx5MPYyExQIlaBK',
@@ -19,18 +22,17 @@ const PRICING = {
   BASE_INCLUDES: 2,
 };
 
-const CORS = {
-  'Access-Control-Allow-Origin':  '*',
-  'Access-Control-Allow-Methods': 'POST, OPTIONS',
-  'Access-Control-Allow-Headers': 'Content-Type, x-user-email',
-};
-
-export async function onRequestOptions() {
-  return new Response(null, { status: 204, headers: CORS });
+export async function onRequestOptions(context) {
+  return new Response(null, { status: 204, headers: corsHeaders(context.request) });
 }
 
 export async function onRequestPost(context) {
   const { request, env } = context;
+  const CORS = corsHeaders(request);
+
+  const user = await requireUser(request, env);
+  if (!user) return unauthorized(CORS);
+
   const stripe = new Stripe(env.STRIPE_SECRET_KEY);
 
   let body;
@@ -40,14 +42,17 @@ export async function onRequestPost(context) {
     return new Response(JSON.stringify({ error: 'Invalid JSON' }), { status: 400, headers: CORS });
   }
 
-  const { user_id, subject_count, plan_type, plan_mode, success_url, cancel_url } = body;
+  const { subject_count, plan_mode, success_url, cancel_url } = body;
+  const nSubjects = parseInt(subject_count, 10);
 
-  if (!user_id || !subject_count) {
-    return new Response(JSON.stringify({ error: 'Missing required fields' }), { status: 400, headers: CORS });
+  if (!nSubjects || nSubjects < 2 || nSubjects > 20) {
+    return new Response(JSON.stringify({ error: 'subject_count must be 2–20' }), { status: 400, headers: CORS });
   }
 
   try {
-    const lineItems = buildLineItems(subject_count, plan_type, plan_mode);
+    // Derive the plan from the count — ignore any client-sent plan_type.
+    const planType  = getPlanType(nSubjects, plan_mode);
+    const lineItems = buildLineItems(nSubjects, planType);
 
     const successUrlWithSession = success_url.includes('?')
       ? success_url + '&session_id={CHECKOUT_SESSION_ID}'
@@ -60,19 +65,19 @@ export async function onRequestPost(context) {
       success_url:          successUrlWithSession,
       cancel_url:           cancel_url,
       metadata: {
-        user_id,
-        subject_count:  String(subject_count),
-        plan_type,
+        user_id:        user.id,
+        subject_count:  String(nSubjects),
+        plan_type:      planType,
         plan_mode:      plan_mode || 'swap',
       },
       subscription_data: {
         metadata: {
-          user_id,
-          subject_count: String(subject_count),
+          user_id:       user.id,
+          subject_count: String(nSubjects),
           plan_mode:     plan_mode || 'swap',
         }
       },
-      customer_email: request.headers.get('x-user-email') || undefined,
+      customer_email: user.email || undefined,
     });
 
     return new Response(JSON.stringify({ url: session.url }), {
@@ -86,10 +91,19 @@ export async function onRequestPost(context) {
   }
 }
 
-function buildLineItems(nSubjects, planType, planMode) {
+function getPlanType(n, mode) {
+  const { BASE_INCLUDES, CAP_LIMIT, BASE_PRICE, EXTRA_PRICE, CAP_PRICE } = PRICING;
+  if (n <= BASE_INCLUDES) return 'base';
+  if (n > CAP_LIMIT)      return 'flex';
+  const raw = BASE_PRICE + (n - BASE_INCLUDES) * EXTRA_PRICE;
+  if (raw >= CAP_PRICE)   return 'unlimited';
+  return 'base_plus';
+}
+
+function buildLineItems(nSubjects, planType) {
   const { BASE_INCLUDES, CAP_LIMIT } = PRICING;
 
-  if (nSubjects <= BASE_INCLUDES) {
+  if (planType === 'base') {
     return [{ price: PRICES.base, quantity: 1 }];
   }
 
@@ -105,13 +119,10 @@ function buildLineItems(nSubjects, planType, planMode) {
     return [{ price: PRICES.cap, quantity: 1 }];
   }
 
-  if (planType === 'flex') {
-    const flexExtras = nSubjects - CAP_LIMIT;
-    return [
-      { price: PRICES.flex_base, quantity: 1 },
-      { price: PRICES.extra,     quantity: flexExtras },
-    ];
-  }
-
-  return [{ price: PRICES.base, quantity: 1 }];
+  // flex — unlimited base + $2.99 per subject above the 7-subject cap
+  const flexExtras = nSubjects - CAP_LIMIT;
+  return [
+    { price: PRICES.flex_base, quantity: 1 },
+    { price: PRICES.extra,     quantity: flexExtras },
+  ];
 }

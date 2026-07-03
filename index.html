@@ -1751,9 +1751,8 @@ async function tryAiMarking(questionIdx, q, studentAnswer) {
   try {
     const res = await fetch('/mark-written', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      headers: { 'Content-Type': 'application/json', ...(await authHeaders()) },
       body: JSON.stringify({
-        userId:          currentUser.id,
         question:        q.q || q.question || q.text || '',
         maxMarks:        q.maxMark || q.marks || 0,
         keywords:        q.keywords || [],
@@ -2462,6 +2461,19 @@ function getSubjectStats(subjectKey) {
   return { seen, correct, pct: seen > 0 ? Math.round(correct / seen * 100) : 0 };
 }
 
+// ── AUTH HEADERS FOR CLOUDFLARE FUNCTIONS ─────────────────────
+// Every billing/AI function verifies this token server-side and derives
+// the user identity from it — bodies no longer carry user/customer IDs.
+async function authHeaders() {
+  try {
+    const { data } = await sbClient.auth.getSession();
+    const token = data?.session?.access_token;
+    return token ? { 'Authorization': 'Bearer ' + token } : {};
+  } catch {
+    return {};
+  }
+}
+
 // ── CAN ACCESS SUBJECT? ───────────────────────────────────────
 function canAccess(subjectId) {
   if (canAccessViaSubscription(subjectId)) return true;
@@ -2843,11 +2855,9 @@ async function handleSubscribeModal() {
   try {
     const res = await fetch('/create-checkout', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json', 'x-user-email': currentUser.email },
+      headers: { 'Content-Type': 'application/json', ...(await authHeaders()) },
       body: JSON.stringify({
-        user_id:       currentUser.id,
         subject_count: n,
-        plan_type:     planType,
         plan_mode:     'swap',
         success_url:   `${window.location.origin}?payment=success&subject=${selectedIds[0] || ''}`,
         cancel_url:    window.location.origin,
@@ -2874,16 +2884,13 @@ async function addSubject(subjectId) {
     // Insert into subject_selections
     await sbClient.from('subject_selections').insert({ user_id: currentUser.id, subject_id: subjectId });
 
-    // If on a paid plan, update Stripe subscription to reflect new subject count
+    // If on a paid plan, sync the Stripe subscription. The function derives
+    // the subscription ID and subject count server-side from the verified user.
     if (userSub.plan !== 'free' && userSub.stripe_subscription_id) {
       await fetch('/update-subscription', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          subscription_id: userSub.stripe_subscription_id,
-          subject_count:   userSubjects.length,
-          plan_mode:       userSub.plan === 'flex' ? 'flex' : 'swap',
-        })
+        headers: { 'Content-Type': 'application/json', ...(await authHeaders()) },
+        body: JSON.stringify({})
       });
     }
 
@@ -2911,11 +2918,9 @@ async function handleCheckout() {
   try {
     const res = await fetch('/create-checkout', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json', 'x-user-email': currentUser.email },
+      headers: { 'Content-Type': 'application/json', ...(await authHeaders()) },
       body: JSON.stringify({
-        user_id:       currentUser.id,
         subject_count: newCount,
-        plan_type:     newCount > PRICING_CFG.CAP_LIMIT ? 'flex' : price >= PRICING_CFG.CAP ? 'unlimited' : newCount <= PRICING_CFG.BASE_INCLUDES ? 'base' : 'base_plus',
         plan_mode:     'swap',
         success_url:   `${window.location.origin}?payment=success&subject=${pendingSubject.id}`,
         cancel_url:    window.location.origin,
@@ -2943,14 +2948,13 @@ async function handleUpgradeFlex() {
 
 async function handleManageBilling() {
   if (!currentUser || !sbClient) return;
-  const { data, error: dbErr } = await sbClient.from('subscriptions').select('stripe_customer_id').eq('user_id', currentUser.id).single();
-  if (dbErr) { console.error('Billing DB error:', dbErr); alert('Could not load subscription: ' + dbErr.message); return; }
-  if (!data?.stripe_customer_id) { alert('No billing account found. Please contact support.'); return; }
   try {
+    // The function looks up the caller's own Stripe customer from the
+    // verified token — no customer_id is sent (or accepted).
     const res = await fetch('/customer-portal', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ customer_id: data.stripe_customer_id, return_url: window.location.origin })
+      headers: { 'Content-Type': 'application/json', ...(await authHeaders()) },
+      body: JSON.stringify({ return_url: window.location.origin })
     });
     const text = await res.text();
     let json;

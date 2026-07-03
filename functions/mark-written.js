@@ -1,6 +1,10 @@
 // functions/mark-written.js — Cloudflare Pages Function (ESM)
 // AI marking for CramIT written-response questions.
 // Called by index.html → tryAiMarking()
+// Identity comes from the verified Supabase JWT — a userId in the body
+// is ignored, so callers can only spend their OWN monthly quota.
+
+import { corsHeaders, requireUser, unauthorized } from './_lib/auth.js';
 
 const QUOTA = {
   free:      0,
@@ -9,18 +13,16 @@ const QUOTA = {
   flex:      100,
 };
 
-const CORS = {
-  'Access-Control-Allow-Origin':  '*',
-  'Access-Control-Allow-Methods': 'POST, OPTIONS',
-  'Access-Control-Allow-Headers': 'Content-Type',
-};
-
-export async function onRequestOptions() {
-  return new Response(null, { status: 204, headers: CORS });
+export async function onRequestOptions(context) {
+  return new Response(null, { status: 204, headers: corsHeaders(context.request) });
 }
 
 export async function onRequestPost(context) {
   const { request, env } = context;
+  const CORS = corsHeaders(request);
+
+  const user = await requireUser(request, env);
+  if (!user) return unauthorized(CORS);
 
   const SUPABASE_URL         = env.SUPABASE_URL;
   const SUPABASE_SERVICE_KEY = env.SUPABASE_SERVICE_ROLE_KEY;
@@ -33,11 +35,12 @@ export async function onRequestPost(context) {
     return new Response(JSON.stringify({ error: 'Invalid JSON' }), { status: 400, headers: CORS });
   }
 
-  const { userId, question, maxMarks, keywords, studentAnswer, bandDescriptors, subject } = body;
+  const { question, maxMarks, keywords, studentAnswer, bandDescriptors, subject } = body;
+  const userId = user.id; // verified — never from the body
 
-  if (!userId || !question || !studentAnswer || !maxMarks) {
+  if (!question || !studentAnswer || !maxMarks) {
     return new Response(
-      JSON.stringify({ error: 'Missing required fields: userId, question, maxMarks, studentAnswer' }),
+      JSON.stringify({ error: 'Missing required fields: question, maxMarks, studentAnswer' }),
       { status: 400, headers: CORS }
     );
   }

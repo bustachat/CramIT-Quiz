@@ -1,8 +1,13 @@
 // functions/update-subscription.js — Cloudflare Pages Function (ESM)
-// Called by billing.js whenever a student adds or removes a subject.
-// Updates the Stripe subscription so billing adjusts automatically.
+// Syncs the AUTHENTICATED user's Stripe subscription with their actual
+// subject count. Both the subscription ID and the count are looked up
+// server-side — the request body is never trusted for either.
 
 import Stripe from 'stripe';
+import {
+  corsHeaders, requireUser, unauthorized,
+  getSubscriptionRow, countSubjectSelections,
+} from './_lib/auth.js';
 
 const PRICES = {
   base:      'price_1TEdRbPvnbx5MPYyExQIlaBK',
@@ -19,37 +24,33 @@ const PRICING = {
   BASE_INCLUDES: 2,
 };
 
-const CORS = {
-  'Access-Control-Allow-Origin':  '*',
-  'Access-Control-Allow-Methods': 'POST, OPTIONS',
-  'Access-Control-Allow-Headers': 'Content-Type',
-};
-
-export async function onRequestOptions() {
-  return new Response(null, { status: 204, headers: CORS });
+export async function onRequestOptions(context) {
+  return new Response(null, { status: 204, headers: corsHeaders(context.request) });
 }
 
 export async function onRequestPost(context) {
   const { request, env } = context;
-  const stripe = new Stripe(env.STRIPE_SECRET_KEY);
+  const CORS = corsHeaders(request);
 
-  let body;
-  try {
-    body = await request.json();
-  } catch {
-    return new Response(JSON.stringify({ error: 'Invalid JSON' }), { status: 400, headers: CORS });
-  }
-
-  const { subscription_id, subject_count, plan_mode } = body;
-
-  if (!subscription_id || subject_count === undefined) {
-    return new Response(
-      JSON.stringify({ error: 'Missing subscription_id or subject_count' }),
-      { status: 400, headers: CORS }
-    );
-  }
+  const user = await requireUser(request, env);
+  if (!user) return unauthorized(CORS);
 
   try {
+    const sub = await getSubscriptionRow(user.id, env, 'stripe_subscription_id,plan,status');
+    if (!sub?.stripe_subscription_id) {
+      return new Response(
+        JSON.stringify({ error: 'No active subscription found for your login.' }),
+        { status: 404, headers: { 'Content-Type': 'application/json', ...CORS } }
+      );
+    }
+
+    // Source of truth: how many subjects the user actually has selected.
+    const subject_count = await countSubjectSelections(user.id, env);
+    const plan_mode     = sub.plan === 'flex' ? 'flex' : 'swap';
+    const subscription_id = sub.stripe_subscription_id;
+
+    const stripe = new Stripe(env.STRIPE_SECRET_KEY);
+
     if (subject_count <= 1) {
       await stripe.subscriptions.cancel(subscription_id);
       return new Response(
@@ -68,14 +69,14 @@ export async function onRequestPost(context) {
         proration_behavior: 'create_prorations',
         metadata: {
           subject_count: String(subject_count),
-          plan_mode:     plan_mode || 'swap',
+          plan_mode:     plan_mode,
         },
       });
     } else {
       await stripe.subscriptions.update(subscription_id, {
         metadata: {
           subject_count: String(subject_count),
-          plan_mode:     plan_mode || 'swap',
+          plan_mode:     plan_mode,
         },
       });
     }
