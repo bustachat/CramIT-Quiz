@@ -665,6 +665,8 @@ let answers = [];
 let answered = false;
 let isPracticeMode = true; // true = practice (instant feedback), false = test (reveal at end)
 let currentStreak = 0;
+let trialCounted = new Set(); // question indices already charged against the trial this session
+let quizSession = 0;          // bumped on every startQuiz — stale async results are dropped
 
 // ── SUBJECT CONFIGS ──
 // categories/topics start as null and are set by loadSubjectData() after fetching.
@@ -1134,6 +1136,12 @@ function startQuiz(mode) {
   score = 0;
   answers = new Array(activeQuestions.length).fill(null);
   answered = false;
+  // Fresh session: clear AI-marking state so feedback from a previous quiz
+  // can never surface on this one, and invalidate in-flight AI responses.
+  aiResults = [];
+  aiMarkingPending.clear();
+  trialCounted = new Set();
+  quizSession++;
   document.getElementById('quiz-name').textContent = s.icon + ' ' + s.name;
 
   document.getElementById('home').style.display = 'none';
@@ -1745,6 +1753,7 @@ async function tryAiMarking(questionIdx, q, studentAnswer) {
   if (aiMarkingPending.has(questionIdx)) return;
   if (aiResults[questionIdx]) return;
 
+  const session = quizSession; // drop the response if a new quiz starts meanwhile
   aiMarkingPending.add(questionIdx);
   if (questionIdx === currentIdx) renderQuestion(); // show spinner immediately
 
@@ -1763,13 +1772,16 @@ async function tryAiMarking(questionIdx, q, studentAnswer) {
     });
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     const data = await res.json();
+    if (session !== quizSession) return; // a new quiz started — this result belongs to the old one
     aiResults[questionIdx] = data;
   } catch (err) {
     console.warn('[CramIT] AI marking failed (silent fallback to keyword grid):', err.message);
     // Don't set aiResults — keyword grid stays as fallback
   } finally {
-    aiMarkingPending.delete(questionIdx);
-    if (questionIdx === currentIdx) renderQuestion(); // refresh: result or remove spinner
+    if (session === quizSession) {
+      aiMarkingPending.delete(questionIdx);
+      if (questionIdx === currentIdx) renderQuestion(); // refresh: result or remove spinner
+    }
   }
 }
 
@@ -1837,10 +1849,14 @@ function nextQuestion() {
 
   if (!answered) return; // Don't advance without answering in MC
 
-  // Trial counter — increment when advancing past a question
+  // Trial counter — charge each question index at most once per session,
+  // so Prev/Next navigation over answered questions doesn't burn extra trials.
   const _trialSubjectId = SUBJECT_CATALOGUE.find(s => s.quizKey === currentSubjectKey)?.id;
   if (_trialSubjectId) {
-    incrementTrialCount(_trialSubjectId);
+    if (!trialCounted.has(currentIdx)) {
+      trialCounted.add(currentIdx);
+      incrementTrialCount(_trialSubjectId);
+    }
     if (isTrialExhausted(_trialSubjectId)) {
       showTrialWall(_trialSubjectId);
       return;
@@ -2250,6 +2266,14 @@ async function initSupabase() {
 
     await loadUserState();
     renderHomeAuth();
+
+    // A Stripe payment completed while logged out leaves the paid subjects
+    // pending in localStorage — finish the unlock now that we have a user.
+    // (completePendingUnlock clears the keys first, so double-fires no-op.)
+    if (currentUser && (localStorage.getItem('cramit_pending_subjects')
+                     || localStorage.getItem('cramit_pending_subject'))) {
+      completePendingUnlock();
+    }
   });
 
   await loadUserState();
@@ -3024,22 +3048,54 @@ async function handleSignOut() {
 }
 
 // ── HANDLE PAYMENT SUCCESS REDIRECT ──────────────────────────
+function showHomeBanner(text) {
+  const list = document.getElementById('subject-list-billing');
+  if (!list) return;
+  const banner = document.createElement('div');
+  banner.style.cssText = 'background:rgba(106,247,200,0.1);border:1px solid var(--accent3);border-radius:12px;padding:12px 16px;margin-bottom:8px;font-size:13px;color:var(--accent3);text-align:center';
+  banner.textContent = text;
+  list.parentNode.insertBefore(banner, list);
+  setTimeout(() => banner.remove(), 8000);
+}
+
 async function handlePaymentReturn() {
   const params  = new URLSearchParams(window.location.search);
-  const success = params.get('payment');
-  // Get subject from URL param, or fall back to localStorage
-  let subjectId = params.get('subject');
-  if (!subjectId) {
-    subjectId = localStorage.getItem('cramit_pending_subject');
+  if (params.get('payment') !== 'success') return;
+
+  // Make sure the paid subjects survive in localStorage even if the URL
+  // param was the only record (older checkout flow stored one subject).
+  const urlSubject = params.get('subject');
+  if (urlSubject && !localStorage.getItem('cramit_pending_subjects')
+                 && !localStorage.getItem('cramit_pending_subject')) {
+    localStorage.setItem('cramit_pending_subject', urlSubject);
   }
-  if (success !== 'success') return;
-
-  console.log('[CramIT] Payment return detected. Subject:', subjectId, 'User:', currentUser?.email);
-
-  // Clean URL and localStorage — collect ALL subjects to insert
   window.history.replaceState({}, '', window.location.pathname);
+
+  // Session didn't survive the Stripe redirect (private mode, cleared
+  // storage). Keep the pending subjects — the auth listener completes the
+  // unlock as soon as the user signs back in.
+  if (!currentUser || !sbClient) {
+    console.warn('[CramIT] Payment return while logged out — unlock deferred until sign-in');
+    showHomeBanner('⏳ Payment received — sign in with the same account to unlock your subjects.');
+    return;
+  }
+
+  await completePendingUnlock();
+}
+
+// Polls for the webhook-written subscription, inserts the paid subjects,
+// and refreshes state. Called from handlePaymentReturn (normal flow) and
+// from the auth listener (user came back from Stripe logged out).
+async function completePendingUnlock() {
+  if (!currentUser || !sbClient) return;
+
   const pendingSubjectsRaw = localStorage.getItem('cramit_pending_subjects');
-  const allPendingSubjects = pendingSubjectsRaw ? JSON.parse(pendingSubjectsRaw) : (subjectId ? [subjectId] : []);
+  const singlePending      = localStorage.getItem('cramit_pending_subject');
+  const allPendingSubjects = pendingSubjectsRaw ? JSON.parse(pendingSubjectsRaw)
+    : (singlePending ? [singlePending] : []);
+  if (!allPendingSubjects.length) return;
+
+  console.log('[CramIT] Completing unlock for:', allPendingSubjects, 'User:', currentUser.email);
   localStorage.removeItem('cramit_pending_subject');
   localStorage.removeItem('cramit_pending_subjects');
 
@@ -3099,16 +3155,9 @@ async function handlePaymentReturn() {
   renderHomeAuth();
 
   // Show success message on home screen
-  const list = document.getElementById('subject-list-billing');
-  if (list) {
-    const banner = document.createElement('div');
-    banner.style.cssText = 'background:rgba(106,247,200,0.1);border:1px solid var(--accent3);border-radius:12px;padding:12px 16px;margin-bottom:8px;font-size:13px;color:var(--accent3);text-align:center';
-    banner.textContent = subConfirmed
-      ? '✅ Payment successful — your subjects are now unlocked!'
-      : '⏳ Payment received — unlocking your subjects (may take a moment)...';
-    list.parentNode.insertBefore(banner, list);
-    setTimeout(() => banner.remove(), 8000);
-  }
+  showHomeBanner(subConfirmed
+    ? '✅ Payment successful — your subjects are now unlocked!'
+    : '⏳ Payment received — unlocking your subjects (may take a moment)...');
 }
 
 // ── LIGHTBOX ──────────────────────────────────────────────────
