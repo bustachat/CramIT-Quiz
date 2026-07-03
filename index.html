@@ -2466,8 +2466,15 @@ function getSubjectStats(subjectKey) {
 // the user identity from it — bodies no longer carry user/customer IDs.
 async function authHeaders() {
   try {
-    const { data } = await sbClient.auth.getSession();
-    const token = data?.session?.access_token;
+    // getSession() can hang on a stale cross-tab auth lock (navigator.locks).
+    // Race it against a timeout so a stuck lock degrades to a 401 + visible
+    // fallback instead of freezing the UI on a spinner forever.
+    const result = await Promise.race([
+      sbClient.auth.getSession(),
+      new Promise(resolve => setTimeout(() => resolve(null), 4000)),
+    ]);
+    const token = result?.data?.session?.access_token;
+    if (!token) console.warn('[CramIT] authHeaders: no token available (timeout or signed out)');
     return token ? { 'Authorization': 'Bearer ' + token } : {};
   } catch {
     return {};
