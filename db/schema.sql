@@ -244,3 +244,92 @@ returns void language sql security definer as $$
          updated_at    = now()
   where  user_id = p_user_id;
 $$;
+
+
+-- ── 10. USER PROGRESS — cross-device answer sync (Stage 7B) ────
+-- Reconstructed from the deployed table (2026-07-04). If restoring from
+-- scratch, verify against a `supabase db dump` when convenient.
+
+create table if not exists public.user_progress (
+  id            uuid primary key default gen_random_uuid(),
+  user_id       uuid not null references auth.users(id) on delete cascade,
+  subject_key   text not null,
+  question_idx  integer not null,
+  mode          text not null,          -- 'mc' | 'written'
+  is_correct    boolean not null,
+  answered_at   timestamptz default now(),
+  unique (user_id, subject_key, question_idx, mode)
+);
+
+alter table public.user_progress enable row level security;
+
+drop policy if exists "user_progress_select_own" on public.user_progress;
+create policy "user_progress_select_own" on public.user_progress
+  for select using (auth.uid() = user_id);
+
+drop policy if exists "user_progress_upsert_own" on public.user_progress;
+create policy "user_progress_upsert_own" on public.user_progress
+  for insert with check (auth.uid() = user_id);
+
+drop policy if exists "user_progress_update_own" on public.user_progress;
+create policy "user_progress_update_own" on public.user_progress
+  for update using (auth.uid() = user_id);
+
+grant select, insert, update            on public.user_progress      to authenticated;
+grant select, insert, update, delete    on public.user_progress      to service_role;
+
+
+-- ── 11. SUBJECT ENTITLEMENT ENFORCEMENT (run 2026-07-04) ───────
+-- Verbatim copy of migrations/2026-07-02_subject_entitlement.sql.
+-- Caps subject_selections at the paid subject_count so a tampered
+-- client can't self-insert subjects it hasn't paid for.
+
+create or replace function public.enforce_subject_entitlement()
+returns trigger
+language plpgsql
+security definer
+set search_path = public
+as $$
+declare
+  sub record;
+  sel_count int;
+  allowed int;
+begin
+  select plan, status, subject_count
+    into sub
+    from public.subscriptions
+   where user_id = new.user_id;
+
+  select count(*) into sel_count
+    from public.subject_selections
+   where user_id = new.user_id;
+
+  if sub is null or sub.status not in ('active', 'trialing') then
+    allowed := 0;
+  elsif sub.plan = 'unlimited' then
+    allowed := 7;
+  elsif sub.plan = 'flex' then
+    allowed := greatest(coalesce(sub.subject_count, 7), 7);
+  else
+    allowed := coalesce(sub.subject_count, 0);
+  end if;
+
+  if sel_count + 1 > allowed then
+    raise exception 'Subject limit reached: your plan covers % subject(s), you have % selected',
+      allowed, sel_count
+      using errcode = 'P0001';
+  end if;
+
+  return new;
+end;
+$$;
+
+drop trigger if exists trg_enforce_subject_entitlement on public.subject_selections;
+
+create trigger trg_enforce_subject_entitlement
+  before insert on public.subject_selections
+  for each row
+  execute function public.enforce_subject_entitlement();
+
+create unique index if not exists uniq_subject_selection
+  on public.subject_selections (user_id, subject_id);

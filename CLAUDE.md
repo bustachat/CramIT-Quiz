@@ -209,41 +209,49 @@ Full schema in `schema.sql` in the repo root.
 ## 6. File Structure
 
 ```
-cramit-quiz/
+cramit-quiz/                    (tree corrected 2026-07-04 — matches the actual repo)
 ├── index.html                  ← Mobile PWA — student quiz experience (logged-in students)
 ├── landing.html                ← ⬜ PLANNED — Public marketing/landing page (pre-signup visitors)
 ├── portal.html                 ← ⬜ PLANNED Stage 10 — Desktop web portal (logged-in students)
-├── manifest.json               ← PWA manifest (CramIT branding)
-├── sw.js                       ← Service worker for offline caching
-├── agent.js                    ← Nightly NESA monitor + AI question generator
-├── billing.js                  ← ⚠️ DEAD CODE — placeholder keys, not imported by index.html. To be deleted.
-├── subject-selector.html       ← Subject selection UI component
+├── manifest.json               ← PWA manifest (icons/icon-192/512.png, #FAF8F5 theme)
+├── agent.js                    ← Nightly NESA monitor + AI question generator (⚠️ schema incompatible with app — rebuild before Stage 9; no GitHub workflow exists yet)
 ├── package.json                ← { "type": "module", "dependencies": { "stripe": "^14.0.0" } }
-├── extract_maths_diagrams.py   ← PDF diagram extractor v3 (PyMuPDF + Pillow + calibration)
-├── diagram_registry.json       ← Crop coordinates for all 76 diagram images (2020–2025)
-├── process_maths_backlog.js    ← Backlog processor for question generation
-├── schema.sql                  ← Supabase table definitions + RLS policies
+├── supabase.min.js             ← Local Supabase JS client (loaded via script tag)
 ├── generate_study_tool.py      ← ⚠️ SIDE PROJECT ONLY — generates olivier-hms-prep.html. NOT part of CramIT app or architecture.
 ├── olivier-hms-prep.html       ← ⚠️ SIDE PROJECT ONLY — standalone assessment study tool for one student (Olivier Khoury, HMS FA2 exam 29.6.26). Self-contained file served at /olivier-hms-prep.html. No auth, no billing, no Supabase. Not part of CramIT product. Do NOT integrate into index.html or reference in any CramIT architecture docs.
-├── supabase_min.js             ← Local Supabase JS client (loaded via script tag)
+├── written_q_extracts.json     ← Pre-extracted NESA PDF text/blocks for written questions — read this, never re-extract from PDFs
+├── diagram_audit.json          ← Written-stimulus image audit results (2026-06-22) — permanent reference
+├── audit_*.py / crop_*.py / fix_*.py / update_written_images.py ← audit/crop scripts of record (referenced by session log entries)
+├── db/
+│   └── schema.sql              ← Supabase tables + RLS + triggers (incl. user_progress + entitlement trigger as of 2026-07-04)
+├── migrations/
+│   └── 2026-07-02_subject_entitlement.sql ← entitlement trigger (run in Supabase 2026-07-04)
+├── icons/                      ← PWA icons (icon-192.png, icon-512.png), generated from CramIT_Logo_Transparent.png
+├── scripts/                    ← Extraction/audit tooling + registries
+│   ├── extract_maths_diagrams.py      ← PDF diagram extractor v3 (PyMuPDF + Pillow + calibration)
+│   ├── extract_written_diagrams.py    ← Written-question stimulus extractor (Stage 8.5)
+│   ├── diagram_registry.json          ← Crop coordinates for MC diagram images
+│   ├── written_diagram_registry.json  ← Crop registry for written stimulus images
+│   ├── process_maths_backlog.js       ← Backlog processor for question generation
+│   └── archive/                       ← Completed one-off migration scripts (kept for reference)
 ├── diagrams/                   ← Exam diagram images — served by Cloudflare Pages at /diagrams/
 │   ├── .gitignore              ← Excludes _debug/ folder from git
-│   └── mathematics-standard-2_{year}_Q{n}_{suffix}.jpg
-│       suffix = stimulus | A | B | C | D
-├── subjects/                   ← ⬜ MIGRATION IN PROGRESS — questions moving here from index.html
-│   ├── index.json              ← List of all available subject files
-│   ├── mathematics-standard-2.json    ← ⬜ To be created (migrated from index.html)
-│   ├── pdhpe-hms.json                 ← ⬜ To be created (migrated from index.html)
-│   ├── multimedia.json                ← ⬜ To be created (migrated from index.html)
-│   ├── vet-construction.json          ← ⬜ To be created (migrated from index.html)
-│   └── mathematics-advanced-2024.json ← Agent-generated (existing)
+│   └── {subject}_{year}_Q{n}_{suffix}.jpg|png  (suffix = stimulus | A | B | C | D)
+├── subjects/                   ← ✅ All question data lives here (one JSON per subject)
+│   ├── index.json              ← List of subject files (⚠️ informational only — the app hardcodes subjects in SUBJECT_ID_MAP/SUBJECT_CATALOGUE)
+│   ├── mathematics-standard-2.json    ← 318 MC + 151 written + 73 tips
+│   ├── pdhpe-hms.json                 ← 165 MC + 35 written
+│   ├── multimedia.json                ← 60 MC + 29 written
+│   └── vet-construction.json          ← 75 MC + 23 written
 └── functions/                  ← Cloudflare Pages Functions — served at /{name} (NOT /functions/{name})
-    ├── create-checkout.js      ← POST /create-checkout — creates Stripe Checkout Session
-    ├── update-subscription.js  ← POST /update-subscription — updates Stripe when subjects change
-    ├── customer-portal.js      ← POST /customer-portal — opens Stripe billing portal
-    ├── upgrade-flex.js         ← POST /upgrade-flex — upgrades cap → flex plan (stub — replaced by Billing Agent)
-    └── mark-written.js         ← POST /mark-written — AI marking via Claude API
+    ├── _lib/auth.js            ← Shared JWT verification + CORS allowlist (underscore = not routed)
+    ├── create-checkout.js      ← POST /create-checkout — creates Stripe Checkout Session (JWT required)
+    ├── update-subscription.js  ← POST /update-subscription — syncs Stripe with the caller's subject count (JWT required)
+    ├── customer-portal.js      ← POST /customer-portal — opens the caller's Stripe billing portal (JWT required)
+    └── mark-written.js         ← POST /mark-written — AI marking via Claude API (JWT required)
 ```
+
+NOT in the repo (removed or never existed, kept out intentionally): `sw.js` (service worker disabled), `billing.js` (deleted — was dead code), `subject-selector.html`, `functions/upgrade-flex.js` (deleted 2026-07-02), `subjects/mathematics-advanced-2024.json` (deleted 2026-07-04 — old agent schema, unloadable by the app).
 
 **Branch structure:**
 ```
@@ -284,7 +292,7 @@ Each folder contains exam papers + marking guidelines (`-mg` suffix). Marking gu
 | 3 | Base + 1 Extra | $10.98 |
 | 4 | Base + 2 Extra | $13.97 |
 | 5 | Base + 3 Extra | $16.96 |
-| 6 | Base + 4 Extra | $19.95 → triggers Unlimited |
+| 6 | Base + 4 Extra | $19.95 (stays base_plus — decided 2026-07-04: Unlimited would cost MORE at $19.99, so no forced upgrade; Unlimited starts at 7) |
 | 7 | Unlimited | $19.99 |
 | 8+ | Flex (Unlimited + $2.99/subject above 7) | $22.98+ |
 
@@ -666,9 +674,9 @@ await logAction(agentName, action, payload);           // log before acting
 | # | Task | File(s) | Notes |
 |---|---|---|---|
 | ~~**1**~~ | ~~**Migrate questions → `subjects/*.json`**~~ | ~~`index.html`, `subjects/`~~ | ✅ Done (2026-06-05) — index.html 11,195 → 2,502 lines. All 4 subjects in `subjects/*.json`. `loadSubjectData(key)` async fetch with `subjectCache`. See §25 for details. |
-| 2 | Fix `handleUpgradeFlex()` | `index.html` | Currently just shows an alert. Redirect to Customer Portal as stopgap until Billing Agent is built. |
-| 3 | Fix `plan_type: flex` in `handleCheckout()` | `index.html` | Currently maps to `'unlimited'` for 8+ subjects — should be `'flex'` |
-| 4 | Delete `billing.js` | `billing.js` | Dead code — placeholder keys, not imported by index.html. Safe to delete. |
+| ~~2~~ | ~~Fix `handleUpgradeFlex()`~~ | ~~`index.html`~~ | ✅ Done — redirects to Customer Portal (`handleManageBilling()`). |
+| ~~3~~ | ~~Fix `plan_type: flex` in `handleCheckout()`~~ | ~~`index.html`~~ | ✅ Done — plan type is now derived server-side in `create-checkout.js` (client-sent plan_type ignored entirely). |
+| ~~4~~ | ~~Delete `billing.js`~~ | ~~`billing.js`~~ | ✅ Done — file no longer exists in the repo. |
 | 5 | Test full payment flow end-to-end | Stripe sandbox | Use test card `4242 4242 4242 4242`. Test: trial → subscribe → add subject → remove subject → cancel |
 | ~~6~~ | ~~Fix remaining 39 MC question texts~~ | ~~`index.html`~~ | ✅ Done — 60 question texts updated to exact NESA wording from PDFs (2020–2025). Also fixed 2021 Q8–15 one-position shift, bearing diagram image, and chocolates optionImages. |
 | ~~7~~ | ~~Re-crop 2024 Q15 stimulus image~~ | ~~`diagrams/`~~ | ✅ Done — manually cropped, `hideQ:true` removed |
@@ -1212,7 +1220,7 @@ JSON format: `{ id, name, icon, accentColor, mcQuestions[], writtenQuestions[], 
   2. **Model answers missing from written test results** — breakdown only read `q.modelAnswer`, but all 238 written questions across all subjects store it in `answer`. Now uses the same `q.answer || q.modelAnswer || q.sampleAnswer` chain as practice mode, with `\n→<br>` for plain-text answers. Also: student answer now HTML-escaped in the breakdown (was raw innerHTML), marks label reads `marks || maxMark || totalMarks` (HMS uses `maxMark`), question text runs through `formatQuestionText()`.
   3. **PWA icons didn't exist** — manifest referenced `icons/icon-192.png`/`icon-512.png` but no `icons/` folder was in the repo (404s broke Chrome installability and the iOS home-screen icon). Generated both from `CramIT_Logo_Transparent.png` on a #FAF8F5 background (maskable-safe, no alpha). Manifest `theme_color`/`background_color` updated from stale dark `#0a0a0f` → `#FAF8F5`.
 
-  **Review findings still open (in priority order):** (f) 6-subject pricing = $19.95 `base_plus`, spec says "triggers Unlimited" — decide + align. (g) Agent pipeline is not real: no `.github/workflows/`, `agent.js` writes an incompatible schema (`questions/text/correct` vs `mcQuestions/q/answer`), and the app never reads `subjects/index.json` (subjects hardcoded in `SUBJECT_ID_MAP`/`SUBJECT_CATALOGUE`); `mathematics-advanced-2024.json` is dead/unloadable. (h) `schema.sql` missing from repo (re-export from Supabase); `sw.js`, `billing.js`, `diagram_registry.json`, `subject-selector.html` also don't exist despite being listed in §6 — billing.js/handleUpgradeFlex/flex plan_type pre-launch tasks #2–#4 are actually DONE in code. (i) 27 orphaned PNGs in `diagrams/` + untracked scratch files in repo root to clean. (j) `mark-written.js` never logs to `written_submissions`. *(Resolved 2026-07-02: (a) function auth, (b) entitlement trigger written — pending SQL run, (k) upgrade-flex deleted — see Security pass entry below.)*
+  **Review findings still open:** (g) Agent pipeline is not real: no `.github/workflows/`, `agent.js` writes an incompatible schema (`questions/text/correct` vs `mcQuestions/q/answer`), and the app never reads `subjects/index.json` (subjects hardcoded in `SUBJECT_ID_MAP`/`SUBJECT_CATALOGUE`) — rebuild before Stage 9. (j) `mark-written.js` never logs to `written_submissions`. *(Resolved 2026-07-04 in housekeeping: (f) pricing decided — 6 subjects stays $19.95 base_plus, §8 aligned; (h) schema.sql was at `db/schema.sql` all along (§6 tree was wrong — now corrected), updated with user_progress + entitlement trigger; (i) orphaned diagrams, dead subject JSON, and scratch files deleted.)* *(Resolved 2026-07-02: (a) function auth, (b) entitlement trigger written — pending SQL run, (k) upgrade-flex deleted — see Security pass entry below.)*
 
 - **Security pass — function auth + entitlement (2026-07-02)** — All Cloudflare Pages Functions now require a verified Supabase JWT; identity is derived server-side, never from the request body.
   - New shared module `functions/_lib/auth.js` (underscore prefix = not routed): `requireUser()` verifies the `Authorization: Bearer` token against `/auth/v1/user`; `corsHeaders()` replaces CORS `*` with an allowlist (`cramit-quiz.pages.dev` + `*.cramit-quiz.pages.dev` previews — add `cramit.com.au` there at domain launch); `getSubscriptionRow()`/`countSubjectSelections()` do service-role lookups.
@@ -1232,6 +1240,14 @@ JSON format: `{ id, name, icon, accentColor, mcQuestions[], writtenQuestions[], 
   2. **Stale AI feedback across sessions** — `aiResults`/`aiMarkingPending` were never reset, so feedback from a previous quiz could surface on the same index of a new one. `startQuiz()` now clears both; a `quizSession` counter also invalidates in-flight `/mark-written` responses that land after a new quiz starts (`tryAiMarking` captures the session and drops mismatched results).
   3. **Payment return while logged out** — `handlePaymentReturn()` dereferenced `currentUser.id` with no guard and cleared the pending-subject keys before doing anything, so a student whose session didn't survive the Stripe redirect crashed the unlock flow and lost the record of what they paid for. Restructured: unlock logic extracted to `completePendingUnlock()`; when logged out, pending keys are KEPT, a "sign in to unlock" banner shows (new `showHomeBanner()` helper), and the auth listener calls `completePendingUnlock()` on the next sign-in (clears keys first, so double-fires no-op).
 
-*CLAUDE.md — CramIT Project — Last updated: 2026-07-04 — Bug batch: trial double-count, stale AI feedback, logged-out payment return all fixed.*
+- **Housekeeping pass (2026-07-04)** — Repo cleaned and docs trued up:
+  - Deleted 27 orphaned diagram files (superseded crops, verified unreferenced by any subject JSON or index.html; checked 2025 Q22b first — the referenced `.png` exists, only the draft `.svg` was orphaned).
+  - Deleted `subjects/mathematics-advanced-2024.json` + its `index.json` entry (old agent schema — `questions/text/correct` — unloadable by the app).
+  - Deleted root scratch (one-off category-audit scripts + inputs, `_png_test/`, `_verify_mc/`, stray temp file) — all from completed audits already recorded here.
+  - `db/schema.sql` (which EXISTS — the old §6 tree wrongly said root `schema.sql`) extended with the Stage 7B `user_progress` table (reconstructed — verify against a `supabase db dump` when convenient) and a verbatim copy of the entitlement trigger.
+  - §6 file tree rewritten to match the actual repo (db/, scripts/, icons/, migrations/, _lib/; removed phantom sw.js/billing.js/subject-selector.html entries); pre-launch tasks #2–#4 marked done.
+  - Pricing decision (f): 6 subjects stays `base_plus` at $19.95 — forcing Unlimited would charge more ($19.99) than advertised; Unlimited begins at 7 subjects. §8 table aligned with code. Owner can revisit before launch.
+
+*CLAUDE.md — CramIT Project — Last updated: 2026-07-04 — Housekeeping: orphans/scratch deleted, schema.sql updated, §6/§8 docs corrected. Open: agent pipeline rebuild, written_submissions logging.*
 *Repo: https://github.com/bustachat/CramIT-Quiz*
 *Supabase: https://ohqtefjawaphtsebnaxg.supabase.co*
