@@ -1,0 +1,31 @@
+name: Validate
+
+# Runs on every push and PR — the project's first automated check.
+# Catches malformed subject JSON and broken Cloudflare Function syntax
+# before they reach a deploy (main auto-deploys to students on push).
+
+on:
+  push:
+    branches: ['**']
+  pull_request:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Validate subject JSON structure
+        run: node scripts/validate_subjects.cjs
+
+      - name: Syntax-check Cloudflare Pages Functions
+        run: |
+          set -e
+          for f in $(find functions -name '*.js'); do
+            echo "checking $f"
+            node --check "$f"
+          done
