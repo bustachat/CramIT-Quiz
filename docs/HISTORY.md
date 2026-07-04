@@ -118,6 +118,19 @@ Project CLAUDE.md had grown to ~84KB (~21,000 tokens), loaded in full on every s
 
 Also added: `scripts/validate_subjects.cjs` (structural validation for all subject JSON — options count, answer index range, image references resolve) and a GitHub Action (`.github/workflows/validate.yml`) that runs it plus a syntax check on all Cloudflare functions on every push/PR — the project's first automated CI check.
 
+## Content Agent rebuild (2026-07-04, Stage 9 Phase 1)
+
+Full rewrite of `agent.js` — the old version wrote a schema the app couldn't load (`questions/text/correct` vs `mcQuestions/q/answer`), created a new subject file per paper (wrong: the app hardcodes subjects), and used retired models + the obsolete prompt-caching beta header. Design decisions:
+
+- **Two-phase: triage then generation.** Owner's call — most papers share a structure (MC + written + diagrams) but some (English) are all-written and fit differently. Every discovered paper first gets a Sonnet-5 triage report (`docs/paper-reports/{subject}-{year}.md`): section breakdown, MC/short-answer/essay/diagram counts, fit assessment, recommendation. Opus-4-8 generation only runs when triage says MC fits AND the subject is one of the 4 the app supports.
+- **Never creates new subjects.** Each new subject needs hand-written `getMC`/`getWritten` filter logic + a card in `index.html` — inherently a human job. For roadmap subjects (Maths Adv, English, sciences, Legal, Business, Economics) the triage report is the deliverable: a briefing for the future porting session.
+- **Autonomy Level 1 from day one** (per `docs/agents-plan.md` risk table): new workflow `.github/workflows/content-agent.yml` (nightly 11pm Sydney + workflow_dispatch) commits to `agent/content-*` and opens a PR — never touches main.
+- **Guardrails:** per-question local validation mirroring `validate_subjects.cjs` (bad questions rejected individually, listed in PR body); category/topic values must come from the subject's existing set — the generator can't invent filter values the UI doesn't know; dedupe against existing question text; diagram-dependent questions always skipped and listed for the manual crop pass; after merge the real `validate_subjects.cjs` runs and the file is rolled back on failure; `MAX_PAPERS_PER_RUN = 3` so the first-run backlog spreads over nights; failed PDF downloads aren't marked processed (auto-retry next night).
+- **Models:** `claude-sonnet-5` discovery + triage, `claude-opus-4-8` generation. No `cache_control` — prompts are under the minimum cacheable prefix (see agent.js comment).
+- **Known limitation:** PRs opened with the default `GITHUB_TOKEN` don't trigger `validate.yml`, so the workflow runs the validator itself as an explicit step. Swap in a PAT later if real CI on agent PRs is wanted.
+
+Verified: `node agent.js --selftest` (14 offline checks: JSON extraction, question validation accept/reject, merge/dedupe/rollback on a temp file, repo validator green, all 4 subject files parse) — all pass; `node --check agent.js` clean; workflow YAML parses (js-yaml). Caught during selftest: `pdhpe-hms.json` has no `year` fields (HMS is topic-based) — `existingYears()` legitimately returns an empty set for it; state-file dedupe covers HMS instead. **Not yet run against the live API** — blocked on the `ANTHROPIC_API_KEY` GitHub Secret; first run should be manual (workflow_dispatch) with careful PR review.
+
 ## Question Expansion Strategy (Stage 3 decision, still partially pending)
 
 Background: the Maths Standard 2 standalone file (v5.4) was expanded from 90 to 318 questions using a **variant** strategy — 3 variants per non-image question, each with different numbers and a different correct answer position (A/B/C/D rotated), totalling 4 questions per concept. The `variant: true` flag marks expanded questions; the HSC 90/Extended 318 toggle controls which set students see.

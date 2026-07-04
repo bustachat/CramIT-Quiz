@@ -12,7 +12,7 @@
 ## 1. What CramIT Is
 
 CramIT is an AI-powered HSC exam practice platform for NSW students. It is a subscription-based Progressive Web App (PWA) that:
-- Automatically monitors NESA for new exam papers nightly via a GitHub Actions agent *(planned — not yet real, see §11 known issues)*
+- Automatically monitors NESA for new exam papers nightly via a GitHub Actions agent *(built 2026-07-04 — Content Agent, PR-only; needs `ANTHROPIC_API_KEY` GitHub Secret to run, see §4.4)*
 - Generates quiz questions using Claude AI and stores them as JSON files in the repo
 - Delivers quizzes through a mobile-friendly PWA students can install on any device
 - Handles billing via Stripe with per-subject pricing and a $19.99 cap
@@ -50,7 +50,7 @@ Every task, no matter how small, follows this process:
 | Database | Supabase (Postgres) — RLS enabled | Client always uses `sbClient` |
 | Payments | Stripe — subscription billing | Webhooks verified server-side |
 | Webhook handler | Supabase Edge Function named `clever-action` | NOT `stripe-webhook` — this was auto-named |
-| AI Agent | Node.js + Anthropic Claude API | Planned nightly via GitHub Actions — not yet real, see §11 |
+| AI Agent | Node.js + Anthropic Claude API | Content Agent (`agent.js`) runs nightly via GitHub Actions, PR-only — see §4.4 |
 | Repo | GitHub — `bustachat/CramIT-Quiz` | Public repo, main branch |
 | Diagram images | Cloudflare Pages static files at `/diagrams/` | Served from git repo — NOT Supabase Storage. Unlimited bandwidth free. |
 
@@ -115,7 +115,13 @@ Never commit API keys to GitHub. All keys go in environment variables. This file
 Price IDs are constants in `create-checkout.js` and `update-subscription.js` (the only two files that need updating when Stripe switches to live mode — create new Price objects first).
 
 ### 4.4 GitHub Actions
-No workflow exists yet — see §11 known issues. Planned: repo `bustachat/CramIT-Quiz`, branch `main`, schedule `0 13 * * *` (1pm UTC = 11pm Sydney), `contents: write` permission, `ANTHROPIC_API_KEY` GitHub Secret.
+Two workflows in `.github/workflows/`:
+| Workflow | Trigger | What it does |
+|---|---|---|
+| `validate.yml` | Every push + PR | Validates subject JSON (`scripts/validate_subjects.cjs`) + syntax-checks Cloudflare functions |
+| `content-agent.yml` | Nightly `0 13 * * *` (11pm Sydney) + manual Run-workflow button | Runs `agent.js` (NESA discovery → paper triage → question generation), opens a PR on an `agent/content-*` branch — **never pushes to main** |
+
+Requires the `ANTHROPIC_API_KEY` repository secret (GitHub → Settings → Secrets and variables → Actions) — not yet set, see pre-launch checklist #2. ⚠️ Gotcha: PRs opened with the default `GITHUB_TOKEN` do **not** trigger `validate.yml`; the content-agent workflow runs the validator itself as an explicit step to compensate (swap in a PAT later for real CI on agent PRs).
 
 ### 4.5 Google OAuth
 Status: **Testing mode** — only approved test users can sign in. To go public: Google Console → OAuth consent screen → Publish app (submit for verification). Client ID/Secret → Google Console → Credentials → used in Supabase Auth → Google provider.
@@ -144,12 +150,15 @@ Tables live in Supabase. RLS is enabled on all tables. Full definitions, includi
 
 ```
 cramit-quiz/
-├── .github/workflows/validate.yml ← CI: validates subject JSON + syntax-checks Cloudflare functions on every push/PR
+├── .github/workflows/
+│   ├── validate.yml            ← CI: validates subject JSON + syntax-checks Cloudflare functions on every push/PR
+│   └── content-agent.yml       ← Nightly Content Agent — runs agent.js, opens PR on agent/content-* branch (needs ANTHROPIC_API_KEY secret)
 ├── index.html                  ← Mobile PWA — student quiz experience (logged-in students)
 ├── landing.html                ← ⬜ PLANNED — Public marketing/landing page (pre-signup visitors)
 ├── portal.html                 ← ⬜ PLANNED Stage 10 — Desktop web portal (logged-in students)
 ├── manifest.json               ← PWA manifest (icons/icon-192/512.png, #FAF8F5 theme)
-├── agent.js                    ← Nightly NESA monitor + AI question generator (⚠️ schema incompatible with app — rebuild before Stage 9; no GitHub workflow exists yet)
+├── agent.js                    ← Content Agent: NESA discovery → paper triage → MC generation in app schema. `node agent.js --selftest` for offline checks. Only updates EXISTING subjects — never creates new ones (those need index.html work, see §10)
+├── agent-state.json            ← Papers the agent has already processed (slug-year keys) — committed so state persists across runs
 ├── package.json                ← { "type": "module", "dependencies": { "stripe": "^14.0.0" } }
 ├── supabase.min.js             ← Local Supabase JS client (loaded via script tag)
 ├── generate_study_tool.py      ← ⚠️ SIDE PROJECT ONLY — generates olivier-hms-prep.html. NOT part of CramIT app or architecture.
@@ -181,7 +190,8 @@ cramit-quiz/
 │   └── vet-construction.json          ← 75 MC + 23 written
 ├── docs/
 │   ├── HISTORY.md              ← Full session log — read on demand, not auto-loaded
-│   └── agents-plan.md          ← Stage 9 agent roster/build order — read on demand
+│   ├── agents-plan.md          ← Stage 9 agent roster/build order — read on demand
+│   └── paper-reports/          ← Content Agent triage reports ({subject}-{year}.md) — briefing docs for porting new subjects
 └── functions/                  ← Cloudflare Pages Functions — served at /{name} (NOT /functions/{name})
     ├── _lib/auth.js            ← Shared JWT verification + CORS allowlist (underscore = not routed)
     ├── create-checkout.js      ← POST /create-checkout — creates Stripe Checkout Session (JWT required)
@@ -378,7 +388,8 @@ All NESA PDF text/block positions for written questions are pre-extracted into `
 ### Known issues (still open)
 | Issue | Notes |
 |---|---|
-| **Agent pipeline is not real** | No `.github/workflows/` exists. `agent.js` writes an incompatible schema (`questions/text/correct` vs the app's `mcQuestions/q/answer`), and the app never reads `subjects/index.json` (subjects are hardcoded). Rebuild required before Stage 9 — see `docs/agents-plan.md`. |
+| **Content Agent has never run for real** | Rebuilt 2026-07-04 (correct app schema, triage phase, PR-only) but blocked on the `ANTHROPIC_API_KEY` GitHub Secret. First run should be manual via the workflow_dispatch button, with the PR reviewed carefully. Offline selftest passes. |
+| Content Agent handles MC only | Written-question generation deferred — triage reports flag written counts for human follow-up. Diagram questions always skipped (need the Python crop tooling). |
 | `mark-written.js` never logs to a `written_submissions` table | Table doesn't exist yet either (see §5 agent coordination tables). |
 | Stripe is in Sandbox/test mode | Switch to live before public launch — new Price objects + secret rotation. |
 | Google OAuth is in Testing mode | Submit for verification before public launch. |
@@ -388,7 +399,7 @@ All NESA PDF text/block positions for written questions are pre-extracted into `
 | # | Task | Notes |
 |---|---|---|
 | 1 | Test full payment flow end-to-end | Stripe sandbox, card `4242 4242 4242 4242`: trial → subscribe → add subject → remove subject → cancel |
-| 2 | Set `ANTHROPIC_API_KEY` in GitHub Secrets | Blocked on the agent rebuild above |
+| 2 | Set `ANTHROPIC_API_KEY` in GitHub Secrets | Agent rebuilt — this is now the only blocker; then trigger content-agent.yml manually once and review the PR |
 | 3 | Submit Google OAuth for verification | Google Console |
 | 4 | Add custom domain `cramit.com.au` | Cloudflare Pages → Custom domains; also update `APP_URL` in index.html, `_lib/auth.js` origin allowlist, and Supabase redirect URLs |
 | 5 | Switch Stripe to live mode | New live Price objects; update `create-checkout.js` + `update-subscription.js` |
@@ -403,7 +414,7 @@ All NESA PDF text/block positions for written questions are pre-extracted into `
 | Multimedia/HMS "Extended" variant question generation | ⬜ Pending — decision + rules in `docs/HISTORY.md` |
 | `landing.html` — public marketing/conversion page | ⬜ Not started — needed for organic signups |
 | `portal.html` — desktop web portal (Stage 10) | ⬜ Not started |
-| Agent infrastructure (Stage 9) | ⬜ Not started — see `docs/agents-plan.md` |
+| Agent infrastructure (Stage 9) | 🔶 Phase 1 Content Agent built (2026-07-04, PR-only, awaiting API key secret) — rest of roster not started, see `docs/agents-plan.md` |
 
 **Three-track architecture (do not merge these):** `landing.html` (public, no auth, static) → `index.html` (mobile PWA, logged-in students, live) → `portal.html` (desktop, logged-in students, planned). All three share the warm earth-tone design tokens and, once built, the same `sbClient`/`user_progress`/pricing logic — but never modify `index.html` when building either of the other two.
 
@@ -434,7 +445,7 @@ All NESA PDF text/block positions for written questions are pre-extracted into `
 | Where | Current model | Notes |
 |---|---|---|
 | `mark-written.js` (Cloudflare Function, live) | `claude-haiku-4-5` | Cheap, sufficient for structured JSON marking. System prompt cached (`cache_control`) — see global CLAUDE.md for the caching minimum-prefix caveat. |
-| `agent.js` (planned, needs rebuild) | Hardcodes `claude-opus-4-5` (generation) / `claude-sonnet-4-6` (discovery) | Update to current-generation models (`claude-opus-4-8` / `claude-sonnet-5`) as part of the Stage 9 rebuild — see `docs/agents-plan.md`. |
+| `agent.js` (Content Agent, nightly GitHub Action) | `claude-sonnet-5` (discovery + triage) / `claude-opus-4-8` (question generation) | Deliberately NO `cache_control` — prompts are under the minimum cacheable prefix and each is called at most a few times per run; see comment in agent.js. |
 | Diagram extraction scripts (`scripts/extract_*.py`) | `claude-sonnet-4-6` vision | Re-evaluate against `claude-sonnet-5` next time these scripts are touched. |
 
 Never expose `ANTHROPIC_API_KEY` in browser code — always proxy through a Cloudflare Pages Function (`env.ANTHROPIC_API_KEY`, not `process.env`).
@@ -465,6 +476,6 @@ At 1,000 active subscribers: ~$105/mo in AI + infra costs (≈1.3% of revenue).
 
 ---
 
-*CLAUDE.md — CramIT Project — Last updated: 2026-07-04 — Restructured: session history moved to docs/HISTORY.md, agent-infrastructure planning moved to docs/agents-plan.md. This file now covers instructions and reference only (~70% smaller).*
+*CLAUDE.md — CramIT Project — Last updated: 2026-07-04 — Content Agent rebuilt (triage + generation, PR-only, nightly via content-agent.yml); earlier same day: restructured, session history moved to docs/HISTORY.md.*
 *Repo: https://github.com/bustachat/CramIT-Quiz*
 *Supabase: https://ohqtefjawaphtsebnaxg.supabase.co*

@@ -17,7 +17,7 @@ The Autonomous Operations Blueprint V4 defines 22 agents across 5 clusters.
 
 | # | Agent | Decision | Reason |
 |---|-------|----------|--------|
-| 1 | Content Agent | ✅ Build Phase 1 | Already ~80% built as `agent.js` (schema needs rebuild first — see CLAUDE.md known issues) |
+| 1 | Content Agent | ✅ **Built 2026-07-04** | Rebuilt `agent.js` (triage + generation, app schema) + `content-agent.yml` (nightly, PR-only = Level 1). Awaiting `ANTHROPIC_API_KEY` GitHub Secret for first live run. See docs/HISTORY.md. |
 | 2 | Incident & Monitoring | ⚡ Replace uptime with UptimeRobot (free) | Custom logic only needed for Supabase/Stripe health checks |
 | 3 | Service Desk | ✅ Build Phase 2 | Scales support without owner time |
 | 4 | Billing & Subscription | ✅ Build Phase 2 | Replaces `handleUpgradeFlex()` stub, handles churn |

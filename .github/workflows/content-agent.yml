@@ -1,0 +1,87 @@
+name: Content Agent
+
+# Nightly NESA monitor + question generator (agent.js).
+# Autonomy Level 1 (docs/agents-plan.md): NEVER pushes to main — output is
+# committed to an agent/content-* branch and opened as a PR for human review.
+#
+# Requires the ANTHROPIC_API_KEY repository secret
+# (GitHub → Settings → Secrets and variables → Actions).
+#
+# NOTE: pushes/PRs made with the default GITHUB_TOKEN do NOT trigger other
+# workflows, so validate.yml will not auto-run on the agent's PR. The agent
+# runs the same validator itself (inside agent.js AND as an explicit step
+# below). To get real CI on agent PRs later, swap GITHUB_TOKEN for a PAT.
+
+on:
+  schedule:
+    - cron: '0 13 * * *'   # 1pm UTC = 11pm Sydney (AEST)
+  workflow_dispatch:        # manual "Run workflow" button for testing
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: content-agent
+  cancel-in-progress: false
+
+jobs:
+  content-agent:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      # The agent's only dependency. --no-save keeps it out of package.json
+      # (which Cloudflare Pages installs on every deploy — stripe only).
+      - name: Install agent dependency
+        run: npm install --no-save @anthropic-ai/sdk
+
+      - name: Offline selftest
+        run: node agent.js --selftest
+
+      - name: Run Content Agent
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          AGENT_SUMMARY_FILE: ${{ runner.temp }}/pr-body.md
+        run: node agent.js
+
+      # Belt-and-braces: agent.js already validates + rolls back on failure,
+      # but never let a broken subjects file reach even an agent branch.
+      - name: Validate subject JSON
+        run: node scripts/validate_subjects.cjs
+
+      - name: Detect changes
+        id: changes
+        run: |
+          if [ -n "$(git status --porcelain subjects docs/paper-reports agent-state.json)" ]; then
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            echo "No new papers — nothing to commit."
+          fi
+
+      - name: Open PR
+        if: steps.changes.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          AGENT_SUMMARY_FILE: ${{ runner.temp }}/pr-body.md
+        run: |
+          BRANCH="agent/content-$(date +%Y-%m-%d-%H%M)"
+          git config user.name  "cramit-content-agent"
+          git config user.email "content-agent@users.noreply.github.com"
+          git checkout -b "$BRANCH"
+          git add subjects docs/paper-reports agent-state.json
+          git commit -m "agent: nightly content run $(date +%Y-%m-%d)"
+          git push origin "$BRANCH"
+          if [ ! -f "$AGENT_SUMMARY_FILE" ]; then
+            echo "Content Agent nightly run — see commit diff." > "$RUNNER_TEMP/pr-body.md"
+          fi
+          gh pr create \
+            --title "Content Agent: nightly run $(date +%Y-%m-%d)" \
+            --body-file "${AGENT_SUMMARY_FILE:-$RUNNER_TEMP/pr-body.md}" \
+            --base main \
+            --head "$BRANCH"
