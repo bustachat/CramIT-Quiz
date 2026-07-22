@@ -162,7 +162,10 @@ cramit-quiz/
 ├── package.json                ← { "type": "module", "dependencies": { "stripe": "^14.0.0" } }
 ├── supabase.min.js             ← Local Supabase JS client (loaded via script tag)
 ├── generate_study_tool.py      ← ⚠️ SIDE PROJECT ONLY — generates olivier-hms-prep.html. NOT part of CramIT app or architecture.
-├── olivier-hms-prep.html       ← ⚠️ SIDE PROJECT ONLY — standalone assessment study tool for one student. No auth, no billing, no Supabase. Do NOT integrate into index.html or reference in any CramIT architecture docs.
+├── olivier-hms-prep.html       ← ⚠️ SIDE PROJECT ONLY — standalone assessment study tool for one student (Focus Area 2 only). No auth, no billing, no Supabase. Do NOT integrate into index.html or reference in any CramIT architecture docs.
+├── olivier-hms-exam-prep.html  ← ⚠️ SIDE PROJECT ONLY — standalone FULL-COURSE HMS study tool (both Focus Areas, 9 topics: Study/Practice MC/Written/Mock). Self-contained; 90 original MC + 10 written, no Supabase. Same "do NOT integrate" rule as above.
+├── olivier-hms-exam-diagrams/  ← ⚠️ SIDE PROJECT ONLY — cropped diagram JPGs for olivier-hms-exam-prep.html (NOT the app's /diagrams/ folder). Regenerate with scripts/crop_olivier_hms_exam.py.
+├── scripts/crop_olivier_hms_exam.py ← ⚠️ SIDE PROJECT ONLY — one-off PyMuPDF cropper (fraction-of-page clips) for the ATAR Notes HMS summary book. Not part of app tooling.
 ├── written_q_extracts.json     ← Pre-extracted NESA PDF text/blocks for written questions — read this, never re-extract from PDFs
 ├── diagram_audit.json          ← Written-stimulus image audit results — permanent reference
 ├── audit_*.py / crop_*.py / fix_*.py / update_written_images.py ← audit/crop scripts of record (see docs/HISTORY.md for what each was for)

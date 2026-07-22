@@ -1,0 +1,1321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Olivier — HMS Full Course Exam Prep</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#F0F2F5;color:#1A1A2E;min-height:100vh}
+
+/* ── HEADER ── */
+.header{background:linear-gradient(135deg,#0F5132 0%,#198754 100%);color:#fff;padding:20px 20px 0;text-align:center}
+.header h1{font-size:clamp(18px,4vw,26px);font-weight:800;letter-spacing:-0.5px}
+.header p{font-size:13px;opacity:0.85;margin-top:4px;margin-bottom:16px}
+.tabs{display:flex;gap:4px;justify-content:center;flex-wrap:wrap;padding-bottom:0}
+.tab-btn{background:rgba(255,255,255,0.12);color:rgba(255,255,255,0.75);border:none;padding:10px 18px;border-radius:10px 10px 0 0;font-size:14px;font-weight:600;cursor:pointer;transition:all 0.2s;white-space:nowrap}
+.tab-btn.active{background:#fff;color:#0F5132}
+
+/* ── PANELS ── */
+.panel{display:none;padding:20px;max-width:920px;margin:0 auto}
+.panel.active{display:block}
+
+/* ── TOPIC COLORS (9 topics across 2 Focus Areas) ── */
+:root{
+  --health:#3B82F6; --system:#EC4899; --tech:#06B6D4; --community:#F97316;
+  --assess:#10B981; --training:#F59E0B; --groups:#6366F1; --fuel:#14B8A6; --injury:#A855F7;
+}
+
+/* ── FOCUS-AREA DIVIDER ── */
+.fa-divider{display:flex;align-items:center;gap:12px;margin:8px 0 18px;font-size:13px;font-weight:800;letter-spacing:0.5px;text-transform:uppercase;color:#0F5132}
+.fa-divider::before,.fa-divider::after{content:'';flex:1;height:2px;background:linear-gradient(90deg,transparent,#198754,transparent)}
+.fa-divider.two{color:#B45309}
+.fa-divider.two::before,.fa-divider.two::after{background:linear-gradient(90deg,transparent,#F59E0B,transparent)}
+
+/* ── STUDY CARDS ── */
+.topic-card{background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,0.08);margin-top:14px}
+.topic-header{padding:14px 18px;display:flex;align-items:center;gap:12px;cursor:pointer;user-select:none}
+.topic-header:hover{filter:brightness(0.96)}
+.topic-icon{font-size:22px}
+.topic-title{font-size:16px;font-weight:700;color:#fff;flex:1}
+.topic-count{font-size:12px;color:rgba(255,255,255,0.85);background:rgba(0,0,0,0.2);padding:2px 8px;border-radius:20px}
+.chevron{color:rgba(255,255,255,0.9);font-size:14px;transition:transform 0.25s}
+.topic-header.open .chevron{transform:rotate(180deg)}
+.topic-body{padding:18px;display:none;border-top:1px solid #F0F2F5}
+.topic-body.open{display:block}
+
+.note-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px}
+@media(max-width:600px){.note-grid{grid-template-columns:1fr}}
+.note-box{background:#F8F9FA;border-radius:10px;padding:12px}
+.note-box h4{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:8px;opacity:0.6}
+.note-box ul{list-style:none;display:flex;flex-direction:column;gap:5px}
+.note-box li{font-size:13px;line-height:1.5;padding-left:14px;position:relative}
+.note-box li::before{content:"•";position:absolute;left:0;opacity:0.5}
+.note-box li b{color:#1A1A2E}
+
+.exam-tip{border-radius:10px;padding:12px 14px;margin-top:10px;font-size:13px;line-height:1.5}
+.exam-tip strong{display:block;font-size:11px;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:4px;opacity:0.8}
+.eg-box{background:#E8F5E9;border-left:3px solid #10B981;border-radius:0 8px 8px 0;padding:10px 12px;margin-top:10px;font-size:13px;line-height:1.5}
+.eg-box strong{color:#10B981;display:block;font-size:11px;text-transform:uppercase;margin-bottom:2px}
+
+/* ── DIAGRAMS + TABLES ── */
+.diagram-wrap{background:#F8F9FA;border-radius:12px;padding:16px;margin-top:12px;text-align:center}
+.diagram-wrap h4{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;opacity:0.5;margin-bottom:12px}
+.diagram-wrap img{max-width:100%;height:auto;border-radius:10px;display:block;margin:0 auto}
+.diagram-wrap .caption{font-size:11px;color:#9CA3AF;margin-top:8px;font-style:italic}
+.dgrid{display:grid;grid-template-columns:1fr 1fr;gap:10px;align-items:start}
+@media(max-width:600px){.dgrid{grid-template-columns:1fr}}
+.table-scroll{overflow-x:auto;margin-top:12px;-webkit-overflow-scrolling:touch}
+.dtable{width:100%;border-collapse:collapse;font-size:13px;background:#fff;border-radius:10px;overflow:hidden;min-width:520px}
+.dtable caption{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;opacity:0.55;padding-bottom:8px;text-align:left}
+.dtable th{background:#1A1A2E;color:#fff;padding:10px 12px;text-align:left;font-size:11px;text-transform:uppercase;letter-spacing:0.4px;vertical-align:top}
+.dtable td{padding:10px 12px;border-top:1px solid #E5E7EB;vertical-align:top;line-height:1.45}
+.dtable td:first-child{font-weight:700;white-space:nowrap}
+.dtable tbody tr:nth-child(even){background:#F8F9FA}
+.acronym-row{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px;justify-content:center}
+.acro-cell{border-radius:8px;padding:8px 6px;text-align:center;min-width:64px;flex:1}
+.acro-cell .letter{font-size:20px;font-weight:900;line-height:1;color:#fff}
+.acro-cell .word{font-size:9px;margin-top:3px;line-height:1.2;color:rgba(255,255,255,0.9)}
+
+/* ── PRACTICE TAB ── */
+.topic-pills{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px}
+.pill{border:none;padding:8px 14px;border-radius:20px;font-size:13px;font-weight:600;cursor:pointer;opacity:0.45;transition:all 0.2s;color:#fff}
+.pill.active{opacity:1;transform:scale(1.05)}
+.q-card{background:#fff;border-radius:16px;padding:20px;box-shadow:0 2px 12px rgba(0,0,0,0.08);margin-bottom:16px}
+.q-meta{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:10px;opacity:0.5}
+.q-text{font-size:15px;font-weight:600;line-height:1.5;margin-bottom:16px}
+.options{display:flex;flex-direction:column;gap:8px}
+.opt-btn{background:#F8F9FA;border:2px solid #E5E7EB;border-radius:10px;padding:12px 14px;font-size:14px;text-align:left;cursor:pointer;transition:all 0.2s;line-height:1.4}
+.opt-btn:hover:not(:disabled){background:#F0F2F5;border-color:#D1D5DB}
+.opt-btn.correct{background:#DCFCE7;border-color:#10B981;color:#065F46}
+.opt-btn.wrong{background:#FEE2E2;border-color:#EF4444;color:#7F1D1D}
+.opt-btn.show-correct{background:#DCFCE7;border-color:#10B981;color:#065F46}
+.explanation{background:#F0FDF4;border-radius:10px;padding:14px;margin-top:14px;font-size:13px;line-height:1.6;display:none}
+.explanation.show{display:block}
+.explanation strong{display:block;margin-bottom:4px;color:#10B981;font-size:12px;text-transform:uppercase}
+.quiz-nav{display:flex;justify-content:space-between;align-items:center;margin-top:16px}
+.quiz-score{font-size:13px;font-weight:600;color:#6B7280}
+.btn-next{background:#0F5132;color:#fff;border:none;padding:10px 22px;border-radius:10px;font-size:14px;font-weight:700;cursor:pointer}
+.results-card{background:#fff;border-radius:16px;padding:28px;text-align:center;box-shadow:0 2px 12px rgba(0,0,0,0.08)}
+.results-card h2{font-size:28px;font-weight:900;margin-bottom:8px}
+.results-card p{color:#6B7280;margin-bottom:20px}
+.btn-retry{background:#0F5132;color:#fff;border:none;padding:12px 28px;border-radius:12px;font-size:15px;font-weight:700;cursor:pointer}
+
+/* ── WRITTEN TAB ── */
+.written-tabs{display:flex;gap:8px;margin-bottom:20px;flex-wrap:wrap}
+.wt-btn{background:#fff;border:2px solid #E5E7EB;border-radius:10px;padding:10px 18px;font-size:14px;font-weight:700;cursor:pointer;transition:all 0.2s}
+.wt-btn.active{border-color:#0F5132;background:#0F5132;color:#fff}
+.scaffold-card{background:#fff;border-radius:16px;padding:22px;box-shadow:0 2px 12px rgba(0,0,0,0.08);display:none}
+.scaffold-card.active{display:block}
+.scaffold-step{display:flex;gap:14px;margin-bottom:16px;position:relative}
+.scaffold-step::after{content:'';position:absolute;left:19px;top:40px;bottom:-16px;width:2px;background:#E5E7EB}
+.scaffold-step:last-child::after{display:none}
+.step-num{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:900;color:#fff;flex-shrink:0}
+.step-content{flex:1;padding-top:8px}
+.step-content h3{font-size:15px;font-weight:800;margin-bottom:4px}
+.step-content p{font-size:13px;color:#4B5563;line-height:1.5}
+.step-content .anchor{background:#FEF3C7;border-radius:8px;padding:10px 12px;margin-top:8px;font-size:13px;line-height:1.5;border-left:3px solid #F59E0B}
+.step-content .anchor strong{display:block;font-size:11px;color:#92400E;text-transform:uppercase;margin-bottom:3px}
+.mark-badge{display:inline-block;background:#0F5132;color:#fff;font-size:11px;font-weight:700;padding:3px 10px;border-radius:20px;margin-bottom:16px}
+.expand-btn{background:#F8F9FA;border:1px solid #E5E7EB;border-radius:8px;padding:8px 14px;font-size:13px;font-weight:600;cursor:pointer;margin-top:12px;width:100%;text-align:left}
+.model-answer{background:#F0FDF4;border-radius:10px;padding:16px;margin-top:10px;font-size:13px;line-height:1.7;display:none;white-space:pre-wrap}
+.model-answer.show{display:block}
+
+/* ── MOCK EXAM TAB ── */
+.mock-start{text-align:center;padding:40px 20px}
+.mock-start h2{font-size:24px;font-weight:900;margin-bottom:10px}
+.mock-start p{color:#6B7280;margin-bottom:8px;font-size:14px;line-height:1.6}
+.mock-start ul{text-align:left;display:inline-block;margin:16px 0;font-size:14px;line-height:2}
+.btn-start-mock{background:linear-gradient(135deg,#0F5132,#198754);color:#fff;border:none;padding:14px 36px;border-radius:14px;font-size:16px;font-weight:800;cursor:pointer;margin-top:8px}
+.mock-active{display:none}
+.timer-bar{background:#0F5132;color:#fff;padding:14px 20px;border-radius:14px;display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;position:sticky;top:0;z-index:10}
+.timer-display{font-size:24px;font-weight:900;font-variant-numeric:tabular-nums}
+.timer-display.urgent{color:#FCA5A5}
+.mock-progress{font-size:13px;opacity:0.8}
+.mock-q-card{background:#fff;border-radius:16px;padding:20px;box-shadow:0 2px 12px rgba(0,0,0,0.08);margin-bottom:16px}
+.mock-q-num{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;opacity:0.5;margin-bottom:8px}
+.mock-opt{background:#F8F9FA;border:2px solid #E5E7EB;border-radius:10px;padding:12px 14px;font-size:14px;text-align:left;cursor:pointer;width:100%;margin-bottom:8px;transition:all 0.2s;display:block}
+.mock-opt.selected{background:#EEF2FF;border-color:#6366F1}
+.written-section{background:#fff;border-radius:16px;padding:20px;box-shadow:0 2px 12px rgba(0,0,0,0.08);margin-bottom:16px}
+.written-section h3{font-size:16px;font-weight:800;margin-bottom:6px}
+.written-section .marks{font-size:12px;color:#6B7280;margin-bottom:12px}
+.written-section textarea{width:100%;border:2px solid #E5E7EB;border-radius:10px;padding:12px;font-size:14px;line-height:1.6;resize:vertical;min-height:120px;font-family:inherit}
+.written-section textarea:focus{outline:none;border-color:#6366F1}
+.btn-submit-mock{background:#198754;color:#fff;border:none;padding:14px 36px;border-radius:14px;font-size:16px;font-weight:800;cursor:pointer;width:100%;margin-top:8px}
+.mock-results{display:none;background:#fff;border-radius:16px;padding:28px;text-align:center;box-shadow:0 2px 12px rgba(0,0,0,0.08)}
+.mock-results h2{font-size:26px;font-weight:900;margin-bottom:6px}
+.mock-results p{color:#6B7280;font-size:14px;margin-bottom:20px}
+.review-item{text-align:left;padding:14px;border-radius:10px;margin-bottom:10px;font-size:13px;line-height:1.5}
+.review-item .ri-q{font-weight:600;margin-bottom:6px}
+.review-item .ri-ans{font-size:12px;opacity:0.7}
+.btn-new-mock{background:#0F5132;color:#fff;border:none;padding:12px 28px;border-radius:12px;font-size:15px;font-weight:700;cursor:pointer;margin-top:8px}
+
+/* ── UTILS ── */
+.section-title{font-size:18px;font-weight:800;margin-bottom:16px;color:#1A1A2E}
+.intro-note{font-size:13px;color:#6B7280;margin-bottom:18px;margin-top:4px;line-height:1.5}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>🏃 Olivier&#39;s HMS Exam Prep</h1>
+  <p>Full Year 12 HSC Health &amp; Movement Science &nbsp;·&nbsp; Focus Area 1 + 2 &nbsp;·&nbsp; 9 topics</p>
+  <div class="tabs">
+    <button class="tab-btn active" onclick="showTab('study')">📚 Study</button>
+    <button class="tab-btn" onclick="showTab('practice')">⚡ Practice MC</button>
+    <button class="tab-btn" onclick="showTab('written')">✍️ Written Help</button>
+    <button class="tab-btn" onclick="showTab('mock')">🎯 Mock Exam</button>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════ STUDY TAB -->
+<div id="tab-study" class="panel active">
+  <p class="intro-note">Tap any topic to expand. Learn the <b>bold</b> terms and always link a fact to a <i>consequence</i> — that's where the marks are. Diagrams are from your ATAR Notes summary book.</p>
+
+  <div class="fa-divider">Focus Area 1 — Health in an Australian &amp; global context</div>
+
+  <!-- FA1 T1: THE HEALTH OF AUSTRALIANS -->
+  <div class="topic-card">
+    <div class="topic-header" style="background:var(--health)" onclick="toggleTopic(this)">
+      <span class="topic-icon">🩺</span>
+      <span class="topic-title">The Health of Australians</span>
+      <span class="topic-count">Topic 1</span>
+      <span class="chevron">▼</span>
+    </div>
+    <div class="topic-body">
+      <div class="note-grid">
+        <div class="note-box">
+          <h4>Key measurement terms</h4>
+          <ul>
+            <li><b>Morbidity</b> — level of ill health in a person or population</li>
+            <li><b>Mortality</b> — the number of deaths in a population</li>
+            <li><b>Prevalence</b> — total existing cases at a point in time</li>
+            <li><b>Incidence</b> — rate of new cases over a set period</li>
+            <li><b>Burden of disease</b> — gap between current health and an ideal, disease-free old age</li>
+            <li><b>DALY</b> — one year of healthy life lost to illness or early death</li>
+          </ul>
+        </div>
+        <div class="note-box">
+          <h4>Life expectancy &amp; causes</h4>
+          <ul>
+            <li><b>Life expectancy</b> ≈ 83 yrs overall (♀ 85, ♂ 81)</li>
+            <li><b>Leading mortality</b> — CVD, coronary heart disease, dementia, lung cancer</li>
+            <li><b>Leading morbidity</b> — mental illness, back pain, asthma, arthritis, diabetes</li>
+            <li><b>Risky-behaviour drivers</b> — low SES, culture &amp; peer influence, rural isolation</li>
+            <li><b>Health inequities</b> — shaped by social, economic &amp; environmental factors</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="diagram-wrap">
+        <h4>Determinants of Health</h4>
+        <img src="olivier-hms-exam-diagrams/determinants-rainbow.jpg" alt="Determinants of health rainbow — from age/sex core outwards to lifestyle, community, living/working conditions, and general socio-economic/environmental conditions">
+        <div class="caption">Inner layers (age, sex) can't be changed; outer layers (work, education, housing) can — and drive most inequity.</div>
+      </div>
+
+      <div class="note-grid" style="margin-top:12px">
+        <div class="note-box">
+          <h4>First Nations' health</h4>
+          <ul>
+            <li>Life expectancy gap of <b>~8 years</b> (ABS, 2020–2023)</li>
+            <li>Chronic conditions are <b>more prevalent and appear younger</b></li>
+            <li>Shaped by colonisation, connection to Country, education &amp; employment, housing &amp; food security</li>
+            <li><b>Actions:</b> Aboriginal Community Controlled Health Services, rural outreach, telehealth, school health promotion</li>
+          </ul>
+        </div>
+        <div class="note-box">
+          <h4>Global context &amp; ageing</h4>
+          <ul>
+            <li>Australia is an <b>OECD</b> member — high life expectancy, low smoking, strong immunisation</li>
+            <li>But <b>mid-level for obesity &amp; alcohol</b>, fewer hospital beds per capita than Japan/Germany</li>
+            <li>By 2026, <b>~22%</b> of Australians will be over 65</li>
+            <li><b>Healthy ageing</b> = maintaining physical, social &amp; mental function → strains hospitals, pensions, housing</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="table-scroll">
+        <table class="dtable">
+          <caption>Two major disease groups (AIHW)</caption>
+          <thead><tr><th>Feature</th><th>Cardiovascular disease</th><th>Cancer</th></tr></thead>
+          <tbody>
+            <tr><td>Mortality</td><td>~45,000 deaths (2022); a leading cause of death</td><td>~32% of the fatal disease burden</td></tr>
+            <tr><td>Morbidity</td><td>Leading disease burden for males, 7th for females</td><td>~17% of total disease burden — the largest single group</td></tr>
+            <tr><td>Risk factors</td><td>Smoking, high BP, diabetes, obesity, family history</td><td>Socio-economic disadvantage, age, smoking, obesity</td></tr>
+            <tr><td>Protective factors</td><td>Low cholesterol/BP, less stress &amp; smoking, healthy diet</td><td>Healthy diet/activity/weight, limit alcohol &amp; sun, vaccination</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="exam-tip" style="background:#EFF6FF;border-left:3px solid var(--health)">
+        <strong>⚡ Exam Tip</strong>
+        Don't confuse <b>prevalence</b> (all existing cases) with <b>incidence</b> (new cases only). Extended questions on health inequity want the <b>determinants</b> (rainbow) linked to a <b>vulnerable group</b> and a concrete action to close the gap.
+      </div>
+      <div class="eg-box">
+        <strong>🔗 Link it</strong>
+        Rural isolation (a socio-economic determinant) → fewer services + more injury risk → higher mortality → telehealth &amp; outreach clinics are the targeted action that reduces the gap.
+      </div>
+    </div>
+  </div>
+
+  <!-- FA1 T2: HEALTHCARE SYSTEM -->
+  <div class="topic-card">
+    <div class="topic-header" style="background:var(--system)" onclick="toggleTopic(this)">
+      <span class="topic-icon">🏥</span>
+      <span class="topic-title">Australia's Healthcare System</span>
+      <span class="topic-count">Topic 2</span>
+      <span class="chevron">▼</span>
+    </div>
+    <div class="topic-body">
+      <div class="note-grid">
+        <div class="note-box">
+          <h4>Who runs it</h4>
+          <ul>
+            <li><b>Role:</b> safe, affordable care for citizens/residents with equity for vulnerable groups</li>
+            <li><b>Government</b> — Federal (Medicare, PBS, policy), State (hospitals, emergency), Local (health promotion, water, waste)</li>
+            <li><b>NGOs</b> — private (e.g. BUPA) and not-for-profit (e.g. Beyond Blue)</li>
+            <li>Government = structure, funding &amp; regulation; NGOs = personalised, community support</li>
+          </ul>
+        </div>
+        <div class="note-box">
+          <h4>Funding &amp; consumption</h4>
+          <ul>
+            <li><b>Medicare</b> funded by the Medicare levy (+ surcharge for high earners); out-of-pocket gaps remain</li>
+            <li><b>Private health insurance</b> funds private hospitals, easing the public load</li>
+            <li><b>Complementary care</b> (acupuncture, yoga, herbal, massage) for prevention/symptom management</li>
+            <li><b>Critical consumption</b> — trust sources with credentials, cited data &amp; transparency (AIHW, WHO)</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="table-scroll">
+        <table class="dtable">
+          <caption>How key schemes support sustainability, access &amp; equity</caption>
+          <thead><tr><th>Scheme</th><th>Sustainability</th><th>Access</th><th>Equity</th></tr></thead>
+          <tbody>
+            <tr><td>Medicare</td><td>Subsidising only certain services preserves funds</td><td>Care for all, regardless of ability to pay</td><td>Safety Net gives extra help to frequent users</td></tr>
+            <tr><td>PBS</td><td>Medicines reviewed so the highest-benefit ones are prioritised</td><td>All citizens/residents access subsidised medicines</td><td>PBS Safety Net protects against large costs</td></tr>
+            <tr><td>NDIS</td><td>Individualised funded plans widen access</td><td>Better access for people with lifelong disability</td><td>Bigger needs receive more assistance</td></tr>
+            <tr><td>Private health</td><td>Incentives to insure reduce public-system strain</td><td>Younger people pay less to encourage uptake</td><td>Rebate gives lower-income earners more help</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="exam-tip" style="background:#FDF2F8;border-left:3px solid var(--system)">
+        <strong>⚡ Exam Tip</strong>
+        Learn the three lenses — <b>sustainability, access, equity</b> — and be able to judge any scheme (or challenge, like privatisation, ageing, or rising chronic disease) against all three. Person-centred care = government + NGOs collaborating (e.g. Headspace, subsidised flu vaccinations).
+      </div>
+    </div>
+  </div>
+
+  <!-- FA1 T3: TECHNOLOGY -->
+  <div class="topic-card">
+    <div class="topic-header" style="background:var(--tech)" onclick="toggleTopic(this)">
+      <span class="topic-icon">💻</span>
+      <span class="topic-title">Technology &amp; Data in Healthcare</span>
+      <span class="topic-count">Topic 3</span>
+      <span class="chevron">▼</span>
+    </div>
+    <div class="topic-body">
+      <div class="note-grid">
+        <div class="note-box">
+          <h4>Digital health &amp; new tech</h4>
+          <ul>
+            <li><b>Digital health</b> — apps, wearables, data systems &amp; telehealth to deliver/manage care</li>
+            <li><b>My Health Record</b> — a digital summary of a person's history → less repeat testing, better coordination</li>
+            <li><b>ePrescriptions</b> sent electronically; <b>Healthdirect</b> is a trusted symptom checker</li>
+            <li><b>AI</b> — mental-health chatbots, drug discovery, predicting deterioration, admin automation</li>
+          </ul>
+        </div>
+        <div class="note-box">
+          <h4>Big data</h4>
+          <ul>
+            <li>Databases (AIHW, Medicare, hospitals) track outbreaks &amp; population trends</li>
+            <li><b>Reduce spending</b> — cut unnecessary tests, flag at-risk patients early, find inefficiencies</li>
+            <li><b>Disease management</b> — faster trials, personalised medicine, side-effect tracking</li>
+            <li><b>Privacy:</b> comply with the Privacy Act 1988 &amp; My Health Records Act 2012 — encryption, consent, audits</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="diagram-wrap">
+        <h4>Six roles of technology in healthcare</h4>
+        <img src="olivier-hms-exam-diagrams/tech-hexagon.jpg" alt="Hexagon: Measure, Communicate, Monitor, Early diagnosis, Precision, Assist all surround Technology">
+        <div class="caption">Measure (Fitbits) · Communicate (telehealth) · Monitor (smart inhalers) · Early diagnosis (AI imaging) · Precision (robotic surgery) · Assist (3D-printed implants)</div>
+      </div>
+
+      <div class="table-scroll">
+        <table class="dtable">
+          <caption>Digital health — two sides</caption>
+          <thead><tr><th>Opportunities</th><th>Challenges</th></tr></thead>
+          <tbody>
+            <tr><td>Greater personalisation of care</td><td>Digital divide — limited access without literacy/devices</td></tr>
+            <tr><td>Remote access &amp; cost saving</td><td>Privacy &amp; data-security concerns</td></tr>
+            <tr><td>Facilitates preventative medicine</td><td>System interoperability between providers</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="exam-tip" style="background:#ECFEFF;border-left:3px solid var(--tech)">
+        <strong>⚡ Exam Tip</strong>
+        For any tech, weigh a <b>benefit against a challenge</b> (e.g. telehealth widens rural access <i>but</i> the digital divide excludes some). Privacy answers should name a real safeguard: encryption, documented consent, role-based access, regular audits.
+      </div>
+    </div>
+  </div>
+
+  <!-- FA1 T4: COMMUNITY HEALTH -->
+  <div class="topic-card">
+    <div class="topic-header" style="background:var(--community)" onclick="toggleTopic(this)">
+      <span class="topic-icon">🌏</span>
+      <span class="topic-title">Improving Community Health</span>
+      <span class="topic-count">Topic 4</span>
+      <span class="chevron">▼</span>
+    </div>
+    <div class="topic-body">
+      <div class="dgrid">
+        <div class="note-box">
+          <h4>Key ideas</h4>
+          <ul>
+            <li>Health promotion must be <b>community-led and culturally appropriate</b></li>
+            <li>Investing in <b>education &amp; infrastructure</b> improves long-term outcomes</li>
+            <li>Targeting <b>vulnerable groups</b> lifts national averages</li>
+            <li><b>Strategies:</b> culturally safe care, school health education, affordable/walkable housing, gov–NGO–council partnerships</li>
+            <li><b>Assess</b> strategies with health indicators, community feedback &amp; SDG benchmarks</li>
+          </ul>
+        </div>
+        <div class="diagram-wrap" style="margin-top:0">
+          <h4>UN Sustainable Development Goals</h4>
+          <img src="olivier-hms-exam-diagrams/sdg-flower.jpg" alt="Cluster of coloured SDG icons around a central health symbol">
+        </div>
+      </div>
+
+      <div class="table-scroll">
+        <table class="dtable">
+          <caption>Health-relevant SDGs</caption>
+          <thead><tr><th>SDG</th><th>Aim</th><th>Health focus</th></tr></thead>
+          <tbody>
+            <tr><td>3 — Good Health &amp; Wellbeing</td><td>Healthy lives &amp; wellbeing at all ages</td><td>Cut maternal/child mortality, combat NCDs, mental health, universal coverage</td></tr>
+            <tr><td>4 — Quality Education</td><td>Inclusive, equitable education</td><td>Higher health literacy → better health choices</td></tr>
+            <tr><td>10 — Reduced Inequalities</td><td>Reduce income/social inequality</td><td>Close gaps for First Nations, rural &amp; CALD communities</td></tr>
+            <tr><td>11 — Sustainable Cities</td><td>Inclusive, safe, resilient cities</td><td>Green space, clean air, active transport, healthcare access</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="exam-tip" style="background:#FFF7ED;border-left:3px solid var(--community)">
+        <strong>⚡ Exam Tip</strong>
+        Tie a strategy to a specific <b>SDG</b> and a real example (SDG 3 telehealth in outback Australia; SDG 11 green cities like Copenhagen). Then say <b>how you'd evaluate it</b> — life expectancy, hospitalisation rates, disease prevalence.
+      </div>
+    </div>
+  </div>
+
+  <div class="fa-divider two">Focus Area 2 — Training for improved performance</div>
+
+  <!-- FA2 T1: EXERCISE ASSESSMENT -->
+  <div class="topic-card">
+    <div class="topic-header" style="background:var(--assess)" onclick="toggleTopic(this)">
+      <span class="topic-icon">📋</span>
+      <span class="topic-title">Exercise Assessment &amp; Prescription</span>
+      <span class="topic-count">Topic 1</span>
+      <span class="chevron">▼</span>
+    </div>
+    <div class="topic-body">
+      <div class="note-grid">
+        <div class="note-box">
+          <h4>Pre-exercise screening</h4>
+          <ul>
+            <li>Assesses <b>readiness for activity</b> &amp; the need for medical clearance</li>
+            <li>Builds a picture of <b>individual health history</b></li>
+            <li>Lifestyle factors (smoking, alcohol, stress) let the plan be <b>personalised</b> by age, fitness &amp; limitations</li>
+            <li>Reduces the risk of <b>injury or adverse health events</b> in training</li>
+          </ul>
+        </div>
+        <div class="note-box">
+          <h4>Building a program</h4>
+          <ul>
+            <li>Identify <b>baseline fitness</b>, then set <b>SMART goals</b></li>
+            <li>Match exercise to the client's needs, preferences &amp; limitations</li>
+            <li>Balance intensity, duration &amp; frequency safely</li>
+            <li>Track <b>adaptation and progression</b> over time</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="diagram-wrap">
+        <h4>SMART goals</h4>
+        <div class="acronym-row">
+          <div class="acro-cell" style="background:#EF4444"><div class="letter">S</div><div class="word">Specific</div></div>
+          <div class="acro-cell" style="background:#F59E0B"><div class="letter">M</div><div class="word">Measurable</div></div>
+          <div class="acro-cell" style="background:#EAB308"><div class="letter">A</div><div class="word">Achievable</div></div>
+          <div class="acro-cell" style="background:#10B981"><div class="letter">R</div><div class="word">Realistic</div></div>
+          <div class="acro-cell" style="background:#3B82F6"><div class="letter">T</div><div class="word">Time-based</div></div>
+        </div>
+      </div>
+
+      <div class="table-scroll">
+        <table class="dtable">
+          <caption>Why fitness testing differs by athlete</caption>
+          <thead><tr><th>Recreational athletes</th><th>Elite athletes</th></tr></thead>
+          <tbody>
+            <tr><td>Increases motivation by tracking improvement</td><td>Precisely measures sport-specific attributes (VO₂ max, anaerobic threshold)</td></tr>
+            <tr><td>Highlights weaknesses to target in the program</td><td>Informs competition, preparation &amp; recovery plans; supports data-driven coaching</td></tr>
+            <tr><td>Helps set realistic, achievable goals</td><td>Identifies injury risk and guides preventive strategies</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="exam-tip" style="background:#F0FDF4;border-left:3px solid var(--assess)">
+        <strong>⚡ Exam Tip</strong>
+        The examiner wants the <b>purpose</b>, not just a list: screening reduces injury risk <i>and</i> personalises the plan. Recreational = motivation &amp; general goals; elite = precise, performance-tracking, injury-prevention. SMART goals make progress measurable.
+      </div>
+    </div>
+  </div>
+
+  <!-- FA2 T2: TRAINING METHODS & ADAPTATIONS -->
+  <div class="topic-card">
+    <div class="topic-header" style="background:var(--training)" onclick="toggleTopic(this)">
+      <span class="topic-icon">🏋️</span>
+      <span class="topic-title">Training Methods &amp; Adaptations</span>
+      <span class="topic-count">Topic 2</span>
+      <span class="chevron">▼</span>
+    </div>
+    <div class="topic-body">
+      <div class="note-grid">
+        <div class="note-box">
+          <h4>Anaerobic (high intensity, short)</h4>
+          <ul>
+            <li>Uses the <b>ATP-PC &amp; lactic acid</b> systems — sprinting, weightlifting, short bursts</li>
+            <li><b>Anaerobic intervals</b> — repeated hard efforts, short rests → speed &amp; lactate tolerance</li>
+            <li><b>HIIT</b> — intense bursts + recovery → anaerobic power &amp; aerobic fitness</li>
+            <li><b>Plyometrics</b> — jumping/bounding → explosive power (volleyball, netball, AFL)</li>
+            <li><b>Resistance</b> — strength &amp; power (rugby, rowing, combat)</li>
+          </ul>
+        </div>
+        <div class="note-box">
+          <h4>Aerobic (sustained)</h4>
+          <ul>
+            <li>Improves <b>cardiovascular endurance</b> via the aerobic system</li>
+            <li><b>Continuous</b> — 30+ min sustained → best for marathon/endurance</li>
+            <li><b>Fartlek</b> — steady state + sprints → footballers, hockey (variable game demands)</li>
+            <li><b>Aerobic intervals</b> — moderate intervals → rowers, triathletes</li>
+            <li><b>Circuit</b> — rotating stations → endurance + strength together</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="note-grid">
+        <div class="note-box">
+          <h4>Flexibility</h4>
+          <ul>
+            <li><b>Static</b> — hold a stretch → best <b>post-training</b> for recovery</li>
+            <li><b>Dynamic</b> — movement-based → best <b>warm-up before</b> a match (leg swings)</li>
+            <li><b>Ballistic</b> — fast bouncing → advanced warm-ups, with caution</li>
+            <li><b>PNF</b> — contract–relax → greatest ROM gains; rehab &amp; elite</li>
+          </ul>
+        </div>
+        <div class="note-box">
+          <h4>Strength &amp; skill</h4>
+          <ul>
+            <li><b>Free/fixed weights</b> — strength &amp; muscular endurance</li>
+            <li><b>Bodyweight</b> — functional &amp; accessible (push-ups, planks)</li>
+            <li><b>Elastic bands</b> — rehab &amp; mobility (swimmers, older adults, F1 drivers)</li>
+            <li><b>Skill/tactical</b> — drills &amp; modified games build 'game sense' &amp; decision-making</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="table-scroll">
+        <table class="dtable">
+          <caption>Physiological adaptations to training</caption>
+          <thead><tr><th>Adaptation</th><th>Principle applied</th><th>Effect on performance</th></tr></thead>
+          <tbody>
+            <tr><td>Resting heart rate ↓</td><td>Progressive overload, specificity</td><td>Aerobic training lowers resting HR → more efficient heart</td></tr>
+            <tr><td>Stroke volume / cardiac output ↑</td><td>Progressive overload, thresholds</td><td>More blood per beat → better O₂ delivery &amp; endurance</td></tr>
+            <tr><td>VO₂ max &amp; lung capacity ↑</td><td>Progressive overload, specificity</td><td>More efficient intake and use of oxygen</td></tr>
+            <tr><td>Haemoglobin ↑</td><td>Aerobic training (specificity)</td><td>More O₂ transported → improved endurance</td></tr>
+            <tr><td>Muscle hypertrophy</td><td>Resistance, overload, specificity</td><td>Bigger, stronger muscle → more power &amp; force</td></tr>
+            <tr><td>Fast-twitch fibres ↑</td><td>Anaerobic/resistance, specificity</td><td>More power &amp; speed for explosive sport</td></tr>
+            <tr><td>Slow-twitch fibres ↑</td><td>Aerobic training, overload</td><td>Better endurance &amp; fatigue resistance</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="exam-tip" style="background:#FFFBEB;border-left:3px solid var(--training)">
+        <strong>⚡ Exam Tip</strong>
+        Static = AFTER, dynamic = BEFORE, PNF = greatest ROM. For adaptations, always finish the chain: <i>overload → cardiac hypertrophy → ↓ resting HR → sustain high intensity longer.</i> Naming the adaptation alone won't score the top band.
+      </div>
+    </div>
+  </div>
+
+  <!-- FA2 T3: GROUPS VS INDIVIDUALS -->
+  <div class="topic-card">
+    <div class="topic-header" style="background:var(--groups)" onclick="toggleTopic(this)">
+      <span class="topic-icon">👥</span>
+      <span class="topic-title">Individual vs Group Sports</span>
+      <span class="topic-count">Topic 3</span>
+      <span class="chevron">▼</span>
+    </div>
+    <div class="topic-body">
+      <div class="note-grid">
+        <div class="note-box">
+          <h4>Yearly program phases</h4>
+          <ul>
+            <li><b>Pre-season</b> (6–12 mo) — general phase (fitness base) then specific phase (skills)</li>
+            <li><b>In-season</b> (~6 mo) — strategy &amp; tactics, maintain fitness, recover between games</li>
+            <li><b>Off-season</b> — physical &amp; mental recovery; a week off or cross-training</li>
+            <li><b>Peaking</b> — temporary optimal performance for the key event</li>
+            <li><b>Tapering</b> — reduce volume/intensity 1–2 wks before → repairs microtears, tops up glycogen, cuts fatigue</li>
+          </ul>
+        </div>
+        <div class="note-box">
+          <h4>Sub-phases &amp; psychology</h4>
+          <ul>
+            <li><b>Macrocycle</b> — whole year; <b>mesocycle</b> — a block; <b>microcycle</b> — ~a week (most detailed)</li>
+            <li><b>Goal setting</b> — personal (individual) vs shared/cohesion (team)</li>
+            <li><b>Mental imagery, self-talk, relaxation</b> reduce anxiety &amp; sharpen focus</li>
+            <li><b>Arousal regulation</b> — calm for golf, high energy for sprints; teams use chants or slow breathing</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="dgrid">
+        <div class="diagram-wrap" style="margin-top:0">
+          <h4>Cycles of a yearly program</h4>
+          <img src="olivier-hms-exam-diagrams/macrocycle.jpg" alt="Macrocycle divided into mesocycles, then microcycles, then training days">
+        </div>
+        <div class="diagram-wrap" style="margin-top:0">
+          <h4>Peaking &amp; tapering</h4>
+          <img src="olivier-hms-exam-diagrams/peaking-tapering.jpg" alt="Graph: training volume drops (taper) while performance rises to a peak across preparation, competition and transition phases">
+        </div>
+      </div>
+
+      <div class="table-scroll">
+        <table class="dtable">
+          <caption>Designing a session — individual vs group</caption>
+          <thead><tr><th>Component</th><th>Individual sport</th><th>Group sport</th></tr></thead>
+          <tbody>
+            <tr><td>Health &amp; safety</td><td>Tailored to the athlete's history &amp; risk</td><td>Accounts for many players, collisions &amp; group dynamics</td></tr>
+            <tr><td>Aim of session</td><td>Personal skill &amp; performance goals</td><td>Team coordination, tactics &amp; shared objectives</td></tr>
+            <tr><td>Skill instruction</td><td>One-on-one, tailored to technique</td><td>Group drills — teamwork, positioning, passing</td></tr>
+            <tr><td>Strategies &amp; tactics</td><td>Athlete's role (pacing, serve placement)</td><td>Team tactics — formations, set plays, attack/defence</td></tr>
+            <tr><td>Reflection/evaluation</td><td>Detailed individual feedback, video analysis</td><td>Team debrief + individual feedback; assess cohesion</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="exam-tip" style="background:#EEF2FF;border-left:3px solid var(--groups)">
+        <strong>⚡ Exam Tip</strong>
+        The classic 12-marker compares a <b>yearly program for an individual vs a group athlete</b>. The single biggest difference is <b>competition frequency</b>: a marathon runner tapers ~2 weeks for one annual race; a soccer team peaks <i>every</i> week and can only use a short mini-taper.
+      </div>
+    </div>
+  </div>
+
+  <!-- FA2 T4: SLEEP, NUTRITION, HYDRATION -->
+  <div class="topic-card">
+    <div class="topic-header" style="background:var(--fuel)" onclick="toggleTopic(this)">
+      <span class="topic-icon">😴</span>
+      <span class="topic-title">Sleep, Nutrition &amp; Hydration</span>
+      <span class="topic-count">Topic 4</span>
+      <span class="chevron">▼</span>
+    </div>
+    <div class="topic-body">
+      <div class="note-grid">
+        <div class="note-box">
+          <h4>Sleep</h4>
+          <ul>
+            <li><b>8–10 hours</b> recommended for adolescents &amp; athletes</li>
+            <li>Plan consistent sleep/wake times; lighter training when sleep-deprived</li>
+            <li>Avoid screens before bed; use a calming nightly routine</li>
+            <li><b>Why:</b> enhances focus, coordination, muscle repair &amp; reaction time → safer movement, fewer injuries</li>
+          </ul>
+        </div>
+        <div class="note-box">
+          <h4>Nutrition</h4>
+          <ul>
+            <li><b>Balanced diet</b> — carbs (energy), protein (repair), fats, micronutrients</li>
+            <li>Fuel <b>before &amp; after</b> training; carb-rich before, protein after</li>
+            <li>Regular eating times; anti-inflammatory foods (berries, leafy greens, omega-3) aid recovery</li>
+            <li><b>Why:</b> maintains energy, supports muscle growth/repair, lowers injury risk</li>
+          </ul>
+        </div>
+      </div>
+      <div class="note-box">
+        <h4>Hydration</h4>
+        <ul>
+          <li><b>2–3 L water/day</b>, more in heat or intense sessions; electrolytes for long/high-intensity work</li>
+          <li>~500 mL water ~4 hrs before, ~300 mL 10–15 min before performance; drink before, during &amp; after</li>
+          <li><b>Monitor</b> — pale-yellow urine = hydrated; watch thirst, dry mouth &amp; fatigue</li>
+          <li><b>Why:</b> maintains blood flow, reduces cramps, prevents overheating, improves concentration</li>
+        </ul>
+      </div>
+
+      <div class="exam-tip" style="background:#F0FDFA;border-left:3px solid var(--fuel)">
+        <strong>⚡ Exam Tip</strong>
+        Every answer here should end in a <b>mechanism</b>: sleep → growth hormone → protein synthesis → repair; dehydration → ↓ blood volume → less O₂ to muscles → fatigue. "It's important" scores nothing without the <i>why</i>.
+      </div>
+    </div>
+  </div>
+
+  <!-- FA2 T5: BIOMECHANICS, RECOVERY & INJURY -->
+  <div class="topic-card">
+    <div class="topic-header" style="background:var(--injury)" onclick="toggleTopic(this)">
+      <span class="topic-icon">🩹</span>
+      <span class="topic-title">Biomechanics, Recovery &amp; Injury</span>
+      <span class="topic-count">Topic 5</span>
+      <span class="chevron">▼</span>
+    </div>
+    <div class="topic-body">
+      <div class="note-grid">
+        <div class="note-box">
+          <h4>Biomechanics &amp; recovery</h4>
+          <ul>
+            <li><b>Biomechanics</b> — how muscles, bones, tendons &amp; ligaments produce movement</li>
+            <li>Prevents injury &amp; corrects form by analysing technique (e.g. stride length)</li>
+            <li><b>Recovery:</b> cool-down (lowers HR, clears lactic acid), hydrotherapy (cold ↓ inflammation, hot ↑ blood flow), relaxation (↓ stress, better sleep)</li>
+            <li><b>Tech:</b> wearables/GPS, smart gyms, VR skill practice, video analysis, live data dashboards</li>
+          </ul>
+        </div>
+        <div class="note-box">
+          <h4>Types of injury</h4>
+          <ul>
+            <li><b>Direct</b> — from external contact (ball, bat, person); <b>indirect</b> — internal force (sprains, strains)</li>
+            <li><b>Soft tissue</b> — muscles, ligaments, fascia (tears, sprains, contusions, abrasions)</li>
+            <li><b>Hard tissue</b> — bones/teeth (fractures, dislocations)</li>
+            <li><b>Overuse</b> — repetitive stress (tendonitis, bursitis) from poor programming or insufficient rest</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="diagram-wrap">
+        <h4>Biomechanics — good stride vs overstride</h4>
+        <img src="olivier-hms-exam-diagrams/biomechanics-stride.jpg" alt="Comparison of a good running stride (foot strike near centre of mass, good knee flexion) vs an overstride (foot strike far from COM, high breaking force)">
+      </div>
+
+      <div class="dgrid">
+        <div class="diagram-wrap" style="margin-top:12px">
+          <h4>Direct vs indirect</h4>
+          <img src="olivier-hms-exam-diagrams/injury-direct-indirect.jpg" alt="Direct injury from a ball to the head vs indirect ankle injury from twisting">
+        </div>
+        <div class="diagram-wrap" style="margin-top:12px">
+          <h4>Overuse injuries</h4>
+          <img src="olivier-hms-exam-diagrams/injury-overuse.jpg" alt="Overuse injuries diagram showing bursitis and tendonitis in the foot/ankle">
+        </div>
+      </div>
+      <div class="diagram-wrap">
+        <h4>Hard vs soft tissue</h4>
+        <img src="olivier-hms-exam-diagrams/injury-hard-soft.jpg" alt="Hard tissue (bone) injury vs soft tissue injury shown on a foot">
+      </div>
+
+      <div class="note-grid" style="margin-top:12px">
+        <div class="note-box">
+          <h4>Assessment &amp; soft-tissue management</h4>
+          <ul>
+            <li><b>TOTAPS</b> — Talk, Observe, Touch, Active &amp; Passive movement, Skills test</li>
+            <li>Sequence: <b>DRSABCD</b> (crisis) → <b>STOP</b> (on-field) → <b>TOTAPS</b> (complete)</li>
+            <li><b>RICER</b> for soft tissue — Rest, Ice, Compression, Elevation, Referral</li>
+            <li>Ice ≈ 20 min every 2 hrs to reduce swelling &amp; pain</li>
+          </ul>
+        </div>
+        <div class="note-box">
+          <h4>Hard tissue, rehab &amp; return</h4>
+          <ul>
+            <li><b>Dislocation</b> — don't relocate; immobilise, ice, seek help</li>
+            <li><b>Fracture</b> — immobilise (splint/sling), control bleeding, call emergency; RICER only after clearance</li>
+            <li><b>Rehab</b> — progressive mobilisation → graduated exercise → modified training; cold early, heat later</li>
+            <li><b>Return-to-play</b> — medical clearance, functional testing, monitor re-injury; physically <i>and</i> psychologically ready</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="diagram-wrap">
+        <h4>RICER — soft-tissue management</h4>
+        <img src="olivier-hms-exam-diagrams/ricer.jpg" alt="RICER: Rest, Ice, Compression, Elevation, Referral">
+      </div>
+      <div class="diagram-wrap">
+        <h4>Hard-tissue injuries</h4>
+        <img src="olivier-hms-exam-diagrams/hard-tissue.jpg" alt="Dislocated humerus and fractured radius">
+      </div>
+
+      <div class="exam-tip" style="background:#FAF5FF;border-left:3px solid var(--injury)">
+        <strong>⚡ Exam Tip</strong>
+        Know the acronyms cold — <b>TOTAPS, DRSABCD, RICER</b> — and the order they're used in. Never relocate a dislocation. Return-to-play answers must include <b>both</b> physical (functional testing) <b>and</b> psychological readiness. Drug use: quick pain relief vs delayed recovery, dependency &amp; bans.
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════ PRACTICE TAB -->
+<div id="tab-practice" class="panel">
+  <p class="section-title">⚡ Practice MC</p>
+  <p class="intro-note">Pick a topic. Each question gives instant feedback and an explanation. Aim for 80%+ before the exam.</p>
+  <div class="topic-pills" id="pill-container">
+    <button class="pill active" style="background:var(--health)" onclick="filterPractice('health')">🩺 Health</button>
+    <button class="pill" style="background:var(--system)" onclick="filterPractice('system')">🏥 System</button>
+    <button class="pill" style="background:var(--tech)" onclick="filterPractice('tech')">💻 Technology</button>
+    <button class="pill" style="background:var(--community)" onclick="filterPractice('community')">🌏 Community</button>
+    <button class="pill" style="background:var(--assess)" onclick="filterPractice('assess')">📋 Assessment</button>
+    <button class="pill" style="background:var(--training)" onclick="filterPractice('training')">🏋️ Training</button>
+    <button class="pill" style="background:var(--groups)" onclick="filterPractice('groups')">👥 Indiv vs Group</button>
+    <button class="pill" style="background:var(--fuel)" onclick="filterPractice('fuel')">😴 Sleep/Nutrition</button>
+    <button class="pill" style="background:var(--injury)" onclick="filterPractice('injury')">🩹 Injury</button>
+  </div>
+  <div id="practice-area"></div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════ WRITTEN TAB -->
+<div id="tab-written" class="panel">
+  <p class="section-title">✍️ Written Answer Scaffolds</p>
+  <p class="intro-note">HMS written responses reward structure and linking. Use these scaffolds for any question at that mark value.</p>
+  <div class="written-tabs">
+    <button class="wt-btn active" onclick="showScaffold('s12')">12-mark</button>
+    <button class="wt-btn" onclick="showScaffold('s5')">5-mark</button>
+    <button class="wt-btn" onclick="showScaffold('s3')">3-mark</button>
+  </div>
+
+  <!-- 12 MARKER -->
+  <div id="scaffold-s12" class="scaffold-card active">
+    <span class="mark-badge">12 marks — ~20 minutes</span>
+    <p class="intro-note">Most 12-markers ask you to <b>compare</b> two things across the whole course — e.g. a yearly training program for an individual vs a group athlete, or how the healthcare system balances access vs sustainability. This structure works for any compare/analyse task.</p>
+    <div class="scaffold-step">
+      <div class="step-num" style="background:#1A1A2E">1</div>
+      <div class="step-content">
+        <h3>INTRO — define + signpost</h3>
+        <p>Define the key term and state the two cases you'll compare.</p>
+        <div class="anchor"><strong>📝 Anchor</strong>"A yearly training program is structured into pre-season, in-season and off-season phases, planned through macro-, meso- and microcycles. These differ significantly for an individual athlete (marathon runner) and a group athlete (soccer team) due to differences in competition frequency and fitness demands."</div>
+      </div>
+    </div>
+    <div class="scaffold-step">
+      <div class="step-num" style="background:#8B5CF6">2</div>
+      <div class="step-content">
+        <h3>POINT 1 — compare both cases</h3>
+        <p>Take your first comparison point and apply it to <i>both</i> athletes with specific detail.</p>
+        <div class="anchor"><strong>📝 Key point</strong>Pre-season: both build a base at high volume/moderate intensity. The runner uses continuous + fartlek work for aerobic capacity; the team adds set plays and small-sided games because group performance needs tactical cohesion, not just fitness.</div>
+      </div>
+    </div>
+    <div class="scaffold-step">
+      <div class="step-num" style="background:#6366F1">3</div>
+      <div class="step-content">
+        <h3>POINT 2 — the biggest difference</h3>
+        <p>Spend the most marks on your strongest contrast.</p>
+        <div class="anchor"><strong>📝 Most marks here</strong>In-season: the runner tapers ~2 weeks and peaks 1–2 times a year. The team must peak <i>every</i> week, so it only uses a 1-day mini-taper — an extended taper is impractical with weekly fixtures.</div>
+      </div>
+    </div>
+    <div class="scaffold-step">
+      <div class="step-num" style="background:#10B981">4</div>
+      <div class="step-content">
+        <h3>EVALUATE — explain the root cause</h3>
+        <p>One judgement sentence naming <i>why</i> all the differences exist.</p>
+        <div class="anchor"><strong>📝 Anchor</strong>"The underlying driver of every difference is competition frequency — a single annual peak allows a full taper, whereas weekly competition forces ongoing fatigue management through mini-tapers and maintenance training."</div>
+      </div>
+    </div>
+    <div class="scaffold-step">
+      <div class="step-num" style="background:#6B7280">5</div>
+      <div class="step-content">
+        <h3>CONCLUSION — 2 sentences</h3>
+        <div class="anchor"><strong>📝 Anchor</strong>"Both programs manipulate volume and intensity to time performance, but differ in tapering, peaking frequency and the integration of tactics — reflecting the demands of individual endurance versus group sport."</div>
+      </div>
+    </div>
+    <button class="expand-btn" onclick="toggleModel('model-12')">👁 Show full model answer</button>
+    <div id="model-12" class="model-answer">INTRODUCTION
+A yearly training program is structured into three phases — pre-season, in-season and off-season — planned through macrocycles, mesocycles and microcycles. These phases differ significantly for an individual athlete (a marathon runner) and a group athlete (a soccer team) because of differences in competition frequency and fitness demands.
+
+PRE-SEASON
+Both athletes build a fitness base at high volume and moderate intensity. The marathon runner uses continuous training and fartlek to develop aerobic capacity, VO₂ max and running economy — directly matching the solo endurance demands of the race. The soccer team also builds an aerobic base but adds set plays, formations and small-sided games, because group-sport performance depends on tactical cohesion and shared skill as well as individual fitness.
+
+IN-SEASON
+Both reduce volume and raise intensity as competition nears, applying specificity more strictly. However, the key difference is tapering. The marathon runner can taper for about two weeks before a major race and peaks only once or twice a year, maximising physiological preparation. The soccer team faces weekly games and must perform near-peak every match, so it uses only a one-day mini-taper — an extended taper is impractical when competing every week.
+
+OFF-SEASON
+Both recover with roughly a week of total rest followed by active recovery. The runner addresses technical weaknesses in running biomechanics, while the team focuses on individual player rehabilitation and maintaining base fitness for the next pre-season.
+
+EVALUATION
+The fundamental driver of every difference is competition frequency. A single annual peak allows the runner a full taper and complete physiological preparation, whereas the team's weekly fixtures demand ongoing fatigue management through mini-tapers and maintenance training rather than one sharp peak.
+
+CONCLUSION
+Both programs manipulate volume and intensity to optimise performance at the right time, but they differ in tapering strategy, peaking frequency and the integration of tactical development — reflecting the fundamental differences between individual endurance and group sport.</div>
+  </div>
+
+  <!-- 5 MARKER -->
+  <div id="scaffold-s5" class="scaffold-card">
+    <span class="mark-badge">5 marks — ~8 minutes</span>
+    <p class="intro-note">A 5-marker usually asks you to <b>explain</b> or <b>compare</b> one concept, often across two contexts (individual vs group, or two schemes/technologies).</p>
+    <div class="scaffold-step">
+      <div class="step-num" style="background:#1A1A2E">1</div>
+      <div class="step-content"><h3>DEFINE (1 sentence)</h3><p>Name and define the concept with correct terminology.</p></div>
+    </div>
+    <div class="scaffold-step">
+      <div class="step-num" style="background:#6366F1">2</div>
+      <div class="step-content"><h3>CASE 1 — apply with detail</h3><p>Apply it to the first context with a specific action and outcome.</p>
+        <div class="anchor"><strong>📝 Formula</strong>[Case 1] uses [concept] by [specific action], which leads to [outcome].</div></div>
+    </div>
+    <div class="scaffold-step">
+      <div class="step-num" style="background:#8B5CF6">3</div>
+      <div class="step-content"><h3>CASE 2 — apply differently</h3><p>Apply it to the second context with a <i>different</i> application.</p>
+        <div class="anchor"><strong>📝 Formula</strong>[Case 2] uses [concept] by [different action], which leads to [outcome].</div></div>
+    </div>
+    <div class="scaffold-step">
+      <div class="step-num" style="background:#10B981">4</div>
+      <div class="step-content"><h3>LINK to performance/health</h3><p>One sentence tying both cases to improved performance, health or reduced risk.</p></div>
+    </div>
+    <button class="expand-btn" onclick="toggleModel('model-5')">👁 Show example 5-mark answer</button>
+    <div id="model-5" class="model-answer">Question: Explain how psychological strategies can be applied to an individual athlete and a team to manage arousal and improve performance.
+
+Arousal is a physiological state of activation that must be regulated to reach an optimal level for a given task (the inverted-U relationship). An individual athlete such as a golfer uses relaxation techniques — centred breathing and progressive muscle relaxation — to lower over-arousal before a putt, reducing muscular tension so fine motor control is maintained. A team such as a netball side uses collective strategies instead: chanting or music to raise arousal before a game, or slow group breathing to refocus after conceding, keeping the whole team near its optimal zone. In both cases, matching arousal to the demands of the task reduces anxiety and allows the athletes to perform closer to their physical and technical potential.</div>
+  </div>
+
+  <!-- 3 MARKER -->
+  <div id="scaffold-s3" class="scaffold-card">
+    <span class="mark-badge">3 marks — ~4 minutes</span>
+    <p class="intro-note">A 3-marker wants <b>define + explain + example</b> — three clear sentences, one mark each.</p>
+    <div class="scaffold-step">
+      <div class="step-num" style="background:#EF4444">1</div>
+      <div class="step-content"><h3>DEFINE — 1 mark</h3><p>What is it? Use the correct term.</p>
+        <div class="anchor"><strong>📝 Example</strong>"Progressive overload is gradually increasing the training load to force the body to adapt."</div></div>
+    </div>
+    <div class="scaffold-step">
+      <div class="step-num" style="background:#F59E0B">2</div>
+      <div class="step-content"><h3>EXPLAIN — 1 mark</h3><p>How/why does it work? Name the mechanism.</p>
+        <div class="anchor"><strong>📝 Example</strong>"Increasing the stimulus beyond what the body is used to triggers adaptations such as cardiac hypertrophy, which lowers resting heart rate."</div></div>
+    </div>
+    <div class="scaffold-step">
+      <div class="step-num" style="background:#10B981">3</div>
+      <div class="step-content"><h3>EXAMPLE — 1 mark</h3><p>A sport-specific example with a named outcome.</p>
+        <div class="anchor"><strong>📝 Example</strong>"A runner increasing weekly intervals from 6×30 s to 8×30 s develops a stronger heart, sustaining high intensity for longer."</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════ MOCK EXAM TAB -->
+<div id="tab-mock" class="panel">
+  <div id="mock-start" class="mock-start">
+    <h2>🎯 Mock Exam</h2>
+    <p>A timed mix drawn from across all 9 topics.</p>
+    <ul>
+      <li>📝 10 multiple-choice (1 mark each)</li>
+      <li>✍️ 3 written responses (3, 5 &amp; 12 marks)</li>
+      <li>⏱️ 50-minute timer</li>
+      <li>🤖 Auto-feedback: MC marked instantly, written checked for key terms</li>
+    </ul>
+    <br>
+    <button class="btn-start-mock" onclick="startMock()">Start Mock Exam →</button>
+  </div>
+
+  <div id="mock-active" class="mock-active">
+    <div class="timer-bar">
+      <span class="mock-progress"><span id="mock-progress-label">0 of 10 answered</span></span>
+      <span class="timer-display" id="timer-display">50:00</span>
+    </div>
+    <div id="mock-questions"></div>
+    <button class="btn-submit-mock" onclick="submitMock()">Submit Exam</button>
+  </div>
+
+  <div id="mock-results" class="mock-results">
+    <h2 id="mock-score-title">MC: 0/10</h2>
+    <p id="mock-score-sub"></p>
+    <div id="mock-review"></div>
+    <button class="btn-new-mock" onclick="resetMock()">New Mock Exam</button>
+  </div>
+</div>
+
+<script>
+// ══════════════════════════════════════════════════════════════════════
+//  DATA — all questions original, written for this tool (not from any bank).
+//  Topic slugs match the Study cards and Practice pills.
+// ══════════════════════════════════════════════════════════════════════
+const TOPIC_LABELS = {
+  health:'The Health of Australians', system:"Healthcare System", tech:'Technology & Data',
+  community:'Community Health', assess:'Exercise Assessment', training:'Training Methods',
+  groups:'Individual vs Group', fuel:'Sleep, Nutrition & Hydration', injury:'Injury & Recovery'
+};
+
+const QUESTIONS = [
+  // ── FA1 T1: THE HEALTH OF AUSTRALIANS ──
+  { topic:'health', q:"What is the difference between prevalence and incidence?", options:["Prevalence is new cases; incidence is total cases","Prevalence is total existing cases; incidence is the rate of new cases","They mean the same thing","Prevalence measures deaths; incidence measures illness"], answer:1, explanation:"Prevalence = all existing cases at a point in time. Incidence = only the new cases arising over a period." },
+  { topic:'health', q:"'Morbidity' refers to:", options:["The number of deaths in a population","The level of ill health in a person or population","The average age of death","The cost of healthcare"], answer:1, explanation:"Morbidity = ill health. Mortality = deaths. Don't mix them up." },
+  { topic:'health', q:"A disability-adjusted life year (DALY) measures:", options:["One year of full-time hospital care","One year of healthy life lost to illness or early death","The number of disabilities in a population","A year of life expectancy gained from treatment"], answer:1, explanation:"One DALY = one year of healthy life lost, either to living with disease or to premature death." },
+  { topic:'health', q:"By 2026, roughly what proportion of Australians will be over 65?", options:["8%","15%","22%","35%"], answer:2, explanation:"About 22%. An ageing population strains hospitals, pensions and housing, and increases demand for aged-care services." },
+  { topic:'health', q:"The life-expectancy gap between First Nations and non-Indigenous Australians (2020–2023) is about:", options:["2 years","8 years","15 years","No gap"], answer:1, explanation:"About an 8-year gap (ABS). Chronic conditions are also more prevalent and appear at a younger age." },
+  { topic:'health', q:"In the determinants-of-health model, which is an outer (modifiable) determinant rather than a core one?", options:["Age","Sex","Employment and housing","Genetic constitution"], answer:2, explanation:"The core (age, sex, constitution) can't be changed. Outer layers — work, education, housing — are modifiable and drive most inequity." },
+  { topic:'health', q:"'Burden of disease' is best described as:", options:["The total cost of treating disease","The gap between current health status and an ideal disease-free old age","The number of hospital admissions per year","The percentage of people who are unwell"], answer:1, explanation:"Burden of disease measures the impact of disease and injury as the gap between current health and living to old age free of disease/disability." },
+  { topic:'health', q:"Health inequities are shaped primarily by:", options:["Genetics alone","Social, economic and environmental factors","Personal choice only","The weather"], answer:1, explanation:"Inequities arise from social (discrimination, education), economic (income, employment) and environmental (location, infrastructure) factors." },
+  { topic:'health', q:"Compared with other OECD nations, Australia ranks:", options:["Worst for life expectancy","High for life expectancy and immunisation, but mid-level for obesity and alcohol","Best in every category","Lowest for immunisation"], answer:1, explanation:"Australia has high life expectancy, low smoking and strong immunisation, but sits mid-level for obesity and alcohol consumption." },
+  { topic:'health', q:"Which action would most directly reduce the health gap for a rural community?", options:["Building more inner-city hospitals","Telehealth and rural outreach clinics","Raising the price of medicines","Reducing the number of GPs"], answer:1, explanation:"Rural isolation limits access and raises injury risk. Telehealth and outreach clinics target that specific determinant." },
+
+  // ── FA1 T2: HEALTHCARE SYSTEM ──
+  { topic:'system', q:"Medicare is primarily funded through:", options:["Private health insurance premiums","The Medicare levy (plus a surcharge for high earners)","Hospital parking fees","Overseas aid"], answer:1, explanation:"Medicare is funded by the Medicare levy, with a surcharge for higher-income earners. Out-of-pocket gaps still apply." },
+  { topic:'system', q:"Which level of government is mainly responsible for running public hospitals and emergency services?", options:["Federal","State/territory","Local","Private insurers"], answer:1, explanation:"State/territory governments run hospitals and emergency services. Federal handles Medicare/PBS/policy; local handles health promotion, water and waste." },
+  { topic:'system', q:"The main purpose of the PBS is to:", options:["Fund private hospitals","Subsidise the cost of medicines","Provide disability support plans","Train healthcare workers"], answer:1, explanation:"The Pharmaceutical Benefits Scheme subsidises medicines; the PBS Safety Net protects families from large overall costs." },
+  { topic:'system', q:"The NDIS mainly improves access for:", options:["Overseas tourists","People with significant, lifelong disability","High-income earners","Aged-care residents only"], answer:1, explanation:"The NDIS gives each participant an individualised funded plan, improving access for people with significant lifelong disability." },
+  { topic:'system', q:"When judging a healthcare scheme, the three key lenses are:", options:["Speed, cost and size","Sustainability, access and equity","Profit, marketing and branding","Location, staffing and parking"], answer:1, explanation:"Evaluate schemes and challenges against sustainability, access and equity." },
+  { topic:'system', q:"Beyond Blue is an example of a:", options:["Federal government department","Not-for-profit NGO","Private insurer","State hospital"], answer:1, explanation:"Beyond Blue is a not-for-profit NGO. NGOs tend to provide personalised, community-based support, while government provides structure and funding." },
+  { topic:'system', q:"Which is an example of complementary healthcare?", options:["Emergency surgery","Acupuncture or yoga","A blood transfusion","An MRI scan"], answer:1, explanation:"Complementary healthcare (acupuncture, yoga, herbal treatments, massage) supports prevention and symptom management." },
+  { topic:'system', q:"A critically informed health consumer would trust a source that:", options:["Has no author and cites no data","Displays credentials, cites its data and is transparent","Only appears on social media","Promises a miracle cure"], answer:1, explanation:"Reliable sources (e.g. AIHW, WHO) show credentials, cite data and are transparent — helping consumers weigh risks, benefits and bias." },
+  { topic:'system', q:"Headspace, jointly supported by government and NGOs, is an example of:", options:["Privatisation","Person-centred, coordinated care","A challenge to the system","Complementary medicine"], answer:1, explanation:"Headspace shows person-centred care — government and NGOs collaborating to deliver personalised youth mental-health services." },
+
+  // ── FA1 T3: TECHNOLOGY & DATA ──
+  { topic:'tech', q:"'Digital health' refers to:", options:["Only hospital paperwork","Using technology — apps, wearables, data systems, telehealth — to deliver and manage care","A type of surgery","Private health insurance"], answer:1, explanation:"Digital health uses technology such as apps, wearables, data systems and telehealth to deliver and manage healthcare." },
+  { topic:'tech', q:"My Health Record is:", options:["A fitness tracking app","A digital summary of a person's health history","A private insurance policy","A hospital booking system"], answer:1, explanation:"My Health Record is a digital summary of an individual's history (medications, allergies) — improving coordination and reducing repeat testing." },
+  { topic:'tech', q:"A common use of AI in healthcare is:", options:["Reading medical imaging for early diagnosis","Replacing the entire hospital","Setting the Medicare levy","Building hospitals"], answer:0, explanation:"AI algorithms read medical imaging (e.g. detecting conditions on X-rays), aiding early diagnosis; AI also supports drug discovery and admin." },
+  { topic:'tech', q:"Big-data health databases help reduce spending by:", options:["Ordering more tests for everyone","Flagging at-risk patients early and cutting unnecessary tests","Closing all rural clinics","Ignoring population trends"], answer:1, explanation:"Predictive analytics flag at-risk individuals for early intervention and reduce unnecessary tests and admissions." },
+  { topic:'tech', q:"Which legislation protects health data privacy in Australia?", options:["The Road Rules 2008","The Privacy Act 1988 and My Health Records Act 2012","The Fair Work Act","There is none"], answer:1, explanation:"Health databases must comply with the Privacy Act 1988 and My Health Records Act 2012, using encryption, consent and audits." },
+  { topic:'tech', q:"The 'digital divide' is a challenge because:", options:["Computers are too fast","People without digital literacy or devices have limited access","Everyone already has equal access","It only affects doctors"], answer:1, explanation:"The digital divide means people without digital literacy or devices can be excluded from digital health services." },
+  { topic:'tech', q:"Telehealth is especially valuable because it:", options:["Only works in cities","Lets doctors monitor patients remotely, helping rural areas","Requires patients to travel further","Removes the need for any records"], answer:1, explanation:"Telehealth video consultations let doctors monitor and treat patients remotely — a major benefit for rural and remote communities." },
+  { topic:'tech', q:"Robotic-assisted (precision) surgery such as the da Vinci system allows:", options:["Larger incisions and slower recovery","Smaller incisions, greater precision and faster recovery","No difference from open surgery","Surgery without any surgeon"], answer:1, explanation:"Robotic-assisted surgery enables smaller incisions, better precision and faster recovery times." },
+  { topic:'tech', q:"In the six-roles model, which technology matches 'Assist'?", options:["Fitbits","3D-printed custom implants and prosthetics","Telehealth video calls","AI imaging"], answer:1, explanation:"Assistive technology includes 3D printing of custom implants, prosthetics and bone structures." },
+  { topic:'tech', q:"A key opportunity of digital health is:", options:["System interoperability problems","Greater personalisation of care","Privacy breaches","The digital divide"], answer:1, explanation:"Opportunities include personalisation, remote access, cost saving and preventative medicine; challenges include the digital divide, privacy and interoperability." },
+
+  // ── FA1 T4: COMMUNITY HEALTH ──
+  { topic:'community', q:"The aim of SDG 3 is to:", options:["Provide quality education","Ensure healthy lives and promote wellbeing at all ages","Reduce inequality between countries","Build sustainable cities"], answer:1, explanation:"SDG 3 (Good Health & Wellbeing) targets maternal/child mortality, non-communicable disease, mental health and universal coverage." },
+  { topic:'community', q:"How does SDG 4 (Quality Education) improve health?", options:["It builds hospitals","Higher health literacy leads to better personal and community health choices","It funds Medicare","It reduces pollution"], answer:1, explanation:"Education raises health literacy, which supports better personal and community health decisions." },
+  { topic:'community', q:"Effective health promotion should be:", options:["Imposed from overseas","Community-led and culturally appropriate","Focused only on hospitals","Kept secret from the community"], answer:1, explanation:"Health promotion works best when it is community-led and culturally appropriate." },
+  { topic:'community', q:"Which is a strategy for improving community health?", options:["Reducing the number of GPs","Culturally safe healthcare for First Nations communities","Closing schools","Removing walkable spaces"], answer:1, explanation:"Strategies include culturally safe care, school-based health education, affordable/walkable housing and government–NGO–council partnerships." },
+  { topic:'community', q:"How should new community-health strategies be assessed?", options:["By guessing","Using health indicators, community feedback and SDG benchmarks","Only by cost","They shouldn't be assessed"], answer:1, explanation:"Assess strategies with health indicators (life expectancy, hospitalisation, disease prevalence), community feedback and SDG benchmarks." },
+  { topic:'community', q:"Green cities such as Copenhagen reducing pollution relate most to:", options:["SDG 3","SDG 4","SDG 11 (Sustainable Cities)","No SDG"], answer:2, explanation:"SDG 11 promotes green space, clean air, active transport and healthcare access in inclusive, sustainable cities." },
+  { topic:'community', q:"SDG 10 focuses on:", options:["Reducing income and social inequalities","Building more cars","Increasing hospital fees","Reducing education"], answer:0, explanation:"SDG 10 (Reduced Inequalities) targets health disparities in First Nations, rural and CALD communities to lift national outcomes." },
+  { topic:'community', q:"Investment in education and infrastructure tends to:", options:["Worsen long-term health","Improve long-term health outcomes","Have no effect","Only help the wealthy"], answer:1, explanation:"Investment in education and infrastructure improves long-term health outcomes across a community." },
+  { topic:'community', q:"A focus area of SDG 3 is:", options:["Reducing maternal and child mortality","Building more roads","Lowering literacy","Increasing screen time"], answer:0, explanation:"SDG 3 focus areas include reducing maternal and child mortality, combating NCDs, improving mental health and achieving universal coverage." },
+
+  // ── FA2 T1: EXERCISE ASSESSMENT ──
+  { topic:'assess', q:"The main purpose of pre-exercise health screening is to:", options:["Guarantee a personal best","Assess readiness for activity and the need for medical clearance","Sell supplements","Replace training"], answer:1, explanation:"Screening assesses readiness for physical activity, identifies the need for clearance and reduces the risk of injury or adverse events." },
+  { topic:'assess', q:"In SMART goals, the 'T' stands for:", options:["Tough","Time-based","Team","Technical"], answer:1, explanation:"SMART = Specific, Measurable, Achievable, Realistic, Time-based. Time-based makes progress trackable." },
+  { topic:'assess', q:"For a recreational athlete, fitness testing mainly:", options:["Measures VO₂ max to the decimal for competition","Increases motivation and sets realistic goals","Is used for data-driven elite coaching","Is unnecessary"], answer:1, explanation:"Recreational testing increases motivation by tracking improvement and helps set realistic, achievable goals; elite testing is precise and performance-focused." },
+  { topic:'assess', q:"VO₂ max measures:", options:["Maximum heart rate only","The maximum rate the body can take in and use oxygen","Muscle size","Flexibility"], answer:1, explanation:"VO₂ max is the maximum rate of oxygen uptake and use — a key marker of aerobic capacity, precisely measured in elite athletes." },
+  { topic:'assess', q:"When building a training program, you should first:", options:["Compete immediately","Identify baseline fitness levels","Skip any assessment","Copy another athlete's plan exactly"], answer:1, explanation:"Identify baseline fitness first, then set SMART goals and match the program to the client's needs and limitations." },
+  { topic:'assess', q:"Screening reduces injury risk mainly because it:", options:["Makes training harder","Reveals health history so the plan can be personalised safely","Removes the need for a warm-up","Guarantees no injuries"], answer:1, explanation:"By revealing individual health history and lifestyle factors, screening lets the plan be personalised to age, fitness and limitations, lowering risk." },
+  { topic:'assess', q:"A personalised exercise plan is adjusted based on:", options:["Age, fitness level and physical limitations","The coach's favourite sport","Random selection","Only body weight"], answer:0, explanation:"Plans are personalised using age, fitness level, physical limitations and lifestyle factors such as smoking, alcohol and stress." },
+  { topic:'assess', q:"For elite athletes, fitness testing especially supports:", options:["Guesswork","Data-driven coaching and injury-prevention planning","Ignoring recovery","Reducing performance"], answer:1, explanation:"Elite testing precisely measures sport-specific attributes, informs competition/recovery plans and supports data-driven, injury-preventing coaching." },
+  { topic:'assess', q:"A safe program balances:", options:["Only intensity","Intensity, duration and frequency","Only frequency","Diet and sleep only"], answer:1, explanation:"An effective program safely balances intensity, duration and frequency, and tracks adaptation over time." },
+
+  // ── FA2 T2: TRAINING METHODS & ADAPTATIONS ──
+  { topic:'training', q:"Anaerobic training mainly uses which energy systems?", options:["Aerobic system only","ATP-PC and lactic acid systems","Digestive system","None"], answer:1, explanation:"Anaerobic (high-intensity, short-duration) work uses the ATP-PC and lactic acid systems — sprinting, weightlifting, short bursts." },
+  { topic:'training', q:"Static stretching is best performed:", options:["Before a match to warm up","After training, for recovery","During maximal sprints","Instead of a cool-down for power"], answer:1, explanation:"Static stretching (holding a stretch) suits post-training recovery. Dynamic stretching is for warming up before a match." },
+  { topic:'training', q:"Which flexibility method produces the greatest range-of-motion gains?", options:["Ballistic","Static","PNF (contract–relax)","None"], answer:2, explanation:"PNF (proprioceptive neuromuscular facilitation) uses a contract–relax technique for the greatest ROM gains; useful in rehab and elite training." },
+  { topic:'training', q:"Fartlek training is especially suited to:", options:["Marathon runners only","Footballers and hockey players","Powerlifters","Archers"], answer:1, explanation:"Fartlek combines steady-state cardio with sprints, mimicking the variable intensity of team sports like football and hockey." },
+  { topic:'training', q:"Plyometric training primarily develops:", options:["Aerobic endurance","Explosive power and agility","Flexibility","Reaction to medication"], answer:1, explanation:"Plyometrics (jumping, bounding) develops explosive power and agility — key for volleyball, netball and AFL." },
+  { topic:'training', q:"Continuous training is best for:", options:["100 m sprinters","Marathon runners and endurance athletes","Powerlifters","Shot-putters"], answer:1, explanation:"Continuous training involves 30+ minutes of sustained activity — ideal for marathon runners and endurance athletes." },
+  { topic:'training', q:"Progressive overload means:", options:["Training the same way forever","Gradually increasing the load to force adaptation","Only resting","Reducing all training"], answer:1, explanation:"Progressive overload gradually increases distance, time, intensity or resistance, forcing the body to adapt." },
+  { topic:'training', q:"A key cardiovascular adaptation to aerobic training is:", options:["A higher resting heart rate","A lower resting heart rate","Smaller lung capacity","Less haemoglobin"], answer:1, explanation:"Aerobic training lowers resting heart rate (cardiac hypertrophy) — a stronger, more efficient heart." },
+  { topic:'training', q:"Increased stroke volume improves performance because:", options:["Less blood is pumped","More blood is pumped per beat, improving O₂ delivery and endurance","The heart beats faster at rest","Muscles shrink"], answer:1, explanation:"A higher stroke volume means more blood per beat, enhancing oxygen delivery and endurance." },
+  { topic:'training', q:"An increase in fast-twitch fibres benefits:", options:["Long-distance endurance","Power and speed for explosive sports","Flexibility only","Sleep quality"], answer:1, explanation:"Fast-twitch fibre development (from anaerobic/resistance training) increases power and speed for explosive sports." },
+  { topic:'training', q:"Circuit training is distinctive because it:", options:["Only builds flexibility","Enhances aerobic endurance and muscular strength together","Requires no movement","Is purely a stretching method"], answer:1, explanation:"Circuit training rotates between stations, developing aerobic endurance and muscular strength simultaneously." },
+
+  // ── FA2 T3: INDIVIDUAL VS GROUP ──
+  { topic:'groups', q:"A macrocycle is:", options:["A single training session","A long-term plan usually covering a whole year","A week of training","A warm-up routine"], answer:1, explanation:"A macrocycle is the long-term planning framework covering the whole year — pre-season, in-season and off-season." },
+  { topic:'groups', q:"A microcycle usually covers:", options:["A whole year","About a week","A decade","A single rep"], answer:1, explanation:"A microcycle is a short-term (~weekly) framework, the most detailed level, noting match days, recovery and tapering days." },
+  { topic:'groups', q:"The purpose of tapering is to:", options:["Increase training load before a race","Gradually reduce volume/intensity so peaking can occur","Stop all recovery","Add microtears"], answer:1, explanation:"Tapering reduces volume and intensity 1–2 weeks before a major event, repairing microtears, topping up glycogen and reducing fatigue so peaking occurs." },
+  { topic:'groups', q:"Peaking is:", options:["A permanent fitness state","A temporary state of optimal performance for the key competition","The off-season","A type of injury"], answer:1, explanation:"Peaking is a temporary state of optimal performance during the most important competition, achieved via correct load plus a short taper." },
+  { topic:'groups', q:"Pre-season is divided into which two sub-phases?", options:["Warm-up and cool-down","General and specific","Attack and defence","Rest and recovery"], answer:1, explanation:"Pre-season has a general phase (overall/health-related fitness) then a specific phase (skill-related components)." },
+  { topic:'groups', q:"During the in-season (competition) phase, training focuses on:", options:["Building maximum volume","Strategy, tactics and maintaining fitness while recovering between games","Complete rest","Only weight gain"], answer:1, explanation:"In-season focuses on strategy and tactics, maintaining skill and fitness, and recovering after games." },
+  { topic:'groups', q:"In a training session, skill instruction differs because:", options:["It is identical for both","Individual = one-on-one technique; group = teamwork, positioning and passing drills","Groups never practise skills","Individuals never practise skills"], answer:1, explanation:"Individual sessions give one-on-one attention to technique; group sessions use drills for teamwork, positioning and passing." },
+  { topic:'groups', q:"The biggest structural difference between individual and team yearly programs is:", options:["The colour of the uniform","Competition frequency (annual peak vs weekly games)","The type of shoes","The stadium size"], answer:1, explanation:"A marathon runner tapers ~2 weeks for one annual race; a team peaks every week, using only a mini-taper — competition frequency drives the difference." },
+  { topic:'groups', q:"Mental imagery as a psychological strategy involves:", options:["Ignoring the game","Visualising successful performance to prepare mentally","Only physical training","Avoiding all goals"], answer:1, explanation:"Mental/rehearsal imagery means visualising success (e.g. the perfect dive) to prepare for plays and reduce anxiety." },
+  { topic:'groups', q:"The off-season primarily focuses on:", options:["Peak competition","Physical and mental recovery, including cross-training","Maximum-intensity racing","Skipping all rest"], answer:1, explanation:"The off-season (transition) focuses on physical and mental recovery — a week off or cross-training before the next pre-season." },
+
+  // ── FA2 T4: SLEEP, NUTRITION & HYDRATION ──
+  { topic:'fuel', q:"How much sleep is recommended for adolescents and athletes?", options:["3–4 hours","5–6 hours","8–10 hours","12–14 hours"], answer:2, explanation:"8–10 hours is recommended. Consistent sleep/wake times and lighter training when sleep-deprived help too." },
+  { topic:'fuel', q:"Deep sleep supports muscle repair mainly by releasing:", options:["Adrenaline","Growth hormone","Insulin","Cortisol"], answer:1, explanation:"Deep sleep releases growth hormone, driving protein synthesis and muscle repair; it also restores the nervous system and reaction time." },
+  { topic:'fuel', q:"General daily hydration guidance for an athlete is about:", options:["0.5 L/day","2–3 L/day (more in heat/intense sessions)","10 L/day","No water needed"], answer:1, explanation:"Aim for 2–3 L/day, more during hot or intense sessions, with electrolytes for long/high-intensity work." },
+  { topic:'fuel', q:"A simple sign of good hydration is:", options:["Dark urine","Pale-yellow urine","No urine at all","Bright red urine"], answer:1, explanation:"Pale-yellow urine indicates good hydration; watch thirst, dry mouth and fatigue as signs of dehydration." },
+  { topic:'fuel', q:"In a balanced diet, protein's main role is:", options:["Energy for sprints","Muscle repair","Storing water","Cooling the body"], answer:1, explanation:"Protein supports muscle repair; carbohydrates provide energy; fats and micronutrients support overall function." },
+  { topic:'fuel', q:"Carbohydrates are important mainly because they:", options:["Repair muscle","Provide energy","Replace sleep","Prevent all injury"], answer:1, explanation:"Carbohydrates are the body's main energy source; carb-rich meals before training help fuel performance." },
+  { topic:'fuel', q:"Dehydration reduces performance because it:", options:["Increases blood volume","Lowers blood volume, so less oxygen reaches muscles → fatigue","Improves concentration","Has no effect"], answer:1, explanation:"Dehydration lowers blood volume, reducing oxygen delivery to muscles and causing fatigue, cramps and poor concentration." },
+  { topic:'fuel', q:"To support recovery, athletes should ideally eat:", options:["Nothing after training","Carb-rich meals before and protein after training","Only fats","Only once a week"], answer:1, explanation:"Fuel before and after training — carbohydrate before, protein after — and maintain regular eating times to prevent fatigue and support recovery." },
+  { topic:'fuel', q:"Electrolytes are especially needed during:", options:["Short, easy sessions","Long or high-intensity workouts","Sleep","Rest days only"], answer:1, explanation:"Electrolytes are used during long or high-intensity sessions to replace those lost in sweat and prevent cramps." },
+  { topic:'fuel', q:"A good pre-sleep routine for an athlete includes:", options:["Screens right up to bedtime","Avoiding screens and using calming techniques","Intense exercise in bed","Caffeine before bed"], answer:1, explanation:"Avoiding screens before bed and using calming techniques (reading, breathing) with a consistent nightly routine improves sleep quality." },
+
+  // ── FA2 T5: BIOMECHANICS, RECOVERY & INJURY ──
+  { topic:'injury', q:"A direct injury is one that:", options:["Comes from an internal force like a strain","Occurs at the site of contact with an external force","Only happens during sleep","Is always an overuse injury"], answer:1, explanation:"Direct injuries occur at the site of contact with an external force (ball, bat, person). Indirect injuries come from internal force (sprains, strains)." },
+  { topic:'injury', q:"Which are soft-tissue injuries?", options:["Fractures and dislocations","Tears, sprains, contusions and abrasions","Broken teeth","Bone breaks only"], answer:1, explanation:"Soft-tissue injuries affect muscles, ligaments and fascia — tears, sprains, contusions, abrasions, blisters. Hard tissue = bones/teeth." },
+  { topic:'injury', q:"A fracture or dislocation is classified as:", options:["A soft-tissue injury","A hard-tissue injury","An overuse injury","Not an injury"], answer:1, explanation:"Hard-tissue injuries affect the bones or teeth (skeletal system) — including fractures and dislocations." },
+  { topic:'injury', q:"RICER stands for:", options:["Run, Ice, Cool, Eat, Rest","Rest, Ice, Compression, Elevation, Referral","Rest, Injure, Compress, Exit, Return","Race, Ice, Care, Eat, Rest"], answer:1, explanation:"RICER = Rest, Ice, Compression, Elevation, Referral — the management of soft-tissue injury." },
+  { topic:'injury', q:"TOTAPS is a procedure to:", options:["Build muscle","Assess whether an injured athlete can return to their sport","Warm up","Plan nutrition"], answer:1, explanation:"TOTAPS (Talk, Observe, Touch, Active & Passive movement, Skills test) assesses the nature and extent of an injury." },
+  { topic:'injury', q:"When managing a suspected dislocation, you should:", options:["Try to relocate the joint yourself","Immobilise it in position, apply ice and seek medical help","Keep the athlete playing","Apply heat immediately"], answer:1, explanation:"Never relocate a dislocation — it can cause serious damage. Immobilise in position, ice, and seek immediate medical help." },
+  { topic:'injury', q:"For an open fracture, first-aid management includes:", options:["Applying RICER before any clearance","Immobilising with a splint/sling, controlling bleeding and calling emergency services","Running it off","Massaging the bone"], answer:1, explanation:"Immobilise (splint/sling), control bleeding, avoid moving the person, call emergency services; apply RICER only after medical clearance." },
+  { topic:'injury', q:"Tendonitis and bursitis are examples of:", options:["Direct injuries","Overuse injuries","Hard-tissue fractures","Skin abrasions"], answer:1, explanation:"Overuse injuries develop over time from repetitive stress — e.g. tendonitis and bursitis — often due to poor programming or insufficient rest." },
+  { topic:'injury', q:"Return-to-play decisions require the athlete to be:", options:["Physically ready only","Both physically and psychologically ready","Psychologically ready only","Ready to sign an autograph"], answer:1, explanation:"Return-to-play needs medical clearance, functional testing and monitoring — the athlete must be both physically and psychologically ready." },
+  { topic:'injury', q:"In RICER, ice should typically be applied:", options:["Continuously for 6 hours","For about 20 minutes every 2 hours","Once, for 5 seconds","Never"], answer:1, explanation:"Apply cold packs for around 20 minutes every 2 hours to reduce swelling and pain." },
+  { topic:'injury', q:"The correct order of injury response is:", options:["TOTAPS → STOP → DRSABCD","DRSABCD (crisis) → STOP (on-field) → TOTAPS (complete)","RICER → DRSABCD → STOP","STOP → RICER → TOTAPS"], answer:1, explanation:"DRSABCD manages the crisis first, STOP is the on-field assessment, then TOTAPS gives the complete assessment." },
+  { topic:'injury', q:"Biomechanics helps performance by:", options:["Ignoring technique","Analysing movement to prevent injury and correct form","Only building muscle","Replacing training"], answer:1, explanation:"Biomechanics studies how muscles, bones, tendons and ligaments produce movement — analysing technique (e.g. stride) to prevent injury and improve efficiency." }
+];
+
+const WRITTEN_Q = [
+  // 3-mark
+  { maxMark:3, q:"Define progressive overload and explain how it improves an endurance athlete's performance.",
+    keywords:["progressive overload","adaptation","cardiac hypertrophy","resting heart rate","endurance"],
+    bandDescriptors:{ full:"Defines progressive overload, explains the adaptation mechanism (e.g. cardiac hypertrophy → lower resting HR), and links it to improved endurance performance.", partial:"Defines the term and gives some explanation, but the mechanism or performance link is incomplete.", minimal:"Names the term without explaining the mechanism or the performance outcome." } },
+  { maxMark:3, q:"Outline the RICER procedure used to manage a soft-tissue injury.",
+    keywords:["rest","ice","compression","elevation","referral","swelling"],
+    bandDescriptors:{ full:"Lists all five steps (Rest, Ice, Compression, Elevation, Referral) and links them to reducing swelling and aiding recovery.", partial:"Lists most steps but misses one or omits the purpose.", minimal:"Gives only one or two steps with no purpose." } },
+  { maxMark:3, q:"Explain how adequate sleep supports an athlete's performance and recovery.",
+    keywords:["growth hormone","muscle repair","reaction time","focus","recovery"],
+    bandDescriptors:{ full:"Explains sleep's role via a mechanism (growth hormone → muscle repair) and links to focus, reaction time and injury prevention.", partial:"States sleep is beneficial with some mechanism but limited linking.", minimal:"Says sleep is important with no mechanism." } },
+  { maxMark:3, q:"Distinguish between prevalence and incidence, using an example.",
+    keywords:["prevalence","incidence","existing cases","new cases","population"],
+    bandDescriptors:{ full:"Clearly distinguishes prevalence (existing cases) from incidence (new cases) with a correct example.", partial:"Defines both but the distinction or example is unclear.", minimal:"Confuses the two terms." } },
+
+  // 5-mark
+  { maxMark:5, q:"Explain how psychological strategies can be applied to an individual athlete and to a team to manage arousal and improve performance.",
+    keywords:["arousal","inverted-u","relaxation","mental imagery","self-talk","individual","team","anxiety"],
+    bandDescriptors:{ full:"Defines arousal, applies at least one strategy to an individual and a different application to a team, and links both to reduced anxiety and improved performance.", partial:"Applies strategies to one context well but the second is thin, or the performance link is weak.", minimal:"Lists strategies without applying them to both contexts." } },
+  { maxMark:5, q:"Compare how Medicare and the PBS support access and equity in Australia's healthcare system.",
+    keywords:["medicare","pbs","access","equity","safety net","subsidise","levy"],
+    bandDescriptors:{ full:"Compares both schemes across access and equity, using specific features (levy, subsidised medicines, Safety Nets).", partial:"Describes both schemes but the access/equity comparison is uneven.", minimal:"Describes one scheme or lists features without comparison." } },
+  { maxMark:5, q:"Explain how digital health can improve patient care, and outline one challenge it must address.",
+    keywords:["telehealth","my health record","access","personalisation","digital divide","privacy"],
+    bandDescriptors:{ full:"Explains at least two benefits (e.g. telehealth access, My Health Record coordination) and outlines a genuine challenge (digital divide or privacy) with a safeguard.", partial:"Gives benefits and a challenge but with limited depth or linking.", minimal:"Lists a benefit or challenge without explanation." } },
+  { maxMark:5, q:"Explain how the type of training method chosen should match the demands of a sport, using two examples.",
+    keywords:["specificity","anaerobic","aerobic","fartlek","plyometric","continuous","energy system"],
+    bandDescriptors:{ full:"Applies specificity, links two named methods to the energy-system/movement demands of specific sports, and explains the performance benefit.", partial:"Names methods and sports but the link to demands is incomplete.", minimal:"Lists methods without matching them to sport demands." } },
+
+  // 12-mark
+  { maxMark:12, q:"Compare a yearly training program for an individual athlete and a group/team athlete. In your answer, refer to the phases of training, sub-phases and the use of peaking and tapering.",
+    keywords:["pre-season","in-season","off-season","macrocycle","taper","peaking","competition frequency","volume","intensity","individual","group"],
+    bandDescriptors:{ full:"Compares both athletes across pre-season, in-season and off-season; explains macro/meso/microcycles; contrasts tapering and peaking; and evaluates competition frequency as the root cause, with a clear conclusion.", partial:"Covers the phases and some contrasts but the tapering comparison or the evaluative judgement is underdeveloped.", minimal:"Describes phases generally with little comparison and no evaluation." } },
+  { maxMark:12, q:"Analyse how the determinants of health contribute to health inequities for a vulnerable group in Australia, and evaluate strategies used to address them.",
+    keywords:["determinants","socio-economic","first nations","inequity","life expectancy","culturally safe","telehealth","vulnerable","access"],
+    bandDescriptors:{ full:"Analyses several determinants for a named vulnerable group, links them to specific inequities (e.g. life-expectancy gap), and evaluates targeted strategies with a judgement of effectiveness.", partial:"Identifies determinants and strategies but analysis or evaluation is limited.", minimal:"Lists determinants or strategies without analysis or evaluation." } }
+];
+
+// ══════════════════════════════════════════════════════════════════════
+//  ENGINE
+// ══════════════════════════════════════════════════════════════════════
+
+// ── TABS ──
+function showTab(id) {
+  document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('tab-' + id).classList.add('active');
+  event.target.classList.add('active');
+  if (id === 'practice' && !practiceLoaded) initPractice();
+}
+
+// ── STUDY TOPIC TOGGLE ──
+function toggleTopic(header) {
+  const body = header.nextElementSibling;
+  const isOpen = body.classList.contains('open');
+  header.classList.toggle('open', !isOpen);
+  body.classList.toggle('open', !isOpen);
+}
+
+// ── PRACTICE MC ──
+let practiceLoaded = false;
+let practiceQ = [];
+let practiceIdx = 0;
+let practiceScore = 0;
+let practiceAnswered = false;
+let currentTopic = 'health';
+
+function initPractice() {
+  practiceLoaded = true;
+  filterPractice('health');
+}
+
+function filterPractice(topic) {
+  currentTopic = topic;
+  document.querySelectorAll('.pill').forEach(p => p.classList.remove('active'));
+  if (event && event.target) event.target.classList.add('active');
+  practiceQ = QUESTIONS.filter(q => q.topic === topic).sort(() => Math.random() - 0.5);
+  practiceIdx = 0;
+  practiceScore = 0;
+  practiceAnswered = false;
+  renderPracticeQ();
+}
+
+function renderPracticeQ() {
+  const area = document.getElementById('practice-area');
+  if (practiceIdx >= practiceQ.length) {
+    const pct = Math.round(practiceScore / practiceQ.length * 100);
+    const emoji = pct >= 80 ? '🎉' : pct >= 60 ? '💪' : '📚';
+    area.innerHTML = `<div class="results-card">
+      <h2>${emoji} ${practiceScore} / ${practiceQ.length}</h2>
+      <p>${pct}% — ${pct >= 80 ? 'Excellent! You know this topic.' : pct >= 60 ? 'Good effort — review the ones you missed.' : 'Keep practising — review the study notes then try again.'}</p>
+      <button class="btn-retry" onclick="filterPracticeRetry('${currentTopic}')">Try Again</button>
+    </div>`;
+    return;
+  }
+  const q = practiceQ[practiceIdx];
+  const shuffled = q.options.map((o,i) => ({text:o, idx:i})).sort(() => Math.random()-0.5);
+  const topicLabel = TOPIC_LABELS[q.topic] || q.topic;
+  area.innerHTML = `<div class="q-card">
+    <div class="q-meta">${topicLabel} &nbsp;·&nbsp; Q ${practiceIdx+1} of ${practiceQ.length}</div>
+    <div class="q-text">${q.q}</div>
+    <div class="options" id="opts">
+      ${shuffled.map(o => `<button class="opt-btn" onclick="selectOpt(this,${o.idx},${q.answer})">${o.text}</button>`).join('')}
+    </div>
+    <div class="explanation" id="expl">
+      <strong>✓ Explanation</strong>${q.explanation || ''}
+    </div>
+    <div class="quiz-nav">
+      <span class="quiz-score">Score: ${practiceScore} / ${practiceIdx}</span>
+      <button class="btn-next" id="btn-next" onclick="nextPractice()" style="display:none">Next →</button>
+    </div>
+  </div>`;
+  practiceAnswered = false;
+}
+
+function selectOpt(btn, selectedIdx, correctIdx) {
+  if (practiceAnswered) return;
+  practiceAnswered = true;
+  const opts = document.querySelectorAll('.opt-btn');
+  opts.forEach(b => b.disabled = true);
+  if (selectedIdx === correctIdx) {
+    btn.classList.add('correct');
+    practiceScore++;
+  } else {
+    btn.classList.add('wrong');
+    opts.forEach(b => {
+      const idx = parseInt(b.getAttribute('onclick').match(/-?\d+/g)[0]);
+      if (idx === correctIdx) b.classList.add('show-correct');
+    });
+  }
+  document.getElementById('expl').classList.add('show');
+  document.getElementById('btn-next').style.display = 'block';
+}
+
+function nextPractice() {
+  practiceIdx++;
+  practiceAnswered = false;
+  renderPracticeQ();
+}
+
+function filterPracticeRetry(topic) {
+  practiceQ = QUESTIONS.filter(q => q.topic === topic).sort(() => Math.random()-0.5);
+  practiceIdx = 0; practiceScore = 0; practiceAnswered = false;
+  renderPracticeQ();
+}
+
+// ── WRITTEN SCAFFOLDS ──
+function showScaffold(id) {
+  document.querySelectorAll('.scaffold-card').forEach(c => c.classList.remove('active'));
+  document.querySelectorAll('.wt-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('scaffold-' + id).classList.add('active');
+  event.target.classList.add('active');
+}
+
+function toggleModel(id) {
+  const el = document.getElementById(id);
+  el.classList.toggle('show');
+  event.target.textContent = el.classList.contains('show') ? '▲ Hide model answer' : '👁 Show full model answer';
+}
+
+// ── KEYWORD MARKING ──
+function markWrittenAnswer(answer, question) {
+  if (!answer || answer.trim().length < 15) {
+    return { band: 'No answer written', color: '#F3F4F6', borderColor: '#D1D5DB',
+      descriptor: 'No answer was provided.', found: [], missing: question.keywords || [] };
+  }
+  const text = answer.toLowerCase();
+  const kws = question.keywords || [];
+  const found = kws.filter(k => text.includes(k.toLowerCase()));
+  const missing = kws.filter(k => !text.includes(k.toLowerCase()));
+  const pct = kws.length > 0 ? found.length / kws.length : 0;
+  if (pct >= 0.55) return { band: 'Strong response ✅',
+    descriptor: question.bandDescriptors?.full || 'Addresses key concepts well.',
+    found, missing, color: '#DCFCE7', borderColor: '#10B981' };
+  if (pct >= 0.3) return { band: 'Developing response ⚡',
+    descriptor: question.bandDescriptors?.partial || 'Some key concepts present but gaps remain.',
+    found, missing, color: '#FEF3C7', borderColor: '#F59E0B' };
+  return { band: 'Needs more detail ⚠️',
+    descriptor: question.bandDescriptors?.minimal || 'Key concepts missing or unclear.',
+    found, missing, color: '#FEE2E2', borderColor: '#EF4444' };
+}
+
+// ── MOCK EXAM ──
+let mockTimer, mockTimeLeft = 50*60;
+let mockQs = [], mockAnswers = {}, mockWrittenQs = [];
+
+function startMock() {
+  document.getElementById('mock-start').style.display = 'none';
+  document.getElementById('mock-active').style.display = 'block';
+  document.getElementById('mock-results').style.display = 'none';
+  mockQs = [...QUESTIONS].sort(() => Math.random()-0.5).slice(0,10);
+  mockAnswers = {};
+  document.getElementById('mock-progress-label').textContent = '0 of 10 answered';
+  renderMockQuestions();
+  mockTimeLeft = 50*60;
+  clearInterval(mockTimer);
+  mockTimer = setInterval(() => {
+    mockTimeLeft--;
+    const m = Math.floor(mockTimeLeft/60), s = mockTimeLeft%60;
+    const disp = document.getElementById('timer-display');
+    disp.textContent = String(m).padStart(2,'0') + ':' + String(s).padStart(2,'0');
+    disp.classList.toggle('urgent', mockTimeLeft <= 300);
+    if (mockTimeLeft <= 0) { clearInterval(mockTimer); submitMock(); }
+  }, 1000);
+}
+
+function renderMockQuestions() {
+  const w3  = WRITTEN_Q.filter(q=>q.maxMark===3).sort(()=>Math.random()-0.5)[0];
+  const w5  = WRITTEN_Q.filter(q=>q.maxMark===5).sort(()=>Math.random()-0.5)[0];
+  const w12 = WRITTEN_Q.filter(q=>q.maxMark===12).sort(()=>Math.random()-0.5)[0];
+  mockWrittenQs = [w3, w5, w12].filter(Boolean);
+  let html = '<p style="font-size:13px;color:#6B7280;margin-bottom:16px;font-weight:600">SECTION I — Multiple Choice (10 marks)</p>';
+  mockQs.forEach((q,i) => {
+    const sh = q.options.map((o,idx)=>({text:o,idx})).sort(()=>Math.random()-0.5);
+    html += '<div class="mock-q-card"><div class="mock-q-num">Question ' + (i+1) + '</div><div class="q-text">' + q.q + '</div>' +
+      sh.map(o=>'<button class="mock-opt" id="mq' + i + '_' + o.idx + '" onclick="selectMockOpt(' + i + ',' + o.idx + ',this)">' + o.text + '</button>').join('') + '</div>';
+  });
+  html += '<p style="font-size:13px;color:#6B7280;margin:24px 0 16px;font-weight:600">SECTION II — Written Response</p>';
+  if(w3)  html += '<div class="written-section"><h3>'  + w3.q  + '</h3><div class="marks">3 marks — approx. 4 minutes</div><textarea id="wans_0" placeholder="Write your answer here..." rows="5"></textarea></div>';
+  if(w5)  html += '<div class="written-section"><h3>'  + w5.q  + '</h3><div class="marks">5 marks — approx. 8 minutes</div><textarea id="wans_1" placeholder="Write your answer here..." rows="8"></textarea></div>';
+  if(w12) html += '<div class="written-section"><h3>' + w12.q + '</h3><div class="marks">12 marks — approx. 20 minutes</div><textarea id="wans_2" placeholder="Write your answer here..." rows="16"></textarea><div style="font-size:12px;color:#9CA3AF;margin-top:6px">Tip: INTRO → POINT 1 → POINT 2 → EVALUATE → CONCLUSION</div></div>';
+  document.getElementById('mock-questions').innerHTML = html;
+}
+
+function selectMockOpt(qIdx, optIdx, btn) {
+  document.querySelectorAll('[id^="mq' + qIdx + '_"]').forEach(b => b.classList.remove('selected'));
+  btn.classList.add('selected');
+  mockAnswers[qIdx] = optIdx;
+  document.getElementById('mock-progress-label').textContent = Object.keys(mockAnswers).length + ' of 10 answered';
+}
+
+function submitMock() {
+  clearInterval(mockTimer);
+  document.getElementById('mock-active').style.display = 'none';
+  const results = document.getElementById('mock-results');
+  results.style.display = 'block';
+  let correct = 0;
+  mockQs.forEach((q,i) => { if(mockAnswers[i]===q.answer) correct++; });
+  const pct = Math.round(correct/10*100);
+  document.getElementById('mock-score-title').textContent = 'MC: ' + correct + '/10 (' + pct + '%)';
+  document.getElementById('mock-score-sub').textContent = pct>=80 ? 'Strong MC result! Review your written feedback below.' : pct>=60 ? 'Good — review the MC questions you missed.' : 'Revisit the Study tab for the topics you found hard.';
+
+  let writtenHtml = '<p style="font-weight:800;font-size:15px;margin:24px 0 12px;text-align:left">✍️ Written Answer Feedback</p>';
+  mockWrittenQs.forEach((q, i) => {
+    if (!q) return;
+    const ta = document.getElementById('wans_' + i);
+    const answer = ta ? ta.value : '';
+    const r = markWrittenAnswer(answer, q);
+    const foundChips  = r.found.map(k=>'<span style="background:#10B981;color:#fff;padding:2px 8px;border-radius:12px;font-size:12px;margin:2px;display:inline-block">' + k + '</span>').join('');
+    const missChips   = r.missing.map(k=>'<span style="background:#EF4444;color:#fff;padding:2px 8px;border-radius:12px;font-size:12px;margin:2px;display:inline-block">' + k + '</span>').join('');
+    writtenHtml += '<div style="background:' + r.color + ';border:2px solid ' + r.borderColor + ';border-radius:14px;padding:16px;margin-bottom:16px;text-align:left">' +
+      '<div style="font-weight:800;font-size:15px;margin-bottom:4px">' + q.maxMark + '-mark — ' + r.band + '</div>' +
+      '<div style="font-size:13px;color:#374151;margin-bottom:12px;line-height:1.5"><strong>To reach full marks:</strong> ' + r.descriptor + '</div>' +
+      (r.found.length > 0 ? '<div style="margin-bottom:10px"><div style="font-size:11px;font-weight:700;text-transform:uppercase;color:#065F46;margin-bottom:4px">✅ Keywords found in your answer</div>' + foundChips + '</div>' : '') +
+      (r.missing.length > 0 ? '<div><div style="font-size:11px;font-weight:700;text-transform:uppercase;color:#7F1D1D;margin-bottom:4px">❌ Missing keywords — add these</div>' + missChips + '</div>' : '<div style="font-size:13px;color:#065F46;font-weight:600">All key terms covered 🎉</div>') +
+      '</div>';
+  });
+
+  let reviewHtml = '<p style="font-weight:700;font-size:14px;margin-bottom:12px;text-align:left">MC Review:</p>';
+  mockQs.forEach((q,i) => {
+    const ua = mockAnswers[i];
+    const ok = ua === q.answer;
+    reviewHtml += '<div class="review-item" style="background:' + (ok ? '#DCFCE7' : '#FEE2E2') + '">' +
+      '<div class="ri-q">Q' + (i+1) + ': ' + q.q.substring(0,80) + (q.q.length>80?'...':'') + '</div>' +
+      '<div class="ri-ans">' + (ok ? '✓ Correct' : '✗ Your answer: ' + (ua!==undefined?q.options[ua]:'Not answered') + ' | Correct: ' + q.options[q.answer]) + '</div>' +
+      '<div style="font-size:12px;margin-top:4px;opacity:0.8">' + (q.explanation||'') + '</div></div>';
+  });
+
+  document.getElementById('mock-review').innerHTML = writtenHtml + reviewHtml;
+  window.scrollTo({top:0, behavior:'smooth'});
+}
+
+function resetMock() {
+  document.getElementById('mock-results').style.display = 'none';
+  document.getElementById('mock-start').style.display = 'block';
+  clearInterval(mockTimer);
+  mockTimeLeft = 50*60;
+}
+</script>
+</body>
+</html>
