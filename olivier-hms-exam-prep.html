@@ -76,6 +76,19 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 .acro-cell{border-radius:8px;padding:8px 6px;text-align:center;min-width:64px;flex:1}
 .acro-cell .letter{font-size:20px;font-weight:900;line-height:1;color:#fff}
 .acro-cell .word{font-size:9px;margin-top:3px;line-height:1.2;color:rgba(255,255,255,0.9)}
+/* tapering-type bars */
+.taper-row{display:flex;flex-direction:column;gap:10px;margin-top:8px;align-items:flex-start;width:100%}
+.taper-item{display:flex;align-items:center;gap:10px;width:100%;flex-wrap:wrap}
+.taper-label{font-size:11px;font-weight:700;width:78px;text-align:right;flex-shrink:0}
+.taper-bars{display:flex;gap:3px;align-items:flex-end;height:34px}
+.tbar{width:20px;border-radius:3px 3px 0 0;background:var(--groups)}
+.taper-note{font-size:11px;color:#6B7280}
+/* HOWSCSE session-component grid */
+.howscse-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:5px;margin-top:8px}
+@media(max-width:520px){.howscse-grid{grid-template-columns:repeat(4,1fr)}}
+.howscse-cell{border-radius:8px;padding:8px 4px;text-align:center;background:#EEF2FF;color:var(--groups)}
+.howscse-cell .letter{font-size:20px;font-weight:900;line-height:1}
+.howscse-cell .word{font-size:9px;margin-top:2px;line-height:1.2;opacity:0.85}
 
 /* ── PRACTICE TAB ── */
 .topic-pills{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px}
@@ -491,6 +504,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
             <li>Match exercise to the client's needs, preferences &amp; limitations</li>
             <li>Balance intensity, duration &amp; frequency safely</li>
             <li>Track <b>adaptation and progression</b> over time</li>
+            <li><b>Common tests</b> — VO₂ max, beep test, 1RM (strength), skinfolds (body composition), Cooper 12-min run</li>
           </ul>
         </div>
       </div>
@@ -594,9 +608,33 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
         </table>
       </div>
 
+      <div class="note-grid" style="margin-top:12px">
+        <div class="note-box">
+          <h4>The principles of training</h4>
+          <ul>
+            <li><b>Progressive overload</b> — gradually ↑ the load to force continued adaptation</li>
+            <li><b>Specificity</b> — train the energy system &amp; muscles the sport actually uses</li>
+            <li><b>Reversibility</b> — stop training and adaptations are lost ("use it or lose it")</li>
+            <li><b>Variety</b> — vary the stimulus to prevent staleness, plateaus &amp; boredom</li>
+            <li><b>Individuality</b> — tailor the program to the athlete's needs &amp; rate of response</li>
+            <li><b>Overtraining &amp; recovery</b> — schedule rest so adaptation, not breakdown, occurs</li>
+          </ul>
+        </div>
+        <div class="note-box">
+          <h4>Thresholds, warm-up &amp; cool-down</h4>
+          <ul>
+            <li><b>Aerobic threshold</b> — ~55–85% of max HR: the zone that drives endurance gains</li>
+            <li><b>Anaerobic threshold</b> — where lactate accumulates faster than it can be cleared</li>
+            <li><b>Warm-up</b> — raise HR &amp; body temp, dynamic stretch, skill rehearsal → prevents injury</li>
+            <li><b>Cool-down</b> — light activity returns the body to rest &amp; clears waste (lactic acid)</li>
+            <li><b>SIT vs HIIT</b> — sprint intervals are all-out with long rest; HIIT is 85–95% MHR bursts</li>
+          </ul>
+        </div>
+      </div>
+
       <div class="exam-tip" style="background:#FFFBEB;border-left:3px solid var(--training)">
         <strong>⚡ Exam Tip</strong>
-        Static = AFTER, dynamic = BEFORE, PNF = greatest ROM. For adaptations, always finish the chain: <i>overload → cardiac hypertrophy → ↓ resting HR → sustain high intensity longer.</i> Naming the adaptation alone won't score the top band.
+        Static = AFTER, dynamic = BEFORE, PNF = greatest ROM. For adaptations, always finish the chain: <i>overload → cardiac hypertrophy → ↓ resting HR → sustain high intensity longer.</i> Naming the adaptation alone won't score the top band. The 12-marker links <b>principle → adaptation → performance</b>.
       </div>
     </div>
   </div>
@@ -657,9 +695,136 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
         </table>
       </div>
 
+      <div class="diagram-wrap">
+        <h4>Tapering types — volume reduction before an event</h4>
+        <div class="taper-row">
+          <div class="taper-item">
+            <span class="taper-label">Step</span>
+            <div class="taper-bars">
+              <div class="tbar" style="height:32px"></div>
+              <div class="tbar" style="height:32px"></div>
+              <div class="tbar" style="height:21px"></div>
+              <div class="tbar" style="height:21px"></div>
+              <div class="tbar" style="height:11px"></div>
+              <div class="tbar" style="height:11px"></div>
+            </div>
+            <span class="taper-note">Best for strength athletes</span>
+          </div>
+          <div class="taper-item">
+            <span class="taper-label">Linear</span>
+            <div class="taper-bars">
+              <div class="tbar" style="height:32px"></div>
+              <div class="tbar" style="height:26px"></div>
+              <div class="tbar" style="height:20px"></div>
+              <div class="tbar" style="height:14px"></div>
+              <div class="tbar" style="height:8px"></div>
+            </div>
+            <span class="taper-note">Gradual, equal reduction</span>
+          </div>
+          <div class="taper-item">
+            <span class="taper-label">Exp. slow</span>
+            <div class="taper-bars">
+              <div class="tbar" style="height:32px"></div>
+              <div class="tbar" style="height:18px"></div>
+              <div class="tbar" style="height:14px"></div>
+              <div class="tbar" style="height:13px"></div>
+              <div class="tbar" style="height:12px"></div>
+            </div>
+            <span class="taper-note">Best for endurance athletes</span>
+          </div>
+          <div class="taper-item">
+            <span class="taper-label">Exp. fast</span>
+            <div class="taper-bars">
+              <div class="tbar" style="height:32px"></div>
+              <div class="tbar" style="height:12px"></div>
+              <div class="tbar" style="height:8px"></div>
+              <div class="tbar" style="height:7px"></div>
+              <div class="tbar" style="height:7px"></div>
+            </div>
+            <span class="taper-note">Rapid early reduction</span>
+          </div>
+        </div>
+      </div>
+      <div class="note-box" style="margin-top:12px">
+        <h4>Why tapering works — metabolic adaptation</h4>
+        <ul>
+          <li>Aerobic adaptations (mitochondrial &amp; capillary density, haemoglobin) <b>decline slowly</b> once training eases</li>
+          <li>So a large early cut in <b>volume</b> is safe — fitness is retained while accumulated fatigue clears</li>
+          <li>Anaerobic adaptations fade faster → strength athletes use shorter, step tapers</li>
+          <li><b>Intensity stays high</b> throughout the taper; only volume drops</li>
+        </ul>
+      </div>
+
+      <div class="diagram-wrap">
+        <h4>Inverted-U hypothesis — arousal vs performance</h4>
+        <svg viewBox="0 0 320 160" width="100%" style="max-width:360px;display:block;margin:0 auto">
+          <line x1="30" y1="140" x2="300" y2="140" stroke="#D1D5DB" stroke-width="2"/>
+          <line x1="30" y1="140" x2="30" y2="15" stroke="#D1D5DB" stroke-width="2"/>
+          <path d="M 40 135 Q 90 100 115 60 Q 140 20 165 20 Q 190 20 215 60 Q 240 100 275 135" stroke="var(--groups)" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+          <circle cx="165" cy="20" r="5" fill="var(--groups)"/>
+          <circle cx="75" cy="110" r="5" fill="#F59E0B"/>
+          <circle cx="255" cy="110" r="5" fill="#EF4444"/>
+          <text x="165" y="12" text-anchor="middle" font-size="12" font-weight="800" fill="var(--groups)">B — OPTIMAL</text>
+          <text x="55" y="108" text-anchor="middle" font-size="11" font-weight="700" fill="#F59E0B">A</text>
+          <text x="255" y="108" text-anchor="middle" font-size="11" font-weight="700" fill="#EF4444">C</text>
+          <text x="40" y="155" font-size="10" fill="#9CA3AF">Low arousal</text>
+          <text x="240" y="155" font-size="10" fill="#9CA3AF">High arousal</text>
+          <text x="8" y="86" font-size="9" fill="#9CA3AF" transform="rotate(-90,8,86)">Performance</text>
+        </svg>
+        <div style="display:flex;gap:12px;justify-content:center;margin-top:10px;flex-wrap:wrap">
+          <span style="font-size:12px"><span style="color:#F59E0B;font-weight:700">A</span> = Under-aroused: low motivation, poor focus</span>
+          <span style="font-size:12px"><span style="color:var(--groups);font-weight:700">B</span> = Optimal: peak performance</span>
+          <span style="font-size:12px"><span style="color:#EF4444;font-weight:700">C</span> = Over-aroused: tense, errors</span>
+        </div>
+      </div>
+
+      <div class="note-grid" style="margin-top:12px">
+        <div class="note-box">
+          <h4>Arousal &amp; anxiety</h4>
+          <ul>
+            <li><b>Arousal</b> — physiological activation &amp; readiness (not the same as anxiety)</li>
+            <li><b>Fine motor</b> skills (golf putt, archery) → <b>low</b> arousal is optimal</li>
+            <li><b>Gross motor</b> skills (weightlifting, tackling) → <b>high</b> arousal is optimal</li>
+            <li><b>Trait anxiety</b> — a stable personality tendency to feel anxious before every game</li>
+            <li><b>State anxiety</b> — situation-specific nerves (e.g. only before a grand final)</li>
+          </ul>
+        </div>
+        <div class="note-box">
+          <h4>Psychological strategies</h4>
+          <ul>
+            <li><b>Mental rehearsal / imagery</b> — visualise success at performance speed</li>
+            <li><b>Relaxation</b> — meditation, progressive muscle relaxation, centred breathing</li>
+            <li><b>Concentration</b> — focus on the <i>process</i> (the next action), not the outcome</li>
+            <li><b>Goal setting</b> — SMART goals; personal (individual) vs shared/cohesion (team)</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="diagram-wrap">
+        <h4>Designing a session — H·O·W·S·C·S·E components</h4>
+        <div class="howscse-grid">
+          <div class="howscse-cell"><div class="letter">H</div><div class="word">Health &amp; Safety</div></div>
+          <div class="howscse-cell"><div class="letter">O</div><div class="word">Overview / Aim</div></div>
+          <div class="howscse-cell"><div class="letter">W</div><div class="word">Warm-up &amp; Cool-down</div></div>
+          <div class="howscse-cell"><div class="letter">S</div><div class="word">Skill Instruction</div></div>
+          <div class="howscse-cell"><div class="letter">C</div><div class="word">Conditioning</div></div>
+          <div class="howscse-cell"><div class="letter">S</div><div class="word">Strategies &amp; Tactics</div></div>
+          <div class="howscse-cell"><div class="letter">E</div><div class="word">Evaluation</div></div>
+        </div>
+      </div>
+      <div class="note-box" style="margin-top:12px">
+        <h4>Warm-up phases (in order)</h4>
+        <ul>
+          <li><b>Phase 1 — General</b> — light jog 5–10 min → raise heart rate &amp; body temperature</li>
+          <li><b>Phase 2 — Stretching</b> — dynamic stretches → increase ROM, reduce injury risk</li>
+          <li><b>Phase 3 — Callisthenics</b> — sport-specific conditioning exercises</li>
+          <li><b>Phase 4 — Skill rehearsal</b> — movements &amp; drills specific to the game</li>
+        </ul>
+      </div>
+
       <div class="exam-tip" style="background:#EEF2FF;border-left:3px solid var(--groups)">
         <strong>⚡ Exam Tip</strong>
-        The classic 12-marker compares a <b>yearly program for an individual vs a group athlete</b>. The single biggest difference is <b>competition frequency</b>: a marathon runner tapers ~2 weeks for one annual race; a soccer team peaks <i>every</i> week and can only use a short mini-taper.
+        The classic 12-marker compares a <b>yearly program for an individual vs a group athlete</b>. The single biggest difference is <b>competition frequency</b>: a marathon runner tapers ~2 weeks for one annual race; a soccer team peaks <i>every</i> week and can only use a short mini-taper. For the 5-marker, apply a <b>different</b> psychological strategy to each (individual = imagery + centred breathing; team = shared goals + group relaxation).
       </div>
     </div>
   </div>
@@ -680,6 +845,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
             <li><b>8–10 hours</b> recommended for adolescents &amp; athletes</li>
             <li>Plan consistent sleep/wake times; lighter training when sleep-deprived</li>
             <li>Avoid screens before bed; use a calming nightly routine</li>
+            <li><b>Mechanism:</b> deep sleep releases <b>growth hormone</b> (muscle repair); poor sleep raises <b>cortisol</b> → inflammation &amp; injury risk (extra sleep improved basketball shooting ~9%)</li>
             <li><b>Why:</b> enhances focus, coordination, muscle repair &amp; reaction time → safer movement, fewer injuries</li>
           </ul>
         </div>
@@ -699,13 +865,54 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
           <li><b>2–3 L water/day</b>, more in heat or intense sessions; electrolytes for long/high-intensity work</li>
           <li>~500 mL water ~4 hrs before, ~300 mL 10–15 min before performance; drink before, during &amp; after</li>
           <li><b>Monitor</b> — pale-yellow urine = hydrated; watch thirst, dry mouth &amp; fatigue</li>
+          <li>Also maintains <b>synovial fluid</b> that lubricates joints for smoother movement</li>
           <li><b>Why:</b> maintains blood flow, reduces cramps, prevents overheating, improves concentration</li>
         </ul>
       </div>
 
+      <div class="note-grid" style="margin-top:12px">
+        <div class="note-box">
+          <h4>Nutrient timing &amp; glycemic index (GI)</h4>
+          <ul>
+            <li><b>Before (3–4 hr)</b> — <b>low-GI</b> carbs (oats, grainy bread), moderate protein, low fat/fibre → slow, sustained energy</li>
+            <li><b>During (&gt;60 min)</b> — <b>high-GI</b> carbs, ~30–60 g/hr (gels, banana, sports drink) → fast glucose</li>
+            <li><b>After</b> — high-GI carbs + protein → refill glycogen &amp; repair muscle</li>
+          </ul>
+        </div>
+        <div class="note-box">
+          <h4>Carbohydrate loading</h4>
+          <ul>
+            <li><b>Who</b> — endurance events lasting &gt;90 minutes only</li>
+            <li><b>How</b> — raise carbohydrate to ~7–12 g/kg of body weight per day</li>
+            <li><b>When</b> — across the 36–72 hours before the event</li>
+            <li><b>Must also taper</b> training, or it won't work — boosts performance ~2–3%</li>
+          </ul>
+        </div>
+      </div>
+      <div class="note-grid">
+        <div class="note-box">
+          <h4>Key nutrients</h4>
+          <ul>
+            <li><b>Electrolytes</b> (Na, K, Ca, Mg) — lost in sweat; depletion causes muscle cramps</li>
+            <li><b>Iron</b> — makes haemoglobin for O₂ transport; deficiency → early fatigue (esp. female &amp; endurance athletes)</li>
+            <li><b>Low-GI foods</b> — oats, grainy bread, lentils (slow release)</li>
+            <li><b>High-GI foods</b> — gels, bananas, white bread (fast release)</li>
+          </ul>
+        </div>
+        <div class="note-box">
+          <h4>RED-S — Relative Energy Deficiency in Sport</h4>
+          <ul>
+            <li>Occurs when <b>energy intake is too low</b> for the athlete's training demands</li>
+            <li>Causes hormonal disruption, impaired <b>bone health</b> &amp; poor recovery</li>
+            <li>Affects female athletes most (studies suggest ~25–60% at risk)</li>
+            <li>Managed by matching energy intake to expenditure, with specialist support</li>
+          </ul>
+        </div>
+      </div>
+
       <div class="exam-tip" style="background:#F0FDFA;border-left:3px solid var(--fuel)">
         <strong>⚡ Exam Tip</strong>
-        Every answer here should end in a <b>mechanism</b>: sleep → growth hormone → protein synthesis → repair; dehydration → ↓ blood volume → less O₂ to muscles → fatigue. "It's important" scores nothing without the <i>why</i>.
+        Every answer here should end in a <b>mechanism</b>: sleep → growth hormone → protein synthesis → repair; dehydration → ↓ blood volume → less O₂ to muscles → fatigue. "It's important" scores nothing without the <i>why</i>. For nutrition: <b>low-GI before, high-GI during/after</b>, and carb loading only works <b>with</b> a taper.
       </div>
     </div>
   </div>
@@ -1149,7 +1356,28 @@ const QUESTIONS = [
   { topic:'health', q:"A key reason different definitions of health exist is that health is:", options:["Fixed and identical for everyone","Subjective and relative — judged against one's own past, others and expectations","Only about disease","Impossible to define"], answer:1, explanation:"Health is subjective and relative: someone recovering from surgery may feel 'healthy' relative to being hospitalised, though not fully recovered." },
   { topic:'health', q:"Describing health as 'dynamic' means that it:", options:["Never changes","Constantly changes over time due to illness, injury, environment and experiences","Only improves with age","Is the same thing as fitness"], answer:1, explanation:"Health is dynamic — it shifts along a continuum over time due to illness, accidents, environment and personal circumstances." },
   { topic:'health', q:"Epidemiology is best defined as:", options:["The treatment of individual patients","The study of the causes and distribution of health conditions in populations, used to improve health","A type of surgery","The funding of hospitals"], answer:1, explanation:"Epidemiology studies the patterns and causes of health and disease across populations — tracking diseases, stopping outbreaks and informing policy." },
-  { topic:'health', q:"Infant mortality refers to the number of deaths among:", options:["People over 65","Children under 1 year of age in a given period","Athletes during competition","Hospital patients"], answer:1, explanation:"Infant mortality counts deaths of children under 1 year — a key epidemiological indicator, alongside mortality, morbidity and life expectancy." }
+  { topic:'health', q:"Infant mortality refers to the number of deaths among:", options:["People over 65","Children under 1 year of age in a given period","Athletes during competition","Hospital patients"], answer:1, explanation:"Infant mortality counts deaths of children under 1 year — a key epidemiological indicator, alongside mortality, morbidity and life expectancy." },
+
+  // ── FA2 depth ported from the FA2-only tool: principles / tapering / psychology / session / nutrition ──
+  { topic:'training', q:"The principle of variety in training means:", options:["Always training the same way","Varying the training stimulus to prevent staleness, plateaus and boredom","Only ever doing aerobic work","Never changing the program"], answer:1, explanation:"Variety changes the stimulus (methods, drills, environment) to keep the athlete motivated and to avoid adaptation plateaus." },
+  { topic:'training', q:"The principle of individuality means a program should be:", options:["Identical for every athlete","Tailored to the individual athlete's needs, goals and rate of response","Copied from an elite athlete","Based only on age"], answer:1, explanation:"Individuality recognises athletes adapt at different rates, so the program must be personalised to their needs and responses." },
+  { topic:'training', q:"Building planned rest into a program mainly prevents:", options:["Adaptation","Overtraining — allowing adaptation and recovery instead of breakdown","Any improvement","Warm-ups"], answer:1, explanation:"Without adequate recovery, training load causes overtraining and breakdown rather than adaptation — rest is when the body actually adapts." },
+  { topic:'training', q:"The aerobic training threshold for improving cardiovascular fitness is roughly:", options:["10–20% of max HR","55–85% of maximum heart rate","95–100% of max HR","There is no threshold"], answer:1, explanation:"Training at about 55–85% of maximum heart rate is the zone that drives aerobic/cardiovascular adaptations." },
+  { topic:'training', q:"Sprint interval training (SIT) differs from HIIT in that SIT uses:", options:["Longer, slower efforts","All-out maximal sprints with longer recovery","No recovery at all","Only static stretching"], answer:1, explanation:"SIT uses all-out maximal sprints with longer recoveries, whereas HIIT works at ~85–95% of max HR in shorter bursts." },
+  { topic:'training', q:"A key purpose of a cool-down after training is to:", options:["Increase heart rate further","Gradually return the body to rest and clear waste products like lactic acid","Build maximum strength","Replace the warm-up"], answer:1, explanation:"A cool-down of light activity returns the body toward rest and helps clear metabolic waste (e.g. lactic acid), reducing stiffness." },
+  { topic:'groups', q:"A 'step' taper (a couple of larger drops in volume) is best suited to:", options:["Endurance athletes","Strength athletes","Only beginners","Injured athletes"], answer:1, explanation:"Strength athletes use shorter step tapers because anaerobic adaptations fade faster; endurance athletes suit an exponential slow-decay taper." },
+  { topic:'groups', q:"A large early cut in training volume during a taper is safe mainly because:", options:["Aerobic adaptations decline slowly after training eases","Fitness is lost instantly","Intensity is also dropped to zero","Recovery is not needed"], answer:0, explanation:"Aerobic adaptations (mitochondrial/capillary density, haemoglobin) decline slowly, so volume can be cut early while fitness is retained and fatigue clears." },
+  { topic:'groups', q:"During an effective taper, training intensity should generally be:", options:["Reduced to zero","Kept high while volume is reduced","Increased above competition levels","Ignored"], answer:1, explanation:"Tapering reduces volume to shed fatigue but keeps intensity high so the athlete retains sharpness and adaptations." },
+  { topic:'groups', q:"For a fine-motor skill such as a golf putt, the optimal level of arousal is:", options:["Very high","Relatively low","Maximal","It doesn't matter"], answer:1, explanation:"Fine-motor, precision skills are performed best at lower arousal; gross-motor power skills (e.g. weightlifting) suit higher arousal." },
+  { topic:'groups', q:"An athlete who feels anxious before every single game, regardless of the situation, is showing:", options:["State anxiety","Trait anxiety","No anxiety","Arousal"], answer:1, explanation:"Trait anxiety is a stable personality tendency to feel anxious across situations; state anxiety is situation-specific (e.g. only a grand final)." },
+  { topic:'groups', q:"A concentration strategy works best when the athlete focuses on:", options:["The final result and the crowd","The process — the next action or cue — rather than the outcome","Their competitors' mistakes","The scoreboard only"], answer:1, explanation:"Focusing on the process (the immediate task/cue) rather than the outcome keeps attention productive and reduces performance anxiety." },
+  { topic:'groups', q:"On the inverted-U curve, performance declines at point C because the athlete is:", options:["Under-aroused and unmotivated","Over-aroused — tense, with reduced focus and more errors","Perfectly relaxed","Asleep"], answer:1, explanation:"Beyond the optimal point, excessive arousal causes muscular tension and mental overload, so performance drops (the right side of the inverted U)." },
+  { topic:'groups', q:"In the H-O-W-S-C-S-E model of a training session, the 'H' stands for:", options:["Hydration","Health and safety considerations","Heart rate","Hypertrophy"], answer:1, explanation:"H-O-W-S-C-S-E = Health & safety, Overview/aim, Warm-up & cool-down, Skill instruction, Conditioning, Strategies & tactics, Evaluation." },
+  { topic:'fuel', q:"For steady energy, an athlete's pre-event meal should favour ____ carbohydrates, and during a long event ____ carbohydrates:", options:["high-GI; low-GI","low-GI; high-GI","high-fat; high-fat","low-GI; low-GI"], answer:1, explanation:"Low-GI carbs before give slow, sustained energy; high-GI carbs during (and after) give rapid glucose to sustain and then restore glycogen." },
+  { topic:'fuel', q:"Carbohydrate loading is appropriate mainly for:", options:["Any 10-minute sprint event","Endurance events lasting longer than about 90 minutes","Weightlifting only","Rest days"], answer:1, explanation:"Carb loading maximises glycogen stores for prolonged endurance events (>90 min); it also requires a training taper to work." },
+  { topic:'fuel', q:"For carbohydrate loading to be effective, the athlete must also:", options:["Increase training volume","Taper their training in the days before the event","Avoid all carbohydrates","Skip the pre-event meal"], answer:1, explanation:"Loading only supercompensates glycogen if training volume is tapered; continuing heavy training would burn the stored glycogen." },
+  { topic:'fuel', q:"RED-S (Relative Energy Deficiency in Sport) is caused by:", options:["Eating too much protein","Energy intake being too low for the athlete's training demands","Drinking too much water","Sleeping too much"], answer:1, explanation:"RED-S results from insufficient energy intake relative to expenditure, disrupting hormones, bone health and recovery; female athletes are most at risk." },
+  { topic:'fuel', q:"Adequate iron intake matters for athletes mainly because iron:", options:["Builds bone directly","Is needed to make haemoglobin, which transports oxygen","Replaces carbohydrate","Prevents all cramps"], answer:1, explanation:"Iron is required to produce haemoglobin; a deficiency reduces oxygen transport and causes early fatigue, especially in female and endurance athletes." }
 ];
 
 // ══════════════════════════════════════════════════════════════════════
