@@ -163,7 +163,7 @@ cramit-quiz/
 ├── supabase.min.js             ← Local Supabase JS client (loaded via script tag)
 ├── generate_study_tool.py      ← ⚠️ SIDE PROJECT ONLY — generates olivier-hms-prep.html. NOT part of CramIT app or architecture.
 ├── olivier-hms-prep.html       ← ⚠️ SIDE PROJECT ONLY — standalone assessment study tool for one student (Focus Area 2 only). No auth, no billing, no Supabase. Do NOT integrate into index.html or reference in any CramIT architecture docs.
-├── olivier-hms-exam-prep.html  ← ⚠️ SIDE PROJECT ONLY — standalone FULL-COURSE HMS study tool (both Focus Areas, 9 topics: Study/Practice MC/Written/Mock). Self-contained; 90 original MC + 10 written, no Supabase. Same "do NOT integrate" rule as above.
+├── olivier-hms-exam-prep.html  ← ⚠️ SIDE PROJECT ONLY — standalone FULL-COURSE HMS study tool (both Focus Areas, 9 topics: Study/Practice MC/Written/Mock). Self-contained, no Supabase. Same "do NOT integrate" rule as above. Mock Exam mirrors the real NESA HMS paper (100 marks: 20 MC + Section II `SECTION2_SLOTS` 56 + Section III `SECTION3_BANK` 2×12); 131 original MC; scaffolds match the real bands (Short 2–4 / Extended 6–10 / Extended Response 12). Recalibration/enrichment plan: docs/olivier-hms-exam-plan.md.
 ├── olivier-hms-exam-diagrams/  ← ⚠️ SIDE PROJECT ONLY — cropped diagram JPGs for olivier-hms-exam-prep.html (NOT the app's /diagrams/ folder). Regenerate with scripts/crop_olivier_hms_exam.py.
 ├── scripts/crop_olivier_hms_exam.py ← ⚠️ SIDE PROJECT ONLY — one-off PyMuPDF cropper (fraction-of-page clips) for the ATAR Notes HMS summary book. Not part of app tooling.
 ├── written_q_extracts.json     ← Pre-extracted NESA PDF text/blocks for written questions — read this, never re-extract from PDFs
