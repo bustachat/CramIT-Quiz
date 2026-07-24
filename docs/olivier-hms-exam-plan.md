@@ -439,32 +439,58 @@ and the app's hardcoded `SUBJECT_ID_MAP` (a decision the owner has separately
 deferred). "Run it against CramIT" = diff its FA2 content against whatever's newly
 authored here for consistency, not rewrite it.
 
-### C.4 — Decisions needed before execution (owner's call, not mine)
+### C.4 — Decisions (resolved 2026-07-24)
 
-1. **Does Year 11 get a Mock Exam?** Year 11 (Preliminary) has no NESA HSC paper — it's
-   school-set, no fixed format. Recommendation: Year 11 content populates **Study +
-   Practice modes only**; Mock Exam stays Year-12-only (matches the real assessment
-   structure — Y11 has no external exam to mirror). Needs a Y11/Y12 toggle or a
-   combined "Year 11" section added to the topic list, tagged so Mock Exam draws only
-   from Y12-tagged questions.
-2. **Scope for this pass** — this is a large lift (33 new subtopics vs. the current
-   9). Recommendation: **phase it** — Y12 gap-fill first (smaller, reuses existing
-   topic cards), then Y11 FA1 (text-only, no new diagram infrastructure needed), then
-   Y11 FA2 last (the biggest lift — new body-systems diagrams).
-3. **Diagram approach for Y11 FA2** — pull real anatomical diagrams from the Wikimedia
-   Commons / OpenStax sources pdhpe.net itself cites (recommended — accurate,
-   legally reusable with attribution, and matches how NESA-adjacent resources already
-   present this content), vs. continuing the project's existing SVG/photo-crop
-   approach. New approach needed either way since nothing so far in this project has
-   sourced third-party CC images.
+1. **Does Year 11 get a Mock Exam? → No — verified, not assumed.** Owner pushed back
+   on the initial recommendation ("doesn't the syllabus say HSC could cover both
+   years?"), so this was checked against the actual **NESA sample HSC exam PDF**
+   (`health-and-movement-science-11-12-2023-annotated-sample-examination-materials.pdf`,
+   39 pages, text-layer present — full-text searched for "Year 11"/"Preliminary": zero
+   hits; every Section I MC question is unambiguously Year 12 content — SDGs, OECD
+   healthcare approaches, recovery strategies, psychological strategy for an athlete,
+   pre-exercise questionnaires). Confirmed: **the HSC written exam only examines Year
+   12 content** — standard NESA structure (Year 11 = Preliminary, school-assessed via
+   a Collaborative Investigation per the syllabus overview; Year 12 = HSC, externally
+   examined). **Decision: Mock Exam stays Year-12-only. Year 11 content populates
+   Study + Practice modes only.**
+2. **Execution order → confirmed as recommended: Y12 gap-fill → Y11 FA1 → Y11 FA2.**
+3. **Diagram sourcing → owner's PowerPoint decks** (not Wikimedia/OpenStax as
+   initially proposed) — reuse the images already in
+   `Health & Movement Y11 Prelim Flash Card Q&A.pptx` and the other YR11/YR12 decks
+   in the Drive folder where they contain usable diagrams; extract via the zipfile/XML
+   media-parts approach (`ppt/media/*`), not screenshots.
+4. **Cross-year duplication → explicit new rule (owner-flagged).** Before authoring
+   any topic, check whether the *other* year already covers it and treat Year 11 as
+   the foundational introduction, Year 12 as the applied/deeper layer that
+   cross-references rather than re-defines. **First check already ran and corrected
+   an assumption**: Year 11's "Role First Aid Plays in Response to Movement" dot
+   point (Content Point Seven) turned out to be about general movement-related
+   conditions (dehydration, hyperthermia, stress fractures — discussed broadly, "for
+   and against"), **not** the RICER/TOTAPS/DRSABCD acronym framework, which is
+   entirely a Year 12 "Sporting Injury Prevention"/"Drug Use and Injury Management"
+   dot point. Lesson: **verify each suspected overlap against the actual pdhpe.net
+   dot-point text before merging/skipping content — topic names can look identical
+   while covering different scope.** Where a school genuinely teaches a technique
+   (like RICER) practically in Year 11 ahead of its formal Year 12 assessment point,
+   still put the full definition in the Year 11 card and have Year 12 reference it
+   (a short recap line, not a re-teach) — apply this per-topic after checking, not by
+   name-matching alone.
 
-### C.5 — Proposed execution order (pending owner sign-off on C.4)
+### C.5 — Execution order
 
-1. **Y12 FA2 gap-fill** — audit Biomechanics / Role of Technology / Supplements &
-   Micronutrients against the 3 existing FA2 note-boxes per topic; screenshot the
-   relevant pdhpe.net subpages for teaching content, add missing note-boxes +
-   matching Practice MC. Smallest, lowest-risk phase — extends existing topic cards,
-   no new infrastructure.
+1. **✅ DONE (2026-07-24) — Y12 FA2 gap-fill.** Checked all 3 flagged subtopics
+   against pdhpe.net's dot points: **Biomechanics** was already reasonably covered
+   (movement analysis, stride length, injury-prevention link in the Injury topic) —
+   no change needed. **Role of Technology** was a real gap (only a one-line mention)
+   — added a full note-box to the `groups` card: training innovations (force plates,
+   reaction lights, VR sims), equipment advances (carbon-fibre shoes, aero helmets),
+   recording/monitoring (GPS, wearables, video analysis), plus a considerations line
+   (cost/access inequity). **Supplements & Micronutrients** was fully absent (only
+   whole-food protein was covered) — added a note-box to the `fuel` card covering
+   protein, creatine (ATP-PCR link), caffeine (CNS stimulant), and micronutrient
+   supplementation, framed as NESA's "Discuss" verb requires (benefit *and*
+   limitation for each). +7 Practice MC (150 → 157 total). Verified: Node data check
+   green, browser pane confirms both note-boxes render, no console errors.
 2. **Y12 FA1 dot-point audit** — screenshot all 19 Y12 FA1 subpages, diff against the
    4 existing topic cards' note-boxes, fill any gaps the same way.
 3. **Y11 FA1 build** — new topic card(s) (likely 1 combined card given FA1 is

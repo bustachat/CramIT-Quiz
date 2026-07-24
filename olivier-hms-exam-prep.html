@@ -822,6 +822,16 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
         </ul>
       </div>
 
+      <div class="note-box" style="margin-top:12px">
+        <h4>Role of technology in improving performance</h4>
+        <ul>
+          <li><b>Training innovations</b> — resistance bands, reaction lights, altitude chambers, force plates, virtual/VR training simulations → sharpen a specific physical or perceptual quality</li>
+          <li><b>Equipment advances</b> — carbon-fibre running shoes, aerodynamic helmets, smart textiles, anti-gravity treadmills → reduce resistance/injury load or allow earlier-stage training</li>
+          <li><b>Recording &amp; monitoring</b> — GPS trackers &amp; wearables (load, speed, heart rate), video analysis (technique correction), live data dashboards (real-time coaching decisions)</li>
+          <li><b>Considerations</b> — cost and access can widen the gap between elite and grassroots athletes; data can be misread without a coach's expertise</li>
+        </ul>
+      </div>
+
       <div class="exam-tip" style="background:#EEF2FF;border-left:3px solid var(--groups)">
         <strong>⚡ Exam Tip</strong>
         The classic 12-marker compares a <b>yearly program for an individual vs a group athlete</b>. The single biggest difference is <b>competition frequency</b>: a marathon runner tapers ~2 weeks for one annual race; a soccer team peaks <i>every</i> week and can only use a short mini-taper. For the 5-marker, apply a <b>different</b> psychological strategy to each (individual = imagery + centred breathing; team = shared goals + group relaxation).
@@ -906,6 +916,24 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
             <li>Causes hormonal disruption, impaired <b>bone health</b> &amp; poor recovery</li>
             <li>Affects female athletes most (studies suggest ~25–60% at risk)</li>
             <li>Managed by matching energy intake to expenditure, with specialist support</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="note-grid">
+        <div class="note-box">
+          <h4>Supplements — protein &amp; creatine</h4>
+          <ul>
+            <li><b>Protein powder</b> — convenient extra protein for repair/growth; benefit is real for athletes with high demands, but whole food already meets most needs — no benefit beyond the body's absorption limit</li>
+            <li><b>Creatine</b> — boosts the ATP-PCR system's phosphate stores → more repeated short, powerful efforts (sprints, lifts); can cause water retention &amp; weight gain, evidence is weaker for endurance events</li>
+          </ul>
+        </div>
+        <div class="note-box">
+          <h4>Supplements — caffeine &amp; micronutrients</h4>
+          <ul>
+            <li><b>Caffeine</b> — a CNS stimulant; ↓ perceived effort, delays fatigue in endurance events; but can raise heart rate, disrupt sleep and cause dependency/anxiety with overuse</li>
+            <li><b>Micronutrients as supplements</b> — iron and vitamin D correct a diagnosed deficiency effectively; taken without one, they add little benefit and can be harmful in excess</li>
+            <li>Overall: supplements work best <b>alongside</b> a good diet, not instead of one, and should be used under professional/medical guidance</li>
           </ul>
         </div>
       </div>
@@ -1377,7 +1405,16 @@ const QUESTIONS = [
   { topic:'fuel', q:"Carbohydrate loading is appropriate mainly for:", options:["Any 10-minute sprint event","Endurance events lasting longer than about 90 minutes","Weightlifting only","Rest days"], answer:1, explanation:"Carb loading maximises glycogen stores for prolonged endurance events (>90 min); it also requires a training taper to work." },
   { topic:'fuel', q:"For carbohydrate loading to be effective, the athlete must also:", options:["Increase training volume","Taper their training in the days before the event","Avoid all carbohydrates","Skip the pre-event meal"], answer:1, explanation:"Loading only supercompensates glycogen if training volume is tapered; continuing heavy training would burn the stored glycogen." },
   { topic:'fuel', q:"RED-S (Relative Energy Deficiency in Sport) is caused by:", options:["Eating too much protein","Energy intake being too low for the athlete's training demands","Drinking too much water","Sleeping too much"], answer:1, explanation:"RED-S results from insufficient energy intake relative to expenditure, disrupting hormones, bone health and recovery; female athletes are most at risk." },
-  { topic:'fuel', q:"Adequate iron intake matters for athletes mainly because iron:", options:["Builds bone directly","Is needed to make haemoglobin, which transports oxygen","Replaces carbohydrate","Prevents all cramps"], answer:1, explanation:"Iron is required to produce haemoglobin; a deficiency reduces oxygen transport and causes early fatigue, especially in female and endurance athletes." }
+  { topic:'fuel', q:"Adequate iron intake matters for athletes mainly because iron:", options:["Builds bone directly","Is needed to make haemoglobin, which transports oxygen","Replaces carbohydrate","Prevents all cramps"], answer:1, explanation:"Iron is required to produce haemoglobin; a deficiency reduces oxygen transport and causes early fatigue, especially in female and endurance athletes." },
+
+  // ── Y12 FA2 gap-fill: Role of Technology + Supplements & Micronutrients ──
+  { topic:'groups', q:"An athlete using a force plate and reaction lights in training is using an example of:", options:["Equipment advances","A training innovation to sharpen a specific physical/perceptual quality","Recording and monitoring","A recovery strategy"], answer:1, explanation:"Force plates, reaction lights, altitude chambers and VR simulations are training innovations — tools that target a specific quality, distinct from equipment advances (gear worn/used in competition) or monitoring (recording data)." },
+  { topic:'groups', q:"Carbon-fibre running shoes and aerodynamic helmets are examples of which category of sports technology?", options:["Recording and monitoring","Training innovations","Equipment advances","Psychological strategies"], answer:2, explanation:"Equipment advances are physical gear improvements (carbon-fibre shoes, aero helmets, smart textiles) that reduce resistance or injury risk during performance itself." },
+  { topic:'groups', q:"GPS trackers, wearables and video analysis mainly serve which purpose in training?", options:["Recording and monitoring performance data","Providing pain relief","Replacing coaching altogether","Immobilising an injury"], answer:0, explanation:"GPS/wearables and video analysis record and monitor load, speed, heart rate and technique, giving coaches real-time data for decisions." },
+  { topic:'groups', q:"A key limitation of relying heavily on sports technology is that:", options:["It always improves performance with no downside","Cost and access can widen the gap between elite and grassroots athletes","It replaces the need for training entirely","It cannot be used in team sports"], answer:1, explanation:"Advanced technology is expensive, so it can create inequity between well-funded elite programs and grassroots athletes; data also still needs a coach's expertise to interpret correctly." },
+  { topic:'fuel', q:"Creatine supplementation is mainly used to improve performance in:", options:["Marathon running","Repeated short, powerful efforts like sprints and lifts","Sleep quality","Flexibility"], answer:1, explanation:"Creatine boosts phosphate stores for the ATP-PCR system, supporting repeated short, powerful efforts; it can cause water retention and weight gain, and shows weaker evidence for endurance events." },
+  { topic:'fuel', q:"Caffeine can improve endurance performance mainly by:", options:["Building muscle mass","Acting as a CNS stimulant that lowers perceived effort and delays fatigue","Replacing carbohydrate stores","Preventing dehydration"], answer:1, explanation:"Caffeine stimulates the central nervous system, reducing perceived exertion and delaying fatigue — but can raise heart rate and disrupt sleep with overuse." },
+  { topic:'fuel', q:"Taking iron or vitamin D supplements is most beneficial when:", options:["Taken in very large doses regardless of need","Correcting a diagnosed deficiency","The athlete already eats a balanced diet","Combined with caffeine"], answer:1, explanation:"Micronutrient supplements are most effective when correcting a diagnosed deficiency; without one, they add little benefit and can be harmful in excess." }
 ];
 
 // ══════════════════════════════════════════════════════════════════════
