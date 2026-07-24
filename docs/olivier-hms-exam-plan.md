@@ -75,6 +75,59 @@ Motivation & Goal Setting/Program Design vs Performance Optimisation/Talent
 Identification/Injury Prevention & Recovery), renamed "Yo-yo test" to its precise name
 **Yo-Yo Intermittent Recovery Test**, +2 Practice MC (175 → 177, assess 13→15).
 
+**Done — full accordion-based re-review of all 36 Y12 pages (owner-requested,
+2026-07-25).** Owner clarified that "review using MCP" meant systematically re-checking
+the actual pdhpe.net content pages with the Browser MCP's visual/DOM tools — not a
+styling comparison of the hub page. This surfaced a **systemic gap in the audit method
+itself**: every pdhpe.net subpage uses a Bootstrap accordion (`.accordion-title` /
+`.accordion-collapse` / `.accordion-body`) that is collapsed by default. `get_page_text`
+only reads what's already rendered/visible, so every prior pass (Phase 2, the Y12 FA2
+audit) had been reading collapsed-accordion boilerplate (headings + "Example(s)" +
+NESA glossary, repeated per slide) while missing the actual explanatory paragraphs
+underneath each accordion item — a much bigger miss than the single image-only slide
+caught the session before. Fixed by running
+`document.querySelectorAll('.accordion-title').forEach(t => t.click())` via
+`javascript_exec` on every page before `get_page_text` — this expands all items at once
+and reveals the real content in one extraction. (Genuine image-only slides, e.g.
+population-group comparison tables, still show only "See table below" even after
+expanding — those still need a screenshot if pursued.)
+
+Re-read all 19 FA1 + 17 FA2 pages this way. Confirmed corrections (primary source wins):
+**ageing projection** "1 in 4 (25%) by 2050" replaces the previous "~22% by the 2060s"
+(itself a Phase-1 correction of an even earlier ATAR Notes error — ABS's own published
+series vary 25–28% by 2051–2071 depending on base year, so pdhpe.net's stated figure was
+adopted); **hydration protocol** rewritten to the mL/kg-based framework pdhpe.net states
+(5–10 mL/kg 2–4 hrs pre, 400–800 mL/hr during, 125–150% of loss post) replacing vague
+fixed volumes. One suspected conflict (carb-loading ">60 min" on pdhpe.net vs the app's
+existing ">90 min") was checked against general sports-science sources and found to be a
+false alarm — the app's two-box structure (in-event fuel at >60 min vs true carb-loading
+at >90 min) was already more precise than pdhpe.net's own single-threshold framing; no
+change made.
+
+Confirmed real content gaps and filled them: equity-vs-equality distinction; Primary
+Health Networks + ACCHO example; expanded complementary-healthcare products/services list
++ regulation caution; critical-health-consumer "red flags" checklist; climate/environmental
+health as an emerging system challenge; "Closing the Gap" campaign + Healthy Cities
+Illawarra's actual SDG-by-SDG breakdown; sex-specific leading causes of death (coronary
+heart disease → males, dementia → females); a full "healthy ageing" section (WHO
+definition, opportunities, named strategies — Find Your 30, My Aged Care, Home Care
+Packages, Men's Sheds); a new individual-vs-group **yearly training program** table (the
+syllabus's own "Compare" content point had only ever been covered by a single exam-tip
+line); the **HARM** acronym (Heat/Alcohol/Running/Massage) paired with RICER; **strict
+liability** + Sport Integrity Australia in the drug-testing content; named pre-exercise
+screening tools (APEST, PAR-Q+) and "contraindications"; protein dosage figures
+(0.8 g/kg baseline, 1.2–1.8 g/kg for hypertrophy). +13 Practice MC (177 → 190). Verified:
+Node data check green (190 MC, all valid, Section II still sums to 56, Section III still
+2 FA1 + 2 FA2, 9 tables with matching data-labels); browser pane — all 9 topic cards
+expand and render correctly (including the new yearly-program table, confirmed via
+`getBoundingClientRect`), Practice MC counts spot-checked on-screen match Node exactly
+(Health 24, Injury 32), no console errors.
+
+**Lesson folded into the method for Y11 (Phases 3–4 below):** always run the
+accordion-expand script before `get_page_text` on any hms.pdhpe.net page. A heading with
+no content after expansion (not before) is the real signal for "this is an image, go
+screenshot it."
+
 **Not started — Phases 3–7, in this order (per C.5):**
 3. **Y11 FA1 build** — 15 new subtopics, no topic cards exist yet for these. Cross-check
    against `HMS_Short_Answer_All.pptx` / `HMS_Extended_Answer_All.pptx` (already
@@ -108,9 +161,14 @@ Identification/Injury Prevention & Recovery), renamed "Yo-yo test" to its precis
   next to something that might already be wrong.
 - CramIT's live `subjects/pdhpe-hms.json` is reference/cross-check only — never edit
   it as part of this work (§C.3).
-- A `get_page_text` heading with no bullet content underneath it means the real content
-  is only in that slide's image — screenshot it, don't assume the app already covers it
-  (caught during the Y12 FA2 audit — see §C.6).
+- **Always run the accordion-expand script before `get_page_text` on any hms.pdhpe.net
+  page**: `document.querySelectorAll('.accordion-title').forEach(t => t.click())` via
+  `javascript_exec`. Every page's real content sits inside collapsed accordions —
+  reading the page without expanding them first only returns repeated boilerplate
+  (headings + "Example(s)" + NESA glossary), not the actual explanatory text. This was
+  the root cause of most of what the Y12 re-review found (see §C.6/2026-07-25 entry).
+- After expanding, a heading with **still** no content underneath it means that specific
+  slide is a genuine image — screenshot it, don't assume the app already covers it.
 
 ---
 
@@ -660,3 +718,12 @@ Directly answering "how did errors get in / how do we stop it happening again":
   extraction. The audit wrongly assumed the app's existing table already covered it and
   moved on without checking. **When this happens, screenshot that specific slide before
   concluding "already covered" — don't assume.**
+- **Bigger version of the same lesson, found one session later:** every hms.pdhpe.net
+  page's real content lives inside collapsed Bootstrap accordions
+  (`.accordion-title`/`.accordion-body`). Reading a page with `get_page_text` alone —
+  without first expanding every accordion via
+  `document.querySelectorAll('.accordion-title').forEach(t => t.click())` in
+  `javascript_exec` — only returns repeated boilerplate (the content-point statement,
+  "Example(s)", NESA glossary), not the actual paragraphs. This affected **every prior
+  pass** (Phase 2, the Y12 FA2 audit), not just the one fitness-testing slide. Always
+  expand accordions first; treat any page read without this step as unverified.
