@@ -337,3 +337,172 @@ Year 12 exam-prep tool; use judgement per-card rather than bulk importing.
 - Do not merge this tool into CramIT's app in this pass — that's a separate, later
   decision the owner has explicitly deferred (see prior conversation: "focus on this
   app first").
+
+---
+
+## PART C — Year 11 + Year 12 gap-fill against the official syllabus (hms.pdhpe.net)
+
+> **Written after Parts A/B shipped and a content-accuracy audit caught two sourcing
+> errors (pre-season "6–12 months" instead of weeks; over-65 "22%" instead of ~16%),
+> both traced to uncritical copying from the ATAR Notes book.** Owner asked for a
+> systematic plan to prevent that class of error while closing a much bigger gap:
+> **the tool only covers Year 12. Year 11 (the Preliminary course) is entirely
+> missing**, and even Year 12's coverage hasn't been checked dot-point-by-dot-point
+> against the real syllabus, only against a commercial summary book.
+
+### C.1 — What `hms.pdhpe.net` actually is
+
+Not NESA itself — it's a syllabus-outline site run by "The Learning Network" (Kelly
+Bell, a former HSC PDHPE Supervisor of Marking). Each subtopic page reproduces the
+**official NESA syllabus dot points verbatim** ("Content Point One: Explain the
+interrelationship between... Including: [dot points]... NESA Glossary of Key Words:
+Explain — ...") as a slide carousel, then illustrates them with **images sourced from
+Wikimedia Commons and OpenStax** (both CC-licensed, credited on-page — e.g. "OpenStax
+College. (2013). Anatomy of a Long Bone. [Image]." linking to
+`commons.wikimedia.org`). Two implications:
+1. **The syllabus dot points themselves are the authoritative scope reference** — better
+   than the ATAR Notes book for scope, because they're NESA's own wording, not a
+   publisher's interpretation.
+2. **The images are a legitimate diagram-sourcing lead.** Instead of redrawing every
+   anatomy diagram as original SVG (slow, and SVG struggles with real anatomical
+   accuracy) or risking copyright by screenshotting pdhpe.net's own slides, go to
+   the **original Wikimedia Commons / OpenStax source** the page cites and pull that
+   image directly (OpenStax content is CC BY 4.0; most Commons anatomy diagrams are
+   CC BY-SA or public domain) — attribute in an image credits section. This is a much
+   better diagram strategy for the Year 11 body-systems content than anything used so
+   far in this project.
+3. Page text extraction via `get_page_text` returns the dot points + image captions on
+   repeat (one repeat per carousel slide) but **not the explanatory prose** — that's
+   only visible in the slide images themselves. Treat each subpage as: read the dot
+   points for scope, then screenshot each carousel slide for the actual teaching
+   content (same visual-reading approach already used for the ATAR book / DLSR deck).
+
+### C.2 — Confirmed scope: the full topic tree
+
+**Year 11 FA1 — "Health for Individuals and Communities"** (15 subtopics, all currently
+**absent** from the tool):
+Meanings of Health · Dynamic Nature of Health · Epidemiology · Social Justice
+Principles · Determinants · Generations · Investigate Meanings · Health Status ·
+Health Issue · Strengthening the Individual · Personal Health and Health Behaviours ·
+Young People Advocate Health · Organisations and Communities Advocate for Health ·
+Nature of Health Promotion in Australia · United Nations SDGs
+
+**Year 11 FA2 — "The Body and Mind in Motion"** (18 subtopics, all currently
+**absent**):
+Skeletal and Muscular Systems Interrelationship · Biomechanical Principles of Muscles,
+Bones & Joints · Respiratory & Circulatory System Interrelationship · Digestive &
+Endocrine Systems Interrelationship · Nervous System & Movement Interrelationship ·
+How the Systems of the Body Work Together · Role First Aid Plays in Response to
+Movement · ATP-PCR/Glycolytic/Aerobic Energy Systems · Role of Nutrition to Energy
+Systems · Aerobic and Anaerobic Training · FITT Principle · Immediate Physiological
+Response to Training · Physiological Responses to Aerobic Training · Purpose and
+Outcomes of Physical Fitness Testing · How Movement Skills are Acquired · Movement
+Skills and Sports of Choice · Psychology, Movement and Performance · Communities of
+Exercise
+
+**This matches the `Health & Movement Y11 Prelim Flash Card Q&A.pptx` content exactly**
+(joints/bones/muscle types, Newton's 3 Laws, fluid mechanics/drag, cardiovascular
+structure, respiratory gas exchange, digestion, blood components, macronutrients,
+motor learning/motivation, nervous system) — confirming that deck is genuinely Year 11
+FA2 material, not off-topic as the original plan's B.4 flagged it might be. It's now a
+**primary source**, not a "skim and use judgement" one.
+
+**Year 12 FA1 — "Health in an Australian and Global Context"** (19 subtopics) — the
+tool's existing 4 topics (`health`/`system`/`tech`/`community`) cluster-match this list
+well (health status+inequities+chronic+ageing → `health`; healthcare system+org+
+expenditure+approaches+consumer+challenges → `system`; technology/digital/big data →
+`tech`; SDGs → `community`). **No new topic cards needed for Y12 FA1** — just a
+dot-point-level audit for gaps within each.
+
+**Year 12 FA2 — "Training for Improved Performance"** (17 subtopics) — the tool's 5
+existing topics (`assess`/`training`/`groups`/`fuel`/`injury`) mostly cluster-match,
+**except three subtopics with no obvious current home**:
+- **Biomechanics** (as its own FA2 dot point — force/levers/projectile motion applied
+  to sporting technique, distinct from Y11's foundational biomechanics)
+- **Role of Technology** (GPS trackers, wearables, video analysis used in
+  training/strategy — distinct from Y12 FA1's healthcare-technology topic)
+- **Supplements and Micronutrients** (may be thinly covered under the existing
+  nutrition note-boxes; the syllabus treats it as its own dot point — protein,
+  creatine, caffeine, iron, vitamin D)
+
+### C.3 — CramIT's live app (`subjects/pdhpe-hms.json`)
+
+Re-confirmed: 165 MC / 35 written, **all Year-12-shaped topics** (`classification`,
+`assessment`, `management`, `rehabilitation`, `returnplay`, `concussion`,
+`fa2_methods`, `fa2_principles`, `fa2_adaptations`, `fa2_periodisation`,
+`fa2_individual_group`, `fa2_psychology`, `fa2_nutrition`, `fa2_sleep`,
+`fa2_assessment`) — no Year 11 content, and per `CLAUDE.md` §6 it's a **different,
+older PDHPE syllabus** than this standalone tool targets. Per the original plan's
+non-goals, it stays a **curation/cross-check source only** — never edited as part of
+this work, since editing the live subject touches production content, entitlements
+and the app's hardcoded `SUBJECT_ID_MAP` (a decision the owner has separately
+deferred). "Run it against CramIT" = diff its FA2 content against whatever's newly
+authored here for consistency, not rewrite it.
+
+### C.4 — Decisions needed before execution (owner's call, not mine)
+
+1. **Does Year 11 get a Mock Exam?** Year 11 (Preliminary) has no NESA HSC paper — it's
+   school-set, no fixed format. Recommendation: Year 11 content populates **Study +
+   Practice modes only**; Mock Exam stays Year-12-only (matches the real assessment
+   structure — Y11 has no external exam to mirror). Needs a Y11/Y12 toggle or a
+   combined "Year 11" section added to the topic list, tagged so Mock Exam draws only
+   from Y12-tagged questions.
+2. **Scope for this pass** — this is a large lift (33 new subtopics vs. the current
+   9). Recommendation: **phase it** — Y12 gap-fill first (smaller, reuses existing
+   topic cards), then Y11 FA1 (text-only, no new diagram infrastructure needed), then
+   Y11 FA2 last (the biggest lift — new body-systems diagrams).
+3. **Diagram approach for Y11 FA2** — pull real anatomical diagrams from the Wikimedia
+   Commons / OpenStax sources pdhpe.net itself cites (recommended — accurate,
+   legally reusable with attribution, and matches how NESA-adjacent resources already
+   present this content), vs. continuing the project's existing SVG/photo-crop
+   approach. New approach needed either way since nothing so far in this project has
+   sourced third-party CC images.
+
+### C.5 — Proposed execution order (pending owner sign-off on C.4)
+
+1. **Y12 FA2 gap-fill** — audit Biomechanics / Role of Technology / Supplements &
+   Micronutrients against the 3 existing FA2 note-boxes per topic; screenshot the
+   relevant pdhpe.net subpages for teaching content, add missing note-boxes +
+   matching Practice MC. Smallest, lowest-risk phase — extends existing topic cards,
+   no new infrastructure.
+2. **Y12 FA1 dot-point audit** — screenshot all 19 Y12 FA1 subpages, diff against the
+   4 existing topic cards' note-boxes, fill any gaps the same way.
+3. **Y11 FA1 build** — new topic card(s) (likely 1 combined card given FA1 is
+   text/definitions-heavy, or split to mirror the pdhpe.net clusters), screenshot all
+   15 subpages, cross-check against `HMS_Short_Answer_All.pptx` /
+   `HMS_Extended_Answer_All.pptx` (already confirmed to cover Meanings of Health,
+   Dynamic Nature, Epidemiology — the first 3 of 15), author note-boxes + Practice MC.
+4. **Y11 FA2 build** — the big one. New topic card(s) for body systems (skeletal/
+   muscular, cardio/respiratory, digestive/endocrine, nervous system, energy systems,
+   training basics, motor learning/psychology — likely 3–4 cards given 18 subtopics).
+   Screenshot all 18 subpages, cross-check against `Health & Movement Y11 Prelim
+   Flash Card Q&A.pptx` (already fully extracted — see C.2), source diagrams from the
+   Wikimedia/OpenStax links each pdhpe.net page cites, author note-boxes + Practice MC
+   + an image-credits section.
+5. **Navigation/engine update** — add a Year 11/12 toggle or combined topic list with
+   Y11 cards visually grouped; tag every question with `year:11|12` so Mock Exam
+   (Y12-only per C.4.1) and Practice (both) filter correctly; update `TOPIC_LABELS`
+   and the practice-topic picker.
+6. **Verify** — Node data-shape check extended to assert every question has a valid
+   `year` tag and Mock Exam draw excludes Y11; browser pane full pass per the existing
+   verification checklist; screenshot new diagrams; confirm image attributions render.
+7. **Docs + commit** — `docs/HISTORY.md` entry, `CLAUDE.md` §6 description update,
+   image-credits note if new licensed images are added, then the standard git flow.
+
+### C.6 — Error-prevention rules for this pass (the reason this plan exists)
+
+Directly answering "how did errors get in / how do we stop it happening again":
+- **Every screenshot-derived fact gets sourced from the syllabus page's own dot
+  points/slides first** — that's NESA's authoritative scope, not a summary book's
+  paraphrase.
+- **Every numeric statistic (%, durations, thresholds) gets a second, independent
+  source check** (a websearch against AIHW/ABS/pdhpe.net/a sports-science body) before
+  it's typed into the tool — the same step that caught the two ATAR Notes errors.
+  Don't trust a single source for numbers, even a good one.
+- **When porting from a secondary source (ATAR Notes, CramIT, the PPTX decks) that
+  disagrees with the primary syllabus source, the primary source (pdhpe.net's stated
+  dot points, or a direct websearch) wins** — flag the discrepancy in the HISTORY.md
+  entry rather than silently picking one.
+- **Diff, don't just add.** The FA2-depth port mistake (Part B) was adding new content
+  *next to* existing-but-inaccurate content instead of reconciling both. For every
+  topic touched in this pass, read what's already there before writing anything new.
