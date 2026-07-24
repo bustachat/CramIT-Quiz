@@ -41,6 +41,31 @@ still sums to 56), browser pane — all 3 touched cards expand and render the ne
 content correctly, Practice MC topic counts match (Health 22, System 13, Community
 13), no console errors.
 
+**Done — Y12 FA2 full dot-point audit (not in the original C.5 order — inserted at owner's
+request).** Phase 1 had only checked 3 of FA2's 17 subtopics individually (the ones with
+no obvious topic-card home); the other 14 had only been matched to a card **by name**,
+never actually read against pdhpe.net — exactly the risk §C.6 warns about. Owner asked
+for the same full audit FA1 got. All 14 remaining subtopics read individually and diffed
+against the 5 FA2 cards (`assess`/`training`/`groups`/`fuel`/`injury`). 10 of 14 were
+already well covered — no change (Pre-Exercise Questionnaire, Types of Training,
+Application/Relationships of Training Principles [principles matched but "apply to both
+aerobic AND strength" was thin — see below], Applied Strategies, Dietary Requirements,
+Sleep/Nutrition/Hydration, Recovery Strategies, Sporting Injury Prevention). Confirmed
+real gaps: (1) the syllabus's own named fitness tests, Yo-yo and Wingate, weren't listed
+— added to the `assess` card; (2) the "evaluate principles applied to **both** aerobic
+**and** strength training" content point wanted an explicit side-by-side, not just a
+list of principles — added a 6-row aerobic-vs-strength table to `training`; (3) "Factors
+that influence how strategies/tactics are applied" (nature of sport, skill level,
+environmental conditions, opposition, team cohesion, communication, fatigue) was an
+**entire content point with zero prior coverage** — added a full note-box to `groups`;
+(4) "Drug use — health implications, ethics, drug testing" only had one line about
+painkillers, missing the WADA/TUE/PED side entirely — added two note-boxes to `injury`
+(verified via websearch: WADA sets the Prohibited List, TUE criteria). +8 Practice MC
+(167 → 175: assess 11→13, training 22→24, groups 26→28, injury 28→30). Verified: Node
+data check green (175 MC, Section II still 56, Section III still 2 FA1 + 2 FA2), browser
+pane — all 4 touched cards expand/render correctly, Practice MC counts confirmed
+on-screen (Assessment 13, Injury 30), no console errors.
+
 **Not started — Phases 3–7, in this order (per C.5):**
 3. **Y11 FA1 build** — 15 new subtopics, no topic cards exist yet for these. Cross-check
    against `HMS_Short_Answer_All.pptx` / `HMS_Extended_Answer_All.pptx` (already
