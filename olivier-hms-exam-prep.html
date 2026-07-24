@@ -65,13 +65,26 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 .diagram-wrap .caption{font-size:11px;color:#9CA3AF;margin-top:8px;font-style:italic}
 .dgrid{display:grid;grid-template-columns:1fr 1fr;gap:10px;align-items:start}
 @media(max-width:600px){.dgrid{grid-template-columns:1fr}}
-.table-scroll{overflow-x:auto;margin-top:12px;-webkit-overflow-scrolling:touch}
-.dtable{width:100%;border-collapse:collapse;font-size:13px;background:#fff;border-radius:10px;overflow:hidden;min-width:520px}
-.dtable caption{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;opacity:0.55;padding-bottom:8px;text-align:left}
-.dtable th{background:#1A1A2E;color:#fff;padding:10px 12px;text-align:left;font-size:11px;text-transform:uppercase;letter-spacing:0.4px;vertical-align:top}
+.table-scroll{margin-top:12px}
+.dtable{width:100%;border-collapse:collapse;font-size:13px;background:#fff;border-radius:10px;overflow:hidden}
+.dtable caption{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;opacity:0.55;padding-bottom:8px;text-align:left;white-space:normal}
+.dtable th{background:var(--accent,#1A1A2E);color:#fff;padding:10px 12px;text-align:left;font-size:11px;text-transform:uppercase;letter-spacing:0.4px;vertical-align:top}
 .dtable td{padding:10px 12px;border-top:1px solid #E5E7EB;vertical-align:top;line-height:1.45}
-.dtable td:first-child{font-weight:700;white-space:nowrap}
+.dtable td:first-child{font-weight:700}
 .dtable tbody tr:nth-child(even){background:#F8F9FA}
+/* Above ~640px: normal grid table, scrolls horizontally only if truly needed */
+@media(min-width:641px){.table-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}.dtable{min-width:520px}}
+/* Below ~640px: each row becomes its own stacked card — nothing gets cut off */
+@media(max-width:640px){
+  .dtable,.dtable caption,.dtable thead,.dtable tbody,.dtable tr,.dtable th,.dtable td{display:block}
+  .dtable{border-radius:0}
+  .dtable thead{display:none}
+  .dtable tbody tr{background:#fff!important;border:1px solid #E5E7EB;border-radius:12px;overflow:hidden;margin-bottom:10px}
+  .dtable tbody tr:last-child{margin-bottom:0}
+  .dtable td{border-top:1px solid #F0F2F5}
+  .dtable td:first-child{background:var(--accent,#1A1A2E);color:#fff;border-top:none;border-radius:12px 12px 0 0}
+  .dtable td:not(:first-child)::before{content:attr(data-label);display:block;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.4px;opacity:0.5;margin-bottom:3px}
+}
 .acronym-row{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px;justify-content:center}
 .acro-cell{border-radius:8px;padding:8px 6px;text-align:center;min-width:64px;flex:1}
 .acro-cell .letter{font-size:20px;font-weight:900;line-height:1;color:#fff}
@@ -211,7 +224,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
   <div class="fa-divider">Focus Area 1 — Health in an Australian &amp; global context</div>
 
   <!-- FA1 T1: THE HEALTH OF AUSTRALIANS -->
-  <div class="topic-card">
+  <div class="topic-card" style="--accent:var(--health)">
     <div class="topic-header" style="background:var(--health)" onclick="toggleTopic(this)">
       <span class="topic-icon">🩺</span>
       <span class="topic-title">The Health of Australians</span>
@@ -295,11 +308,11 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
           <caption>Three chronic conditions the syllabus names — CVD, cancer &amp; injury (AIHW)</caption>
           <thead><tr><th>Feature</th><th>Cardiovascular disease</th><th>Cancer</th><th>Injury</th></tr></thead>
           <tbody>
-            <tr><td>Mortality</td><td>~45,000 deaths (2022); a leading cause of death</td><td>~32% of the fatal disease burden</td><td>Leading cause of death for 15–24 year-olds (73% of youth deaths, 2017–19); road trauma, poisoning &amp; drowning are the top unintentional causes</td></tr>
-            <tr><td>Morbidity</td><td>Leading disease burden for males, 7th for females</td><td>~17% of total disease burden — the largest single group</td><td>Major cause of hospitalisation, not just death — falls, workplace and sporting injuries add to the burden</td></tr>
-            <tr><td>Risk factors</td><td>Smoking, high BP, diabetes, obesity, family history</td><td>Socio-economic disadvantage, age, smoking, obesity</td><td>Alcohol, speeding/distraction, unsafe workplaces, falls risk in older age</td></tr>
-            <tr><td>Protective factors</td><td>Low cholesterol/BP, less stress &amp; smoking, healthy diet</td><td>Healthy diet/activity/weight, limit alcohol &amp; sun, vaccination</td><td>Road-safety laws &amp; seatbelts, workplace safety standards, fall-prevention programs</td></tr>
-            <tr><td>Changing where/for whom</td><td>Falling for males (better treatment/prevention)</td><td>Survival rising with earlier screening/detection</td><td>Youth unintentional-injury deaths fell 18→12 per 100,000 (2007–2019) as road laws tightened; falls injuries are rising in an ageing population</td></tr>
+            <tr><td>Mortality</td><td data-label="Cardiovascular disease">~45,000 deaths (2022); a leading cause of death</td><td data-label="Cancer">~32% of the fatal disease burden</td><td data-label="Injury">Leading cause of death for 15–24 year-olds (73% of youth deaths, 2017–19); road trauma, poisoning &amp; drowning are the top unintentional causes</td></tr>
+            <tr><td>Morbidity</td><td data-label="Cardiovascular disease">Leading disease burden for males, 7th for females</td><td data-label="Cancer">~17% of total disease burden — the largest single group</td><td data-label="Injury">Major cause of hospitalisation, not just death — falls, workplace and sporting injuries add to the burden</td></tr>
+            <tr><td>Risk factors</td><td data-label="Cardiovascular disease">Smoking, high BP, diabetes, obesity, family history</td><td data-label="Cancer">Socio-economic disadvantage, age, smoking, obesity</td><td data-label="Injury">Alcohol, speeding/distraction, unsafe workplaces, falls risk in older age</td></tr>
+            <tr><td>Protective factors</td><td data-label="Cardiovascular disease">Low cholesterol/BP, less stress &amp; smoking, healthy diet</td><td data-label="Cancer">Healthy diet/activity/weight, limit alcohol &amp; sun, vaccination</td><td data-label="Injury">Road-safety laws &amp; seatbelts, workplace safety standards, fall-prevention programs</td></tr>
+            <tr><td>Changing where/for whom</td><td data-label="Cardiovascular disease">Falling for males (better treatment/prevention)</td><td data-label="Cancer">Survival rising with earlier screening/detection</td><td data-label="Injury">Youth unintentional-injury deaths fell 18→12 per 100,000 (2007–2019) as road laws tightened; falls injuries are rising in an ageing population</td></tr>
           </tbody>
         </table>
       </div>
@@ -336,7 +349,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
   </div>
 
   <!-- FA1 T2: HEALTHCARE SYSTEM -->
-  <div class="topic-card">
+  <div class="topic-card" style="--accent:var(--system)">
     <div class="topic-header" style="background:var(--system)" onclick="toggleTopic(this)">
       <span class="topic-icon">🏥</span>
       <span class="topic-title">Australia's Healthcare System</span>
@@ -371,11 +384,11 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
           <caption>How key schemes support sustainability, access &amp; equity</caption>
           <thead><tr><th>Scheme</th><th>Sustainability</th><th>Access</th><th>Equity</th></tr></thead>
           <tbody>
-            <tr><td>Medicare</td><td>Subsidising only certain services preserves funds</td><td>Care for all, regardless of ability to pay</td><td>Safety Net gives extra help to frequent users</td></tr>
-            <tr><td>PBS</td><td>Medicines reviewed so the highest-benefit ones are prioritised</td><td>All citizens/residents access subsidised medicines</td><td>PBS Safety Net protects against large costs</td></tr>
-            <tr><td>NDIS — National Disability Insurance Scheme</td><td>Individualised funded plans widen access</td><td>Better access for people with lifelong disability</td><td>Bigger needs receive more assistance</td></tr>
-            <tr><td>My Aged Care</td><td>Assessment-based funding targets those most in need</td><td>Single entry point connects older Australians to home/residential care</td><td>Subsidies scale with a person's means and care needs</td></tr>
-            <tr><td>Private health</td><td>Incentives to insure reduce public-system strain</td><td>Younger people pay less to encourage uptake</td><td>Rebate gives lower-income earners more help</td></tr>
+            <tr><td>Medicare</td><td data-label="Sustainability">Subsidising only certain services preserves funds</td><td data-label="Access">Care for all, regardless of ability to pay</td><td data-label="Equity">Safety Net gives extra help to frequent users</td></tr>
+            <tr><td>PBS</td><td data-label="Sustainability">Medicines reviewed so the highest-benefit ones are prioritised</td><td data-label="Access">All citizens/residents access subsidised medicines</td><td data-label="Equity">PBS Safety Net protects against large costs</td></tr>
+            <tr><td>NDIS — National Disability Insurance Scheme</td><td data-label="Sustainability">Individualised funded plans widen access</td><td data-label="Access">Better access for people with lifelong disability</td><td data-label="Equity">Bigger needs receive more assistance</td></tr>
+            <tr><td>My Aged Care</td><td data-label="Sustainability">Assessment-based funding targets those most in need</td><td data-label="Access">Single entry point connects older Australians to home/residential care</td><td data-label="Equity">Subsidies scale with a person's means and care needs</td></tr>
+            <tr><td>Private health</td><td data-label="Sustainability">Incentives to insure reduce public-system strain</td><td data-label="Access">Younger people pay less to encourage uptake</td><td data-label="Equity">Rebate gives lower-income earners more help</td></tr>
           </tbody>
         </table>
       </div>
@@ -408,7 +421,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
   </div>
 
   <!-- FA1 T3: TECHNOLOGY -->
-  <div class="topic-card">
+  <div class="topic-card" style="--accent:var(--tech)">
     <div class="topic-header" style="background:var(--tech)" onclick="toggleTopic(this)">
       <span class="topic-icon">💻</span>
       <span class="topic-title">Technology &amp; Data in Healthcare</span>
@@ -448,9 +461,9 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
           <caption>Digital health — two sides</caption>
           <thead><tr><th>Opportunities</th><th>Challenges</th></tr></thead>
           <tbody>
-            <tr><td>Greater personalisation of care</td><td>Digital divide — limited access without literacy/devices</td></tr>
-            <tr><td>Remote access &amp; cost saving</td><td>Privacy &amp; data-security concerns</td></tr>
-            <tr><td>Facilitates preventative medicine</td><td>System interoperability between providers</td></tr>
+            <tr><td>Greater personalisation of care</td><td data-label="Challenges">Digital divide — limited access without literacy/devices</td></tr>
+            <tr><td>Remote access &amp; cost saving</td><td data-label="Challenges">Privacy &amp; data-security concerns</td></tr>
+            <tr><td>Facilitates preventative medicine</td><td data-label="Challenges">System interoperability between providers</td></tr>
           </tbody>
         </table>
       </div>
@@ -463,7 +476,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
   </div>
 
   <!-- FA1 T4: COMMUNITY HEALTH -->
-  <div class="topic-card">
+  <div class="topic-card" style="--accent:var(--community)">
     <div class="topic-header" style="background:var(--community)" onclick="toggleTopic(this)">
       <span class="topic-icon">🌏</span>
       <span class="topic-title">Improving Community Health</span>
@@ -494,10 +507,10 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
           <caption>Health-relevant SDGs</caption>
           <thead><tr><th>SDG</th><th>Aim</th><th>Health focus</th></tr></thead>
           <tbody>
-            <tr><td>3 — Good Health &amp; Wellbeing</td><td>Healthy lives &amp; wellbeing at all ages</td><td>Cut maternal/child mortality, combat NCDs, mental health, universal coverage</td></tr>
-            <tr><td>4 — Quality Education</td><td>Inclusive, equitable education</td><td>Higher health literacy → better health choices</td></tr>
-            <tr><td>10 — Reduced Inequalities</td><td>Reduce income/social inequality</td><td>Close gaps for First Nations, rural &amp; culturally and linguistically diverse (CALD) communities</td></tr>
-            <tr><td>11 — Sustainable Cities</td><td>Inclusive, safe, resilient cities</td><td>Green space, clean air, active transport, healthcare access</td></tr>
+            <tr><td>3 — Good Health &amp; Wellbeing</td><td data-label="Aim">Healthy lives &amp; wellbeing at all ages</td><td data-label="Health focus">Cut maternal/child mortality, combat NCDs, mental health, universal coverage</td></tr>
+            <tr><td>4 — Quality Education</td><td data-label="Aim">Inclusive, equitable education</td><td data-label="Health focus">Higher health literacy → better health choices</td></tr>
+            <tr><td>10 — Reduced Inequalities</td><td data-label="Aim">Reduce income/social inequality</td><td data-label="Health focus">Close gaps for First Nations, rural &amp; culturally and linguistically diverse (CALD) communities</td></tr>
+            <tr><td>11 — Sustainable Cities</td><td data-label="Aim">Inclusive, safe, resilient cities</td><td data-label="Health focus">Green space, clean air, active transport, healthcare access</td></tr>
           </tbody>
         </table>
       </div>
@@ -523,7 +536,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
   <div class="fa-divider two">Focus Area 2 — Training for improved performance</div>
 
   <!-- FA2 T1: EXERCISE ASSESSMENT -->
-  <div class="topic-card">
+  <div class="topic-card" style="--accent:var(--assess)">
     <div class="topic-header" style="background:var(--assess)" onclick="toggleTopic(this)">
       <span class="topic-icon">📋</span>
       <span class="topic-title">Exercise Assessment &amp; Prescription</span>
@@ -571,9 +584,9 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
           <caption>Why fitness testing differs by athlete</caption>
           <thead><tr><th>Recreational athletes</th><th>Elite athletes</th></tr></thead>
           <tbody>
-            <tr><td><b>Health monitoring</b> — checks cardiovascular fitness, strength, flexibility &amp; body composition, catching health concerns early</td><td><b>Performance optimisation</b> — precise, sport-specific data (VO₂ max, anaerobic threshold) fine-tunes the training plan</td></tr>
-            <tr><td><b>Motivation &amp; goal setting</b> — benchmarks that track progress and keep people engaged</td><td><b>Talent identification</b> — helps coaches compare athletes and monitor progression across a squad</td></tr>
-            <tr><td><b>Program design</b> — builds a safe, personalised plan around individual needs</td><td><b>Injury prevention &amp; recovery</b> — monitoring biomechanical/physiological data flags injury risk and tracks recovery post-injury</td></tr>
+            <tr><td><b>Health monitoring</b> — checks cardiovascular fitness, strength, flexibility &amp; body composition, catching health concerns early</td><td data-label="Elite athletes"><b>Performance optimisation</b> — precise, sport-specific data (VO₂ max, anaerobic threshold) fine-tunes the training plan</td></tr>
+            <tr><td><b>Motivation &amp; goal setting</b> — benchmarks that track progress and keep people engaged</td><td data-label="Elite athletes"><b>Talent identification</b> — helps coaches compare athletes and monitor progression across a squad</td></tr>
+            <tr><td><b>Program design</b> — builds a safe, personalised plan around individual needs</td><td data-label="Elite athletes"><b>Injury prevention &amp; recovery</b> — monitoring biomechanical/physiological data flags injury risk and tracks recovery post-injury</td></tr>
           </tbody>
         </table>
       </div>
@@ -586,7 +599,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
   </div>
 
   <!-- FA2 T2: TRAINING METHODS & ADAPTATIONS -->
-  <div class="topic-card">
+  <div class="topic-card" style="--accent:var(--training)">
     <div class="topic-header" style="background:var(--training)" onclick="toggleTopic(this)">
       <span class="topic-icon">🏋️</span>
       <span class="topic-title">Training Methods &amp; Adaptations</span>
@@ -643,13 +656,13 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
           <caption>Physiological adaptations to training</caption>
           <thead><tr><th>Adaptation</th><th>Principle applied</th><th>Effect on performance</th></tr></thead>
           <tbody>
-            <tr><td>Resting heart rate ↓</td><td>Progressive overload, specificity</td><td>Aerobic training lowers resting HR → more efficient heart</td></tr>
-            <tr><td>Stroke volume / cardiac output ↑</td><td>Progressive overload, thresholds</td><td>More blood per beat → better O₂ delivery &amp; endurance</td></tr>
-            <tr><td>VO₂ max &amp; lung capacity ↑</td><td>Progressive overload, specificity</td><td>More efficient intake and use of oxygen</td></tr>
-            <tr><td>Haemoglobin ↑</td><td>Aerobic training (specificity)</td><td>More O₂ transported → improved endurance</td></tr>
-            <tr><td>Muscle hypertrophy</td><td>Resistance, overload, specificity</td><td>Bigger, stronger muscle → more power &amp; force</td></tr>
-            <tr><td>Fast-twitch fibres ↑</td><td>Anaerobic/resistance, specificity</td><td>More power &amp; speed for explosive sport</td></tr>
-            <tr><td>Slow-twitch fibres ↑</td><td>Aerobic training, overload</td><td>Better endurance &amp; fatigue resistance</td></tr>
+            <tr><td>Resting heart rate ↓</td><td data-label="Principle applied">Progressive overload, specificity</td><td data-label="Effect on performance">Aerobic training lowers resting HR → more efficient heart</td></tr>
+            <tr><td>Stroke volume / cardiac output ↑</td><td data-label="Principle applied">Progressive overload, thresholds</td><td data-label="Effect on performance">More blood per beat → better O₂ delivery &amp; endurance</td></tr>
+            <tr><td>VO₂ max &amp; lung capacity ↑</td><td data-label="Principle applied">Progressive overload, specificity</td><td data-label="Effect on performance">More efficient intake and use of oxygen</td></tr>
+            <tr><td>Haemoglobin ↑</td><td data-label="Principle applied">Aerobic training (specificity)</td><td data-label="Effect on performance">More O₂ transported → improved endurance</td></tr>
+            <tr><td>Muscle hypertrophy</td><td data-label="Principle applied">Resistance, overload, specificity</td><td data-label="Effect on performance">Bigger, stronger muscle → more power &amp; force</td></tr>
+            <tr><td>Fast-twitch fibres ↑</td><td data-label="Principle applied">Anaerobic/resistance, specificity</td><td data-label="Effect on performance">More power &amp; speed for explosive sport</td></tr>
+            <tr><td>Slow-twitch fibres ↑</td><td data-label="Principle applied">Aerobic training, overload</td><td data-label="Effect on performance">Better endurance &amp; fatigue resistance</td></tr>
           </tbody>
         </table>
       </div>
@@ -683,12 +696,12 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
           <caption>Applying the 6 principles to aerobic vs strength training</caption>
           <thead><tr><th>Principle</th><th>Aerobic training</th><th>Strength training</th></tr></thead>
           <tbody>
-            <tr><td>Progressive overload</td><td>Gradually increase distance, duration or pace</td><td>Gradually increase resistance, sets or reps</td></tr>
-            <tr><td>Training thresholds</td><td>Work within a heart-rate zone (e.g. 70–85% max HR)</td><td>Work at a %RM (percentage of one-rep max) load</td></tr>
-            <tr><td>Reversibility</td><td>VO₂ max and endurance drop within weeks of stopping</td><td>Strength and muscle size decline as disuse sets in</td></tr>
-            <tr><td>Specificity</td><td>Match the energy system used by the event (e.g. continuous running for a marathon)</td><td>Match the muscle groups &amp; movement pattern used by the sport</td></tr>
-            <tr><td>Variety</td><td>Rotate continuous/fartlek/interval sessions to avoid staleness</td><td>Rotate exercises, equipment or rep ranges</td></tr>
-            <tr><td>Warm-up &amp; cool-down</td><td>Light jog to raise heart rate, then light activity after to clear lactic acid</td><td>Dynamic movement + light sets before, static stretching after</td></tr>
+            <tr><td>Progressive overload</td><td data-label="Aerobic training">Gradually increase distance, duration or pace</td><td data-label="Strength training">Gradually increase resistance, sets or reps</td></tr>
+            <tr><td>Training thresholds</td><td data-label="Aerobic training">Work within a heart-rate zone (e.g. 70–85% max HR)</td><td data-label="Strength training">Work at a %RM (percentage of one-rep max) load</td></tr>
+            <tr><td>Reversibility</td><td data-label="Aerobic training">VO₂ max and endurance drop within weeks of stopping</td><td data-label="Strength training">Strength and muscle size decline as disuse sets in</td></tr>
+            <tr><td>Specificity</td><td data-label="Aerobic training">Match the energy system used by the event (e.g. continuous running for a marathon)</td><td data-label="Strength training">Match the muscle groups &amp; movement pattern used by the sport</td></tr>
+            <tr><td>Variety</td><td data-label="Aerobic training">Rotate continuous/fartlek/interval sessions to avoid staleness</td><td data-label="Strength training">Rotate exercises, equipment or rep ranges</td></tr>
+            <tr><td>Warm-up &amp; cool-down</td><td data-label="Aerobic training">Light jog to raise heart rate, then light activity after to clear lactic acid</td><td data-label="Strength training">Dynamic movement + light sets before, static stretching after</td></tr>
           </tbody>
         </table>
       </div>
@@ -701,7 +714,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
   </div>
 
   <!-- FA2 T3: GROUPS VS INDIVIDUALS -->
-  <div class="topic-card">
+  <div class="topic-card" style="--accent:var(--groups)">
     <div class="topic-header" style="background:var(--groups)" onclick="toggleTopic(this)">
       <span class="topic-icon">👥</span>
       <span class="topic-title">Individual vs Group Sports</span>
@@ -747,11 +760,11 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
           <caption>Designing a session — individual vs group</caption>
           <thead><tr><th>Component</th><th>Individual sport</th><th>Group sport</th></tr></thead>
           <tbody>
-            <tr><td>Health &amp; safety</td><td>Tailored to the athlete's history &amp; risk</td><td>Accounts for many players, collisions &amp; group dynamics</td></tr>
-            <tr><td>Aim of session</td><td>Personal skill &amp; performance goals</td><td>Team coordination, tactics &amp; shared objectives</td></tr>
-            <tr><td>Skill instruction</td><td>One-on-one, tailored to technique</td><td>Group drills — teamwork, positioning, passing</td></tr>
-            <tr><td>Strategies &amp; tactics</td><td>Athlete's role (pacing, serve placement)</td><td>Team tactics — formations, set plays, attack/defence</td></tr>
-            <tr><td>Reflection/evaluation</td><td>Detailed individual feedback, video analysis</td><td>Team debrief + individual feedback; assess cohesion</td></tr>
+            <tr><td>Health &amp; safety</td><td data-label="Individual sport">Tailored to the athlete's history &amp; risk</td><td data-label="Group sport">Accounts for many players, collisions &amp; group dynamics</td></tr>
+            <tr><td>Aim of session</td><td data-label="Individual sport">Personal skill &amp; performance goals</td><td data-label="Group sport">Team coordination, tactics &amp; shared objectives</td></tr>
+            <tr><td>Skill instruction</td><td data-label="Individual sport">One-on-one, tailored to technique</td><td data-label="Group sport">Group drills — teamwork, positioning, passing</td></tr>
+            <tr><td>Strategies &amp; tactics</td><td data-label="Individual sport">Athlete's role (pacing, serve placement)</td><td data-label="Group sport">Team tactics — formations, set plays, attack/defence</td></tr>
+            <tr><td>Reflection/evaluation</td><td data-label="Individual sport">Detailed individual feedback, video analysis</td><td data-label="Group sport">Team debrief + individual feedback; assess cohesion</td></tr>
           </tbody>
         </table>
       </div>
@@ -914,7 +927,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
   </div>
 
   <!-- FA2 T4: SLEEP, NUTRITION, HYDRATION -->
-  <div class="topic-card">
+  <div class="topic-card" style="--accent:var(--fuel)">
     <div class="topic-header" style="background:var(--fuel)" onclick="toggleTopic(this)">
       <span class="topic-icon">😴</span>
       <span class="topic-title">Sleep, Nutrition &amp; Hydration</span>
@@ -1020,7 +1033,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
   </div>
 
   <!-- FA2 T5: BIOMECHANICS, RECOVERY & INJURY -->
-  <div class="topic-card">
+  <div class="topic-card" style="--accent:var(--injury)">
     <div class="topic-header" style="background:var(--injury)" onclick="toggleTopic(this)">
       <span class="topic-icon">🩹</span>
       <span class="topic-title">Biomechanics, Recovery &amp; Injury</span>
