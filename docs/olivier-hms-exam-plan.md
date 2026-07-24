@@ -8,6 +8,59 @@
 
 ---
 
+## 🔵 HANDOVER — START HERE (session closed 2026-07-24)
+
+**Parts A and B are fully shipped** (Mock Exam recalibrated to the real 100-mark NESA
+structure, FA2 depth ported, content-accuracy audit done — see `docs/HISTORY.md` for
+the full trail). **Part C is in progress.** Read Part C below in full before doing
+anything — it has the topic tree, sourcing rules and the decisions already made. Short
+version of where things stand:
+
+**Done — Part C, Phase 1 (Y12 FA2 gap-fill).** Biomechanics/Role of Technology/
+Supplements & Micronutrients checked against pdhpe.net; Role of Technology and
+Supplements were real gaps, both filled with note-boxes + 7 Practice MC (bank now
+157). Commit `7e05cb8`.
+
+**Not started — Phases 2–7, in this order (per C.5):**
+2. **Y12 FA1 audit** — 19 subtopics (`hms.pdhpe.net`, Y12 FA1 URL list in §C.2) against
+   the 4 existing topic cards (`health`/`system`/`tech`/`community`). Same method as
+   Phase 1: read each subpage's dot points, diff against what's already in the card,
+   fill only real gaps.
+3. **Y11 FA1 build** — 15 new subtopics, no topic cards exist yet for these. Cross-check
+   against `HMS_Short_Answer_All.pptx` / `HMS_Extended_Answer_All.pptx` (already
+   confirmed to cover the first 3 of 15 — Meanings of Health, Dynamic Nature,
+   Epidemiology).
+4. **Y11 FA2 build — the big one.** 18 new subtopics (body systems, biomechanics
+   fundamentals, energy systems, motor learning/psychology). Primary source is now
+   confirmed: `Health & Movement Y11 Prelim Flash Card Q&A.pptx` (26 slides, already
+   fully extracted in this session's transcript — re-extract via the zipfile/regex
+   method in §B.4 if needed, it's native PowerPoint text, not scans). **Diagrams: pull
+   from the owner's PowerPoint decks** (extract embedded images via
+   `ppt/media/*` inside the pptx zip), not Wikimedia/redrawn SVG — this was explicitly
+   decided over the initially-proposed Wikimedia/OpenStax route.
+5. **Navigation/engine update** — add a `year:11|12` tag to every question, add Year
+   11 topic cards to the picker, make sure Mock Exam only ever draws Y12-tagged
+   questions (confirmed via NESA's actual sample HSC paper: zero Year 11 content in
+   it — this is not a guess, it's verified, see §C.4.1).
+6. **Verify** — Node check extended to assert every question has a valid `year` tag;
+   full browser pass; confirm Mock Exam draw excludes Y11.
+7. **Docs + commit** — `HISTORY.md` entry, `CLAUDE.md` §6 description update (question
+   counts will be well out of date once Y11 lands), then the usual git flow.
+
+**Rules that must not get dropped when picking this back up** (see §C.6 for why):
+- Verify every suspected Y11/Y12 topic overlap against the actual pdhpe.net page
+  before merging or skipping content — **don't pattern-match by topic name.** (RICER
+  looked like a Y11/Y12 duplicate by name; it wasn't — Y11's "first aid" dot point
+  covers different ground entirely. Checked and documented in §C.4.4.)
+- Any numeric claim gets an independent second-source check before being typed in —
+  this caught two real errors already (pre-season duration, over-65 %).
+- Diff existing content before adding new content to the same topic card — don't add
+  next to something that might already be wrong.
+- CramIT's live `subjects/pdhpe-hms.json` is reference/cross-check only — never edit
+  it as part of this work (§C.3).
+
+---
+
 ## Context — why this plan exists
 
 `olivier-hms-exam-prep.html` was built by reading the ATAR Notes "HSC Health and
