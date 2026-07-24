@@ -66,6 +66,15 @@ data check green (175 MC, Section II still 56, Section III still 2 FA1 + 2 FA2),
 pane — all 4 touched cards expand/render correctly, Practice MC counts confirmed
 on-screen (Assessment 13, Injury 30), no console errors.
 
+**Immediate correction, same day.** Owner spotted a real miss: the Fitness Testing
+page's "Benefits" slide had returned as a bare heading from `get_page_text` (no bullet
+content — see the new C.6 rule above), and the audit wrongly assumed the app's existing
+table already covered it. It didn't — rewrote the "Why fitness testing differs by
+athlete" table to the syllabus's actual 3-category framework (Health Monitoring/
+Motivation & Goal Setting/Program Design vs Performance Optimisation/Talent
+Identification/Injury Prevention & Recovery), renamed "Yo-yo test" to its precise name
+**Yo-Yo Intermittent Recovery Test**, +2 Practice MC (175 → 177, assess 13→15).
+
 **Not started — Phases 3–7, in this order (per C.5):**
 3. **Y11 FA1 build** — 15 new subtopics, no topic cards exist yet for these. Cross-check
    against `HMS_Short_Answer_All.pptx` / `HMS_Extended_Answer_All.pptx` (already
@@ -99,6 +108,9 @@ on-screen (Assessment 13, Injury 30), no console errors.
   next to something that might already be wrong.
 - CramIT's live `subjects/pdhpe-hms.json` is reference/cross-check only — never edit
   it as part of this work (§C.3).
+- A `get_page_text` heading with no bullet content underneath it means the real content
+  is only in that slide's image — screenshot it, don't assume the app already covers it
+  (caught during the Y12 FA2 audit — see §C.6).
 
 ---
 
@@ -641,3 +653,10 @@ Directly answering "how did errors get in / how do we stop it happening again":
 - **Diff, don't just add.** The FA2-depth port mistake (Part B) was adding new content
   *next to* existing-but-inaccurate content instead of reconciling both. For every
   topic touched in this pass, read what's already there before writing anything new.
+- **A `get_page_text` heading with no bullet content underneath it is a red flag, not a
+  green light.** Caught during the Y12 FA2 audit: the Fitness Testing page's "Benefits
+  to health, participation and performance" slide returned as a bare heading with no
+  text — that's the carousel-image content §C.1 already warned isn't captured by text
+  extraction. The audit wrongly assumed the app's existing table already covered it and
+  moved on without checking. **When this happens, screenshot that specific slide before
+  concluding "already covered" — don't assume.**
