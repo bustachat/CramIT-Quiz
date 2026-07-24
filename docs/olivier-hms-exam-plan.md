@@ -21,11 +21,27 @@ Supplements & Micronutrients checked against pdhpe.net; Role of Technology and
 Supplements were real gaps, both filled with note-boxes + 7 Practice MC (bank now
 157). Commit `7e05cb8`.
 
-**Not started — Phases 2–7, in this order (per C.5):**
-2. **Y12 FA1 audit** — 19 subtopics (`hms.pdhpe.net`, Y12 FA1 URL list in §C.2) against
-   the 4 existing topic cards (`health`/`system`/`tech`/`community`). Same method as
-   Phase 1: read each subpage's dot points, diff against what's already in the card,
-   fill only real gaps.
+**Done — Part C, Phase 2 (Y12 FA1 dot-point audit).** All 19 Y12 FA1 subtopics read
+against pdhpe.net (health/system/tech/community clusters, §C.2 mapping). Tech (4/4)
+and most of health/system were already well covered — no change. Confirmed real gaps,
+each traced to a specific NESA content point: (1) the "ATSI **+ one other group**"
+inequity requirement had no second group — added a rural &amp; remote case study
+(AIHW life-expectancy-by-remoteness data, verified via websearch); (2) "CVD, cancer
+**+ one other condition**" only had 2 of 3 — extended the existing disease table to a
+3rd column, Injury (AIHW youth-injury-mortality data, verified); (3) gender-specific
+sociological causes of risky behaviour (masculinity/beauty-standard norms) were
+missing; (4) the healthcare system's "future opportunities" content point (rural,
+ATSI, disability) had no content; (5) "healthcare vs prevention" spending trade-off
+was missing; (6) "current & emerging challenges" (wait times, workforce, privatisation)
+had no content; (7) added the syllabus's own named example, Healthy Cities Illawarra,
+to the community card's SDGs-in-action box (verified via websearch — WHO Healthy
+Cities movement, 1987 Australian pilot). +10 Practice MC (157 → 167: health 17→22,
+system 9→13, community 12→13). Verified: Node data check green (167 MC, Section II
+still sums to 56), browser pane — all 3 touched cards expand and render the new
+content correctly, Practice MC topic counts match (Health 22, System 13, Community
+13), no console errors.
+
+**Not started — Phases 3–7, in this order (per C.5):**
 3. **Y11 FA1 build** — 15 new subtopics, no topic cards exist yet for these. Cross-check
    against `HMS_Short_Answer_All.pptx` / `HMS_Extended_Answer_All.pptx` (already
    confirmed to cover the first 3 of 15 — Meanings of Health, Dynamic Nature,
@@ -544,8 +560,23 @@ authored here for consistency, not rewrite it.
    supplementation, framed as NESA's "Discuss" verb requires (benefit *and*
    limitation for each). +7 Practice MC (150 → 157 total). Verified: Node data check
    green, browser pane confirms both note-boxes render, no console errors.
-2. **Y12 FA1 dot-point audit** — screenshot all 19 Y12 FA1 subpages, diff against the
-   4 existing topic cards' note-boxes, fill any gaps the same way.
+2. **✅ DONE (2026-07-24) — Y12 FA1 dot-point audit.** Read all 19 Y12 FA1 subpages
+   (`get_page_text`, not screenshots — the dot points/captions were sufficient to
+   diff against the existing note-boxes without needing carousel-slide images) and
+   diffed against the 4 existing cards. Tech cluster (4/4) and most of health/system
+   were already adequately covered — no change. Real gaps found and filled: rural &
+   remote as the required "one other group" inequity case study (health card);
+   Injury as the required 3rd chronic condition alongside CVD/cancer, folded into the
+   existing disease table rather than a separate box (health card); gender-specific
+   sociological causes of risky behaviour (health card); healthcare system's "future
+   opportunities" content point (system card); "healthcare vs prevention" spending
+   trade-off (system card); "current & emerging challenges" — wait times, workforce,
+   privatisation (system card); Healthy Cities Illawarra as the syllabus's own named
+   community example (community card). All new numeric claims (life expectancy by
+   remoteness, youth injury mortality) verified via websearch against AIHW before
+   being typed in, per §C.6. +10 Practice MC (157 → 167). Verified: Node data check
+   green, browser pane confirms all 3 touched cards render correctly, no console
+   errors.
 3. **Y11 FA1 build** — new topic card(s) (likely 1 combined card given FA1 is
    text/definitions-heavy, or split to mirror the pdhpe.net clusters), screenshot all
    15 subpages, cross-check against `HMS_Short_Answer_All.pptx` /
