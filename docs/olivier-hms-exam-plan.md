@@ -169,6 +169,11 @@ screenshot it."
   the root cause of most of what the Y12 re-review found (see §C.6/2026-07-25 entry).
 - After expanding, a heading with **still** no content underneath it means that specific
   slide is a genuine image — screenshot it, don't assume the app already covers it.
+- **Check `pdhpe-net-cache/` (repo root, gitignored — local only) before re-fetching any
+  hms.pdhpe.net page.** It holds condensed, accordion-expanded notes for all 36 Y12
+  pages (2026-07-25), organised to mirror the app's 9 topic cards. Read its README
+  first. Update the relevant file after re-fetching a page so the cache stays current.
+  Year 11 notes will be added here as that build starts.
 
 ---
 

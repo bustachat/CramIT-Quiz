@@ -17,3 +17,7 @@ node_modules/
 # OS
 .DS_Store
 Thumbs.db
+
+# Local-only cache of condensed hms.pdhpe.net notes (third-party commercial
+# tutoring content — never publish to this public repo; see pdhpe-net-cache/README.md)
+pdhpe-net-cache/
