@@ -8,125 +8,58 @@
 
 ---
 
-## 🔵 HANDOVER — START HERE (session closed 2026-07-24)
+## 🔵 HANDOVER — START HERE (session closed 2026-07-26)
 
 **Parts A and B are fully shipped** (Mock Exam recalibrated to the real 100-mark NESA
-structure, FA2 depth ported, content-accuracy audit done — see `docs/HISTORY.md` for
-the full trail). **Part C is in progress.** Read Part C below in full before doing
-anything — it has the topic tree, sourcing rules and the decisions already made. Short
-version of where things stand:
+structure, FA2 depth ported, content-accuracy audit done). **Part C: all of Year 12
+(both focus areas, all 36 subtopics) is now fully audited against the primary syllabus
+source using a verified-correct method — this is the first time that's been true.**
+Bank stands at **190 Practice MC** (started at 93). Full session-by-session narrative
+of how it got here is in `docs/HISTORY.md` (2026-07-22 through 2026-07-26 entries) —
+read it if you want the *why* behind any specific piece of content; this handover only
+covers what a fresh session needs to keep moving.
 
-**Done — Part C, Phase 1 (Y12 FA2 gap-fill).** Biomechanics/Role of Technology/
-Supplements & Micronutrients checked against pdhpe.net; Role of Technology and
-Supplements were real gaps, both filled with note-boxes + 7 Practice MC (bank now
-157). Commit `7e05cb8`.
+**What happened, compressed:**
+1. Phase 1 (Y12 FA2 gap-fill, 3 subtopics) → Phase 2 (Y12 FA1, all 19 subtopics) → a
+   full Y12 FA2 audit (remaining 14 subtopics) — each pass found real gaps and filled
+   them with original-wording note-boxes/tables + matching Practice MC.
+2. **A methodology bug was found and fixed mid-project**: every hms.pdhpe.net page
+   hides its real content inside collapsed Bootstrap accordions. Reading a page with
+   `get_page_text` alone — without expanding accordions first — only returns repeated
+   boilerplate, not the actual explanatory paragraphs. This meant Phases 1–2 and the
+   FA2 audit had all been under-reading every single page. Fixed by running
+   `document.querySelectorAll('.accordion-title').forEach(t => t.click())` via
+   `javascript_exec` before every `get_page_text` call — now the mandatory first step,
+   see the rules list below.
+3. A **full re-review of all 36 Y12 pages** was then done with the corrected method,
+   surfacing real numeric corrections (ageing population projection, hydration
+   protocol) and real content gaps (equity vs equality, Primary Health Networks, the
+   HARM acronym, strict liability, a proper individual-vs-group yearly-program table,
+   and more — full list in `docs/HISTORY.md`'s 2026-07-25 entry).
+4. Two small follow-up refinements (2026-07-26): the groups card's technology
+   note-box now names AR + VBT explicitly, plus a dedicated technology exam-tip; the
+   ageing card's falls stat now has a visual highlight (new `.stat-flag` CSS class)
+   instead of sitting as a plain bullet.
+5. **Table formatting was redesigned** for mobile + aesthetics: topic-coloured
+   headers (via a `--accent` CSS custom property per topic card) and a CSS-only
+   responsive "stacked card" layout below ~640px (`data-label` attributes on every
+   `<td>`) — nothing gets cut off on a phone anymore.
+6. **A local pdhpe.net cache was set up**: `pdhpe-net-cache/` at the repo root,
+   **gitignored, never committed** (hms.pdhpe.net is a commercial tutoring product,
+   not NESA's own material — this repo is public). It holds condensed, original-
+   wording notes for all 36 Y12 pages, organised to mirror the app's 9 topic cards,
+   backfilled from the 2026-07-25 re-review. **Check this before re-fetching any
+   hms.pdhpe.net page** — read its README first.
 
-**Done — Part C, Phase 2 (Y12 FA1 dot-point audit).** All 19 Y12 FA1 subtopics read
-against pdhpe.net (health/system/tech/community clusters, §C.2 mapping). Tech (4/4)
-and most of health/system were already well covered — no change. Confirmed real gaps,
-each traced to a specific NESA content point: (1) the "ATSI **+ one other group**"
-inequity requirement had no second group — added a rural &amp; remote case study
-(AIHW life-expectancy-by-remoteness data, verified via websearch); (2) "CVD, cancer
-**+ one other condition**" only had 2 of 3 — extended the existing disease table to a
-3rd column, Injury (AIHW youth-injury-mortality data, verified); (3) gender-specific
-sociological causes of risky behaviour (masculinity/beauty-standard norms) were
-missing; (4) the healthcare system's "future opportunities" content point (rural,
-ATSI, disability) had no content; (5) "healthcare vs prevention" spending trade-off
-was missing; (6) "current & emerging challenges" (wait times, workforce, privatisation)
-had no content; (7) added the syllabus's own named example, Healthy Cities Illawarra,
-to the community card's SDGs-in-action box (verified via websearch — WHO Healthy
-Cities movement, 1987 Australian pilot). +10 Practice MC (157 → 167: health 17→22,
-system 9→13, community 12→13). Verified: Node data check green (167 MC, Section II
-still sums to 56), browser pane — all 3 touched cards expand and render the new
-content correctly, Practice MC topic counts match (Health 22, System 13, Community
-13), no console errors.
-
-**Done — Y12 FA2 full dot-point audit (not in the original C.5 order — inserted at owner's
-request).** Phase 1 had only checked 3 of FA2's 17 subtopics individually (the ones with
-no obvious topic-card home); the other 14 had only been matched to a card **by name**,
-never actually read against pdhpe.net — exactly the risk §C.6 warns about. Owner asked
-for the same full audit FA1 got. All 14 remaining subtopics read individually and diffed
-against the 5 FA2 cards (`assess`/`training`/`groups`/`fuel`/`injury`). 10 of 14 were
-already well covered — no change (Pre-Exercise Questionnaire, Types of Training,
-Application/Relationships of Training Principles [principles matched but "apply to both
-aerobic AND strength" was thin — see below], Applied Strategies, Dietary Requirements,
-Sleep/Nutrition/Hydration, Recovery Strategies, Sporting Injury Prevention). Confirmed
-real gaps: (1) the syllabus's own named fitness tests, Yo-yo and Wingate, weren't listed
-— added to the `assess` card; (2) the "evaluate principles applied to **both** aerobic
-**and** strength training" content point wanted an explicit side-by-side, not just a
-list of principles — added a 6-row aerobic-vs-strength table to `training`; (3) "Factors
-that influence how strategies/tactics are applied" (nature of sport, skill level,
-environmental conditions, opposition, team cohesion, communication, fatigue) was an
-**entire content point with zero prior coverage** — added a full note-box to `groups`;
-(4) "Drug use — health implications, ethics, drug testing" only had one line about
-painkillers, missing the WADA/TUE/PED side entirely — added two note-boxes to `injury`
-(verified via websearch: WADA sets the Prohibited List, TUE criteria). +8 Practice MC
-(167 → 175: assess 11→13, training 22→24, groups 26→28, injury 28→30). Verified: Node
-data check green (175 MC, Section II still 56, Section III still 2 FA1 + 2 FA2), browser
-pane — all 4 touched cards expand/render correctly, Practice MC counts confirmed
-on-screen (Assessment 13, Injury 30), no console errors.
-
-**Immediate correction, same day.** Owner spotted a real miss: the Fitness Testing
-page's "Benefits" slide had returned as a bare heading from `get_page_text` (no bullet
-content — see the new C.6 rule above), and the audit wrongly assumed the app's existing
-table already covered it. It didn't — rewrote the "Why fitness testing differs by
-athlete" table to the syllabus's actual 3-category framework (Health Monitoring/
-Motivation & Goal Setting/Program Design vs Performance Optimisation/Talent
-Identification/Injury Prevention & Recovery), renamed "Yo-yo test" to its precise name
-**Yo-Yo Intermittent Recovery Test**, +2 Practice MC (175 → 177, assess 13→15).
-
-**Done — full accordion-based re-review of all 36 Y12 pages (owner-requested,
-2026-07-25).** Owner clarified that "review using MCP" meant systematically re-checking
-the actual pdhpe.net content pages with the Browser MCP's visual/DOM tools — not a
-styling comparison of the hub page. This surfaced a **systemic gap in the audit method
-itself**: every pdhpe.net subpage uses a Bootstrap accordion (`.accordion-title` /
-`.accordion-collapse` / `.accordion-body`) that is collapsed by default. `get_page_text`
-only reads what's already rendered/visible, so every prior pass (Phase 2, the Y12 FA2
-audit) had been reading collapsed-accordion boilerplate (headings + "Example(s)" +
-NESA glossary, repeated per slide) while missing the actual explanatory paragraphs
-underneath each accordion item — a much bigger miss than the single image-only slide
-caught the session before. Fixed by running
-`document.querySelectorAll('.accordion-title').forEach(t => t.click())` via
-`javascript_exec` on every page before `get_page_text` — this expands all items at once
-and reveals the real content in one extraction. (Genuine image-only slides, e.g.
-population-group comparison tables, still show only "See table below" even after
-expanding — those still need a screenshot if pursued.)
-
-Re-read all 19 FA1 + 17 FA2 pages this way. Confirmed corrections (primary source wins):
-**ageing projection** "1 in 4 (25%) by 2050" replaces the previous "~22% by the 2060s"
-(itself a Phase-1 correction of an even earlier ATAR Notes error — ABS's own published
-series vary 25–28% by 2051–2071 depending on base year, so pdhpe.net's stated figure was
-adopted); **hydration protocol** rewritten to the mL/kg-based framework pdhpe.net states
-(5–10 mL/kg 2–4 hrs pre, 400–800 mL/hr during, 125–150% of loss post) replacing vague
-fixed volumes. One suspected conflict (carb-loading ">60 min" on pdhpe.net vs the app's
-existing ">90 min") was checked against general sports-science sources and found to be a
-false alarm — the app's two-box structure (in-event fuel at >60 min vs true carb-loading
-at >90 min) was already more precise than pdhpe.net's own single-threshold framing; no
-change made.
-
-Confirmed real content gaps and filled them: equity-vs-equality distinction; Primary
-Health Networks + ACCHO example; expanded complementary-healthcare products/services list
-+ regulation caution; critical-health-consumer "red flags" checklist; climate/environmental
-health as an emerging system challenge; "Closing the Gap" campaign + Healthy Cities
-Illawarra's actual SDG-by-SDG breakdown; sex-specific leading causes of death (coronary
-heart disease → males, dementia → females); a full "healthy ageing" section (WHO
-definition, opportunities, named strategies — Find Your 30, My Aged Care, Home Care
-Packages, Men's Sheds); a new individual-vs-group **yearly training program** table (the
-syllabus's own "Compare" content point had only ever been covered by a single exam-tip
-line); the **HARM** acronym (Heat/Alcohol/Running/Massage) paired with RICER; **strict
-liability** + Sport Integrity Australia in the drug-testing content; named pre-exercise
-screening tools (APEST, PAR-Q+) and "contraindications"; protein dosage figures
-(0.8 g/kg baseline, 1.2–1.8 g/kg for hypertrophy). +13 Practice MC (177 → 190). Verified:
-Node data check green (190 MC, all valid, Section II still sums to 56, Section III still
-2 FA1 + 2 FA2, 9 tables with matching data-labels); browser pane — all 9 topic cards
-expand and render correctly (including the new yearly-program table, confirmed via
-`getBoundingClientRect`), Practice MC counts spot-checked on-screen match Node exactly
-(Health 24, Injury 32), no console errors.
-
-**Lesson folded into the method for Y11 (Phases 3–4 below):** always run the
-accordion-expand script before `get_page_text` on any hms.pdhpe.net page. A heading with
-no content after expansion (not before) is the real signal for "this is an image, go
-screenshot it."
+**Open, undecided item — do not build without confirming first:** a per-topic
+"Revision Questions" feature. pdhpe.net's own end-of-page revision questions aren't
+mapped anywhere in the app (Practice MC is multiple-choice, a different format;
+Written Help is 3 generic scaffolds, not organised per-topic). If this gets picked up:
+pdhpe.net has no official answer key (every page says "Sample answers coming soon"),
+so any model answers would need to be written originally — same process as every
+other written question in this tool (syllabus dot points + NESA glossary verbs for
+structure, the app's own verified facts for content, independent source-checks for any
+new numeric claim).
 
 **Not started — Phases 3–7, in this order (per C.5):**
 3. **Y11 FA1 build** — 15 new subtopics, no topic cards exist yet for these. Cross-check
