@@ -326,6 +326,7 @@
       .back-btn { width: 44px; height: 44px; }
       .mode-card { padding: 20px 18px; }
       .seg-btn { padding: 9px 10px; }
+      .study-card-header { min-height: 52px; }
     }
 
     /* ── RESET MODAL ── */
@@ -364,6 +365,65 @@
     .model-answer { background: var(--surface2); border: 1px solid var(--border); border-left: 3px solid var(--accent3); border-radius: 11px; padding: 14px; margin-top: 14px; font-size: 13px; line-height: 1.6; color: var(--text); display: none; }
     .model-answer.show { display: block; animation: fadeUp 0.25s ease; }
     .model-answer-label { font-family: var(--font-display); font-size: 10px; font-weight: 700; letter-spacing: 2px; color: var(--accent3); text-transform: uppercase; margin-bottom: 8px; }
+
+    /* ── STUDY MODE & EXAM MODE ── */
+    .study-card { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; margin-bottom: 12px; overflow: hidden; }
+    .study-card-header { padding: 14px 16px; display: flex; align-items: center; gap: 10px; cursor: pointer; background: var(--surface2); border-left: 4px solid var(--study-accent, var(--accent)); }
+    .study-card-icon { font-size: 20px; flex-shrink: 0; }
+    .study-card-title { font-family: var(--font-display); font-size: 14px; font-weight: 700; color: var(--text); flex: 1; }
+    .study-card-chevron { color: var(--muted); font-size: 13px; transition: transform 0.2s; flex-shrink: 0; }
+    .study-card.open .study-card-chevron { transform: rotate(180deg); }
+    .study-card.locked { opacity: 0.5; }
+    .study-card.locked .study-card-header { cursor: pointer; }
+    .study-card.locked .study-card-chevron { font-size: 14px; }
+    .study-card-body { display: none; padding: 4px 16px 16px; }
+    .study-card.open .study-card-body { display: block; animation: fadeUp 0.2s ease; }
+    .study-note-box { margin-bottom: 12px; }
+    .study-note-box h4 { font-family: var(--font-display); font-size: 12px; font-weight: 700; color: var(--accent); text-transform: uppercase; letter-spacing: 0.4px; margin: 0 0 6px; }
+    .study-note-box ul { margin: 0; padding-left: 18px; font-size: 13px; line-height: 1.6; color: var(--text); }
+    .study-note-box li { margin-bottom: 4px; }
+    .study-note-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px; }
+    @media (max-width: 600px) { .study-note-grid { grid-template-columns: 1fr; } }
+    .study-note-grid .study-note-box { margin-bottom: 0; }
+    .stat-flag { background: #FEF3C7; color: #92400E; padding: 2px 6px; border-radius: 4px; font-weight: 700; }
+    .study-image-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 12px; }
+    @media (max-width: 600px) { .study-image-grid { grid-template-columns: 1fr; } }
+    .study-image-grid .study-image-wrap { margin-bottom: 0; }
+    .study-image-wrap { background: var(--surface2); border-radius: 12px; padding: 14px; margin-bottom: 12px; text-align: center; }
+    .study-image-wrap h4 { font-family: var(--font-display); font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.4px; color: var(--muted); margin: 0 0 10px; }
+    .study-image-wrap img { max-width: 100%; height: auto; border-radius: 10px; display: block; margin: 0 auto; box-shadow: 0 6px 16px rgba(0,0,0,0.18); cursor: zoom-in; }
+    .study-image-caption { font-size: 11px; color: var(--muted); margin-top: 8px; font-style: italic; line-height: 1.4; }
+    /* Table block — mirrors the proven responsive pattern from olivier-hms-exam-prep.html's .dtable */
+    .study-table-scroll { margin-bottom: 12px; }
+    .study-dtable { width: 100%; border-collapse: collapse; font-size: 13px; background: var(--surface); border-radius: 10px; overflow: hidden; }
+    .study-dtable caption { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.4px; color: var(--muted); padding-bottom: 8px; text-align: left; white-space: normal; }
+    .study-dtable th { background: var(--study-accent, var(--accent)); color: #fff; padding: 10px 12px; text-align: left; font-size: 11px; text-transform: uppercase; letter-spacing: 0.4px; vertical-align: top; }
+    .study-dtable td { padding: 10px 12px; border-top: 1px solid var(--border); vertical-align: top; line-height: 1.45; }
+    .study-dtable td:first-child { font-weight: 700; }
+    .study-dtable tbody tr:nth-child(even) { background: var(--surface2); }
+    @media (min-width: 641px) { .study-table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; } .study-dtable { min-width: 480px; } }
+    @media (max-width: 640px) {
+      .study-dtable, .study-dtable caption, .study-dtable thead, .study-dtable tbody, .study-dtable tr, .study-dtable th, .study-dtable td { display: block; }
+      .study-dtable { border-radius: 0; }
+      .study-dtable thead { display: none; }
+      .study-dtable tbody tr { background: var(--surface) !important; border: 1px solid var(--border); border-radius: 12px; overflow: hidden; margin-bottom: 10px; }
+      .study-dtable tbody tr:last-child { margin-bottom: 0; }
+      .study-dtable td { border-top: 1px solid var(--border); }
+      .study-dtable td:first-child { background: var(--study-accent, var(--accent)); color: #fff; border-top: none; border-radius: 12px 12px 0 0; }
+      .study-dtable td:not(:first-child)::before { content: attr(data-label); display: block; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.4px; opacity: 0.6; margin-bottom: 3px; }
+    }
+    .study-exam-tip { margin-top: 10px; padding: 12px 14px; background: rgba(193,125,60,0.08); border-left: 3px solid var(--accent); border-radius: 10px; font-size: 13px; line-height: 1.6; color: var(--text); }
+    .study-exam-tip strong { display: block; font-family: var(--font-display); font-size: 11px; text-transform: uppercase; letter-spacing: 0.4px; color: var(--accent); margin-bottom: 4px; }
+    .scaffold-card { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 16px; margin-bottom: 14px; }
+    .scaffold-badge { display: inline-block; padding: 4px 10px; background: rgba(91,127,166,0.12); border: 1px solid var(--accent3); color: var(--accent3); border-radius: 20px; font-family: var(--font-display); font-size: 11px; font-weight: 700; margin-bottom: 10px; }
+    .scaffold-intro { font-size: 12px; color: var(--muted); line-height: 1.5; margin-bottom: 12px; }
+    .scaffold-step { display: flex; gap: 10px; margin-bottom: 12px; }
+    .scaffold-step-num { width: 22px; height: 22px; border-radius: 50%; background: var(--accent3); color: white; font-family: var(--font-display); font-size: 12px; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .scaffold-step-content h5 { font-family: var(--font-display); font-size: 13px; font-weight: 700; margin: 0 0 4px; color: var(--text); }
+    .scaffold-step-content p { font-size: 13px; line-height: 1.5; color: var(--text); margin: 0 0 6px; }
+    .wh-anchor { font-size: 12px; background: var(--surface2); border-radius: 8px; padding: 8px 10px; line-height: 1.5; color: var(--muted); }
+    .wh-anchor strong { display: block; color: var(--accent3); margin-bottom: 3px; font-family: var(--font-display); font-size: 10px; text-transform: uppercase; }
+    .scaffold-expand-btn { width: 100%; padding: 11px; background: var(--surface2); border: 1px solid var(--border); border-radius: 10px; font-family: var(--font-display); font-size: 13px; font-weight: 700; color: var(--accent3); cursor: pointer; margin-top: 4px; }
 
     /* Year filter chips in quiz */
     .quiz-filters { padding: 10px 20px 0; display: flex; gap: 6px; overflow-x: auto; scrollbar-width: none; }
@@ -698,7 +758,7 @@ const SUBJECTS = {
     name: 'HMS — PDHPE Depth Study',
     icon: '🏃',
     accent: '#7B9E6B',
-    hasMC: true, hasWritten: true,
+    hasMC: true, hasWritten: true, hasStudy: true,
     getMC: (filters) => {
       const FA1 = ['classification','assessment','management','rehabilitation','returnplay','concussion'];
       const FA2 = ['fa2_assessment','fa2_methods','fa2_principles','fa2_adaptations','fa2_periodisation','fa2_nutrition','fa2_psychology','fa2_individual_group','fa2_sleep'];
@@ -779,6 +839,11 @@ function goHome() {
 // ── PICKER ──
 let pickerFilters = {};
 let mathsQuestionSet = 'original'; // 'original' = HSC 90, 'extended' = all 318 with variants
+// Study/Exam Mode front-page toggle (subjects with hasStudy only, e.g. HMS).
+// Not reset on every openPicker() call — persists across a session so
+// backToPicker() returns to whichever side the student was last on.
+let pickerViewMode = 'study'; // 'study' | 'exam' — Study Mode is the front page on first visit
+let studySection = 'notes';   // 'notes' | 'help' — nested toggle within Study Mode
 
 async function openPicker(subjectKey) {
   currentSubjectKey = subjectKey;
@@ -807,6 +872,32 @@ function renderPicker() {
   const trialLeft = _trialId ? Math.max(0, TRIAL_LIMIT - getTrialCount(_trialId)) : TRIAL_LIMIT;
   if (inTrial) isPracticeMode = true; // trial = practice mode only
 
+  let html = '';
+
+  // Subjects with Study content (HMS only, for now) land on a Study Mode /
+  // Exam Mode front page instead of going straight to the quiz picker.
+  // Exam Mode's content below is exactly today's picker, unchanged.
+  if (s.hasStudy) {
+    html += `<div class="filter-row"><div class="seg-control" id="seg-viewmode"><div class="seg-slider"></div>
+      <button class="seg-btn ${pickerViewMode === 'study' ? 'active' : ''}" data-val="study" onclick="switchPickerView('study')">📚 Study Mode</button>
+      <button class="seg-btn ${pickerViewMode === 'exam' ? 'active' : ''}" data-val="exam" onclick="switchPickerView('exam')">🎯 Exam Mode</button>
+    </div></div>`;
+  }
+
+  if (s.hasStudy && pickerViewMode === 'study') {
+    html += renderStudyModeHtml();
+    document.getElementById('picker-body').innerHTML = html;
+    requestAnimationFrame(() => positionAllSliders(false));
+    return;
+  }
+
+  html += renderExamModeHtml(s, inTrial, trialLeft);
+  document.getElementById('picker-body').innerHTML = html;
+  // Position all sliders after initial render (no animation on first paint)
+  requestAnimationFrame(() => positionAllSliders(false));
+}
+
+function renderExamModeHtml(s, inTrial, trialLeft) {
   let html = '';
 
   // ── Question Set toggle (Maths only) ──
@@ -973,14 +1064,11 @@ function renderPicker() {
       </div>`;
     }
   }
-
-  document.getElementById('picker-body').innerHTML = html;
-  // Position all sliders after initial render (no animation on first paint)
-  requestAnimationFrame(() => positionAllSliders(false));
+  return html;
 }
 
 function positionAllSliders(animate) {
-  ['seg-year','seg-topic','seg-assess'].forEach(id => slideToActive(id, animate));
+  ['seg-year','seg-topic','seg-assess','seg-viewmode','seg-studysection'].forEach(id => slideToActive(id, animate));
 }
 
 function slideToActive(ctrlId, animate = true) {
@@ -1161,6 +1249,151 @@ function backToPicker() {
   } else {
     openPicker(currentSubjectKey);
   }
+}
+
+// ══════════════════════════════════════════════════════════════════════════════
+// STUDY MODE — topic notes + generic written-answer scaffolds ("Writing Help").
+// This is one side of the Study Mode / Exam Mode front-page toggle rendered by
+// renderPicker() for subjects with hasStudy (HMS only, for now); Exam Mode is
+// today's existing quiz picker (renderExamModeHtml()), unchanged. Free-preview
+// gating, not the usual all-or-nothing trial lock: the first Notes topic is
+// always free so non-subscribers get a real taste of the content; the
+// remaining topics and all of Writing Help require a subscription (the same
+// subscription that unlocks Exam Mode's Test Mode/Written Response/etc).
+// Locked content's HTML is never rendered into the DOM.
+// ══════════════════════════════════════════════════════════════════════════════
+const STUDY_FREE_TOPIC_COUNT = 1;
+
+function isStudyLocked() {
+  const subjectId = SUBJECT_CATALOGUE.find(sub => sub.quizKey === currentSubjectKey)?.id;
+  return subjectId ? !canAccessViaSubscription(subjectId) : false;
+}
+
+function switchPickerView(mode) {
+  pickerViewMode = mode;
+  renderPicker();
+}
+
+function switchStudySection(section) {
+  studySection = section;
+  renderPicker();
+}
+
+function renderStudyModeHtml() {
+  return `
+    <div class="filter-row"><div class="seg-control" id="seg-studysection"><div class="seg-slider"></div>
+      <button class="seg-btn ${studySection === 'notes' ? 'active' : ''}" data-val="notes" onclick="switchStudySection('notes')">📖 Notes</button>
+      <button class="seg-btn ${studySection === 'help' ? 'active' : ''}" data-val="help" onclick="switchStudySection('help')">✍️ Writing Help</button>
+    </div></div>
+    ${studySection === 'notes' ? renderStudyNotesHtml() : renderWritingHelpHtml()}
+  `;
+}
+
+function renderStudyImage(img) {
+  return `<div class="study-image-wrap">
+    ${img.title ? `<h4>${img.title}</h4>` : ''}
+    <img src="${img.src}" alt="${img.alt || ''}" loading="lazy" onclick="openLightbox('${img.src}')">
+    ${img.caption ? `<div class="study-image-caption">${img.caption}</div>` : ''}
+  </div>`;
+}
+
+function renderStudyBlock(block) {
+  if (block.type === 'noteGrid') {
+    const boxesHtml = block.boxes.map(nb => `<div class="study-note-box"><h4>${nb.heading}</h4>${nb.html}</div>`).join('');
+    return block.boxes.length > 1 ? `<div class="study-note-grid">${boxesHtml}</div>` : boxesHtml;
+  }
+  if (block.type === 'image') return renderStudyImage(block);
+  if (block.type === 'imageGrid') return `<div class="study-image-grid">${block.images.map(renderStudyImage).join('')}</div>`;
+  if (block.type === 'table') {
+    return `<div class="study-table-scroll"><table class="study-dtable">
+      ${block.caption ? `<caption>${block.caption}</caption>` : ''}
+      <thead><tr>${block.headers.map(h => `<th>${h}</th>`).join('')}</tr></thead>
+      <tbody>
+        ${block.rows.map(row => `<tr>${row.map(cell => `<td${cell.label ? ` data-label="${cell.label}"` : ''}>${cell.html}</td>`).join('')}</tr>`).join('')}
+      </tbody>
+    </table></div>`;
+  }
+  return '';
+}
+
+function renderStudyNotesHtml() {
+  const notes = subjectCache[currentSubjectKey]?.studyNotes || [];
+  if (!notes.length) {
+    return '<div style="text-align:center;padding:40px 20px;color:var(--muted);font-size:13px">Study notes aren\'t available for this subject yet.</div>';
+  }
+  const locked = isStudyLocked();
+  return notes.map((topic, i) => {
+    const topicLocked = locked && i >= STUDY_FREE_TOPIC_COUNT;
+    if (topicLocked) {
+      return `
+      <div class="study-card locked">
+        <div class="study-card-header" onclick="openSubscribeModal()">
+          <span class="study-card-icon">${topic.icon || '📖'}</span>
+          <span class="study-card-title">${topic.title}</span>
+          <span class="study-card-chevron">&#128274;</span>
+        </div>
+      </div>`;
+    }
+    return `
+      <div class="study-card" id="study-card-${i}" style="--study-accent:${topic.accentColor || 'var(--accent)'}">
+        <div class="study-card-header" onclick="toggleStudyCard(${i})">
+          <span class="study-card-icon">${topic.icon || '📖'}</span>
+          <span class="study-card-title">${topic.title}</span>
+          <span class="study-card-chevron">▾</span>
+        </div>
+        <div class="study-card-body">
+          ${(topic.blocks || []).map(renderStudyBlock).join('')}
+          ${topic.examTips.map(tip => `<div class="study-exam-tip"><strong>⚡ Exam Tip${tip.label ? ' — ' + tip.label : ''}</strong>${tip.html}</div>`).join('')}
+        </div>
+      </div>`;
+  }).join('') + (locked ? `
+    <div style="text-align:center;padding:16px 12px;color:var(--muted);font-size:12px">
+      🔒 ${notes.length - STUDY_FREE_TOPIC_COUNT} more topics unlock with a subscription.
+      <button onclick="openSubscribeModal()" style="display:block;margin:12px auto 0;background:var(--accent);color:white;border:none;border-radius:11px;padding:12px 20px;font-family:var(--font-display);font-size:13px;font-weight:700;cursor:pointer">Choose subjects &amp; subscribe →</button>
+    </div>` : '');
+}
+
+function toggleStudyCard(i) {
+  document.getElementById('study-card-' + i).classList.toggle('open');
+}
+
+function renderWritingHelpHtml() {
+  if (isStudyLocked()) {
+    return `<div style="text-align:center;padding:40px 20px 20px">
+      <div style="font-size:40px;margin-bottom:12px">🔒</div>
+      <div style="font-family:var(--font-display);font-size:15px;font-weight:700;color:var(--text);margin-bottom:6px">Writing Help is a subscriber feature</div>
+      <div style="font-size:12px;color:var(--muted);margin-bottom:20px;line-height:1.5">Unlock all 3 answer-writing scaffolds — short, extended &amp; extended response — plus every Study Mode topic.</div>
+      <button onclick="openSubscribeModal()" style="background:var(--accent);color:white;border:none;border-radius:11px;padding:14px;width:100%;max-width:320px;font-family:var(--font-display);font-size:14px;font-weight:700;cursor:pointer">Choose subjects &amp; subscribe →</button>
+    </div>`;
+  }
+  const scaffolds = subjectCache[currentSubjectKey]?.writingScaffolds || [];
+  if (!scaffolds.length) {
+    return '<div style="text-align:center;padding:40px 20px;color:var(--muted);font-size:13px">Writing help isn\'t available for this subject yet.</div>';
+  }
+  return scaffolds.map(sc => `
+    <div class="scaffold-card">
+      <span class="scaffold-badge">${sc.label}</span>
+      <div class="scaffold-intro">${sc.introNote}</div>
+      ${sc.steps.map((step, i) => `
+        <div class="scaffold-step">
+          <div class="scaffold-step-num">${i + 1}</div>
+          <div class="scaffold-step-content">
+            <h5>${step.heading}</h5>
+            ${step.html}
+          </div>
+        </div>
+      `).join('')}
+      <button class="scaffold-expand-btn" onclick="toggleScaffoldModel('model-${sc.id}')">👁 Show ${sc.modelAnswerLabel}</button>
+      <div id="model-${sc.id}" class="model-answer">
+        <div class="model-answer-label">Model Answer</div>
+        ${sc.modelAnswer}
+      </div>
+    </div>
+  `).join('');
+}
+
+function toggleScaffoldModel(id) {
+  document.getElementById(id).classList.toggle('show');
 }
 
 // ══════════════════════════════════════════════════════════════════════════════

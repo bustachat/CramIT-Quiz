@@ -188,7 +188,7 @@ cramit-quiz/
 ├── subjects/                   ← ✅ All question data lives here (one JSON per subject)
 │   ├── index.json              ← List of subject files (⚠️ informational only — the app hardcodes subjects in SUBJECT_ID_MAP/SUBJECT_CATALOGUE)
 │   ├── mathematics-standard-2.json    ← 318 MC + 151 written + 73 tips
-│   ├── pdhpe-hms.json                 ← 165 MC + 35 written
+│   ├── pdhpe-hms.json                 ← 165 MC + 35 written + studyNotes (9 topics) + writingScaffolds (3 mark-band scaffolds) — prototype content for the Study & Writing Help mode-card (index.html, HMS only, see §11)
 │   ├── multimedia.json                ← 60 MC + 29 written
 │   └── vet-construction.json          ← 75 MC + 23 written
 ├── docs/
@@ -371,6 +371,7 @@ Do NOT use Supabase Storage for diagrams (retired `exam-images` bucket) or the o
 { "id": "mathematics-standard-2", "name": "Mathematics Standard 2", "icon": "📐", "accentColor": "#C17D3C",
   "mcQuestions": [ /* MC objects */ ], "writtenQuestions": [ /* written objects */ ], "tips": { /* Formula Hint data, Maths only */ } }
 ```
+**Study & Writing Help (HMS only, prototype — see §11):** `pdhpe-hms.json` additionally has `studyNotes: [ { id, icon, title, focusArea, noteBoxes: [{heading, html}], examTips: [{label, html}] } ]` and `writingScaffolds: [ { id, label, introNote, steps: [{heading, html}], modelAnswerLabel, modelAnswer } ]`. Rendered by `index.html`'s `#study-view` (a sibling to `#picker`/`#quiz`, not a quiz mode) via `openStudyView()`/`renderStudyNotesHtml()`/`renderWritingHelpHtml()`. `validate_subjects.cjs` ignores these keys (permissive of unknown top-level keys) — no validator changes were needed.
 
 ### Written question stimulus text — never re-extract from PDFs
 All NESA PDF text/block positions for written questions are pre-extracted into `written_q_extracts.json` (repo root). **Always read this file first** — re-extracting from a PDF wastes tokens every session. Content rule: plain text → `q` field; diagram → `<img>` tag embedded inline in `q`, `image` field set `null`; table → `<table>` HTML reconstructed from the extract data; no SVGs, always crop from the PDF as JPG.
@@ -415,6 +416,7 @@ All NESA PDF text/block positions for written questions are pre-extracted into `
 | Cross-device progress sync (`user_progress`) | ✅ Done |
 | Cloudflare Function auth + subject entitlement DB enforcement | ✅ Done |
 | Multimedia/HMS "Extended" variant question generation | ⬜ Pending — decision + rules in `docs/HISTORY.md` |
+| Study & Writing Help mode (HMS prototype) | 🔶 Built 2026-07-26 — HMS only, text-only (no diagrams/revision-Q&A yet), gated same as other premium modes. Not yet extended to Maths/Multimedia/VET. |
 | `landing.html` — public marketing/conversion page | ⬜ Not started — needed for organic signups |
 | `portal.html` — desktop web portal (Stage 10) | ⬜ Not started |
 | Agent infrastructure (Stage 9) | 🔶 Phase 1 Content Agent built (2026-07-04, PR-only, awaiting API key secret) — rest of roster not started, see `docs/agents-plan.md` |
@@ -479,6 +481,6 @@ At 1,000 active subscribers: ~$105/mo in AI + infra costs (≈1.3% of revenue).
 
 ---
 
-*CLAUDE.md — CramIT Project — Last updated: 2026-07-04 — Content Agent rebuilt (triage + generation, PR-only, nightly via content-agent.yml); earlier same day: restructured, session history moved to docs/HISTORY.md.*
+*CLAUDE.md — CramIT Project — Last updated: 2026-07-26 — Study & Writing Help mode-card added to index.html (HMS prototype, §6/§10/§11); earlier: Content Agent rebuilt (triage + generation, PR-only, nightly via content-agent.yml); before that: restructured, session history moved to docs/HISTORY.md.*
 *Repo: https://github.com/bustachat/CramIT-Quiz*
 *Supabase: https://ohqtefjawaphtsebnaxg.supabase.co*
