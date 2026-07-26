@@ -14,10 +14,12 @@
 structure, FA2 depth ported, content-accuracy audit done). **Part C: all of Year 12
 (both focus areas, all 36 subtopics) is now fully audited against the primary syllabus
 source using a verified-correct method — this is the first time that's been true.**
-Bank stands at **190 Practice MC** (started at 93). Full session-by-session narrative
-of how it got here is in `docs/HISTORY.md` (2026-07-22 through 2026-07-26 entries) —
-read it if you want the *why* behind any specific piece of content; this handover only
-covers what a fresh session needs to keep moving.
+Bank stands at **190 Practice MC** (started at 93). **The Revision Questions feature
+(previously flagged as undecided) is now built and shipped** — see the item below,
+formerly "Open, undecided item," which is no longer open. Full session-by-session
+narrative of how it got here is in `docs/HISTORY.md` (2026-07-22 through 2026-07-26
+entries) — read it if you want the *why* behind any specific piece of content; this
+handover only covers what a fresh session needs to keep moving.
 
 **What happened, compressed:**
 1. Phase 1 (Y12 FA2 gap-fill, 3 subtopics) → Phase 2 (Y12 FA1, all 19 subtopics) → a
@@ -51,15 +53,16 @@ covers what a fresh session needs to keep moving.
    backfilled from the 2026-07-25 re-review. **Check this before re-fetching any
    hms.pdhpe.net page** — read its README first.
 
-**Open, undecided item — do not build without confirming first:** a per-topic
-"Revision Questions" feature. pdhpe.net's own end-of-page revision questions aren't
-mapped anywhere in the app (Practice MC is multiple-choice, a different format;
-Written Help is 3 generic scaffolds, not organised per-topic). If this gets picked up:
-pdhpe.net has no official answer key (every page says "Sample answers coming soon"),
-so any model answers would need to be written originally — same process as every
+**✅ DONE (2026-07-26) — Revision Questions feature.** Owner confirmed: lives inside
+each existing Study topic-card accordion (not a new tab) as a "Revision Questions —
+test yourself" block, click-to-reveal; built for all 9 Y12 topic cards in one pass.
+74 original model answers written (2–3 curated per pdhpe.net content point, not every
+listed prompt) since pdhpe.net has no official answer key — same process as every
 other written question in this tool (syllabus dot points + NESA glossary verbs for
-structure, the app's own verified facts for content, independent source-checks for any
-new numeric claim).
+structure, the app's own already-verified facts for content, no new unverified numeric
+claims introduced). Engine: `.revision-block`/`.revision-item` CSS + `toggleRevision()`
+JS, inserted as the last element in each `.topic-body`. Full detail in `docs/HISTORY.md`
+2026-07-26 entry.
 
 **Not started — Phases 3–7, in this order (per C.5):**
 3. **Y11 FA1 build** — 15 new subtopics, no topic cards exist yet for these. Cross-check
