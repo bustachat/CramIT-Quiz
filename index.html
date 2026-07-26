@@ -378,8 +378,8 @@
     .study-card.locked .study-card-chevron { font-size: 14px; }
     .study-card-body { display: none; padding: 4px 16px 16px; }
     .study-card.open .study-card-body { display: block; animation: fadeUp 0.2s ease; }
-    .study-note-box { margin-bottom: 12px; }
-    .study-note-box h4 { font-family: var(--font-display); font-size: 12px; font-weight: 700; color: var(--accent); text-transform: uppercase; letter-spacing: 0.4px; margin: 0 0 6px; }
+    .study-note-box { background: var(--surface2); border-radius: 10px; padding: 12px; margin-bottom: 12px; }
+    .study-note-box h4 { font-family: var(--font-display); font-size: 12px; font-weight: 700; color: var(--study-accent, var(--accent)); text-transform: uppercase; letter-spacing: 0.4px; margin: 0 0 6px; }
     .study-note-box ul { margin: 0; padding-left: 18px; font-size: 13px; line-height: 1.6; color: var(--text); }
     .study-note-box li { margin-bottom: 4px; }
     .study-note-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px; }
@@ -414,6 +414,18 @@
     }
     .study-exam-tip { margin-top: 10px; padding: 12px 14px; background: rgba(193,125,60,0.08); border-left: 3px solid var(--accent); border-radius: 10px; font-size: 13px; line-height: 1.6; color: var(--text); }
     .study-exam-tip strong { display: block; font-family: var(--font-display); font-size: 11px; text-transform: uppercase; letter-spacing: 0.4px; color: var(--accent); margin-bottom: 4px; }
+    .study-eg-box { margin-top: 10px; padding: 12px 14px; background: rgba(91,127,166,0.08); border-left: 3px solid var(--accent3); border-radius: 10px; font-size: 13px; line-height: 1.6; color: var(--text); }
+    .study-eg-box strong { display: block; font-family: var(--font-display); font-size: 11px; text-transform: uppercase; letter-spacing: 0.4px; color: var(--accent3); margin-bottom: 4px; }
+    .study-revision-block { margin-top: 14px; background: var(--surface2); border-radius: 10px; padding: 12px 14px; }
+    .study-revision-block h4 { font-family: var(--font-display); font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.4px; color: var(--muted); margin: 0 0 4px; }
+    .study-revision-item { border-bottom: 1px solid var(--border); }
+    .study-revision-item:last-child { border-bottom: none; }
+    .study-revision-q { display: flex; justify-content: space-between; align-items: center; gap: 10px; cursor: pointer; padding: 9px 2px; font-size: 13px; font-weight: 600; line-height: 1.4; color: var(--text); }
+    .study-rev-chevron { flex-shrink: 0; opacity: 0.45; font-size: 11px; transition: transform 0.2s; }
+    .study-revision-item.open .study-rev-chevron { transform: rotate(180deg); }
+    .study-revision-a { max-height: 0; overflow: hidden; transition: max-height 0.25s ease; }
+    .study-revision-item.open .study-revision-a { max-height: 400px; }
+    .study-revision-a-inner { padding: 2px 2px 12px; font-size: 13px; line-height: 1.6; color: var(--muted); }
     .scaffold-card { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 16px; margin-bottom: 14px; }
     .scaffold-badge { display: inline-block; padding: 4px 10px; background: rgba(91,127,166,0.12); border: 1px solid var(--accent3); color: var(--accent3); border-radius: 20px; font-family: var(--font-display); font-size: 11px; font-weight: 700; margin-bottom: 10px; }
     .scaffold-intro { font-size: 12px; color: var(--muted); line-height: 1.5; margin-bottom: 12px; }
@@ -1292,7 +1304,7 @@ function renderStudyModeHtml() {
 function renderStudyImage(img) {
   return `<div class="study-image-wrap">
     ${img.title ? `<h4>${img.title}</h4>` : ''}
-    <img src="${img.src}" alt="${img.alt || ''}" loading="lazy" onclick="openLightbox('${img.src}')">
+    <img src="${img.src}" alt="${img.alt || ''}" loading="lazy" onclick="openLightbox('${img.src}')"${img.style ? ` style="${img.style}"` : ''}>
     ${img.caption ? `<div class="study-image-caption">${img.caption}</div>` : ''}
   </div>`;
 }
@@ -1312,6 +1324,12 @@ function renderStudyBlock(block) {
         ${block.rows.map(row => `<tr>${row.map(cell => `<td${cell.label ? ` data-label="${cell.label}"` : ''}>${cell.html}</td>`).join('')}</tr>`).join('')}
       </tbody>
     </table></div>`;
+  }
+  if (block.type === 'examTip') {
+    return `<div class="study-exam-tip"><strong>⚡ Exam Tip${block.label ? ' — ' + block.label : ''}</strong>${block.html}</div>`;
+  }
+  if (block.type === 'linkIt') {
+    return `<div class="study-eg-box"><strong>🔗 Link it</strong>${block.html}</div>`;
   }
   return '';
 }
@@ -1343,7 +1361,7 @@ function renderStudyNotesHtml() {
         </div>
         <div class="study-card-body">
           ${(topic.blocks || []).map(renderStudyBlock).join('')}
-          ${topic.examTips.map(tip => `<div class="study-exam-tip"><strong>⚡ Exam Tip${tip.label ? ' — ' + tip.label : ''}</strong>${tip.html}</div>`).join('')}
+          ${renderStudyRevisionBlock(topic, i)}
         </div>
       </div>`;
   }).join('') + (locked ? `
@@ -1355,6 +1373,23 @@ function renderStudyNotesHtml() {
 
 function toggleStudyCard(i) {
   document.getElementById('study-card-' + i).classList.toggle('open');
+}
+
+function renderStudyRevisionBlock(topic, topicIdx) {
+  const qs = topic.revisionQuestions || [];
+  if (!qs.length) return '';
+  return `<div class="study-revision-block">
+    <h4>Revision Questions — test yourself</h4>
+    ${qs.map((rq, qIdx) => `
+      <div class="study-revision-item" id="study-rev-${topicIdx}-${qIdx}">
+        <div class="study-revision-q" onclick="toggleStudyRevision(${topicIdx},${qIdx})">${rq.q}<span class="study-rev-chevron">▾</span></div>
+        <div class="study-revision-a"><div class="study-revision-a-inner">${rq.a}</div></div>
+      </div>`).join('')}
+  </div>`;
+}
+
+function toggleStudyRevision(topicIdx, qIdx) {
+  document.getElementById(`study-rev-${topicIdx}-${qIdx}`).classList.toggle('open');
 }
 
 function renderWritingHelpHtml() {

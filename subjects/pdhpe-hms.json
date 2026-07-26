@@ -3850,7 +3850,8 @@
           "src": "/diagrams/pdhpe-hms_study_determinants-rainbow.jpg",
           "alt": "Determinants of health rainbow — from age/sex core outwards to lifestyle, community, living/working conditions, and general socio-economic/environmental conditions",
           "title": "Determinants of Health",
-          "caption": "Inner layers (age, sex) can't be changed; outer layers (work, education, housing) can — and drive most inequity."
+          "caption": "Inner layers (age, sex) can't be changed; outer layers (work, education, housing) can — and drive most inequity.",
+          "style": null
         },
         {
           "type": "noteGrid",
@@ -3992,12 +3993,69 @@
               "html": "<ul>\n<li><b>Masculinity norms</b> — social pressure to appear tough can push males toward smoking, heavy drinking or violence</li>\n<li><b>Beauty standards</b> — pressure to conform can push females toward unhealthy dieting, smoking (as appetite control) or excessive weight-control practices</li>\n<li>Both are <b>socio-cultural determinants</b> — a strong link for an \"explain the sociological causes\" question</li>\n</ul>"
             }
           ]
-        }
-      ],
-      "examTips": [
+        },
         {
+          "type": "examTip",
           "label": "",
           "html": "Don't confuse <b>prevalence</b> (all existing cases) with <b>incidence</b> (new cases only). Extended questions on health inequity want the <b>determinants</b> (rainbow) linked to a <b>vulnerable group</b> and a concrete action to close the gap. Remember the \"one other group\" question can ask about rural/remote, low-SES, CALD, disability <b>or</b> older people — rural/remote is the safest one to know in depth since it's the syllabus's own example."
+        },
+        {
+          "type": "linkIt",
+          "html": "Rural isolation (a socio-economic determinant) → fewer services + more injury risk → higher mortality → telehealth &amp; outreach clinics are the targeted action that reduces the gap."
+        }
+      ],
+      "revisionQuestions": [
+        {
+          "q": "Explain how mortality patterns differ between males and females in Australia.",
+          "a": "Coronary heart disease is currently the leading cause of death for males, while dementia is currently the leading cause for females (AIHW). This sex difference reflects different risk-factor profiles (e.g. higher historical smoking/cardiovascular risk in males) combined with females' longer average life expectancy, which increases exposure to age-related conditions like dementia."
+        },
+        {
+          "q": "Analyse the sociological causes of risky health behaviours.",
+          "a": "Risky behaviours are often driven by socio-cultural expectations rather than individual failure. Masculinity norms can pressure males to \"tough it out\" — avoiding doctors and coping through heavy drinking or aggression — while beauty standards can push females toward unhealthy dieting or smoking for appetite control. Both show how social determinants shape behaviour, which is why effective interventions target norms and environments, not just individuals."
+        },
+        {
+          "q": "Describe an action that could reduce a health inequity for a vulnerable group.",
+          "a": "For rural and remote Australians, expanding telehealth and rural outreach clinics directly targets the determinant causing the inequity — distance from GPs and specialists — by bringing consultation and follow-up care to the patient instead of requiring travel, which reduces delayed diagnosis and treatment."
+        },
+        {
+          "q": "Analyse how determinants of health interact to disadvantage Aboriginal and Torres Strait Islander Peoples.",
+          "a": "Determinants compound rather than act in isolation. Historical dispossession and intergenerational trauma reduced access to education and stable employment; this in turn contributes to overcrowded housing and limited access to culturally safe, geographically accessible services; the combined effect is a life-expectancy gap of around 8 years and 2.3 times the burden of disease compared with non-Indigenous Australians."
+        },
+        {
+          "q": "Justify the effectiveness of a strategy to improve ATSI health status.",
+          "a": "Aboriginal Community Controlled Health Organisations are effective because they directly address cultural safety — one of the specific causes underpinning the inequity — by being community-led and culturally appropriate, which tends to build trust and improve service uptake compared with mainstream-only healthcare."
+        },
+        {
+          "q": "Compare the health inequities faced by ATSI Peoples and rural/remote Australians.",
+          "a": "Both groups share overlapping causes — distance from services and socio-economic disadvantage — but ATSI inequity carries an additional historical and cultural dimension (colonisation, intergenerational trauma, systemic racism) that the general rural population does not experience. The two overlap heavily, since many remote communities are also predominantly Aboriginal, compounding both sets of determinants at once."
+        },
+        {
+          "q": "Explain why Australia ranks highly for life expectancy among OECD countries.",
+          "a": "Australia benefits from universal healthcare (Medicare), effective public health campaigns (anti-smoking, cancer screening, immunisation), relatively high health expenditure per capita, an education system that supports health literacy, and high overall living standards (safe water, sanitation, food regulation)."
+        },
+        {
+          "q": "Describe a strategy from another OECD country that could be applied in Australia.",
+          "a": "Finland embeds health literacy, mental health and physical activity directly into its school curriculum. Applying this more deeply in Australian schools could build health literacy earlier — particularly benefiting lower socio-economic students who have less exposure to health information outside school."
+        },
+        {
+          "q": "Describe the risk and protective factors for cardiovascular disease, cancer and injury.",
+          "a": "CVD — risk: smoking, high blood pressure, obesity, family history; protective: healthy diet, low cholesterol, reduced stress. Cancer — risk: socio-economic disadvantage, smoking, obesity; protective: healthy diet/activity, sun protection, vaccination, early screening. Injury — risk: alcohol, speeding/distraction, unsafe workplaces, falls risk in older age; protective: road-safety laws and seatbelts, workplace safety standards, fall-prevention programs."
+        },
+        {
+          "q": "Discuss how the burden of youth injury mortality has changed over time.",
+          "a": "Unintentional-injury deaths among 15–24 year-olds fell from about 18 to 12 per 100,000 between 2007 and 2019, largely due to tightened road-safety laws. Despite this improvement, injury remains the leading cause of death in this age group, showing that reducing a rate doesn't eliminate a health priority."
+        },
+        {
+          "q": "Define healthy ageing and its key domains.",
+          "a": "The WHO defines healthy ageing as the process of developing and maintaining the functional ability that enables wellbeing in older age. Its domains are physical health, mental/cognitive health, social wellbeing, and supportive environments (e.g. accessible housing, transport, age-friendly communities)."
+        },
+        {
+          "q": "Explain factors contributing to Australia's ageing population.",
+          "a": "Rising life expectancy combined with declining fertility is shifting Australia's age structure toward older ages. About 1 in 6 Australians are currently aged 65+, and this is projected to reach about 1 in 4 by 2050."
+        },
+        {
+          "q": "Discuss a challenge and a strategy addressing Australia's ageing population.",
+          "a": "A key challenge is that falls are the leading cause of injury-related death for older Australians, worsened by multimorbidity (2+ chronic conditions). Falls-prevention programs and Home Care Packages address this by reducing fall risk in the home while supporting people to keep living independently rather than moving prematurely into higher-care settings."
         }
       ]
     },
@@ -4135,12 +4193,61 @@
               "html": "<ul>\n<li><b>Rising wait times</b> for GP appointments and emergency departments as demand grows</li>\n<li><b>Workforce shortages</b>, especially GPs and specialists in rural/regional areas</li>\n<li><b>Privatisation debate</b> — moving services to private providers can speed access for some but risks equity for those who can't pay</li>\n<li><b>Ageing population &amp; rising chronic disease</b> increase long-term demand and cost pressure on the system</li>\n<li><b>Climate &amp; environmental health</b> (emerging) — extreme heat, air quality and disaster-related trauma are increasingly factored into public health planning</li>\n</ul>"
             }
           ]
-        }
-      ],
-      "examTips": [
+        },
         {
+          "type": "examTip",
           "label": "",
           "html": "Learn the three lenses — <b>sustainability, access, equity</b> — and be able to judge any scheme (or challenge, like privatisation, ageing, or rising chronic disease) against all three. Person-centred care = government + NGOs collaborating (e.g. Headspace, subsidised flu vaccinations)."
+        }
+      ],
+      "revisionQuestions": [
+        {
+          "q": "Analyse the challenges different groups face accessing Australia's healthcare system.",
+          "a": "Distance limits access for rural and remote Australians; cultural safety barriers affect Aboriginal and Torres Strait Islander Peoples; physical and service gaps affect people with disability. Future opportunities target each directly — expanded telehealth and rural incentives, more Aboriginal Community Controlled Health Services, and a full NDIS rollout."
+        },
+        {
+          "q": "Explain the difference between equity and equality in healthcare access.",
+          "a": "Equality means everyone receives the same treatment. Equity means people get what they individually need for a fair outcome — for example, a rural patient may need a telehealth service rather than the same single in-person GP visit offered to a city patient."
+        },
+        {
+          "q": "Compare the responsibilities of federal, state and local government in healthcare.",
+          "a": "Federal government funds Medicare, the PBS and public hospitals via agreements with the states. State/territory governments run public hospitals and emergency, mental health and community health services. Local governments handle environmental health such as food safety inspections and water quality."
+        },
+        {
+          "q": "Discuss how non-government organisations share responsibility for healthcare with government.",
+          "a": "NGOs such as Beyond Blue provide personalised, community-based support for issues like mental health, often funded partly by government. This complements government's role of providing overall structure, funding and policy — together covering needs neither could meet alone."
+        },
+        {
+          "q": "Outline how government and non-government organisations collaborate to provide person-centred healthcare.",
+          "a": "Primary Health Networks link government funding with non-government providers to plan and deliver locally appropriate care — for example, a PHN funding a local Aboriginal Community Controlled Health Organisation to deliver culturally appropriate care to its community."
+        },
+        {
+          "q": "Justify the need for government and non-government collaboration in healthcare.",
+          "a": "Government provides funding, infrastructure and broad policy reach, while NGOs provide localised, culturally responsive delivery on the ground. Together, as seen in programs like Headspace, they reach populations more effectively than either could alone."
+        },
+        {
+          "q": "Analyse Medicare's impact on current and future populations.",
+          "a": "Medicare, funded by the Medicare levy and general taxation, currently provides free or subsidised GP visits and public hospital care, supporting equitable access. As the population ages and chronic disease becomes more common, its future impact depends on balancing this universal access against rising demand and cost pressures."
+        },
+        {
+          "q": "Discuss the balance between healthcare and prevention spending.",
+          "a": "Only a small share of total health expenditure — roughly 1 to 2% — goes to prevention, despite prevention generally being more cost-effective long-term than treating illness after it has already occurred. This imbalance is a recurring theme in \"current challenges\" questions."
+        },
+        {
+          "q": "Describe examples of complementary healthcare and how they are used.",
+          "a": "Practices such as acupuncture, yoga and naturopathy are used alongside, not instead of, conventional medicine — as a preventative measure (e.g. yoga for stress management), to help treat a health issue (e.g. acupuncture for chronic pain), or as a supplement to medical treatment during recovery."
+        },
+        {
+          "q": "Explain the importance of being a critical health consumer.",
+          "a": "With unregulated health products and misinformation common, especially on social media, consumers need to check who is providing information and why, look for evidence-based claims, and watch for red flags like \"miracle cure\" language — otherwise they risk wasting money on or being harmed by unproven products."
+        },
+        {
+          "q": "Analyse the impact of privatisation as a challenge for the healthcare system.",
+          "a": "Moving services such as aged care or pathology to private providers can speed up access for those who can pay, but risks reduced equity and more fragmented care for those who can't — a direct trade-off against the sustainability/access/equity framework used to judge the system."
+        },
+        {
+          "q": "Discuss an emerging challenge facing Australia's healthcare system.",
+          "a": "Climate and environmental health is an emerging challenge — extreme heat, poor air quality and disaster-related trauma are increasingly being factored into public health planning, alongside more established pressures like rising GP/ED wait times and workforce shortages."
         }
       ]
     },
@@ -4169,7 +4276,8 @@
           "src": "/diagrams/pdhpe-hms_study_tech-hexagon.jpg",
           "alt": "Hexagon: Measure, Communicate, Monitor, Early diagnosis, Precision, Assist all surround Technology",
           "title": "Six roles of technology in healthcare",
-          "caption": "Measure (Fitbits) · Communicate (telehealth) · Monitor (smart inhalers) · Early diagnosis (AI imaging) · Precision (robotic surgery) · Assist (3D-printed implants)"
+          "caption": "Measure (Fitbits) · Communicate (telehealth) · Monitor (smart inhalers) · Early diagnosis (AI imaging) · Precision (robotic surgery) · Assist (3D-printed implants)",
+          "style": null
         },
         {
           "type": "table",
@@ -4210,12 +4318,41 @@
               }
             ]
           ]
-        }
-      ],
-      "examTips": [
+        },
         {
+          "type": "examTip",
           "label": "",
           "html": "For any tech, weigh a <b>benefit against a challenge</b> (e.g. telehealth widens rural access <i>but</i> the digital divide excludes some). Privacy answers should name a real safeguard: encryption, documented consent, role-based access, regular audits."
+        }
+      ],
+      "revisionQuestions": [
+        {
+          "q": "Explain the six roles technology plays in improving health.",
+          "a": "Measure (wearables like Fitbits tracking heart rate and steps), Communicate (telehealth consultations), Monitor (smart inhalers, continuous glucose monitors), Early diagnosis (AI reading medical imaging), Precision (robotic-assisted surgery), and Assist (3D-printed implants and prosthetics)."
+        },
+        {
+          "q": "Discuss AI's role in healthcare treatment and diagnosis.",
+          "a": "AI reads medical imaging to detect conditions like cancer or heart disease earlier and more accurately than manual review alone, supports drug discovery, and automates administrative tasks — reducing pressure on overworked clinicians while speeding up diagnosis and treatment planning."
+        },
+        {
+          "q": "Justify the effectiveness of a new health technology.",
+          "a": "My Health Record is effective because it directly addresses the inefficiency of fragmented, paper-based records — giving GPs, hospitals and pharmacists a shared digital summary of a patient's history, which reduces repeat testing and improves coordination of care."
+        },
+        {
+          "q": "Evaluate the effectiveness of digital health at connecting health information.",
+          "a": "Tools like My Health Record and ePrescriptions have improved coordination and reduced errors, but effectiveness is limited by inconsistent updating by some professionals and gaps where services aren't fully integrated — so digital health helps significantly but isn't yet a seamless system."
+        },
+        {
+          "q": "Discuss a challenge digital health poses for individuals or organisations.",
+          "a": "The digital divide is a key challenge — people without digital literacy, devices or reliable internet access, especially in remote areas, can be excluded from digital health services rather than benefiting from them, widening rather than closing existing health inequities."
+        },
+        {
+          "q": "Explain how big data is used to reduce health spending.",
+          "a": "Predictive analytics flag at-risk patients for earlier, cheaper intervention instead of late-stage treatment, and reduce unnecessary or duplicate testing — improving the overall efficiency of how health resources are allocated across the system."
+        },
+        {
+          "q": "Describe how privacy is protected when big data is used in healthcare.",
+          "a": "Health databases must comply with the Privacy Act 1988 and My Health Records Act 2012, using de-identification of data, encryption, restricted/role-based access controls and regular audits to protect patient information."
         }
       ]
     },
@@ -4310,12 +4447,33 @@
               "html": "<ul>\n<li><b>SDG 3</b> — remote telehealth programs in <b>outback Australia</b> and rural Africa have widened health access</li>\n<li><b>SDG 4</b> — community education campaigns in sexual health &amp; nutrition across <b>South-East Asia</b> have lowered disease rates</li>\n<li><b>SDG 10</b> — social services in <b>Sweden</b> have narrowed the life-expectancy gap between low- and high-income groups; in Australia, the <b>Closing the Gap</b> campaign targets health, education and economic inequalities between First Nations and non-Indigenous Australians (also a real-world SDG 3 action)</li>\n<li><b>SDG 11</b> — green cities like <b>Copenhagen</b> have reduced pollution and obesity-related illness</li>\n<li><b>Local example — Healthy Cities Illawarra:</b> one of the original 1987 Australian pilot sites for the WHO's global Healthy Cities movement; still runs today across Wollongong, Kiama, Shellharbour &amp; the Shoalhaven. Maps directly onto the 4 SDGs — <b>SDG 3</b>: physical activity/nutrition/mental health programs; <b>SDG 4</b>: health literacy workshops in schools; <b>SDG 10</b>: targets low-income families, Aboriginal communities and new migrants; <b>SDG 11</b>: partners with councils on green spaces and walking paths</li>\n</ul>"
             }
           ]
-        }
-      ],
-      "examTips": [
+        },
         {
+          "type": "examTip",
           "label": "",
           "html": "A top answer names the <b>SDG</b>, states <b>how</b> it's applied with a real example (SDG 3 → remote telehealth in outback Australia; SDG 11 → green cities like Copenhagen), then says <b>how you'd evaluate it</b> — life expectancy, hospitalisation rates, disease prevalence."
+        }
+      ],
+      "revisionQuestions": [
+        {
+          "q": "Describe the key features of SDG 3 (Good Health & Wellbeing).",
+          "a": "SDG 3 aims for healthy lives and wellbeing at all ages — its key features include reducing maternal and child mortality, ending epidemics, achieving universal health coverage, reducing non-communicable disease and strengthening mental health services. In Australia this is seen in free vaccination programs and the Closing the Gap campaign."
+        },
+        {
+          "q": "Explain how SDG 4 relates to SDG 10.",
+          "a": "SDG 4 (Quality Education) raises health literacy, which supports better personal health decisions. SDG 10 (Reduced Inequalities) partly depends on that education reaching marginalised groups equally, so improving equitable education access is one of the levers that helps narrow health inequality."
+        },
+        {
+          "q": "Demonstrate the importance of the SDGs' interrelationship.",
+          "a": "The SDGs are designed to be interconnected — progress on education (SDG 4) supports health outcomes (SDG 3), while sustainable urban planning (SDG 11) supports both by improving access to green space and services. This shows health strategies work best when they address multiple SDGs together rather than in isolation."
+        },
+        {
+          "q": "Analyse the effectiveness of Healthy Cities Illawarra as a community health initiative.",
+          "a": "It addresses all four SDGs at once — physical activity and mental health programs (SDG 3), health-literacy workshops in schools (SDG 4), targeted support for low-income, Aboriginal and migrant communities (SDG 10), and council partnerships on green space and walking paths (SDG 11) — showing that multi-sector collaboration is central to its effectiveness."
+        },
+        {
+          "q": "Propose a strategy a community could use to advocate for its own health via the SDGs.",
+          "a": "A community could build multi-sector partnerships across health, education, housing and transport, prioritise community leadership (especially Aboriginal co-design), and focus on prevention and early intervention — the same approach Healthy Cities Illawarra uses, adaptable to whatever health issues are most pressing locally."
         }
       ]
     },
@@ -4378,12 +4536,37 @@
               }
             ]
           ]
-        }
-      ],
-      "examTips": [
+        },
         {
+          "type": "examTip",
           "label": "",
           "html": "The examiner wants the <b>purpose</b>, not just a list: screening reduces injury risk <i>and</i> personalises the plan. Recreational = motivation &amp; general goals; elite = precise, performance-tracking, injury-prevention. SMART goals make progress measurable."
+        }
+      ],
+      "revisionQuestions": [
+        {
+          "q": "Explain the importance of pre-exercise health screening.",
+          "a": "Tools like APEST and PAR-Q+ identify existing conditions, past injuries and risk factors before activity begins, reducing the risk of adverse events such as a cardiovascular incident. If a contraindication is found, the activity can be modified or delayed instead of causing harm."
+        },
+        {
+          "q": "Analyse how screening supports safe, personalised training.",
+          "a": "By revealing an individual's health history and risk factors, screening lets a program be matched to their age, fitness level and physical limitations, lowering injury risk, while also giving a baseline reading to measure future improvement against."
+        },
+        {
+          "q": "Compare fitness testing for recreational versus elite athletes.",
+          "a": "For recreational athletes, testing focuses on health monitoring, motivation and goal setting, and safe program design. For elite athletes, it focuses on performance optimisation, talent identification, and injury prevention and recovery, using more precise sport-specific data like VO₂ max or anaerobic threshold."
+        },
+        {
+          "q": "Describe the Yo-Yo test and the Wingate test.",
+          "a": "The Yo-Yo Intermittent Recovery Test uses shuttle runs paced by a beep, with a short active-recovery jog between each, measuring aerobic fitness and repeated-effort capacity under fatigue — useful for team sports. The Wingate test is a maximal 30-second cycle sprint against fixed resistance, measuring anaerobic power and fatigue index."
+        },
+        {
+          "q": "Explain how exercise assessment assists the development of training programs.",
+          "a": "Baseline testing of cardiovascular endurance, strength, flexibility and body composition establishes a starting point, enables SMART goal setting, and informs which training method suits the athlete (e.g. low anaerobic power might indicate sprint interval training). Regular reassessment then tracks improvement and allows intensity to be adjusted."
+        },
+        {
+          "q": "Analyse the importance of identifying contraindications during assessment.",
+          "a": "A contraindication is a health or risk factor meaning an activity should be modified or delayed for safety. Identifying it prevents an unsafe program being built around a risk the athlete or coach wasn't otherwise aware of, which is central to a screening tool's purpose."
         }
       ]
     },
@@ -4412,7 +4595,8 @@
           "src": "/diagrams/pdhpe-hms_study_anaerobic-vs-aerobic.jpg",
           "alt": "Aerobic pathway (oxygen required, fats and carbohydrates, sustained lower-intensity output — jogging, cycling, swimming) vs anaerobic pathway (no oxygen required, stored glucose, explosive high-intensity output — sprinting, jumping, lifting)",
           "title": "Aerobic vs anaerobic pathway",
-          "caption": "Aerobic = oxygen-fuelled, sustained (jogging, cycling, swimming). Anaerobic = stored glucose, explosive (sprinting, jumping, lifting)."
+          "caption": "Aerobic = oxygen-fuelled, sustained (jogging, cycling, swimming). Anaerobic = stored glucose, explosive (sprinting, jumping, lifting).",
+          "style": null
         },
         {
           "type": "noteGrid",
@@ -4434,13 +4618,15 @@
               "src": "/diagrams/pdhpe-hms_study_dynamic-vs-static-stretching.jpg",
               "alt": "Dynamic stretch (involves movement, end position isn't held, best performed before a workout) vs static stretch (positions held for a period of time, best performed after a workout)",
               "title": "Dynamic vs static stretching",
-              "caption": "Dynamic = before (movement-based). Static = after (hold & recover)."
+              "caption": "Dynamic = before (movement-based). Static = after (hold & recover).",
+              "style": "max-height:165px;width:auto"
             },
             {
               "src": "/diagrams/pdhpe-hms_study_pnf.jpg",
               "alt": "PNF stretching diagram — contract the muscle 3-5 seconds, then relax and stretch further 10-30+ seconds, using autogenic and reciprocal inhibition",
               "title": "PNF stretching",
-              "caption": "Contract (3–5s) → relax → stretch further (10–30+s). Greatest ROM gains; used in rehab & elite training."
+              "caption": "Contract (3–5s) → relax → stretch further (10–30+s). Greatest ROM gains; used in rehab & elite training.",
+              "style": "max-height:165px;width:auto"
             }
           ]
         },
@@ -4660,12 +4846,41 @@
               }
             ]
           ]
-        }
-      ],
-      "examTips": [
+        },
         {
+          "type": "examTip",
           "label": "",
           "html": "Static = AFTER, dynamic = BEFORE, PNF = greatest ROM. For adaptations, always finish the chain: <i>overload → cardiac hypertrophy → ↓ resting HR → sustain high intensity longer.</i> Naming the adaptation alone won't score the top band. The 12-marker links <b>principle → adaptation → performance</b>. If asked to evaluate a principle across aerobic <b>and</b> strength training, always give one concrete example from each — don't just define the principle once."
+        }
+      ],
+      "revisionQuestions": [
+        {
+          "q": "Compare HIIT and SIT.",
+          "a": "HIIT (high-intensity interval training) uses bursts at roughly 85–95% max heart rate with incomplete recovery between efforts. SIT (sprint interval training) uses all-out maximal sprints with longer rest periods — both are anaerobic, but SIT trades volume for near-maximal intensity on each individual effort."
+        },
+        {
+          "q": "Evaluate the effectiveness of plyometric training for a chosen sport.",
+          "a": "Plyometrics (jumping, bounding) develops explosive power and agility, making it highly effective for sports needing rapid direction change and jump height, such as volleyball or netball. Its high-impact nature means it should be introduced gradually and combined with adequate recovery to manage injury risk."
+        },
+        {
+          "q": "Explain progressive overload applied to strength training.",
+          "a": "Gradually increasing resistance, sets or reps forces continued adaptation — for example, an athlete increasing their squat load by 5kg each fortnight so muscles keep being challenged beyond their current capacity rather than plateauing."
+        },
+        {
+          "q": "Describe reversibility applied to strength training.",
+          "a": "Strength and muscle size decline once training stops or is significantly reduced, as the body no longer needs to maintain the adaptation. This shows why consistent training matters more than any single high-intensity session."
+        },
+        {
+          "q": "Justify the need for variety in aerobic training programs.",
+          "a": "Rotating continuous, fartlek and interval sessions prevents staleness and boredom, and reduces overuse-injury risk from always stressing the same muscles and joints the same way — while still developing the aerobic system overall."
+        },
+        {
+          "q": "Analyse the relationship between progressive overload, hypertrophy and performance.",
+          "a": "Progressive overload stresses muscle fibres beyond their current capacity, triggering muscle hypertrophy (fibre growth) as the body adapts. Larger, stronger fibres then improve force production and power output, directly improving performance in strength and power-based sports."
+        },
+        {
+          "q": "Discuss how increased stroke volume and oxygen uptake improve performance.",
+          "a": "Aerobic training increases stroke volume (more blood pumped per heartbeat) and VO₂ max (oxygen uptake capacity). Together these improve oxygen delivery to working muscles, allowing an athlete to sustain higher-intensity effort for longer before fatiguing."
         }
       ]
     },
@@ -4696,13 +4911,15 @@
               "src": "/diagrams/pdhpe-hms_study_macrocycle.jpg",
               "alt": "Macrocycle divided into mesocycles, then microcycles, then training days",
               "title": "Cycles of a yearly program",
-              "caption": null
+              "caption": null,
+              "style": null
             },
             {
               "src": "/diagrams/pdhpe-hms_study_peaking-tapering.jpg",
               "alt": "Graph: training volume drops (taper) while performance rises to a peak across preparation, competition and transition phases",
               "title": "Peaking & tapering",
-              "caption": null
+              "caption": null,
+              "style": null
             }
           ]
         },
@@ -4888,16 +5105,50 @@
               "html": "<ul>\n<li><b>Training innovations</b> — resistance bands, reaction lights, altitude chambers, force plates; <b>VR (virtual reality) &amp; AR (augmented reality)</b> simulate game scenarios to sharpen decision-making, reaction time and tactical awareness without physical fatigue; <b>smart resistance machines &amp; VBT (velocity-based training)</b> adjust resistance in real time based on the athlete's force output to target specific muscular adaptations</li>\n<li><b>Equipment advances</b> — carbon-fibre running shoes, aerodynamic helmets, smart textiles, anti-gravity treadmills → reduce resistance/injury load or allow earlier-stage training</li>\n<li><b>Recording &amp; monitoring</b> — GPS trackers &amp; wearables (load, speed, heart rate), video analysis (technique correction), live data dashboards (real-time coaching decisions)</li>\n<li><b>Considerations</b> — cost and access can widen the gap between elite and grassroots athletes; data can be misread without a coach's expertise</li>\n</ul>"
             }
           ]
-        }
-      ],
-      "examTips": [
+        },
         {
+          "type": "examTip",
           "label": "the role &amp; impact of technology",
           "html": "Don't just list devices — argue their <b>role</b>: technology enhances skill acquisition (real-time feedback), individualises training (data-informed decisions) and manages load to cut injury risk. Then weigh the <b>impact</b> both ways — faster adaptation and precision <i>vs</i> cost/access inequity between elite and grassroots athletes, and the risk of over-relying on data without a coach's judgement. A strong answer names a specific technology (VR/AR, VBT, GPS) <b>and</b> links it to both a benefit and a limitation."
         },
         {
+          "type": "examTip",
           "label": "comparing yearly programs",
           "html": "The classic 12-marker compares a <b>yearly program for an individual vs a group athlete</b>. The single biggest difference is <b>competition frequency</b>: a marathon runner tapers ~2 weeks for one annual race; a soccer team peaks <i>every</i> week and can only use a short mini-taper. For the 5-marker, apply a <b>different</b> psychological strategy to each (individual = imagery + centred breathing; team = shared goals + group relaxation)."
+        }
+      ],
+      "revisionQuestions": [
+        {
+          "q": "Explain why peaking and tapering timing differs by sport.",
+          "a": "An individual athlete like a marathon runner tapers for around two weeks before a single annual event to peak once. A team-sport athlete competes weekly, so only a short mini-taper is possible between matches — \"peaking\" is managed match-to-match rather than built toward one key event."
+        },
+        {
+          "q": "Compare a yearly training program for an individual versus a group sport.",
+          "a": "Individual pre-season builds aerobic base, general strength and technique; group pre-season builds team fitness, tactical frameworks and trial games. In-season, the individual targets peaking for key events while the team maintains fitness and refines strategy week to week. Both use an off-season for recovery, but the team's is shorter and less individualised."
+        },
+        {
+          "q": "Explain the Inverted-U Hypothesis.",
+          "a": "Performance improves as arousal rises, up to an optimal point, then declines if arousal goes too high. The optimal level is sport- and skill-specific — high-intensity contact sports need higher arousal than precision sports like archery, and harder skills (e.g. a handstand) need lower arousal than simpler ones."
+        },
+        {
+          "q": "Analyse strategies for managing team stress and anxiety.",
+          "a": "Shared goal-setting and group relaxation techniques build collective composure under pressure, while clear communication and trust between teammates reduce the uncertainty that drives state anxiety in high-pressure moments, like a penalty shot or a last-minute play."
+        },
+        {
+          "q": "Discuss how opposition strengths and weaknesses shape strategy.",
+          "a": "Scouting an opponent informs tactic selection — in a group sport this might mean man-marking a key attacking player, while in an individual sport it might mean adjusting serve placement or pace based on a known opponent tendency."
+        },
+        {
+          "q": "Explain how physical conditioning and fatigue affect tactics late in a game.",
+          "a": "As players tire, complex tactics become harder to execute accurately, so coaches often simplify strategy late in a match and use rotations or substitutions to manage workload and maintain tactical discipline."
+        },
+        {
+          "q": "Explain the role of GPS trackers and video analysis in improving performance.",
+          "a": "GPS trackers record distance, speed and workload to individualise training load and manage injury risk, while video analysis lets coaches break down technique frame-by-frame for correction — turning training decisions from guesswork into data-informed choices."
+        },
+        {
+          "q": "Discuss a limitation of using technology to improve performance.",
+          "a": "Cost and access can widen the gap between elite and grassroots athletes who can't afford GPS or VBT systems, and data can be misread or over-relied on without a coach's expertise to interpret it in context."
         }
       ]
     },
@@ -4968,12 +5219,37 @@
               "html": "<ul>\n<li><b>Caffeine</b> — a CNS stimulant; ↓ perceived effort, delays fatigue in endurance events; but can raise heart rate, disrupt sleep and cause dependency/anxiety with overuse</li>\n<li><b>Micronutrients as supplements</b> — iron and vitamin D correct a diagnosed deficiency effectively; taken without one, they add little benefit and can be harmful in excess</li>\n<li>Overall: supplements work best <b>alongside</b> a good diet, not instead of one, and should be used under professional/medical guidance</li>\n</ul>"
             }
           ]
-        }
-      ],
-      "examTips": [
+        },
         {
+          "type": "examTip",
           "label": "",
           "html": "Every answer here should end in a <b>mechanism</b>: sleep → growth hormone → protein synthesis → repair; dehydration → ↓ blood volume → less O₂ to muscles → fatigue. \"It's important\" scores nothing without the <i>why</i>. For nutrition: <b>low-GI before, high-GI during/after</b>, and carb loading only works <b>with</b> a taper."
+        }
+      ],
+      "revisionQuestions": [
+        {
+          "q": "Analyse dietary requirements before, during and after performance.",
+          "a": "Pre-performance favours complex carbohydrates 3–4 hours before, using only familiar foods and tapering food size as the start nears. During performance, sports drinks provide glucose and electrolytes to sustain intensity and replace sweat losses. Post-performance focuses on replacing glycogen and fluid to begin recovery."
+        },
+        {
+          "q": "Explain carbohydrate loading and which athletes benefit from it.",
+          "a": "Carbohydrate loading combines a taper in training with a large complex-carbohydrate intake in the week before an event, maximising glycogen stores. It mainly benefits endurance events lasting longer than about 90 minutes, such as marathons, where glycogen depletion would otherwise limit performance late in the event."
+        },
+        {
+          "q": "Explain how sleep, nutrition and hydration reduce fatigue and prevent injury.",
+          "a": "Sleep supports muscle repair and hormonal balance — poor sleep slows reaction time and raises overuse-injury risk. Adequate protein, iron and calcium prevent deficiency-related fatigue and support bone and muscle recovery. Proper hydration maintains blood volume so oxygen keeps reaching working muscles, since even 2% fluid loss measurably reduces performance."
+        },
+        {
+          "q": "Propose a routine to manage sleep, nutrition and hydration around training.",
+          "a": "A pre-sleep routine (stretching, no screens 30–60 minutes before bed) with consistent sleep/wake times; pre-planned meals with protein and carbs timed within 30–60 minutes post-training; and a personalised hydration plan based on sweat rate, monitored via urine colour or pre/post-training weigh-ins."
+        },
+        {
+          "q": "Discuss appropriate use of protein supplementation for performance.",
+          "a": "Most people need only about 0.8g/kg/day, achievable through food. Resistance-training athletes chasing hypertrophy need roughly 1.2–1.8g/kg/day, still achievable through diet for most, so supplementation is mainly useful for post-training timing convenience or for vegetarians/vegans who need to combine plant protein sources carefully."
+        },
+        {
+          "q": "Explain the risks and benefits of caffeine as a performance supplement.",
+          "a": "As a central nervous system stimulant, caffeine lowers perceived effort and delays fatigue in endurance events. Overuse can raise heart rate, disrupt sleep and cause dependency or anxiety — so timing and dosage matter as much as the substance itself."
         }
       ]
     },
@@ -5002,7 +5278,8 @@
           "src": "/diagrams/pdhpe-hms_study_biomechanics-stride.jpg",
           "alt": "Comparison of a good running stride (foot strike near centre of mass, good knee flexion) vs an overstride (foot strike far from COM, high breaking force)",
           "title": "Biomechanics — good stride vs overstride",
-          "caption": null
+          "caption": null,
+          "style": null
         },
         {
           "type": "imageGrid",
@@ -5011,13 +5288,15 @@
               "src": "/diagrams/pdhpe-hms_study_injury-direct-indirect.jpg",
               "alt": "Direct injury from a ball to the head vs indirect ankle injury from twisting",
               "title": "Direct vs indirect",
-              "caption": null
+              "caption": null,
+              "style": null
             },
             {
               "src": "/diagrams/pdhpe-hms_study_injury-overuse.jpg",
               "alt": "Overuse injuries diagram showing bursitis and tendonitis in the foot/ankle",
               "title": "Overuse injuries",
-              "caption": null
+              "caption": null,
+              "style": null
             }
           ]
         },
@@ -5026,7 +5305,8 @@
           "src": "/diagrams/pdhpe-hms_study_injury-hard-soft.jpg",
           "alt": "Hard tissue (bone) injury vs soft tissue injury shown on a foot",
           "title": "Hard vs soft tissue",
-          "caption": null
+          "caption": null,
+          "style": null
         },
         {
           "type": "noteGrid",
@@ -5046,14 +5326,16 @@
           "src": "/diagrams/pdhpe-hms_study_ricer.jpg",
           "alt": "RICER: Rest, Ice, Compression, Elevation, Referral",
           "title": "RICER — soft-tissue management",
-          "caption": null
+          "caption": null,
+          "style": null
         },
         {
           "type": "image",
           "src": "/diagrams/pdhpe-hms_study_hard-tissue.jpg",
           "alt": "Dislocated humerus and fractured radius",
           "title": "Hard-tissue injuries",
-          "caption": null
+          "caption": null,
+          "style": null
         },
         {
           "type": "noteGrid",
@@ -5080,12 +5362,53 @@
               "html": "<ul>\n<li>The <b>World Anti-Doping Agency (WADA)</b> sets the banned-substance list; in Australia, <b>Sport Integrity Australia</b> carries out the testing</li>\n<li>A <b>Therapeutic Use Exemption (TUE)</b> lets an athlete use an otherwise-banned medication for a genuine diagnosed medical condition, if approved in advance</li>\n<li>Testing happens both in and out of competition, including biological passports that track markers over time</li>\n<li><b>Strict liability</b> — athletes are responsible for anything found in their body, even if the banned substance was taken accidentally (e.g. in a contaminated supplement)</li>\n</ul>"
             }
           ]
-        }
-      ],
-      "examTips": [
+        },
         {
+          "type": "examTip",
           "label": "",
           "html": "Know the acronyms cold — <b>TOTAPS, DRSABCD, RICER</b> — and the order they're used in. Never relocate a dislocation. Return-to-play answers must include <b>both</b> physical (functional testing) <b>and</b> psychological readiness. For drug use, cover all three angles the syllabus wants: health implications, ethics, and drug testing — not just painkillers."
+        }
+      ],
+      "revisionQuestions": [
+        {
+          "q": "Explain how biomechanics reduces injury risk in sport.",
+          "a": "Analysing technique — such as landing mechanics in jump sports or bar-path in weightlifting — identifies poor joint alignment or excess load, allowing correction before it causes strain. For example, adjusting a football player's jump-landing technique can reduce ACL injury risk."
+        },
+        {
+          "q": "Analyse how biomechanics develops efficient movement.",
+          "a": "Applying physics principles like force, speed and energy conservation to technique — for example correcting overstriding in a running gait, or adjusting shoulder angle in a tennis serve — reduces wasted energy, improving performance and injury prevention together."
+        },
+        {
+          "q": "Justify recovery strategies used for sustained movement and performance.",
+          "a": "Physiological strategies like a cool-down gradually lower heart rate and clear lactic acid, reducing blood pooling and stiffness. Psychological strategies like progressive muscle relaxation lower stress hormones and cognitive fatigue. Together they let an athlete recover fully between sessions rather than accumulating fatigue."
+        },
+        {
+          "q": "Describe how hydrotherapy aids recovery.",
+          "a": "Cold water immersion reduces inflammation and soreness; contrast water therapy alternates hot and cold to stimulate circulation via vasoconstriction and vasodilation; warm water or thermal spa relaxes muscles and supports mental recovery."
+        },
+        {
+          "q": "Explain how injuries are classified, with examples.",
+          "a": "Injuries are classified as direct (caused by an external force, e.g. a tackle) or indirect (caused by internal stress, e.g. a hamstring tear from sprinting), and as soft-tissue (RICER-managed, e.g. a sprain) or hard-tissue (e.g. a fracture, requiring immediate medical referral and never relocated on-field)."
+        },
+        {
+          "q": "Describe key rehabilitation stages after an injury.",
+          "a": "Progressive mobilisation restores range of movement pain-free; graduated exercise rebuilds strength using overload while avoiding muscle atrophy; total body fitness rebuilds general conditioning; training returns sport-specific skills, complete once a full pain-free session is achieved."
+        },
+        {
+          "q": "Justify the need for both RICER and HARM guidance in the first 48–72 hours.",
+          "a": "RICER (Rest, Ice, Compression, Elevation, Referral) actively limits swelling and bleeding, while HARM (avoid Heat, Alcohol, Running, Massage) prevents actions that would worsen bleeding and swelling during the same window — together they cover both what to do and what to avoid."
+        },
+        {
+          "q": "Discuss the ethical considerations of performance-enhancing drug use.",
+          "a": "PED use undermines fair competition and can pressure other athletes to use them just to stay competitive. It also sends a harmful message to young, impressionable athletes that success requires artificial enhancement rather than legitimate training."
+        },
+        {
+          "q": "Describe WADA's role in drug testing.",
+          "a": "The World Anti-Doping Agency sets the list of prohibited substances and methods internationally. In Australia, Sport Integrity Australia carries out the actual testing — in- and out-of-competition, random and targeted, including biological passports that track markers over time."
+        },
+        {
+          "q": "Explain the concept of strict liability in drug testing.",
+          "a": "Athletes are held responsible for any banned substance found in their body, even if it was taken accidentally — such as through a contaminated supplement — meaning there's no automatic excuse for a positive test. This is why a food-first, batch-tested approach to supplements matters."
         }
       ]
     }
