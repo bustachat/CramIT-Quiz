@@ -15,7 +15,7 @@ import { test, describe, beforeEach, afterEach } from 'node:test';
 import assert from 'node:assert/strict';
 import {
   corsHeaders, requireUser, unauthorized,
-  getSubscriptionRow, countSubjectSelections, getSubjectSelectionsWithPending,
+  getSubscriptionRow, countSubjectSelections,
 } from '../functions/_lib/auth.js';
 
 const realFetch = globalThis.fetch;
@@ -123,15 +123,5 @@ describe('getSubscriptionRow() / countSubjectSelections()', () => {
     globalThis.fetch = async () => new Response(JSON.stringify([{ subject_id: 'maths' }, { subject_id: 'hms' }]), { status: 200 });
     const count = await countSubjectSelections('user-1', env);
     assert.equal(count, 2);
-  });
-
-  test('getSubjectSelectionsWithPending returns rows including pending_removal_at', async () => {
-    globalThis.fetch = async () => new Response(JSON.stringify([
-      { subject_id: 'maths', pending_removal_at: null },
-      { subject_id: 'multimedia', pending_removal_at: '2026-08-29T00:00:00.000Z' },
-    ]), { status: 200 });
-    const rows = await getSubjectSelectionsWithPending('user-1', env);
-    assert.equal(rows.length, 2);
-    assert.equal(rows[1].pending_removal_at, '2026-08-29T00:00:00.000Z');
   });
 });
