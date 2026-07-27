@@ -9,7 +9,7 @@ import {
   getSubscriptionRow, countSubjectSelections,
 } from './_lib/auth.js';
 
-const PRICES = {
+export const PRICES = {
   base:      'price_1TEdRbPvnbx5MPYyExQIlaBK',
   extra:     'price_1TEdUJPvnbx5MPYy6luOiFjv',
   cap:       'price_1TEdW3Pvnbx5MPYykHvvk7gf',
@@ -92,7 +92,7 @@ export async function onRequestPost(context) {
   }
 }
 
-function getPlanType(n, mode) {
+export function getPlanType(n, mode) {
   const { BASE_INCLUDES, CAP_LIMIT, BASE_PRICE, EXTRA_PRICE, CAP_PRICE } = PRICING;
   if (n <= 1)             return 'free';
   if (n <= BASE_INCLUDES) return 'base';
@@ -103,7 +103,7 @@ function getPlanType(n, mode) {
   return 'unlimited';
 }
 
-function buildUpdatedItems(currentItems, nSubjects, planType) {
+export function buildUpdatedItems(currentItems, nSubjects, planType) {
   const { BASE_INCLUDES, CAP_LIMIT } = PRICING;
   const updated = [];
   const ids         = currentItems.map(i => i.price.id);
