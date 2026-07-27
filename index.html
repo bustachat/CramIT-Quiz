@@ -497,17 +497,29 @@
 </div>
 
 <!-- PROFILE SHEET -->
-<div class="sheet-backdrop" id="sheet-backdrop" onclick="closeProfileSheet()"></div>
+<div class="sheet-backdrop" id="sheet-backdrop" onclick="closeAllSheets()"></div>
 <div class="profile-sheet" id="profile-sheet">
   <div class="sheet-handle"></div>
   <div class="sheet-email" id="sheet-email"></div>
   <div class="sheet-plan" id="sheet-plan"></div>
+  <button class="sheet-btn" id="manage-subjects-btn" style="display:none" onclick="openManageSubjectsSheet()">
+    <span class="sheet-btn-icon">🎯</span> Manage subjects
+  </button>
   <button class="sheet-btn" onclick="closeProfileSheet();handleManageBilling()">
     <span class="sheet-btn-icon">💳</span> Billing &amp; subscription
   </button>
   <button class="sheet-btn danger" onclick="closeProfileSheet();handleSignOut()">
     <span class="sheet-btn-icon">↩︎</span> Sign out
   </button>
+</div>
+
+<!-- Manage subjects sheet — remove a subject from a paid plan -->
+<div class="profile-sheet" id="manage-subjects-sheet">
+  <div class="sheet-handle"></div>
+  <div class="sheet-email">Manage subjects</div>
+  <div class="sheet-plan" id="manage-subjects-summary"></div>
+  <div id="manage-subjects-list"></div>
+  <button class="sheet-btn" style="margin-top:4px;justify-content:center" onclick="closeManageSubjectsSheet()">Done</button>
 </div>
 
 <!-- HOME -->
@@ -2824,13 +2836,138 @@ function renderHomeAuth() {
   }
   // Header subscribe button — show only to non-subscribers
   const headerSubBtn = document.getElementById('header-subscribe-btn');
+  const isSubscribed = userSub.stripe_subscription_id && (userSub.status === 'active' || userSub.status === 'trialing');
   if (headerSubBtn) {
-    const isSubscribed = userSub.stripe_subscription_id && (userSub.status === 'active' || userSub.status === 'trialing');
     headerSubBtn.style.display = isSubscribed ? 'none' : 'block';
+  }
+  // Manage subjects — only meaningful for a paid subscriber with subjects to remove
+  const manageBtn = document.getElementById('manage-subjects-btn');
+  if (manageBtn) {
+    manageBtn.style.display = (isSubscribed && userSubjects.length > 0) ? 'flex' : 'none';
   }
 
   updateStats();
   renderSubjectList();
+}
+
+function closeAllSheets() {
+  document.getElementById('sheet-backdrop').classList.remove('open');
+  document.getElementById('profile-sheet').classList.remove('open');
+  document.getElementById('manage-subjects-sheet').classList.remove('open');
+}
+
+function openManageSubjectsSheet() {
+  renderManageSubjectsList();
+  document.getElementById('profile-sheet').classList.remove('open');
+  document.getElementById('sheet-backdrop').classList.add('open');
+  document.getElementById('manage-subjects-sheet').classList.add('open');
+}
+
+function closeManageSubjectsSheet() {
+  document.getElementById('manage-subjects-sheet').classList.remove('open');
+  document.getElementById('sheet-backdrop').classList.remove('open');
+}
+
+// ── RENDER MANAGE SUBJECTS LIST ───────────────────────────────
+function renderManageSubjectsList() {
+  const summary = document.getElementById('manage-subjects-summary');
+  const list    = document.getElementById('manage-subjects-list');
+  if (!list) return;
+  list.innerHTML = '';
+
+  if (!userSubjects.length) {
+    if (summary) summary.textContent = 'No subjects on your plan yet.';
+    return;
+  }
+
+  if (summary) {
+    summary.textContent = userSubjects.length <= 1
+      ? '1 subject · removing it will cancel your subscription'
+      : `${userSubjects.length} subjects on your plan`;
+  }
+
+  userSubjects.forEach(subjectId => {
+    const s = SUBJECT_CATALOGUE.find(x => x.id === subjectId);
+    const name = s ? s.name : subjectId;
+    const row = document.createElement('div');
+    row.style.cssText = 'display:flex;align-items:center;justify-content:space-between;gap:12px;padding:8px 2px;border-bottom:1px solid var(--border)';
+    row.innerHTML = `
+      <span style="font-family:var(--font-display);font-weight:600;font-size:14px;color:var(--text)">${name}</span>
+      <button style="background:none;border:1px solid #C15A3C;color:#C15A3C;border-radius:10px;padding:0 16px;min-height:44px;font-size:12px;font-weight:700;cursor:pointer;white-space:nowrap">Remove</button>
+    `;
+    row.querySelector('button').onclick = () => confirmRemoveSubject(subjectId, name);
+    list.appendChild(row);
+  });
+}
+
+// ── CONFIRM + REMOVE SUBJECT ──────────────────────────────────
+// Reuses the existing reset-modal (see showSubmitTestModal for the same
+// swap-handlers-then-restore pattern) instead of a native confirm() —
+// keeps the confirmation dialog visually consistent with the rest of the app.
+function confirmRemoveSubject(subjectId, name) {
+  const modal      = document.getElementById('reset-modal');
+  const title      = document.getElementById('reset-modal-title');
+  const body       = document.getElementById('reset-modal-body');
+  const okBtn      = document.getElementById('reset-modal-confirm');
+  const cancelBtn  = document.getElementById('reset-modal-cancel');
+  const isLastSubject = userSubjects.length <= 1;
+
+  title.textContent = `Remove ${name}?`;
+  body.textContent = isLastSubject
+    ? 'This is your only subject — removing it will cancel your subscription.'
+    : 'Your plan will be adjusted and any price difference prorated by Stripe.';
+  okBtn.textContent = 'Yes, remove';
+  cancelBtn.textContent = 'Cancel';
+
+  const prevOk = okBtn.onclick, prevCancel = cancelBtn.onclick, prevOverlay = modal.onclick;
+  function cleanup() {
+    modal.classList.remove('modal-visible');
+    okBtn.onclick = prevOk;
+    cancelBtn.onclick = prevCancel;
+    modal.onclick = prevOverlay;
+    title.textContent = 'Reset quiz?';
+    body.textContent  = "All your progress and answers will be lost. This can't be undone.";
+    okBtn.textContent = 'Yes, reset';
+    cancelBtn.textContent = 'Cancel';
+  }
+  okBtn.onclick     = async () => { cleanup(); await removeSubject(subjectId); };
+  cancelBtn.onclick = () => { cleanup(); };
+  modal.onclick     = (e) => { if (e.target === modal) cleanup(); };
+  modal.classList.add('modal-visible');
+}
+
+async function removeSubject(subjectId) {
+  if (!currentUser || !sbClient) return;
+  try {
+    const { error: delErr } = await sbClient.from('subject_selections')
+      .delete()
+      .eq('user_id', currentUser.id)
+      .eq('subject_id', subjectId);
+    if (delErr) {
+      console.error('Remove subject failed:', delErr);
+      alert('Could not remove subject — please try again.');
+      return;
+    }
+
+    if (userSub.plan !== 'free' && userSub.stripe_subscription_id) {
+      const res = await fetch('/update-subscription', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', ...(await authHeaders()) },
+        body: JSON.stringify({})
+      });
+      if (!res.ok) console.warn('[CramIT] update-subscription returned', res.status);
+    }
+
+    // Reload authoritative state from Supabase/Stripe rather than patching
+    // local state — removing the last subject cancels the whole
+    // subscription server-side, which local optimistic state can't predict.
+    await loadUserState();
+    renderHomeAuth();
+    renderManageSubjectsList();
+  } catch(e) {
+    console.error('Remove subject threw:', e);
+    alert('Could not remove subject. Please try again.');
+  }
 }
 
 function openProfileSheet() {

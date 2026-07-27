@@ -19,6 +19,9 @@ jobs:
         with:
           node-version: 22
 
+      - name: Install dependencies
+        run: npm install
+
       - name: Validate subject JSON structure
         run: node scripts/validate_subjects.cjs
 
@@ -29,3 +32,6 @@ jobs:
             echo "checking $f"
             node --check "$f"
           done
+
+      - name: Run billing function tests
+        run: npm test

@@ -4,7 +4,8 @@
   "description": "CramIT HSC Quiz — Cloudflare Pages Functions",
   "type": "module",
   "scripts": {
-    "build": "echo 'No build step required'"
+    "build": "echo 'No build step required'",
+    "test": "node --test tests/*.test.js"
   },
   "dependencies": {
     "stripe": "^14.0.0"
