@@ -80,3 +80,20 @@ export async function countSubjectSelections(userId, env) {
   const rows = await res.json();
   return rows.length;
 }
+
+// Fetch the authenticated user's subject rows including pending-removal
+// state (service-role read). A non-null pending_removal_at means the row
+// is scheduled to stop granting access at that timestamp (set to the
+// subscription's current_period_end when a downgrade is deferred) but
+// should NOT count toward the target subject count used to price the plan.
+export async function getSubjectSelectionsWithPending(userId, env) {
+  const url = `${env.SUPABASE_URL}/rest/v1/subject_selections?user_id=eq.${encodeURIComponent(userId)}&select=subject_id,pending_removal_at`;
+  const res = await fetch(url, {
+    headers: {
+      'apikey':        env.SUPABASE_SERVICE_ROLE_KEY,
+      'Authorization': `Bearer ${env.SUPABASE_SERVICE_ROLE_KEY}`,
+    },
+  });
+  if (!res.ok) throw new Error(`Supabase subject_selections query failed: ${res.status}`);
+  return res.json();
+}
