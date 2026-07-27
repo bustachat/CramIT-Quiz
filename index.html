@@ -2368,7 +2368,8 @@ const SUBJECT_CATALOGUE = [
 let sbClient       = null;
 let currentUser    = null;
 let userSub        = { plan: 'free', subject_count: 1, status: 'active' };
-let userSubjects   = [];   // array of subject IDs they've selected
+let userSubjects   = [];   // array of subject IDs they currently have access to (includes ones pending removal until their grace period ends)
+let userSubjectsPending = {}; // { subjectId: pending_removal_at } — subjects on their way out, access continues until this timestamp
 let aiResults          = [];   // aiResults[qIdx] = AI marking result | null
 const aiMarkingPending = new Set(); // question indices where AI call is in-flight
 let pendingSubject = null; // subject waiting for payment
@@ -2574,20 +2575,46 @@ async function loadUserState() {
   if (!currentUser || !sbClient) {
     userSub      = { plan: 'free', subject_count: 1, status: 'active' };
     userSubjects = [];
+    userSubjectsPending = {};
     return;
   }
   try {
     const [subRes, selRes] = await Promise.all([
       sbClient.from('subscriptions').select('*').eq('user_id', currentUser.id).maybeSingle(),
-      sbClient.from('subject_selections').select('subject_id').eq('user_id', currentUser.id)
+      sbClient.from('subject_selections').select('subject_id, pending_removal_at').eq('user_id', currentUser.id)
     ]);
-    userSub      = subRes.data ?? { plan: 'free', subject_count: 1, status: 'active' };
-    userSubjects = (selRes.data ?? []).map(s => s.subject_id);
+    userSub = subRes.data ?? { plan: 'free', subject_count: 1, status: 'active' };
+
+    // A row with pending_removal_at set is on its way out (removed, deferred
+    // to end of billing period) — it still grants access until that
+    // timestamp. Once it's passed, treat it as gone and clean the row up.
+    const rows = selRes.data ?? [];
+    const now = Date.now();
+    const staleSubjectIds = [];
+    userSubjectsPending = {};
+    userSubjects = rows.filter(r => {
+      if (r.pending_removal_at) {
+        if (new Date(r.pending_removal_at).getTime() <= now) {
+          staleSubjectIds.push(r.subject_id);
+          return false;
+        }
+        userSubjectsPending[r.subject_id] = r.pending_removal_at;
+      }
+      return true;
+    }).map(r => r.subject_id);
+
+    // Opportunistic cleanup — fire-and-forget, next load retries on failure.
+    staleSubjectIds.forEach(subjectId => {
+      sbClient.from('subject_selections').delete()
+        .eq('user_id', currentUser.id).eq('subject_id', subjectId)
+        .then(() => {}, () => {});
+    });
+
     // Restore streak from user-scoped key now that currentUser is known
     currentStreak = getStatInt(statKey('streak'));
     // Pull per-question progress from Supabase so stats are correct on any device
     await loadProgressFromSupabase();
-    console.log('[CramIT] loadUserState — plan:', userSub.plan, 'subjects:', userSubjects);
+    console.log('[CramIT] loadUserState — plan:', userSub.plan, 'subjects:', userSubjects, 'pending:', userSubjectsPending);
   } catch(e) {
     console.warn('Could not load user state:', e);
   }
@@ -2881,9 +2908,14 @@ function renderManageSubjectsList() {
   }
 
   if (summary) {
-    summary.textContent = userSubjects.length <= 1
-      ? '1 subject · removing it will cancel your subscription'
-      : `${userSubjects.length} subjects on your plan`;
+    const activeCount  = userSubjects.filter(id => !userSubjectsPending[id]).length;
+    const pendingCount = userSubjects.length - activeCount;
+    const base = activeCount <= 1
+      ? `${activeCount} subject · removing it will cancel your subscription`
+      : `${activeCount} subjects on your plan`;
+    summary.textContent = pendingCount > 0
+      ? `${base} · ${pendingCount} ending soon`
+      : base;
   }
 
   userSubjects.forEach(subjectId => {
@@ -2891,11 +2923,21 @@ function renderManageSubjectsList() {
     const name = s ? s.name : subjectId;
     const row = document.createElement('div');
     row.style.cssText = 'display:flex;align-items:center;justify-content:space-between;gap:12px;padding:8px 2px;border-bottom:1px solid var(--border)';
-    row.innerHTML = `
-      <span style="font-family:var(--font-display);font-weight:600;font-size:14px;color:var(--text)">${name}</span>
-      <button style="background:none;border:1px solid #C15A3C;color:#C15A3C;border-radius:10px;padding:0 16px;min-height:44px;font-size:12px;font-weight:700;cursor:pointer;white-space:nowrap">Remove</button>
-    `;
-    row.querySelector('button').onclick = () => confirmRemoveSubject(subjectId, name);
+
+    const pendingUntil = userSubjectsPending[subjectId];
+    if (pendingUntil) {
+      const dateLabel = new Date(pendingUntil).toLocaleDateString('en-AU', { day: 'numeric', month: 'short' });
+      row.innerHTML = `
+        <span style="font-family:var(--font-display);font-weight:600;font-size:14px;color:var(--muted)">${name}</span>
+        <span style="font-size:11px;color:var(--muted);white-space:nowrap">Ends ${dateLabel}</span>
+      `;
+    } else {
+      row.innerHTML = `
+        <span style="font-family:var(--font-display);font-weight:600;font-size:14px;color:var(--text)">${name}</span>
+        <button style="background:none;border:1px solid #C15A3C;color:#C15A3C;border-radius:10px;padding:0 16px;min-height:44px;font-size:12px;font-weight:700;cursor:pointer;white-space:nowrap">Remove</button>
+      `;
+      row.querySelector('button').onclick = () => confirmRemoveSubject(subjectId, name);
+    }
     list.appendChild(row);
   });
 }
@@ -2910,12 +2952,15 @@ function confirmRemoveSubject(subjectId, name) {
   const body       = document.getElementById('reset-modal-body');
   const okBtn      = document.getElementById('reset-modal-confirm');
   const cancelBtn  = document.getElementById('reset-modal-cancel');
-  const isLastSubject = userSubjects.length <= 1;
+  // Active (non-pending) count — a subject already ending soon doesn't
+  // count as "still there" for the purposes of "is this my last one".
+  const activeCount = userSubjects.filter(id => !userSubjectsPending[id]).length;
+  const isLastSubject = activeCount <= 1;
 
   title.textContent = `Remove ${name}?`;
   body.textContent = isLastSubject
-    ? 'This is your only subject — removing it will cancel your subscription.'
-    : 'Your plan will be adjusted and any price difference prorated by Stripe.';
+    ? "This is your only subject — you'll keep access until your current billing period ends, then your subscription will cancel."
+    : "You'll keep access to it until your current billing period ends — your price only drops at renewal, no refund or immediate change.";
   okBtn.textContent = 'Yes, remove';
   cancelBtn.textContent = 'Cancel';
 
@@ -2939,23 +2984,21 @@ function confirmRemoveSubject(subjectId, name) {
 async function removeSubject(subjectId) {
   if (!currentUser || !sbClient) return;
   try {
-    const { error: delErr } = await sbClient.from('subject_selections')
-      .delete()
-      .eq('user_id', currentUser.id)
-      .eq('subject_id', subjectId);
-    if (delErr) {
-      console.error('Remove subject failed:', delErr);
-      alert('Could not remove subject — please try again.');
-      return;
-    }
-
+    // The row itself isn't deleted here — the server stamps it with the
+    // exact Stripe current_period_end and access continues until then.
+    // No RLS grant is needed client-side since /update-subscription writes
+    // it with the service-role key (and knows the authoritative period end).
     if (userSub.plan !== 'free' && userSub.stripe_subscription_id) {
       const res = await fetch('/update-subscription', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', ...(await authHeaders()) },
-        body: JSON.stringify({})
+        body: JSON.stringify({ action: 'remove', subject_id: subjectId })
       });
-      if (!res.ok) console.warn('[CramIT] update-subscription returned', res.status);
+      if (!res.ok) {
+        console.warn('[CramIT] update-subscription returned', res.status);
+        alert('Could not remove subject — please try again.');
+        return;
+      }
     }
 
     // Reload authoritative state from Supabase/Stripe rather than patching
@@ -3061,14 +3104,23 @@ function renderSubjectList() {
           cardBadge = `<div style="position:absolute;bottom:8px;left:0;right:0;font-size:10px;color:rgba(255,255,255,0.85);text-align:center;font-weight:700">${subStats.seen} seen &middot; ${subStats.pct}%</div>`;
         }
       } else if (!canAccessViaSubscription(s.id)) {
-        // Trial — show trial progress pinned to card bottom
-        const tc = getTrialCount(s.id);
-        if (tc === 0) {
-          cardBadge = `<div style="position:absolute;bottom:8px;left:0;right:0;font-size:10px;color:rgba(255,255,255,0.7);text-align:center;font-weight:600">${TRIAL_LIMIT} free trial questions</div>`;
-        } else if (tc < TRIAL_LIMIT) {
-          cardBadge = `<div style="position:absolute;bottom:8px;left:0;right:0;font-size:10px;color:rgba(255,255,255,0.7);text-align:center;font-weight:600">${tc}/${TRIAL_LIMIT} trial used &middot; ${TRIAL_LIMIT - tc} left</div>`;
+        const subStats = getSubjectStats(s.quizKey);
+        // More answered questions than the trial ever allows only happens
+        // if this subject was fully subscribed at some point (e.g. removed
+        // via Manage Subjects, or its access grace period lapsed) — show
+        // the real history instead of misleading "fresh trial" copy.
+        if (subStats.seen > TRIAL_LIMIT) {
+          cardBadge = `<div style="position:absolute;bottom:8px;left:0;right:0;font-size:10px;color:rgba(255,255,255,0.55);text-align:center;font-weight:600">${subStats.seen} seen &middot; ${subStats.pct}% &middot; not currently subscribed</div>`;
         } else {
-          cardBadge = `<div style="position:absolute;bottom:8px;left:0;right:0;font-size:10px;color:rgba(255,220,150,0.95);text-align:center;font-weight:700">Trial ended &middot; Subscribe to continue</div>`;
+          // Trial — show trial progress pinned to card bottom
+          const tc = getTrialCount(s.id);
+          if (tc === 0) {
+            cardBadge = `<div style="position:absolute;bottom:8px;left:0;right:0;font-size:10px;color:rgba(255,255,255,0.7);text-align:center;font-weight:600">${TRIAL_LIMIT} free trial questions</div>`;
+          } else if (tc < TRIAL_LIMIT) {
+            cardBadge = `<div style="position:absolute;bottom:8px;left:0;right:0;font-size:10px;color:rgba(255,255,255,0.7);text-align:center;font-weight:600">${tc}/${TRIAL_LIMIT} trial used &middot; ${TRIAL_LIMIT - tc} left</div>`;
+          } else {
+            cardBadge = `<div style="position:absolute;bottom:8px;left:0;right:0;font-size:10px;color:rgba(255,220,150,0.95);text-align:center;font-weight:700">Trial ended &middot; Subscribe to continue</div>`;
+          }
         }
       }
     }
@@ -3316,17 +3368,23 @@ async function addSubject(subjectId) {
   if (!currentUser || !sbClient) return;
   // Optimistically update local state immediately so any follow-up tap sees the correct count
   if (!userSubjects.includes(subjectId)) userSubjects.push(subjectId);
+  delete userSubjectsPending[subjectId]; // re-adding cancels any pending removal
   try {
-    // Insert into subject_selections
+    // Insert into subject_selections. If a row already exists (e.g. it was
+    // marked pending-removal from an earlier removeSubject() call), this
+    // insert fails on the unique constraint — that's fine, the
+    // /update-subscription call below clears pending_removal_at server-side
+    // as a fallback for exactly that case.
     await sbClient.from('subject_selections').insert({ user_id: currentUser.id, subject_id: subjectId });
 
     // If on a paid plan, sync the Stripe subscription. The function derives
-    // the subscription ID and subject count server-side from the verified user.
+    // the subscription ID and subject count server-side from the verified
+    // user, and (re)computes the plan from subject_selections itself.
     if (userSub.plan !== 'free' && userSub.stripe_subscription_id) {
       await fetch('/update-subscription', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', ...(await authHeaders()) },
-        body: JSON.stringify({})
+        body: JSON.stringify({ action: 'add', subject_id: subjectId })
       });
     }
 
