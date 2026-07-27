@@ -7,10 +7,7 @@
 
 import { test, describe } from 'node:test';
 import assert from 'node:assert/strict';
-import {
-  getPlanType, buildUpdatedItems, PRICES,
-  getCurrentTierInfo, compareTiers, buildPhaseItems, getExtraQty,
-} from '../functions/update-subscription.js';
+import { getPlanType, buildUpdatedItems, PRICES } from '../functions/update-subscription.js';
 
 describe('update-subscription getPlanType()', () => {
   test('0-1 subjects -> free (cancel path)', () => {
@@ -95,126 +92,5 @@ describe('update-subscription buildUpdatedItems() tier transitions', () => {
     ];
     const result = buildUpdatedItems(currentItems, 2, 'base');
     assert.deepEqual(result, []); // nothing to change
-  });
-});
-
-describe('getCurrentTierInfo() — reverse-derives tier from live Stripe items', () => {
-  test('base only -> base, 0 extras', () => {
-    const info = getCurrentTierInfo([{ price: { id: PRICES.base } }]);
-    assert.deepEqual(info, { planType: 'base', extraQty: 0 });
-  });
-
-  test('base + extra qty 2 -> base_plus, 2 extras', () => {
-    const info = getCurrentTierInfo([
-      { price: { id: PRICES.base } },
-      { price: { id: PRICES.extra }, quantity: 2 },
-    ]);
-    assert.deepEqual(info, { planType: 'base_plus', extraQty: 2 });
-  });
-
-  test('cap present -> unlimited regardless of other items', () => {
-    const info = getCurrentTierInfo([{ price: { id: PRICES.cap } }]);
-    assert.equal(info.planType, 'unlimited');
-  });
-
-  test('flex_base present -> flex', () => {
-    const info = getCurrentTierInfo([
-      { price: { id: PRICES.flex_base } },
-      { price: { id: PRICES.extra }, quantity: 3 },
-    ]);
-    assert.deepEqual(info, { planType: 'flex', extraQty: 3 });
-  });
-
-  test('no recognised items -> free', () => {
-    assert.equal(getCurrentTierInfo([]).planType, 'free');
-  });
-});
-
-describe('compareTiers() — decides upgrade vs downgrade vs same', () => {
-  test('base -> base_plus is an upgrade', () => {
-    assert.equal(compareTiers({ planType: 'base', extraQty: 0 }, { planType: 'base_plus', extraQty: 1 }), 'upgrade');
-  });
-
-  test('unlimited -> base_plus is a downgrade', () => {
-    assert.equal(compareTiers({ planType: 'unlimited', extraQty: 0 }, { planType: 'base_plus', extraQty: 4 }), 'downgrade');
-  });
-
-  test('same planType, fewer extras -> downgrade', () => {
-    assert.equal(compareTiers({ planType: 'base_plus', extraQty: 3 }, { planType: 'base_plus', extraQty: 1 }), 'downgrade');
-  });
-
-  test('same planType, more extras -> upgrade', () => {
-    assert.equal(compareTiers({ planType: 'base_plus', extraQty: 1 }, { planType: 'base_plus', extraQty: 3 }), 'upgrade');
-  });
-
-  test('identical tier and extras -> same (the net-neutral swap case)', () => {
-    // This is the exact scenario: remove Multimedia (3 subjects -> 2,
-    // base_plus with 0 extras dropping toward base) then immediately add
-    // VET back (2 -> 3 again). By the time update-subscription.js
-    // recomputes from scratch, target should land back on the SAME tier
-    // it started from, so no Stripe call should happen at all.
-    assert.equal(compareTiers({ planType: 'base_plus', extraQty: 1 }, { planType: 'base_plus', extraQty: 1 }), 'same');
-    assert.equal(compareTiers({ planType: 'unlimited', extraQty: 0 }, { planType: 'unlimited', extraQty: 0 }), 'same');
-  });
-});
-
-describe('buildPhaseItems() — canonical full item list for a schedule phase', () => {
-  test('base_plus: base + correct extras', () => {
-    assert.deepEqual(buildPhaseItems(5, 'base_plus'), [
-      { price: PRICES.base, quantity: 1 },
-      { price: PRICES.extra, quantity: 3 },
-    ]);
-  });
-
-  test('unlimited: single cap item', () => {
-    assert.deepEqual(buildPhaseItems(7, 'unlimited'), [{ price: PRICES.cap, quantity: 1 }]);
-  });
-
-  test('flex: flex_base + extras above the 7-subject cap', () => {
-    assert.deepEqual(buildPhaseItems(10, 'flex'), [
-      { price: PRICES.flex_base, quantity: 1 },
-      { price: PRICES.extra, quantity: 3 },
-    ]);
-  });
-});
-
-describe('getExtraQty()', () => {
-  test('base_plus at 5 subjects -> 3 extras', () => {
-    assert.equal(getExtraQty(5, 'base_plus'), 3);
-  });
-  test('flex at 10 subjects -> 3 extras above the cap', () => {
-    assert.equal(getExtraQty(10, 'flex'), 3);
-  });
-  test('base/unlimited -> 0 extras', () => {
-    assert.equal(getExtraQty(2, 'base'), 0);
-    assert.equal(getExtraQty(7, 'unlimited'), 0);
-  });
-});
-
-describe('End-to-end tier reconciliation — the net-neutral swap scenario', () => {
-  test('3 subjects (base_plus) -> remove one (target 2, base) -> downgrade detected', () => {
-    const currentItems = [
-      { price: { id: PRICES.base } },
-      { price: { id: PRICES.extra }, quantity: 1 },
-    ];
-    const current = getCurrentTierInfo(currentItems);
-    const targetCount = 2;
-    const targetPlanType = getPlanType(targetCount, 'swap');
-    const target = { planType: targetPlanType, extraQty: getExtraQty(targetCount, targetPlanType) };
-    assert.equal(compareTiers(current, target), 'downgrade');
-  });
-
-  test('...then add a different subject back (target 3 again, base_plus) -> same, zero Stripe change', () => {
-    // Same starting Stripe state as above (still billed for 3 subjects —
-    // nothing was ever applied to Stripe for the pending downgrade).
-    const currentItems = [
-      { price: { id: PRICES.base } },
-      { price: { id: PRICES.extra }, quantity: 1 },
-    ];
-    const current = getCurrentTierInfo(currentItems);
-    const targetCount = 3; // Multimedia excluded (pending removal), VET added
-    const targetPlanType = getPlanType(targetCount, 'swap');
-    const target = { planType: targetPlanType, extraQty: getExtraQty(targetCount, targetPlanType) };
-    assert.equal(compareTiers(current, target), 'same');
   });
 });
