@@ -9291,6 +9291,425 @@
   ],
   "studyNotes": [
     {
+      "id": "a1-formulae-equations",
+      "icon": "🧮",
+      "title": "A1 — Formulae & Equations",
+      "accentColor": "#C17D3C",
+      "blocks": [
+        {
+          "type": "noteGrid",
+          "boxes": [
+            {
+              "heading": "Substituting into formulas",
+              "html": "<ul>\n<li>Replace each letter with its given value, then follow the <b>order of operations</b> — multiply/divide before add/subtract, and work out anything above or below a fraction bar as its own group first</li>\n<li>Keep units consistent before substituting (e.g. convert minutes to hours if the formula expects hours)</li>\n</ul>"
+            },
+            {
+              "heading": "Translating words into equations",
+              "html": "<ul>\n<li>Build the equation in the <b>same order</b> the words describe — e.g. \"subtract 8, then multiply by 3\" becomes 3(<em>x</em> − 8), not 3<em>x</em> − 8</li>\n<li>\"Is 2 more than <em>x</em>\" means <b>= <em>x</em> + 2</b>; \"is 2 less than <em>x</em>\" means <b>= <em>x</em> − 2</b> — the direction matters</li>\n</ul>"
+            }
+          ]
+        },
+        {
+          "type": "noteGrid",
+          "boxes": [
+            {
+              "heading": "Solving linear equations",
+              "html": "<ul>\n<li>Isolate the unknown using <b>inverse operations</b>, applying the same operation to both sides every time</li>\n<li>Undo operations in <b>reverse order</b> to how they were applied — undo addition/subtraction before multiplication/division</li>\n</ul>"
+            },
+            {
+              "heading": "Equations with fractions",
+              "html": "<ul>\n<li><b>Multiply every term</b> by the denominator (or the lowest common denominator, if there's more than one) first — this clears the fraction so you're left with an ordinary linear equation</li>\n<li>Don't forget to multiply terms that <b>aren't</b> already over a fraction too — every term on both sides needs the same multiplier</li>\n</ul>"
+            }
+          ]
+        },
+        {
+          "type": "table",
+          "caption": "Changing the subject of a formula — worked example (make x the subject of y = (ax − b)/2)",
+          "headers": [
+            "Step",
+            "What to do",
+            "Result"
+          ],
+          "rows": [
+            [
+              {
+                "label": "Step",
+                "html": "1"
+              },
+              {
+                "label": "What to do",
+                "html": "Multiply both sides by 2 (clear the fraction)"
+              },
+              {
+                "label": "Result",
+                "html": "2<em>y</em> = <em>ax</em> − <em>b</em>"
+              }
+            ],
+            [
+              {
+                "label": "Step",
+                "html": "2"
+              },
+              {
+                "label": "What to do",
+                "html": "Add <em>b</em> to both sides"
+              },
+              {
+                "label": "Result",
+                "html": "2<em>y</em> + <em>b</em> = <em>ax</em>"
+              }
+            ],
+            [
+              {
+                "label": "Step",
+                "html": "3"
+              },
+              {
+                "label": "What to do",
+                "html": "Divide both sides by <em>a</em>"
+              },
+              {
+                "label": "Result",
+                "html": "<em>x</em> = (2<em>y</em> + <em>b</em>) ÷ <em>a</em>"
+              }
+            ]
+          ]
+        },
+        {
+          "type": "noteGrid",
+          "boxes": [
+            {
+              "heading": "Applying formulas in context",
+              "html": "<ul>\n<li>Real-world formulas (BAC estimation, electricity billing, wages) combine everything above: <b>substitute</b> known values, then <b>solve or rearrange</b> for whatever's unknown</li>\n<li>Read carefully which letter the question wants — sometimes it's a direct substitution, other times you need to rearrange first before substituting</li>\n</ul>"
+            },
+            {
+              "heading": "Checking your answer",
+              "html": "<ul>\n<li>Substitute your solution <b>back into the original equation</b> — both sides should be equal</li>\n<li>For a rearranged formula, check it still works by substituting a value for every letter and confirming both the original and rearranged versions agree</li>\n</ul>"
+            }
+          ]
+        },
+        {
+          "type": "examTip",
+          "label": "\"Make X the subject\" questions",
+          "html": "<p>Treat the target letter exactly like the unknown in an equation you're solving — undo whatever has been done to it, in reverse order, keeping both sides balanced at each step. Clear any fractions first. The multiple-choice versions of these questions are really just testing whether you did the steps in the right order.</p>"
+        },
+        {
+          "type": "linkIt",
+          "html": "<p>The BAC and electricity-billing formulas here reappear as <b>rates</b> in <b>M7 — Rates &amp; Ratios</b> — this topic teaches the algebra (substituting, rearranging), M7 covers reading and using the rate itself.</p>"
+        }
+      ],
+      "revisionQuestions": [
+        {
+          "q": "Given the formula A = P + Prt, find A when P = 2000, r = 0.05 and t = 3.",
+          "a": "<em>A</em> = 2000 + 2000(0.05)(3) = 2000 + 300 = <b>$2300</b>."
+        },
+        {
+          "q": "A student thinks of a number x. Subtracting 4 and multiplying the result by 3 gives an answer 5 more than x. Write an equation for this and solve for x.",
+          "a": "3(<em>x</em> − 4) = <em>x</em> + 5 → 3<em>x</em> − 12 = <em>x</em> + 5 → 2<em>x</em> = 17 → <em>x</em> = <b>8.5</b>."
+        },
+        {
+          "q": "Make x the subject of the formula y = (px + q)/4.",
+          "a": "Multiply both sides by 4: 4<em>y</em> = <em>px</em> + <em>q</em>. Subtract <em>q</em>: 4<em>y</em> − <em>q</em> = <em>px</em>. Divide by <em>p</em>: <b><em>x</em> = (4<em>y</em> − <em>q</em>) ÷ <em>p</em></b>."
+        },
+        {
+          "q": "Solve the equation x + (x − 1)/3 = 7.",
+          "a": "Multiply every term by 3: 3<em>x</em> + (<em>x</em> − 1) = 21 → 4<em>x</em> − 1 = 21 → 4<em>x</em> = 22 → <em>x</em> = <b>5.5</b>."
+        },
+        {
+          "q": "The formula for BAC (males) is BAC = (10N − 7.5H) ÷ (6.8M), where N = standard drinks, H = hours drinking, M = mass in kg. Calculate the BAC for a 90 kg male who has had 6 standard drinks over 3 hours.",
+          "a": "BAC = (10×6 − 7.5×3) ÷ (6.8×90) = (60 − 22.5) ÷ 612 = 37.5 ÷ 612 ≈ <b>0.061</b>."
+        },
+        {
+          "q": "Explain the general strategy for making a given letter the subject of a formula.",
+          "a": "Treat the target letter as the unknown you're solving for, and undo the operations applied to it in reverse order — clear any fractions by multiplying through first, then undo addition/subtraction, then undo multiplication/division, keeping both sides balanced at each step, until the target letter is alone on one side."
+        }
+      ]
+    },
+    {
+      "id": "a2-linear-relationships",
+      "icon": "📐",
+      "title": "A2 — Linear Relationships",
+      "accentColor": "#C17D3C",
+      "blocks": [
+        {
+          "type": "noteGrid",
+          "boxes": [
+            {
+              "heading": "The linear equation y = mx + c",
+              "html": "<ul>\n<li><b><em>m</em></b> is the <b>gradient</b> (how steep the line is, and which way it slopes)</li>\n<li><b><em>c</em></b> is the <b><em>y</em>-intercept</b> — the value of <em>y</em> when <em>x</em> = 0</li>\n<li>To find <em>m</em> and <em>c</em> from an equation, rearrange it into <em>y</em> = <em>mx</em> + <em>c</em> form first — e.g. <em>y</em> = 5 − 3<em>x</em> has <em>m</em> = −3, <em>c</em> = 5</li>\n</ul>"
+            },
+            {
+              "heading": "Gradient — what it means",
+              "html": "<ul>\n<li>Gradient = how much <em>y</em> changes for <b>every 1-unit increase</b> in <em>x</em></li>\n<li><b>Positive</b> gradient → line rises left to right (<em>y</em> increases as <em>x</em> increases)</li>\n<li><b>Negative</b> gradient → line falls left to right (<em>y</em> decreases as <em>x</em> increases)</li>\n<li>Between any two points on the line: gradient = rise ÷ run = change in <em>y</em> ÷ change in <em>x</em></li>\n</ul>"
+            }
+          ]
+        },
+        {
+          "type": "noteGrid",
+          "boxes": [
+            {
+              "heading": "Building a linear model from a description",
+              "html": "<ul>\n<li>A <b>fixed</b> amount (a call-out fee, a base charge) becomes <em>c</em>, the <em>y</em>-intercept</li>\n<li>A <b>rate</b> (cost per minute, per item) becomes <em>m</em>, the gradient</li>\n<li>Combine as <b>total = <em>c</em> + <em>m</em> × (quantity)</b> — but check the units match first (see the exam tip below)</li>\n</ul>"
+            },
+            {
+              "heading": "Reading a graph's equation",
+              "html": "<ul>\n<li>Check where the line crosses the <em>y</em>-axis first — that's <em>c</em>, and it immediately rules out any candidate equation with the wrong intercept</li>\n<li>Then check the slope <b>direction</b> (rising or falling) to confirm the sign of <em>m</em>, and the steepness if more than one candidate still matches</li>\n</ul>"
+            }
+          ]
+        },
+        {
+          "type": "table",
+          "caption": "Direct variation vs. a general linear relationship",
+          "headers": [
+            "Form",
+            "Graph",
+            "Key feature"
+          ],
+          "rows": [
+            [
+              {
+                "label": "Form",
+                "html": "<em>y</em> = <em>mx</em> (direct variation)"
+              },
+              {
+                "label": "Graph",
+                "html": "Straight line through the origin"
+              },
+              {
+                "label": "Key feature",
+                "html": "<em>y</em> is directly proportional to <em>x</em> — no constant term"
+              }
+            ],
+            [
+              {
+                "label": "Form",
+                "html": "<em>y</em> = <em>mx</em> + <em>c</em>, <em>c</em> ≠ 0"
+              },
+              {
+                "label": "Graph",
+                "html": "Straight line shifted up/down from the origin"
+              },
+              {
+                "label": "Key feature",
+                "html": "Doesn't pass through (0, 0) unless <em>c</em> happens to be 0"
+              }
+            ]
+          ]
+        },
+        {
+          "type": "noteGrid",
+          "boxes": [
+            {
+              "heading": "Profit as a linear model",
+              "html": "<ul>\n<li><b>Profit = Revenue − Cost</b> — if both Revenue and Cost are linear in the number of items <em>x</em>, Profit is linear too</li>\n<li>The <b>profit gained per extra item</b> sold is the gradient of the profit equation — i.e. Revenue's gradient minus Cost's gradient</li>\n</ul>"
+            },
+            {
+              "heading": "Matching graphs to equations",
+              "html": "<ul>\n<li>Eliminate options using the <em>y</em>-intercept first — it's usually the fastest check</li>\n<li>Then use the slope direction, and finally steepness (a larger |<em>m</em>| means a steeper line) if more than one option remains</li>\n</ul>"
+            }
+          ]
+        },
+        {
+          "type": "examTip",
+          "label": "Match your units before combining rates",
+          "html": "<p>A very common trap: a rate given \"per minute\" combined with a variable given in hours. Convert one to match the other <b>before</b> substituting — e.g. \"$2 per minute\" for <em>t</em> hours of work needs 2 × 60<em>t</em>, not 2<em>t</em>.</p>"
+        },
+        {
+          "type": "linkIt",
+          "html": "<p>Everything in <b>A4 — Non-linear Relationships</b> (parabolas, exponentials) is understood by contrast with the straight-line behaviour covered here — a constant gradient is what makes a relationship linear in the first place. Rearranging <em>y</em> = <em>mx</em> + <em>c</em> for <em>m</em> or <em>c</em> uses the same subject-changing skill from <b>A1 — Formulae &amp; Equations</b>.</p>"
+        }
+      ],
+      "revisionQuestions": [
+        {
+          "q": "State the gradient and y-intercept of the line y = 5 − 3x.",
+          "a": "Rewritten in <em>y</em> = <em>mx</em> + <em>c</em> form: <em>y</em> = −3<em>x</em> + 5. Gradient <em>m</em> = <b>−3</b>, <em>y</em>-intercept <em>c</em> = <b>5</b>."
+        },
+        {
+          "q": "A plumber charges a $70 call-out fee plus $2.50 per minute. Write an equation for the total charge C, in dollars, for t hours of work.",
+          "a": "t hours = 60<em>t</em> minutes, so <b><em>C</em> = 70 + 150<em>t</em></b> (since 2.50 × 60 = 150)."
+        },
+        {
+          "q": "A line has a gradient of −4 and passes through (0, 6). Determine the y-value when x = 3.",
+          "a": "<em>y</em> = 6 + (−4)(3) = 6 − 12 = <b>−6</b>."
+        },
+        {
+          "q": "Cost C = 4x + 20 and Revenue R = 10x for a business selling x items. Calculate how much profit increases for each additional item sold.",
+          "a": "Profit = <em>R</em> − <em>C</em> = 10<em>x</em> − (4<em>x</em> + 20) = 6<em>x</em> − 20. The gradient is 6, so profit increases by <b>$6</b> per additional item."
+        },
+        {
+          "q": "Explain how to identify whether a straight-line graph represents a direct variation relationship.",
+          "a": "A direct variation relationship has the form <em>y</em> = <em>mx</em>, with no constant term, so its graph is a straight line passing through the origin (0, 0). Check whether the line crosses the axes exactly at the origin — if it crosses the <em>y</em>-axis anywhere else, it isn't direct variation."
+        },
+        {
+          "q": "Two candidate equations are y = 2x − 3 and y = −2x − 3. The graph shown falls from left to right. Explain which equation matches.",
+          "a": "A graph falling from left to right has a negative gradient. <em>y</em> = 2<em>x</em> − 3 has gradient +2 (rising), while <em>y</em> = −2<em>x</em> − 3 has gradient −2 (falling) — so <b><em>y</em> = −2<em>x</em> − 3</b> matches."
+        }
+      ]
+    },
+    {
+      "id": "a4-nonlinear-relationships",
+      "icon": "📉",
+      "title": "A4 — Non-linear Relationships",
+      "accentColor": "#C17D3C",
+      "blocks": [
+        {
+          "type": "noteGrid",
+          "boxes": [
+            {
+              "heading": "Simultaneous equations (break-even & comparisons)",
+              "html": "<ul>\n<li>Two linear equations (e.g. a cost equation and a revenue equation, or two payment plans) can be compared by finding where they're <b>equal</b> — this is the \"break-even point\"</li>\n<li>Solved either <b>graphically</b> (the intersection point of the two lines) or <b>algebraically</b> (set the two expressions equal and solve)</li>\n<li>Before the intersection point one option is better; after it, the other is — always check which side of the break-even point the question is actually asking about</li>\n</ul>"
+            },
+            {
+              "heading": "Quadratic graphs — parabolas",
+              "html": "<ul>\n<li><b><em>y</em> = <em>ax</em>² + <em>bx</em> + <em>c</em></b> — if <em>a</em> &gt; 0 the parabola opens <b>upward</b> (a minimum turning point); if <em>a</em> &lt; 0 it opens <b>downward</b> (a maximum turning point)</li>\n<li><em>c</em> is the <em>y</em>-intercept (the value when <em>x</em> = 0)</li>\n<li>To recognise a parabola's graph, check which way it opens first (sign of <em>a</em>), then check the <em>y</em>-intercept matches</li>\n</ul>"
+            }
+          ]
+        },
+        {
+          "type": "noteGrid",
+          "boxes": [
+            {
+              "heading": "Projectile motion (quadratics in context)",
+              "html": "<ul>\n<li>Height over time for a thrown/launched object is modelled by a <b>downward-opening parabola</b>, e.g. <em>h</em> = −5<em>t</em>² + 80<em>t</em></li>\n<li>The object is on the ground when <em>h</em> = 0 — this happens at the start (<em>t</em> = 0) and again when it lands, so solving <em>h</em> = 0 gives the <b>total time in the air</b></li>\n<li>The negative coefficient on <em>t</em>² reflects gravity pulling the object back down — it's always negative in these models</li>\n</ul>"
+            },
+            {
+              "heading": "Exponential graphs",
+              "html": "<ul>\n<li><b><em>y</em> = <em>a</em>(<em>b</em>)ˣ</b> — <em>a</em> is the starting value (at <em>x</em> = 0), <em>b</em> is the growth/decay factor</li>\n<li><em>b</em> &gt; 1 → <b>growth</b> (curve rises, gets steeper); 0 &lt; <em>b</em> &lt; 1 → <b>decay</b> (curve falls, flattening toward — but never reaching — zero)</li>\n<li>This is the exact same shape as F4's compound interest formula — money and populations both follow <em>y</em> = <em>a</em>(<em>b</em>)ˣ</li>\n</ul>"
+            }
+          ]
+        },
+        {
+          "type": "table",
+          "caption": "Recognising a graph from its equation",
+          "headers": [
+            "Equation form",
+            "Shape",
+            "Key feature"
+          ],
+          "rows": [
+            [
+              {
+                "label": "Equation form",
+                "html": "<em>y</em> = <em>ax</em>² + <em>bx</em> + <em>c</em>, <em>a</em> &gt; 0"
+              },
+              {
+                "label": "Shape",
+                "html": "Parabola, opens upward"
+              },
+              {
+                "label": "Key feature",
+                "html": "Minimum turning point"
+              }
+            ],
+            [
+              {
+                "label": "Equation form",
+                "html": "<em>y</em> = <em>ax</em>² + <em>bx</em> + <em>c</em>, <em>a</em> &lt; 0"
+              },
+              {
+                "label": "Shape",
+                "html": "Parabola, opens downward"
+              },
+              {
+                "label": "Key feature",
+                "html": "Maximum turning point"
+              }
+            ],
+            [
+              {
+                "label": "Equation form",
+                "html": "<em>y</em> = <em>a</em>(<em>b</em>)ˣ, <em>b</em> &gt; 1"
+              },
+              {
+                "label": "Shape",
+                "html": "Exponential growth"
+              },
+              {
+                "label": "Key feature",
+                "html": "Rises, gets steeper, never touches zero"
+              }
+            ],
+            [
+              {
+                "label": "Equation form",
+                "html": "<em>y</em> = <em>a</em>(<em>b</em>)ˣ, 0 &lt; <em>b</em> &lt; 1"
+              },
+              {
+                "label": "Shape",
+                "html": "Exponential decay"
+              },
+              {
+                "label": "Key feature",
+                "html": "Falls, flattens toward zero, never reaches it"
+              }
+            ],
+            [
+              {
+                "label": "Equation form",
+                "html": "<em>y</em> = <em>k</em>/<em>x</em>"
+              },
+              {
+                "label": "Shape",
+                "html": "Reciprocal (hyperbola)"
+              },
+              {
+                "label": "Key feature",
+                "html": "Two curved branches, never touches either axis"
+              }
+            ]
+          ]
+        },
+        {
+          "type": "noteGrid",
+          "boxes": [
+            {
+              "heading": "Direct & inverse variation",
+              "html": "<ul>\n<li><b>Direct variation</b>: <em>y</em> varies directly with <em>x</em>ⁿ means <em>y</em> = <em>kx</em>ⁿ — if <em>x</em> is scaled by a factor, <em>y</em> is scaled by that factor raised to the power <em>n</em> (e.g. volume ∝ side³: doubling the side multiplies volume by 2³ = 8)</li>\n<li><b>Inverse variation</b>: <em>y</em> varies inversely with <em>x</em> means <em>y</em> = <em>k</em>/<em>x</em>, so <em>xy</em> = <em>k</em> is always constant — if <em>x</em> is scaled by a factor, <em>y</em> is <b>divided</b> by that same factor (e.g. double the workers, half the time)</li>\n<li>To solve either type: find <em>k</em> from the one pair of values you're given, then substitute the new value to find the unknown</li>\n</ul>"
+            },
+            {
+              "heading": "Reading exponential growth/decay models",
+              "html": "<ul>\n<li>In <em>y</em> = <em>a</em>(<em>b</em>)ᵗ, <em>a</em> is always the <b>initial value</b> (read it off directly at <em>t</em> = 0 — no calculation needed)</li>\n<li>The base <em>b</em> tells you the growth/decay <b>rate per period</b>: <em>b</em> = 1.055 means +5.5% per period; <em>b</em> = 0.97 means −3% per period (a decay of 3%)</li>\n<li>Only the value of <em>b</em> determines growth vs. decay — <em>a</em> just sets the starting point and doesn't affect the shape</li>\n</ul>"
+            }
+          ]
+        },
+        {
+          "type": "examTip",
+          "label": "\"Varies with\" word problems",
+          "html": "<p>Whenever a question says a quantity \"varies directly/inversely with\" another, don't scale intuitively — write the variation equation, substitute the given pair to solve for <em>k</em>, then use that same <em>k</em> for the new situation. This is especially important for inverse variation, where doubling one quantity <b>halves</b> the other, not doubles it.</p>"
+        },
+        {
+          "type": "linkIt",
+          "html": "<p>Exponential growth/decay here (<em>y</em> = <em>a</em>(<em>b</em>)ˣ) is the same structure as <b>F4 — Investments &amp; Loans</b>'s compound interest formula — just with different variable names. Simultaneous linear equations build on the straight-line graphs covered in <b>A2 — Linear Relationships</b>.</p>"
+        }
+      ],
+      "revisionQuestions": [
+        {
+          "q": "Determine whether the graph of y = −3x² + 2 opens upward or downward, and state whether it has a maximum or minimum turning point.",
+          "a": "The coefficient of <em>x</em>² is negative (<em>a</em> = −3), so the parabola opens <b>downward</b> and has a <b>maximum</b> turning point."
+        },
+        {
+          "q": "An object's height is modelled by h = −5t² + 40t. Determine how long the object is in the air.",
+          "a": "The object is at ground level when <em>h</em> = 0: −5<em>t</em>² + 40<em>t</em> = 0 → <em>t</em>(−5<em>t</em> + 40) = 0 → <em>t</em> = 0 or <em>t</em> = 8. It starts at <em>t</em> = 0 and lands at <em>t</em> = 8, so it is in the air for <b>8 seconds</b>."
+        },
+        {
+          "q": "The number of bacteria in a culture is modelled by y = 500(1.08)ⁿ, where n is the time in minutes. State the initial number of bacteria and determine whether the population is growing or shrinking.",
+          "a": "Initial number (at <em>n</em> = 0): <em>y</em> = 500(1.08)⁰ = <b>500</b>. Since the base 1.08 is greater than 1, the population is <b>growing</b>, by 8% each minute."
+        },
+        {
+          "q": "The time to complete a task varies inversely with the number of workers. It takes 5 workers 12 hours to finish the job. Determine how long it would take 8 workers, working at the same rate.",
+          "a": "Inverse variation: workers × time = <em>k</em>. <em>k</em> = 5 × 12 = 60. For 8 workers: time = 60 ÷ 8 = <b>7.5 hours</b>."
+        },
+        {
+          "q": "A cube's volume varies directly with the cube of its side length. Determine the factor by which the volume increases if the side length is tripled.",
+          "a": "Volume ∝ side³, so tripling the side length multiplies the volume by 3³ = <b>27</b>."
+        },
+        {
+          "q": "Explain how to identify, from its equation alone, whether a graph shows exponential growth or exponential decay.",
+          "a": "Write the equation in the form <em>y</em> = <em>a</em> × <em>b</em>ˣ. If the base <em>b</em> is greater than 1, the graph shows growth (values increase); if <em>b</em> is between 0 and 1, it shows decay (values decrease, flattening toward zero). The value of <em>a</em> is just the starting value and has no effect on whether it's growth or decay — only <em>b</em> determines that."
+        }
+      ]
+    },
+    {
       "id": "f1-money-matters",
       "icon": "💰",
       "title": "F1 — Money Matters",
@@ -9574,6 +9993,141 @@
       ]
     },
     {
+      "id": "f5-annuities",
+      "icon": "🏦",
+      "title": "F5 — Annuities",
+      "accentColor": "#C17D3C",
+      "blocks": [
+        {
+          "type": "noteGrid",
+          "boxes": [
+            {
+              "heading": "What is an annuity?",
+              "html": "<ul>\n<li>A sequence of <b>equal, regular payments</b> into (or out of) an account that earns <b>compound interest</b> each period</li>\n<li>Payments are usually made at the <b>end</b> of each compounding period</li>\n<li>Can work either way: building up savings (regular deposits) or paying off a loan (regular repayments)</li>\n</ul>"
+            },
+            {
+              "heading": "Recurrence relations for annuities",
+              "html": "<ul>\n<li><b><em>A</em>ₙ = <em>A</em>ₙ₋₁ × (1 + <em>r</em>) ± payment</b> — <em>r</em> is the interest rate per period, <em>A</em>₀ is the starting balance</li>\n<li><b>Add</b> the payment for an investment (regular deposits growing the balance)</li>\n<li><b>Subtract</b> the payment for a loan or a withdrawal (regular amounts drawn down)</li>\n<li>Work through one period at a time — there's no shortcut, just repeat the same step</li>\n</ul>"
+            }
+          ]
+        },
+        {
+          "type": "noteGrid",
+          "boxes": [
+            {
+              "heading": "Future value of an annuity (using tables)",
+              "html": "<ul>\n<li>Exams provide a <b>\"future value of an annuity of $1\" table</b> — look up the factor for the given rate and number of periods</li>\n<li><b><em>FV</em> = payment × (FV interest factor)</b> — multiply the table value by the actual payment amount</li>\n</ul>"
+            },
+            {
+              "heading": "Present value of an annuity (using tables)",
+              "html": "<ul>\n<li>Same idea with a <b>\"present value of an annuity of $1\" table</b></li>\n<li><b><em>PV</em> = payment × (PV interest factor)</b> — used to value a future stream of payments in today's dollars, or to connect a loan amount to its repayments</li>\n</ul>"
+            }
+          ]
+        },
+        {
+          "type": "table",
+          "caption": "Reading annuity interest-factor tables",
+          "headers": [
+            "Situation",
+            "Formula",
+            "What the table gives you"
+          ],
+          "rows": [
+            [
+              {
+                "label": "Situation",
+                "html": "Future value of an investment"
+              },
+              {
+                "label": "Formula",
+                "html": "<em>FV</em> = payment × FV factor"
+              },
+              {
+                "label": "What the table gives you",
+                "html": "The value $1 invested each period grows to by the end"
+              }
+            ],
+            [
+              {
+                "label": "Situation",
+                "html": "Present value of a loan"
+              },
+              {
+                "label": "Formula",
+                "html": "Loan amount = repayment × PV factor"
+              },
+              {
+                "label": "What the table gives you",
+                "html": "Today's value of $1 to be paid each period"
+              }
+            ],
+            [
+              {
+                "label": "Situation",
+                "html": "Finding the repayment"
+              },
+              {
+                "label": "Formula",
+                "html": "Repayment = loan amount ÷ PV factor"
+              },
+              {
+                "label": "What the table gives you",
+                "html": "Same PV factor, rearranged to solve for the unknown repayment"
+              }
+            ]
+          ]
+        },
+        {
+          "type": "noteGrid",
+          "boxes": [
+            {
+              "heading": "Loans repaid via annuity tables",
+              "html": "<ul>\n<li>A reducing-balance loan repaid in equal instalments is mathematically an annuity <b>in reverse</b> — the loan amount is the present value of all the future repayments</li>\n<li><b>Repayment = loan amount ÷ PV interest factor</b> — using the factor for the loan's rate per period and total number of repayments</li>\n</ul>"
+            },
+            {
+              "heading": "PV vs. FV — which is bigger",
+              "html": "<ul>\n<li>For any annuity: <b>PV &lt; total of the nominal (face-value) payments &lt; FV</b></li>\n<li>Discounting brings future payments back to a <b>smaller</b> value today (PV); compounding grows the account to <b>more</b> than the sum of the plain contributions (FV)</li>\n</ul>"
+            }
+          ]
+        },
+        {
+          "type": "examTip",
+          "label": "Matching the table to the question",
+          "html": "<p>Always match the interest factor table's rate-per-period and number-of-periods to the question's actual compounding frequency — e.g. monthly repayments need the <b>monthly</b> rate and the <b>total number of months</b>, not the annual figures. Reading the wrong row/column of the table is the single most common error in this topic.</p>"
+        },
+        {
+          "type": "linkIt",
+          "html": "<p>Annuities extend <b>F4 — Investments &amp; Loans</b>'s single-lump-sum compound interest to a whole <b>series</b> of regular payments — the underlying compounding is identical, just applied repeatedly.</p>"
+        }
+      ],
+      "revisionQuestions": [
+        {
+          "q": "Explain the difference between the future value and the present value of an annuity.",
+          "a": "The future value (FV) is the total amount accumulated at the end of the annuity's term — every payment plus all the compound interest earned. The present value (PV) is the equivalent single lump sum, invested today, that would grow into (or is needed to fund) that same stream of payments. PV is always smaller than FV, since it hasn't yet had the chance to earn interest."
+        },
+        {
+          "q": "A savings recurrence relation is Aₙ = Aₙ₋₁ × 1.004 − 250, with A₀ = $10 000. Find the balance after the second withdrawal (A₂).",
+          "a": "<em>A</em>₁ = 10 000 × 1.004 − 250 = 10 040 − 250 = 9790. <em>A</em>₂ = 9790 × 1.004 − 250 = 9829.16 − 250 = <b>$9579.16</b>."
+        },
+        {
+          "q": "An annuity has a future value interest factor of 12.0061 for 10 yearly payments at a given rate. If each payment is $2000, calculate the future value of the annuity.",
+          "a": "<em>FV</em> = payment × factor = 2000 × 12.0061 = <b>$24 012.20</b>."
+        },
+        {
+          "q": "A loan of $180 000 is to be repaid in equal monthly instalments. The present value interest factor for the loan's rate and term is 150.30. Calculate the monthly repayment.",
+          "a": "Repayment = loan amount ÷ PV factor = 180 000 ÷ 150.30 ≈ <b>$1197.61</b>."
+        },
+        {
+          "q": "Explain why, for the same regular payment amount, the present value of an annuity is always less than the total of all the nominal (undiscounted) payments.",
+          "a": "The present value discounts every future payment back to today's value using the interest rate — money received in the future is worth less today, since it hasn't yet had the chance to earn interest. So even though the actual dollar payments add up to a certain total, their combined value today (PV) is always less than that simple total."
+        },
+        {
+          "q": "Describe, in general terms, how a recurrence relation for an annuity differs between an investment (building up savings) and a loan (paying down debt).",
+          "a": "In both cases the balance is multiplied by (1 + r) each period to add interest. For an investment, the regular contribution is <b>added</b> each period, so the balance grows from both interest and new deposits. For a loan, the regular repayment is <b>subtracted</b> each period — interest still accrues on the balance (working against the borrower), but the repayment reduces it, so the balance shrinks over time as long as repayments exceed the interest charged."
+        }
+      ]
+    },
+    {
       "id": "m1-measurement",
       "icon": "📏",
       "title": "M1 — Measurement",
@@ -9748,672 +10302,6 @@
         {
           "q": "Explain why the trapezoidal rule only gives an estimate of area, not an exact value.",
           "a": "The trapezoidal rule approximates the region between each pair of measurements as a straight-sided trapezium. If the actual boundary curves between those measurement points, the straight edge doesn't match the true shape exactly, so the calculated area differs slightly from the real area — the estimate improves as more, closer-together measurements are used."
-        }
-      ]
-    },
-    {
-      "id": "m7-rates-ratios",
-      "icon": "⚖️",
-      "title": "M7 — Rates & Ratios",
-      "accentColor": "#C17D3C",
-      "blocks": [
-        {
-          "type": "noteGrid",
-          "boxes": [
-            {
-              "heading": "Ratios — simplifying, dividing & changing",
-              "html": "<ul>\n<li><b>Simplify</b> a ratio by dividing every term by their highest common factor</li>\n<li>To <b>divide a quantity</b> in a given ratio: total parts = sum of the ratio numbers, then each share = (quantity ÷ total parts) × that number</li>\n<li>Both quantities in a ratio must be in the <b>same units</b> before simplifying — e.g. \"20 minutes to one-third of a day\" needs converting to the same unit (minutes) first</li>\n<li>If amounts are <b>added or removed</b> (e.g. jelly beans eaten, liquid removed from a mixture), calculate the new individual amounts first, then re-simplify the ratio from those — don't adjust the ratio numbers directly</li>\n</ul>"
-            },
-            {
-              "heading": "Scale (model : actual)",
-              "html": "<ul>\n<li>A scale of <b>1 : <em>n</em></b> means 1 unit on the model/map = <em>n</em> of the same unit in real life</li>\n<li>Model → actual: <b>multiply</b> by <em>n</em>. Actual → model: <b>divide</b> by <em>n</em></li>\n<li>Convert units at the end, not the start — work in one consistent unit throughout the ratio calculation, then convert the answer if the question asks for a different unit</li>\n</ul>"
-            }
-          ]
-        },
-        {
-          "type": "noteGrid",
-          "boxes": [
-            {
-              "heading": "Speed, distance & time",
-              "html": "<ul>\n<li><b>Speed = distance ÷ time</b>, so distance = speed × time, and time = distance ÷ speed</li>\n<li>Convert time to match the speed's units before dividing — e.g. \"3 hours 30 minutes\" must become 3.5 hours to use with km/h</li>\n<li>Reading start/end clock times (e.g. 6:42 am to 8:04 am) — find the elapsed time first, converting to hours as a decimal if needed</li>\n</ul>"
-            },
-            {
-              "heading": "Best value (unit pricing)",
-              "html": "<ul>\n<li><b>Unit price = cost ÷ quantity</b> — the <b>lower</b> unit price is the better deal</li>\n<li>All options must be compared in the <b>same unit</b> (e.g. cost per litre, cost per 100 g) — convert first if the options are given in different sizes</li>\n</ul>"
-            }
-          ]
-        },
-        {
-          "type": "table",
-          "caption": "Converting between speed units",
-          "headers": [
-            "Conversion",
-            "Multiply by"
-          ],
-          "rows": [
-            [
-              {
-                "label": "Conversion",
-                "html": "km/h → m/s"
-              },
-              {
-                "label": "Multiply by",
-                "html": "÷ 3.6"
-              }
-            ],
-            [
-              {
-                "label": "Conversion",
-                "html": "m/s → km/h"
-              },
-              {
-                "label": "Multiply by",
-                "html": "× 3.6"
-              }
-            ]
-          ]
-        },
-        {
-          "type": "noteGrid",
-          "boxes": [
-            {
-              "heading": "Rates of change (linear)",
-              "html": "<ul>\n<li>Some quantities change by a <b>fixed amount per unit of time</b> — e.g. blood alcohol concentration (BAC) decreasing by a set amount per hour — the same \"flat rate\" structure as F1's straight-line depreciation</li>\n<li>To find the <b>time to reach a target value</b>: time = (starting value − target value) ÷ rate of change</li>\n</ul>"
-            },
-            {
-              "heading": "Using a rate to estimate a total",
-              "html": "<ul>\n<li>Count/measure a small, <b>representative sample</b> (e.g. trees in a small section of land), and calculate the rate for that sample (e.g. trees per m²)</li>\n<li><b>Scale up</b>: multiply the rate by the total area/quantity to estimate the full total — this assumes the sample is spread evenly and is genuinely representative</li>\n<li><b>Capture–recapture</b> (tagging and resampling to estimate an animal population) uses this same idea, applied to a ratio of tagged-to-total in each sample — see <b>M1 — Measurement</b> for the full method</li>\n</ul>"
-            }
-          ]
-        },
-        {
-          "type": "examTip",
-          "label": "Units, units, units",
-          "html": "<p>Almost every mistake in this topic comes from mismatched units — minutes vs. hours, cm vs. m, or comparing a 1.5 L price against a 2 L price without converting to a common unit first. Before calculating, check every quantity in the question is in the same unit you need for the formula.</p>"
-        },
-        {
-          "type": "linkIt",
-          "html": "<p>Scale here uses the same ratio idea as F1/F4's money problems and M1's scale drawings — the difference is just what's being scaled (a length or a price, not an area). Capture-recapture population estimation is covered in full under <b>M1 — Measurement</b>.</p>"
-        }
-      ],
-      "revisionQuestions": [
-        {
-          "q": "A drink is made from cordial and water in the ratio 1 : 4. Determine how much cordial is needed to make 3 L of the drink.",
-          "a": "Total parts = 1 + 4 = 5. Cordial = (1 ÷ 5) × 3 L = <b>0.6 L</b>."
-        },
-        {
-          "q": "A car travels 210 km in 3 hours 30 minutes. Calculate its average speed in km/h.",
-          "a": "Convert time to hours: 3 h 30 min = 3.5 h. Speed = distance ÷ time = 210 ÷ 3.5 = <b>60 km/h</b>."
-        },
-        {
-          "q": "Two bottles of juice are for sale: a 1.5 L bottle for $4.50, and a 2 L bottle for $5.60. Determine which is better value.",
-          "a": "Unit price: 1.5 L bottle = $4.50 ÷ 1.5 = $3.00/L. 2 L bottle = $5.60 ÷ 2 = $2.80/L. The <b>2 L bottle</b> is better value, since its price per litre is lower."
-        },
-        {
-          "q": "A model bridge is built at a scale of 1 : 150. Calculate the real length, in metres, of a section that measures 8 cm on the model.",
-          "a": "Real length = 8 cm × 150 = 1200 cm = <b>12 m</b>."
-        },
-        {
-          "q": "A person's BAC is 0.090 at midnight and decreases at a constant rate of 0.012 per hour. Calculate how long it takes for their BAC to reach zero.",
-          "a": "Time = starting value ÷ rate = 0.090 ÷ 0.012 = <b>7.5 hours</b>."
-        },
-        {
-          "q": "Explain how a small sample can be used to estimate the number of trees on a large block of land.",
-          "a": "Count the trees in a small, representative section of the block, then calculate the rate (trees per unit area, e.g. trees per m²) for that section. Multiply this rate by the total area of the block to estimate the total number of trees — this assumes the trees are spread roughly evenly across the whole block."
-        }
-      ]
-    },
-    {
-      "id": "a4-nonlinear-relationships",
-      "icon": "📉",
-      "title": "A4 — Non-linear Relationships",
-      "accentColor": "#C17D3C",
-      "blocks": [
-        {
-          "type": "noteGrid",
-          "boxes": [
-            {
-              "heading": "Simultaneous equations (break-even & comparisons)",
-              "html": "<ul>\n<li>Two linear equations (e.g. a cost equation and a revenue equation, or two payment plans) can be compared by finding where they're <b>equal</b> — this is the \"break-even point\"</li>\n<li>Solved either <b>graphically</b> (the intersection point of the two lines) or <b>algebraically</b> (set the two expressions equal and solve)</li>\n<li>Before the intersection point one option is better; after it, the other is — always check which side of the break-even point the question is actually asking about</li>\n</ul>"
-            },
-            {
-              "heading": "Quadratic graphs — parabolas",
-              "html": "<ul>\n<li><b><em>y</em> = <em>ax</em>² + <em>bx</em> + <em>c</em></b> — if <em>a</em> &gt; 0 the parabola opens <b>upward</b> (a minimum turning point); if <em>a</em> &lt; 0 it opens <b>downward</b> (a maximum turning point)</li>\n<li><em>c</em> is the <em>y</em>-intercept (the value when <em>x</em> = 0)</li>\n<li>To recognise a parabola's graph, check which way it opens first (sign of <em>a</em>), then check the <em>y</em>-intercept matches</li>\n</ul>"
-            }
-          ]
-        },
-        {
-          "type": "noteGrid",
-          "boxes": [
-            {
-              "heading": "Projectile motion (quadratics in context)",
-              "html": "<ul>\n<li>Height over time for a thrown/launched object is modelled by a <b>downward-opening parabola</b>, e.g. <em>h</em> = −5<em>t</em>² + 80<em>t</em></li>\n<li>The object is on the ground when <em>h</em> = 0 — this happens at the start (<em>t</em> = 0) and again when it lands, so solving <em>h</em> = 0 gives the <b>total time in the air</b></li>\n<li>The negative coefficient on <em>t</em>² reflects gravity pulling the object back down — it's always negative in these models</li>\n</ul>"
-            },
-            {
-              "heading": "Exponential graphs",
-              "html": "<ul>\n<li><b><em>y</em> = <em>a</em>(<em>b</em>)ˣ</b> — <em>a</em> is the starting value (at <em>x</em> = 0), <em>b</em> is the growth/decay factor</li>\n<li><em>b</em> &gt; 1 → <b>growth</b> (curve rises, gets steeper); 0 &lt; <em>b</em> &lt; 1 → <b>decay</b> (curve falls, flattening toward — but never reaching — zero)</li>\n<li>This is the exact same shape as F4's compound interest formula — money and populations both follow <em>y</em> = <em>a</em>(<em>b</em>)ˣ</li>\n</ul>"
-            }
-          ]
-        },
-        {
-          "type": "table",
-          "caption": "Recognising a graph from its equation",
-          "headers": [
-            "Equation form",
-            "Shape",
-            "Key feature"
-          ],
-          "rows": [
-            [
-              {
-                "label": "Equation form",
-                "html": "<em>y</em> = <em>ax</em>² + <em>bx</em> + <em>c</em>, <em>a</em> &gt; 0"
-              },
-              {
-                "label": "Shape",
-                "html": "Parabola, opens upward"
-              },
-              {
-                "label": "Key feature",
-                "html": "Minimum turning point"
-              }
-            ],
-            [
-              {
-                "label": "Equation form",
-                "html": "<em>y</em> = <em>ax</em>² + <em>bx</em> + <em>c</em>, <em>a</em> &lt; 0"
-              },
-              {
-                "label": "Shape",
-                "html": "Parabola, opens downward"
-              },
-              {
-                "label": "Key feature",
-                "html": "Maximum turning point"
-              }
-            ],
-            [
-              {
-                "label": "Equation form",
-                "html": "<em>y</em> = <em>a</em>(<em>b</em>)ˣ, <em>b</em> &gt; 1"
-              },
-              {
-                "label": "Shape",
-                "html": "Exponential growth"
-              },
-              {
-                "label": "Key feature",
-                "html": "Rises, gets steeper, never touches zero"
-              }
-            ],
-            [
-              {
-                "label": "Equation form",
-                "html": "<em>y</em> = <em>a</em>(<em>b</em>)ˣ, 0 &lt; <em>b</em> &lt; 1"
-              },
-              {
-                "label": "Shape",
-                "html": "Exponential decay"
-              },
-              {
-                "label": "Key feature",
-                "html": "Falls, flattens toward zero, never reaches it"
-              }
-            ],
-            [
-              {
-                "label": "Equation form",
-                "html": "<em>y</em> = <em>k</em>/<em>x</em>"
-              },
-              {
-                "label": "Shape",
-                "html": "Reciprocal (hyperbola)"
-              },
-              {
-                "label": "Key feature",
-                "html": "Two curved branches, never touches either axis"
-              }
-            ]
-          ]
-        },
-        {
-          "type": "noteGrid",
-          "boxes": [
-            {
-              "heading": "Direct & inverse variation",
-              "html": "<ul>\n<li><b>Direct variation</b>: <em>y</em> varies directly with <em>x</em>ⁿ means <em>y</em> = <em>kx</em>ⁿ — if <em>x</em> is scaled by a factor, <em>y</em> is scaled by that factor raised to the power <em>n</em> (e.g. volume ∝ side³: doubling the side multiplies volume by 2³ = 8)</li>\n<li><b>Inverse variation</b>: <em>y</em> varies inversely with <em>x</em> means <em>y</em> = <em>k</em>/<em>x</em>, so <em>xy</em> = <em>k</em> is always constant — if <em>x</em> is scaled by a factor, <em>y</em> is <b>divided</b> by that same factor (e.g. double the workers, half the time)</li>\n<li>To solve either type: find <em>k</em> from the one pair of values you're given, then substitute the new value to find the unknown</li>\n</ul>"
-            },
-            {
-              "heading": "Reading exponential growth/decay models",
-              "html": "<ul>\n<li>In <em>y</em> = <em>a</em>(<em>b</em>)ᵗ, <em>a</em> is always the <b>initial value</b> (read it off directly at <em>t</em> = 0 — no calculation needed)</li>\n<li>The base <em>b</em> tells you the growth/decay <b>rate per period</b>: <em>b</em> = 1.055 means +5.5% per period; <em>b</em> = 0.97 means −3% per period (a decay of 3%)</li>\n<li>Only the value of <em>b</em> determines growth vs. decay — <em>a</em> just sets the starting point and doesn't affect the shape</li>\n</ul>"
-            }
-          ]
-        },
-        {
-          "type": "examTip",
-          "label": "\"Varies with\" word problems",
-          "html": "<p>Whenever a question says a quantity \"varies directly/inversely with\" another, don't scale intuitively — write the variation equation, substitute the given pair to solve for <em>k</em>, then use that same <em>k</em> for the new situation. This is especially important for inverse variation, where doubling one quantity <b>halves</b> the other, not doubles it.</p>"
-        },
-        {
-          "type": "linkIt",
-          "html": "<p>Exponential growth/decay here (<em>y</em> = <em>a</em>(<em>b</em>)ˣ) is the same structure as <b>F4 — Investments &amp; Loans</b>'s compound interest formula — just with different variable names. Simultaneous linear equations build on the straight-line graphs covered in <b>A2 — Linear Relationships</b>.</p>"
-        }
-      ],
-      "revisionQuestions": [
-        {
-          "q": "Determine whether the graph of y = −3x² + 2 opens upward or downward, and state whether it has a maximum or minimum turning point.",
-          "a": "The coefficient of <em>x</em>² is negative (<em>a</em> = −3), so the parabola opens <b>downward</b> and has a <b>maximum</b> turning point."
-        },
-        {
-          "q": "An object's height is modelled by h = −5t² + 40t. Determine how long the object is in the air.",
-          "a": "The object is at ground level when <em>h</em> = 0: −5<em>t</em>² + 40<em>t</em> = 0 → <em>t</em>(−5<em>t</em> + 40) = 0 → <em>t</em> = 0 or <em>t</em> = 8. It starts at <em>t</em> = 0 and lands at <em>t</em> = 8, so it is in the air for <b>8 seconds</b>."
-        },
-        {
-          "q": "The number of bacteria in a culture is modelled by y = 500(1.08)ⁿ, where n is the time in minutes. State the initial number of bacteria and determine whether the population is growing or shrinking.",
-          "a": "Initial number (at <em>n</em> = 0): <em>y</em> = 500(1.08)⁰ = <b>500</b>. Since the base 1.08 is greater than 1, the population is <b>growing</b>, by 8% each minute."
-        },
-        {
-          "q": "The time to complete a task varies inversely with the number of workers. It takes 5 workers 12 hours to finish the job. Determine how long it would take 8 workers, working at the same rate.",
-          "a": "Inverse variation: workers × time = <em>k</em>. <em>k</em> = 5 × 12 = 60. For 8 workers: time = 60 ÷ 8 = <b>7.5 hours</b>."
-        },
-        {
-          "q": "A cube's volume varies directly with the cube of its side length. Determine the factor by which the volume increases if the side length is tripled.",
-          "a": "Volume ∝ side³, so tripling the side length multiplies the volume by 3³ = <b>27</b>."
-        },
-        {
-          "q": "Explain how to identify, from its equation alone, whether a graph shows exponential growth or exponential decay.",
-          "a": "Write the equation in the form <em>y</em> = <em>a</em> × <em>b</em>ˣ. If the base <em>b</em> is greater than 1, the graph shows growth (values increase); if <em>b</em> is between 0 and 1, it shows decay (values decrease, flattening toward zero). The value of <em>a</em> is just the starting value and has no effect on whether it's growth or decay — only <em>b</em> determines that."
-        }
-      ]
-    },
-    {
-      "id": "a1-formulae-equations",
-      "icon": "🧮",
-      "title": "A1 — Formulae & Equations",
-      "accentColor": "#C17D3C",
-      "blocks": [
-        {
-          "type": "noteGrid",
-          "boxes": [
-            {
-              "heading": "Substituting into formulas",
-              "html": "<ul>\n<li>Replace each letter with its given value, then follow the <b>order of operations</b> — multiply/divide before add/subtract, and work out anything above or below a fraction bar as its own group first</li>\n<li>Keep units consistent before substituting (e.g. convert minutes to hours if the formula expects hours)</li>\n</ul>"
-            },
-            {
-              "heading": "Translating words into equations",
-              "html": "<ul>\n<li>Build the equation in the <b>same order</b> the words describe — e.g. \"subtract 8, then multiply by 3\" becomes 3(<em>x</em> − 8), not 3<em>x</em> − 8</li>\n<li>\"Is 2 more than <em>x</em>\" means <b>= <em>x</em> + 2</b>; \"is 2 less than <em>x</em>\" means <b>= <em>x</em> − 2</b> — the direction matters</li>\n</ul>"
-            }
-          ]
-        },
-        {
-          "type": "noteGrid",
-          "boxes": [
-            {
-              "heading": "Solving linear equations",
-              "html": "<ul>\n<li>Isolate the unknown using <b>inverse operations</b>, applying the same operation to both sides every time</li>\n<li>Undo operations in <b>reverse order</b> to how they were applied — undo addition/subtraction before multiplication/division</li>\n</ul>"
-            },
-            {
-              "heading": "Equations with fractions",
-              "html": "<ul>\n<li><b>Multiply every term</b> by the denominator (or the lowest common denominator, if there's more than one) first — this clears the fraction so you're left with an ordinary linear equation</li>\n<li>Don't forget to multiply terms that <b>aren't</b> already over a fraction too — every term on both sides needs the same multiplier</li>\n</ul>"
-            }
-          ]
-        },
-        {
-          "type": "table",
-          "caption": "Changing the subject of a formula — worked example (make x the subject of y = (ax − b)/2)",
-          "headers": [
-            "Step",
-            "What to do",
-            "Result"
-          ],
-          "rows": [
-            [
-              {
-                "label": "Step",
-                "html": "1"
-              },
-              {
-                "label": "What to do",
-                "html": "Multiply both sides by 2 (clear the fraction)"
-              },
-              {
-                "label": "Result",
-                "html": "2<em>y</em> = <em>ax</em> − <em>b</em>"
-              }
-            ],
-            [
-              {
-                "label": "Step",
-                "html": "2"
-              },
-              {
-                "label": "What to do",
-                "html": "Add <em>b</em> to both sides"
-              },
-              {
-                "label": "Result",
-                "html": "2<em>y</em> + <em>b</em> = <em>ax</em>"
-              }
-            ],
-            [
-              {
-                "label": "Step",
-                "html": "3"
-              },
-              {
-                "label": "What to do",
-                "html": "Divide both sides by <em>a</em>"
-              },
-              {
-                "label": "Result",
-                "html": "<em>x</em> = (2<em>y</em> + <em>b</em>) ÷ <em>a</em>"
-              }
-            ]
-          ]
-        },
-        {
-          "type": "noteGrid",
-          "boxes": [
-            {
-              "heading": "Applying formulas in context",
-              "html": "<ul>\n<li>Real-world formulas (BAC estimation, electricity billing, wages) combine everything above: <b>substitute</b> known values, then <b>solve or rearrange</b> for whatever's unknown</li>\n<li>Read carefully which letter the question wants — sometimes it's a direct substitution, other times you need to rearrange first before substituting</li>\n</ul>"
-            },
-            {
-              "heading": "Checking your answer",
-              "html": "<ul>\n<li>Substitute your solution <b>back into the original equation</b> — both sides should be equal</li>\n<li>For a rearranged formula, check it still works by substituting a value for every letter and confirming both the original and rearranged versions agree</li>\n</ul>"
-            }
-          ]
-        },
-        {
-          "type": "examTip",
-          "label": "\"Make X the subject\" questions",
-          "html": "<p>Treat the target letter exactly like the unknown in an equation you're solving — undo whatever has been done to it, in reverse order, keeping both sides balanced at each step. Clear any fractions first. The multiple-choice versions of these questions are really just testing whether you did the steps in the right order.</p>"
-        },
-        {
-          "type": "linkIt",
-          "html": "<p>The BAC and electricity-billing formulas here reappear as <b>rates</b> in <b>M7 — Rates &amp; Ratios</b> — this topic teaches the algebra (substituting, rearranging), M7 covers reading and using the rate itself.</p>"
-        }
-      ],
-      "revisionQuestions": [
-        {
-          "q": "Given the formula A = P + Prt, find A when P = 2000, r = 0.05 and t = 3.",
-          "a": "<em>A</em> = 2000 + 2000(0.05)(3) = 2000 + 300 = <b>$2300</b>."
-        },
-        {
-          "q": "A student thinks of a number x. Subtracting 4 and multiplying the result by 3 gives an answer 5 more than x. Write an equation for this and solve for x.",
-          "a": "3(<em>x</em> − 4) = <em>x</em> + 5 → 3<em>x</em> − 12 = <em>x</em> + 5 → 2<em>x</em> = 17 → <em>x</em> = <b>8.5</b>."
-        },
-        {
-          "q": "Make x the subject of the formula y = (px + q)/4.",
-          "a": "Multiply both sides by 4: 4<em>y</em> = <em>px</em> + <em>q</em>. Subtract <em>q</em>: 4<em>y</em> − <em>q</em> = <em>px</em>. Divide by <em>p</em>: <b><em>x</em> = (4<em>y</em> − <em>q</em>) ÷ <em>p</em></b>."
-        },
-        {
-          "q": "Solve the equation x + (x − 1)/3 = 7.",
-          "a": "Multiply every term by 3: 3<em>x</em> + (<em>x</em> − 1) = 21 → 4<em>x</em> − 1 = 21 → 4<em>x</em> = 22 → <em>x</em> = <b>5.5</b>."
-        },
-        {
-          "q": "The formula for BAC (males) is BAC = (10N − 7.5H) ÷ (6.8M), where N = standard drinks, H = hours drinking, M = mass in kg. Calculate the BAC for a 90 kg male who has had 6 standard drinks over 3 hours.",
-          "a": "BAC = (10×6 − 7.5×3) ÷ (6.8×90) = (60 − 22.5) ÷ 612 = 37.5 ÷ 612 ≈ <b>0.061</b>."
-        },
-        {
-          "q": "Explain the general strategy for making a given letter the subject of a formula.",
-          "a": "Treat the target letter as the unknown you're solving for, and undo the operations applied to it in reverse order — clear any fractions by multiplying through first, then undo addition/subtraction, then undo multiplication/division, keeping both sides balanced at each step, until the target letter is alone on one side."
-        }
-      ]
-    },
-    {
-      "id": "a2-linear-relationships",
-      "icon": "📐",
-      "title": "A2 — Linear Relationships",
-      "accentColor": "#C17D3C",
-      "blocks": [
-        {
-          "type": "noteGrid",
-          "boxes": [
-            {
-              "heading": "The linear equation y = mx + c",
-              "html": "<ul>\n<li><b><em>m</em></b> is the <b>gradient</b> (how steep the line is, and which way it slopes)</li>\n<li><b><em>c</em></b> is the <b><em>y</em>-intercept</b> — the value of <em>y</em> when <em>x</em> = 0</li>\n<li>To find <em>m</em> and <em>c</em> from an equation, rearrange it into <em>y</em> = <em>mx</em> + <em>c</em> form first — e.g. <em>y</em> = 5 − 3<em>x</em> has <em>m</em> = −3, <em>c</em> = 5</li>\n</ul>"
-            },
-            {
-              "heading": "Gradient — what it means",
-              "html": "<ul>\n<li>Gradient = how much <em>y</em> changes for <b>every 1-unit increase</b> in <em>x</em></li>\n<li><b>Positive</b> gradient → line rises left to right (<em>y</em> increases as <em>x</em> increases)</li>\n<li><b>Negative</b> gradient → line falls left to right (<em>y</em> decreases as <em>x</em> increases)</li>\n<li>Between any two points on the line: gradient = rise ÷ run = change in <em>y</em> ÷ change in <em>x</em></li>\n</ul>"
-            }
-          ]
-        },
-        {
-          "type": "noteGrid",
-          "boxes": [
-            {
-              "heading": "Building a linear model from a description",
-              "html": "<ul>\n<li>A <b>fixed</b> amount (a call-out fee, a base charge) becomes <em>c</em>, the <em>y</em>-intercept</li>\n<li>A <b>rate</b> (cost per minute, per item) becomes <em>m</em>, the gradient</li>\n<li>Combine as <b>total = <em>c</em> + <em>m</em> × (quantity)</b> — but check the units match first (see the exam tip below)</li>\n</ul>"
-            },
-            {
-              "heading": "Reading a graph's equation",
-              "html": "<ul>\n<li>Check where the line crosses the <em>y</em>-axis first — that's <em>c</em>, and it immediately rules out any candidate equation with the wrong intercept</li>\n<li>Then check the slope <b>direction</b> (rising or falling) to confirm the sign of <em>m</em>, and the steepness if more than one candidate still matches</li>\n</ul>"
-            }
-          ]
-        },
-        {
-          "type": "table",
-          "caption": "Direct variation vs. a general linear relationship",
-          "headers": [
-            "Form",
-            "Graph",
-            "Key feature"
-          ],
-          "rows": [
-            [
-              {
-                "label": "Form",
-                "html": "<em>y</em> = <em>mx</em> (direct variation)"
-              },
-              {
-                "label": "Graph",
-                "html": "Straight line through the origin"
-              },
-              {
-                "label": "Key feature",
-                "html": "<em>y</em> is directly proportional to <em>x</em> — no constant term"
-              }
-            ],
-            [
-              {
-                "label": "Form",
-                "html": "<em>y</em> = <em>mx</em> + <em>c</em>, <em>c</em> ≠ 0"
-              },
-              {
-                "label": "Graph",
-                "html": "Straight line shifted up/down from the origin"
-              },
-              {
-                "label": "Key feature",
-                "html": "Doesn't pass through (0, 0) unless <em>c</em> happens to be 0"
-              }
-            ]
-          ]
-        },
-        {
-          "type": "noteGrid",
-          "boxes": [
-            {
-              "heading": "Profit as a linear model",
-              "html": "<ul>\n<li><b>Profit = Revenue − Cost</b> — if both Revenue and Cost are linear in the number of items <em>x</em>, Profit is linear too</li>\n<li>The <b>profit gained per extra item</b> sold is the gradient of the profit equation — i.e. Revenue's gradient minus Cost's gradient</li>\n</ul>"
-            },
-            {
-              "heading": "Matching graphs to equations",
-              "html": "<ul>\n<li>Eliminate options using the <em>y</em>-intercept first — it's usually the fastest check</li>\n<li>Then use the slope direction, and finally steepness (a larger |<em>m</em>| means a steeper line) if more than one option remains</li>\n</ul>"
-            }
-          ]
-        },
-        {
-          "type": "examTip",
-          "label": "Match your units before combining rates",
-          "html": "<p>A very common trap: a rate given \"per minute\" combined with a variable given in hours. Convert one to match the other <b>before</b> substituting — e.g. \"$2 per minute\" for <em>t</em> hours of work needs 2 × 60<em>t</em>, not 2<em>t</em>.</p>"
-        },
-        {
-          "type": "linkIt",
-          "html": "<p>Everything in <b>A4 — Non-linear Relationships</b> (parabolas, exponentials) is understood by contrast with the straight-line behaviour covered here — a constant gradient is what makes a relationship linear in the first place. Rearranging <em>y</em> = <em>mx</em> + <em>c</em> for <em>m</em> or <em>c</em> uses the same subject-changing skill from <b>A1 — Formulae &amp; Equations</b>.</p>"
-        }
-      ],
-      "revisionQuestions": [
-        {
-          "q": "State the gradient and y-intercept of the line y = 5 − 3x.",
-          "a": "Rewritten in <em>y</em> = <em>mx</em> + <em>c</em> form: <em>y</em> = −3<em>x</em> + 5. Gradient <em>m</em> = <b>−3</b>, <em>y</em>-intercept <em>c</em> = <b>5</b>."
-        },
-        {
-          "q": "A plumber charges a $70 call-out fee plus $2.50 per minute. Write an equation for the total charge C, in dollars, for t hours of work.",
-          "a": "t hours = 60<em>t</em> minutes, so <b><em>C</em> = 70 + 150<em>t</em></b> (since 2.50 × 60 = 150)."
-        },
-        {
-          "q": "A line has a gradient of −4 and passes through (0, 6). Determine the y-value when x = 3.",
-          "a": "<em>y</em> = 6 + (−4)(3) = 6 − 12 = <b>−6</b>."
-        },
-        {
-          "q": "Cost C = 4x + 20 and Revenue R = 10x for a business selling x items. Calculate how much profit increases for each additional item sold.",
-          "a": "Profit = <em>R</em> − <em>C</em> = 10<em>x</em> − (4<em>x</em> + 20) = 6<em>x</em> − 20. The gradient is 6, so profit increases by <b>$6</b> per additional item."
-        },
-        {
-          "q": "Explain how to identify whether a straight-line graph represents a direct variation relationship.",
-          "a": "A direct variation relationship has the form <em>y</em> = <em>mx</em>, with no constant term, so its graph is a straight line passing through the origin (0, 0). Check whether the line crosses the axes exactly at the origin — if it crosses the <em>y</em>-axis anywhere else, it isn't direct variation."
-        },
-        {
-          "q": "Two candidate equations are y = 2x − 3 and y = −2x − 3. The graph shown falls from left to right. Explain which equation matches.",
-          "a": "A graph falling from left to right has a negative gradient. <em>y</em> = 2<em>x</em> − 3 has gradient +2 (rising), while <em>y</em> = −2<em>x</em> − 3 has gradient −2 (falling) — so <b><em>y</em> = −2<em>x</em> − 3</b> matches."
-        }
-      ]
-    },
-    {
-      "id": "f5-annuities",
-      "icon": "🏦",
-      "title": "F5 — Annuities",
-      "accentColor": "#C17D3C",
-      "blocks": [
-        {
-          "type": "noteGrid",
-          "boxes": [
-            {
-              "heading": "What is an annuity?",
-              "html": "<ul>\n<li>A sequence of <b>equal, regular payments</b> into (or out of) an account that earns <b>compound interest</b> each period</li>\n<li>Payments are usually made at the <b>end</b> of each compounding period</li>\n<li>Can work either way: building up savings (regular deposits) or paying off a loan (regular repayments)</li>\n</ul>"
-            },
-            {
-              "heading": "Recurrence relations for annuities",
-              "html": "<ul>\n<li><b><em>A</em>ₙ = <em>A</em>ₙ₋₁ × (1 + <em>r</em>) ± payment</b> — <em>r</em> is the interest rate per period, <em>A</em>₀ is the starting balance</li>\n<li><b>Add</b> the payment for an investment (regular deposits growing the balance)</li>\n<li><b>Subtract</b> the payment for a loan or a withdrawal (regular amounts drawn down)</li>\n<li>Work through one period at a time — there's no shortcut, just repeat the same step</li>\n</ul>"
-            }
-          ]
-        },
-        {
-          "type": "noteGrid",
-          "boxes": [
-            {
-              "heading": "Future value of an annuity (using tables)",
-              "html": "<ul>\n<li>Exams provide a <b>\"future value of an annuity of $1\" table</b> — look up the factor for the given rate and number of periods</li>\n<li><b><em>FV</em> = payment × (FV interest factor)</b> — multiply the table value by the actual payment amount</li>\n</ul>"
-            },
-            {
-              "heading": "Present value of an annuity (using tables)",
-              "html": "<ul>\n<li>Same idea with a <b>\"present value of an annuity of $1\" table</b></li>\n<li><b><em>PV</em> = payment × (PV interest factor)</b> — used to value a future stream of payments in today's dollars, or to connect a loan amount to its repayments</li>\n</ul>"
-            }
-          ]
-        },
-        {
-          "type": "table",
-          "caption": "Reading annuity interest-factor tables",
-          "headers": [
-            "Situation",
-            "Formula",
-            "What the table gives you"
-          ],
-          "rows": [
-            [
-              {
-                "label": "Situation",
-                "html": "Future value of an investment"
-              },
-              {
-                "label": "Formula",
-                "html": "<em>FV</em> = payment × FV factor"
-              },
-              {
-                "label": "What the table gives you",
-                "html": "The value $1 invested each period grows to by the end"
-              }
-            ],
-            [
-              {
-                "label": "Situation",
-                "html": "Present value of a loan"
-              },
-              {
-                "label": "Formula",
-                "html": "Loan amount = repayment × PV factor"
-              },
-              {
-                "label": "What the table gives you",
-                "html": "Today's value of $1 to be paid each period"
-              }
-            ],
-            [
-              {
-                "label": "Situation",
-                "html": "Finding the repayment"
-              },
-              {
-                "label": "Formula",
-                "html": "Repayment = loan amount ÷ PV factor"
-              },
-              {
-                "label": "What the table gives you",
-                "html": "Same PV factor, rearranged to solve for the unknown repayment"
-              }
-            ]
-          ]
-        },
-        {
-          "type": "noteGrid",
-          "boxes": [
-            {
-              "heading": "Loans repaid via annuity tables",
-              "html": "<ul>\n<li>A reducing-balance loan repaid in equal instalments is mathematically an annuity <b>in reverse</b> — the loan amount is the present value of all the future repayments</li>\n<li><b>Repayment = loan amount ÷ PV interest factor</b> — using the factor for the loan's rate per period and total number of repayments</li>\n</ul>"
-            },
-            {
-              "heading": "PV vs. FV — which is bigger",
-              "html": "<ul>\n<li>For any annuity: <b>PV &lt; total of the nominal (face-value) payments &lt; FV</b></li>\n<li>Discounting brings future payments back to a <b>smaller</b> value today (PV); compounding grows the account to <b>more</b> than the sum of the plain contributions (FV)</li>\n</ul>"
-            }
-          ]
-        },
-        {
-          "type": "examTip",
-          "label": "Matching the table to the question",
-          "html": "<p>Always match the interest factor table's rate-per-period and number-of-periods to the question's actual compounding frequency — e.g. monthly repayments need the <b>monthly</b> rate and the <b>total number of months</b>, not the annual figures. Reading the wrong row/column of the table is the single most common error in this topic.</p>"
-        },
-        {
-          "type": "linkIt",
-          "html": "<p>Annuities extend <b>F4 — Investments &amp; Loans</b>'s single-lump-sum compound interest to a whole <b>series</b> of regular payments — the underlying compounding is identical, just applied repeatedly.</p>"
-        }
-      ],
-      "revisionQuestions": [
-        {
-          "q": "Explain the difference between the future value and the present value of an annuity.",
-          "a": "The future value (FV) is the total amount accumulated at the end of the annuity's term — every payment plus all the compound interest earned. The present value (PV) is the equivalent single lump sum, invested today, that would grow into (or is needed to fund) that same stream of payments. PV is always smaller than FV, since it hasn't yet had the chance to earn interest."
-        },
-        {
-          "q": "A savings recurrence relation is Aₙ = Aₙ₋₁ × 1.004 − 250, with A₀ = $10 000. Find the balance after the second withdrawal (A₂).",
-          "a": "<em>A</em>₁ = 10 000 × 1.004 − 250 = 10 040 − 250 = 9790. <em>A</em>₂ = 9790 × 1.004 − 250 = 9829.16 − 250 = <b>$9579.16</b>."
-        },
-        {
-          "q": "An annuity has a future value interest factor of 12.0061 for 10 yearly payments at a given rate. If each payment is $2000, calculate the future value of the annuity.",
-          "a": "<em>FV</em> = payment × factor = 2000 × 12.0061 = <b>$24 012.20</b>."
-        },
-        {
-          "q": "A loan of $180 000 is to be repaid in equal monthly instalments. The present value interest factor for the loan's rate and term is 150.30. Calculate the monthly repayment.",
-          "a": "Repayment = loan amount ÷ PV factor = 180 000 ÷ 150.30 ≈ <b>$1197.61</b>."
-        },
-        {
-          "q": "Explain why, for the same regular payment amount, the present value of an annuity is always less than the total of all the nominal (undiscounted) payments.",
-          "a": "The present value discounts every future payment back to today's value using the interest rate — money received in the future is worth less today, since it hasn't yet had the chance to earn interest. So even though the actual dollar payments add up to a certain total, their combined value today (PV) is always less than that simple total."
-        },
-        {
-          "q": "Describe, in general terms, how a recurrence relation for an annuity differs between an investment (building up savings) and a loan (paying down debt).",
-          "a": "In both cases the balance is multiplied by (1 + r) each period to add interest. For an investment, the regular contribution is <b>added</b> each period, so the balance grows from both interest and new deposits. For a loan, the regular repayment is <b>subtracted</b> each period — interest still accrues on the balance (working against the borrower), but the repayment reduces it, so the balance shrinks over time as long as repayments exceed the interest charged."
         }
       ]
     },
@@ -10684,6 +10572,118 @@
         {
           "q": "Explain why the sine rule can sometimes give two possible answers for an unknown angle (the ambiguous case), and how to decide which is correct.",
           "a": "Because sin(θ) = sin(180° − θ), an angle and its supplement have the same sine value — so solving the sine rule for an angle can produce both an acute and an obtuse solution. The correct one is chosen by checking which is consistent with the rest of the triangle: the three angles must sum to 180°, and the question may explicitly state that a particular angle is obtuse."
+        }
+      ]
+    },
+    {
+      "id": "m7-rates-ratios",
+      "icon": "⚖️",
+      "title": "M7 — Rates & Ratios",
+      "accentColor": "#C17D3C",
+      "blocks": [
+        {
+          "type": "noteGrid",
+          "boxes": [
+            {
+              "heading": "Ratios — simplifying, dividing & changing",
+              "html": "<ul>\n<li><b>Simplify</b> a ratio by dividing every term by their highest common factor</li>\n<li>To <b>divide a quantity</b> in a given ratio: total parts = sum of the ratio numbers, then each share = (quantity ÷ total parts) × that number</li>\n<li>Both quantities in a ratio must be in the <b>same units</b> before simplifying — e.g. \"20 minutes to one-third of a day\" needs converting to the same unit (minutes) first</li>\n<li>If amounts are <b>added or removed</b> (e.g. jelly beans eaten, liquid removed from a mixture), calculate the new individual amounts first, then re-simplify the ratio from those — don't adjust the ratio numbers directly</li>\n</ul>"
+            },
+            {
+              "heading": "Scale (model : actual)",
+              "html": "<ul>\n<li>A scale of <b>1 : <em>n</em></b> means 1 unit on the model/map = <em>n</em> of the same unit in real life</li>\n<li>Model → actual: <b>multiply</b> by <em>n</em>. Actual → model: <b>divide</b> by <em>n</em></li>\n<li>Convert units at the end, not the start — work in one consistent unit throughout the ratio calculation, then convert the answer if the question asks for a different unit</li>\n</ul>"
+            }
+          ]
+        },
+        {
+          "type": "noteGrid",
+          "boxes": [
+            {
+              "heading": "Speed, distance & time",
+              "html": "<ul>\n<li><b>Speed = distance ÷ time</b>, so distance = speed × time, and time = distance ÷ speed</li>\n<li>Convert time to match the speed's units before dividing — e.g. \"3 hours 30 minutes\" must become 3.5 hours to use with km/h</li>\n<li>Reading start/end clock times (e.g. 6:42 am to 8:04 am) — find the elapsed time first, converting to hours as a decimal if needed</li>\n</ul>"
+            },
+            {
+              "heading": "Best value (unit pricing)",
+              "html": "<ul>\n<li><b>Unit price = cost ÷ quantity</b> — the <b>lower</b> unit price is the better deal</li>\n<li>All options must be compared in the <b>same unit</b> (e.g. cost per litre, cost per 100 g) — convert first if the options are given in different sizes</li>\n</ul>"
+            }
+          ]
+        },
+        {
+          "type": "table",
+          "caption": "Converting between speed units",
+          "headers": [
+            "Conversion",
+            "Multiply by"
+          ],
+          "rows": [
+            [
+              {
+                "label": "Conversion",
+                "html": "km/h → m/s"
+              },
+              {
+                "label": "Multiply by",
+                "html": "÷ 3.6"
+              }
+            ],
+            [
+              {
+                "label": "Conversion",
+                "html": "m/s → km/h"
+              },
+              {
+                "label": "Multiply by",
+                "html": "× 3.6"
+              }
+            ]
+          ]
+        },
+        {
+          "type": "noteGrid",
+          "boxes": [
+            {
+              "heading": "Rates of change (linear)",
+              "html": "<ul>\n<li>Some quantities change by a <b>fixed amount per unit of time</b> — e.g. blood alcohol concentration (BAC) decreasing by a set amount per hour — the same \"flat rate\" structure as F1's straight-line depreciation</li>\n<li>To find the <b>time to reach a target value</b>: time = (starting value − target value) ÷ rate of change</li>\n</ul>"
+            },
+            {
+              "heading": "Using a rate to estimate a total",
+              "html": "<ul>\n<li>Count/measure a small, <b>representative sample</b> (e.g. trees in a small section of land), and calculate the rate for that sample (e.g. trees per m²)</li>\n<li><b>Scale up</b>: multiply the rate by the total area/quantity to estimate the full total — this assumes the sample is spread evenly and is genuinely representative</li>\n<li><b>Capture–recapture</b> (tagging and resampling to estimate an animal population) uses this same idea, applied to a ratio of tagged-to-total in each sample — see <b>M1 — Measurement</b> for the full method</li>\n</ul>"
+            }
+          ]
+        },
+        {
+          "type": "examTip",
+          "label": "Units, units, units",
+          "html": "<p>Almost every mistake in this topic comes from mismatched units — minutes vs. hours, cm vs. m, or comparing a 1.5 L price against a 2 L price without converting to a common unit first. Before calculating, check every quantity in the question is in the same unit you need for the formula.</p>"
+        },
+        {
+          "type": "linkIt",
+          "html": "<p>Scale here uses the same ratio idea as F1/F4's money problems and M1's scale drawings — the difference is just what's being scaled (a length or a price, not an area). Capture-recapture population estimation is covered in full under <b>M1 — Measurement</b>.</p>"
+        }
+      ],
+      "revisionQuestions": [
+        {
+          "q": "A drink is made from cordial and water in the ratio 1 : 4. Determine how much cordial is needed to make 3 L of the drink.",
+          "a": "Total parts = 1 + 4 = 5. Cordial = (1 ÷ 5) × 3 L = <b>0.6 L</b>."
+        },
+        {
+          "q": "A car travels 210 km in 3 hours 30 minutes. Calculate its average speed in km/h.",
+          "a": "Convert time to hours: 3 h 30 min = 3.5 h. Speed = distance ÷ time = 210 ÷ 3.5 = <b>60 km/h</b>."
+        },
+        {
+          "q": "Two bottles of juice are for sale: a 1.5 L bottle for $4.50, and a 2 L bottle for $5.60. Determine which is better value.",
+          "a": "Unit price: 1.5 L bottle = $4.50 ÷ 1.5 = $3.00/L. 2 L bottle = $5.60 ÷ 2 = $2.80/L. The <b>2 L bottle</b> is better value, since its price per litre is lower."
+        },
+        {
+          "q": "A model bridge is built at a scale of 1 : 150. Calculate the real length, in metres, of a section that measures 8 cm on the model.",
+          "a": "Real length = 8 cm × 150 = 1200 cm = <b>12 m</b>."
+        },
+        {
+          "q": "A person's BAC is 0.090 at midnight and decreases at a constant rate of 0.012 per hour. Calculate how long it takes for their BAC to reach zero.",
+          "a": "Time = starting value ÷ rate = 0.090 ÷ 0.012 = <b>7.5 hours</b>."
+        },
+        {
+          "q": "Explain how a small sample can be used to estimate the number of trees on a large block of land.",
+          "a": "Count the trees in a small, representative section of the block, then calculate the rate (trees per unit area, e.g. trees per m²) for that section. Multiply this rate by the total area of the block to estimate the total number of trees — this assumes the trees are spread roughly evenly across the whole block."
         }
       ]
     },
