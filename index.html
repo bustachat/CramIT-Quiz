@@ -747,7 +747,7 @@ const SUBJECTS = {
     name: 'Mathematics Standard 2',
     icon: '📐',
     accent: '#C17D3C',
-    hasMC: true, hasWritten: true,
+    hasMC: true, hasWritten: true, hasStudy: true,
     getMC: (filters) => {
       const qs0 = subjectCache.maths?.mcQuestions ?? [];
       let qs = mathsQuestionSet === 'original'
@@ -886,7 +886,7 @@ function renderPicker() {
 
   let html = '';
 
-  // Subjects with Study content (HMS only, for now) land on a Study Mode /
+  // Subjects with Study content (HMS, Maths so far) land on a Study Mode /
   // Exam Mode front page instead of going straight to the quiz picker.
   // Exam Mode's content below is exactly today's picker, unchanged.
   if (s.hasStudy) {
