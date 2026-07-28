@@ -1962,6 +1962,593 @@
           "a": "Object layering stacks visual elements — images, shapes, text — from separate sources onto independent layers to build one composite image. It's useful because each layer can still be selected, moved and edited on its own without disturbing the others, which is fundamental to how software like Photoshop or Illustrator is used."
         }
       ]
+    },
+    {
+      "id": "animation",
+      "icon": "🎞️",
+      "title": "Animation",
+      "accentColor": "#5B7FA6",
+      "blocks": [
+        {
+          "type": "noteGrid",
+          "boxes": [
+            {
+              "heading": "Keyframes & tweening",
+              "html": "<ul>\n<li><b>Keyframes</b> are frames the animator creates by hand to define the start and end states of a movement (position, scale, rotation or shape)</li>\n<li><b>Tweening</b> (in-betweening) is the software process that automatically generates the frames <em>between</em> keyframes, creating smooth motion without the animator drawing every frame</li>\n</ul>"
+            },
+            {
+              "heading": "Animation techniques",
+              "html": "<ul>\n<li><b>Path-based</b> animation — an object follows an assigned path, with keyframes setting its position at points along it; tweening fills in the rest</li>\n<li><b>Cel-based (hand-drawn)</b> animation — every frame is drawn individually on transparent sheets; tweening replaces this labour-intensive process in digital animation</li>\n<li><b>Stop motion</b> — physical objects (puppets, clay models) are photographed frame by frame with slight adjustments between shots</li>\n</ul>"
+            }
+          ]
+        },
+        {
+          "type": "noteGrid",
+          "boxes": [
+            {
+              "heading": "Motion capture",
+              "html": "<ul>\n<li>Reflective markers (or sensors) are placed on key points of a performer's body — multiple (often infrared) cameras track each marker's position in 3D space</li>\n<li>The captured positional data is assembled into a skeleton model and mapped onto a digital 3D character, producing natural, realistic movement that would be very difficult to hand-animate</li>\n</ul>"
+            },
+            {
+              "heading": "3D modelling, rigging & wireframes",
+              "html": "<ul>\n<li><b>3D modelling</b> creates a mathematical representation of an object using X/Y/Z coordinates — vertices, edges and polygonal faces</li>\n<li><b>Rigging</b> sets up a skeleton (armature) inside the finished model — this controls how it deforms and moves when animated, and always happens <b>after</b> modelling</li>\n<li>A <b>wireframe</b> shows only a model's edges and vertices — used during <b>previsualisation</b> (planning camera angles, movement and timing) before detailed modelling and rendering</li>\n</ul>"
+            }
+          ]
+        },
+        {
+          "type": "noteGrid",
+          "boxes": [
+            {
+              "heading": "Looping & morphing",
+              "html": "<ul>\n<li><b>Looping</b> — playing an animation sequence continuously from start to finish, repeating indefinitely (animated GIFs, loading spinners)</li>\n<li><b>Morphing</b> — smoothly transforming one image or shape into a different one over a sequence of frames</li>\n</ul>"
+            },
+            {
+              "heading": "What is animation?",
+              "html": "<ul>\n<li>Animation is the process of displaying a series of images (frames) in <b>quick succession</b> to create the illusion of movement — the eye and brain perceive the rapid sequence as continuous motion</li>\n<li>This principle applies to every animation technique, from hand-drawn cel animation to fully rendered CGI</li>\n</ul>"
+            }
+          ]
+        },
+        {
+          "type": "table",
+          "caption": "3D animation pipeline — typical stage order",
+          "headers": ["Stage", "What happens"],
+          "rows": [
+            [
+              { "label": "Stage", "html": "Previsualisation" },
+              { "label": "What happens", "html": "Rough wireframe models plan camera angles, movement and timing before detailed work begins" }
+            ],
+            [
+              { "label": "Stage", "html": "Modelling" },
+              { "label": "What happens", "html": "The finished 3D geometry (shape, form) of characters and objects is created" }
+            ],
+            [
+              { "label": "Stage", "html": "Rigging" },
+              { "label": "What happens", "html": "A skeleton structure is built inside the model so it can be posed and animated" }
+            ],
+            [
+              { "label": "Stage", "html": "Animating" },
+              { "label": "What happens", "html": "Keyframes are set and tweened (or motion capture data applied) to create movement" }
+            ],
+            [
+              { "label": "Stage", "html": "Rendering" },
+              { "label": "What happens", "html": "The fully modelled, textured, lit and animated scene is converted into finished 2D images/video frames" }
+            ]
+          ]
+        },
+        {
+          "type": "table",
+          "caption": "Virtual reality — advantage vs disadvantage",
+          "headers": ["Aspect", "Detail"],
+          "rows": [
+            [
+              { "label": "Aspect", "html": "Advantage" },
+              { "label": "Detail", "html": "Enables safe, immersive rehearsal of dangerous, expensive or impossible scenarios — e.g. surgeons, pilots and emergency responders can train without real-world risk or cost, with high engagement and retention" }
+            ],
+            [
+              { "label": "Aspect", "html": "Disadvantage" },
+              { "label": "Detail", "html": "Requires expensive specialist hardware (headsets, motion controllers, high-performance computers); some users experience motion sickness, eye strain or disorientation" }
+            ]
+          ]
+        },
+        {
+          "type": "examTip",
+          "label": "Lip-sync / mouth-shape questions",
+          "html": "<p>These questions want the full pipeline, not just \"match the mouth to the sound\": import the <b>audio waveform</b> onto the timeline → match each pre-drawn mouth shape (a <b>phoneme</b>) to the correct point in the waveform → use <b>tweening</b>/<b>morphing</b> to smooth the transitions between shapes → <b>play back</b> and adjust timing until it looks natural. Naming tweening and morphing explicitly is usually worth real marks.</p>"
+        },
+        {
+          "type": "linkIt",
+          "html": "<p>3D modelling and rigging feed directly into <b>Video</b>'s special-effects pipeline (CGI characters and creatures are built exactly this way before being composited into live-action footage), and the mathematical, coordinate-based nature of a 3D model is the same underlying idea as a 2D <b>vector</b> graphic in <b>Graphics</b> — just extended into a third dimension.</p>"
+        }
+      ],
+      "revisionQuestions": [
+        {
+          "q": "Explain the difference between tweening and motion capture as two ways of generating animation movement.",
+          "a": "<b>Tweening</b> is a software process — the animator sets keyframes and the software automatically calculates the frames in between them. <b>Motion capture</b> records the real physical movement of a human performer (via markers and cameras) and maps that recorded data onto a digital 3D character, rather than generating movement mathematically."
+        },
+        {
+          "q": "What is the purpose of rigging in 3D animation, and does it happen before or after modelling?",
+          "a": "Rigging builds a skeleton (armature) structure inside a 3D model so it can be posed and animated realistically. It always happens <b>after</b> modelling — you need the finished 3D geometry of the character before you can build a skeleton inside it."
+        },
+        {
+          "q": "A loading spinner plays the same short animation over and over without stopping. Which animation concept does this demonstrate? Explain.",
+          "a": "<b>Looping</b> — playing an animation sequence continuously from start to finish and repeating it indefinitely, without any change to the sequence itself."
+        },
+        {
+          "q": "Outline ONE advantage and ONE disadvantage of using virtual reality for staff training in a company.",
+          "a": "<b>Advantage:</b> employees can safely rehearse dangerous or high-stakes scenarios (e.g. emergency procedures) in a fully immersive simulation with no real-world risk or cost. <b>Disadvantage:</b> VR requires expensive specialist hardware (headsets, high-performance computers) to set up and maintain, and some users experience motion sickness or eye strain during use."
+        },
+        {
+          "q": "Explain what a wireframe is and why it's used during previsualisation rather than being the final rendered output.",
+          "a": "A wireframe shows only a 3D model's edges and vertices, with no textures, lighting or surface detail. It's used during previsualisation because it's quick to move and reposition, letting the team plan camera angles, movement and timing cheaply before investing time in detailed modelling, texturing and rendering."
+        },
+        {
+          "q": "An animator wants a character's mouth movements to sync precisely with recorded dialogue. Outline the general process.",
+          "a": "The audio dialogue track is imported onto the timeline and its waveform analysed to identify which sounds occur at which frames. Each pre-drawn mouth shape (matched to a phoneme) is placed at the corresponding point on the timeline, and tweening or morphing is used to smooth the transitions between shapes. The sequence is then played back and timing adjusted until the mouth movements look natural and precisely synchronised with the audio."
+        }
+      ]
+    },
+    {
+      "id": "video",
+      "icon": "🎬",
+      "title": "Video",
+      "accentColor": "#5B7FA6",
+      "blocks": [
+        {
+          "type": "noteGrid",
+          "boxes": [
+            {
+              "heading": "Lossy vs lossless compression",
+              "html": "<ul>\n<li><b>Lossy</b> compression (e.g. MP4/H.264) permanently discards data the eye is least likely to notice — smaller files, but quality is reduced, more visibly at higher compression ratios</li>\n<li><b>Lossless</b> compression (e.g. ProRes, RAW) preserves all original data and full quality, but produces very large files that need more storage and processing power</li>\n<li>The <b>primary purpose</b> of video compression is to reduce file size <em>while keeping as much quality as possible</em> — not simply to shrink files at any cost</li>\n</ul>"
+            },
+            {
+              "heading": "Frame rates & slow motion",
+              "html": "<ul>\n<li>To create slow motion by <b>recording</b>: film at a <b>higher</b> frame rate than the playback rate (e.g. record 60fps, play back at 25fps) — there's more footage than needed, so it plays back slower and smoothly</li>\n<li>To create slow motion in <b>post-production</b> from normal-speed footage: software generates additional in-between frames (<b>frame interpolation</b>) so the existing footage can be stretched out without becoming choppy</li>\n</ul>"
+            }
+          ]
+        },
+        {
+          "type": "noteGrid",
+          "boxes": [
+            {
+              "heading": "Video resolution standards",
+              "html": "<ul>\n<li><b>HD (720p)</b> = 1280 × 720</li>\n<li><b>Full HD (1080p)</b> = 1920 × 1080, 16:9 — the standard for broadcast TV, Blu-ray and most streaming</li>\n<li><b>4K / Ultra HD</b> = 3840 × 2160 — four times the pixel count of Full HD</li>\n<li><b>8K</b> = 7680 × 4320 — sixteen times the pixel count of Full HD, with very high storage/bandwidth needs</li>\n</ul>"
+            },
+            {
+              "heading": "Analogue vs digital video",
+              "html": "<ul>\n<li><b>Analogue</b> video is a <b>continuous</b> electrical signal stored on magnetic tape (e.g. VHS) — smooth, but degrades in quality over time and with every copy made</li>\n<li><b>Digital</b> video is stored as <b>discrete</b> binary data (0s and 1s) — consistent quality, easier editing/post-production, error correction, lossless copying and efficient compression for online distribution</li>\n</ul>"
+            }
+          ]
+        },
+        {
+          "type": "noteGrid",
+          "boxes": [
+            {
+              "heading": "The clapperboard",
+              "html": "<ul>\n<li>The clapperboard's sharp \"clap\" creates a visible spike in the audio waveform — editors align this spike with the frame where the board closes, precisely synchronising separately recorded video and audio tracks in post-production</li>\n</ul>"
+            },
+            {
+              "heading": "Video player performance",
+              "html": "<ul>\n<li>Smooth playback depends mainly on <b>processing power</b> (CPU, or a GPU with hardware decoding) — the player has to decode compressed video data (e.g. H.264/H.265) and render frames fast enough to keep up with the required frame rate</li>\n<li>Screen brightness, sound card quality and storage space do <b>not</b> affect playback smoothness — a common distractor pattern in exam questions</li>\n</ul>"
+            }
+          ]
+        },
+        {
+          "type": "table",
+          "caption": "Camera shot types & their purpose",
+          "headers": ["Shot type", "Purpose / effect"],
+          "rows": [
+            [
+              { "label": "Shot type", "html": "Wide / establishing shot" },
+              { "label": "Purpose / effect", "html": "Shows the environment at the start of a scene, situating the audience within the setting (e.g. a skyline shot establishing location)" }
+            ],
+            [
+              { "label": "Shot type", "html": "Close-up" },
+              { "label": "Purpose / effect", "html": "Focuses tightly on a face or object to convey intense emotion or draw attention to detail" }
+            ],
+            [
+              { "label": "Shot type", "html": "Medium shot" },
+              { "label": "Purpose / effect", "html": "Shows a character from the waist up — common for dialogue, capturing expression and body language together" }
+            ],
+            [
+              { "label": "Shot type", "html": "Low-angle shot" },
+              { "label": "Purpose / effect", "html": "Camera points upward at the subject — makes them appear powerful, threatening or authoritative" }
+            ],
+            [
+              { "label": "Shot type", "html": "High-angle shot" },
+              { "label": "Purpose / effect", "html": "Camera points downward at the subject — makes them appear small, vulnerable or powerless" }
+            ],
+            [
+              { "label": "Shot type", "html": "Tracking shot" },
+              { "label": "Purpose / effect", "html": "Follows a moving subject — maintains engagement and creates a sense of dynamic action" }
+            ]
+          ]
+        },
+        {
+          "type": "table",
+          "caption": "Special effects (VFX) pipeline",
+          "headers": ["Stage", "What happens"],
+          "rows": [
+            [
+              { "label": "Stage", "html": "Pre-production" },
+              { "label": "What happens", "html": "Storyboard identifies every scene needing effects; software, hardware, skills and budget are planned" }
+            ],
+            [
+              { "label": "Stage", "html": "Production" },
+              { "label": "What happens", "html": "Green screens set up for chroma keying; actors work with markers/props that will be replaced by CGI; lighting and camera angles planned to integrate seamlessly with digital elements later" }
+            ],
+            [
+              { "label": "Stage", "html": "Post-production" },
+              { "label": "What happens", "html": "Digital assets (3D models, textures, particle effects) are composited into the footage frame by frame, then colour graded and rendered into the final product" }
+            ]
+          ]
+        },
+        {
+          "type": "examTip",
+          "label": "Adding sound effects to footage",
+          "html": "<p>Describe the whole workflow, in order: <b>import</b> the audio file into the editing software's library → <b>place</b> it on a dedicated audio track at the correct frame on the timeline → <b>adjust volume</b> so it sits naturally in the mix → apply <b>fade-in/fade-out</b> to avoid abrupt, jarring cuts → <b>play back and review</b>, adjusting timing until it's synchronised with the on-screen action. Naming each step (not just \"add the sound\") is what separates a full-mark answer from a partial one.</p>"
+        },
+        {
+          "type": "linkIt",
+          "html": "<p>The VFX pipeline's 3D assets are built using the same modelling/rigging process covered in <b>Animation</b> — video production is often where animated CGI elements actually get composited into the final footage. Placing and syncing sound effects on a timeline here is the same core skill covered in more depth in <b>Audio</b>.</p>"
+        }
+      ],
+      "revisionQuestions": [
+        {
+          "q": "Explain the difference between lossy and lossless video compression, referring to both file size and quality.",
+          "a": "<b>Lossy</b> compression permanently discards visual data the eye is least likely to notice, producing much smaller files at the cost of some quality (more visible at higher compression). <b>Lossless</b> compression preserves all original data and full quality, but results in much larger file sizes that need more storage and processing power."
+        },
+        {
+          "q": "A filmmaker wants to produce smooth slow-motion footage by recording rather than by editing later. Explain how they should set their frame rates.",
+          "a": "They should <b>record at a higher frame rate than they intend to play back</b> — e.g. record at 60fps and play back at 25fps. Because more frames were captured than are needed for real-time playback, the footage stretches out and plays back slower while remaining smooth."
+        },
+        {
+          "q": "State the resolution (in pixels) of Full HD video, and explain how 4K compares to it.",
+          "a": "Full HD (1080p) is <b>1920 × 1080</b> pixels. 4K (Ultra HD) is <b>3840 × 2160</b> — exactly <b>four times</b> the pixel count of Full HD, offering much more detail but requiring more storage and bandwidth."
+        },
+        {
+          "q": "Explain the key technical difference between how analogue and digital video store information.",
+          "a": "Analogue video stores information as a <b>continuous</b>, smoothly varying electrical signal (e.g. on magnetic tape). Digital video stores information as <b>discrete</b> binary data (0s and 1s), which allows for consistent quality, easier editing, error correction and lossless copying — analogue quality degrades with every copy made."
+        },
+        {
+          "q": "A director wants to make a character look small and powerless in a shot. Which camera angle should they use, and why?",
+          "a": "A <b>high-angle shot</b> — pointing the camera downward at the subject makes them appear small, vulnerable or powerless to the audience."
+        },
+        {
+          "q": "Outline the three main stages of the special effects (VFX) pipeline in multimedia production.",
+          "a": "<b>Pre-production</b> — storyboarding every effects scene and planning software, hardware and budget. <b>Production</b> — setting up green screens for chroma keying and coordinating actors/camera with the planned digital elements. <b>Post-production</b> — compositing digital assets (3D models, textures, particle effects) into the footage, then colour grading and rendering the final result."
+        }
+      ]
+    },
+    {
+      "id": "audio",
+      "icon": "🔊",
+      "title": "Audio",
+      "accentColor": "#5B7FA6",
+      "blocks": [
+        {
+          "type": "noteGrid",
+          "boxes": [
+            {
+              "heading": "MIDI vs recorded audio",
+              "html": "<ul>\n<li>A <b>MIDI</b> file contains no actual sound — it stores <b>music sequence data</b> (which notes to play, at what pitch, velocity, duration and timing). A synthesiser or virtual instrument reads these instructions to generate the sound</li>\n<li>A recorded audio file (e.g. MP3, WAV) stores the actual <b>captured sound wave</b> itself, not instructions for generating one</li>\n</ul>"
+            },
+            {
+              "heading": "Clipping & distortion",
+              "html": "<ul>\n<li><b>Clipping</b> happens when the recording level (gain) is set <b>too high</b> — the incoming signal exceeds the maximum amplitude the system can capture, so the tops and bottoms of the waveform are \"clipped off\", producing harsh, irreversible distortion</li>\n<li>A poor-quality microphone or a mic placed too close to a loud source can cause other distortion problems, but <b>clipping specifically</b> is a recording/gain-level issue, not a hardware quality issue</li>\n</ul>"
+            }
+          ]
+        },
+        {
+          "type": "table",
+          "caption": "Common audio file formats",
+          "headers": ["Format", "Notes"],
+          "rows": [
+            [
+              { "label": "Format", "html": "MP3" },
+              { "label": "Notes", "html": "Lossy compression — small file size, the most common format for distributing music; some quality is permanently discarded" }
+            ],
+            [
+              { "label": "Format", "html": "WAV" },
+              { "label": "Notes", "html": "Uncompressed/lossless — very high quality, very large files; common in studio recording and editing" }
+            ],
+            [
+              { "label": "Format", "html": "FLAC" },
+              { "label": "Notes", "html": "Lossless compression — full quality preserved but at a smaller size than WAV" }
+            ],
+            [
+              { "label": "Format", "html": "MIDI" },
+              { "label": "Notes", "html": "Not an audio recording at all — stores instructions (notes, timing, velocity) for a synthesiser to generate sound" }
+            ],
+            [
+              { "label": "Format", "html": "AAC" },
+              { "label": "Notes", "html": "Lossy compression, generally more efficient than MP3 at the same file size — used by many streaming services and Apple devices" }
+            ]
+          ]
+        },
+        {
+          "type": "noteGrid",
+          "boxes": [
+            {
+              "heading": "Sample rate & bit depth",
+              "html": "<ul>\n<li><b>Sample rate</b> is how many times per second the sound wave is measured to create the digital recording (e.g. 44,100 Hz for CD audio) — a higher sample rate captures higher frequencies more accurately</li>\n<li><b>Bit depth</b> is how many possible amplitude values each sample can have (e.g. 16-bit) — a higher bit depth captures a wider dynamic range (the gap between the quietest and loudest sound) with less background noise</li>\n</ul>"
+            },
+            {
+              "heading": "Audio compression & streaming quality",
+              "html": "<ul>\n<li>When streaming audio online, the <b>compression method</b> applied is the single biggest factor affecting sound quality — lossy compression at a low bit rate discards more data and introduces more audible artefacts than a higher bit rate</li>\n<li>Factors like the file's popularity or the listener's speaker quality do <b>not</b> change the underlying quality of the audio file itself</li>\n</ul>"
+            }
+          ]
+        },
+        {
+          "type": "examTip",
+          "label": "Clipping-cause questions",
+          "html": "<p>These questions often offer a tempting wrong answer like \"poor quality microphone\" or \"microphone too close to the source\" — both describe real audio problems, but not <em>clipping</em> specifically. The correct cause is always the <b>recording/gain level being set too high</b> in the software or hardware interface, exceeding the maximum amplitude the system can capture.</p>"
+        },
+        {
+          "type": "linkIt",
+          "html": "<p>Placing and syncing audio on a timeline (covered in more depth in <b>Video</b>'s sound-effects process) uses the same waveform and track concepts as here. Streaming compression trade-offs connect directly to <b>World Wide Web</b>, where bandwidth and connection speed determine what quality is actually deliverable to a listener.</p>"
+        }
+      ],
+      "revisionQuestions": [
+        {
+          "q": "Explain what a MIDI file actually contains, and why it is not the same as a recorded audio file like an MP3.",
+          "a": "A MIDI file contains no actual sound — it stores <b>music sequence data</b> (instructions specifying which notes to play, at what pitch, velocity, duration and timing), which a synthesiser or virtual instrument interprets to generate sound. An MP3 stores the actual recorded/captured sound wave itself, not instructions for creating one."
+        },
+        {
+          "q": "What causes clipping in a digital audio recording?",
+          "a": "Clipping happens when the recording level (gain) is set <b>too high</b> — the incoming signal exceeds the maximum amplitude the recording system can capture, so the tops and bottoms of the waveform are cut off flat, producing harsh, irreversible distortion."
+        },
+        {
+          "q": "A student wants to distribute a song online with the smallest possible file size, and is willing to accept some loss in quality. Which type of compression should the file use, and why?",
+          "a": "<b>Lossy</b> compression (e.g. MP3 or AAC) — it permanently discards audio data the ear is least likely to notice, which achieves a much smaller file size than lossless formats like WAV or FLAC, at the cost of some quality."
+        },
+        {
+          "q": "Explain the difference between sample rate and bit depth in digital audio.",
+          "a": "<b>Sample rate</b> is how many times per second the sound wave is measured to create the digital recording — a higher sample rate captures higher frequencies more accurately. <b>Bit depth</b> is how many possible amplitude values each of those samples can have — a higher bit depth captures a wider dynamic range with less background noise."
+        },
+        {
+          "q": "Explain why the compression method applied to an audio file affects streaming quality more than the type of speakers a listener owns.",
+          "a": "The compression method determines how much of the original audio data was <b>permanently discarded</b> before the file was ever streamed — a low-bitrate lossy file has artefacts baked into it. Excellent speakers can't recover data that isn't there, and poor speakers can't make a high-quality file sound worse than what's actually encoded — the file's own compression sets the ceiling on the quality that reaches the listener."
+        },
+        {
+          "q": "A sound engineer notices a recorded track has flat-topped waveform peaks. Identify the problem and explain how to fix it.",
+          "a": "This is <b>clipping</b>, caused by the recording level being set too high. It can't be fixed after the fact (the lost information is gone permanently) — the engineer needs to re-record at a lower gain/input level so the waveform peaks stay below the maximum amplitude the system can capture."
+        }
+      ]
+    },
+    {
+      "id": "world-wide-web",
+      "icon": "🌐",
+      "title": "World Wide Web",
+      "accentColor": "#5B7FA6",
+      "blocks": [
+        {
+          "type": "noteGrid",
+          "boxes": [
+            {
+              "heading": "RTSP & buffering",
+              "html": "<ul>\n<li><b>RTSP</b> (Real-Time Streaming Protocol) is a network control protocol used to establish and control streaming media sessions — enabling functions like play, pause and seek</li>\n<li><b>Buffering</b> preloads a portion of a video into memory ahead of the current playback position, so minor fluctuations in internet speed don't immediately interrupt playback — it's a response to variable connection speed, not a cause of slow speed</li>\n</ul>"
+            },
+            {
+              "heading": "Progressive loading",
+              "html": "<ul>\n<li>Progressive loading lets a web page display and become usable <b>while content is still loading</b> — text can be read and interacted with while remaining images/scripts continue loading in the background, improving perceived performance</li>\n<li>The opposite (baseline loading) shows a blank page or space until the entire file has fully arrived</li>\n</ul>"
+            }
+          ]
+        },
+        {
+          "type": "noteGrid",
+          "boxes": [
+            {
+              "heading": "Web form design",
+              "html": "<ul>\n<li>A <b>drop-down list</b> limits a user to a predefined set of choices — this ensures data consistency and validity by preventing free-text responses that might be inconsistent, misspelled or outside the expected range</li>\n</ul>"
+            },
+            {
+              "heading": "Age verification & access controls",
+              "html": "<ul>\n<li>The most <b>reliable</b> age verification method is requiring an official government-issued ID, since it's an authoritative, independently verified document containing the user's actual date of birth</li>\n<li>Weaker methods — facial recognition (can be fooled, imprecise), email verification codes (confirms an email account, not an age), CAPTCHA (confirms a human, not an age) — don't actually verify age at all</li>\n</ul>"
+            }
+          ]
+        },
+        {
+          "type": "table",
+          "caption": "Homepage design essentials",
+          "headers": ["Feature", "Purpose"],
+          "rows": [
+            [
+              { "label": "Feature", "html": "Logo & headline" },
+              { "label": "Purpose", "html": "Immediately identifies the brand and communicates the company's purpose within seconds" }
+            ],
+            [
+              { "label": "Feature", "html": "Navigation links & site map" },
+              { "label": "Purpose", "html": "Lets users easily locate all services and return to the homepage from anywhere on the site" }
+            ],
+            [
+              { "label": "Feature", "html": "Contact details" },
+              { "label": "Purpose", "html": "Makes the business accessible (address, phone, email)" }
+            ],
+            [
+              { "label": "Feature", "html": "Search function" },
+              { "label": "Purpose", "html": "Lets visitors quickly locate specific information without browsing manually" }
+            ],
+            [
+              { "label": "Feature", "html": "Testimonials / social proof" },
+              { "label": "Purpose", "html": "Builds credibility and trust with new visitors" }
+            ],
+            [
+              { "label": "Feature", "html": "Calls to action" },
+              { "label": "Purpose", "html": "Guides users toward a desired outcome (e.g. \"Contact us\", \"Get a quote\")" }
+            ]
+          ]
+        },
+        {
+          "type": "noteGrid",
+          "boxes": [
+            {
+              "heading": "Optimising images for the web",
+              "html": "<ul>\n<li>Set the correct <b>aspect ratio and dimensions</b> for the layout (e.g. a full-width header banner), then export at an appropriate <b>file size and format</b> (JPEG for photographs, PNG for graphics needing transparency) so the page loads quickly</li>\n<li>Test the result across different screen sizes to confirm it stays <b>responsive</b> and visually consistent</li>\n</ul>"
+            },
+            {
+              "heading": "Thumbnails",
+              "html": "<ul>\n<li>A thumbnail is a small, reduced-resolution copy of a larger image or video — its purpose is to <b>reduce download time and bandwidth usage</b> since loading a small preview is far faster than the full file</li>\n<li>Thumbnails also let users <b>browse and preview</b> content (a gallery, a video playlist) without downloading every full file first</li>\n</ul>"
+            }
+          ]
+        },
+        {
+          "type": "table",
+          "caption": "Worked example — file transfer time",
+          "headers": ["Step", "Calculation", "Result"],
+          "rows": [
+            [
+              { "label": "Step", "html": "1" },
+              { "label": "Calculation", "html": "Convert file size to megabits: 12 MB × 8" },
+              { "label": "Result", "html": "96 megabits" }
+            ],
+            [
+              { "label": "Step", "html": "2" },
+              { "label": "Calculation", "html": "Divide by the transfer rate: 96 megabits ÷ 16 Mbps" },
+              { "label": "Result", "html": "<b>6 seconds</b>" }
+            ]
+          ]
+        },
+        {
+          "type": "examTip",
+          "label": "File transfer time questions",
+          "html": "<p>Transfer rates are always given in <b>megabits</b> per second (Mbps), but file sizes are usually given in <b>megabytes</b> (MB) — the most common way marks are lost is skipping the <b>× 8</b> conversion from bytes to bits before dividing. Formula: (file size in MB × 8) ÷ transfer rate in Mbps = time in seconds.</p>"
+        },
+        {
+          "type": "linkIt",
+          "html": "<p>Streaming protocols and buffering here connect to <b>Audio</b>'s coverage of streaming compression and quality — both determine what a listener or viewer actually experiences over a live connection. Using someone else's photos or graphics on a website without permission is a copyright issue, covered in <b>Intellectual Property & Ethics</b>.</p>"
+        }
+      ],
+      "revisionQuestions": [
+        {
+          "q": "Explain the difference between RTSP and buffering, and how each helps deliver a smooth streaming experience.",
+          "a": "<b>RTSP</b> (Real-Time Streaming Protocol) is the set of communication rules used to establish and control a streaming session — enabling functions like play, pause and seek. <b>Buffering</b> is the practice of preloading a portion of the content into memory ahead of the current playback position, so brief drops in connection speed don't interrupt playback. RTSP controls the session; buffering absorbs network fluctuations within it."
+        },
+        {
+          "q": "Explain the advantage of progressive loading over baseline loading for a web page with a large image.",
+          "a": "Progressive loading lets the page display and become usable while content is still arriving — a user can read text and interact with the page while a large image continues loading in the background. Baseline loading shows a blank space until the entire image has fully downloaded, which feels slower even if the total download time is the same."
+        },
+        {
+          "q": "A web form uses a drop-down list instead of a free-text box to collect a user's state/territory. Explain why this improves the data collected.",
+          "a": "A drop-down list limits the user to a predefined set of valid choices, which ensures the collected data is consistent and valid — it prevents inconsistent, misspelled or invalid free-text responses (e.g. \"NSW\" vs \"New South Wales\" vs a typo) that would need to be cleaned up later."
+        },
+        {
+          "q": "A website needs to verify that a user is over 18 before allowing access to restricted content. Identify the most reliable verification method and explain why weaker alternatives fall short.",
+          "a": "Requiring a <b>government-issued ID</b> upload is the most reliable method, since it's an authoritative, independently verified document containing the user's actual date of birth. Weaker alternatives don't actually verify age: an email verification code only confirms access to an email account, and a CAPTCHA only confirms the user is human — neither proves how old they are."
+        },
+        {
+          "q": "Explain the purpose of a thumbnail on a web page, referring to both bandwidth and user experience.",
+          "a": "A thumbnail is a small, reduced-resolution copy of a larger image or video. It reduces <b>download time and bandwidth usage</b> since a small preview loads far faster than the full-resolution file, and it lets users <b>browse and preview</b> content — like a gallery or playlist — without downloading every full file first."
+        },
+        {
+          "q": "Calculate the time required (in seconds) to transfer a 5 MB file at a connection speed of 32 Mbps. Show all working.",
+          "a": "Convert MB to megabits: 5 MB × 8 = 40 megabits. Divide by the transfer rate: 40 megabits ÷ 32 Mbps = <b>1.25 seconds</b>."
+        }
+      ]
+    },
+    {
+      "id": "intellectual-property-ethics",
+      "icon": "⚖️",
+      "title": "Intellectual Property & Ethics",
+      "accentColor": "#5B7FA6",
+      "blocks": [
+        {
+          "type": "noteGrid",
+          "boxes": [
+            {
+              "heading": "Copyright basics",
+              "html": "<ul>\n<li>Copyright is <b>automatically</b> assigned to a creator the moment they make an original work — no registration or © symbol is required for it to apply</li>\n<li>To legally use someone else's copyrighted material (an image, a font, audio, video, code) you need their explicit <b>permission</b> — typically through a licence or agreement</li>\n<li>Making <b>no profit</b> from the use does <b>not</b> grant permission — copyright protects creators regardless of whether the user is making money</li>\n</ul>"
+            },
+            {
+              "heading": "Creative Commons & attribution",
+              "html": "<ul>\n<li><b>Creative Commons</b> licences let a creator pre-authorise certain uses of their work under stated conditions — often still requiring <b>attribution</b> (crediting the original creator) as a legal condition of use</li>\n<li>Attribution can be a legal requirement even when a work <em>can</em> be used — \"permission granted\" and \"no credit needed\" are not the same thing</li>\n</ul>"
+            }
+          ]
+        },
+        {
+          "type": "noteGrid",
+          "boxes": [
+            {
+              "heading": "Trademark & privacy",
+              "html": "<ul>\n<li><b>Trademark law</b> protects registered logos, brand names and slogans — using them without authorisation can result in legal action, separately from copyright</li>\n<li><b>Privacy rights</b> apply when using images, audio or video of identifiable individuals — consent (often a formal <b>model release</b>) must be obtained before using someone's likeness in a commercial or publicly distributed product</li>\n</ul>"
+            },
+            {
+              "heading": "Content classification",
+              "html": "<ul>\n<li>Multimedia content produced for public distribution or sale must carry an appropriate <b>Australian Classification</b> (G, PG, M, MA15+) so audiences can make informed decisions about suitability — particularly important for protecting children</li>\n</ul>"
+            }
+          ]
+        },
+        {
+          "type": "noteGrid",
+          "boxes": [
+            {
+              "heading": "Authenticity & misinformation",
+              "html": "<ul>\n<li>Heavily manipulated images — especially in journalism and social media — can mislead the public by distorting facts or fabricating events, eroding trust in the source</li>\n<li>Digitally placing a person somewhere they never were, or altering a newsworthy image, can carry real legal and reputational consequences</li>\n</ul>"
+            },
+            {
+              "heading": "Beauty standards, privacy & consent",
+              "html": "<ul>\n<li>Over-editing photographs in advertising/social media (removing blemishes, reshaping bodies, altering skin tone) creates unrealistic beauty standards that can harm viewers' mental health, particularly young people</li>\n<li>Manipulating an identifiable person's image without their consent violates privacy rights and can amount to defamation or harassment — but <b>some</b> manipulation is ethical, e.g. blurring a victim's or child's face in a traumatic news image to protect their privacy</li>\n</ul>"
+            }
+          ]
+        },
+        {
+          "type": "table",
+          "caption": "Common myths about using online images",
+          "headers": ["Myth", "Reality"],
+          "rows": [
+            [
+              { "label": "Myth", "html": "\"If there's no copyright symbol (©), the image is free to use\"" },
+              { "label": "Reality", "html": "Copyright is automatic — it applies whether or not a © symbol, watermark or notice is present" }
+            ],
+            [
+              { "label": "Myth", "html": "\"It's fine if I'm not making any money from it\"" },
+              { "label": "Reality", "html": "Copyright protects the creator regardless of whether the user profits — non-commercial use is not automatically exempt" }
+            ],
+            [
+              { "label": "Myth", "html": "\"If I found it on the internet, it must be free to use\"" },
+              { "label": "Reality", "html": "Most online images are still protected by copyright; only Creative Commons/Public Domain images are genuinely free to use, and even those may require attribution" }
+            ],
+            [
+              { "label": "Myth", "html": "\"Crediting the creator means I don't need permission\"" },
+              { "label": "Reality", "html": "Attribution and permission are separate requirements — some licences require both, and crediting someone doesn't retroactively grant permission you never had" }
+            ]
+          ]
+        },
+        {
+          "type": "examTip",
+          "label": "\"Explain the ethical/legal issues\" essay questions",
+          "html": "<p>These are the highest-value questions in the exam (often 5 marks) and reward <b>breadth with depth</b> — naming three or four <em>distinct</em> issues (copyright/licensing, classification, privacy/consent, attribution, trademark) each with a sentence on <em>why</em> it matters or <em>what happens</em> if ignored scores far higher than one issue explained at length. A one-line list without explanation caps out at the bottom band.</p>"
+        },
+        {
+          "type": "linkIt",
+          "html": "<p>These obligations apply to <b>every</b> multimedia element covered in the other six topics — a Graphics image, a Video clip, an Audio track and Text/fonts can all be copyrighted material requiring the same permission, licensing and attribution considered here. This topic is the thread that runs underneath all the others.</p>"
+        }
+      ],
+      "revisionQuestions": [
+        {
+          "q": "Explain why an image found on the internet with no copyright symbol or watermark cannot automatically be assumed to be free to use.",
+          "a": "Copyright is <b>automatically</b> assigned to a creator the moment they produce original work — it does not require registration, a © symbol or a watermark to apply. The absence of a visible notice says nothing about the image's legal status; it is still protected unless it is specifically released under a Creative Commons or Public Domain licence."
+        },
+        {
+          "q": "A student uses a photo they found online in a school project, without payment, and argues this is fine because they aren't making any money from it. Explain why this reasoning is incorrect.",
+          "a": "Making no profit does not grant permission to use copyrighted material — copyright protects the creator's rights regardless of whether the user is making money from the use. Non-commercial use can still be copyright infringement without the creator's permission or an applicable licence exemption."
+        },
+        {
+          "q": "Explain the difference between copyright and trademark, using an example of each.",
+          "a": "<b>Copyright</b> protects original creative works — e.g. a photograph, song or piece of code — automatically from the moment of creation. <b>Trademark</b> protects registered brand identifiers — e.g. a company's logo or slogan — and must generally be formally registered. Using a copyrighted photo without permission and using a company's logo without authorisation are two separate legal issues, even though both are intellectual property."
+        },
+        {
+          "q": "Explain why content classification (e.g. G, PG, M, MA15+) is an important ethical consideration for a multimedia company distributing content publicly.",
+          "a": "Classification lets audiences make an informed decision about whether content is appropriate for them before viewing it — this is particularly important for protecting children from content that isn't suitable for their age, and it's an ethical (and often legal) obligation for anyone distributing multimedia content for public sale or viewing."
+        },
+        {
+          "q": "Describe ONE way image manipulation can be ethically harmful, and ONE way it can be used ethically.",
+          "a": "<b>Harmful:</b> over-editing photographs in advertising (removing blemishes, reshaping bodies) creates unrealistic beauty standards that can damage viewers' self-perception and mental health, especially among young people. <b>Ethical:</b> blurring or pixelating the face of a victim or a child in a traumatic news image protects their privacy and dignity."
+        },
+        {
+          "q": "A project team wants to use a piece of licensed stock music in their multimedia presentation. Outline the ethical and legal considerations they should address before using it.",
+          "a": "They should confirm they have the correct <b>licence or permission</b> for the specific use intended (personal-use and commercial-use terms often differ), check whether <b>attribution</b> to the composer/creator is required as a condition of the licence, and ensure they aren't inadvertently breaching any associated <b>trademark</b> (e.g. a recognisable brand jingle) — addressing each of these checks before distribution, not after."
+        }
+      ]
     }
   ]
 }
