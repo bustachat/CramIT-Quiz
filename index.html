@@ -2929,8 +2929,12 @@ function renderManageSubjectsList() {
       const dateLabel = new Date(pendingUntil).toLocaleDateString('en-AU', { day: 'numeric', month: 'short' });
       row.innerHTML = `
         <span style="font-family:var(--font-display);font-weight:600;font-size:14px;color:var(--muted)">${name}</span>
-        <span style="font-size:11px;color:var(--muted);white-space:nowrap">Ends ${dateLabel}</span>
+        <div style="display:flex;align-items:center;gap:10px">
+          <span style="font-size:11px;color:var(--muted);white-space:nowrap">Ends ${dateLabel}</span>
+          <button style="background:none;border:1px solid var(--accent);color:var(--accent);border-radius:10px;padding:0 14px;min-height:44px;font-size:12px;font-weight:700;cursor:pointer;white-space:nowrap">Keep</button>
+        </div>
       `;
+      row.querySelector('button').onclick = () => undoRemoveSubject(subjectId);
     } else {
       row.innerHTML = `
         <span style="font-family:var(--font-display);font-weight:600;font-size:14px;color:var(--text)">${name}</span>
@@ -3020,6 +3024,43 @@ async function removeSubject(subjectId) {
   } catch(e) {
     console.error('Remove subject threw:', e);
     alert('Could not remove subject. Please try again.');
+  }
+}
+
+// ── UNDO A PENDING REMOVAL ("Keep" button in Manage Subjects) ──
+// Reuses the server's action:'add' path, which clears pending_removal_at
+// on the existing row (and re-syncs the Stripe schedule/items) instead of
+// inserting a new row — deliberately NOT addSubject() itself, since that
+// also opens the quiz picker, which isn't the right UX from this screen.
+async function undoRemoveSubject(subjectId) {
+  if (!currentUser || !sbClient) return;
+  try {
+    const res = await fetch('/update-subscription', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', ...(await authHeaders()) },
+      body: JSON.stringify({ action: 'add', subject_id: subjectId })
+    });
+    if (!res.ok) {
+      // TEMPORARY (remove once the Subscription Schedule path is proven
+      // live): surface the server's real error detail directly.
+      const errBody = await res.json().catch(() => ({}));
+      console.warn('[CramIT] undo remove returned', res.status, errBody);
+      alert(
+        `Could not keep subject (${res.status}).\n\n` +
+        `${errBody.error || 'Unknown error'}` +
+        (errBody.stripeType ? `\nType: ${errBody.stripeType}` : '') +
+        (errBody.stripeCode ? `\nCode: ${errBody.stripeCode}` : '') +
+        (errBody.stripeParam ? `\nParam: ${errBody.stripeParam}` : '')
+      );
+      return;
+    }
+
+    await loadUserState();
+    renderHomeAuth();
+    renderManageSubjectsList();
+  } catch(e) {
+    console.error('Undo remove threw:', e);
+    alert('Could not keep subject. Please try again.');
   }
 }
 
