@@ -7,7 +7,7 @@
 import Stripe from 'stripe';
 import { corsHeaders, requireUser, unauthorized } from './_lib/auth.js';
 
-const PRICES = {
+export const PRICES = {
   base:      'price_1TEdRbPvnbx5MPYyExQIlaBK',
   cap:       'price_1TEdW3Pvnbx5MPYykHvvk7gf',
   flex_base: 'price_1TEdZRPvnbx5MPYylioNhNQI',
@@ -91,7 +91,7 @@ export async function onRequestPost(context) {
   }
 }
 
-function getPlanType(n, mode) {
+export function getPlanType(n, mode) {
   const { BASE_INCLUDES, CAP_LIMIT, BASE_PRICE, EXTRA_PRICE, CAP_PRICE } = PRICING;
   if (n <= BASE_INCLUDES) return 'base';
   if (n > CAP_LIMIT)      return 'flex';
@@ -100,7 +100,7 @@ function getPlanType(n, mode) {
   return 'base_plus';
 }
 
-function buildLineItems(nSubjects, planType) {
+export function buildLineItems(nSubjects, planType) {
   const { BASE_INCLUDES, CAP_LIMIT } = PRICING;
 
   if (planType === 'base') {
