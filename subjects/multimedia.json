@@ -1821,6 +1821,147 @@
           "a": "Paper: 9,000 ÷ 500 = 18 reams × $22.00 = <b>$396.00</b>. Toner: 9,000 ÷ 1,200 = 7.5 → round up to <b>8</b> cartridges × $38.00 = <b>$304.00</b>. Total cost = $396 + $304 = <b>$700.00</b>."
         }
       ]
+    },
+    {
+      "id": "graphics",
+      "icon": "🖼️",
+      "title": "Graphics",
+      "accentColor": "#5B7FA6",
+      "blocks": [
+        {
+          "type": "noteGrid",
+          "boxes": [
+            {
+              "heading": "Bitmap (raster) vs vector",
+              "html": "<ul>\n<li><b>Bitmap (raster)</b> images are made of a fixed grid of pixels, each with its own colour value — <b>resolution-dependent</b>: enlarging beyond the original size makes individual pixels visible, causing blur or pixelation</li>\n<li><b>Vector</b> images are defined by mathematical equations describing shapes, lines and curves rather than pixels — <b>resolution-independent</b>: they can be scaled to any size with no loss of quality</li>\n<li>Bitmaps suit complex photographic content with subtle colour gradations; vectors suit logos, icons and illustrations that need to be reproduced at many sizes</li>\n</ul>"
+            },
+            {
+              "heading": "File formats & transparency",
+              "html": "<ul>\n<li><b>JPEG</b> — lossy compression, smaller files, no transparency support, best for photographs</li>\n<li><b>PNG</b> — lossless compression (no quality lost), supports a full transparent background, best for graphics/logos that need to sit over different backgrounds</li>\n<li><b>GIF</b> — supports transparency (one colour from a 256-colour palette only) and looping animation, but a very limited colour range</li>\n<li><b>BMP</b> — uncompressed raster format, always has a solid background, very large file sizes</li>\n</ul>"
+            }
+          ]
+        },
+        {
+          "type": "noteGrid",
+          "boxes": [
+            {
+              "heading": "Anti-aliasing",
+              "html": "<ul>\n<li>Smooths the jagged \"staircase\" effect that appears on diagonal or curved edges of a bitmap image, by blending the colour of edge pixels with the surrounding pixels</li>\n<li>Needed because a display is a fixed grid of square pixels — any line that isn't perfectly horizontal or vertical shows jagged steps without it</li>\n</ul>"
+            },
+            {
+              "heading": "Resolution & image quality",
+              "html": "<ul>\n<li><b>Full HD</b> = 1920 × 1080 pixels at a 16:9 aspect ratio — one image/screen resolution standard worth knowing</li>\n<li>Higher resolution means more pixels, more visual detail and a <b>larger file size</b> — the trade-off is slower loading and more processing power needed on lower-end devices</li>\n<li><b>Progressive JPEG</b> loads the whole image immediately at low quality, then sharpens it in passes — this makes a page <em>feel</em> faster even though the total download size is about the same as a standard JPEG</li>\n</ul>"
+            }
+          ]
+        },
+        {
+          "type": "noteGrid",
+          "boxes": [
+            {
+              "heading": "Colour adjustment tools",
+              "html": "<ul>\n<li><b>Hue</b> — rotates which colours are present around the colour wheel (e.g. reds shift toward orange)</li>\n<li><b>Saturation</b> — controls colour intensity/vividness, not which colours are present</li>\n<li><b>Brightness</b> — controls overall lightness/darkness</li>\n<li><b>Contrast</b> — widens the gap between the lightest and darkest areas; low contrast flattens an image, high contrast makes it more dramatic</li>\n</ul>"
+            },
+            {
+              "heading": "Photography — aperture & depth of field",
+              "html": "<ul>\n<li>A <b>larger aperture</b> (lower f-number, e.g. f/1.8) lets in <b>more light</b> and produces a <b>shallow</b> depth of field — only a narrow plane is sharp, foreground/background blur (the \"bokeh\" look)</li>\n<li>A <b>smaller aperture</b> (higher f-number, e.g. f/16) lets in less light and produces a <b>wide</b> depth of field — more of the scene stays in focus</li>\n</ul>"
+            }
+          ]
+        },
+        {
+          "type": "noteGrid",
+          "boxes": [
+            {
+              "heading": "Object layering & stroke/fill",
+              "html": "<ul>\n<li><b>Object layering</b> stacks visual elements (images, shapes, text) from separate sources on independent layers to build one composite image — each layer can still be edited on its own (fundamental to Photoshop/Illustrator)</li>\n<li><b>Fill</b> is the colour inside a shape; <b>stroke</b> is the colour of its outline/border — a shape can have one, the other, or both</li>\n</ul>"
+            },
+            {
+              "heading": "Capturing images",
+              "html": "<ul>\n<li>A <b>scanner</b> uses light sensors to capture a physical document or photo and convert it into a digital raster image file — it captures an image only; converting handwritten text into <em>editable</em> text needs separate OCR software</li>\n<li>Dedicated <b>screenshot tools</b> (vs a basic keyboard shortcut) add a visual interface for precisely selecting the capture area, annotating, timers and export format/settings</li>\n</ul>"
+            }
+          ]
+        },
+        {
+          "type": "table",
+          "caption": "Worked example — image file size calculation",
+          "headers": ["Step", "Calculation", "Result"],
+          "rows": [
+            [
+              { "label": "Step", "html": "1" },
+              { "label": "Calculation", "html": "Total pixels: 800 × 600" },
+              { "label": "Result", "html": "480,000 pixels" }
+            ],
+            [
+              { "label": "Step", "html": "2" },
+              { "label": "Calculation", "html": "Total bits: 480,000 × 16-bit colour depth" },
+              { "label": "Result", "html": "7,680,000 bits" }
+            ],
+            [
+              { "label": "Step", "html": "3" },
+              { "label": "Calculation", "html": "Convert to bytes: 7,680,000 ÷ 8" },
+              { "label": "Result", "html": "960,000 bytes" }
+            ],
+            [
+              { "label": "Step", "html": "4" },
+              { "label": "Calculation", "html": "Convert to MB: 960,000 ÷ 1,048,576 (1024²)" },
+              { "label": "Result", "html": "<b>≈ 0.92 MB</b>" }
+            ]
+          ]
+        },
+        {
+          "type": "table",
+          "caption": "Choosing an image format",
+          "headers": ["Format", "Best for"],
+          "rows": [
+            [
+              { "label": "Format", "html": "PNG" },
+              { "label": "Best for", "html": "Logos, graphics and anything needing transparency or exact colour fidelity — lossless, so no quality is lost on save, but a larger file size than JPEG" }
+            ],
+            [
+              { "label": "Format", "html": "JPEG" },
+              { "label": "Best for", "html": "Photographs and complex images with lots of colour gradation — lossy compression keeps file size small, at the cost of some permanently discarded detail" }
+            ],
+            [
+              { "label": "Format", "html": "GIF" },
+              { "label": "Best for", "html": "Simple looping animations and images needing single-colour transparency — very limited colour palette (256 colours)" }
+            ]
+          ]
+        },
+        {
+          "type": "examTip",
+          "label": "File size calculation questions",
+          "html": "<p>The formula is always the same: <b>pixels × bit depth = total bits → ÷8 for bytes → ÷1,048,576 (1024²) for MB</b>. The most common way marks are lost is dividing by 1,000,000 instead of 1,048,576 — computer storage units are based on powers of 1024, not 1000. Always show every conversion step, not just the final answer.</p>"
+        },
+        {
+          "type": "linkIt",
+          "html": "<p>Colour and resolution concepts here carry straight into <b>Video</b> (video is just a fast sequence of images, so resolution and compression trade-offs work the same way) and forward into <b>Intellectual Property & Ethics</b> (using someone else's photos or graphics without permission is a copyright issue, covered separately there).</p>"
+        }
+      ],
+      "revisionQuestions": [
+        {
+          "q": "Explain the key difference between bitmap and vector images, and state which is better suited to a company logo.",
+          "a": "A <b>bitmap</b> image is made of a fixed grid of pixels and is <b>resolution-dependent</b> — enlarging it causes pixelation. A <b>vector</b> image is defined by mathematical equations and is <b>resolution-independent</b> — it can be scaled to any size with no loss of quality. A company logo is better suited to <b>vector</b>, since it needs to be reproduced sharply at many different sizes, from business cards to billboards."
+        },
+        {
+          "q": "What is anti-aliasing, and why is it needed?",
+          "a": "Anti-aliasing blends the colour of edge pixels with the pixels around them to smooth the jagged \"staircase\" effect that appears on diagonal or curved lines. It's needed because a screen is a fixed grid of square pixels — any edge that isn't perfectly horizontal or vertical looks jagged (aliased) without it."
+        },
+        {
+          "q": "A portrait photographer wants a shallow depth of field, with the background blurred behind a sharp subject. Should they use a large or small aperture, and why?",
+          "a": "A <b>large aperture</b> (a low f-number, e.g. f/1.8) — it lets in more light and produces a <b>shallow</b> depth of field, so only a narrow plane (the subject) stays in sharp focus while the foreground and background blur."
+        },
+        {
+          "q": "Explain why PNG is often chosen over JPEG for web graphics such as logos.",
+          "a": "PNG uses <b>lossless</b> compression, so no image data is discarded and quality is fully preserved, and it supports a <b>transparent background</b>, letting the graphic sit cleanly over any page background colour. JPEG uses lossy compression (some quality is always lost) and cannot have a transparent background, which is why it suits photographs rather than graphics or logos."
+        },
+        {
+          "q": "Calculate the file size in megabytes (MB) of a 1280 × 720 pixel image with a bit depth of 24. Show all working.",
+          "a": "Total pixels: 1280 × 720 = 921,600. Total bits: 921,600 × 24 = 22,118,400 bits. Convert to bytes: 22,118,400 ÷ 8 = 2,764,800 bytes. Convert to MB: 2,764,800 ÷ 1,048,576 ≈ <b>2.64 MB</b>."
+        },
+        {
+          "q": "Explain what \"object layering\" means in multimedia design software, and why it's useful.",
+          "a": "Object layering stacks visual elements — images, shapes, text — from separate sources onto independent layers to build one composite image. It's useful because each layer can still be selected, moved and edited on its own without disturbing the others, which is fundamental to how software like Photoshop or Illustrator is used."
+        }
+      ]
     }
   ]
 }
