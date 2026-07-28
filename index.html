@@ -1304,6 +1304,13 @@ function switchStudySection(section) {
 }
 
 function renderStudyModeHtml() {
+  // Subjects with no writingScaffolds (e.g. Maths) skip the Notes/Writing Help
+  // toggle entirely and just show the topic sections — nothing to switch to.
+  const hasScaffolds = (subjectCache[currentSubjectKey]?.writingScaffolds || []).length > 0;
+  if (!hasScaffolds) {
+    studySection = 'notes';
+    return renderStudyNotesHtml();
+  }
   return `
     <div class="filter-row"><div class="seg-control" id="seg-studysection"><div class="seg-slider"></div>
       <button class="seg-btn ${studySection === 'notes' ? 'active' : ''}" data-val="notes" onclick="switchStudySection('notes')">📖 Notes</button>
