@@ -1697,5 +1697,130 @@
         "minimal": "1–2/5 — Focuses only on one concern (typically 'making images look fake') or lists concerns without explaining the ethical dimension of each."
       }
     }
+  ],
+  "studyNotes": [
+    {
+      "id": "text-document-design",
+      "icon": "📝",
+      "title": "Text & Document Design",
+      "accentColor": "#5B7FA6",
+      "blocks": [
+        {
+          "type": "noteGrid",
+          "boxes": [
+            {
+              "heading": "Alignment",
+              "html": "<ul>\n<li><b>Left-aligned</b> (ragged right) — straight left edge, uneven right edge; the default for most body text</li>\n<li><b>Right-aligned</b> — straight right edge, uneven left edge</li>\n<li><b>Centred</b> — both edges uneven, each line centred in the column</li>\n<li><b>Fully justified</b> — aligned to <b>both</b> margins by adjusting word spacing so every line fills the column width (common in newspapers and books)</li>\n</ul>"
+            },
+            {
+              "heading": "Indents",
+              "html": "<ul>\n<li><b>First-line indent</b> — only the first line of a paragraph moves right; the standard indent used in essays and books</li>\n<li><b>Hanging indent</b> — the opposite: the first line stays at the margin, every other line is indented (used for bibliographies/reference lists)</li>\n<li><b>Left/right indent</b> — moves an entire paragraph's left or right edge away from the margin, affecting every line</li>\n<li><b>Mirror indent</b> — used in documents with facing pages, where left/right margins swap on alternating pages</li>\n</ul>"
+            }
+          ]
+        },
+        {
+          "type": "noteGrid",
+          "boxes": [
+            {
+              "heading": "Typeface vs font",
+              "html": "<ul>\n<li>A <b>typeface</b> is the overall design of a set of characters — e.g. Times New Roman is a typeface</li>\n<li>A <b>font</b> is one specific instance of a typeface at a given size and style — e.g. \"Times New Roman Bold 12pt\" is a font. A <b>font family</b> is the full set of related weights/styles (regular, bold, italic) within one typeface</li>\n</ul>"
+            },
+            {
+              "heading": "Serif vs sans-serif",
+              "html": "<ul>\n<li><b>Serif</b> fonts (e.g. Times New Roman) have small decorative strokes at the ends of letters that guide the eye along a line — favoured for printed body text and formal/traditional documents</li>\n<li><b>Sans-serif</b> fonts (e.g. Arial, Helvetica, Calibri) have clean letterforms with no serifs — favoured for on-screen reading and headings, where clarity at a distance or low resolution matters more than eye-tracking along long lines</li>\n</ul>"
+            }
+          ]
+        },
+        {
+          "type": "noteGrid",
+          "boxes": [
+            {
+              "heading": "Visual hierarchy",
+              "html": "<ul>\n<li>Headings and titles should be <b>larger and styled differently</b> (different weight/font) from body text — this creates a clear visual hierarchy readers can scan</li>\n<li>If a heading looks identical to body text it loses its navigational purpose — readers can no longer tell where one section ends and another begins</li>\n</ul>"
+            },
+            {
+              "heading": "Paragraph formatting & pagination",
+              "html": "<ul>\n<li>Paragraph formatting (line spacing, indents, alignment, spacing before/after) exists to make a document <b>easier to read and visually organised</b> — not to make it \"unique\" or add effects, which are different tools' jobs entirely</li>\n<li><b>Pagination</b> controls where page breaks occur and how content flows from page to page — separate from alignment or colour</li>\n</ul>"
+            }
+          ]
+        },
+        {
+          "type": "table",
+          "caption": "PDF — Portable Document Format",
+          "headers": ["Aspect", "Detail"],
+          "rows": [
+            [
+              { "label": "Aspect", "html": "Formatting" },
+              { "label": "Detail", "html": "Preserves fonts, images and layout identically across every operating system, device and piece of software — a Word document can render differently depending on what opens it; a PDF will not" }
+            ],
+            [
+              { "label": "Aspect", "html": "Security" },
+              { "label": "Detail", "html": "Supports password protection, encryption, digital signatures and printing/copying restrictions — a genuine strength of the format" }
+            ],
+            [
+              { "label": "Aspect", "html": "Editing (limitation)" },
+              { "label": "Detail", "html": "PDFs are a fixed, print-like layout rather than an editable one. Changing text or restructuring content needs specialised (often costly) software, making collaborative editing harder than a native format like Word or Google Docs" }
+            ]
+          ]
+        },
+        {
+          "type": "table",
+          "caption": "Worked example — print run costing",
+          "headers": ["Step", "Calculation", "Result"],
+          "rows": [
+            [
+              { "label": "Step", "html": "1" },
+              { "label": "Calculation", "html": "Paper: 6,000 pages ÷ 500 sheets per ream = 12 reams needed, × $20.00 per ream" },
+              { "label": "Result", "html": "$240.00" }
+            ],
+            [
+              { "label": "Step", "html": "2" },
+              { "label": "Calculation", "html": "Toner: 6,000 pages ÷ 1,500-page cartridge capacity = 4 cartridges needed, × $40.00 per cartridge" },
+              { "label": "Result", "html": "$160.00" }
+            ],
+            [
+              { "label": "Step", "html": "3" },
+              { "label": "Calculation", "html": "Total cost = $240.00 + $160.00" },
+              { "label": "Result", "html": "<b>$400.00</b>" }
+            ]
+          ]
+        },
+        {
+          "type": "examTip",
+          "label": "Print-run costing questions",
+          "html": "<p>These questions almost always require <b>rounding up</b> to the next whole ream/cartridge — you can't buy 7.5 cartridges, so 7.5 becomes 8. Forgetting to round up (or rounding down instead) is the single most common way marks are lost here. Always show your working: cost-per-unit × quantity needed for <em>each</em> consumable, then sum the totals.</p>"
+        },
+        {
+          "type": "linkIt",
+          "html": "<p>Font choices and layout principles here connect directly to <b>Graphics</b> (visual hierarchy applies to images too) and <b>World Wide Web</b> (fonts behave differently online — a font not installed on a viewer's device gets <em>substituted</em>, which is why web design relies on font sets and fallback fonts, unlike print where the exact font is guaranteed).</p>"
+        }
+      ],
+      "revisionQuestions": [
+        {
+          "q": "Explain the difference between a typeface and a font, using an example.",
+          "a": "A <b>typeface</b> is the overall design of a set of characters — e.g. Times New Roman is a typeface. A <b>font</b> is one specific instance of that typeface at a given size and style — e.g. <b>Times New Roman Bold, 12pt</b> is a font."
+        },
+        {
+          "q": "A student wants only the first line of every paragraph indented by 1cm, with every other line staying at the margin. Which indent type should they apply, and why?",
+          "a": "A <b>first-line indent</b> — it moves only the very first line of a paragraph to the right while leaving every subsequent line at the margin, which is exactly what's described. (A <b>hanging indent</b> does the opposite — first line at the margin, every other line indented.)"
+        },
+        {
+          "q": "Explain why full justification can sometimes create uneven spacing between words within a line.",
+          "a": "Full justification stretches or compresses the spacing between words so every line reaches <b>both</b> the left and right margins exactly. Because each line has a different amount of text, the software adds a different amount of extra space to make each one fill the full width — on lines with fewer words this can create noticeably wider, uneven gaps between words."
+        },
+        {
+          "q": "Outline ONE advantage and ONE limitation of distributing a document as a PDF rather than as an editable word-processing file.",
+          "a": "<b>Advantage:</b> a PDF preserves formatting (fonts, images, layout) identically across every device, operating system and piece of software, so it looks the same for every reader. <b>Limitation:</b> PDFs are a fixed, print-like format rather than an editable one — changing the text or restructuring the layout needs specialised software, making collaborative editing much harder than with a native format like Word."
+        },
+        {
+          "q": "Explain why a heading in a document should be styled differently from the body text around it.",
+          "a": "Headings need to be <b>visually distinct</b> — larger in size and/or a different weight or font style — so readers can immediately tell them apart from body text and scan the document's structure. If a heading looked identical to body text, it would lose its navigational purpose: readers couldn't tell where one section ends and the next begins."
+        },
+        {
+          "q": "A print shop charges $22.00 per ream of paper (500 sheets) and $38.00 per toner cartridge (1,200-page capacity). Calculate the total cost of paper and toner for a print run of 9,000 pages.",
+          "a": "Paper: 9,000 ÷ 500 = 18 reams × $22.00 = <b>$396.00</b>. Toner: 9,000 ÷ 1,200 = 7.5 → round up to <b>8</b> cartridges × $38.00 = <b>$304.00</b>. Total cost = $396 + $304 = <b>$700.00</b>."
+        }
+      ]
+    }
   ]
 }
