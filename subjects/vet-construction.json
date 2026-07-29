@@ -2151,6 +2151,473 @@
           "a": "The worker should first check for <b>Danger</b> — assessing whether it's safe to approach, e.g. by isolating the power source or keeping clear of it — before going near the collapsed colleague. Rushing in without checking for danger risks the responder becoming a second casualty, which worsens the situation rather than helping it."
         }
       ]
+    },
+    {
+      "id": "plans-drawings-specifications",
+      "icon": "📐",
+      "title": "Plans, Drawings & Specifications",
+      "accentColor": "#f7c46a",
+      "blocks": [
+        {
+          "type": "noteGrid",
+          "boxes": [
+            {
+              "heading": "What's on a title panel",
+              "html": "<ul>\n<li>Every plan has a <b>title panel</b> (usually bottom-right) recording: architect/drafting company, client, contractor, drawing number, date/version (including amendments), north indicator, number of pages, scale, and site location/address</li>\n<li>Always check the title panel <b>first</b> — it confirms you're reading the correct, current version of the right drawing before using any dimension on it</li>\n</ul>"
+            },
+            {
+              "heading": "Symbols & conventions",
+              "html": "<ul>\n<li>Standard symbols and abbreviations are used for: contours, datum, dimensions, direction, levels, material types, orientation (north), projection, scale, services (electricity, gas, plumbing) and the situation of structures on site</li>\n<li>Symbols follow Australian Standards so any tradesperson can read a plan the same way, regardless of who drew it — e.g. <b>HW</b> = hot water, <b>RWP</b> = rainwater pipe</li>\n</ul>"
+            }
+          ]
+        },
+        {
+          "type": "noteGrid",
+          "boxes": [
+            {
+              "heading": "Pictorial vs working drawings",
+              "html": "<ul>\n<li><b>Pictorial drawings</b> (illustrations, concept drawings, sketches) give a <b>3D representation</b> of a project — used in initial planning to communicate major features and help clients/workers visualise the finished result</li>\n<li><b>Working drawings</b> are the precise, dimensioned 2D plans used to actually construct the building</li>\n</ul>"
+            },
+            {
+              "heading": "Detail drawings",
+              "html": "<ul>\n<li>Detail drawings enlarge a specific part of the construction (e.g. a joint or connection) at a larger scale — commonly <b>1:20, 1:10 or 1:5</b> — so tolerances and assembly notes stay legible</li>\n<li>They include notes on dimensions and adherence to standards that couldn't be shown clearly on a full sectional view</li>\n</ul>"
+            }
+          ]
+        },
+        {
+          "type": "table",
+          "caption": "Working drawing types & what each shows",
+          "headers": [
+            "Drawing",
+            "Purpose",
+            "Typical content"
+          ],
+          "rows": [
+            [
+              {
+                "label": "Drawing",
+                "html": "Location plan"
+              },
+              {
+                "label": "Purpose",
+                "html": "Shows where the site sits within its surrounds"
+              },
+              {
+                "label": "Typical content",
+                "html": "Orientation, scale, address, street names/lot number, other block numbers"
+              }
+            ],
+            [
+              {
+                "label": "Drawing",
+                "html": "Site/block plan"
+              },
+              {
+                "label": "Purpose",
+                "html": "Shows the building's position on its own block"
+              },
+              {
+                "label": "Typical content",
+                "html": "Orientation, scale, position of structures/easements/ancillary works, boundary dimensions, street/boundary setbacks, contour lines and datum, utilities (power, gas, sewer, stormwater)"
+              }
+            ],
+            [
+              {
+                "label": "Drawing",
+                "html": "Floor plan"
+              },
+              {
+                "label": "Purpose",
+                "html": "Shows the layout of each level"
+              },
+              {
+                "label": "Typical content",
+                "html": "Overall internal/external dimensions, position/size/function of doors and windows, wall thickness and type, service outlets/switches, fixtures (baths, showers, toilets, cupboards), roofline, symbol legend"
+              }
+            ],
+            [
+              {
+                "label": "Drawing",
+                "html": "Elevation"
+              },
+              {
+                "label": "Purpose",
+                "html": "Shows an external face of the building"
+              },
+              {
+                "label": "Typical content",
+                "html": "Façade, roof shape/pitch/height, position of doors and windows, ground/floor/ceiling levels, window sill heights, roof and wall finishes"
+              }
+            ],
+            [
+              {
+                "label": "Drawing",
+                "html": "Section"
+              },
+              {
+                "label": "Purpose",
+                "html": "Shows a vertical \"slice\" through the building"
+              },
+              {
+                "label": "Typical content",
+                "html": "Wall/floor/subfloor structure and dimensions, roof structure and dimensions, structural members"
+              }
+            ]
+          ]
+        },
+        {
+          "type": "noteGrid",
+          "boxes": [
+            {
+              "heading": "Project documentation",
+              "html": "<ul>\n<li>Building/engagement <b>contracts</b> record: costing/itemised quote, inclusions, material and finish specifications, stage schedule and payment schedule</li>\n<li><b>Environmental plans</b> link to legislation and company policy, and set out requirements/controls for bush fire, coastal management, flood zones, protecting significant cultural/historical sites, rehabilitation and waste management/disposal</li>\n</ul>"
+            },
+            {
+              "heading": "Specifications",
+              "html": "<ul>\n<li>A <b>specification</b> is a written document describing construction and finishing that can't be shown on the drawings — e.g. concrete composition, timber species/grade, brick type, mortar quality, paint colours, and PC (prime cost) items like tapware, appliances and hot water systems</li>\n<li>Specifications and drawings must always be read <b>together</b> — the drawing shows where, the specification shows what and how</li>\n</ul>"
+            }
+          ]
+        },
+        {
+          "type": "noteGrid",
+          "boxes": [
+            {
+              "heading": "Reading scale drawings",
+              "html": "<ul>\n<li>A scale like <b>1:100</b> means every 1 unit on the drawing represents 100 of the same unit in reality</li>\n<li>Larger-scale drawings (e.g. 1:10) are used for small, detailed elements so they stay legible; smaller-scale drawings (e.g. 1:200) are used for whole-site plans</li>\n<li>Always convert to consistent units before calculating (e.g. metres on-site vs millimetres on the plan)</li>\n</ul>"
+            },
+            {
+              "heading": "Keeping plans current",
+              "html": "<ul>\n<li><b>Amendments and version currency</b> must always be checked before using a plan — an out-of-date version can lead to costly on-site errors</li>\n<li>Any <b>inconsistency</b> found between plans, drawings and specifications must be reported through the correct procedure, not silently resolved on-site</li>\n</ul>"
+            }
+          ]
+        },
+        {
+          "type": "table",
+          "caption": "Worked example — converting a real measurement to a plan measurement",
+          "headers": [
+            "Step",
+            "Calculation",
+            "Result"
+          ],
+          "rows": [
+            [
+              {
+                "label": "Step",
+                "html": "1"
+              },
+              {
+                "label": "Calculation",
+                "html": "Convert the real length to a single unit: 13.7 m ="
+              },
+              {
+                "label": "Result",
+                "html": "13,700 mm"
+              }
+            ],
+            [
+              {
+                "label": "Step",
+                "html": "2"
+              },
+              {
+                "label": "Calculation",
+                "html": "Divide by the scale factor (1:100 → ÷100): 13,700 mm ÷ 100"
+              },
+              {
+                "label": "Result",
+                "html": "137 mm"
+              }
+            ],
+            [
+              {
+                "label": "Step",
+                "html": "3"
+              },
+              {
+                "label": "Calculation",
+                "html": "The line drawn on the plan is"
+              },
+              {
+                "label": "Result",
+                "html": "<b>137 mm</b>"
+              }
+            ]
+          ]
+        },
+        {
+          "type": "examTip",
+          "label": "Scale questions are pure unit conversion",
+          "html": "<p>Scale-conversion questions are graded on getting the <b>units and division direction</b> right, not on complex maths. Convert everything to the same unit first (usually millimetres), then <b>divide</b> by the scale factor for a real-to-plan conversion (or <b>multiply</b> for plan-to-real). Always sanity-check your answer: a 1:100 plan of a 13.7 m wall should give an answer measured in tens of millimetres, not centimetres or metres — if your answer doesn't \"look like\" a small line on a page, you've likely divided the wrong way.</p>"
+        },
+        {
+          "type": "linkIt",
+          "html": "<p>Taking your own measurements and performing construction calculations — area, volume, unit conversions and material quantities — are covered in the next topic, <b>Measurements & Calculations</b>.</p>"
+        }
+      ],
+      "revisionQuestions": [
+        {
+          "q": "A retaining wall measures 22.4 metres in real life and is drawn at a scale of 1:200. How long is the line on the plan?",
+          "a": "22.4 m = 22,400 mm. At 1:200, 22,400 mm ÷ 200 = <b>112 mm</b>. The line on the plan is 112 mm long."
+        },
+        {
+          "q": "Which type of plan would you check to find the north point, boundary setbacks, and the location of stormwater and sewer connections? Explain why.",
+          "a": "The <b>site/block plan</b> — it shows the building's position on its own block, including orientation (north point), boundary dimensions and setbacks, contour lines/datum, and utilities such as stormwater and sewer. This information isn't shown on a floor plan or elevation."
+        },
+        {
+          "q": "A drawing shows a joint detail at a scale of 1:5, while the overall floor plan is drawn at 1:100. Explain why the two drawings use different scales.",
+          "a": "Detail drawings use a much larger scale (e.g. 1:5 or 1:10) so small elements like joints and connections stay legible and can show precise dimensions and assembly notes. A floor plan uses a smaller scale (e.g. 1:100) because it needs to fit an entire level of the building on one page — using a large scale for the whole floor plan would make the page impractically large."
+        },
+        {
+          "q": "A specification states the brick type, mortar quality and paint colours for a house. Why isn't this information included directly on the drawings instead?",
+          "a": "Drawings are for showing dimensions, layout and positioning — adding this much written detail would clutter them and make them harder to read. A specification is a separate written document specifically for information that can't be clearly illustrated on the drawings, such as material grades, finishes and PC items — the drawing and specification are meant to be read together."
+        },
+        {
+          "q": "A builder is using a set of plans on-site but isn't sure if it's the most recent version. What should they check, and why does this matter?",
+          "a": "They should check the <b>title panel</b> for the date/version and any recorded amendments. Using an outdated version can lead to the wrong dimensions, materials or design being built — an expensive and time-consuming mistake to fix once construction has already started."
+        },
+        {
+          "q": "Explain the difference between a pictorial drawing and a working drawing, and give a reason each is used.",
+          "a": "A <b>pictorial drawing</b> (e.g. a 3D illustration or sketch) gives a three-dimensional representation of the project, used in initial planning to help clients and workers visualise the finished result. A <b>working drawing</b> (e.g. a floor plan or elevation) is a precise, dimensioned 2D plan used to actually construct the building — it's accurate enough to build from, which a pictorial drawing is not."
+        }
+      ]
+    },
+    {
+      "id": "measurements-calculations",
+      "icon": "📏",
+      "title": "Measurements & Calculations",
+      "accentColor": "#f7c46a",
+      "blocks": [
+        {
+          "type": "noteGrid",
+          "boxes": [
+            {
+              "heading": "Key terminology",
+              "html": "<ul>\n<li><b>Area</b>, <b>volume</b>, <b>perimeter</b> and <b>circumference</b> measure different things — area is 2D surface (m²), volume is 3D space (m³), perimeter/circumference is the distance around a shape's edge (m)</li>\n<li><b>Ratio</b> compares quantities to each other (e.g. a 1:2:3 concrete mix); <b>tolerance</b> is the acceptable margin of error for a measurement; <b>estimation</b> is a reasoned approximation, not a guess</li>\n<li><b>Waste minimisation</b> means calculating quantities carefully so as little material as possible is over-ordered or wasted on-site</li>\n</ul>"
+            },
+            {
+              "heading": "Measuring equipment",
+              "html": "<ul>\n<li>Common equipment: digital devices (including laser measure), retractable tape measure, rule, scales, squares, and the <b>trundle wheel</b> (for long ground distances)</li>\n<li>Each tool has a correct use and limitation — a laser measure is fast and accurate over long straight distances but needs a clear line of sight; a retractable tape measure is accurate to 1 mm when the end hook and lock button are used correctly</li>\n<li>Select the tool appropriate to the task, and clean/maintain/store it correctly afterwards, same as any other tool</li>\n</ul>"
+            }
+          ]
+        },
+        {
+          "type": "noteGrid",
+          "boxes": [
+            {
+              "heading": "Units of measurement",
+              "html": "<ul>\n<li><b>Length</b> — millimetres (mm) and metres (m), including m² (area) and m³ (volume)</li>\n<li><b>Mass</b> — grams (g) and kilograms (kg); larger loads use <b>tonnes (t)</b></li>\n<li><b>Liquid volume</b> — millilitres (mL) and litres (L)</li>\n</ul>"
+            },
+            {
+              "heading": "Converting between units",
+              "html": "<ul>\n<li><b>mm → m</b>: divide by 1,000 (e.g. 330 mm ÷ 1,000 = 0.330 m); <b>m → mm</b>: multiply by 1,000</li>\n<li><b>kg → t</b>: divide by 1,000; <b>t → kg</b>: multiply by 1,000</li>\n<li><b>g → kg</b> and <b>mL → L</b>: divide by 1,000</li>\n<li>Always double-check which direction you're converting — an answer 1,000× too big or small is the most common error here</li>\n</ul>"
+            }
+          ]
+        },
+        {
+          "type": "noteGrid",
+          "boxes": [
+            {
+              "heading": "Why accuracy matters",
+              "html": "<ul>\n<li>Incorrect measurements and calculations affect the client, the workplace/company and the environment — wrong material orders cause delays, extra delivery costs and wasted material</li>\n<li><b>Under-ordering</b> delays the project while waiting for a second delivery; <b>over-ordering</b> wastes money and creates unnecessary waste to dispose of</li>\n</ul>"
+            },
+            {
+              "heading": "Taking a linear measurement correctly",
+              "html": "<ul>\n<li>Identify a clear <b>start and end point</b>, and read the correct units and scale</li>\n<li>Use a retractable tape measure safely and correctly: hook the end securely, and use the lock button to hold the reading steady</li>\n<li>Aim for accuracy to within <b>1 mm</b> on a construction site</li>\n</ul>"
+            }
+          ]
+        },
+        {
+          "type": "table",
+          "caption": "Formulae you need to know",
+          "headers": [
+            "Shape/quantity",
+            "Formula"
+          ],
+          "rows": [
+            [
+              {
+                "label": "Shape/quantity",
+                "html": "Perimeter (rectangle)"
+              },
+              {
+                "label": "Formula",
+                "html": "2 × (length + width)"
+              }
+            ],
+            [
+              {
+                "label": "Shape/quantity",
+                "html": "Circumference (circle)"
+              },
+              {
+                "label": "Formula",
+                "html": "π × diameter (or 2 × π × radius)"
+              }
+            ],
+            [
+              {
+                "label": "Shape/quantity",
+                "html": "Area (rectangle/square)"
+              },
+              {
+                "label": "Formula",
+                "html": "length × width"
+              }
+            ],
+            [
+              {
+                "label": "Shape/quantity",
+                "html": "Area (circle)"
+              },
+              {
+                "label": "Formula",
+                "html": "π × radius²"
+              }
+            ],
+            [
+              {
+                "label": "Shape/quantity",
+                "html": "Area (triangle)"
+              },
+              {
+                "label": "Formula",
+                "html": "½ × base × height"
+              }
+            ],
+            [
+              {
+                "label": "Shape/quantity",
+                "html": "Volume (cube/rectangular prism)"
+              },
+              {
+                "label": "Formula",
+                "html": "length × width × height (depth)"
+              }
+            ],
+            [
+              {
+                "label": "Shape/quantity",
+                "html": "Volume (cylinder)"
+              },
+              {
+                "label": "Formula",
+                "html": "π × radius² × height"
+              }
+            ],
+            [
+              {
+                "label": "Shape/quantity",
+                "html": "3:4:5 method"
+              },
+              {
+                "label": "Formula",
+                "html": "Checks a corner is a true right angle — measure 3 units along one side and 4 along the other; if the diagonal between those points is exactly 5 units, the corner is square"
+              }
+            ]
+          ]
+        },
+        {
+          "type": "table",
+          "caption": "Worked example — concrete slab volume & cost",
+          "headers": [
+            "Step",
+            "Calculation",
+            "Result"
+          ],
+          "rows": [
+            [
+              {
+                "label": "Step",
+                "html": "1"
+              },
+              {
+                "label": "Calculation",
+                "html": "Convert slab depth to metres: 120 mm ÷ 1,000"
+              },
+              {
+                "label": "Result",
+                "html": "0.12 m"
+              }
+            ],
+            [
+              {
+                "label": "Step",
+                "html": "2"
+              },
+              {
+                "label": "Calculation",
+                "html": "Calculate volume: 40 m² (slab area) × 0.12 m (depth)"
+              },
+              {
+                "label": "Result",
+                "html": "4.8 m³"
+              }
+            ],
+            [
+              {
+                "label": "Step",
+                "html": "3"
+              },
+              {
+                "label": "Calculation",
+                "html": "Calculate cost: 4.8 m³ × $310.00 per m³"
+              },
+              {
+                "label": "Result",
+                "html": "<b>$1,488.00</b>"
+              }
+            ]
+          ]
+        },
+        {
+          "type": "noteGrid",
+          "boxes": [
+            {
+              "heading": "Determining material quantities",
+              "html": "<ul>\n<li>Materials are supplied in different forms — <b>packed</b>, <b>loose</b>, or <b>compacted</b> — and this affects how much you need to order</li>\n<li>Some materials have standard supply quantities, e.g. timber in <b>300 mm increments</b>, sheet materials by m², fencing/piping by lineal metre (Lm)</li>\n<li>Always estimate within industry and workplace tolerances — a small buffer for cutting waste and offcuts is normal, not sloppy</li>\n</ul>"
+            },
+            {
+              "heading": "Recording & communicating results",
+              "html": "<ul>\n<li>Measurements, calculations and material requirements should be recorded in an appropriate location or format — e.g. ground spray on-site, or a written/digital work plan, job card or sketch</li>\n<li>Records must be <b>concise, legible and accurate</b>, using correct industry abbreviations, symbols and standards</li>\n<li>Always confirm and check recorded figures against the actual drawings, plans and specifications before ordering or building</li>\n</ul>"
+            }
+          ]
+        },
+        {
+          "type": "examTip",
+          "label": "Show every step of a calculation",
+          "html": "<p>Multi-step construction calculations (area → volume → cost, or quantity → wastage → pallets) are marked on the <b>working</b>, not just the final number. Write out each step separately, including the unit conversion, and round consistently — usually rounding <b>up</b> for quantities you need to buy (you can't purchase half a pallet or 0.6 of a fence panel) and to the nearest cent for cost. A correct final answer with no working shown can lose marks even if it's right; clear, logical working showing an almost-correct answer will often score better.</p>"
+        },
+        {
+          "type": "linkIt",
+          "html": "<p>Reading plans, drawings and specifications — the source of most of the dimensions used in these calculations — was covered in the previous topic. Next, in Tools of the Trade: <b>Hand & Power Tools</b>.</p>"
+        }
+      ],
+      "revisionQuestions": [
+        {
+          "q": "A garden bed is 2,450 mm long. Convert this to metres.",
+          "a": "2,450 mm ÷ 1,000 = <b>2.45 m</b>."
+        },
+        {
+          "q": "A concrete path is 15 m long, 0.9 m wide and 100 mm deep. Calculate the volume of concrete required in m³.",
+          "a": "Convert depth to metres: 100 mm ÷ 1,000 = 0.1 m. Volume = 15 m × 0.9 m × 0.1 m = <b>1.35 m³</b>."
+        },
+        {
+          "q": "Explain the 3:4:5 method and what it's used for on a construction site.",
+          "a": "The 3:4:5 method checks whether a corner is a true right angle. Measure 3 units along one side of the corner and 4 units along the other; if the diagonal distance between those two points is exactly 5 units, the corner is square. It's commonly used when setting out foundations or frames."
+        },
+        {
+          "q": "A load of 2.4 tonnes of sand is delivered. Express this in kilograms.",
+          "a": "2.4 t × 1,000 = <b>2,400 kg</b>."
+        },
+        {
+          "q": "Explain why over-ordering material is a problem, even though it avoids the risk of running out.",
+          "a": "Over-ordering wastes money on unnecessary material, and the leftover material still has to be stored, returned or disposed of — creating extra cost, handling and environmental waste. Accurate estimation with only a reasonable tolerance for cutting waste is more resource-efficient than ordering a large surplus \"just in case\"."
+        },
+        {
+          "q": "A worker records a measurement in chalk directly on the slab instead of on the job card. Is this an acceptable way to record and communicate a measurement? Explain.",
+          "a": "Yes, in the right context — ground spray/chalk marking is a recognised way to record measurements directly on-site (e.g. marking out a layout). However, it should still be confirmed and checked against the drawings/specifications, and for anything that needs to be communicated to others later or kept as a permanent record, a written or digital record (work plan, job card, sketch) is more appropriate since on-site marks can be walked over, washed away or built over."
+        }
+      ]
     }
   ]
 }
