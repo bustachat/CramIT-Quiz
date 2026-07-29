@@ -828,7 +828,7 @@ const SUBJECTS = {
     name: 'VET Construction',
     icon: '🔨',
     accent: '#f7c46a',
-    hasMC: true, hasWritten: true,
+    hasMC: true, hasWritten: true, hasStudy: true,
     getMC: (filters) => {
       let qs = [...(subjectCache.vet?.mcQuestions ?? [])];
       if (filters.year && filters.year !== 'all') qs = qs.filter(q => String(q.year) === filters.year);

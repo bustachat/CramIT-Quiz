@@ -1786,5 +1786,210 @@
       ],
       "minKeywords": 9
     }
+  ],
+  "studyNotes": [
+    {
+      "id": "safety-whs-risk-management",
+      "icon": "🦺",
+      "title": "Safety: WHS & Risk Management",
+      "accentColor": "#f7c46a",
+      "blocks": [
+        {
+          "type": "noteGrid",
+          "boxes": [
+            {
+              "heading": "What is WHS?",
+              "html": "<ul>\n<li><b>WHS (Work Health and Safety)</b> is the laws, policies and procedures that protect workers, visitors and the public from harm in a workplace</li>\n<li><b>Duty of care</b> — every business and worker in construction has a legal obligation to take reasonable care to protect their own health and safety, and that of others who may be affected by what they do (or fail to do)</li>\n<li>WHS is <b>everyone's responsibility</b>, not just management's — every worker shares responsibility for identifying hazards and working safely</li>\n</ul>"
+            },
+            {
+              "heading": "The cost of workplace injury",
+              "html": "<ul>\n<li><b>Human</b> — pain, injury, disability, and in the worst cases death or permanent trauma to the worker and their family</li>\n<li><b>Social</b> — loss of income, strain on relationships, reduced quality of life, burden on the healthcare system</li>\n<li><b>Economic</b> — workers compensation payouts, lost productivity, increased insurance premiums, potential fines</li>\n<li><b>Organisational</b> — damage to a company's reputation, loss of clients/contracts, low staff morale, project delays</li>\n</ul>"
+            }
+          ]
+        },
+        {
+          "type": "noteGrid",
+          "boxes": [
+            {
+              "heading": "Key WHS bodies",
+              "html": "<ul>\n<li><b>SafeWork NSW</b> — the NSW regulator that enforces WHS law, investigates incidents, and issues improvement/prohibition notices</li>\n<li><b>Safe Work Australia</b> — the national body that develops WHS policy and model laws, which states then adopt or adapt</li>\n<li><b>Local councils</b> — enforce building and development regulations that intersect with site safety, e.g. hoarding and public safety</li>\n<li><b>Unions and professional associations</b> (e.g. CFMEU, HIA, MBA) — represent worker/industry interests and provide WHS advice and training</li>\n</ul>"
+            },
+            {
+              "heading": "Sources of WHS information",
+              "html": "<ul>\n<li><b>Internal</b> — site inductions, toolbox talks, workplace policies and procedures, safety data sheets (SDS), supervisors</li>\n<li><b>External</b> — the SafeWork NSW website and codes of practice, Australian Standards, industry associations, legislation</li>\n</ul>"
+            }
+          ]
+        },
+        {
+          "type": "noteGrid",
+          "boxes": [
+            {
+              "heading": "Acts, Regulations, Codes of Practice & Standards",
+              "html": "<ul>\n<li><b>Act</b> — the primary law passed by parliament, e.g. the <i>Work Health and Safety Act 2011 (NSW)</i> — sets out broad legal obligations</li>\n<li><b>Regulation</b> — more detailed rules made under the Act, e.g. the <i>Work Health and Safety Regulation 2017 (NSW)</i> — specifies how obligations must be met</li>\n<li><b>Code of practice</b> — practical guidance on complying with the Act/Regulation for a specific area (e.g. site induction, first aid, manual handling, risk management, WHS consultation) — not legally binding by itself, but following one is strong evidence of compliance</li>\n<li><b>Standard</b> (Australian, industry or workplace) — a technical benchmark for materials, products or processes</li>\n</ul>"
+            },
+            {
+              "heading": "Who holds duties under the Act",
+              "html": "<ul>\n<li><b>PCBU</b> (Person Conducting a Business or Undertaking) — the primary duty holder; must ensure health and safety so far as reasonably practicable</li>\n<li><b>Officer</b> — a person who makes or influences decisions affecting the business (e.g. a director) — must exercise due diligence</li>\n<li><b>Worker</b> — anyone who carries out work for a PCBU (employee, apprentice, contractor) — must take reasonable care for their own safety and follow reasonable instructions</li>\n<li>Some tasks legally require a <b>license, permit, ticket or certificate of competency</b> before a worker may perform them, e.g. operating certain plant, working at heights, asbestos removal</li>\n</ul>"
+            }
+          ]
+        },
+        {
+          "type": "noteGrid",
+          "boxes": [
+            {
+              "heading": "WHS consultation & participation",
+              "html": "<ul>\n<li><b>Consultation</b> means genuinely involving workers in WHS decisions that affect them — required by law, not just good practice</li>\n<li>Workers can provide input through formal and informal discussion, meetings, surveys, training, WHS audits and inspections</li>\n<li>A <b>Health and Safety Representative (HSR)</b> can be elected to represent workers in WHS consultation</li>\n<li>A workplace must establish a <b>WHS committee</b> when requested by a worker or HSR, <b>or</b> once the business employs <b>20 or more workers</b> — whichever comes first</li>\n</ul>"
+            },
+            {
+              "heading": "Reporting WHS issues",
+              "html": "<ul>\n<li>Reporting can be formal or informal, written or verbal — but must always go to the appropriate person, e.g. supervisor, PCBU or HSR</li>\n<li>It's <b>every worker's responsibility</b> to identify and report WHS issues, concerns and hazards — not just management's</li>\n<li>Reports and records must be handled according to workplace policy and regulatory requirements</li>\n<li>Unsafe work practices and breaches of health and safety should be reported immediately, even if no one was hurt — near misses are early warnings</li>\n</ul>"
+            }
+          ]
+        },
+        {
+          "type": "noteGrid",
+          "boxes": [
+            {
+              "heading": "Hazard vs risk",
+              "html": "<ul>\n<li>A <b>hazard</b> is anything with the potential to cause harm — e.g. an unguarded saw blade, a wet floor, a loud generator</li>\n<li>A <b>risk</b> is the likelihood that a hazard will actually cause harm, combined with how severe that harm would be — the same hazard can carry different risk depending on context (e.g. a wet floor in a fenced-off area is lower risk than the same wet floor on a busy walkway)</li>\n<li><b>Risk assessment</b> means identifying hazards, then judging likelihood × severity to decide what controls are needed</li>\n</ul>"
+            },
+            {
+              "heading": "Types of hazards on a construction site",
+              "html": "<ul>\n<li>Hazardous and non-hazardous materials</li>\n<li>Human factors (fatigue, inexperience, distraction) affecting self, colleagues or others</li>\n<li>Manual handling; tools, equipment, machinery and plant</li>\n<li>Work environment and weather; work processes and practices</li>\n<li>Specific high-risk situations: working alone, at heights, in confined spaces, in/around excavations, near traffic and water, and with compressed air, electricity or liquids under pressure</li>\n</ul>"
+            }
+          ]
+        },
+        {
+          "type": "table",
+          "caption": "The hierarchy of risk control",
+          "headers": [
+            "Level",
+            "Description",
+            "Construction example"
+          ],
+          "rows": [
+            [
+              {
+                "label": "Level",
+                "html": "1. Eliminate"
+              },
+              {
+                "label": "Description",
+                "html": "Remove the hazard completely so it can no longer cause harm"
+              },
+              {
+                "label": "Construction example",
+                "html": "Redesigning a job so work is never performed at height"
+              }
+            ],
+            [
+              {
+                "label": "Level",
+                "html": "2. Substitute"
+              },
+              {
+                "label": "Description",
+                "html": "Replace the hazard with something less hazardous"
+              },
+              {
+                "label": "Construction example",
+                "html": "Using battery-powered tools instead of 240V corded tools in a damp area"
+              }
+            ],
+            [
+              {
+                "label": "Level",
+                "html": "3. Isolate"
+              },
+              {
+                "label": "Description",
+                "html": "Physically separate people from the hazard"
+              },
+              {
+                "label": "Construction example",
+                "html": "Roping off a crane's lift zone so no one can walk underneath a suspended load"
+              }
+            ],
+            [
+              {
+                "label": "Level",
+                "html": "4. Engineering controls"
+              },
+              {
+                "label": "Description",
+                "html": "Modify equipment or the work environment to reduce exposure"
+              },
+              {
+                "label": "Construction example",
+                "html": "Local exhaust ventilation, dust extraction systems, machine guards fitted to power tools"
+              }
+            ],
+            [
+              {
+                "label": "Level",
+                "html": "5. Administrative controls"
+              },
+              {
+                "label": "Description",
+                "html": "Change work practices through procedures, training, signage or scheduling"
+              },
+              {
+                "label": "Construction example",
+                "html": "Safe work method statements (SWMS), toolbox talks, job rotation, testing and tagging schedules"
+              }
+            ],
+            [
+              {
+                "label": "Level",
+                "html": "6. PPE"
+              },
+              {
+                "label": "Description",
+                "html": "Personal protective equipment — the last line of defence, relied on only when higher controls aren't practicable"
+              },
+              {
+                "label": "Construction example",
+                "html": "Safety glasses, hearing protection, hard hats, gloves"
+              }
+            ]
+          ]
+        },
+        {
+          "type": "examTip",
+          "label": "Reading hierarchy-of-control questions",
+          "html": "<p>NESA loves describing a real action and asking which level of the hierarchy it belongs to. The trap: most described actions sit <b>lower</b> in the hierarchy than they sound. Testing and tagging equipment, providing training and using a safe work method statement all feel proactive, but they're <b>administrative</b> controls, not engineering controls — they rely on people following a procedure rather than changing the physical hazard itself. Ask: does this action remove or reduce the hazard (elimination, substitution, isolation, engineering), or does it just change how people behave around an unchanged hazard (administrative, PPE)?</p>"
+        },
+        {
+          "type": "linkIt",
+          "html": "<p>Safe work procedures, PPE selection, incidents and emergency response — including first aid, fire safety and reporting — are covered in the next Safety topic, <b>Safe Work Practices & Emergencies</b>.</p>"
+        }
+      ],
+      "revisionQuestions": [
+        {
+          "q": "A business has grown to 22 workers and still has no WHS committee. Is this compliant with the Work Health and Safety Act 2011? Explain.",
+          "a": "No. Under the WHS Act, a workplace must establish a WHS committee once the business employs <b>20 or more workers</b> (or earlier if requested by a worker or Health and Safety Representative). At 22 workers, the business is required to have a committee in place."
+        },
+        {
+          "q": "Explain the difference between a hazard and a risk, using a construction example.",
+          "a": "A <b>hazard</b> is anything with the potential to cause harm — e.g. an open excavation. A <b>risk</b> is the likelihood that the hazard will cause harm, combined with how severe that harm would be — e.g. the risk of someone falling into that excavation is higher if it's unfenced next to a busy walkway than if it's isolated and clearly signed."
+        },
+        {
+          "q": "A worker is asked to use a step ladder near a live overhead power line. Identify the hazard, and propose a risk control that sits higher in the hierarchy than wearing insulated gloves.",
+          "a": "The hazard is electrocution from contact with the live overhead line. Insulated gloves are only a <b>PPE</b> control, the lowest level. A higher-level control would be to <b>isolate</b> the work area from the line (e.g. an exclusion zone, or de-energising the line) or <b>eliminate</b> the risk entirely by rescheduling the task so no work occurs near the line while it is live."
+        },
+        {
+          "q": "What is the difference between an Act, a Regulation and a Code of Practice in the WHS legal framework?",
+          "a": "An <b>Act</b> is the primary law passed by parliament (e.g. the Work Health and Safety Act 2011 (NSW)), setting out broad legal duties. A <b>Regulation</b> is made under the Act and sets out more detailed rules for meeting those duties (e.g. the Work Health and Safety Regulation 2017 (NSW)). A <b>Code of Practice</b> gives practical guidance on complying with the Act and Regulation for a specific area, such as manual handling or site induction — it isn't legally binding on its own, but following it is strong evidence a business met its duty."
+        },
+        {
+          "q": "Name three of the human, social, economic or organisational costs of a serious workplace injury.",
+          "a": "Accept any three, e.g.: <b>human</b> — pain, disability or death; <b>social</b> — loss of income, strain on relationships; <b>economic</b> — workers compensation payouts, increased insurance premiums, fines; <b>organisational</b> — reputational damage, lost contracts, low staff morale, project delays."
+        },
+        {
+          "q": "A new apprentice notices a frayed extension lead but doesn't report it because “it's not my job.” Explain why this reasoning is incorrect under WHS consultation and participation requirements.",
+          "a": "WHS is everyone's responsibility, not just management's or supervisors'. Every worker has a duty to identify and report hazards and WHS issues as soon as they notice them, regardless of role or seniority — reporting a frayed lead immediately (even if it later turns out to be minor) is exactly the kind of participation the WHS Act expects. Failing to report it leaves the hazard in place for the next person."
+        }
+      ]
+    }
   ]
 }
