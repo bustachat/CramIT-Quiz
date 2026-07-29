@@ -1990,6 +1990,167 @@
           "a": "WHS is everyone's responsibility, not just management's or supervisors'. Every worker has a duty to identify and report hazards and WHS issues as soon as they notice them, regardless of role or seniority — reporting a frayed lead immediately (even if it later turns out to be minor) is exactly the kind of participation the WHS Act expects. Failing to report it leaves the hazard in place for the next person."
         }
       ]
+    },
+    {
+      "id": "safety-safe-work-practices-emergencies",
+      "icon": "🧯",
+      "title": "Safety: Safe Work Practices & Emergencies",
+      "accentColor": "#f7c46a",
+      "blocks": [
+        {
+          "type": "noteGrid",
+          "boxes": [
+            {
+              "heading": "Safe work procedures & documents",
+              "html": "<ul>\n<li>WHS induction training happens at three levels: <b>general</b>, <b>work-activity-specific</b> and <b>site-specific</b></li>\n<li>Safe work relies on a set of standard documents: job safety analysis (<b>JSA</b>), safe work method statement (<b>SWMS</b>), safety data sheet (<b>SDS</b>), standard operating procedures (<b>SOP</b>), and the site/project safety plan</li>\n<li>A SWMS is <b>legally mandatory</b> for \"high-risk construction work\" — e.g. work at heights above 2 metres, work in or near a confined space, or demolition</li>\n<li>Hazardous substances and dangerous goods must be correctly handled, labelled, transported, stored and disposed of according to their SDS</li>\n</ul>"
+            },
+            {
+              "heading": "PPE — selection, fit & maintenance",
+              "html": "<ul>\n<li>Correct <b>fit</b> matters as much as wearing PPE at all — poorly fitted PPE can create new hazards, e.g. loose clothing caught in moving machinery</li>\n<li>Common PPE: eye protection, hearing protection, respirators/masks, gloves, head protection, footwear, high-vis clothing, sunscreen</li>\n<li>PPE is selected based on the <b>specific hazard and task</b> — one type doesn't suit every job</li>\n<li>PPE must be regularly inspected, maintained and correctly stored to remain effective</li>\n</ul>"
+            }
+          ]
+        },
+        {
+          "type": "noteGrid",
+          "boxes": [
+            {
+              "heading": "Manual handling technique",
+              "html": "<ul>\n<li>Correct technique: <b>wide stance</b> for stability, look forward (neutral neck position), <b>bend at the knees</b>, and lift using the leg muscles — not the back or arms — keeping the load close to the body</li>\n<li>Avoid bending, twisting and overreaching while carrying a load</li>\n<li>Use mechanical aids (trolleys, pallet jacks, hoists) or team lifting for heavy or awkward loads rather than always lifting manually</li>\n<li>Recommended weight limits and task rotation reduce cumulative strain from repetitious tasks</li>\n</ul>"
+            },
+            {
+              "heading": "Ergonomics & housekeeping",
+              "html": "<ul>\n<li><b>Ergonomics</b> means designing the task/workspace to fit the worker — correct tool placement, sitting/standing posture, adjustable equipment and task rotation all reduce strain</li>\n<li><b>Housekeeping</b> covers clean-up procedures for the immediate work area and the whole site, and correct storage/disposal of waste</li>\n<li>Good housekeeping is a WHS issue, not just tidiness — clutter, spills and stray materials are trip and injury hazards</li>\n</ul>"
+            }
+          ]
+        },
+        {
+          "type": "noteGrid",
+          "boxes": [
+            {
+              "heading": "Working with electricity",
+              "html": "<ul>\n<li>All electrical equipment must be <b>tested and tagged</b>, showing a current inspection date — a <b>missing or expired tag</b> means the tool must be removed from service and reported to a supervisor immediately, never used \"more carefully\" instead</li>\n<li>Leads and power boards should be placed and secured to avoid trip hazards, including overhead runs</li>\n<li>A <b>residual current device (RCD)</b> continuously monitors current and trips the circuit within milliseconds if it detects a leakage to earth (such as through a person receiving a shock)</li>\n<li>Always check for the location of existing site utilities (buried or overhead power lines) before starting work</li>\n</ul>"
+            },
+            {
+              "heading": "Tools, equipment & machinery checks",
+              "html": "<ul>\n<li><b>Pre-operational checks</b> come before every task — confirm machine guards are fitted, look for damage, and check the tool is rated for the job</li>\n<li>Faults must be reported <b>verbally</b> to the appropriate person, and <b>recorded</b> on a job card or maintenance log</li>\n<li>Faulty or unsafe equipment should be <b>tagged out</b> (safety tags and lockout) so it cannot be used until repaired</li>\n<li>Regular maintenance and correct storage extend a tool's working life and keep it safe to use</li>\n</ul>"
+            }
+          ]
+        },
+        {
+          "type": "noteGrid",
+          "boxes": [
+            {
+              "heading": "Asbestos containing materials (ACM)",
+              "html": "<ul>\n<li>Asbestos was widely used in older building materials (e.g. fibro sheeting, some vinyl floor tiles, roofing) — its fibres, if disturbed, cause serious long-term respiratory illness, including mesothelioma</li>\n<li>Workers must be able to recognise the <b>types</b> of ACM and their <b>possible locations</b> in older structures, especially before renovation or demolition</li>\n<li>Handling and removal is governed by strict workplace policy and government legislation, including the <b>asbestos management code of practice</b></li>\n</ul>"
+            },
+            {
+              "heading": "High-risk work situations",
+              "html": "<ul>\n<li>Working at heights, in confined spaces, near others, with compressed air, and with dangerous materials all require specific procedures beyond standard safe work practices</li>\n<li>Entering a <b>confined space</b> always requires an <b>entry permit</b> as the first step — before any PPE is put on or atmospheric testing begins</li>\n<li>High-risk activities like these are exactly the kind of work a SWMS is legally required for</li>\n</ul>"
+            }
+          ]
+        },
+        {
+          "type": "table",
+          "caption": "Fire safety essentials",
+          "headers": [
+            "Equipment",
+            "How it works",
+            "When to use it"
+          ],
+          "rows": [
+            [
+              {
+                "label": "Equipment",
+                "html": "Fire blanket"
+              },
+              {
+                "label": "How it works",
+                "html": "Smothers the fire by cutting off its oxygen supply"
+              },
+              {
+                "label": "When to use it",
+                "html": "Clothing fires on a person — always the correct choice; never aim a chemical extinguisher at a person"
+              }
+            ],
+            [
+              {
+                "label": "Equipment",
+                "html": "Blue band extinguisher (dry powder, ABE)"
+              },
+              {
+                "label": "How it works",
+                "html": "The powder doesn't conduct electricity"
+              },
+              {
+                "label": "When to use it",
+                "html": "Electrical equipment fires — isolate the power first where possible"
+              }
+            ],
+            [
+              {
+                "label": "Equipment",
+                "html": "Other extinguisher types"
+              },
+              {
+                "label": "How it works",
+                "html": "Different colour bands/agents suit different fuel classes"
+              },
+              {
+                "label": "When to use it",
+                "html": "Always check the extinguisher's label and colour band before use — the wrong type can spread or worsen a fire"
+              }
+            ]
+          ]
+        },
+        {
+          "type": "noteGrid",
+          "boxes": [
+            {
+              "heading": "Incidents, accidents & emergencies",
+              "html": "<ul>\n<li>An <b>incident</b> is any unplanned event; an <b>accident</b> is an incident that results in injury, illness or damage; an <b>emergency</b> is a serious, urgent situation requiring an immediate response</li>\n<li>First aid is different from an emergency — first aid is for a manageable injury a trained person can treat on-site; an emergency requires evacuation, emergency services or specialist response</li>\n<li>The very first step of the <b>DRSABCD</b> first aid action plan is to check for <b>Danger</b> — a responder must not become a second casualty</li>\n<li>Common workplace injuries include cuts, sprains, burns, falls and manual-handling strains, each needing different basic first aid</li>\n</ul>"
+            },
+            {
+              "heading": "Responding to an emergency",
+              "html": "<ul>\n<li>Know the location and use of emergency signals, alarms, exits, and emergency contact numbers <b>before</b> an emergency happens, not during one</li>\n<li>Follow the workplace's procedures for notification, evacuation and securing the workplace/building</li>\n<li>Basic firefighting equipment includes the fire blanket, fire extinguishers (chosen by class/colour band) and fire hose reels — know their location, class and maintenance status</li>\n<li>After any incident, accident or emergency, recording and reporting must follow workplace policy and regulatory requirements — even near misses should be reported</li>\n</ul>"
+            }
+          ]
+        },
+        {
+          "type": "examTip",
+          "label": "Fire and first-aid questions are answered from the label, not guesswork",
+          "html": "<p>NESA's fire and first-aid MC questions are almost always testable directly from the extinguisher's colour band or the DRSABCD sequence — <b>D</b>anger, <b>R</b>esponse, <b>S</b>end for help, <b>A</b>irway, <b>B</b>reathing, <b>C</b>PR, <b>D</b>efibrillation. The most common trap is picking the \"most active-sounding\" first step (e.g. check breathing, or call emergency services) instead of the actual first step, which is always checking for danger to the responder. The same logic applies to fires on a person: even the correct extinguisher class for the fuel should never be aimed at someone — only a fire blanket, because of the physical injury the discharge itself could cause.</p>"
+        },
+        {
+          "type": "linkIt",
+          "html": "<p>WHS's legal framework, the risk control hierarchy and WHS consultation & participation are covered in the previous Safety topic, <b>WHS & Risk Management</b>. The next focus area, Skills in Construction, begins with <b>Plans, Drawings & Specifications</b>.</p>"
+        }
+      ],
+      "revisionQuestions": [
+        {
+          "q": "A worker on a residential renovation accidentally cuts through an old fibro sheet and notices dust in the air. What material might this be, and what should the worker do?",
+          "a": "This could be an <b>asbestos containing material (ACM)</b> — fibro sheeting was widely used in older buildings, and its fibres are extremely hazardous if disturbed, causing serious long-term respiratory illness. The worker should stop work immediately, avoid disturbing the material further, and follow workplace policy and the asbestos management code of practice rather than continuing to cut it."
+        },
+        {
+          "q": "Explain why a fire blanket, not a fire extinguisher, is the correct choice when a worker's clothing catches fire.",
+          "a": "A fire blanket smothers the fire by cutting off its oxygen supply and is safe to wrap around a person. Chemical fire extinguishers (dry powder, foam, CO₂) can cause serious injury if discharged directly at a person — CO₂ causes cryogenic burns from its extreme cold, and dry powder's discharge pressure and residue can injure someone at close range."
+        },
+        {
+          "q": "A power tool's test-and-tag label is missing. What is the correct action, and why is \"use it more carefully\" not an acceptable response?",
+          "a": "The tool must be removed from service and reported to a supervisor immediately, so it can be inspected, tested and tagged by a competent person before use. \"Using it more carefully\" doesn't address the real issue — without a current tag there is no evidence the tool is electrically safe, and it may already have been identified as faulty."
+        },
+        {
+          "q": "A worker needs to move fifteen 25 kg bags of cement by hand. Describe the correct manual handling technique.",
+          "a": "Use a wide stance for stability, look forward keeping the neck neutral, bend at the knees (not the back), and lift using the leg muscles, keeping the load close to the body and avoiding twisting. Given the number and weight of the bags, mechanical aids (e.g. a trolley or pallet jack) or team lifting should also be considered rather than lifting all fifteen manually."
+        },
+        {
+          "q": "What is the very first step a worker must complete before entering a confined space, and what does this step involve?",
+          "a": "Obtaining a valid <b>permit to enter</b> — this must happen before any PPE is put on or entry attempted. The permit process includes atmospheric testing, a risk assessment, emergency procedures and authorisation by a competent person."
+        },
+        {
+          "q": "A worker discovers a colleague who has collapsed near a live power source. Using the first step of the DRSABCD action plan, explain what the worker should do first, and why.",
+          "a": "The worker should first check for <b>Danger</b> — assessing whether it's safe to approach, e.g. by isolating the power source or keeping clear of it — before going near the collapsed colleague. Rushing in without checking for danger risks the responder becoming a second casualty, which worsens the situation rather than helping it."
+        }
+      ]
     }
   ]
 }
