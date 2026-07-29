@@ -2618,6 +2618,373 @@
           "a": "Yes, in the right context — ground spray/chalk marking is a recognised way to record measurements directly on-site (e.g. marking out a layout). However, it should still be confirmed and checked against the drawings/specifications, and for anything that needs to be communicated to others later or kept as a permanent record, a written or digital record (work plan, job card, sketch) is more appropriate since on-site marks can be walked over, washed away or built over."
         }
       ]
+    },
+    {
+      "id": "hand-power-tools",
+      "icon": "🔧",
+      "title": "Hand & Power Tools",
+      "accentColor": "#f7c46a",
+      "blocks": [
+        {
+          "type": "noteGrid",
+          "boxes": [
+            {
+              "heading": "Hand vs power vs pneumatic",
+              "html": "<ul>\n<li>A <b>hand tool</b> uses only manual force, e.g. a hand saw or chisel</li>\n<li>A <b>power tool</b> uses an electric motor — corded or battery — to do the work, e.g. a drill or circular saw</li>\n<li>A <b>pneumatic tool</b> is powered by compressed air from a compressor, e.g. a nail gun or impact wrench</li>\n</ul>"
+            },
+            {
+              "heading": "Selecting & using hand tools safely",
+              "html": "<ul>\n<li>Select the tool that's appropriate for the task and material — using the wrong tool damages both the tool and the work</li>\n<li>Follow the manufacturer's specifications and standard operating procedures (SOP), wear the correct PPE, and identify hazards and risk controls before starting</li>\n<li>Clean, maintain and store hand tools correctly after every use — this is part of using them safely, not a separate step</li>\n</ul>"
+            }
+          ]
+        },
+        {
+          "type": "table",
+          "caption": "Common hand tools & their purpose",
+          "headers": [
+            "Tool",
+            "Best used for"
+          ],
+          "rows": [
+            [
+              {
+                "label": "Tool",
+                "html": "Claw hammer"
+              },
+              {
+                "label": "Best used for",
+                "html": "Driving and removing nails — the V-shaped claw grips nail heads to lever them out of timber"
+              }
+            ],
+            [
+              {
+                "label": "Tool",
+                "html": "Chisel"
+              },
+              {
+                "label": "Best used for",
+                "html": "Cutting and shaping wood, stone or metal by hand"
+              }
+            ],
+            [
+              {
+                "label": "Tool",
+                "html": "Hand plane"
+              },
+              {
+                "label": "Best used for",
+                "html": "Smoothing and shaping timber surfaces — different plane types (jack, trying, smoothing) suit different stages of finishing"
+              }
+            ],
+            [
+              {
+                "label": "Tool",
+                "html": "Spirit level"
+              },
+              {
+                "label": "Best used for",
+                "html": "Checking a surface is level (horizontal) or plumb (vertical)"
+              }
+            ],
+            [
+              {
+                "label": "Tool",
+                "html": "Crowbar / pinch bar"
+              },
+              {
+                "label": "Best used for",
+                "html": "Prying, levering and demolition work"
+              }
+            ],
+            [
+              {
+                "label": "Tool",
+                "html": "Mattock"
+              },
+              {
+                "label": "Best used for",
+                "html": "Digging and breaking up compacted ground"
+              }
+            ],
+            [
+              {
+                "label": "Tool",
+                "html": "Hand saw types"
+              },
+              {
+                "label": "Best used for",
+                "html": "Crosscut (across the grain), rip (along the grain), coping (tight curves), hacksaw (metal)"
+              }
+            ]
+          ]
+        },
+        {
+          "type": "noteGrid",
+          "boxes": [
+            {
+              "heading": "Power tools",
+              "html": "<ul>\n<li>Powered by an electric motor — <b>corded</b> (needs a power source) or <b>battery</b> (portable, no trip hazard from leads, but limited by charge)</li>\n<li>Common examples: drills (standard and hammer), circular saws, drop/sliding compound mitre saws, jigsaws, routers, sanders (orbital and belt), angle and bench grinders, electric planes, impact drivers, nibblers</li>\n</ul>"
+            },
+            {
+              "heading": "Pneumatic tools & compressed air",
+              "html": "<ul>\n<li>Powered by compressed air supplied through hoses from a compressor — e.g. nail guns, some impact wrenches, jackhammers</li>\n<li>A <b>compressor regulator</b> reduces the air pressure from the receiver tank to the correct, safe working pressure for the tool being used</li>\n<li>Supporting equipment includes air compressors and hoses, batteries and chargers, leads and power boards, and a portable RCD for added shock protection on corded tools</li>\n</ul>"
+            }
+          ]
+        },
+        {
+          "type": "table",
+          "caption": "Common power & pneumatic tools & their purpose",
+          "headers": [
+            "Tool",
+            "Best used for"
+          ],
+          "rows": [
+            [
+              {
+                "label": "Tool",
+                "html": "Nibbler"
+              },
+              {
+                "label": "Best used for",
+                "html": "Cutting sheet metal — punches a series of small \"nibbles\" to cut curves and straight lines without distorting the sheet"
+              }
+            ],
+            [
+              {
+                "label": "Tool",
+                "html": "Jackhammer"
+              },
+              {
+                "label": "Best used for",
+                "html": "Breaking up hard materials like brick walls and concrete slabs — demolition work"
+              }
+            ],
+            [
+              {
+                "label": "Tool",
+                "html": "Router"
+              },
+              {
+                "label": "Best used for",
+                "html": "Edge profiling, grooves, housings, rebates and joints"
+              }
+            ],
+            [
+              {
+                "label": "Tool",
+                "html": "Nail gun"
+              },
+              {
+                "label": "Best used for",
+                "html": "Driving nails quickly using pneumatic or battery power"
+              }
+            ],
+            [
+              {
+                "label": "Tool",
+                "html": "Orbital / belt sander"
+              },
+              {
+                "label": "Best used for",
+                "html": "Smoothing surfaces — orbital for fine finishing, belt for faster material removal"
+              }
+            ]
+          ]
+        },
+        {
+          "type": "noteGrid",
+          "boxes": [
+            {
+              "heading": "Choosing the right drill bit",
+              "html": "<ul>\n<li><b>Twist bit</b> — general-purpose drilling in metal and timber</li>\n<li><b>Spade bit</b> — large-diameter holes in timber</li>\n<li><b>Masonry bit</b> — hardened tungsten carbide tip for drilling brick, concrete and stone; used with a hammer drill</li>\n<li><b>Hole saw</b> — large circular holes in timber, plasterboard or thin metal</li>\n</ul>"
+            },
+            {
+              "heading": "Factors affecting tool selection",
+              "html": "<ul>\n<li>Availability, cost and time — is the tool worth buying for this job, or better hired?</li>\n<li>Desired finish, intended purpose and the material being worked</li>\n<li>Environmental factors — confined space, noise restrictions, pollution</li>\n<li>Licensing, training and skills required, and whether extra supervision is needed</li>\n<li>Site location and access to amenities (power/water); WHS requirements and the relevant JSA/SWMS</li>\n</ul>"
+            }
+          ]
+        },
+        {
+          "type": "examTip",
+          "label": "Match the tool to what the question actually describes",
+          "html": "<p>These questions are usually won or lost on precisely matching the tool's <b>defining feature</b> to the task in the question — not general tool knowledge. A masonry bit is right because of its hardened tip for brick/concrete, not just because \"it drills holes\"; a nibbler is right for sheet metal specifically because it doesn't distort the material, unlike cutting sheet metal with a jigsaw. Read for the specific material and outcome described, then match it to the tool whose defining feature solves exactly that problem.</p>"
+        },
+        {
+          "type": "linkIt",
+          "html": "<p>How to select, use safely, clean, maintain, store and secure these tools — plus the PPE that goes with them — is covered in the next topic, <b>Tool Selection, Safety, Care & Security</b>.</p>"
+        }
+      ],
+      "revisionQuestions": [
+        {
+          "q": "A worker needs to remove bent nails from a piece of reclaimed timber. Which hand tool should they use, and why?",
+          "a": "A <b>claw hammer</b> — its V-shaped claw is specifically designed to grip nail heads and lever them out of timber using leverage, unlike other hammer types (e.g. lump or sledge) which have no nail-removal capability."
+        },
+        {
+          "q": "Explain the difference between a power tool and a pneumatic tool, giving one example of each.",
+          "a": "A <b>power tool</b> is driven by an electric motor, either corded or battery — e.g. a circular saw. A <b>pneumatic tool</b> is driven by compressed air delivered through hoses from a compressor — e.g. a nail gun."
+        },
+        {
+          "q": "A worker needs to drill anchor holes into a brick wall. Which type of drill bit is correct, and what would happen if a standard twist bit were used instead?",
+          "a": "A <b>masonry bit</b>, used with a hammer drill — its hardened tungsten carbide tip is designed to drill through brick, concrete and stone. A standard twist bit is designed for metal and timber and would be damaged quickly and be ineffective on masonry."
+        },
+        {
+          "q": "A sheet metal panel needs curved cuts made in it without distorting the material. Which power tool is best suited, and why?",
+          "a": "A <b>nibbler</b> — it cuts sheet metal by punching a series of small \"nibbles\" out of the material, which lets it follow curves and complex profiles in steel or aluminium sheet without bending or distorting it, unlike shears or a standard cutting blade."
+        },
+        {
+          "q": "What is the function of a compressor regulator, and why does it matter for tool safety?",
+          "a": "A compressor regulator reduces the air pressure from the receiver tank down to the correct working pressure for the specific tool or application. Using a tool at the wrong (too high) pressure can damage the tool or make it unsafe to operate, so setting the regulator correctly protects both the equipment and the operator."
+        },
+        {
+          "q": "A worker is deciding whether to hire or buy a specialised power tool for a one-off job. Name three factors from the syllabus that should influence this decision.",
+          "a": "Accept any three, e.g.: availability, cost and how often the tool would be used (frequency of use); licensing/training requirements for safe use; time needed to source, learn and use the tool; the intended purpose and whether it truly suits the job; WHS requirements and site access to power/amenities."
+        }
+      ]
+    },
+    {
+      "id": "tool-selection-safety-care-security",
+      "icon": "🔒",
+      "title": "Tool Selection, Safety, Care & Security",
+      "accentColor": "#f7c46a",
+      "blocks": [
+        {
+          "type": "noteGrid",
+          "boxes": [
+            {
+              "heading": "Safe work practices with tools",
+              "html": "<ul>\n<li>Always adhere to workplace/company WHS policy, procedures and guidelines when selecting and using tools</li>\n<li>Follow the manufacturer's specifications, complete pre-operational checks/safety inspections, and secure the workpiece before starting</li>\n<li>Use correct manual handling technique and pay attention to ergonomics and posture while working</li>\n<li>Work safely with compressed air and/or the power supply, and select the tool appropriate to the task</li>\n</ul>"
+            },
+            {
+              "heading": "PPE for tool use",
+              "html": "<ul>\n<li>PPE that may be required: clothing, eye protection, footwear, gloves, head protection, hearing protection, masks/respirators, sunscreen</li>\n<li>The specific hazard determines which PPE is needed — e.g. hearing protection for loud power tools, a respirator for dust-producing tasks</li>\n</ul>"
+            }
+          ]
+        },
+        {
+          "type": "noteGrid",
+          "boxes": [
+            {
+              "heading": "Cleaning techniques",
+              "html": "<ul>\n<li>Techniques include brushing, scraping, sweeping, washing and wiping, plus the use of cleaning agents (chemicals, solvents, detergents) where appropriate</li>\n<li>A wet/dry vacuum or high-pressure water cleaner is used for larger or more stubborn clean-up jobs</li>\n<li>Waste from cleaning must be disposed of in line with legislative requirements and workplace guidelines — it can't just be tipped out</li>\n</ul>"
+            },
+            {
+              "heading": "Maintenance tasks",
+              "html": "<ul>\n<li>Anti-rust treatments, refuelling/topping-up consumables, and removing dirt, dust, grease and oil keep a tool working correctly</li>\n<li>Damaged or missing parts should be repaired or replaced, and faults reported — don't just keep using a tool \"as is\"</li>\n<li>Scheduled servicing and sharpening (for cutting tools) are planned maintenance, not just a response to something going wrong</li>\n</ul>"
+            }
+          ]
+        },
+        {
+          "type": "table",
+          "caption": "Signs a tool is faulty or performing poorly",
+          "headers": [
+            "Category",
+            "Signs to watch for"
+          ],
+          "rows": [
+            [
+              {
+                "label": "Category",
+                "html": "Won't start or run properly"
+              },
+              {
+                "label": "Signs to watch for",
+                "html": "Failure to start, rough running, blockages, malfunctions"
+              }
+            ],
+            [
+              {
+                "label": "Category",
+                "html": "Physical damage"
+              },
+              {
+                "label": "Signs to watch for",
+                "html": "Broken or missing safety guards, worn/broken/missing components"
+              }
+            ],
+            [
+              {
+                "label": "Category",
+                "html": "Unusual output"
+              },
+              {
+                "label": "Signs to watch for",
+                "html": "Smoke or odours, excessive noise or vibration"
+              }
+            ],
+            [
+              {
+                "label": "Category",
+                "html": "Poor results"
+              },
+              {
+                "label": "Signs to watch for",
+                "html": "Reduced quality of the end product, excessive time taken to complete the task, higher-than-normal consumption of fuel/consumables"
+              }
+            ]
+          ]
+        },
+        {
+          "type": "noteGrid",
+          "boxes": [
+            {
+              "heading": "Reporting & tagging faulty equipment",
+              "html": "<ul>\n<li>Report faults <b>verbally</b> to the appropriate person, and <b>record/document</b> them, e.g. on a maintenance log</li>\n<li>Faulty equipment should be marked with <b>safety/lockout tagging</b> so nobody else can use it before it's repaired</li>\n<li>Never assume a missing tag or an ignored fault is \"probably fine\" — treat it as out of service until checked</li>\n</ul>"
+            },
+            {
+              "heading": "Storing tools correctly",
+              "html": "<ul>\n<li>Consider <b>access</b>, <b>stability</b>, and protection from <b>weather/climate</b> when choosing a storage location</li>\n<li><b>Isolate power</b> before storing powered equipment</li>\n<li>WHS factors — e.g. not storing heavy items where they could fall — apply to storage just as much as to active use</li>\n</ul>"
+            }
+          ]
+        },
+        {
+          "type": "noteGrid",
+          "boxes": [
+            {
+              "heading": "Securing tools & equipment on site",
+              "html": "<ul>\n<li>Security measures: machine/tool guards, lock-up procedures, protective covers, security cameras, storage racks, temporary fencing</li>\n<li>Tools left insecure on an open site are a <b>theft risk</b> and a <b>safety risk</b> — e.g. to trespassers or the public</li>\n</ul>"
+            },
+            {
+              "heading": "Why tool care matters",
+              "html": "<ul>\n<li>Well-maintained tools are safer, more efficient and last longer — poor care costs more in replacement, repair and lost productivity than it saves in time</li>\n<li>Reporting a fault promptly (rather than \"just using it carefully\") protects the <b>next person</b> who picks that tool up, not just the current user</li>\n</ul>"
+            }
+          ]
+        },
+        {
+          "type": "examTip",
+          "label": "Faulty vs unsafe vs just needs cleaning",
+          "html": "<p>NESA likes to test whether you can tell the difference between routine maintenance (cleaning, sharpening, scheduled servicing), a repairable fault that must be <b>reported and tagged out</b> (a broken guard, unusual noise, failure to start), and correct storage/security (which is about protecting the tool and site, not about the tool's condition). If a question describes a tool that's dangerous to use right now, the correct action is almost always report + tag out — not \"clean it and try again\" or \"use it more carefully.\"</p>"
+        },
+        {
+          "type": "linkIt",
+          "html": "<p>Selecting the right hand and power tool for a task was covered in the previous topic. Next, Working in the Industry begins with <b>Industry Structure, Careers & Employment</b>.</p>"
+        }
+      ],
+      "revisionQuestions": [
+        {
+          "q": "A worker notices a power saw is taking much longer than usual to cut through timber and is vibrating more than normal. What do these signs indicate, and what should the worker do?",
+          "a": "These are signs the tool is faulty or not performing efficiently (excessive time to complete the task and unusual vibration). The worker should stop using it, report the fault verbally to the appropriate person, record it, and tag the tool out of service — not keep using it or just work around the problem."
+        },
+        {
+          "q": "Explain the difference between cleaning a tool and maintaining a tool, using an example of each.",
+          "a": "Cleaning removes dirt, dust, grease and residue after use — e.g. wiping down a hand plane and brushing off sawdust. Maintenance is a broader, ongoing process to keep the tool working correctly and extend its life — e.g. applying anti-rust treatment, sharpening a blade, or scheduled servicing. Both are needed; cleaning alone doesn't replace scheduled maintenance."
+        },
+        {
+          "q": "Name three items of PPE and explain why the correct choice depends on the task, not just \"wearing something.\"",
+          "a": "Accept any three, e.g. eye protection, hearing protection, gloves, respirator/mask, head protection, footwear. The correct choice depends on the specific hazard of the task — e.g. hearing protection matters for a loud power tool but not for hand-sanding, while a respirator matters for a dusty task but adds nothing against a noise hazard. Wearing PPE that doesn't match the actual hazard doesn't protect the worker."
+        },
+        {
+          "q": "A site has several expensive power tools left out overnight in an unlocked area. Identify two security measures that should have been used, and explain the risk this situation creates.",
+          "a": "Accept any two, e.g. lock-up procedures, a lockable storage container/shed, security cameras, temporary fencing, storage racks inside a secured area. Leaving tools out unsecured overnight creates a theft risk and a safety risk — e.g. to trespassers, children or the public who might access dangerous equipment."
+        },
+        {
+          "q": "A worker finds a drill with a missing safety guard. Is it acceptable to keep using it carefully until a replacement guard arrives? Explain.",
+          "a": "No. A broken or missing safety guard is one of the listed signs of a faulty or unsafe tool. The correct response is to report the fault and tag the tool out of service so it cannot be used until it is repaired — using it \"carefully\" without the guard still exposes the operator to the exact hazard the guard is there to prevent."
+        },
+        {
+          "q": "Explain why isolating power is part of correctly storing a power tool, not just part of using it safely.",
+          "a": "Even in storage, a powered tool that's still connected or switched on poses a risk — e.g. it could be accidentally activated, or present an electrical hazard while being moved or handled by someone else. Isolating power before storage is a WHS factor that applies to how a tool is kept, not just how it's operated."
+        }
+      ]
     }
   ]
 }
