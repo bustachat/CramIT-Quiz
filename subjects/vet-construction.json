@@ -2000,7 +2000,7 @@
             },
             {
               "heading": "PPE — selection, fit & maintenance",
-              "html": "<ul>\n<li>Correct <b>fit</b> matters as much as wearing PPE at all — poorly fitted PPE can create new hazards, e.g. loose clothing caught in moving machinery</li>\n<li>Common PPE: eye protection, hearing protection, respirators/masks, gloves, head protection, footwear, high-vis clothing, sunscreen</li>\n<li>PPE is selected based on the <b>specific hazard and task</b> — one type doesn't suit every job</li>\n<li>PPE must be regularly inspected, maintained and correctly stored to remain effective</li>\n</ul>"
+              "html": "<ul>\n<li>Correct <b>fit</b> matters as much as wearing PPE at all — poorly fitted PPE can create new hazards, e.g. loose clothing caught in moving machinery</li>\n<li>Common PPE: <img src=\"/icons/vet-construction/goggles.png\" alt=\"\" style=\"width:22px;height:22px;vertical-align:middle;margin-right:8px;object-fit:contain\">eye protection, <img src=\"/icons/vet-construction/ear-muffs.png\" alt=\"\" style=\"width:22px;height:22px;vertical-align:middle;margin-right:8px;object-fit:contain\">hearing protection, <img src=\"/icons/vet-construction/dust-mask.png\" alt=\"\" style=\"width:22px;height:22px;vertical-align:middle;margin-right:8px;object-fit:contain\">respirators/masks, <img src=\"/icons/vet-construction/gloves.png\" alt=\"\" style=\"width:22px;height:22px;vertical-align:middle;margin-right:8px;object-fit:contain\">gloves, <img src=\"/icons/vet-construction/hard-hat.png\" alt=\"\" style=\"width:22px;height:22px;vertical-align:middle;margin-right:8px;object-fit:contain\">head protection, <img src=\"/icons/vet-construction/boots.png\" alt=\"\" style=\"width:22px;height:22px;vertical-align:middle;margin-right:8px;object-fit:contain\">footwear, <img src=\"/icons/vet-construction/vest.png\" alt=\"\" style=\"width:22px;height:22px;vertical-align:middle;margin-right:8px;object-fit:contain\">high-vis clothing, sunscreen</li>\n<li>PPE is selected based on the <b>specific hazard and task</b> — one type doesn't suit every job</li>\n<li>PPE must be regularly inspected, maintained and correctly stored to remain effective</li>\n</ul>"
             }
           ]
         },
@@ -2069,7 +2069,7 @@
             [
               {
                 "label": "Equipment",
-                "html": "Blue band extinguisher (dry powder, ABE)"
+                "html": "<img src=\"/icons/vet-construction/fire-extinguisher.png\" alt=\"\" style=\"width:22px;height:22px;vertical-align:middle;margin-right:8px;object-fit:contain\">Blue band extinguisher (dry powder, ABE)"
               },
               {
                 "label": "How it works",
@@ -2390,7 +2390,7 @@
             },
             {
               "heading": "Measuring equipment",
-              "html": "<ul>\n<li>Common equipment: digital devices (including laser measure), retractable tape measure, rule, scales, squares, and the <b>trundle wheel</b> (for long ground distances)</li>\n<li>Each tool has a correct use and limitation — a laser measure is fast and accurate over long straight distances but needs a clear line of sight; a retractable tape measure is accurate to 1 mm when the end hook and lock button are used correctly</li>\n<li>Select the tool appropriate to the task, and clean/maintain/store it correctly afterwards, same as any other tool</li>\n</ul>"
+              "html": "<ul>\n<li>Common equipment: digital devices (including laser measure), <img src=\"/icons/vet-construction/tape-measure.png\" alt=\"\" style=\"width:22px;height:22px;vertical-align:middle;margin-right:8px;object-fit:contain\">retractable tape measure, rule, scales, squares, and the <b>trundle wheel</b> (for long ground distances)</li>\n<li>Each tool has a correct use and limitation — a laser measure is fast and accurate over long straight distances but needs a clear line of sight; a retractable tape measure is accurate to 1 mm when the end hook and lock button are used correctly</li>\n<li>Select the tool appropriate to the task, and clean/maintain/store it correctly afterwards, same as any other tool</li>\n</ul>"
             }
           ]
         },
@@ -2643,7 +2643,7 @@
             [
               {
                 "label": "Tool",
-                "html": "Claw hammer"
+                "html": "<img src=\"/icons/vet-construction/hammer.png\" alt=\"\" style=\"width:22px;height:22px;vertical-align:middle;margin-right:8px;object-fit:contain\">Claw hammer"
               },
               {
                 "label": "Best used for",
@@ -2653,7 +2653,7 @@
             [
               {
                 "label": "Tool",
-                "html": "Chisel"
+                "html": "<img src=\"/icons/vet-construction/chisel.png\" alt=\"\" style=\"width:22px;height:22px;vertical-align:middle;margin-right:8px;object-fit:contain\">Chisel"
               },
               {
                 "label": "Best used for",
@@ -2663,7 +2663,7 @@
             [
               {
                 "label": "Tool",
-                "html": "Hand plane"
+                "html": "<img src=\"/icons/vet-construction/hand-plane.png\" alt=\"\" style=\"width:22px;height:22px;vertical-align:middle;margin-right:8px;object-fit:contain\">Hand plane"
               },
               {
                 "label": "Best used for",
@@ -2673,7 +2673,7 @@
             [
               {
                 "label": "Tool",
-                "html": "Spirit level"
+                "html": "<img src=\"/icons/vet-construction/spirit-level.png\" alt=\"\" style=\"width:22px;height:22px;vertical-align:middle;margin-right:8px;object-fit:contain\">Spirit level"
               },
               {
                 "label": "Best used for",
@@ -2683,7 +2683,7 @@
             [
               {
                 "label": "Tool",
-                "html": "Crowbar / pinch bar"
+                "html": "<img src=\"/icons/vet-construction/crowbar.png\" alt=\"\" style=\"width:22px;height:22px;vertical-align:middle;margin-right:8px;object-fit:contain\">Crowbar / pinch bar"
               },
               {
                 "label": "Best used for",
@@ -2693,7 +2693,7 @@
             [
               {
                 "label": "Tool",
-                "html": "Mattock"
+                "html": "<img src=\"/icons/vet-construction/mattock.png\" alt=\"\" style=\"width:22px;height:22px;vertical-align:middle;margin-right:8px;object-fit:contain\">Mattock"
               },
               {
                 "label": "Best used for",
@@ -2703,11 +2703,41 @@
             [
               {
                 "label": "Tool",
-                "html": "Hand saw types"
+                "html": "<img src=\"/icons/vet-construction/crosscut-saw.png\" alt=\"\" style=\"width:22px;height:22px;vertical-align:middle;margin-right:8px;object-fit:contain\">Hand saw types"
               },
               {
                 "label": "Best used for",
                 "html": "Crosscut (across the grain), rip (along the grain), coping (tight curves), hacksaw (metal)"
+              }
+            ],
+            [
+              {
+                "label": "Tool",
+                "html": "<img src=\"/icons/vet-construction/wrench.png\" alt=\"\" style=\"width:22px;height:22px;vertical-align:middle;margin-right:8px;object-fit:contain\">Wrench / spanner"
+              },
+              {
+                "label": "Best used for",
+                "html": "Tightening and loosening nuts and bolts"
+              }
+            ],
+            [
+              {
+                "label": "Tool",
+                "html": "<img src=\"/icons/vet-construction/screwdriver.png\" alt=\"\" style=\"width:22px;height:22px;vertical-align:middle;margin-right:8px;object-fit:contain\">Screwdriver"
+              },
+              {
+                "label": "Best used for",
+                "html": "Driving and removing screws — flat and Phillips-head types suit different screw heads"
+              }
+            ],
+            [
+              {
+                "label": "Tool",
+                "html": "<img src=\"/icons/vet-construction/pliers.png\" alt=\"\" style=\"width:22px;height:22px;vertical-align:middle;margin-right:8px;object-fit:contain\">Pliers"
+              },
+              {
+                "label": "Best used for",
+                "html": "Gripping, bending and cutting wire and small materials"
               }
             ]
           ]
@@ -2736,7 +2766,7 @@
             [
               {
                 "label": "Tool",
-                "html": "Nibbler"
+                "html": "<img src=\"/icons/vet-construction/nibbler.png\" alt=\"\" style=\"width:22px;height:22px;vertical-align:middle;margin-right:8px;object-fit:contain\">Nibbler"
               },
               {
                 "label": "Best used for",
@@ -2746,7 +2776,7 @@
             [
               {
                 "label": "Tool",
-                "html": "Jackhammer"
+                "html": "<img src=\"/icons/vet-construction/jackhammer.png\" alt=\"\" style=\"width:22px;height:22px;vertical-align:middle;margin-right:8px;object-fit:contain\">Jackhammer"
               },
               {
                 "label": "Best used for",
@@ -2756,7 +2786,7 @@
             [
               {
                 "label": "Tool",
-                "html": "Router"
+                "html": "<img src=\"/icons/vet-construction/router.png\" alt=\"\" style=\"width:22px;height:22px;vertical-align:middle;margin-right:8px;object-fit:contain\">Router"
               },
               {
                 "label": "Best used for",
@@ -2766,7 +2796,7 @@
             [
               {
                 "label": "Tool",
-                "html": "Nail gun"
+                "html": "<img src=\"/icons/vet-construction/nail-gun.png\" alt=\"\" style=\"width:22px;height:22px;vertical-align:middle;margin-right:8px;object-fit:contain\">Nail gun"
               },
               {
                 "label": "Best used for",
@@ -2776,11 +2806,21 @@
             [
               {
                 "label": "Tool",
-                "html": "Orbital / belt sander"
+                "html": "<img src=\"/icons/vet-construction/orbital-sander.png\" alt=\"\" style=\"width:22px;height:22px;vertical-align:middle;margin-right:8px;object-fit:contain\">Orbital / belt sander"
               },
               {
                 "label": "Best used for",
                 "html": "Smoothing surfaces — orbital for fine finishing, belt for faster material removal"
+              }
+            ],
+            [
+              {
+                "label": "Tool",
+                "html": "<img src=\"/icons/vet-construction/angle-grinder.png\" alt=\"\" style=\"width:22px;height:22px;vertical-align:middle;margin-right:8px;object-fit:contain\">Angle grinder"
+              },
+              {
+                "label": "Best used for",
+                "html": "Cutting, grinding and polishing metal, stone and masonry with interchangeable discs"
               }
             ]
           ]
@@ -2790,7 +2830,7 @@
           "boxes": [
             {
               "heading": "Choosing the right drill bit",
-              "html": "<ul>\n<li><b>Twist bit</b> — general-purpose drilling in metal and timber</li>\n<li><b>Spade bit</b> — large-diameter holes in timber</li>\n<li><b>Masonry bit</b> — hardened tungsten carbide tip for drilling brick, concrete and stone; used with a hammer drill</li>\n<li><b>Hole saw</b> — large circular holes in timber, plasterboard or thin metal</li>\n</ul>"
+              "html": "<ul>\n<li><img src=\"/icons/vet-construction/twist-bit.png\" alt=\"\" style=\"width:22px;height:22px;vertical-align:middle;margin-right:8px;object-fit:contain\"><b>Twist bit</b> — general-purpose drilling in metal and timber</li>\n<li><img src=\"/icons/vet-construction/spade-bit.png\" alt=\"\" style=\"width:22px;height:22px;vertical-align:middle;margin-right:8px;object-fit:contain\"><b>Spade bit</b> — large-diameter holes in timber</li>\n<li><img src=\"/icons/vet-construction/twist-bit.png\" alt=\"\" style=\"width:22px;height:22px;vertical-align:middle;margin-right:8px;object-fit:contain\"><b>Masonry bit</b> — hardened tungsten carbide tip for drilling brick, concrete and stone; used with a hammer drill</li>\n<li><b>Hole saw</b> — large circular holes in timber, plasterboard or thin metal</li>\n</ul>"
             },
             {
               "heading": "Factors affecting tool selection",
