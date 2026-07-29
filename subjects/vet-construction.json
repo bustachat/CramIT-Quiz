@@ -2843,7 +2843,7 @@
     },
     {
       "id": "tool-selection-safety-care-security",
-      "icon": "🔒",
+      "icon": "🧰",
       "title": "Tool Selection, Safety, Care & Security",
       "accentColor": "#f7c46a",
       "blocks": [
@@ -2983,6 +2983,574 @@
         {
           "q": "Explain why isolating power is part of correctly storing a power tool, not just part of using it safely.",
           "a": "Even in storage, a powered tool that's still connected or switched on poses a risk — e.g. it could be accidentally activated, or present an electrical hazard while being moved or handled by someone else. Isolating power before storage is a WHS factor that applies to how a tool is kept, not just how it's operated."
+        }
+      ]
+    },
+    {
+      "id": "industry-structure-careers-employment",
+      "icon": "🏗️",
+      "title": "Industry Structure, Careers & Employment",
+      "accentColor": "#f7c46a",
+      "blocks": [
+        {
+          "type": "noteGrid",
+          "boxes": [
+            {
+              "heading": "What is the construction industry?",
+              "html": "<ul>\n<li>Covers the construction, demolition, renovation, maintenance and repair of buildings and infrastructure — from initial planning and design through to installation/production and ongoing maintenance/servicing</li>\n<li>It's a heavily regulated industry — Australian and industry standards, building regulations, local council requirements and occupational licensing all apply, often depending on the specific job role</li>\n</ul>"
+            },
+            {
+              "heading": "Sectors of the industry",
+              "html": "<ul>\n<li><b>Building completion services</b> — plastering, carpentry, tiling, painting and decorating, glazing</li>\n<li><b>Building installation services</b> — plumbing, electrical, fire and security, air-conditioning and heating</li>\n<li><b>Building structure services</b> — concreting, bricklaying/blocklaying/paving, roofing, structural steel</li>\n<li><b>Specialist construction services</b> — crane operations, scaffolding, pool/spa building; plus building surveying and signage</li>\n</ul>"
+            }
+          ]
+        },
+        {
+          "type": "table",
+          "caption": "Types of construction & their sector",
+          "headers": [
+            "Sector",
+            "What it builds"
+          ],
+          "rows": [
+            [
+              {
+                "label": "Sector",
+                "html": "Residential"
+              },
+              {
+                "label": "What it builds",
+                "html": "Houses, townhouses, apartments and other dwellings"
+              }
+            ],
+            [
+              {
+                "label": "Sector",
+                "html": "Industrial"
+              },
+              {
+                "label": "What it builds",
+                "html": "Warehouses, factories, distribution centres and industrial facilities"
+              }
+            ],
+            [
+              {
+                "label": "Sector",
+                "html": "Institutional"
+              },
+              {
+                "label": "What it builds",
+                "html": "Hospitals, schools, government buildings and community facilities"
+              }
+            ],
+            [
+              {
+                "label": "Sector",
+                "html": "Civil"
+              },
+              {
+                "label": "What it builds",
+                "html": "Infrastructure — roads, bridges, tunnels, dams and utilities"
+              }
+            ]
+          ]
+        },
+        {
+          "type": "noteGrid",
+          "boxes": [
+            {
+              "heading": "Pathways into the industry",
+              "html": "<ul>\n<li><b>Apprenticeships and traineeships</b> (including school-based apprenticeships and traineeships, SBATs) combine paid work with structured training</li>\n<li>Training is <b>competency-based</b> — you're assessed against a defined standard of skill, not ranked against other students</li>\n<li>Many occupations require specific <b>qualifications and licences</b> before a worker can legally perform certain tasks</li>\n</ul>"
+            },
+            {
+              "heading": "Growing your skills & career",
+              "html": "<ul>\n<li>Ongoing skill development comes from industry seminars, training courses, in-house training and reference manuals</li>\n<li>Improving your own work performance means personal reflection plus <b>seeking feedback</b> from supervisors, colleagues and clients — and knowing how to respond constructively to both positive and negative feedback</li>\n<li>Career pathways differ across sectors (e.g. bricklaying vs electrical vs plumbing) but occupations are often interrelated on the same project</li>\n</ul>"
+            }
+          ]
+        },
+        {
+          "type": "noteGrid",
+          "boxes": [
+            {
+              "heading": "Types of employment",
+              "html": "<ul>\n<li><b>Full-time, part-time, casual</b> and <b>contract</b> work all exist in construction, each with different entitlements and conditions</li>\n<li>An <b>award</b>, a <b>registered agreement</b> and a <b>contract</b> are different — always understand the actual terms and conditions of a specific job role rather than assuming</li>\n</ul>"
+            },
+            {
+              "heading": "Key industry bodies",
+              "html": "<ul>\n<li><b>Employer groups</b> and <b>employee groups</b> both exist to represent their side's interests</li>\n<li>Industry/professional associations, e.g. the Housing Industry Association (HIA) and Master Builders Association (MBA)</li>\n<li><b>Regulators</b> enforce compliance; <b>trade unions</b> (e.g. the CFMEU) represent worker interests</li>\n</ul>"
+            }
+          ]
+        },
+        {
+          "type": "table",
+          "caption": "Who represents whom",
+          "headers": [
+            "Body",
+            "Represents"
+          ],
+          "rows": [
+            [
+              {
+                "label": "Body",
+                "html": "HIA / MBA"
+              },
+              {
+                "label": "Represents",
+                "html": "Employer and industry interests — builders, developers and the businesses that employ workers"
+              }
+            ],
+            [
+              {
+                "label": "Body",
+                "html": "CFMEU (trade union)"
+              },
+              {
+                "label": "Represents",
+                "html": "Worker interests — advocating for wages, conditions, workplace disputes and safety standards, not company interests or project decisions"
+              }
+            ],
+            [
+              {
+                "label": "Body",
+                "html": "SafeWork NSW"
+              },
+              {
+                "label": "Represents",
+                "html": "WHS compliance and enforcement (see the Safety topics)"
+              }
+            ],
+            [
+              {
+                "label": "Body",
+                "html": "Registered Training Organisation (RTO)"
+              },
+              {
+                "label": "Represents",
+                "html": "Development and delivery of the industry's training and qualifications"
+              }
+            ]
+          ]
+        },
+        {
+          "type": "noteGrid",
+          "boxes": [
+            {
+              "heading": "Employment must be based on merit",
+              "html": "<ul>\n<li>Employment decisions must be based on <b>merit</b> — a candidate's skills, qualifications and ability to do the job — not on age, gender, or union membership</li>\n<li>This is a legal requirement, not just good practice, under Australian anti-discrimination and workplace law</li>\n</ul>"
+            },
+            {
+              "heading": "Personal attributes the industry values",
+              "html": "<ul>\n<li>Attendance and punctuality; a positive attitude; confidentiality; ethical behaviour; honesty; professional presentation and grooming</li>\n<li>Work performance: taking directions, attention to detail, consistency of service, safe work practices</li>\n<li>Knowing the limits of your own responsibility and ability, and asking for help when needed, rather than guessing</li>\n</ul>"
+            }
+          ]
+        },
+        {
+          "type": "examTip",
+          "label": "Don't mix up who does what",
+          "html": "<p>A common trap is swapping the roles of employer bodies, unions and regulators. Remember: an industry/employer association (HIA, MBA) represents <b>businesses</b>; a trade union (CFMEU) represents <b>workers</b>; SafeWork NSW enforces WHS law; and none of these determine construction designs or set project timelines — that's the job of architects, engineers and project managers/schedulers. If a question asks \"who represents X,\" check whether X is an employer-side or worker-side interest first.</p>"
+        },
+        {
+          "type": "linkIt",
+          "html": "<p>How to communicate on-site, work in a team, and handle workplace conduct issues (including cultural diversity and anti-discrimination) is covered in the next topic, <b>Work Instructions, Teamwork & Workplace Conduct</b>.</p>"
+        }
+      ],
+      "revisionQuestions": [
+        {
+          "q": "Which sector of the construction industry would be responsible for building a new distribution centre for an online retailer?",
+          "a": "The <b>industrial</b> sector — it covers warehouses, factories, distribution centres and industrial facilities."
+        },
+        {
+          "q": "Explain why employment decisions in construction must be based on merit rather than other factors, and name two factors that legally cannot be used instead.",
+          "a": "Employment must be based on <b>merit</b> — the candidate's actual skills, qualifications and ability to do the job — because Australian anti-discrimination and workplace law prohibits basing employment decisions on factors like age, gender or union membership."
+        },
+        {
+          "q": "A first-year apprentice wants advice about a pay dispute with their employer. Which body would be most appropriate to approach — the HIA or the CFMEU — and why?",
+          "a": "The <b>CFMEU</b> — it is a trade union that represents worker interests, including pay and conditions disputes. The HIA is an employer/industry association representing builders and businesses, not individual workers."
+        },
+        {
+          "q": "Describe two ways a construction worker can keep developing their skills and knowledge after finishing their initial training.",
+          "a": "Accept any two, e.g.: attending industry seminars or training courses, in-house training provided by an employer, using reference manuals, and seeking feedback from supervisors/colleagues/clients and acting on it."
+        },
+        {
+          "q": "Name three personal attributes or work ethics that the construction industry values in its workers, other than technical skill.",
+          "a": "Accept any three, e.g.: punctuality/attendance, positive attitude, honesty, confidentiality, ethical behaviour, professional presentation, taking directions well, attention to detail, consistency of service, safe work practices."
+        },
+        {
+          "q": "Explain the difference between competency-based training and how assessment usually works in a typical school subject.",
+          "a": "Competency-based training assesses a learner against a defined, fixed standard of skill and knowledge required to safely and correctly perform a task — you either meet the standard (competent) or you don't yet (not yet competent). This differs from typical school assessment, which often ranks or grades students relative to each other or against a mark range."
+        }
+      ]
+    },
+    {
+      "id": "work-instructions-teamwork-workplace-conduct",
+      "icon": "🤝",
+      "title": "Work Instructions, Teamwork & Workplace Conduct",
+      "accentColor": "#f7c46a",
+      "blocks": [
+        {
+          "type": "noteGrid",
+          "boxes": [
+            {
+              "heading": "Where work instructions come from",
+              "html": "<ul>\n<li>Work practices and expectations <b>differ between workplaces</b> — don't assume your last site works the same way as this one</li>\n<li>Sources of instructions include: Australian/industry standards, client/customer/PCBU/supervisor requirements, diagrams/drawings/sketches, job cards, JSA/SWMS, legislation/codes of practice, manufacturer specifications, plans/specifications, SDS, SOP, work schedules, workplace bulletins/memos, and workplace/site policies</li>\n</ul>"
+            },
+            {
+              "heading": "Getting instructions right",
+              "html": "<ul>\n<li>Strategies for understanding and clarifying instructions: correctly sourcing and selecting information, consulting the appropriate person, <b>active listening</b>, and asking open and closed questions</li>\n<li><b>Quality assurance</b> means every worker has a role in checking their own work meets the required standard — not just relying on a final inspection to catch problems</li>\n</ul>"
+            }
+          ]
+        },
+        {
+          "type": "noteGrid",
+          "boxes": [
+            {
+              "heading": "What is a team?",
+              "html": "<ul>\n<li>A team is a group working together toward a shared goal — types include executive teams, project teams and committees</li>\n<li>Effective teamwork depends on developing genuine <b>collegial working relationships</b>, not just working near each other</li>\n</ul>"
+            },
+            {
+              "heading": "Cross-trade cooperation",
+              "html": "<ul>\n<li>Construction relies on <b>cross-trade cooperation</b> — different trades' work is interdependent, and delays or poor work from one trade affect everyone downstream</li>\n<li>An individual's contribution to effective teamwork includes: reviewing goals, participating in planning and skill sharing, understanding others' roles, assisting with organisation, using resources efficiently, adhering to timelines, and helping resolve problems that impede performance</li>\n</ul>"
+            }
+          ]
+        },
+        {
+          "type": "table",
+          "caption": "The communication cycle",
+          "headers": [
+            "Stage",
+            "What happens"
+          ],
+          "rows": [
+            [
+              {
+                "label": "Stage",
+                "html": "Sender"
+              },
+              {
+                "label": "What happens",
+                "html": "Forms the idea and transmits the message — this is the sender's first role, before any decoding or feedback happens"
+              }
+            ],
+            [
+              {
+                "label": "Stage",
+                "html": "Message (encoding)"
+              },
+              {
+                "label": "What happens",
+                "html": "The idea is put into words, symbols or actions"
+              }
+            ],
+            [
+              {
+                "label": "Stage",
+                "html": "Transmission"
+              },
+              {
+                "label": "What happens",
+                "html": "The message is sent through a chosen channel (verbal, written, non-verbal)"
+              }
+            ],
+            [
+              {
+                "label": "Stage",
+                "html": "Receiver"
+              },
+              {
+                "label": "What happens",
+                "html": "Decodes the message and interprets its meaning"
+              }
+            ],
+            [
+              {
+                "label": "Stage",
+                "html": "Feedback"
+              },
+              {
+                "label": "What happens",
+                "html": "The receiver responds, letting the sender confirm the message was understood correctly"
+              }
+            ]
+          ]
+        },
+        {
+          "type": "noteGrid",
+          "boxes": [
+            {
+              "heading": "Barriers to communication",
+              "html": "<ul>\n<li>Common barriers: noise, technical jargon, language differences, distractions, unclear instructions, and assumptions about what the other person already knows</li>\n<li>Overcome barriers with effective questioning and listening techniques, and by choosing communication methods that suit the situation</li>\n</ul>"
+            },
+            {
+              "heading": "Choosing the right communication method",
+              "html": "<ul>\n<li>Match the method to the <b>urgency and audience</b> — e.g. an urgent, site-wide change needs a <b>site meeting/toolbox talk</b> (gathers everyone at once, allows immediate questions), not an email or memo, which relies on people checking it in time</li>\n<li>Available methods include face-to-face discussion, phone/two-way radio, written notices, signage, and digital tools — each suited to different situations</li>\n</ul>"
+            }
+          ]
+        },
+        {
+          "type": "noteGrid",
+          "boxes": [
+            {
+              "heading": "Causes of workplace conflict",
+              "html": "<ul>\n<li>Poor communication, unrealistic timeframes or workloads, opposing priorities, unavailable equipment/materials, stress, inequity, mistakes, cultural differences, and simply not following workplace policies</li>\n<li>Conflict isn't always destructive — handled well, disagreement can surface real problems that need solving</li>\n</ul>"
+            },
+            {
+              "heading": "Resolving conflict",
+              "html": "<ul>\n<li>Conflict resolution techniques include open communication, active listening to understand the other perspective, focusing on the issue rather than the person, and involving a supervisor or mediator when needed</li>\n<li>Unresolved conflict has real workplace costs — lower morale, reduced productivity, and safety risks from poor teamwork</li>\n</ul>"
+            }
+          ]
+        },
+        {
+          "type": "noteGrid",
+          "boxes": [
+            {
+              "heading": "Cultural diversity & inclusivity",
+              "html": "<ul>\n<li>Cultural diversity brings a wider range of skills, perspectives and experience to a workplace</li>\n<li>Respecting diversity means using <b>culturally appropriate work practices</b> and effective cross-cultural communication — adapting how you communicate, not expecting everyone to communicate the same way</li>\n</ul>"
+            },
+            {
+              "heading": "Anti-discrimination & harassment",
+              "html": "<ul>\n<li>Bullying and harassment can be direct or indirect, and verbal, physical, psychological or sexual in nature</li>\n<li>Employers and employees both have rights and responsibilities under anti-discrimination legislation and workplace policy</li>\n<li>Consequences of discriminatory behaviour can include legal ramifications — and individuals experiencing it have recourse through workplace policy, HR, or external bodies</li>\n</ul>"
+            }
+          ]
+        },
+        {
+          "type": "examTip",
+          "label": "Communication-cycle questions test the order, not just the vocabulary",
+          "html": "<p>NESA likes to test whether you know the <b>order</b> of the communication cycle, not just the names of its stages. Remember: the <b>sender always acts first</b> (forming and transmitting the message) — decoding is the receiver's job, and feedback only happens after the receiver has responded. If an option describes the sender doing something that's actually the receiver's role (like \"decode\" or \"receive feedback\" as a first action), it's wrong regardless of how plausible it sounds.</p>"
+        },
+        {
+          "type": "linkIt",
+          "html": "<p>How to plan and sequence work, and how sustainability fits into day-to-day construction practice, is covered in the final topic, <b>Task Planning & Sustainability</b>.</p>"
+        }
+      ],
+      "revisionQuestions": [
+        {
+          "q": "A supervisor needs to inform every worker on a large site about a sudden, urgent change to today's schedule. Explain why a site meeting is more effective than sending an email.",
+          "a": "A site meeting (toolbox talk) gathers all workers in one place at the same time, so the message is delivered consistently to everyone at once, and workers can ask questions immediately. An email relies on workers having access to a device and checking it promptly, which isn't reliable for urgent, site-wide information during work hours."
+        },
+        {
+          "q": "In the communication cycle, what is the sender's first role, and what is a common mistake students make when answering this kind of question?",
+          "a": "The sender's first role is to <b>transmit the message</b> — forming the idea, encoding it and sending it to the receiver. A common mistake is confusing this with the receiver's role (decoding the message) or with feedback, which only happens after the receiver has responded — those come later in the cycle, not first."
+        },
+        {
+          "q": "Name three sources a worker could use to find out exactly how a task should be completed on-site.",
+          "a": "Accept any three, e.g.: plans and specifications, a job card/sheet, a safe work method statement (SWMS), manufacturer specifications, workplace policies and procedures, a supervisor's instructions, Australian/industry standards."
+        },
+        {
+          "q": "Explain why cross-trade cooperation matters on a construction site, using an example.",
+          "a": "Different trades' work is interdependent — one trade's delays or poor-quality work directly affects the trades that come after them. For example, if the framing carpenter's work is inaccurate, the plumber and electrician doing rough-in afterwards will have problems fitting their work correctly, causing delays for the whole project."
+        },
+        {
+          "q": "List two causes of conflict in a construction workplace and one appropriate way to resolve conflict when it occurs.",
+          "a": "Accept any two causes, e.g.: poor communication, unrealistic timeframes, unavailable equipment/materials, stress, cultural differences, not following workplace policy. An appropriate resolution technique: open communication and active listening to understand the other person's perspective, focusing on the issue rather than the person, and involving a supervisor or mediator if needed."
+        },
+        {
+          "q": "Explain what \"culturally appropriate work practices\" means in a construction workplace, and why it matters.",
+          "a": "It means adapting how you communicate and work with colleagues to respect different cultural backgrounds, rather than assuming everyone shares the same norms and communication style. It matters because a diverse workforce brings valuable skills and perspectives, and workplaces have a responsibility — including legal responsibilities under anti-discrimination law — to ensure all workers are treated with respect and included fairly."
+        }
+      ]
+    },
+    {
+      "id": "task-planning-sustainability",
+      "icon": "🌱",
+      "title": "Task Planning & Sustainability",
+      "accentColor": "#f7c46a",
+      "blocks": [
+        {
+          "type": "noteGrid",
+          "boxes": [
+            {
+              "heading": "Planning a work task",
+              "html": "<ul>\n<li>Start by understanding the overall goals, objectives, priorities and outcomes of the job, then break it down into its component tasks</li>\n<li>For each component, assess what needs to be done and how — estimating time and personnel required, and identifying the tools, equipment (including PPE), materials and consumables needed</li>\n<li><b>Work sequencing</b> means receiving instructions, organising/coordinating the task, then carrying it out in a logical order that makes efficient use of resources and meets both the completion timeframe and quality measures</li>\n</ul>"
+            },
+            {
+              "heading": "What a written work plan includes",
+              "html": "<ul>\n<li>A written work plan and resource list captures the sequence of tasks, timing and resources needed to complete the job</li>\n<li>Tasks must be planned and sequenced within the overall construction schedule, coordinated with <b>other trades' work processes</b> — not planned in isolation</li>\n<li>Finish with final checks, notification of completion, and cleaning up after the task — task completion isn't just about the physical work being done</li>\n</ul>"
+            }
+          ]
+        },
+        {
+          "type": "table",
+          "caption": "Gantt chart vs other planning tools",
+          "headers": [
+            "Tool",
+            "Best for"
+          ],
+          "rows": [
+            [
+              {
+                "label": "Tool",
+                "html": "Gantt chart"
+              },
+              {
+                "label": "Best for",
+                "html": "Scheduling multi-trade projects — shows tasks on a timeline with start/end dates and dependencies between trades; the industry standard for construction scheduling"
+              }
+            ],
+            [
+              {
+                "label": "Tool",
+                "html": "Checklists"
+              },
+              {
+                "label": "Best for",
+                "html": "Confirming a task or set of steps has been completed correctly"
+              }
+            ],
+            [
+              {
+                "label": "Tool",
+                "html": "Job card / work order"
+              },
+              {
+                "label": "Best for",
+                "html": "Recording task-specific instructions, materials and time for an individual job"
+              }
+            ],
+            [
+              {
+                "label": "Tool",
+                "html": "Toolbox talk / site meeting"
+              },
+              {
+                "label": "Best for",
+                "html": "Communicating planning changes or urgent updates to the whole team at once"
+              }
+            ]
+          ]
+        },
+        {
+          "type": "noteGrid",
+          "boxes": [
+            {
+              "heading": "Collaborating with your team before starting",
+              "html": "<ul>\n<li>Before starting, the team should <b>review the work plan</b>, schedule the work, allocate roles and responsibilities, and review WHS requirements together</li>\n<li>Access the required tools and equipment, including PPE, before work begins — not partway through</li>\n</ul>"
+            },
+            {
+              "heading": "Quality on the job",
+              "html": "<ul>\n<li>Work must adhere to quality requirements, standards and practices: Australian Standards, workplace/company quality policy, local council regulations, manufacturers' specifications, and workplace procedures/operations</li>\n<li>Planning and preparation apply to daily, routine tasks just as much as to major project milestones</li>\n</ul>"
+            }
+          ]
+        },
+        {
+          "type": "noteGrid",
+          "boxes": [
+            {
+              "heading": "What is sustainability?",
+              "html": "<ul>\n<li>Sustainability means meeting present needs without compromising the ability to do so in the future — in construction, this covers conservation, energy efficiency, pollution control, recycling/re-use, and water and resource management</li>\n<li>Sustainable development means work practices that have <b>minimal impact on the surrounding area</b> — not just minimising cost or ordering efficiently, though those can help too</li>\n</ul>"
+            },
+            {
+              "heading": "Minimising environmental impact",
+              "html": "<ul>\n<li>Poor environmental work practices have real consequences — soil, water and habitat damage, legal penalties, and reputational damage to the business</li>\n<li>Environmental hazards typical to a construction workplace must be identified, with responsibility for hazard identification and risk control assigned to specific personnel, just like WHS hazards</li>\n</ul>"
+            }
+          ]
+        },
+        {
+          "type": "table",
+          "caption": "Ways to reduce environmental impact on-site",
+          "headers": [
+            "Practice",
+            "Why it helps"
+          ],
+          "rows": [
+            [
+              {
+                "label": "Practice",
+                "html": "Approved waste disposal & recycling"
+              },
+              {
+                "label": "Why it helps",
+                "html": "Prevents contamination and reduces landfill — burying waste on-site is illegal and damages soil/groundwater"
+              }
+            ],
+            [
+              {
+                "label": "Practice",
+                "html": "Reusing recycled materials (e.g. recycled concrete aggregate)"
+              },
+              {
+                "label": "Why it helps",
+                "html": "Reduces demand for new quarried/raw materials, cutting energy use and habitat disruption"
+              }
+            ],
+            [
+              {
+                "label": "Practice",
+                "html": "Limiting noise, dust and vibration"
+              },
+              {
+                "label": "Why it helps",
+                "html": "Reduces impact on neighbours, wildlife and worker health"
+              }
+            ],
+            [
+              {
+                "label": "Practice",
+                "html": "Protecting waterways and stormwater"
+              },
+              {
+                "label": "Why it helps",
+                "html": "Prevents sediment, chemicals and debris from entering local water systems"
+              }
+            ],
+            [
+              {
+                "label": "Practice",
+                "html": "Using biodegradable, non-toxic, recoverable, recyclable, renewable or reusable resources"
+              },
+              {
+                "label": "Why it helps",
+                "html": "Biodegradable materials are broken down naturally by bacteria and microorganisms, reducing long-term waste"
+              }
+            ]
+          ]
+        },
+        {
+          "type": "noteGrid",
+          "boxes": [
+            {
+              "heading": "Resource efficiency",
+              "html": "<ul>\n<li>Resources used in construction include energy, equipment and consumables, facilities, human resources, and materials</li>\n<li>Resource efficiency is measured and tracked with checklists, stock control tools, and software (databases, spreadsheets, graphs) — by documenting resources, examining supplier invoices, and monitoring usage under different conditions</li>\n<li>Environmental hazards and resource efficiency issues should be reported (verbally and in writing) to the appropriate person, following legislation and workplace/company policy</li>\n</ul>"
+            },
+            {
+              "heading": "Site clean-up",
+              "html": "<ul>\n<li>A messy site affects the company's <b>reputation</b>, not just how it looks</li>\n<li>Clean-up procedures include: replacing disturbed or removed soil, responsibly removing and disposing of non-reusable materials (work materials, plant debris, chemicals), safely storing reusable materials, containing loose materials (mud, dust, litter, waste), and controlling run-off</li>\n</ul>"
+            }
+          ]
+        },
+        {
+          "type": "examTip",
+          "label": "Sustainability answers need a real environmental link",
+          "html": "<p>NESA's sustainability questions reward options that show a genuine environmental mechanism, not just efficiency or cost-saving in general. \"Minimises cost\" or \"orders the right amount of material\" sounds sustainable but isn't automatically an example unless it's specifically tied to reduced environmental impact — the strongest answer is always the one that explains <b>how</b> the practice reduces harm to the surrounding area (less waste, less pollution, less habitat disruption), not just how it saves time or money.</p>"
+        },
+        {
+          "type": "linkIt",
+          "html": "<p>This completes VET Construction's Study Mode. Revisit any topic above, or head to <b>Exam Mode</b> to practise with the full MC and written question bank.</p>"
+        }
+      ],
+      "revisionQuestions": [
+        {
+          "q": "A site supervisor needs to schedule five different trades across an 8-week build, showing when each trade's work overlaps with others. Which planning tool should they use, and why?",
+          "a": "A <b>Gantt chart</b> — it displays project tasks on a timeline with start and end dates, and shows dependencies between tasks/trades, making it the industry-standard tool for coordinating multiple trades on a complex schedule."
+        },
+        {
+          "q": "Explain why \"construction and labour costs are minimised\" is not, by itself, an example of environmentally sustainable development practice.",
+          "a": "Minimising cost doesn't necessarily reduce environmental impact — a cheaper practice could still cause pollution, waste or habitat damage. A genuinely sustainable practice is one that specifically has minimal impact on the surrounding environment, such as managing waste properly, controlling erosion or reducing pollution — cost isn't the deciding factor."
+        },
+        {
+          "q": "Describe what should happen before a team starts a work task, according to the syllabus's collaboration requirements.",
+          "a": "The team should review the work plan together, schedule the work, allocate roles and responsibilities, review WHS requirements, and access the required tools and equipment (including PPE) — all before starting, not partway through the task."
+        },
+        {
+          "q": "Explain how using recycled concrete aggregate contributes to sustainability on a construction site.",
+          "a": "Recycled concrete (crushed demolished concrete reused as aggregate or fill) reduces the demand for new quarried materials, which decreases energy use, transportation impacts and habitat disruption from mining, and also reduces landfill waste."
+        },
+        {
+          "q": "A construction site has loose soil, mud and litter that could wash into a nearby stormwater drain after rain. Describe two site clean-up practices that would address this.",
+          "a": "Accept any two, e.g.: containing loose materials on site (so mud, dust, litter and waste material don't spread), controlling run-off (e.g. with barriers or drainage controls), and replacing disturbed or removed soil to reduce erosion — all of which help protect the stormwater system from contamination."
+        },
+        {
+          "q": "Explain the difference between resource efficiency and environmental sustainability, and how they relate to each other.",
+          "a": "Resource efficiency is about using inputs (energy, materials, equipment, human resources) with minimal waste to get the most value from them. Environmental sustainability is the broader goal of minimising a construction workplace's overall impact on the environment. They're closely related — using resources efficiently (e.g. not over-ordering materials) is one of the main ways a construction workplace becomes more environmentally sustainable."
         }
       ]
     }
