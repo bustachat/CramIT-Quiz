@@ -4358,7 +4358,7 @@
     },
     {
       "topic": "fa2_technology",
-      "q": "To what extent can technology improve performance? Provide examples. (8 marks) <em>(HSC 2024, PDHPE Exam, Section I, Part B, Q31.b)</em>",
+      "q": "To what extent can technology improve performance? Provide examples. (8 marks)",
       "answer": "<p>Technology can improve athletic performance to a <strong>significant extent</strong>, though its benefit depends on how well the data or equipment it provides is understood and applied by athletes and coaches.</p><p><strong>Training innovations</strong> such as lactate testing allow coaches to set individualised training zones based on an athlete's own physiology, while GPS wearables and heart-rate monitors record distance, speed and workload in real time — helping manage training load and reduce injury risk. Virtual and augmented reality allow athletes to rehearse skills and scenarios (e.g. a basketball player practising shooting, or a soccer player rehearsing tactics) without the physical toll of full training, and AI systems such as PlayerMaker or TacticAI can personalise training programs and flag early fatigue.</p><p><strong>Equipment advances</strong> also contribute — lighter, more aerodynamic materials such as carbon-fibre bike frames or cushioned, carbon-plated running shoes improve energy return and reduce injury load, while smart racquets and balls with embedded sensors give athletes real-time feedback on technique.</p><p>However, technology's benefit is not unlimited: data is only useful once correctly interpreted by a knowledgeable coach, and equipment access is not equal across all athletes. Overall, though, when used well, technology gives athletes and coaches objective information that supports more precise, individualised training decisions than would otherwise be possible — representing a genuine and significant improvement to performance.</p>",
       "keywords": [
         "technology",
@@ -4376,8 +4376,7 @@
         "full": "7-8/8 — Makes a clear judgement (\"to what extent\"), supports it with specific named examples across at least two categories (training innovations, equipment, monitoring), and acknowledges a genuine limitation before reaching an overall conclusion.",
         "partial": "4-6/8 — Discusses technology's benefits with some specific examples, but coverage is limited to one category, examples are generic rather than named, or no real judgement/limitation is given.",
         "minimal": "1-3/8 — General statements that technology \"helps performance\" without specific, named examples or a clear extent-based judgement."
-      },
-      "source": "HSC 2024, PDHPE Exam, Section I, Part B, Q31.b"
+      }
     },
     {
       "topic": "fa2_drugs",
@@ -5884,6 +5883,56 @@
           ]
         },
         {
+          "type": "table",
+          "caption": "The four biomechanical principles and the sub-concepts under each",
+          "headers": [
+            "Principle",
+            "What it covers"
+          ],
+          "rows": [
+            [
+              {
+                "label": null,
+                "html": "<b>Motion</b>"
+              },
+              {
+                "label": "What it covers",
+                "html": "Linear, angular &amp; general motion; velocity; speed; acceleration; distance; displacement; momentum; angular momentum"
+              }
+            ],
+            [
+              {
+                "label": null,
+                "html": "<b>Balance &amp; stability</b>"
+              },
+              {
+                "label": "What it covers",
+                "html": "Centre of gravity; line of gravity; base of support"
+              }
+            ],
+            [
+              {
+                "label": null,
+                "html": "<b>Force</b>"
+              },
+              {
+                "label": "What it covers",
+                "html": "Newton's laws; force application; summation of force; force absorption"
+              }
+            ],
+            [
+              {
+                "label": null,
+                "html": "<b>Fluid mechanics</b>"
+              },
+              {
+                "label": "What it covers",
+                "html": "Flotation; centre of buoyancy; fluid resistance (drag); the Magnus effect"
+              }
+            ]
+          ]
+        },
+        {
           "type": "image",
           "src": "/diagrams/pdhpe-hms_study_biomechanics-stride.jpg",
           "alt": "Comparison of a good running stride (foot strike near centre of mass, good knee flexion) vs an overstride (foot strike far from COM, high breaking force)",
@@ -5918,6 +5967,96 @@
           ]
         },
         {
+          "type": "table",
+          "caption": "Training innovations using technology — the eight categories",
+          "headers": [
+            "Innovation",
+            "How it improves training or performance"
+          ],
+          "rows": [
+            [
+              {
+                "label": null,
+                "html": "<b>Mobile apps</b>"
+              },
+              {
+                "label": "How it improves training or performance",
+                "html": "Strava, TrainingPeaks and similar let athletes log, monitor and adjust training between sessions"
+              }
+            ],
+            [
+              {
+                "label": null,
+                "html": "<b>Wearable technology</b>"
+              },
+              {
+                "label": "How it improves training or performance",
+                "html": "GPS units, heart-rate straps and smartwatches track distance, speed, HR and workload in real time"
+              }
+            ],
+            [
+              {
+                "label": null,
+                "html": "<b>Lactate testing</b>"
+              },
+              {
+                "label": "How it improves training or performance",
+                "html": "Blood-lactate sampling during graded effort sets training-intensity zones specific to that athlete"
+              }
+            ],
+            [
+              {
+                "label": null,
+                "html": "<b>Biomechanics analysis tools</b>"
+              },
+              {
+                "label": "How it improves training or performance",
+                "html": "Video and motion-analysis software (e.g. Dartfish, Hudl) breaks technique down frame by frame to correct form"
+              }
+            ],
+            [
+              {
+                "label": null,
+                "html": "<b>Virtual &amp; augmented reality</b>"
+              },
+              {
+                "label": "How it improves training or performance",
+                "html": "Rehearse skills, tactics and competition pressure without the physical load of full training"
+              }
+            ],
+            [
+              {
+                "label": null,
+                "html": "<b>Data analytics</b>"
+              },
+              {
+                "label": "How it improves training or performance",
+                "html": "Turns large volumes of training and match data into patterns a coach can actually act on"
+              }
+            ],
+            [
+              {
+                "label": null,
+                "html": "<b>Artificial intelligence (AI)</b>"
+              },
+              {
+                "label": "How it improves training or performance",
+                "html": "Systems such as PlayerMaker, Statcast and TacticAI personalise programs and flag early fatigue"
+              }
+            ],
+            [
+              {
+                "label": null,
+                "html": "<b>Smart equipment</b>"
+              },
+              {
+                "label": "How it improves training or performance",
+                "html": "Sensor-embedded racquets, balls and machines give real-time feedback on technique and output"
+              }
+            ]
+          ]
+        },
+        {
           "type": "noteGrid",
           "boxes": [
             {
@@ -5926,7 +6065,7 @@
             },
             {
               "heading": "Fracture types",
-              "html": "<ul>\n<li><b>Simple (closed)</b> — bone breaks but stays under the skin; <b>compound (open)</b> — bone breaks through the skin</li>\n<li>Named patterns: <b>greenstick</b> (incomplete, bends), <b>spiral</b> (twisting), <b>comminuted</b> (3+ fragments), <b>transverse</b> (straight across), <b>oblique</b></li>\n<li><b>Dislocation</b> — bone displaced from the joint; ligaments stretch/rupture but the bone itself isn't damaged; never relocate it yourself</li>\n<li>A <b>subluxation</b> is a bone momentarily \"popping out\" and returning — still needs rehab even without lasting displacement</li>\n</ul>"
+              "html": "<ul>\n<li><b>Simple (closed)</b> — bone breaks but stays under the skin; <b>compound (open)</b> — bone breaks through the skin</li>\n<li>Named patterns: <b>greenstick</b> (incomplete, bends), <b>spiral</b> (twisting), <b>comminuted</b> (3+ fragments), <b>transverse</b> (straight across), <b>oblique</b> (angled), <b>avulsion</b> (fragment pulled off by a tendon/ligament)</li>\n<li><b>Dislocation</b> — bone displaced from the joint; ligaments stretch/rupture but the bone itself isn't damaged; never relocate it yourself</li>\n<li>A <b>subluxation</b> is a bone momentarily \"popping out\" and returning — still needs rehab even without lasting displacement</li>\n</ul>"
             }
           ]
         },
@@ -5987,11 +6126,19 @@
           "style": null
         },
         {
+          "type": "image",
+          "src": "/diagrams/pdhpe-hms_study_fracture-types.jpg",
+          "alt": "Eight labelled fracture patterns shown on a leg: closed, open, transverse, spiral, comminuted, impacted, greenstick and oblique",
+          "title": "Fracture types",
+          "caption": "Closed vs open, plus the named break patterns. Image: OpenStax College, <i>Anatomy &amp; Physiology</i> — CC BY 4.0.",
+          "style": null
+        },
+        {
           "type": "noteGrid",
           "boxes": [
             {
               "heading": "Rehabilitation stages (in order)",
-              "html": "<ul>\n<li><b>Progressive mobilisation</b> — gently restore range of movement (active by the athlete, or passive by a practitioner); <i>not</i> during the acute inflammatory phase, and stay pain-free</li>\n<li><b>Graduated exercise</b> — static &amp; PNF stretching, then conditioning using <b>overload</b> to rebuild strength and prevent <b>muscle atrophy</b></li>\n<li><b>PNF stretching in rehab</b> — contract the target muscle 3–5s, relax, then stretch further 10–30s (e.g. hamstring, calf) — used within graduated exercise</li>\n<li><b>Total body fitness</b> — rebuild all muscle groups &amp; energy systems (pool work, cycling ergometer, light jogging, weights)</li>\n<li><b>Training</b> — build sport-specific skills back to pre-injury level; complete once a full session is done pain-free</li>\n</ul>"
+              "html": "<ul>\n<li><b>Progressive mobilisation</b> — gently restore range of movement (active by the athlete, or passive by a practitioner); <i>not</i> during the acute inflammatory phase, and stay pain-free</li>\n<li><b>Graduated exercise</b> — static &amp; PNF stretching, then conditioning using <b>overload</b> to rebuild strength and prevent <b>muscle atrophy</b></li>\n<li><b>PNF stretching in rehab</b> — contract the target muscle 5–10s, relax, then let a partner (or band/towel) push further into the stretch (e.g. hamstring, gastrocnemius) — used within graduated exercise</li>\n<li><b>Total body fitness</b> — rebuild all muscle groups &amp; energy systems (pool work, cycling ergometer, light jogging, weights)</li>\n<li><b>Training</b> — build sport-specific skills back to pre-injury level; complete once a full session is done pain-free</li>\n</ul>"
             },
             {
               "heading": "Return-to-play &amp; ethics",
