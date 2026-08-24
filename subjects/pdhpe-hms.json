@@ -5945,20 +5945,11 @@
           "boxes": [
             {
               "heading": "Physiological recovery",
-              "html": "<ul>\n<li><b>Cool-down</b> — gradually lowers HR, ventilation &amp; blood distribution back to resting; prevents blood pooling; static stretching realigns muscle fibres</li>\n<li><b>Hydrotherapy</b> — <b>CWI</b> (cold water immersion) ↓ inflammation via vasoconstriction, best for DOMS; <b>WWI</b> (warm) ↑ blood flow via vasodilation, relaxes stiff joints; <b>contrast water therapy</b> alternates both to pump blood flow</li>\n<li>Avoid hydrotherapy on a hot, red, inflamed injury — swelling must be controlled first</li>\n</ul>"
+              "html": "<ul>\n<li><b>Cool-down</b> — gradually lowers HR, ventilation &amp; blood distribution back to resting; prevents blood pooling; static stretching realigns muscle fibres</li>\n<li><b>Hydrotherapy (after training)</b> — <b>CWI</b> (cold water immersion) ↓ inflammation via vasoconstriction, best for DOMS; <b>WWI</b> (warm) ↑ blood flow via vasodilation, relaxes stiff joints; <b>contrast water therapy</b> alternates both to pump blood flow</li>\n<li>Avoid hydrotherapy on a hot, red, inflamed injury — swelling must be controlled first</li>\n</ul>"
             },
             {
               "heading": "Psychological recovery",
               "html": "<ul>\n<li>Reduces <b>cortisol</b> (the stress hormone), improving focus, sleep quality &amp; emotional resilience</li>\n<li><b>Meditation/mindfulness</b> — regulates the stress response, builds body awareness</li>\n<li>Also used: mental rehearsal, yoga, calming music, aromatherapy, journaling, deep breathing, progressive muscle relaxation (PMR)</li>\n<li>Adequate <b>sleep</b> is regarded as the most important recovery strategy overall — but too much can also cause sluggishness</li>\n</ul>"
-            }
-          ]
-        },
-        {
-          "type": "noteGrid",
-          "boxes": [
-            {
-              "heading": "Equipment advances",
-              "html": "<ul>\n<li>Lighter, more aerodynamic <b>materials</b> (carbon-fibre bikes, foam-cushioned running shoes) improve speed &amp; reduce injury load</li>\n<li><b>Assistive technology</b> — lightweight wheelchairs &amp; audible balls (sound/vibration cues) widen access for athletes with disability</li>\n</ul>"
             }
           ]
         },
@@ -6056,12 +6047,21 @@
           "type": "noteGrid",
           "boxes": [
             {
+              "heading": "Equipment advances",
+              "html": "<ul>\n<li>Lighter, more aerodynamic <b>materials</b> (carbon-fibre bikes, foam-cushioned running shoes) improve speed &amp; reduce injury load</li>\n<li><b>Assistive technology</b> — lightweight wheelchairs &amp; audible balls (sound/vibration cues) widen access for athletes with disability</li>\n</ul>"
+            }
+          ]
+        },
+        {
+          "type": "noteGrid",
+          "boxes": [
+            {
               "heading": "Types of injury",
               "html": "<ul>\n<li><b>Direct</b> — from external contact (ball, bat, person); <b>indirect</b> — internal force (sprains, strains)</li>\n<li><b>Soft tissue</b> — muscles, ligaments, fascia (tears, sprains, contusions, abrasions)</li>\n<li><b>Hard tissue</b> — bones/teeth (fractures, dislocations)</li>\n<li><b>Overuse</b> — repetitive stress (tendonitis, bursitis) from poor programming or insufficient rest</li>\n</ul>"
             },
             {
               "heading": "Fracture types",
-              "html": "<ul>\n<li><b>Simple (closed)</b> — bone breaks but stays under the skin; <b>compound (open)</b> — bone breaks through the skin</li>\n<li>Named patterns: <b>greenstick</b> (incomplete, bends), <b>spiral</b> (twisting), <b>comminuted</b> (3+ fragments), <b>transverse</b> (straight across), <b>oblique</b> (angled), <b>avulsion</b> (fragment pulled off by a tendon/ligament)</li>\n<li><b>Dislocation</b> — bone displaced from the joint; ligaments stretch/rupture but the bone itself isn't damaged; never relocate it yourself</li>\n<li>A <b>subluxation</b> is a bone momentarily \"popping out\" and returning — still needs rehab even without lasting displacement</li>\n</ul>"
+              "html": "<ul>\n<li><b>Simple (closed)</b> — bone breaks but stays under the skin; <b>compound (open)</b> — bone breaks through the skin (higher infection risk)</li>\n<li>Named patterns: <b>greenstick</b> (incomplete, bends), <b>spiral</b> (twisting), <b>comminuted</b> (3+ fragments), <b>transverse</b> (straight across), <b>oblique</b> (angled), <b>avulsion</b> (fragment pulled off by a tendon/ligament)</li>\n<li><b>Dislocation</b> — bone displaced from the joint; the ligaments stretch or rupture but the bone itself isn't damaged</li>\n<li>A <b>subluxation</b> is a bone momentarily “popping out” and returning — still needs rehab even without lasting displacement</li>\n</ul>"
             }
           ]
         },
@@ -6100,8 +6100,8 @@
               "html": "<ul>\n<li><b>TOTAPS</b> — Talk, Observe, Touch, Active &amp; Passive movement, Skills test</li>\n<li>Sequence: <b>DRSABCD</b> (Danger, Response, Send for help, Airway, Breathing, CPR, Defibrillation — the crisis check) → <b>STOP</b> (Stop, Talk, Observe, Prevent — on-field) → <b>TOTAPS</b> (complete)</li>\n<li><b>RICER</b> for soft tissue — Rest, Ice, Compression, Elevation, Referral — applied in the first 48–72 hours</li>\n<li>Ice ≈ 20 min every 2 hrs to reduce swelling &amp; pain</li>\n<li>Avoid <b>HARM</b> in that time — Heat, Alcohol, Running, Massage — each one increases bleeding/swelling and delays healing</li>\n</ul>"
             },
             {
-              "heading": "Hard tissue, rehab &amp; return",
-              "html": "<ul>\n<li><b>Dislocation</b> — don't relocate; immobilise, ice, seek help</li>\n<li><b>Fracture</b> — immobilise (splint/sling), control bleeding, call emergency; RICER only after clearance</li>\n<li><b>Rehab</b> — progressive mobilisation → graduated exercise → modified training; cold early, heat later</li>\n<li><b>Cold options</b> — ice massage, cold-water immersion, cold sprays/gels (first ~4 days); <b>heat options</b> — moist heat packs, whirlpool/contrast baths, ultrasound, infrared (once bleeding has stopped, ~48 hrs+)</li>\n<li><b>Return-to-play</b> — medical clearance, functional testing, monitor re-injury; physically <i>and</i> psychologically ready</li>\n</ul>"
+              "heading": "Hard-tissue management",
+              "html": "<ul>\n<li><b>Dislocation</b> — <b>never relocate it yourself</b>; immobilise with a splint, ice, elevate and get immediate medical attention</li>\n<li><b>Fracture</b> — DRSABCD, control bleeding, treat for shock, immobilise (splint/sling), then immediate medical assistance</li>\n<li>Seek medical attention if there is obvious deformity, uncontrolled bleeding, or the casualty can't complete TOTAPS</li>\n<li>RICER applies to <b>soft</b> tissue — for a suspected fracture or dislocation it comes only after medical clearance</li>\n</ul>"
             }
           ]
         },
@@ -6133,12 +6133,12 @@
           "type": "noteGrid",
           "boxes": [
             {
-              "heading": "Rehabilitation stages (in order)",
-              "html": "<ul>\n<li><b>Progressive mobilisation</b> — gently restore range of movement (active by the athlete, or passive by a practitioner); <i>not</i> during the acute inflammatory phase, and stay pain-free</li>\n<li><b>Graduated exercise</b> — static &amp; PNF stretching, then conditioning using <b>overload</b> to rebuild strength and prevent <b>muscle atrophy</b></li>\n<li><b>PNF stretching in rehab</b> — contract the target muscle 5–10s, relax, then let a partner (or band/towel) push further into the stretch (e.g. hamstring, gastrocnemius) — used within graduated exercise</li>\n<li><b>Total body fitness</b> — rebuild all muscle groups &amp; energy systems (pool work, cycling ergometer, light jogging, weights)</li>\n<li><b>Training</b> — build sport-specific skills back to pre-injury level; complete once a full session is done pain-free</li>\n</ul>"
+              "heading": "Rehabilitation procedures",
+              "html": "<ul>\n<li><b>1. Progressive mobilisation</b> — gently restore range of movement (active by the athlete, or passive by a practitioner); not during the acute inflammatory phase, and stay pain-free</li>\n<li><b>2. Graduated exercise</b> — the workbook groups <i>three</i> things under this single stage:</li>\n<li>&nbsp;&nbsp;&bull; <b>Stretching</b> — prevents scarring that shortens the muscle. PNF is the most effective: contract the target muscle 5–10s, relax, then a partner (or band/towel) pushes further into the stretch (e.g. hamstring, gastrocnemius)</li>\n<li>&nbsp;&nbsp;&bull; <b>Conditioning</b> — rebuild strength using <b>overload</b> and <b>progression</b>, kept pain-free; <b>specificity</b> targets the injured area</li>\n<li>&nbsp;&nbsp;&bull; <b>Total body fitness</b> — regain pre-injury physical <i>and</i> mental condition: hypertrophy, stronger tendons/ligaments, capillarisation, elasticity, joint mobility, absence of pain, restored balance and coordination</li>\n<li><b>3. Training</b> — full program resumed pain-free — warm-up, conditioning, drills, skills development, tactics, cool-down</li>\n<li><b>Use of heat and cold (treating an injury — not the same as post-training hydrotherapy above)</b> — <b>cold</b> for up to ~4 days (ice massage ≤ 15 min, cold-water immersion, cold sprays/gels); <b>heat</b> once internal bleeding has stopped (~48 hrs) — moist heat packs, whirlpool and contrast baths, ultrasound, infrared — to increase elasticity and blood flow and reduce pain and stiffness</li>\n</ul>"
             },
             {
-              "heading": "Return-to-play &amp; ethics",
-              "html": "<ul>\n<li><b>Readiness indicators</b> — elasticity, strength, mobility, pain-free, and <b>balance on the injured limb</b></li>\n<li><b>Named RTP tests</b> — Illinois Agility Test (agility), vertical jump (power), grip strength, circumduction test (shoulder ROM) — chosen to match the injured area &amp; sport</li>\n<li><b>Psychological readiness</b> — confidence rebuilt via sport-specific tests (e.g. beep test) &amp; a sports psychologist</li>\n<li><b>Ethics</b> — painkillers mask pain (a damage warning) → further injury &amp; prolonged healing; beware <b>pressure to participate</b></li>\n</ul>"
+              "heading": "Return-to-play",
+              "html": "<ul>\n<li><b>Readiness indicators</b> — elasticity, strength, mobility, pain-free under both light and strenuous work, and balance on the injured limb</li>\n<li><b>Monitoring progress</b> — compare pre-injury with post-injury test results, and the injured limb against the uninjured one (roughly 90–95% of strength and range restored)</li>\n<li><b>Named tests</b>, matched to the injured area and sport — Illinois Agility Test (knee/agility), vertical jump (power), grip strength (upper limb), circumduction test (shoulder ROM), hop and Y-balance tests</li>\n<li><b>Psychological readiness</b> — confidence and a positive outlook, rebuilt through sport-specific testing; some athletes push to return too early, others feel pressured to — both risk re-injury</li>\n<li><b>Specific warm-up</b> — targeted at the injured area before returning to training or competition</li>\n<li><b>Responsibility</b> — shared between athlete, doctor, physiotherapist and coach; at elite level a formal policy sets the procedure. Returning too soon is costly for both athlete and team</li>\n</ul>"
             }
           ]
         },
@@ -6159,9 +6159,27 @@
           "type": "noteGrid",
           "boxes": [
             {
-              "heading": "Drug testing",
-              "html": "<ul>\n<li><b>WADA</b> sets the banned-substance list (refreshed every 1 January); in Australia, <b>Sport Integrity Australia</b> carries out testing, in- and out-of-competition</li>\n<li>A <b>Therapeutic Use Exemption (TUE)</b> is approved only if: it's medically necessary, doesn't improve performance beyond normal levels, no reasonable alternative treatment exists, and the condition wasn't caused by prior misuse</li>\n<li><b>Strict liability</b> — athletes are responsible for anything found in their body, even if it was taken accidentally (e.g. a contaminated supplement)</li>\n<li><b>Limitations</b> — testing is expensive (millions of dollars a year), and athletes must track an annually-changing prohibited list</li>\n</ul>"
+              "heading": "Drug testing — who &amp; how",
+              "html": "<ul>\n<li><b>WADA</b> sets the international prohibited list, revised every <b>1 January</b></li>\n<li>In Australia, <b>Sport Integrity Australia</b> (SIA, formerly ASADA) carries out the testing, in- and out-of-competition</li>\n<li>Testing is <b>random</b> with no advance warning unless it follows a competition performance — ranging from several times a week to once a month</li>\n<li>A <b>Therapeutic Use Exemption (TUE)</b>, assessed by <b>ASDMAC</b>, is approved only if: it is medically necessary, it does not improve performance beyond normal levels, no reasonable alternative treatment exists, and the condition was not caused by prior misuse</li>\n<li><b>Strict liability</b> — the athlete is responsible for anything found in their body, even if taken accidentally (e.g. a contaminated supplement)</li>\n</ul>"
+            }
+          ]
+        },
+        {
+          "type": "noteGrid",
+          "boxes": [
+            {
+              "heading": "Benefits of drug testing",
+              "html": "<ul>\n<li>Protects athletes' right to compete in an environment free from doping</li>\n<li>Ensures athletes are rewarded for natural ability and training outcomes, not chemical enhancement</li>\n<li>Knowing they can be tested <b>any time, anywhere</b> deters athletes who might consider doping</li>\n<li>Doping is harmful to athlete health — testing discourages it</li>\n<li>Many athletes <i>want</i> to be tested, because it lets them prove they are competing clean</li>\n</ul>"
             },
+            {
+              "heading": "Limitations of drug testing",
+              "html": "<ul>\n<li><b>Cost</b> — several millions of dollars annually worldwide</li>\n<li>The prohibited list changes annually, so the burden sits on the athlete to keep their knowledge current</li>\n<li><b>Intrusive procedure</b> — because samples have been tampered with in the past, athletes must remove clothing from the knees to mid-torso and from the hands to the elbows, and a same-gender chaperone must witness the sample leaving the body — confronting for some athletes</li>\n</ul>"
+            }
+          ]
+        },
+        {
+          "type": "noteGrid",
+          "boxes": [
             {
               "heading": "Painkillers &amp; the doping line",
               "html": "<ul>\n<li>Over-the-counter painkillers (e.g. paracetamol) are legal; prescription painkillers by injection are more concerning — they mask the body's damage warning</li>\n<li>Playing through masked pain risks turning a manageable injury into a worse, prolonged one</li>\n<li>Anti-inflammatories/painkillers taken for genuine medical treatment can blur into performance enhancement — a real ethical grey area covered by the TUE process</li>\n</ul>"
@@ -6171,7 +6189,7 @@
         {
           "type": "examTip",
           "label": "",
-          "html": "Know the acronyms cold — <b>TOTAPS, DRSABCD, RICER</b> — and the order they're used in. Never relocate a dislocation. Return-to-play answers must include <b>both</b> physical (functional testing) <b>and</b> psychological readiness. For biomechanics questions, name the actual principle (motion / balance &amp; stability / force / fluid mechanics) rather than just saying 'technique'. For drug use, cover all three angles the syllabus wants — health implications, ethics, and drug testing — and use a named example (e.g. steroids, EPO) rather than a vague 'PEDs'."
+          "html": "Know the acronyms cold — <b>TOTAPS, DRSABCD, RICER</b> — and the order they're used in. Never relocate a dislocation. Return-to-play answers must include <b>both</b> physical (functional testing) <b>and</b> psychological readiness. For biomechanics questions, name the actual principle (motion / balance &amp; stability / force / fluid mechanics) rather than just saying 'technique'. For drug use, cover all three angles the syllabus wants — health implications, ethics, and drug testing — Drug-testing questions almost always want <b>benefits and limitations</b>, so give at least two of each rather than only the criticisms. Use a named example (e.g. steroids, EPO) rather than a vague 'PEDs'."
         }
       ],
       "revisionQuestions": [
