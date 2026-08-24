@@ -784,7 +784,7 @@ const SUBJECTS = {
     accent: '#7B9E6B',
     hasMC: true, hasWritten: true, hasStudy: true,
     getMC: (filters) => {
-      const FA1 = ['classification','assessment','management','rehabilitation','returnplay','concussion'];
+      const FA1 = ['classification','assessment','management','rehabilitation','returnplay','concussion','fa2_biomechanics','fa2_technology','fa2_drugs'];
       const FA2 = ['fa2_assessment','fa2_methods','fa2_principles','fa2_adaptations','fa2_periodisation','fa2_nutrition','fa2_psychology','fa2_individual_group','fa2_sleep'];
       let qs = [...(subjectCache.hms?.mcQuestions ?? [])];
       if (filters.assessment && filters.assessment !== 'all') {
@@ -795,7 +795,7 @@ const SUBJECTS = {
       return shuffle(qs);
     },
     getWritten: (filters) => {
-      const FA1 = ['classification','assessment','management','rehabilitation','returnplay','concussion'];
+      const FA1 = ['classification','assessment','management','rehabilitation','returnplay','concussion','fa2_biomechanics','fa2_technology','fa2_drugs'];
       const FA2 = ['fa2_assessment','fa2_methods','fa2_principles','fa2_adaptations','fa2_periodisation','fa2_nutrition','fa2_psychology','fa2_individual_group','fa2_sleep'];
       let qs = [...(subjectCache.hms?.writtenQuestions ?? [])];
       if (filters.assessment && filters.assessment !== 'all') {
@@ -994,7 +994,7 @@ function renderExamModeHtml(s, inTrial, trialLeft) {
     html += '</div></div>';
   }
   if (s.topics) {
-    const FA1 = ['classification','assessment','management','rehabilitation','returnplay','concussion'];
+    const FA1 = ['classification','assessment','management','rehabilitation','returnplay','concussion','fa2_biomechanics','fa2_technology','fa2_drugs'];
     const FA2 = ['fa2_assessment','fa2_methods','fa2_principles','fa2_adaptations','fa2_periodisation','fa2_nutrition','fa2_psychology','fa2_individual_group','fa2_sleep'];
     const activeAssessment = pickerFilters.assessment || 'all';
 
@@ -1203,7 +1203,7 @@ function rebuildTopicControl() {
   if (!ctrl) return;
   const s = SUBJECTS[currentSubjectKey];
   if (!s?.topics) return;
-  const FA1 = ['classification','assessment','management','rehabilitation','returnplay','concussion'];
+  const FA1 = ['classification','assessment','management','rehabilitation','returnplay','concussion','fa2_biomechanics','fa2_technology','fa2_drugs'];
   const FA2 = ['fa2_assessment','fa2_methods','fa2_principles','fa2_adaptations','fa2_periodisation','fa2_nutrition','fa2_psychology','fa2_individual_group','fa2_sleep'];
   const activeAssessment = pickerFilters.assessment || 'all';
   const visible = s.topics.filter(t => {

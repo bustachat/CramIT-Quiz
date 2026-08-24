@@ -2973,6 +2973,510 @@
         "Muscle hypertrophy increases force production for strength tasks — not endurance performance in the 85th minute.",
         "Flexibility improves range of motion and reduces injury risk — it does not determine aerobic endurance capacity."
       ]
+    },
+    {
+      "topic": "fa2_biomechanics",
+      "q": "In sport, biomechanics is best described as the study of:",
+      "options": [
+        "Nutrition and its effect on energy systems",
+        "How and why the body moves, including the forces acting on it",
+        "The scheduling of training phases across a season",
+        "Psychological strategies used to manage competition anxiety"
+      ],
+      "answer": 1,
+      "explanation": "Biomechanics applies physics principles to study kinetics (forces) and kinematics (movement) to understand how and why the body moves.",
+      "optionExplanations": [
+        "Nutrition and energy systems are studied in exercise physiology, not biomechanics.",
+        "✓ Correct. Biomechanics investigates the forces acting on the body (kinetics) and the movements the body produces (kinematics) to describe and explain human movement.",
+        "Periodisation and training phases belong to training program design, not biomechanics.",
+        "Managing anxiety is a psychological strategy, a separate part of the HMS syllabus from biomechanics."
+      ]
+    },
+    {
+      "topic": "fa2_biomechanics",
+      "q": "Which biomechanical principle explains why a netball defender adopts a wide stance with bent knees before changing direction?",
+      "options": [
+        "Force absorption",
+        "Balance and stability",
+        "Fluid mechanics",
+        "Angular motion"
+      ],
+      "answer": 1,
+      "explanation": "Lowering the centre of gravity and widening the base of support keeps the line of gravity within the base, improving balance and stability for quick changes of direction.",
+      "optionExplanations": [
+        "Force absorption relates to reducing impact on landing, not to a defensive ready stance.",
+        "✓ Correct. A wide stance and bent knees lower the centre of gravity and widen the base of support, which is the core of the balance and stability principle.",
+        "Fluid mechanics applies to movement through water or air (drag, buoyancy), not court-based footwork.",
+        "Angular motion describes rotation around a joint or axis, not a stationary defensive stance."
+      ]
+    },
+    {
+      "topic": "fa2_biomechanics",
+      "q": "\"Drag\", as used in the biomechanics of swimming, refers to:",
+      "options": [
+        "The force that propels a swimmer forward",
+        "The resisting force that opposes a swimmer's forward motion through water",
+        "The buoyant force that keeps a swimmer afloat",
+        "The rotational force generated during a tumble turn"
+      ],
+      "answer": 1,
+      "explanation": "Drag is a resisting force that acts in opposition to a body moving through a fluid (in this case, water), reducing speed and increasing energy expenditure.",
+      "optionExplanations": [
+        "Propulsion comes from the swimmer's pull and kick, not from drag, which opposes motion.",
+        "✓ Correct. Drag opposes forward motion through water; minimising it (streamlined position, tight kick, efficient catch) reduces energy expenditure and sustains movement.",
+        "Buoyancy is the upward force that helps a swimmer float — a separate fluid mechanics concept from drag.",
+        "Rotational force in a tumble turn relates to angular motion, not drag."
+      ]
+    },
+    {
+      "topic": "fa2_biomechanics",
+      "q": "A sprint coach advises an athlete to keep their arms bent at roughly 90 degrees and rotate them from the shoulder rather than swinging them across the chest. This advice is primarily aimed at:",
+      "options": [
+        "Increasing drag to control deceleration at the finish",
+        "Minimising wasted movement and tension to sustain efficient running technique",
+        "Maximising angular momentum during the starting blocks",
+        "Improving flotation for open-water events"
+      ],
+      "answer": 1,
+      "explanation": "Reducing unnecessary arm movement and tension lowers energy expenditure, helping the runner sustain efficient technique and delay fatigue over the race.",
+      "optionExplanations": [
+        "Sprinters aim to minimise, not increase, drag — this option describes the opposite goal.",
+        "✓ Correct. Efficient arm mechanics reduce tension moving into the shoulders and neck and avoid wasted lateral movement, sustaining efficient technique for longer.",
+        "Angular momentum during blocks relates to the start phase, not ongoing arm-swing technique mid-race.",
+        "Flotation is a fluid mechanics concept relevant to swimming, not running."
+      ]
+    },
+    {
+      "topic": "fa2_biomechanics",
+      "q": "Which of the following best demonstrates applying the biomechanical principle of force in a tennis serve?",
+      "options": [
+        "Keeping eyes on the ball throughout the toss",
+        "Shifting weight from the back foot to the front foot to transfer momentum into the racquet",
+        "Selecting a racquet with a smaller head size",
+        "Serving on a slower court surface"
+      ],
+      "answer": 1,
+      "explanation": "Transferring weight from back to front foot applies force through the kinetic chain, generating greater momentum and racquet-head speed for a more powerful serve.",
+      "optionExplanations": [
+        "Visual focus on the ball toss is a skill/technique factor, not an example of the force principle.",
+        "✓ Correct. Shifting weight forward transfers force through the body into the racquet, generating momentum for a more powerful, efficient serve.",
+        "Racquet head size is an equipment choice, not an application of the force principle to technique.",
+        "Court surface speed affects ball bounce and rally style, not the biomechanics of force production in the serve itself."
+      ]
+    },
+    {
+      "topic": "fa2_biomechanics",
+      "q": "When lifting a heavy box using correct biomechanical technique, an individual should:",
+      "options": [
+        "Keep the back straight, bend at the hips/knees and keep the load close to the body",
+        "Bend at the waist with straight legs to maximise leverage",
+        "Position the feet close together to narrow the base of support",
+        "Lift using the arms only, keeping the core relaxed"
+      ],
+      "answer": 0,
+      "explanation": "Bending at the hip/knee joints, keeping the back straight and the load close to the body lowers the centre of gravity and lets the leg muscles do the work, protecting the spine.",
+      "optionExplanations": [
+        "✓ Correct. This technique lowers the centre of gravity, keeps the line of gravity within the base of support, and uses the stronger leg muscles rather than the lower back.",
+        "Bending at the waist with straight legs places excessive load on the lower back and spine, increasing injury risk.",
+        "A narrow base of support reduces stability, making the lift less safe, not safer.",
+        "Lifting with the arms alone and a relaxed core removes the stabilising role of the trunk, increasing strain and injury risk."
+      ]
+    },
+    {
+      "topic": "fa2_biomechanics",
+      "q": "Which pair correctly matches a biomechanical principle with its components?",
+      "options": [
+        "Force — flotation and buoyancy",
+        "Fluid mechanics — Newton's laws and summation of force",
+        "Motion — velocity, acceleration and momentum",
+        "Balance and stability — drag and the Magnus effect"
+      ],
+      "answer": 2,
+      "explanation": "Motion covers linear, angular and general motion, including velocity, speed, acceleration, distance, momentum and angular momentum.",
+      "optionExplanations": [
+        "Flotation and buoyancy are components of fluid mechanics, not force.",
+        "Newton's laws and summation of force are components of force, not fluid mechanics.",
+        "✓ Correct. Motion includes velocity, speed, acceleration, distance, momentum and angular momentum.",
+        "Drag and the Magnus effect are components of fluid mechanics, not balance and stability."
+      ]
+    },
+    {
+      "topic": "fa2_biomechanics",
+      "q": "A biomechanist analyses a fast bowler's action to reduce the load travelling through the lower back, hips and shoulders. This analysis is primarily intended to:",
+      "options": [
+        "Increase the bowler's run-up speed",
+        "Identify technique adjustments that reduce injury risk while maintaining performance",
+        "Change the bowler's grip on the ball for more swing",
+        "Lengthen the bowler's follow-through purely for style"
+      ],
+      "answer": 1,
+      "explanation": "Fast bowlers are identified early for biomechanical analysis specifically to reduce the immense repetitive loads through the lower back, hips and shoulders, lowering the risk of overuse injuries such as stress fractures.",
+      "optionExplanations": [
+        "Run-up speed is a performance factor, not the focus of load-reduction biomechanical analysis.",
+        "✓ Correct. The goal is to correct technique that places excessive load on vulnerable joints, reducing overuse-injury risk while the bowler continues to perform.",
+        "Grip changes affect swing/seam movement of the ball, not the biomechanical load through the bowler's body.",
+        "Follow-through changes made \"for style\" are not the purpose of injury-focused biomechanical analysis."
+      ]
+    },
+    {
+      "topic": "fa2_biomechanics",
+      "q": "The Magnus effect, relevant to sports such as cricket and soccer, is an example of which biomechanical principle?",
+      "options": [
+        "Force",
+        "Balance and stability",
+        "Fluid mechanics",
+        "Linear motion"
+      ],
+      "answer": 2,
+      "explanation": "The Magnus effect describes how a spinning ball's path curves due to pressure differences in the air around it — a fluid mechanics concept, alongside flotation, buoyancy and drag.",
+      "optionExplanations": [
+        "Force covers Newton's laws and force application/absorption, not the curving flight of a spinning ball.",
+        "Balance and stability relates to a body's centre of gravity and base of support, not ball flight.",
+        "✓ Correct. The Magnus effect is a fluid mechanics concept, describing how spin alters the air pressure around a ball and curves its path.",
+        "Linear motion describes movement in one direction, not the curved path caused by spin."
+      ]
+    },
+    {
+      "topic": "fa2_biomechanics",
+      "q": "Improving technique through biomechanical analysis (e.g. correcting an athlete's running stride or swimming stroke) mainly helps sustain movement and performance by:",
+      "options": [
+        "Increasing the total distance an athlete must cover",
+        "Reducing wasted energy expenditure and fatigue while lowering injury risk",
+        "Guaranteeing a faster race time regardless of an athlete's fitness",
+        "Replacing the need for a warm-up before training"
+      ],
+      "answer": 1,
+      "explanation": "Correcting inefficient technique reduces unnecessary energy expenditure and joint strain, which sustains movement for longer and lowers the risk of technique-related injury.",
+      "optionExplanations": [
+        "Biomechanical analysis has no effect on the distance an event requires an athlete to cover.",
+        "✓ Correct. More efficient technique reduces energy wasted on poor movement patterns, delaying fatigue and reducing injury risk — sustaining performance over a longer period.",
+        "Technique correction supports performance but does not guarantee a result independent of an athlete's actual fitness.",
+        "Biomechanical technique correction is separate from, and does not replace, the need for a warm-up."
+      ]
+    },
+    {
+      "topic": "fa2_technology",
+      "q": "Lactate testing during a graded training session is primarily used to:",
+      "options": [
+        "Diagnose a suspected soft-tissue injury",
+        "Set athlete-specific training intensity zones based on blood-lactate levels",
+        "Measure an athlete's psychological readiness to compete",
+        "Replace the need for heart-rate monitoring"
+      ],
+      "answer": 1,
+      "explanation": "By sampling blood lactate at increasing exercise intensities, coaches can identify an athlete's lactate threshold and set individualised training zones.",
+      "optionExplanations": [
+        "Lactate testing measures a metabolic response to exercise intensity, not tissue injury.",
+        "✓ Correct. Rising blood-lactate levels at different intensities let coaches identify an athlete's lactate threshold and personalise training zones around it.",
+        "Lactate testing is a physiological measure, not a psychological assessment tool.",
+        "Lactate testing complements heart-rate data rather than replacing it — the two measure different things."
+      ]
+    },
+    {
+      "topic": "fa2_technology",
+      "q": "Which of the following is an example of using virtual reality (VR) to improve athletic performance?",
+      "options": [
+        "A basketball player using a VR headset to rehearse shooting in a simulated arena",
+        "A physiotherapist applying ice to an injured hamstring",
+        "A nutritionist calculating an athlete's carbohydrate requirements",
+        "A referee reviewing a decision using the video assistant referee (VAR) system"
+      ],
+      "answer": 0,
+      "explanation": "VR creates simulated training environments, allowing athletes to rehearse skills such as shooting technique or tactics without the physical strain of a full training session.",
+      "optionExplanations": [
+        "✓ Correct. VR headsets can simulate a competition environment, letting athletes practise skills like shooting without the physical toll of full training.",
+        "Applying ice is a physiological recovery strategy, not a use of virtual reality technology.",
+        "Calculating carbohydrate needs is a nutrition strategy, unrelated to VR.",
+        "VAR is a decision-review technology used by officials, a different application from athlete-facing VR training."
+      ]
+    },
+    {
+      "topic": "fa2_technology",
+      "q": "Wearable GPS devices used during training and competition primarily allow coaches to monitor:",
+      "options": [
+        "An athlete's dietary intake and hydration levels",
+        "Distance covered, speed and workload in real time",
+        "The results of an athlete's most recent drug test",
+        "The specific biomechanical forces acting on a joint"
+      ],
+      "answer": 1,
+      "explanation": "GPS-based wearables track location data to record movement, distance, speed and intensity, helping coaches manage player workload and reduce injury risk.",
+      "optionExplanations": [
+        "Dietary intake is tracked through separate nutrition-monitoring apps, not GPS technology.",
+        "✓ Correct. GPS wearables record movement, distance, speed and intensity in real time, helping monitor workload and inform decisions on rotation, recovery and rest.",
+        "Drug testing results are managed by anti-doping organisations, unrelated to GPS wearable data.",
+        "Detailed joint-force analysis is closer to specialised biomechanics analysis tools (e.g. motion capture) than to standard GPS tracking."
+      ]
+    },
+    {
+      "topic": "fa2_technology",
+      "q": "Video analysis software (e.g. Dartfish) used by coaches is most useful for:",
+      "options": [
+        "Annotating footage to compare technique and highlight areas for improvement",
+        "Calculating an athlete's exact caloric requirements",
+        "Selecting an athlete's competition schedule",
+        "Directly reducing an athlete's heart rate during recovery"
+      ],
+      "answer": 0,
+      "explanation": "Performance analysis software allows coaches to annotate video, compare technique across sessions, and highlight specific areas for correction.",
+      "optionExplanations": [
+        "✓ Correct. Video analysis software lets coaches annotate footage, compare performances and pinpoint specific technique issues to correct.",
+        "Caloric requirements are calculated using nutrition-tracking tools, not video analysis software.",
+        "Competition scheduling is an administrative/training-program decision, not a function of video analysis.",
+        "Video analysis is a monitoring tool — it does not physiologically affect heart rate."
+      ]
+    },
+    {
+      "topic": "fa2_technology",
+      "q": "Which piece of equipment technology is designed specifically to widen access to sport for athletes with a vision impairment?",
+      "options": [
+        "Carbon-fibre running blades",
+        "Audible balls that produce sound and vibration cues",
+        "Smart resistance training machines",
+        "Altitude simulation masks"
+      ],
+      "answer": 1,
+      "explanation": "Audible balls use sound and, in some cases, vibration technology to help athletes with vision impairment track the ball's location and movement during play.",
+      "optionExplanations": [
+        "Carbon-fibre running blades are assistive technology for athletes with a limb difference, not a vision impairment.",
+        "✓ Correct. Audible balls produce consistent, directional sound (and sometimes vibration) so athletes with vision impairment can track and engage with the ball.",
+        "Smart resistance machines adjust training load based on effort — not designed for a sensory impairment.",
+        "Altitude masks simulate high-altitude conditions for endurance training, unrelated to vision impairment."
+      ]
+    },
+    {
+      "topic": "fa2_technology",
+      "q": "A team uses an AI system to automatically track distance covered, speed and fatigue levels for each player during training. This is an example of:",
+      "options": [
+        "A recovery strategy",
+        "Applying artificial intelligence to monitor training load",
+        "A biomechanical principle",
+        "A dietary intervention"
+      ],
+      "answer": 1,
+      "explanation": "Systems such as PlayerMaker use AI-driven sensors to track distance, speed, acceleration and fatigue, helping coaches personalise training and manage workload.",
+      "optionExplanations": [
+        "Tracking training data is a monitoring tool, not itself a recovery strategy such as hydrotherapy or a cool-down.",
+        "✓ Correct. This describes an AI system analysing performance data to inform training decisions, such as identifying fatigue and adjusting load.",
+        "A biomechanical principle (motion, force, balance, fluid mechanics) explains movement itself, not the technology used to record it.",
+        "Tracking distance, speed and fatigue is a performance-monitoring function, not a dietary intervention."
+      ]
+    },
+    {
+      "topic": "fa2_technology",
+      "q": "Which statement about equipment advances and performance is MOST accurate?",
+      "options": [
+        "Advances in materials, such as carbon-fibre plates in running shoes, can improve energy return and reduce injury risk",
+        "Equipment technology has no measurable effect on athletic performance",
+        "All equipment advances are banned under World Anti-Doping Agency rules",
+        "Equipment advances only benefit elite athletes competing in individual sports"
+      ],
+      "answer": 0,
+      "explanation": "Innovations such as carbon-fibre plates, lighter frames and improved cushioning can genuinely improve energy return, comfort and injury prevention across a range of sports.",
+      "optionExplanations": [
+        "✓ Correct. Materials innovations like carbon-fibre plates and improved cushioning systems can improve energy return, comfort and injury prevention.",
+        "Equipment such as improved footwear, bikes and racquets has a documented, measurable effect on performance — this option is factually incorrect.",
+        "Equipment advances are a separate issue from WADA's prohibited substances/methods list; equipment is not banned in the way drugs are.",
+        "Equipment advances such as GPS wearables, smart balls and improved footwear benefit team and individual sports, and recreational as well as elite athletes."
+      ]
+    },
+    {
+      "topic": "fa2_technology",
+      "q": "A key limitation coaches must consider when relying heavily on technology such as GPS and AI analytics is that:",
+      "options": [
+        "The data collected is always completely error-free",
+        "The technology and data still need to be interpreted correctly to inform genuinely useful training decisions",
+        "Technology can fully replace the need for a coach",
+        "Wearable technology eliminates all risk of injury"
+      ],
+      "answer": 1,
+      "explanation": "Technology provides data, but it still requires a knowledgeable coach or practitioner to interpret it correctly and apply it to training and recovery decisions.",
+      "optionExplanations": [
+        "No monitoring technology is completely free from measurement error or limitations — this overstates its reliability.",
+        "✓ Correct. Raw data from GPS, wearables or AI systems only becomes useful once it's correctly interpreted and applied to training or recovery decisions.",
+        "Technology supports, but does not replace, the judgement and expertise of a coach.",
+        "Wearable technology can help manage workload and flag risk factors, but it does not eliminate injury risk entirely."
+      ]
+    },
+    {
+      "topic": "fa2_drugs",
+      "q": "Which of the following is classified as a stimulant that may be used illegally to improve athletic performance?",
+      "options": [
+        "Anabolic steroids",
+        "Amphetamines",
+        "Erythropoietin (EPO)",
+        "Diuretics"
+      ],
+      "answer": 1,
+      "explanation": "Stimulants — including amphetamines, cocaine and caffeine — stimulate the central nervous system, increasing alertness and delaying fatigue.",
+      "optionExplanations": [
+        "Anabolic steroids are a separate category, used to increase muscle size and strength, not to stimulate the central nervous system.",
+        "✓ Correct. Amphetamines are a stimulant, increasing heart rate, alertness and delaying fatigue.",
+        "EPO is a hormone used for blood doping, increasing red blood cell production — a different mechanism from stimulants.",
+        "Diuretics increase fluid loss from the body, often used to \"make weight\" — unrelated to central nervous system stimulation."
+      ]
+    },
+    {
+      "topic": "fa2_drugs",
+      "q": "Erythropoietin (EPO) is used illegally by some endurance athletes because it:",
+      "options": [
+        "Reduces heart rate and induces a calming effect",
+        "Stimulates red blood cell production, increasing the blood's oxygen-carrying capacity",
+        "Increases fluid loss to help athletes make weight",
+        "Numbs pain, allowing athletes to train through injury"
+      ],
+      "answer": 1,
+      "explanation": "EPO stimulates red blood cell production, a form of blood doping that increases oxygen-carrying capacity and can improve endurance performance — but also raises blood viscosity, increasing the risk of clots and stroke.",
+      "optionExplanations": [
+        "Beta blockers, not EPO, lower heart rate and produce a calming effect.",
+        "✓ Correct. EPO increases red blood cell production, improving oxygen delivery to muscles — beneficial for endurance events but risky due to increased blood viscosity.",
+        "Diuretics, not EPO, are used to increase fluid loss for weight-category sports.",
+        "Painkillers, not EPO, are used to mask pain during competition."
+      ]
+    },
+    {
+      "topic": "fa2_drugs",
+      "q": "Beta blockers are sometimes used illegally in sports such as archery, shooting and golf because they:",
+      "options": [
+        "Increase muscle mass and explosive power",
+        "Steady the hands by lowering heart rate and reducing tremor",
+        "Increase red blood cell production",
+        "Mask pain from soft-tissue injuries"
+      ],
+      "answer": 1,
+      "explanation": "Beta blockers lower heart rate and have a relaxing, hand-steadying effect, which can benefit precision sports requiring fine motor control.",
+      "optionExplanations": [
+        "Anabolic steroids, not beta blockers, are used to increase muscle mass and explosive power.",
+        "✓ Correct. By lowering heart rate and reducing tremor, beta blockers can steady the hands — an advantage in precision sports like archery and shooting.",
+        "EPO, not beta blockers, increases red blood cell production.",
+        "Painkillers, not beta blockers, are used to mask injury-related pain."
+      ]
+    },
+    {
+      "topic": "fa2_drugs",
+      "q": "A key health risk specifically associated with anabolic steroid use in female athletes is:",
+      "options": [
+        "Improved cardiovascular endurance",
+        "Masculinisation, including deepening of the voice and facial hair growth",
+        "Increased bone density with no other side effects",
+        "Reduced risk of liver damage compared to male athletes"
+      ],
+      "answer": 1,
+      "explanation": "Because anabolic steroids increase androgenic (masculinising) hormone activity, female athletes are at particular risk of effects such as facial hair growth, voice deepening and infertility.",
+      "optionExplanations": [
+        "Anabolic steroids are not used for, nor associated with, improved cardiovascular endurance — that is more typical of aerobic training adaptations.",
+        "✓ Correct. Steroids' androgenic effects are particularly significant for female athletes, causing masculinising changes such as facial hair and voice deepening.",
+        "Steroid-related bone and joint changes come with other serious risks, such as increased injury vulnerability — this option is misleading.",
+        "Liver damage is a risk of anabolic steroid use regardless of the athlete's sex."
+      ]
+    },
+    {
+      "topic": "fa2_drugs",
+      "q": "The role of the Australian Sports Drug Medical Advisory Committee (ASDMAC) is to:",
+      "options": [
+        "Conduct all in-competition drug testing across Australia",
+        "Assess applications for a Therapeutic Use Exemption (TUE)",
+        "Set the international list of banned substances",
+        "Coach elite athletes on injury rehabilitation"
+      ],
+      "answer": 1,
+      "explanation": "ASDMAC assesses TUE applications against four criteria: medical necessity, no performance benefit beyond normal levels, no reasonable alternative treatment, and that the condition wasn't caused by prior misuse.",
+      "optionExplanations": [
+        "Sport Integrity Australia, not ASDMAC, conducts drug testing in Australia.",
+        "✓ Correct. ASDMAC reviews TUE applications, with supporting medical evidence, against strict criteria before approving an athlete's use of an otherwise-banned medication.",
+        "The World Anti-Doping Agency (WADA), not ASDMAC, sets the international prohibited list.",
+        "ASDMAC's role is regulatory/medical assessment, not athlete coaching or rehabilitation."
+      ]
+    },
+    {
+      "topic": "fa2_drugs",
+      "q": "\"Strict liability\" in anti-doping means that:",
+      "options": [
+        "An athlete is only penalised if they intentionally took a banned substance",
+        "An athlete is responsible for any banned substance found in their body, even if taken accidentally",
+        "Only elite athletes are subject to drug testing",
+        "Coaches, not athletes, are held responsible for a positive test"
+      ],
+      "answer": 1,
+      "explanation": "Under strict liability, an athlete is responsible for any prohibited substance in their body regardless of how it got there, including through a contaminated supplement.",
+      "optionExplanations": [
+        "Strict liability applies regardless of intent — this is precisely what distinguishes it from an intent-based standard.",
+        "✓ Correct. Athletes are held accountable for a positive test even if the banned substance entered their body accidentally, which is why supplement sourcing matters.",
+        "Drug testing applies to recreational and amateur athletes as well as elite athletes, not exclusively the latter.",
+        "Under strict liability, it is the athlete — not the coach — who bears responsibility for a positive test."
+      ]
+    },
+    {
+      "topic": "fa2_drugs",
+      "q": "Which of the following is a genuine limitation of drug testing as an anti-doping strategy?",
+      "options": [
+        "It is inexpensive to run at scale",
+        "It can be costly, amounting to millions of dollars annually, and requires athletes to keep up with an annually-revised prohibited list",
+        "It has completely eliminated doping in professional sport",
+        "It only needs to be conducted once per athlete's career"
+      ],
+      "answer": 1,
+      "explanation": "Sample collection and laboratory analysis are expensive to run at the scale required internationally, and the WADA prohibited list is revised every 1 January, requiring athletes to stay informed.",
+      "optionExplanations": [
+        "Drug testing at an international scale is expensive, not inexpensive — this understates a genuine limitation.",
+        "✓ Correct. The cost of testing and the need to track an annually-updated prohibited list are real, ongoing limitations of the anti-doping system.",
+        "Doping remains a persistent issue in sport despite testing — it has reduced, but not eliminated, the problem.",
+        "Testing is random and ongoing, both in and out of competition, not a single one-off event."
+      ]
+    },
+    {
+      "topic": "fa2_drugs",
+      "q": "Which statement correctly distinguishes legal from illegal drug use in sport?",
+      "options": [
+        "All medications used by athletes are automatically banned",
+        "A drug can be legal for general medical use but still banned in competition without an approved Therapeutic Use Exemption",
+        "Caffeine is banned under the current WADA prohibited list",
+        "Only injectable substances are considered performance-enhancing drugs"
+      ],
+      "answer": 1,
+      "explanation": "Some legal, doctor-prescribed medications contain substances that are banned in competition; without an approved TUE, using them would breach anti-doping rules even though the medication itself is legal.",
+      "optionExplanations": [
+        "Many medications athletes use are not banned at all — this overstates the restriction.",
+        "✓ Correct. A medication can be entirely legal medically, but still prohibited in sport unless a TUE has been approved for genuine medical need.",
+        "Caffeine is a legal, unrestricted stimulant in sport, though athletes are still advised to use it cautiously due to its side effects at high doses.",
+        "Performance-enhancing drugs can be taken in tablet or injected form — method of administration does not define the category."
+      ]
+    },
+    {
+      "topic": "fa2_drugs",
+      "q": "Which of the following best describes an ethical concern around using painkillers to manage a sporting injury?",
+      "options": [
+        "Painkillers always cure the underlying injury completely",
+        "Painkillers can mask pain that signals ongoing damage, and athletes may feel pressured to use them to keep playing",
+        "Painkillers are illegal for all athletes to use under any circumstances",
+        "Painkillers have no effect on an athlete's ability to continue playing"
+      ],
+      "answer": 1,
+      "explanation": "Because pain is the body's warning signal, using painkillers to continue competing risks turning a manageable injury into something more serious, and the decision is often made under pressure from coaches, teammates or the athlete's own career concerns.",
+      "optionExplanations": [
+        "Painkillers manage the symptom of pain — they do not cure the tissue damage causing it.",
+        "✓ Correct. Masking pain risks further injury, and the pressure many athletes face to keep playing raises real questions about how genuinely free that choice is.",
+        "Over-the-counter and appropriately prescribed painkillers are legal for athletes to use — this option is factually incorrect.",
+        "Painkillers can allow an athlete to continue competing despite pain, which is precisely the concern raised about their use."
+      ]
+    },
+    {
+      "topic": "fa2_drugs",
+      "q": "A key argument raised against proposals (such as the \"Enhanced Games\") to remove all doping restrictions from a sporting competition is that:",
+      "options": [
+        "It would have no effect on athlete health outcomes",
+        "It could grant a further competitive advantage to athletes and nations with the greatest access to medical and financial resources",
+        "It would make drug testing easier and cheaper to administer",
+        "All athletes would have identical access to performance-enhancing drugs"
+      ],
+      "answer": 1,
+      "explanation": "Critics argue that removing anti-doping rules would deepen existing inequality, since access to the best (and safest) doping support would still depend heavily on an athlete's financial and medical resources.",
+      "optionExplanations": [
+        "Removing doping restrictions raises serious health-risk concerns for athletes, not a neutral effect.",
+        "✓ Correct. Critics argue this would advantage athletes and nations with the greatest financial and medical resources, deepening existing inequality in sport.",
+        "Removing the ban on doping would eliminate the need for anti-doping testing altogether in that competition, not make it easier or cheaper.",
+        "Access to PEDs, medical supervision and financial resources is not equal across all athletes — this is a central criticism of the proposal."
+      ]
     }
   ],
   "writtenQuestions": [
@@ -3808,6 +4312,112 @@
         "full": "Examines the CHAIN from at least TWO principles → specific physiological adaptations → named performance outcomes, with soccer-specific examples. Uses correct terminology throughout.",
         "partial": "Links one principle to an adaptation OR names adaptations without connecting to principles OR states performance outcomes without explaining the physiological mechanism.",
         "minimal": "Lists principles and adaptations separately with no connection or performance link."
+      }
+    },
+    {
+      "topic": "fa2_biomechanics",
+      "q": "Explain how biomechanics can be applied to improve technique in a sport of your choice. (5 marks)",
+      "answer": "<p><strong>Biomechanics</strong> is the study of the forces acting on the body (kinetics) and the movement the body produces (kinematics), used to analyse and improve technique.</p><p>For example, in a <strong>tennis serve</strong>, a biomechanist can analyse the transfer of weight from the back foot to the front foot. Correctly shifting this weight transfers <strong>force</strong> through the kinetic chain into the racquet, generating greater momentum and racquet-head speed for a more powerful, efficient serve. Refining the timing of shoulder and trunk rotation similarly maximises velocity into the ball.</p><p>Applying these principles allows technique to become more efficient — reducing wasted energy and joint strain — which both improves performance and reduces injury risk, allowing the movement to be sustained over a full match.</p>",
+      "keywords": [
+        "biomechanics",
+        "kinetics",
+        "kinematics",
+        "force",
+        "technique",
+        "efficient",
+        "sustained",
+        "injury"
+      ],
+      "maxMark": 5,
+      "bandDescriptors": {
+        "full": "5/5 — Defines biomechanics correctly (forces + movement), applies it to a specific named sport with concrete technique detail (not just \"correct form\"), and links the improved technique to both performance and injury/sustained-movement outcomes.",
+        "partial": "3-4/5 — Defines biomechanics and gives a sport example, but the technique detail is generic (e.g. \"good technique helps\") rather than specific, or the link to performance/injury outcomes is missing.",
+        "minimal": "1-2/5 — Mentions biomechanics or technique in general terms without a specific sport example or a clear explanation of the biomechanical principle involved."
+      }
+    },
+    {
+      "topic": "fa2_biomechanics",
+      "q": "Describe how a swimmer can apply biomechanical principles to reduce drag and sustain movement. (4 marks)",
+      "answer": "<p><strong>Drag</strong> is the resisting force that opposes a swimmer's forward motion through the water, and minimising it is central to sustaining efficient movement.</p><p>A swimmer can reduce drag by adopting a <strong>streamlined position</strong> — engaging the core and lifting the hips so the body sits higher and flatter in the water — and by keeping the arms and legs close to the body to reduce the joint angle at the shoulders and hips. A <strong>tight kick</strong> with legs close together and toes pointed further reduces splash and resistance, and using a <em>scull</em> (slightly cupped) hand position helps \"catch\" the water for a more effective pull.</p><p>Together, these adjustments lower the energy required to move through the water, reducing fatigue and allowing the swimmer to sustain their pace for longer.</p>",
+      "keywords": [
+        "drag",
+        "streamlined",
+        "hips",
+        "kick",
+        "catch",
+        "energy",
+        "sustained",
+        "fatigue"
+      ],
+      "maxMark": 4,
+      "bandDescriptors": {
+        "full": "4/4 — Defines drag correctly, and gives at least two specific, correctly described technique adjustments (streamlined position, tight kick, catch hand position), linking them to reduced energy expenditure/sustained movement.",
+        "partial": "2-3/4 — Defines drag and gives at least one specific technique adjustment, but detail is limited or the link to sustained movement/energy expenditure is not made.",
+        "minimal": "1/4 — Vague reference to \"good technique\" or \"streamlining\" without defining drag or giving a specific, correct technique adjustment."
+      }
+    },
+    {
+      "topic": "fa2_technology",
+      "q": "To what extent can technology improve performance? Provide examples. (8 marks) <em>(HSC 2024, PDHPE Exam, Section I, Part B, Q31.b)</em>",
+      "answer": "<p>Technology can improve athletic performance to a <strong>significant extent</strong>, though its benefit depends on how well the data or equipment it provides is understood and applied by athletes and coaches.</p><p><strong>Training innovations</strong> such as lactate testing allow coaches to set individualised training zones based on an athlete's own physiology, while GPS wearables and heart-rate monitors record distance, speed and workload in real time — helping manage training load and reduce injury risk. Virtual and augmented reality allow athletes to rehearse skills and scenarios (e.g. a basketball player practising shooting, or a soccer player rehearsing tactics) without the physical toll of full training, and AI systems such as PlayerMaker or TacticAI can personalise training programs and flag early fatigue.</p><p><strong>Equipment advances</strong> also contribute — lighter, more aerodynamic materials such as carbon-fibre bike frames or cushioned, carbon-plated running shoes improve energy return and reduce injury load, while smart racquets and balls with embedded sensors give athletes real-time feedback on technique.</p><p>However, technology's benefit is not unlimited: data is only useful once correctly interpreted by a knowledgeable coach, and equipment access is not equal across all athletes. Overall, though, when used well, technology gives athletes and coaches objective information that supports more precise, individualised training decisions than would otherwise be possible — representing a genuine and significant improvement to performance.</p>",
+      "keywords": [
+        "technology",
+        "GPS",
+        "wearables",
+        "AI",
+        "equipment",
+        "training",
+        "monitoring",
+        "performance",
+        "injury"
+      ],
+      "maxMark": 8,
+      "bandDescriptors": {
+        "full": "7-8/8 — Makes a clear judgement (\"to what extent\"), supports it with specific named examples across at least two categories (training innovations, equipment, monitoring), and acknowledges a genuine limitation before reaching an overall conclusion.",
+        "partial": "4-6/8 — Discusses technology's benefits with some specific examples, but coverage is limited to one category, examples are generic rather than named, or no real judgement/limitation is given.",
+        "minimal": "1-3/8 — General statements that technology \"helps performance\" without specific, named examples or a clear extent-based judgement."
+      },
+      "source": "HSC 2024, PDHPE Exam, Section I, Part B, Q31.b"
+    },
+    {
+      "topic": "fa2_drugs",
+      "q": "Discuss the health implications and ethical considerations of performance-enhancing drug (PED) use in sport. (6 marks)",
+      "answer": "<p>Performance-enhancing drugs carry serious <strong>health implications</strong> that vary by category. Anabolic steroids can cause liver damage, heart disease and, in female athletes, masculinising effects such as facial hair growth. EPO (blood doping) increases the blood's oxygen-carrying capacity but also its viscosity, raising the risk of blood clots and stroke. Diuretics, used to \"make weight\", can cause dehydration and heart or kidney failure.</p><p>These health risks connect directly to <strong>ethical concerns</strong>. PED use undermines <em>fairness of competition</em>, since not every athlete has equal access to these substances or the medical supervision to manage their risks. It raises <em>athlete health and safety</em> concerns where coaches or team doctors pressure athletes to use PEDs or play through masked injury. It threatens the <em>integrity of sport</em> by rewarding artificial enhancement over genuine skill and training, and it can normalise drug use for <em>young athletes</em> who look up to elite competitors.</p><p>Together, these health and ethical dimensions are why sports organisations maintain strict anti-doping rules — the risks are not just physical, but extend to the fairness and integrity of competition itself.</p>",
+      "keywords": [
+        "steroids",
+        "EPO",
+        "diuretics",
+        "health",
+        "fairness",
+        "integrity",
+        "young athletes",
+        "ethical"
+      ],
+      "maxMark": 6,
+      "bandDescriptors": {
+        "full": "6/6 — Names at least two specific PED categories with correct health effects, and covers at least two distinct ethical angles (fairness, health/safety, integrity, influence on young athletes, age) with clear reasoning linking health risk to ethical concern.",
+        "partial": "3-5/6 — Covers health implications and ethical considerations, but with only one specific named drug category, or ethical discussion limited to one angle (e.g. only \"fairness\") without further development.",
+        "minimal": "1-2/6 — Vague reference to PEDs being \"bad for health\" or \"unfair\" without naming specific drug categories or effects."
+      }
+    },
+    {
+      "topic": "fa2_drugs",
+      "q": "Explain the process and purpose of drug testing in sport, including its benefits and limitations. (5 marks)",
+      "answer": "<p>Drug testing (sample collection) is conducted by anti-doping organisations — in Australia, <strong>Sport Integrity Australia</strong> — testing both in- and out-of-competition, with athletes given no advance warning. Testing is random, which increases the chance of catching an athlete who is doping and acts as a deterrent to athletes who might otherwise consider it.</p><p>The <strong>benefits</strong> of testing include protecting the right of athletes to compete in a doping-free environment, ensuring athletes are rewarded for natural ability and training rather than chemical enhancement, and providing a way for clean athletes to prove their performances are genuine.</p><p>However, testing has real <strong>limitations</strong>. It is expensive, costing millions of dollars annually to run at scale internationally. The <strong>World Anti-Doping Agency (WADA)</strong> prohibited list is revised every 1 January, meaning athletes must continually stay informed of what is currently banned. The collection process itself — requiring a same-gender chaperone to witness a urine sample, for example — can also be a confronting experience for athletes.</p>",
+      "keywords": [
+        "Sport Integrity Australia",
+        "WADA",
+        "random",
+        "benefits",
+        "limitations",
+        "cost",
+        "prohibited list"
+      ],
+      "maxMark": 5,
+      "bandDescriptors": {
+        "full": "5/5 — Explains the testing process (random, in/out of competition, named authority), gives at least two genuine benefits and at least two genuine limitations.",
+        "partial": "3-4/5 — Explains the testing process and gives some benefits/limitations, but is one-sided (benefits only, or limitations only) or lacks named organisations.",
+        "minimal": "1-2/5 — Vague statement that \"athletes get drug tested\" without explaining the process, benefits or limitations."
       }
     }
   ],
@@ -5264,12 +5874,12 @@
           "type": "noteGrid",
           "boxes": [
             {
-              "heading": "Biomechanics & recovery",
-              "html": "<ul>\n<li><b>Biomechanics</b> — how muscles, bones, tendons &amp; ligaments produce movement</li>\n<li>Prevents injury &amp; corrects form by analysing technique (e.g. stride length)</li>\n<li><b>Recovery:</b> cool-down (lowers HR, clears lactic acid), hydrotherapy (cold ↓ inflammation, hot ↑ blood flow), relaxation (↓ stress, better sleep)</li>\n<li><b>Tech:</b> wearables/GPS, smart gyms, VR skill practice, video analysis, live data dashboards</li>\n</ul>"
+              "heading": "Biomechanical principles",
+              "html": "<ul>\n<li><b>Motion</b> — linear, angular &amp; general motion: velocity, speed, acceleration, distance, momentum</li>\n<li><b>Balance &amp; stability</b> — keeping the line of gravity within the base of support (centre of gravity, base of support)</li>\n<li><b>Force</b> — Newton's laws, force application, summation of force, force absorption</li>\n<li><b>Fluid mechanics</b> — flotation, buoyancy, drag (fluid resistance), the Magnus effect</li>\n</ul>"
             },
             {
-              "heading": "Types of injury",
-              "html": "<ul>\n<li><b>Direct</b> — from external contact (ball, bat, person); <b>indirect</b> — internal force (sprains, strains)</li>\n<li><b>Soft tissue</b> — muscles, ligaments, fascia (tears, sprains, contusions, abrasions)</li>\n<li><b>Hard tissue</b> — bones/teeth (fractures, dislocations)</li>\n<li><b>Overuse</b> — repetitive stress (tendonitis, bursitis) from poor programming or insufficient rest</li>\n</ul>"
+              "heading": "Applying biomechanics",
+              "html": "<ul>\n<li><b>Running</b> — relaxed shoulders/hands, upright posture, arms bent ~90°, minimise ground-reaction force → less fatigue</li>\n<li><b>Swimming</b> — reduce <b>drag</b>: streamlined body, hips lifted, tight kick, hands \"catch\" the water</li>\n<li><b>Sport-specific</b> — e.g. shifting weight back-to-front in a tennis serve transfers force into racquet speed; reducing rotation load protects a fast bowler's lower back</li>\n<li><b>Functional movement</b> — correct lifting technique (bend at hip, wide base, brace core) protects the spine in everyday tasks and gym work (e.g. CrossFit)</li>\n</ul>"
             }
           ]
         },
@@ -5280,6 +5890,45 @@
           "title": "Biomechanics — good stride vs overstride",
           "caption": null,
           "style": null
+        },
+        {
+          "type": "noteGrid",
+          "boxes": [
+            {
+              "heading": "Physiological recovery",
+              "html": "<ul>\n<li><b>Cool-down</b> — gradually lowers HR, ventilation &amp; blood distribution back to resting; prevents blood pooling; static stretching realigns muscle fibres</li>\n<li><b>Hydrotherapy</b> — <b>CWI</b> (cold water immersion) ↓ inflammation via vasoconstriction, best for DOMS; <b>WWI</b> (warm) ↑ blood flow via vasodilation, relaxes stiff joints; <b>contrast water therapy</b> alternates both to pump blood flow</li>\n<li>Avoid hydrotherapy on a hot, red, inflamed injury — swelling must be controlled first</li>\n</ul>"
+            },
+            {
+              "heading": "Psychological recovery",
+              "html": "<ul>\n<li>Reduces <b>cortisol</b> (the stress hormone), improving focus, sleep quality &amp; emotional resilience</li>\n<li><b>Meditation/mindfulness</b> — regulates the stress response, builds body awareness</li>\n<li>Also used: mental rehearsal, yoga, calming music, aromatherapy, journaling, deep breathing, progressive muscle relaxation (PMR)</li>\n<li>Adequate <b>sleep</b> is regarded as the most important recovery strategy overall — but too much can also cause sluggishness</li>\n</ul>"
+            }
+          ]
+        },
+        {
+          "type": "noteGrid",
+          "boxes": [
+            {
+              "heading": "Training innovations &amp; monitoring",
+              "html": "<ul>\n<li><b>Lactate testing</b> — blood-lactate sampling during graded effort sets athlete-specific training zones</li>\n<li><b>VR/AR</b> — simulate competition environments &amp; visualise scenarios without physical strain</li>\n<li><b>Apps &amp; AI</b> — Strava, TrainingPeaks, Dartfish (video analysis); AI systems like PlayerMaker, Statcast &amp; TacticAI personalise training and flag fatigue</li>\n<li><b>Wearables/GPS</b> — heart rate, distance, speed &amp; workload monitoring in real time</li>\n</ul>"
+            },
+            {
+              "heading": "Equipment advances",
+              "html": "<ul>\n<li>Lighter, more aerodynamic materials (carbon-fibre bikes, foam-cushioned running shoes) improve speed &amp; reduce injury load</li>\n<li><b>Smart equipment</b> — sensor-embedded racquets/balls give real-time technique feedback</li>\n<li><b>Assistive technology</b> — lightweight wheelchairs &amp; audible balls (sound/vibration cues) widen access for athletes with disability</li>\n</ul>"
+            }
+          ]
+        },
+        {
+          "type": "noteGrid",
+          "boxes": [
+            {
+              "heading": "Types of injury",
+              "html": "<ul>\n<li><b>Direct</b> — from external contact (ball, bat, person); <b>indirect</b> — internal force (sprains, strains)</li>\n<li><b>Soft tissue</b> — muscles, ligaments, fascia (tears, sprains, contusions, abrasions)</li>\n<li><b>Hard tissue</b> — bones/teeth (fractures, dislocations)</li>\n<li><b>Overuse</b> — repetitive stress (tendonitis, bursitis) from poor programming or insufficient rest</li>\n</ul>"
+            },
+            {
+              "heading": "Fracture types",
+              "html": "<ul>\n<li><b>Simple (closed)</b> — bone breaks but stays under the skin; <b>compound (open)</b> — bone breaks through the skin</li>\n<li>Named patterns: <b>greenstick</b> (incomplete, bends), <b>spiral</b> (twisting), <b>comminuted</b> (3+ fragments), <b>transverse</b> (straight across), <b>oblique</b></li>\n<li><b>Dislocation</b> — bone displaced from the joint; ligaments stretch/rupture but the bone itself isn't damaged; never relocate it yourself</li>\n<li>A <b>subluxation</b> is a bone momentarily \"popping out\" and returning — still needs rehab even without lasting displacement</li>\n</ul>"
+            }
+          ]
         },
         {
           "type": "imageGrid",
@@ -5312,12 +5961,12 @@
           "type": "noteGrid",
           "boxes": [
             {
-              "heading": "Assessment & soft-tissue management",
+              "heading": "Assessment &amp; soft-tissue management",
               "html": "<ul>\n<li><b>TOTAPS</b> — Talk, Observe, Touch, Active &amp; Passive movement, Skills test</li>\n<li>Sequence: <b>DRSABCD</b> (Danger, Response, Send for help, Airway, Breathing, CPR, Defibrillation — the crisis check) → <b>STOP</b> (Stop, Talk, Observe, Prevent — on-field) → <b>TOTAPS</b> (complete)</li>\n<li><b>RICER</b> for soft tissue — Rest, Ice, Compression, Elevation, Referral — applied in the first 48–72 hours</li>\n<li>Ice ≈ 20 min every 2 hrs to reduce swelling &amp; pain</li>\n<li>Avoid <b>HARM</b> in that time — Heat, Alcohol, Running, Massage — each one increases bleeding/swelling and delays healing</li>\n</ul>"
             },
             {
-              "heading": "Hard tissue, rehab & return",
-              "html": "<ul>\n<li><b>Dislocation</b> — don't relocate; immobilise, ice, seek help</li>\n<li><b>Fracture</b> — immobilise (splint/sling), control bleeding, call emergency; RICER only after clearance</li>\n<li><b>Rehab</b> — progressive mobilisation → graduated exercise → modified training; cold early, heat later</li>\n<li><b>Return-to-play</b> — medical clearance, functional testing, monitor re-injury; physically <i>and</i> psychologically ready</li>\n</ul>"
+              "heading": "Hard tissue, rehab &amp; return",
+              "html": "<ul>\n<li><b>Dislocation</b> — don't relocate; immobilise, ice, seek help</li>\n<li><b>Fracture</b> — immobilise (splint/sling), control bleeding, call emergency; RICER only after clearance</li>\n<li><b>Rehab</b> — progressive mobilisation → graduated exercise → modified training; cold early, heat later</li>\n<li><b>Cold options</b> — ice massage, cold-water immersion, cold sprays/gels (first ~4 days); <b>heat options</b> — moist heat packs, whirlpool/contrast baths, ultrasound, infrared (once bleeding has stopped, ~48 hrs+)</li>\n<li><b>Return-to-play</b> — medical clearance, functional testing, monitor re-injury; physically <i>and</i> psychologically ready</li>\n</ul>"
             }
           ]
         },
@@ -5342,11 +5991,11 @@
           "boxes": [
             {
               "heading": "Rehabilitation stages (in order)",
-              "html": "<ul>\n<li><b>Progressive mobilisation</b> — gently restore range of movement (active by the athlete, or passive by a practitioner); <i>not</i> during the acute inflammatory phase, and stay pain-free</li>\n<li><b>Graduated exercise</b> — static &amp; PNF stretching, then conditioning using <b>overload</b> to rebuild strength and prevent <b>muscle atrophy</b></li>\n<li><b>Total body fitness</b> — rebuild all muscle groups &amp; energy systems (pool work, cycling ergometer, light jogging, weights)</li>\n<li><b>Training</b> — build sport-specific skills back to pre-injury level; complete once a full session is done pain-free</li>\n</ul>"
+              "html": "<ul>\n<li><b>Progressive mobilisation</b> — gently restore range of movement (active by the athlete, or passive by a practitioner); <i>not</i> during the acute inflammatory phase, and stay pain-free</li>\n<li><b>Graduated exercise</b> — static &amp; PNF stretching, then conditioning using <b>overload</b> to rebuild strength and prevent <b>muscle atrophy</b></li>\n<li><b>PNF stretching in rehab</b> — contract the target muscle 3–5s, relax, then stretch further 10–30s (e.g. hamstring, calf) — used within graduated exercise</li>\n<li><b>Total body fitness</b> — rebuild all muscle groups &amp; energy systems (pool work, cycling ergometer, light jogging, weights)</li>\n<li><b>Training</b> — build sport-specific skills back to pre-injury level; complete once a full session is done pain-free</li>\n</ul>"
             },
             {
-              "heading": "Return-to-play & ethics",
-              "html": "<ul>\n<li><b>Cold early, heat later</b> — cold limits internal bleeding/swelling; heat (once bleeding stops) boosts blood flow &amp; relaxes muscle for chronic tightness</li>\n<li><b>Readiness indicators</b> — elasticity, strength, mobility, pain-free, and <b>balance on the injured limb</b></li>\n<li><b>Psychological readiness</b> — confidence rebuilt via sport-specific tests (e.g. beep test) &amp; a sports psychologist</li>\n<li><b>Ethics</b> — painkillers mask pain (a damage warning) → further injury &amp; prolonged healing; beware <b>pressure to participate</b></li>\n</ul>"
+              "heading": "Return-to-play &amp; ethics",
+              "html": "<ul>\n<li><b>Readiness indicators</b> — elasticity, strength, mobility, pain-free, and <b>balance on the injured limb</b></li>\n<li><b>Named RTP tests</b> — Illinois Agility Test (agility), vertical jump (power), grip strength, circumduction test (shoulder ROM) — chosen to match the injured area &amp; sport</li>\n<li><b>Psychological readiness</b> — confidence rebuilt via sport-specific tests (e.g. beep test) &amp; a sports psychologist</li>\n<li><b>Ethics</b> — painkillers mask pain (a damage warning) → further injury &amp; prolonged healing; beware <b>pressure to participate</b></li>\n</ul>"
             }
           ]
         },
@@ -5354,19 +6003,32 @@
           "type": "noteGrid",
           "boxes": [
             {
-              "heading": "Drug use — health & ethical considerations",
-              "html": "<ul>\n<li>Performance-enhancing drugs (steroids, stimulants, blood doping) can carry serious health risks — heart strain, hormonal disruption, dependency</li>\n<li>Painkillers let an athlete play through injury but mask the body's damage warning → risk of a worse, prolonged injury</li>\n<li>Ethical issue: drug use undermines fair competition and pressures other athletes to use them too, just to keep up</li>\n</ul>"
+              "heading": "Performance-enhancing drugs",
+              "html": "<ul>\n<li><b>Stimulants</b> — amphetamines, cocaine, ecstasy, ritalin, nicotine, caffeine — ↑ alertness &amp; delay fatigue; risk: ↑ heart rate, anxiety, impaired fine motor skill</li>\n<li><b>Anabolic steroids</b> — ↑ muscle size/strength/recovery; risk: liver damage, heart disease, masculinisation in women</li>\n<li><b>Human growth hormone (HGH)</b> — ↑ muscle size, mobilises fat for energy; risk: gigantism, diabetes, disfigurement</li>\n<li><b>EPO</b> (blood doping) — ↑ red blood cells &amp; oxygen carriage; risk: blood clots, stroke, ↑ blood viscosity</li>\n<li><b>Beta blockers</b> — steady the hands in precision sports (archery, shooting, golf); risk: low blood pressure, fatigue</li>\n<li><b>Diuretics</b> — used to \"make weight\"; risk: dehydration, heart &amp; kidney failure; also banned as a masking agent</li>\n</ul>"
             },
             {
+              "heading": "Ethical considerations",
+              "html": "<ul>\n<li><b>Fairness</b> — PEDs create an uneven playing field for athletes who can't or won't access them</li>\n<li><b>Athlete health &amp; safety</b> — pressure from coaches/team doctors to use PEDs or to play through pain</li>\n<li><b>Influence on young athletes</b> — elite PED use can normalise drugs over hard work for developing athletes</li>\n<li><b>Integrity of sport</b> — undermines competition based on skill, training &amp; effort</li>\n<li><b>Age</b> — younger bodies are more vulnerable to PED harm and to pressure from sponsors/peers</li>\n</ul>"
+            }
+          ]
+        },
+        {
+          "type": "noteGrid",
+          "boxes": [
+            {
               "heading": "Drug testing",
-              "html": "<ul>\n<li>The <b>World Anti-Doping Agency (WADA)</b> sets the banned-substance list; in Australia, <b>Sport Integrity Australia</b> carries out the testing</li>\n<li>A <b>Therapeutic Use Exemption (TUE)</b> lets an athlete use an otherwise-banned medication for a genuine diagnosed medical condition, if approved in advance</li>\n<li>Testing happens both in and out of competition, including biological passports that track markers over time</li>\n<li><b>Strict liability</b> — athletes are responsible for anything found in their body, even if the banned substance was taken accidentally (e.g. in a contaminated supplement)</li>\n</ul>"
+              "html": "<ul>\n<li><b>WADA</b> sets the banned-substance list (refreshed every 1 January); in Australia, <b>Sport Integrity Australia</b> carries out testing, in- and out-of-competition</li>\n<li>A <b>Therapeutic Use Exemption (TUE)</b> is approved only if: it's medically necessary, doesn't improve performance beyond normal levels, no reasonable alternative treatment exists, and the condition wasn't caused by prior misuse</li>\n<li><b>Strict liability</b> — athletes are responsible for anything found in their body, even if it was taken accidentally (e.g. a contaminated supplement)</li>\n<li><b>Limitations</b> — testing is expensive (millions of dollars a year), and athletes must track an annually-changing prohibited list</li>\n</ul>"
+            },
+            {
+              "heading": "Painkillers &amp; the doping line",
+              "html": "<ul>\n<li>Over-the-counter painkillers (e.g. paracetamol) are legal; prescription painkillers by injection are more concerning — they mask the body's damage warning</li>\n<li>Playing through masked pain risks turning a manageable injury into a worse, prolonged one</li>\n<li>Anti-inflammatories/painkillers taken for genuine medical treatment can blur into performance enhancement — a real ethical grey area covered by the TUE process</li>\n</ul>"
             }
           ]
         },
         {
           "type": "examTip",
           "label": "",
-          "html": "Know the acronyms cold — <b>TOTAPS, DRSABCD, RICER</b> — and the order they're used in. Never relocate a dislocation. Return-to-play answers must include <b>both</b> physical (functional testing) <b>and</b> psychological readiness. For drug use, cover all three angles the syllabus wants: health implications, ethics, and drug testing — not just painkillers."
+          "html": "Know the acronyms cold — <b>TOTAPS, DRSABCD, RICER</b> — and the order they're used in. Never relocate a dislocation. Return-to-play answers must include <b>both</b> physical (functional testing) <b>and</b> psychological readiness. For biomechanics questions, name the actual principle (motion / balance &amp; stability / force / fluid mechanics) rather than just saying 'technique'. For drug use, cover all three angles the syllabus wants — health implications, ethics, and drug testing — and use a named example (e.g. steroids, EPO) rather than a vague 'PEDs'."
         }
       ],
       "revisionQuestions": [
@@ -5379,36 +6041,76 @@
           "a": "Applying physics principles like force, speed and energy conservation to technique — for example correcting overstriding in a running gait, or adjusting shoulder angle in a tennis serve — reduces wasted energy, improving performance and injury prevention together."
         },
         {
+          "q": "Outline the four biomechanical principles used to analyse sporting movement.",
+          "a": "Motion (linear, angular and general motion — velocity, speed, acceleration, momentum), balance and stability (keeping the line of gravity within the base of support), force (Newton's laws, force application, summation and absorption), and fluid mechanics (flotation, buoyancy, drag and the Magnus effect)."
+        },
+        {
+          "q": "Describe how reducing drag improves a swimmer's performance.",
+          "a": "Drag is the resisting force opposing forward motion through water. A swimmer reduces it by keeping a streamlined body position with hips lifted, keeping arms and legs close to the body, kicking tightly with pointed toes, and using a 'catch' hand position — all of which lower energy expenditure and sustain movement for longer."
+        },
+        {
           "q": "Justify recovery strategies used for sustained movement and performance.",
-          "a": "Physiological strategies like a cool-down gradually lower heart rate and clear lactic acid, reducing blood pooling and stiffness. Psychological strategies like progressive muscle relaxation lower stress hormones and cognitive fatigue. Together they let an athlete recover fully between sessions rather than accumulating fatigue."
+          "a": "Physiological strategies like a cool-down gradually lower heart rate and clear lactic acid, reducing blood pooling and stiffness. Psychological strategies like progressive muscle relaxation lower cortisol and cognitive fatigue. Together they let an athlete recover fully between sessions rather than accumulating fatigue."
         },
         {
           "q": "Describe how hydrotherapy aids recovery.",
-          "a": "Cold water immersion reduces inflammation and soreness; contrast water therapy alternates hot and cold to stimulate circulation via vasoconstriction and vasodilation; warm water or thermal spa relaxes muscles and supports mental recovery."
+          "a": "Cold water immersion causes vasoconstriction, reducing inflammation and soreness — particularly effective for DOMS. Warm water immersion causes vasodilation, increasing blood flow and relaxing stiff joints. Contrast water therapy alternates both to pump blood flow through the tissue. It should not be used on a hot, red, inflamed injury."
+        },
+        {
+          "q": "Explain why psychological recovery strategies matter as much as physiological ones.",
+          "a": "Hard training raises cortisol and can leave athletes with low concentration, low motivation and higher anxiety. Techniques like meditation, deep breathing and progressive muscle relaxation lower cortisol, improve sleep quality and focus, and help prevent burnout — meaning an athlete who recovers physically but not mentally is still at risk of underperforming or overtraining."
+        },
+        {
+          "q": "Discuss how technology can be used to improve training and performance.",
+          "a": "Wearables and GPS track heart rate, distance and workload in real time; apps like Strava and TrainingPeaks let athletes monitor and adjust training; AI systems such as PlayerMaker and TacticAI personalise programs and flag fatigue; and tools like Dartfish support video-based technique correction — together giving coaches and athletes objective data instead of guesswork."
+        },
+        {
+          "q": "Explain how equipment advances can both improve performance and support inclusion in sport.",
+          "a": "Lighter, more aerodynamic materials (carbon fibre, cushioned foam soles) reduce energy loss and injury load for able-bodied athletes, while assistive technology — lightweight wheelchairs and audible balls with sound or vibration cues — removes physical and sensory barriers so athletes with disability can participate and compete more effectively."
         },
         {
           "q": "Explain how injuries are classified, with examples.",
-          "a": "Injuries are classified as direct (caused by an external force, e.g. a tackle) or indirect (caused by internal stress, e.g. a hamstring tear from sprinting), and as soft-tissue (RICER-managed, e.g. a sprain) or hard-tissue (e.g. a fracture, requiring immediate medical referral and never relocated on-field)."
+          "a": "Injuries are classified as direct (caused by an external force, e.g. a tackle) or indirect (caused by internal stress, e.g. a hamstring tear from sprinting), and as soft-tissue (RICER-managed, e.g. a sprain) or hard-tissue (e.g. a fracture, requiring immediate medical referral and never relocated on-field). Overuse injuries like tendonitis are a third category, caused by repetitive stress rather than a single incident."
+        },
+        {
+          "q": "Distinguish between a simple and a compound fracture, and name two other fracture patterns.",
+          "a": "A simple (closed) fracture breaks the bone but it stays under the skin; a compound (open) fracture breaks through the skin, carrying a higher infection risk. Other named patterns include greenstick (an incomplete break where the bone bends), spiral (from a twisting force), comminuted (three or more fragments), and transverse (a straight break across the bone)."
         },
         {
           "q": "Describe key rehabilitation stages after an injury.",
-          "a": "Progressive mobilisation restores range of movement pain-free; graduated exercise rebuilds strength using overload while avoiding muscle atrophy; total body fitness rebuilds general conditioning; training returns sport-specific skills, complete once a full pain-free session is achieved."
+          "a": "Progressive mobilisation restores range of movement pain-free; graduated exercise (including PNF stretching) rebuilds strength using overload while avoiding muscle atrophy; total body fitness rebuilds general conditioning; training returns sport-specific skills, complete once a full pain-free session is achieved."
         },
         {
           "q": "Justify the need for both RICER and HARM guidance in the first 48–72 hours.",
           "a": "RICER (Rest, Ice, Compression, Elevation, Referral) actively limits swelling and bleeding, while HARM (avoid Heat, Alcohol, Running, Massage) prevents actions that would worsen bleeding and swelling during the same window — together they cover both what to do and what to avoid."
         },
         {
+          "q": "Explain how physical tests are used to determine an athlete's readiness to return to play.",
+          "a": "Tests are chosen to match the injured area and sport — for example the Illinois Agility Test for a knee-ligament injury, a vertical jump for muscular power, grip strength for an upper-limb injury, or a circumduction test for a shoulder. Results are compared against a pre-injury baseline or the uninjured limb, and the athlete must be pain-free and demonstrate near-full strength and range of motion before being cleared."
+        },
+        {
           "q": "Discuss the ethical considerations of performance-enhancing drug use.",
-          "a": "PED use undermines fair competition and can pressure other athletes to use them just to stay competitive. It also sends a harmful message to young, impressionable athletes that success requires artificial enhancement rather than legitimate training."
+          "a": "PED use undermines fair competition, since not all athletes can or will access them, and pressures other athletes to use them just to stay competitive. It also raises athlete health and safety concerns, particularly where coaches or team doctors apply pressure, and sends a harmful message to young, impressionable athletes that success requires artificial enhancement rather than legitimate training."
+        },
+        {
+          "q": "Outline the health risks associated with three different categories of performance-enhancing drugs.",
+          "a": "Anabolic steroids can cause liver damage, heart disease and masculinisation in female athletes. EPO (blood doping) increases blood viscosity, raising the risk of blood clots and stroke. Diuretics cause dehydration and can lead to heart and kidney failure, despite being used to make weight in weight-category sports."
         },
         {
           "q": "Describe WADA's role in drug testing.",
-          "a": "The World Anti-Doping Agency sets the list of prohibited substances and methods internationally. In Australia, Sport Integrity Australia carries out the actual testing — in- and out-of-competition, random and targeted, including biological passports that track markers over time."
+          "a": "The World Anti-Doping Agency sets the list of prohibited substances and methods internationally, refreshed every 1 January. In Australia, Sport Integrity Australia carries out the actual testing — in- and out-of-competition, random and targeted, including biological passports that track markers over time."
         },
         {
           "q": "Explain the concept of strict liability in drug testing.",
           "a": "Athletes are held responsible for any banned substance found in their body, even if it was taken accidentally — such as through a contaminated supplement — meaning there's no automatic excuse for a positive test. This is why a food-first, batch-tested approach to supplements matters."
+        },
+        {
+          "q": "Outline the criteria used to approve a Therapeutic Use Exemption (TUE).",
+          "a": "A TUE is only approved if the medication is medically necessary, does not improve the athlete's performance beyond normal levels, no other reasonable treatment exists, and the medical issue was not caused by the athlete's own prior misuse of the medication."
+        },
+        {
+          "q": "Discuss why using painkillers to manage an injury raises both a health and an ethical concern.",
+          "a": "Health: painkillers mask pain that signals tissue or organ damage, so an athlete can worsen an injury without realising it, extending recovery time or causing permanent damage. Ethics: the pressure to use painkillers to keep playing important matches usually comes from coaches, teammates or the athlete's own career pressure, raising questions about whether the choice is genuinely free or coerced."
         }
       ]
     }
