@@ -5873,8 +5873,8 @@
           "type": "noteGrid",
           "boxes": [
             {
-              "heading": "Biomechanical principles",
-              "html": "<ul>\n<li><b>Motion</b> — linear, angular &amp; general motion: velocity, speed, acceleration, distance, momentum</li>\n<li><b>Balance &amp; stability</b> — keeping the line of gravity within the base of support (centre of gravity, base of support)</li>\n<li><b>Force</b> — Newton's laws, force application, summation of force, force absorption</li>\n<li><b>Fluid mechanics</b> — flotation, buoyancy, drag (fluid resistance), the Magnus effect</li>\n</ul>"
+              "heading": "What biomechanics is",
+              "html": "<ul>\n<li><b>Biomechanics</b> — the study of human movement: how and why we move</li>\n<li><b>Kinetics</b> — the forces acting on the body; <b>kinematics</b> — the movement those forces produce</li>\n<li>Examines how muscles, bones, tendons &amp; ligaments work together to produce movement</li>\n<li>Used in sport to analyse technique closely, to <b>reduce injury risk</b> and <b>improve performance</b> — the two go together</li>\n<li>Any force that exceeds the limits of the tissue causes injury — e.g. decelerating while pivoting drives the tibia forward beyond what the ACL can absorb → rupture</li>\n<li>Correct technique → efficient movement → less wasted energy, so movement can be <b>sustained</b> for longer</li>\n</ul>"
             },
             {
               "heading": "Applying biomechanics",
@@ -5957,12 +5957,8 @@
           "type": "noteGrid",
           "boxes": [
             {
-              "heading": "Training innovations &amp; monitoring",
-              "html": "<ul>\n<li><b>Lactate testing</b> — blood-lactate sampling during graded effort sets athlete-specific training zones</li>\n<li><b>VR/AR</b> — simulate competition environments &amp; visualise scenarios without physical strain</li>\n<li><b>Apps &amp; AI</b> — Strava, TrainingPeaks, Dartfish (video analysis); AI systems like PlayerMaker, Statcast &amp; TacticAI personalise training and flag fatigue</li>\n<li><b>Wearables/GPS</b> — heart rate, distance, speed &amp; workload monitoring in real time</li>\n</ul>"
-            },
-            {
               "heading": "Equipment advances",
-              "html": "<ul>\n<li>Lighter, more aerodynamic materials (carbon-fibre bikes, foam-cushioned running shoes) improve speed &amp; reduce injury load</li>\n<li><b>Smart equipment</b> — sensor-embedded racquets/balls give real-time technique feedback</li>\n<li><b>Assistive technology</b> — lightweight wheelchairs &amp; audible balls (sound/vibration cues) widen access for athletes with disability</li>\n</ul>"
+              "html": "<ul>\n<li>Lighter, more aerodynamic <b>materials</b> (carbon-fibre bikes, foam-cushioned running shoes) improve speed &amp; reduce injury load</li>\n<li><b>Assistive technology</b> — lightweight wheelchairs &amp; audible balls (sound/vibration cues) widen access for athletes with disability</li>\n</ul>"
             }
           ]
         },
