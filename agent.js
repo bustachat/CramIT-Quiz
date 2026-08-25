@@ -53,7 +53,7 @@ const MAX_PAPERS_PER_RUN = 3; // keeps the first run (backlog) from ballooning
 // `file` must match subjects/{file}; `searchName` is what NESA calls it.
 const SUPPORTED_SUBJECTS = {
   'mathematics-standard-2': { searchName: 'Mathematics Standard 2', file: 'mathematics-standard-2.json' },
-  'pdhpe-hms':              { searchName: 'PDHPE', file: 'pdhpe-hms.json' },
+  'health-movement-science': { searchName: 'Health and Movement Science', file: 'health-movement-science.json' },
   'multimedia':             { searchName: 'Industrial Technology', file: 'multimedia.json' },
   'vet-construction':       { searchName: 'Construction Examination', file: 'vet-construction.json' },
 };
@@ -526,7 +526,7 @@ function selftest() {
   check('validate_subjects.cjs passes on current repo', runRepoValidator());
 
   // Supported subject files all exist, parse, and have questions.
-  // (Note: pdhpe-hms has no year fields — HMS is topic-based — so
+  // (Note: health-movement-science has no year fields — HMS is topic-based — so
   // existingYears() legitimately returns an empty set for it.)
   for (const s of Object.values(SUPPORTED_SUBJECTS)) {
     check(`subjects/${s.file} exists + has mcQuestions`, (() => {
