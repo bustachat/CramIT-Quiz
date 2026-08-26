@@ -3,6 +3,14 @@
   "name": "Industrial Technology — Multimedia",
   "icon": "🎬",
   "accentColor": "#5B7FA6",
+  "omittedQuestions": [
+    {
+      "year": 2021,
+      "qNum": 12,
+      "marks": 2,
+      "reason": "Drawing task — the paper asks the student to draw a digital audio wave pattern, and the marking guidelines award the marks for sketching a stepped waveform. The engine cannot present or mark a drawn diagram, so the question is deliberately absent from the bank rather than missing by oversight. Same class as mathematics-standard-2 2020 Q24 part (a), which is recorded with omittedParts. This is why 2021 Section II holds 13 of the paper's 15 marks."
+    }
+  ],
   "mcQuestions": [
     {
       "year": 2020,

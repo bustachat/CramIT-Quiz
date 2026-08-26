@@ -910,3 +910,111 @@ caught by reading stems — the regex used here is a good net, not a proof. The 
 `variant: true` Maths graph questions describe graph shapes in text rather than showing
 them; that is a content-quality choice for authored variants, not a gap against a paper,
 and was left alone.
+
+---
+
+## 2026-08-27 (later still) — Written-answer key built and enforced in CI
+
+The second answer-key table, carried forward from the previous handover. **203 written
+questions across three subjects now check against the official marks on every push,
+0 wrong, 0 unverifiable.** HMS is excluded and always will be until after the 2026 HSC —
+it has no past papers.
+
+### What is enforced, and what deliberately is not
+
+The guidelines lay every part out as `Question N (a)` → a `Criteria`/`Marks` table →
+`Sample answer:`. Both the **maximum mark** and the official **sample answer** are
+extracted and committed; only the **mark** is enforced. Prose cannot be compared for
+equality, so the sample answer is stored as the source a reviewer needs when a bank
+answer looks wrong — not as an assertion. (Maths sample answers extract as mangled
+equation text, e.g. `x2 102 82 = + 2 = 164`, since the layout is mathematical. Fine for
+reference, useless for matching — another reason not to enforce it.)
+
+### The join — aggregate to the question, don't match part-for-part
+
+The handover's warning (`qNum` alone is not a sufficient key, because 2020 and 2021 Maths
+split multi-part questions that 2022–2025 merge) is real, and the fix is to stop trying to
+pair rows. The bank stores parts three different ways, sometimes in one subject:
+
+    "qNum": 16          one entry covering every part of Q16
+    "qNum": "23(a)"     one entry per part
+    "qNum": "19(b)(i)"  one entry per sub-part
+
+Each bank `qNum` is parsed into a base number plus a part path, and its expected marks are
+the **sum of every official leaf part whose path starts with that path**. `16` sums all of
+Q16's parts; `19(b)` sums (b)(i) and (b)(ii); `19(b)(i)` matches that leaf alone. Merged
+and split storage reconcile under one rule, and the 2020/2021-vs-later difference stops
+mattering. `omittedParts` marks are added back before comparing.
+
+### Three extraction bugs, each caught by a total that didn't reconcile
+
+The first run looked plausible and was wrong in three places. Every one was found by
+checking totals against the papers' own stated section marks, not by reading output.
+
+- **A naive digit regex over the block over-counts** (the handover said so; confirmed at
+  117 for 2020 Maths against a true 85). The marks live in a right-hand column at x ≈ 485,
+  so they are read **positionally** instead.
+- **`Answers could include:` is the other spelling of `Sample answer:`.** Only stopping on
+  the latter let the marks scan run into the answer body and swallow the page footer —
+  `Page 18 of 23` gave 2022 Maths a phantom 23-mark Q35 (104 marks for the paper).
+- **Extended-response criteria use mark *ranges*, and the text layer splits them.**
+  Multimedia Section III prints `9–10`, `7–8`, … and `9–10` comes out as two words on the
+  same line (`9–1` + `0`, the same fragmentation that renders `Marks` as `Mar` + `ks`).
+  The marks column is now joined left-to-right per line before parsing, and a range takes
+  its upper bound. Before this, Section III scored 6 instead of 10.
+- A fourth, related: VET 2021 read **2077 marks**, because the last part had no answer
+  heading at all, so its block ran to the end of the document and picked the year `2021`
+  out of the trailing mapping grid. Filtering page furniture from the criteria scan (not
+  just the answer text) fixed it.
+
+### The totals reconcile exactly, against an independent source
+
+Every paper, every year, matches the marks the exam paper's own front page states:
+
+| Subject | Paper's front page | Extracted |
+|---|---|---|
+| Mathematics Standard 2 | Section II — 85 | **85** ×6 years |
+| Multimedia | II 15 + III 15 = 30 | **30** ×6 years |
+| VET Construction | II 35 + III 15 + IV 15 = 65 | **65** ×5 years |
+
+This is the check that matters: it is not self-consistency, it is agreement with a
+document the extractor never reads.
+
+### A coverage gap found, and a way to record it
+
+`check_written_key.cjs` reports correctness, not coverage — VET's written bank is a
+deliberate *selection* (2021 holds 2 entries against a 35-mark Section II), so a
+paper-total assertion would fail by design. Coverage was checked separately, once:
+**Multimedia 2021 Q12 (2 marks)** is the only gap in an otherwise complete six-year
+Section II port.
+
+It turned out to be a *legitimate* omission that had simply never been recorded: the paper
+asks the student to **draw** a digital audio wave pattern, and the guidelines award the
+marks for "sketches a diagram of a stepped waveform". The engine cannot present or mark a
+drawn diagram — exactly the class of Maths 2020 Q24(a), which *is* recorded via
+`omittedParts`. There was no way to record it, because `omittedParts` hangs off a question
+that exists and this whole question is absent.
+
+Added a subject-level **`omittedQuestions`** key (multimedia.json) so the gap lives in the
+data rather than only in prose, per §10 rule 5. The checker validates each declaration
+rather than trusting it: the question must exist in the official key, the declared marks
+must match it, and it must **not** also be present in the bank — so a stale declaration
+cannot quietly excuse nothing. `validate_subjects.cjs` reads only known keys, so the new
+top-level key needed no validator change.
+
+### Verified
+
+`node scripts/check_written_key.cjs` → 203 checked, 0 wrong, 0 unverifiable, 1 declared
+omission. **Negative controls were run, because a check that has never failed is not known
+to work:** perturbing a merged-part question (2020 Q16 → 3), a split-part question
+(2020 Q23(a) → 5), and removing 2020 Q24's `omittedParts` produced exactly three failures
+with the right expected values and exit 1; corrupting the declared omission's marks
+(2 → 7) produced the fourth. All restored afterwards. Full local CI green: validate
+(MC=646, Written=243, 0 issues), answer key 225/0/0, written 203/0/0, all Cloudflare
+functions parse, `npm test` 67 passed / 0 failed. `validate.yml` gains one step; the YAML
+parses and the step order is correct.
+
+**Next.** Sample answers are committed but unenforced — the obvious follow-up is a
+reviewer-facing diff of bank `answer` against the official `sampleAnswer` for the subjects
+where the extraction is clean prose (Multimedia and VET; Maths is mathematical layout and
+extracts badly). That is a human-judgement pass, not a CI check.

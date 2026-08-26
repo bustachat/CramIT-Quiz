@@ -31,6 +31,12 @@ jobs:
       - name: Check HSC answers against the official marking guidelines
         run: node scripts/check_answer_key.cjs
 
+      # The written companion to the step above: official maximum marks per question
+      # part, from data/answer-key/written/. A wrong mark value is not cosmetic — it
+      # drives scoring and the AI marking prompt. Also reads no PDFs.
+      - name: Check written-question marks against the official marking guidelines
+        run: node scripts/check_written_key.cjs
+
       - name: Syntax-check Cloudflare Pages Functions
         run: |
           set -e
