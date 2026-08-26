@@ -118,7 +118,7 @@ Price IDs are constants in `create-checkout.js` and `update-subscription.js` (th
 Two workflows in `.github/workflows/`:
 | Workflow | Trigger | What it does |
 |---|---|---|
-| `validate.yml` | Every push + PR | Validates subject JSON (`scripts/validate_subjects.cjs`) + syntax-checks Cloudflare functions |
+| `validate.yml` | Every push + PR | Validates subject JSON (`scripts/validate_subjects.cjs`), **checks HSC answers against the official key** (`scripts/check_answer_key.cjs`), syntax-checks Cloudflare functions, runs billing tests |
 | `content-agent.yml` | Nightly `0 13 * * *` (11pm Sydney) + manual Run-workflow button | Runs `agent.js` (NESA discovery → paper triage → question generation), opens a PR on an `agent/content-*` branch — **never pushes to main** |
 | `security-scan.yml` | Push/PR to `main` + weekly Monday `0 6 * * 1` + manual dispatch | Semgrep + Trivy (report-only, SARIF → Security → Code scanning tab) and Gitleaks (**blocking** — fails the build on a hardcoded secret; repo is public and holds live Stripe integration, no staging gate before main auto-deploys) |
 
@@ -171,6 +171,11 @@ cramit-quiz/
 ├── written_q_extracts.json     ← Pre-extracted NESA PDF text/blocks for written questions — read this, never re-extract from PDFs
 ├── diagram_audit.json          ← Written-stimulus image audit results — permanent reference
 ├── audit_*.py / crop_*.py / fix_*.py / update_written_images.py ← audit/crop scripts of record (see docs/HISTORY.md for what each was for)
+├── data/
+│   └── answer-key/             ← ✅ GROUND TRUTH — official HSC answers, extracted from the NESA
+│       └── mathematics-standard-2.json  ← 90 MC answers 2020–2025 + provenance. Immutable; never
+│                                  hand-edit — regenerate with scripts/build_answer_key.py.
+│                                  NOT in subjects/ (validate_subjects.cjs enumerates that folder).
 ├── db/
 │   └── schema.sql              ← Supabase tables + RLS + triggers (incl. user_progress + entitlement trigger)
 ├── migrations/
@@ -180,6 +185,12 @@ cramit-quiz/
 │   ├── extract_maths_diagrams.py      ← PDF diagram extractor v3 (PyMuPDF + Pillow + calibration)
 │   ├── extract_written_diagrams.py    ← Written-question stimulus extractor
 │   ├── validate_subjects.cjs          ← Structural validation for all subject JSON (also runs in CI)
+│   ├── build_answer_key.py            ← Extracts official MC answer keys from NESA marking-guideline
+│   │                                    PDFs (page 1 only) → data/answer-key/. Run locally; needs the
+│   │                                    PDFs, which are NOT in the repo, so CI can never regenerate.
+│   ├── check_answer_key.cjs           ← CI: compares original (non-variant) MC answers against the
+│   │                                    committed key. Reads no PDFs. Questions without `qNum` are
+│   │                                    reported UNVERIFIABLE, never passed silently.
 │   ├── diagram_registry.json          ← Crop coordinates for MC diagram images
 │   ├── written_diagram_registry.json  ← Crop registry for written stimulus images
 │   ├── process_maths_backlog.js       ← Backlog processor for question generation
@@ -391,6 +402,31 @@ All NESA PDF text/block positions for written questions are pre-extracted into `
 ### Exam citations — verify against the actual paper, never a third-party claim
 Never label a question with an HSC/NESA citation (year, section, question number, marks) on the strength of a workbook, textbook or tutoring handout. Papers are local at `NESA Exams Folder/{subject}/` and have real text layers (`python -c "import fitz"` extracts them; only the photographed workbooks are image-only). Open the paper and confirm **all four** of section, question number, marks and wording. If any don't match, drop the citation — the question is still fine as ordinary practice content. Never restate a third-party source's provenance claim as verified fact in `docs/HISTORY.md` or a commit message. This rule exists because a session shipped a question labelled "HSC 2024, PDHPE Exam, Section I, Part B, Q31.b" that was wrong on section (really Section II), marks (12, not 8) and wording — see `docs/HISTORY.md`, 2026-08-25.
 
+### HSC answers are ground truth in `data/answer-key/` — never re-derive them by reading
+Official HSC answers never change, so they are derived **once**, committed, and enforced by CI
+(`scripts/check_answer_key.cjs`, wired into `validate.yml`). Do **not** "audit the answers" by
+reading a marking guideline again — that has been attempted repeatedly and produced a *different
+result every time*, including a clean bill of health for a bank that had five wrong answers
+(see `docs/HISTORY.md`, 2026-08-26).
+
+Rules:
+1. **Never assume array position equals question number.** Multimedia 2022 stores all ten
+   questions in a different order than the paper. A positional join produced six phantom
+   "errors" in one pass and a different six in the next. Join on `qNum` or not at all.
+2. **A question with no `qNum` is unverifiable, not correct.** Multimedia and VET Construction
+   carry none — 135 questions currently unauditable. Adding `qNum` needs human alignment.
+3. **Fuzzy text-matching against the exam PDFs is not a join.** NESA's text layers are uneven
+   (2020 p4 renders Q7's stem as `mul\ntip\nle graphs`); every fuzzy build mis-aligned questions
+   while reporting high confidence. Where a check genuinely needs the paper, **render the page to
+   an image and read it** — that works where the text layer does not.
+4. **The answer key is regenerated only when new papers arrive**, via
+   `python scripts/build_answer_key.py <subject-id>`. It parses page 1 of the marking guidelines
+   and nothing else. CI cannot regenerate it (the PDFs are not in the repo, by copyright) — which
+   is precisely why the generated file is committed.
+5. **Deliberate omissions must be recorded, not silently absent.** A question part dropped because
+   the engine can't mark it (e.g. graph-drawing) gets an `omittedParts` entry on the question —
+   otherwise the paper's marks quietly fail to total 100, as 2020 did at 84/85 for over a year.
+
 ⚠️ **HMS has no past papers, and cannot have any yet.** Health and Movement Science is a **new subject for 2026**, superseding PDHPE — **2026 is the first year it is examined**, so no historical HMS HSC paper exists. `NESA Exams Folder/Health and Movement Science/` holds only NESA's **sample** materials (`HMS SAMPLE HSC PAPER 2026.pdf`, `health-and-movement-science-11-12-2023-annotated-sample-examination-materials.pdf`) plus study resources — no past papers, and none to come until after the 2026 HSC. **PDHPE (2020–2024, in `NESA Exams Folder/PDHE/`) is a legitimate reference point with real content overlap, but a PDHPE question is not an HMS question:** cite it explicitly as PDHPE with its year, never as HMS, and never imply an HMS exam precedent that doesn't exist. The same applies to the Content Agent — there is no HMS paper for it to discover. (Legacy naming: the subject id is still `pdhpe-hms` and §7 still lists it as "PDHPE — HMS Depth Study", from when this content was a PDHPE depth study. The id is load-bearing across `subjects/`, `index.html` and `/diagrams/` filenames — don't rename it casually.)
 
 ### Editing an existing Study Mode topic — diff before you insert
@@ -505,6 +541,6 @@ At 1,000 active subscribers: ~$105/mo in AI + infra costs (≈1.3% of revenue).
 
 ---
 
-*CLAUDE.md — CramIT Project — Last updated: 2026-08-25 — **HMS de-PDHPE'd and audited.** Facts changed here: the subject file is now `subjects/health-movement-science.json` (§6 tree, §10), the §7 row reads **Health & Movement Science (HMS)** at 193 MC / 40 written, and §7 now records that HMS is a **new subject for 2026** superseding PDHPE — **2026 is its first HSC exam year, so no HMS past papers exist** (only NESA sample materials; PDHPE 2020–2024 is a reference point but a different exam). Critically, `SUBJECT_ID_MAP` (JSON fetch URL) and `SUBJECT_CATALOGUE[].id` (billing id, written to Supabase `subject_selections.subject_id`) are **separate and no longer share a value** — `pdhpe-hms` survives only as the billing id, the artwork SVG key, the reverse id→quizKey map and the `/diagrams/pdhpe-hms_*` prefix; renaming it needs a migration against live user rows. Two new mandatory rules in §10, both written after real failures: **verify exam citations against the actual paper** (a session shipped "HSC 2024, PDHPE, Section I Part B, Q31.b" — wrong section, marks and wording — without opening the paper already on disk) and **diff a new block against its neighbours before inserting it** into an existing Study Mode topic, since an accuracy audit is not an editorial review. §10 also records that `validate_subjects.cjs` does **not** existence-check `studyNotes` images and that those images are `loading="lazy"` (so `naturalWidth` reads 0 in a hidden Browser pane). No credential, schema or pricing facts changed. The HMS `biomechanics-recovery-injury` topic was audited against the owner's school workbook and rebuilt (2→19 blocks over two sessions): three factual fixes, topics refiled from the FA1 to the FA2 picker bucket, a CC BY 4.0 OpenStax fracture diagram added, two syllabus concept maps built natively as `table` blocks, and a full de-duplication pass. Full detail in `docs/HISTORY.md` (2026-08-25 entries). Earlier (2026-08-08): CI security scanning added — `.github/workflows/security-scan.yml` (Semgrep + Trivy report-only to the Security tab, Gitleaks **blocking**), additive alongside `validate.yml`/`content-agent.yml`.*
+*CLAUDE.md — CramIT Project — Last updated: 2026-08-26 — **HSC answer-key database added; five wrong Maths answers fixed.** Facts changed here: a new top-level **`data/answer-key/`** holds the official HSC answers as committed ground truth (§6), generated by **`scripts/build_answer_key.py`** and enforced in CI by **`scripts/check_answer_key.cjs`**, now a step in `validate.yml` (§4.4). §10 gains a mandatory rule block — **HSC answers are ground truth in `data/answer-key/`, never re-derive them by reading** — written after a prior audit passed a bank that had five wrong 2025 Maths answers, and after this session's own first two passes produced twelve phantom errors by joining on array position. Key points: never assume array position equals question number; a question with no `qNum` is *unverifiable*, not correct (Multimedia and VET have none — 135 questions unauditable); fuzzy text-matching the exam PDFs is not a join (render the page and read it instead); and deliberate omissions get an `omittedParts` entry rather than vanishing (2020 Q24's graph-drawing part, which left Section II at 84/85). Content changed: 2025 Maths Q1/Q2/Q3/Q8/Q13 answers corrected to B/A/C/A/A with all five solutions rewritten, Q2 and Q8 option labels re-aligned to their own images, and Q2's stem corrected from `4<em>x</em>` to `4<sup><em>x</em></sup>`. No NESA wording was altered. No credential, schema or pricing facts changed. Full detail in `docs/HISTORY.md` (2026-08-26). Previously (2026-08-25) — **HMS de-PDHPE'd and audited.** Facts changed here: the subject file is now `subjects/health-movement-science.json` (§6 tree, §10), the §7 row reads **Health & Movement Science (HMS)** at 193 MC / 40 written, and §7 now records that HMS is a **new subject for 2026** superseding PDHPE — **2026 is its first HSC exam year, so no HMS past papers exist** (only NESA sample materials; PDHPE 2020–2024 is a reference point but a different exam). Critically, `SUBJECT_ID_MAP` (JSON fetch URL) and `SUBJECT_CATALOGUE[].id` (billing id, written to Supabase `subject_selections.subject_id`) are **separate and no longer share a value** — `pdhpe-hms` survives only as the billing id, the artwork SVG key, the reverse id→quizKey map and the `/diagrams/pdhpe-hms_*` prefix; renaming it needs a migration against live user rows. Two new mandatory rules in §10, both written after real failures: **verify exam citations against the actual paper** (a session shipped "HSC 2024, PDHPE, Section I Part B, Q31.b" — wrong section, marks and wording — without opening the paper already on disk) and **diff a new block against its neighbours before inserting it** into an existing Study Mode topic, since an accuracy audit is not an editorial review. §10 also records that `validate_subjects.cjs` does **not** existence-check `studyNotes` images and that those images are `loading="lazy"` (so `naturalWidth` reads 0 in a hidden Browser pane). No credential, schema or pricing facts changed. The HMS `biomechanics-recovery-injury` topic was audited against the owner's school workbook and rebuilt (2→19 blocks over two sessions): three factual fixes, topics refiled from the FA1 to the FA2 picker bucket, a CC BY 4.0 OpenStax fracture diagram added, two syllabus concept maps built natively as `table` blocks, and a full de-duplication pass. Full detail in `docs/HISTORY.md` (2026-08-25 entries). Earlier (2026-08-08): CI security scanning added — `.github/workflows/security-scan.yml` (Semgrep + Trivy report-only to the Security tab, Gitleaks **blocking**), additive alongside `validate.yml`/`content-agent.yml`.*
 *Repo: https://github.com/bustachat/CramIT-Quiz*
 *Supabase: https://ohqtefjawaphtsebnaxg.supabase.co*

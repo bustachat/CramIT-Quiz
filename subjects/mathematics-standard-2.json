@@ -1153,29 +1153,29 @@
         "C",
         "D"
       ],
-      "answer": 2,
+      "answer": 1,
       "image": "/diagrams/mathematics-standard-2_2025_Q1_stimulus.png",
-      "solution": "<div class=\"step\"><span class=\"step-number\">1.</span> Degree of a vertex = number of edges connected to it.</div>\n<div class=\"step\"><span class=\"step-number\">2.</span> Examine the network diagram.</div>\n<div class=\"step\"><span class=\"step-number\">3.</span> Count edges incident on vertex A.</div>\n<div class=\"step\"><span class=\"step-number\">4.</span> Count edges incident on vertex B.</div>\n<div class=\"step\"><span class=\"step-number\">5.</span> Count edges incident on vertex C.</div>\n<div class=\"step\"><span class=\"step-number\">6.</span> Count edges incident on vertex D.</div>\n<div class=\"step\"><span class=\"step-number\">7.</span> Identify which has exactly 4 edges.</div>\n<div class=\"step\"><span class=\"step-number\">8.</span> No multiple edges or loops assumed.</div>\n<div class=\"step\"><span class=\"step-number\">9.</span> From diagram, vertex C has 4 connections.</div>\n<div class=\"step\"><span class=\"step-number\">10.</span> Correct: C.</div>",
+      "solution": "<div class=\"step\"><span class=\"step-number\">1.</span> The degree of a vertex is the number of edges meeting at it.</div>\n<div class=\"step\"><span class=\"step-number\">2.</span> Vertex <em>A</em> joins <em>B</em> and <em>E</em> — degree 2.</div>\n<div class=\"step\"><span class=\"step-number\">3.</span> Vertex <em>B</em> joins <em>A</em>, <em>C</em>, <em>E</em> and <em>F</em> — degree 4.</div>\n<div class=\"step\"><span class=\"step-number\">4.</span> Vertex <em>C</em> joins <em>B</em>, <em>D</em> and <em>F</em> — degree 3.</div>\n<div class=\"step\"><span class=\"step-number\">5.</span> Vertex <em>D</em> joins only <em>C</em> — degree 1.</div>\n<div class=\"step\"><span class=\"step-number\">6.</span> Only vertex <em>B</em> has degree 4.</div>\n<div class=\"step\"><span class=\"step-number\">7.</span> Correct: B.</div>",
       "qNum": 1
     },
     {
       "year": 2025,
       "category": "A4",
-      "q": "Which graph could represent <em>y</em> = 4<em>x</em>?",
+      "q": "Which graph could represent <em>y</em> = 4<sup><em>x</em></sup>?",
       "options": [
+        "Exponential growth",
         "Exponential decay",
-        "Exponential growth from 1",
-        "Linear",
-        "Parabola"
+        "Decreasing straight line",
+        "Increasing straight line"
       ],
-      "answer": 1,
+      "answer": 0,
       "optionImages": [
         "/diagrams/mathematics-standard-2_2025_Q2_A.png",
         "/diagrams/mathematics-standard-2_2025_Q2_B.png",
         "/diagrams/mathematics-standard-2_2025_Q2_C.png",
         "/diagrams/mathematics-standard-2_2025_Q2_D.png"
       ],
-      "solution": "<div class=\"step\"><span class=\"step-number\">1.</span> Equation y = 4^x is exponential form y = a × b^x.</div>\n<div class=\"step\"><span class=\"step-number\">2.</span> Here a = 1 (implied), base b = 4.</div>\n<div class=\"step\"><span class=\"step-number\">3.</span> Base > 1 → exponential growth.</div>\n<div class=\"step\"><span class=\"step-number\">4.</span> When x = 0, y = 4^0 = 1.</div>\n<div class=\"step\"><span class=\"step-number\">5.</span> y-intercept at 1.</div>\n<div class=\"step\"><span class=\"step-number\">6.</span> As x increases, y increases rapidly.</div>\n<div class=\"step\"><span class=\"step-number\">7.</span> As x decreases, y approaches 0.</div>\n<div class=\"step\"><span class=\"step-number\">8.</span> Not decay (base < 1).</div>\n<div class=\"step\"><span class=\"step-number\">9.</span> Not linear or parabolic.</div>\n<div class=\"step\"><span class=\"step-number\">10.</span> Correct: Exponential growth from 1.</div>",
+      "solution": "<div class=\"step\"><span class=\"step-number\">1.</span> <em>y</em> = 4<sup><em>x</em></sup> is an exponential function with base 4.</div>\n<div class=\"step\"><span class=\"step-number\">2.</span> The base is greater than 1, so the graph shows exponential growth.</div>\n<div class=\"step\"><span class=\"step-number\">3.</span> When <em>x</em> = 0, <em>y</em> = 4<sup>0</sup> = 1, so the curve cuts the <em>y</em>-axis at 1.</div>\n<div class=\"step\"><span class=\"step-number\">4.</span> As <em>x</em> increases the curve rises ever more steeply.</div>\n<div class=\"step\"><span class=\"step-number\">5.</span> As <em>x</em> decreases, <em>y</em> approaches 0 but never reaches it.</div>\n<div class=\"step\"><span class=\"step-number\">6.</span> Graph A is the only curve rising steeply from a positive <em>y</em>-intercept.</div>\n<div class=\"step\"><span class=\"step-number\">7.</span> Graph B falls towards zero — that is decay, which needs a base below 1.</div>\n<div class=\"step\"><span class=\"step-number\">8.</span> Graphs C and D are straight lines, not exponential curves.</div>\n<div class=\"step\"><span class=\"step-number\">9.</span> Correct: A.</div>",
       "qNum": 2
     },
     {
@@ -1188,9 +1188,9 @@
         "9",
         "10"
       ],
-      "answer": 0,
+      "answer": 2,
       "image": "/diagrams/mathematics-standard-2_2025_Q3_stimulus.png",
-      "solution": "<div class=\"step\"><span class=\"step-number\">1.</span> Minimum spanning tree (MST) connects all vertices with minimum total weight.</div>\n<div class=\"step\"><span class=\"step-number\">2.</span> No cycles, uses Kruskal's or Prim's algorithm.</div>\n<div class=\"step\"><span class=\"step-number\">3.</span> Sort edges by increasing weight.</div>\n<div class=\"step\"><span class=\"step-number\">4.</span> Add smallest edges that don't form cycles.</div>\n<div class=\"step\"><span class=\"step-number\">5.</span> Continue until all towns connected.</div>\n<div class=\"step\"><span class=\"step-number\">6.</span> The last edge added is the largest in the MST.</div>\n<div class=\"step\"><span class=\"step-number\">7.</span> From diagram weights, largest included is 7.</div>\n<div class=\"step\"><span class=\"step-number\">8.</span> Higher weights avoided to keep total minimal.</div>\n<div class=\"step\"><span class=\"step-number\">9.</span> MST property confirmed.</div>\n<div class=\"step\"><span class=\"step-number\">10.</span> Correct: 7.</div>",
+      "solution": "<div class=\"step\"><span class=\"step-number\">1.</span> There are 6 towns, so the minimum spanning tree uses 5 edges.</div>\n<div class=\"step\"><span class=\"step-number\">2.</span> Use Kruskal's algorithm: take edges from smallest upwards, skipping any that close a cycle.</div>\n<div class=\"step\"><span class=\"step-number\">3.</span> Add 4, then 5, then the second 5, then 6 — that is 4 edges joining 5 towns.</div>\n<div class=\"step\"><span class=\"step-number\">4.</span> The edges 7, 7 and 8 would each close a cycle, so skip them.</div>\n<div class=\"step\"><span class=\"step-number\">5.</span> The top town is still unconnected; its cheapest link is 9.</div>\n<div class=\"step\"><span class=\"step-number\">6.</span> Add 9 to finish the tree: edges 4, 5, 5, 6 and 9.</div>\n<div class=\"step\"><span class=\"step-number\">7.</span> The largest edge in that tree is 9.</div>\n<div class=\"step\"><span class=\"step-number\">8.</span> Correct: 9.</div>",
       "qNum": 3
     },
     {
@@ -1254,12 +1254,12 @@
       "category": "S2",
       "q": "A spinner made up of 4 colours is spun 100 times. The frequency histogram shows the results. Which of these spinners is most likely to give the results shown?",
       "options": [
-        "Equal quarters",
-        "Mostly red",
-        "Mostly white",
-        "Mixed proportions"
+        "White about half, Red about a quarter, Yellow and Green smaller",
+        "Four equal quarters",
+        "White largest, with Red, Green and Yellow about equal",
+        "Red largest, then White"
       ],
-      "answer": 1,
+      "answer": 0,
       "image": "/diagrams/mathematics-standard-2_2025_Q8_stimulus.png",
       "optionImages": [
         "/diagrams/mathematics-standard-2_2025_Q8_A.png",
@@ -1267,7 +1267,7 @@
         "/diagrams/mathematics-standard-2_2025_Q8_C.png",
         "/diagrams/mathematics-standard-2_2025_Q8_D.png"
       ],
-      "solution": "<div class=\"step\"><span class=\"step-number\">1.</span> Histogram shows frequency of each color.</div>\n<div class=\"step\"><span class=\"step-number\">2.</span> Total spins = 100.</div>\n<div class=\"step\"><span class=\"step-number\">3.</span> Compare bar heights to expected.</div>\n<div class=\"step\"><span class=\"step-number\">4.</span> Equal quarters → ~25 each.</div>\n<div class=\"step\"><span class=\"step-number\">5.</span> Histogram shows one color much higher.</div>\n<div class=\"step\"><span class=\"step-number\">6.</span> Likely red section largest.</div>\n<div class=\"step\"><span class=\"step-number\">7.</span> Unequal probabilities.</div>\n<div class=\"step\"><span class=\"step-number\">8.</span> Not uniform or balanced.</div>\n<div class=\"step\"><span class=\"step-number\">9.</span> Matches \"mostly red\" spinner.</div>\n<div class=\"step\"><span class=\"step-number\">10.</span> Correct: Mostly red.</div>",
+      "solution": "<div class=\"step\"><span class=\"step-number\">1.</span> Read the histogram: Red 25, White 50, Green 10, Yellow 15, totalling 100 spins.</div>\n<div class=\"step\"><span class=\"step-number\">2.</span> Relative frequency estimates each sector's share of the spinner.</div>\n<div class=\"step\"><span class=\"step-number\">3.</span> White is 50 out of 100, so White should take about half the circle.</div>\n<div class=\"step\"><span class=\"step-number\">4.</span> Red is 25 out of 100, so Red should be about a quarter.</div>\n<div class=\"step\"><span class=\"step-number\">5.</span> Yellow (15) and Green (10) are the two smallest sectors.</div>\n<div class=\"step\"><span class=\"step-number\">6.</span> Spinner A has White at about a half and Red at about a quarter — a match.</div>\n<div class=\"step\"><span class=\"step-number\">7.</span> Spinner B is four equal quarters, which would give about 25 of each.</div>\n<div class=\"step\"><span class=\"step-number\">8.</span> Spinner C has Red, Green and Yellow about equal, but Green should be smallest.</div>\n<div class=\"step\"><span class=\"step-number\">9.</span> Spinner D makes Red the largest sector, but White had the highest frequency.</div>\n<div class=\"step\"><span class=\"step-number\">10.</span> Correct: A.</div>",
       "qNum": 8
     },
     {
@@ -1336,8 +1336,8 @@
         "1/10",
         "1/9"
       ],
-      "answer": 3,
-      "solution": "<div class=\"step\"><span class=\"step-number\">1.</span> Die has faces 1 through 10.</div>\n<div class=\"step\"><span class=\"step-number\">2.</span> P(1) > P(each of 2-10).</div>\n<div class=\"step\"><span class=\"step-number\">3.</span> Assume P(2)=P(3)=...=P(10)=p, P(1)=q > p.</div>\n<div class=\"step\"><span class=\"step-number\">4.</span> Total probability: q + 9p = 1.</div>\n<div class=\"step\"><span class=\"step-number\">5.</span> Rolls: 153, ones: 72 → estimate q ≈ 72/153.</div>\n<div class=\"step\"><span class=\"step-number\">6.</span> Non-ones: 153 − 72 = 81.</div>\n<div class=\"step\"><span class=\"step-number\">7.</span> Each of 2-10 approx 81/9 = 9.</div>\n<div class=\"step\"><span class=\"step-number\">8.</span> But exact estimate p = (1 − q)/9 ≈ (81/153)/9.</div>\n<div class=\"step\"><span class=\"step-number\">9.</span> 81/153 = 9/17, then /9 = 1/17? Wait, common answer 1/9.</div>\n<div class=\"step\"><span class=\"step-number\">10.</span> Correct: 1/9 (verified from similar problems).</div>",
+      "answer": 0,
+      "solution": "<div class=\"step\"><span class=\"step-number\">1.</span> The relative frequency of rolling a 1 is 72 out of 153.</div>\n<div class=\"step\"><span class=\"step-number\">2.</span> Simplify: 72/153 = 8/17 (divide both by 9).</div>\n<div class=\"step\"><span class=\"step-number\">3.</span> So P(1) is estimated as 8/17.</div>\n<div class=\"step\"><span class=\"step-number\">4.</span> All probabilities sum to 1, so the rest is 1 − 8/17 = 9/17.</div>\n<div class=\"step\"><span class=\"step-number\">5.</span> That 9/17 is shared equally by the nine faces 2 to 10.</div>\n<div class=\"step\"><span class=\"step-number\">6.</span> P(10) = 9/17 ÷ 9 = 1/17.</div>\n<div class=\"step\"><span class=\"step-number\">7.</span> Check: 1/17 is smaller than 8/17, as required since 1 is the most likely face.</div>\n<div class=\"step\"><span class=\"step-number\">8.</span> Correct: 1/17.</div>",
       "qNum": 13
     },
     {
@@ -6339,6 +6339,13 @@
       "section": "II",
       "qNum": "24",
       "category": "A4",
+      "omittedParts": [
+        {
+          "part": "a",
+          "marks": 1,
+          "reason": "Graph-drawing task — the student must draw Tank A's volume line on supplied axes. The engine cannot present or mark a drawn graph, so part (a) is deliberately excluded. This is why stored marks (3) are below the paper's 4 for Q24, and why 2020 Section II sums to 84 rather than 85."
+        }
+      ],
       "image": null,
       "q": "There are two tanks on a property, Tank A and Tank B. Initially, Tank A holds 1000 litres of water and Tank B is empty. Tank A begins to lose water at a constant rate of 20 litres per minute. The volume of water in Tank A is modelled by <em>V</em> = 1000 − 20<em>t</em> where <em>V</em> is the volume in litres and <em>t</em> is the time in minutes from when the tank begins to lose water.\n\n(b) Tank B remains empty until <em>t</em> = 15 when water is added to it at a constant rate of 30 litres per minute. Find the value of <em>t</em> when the two tanks contain the same volume of water. (2 marks)\n\n(c) Find the value of <em>t</em> (where <em>t</em> &gt; 0) when the total volume of water in the two tanks is 1000 litres. (1 mark)",
       "answer": "(b) Tank A: V_A = 1000 - 20t\nTank B (t >= 15): V_B = 30(t - 15)\nSet equal: 1000 - 20t = 30t - 450\n1450 = 50t, t = 29 minutes\n\n(c) Total = (1000 - 20t) + 30(t - 15) = 550 + 10t\nSet = 1000: 10t = 450, t = 45 minutes",

@@ -1,0 +1,172 @@
+{
+  "schemaVersion": 1,
+  "subjectId": "mathematics-standard-2",
+  "subjectName": "Mathematics Standard 2",
+  "generatedAt": "2026-08-26T09:20:16Z",
+  "generator": "scripts/build_answer_key.py",
+  "source": {
+    "publisher": "NSW Education Standards Authority",
+    "folder": "Maths Standard 2",
+    "extractedFrom": "Multiple-choice Answer Key table, page 1 of each marking guidelines PDF",
+    "note": "Official HSC answers are immutable. Do not hand-edit this file -- regenerate it with the script above."
+  },
+  "papers": [
+    {
+      "year": 2025,
+      "markingGuidelines": "2025-hsc-maths-standard-2-mg.pdf",
+      "examPaper": "2025-hsc-maths-standard-2.pdf",
+      "sectionI": {
+        "questionCount": 15,
+        "sourcePage": 1,
+        "answers": {
+          "1": "B",
+          "2": "A",
+          "3": "C",
+          "4": "D",
+          "5": "D",
+          "6": "B",
+          "7": "C",
+          "8": "A",
+          "9": "B",
+          "10": "A",
+          "11": "C",
+          "12": "D",
+          "13": "A",
+          "14": "C",
+          "15": "D"
+        }
+      }
+    },
+    {
+      "year": 2024,
+      "markingGuidelines": "2024-hsc-maths-std-2-mg.pdf",
+      "examPaper": "2024-hsc-maths-std-2.pdf",
+      "sectionI": {
+        "questionCount": 15,
+        "sourcePage": 1,
+        "answers": {
+          "1": "D",
+          "2": "C",
+          "3": "A",
+          "4": "B",
+          "5": "A",
+          "6": "A",
+          "7": "D",
+          "8": "C",
+          "9": "B",
+          "10": "D",
+          "11": "B",
+          "12": "C",
+          "13": "A",
+          "14": "B",
+          "15": "D"
+        }
+      }
+    },
+    {
+      "year": 2023,
+      "markingGuidelines": "2023-hsc-maths-std-2-mg.pdf",
+      "examPaper": "2023-hsc-maths-std-2.pdf",
+      "sectionI": {
+        "questionCount": 15,
+        "sourcePage": 1,
+        "answers": {
+          "1": "B",
+          "2": "C",
+          "3": "D",
+          "4": "A",
+          "5": "B",
+          "6": "C",
+          "7": "C",
+          "8": "D",
+          "9": "D",
+          "10": "A",
+          "11": "C",
+          "12": "B",
+          "13": "B",
+          "14": "C",
+          "15": "A"
+        }
+      }
+    },
+    {
+      "year": 2022,
+      "markingGuidelines": "2022-hsc-mathematics-standard-2-mg.pdf",
+      "examPaper": "2022-hsc-mathematics-standard-2.pdf",
+      "sectionI": {
+        "questionCount": 15,
+        "sourcePage": 1,
+        "answers": {
+          "1": "C",
+          "2": "A",
+          "3": "B",
+          "4": "D",
+          "5": "D",
+          "6": "B",
+          "7": "C",
+          "8": "C",
+          "9": "A",
+          "10": "B",
+          "11": "D",
+          "12": "B",
+          "13": "B",
+          "14": "A",
+          "15": "C"
+        }
+      }
+    },
+    {
+      "year": 2021,
+      "markingGuidelines": "2021-hsc-mathematics-standard-2-mg.pdf",
+      "examPaper": "2021-hsc-mathematics-standard-2.pdf",
+      "sectionI": {
+        "questionCount": 15,
+        "sourcePage": 1,
+        "answers": {
+          "1": "A",
+          "2": "D",
+          "3": "C",
+          "4": "D",
+          "5": "B",
+          "6": "A",
+          "7": "C",
+          "8": "D",
+          "9": "C",
+          "10": "A",
+          "11": "D",
+          "12": "B",
+          "13": "B",
+          "14": "D",
+          "15": "B"
+        }
+      }
+    },
+    {
+      "year": 2020,
+      "markingGuidelines": "2020-hsc-mathematics-standard-2-mg.pdf",
+      "examPaper": "2020-hsc-mathematics-standard-2.pdf",
+      "sectionI": {
+        "questionCount": 15,
+        "sourcePage": 1,
+        "answers": {
+          "1": "C",
+          "2": "D",
+          "3": "C",
+          "4": "B",
+          "5": "A",
+          "6": "D",
+          "7": "A",
+          "8": "A",
+          "9": "B",
+          "10": "D",
+          "11": "C",
+          "12": "D",
+          "13": "A",
+          "14": "A",
+          "15": "B"
+        }
+      }
+    }
+  ],
+  "extractionProblems": []
+}

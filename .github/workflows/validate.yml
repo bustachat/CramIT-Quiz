@@ -25,6 +25,12 @@ jobs:
       - name: Validate subject JSON structure
         run: node scripts/validate_subjects.cjs
 
+      # Ground truth is the committed key in data/answer-key/, extracted from the
+      # NESA marking guidelines. The PDFs are not in the repo (copyright), so this
+      # step reads no PDFs — it only compares the bank against the frozen key.
+      - name: Check HSC answers against the official marking guidelines
+        run: node scripts/check_answer_key.cjs
+
       - name: Syntax-check Cloudflare Pages Functions
         run: |
           set -e

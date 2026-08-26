@@ -574,3 +574,112 @@ Changed: `git mv` of the file; `SUBJECT_ID_MAP.hms`; `subjects/index.json` (`fil
 **Left open, deliberately.** The `pdhpe-hms` **billing id** (plus the artwork SVG key, the reverse id→quizKey map, and the 15 `/diagrams/pdhpe-hms_*` filenames) — renaming needs `UPDATE subject_selections SET subject_id=…` against live user rows, which is the owner's call. The app's **"FA1 — Injury" picker label** remains a pre-existing mismatch (its injury topics are also FA2 content in this workbook). The **Content Agent** is still failing nightly on the unset `ANTHROPIC_API_KEY` (pre-launch checklist #2). `landing.html` remains untracked, as at session start — its two PDHPE references were fixed in the working tree but not committed, since it is the owner's WIP.
 
 **Final state:** `main` at this commit, local and origin in sync, working tree clean apart from the untracked `landing.html`. `node scripts/validate_subjects.cjs` green (MC=646, Written=243, 0 issues, 0 missing images). `node agent.js --selftest` green. Both CI workflows green on every commit this session. `CLAUDE.md` updated for the changed file-structure and id facts (and its stale "165 MC + 35 written / 74 revision questions" line corrected to the verified 193 / 40 / 84 — counted, not assumed).
+
+---
+
+## 2026-08-26 — HSC answer-key database; five wrong Maths answers found and fixed
+
+**How this started.** The owner found [hscmathsdb.jboxgames.com](https://hscmathsdb.jboxgames.com/)
+and asked what could be leveraged from it. Interrogating it turned up little worth
+importing — but cross-checking its answers against `mathematics-standard-2.json`
+surfaced five disagreements, all in 2025. Verified against the official NESA
+marking guidelines: **CramIT was wrong on all five.**
+
+**The methodology lesson, which matters more than the bug.** A previous session had
+audited these same answers against the marking guide and reported them all correct.
+This session's own first pass was *also* wrong — it reported 6 errors in Multimedia
+and 6 in VET that were pure artifacts of matching questions by array position.
+Multimedia 2022 disproved that assumption: all ten questions are present but stored
+in a different order than the paper. Three further rebuilds using fuzzy text matching
+each produced a different count (8, then 11, then 7); one confidently matched 2024's
+"Pia's marks" question, which is paper Q5, to Q9.
+
+The failure mode is not carelessness. It is that **the join between the question bank
+and the marking guideline was being re-derived by judgement every time, and it is not
+reliably derivable** — NESA's PDFs are not uniformly machine-readable (2020 page 4 has
+a re-typeset text layer that renders Q7's stem as `mul\ntip\nle graphs` and puts Q8's
+options in a table). Hence the fix is not "audit more carefully" but: derive once,
+freeze it, enforce mechanically.
+
+**What was built.**
+- `scripts/build_answer_key.py` — extracts the official multiple-choice answer key
+  from page 1 of each marking guidelines PDF. Parses **only** that table; it never
+  touches exam-paper question text, whose text layer is unreliable. Clean extraction
+  on all 17 papers across Maths / Multimedia / VET (225 answers).
+- `data/answer-key/mathematics-standard-2.json` — 90 committed answers, 2020–2025,
+  with per-paper provenance. New top-level `data/`, deliberately **not** `subjects/`,
+  which `validate_subjects.cjs` and `subjects/index.json` enumerate.
+- `scripts/check_answer_key.cjs` — CI check comparing the bank against the frozen key.
+  Reads no PDFs: the NESA papers are not in the repo (copyright), so CI *cannot*
+  re-derive, which is exactly why the artefact is committed. Questions lacking a
+  `qNum` are reported as **unverifiable**, never silently passed.
+- Wired into `.github/workflows/validate.yml`.
+
+**The five errors (2025), each verified independently — not just against the key.**
+
+| Q | Independent check | was | now |
+|---|---|---|---|
+| 1 | Degrees off the diagram: A=2, **B=4**, C=3, D=1 | C | **B** |
+| 2 | `_A.png` is the growth curve, correct for y = 4ˣ | B | **A** |
+| 3 | Kruskal: tree = {4,5,5,6,9}, largest 9 | A (7) | **C** (9) |
+| 8 | Histogram White 50 / Red 25 / Yellow 15 / Green 10 → spinner A | B | **A** |
+| 13 | 72/153 = 8/17; (1 − 8/17) ÷ 9 = **1/17** | D (1/9) | **A** (1/17) |
+
+All five `solution` fields argued for the wrong answer and were rewritten. Q13's had
+shipped reading `81/153 = 9/17, then /9 = 1/17? Wait, common answer 1/9.` — it derived
+the right answer and then talked itself out of it. These solutions are CramIT-authored,
+not NESA text; **no NESA question wording was altered.**
+
+**Two further defects found in passing.**
+- **2025 Q2 and Q8 option labels were scrambled against their own images.** In the real
+  paper both questions' options are pictures; someone wrote text labels to sit beside
+  the crops, and they had drifted out of order (position A read "Exponential decay"
+  while `_A.png` is the growth curve). Q2's D read "Parabola" — there is no parabola in
+  the question. Relabelled from the images. Q2's stem also read `y = 4<em>x</em>`,
+  rendering as "y = 4x"; corrected to `4<sup><em>x</em></sup>`, the pattern already used
+  elsewhere in the file.
+- **2020 Section II sums to 84 marks, not 85.** Cause: Q24 is officially 4 marks over
+  parts (a) 1 / (b) 2 / (c) 1, but the bank stores only (b) and (c). Part (a) is a
+  graph-*drawing* task the engine cannot mark, so its omission is correct — it was just
+  invisible. Now recorded explicitly as `omittedParts` on the question rather than
+  silently absent.
+
+**Also established (documented here, not yet acted on).**
+- 2020 and 2021 split some multi-part questions into separate rows (7 and 4
+  respectively); 2022–2025 merge every question's parts into one row. Convention drift
+  from the porting order. Every official Section II question number is present in all
+  six years — none missing, none extra.
+- MC sequence: all 90 originals have `qNum` 1–15, no gaps or duplicates, stored in
+  order. 56 of 90 were machine-confirmed as matching the paper's question at that
+  number; the other 34 are unconfirmable from the text layer, not suspicious. Zero
+  actual misplacements found. Rendering the page and reading it closes that gap where
+  needed.
+- **Multimedia and VET Construction cannot be audited at all yet** — their MC questions
+  carry no `qNum`, so there is no reliable join. 135 questions in an unknown state; the
+  check reports them as unverifiable. Adding `qNum` is the unlock and needs human
+  alignment, since position cannot be assumed.
+
+**On the source database.** Not imported, and not recommended: its own About panel says
+"most of these questions and answers haven't been human QA'd", it carries no licence,
+its diagram crops are frequently clipped (2021 Q2's network loses vertex D entirely,
+where CramIT's existing crop is complete), and it tags Standard 2 papers with Standard 1
+syllabus codes. Its "Standard" course bucket also mixes Standard 1, Standard 2 and the
+pre-2019 General papers — anything ever taken from it must be filtered on
+`paperId` starting `std2-`. Its genuinely useful assets are the official marking criteria
+and NESA marker feedback, both of which we can extract from our own PDFs with better
+provenance. Note it labels the 2017/2018 papers "Mathematics Standard", which is wrong:
+Mathematics Standard was first examined in **2019**.
+
+**Verified.** `node scripts/check_answer_key.cjs` — 90 checked, 0 wrong, 0 unverifiable
+(it failed with exactly the 5 before the fix, which is how the fix was confirmed).
+`node scripts/validate_subjects.cjs` green (MC=646, Written=243, 0 issues, 0 missing
+images). Browser: loaded all five through the app's own `loadSubjectData`/`renderQuestion`
+path, answered each and ran `checkAnswer()` — every one marks correct at letters
+**B, A, C, A, A**, matching the NESA key; rewritten solutions render 7–10 steps each;
+Q2's `<sup>` computes to `vertical-align: super` at 15px against an 18px stem; Q2/Q8
+option images pair with their corrected labels; no console errors.
+
+**Next.** Written answers (official sample answer + mark-band criteria) as a second
+table — the marking guidelines are uniformly structured (`Question N` → `Criteria` →
+`Sample answer`) and a scoped extractor reproduced 2020's 85-mark total exactly. Then
+`qNum` backfill for Multimedia and VET.
