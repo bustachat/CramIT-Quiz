@@ -206,6 +206,9 @@ cramit-quiz/
 │   └── vet-construction.json          ← 75 MC + 23 written
 ├── docs/
 │   ├── HISTORY.md              ← Full session log — read on demand, not auto-loaded
+│   ├── handover-answer-key-multimedia-vet.md ← ⬜ OPEN TASK — extend the answer-key check to
+│   │                             Multimedia + VET. Blocked on backfilling `qNum` (135 questions
+│   │                             currently unauditable). Read before starting that work.
 │   ├── agents-plan.md          ← Stage 9 agent roster/build order — read on demand
 │   └── paper-reports/          ← Content Agent triage reports ({subject}-{year}.md) — briefing docs for porting new subjects
 └── functions/                  ← Cloudflare Pages Functions — served at /{name} (NOT /functions/{name})
