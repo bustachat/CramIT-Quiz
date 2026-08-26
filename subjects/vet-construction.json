@@ -6,6 +6,7 @@
   "mcQuestions": [
     {
       "year": 2021,
+      "qNum": 1,
       "q": "A diagram of a plane is shown. What type of plane is this?",
       "options": [
         "Jack",
@@ -13,17 +14,18 @@
         "Electric",
         "Smoothing"
       ],
-      "answer": 3,
+      "answer": 2,
       "image": "/diagrams/vet-construction_2021_Q1_stimulus.jpg",
       "optionExplanations": [
-        "A jack plane is a general-purpose bench plane used for initial stock removal. It has a longer body (around 380mm) and is used before the trying plane.",
-        "A trying plane (jointer) is the longest bench plane, used to flatten and straighten long boards. It is longer than the plane shown.",
-        "An electric plane uses a motor and rotating cutter head — it looks entirely different from a traditional hand plane.",
-        "✓ Correct. A smoothing plane is the shortest bench plane, used for final surface finishing. Its compact size and fine mouth setting produce a very smooth surface ready for finishing."
+        "A jack plane is a general-purpose bench plane about 380 mm long, used for initial stock removal. The tool shown is not a hand plane at all.",
+        "A trying plane (jointer) is the longest bench plane, used to flatten and straighten long boards. Like the jack plane it is worked by hand, with no motor.",
+        "✓ Correct. The diagram shows an electric planer: a motor housing with cooling vents along the side, a front knob for setting depth of cut, and a rear handle with a trigger. The cutter block rotates in the base instead of a fixed blade being held by a lever cap.",
+        "A smoothing plane is the shortest bench plane, used by hand for final finishing. The tool shown is powered, so it cannot be a smoothing plane."
       ]
     },
     {
       "year": 2021,
+      "qNum": 2,
       "q": "Employment on any worksite should be based on",
       "options": [
         "Age",
@@ -41,6 +43,7 @@
     },
     {
       "year": 2021,
+      "qNum": 3,
       "q": "Which of the following is an example of environmentally sustainable development practices on a construction site?",
       "options": [
         "All waste material is buried on site",
@@ -58,6 +61,7 @@
     },
     {
       "year": 2021,
+      "qNum": 4,
       "q": "A large construction site requires different trades. To plan all tasks in a logical sequence and to a timeframe, which organisational tool would be the most effective?",
       "options": [
         "Pie chart",
@@ -75,6 +79,7 @@
     },
     {
       "year": 2021,
+      "qNum": 5,
       "q": "A brick wall measuring 13.7 metres is drawn on a plan using a scale of 1:100. What is the length of the line drawn on the plan?",
       "options": [
         "1.37 mm",
@@ -92,6 +97,7 @@
     },
     {
       "year": 2021,
+      "qNum": 6,
       "q": "A diagram of a wall is shown with two window sills at 8m width. Which tool should be used to make sure these two window sills are at the same height?",
       "options": [
         "Plumb bob",
@@ -110,6 +116,7 @@
     },
     {
       "year": 2021,
+      "qNum": 7,
       "q": "What is the best way to prevent soil erosion from a construction site?",
       "options": [
         "Work only on dry days",
@@ -127,6 +134,7 @@
     },
     {
       "year": 2021,
+      "qNum": 8,
       "q": "A 150 mm steel rule is shown. To what level of accuracy can this rule measure?",
       "options": [
         "0.1 mm",
@@ -145,6 +153,7 @@
     },
     {
       "year": 2021,
+      "qNum": 9,
       "q": "According to the Work Health and Safety Act, when is a workplace required to set up a WHS committee?",
       "options": [
         "After an accident has occurred",
@@ -162,6 +171,7 @@
     },
     {
       "year": 2021,
+      "qNum": 10,
       "q": "An emergency information sign is shown. What colours would be used on this sign?",
       "options": [
         "Red and white",
@@ -180,6 +190,7 @@
     },
     {
       "year": 2021,
+      "qNum": 11,
       "q": "Who should a member of the community contact to report that a construction site is operating outside permitted hours?",
       "options": [
         "Unions NSW",
@@ -197,6 +208,7 @@
     },
     {
       "year": 2021,
+      "qNum": 12,
       "q": "With reference to the risk control hierarchy, which should be the first course of action when operating power tools in a damp area?",
       "options": [
         "Wear correct PPE",
@@ -214,6 +226,7 @@
     },
     {
       "year": 2021,
+      "qNum": 13,
       "q": "A worker's clothing catches fire. What would be the best method to extinguish the fire?",
       "options": [
         "A fire blanket",
@@ -231,6 +244,7 @@
     },
     {
       "year": 2021,
+      "qNum": 14,
       "q": "A garden area is shown: 4m × 3m with 8m base. What is the area of the garden?",
       "options": [
         "15 m²",
@@ -249,24 +263,26 @@
     },
     {
       "year": 2021,
+      "qNum": 15,
       "q": "The following site plan indicates the contours. Which best represents the cross-section Z-Z?",
       "options": [
-        "Flat",
-        "Slope up",
-        "Slope down",
-        "Valley"
+        "Ground rises steadily from north to south",
+        "Ground falls steadily from north to south",
+        "Ground rises, dips, then rises sharply at the southern end",
+        "Ground rises steadily, then drops sharply at the southern end"
       ],
       "answer": 0,
       "image": "/diagrams/vet-construction_2021_Q15_stimulus.jpg",
       "optionExplanations": [
-        "✓ Correct. Reading the contour lines along the Z-Z section line on the site plan shows evenly spaced parallel contours indicating a flat terrain profile at that cross-section.",
-        "Slope up would be shown by contour lines getting closer together in one direction along the section, with increasing elevation values.",
-        "Slope down would be shown by contour lines with decreasing elevation values along the section line.",
-        "A valley would be shown by contour lines forming a V-shape or U-shape pointing toward higher elevations on the section."
+        "✓ Correct. Along Z–Z the contour values run from 10.500 at the northern end up to 12.500 at the southern end, so the ground gets steadily higher towards the south.",
+        "This reverses the contours. A fall from north to south would put the highest value at the north, but 10.500 — the lowest — is the northernmost contour.",
+        "A dip partway along would show as contour values decreasing and then increasing again. Along Z–Z the values only ever rise.",
+        "A sharp drop at the southern end would need the contour values to fall again near the south. The southernmost contour is 12.500, the highest on the plan, so the ground is still rising there."
       ]
     },
     {
       "year": 2022,
+      "qNum": 1,
       "q": "What type of level can be used to determine both level and plumb?",
       "options": [
         "Line",
@@ -284,6 +300,7 @@
     },
     {
       "year": 2022,
+      "qNum": 2,
       "q": "Which trade is responsible for erecting temporary work platforms during multistorey construction?",
       "options": [
         "Roofer",
@@ -301,6 +318,7 @@
     },
     {
       "year": 2022,
+      "qNum": 3,
       "q": "What would be the most effective tool to remove a 75 mm-long nail from timber?",
       "options": [
         "Pincers",
@@ -318,6 +336,7 @@
     },
     {
       "year": 2022,
+      "qNum": 4,
       "q": "A new brick veneer residence on a concrete slab. Which building material should be first delivered?",
       "options": [
         "Formwork",
@@ -335,6 +354,7 @@
     },
     {
       "year": 2022,
+      "qNum": 5,
       "q": "What is the first action required when providing first aid?",
       "options": [
         "Check airways",
@@ -352,6 +372,7 @@
     },
     {
       "year": 2022,
+      "qNum": 6,
       "q": "Holding a valid SafeWork NSW White Card means that a worker",
       "options": [
         "Is a licensed builder",
@@ -369,24 +390,26 @@
     },
     {
       "year": 2022,
+      "qNum": 7,
       "q": "A workshop wall diagram is shown. Which is the best position for a safety sign?",
       "options": [
-        "W - low corner",
-        "X - middle",
-        "Y - high corner",
-        "Z - door height"
+        "W",
+        "X",
+        "Y",
+        "Z"
       ],
       "answer": 1,
       "image": "/diagrams/vet-construction_2022_Q7_stimulus.jpg",
       "optionExplanations": [
-        "Position W (low corner) is too low to be easily visible to workers passing through the area and could be obscured by stored materials or equipment.",
-        "✓ Correct. Position X (middle height, central location) provides the best visibility for safety signs — at eye level and in a prominent position where workers will naturally look. Signs should be placed where they are easily noticed.",
-        "Position Y (high corner) is too high — workers are unlikely to look up to a high corner for safety information, reducing its effectiveness as a warning.",
-        "Position Z (door height) may be too high and is often obscured when doors are open. Central, eye-level placement is more effective."
+        "W is low on the wall to the left of the door, below normal sight line and easily hidden behind stored materials.",
+        "✓ Correct. X is at about eye level on the clear wall beside the door, directly in view of anyone entering the workshop. Safety signage belongs at eye level where it is read before the hazard is reached.",
+        "Y is low on the wall beneath the window, below eye level and easily obscured by benches or stacked material.",
+        "Z is high in the corner of a 2.4 m wall, above normal sight line, so it is easily missed."
       ]
     },
     {
       "year": 2022,
+      "qNum": 8,
       "q": "A fence around a construction site is shown. What is the purpose of this fence?",
       "options": [
         "Reduce dust",
@@ -405,6 +428,7 @@
     },
     {
       "year": 2022,
+      "qNum": 9,
       "q": "A diagram shows an area to be fenced. Calculate the perimeter.",
       "options": [
         "13",
@@ -423,6 +447,7 @@
     },
     {
       "year": 2022,
+      "qNum": 10,
       "q": "What is the trade union that represents construction workers?",
       "options": [
         "HIA",
@@ -440,6 +465,7 @@
     },
     {
       "year": 2022,
+      "qNum": 11,
       "q": "Information about internal subfloor and roof structure would be found on which drawing?",
       "options": [
         "Section",
@@ -457,6 +483,7 @@
     },
     {
       "year": 2022,
+      "qNum": 12,
       "q": "In the hierarchy of hazard control, which is an engineering control?",
       "options": [
         "Erecting a fence around excavation",
@@ -474,24 +501,26 @@
     },
     {
       "year": 2022,
+      "qNum": 13,
       "q": "A selection of drill bits is shown. Which bit for drilling a masonry anchor?",
       "options": [
-        "W - twist bit",
-        "X - spade bit",
-        "Y - masonry bit",
-        "Z - hole saw"
+        "W",
+        "X",
+        "Y",
+        "Z"
       ],
-      "answer": 2,
+      "answer": 1,
       "image": "/diagrams/vet-construction_2022_Q13_stimulus.jpg",
       "optionExplanations": [
-        "A twist bit (W) is designed for drilling metal and timber. It would be damaged quickly and be ineffective when used on masonry materials like brick or concrete.",
-        "A spade bit (X) is used for drilling large-diameter holes in timber. Its flat paddle shape is not designed for masonry and would fail quickly.",
-        "✓ Correct. A masonry bit (Y) has a specially hardened tungsten carbide tip designed to drill through concrete, brick, stone and other masonry materials. It is used with a hammer drill to chip and drill simultaneously.",
-        "A hole saw (Z) is used for cutting large circular holes in timber, plasterboard or thin metal. It is not suitable for drilling anchor holes in masonry."
+        "W is an auger bit — a screw lead point with a single wide helical flute to clear shavings. It bores deep holes in timber and would be destroyed by masonry.",
+        "✓ Correct. X is the masonry bit: note the hardened tungsten carbide tip brazed across the end of the shaft, wider than the flutes behind it. Used in a hammer drill it chips and drills through brick, block and concrete to take a masonry anchor.",
+        "Y is a spade (paddle) bit with a hex shank — a flat blade with a centre point that cuts large-diameter holes in timber quickly. It has no carbide tip and cannot cut masonry.",
+        "Z is a brad point bit — a twist bit with a centre spur and two raised side spurs that score the fibres for a clean-edged hole in timber. It is a timber bit, not a masonry bit."
       ]
     },
     {
       "year": 2022,
+      "qNum": 14,
       "q": "Concrete ratio is 3:2:1 (aggregate:sand:cement). Calculate sand for 4.2 m³ concrete.",
       "options": [
         "0.6 m³",
@@ -509,6 +538,7 @@
     },
     {
       "year": 2022,
+      "qNum": 15,
       "q": "A paved area plan is shown. A 50mm sand layer is required. Calculate sand volume.",
       "options": [
         "5.58 m³",
@@ -516,17 +546,18 @@
         "11.50 m³",
         "150.00 m³"
       ],
-      "answer": 1,
+      "answer": 0,
       "image": "/diagrams/vet-construction_2022_Q15_stimulus.jpg",
       "optionExplanations": [
-        "5.58 m³ does not correspond to the correct calculation for the area shown × 0.05 m depth.",
-        "✓ Correct. Calculate the area from the plan dimensions, then multiply by the sand depth (50 mm = 0.05 m). Area × 0.05 = 7.50 m³.",
-        "11.50 m³ would result from an incorrect area calculation or using the wrong depth conversion.",
-        "150.00 m³ would result from not converting 50 mm to metres — a common calculation error."
+        "✓ Correct. The paved area is a 15 000 x 10 000 rectangle (4000 + 7000 + 4000 wide, 5500 + 4500 deep) with a 7000 x 5500 notch removed from the top: 15 x 10 — 7 x 5.5 = 150 — 38.5 = 111.5 m². Sand volume = 111.5 x 0.05 = 5.575, which rounds to 5.58 m³.",
+        "7.50 m³ is the full 15 m x 10 m rectangle (150 m² x 0.05 m). It ignores the 7 m x 5.5 m notch cut out of the top of the plan, which must be subtracted from the area first.",
+        "11.50 m³ would need an area of 230 m² — larger than the whole 15 m x 10 m rectangle before the notch is even removed.",
+        "150.00 m³ is the area of the full rectangle in square metres with the sand depth left out altogether. Convert the depth to metres (50 mm = 0.05 m) and subtract the notch before multiplying."
       ]
     },
     {
       "year": 2023,
+      "qNum": 1,
       "q": "A 205 metre land block is measured. Which tool was most likely used?",
       "options": [
         "String line",
@@ -544,6 +575,7 @@
     },
     {
       "year": 2023,
+      "qNum": 2,
       "q": "Which construction plan contains a North symbol?",
       "options": [
         "Site",
@@ -561,6 +593,7 @@
     },
     {
       "year": 2023,
+      "qNum": 3,
       "q": "What is the primary purpose of workers wearing 'high vis' clothing?",
       "options": [
         "Keep warm",
@@ -578,6 +611,7 @@
     },
     {
       "year": 2023,
+      "qNum": 4,
       "q": "When ordering timber in metres but plans in millimetres. Which length equals 330 mm?",
       "options": [
         "0.033 m",
@@ -595,6 +629,7 @@
     },
     {
       "year": 2023,
+      "qNum": 5,
       "q": "Most appropriate method to manage dust on recently demolished site?",
       "options": [
         "Damping the area",
@@ -612,6 +647,7 @@
     },
     {
       "year": 2023,
+      "qNum": 6,
       "q": "An image of a sign is shown. Where should this sign be placed?",
       "options": [
         "On notice board",
@@ -630,6 +666,7 @@
     },
     {
       "year": 2023,
+      "qNum": 7,
       "q": "A jackhammer could be used for which task?",
       "options": [
         "Breaking up brick walls",
@@ -647,6 +684,7 @@
     },
     {
       "year": 2023,
+      "qNum": 8,
       "q": "What is the purpose of a residual current device (RCD)?",
       "options": [
         "Save electricity",
@@ -664,6 +702,7 @@
     },
     {
       "year": 2023,
+      "qNum": 9,
       "q": "What is ACM an abbreviation for?",
       "options": [
         "Asbestos Containing Material",
@@ -681,6 +720,7 @@
     },
     {
       "year": 2023,
+      "qNum": 10,
       "q": "Why are pictorial drawings used in construction?",
       "options": [
         "Quick to produce",
@@ -698,6 +738,7 @@
     },
     {
       "year": 2023,
+      "qNum": 11,
       "q": "What would a surveyor use to outline the initial external perimeter?",
       "options": [
         "Fences and stays",
@@ -705,16 +746,17 @@
         "Star pickets and string lines",
         "Painted pegs and ground spray"
       ],
-      "answer": 1,
+      "answer": 3,
       "optionExplanations": [
-        "Fences and stays are used for site security and boundary marking, not for precise survey set-out of building positions.",
-        "✓ Correct. Surveyors use profiles (horizontal boards on pegs set back from the building line) and string lines to mark the exact perimeter of a building. Profile boards allow the string lines to be removed and repositioned accurately during excavation and construction.",
-        "Star pickets and string lines are used for rough site fencing and general alignment but lack the precision required for building set-out — star pickets move too easily.",
-        "Painted pegs and ground spray are used for marking approximate excavation boundaries or services — not for the precise surveyed building perimeter."
+        "Fences and stays secure a site and keep the public out. They do not mark where the building sits.",
+        "Profiles and string lines are erected by the builder to hold the wall lines during excavation and footing work. They are set up from the surveyor's marks, so they are not what outlines the perimeter initially.",
+        "Star pickets and string lines are used for temporary fencing and rough alignment. Star pickets are driven by hand and move too easily to define a surveyed perimeter.",
+        "✓ Correct. On a freshly cleared block the surveyor sets out the building by driving marked (painted) survey pegs at the corners and spraying the perimeter line onto the ground. That first outline is what the builder then works from when erecting profiles and string lines."
       ]
     },
     {
       "year": 2023,
+      "qNum": 12,
       "q": "What does a lock-out tag on an electric plane mean?",
       "options": [
         "In dangerous condition",
@@ -732,6 +774,7 @@
     },
     {
       "year": 2023,
+      "qNum": 13,
       "q": "Correct manual handling technique to move 10 lots of 20 kg cement bags?",
       "options": [
         "Wide stance, straight back, lift with arms",
@@ -749,6 +792,7 @@
     },
     {
       "year": 2023,
+      "qNum": 14,
       "q": "A trench 3m × 1.5m × 0.2m deep needs excavating. Total soil to be excavated?",
       "options": [
         "0.09 m³",
@@ -766,6 +810,7 @@
     },
     {
       "year": 2023,
+      "qNum": 15,
       "q": "Which plan drawing would show the pitch of the roof?",
       "options": [
         "Site",
@@ -783,6 +828,7 @@
     },
     {
       "year": 2024,
+      "qNum": 1,
       "q": "Why are blue and white safety signs used on construction sites?",
       "options": [
         "Show danger",
@@ -800,6 +846,7 @@
     },
     {
       "year": 2024,
+      "qNum": 2,
       "q": "What type of hammer should be used to remove nails from timber?",
       "options": [
         "Claw",
@@ -817,6 +864,7 @@
     },
     {
       "year": 2024,
+      "qNum": 3,
       "q": "A hacksaw is primarily used for cutting",
       "options": [
         "Glass panels",
@@ -834,6 +882,7 @@
     },
     {
       "year": 2024,
+      "qNum": 4,
       "q": "Most appropriate tool to measure vertical distance floor to ceiling of 2.4m wall?",
       "options": [
         "1-metre rule",
@@ -851,6 +900,7 @@
     },
     {
       "year": 2024,
+      "qNum": 5,
       "q": "A construction detail drawing (450mm) is shown. What scale is most suited?",
       "options": [
         "1:10",
@@ -869,6 +919,7 @@
     },
     {
       "year": 2024,
+      "qNum": 6,
       "q": "When electrical safety tag on power tool is missing, what action must be taken?",
       "options": [
         "Report to supervisor",
@@ -886,6 +937,7 @@
     },
     {
       "year": 2024,
+      "qNum": 7,
       "q": "In communication process, the first role of sender is to",
       "options": [
         "Receive feedback",
@@ -903,6 +955,7 @@
     },
     {
       "year": 2024,
+      "qNum": 8,
       "q": "Recommended method for extinguishing small flammable liquid fire on clothing?",
       "options": [
         "Fire blanket",
@@ -920,6 +973,7 @@
     },
     {
       "year": 2024,
+      "qNum": 9,
       "q": "Trench dimensions: 4.2m length, 0.9m width, 1600mm depth. Volume of soil to remove?",
       "options": [
         "0.0648 m³",
@@ -937,6 +991,7 @@
     },
     {
       "year": 2024,
+      "qNum": 10,
       "q": "How does recycled concrete contribute to sustainability?",
       "options": [
         "Adds to costs",
@@ -954,6 +1009,7 @@
     },
     {
       "year": 2024,
+      "qNum": 11,
       "q": "A site plan (Smith Street) is shown. What is the eastern setback?",
       "options": [
         "2600",
@@ -961,17 +1017,18 @@
         "4000",
         "4600"
       ],
-      "answer": 1,
+      "answer": 3,
       "image": "/diagrams/vet-construction_2024_Q11_stimulus.jpg",
       "optionExplanations": [
-        "2600 is another dimension shown on the plan — read the dimension specifically labelled for the eastern boundary setback.",
-        "✓ Correct. Reading the site plan carefully, the dimension shown for the eastern setback (distance from the building to the eastern boundary) is 2900 mm. Always identify which boundary is east by using the North point on the plan.",
-        "4000 is another dimension on the plan, likely a setback to a different boundary.",
-        "4600 is another dimension on the plan — not the eastern setback."
+        "2600 is measured on the left-hand side of the plan. With the north point facing up, that is the western setback.",
+        "2900 is measured from the bottom of the building down to the Smith Street boundary — a southern setback, running north–south rather than east–west.",
+        "4000 is measured from the top of the building to the rear boundary, so it is the northern setback.",
+        "✓ Correct. The north point on the plan faces up, so east is to the right. Two dimensions run to the eastern boundary, 5200 and 4600. A setback is measured to the closest part of the building, so the eastern setback is 4600."
       ]
     },
     {
       "year": 2024,
+      "qNum": 12,
       "q": "What is the primary role of trade unions in Australian construction?",
       "options": [
         "Determine construction designs",
@@ -989,6 +1046,7 @@
     },
     {
       "year": 2024,
+      "qNum": 13,
       "q": "Before entering confined space, what is the first step?",
       "options": [
         "Eliminate air leaks",
@@ -1006,6 +1064,7 @@
     },
     {
       "year": 2024,
+      "qNum": 14,
       "q": "In construction, what does the term 'datum' refer to?",
       "options": [
         "North orientation on plans",
@@ -1023,6 +1082,7 @@
     },
     {
       "year": 2024,
+      "qNum": 15,
       "q": "What is the primary function of a compressor regulator?",
       "options": [
         "Add lubrication",
@@ -1040,6 +1100,7 @@
     },
     {
       "year": 2025,
+      "qNum": 1,
       "q": "A fire extinguisher with a blue band is shown. This fire extinguisher would be most suitable to use on which type of fire?",
       "options": [
         "Clothing",
@@ -1047,17 +1108,18 @@
         "Flammable liquid",
         "Electrical equipment"
       ],
-      "answer": 3,
+      "answer": 2,
       "image": "/diagrams/vet-construction_2025_Q1_stimulus.jpg",
       "optionExplanations": [
-        "Clothing fires are most safely extinguished with a fire blanket — chemical extinguishers of any type should not be directed at a burning person.",
-        "Flammable gas fires (Class C) require a dry chemical (BE) or clean agent extinguisher. Blue band extinguishers (dry powder) can handle gas but are specifically coded for electrical fires.",
-        "Flammable liquid fires (Class B) are handled by foam, dry chemical (ABE) or CO₂ extinguishers — not specifically by the blue-banded type.",
-        "✓ Correct. A blue band on a fire extinguisher indicates a dry powder (ABE) type, which is most suitable for electrical fires (Class E). The dry powder does not conduct electricity, making it safe to use on electrical equipment. Always isolate power first where possible."
+        "A fire blanket is used on burning clothing. An extinguisher discharged directly at a person risks further injury.",
+        "Flammable gas fires (Class C) call for a dry chemical extinguisher (white band), and the first action is to isolate the gas supply.",
+        "✓ Correct. Under AS 2444 a blue band identifies a foam (AFFF) extinguisher. Foam is rated for Class A and Class B fires and works on flammable liquids by blanketing the surface and cutting off the oxygen supply.",
+        "Foam is water-based and conducts electricity, so a blue-band extinguisher must never be used on live electrical equipment. Electrical fires call for carbon dioxide (black band) or dry chemical (white band)."
       ]
     },
     {
       "year": 2025,
+      "qNum": 2,
       "q": "A workplace is required to implement a health and safety committee when employee numbers reach what number?",
       "options": [
         "10",
@@ -1075,6 +1137,7 @@
     },
     {
       "year": 2025,
+      "qNum": 3,
       "q": "A safe work method statement is mandatory for which of the following construction activities?",
       "options": [
         "Mixing concrete",
@@ -1092,6 +1155,7 @@
     },
     {
       "year": 2025,
+      "qNum": 4,
       "q": "A drawing of a house is shown. What type of roof is on this house?",
       "options": [
         "Gable",
@@ -1110,6 +1174,7 @@
     },
     {
       "year": 2025,
+      "qNum": 5,
       "q": "What type of material would a nibbler be best suited to cut?",
       "options": [
         "Sheet metal",
@@ -1127,6 +1192,7 @@
     },
     {
       "year": 2025,
+      "qNum": 6,
       "q": "Which of the following images shows a cross-cut saw?",
       "options": [
         "A",
@@ -1145,6 +1211,7 @@
     },
     {
       "year": 2025,
+      "qNum": 7,
       "q": "Which sector of the construction industry is responsible for building warehouses?",
       "options": [
         "Civil",
@@ -1162,6 +1229,7 @@
     },
     {
       "year": 2025,
+      "qNum": 8,
       "q": "A ten-metre long retaining wall is to be built. Which of the following is best suited to assist in constructing a straight wall?",
       "options": [
         "String line",
@@ -1179,6 +1247,7 @@
     },
     {
       "year": 2025,
+      "qNum": 9,
       "q": "The dimensions of a room are shown (3.4m × 6m).",
       "options": [
         "18.80 m",
@@ -1197,6 +1266,7 @@
     },
     {
       "year": 2025,
+      "qNum": 10,
       "q": "Which set of tools would be most appropriate for excavating a footing by hand?",
       "options": [
         "Spade, pick and rake",
@@ -1214,6 +1284,7 @@
     },
     {
       "year": 2025,
+      "qNum": 11,
       "q": "All workers on a construction site need to be informed about an urgent change. What is the most effective way to communicate this information to all workers?",
       "options": [
         "Email",
@@ -1231,6 +1302,7 @@
     },
     {
       "year": 2025,
+      "qNum": 12,
       "q": "Which of the following lists contains the correct sequence in the construction of a residential building?",
       "options": [
         "Painting, plumbing, concreting, scaffolding",
@@ -1248,6 +1320,7 @@
     },
     {
       "year": 2025,
+      "qNum": 13,
       "q": "A characteristic of biodegradable construction materials is that they",
       "options": [
         "are expensive to dispose of.",
@@ -1265,6 +1338,7 @@
     },
     {
       "year": 2025,
+      "qNum": 14,
       "q": "Which of the following documents would be found in a building contract?",
       "options": [
         "Work schedule and materials list",
@@ -1282,6 +1356,7 @@
     },
     {
       "year": 2025,
+      "qNum": 15,
       "q": "The table shows hourly rates for apprentices. A second year apprentice works a standard week (38 hours) and 4 hours overtime on a Saturday (first 2 hours at ×1.5, after at ×2.0). What is the wage?",
       "options": [
         "$570.00",

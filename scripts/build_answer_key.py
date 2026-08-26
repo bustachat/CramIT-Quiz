@@ -67,8 +67,14 @@ SUBJECTS = {
     },
 }
 
-# "17" then "B" on the next line, each alone on its line.
-ANSWER_ROW = re.compile(r"^[ \t]*(\d{1,2})[ \t]*\n[ \t]*([A-D])[ \t]*$", re.MULTILINE)
+# "17" then "B", each alone on its line. Multimedia/Construction papers up to
+# 2023 interleave a whitespace-only line between the two (" \n \nC \n") where
+# 2024-25 and every Maths paper do not (" \nC \n"). Both shapes must parse --
+# without the blank-line tolerance, three of the eleven papers yield no answers
+# at all.
+ANSWER_ROW = re.compile(
+    r"^[ \t]*(\d{1,2})[ \t]*\n(?:[ \t]*\n)*[ \t]*([A-D])[ \t]*$", re.MULTILINE
+)
 
 
 def extract_mc_key(pdf_path: str) -> dict[int, str]:

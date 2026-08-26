@@ -6,6 +6,7 @@
   "mcQuestions": [
     {
       "year": 2020,
+      "qNum": 1,
       "q": "When text is moved at the beginning of a paragraph by five spaces to the right it is called",
       "options": [
         "A right indent",
@@ -23,6 +24,7 @@
     },
     {
       "year": 2020,
+      "qNum": 2,
       "q": "What does PDF stand for?",
       "options": [
         "Portable Data File",
@@ -40,6 +42,7 @@
     },
     {
       "year": 2020,
+      "qNum": 3,
       "q": "What is pagination used for?",
       "options": [
         "Removing irrelevant pages",
@@ -57,6 +60,7 @@
     },
     {
       "year": 2020,
+      "qNum": 4,
       "q": "Which of the following affects file size?",
       "options": [
         "Colour depth",
@@ -74,6 +78,7 @@
     },
     {
       "year": 2020,
+      "qNum": 5,
       "q": "What is the primary function of a clapper board?",
       "options": [
         "To indicate the beginning of a shot",
@@ -91,6 +96,7 @@
     },
     {
       "year": 2020,
+      "qNum": 6,
       "q": "What does authoring software allow a user to do?",
       "options": [
         "Watch media content",
@@ -108,6 +114,7 @@
     },
     {
       "year": 2020,
+      "qNum": 7,
       "q": "What is required to use copyrighted images on your webpage?",
       "options": [
         "A software licence",
@@ -125,6 +132,7 @@
     },
     {
       "year": 2020,
+      "qNum": 8,
       "q": "Tweening is the process of generating",
       "options": [
         "Hand-drawn files",
@@ -142,6 +150,7 @@
     },
     {
       "year": 2020,
+      "qNum": 9,
       "q": "Anti-aliasing is used when",
       "options": [
         "Games don't run fast enough",
@@ -159,6 +168,7 @@
     },
     {
       "year": 2020,
+      "qNum": 10,
       "q": "Which describes the result of lossy video compression?",
       "options": [
         "Poorer quality, Smaller file",
@@ -176,23 +186,25 @@
     },
     {
       "year": 2021,
+      "qNum": 1,
       "q": "Which of the following is a 'serif' font?",
       "options": [
         "Arial",
-        "Helvetica",
-        "Calibri",
+        "Comic Sans",
+        "Century Gothic",
         "Times New Roman"
       ],
       "answer": 3,
       "optionExplanations": [
         "Arial is a sans-serif font — it has clean, straight letterforms with no decorative finishing strokes at the ends of characters.",
-        "Helvetica is one of the most famous sans-serif fonts, known for its clean, neutral design. It was the basis for Arial.",
-        "Calibri is a sans-serif font introduced by Microsoft. Its rounded, open letterforms are designed for on-screen readability.",
+        "Comic Sans is a casual sans-serif face with hand-drawn letterforms. It has no serifs.",
+        "Century Gothic is a geometric sans-serif built from circular letterforms. It has no serifs.",
         "✓ Correct. Times New Roman is a serif font — it has small decorative strokes (serifs) at the ends of letterforms, which help guide the reader's eye along lines of text in print."
       ]
     },
     {
       "year": 2021,
+      "qNum": 2,
       "q": "Scanners are typically used to",
       "options": [
         "Convert numbers into files",
@@ -210,6 +222,7 @@
     },
     {
       "year": 2021,
+      "qNum": 3,
       "q": "What units are used to measure high speed video streaming?",
       "options": [
         "Mbps",
@@ -227,6 +240,7 @@
     },
     {
       "year": 2021,
+      "qNum": 4,
       "q": "What image type supports transparency?",
       "options": [
         "BMP",
@@ -244,6 +258,7 @@
     },
     {
       "year": 2021,
+      "qNum": 5,
       "q": "Which technique can be used to digitally capture patterns of movement to animate a 3D character?",
       "options": [
         "Stop motion",
@@ -261,6 +276,7 @@
     },
     {
       "year": 2021,
+      "qNum": 6,
       "q": "Which technique is used to smooth jagged lines by blending the edge with pixels around it?",
       "options": [
         "Anti-aliasing",
@@ -278,6 +294,7 @@
     },
     {
       "year": 2021,
+      "qNum": 7,
       "q": "In what type of animation is tweening used?",
       "options": [
         "Cel based",
@@ -295,6 +312,7 @@
     },
     {
       "year": 2021,
+      "qNum": 8,
       "q": "Which type of file format is lossless?",
       "options": [
         "JPG",
@@ -312,6 +330,7 @@
     },
     {
       "year": 2021,
+      "qNum": 9,
       "q": "Which frame rates should be used when producing slow-motion video?",
       "options": [
         "Play 12 fps, record 12 fps",
@@ -329,6 +348,7 @@
     },
     {
       "year": 2021,
+      "qNum": 10,
       "q": "How long (in seconds) to transfer 163,840 bytes at 10 megabits per second?",
       "options": [
         "0.01",
@@ -346,6 +366,7 @@
     },
     {
       "year": 2022,
+      "qNum": 1,
       "q": "A MIDI file contains",
       "options": [
         "High-fidelity audio",
@@ -363,6 +384,7 @@
     },
     {
       "year": 2022,
+      "qNum": 3,
       "q": "Which of the following uses the process of motion capture?",
       "options": [
         "Recording the movement of people",
@@ -380,6 +402,7 @@
     },
     {
       "year": 2022,
+      "qNum": 4,
       "q": "What is the screen size in pixels for a full HD screen with 16:9 aspect ratio?",
       "options": [
         "480 x 680",
@@ -397,6 +420,7 @@
     },
     {
       "year": 2022,
+      "qNum": 5,
       "q": "What does RTSP stand for?",
       "options": [
         "Real-time server protocol",
@@ -414,6 +438,7 @@
     },
     {
       "year": 2022,
+      "qNum": 6,
       "q": "What is the function of progressive JPEG technology?",
       "options": [
         "To enhance the colours",
@@ -431,6 +456,7 @@
     },
     {
       "year": 2022,
+      "qNum": 8,
       "q": "What is the cause of poor quality audio with clipped waveforms?",
       "options": [
         "Recording level set too high",
@@ -448,6 +474,7 @@
     },
     {
       "year": 2022,
+      "qNum": 9,
       "q": "Buffering is used when streaming video in order to",
       "options": [
         "Preload content",
@@ -465,6 +492,7 @@
     },
     {
       "year": 2022,
+      "qNum": 10,
       "q": "How does larger aperture affect an image recorded by a camera?",
       "options": [
         "Increases depth of field",
@@ -482,6 +510,7 @@
     },
     {
       "year": 2022,
+      "qNum": 7,
       "q": "How will an image be affected by color balance adjustments showing Cyan +4, Magenta -41, Yellow +15?",
       "options": [
         "Red midtones will be enhanced",
@@ -499,6 +528,7 @@
     },
     {
       "year": 2022,
+      "qNum": 2,
       "q": "Which image in the sequence uses stroke colour? (Image 1: outline star, Image 2: filled circle, Image 3: filled star)",
       "options": [
         "Only 1",
@@ -516,6 +546,7 @@
     },
     {
       "year": 2023,
+      "qNum": 1,
       "q": "Which is the best way to format headings and titles in a document?",
       "options": [
         "Use any size and style desired",
@@ -533,6 +564,7 @@
     },
     {
       "year": 2023,
+      "qNum": 2,
       "q": "Which term describes the process where an animated image repeats indefinitely?",
       "options": [
         "Blending",
@@ -550,6 +582,7 @@
     },
     {
       "year": 2023,
+      "qNum": 3,
       "q": "What is object layering?",
       "options": [
         "Preparing audio and video for editing",
@@ -567,6 +600,7 @@
     },
     {
       "year": 2023,
+      "qNum": 4,
       "q": "What term describes broadcasting and listening to on-demand music over the internet?",
       "options": [
         "Interactive",
@@ -584,6 +618,7 @@
     },
     {
       "year": 2023,
+      "qNum": 5,
       "q": "Which process is used for smoothing edges by blending colours with adjacent colours?",
       "options": [
         "Anti-aliasing",
@@ -601,6 +636,7 @@
     },
     {
       "year": 2023,
+      "qNum": 6,
       "q": "What is the primary purpose of video compression?",
       "options": [
         "Reduce size of file and maintain quality",
@@ -618,6 +654,7 @@
     },
     {
       "year": 2023,
+      "qNum": 7,
       "q": "Which best describes 3D modelling for animation?",
       "options": [
         "Visual illusion of depth of 3D objects",
@@ -635,6 +672,7 @@
     },
     {
       "year": 2023,
+      "qNum": 8,
       "q": "Which best describes a font?",
       "options": [
         "It has many sizes and styles",
@@ -652,6 +690,7 @@
     },
     {
       "year": 2023,
+      "qNum": 9,
       "q": "Which correctly describes a multimedia authoring tool?",
       "options": [
         "Hardware used to display a multimedia title",
@@ -669,6 +708,7 @@
     },
     {
       "year": 2023,
+      "qNum": 10,
       "q": "Which statement is true about using images from the internet?",
       "options": [
         "Images can be used freely",
@@ -686,6 +726,7 @@
     },
     {
       "year": 2024,
+      "qNum": 1,
       "q": "When text on a page is fully justified, it is aligned",
       "options": [
         "To the left",
@@ -703,6 +744,7 @@
     },
     {
       "year": 2024,
+      "qNum": 2,
       "q": "Which file format supports transparent backgrounds?",
       "options": [
         "BMP",
@@ -720,6 +762,7 @@
     },
     {
       "year": 2024,
+      "qNum": 3,
       "q": "A web-based survey uses a drop-down list to",
       "options": [
         "Guide the user to the correct answer",
@@ -737,6 +780,7 @@
     },
     {
       "year": 2024,
+      "qNum": 4,
       "q": "What characterises 'motion capture' as an animation technique?",
       "options": [
         "Drawing individual frames by hand",
@@ -754,6 +798,7 @@
     },
     {
       "year": 2024,
+      "qNum": 5,
       "q": "Which encoding technique maintains original quality while reducing file size?",
       "options": [
         "Encryption",
@@ -771,6 +816,7 @@
     },
     {
       "year": 2024,
+      "qNum": 6,
       "q": "What is the standard video size for full HD video?",
       "options": [
         "1920 x 1080",
@@ -788,6 +834,7 @@
     },
     {
       "year": 2024,
+      "qNum": 7,
       "q": "What does the 'hue' adjustment tool primarily affect?",
       "options": [
         "Sharpness of the image",
@@ -805,6 +852,7 @@
     },
     {
       "year": 2024,
+      "qNum": 8,
       "q": "What advantage does progressive loading of web pages offer?",
       "options": [
         "Images can be re-sent if interrupted",
@@ -822,6 +870,7 @@
     },
     {
       "year": 2024,
+      "qNum": 9,
       "q": "Which statement correctly describes storage of analogue video?",
       "options": [
         "Analogue video is stored in binary code",
@@ -839,6 +888,7 @@
     },
     {
       "year": 2024,
+      "qNum": 10,
       "q": "Which stage of animation typically involves the use of wire frames?",
       "options": [
         "Previsualisation",
@@ -856,6 +906,7 @@
     },
     {
       "year": 2025,
+      "qNum": 1,
       "q": "What is the primary purpose of paragraph formatting in a word processing document?",
       "options": [
         "To ensure documents have a unique appearance",
@@ -873,6 +924,7 @@
     },
     {
       "year": 2025,
+      "qNum": 2,
       "q": "What is the primary advantage of using dedicated screenshot tools over keyboard shortcuts?",
       "options": [
         "They are faster and more efficient.",
@@ -890,6 +942,7 @@
     },
     {
       "year": 2025,
+      "qNum": 3,
       "q": "Which factor most commonly affects sound quality when streaming audio on the World Wide Web?",
       "options": [
         "The popularity of the audio file",
@@ -907,6 +960,7 @@
     },
     {
       "year": 2025,
+      "qNum": 4,
       "q": "Which of the following best describes the effect of using a contrast filter in multimedia design?",
       "options": [
         "The transitions between colours are smoothed out.",
@@ -924,6 +978,7 @@
     },
     {
       "year": 2025,
+      "qNum": 5,
       "q": "Which of the following post-editing techniques is commonly used to create slow-motion effects in video?",
       "options": [
         "Using software to generate additional frames between existing frames",
@@ -941,6 +996,7 @@
     },
     {
       "year": 2025,
+      "qNum": 6,
       "q": "Which of the following is a characteristic of rigging in 3D animation?",
       "options": [
         "Modelling characters and objects in a scene",
@@ -958,6 +1014,7 @@
     },
     {
       "year": 2025,
+      "qNum": 7,
       "q": "Which of the following is most important for video player software to play videos smoothly?",
       "options": [
         "High screen brightness for better visibility",
@@ -975,6 +1032,7 @@
     },
     {
       "year": 2025,
+      "qNum": 8,
       "q": "What is a key limitation of PDF files that hinders collaboration and editing?",
       "options": [
         "Dependence on proprietary software limits accessibility.",
@@ -992,6 +1050,7 @@
     },
     {
       "year": 2025,
+      "qNum": 9,
       "q": "Which of the following best describes animation as a multimedia element?",
       "options": [
         "A special effect used to enhance the appearance of static images",
@@ -1009,6 +1068,7 @@
     },
     {
       "year": 2025,
+      "qNum": 10,
       "q": "A website wants to implement an age verification system to restrict access to adult content. Which of the following methods would be the most reliable for ensuring accurate age control?",
       "options": [
         "Using facial recognition software to estimate age",

@@ -1,0 +1,146 @@
+{
+  "schemaVersion": 1,
+  "subjectId": "vet-construction",
+  "subjectName": "VET Construction",
+  "generatedAt": "2026-08-26T11:43:26Z",
+  "generator": "scripts/build_answer_key.py",
+  "source": {
+    "publisher": "NSW Education Standards Authority",
+    "folder": "VET - Construction",
+    "extractedFrom": "Multiple-choice Answer Key table, page 1 of each marking guidelines PDF",
+    "note": "Official HSC answers are immutable. Do not hand-edit this file -- regenerate it with the script above."
+  },
+  "papers": [
+    {
+      "year": 2025,
+      "markingGuidelines": "2025-hsc-vet-construction-mg.pdf",
+      "examPaper": "2025-hsc-vet-construction.pdf",
+      "sectionI": {
+        "questionCount": 15,
+        "sourcePage": 1,
+        "answers": {
+          "1": "C",
+          "2": "B",
+          "3": "D",
+          "4": "B",
+          "5": "A",
+          "6": "A",
+          "7": "B",
+          "8": "A",
+          "9": "C",
+          "10": "C",
+          "11": "D",
+          "12": "C",
+          "13": "D",
+          "14": "B",
+          "15": "D"
+        }
+      }
+    },
+    {
+      "year": 2024,
+      "markingGuidelines": "2024-hsc-vet-construction-mg.pdf",
+      "examPaper": "2024-hsc-vet-construction.pdf",
+      "sectionI": {
+        "questionCount": 15,
+        "sourcePage": 1,
+        "answers": {
+          "1": "C",
+          "2": "A",
+          "3": "B",
+          "4": "B",
+          "5": "A",
+          "6": "A",
+          "7": "D",
+          "8": "A",
+          "9": "B",
+          "10": "B",
+          "11": "D",
+          "12": "C",
+          "13": "D",
+          "14": "C",
+          "15": "D"
+        }
+      }
+    },
+    {
+      "year": 2023,
+      "markingGuidelines": "2023-hsc-vet-construction-mg.pdf",
+      "examPaper": "2023-hsc-vet-construction.pdf",
+      "sectionI": {
+        "questionCount": 15,
+        "sourcePage": 1,
+        "answers": {
+          "1": "C",
+          "2": "A",
+          "3": "C",
+          "4": "B",
+          "5": "A",
+          "6": "D",
+          "7": "A",
+          "8": "D",
+          "9": "A",
+          "10": "C",
+          "11": "D",
+          "12": "A",
+          "13": "C",
+          "14": "B",
+          "15": "D"
+        }
+      }
+    },
+    {
+      "year": 2022,
+      "markingGuidelines": "2022-hsc-vet-construction-mg.pdf",
+      "examPaper": "2022-hsc-vet-construction.pdf",
+      "sectionI": {
+        "questionCount": 15,
+        "sourcePage": 1,
+        "answers": {
+          "1": "B",
+          "2": "D",
+          "3": "C",
+          "4": "A",
+          "5": "B",
+          "6": "D",
+          "7": "B",
+          "8": "C",
+          "9": "C",
+          "10": "D",
+          "11": "A",
+          "12": "A",
+          "13": "B",
+          "14": "C",
+          "15": "A"
+        }
+      }
+    },
+    {
+      "year": 2021,
+      "markingGuidelines": "2021-hsc-construction-mg.pdf",
+      "examPaper": "2021-hsc-vet-construction.pdf",
+      "sectionI": {
+        "questionCount": 15,
+        "sourcePage": 1,
+        "answers": {
+          "1": "C",
+          "2": "B",
+          "3": "D",
+          "4": "B",
+          "5": "C",
+          "6": "C",
+          "7": "D",
+          "8": "B",
+          "9": "D",
+          "10": "C",
+          "11": "B",
+          "12": "D",
+          "13": "A",
+          "14": "C",
+          "15": "A"
+        }
+      }
+    }
+  ],
+  "extractionProblems": []
+}
