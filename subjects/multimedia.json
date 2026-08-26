@@ -529,7 +529,8 @@
     {
       "year": 2022,
       "qNum": 2,
-      "q": "Which image in the sequence uses stroke colour? (Image 1: outline star, Image 2: filled circle, Image 3: filled star)",
+      "q": "Which of the following images uses stroke colour?",
+      "image": "/diagrams/multimedia_2022_Q2_stimulus.jpg",
       "options": [
         "Only 1",
         "Only 2",
@@ -538,10 +539,10 @@
       ],
       "answer": 3,
       "optionExplanations": [
-        "Image 1 is an outline-only star — it uses stroke colour for its outline with no fill. However, this option says 'only 1', which is incorrect because other images also use stroke colour.",
-        "Image 2 is a filled circle. It uses fill colour and also has a visible stroke/outline border. Saying 'only 2' is incorrect because image 3 also has a stroke.",
-        "Images 1 and 3 both have outlines, but image 1 has no fill (outline only) while images 2 and 3 have both fill and stroke. The question identifies which use stroke colour — both 2 and 3 do.",
-        "✓ Correct. Image 2 (filled circle) and Image 3 (filled star) both have a stroke colour applied to their outlines alongside fill colour. They display the combination of fill and stroke that distinguishes them from Image 1."
+        "Image 1 is a plain filled star with no outline drawn around it, so it is the one image here that uses no stroke colour at all — it is fill only.",
+        "Image 2 does use stroke colour: it is an unfilled star drawn with a heavy dark outline. But it is not the only one — image 3 carries the same dark outline.",
+        "Image 3 does use stroke colour, but image 1 does not. Image 1 has no outline around it at all, so this pairing includes the one image with fill only.",
+        "✓ Correct. Image 2 is an unfilled star drawn with a heavy dark outline (stroke, no fill) and image 3 is a grey-filled star with that same dark outline (stroke and fill). Only image 1 is drawn without any outline."
       ]
     },
     {

@@ -802,3 +802,111 @@ exactly, so the approach works — but scope the extraction to the criteria tabl
 stray digits in the sample working. Note `qNum` alone will not be a sufficient join key
 there: **2020 and 2021 Maths split some multi-part questions into separate rows (7 and 4
 respectively) where 2022–2025 merge them.**
+
+---
+
+## 2026-08-27 (later) — VET 2021 Q15 option images cropped; the sweep found a second, worse case
+
+Closes the `VET 2021 Q15` known issue in CLAUDE.md §11, including the sweep it asked
+for. The sweep is the part that mattered: it turned up a Multimedia question that was
+not merely missing pictures but **actively contradicted its own answer**.
+
+### VET 2021 Q15 — the four cross-sections
+
+Only the site-plan stimulus had ever been cropped; the four answer diagrams on page 7
+of `2021-hsc-vet-construction.pdf` had not, so the question ran on text descriptions of
+the curves. All four are now cropped and wired as `optionImages`.
+
+The page defeats the usual extraction routes: there are **no embedded raster images**
+(the diagrams are vector), and the option letters and the `North` / `South` /
+`Ground level` labels are **outline paths, not text** — `get_text()` returns none of
+them and `get_drawings()` reports only the chart boxes. The crop boxes are therefore
+derived from an **ink profile** of the rendered page, which is the only reading that
+sees every mark actually printed. Each option is two ink bands (chart + `Ground level`,
+then a strip holding `North` / `South`); both are kept.
+
+The paper's own `A.`/`B.`/… glyph is deliberately **excluded** from each crop, unlike
+the 56 existing Maths option crops: `index.html` renders its own `<span class="option-label">`
+beside the image, so a baked-in letter prints twice. (Option order is safe to rely on —
+`shuffle()` shuffles the question list, never the options.)
+
+Each crop was then read back and checked against the paper one by one — the §10 rule 6
+trap. All four match their existing descriptions, and the contours (10.500 at the north
+end rising to 12.500 at the south) confirm `answer: 0`. **No answer or option text
+changed on this question.**
+
+`scripts/crop_vet_2021_q15_options.py` is the script of record.
+
+### A layout problem the crops created, found by measuring rather than assuming
+
+These cross-sections are ~4.6:1 — twice as wide as any existing option image (Maths'
+are ~2.2:1). In the `.options-grid-2x2` layout they render **160×35 px** at a 430 px
+viewport (iPhone Pro Max), where a gentle dip in C is indistinguishable from a sharp
+drop in D. The existing `@media (max-width: 380px)` single-column fallback does not
+catch this, since 430 px is well above it.
+
+Added an opt-in `"optionImagesWide": true` on the question plus an `.options-list-wide`
+rule that keeps such options one-per-row at every width: **360×78 px**, more than double
+the height. Maths' 14 image-option questions were re-checked and still render
+`options-grid-2x2` at 2 columns — unchanged.
+
+### The sweep — and Multimedia 2022 Q2
+
+Two passes, because the obvious one would have missed Q15 itself:
+
+1. **Bare-letter options** (`A/B/C/D`, `W/X/Y/Z`) — 7 questions. Four already carried
+   `optionImages`; the other three (VET 2022 Q7 and Q13, VET 2025 Q6, plus Maths 2025 Q1)
+   are *self-contained*: their single stimulus carries all four labels — wall positions
+   W–Z, four drill bits W–Z, four saws A–D, network vertices A–F. Each was opened and
+   confirmed, answers included. **None has Q15's gap.**
+2. **Stem-based** — questions promising the options are pictures ("which of the following
+   best represents/shows…"). This is the pass that finds Q15-shaped gaps, since Q15's
+   options were *prose descriptions*, not letters. Six hits were CramIT-authored
+   `variant: true` Maths questions (no paper exists, nothing to crop); two VET hits
+   (2022 Q11, 2023 Q15) answer with the *name* of a drawing type, so text options are
+   correct.
+
+That left **Multimedia 2022 Q2**, which was worse than Q15. The paper shows three star
+shapes labelled 1, 2, 3; the port carried no image and appended descriptions to the stem
+instead — and **all three were wrong**:
+
+| | paper | port said |
+|---|---|---|
+| image 1 | filled star, **no** outline | "outline star" |
+| image 2 | **unfilled** star **with** outline | "filled circle" |
+| image 3 | filled star **with** outline | "filled star" |
+
+The keyed answer D (`2 and 3`) is right for the real pictures, but a student reasoning
+correctly from the port's text answers A (`Only 1`) and is **marked wrong**. All four
+`optionExplanations` argued from the same wrong descriptions. This is precisely what §10
+rule 6 warns about — the answer-key check compares the official letter only and never
+sees stem or option text, so it passed this question at 60/60 both before and after.
+
+Fixed: stimulus cropped (`scripts/crop_multimedia_2022_q2_stimulus.py`), the stem
+restored to the paper's exact wording ("Which of the following images uses stroke
+colour?"), and all four explanations rewritten against the real pictures. **The answer
+did not change.**
+
+⚠️ **Process note.** The first edit to `multimedia.json` was written with
+`json.dumps(indent=2)` and reformatted the whole file — 461 insertions for a 6-line
+change, because it expanded the compact inline arrays in `studyNotes`. Reverted and
+redone as a targeted text replacement (6 insertions, 5 deletions). **Do not round-trip a
+subject JSON through `json.dumps` to make a small edit** — `vet-construction.json`
+happened to survive it only because it has no compact inline formatting.
+
+**Verified.** `node scripts/validate_subjects.cjs` green (MC=646, Written=243,
+imageRefs 183→188, 0 missing images, 0 issues); `node scripts/check_answer_key.cjs`
+225 checked, 0 wrong, 0 unverifiable. Browser (served locally, `loading='eager'` forced
+since lazy images read `naturalWidth` 0 while the pane is hidden): VET 2021 Q15 renders
+one-per-row at 430 px with all four crops at 360×78, A marks correct (score 1) and D
+marks wrong with A shown correct, all four explanations rendering; Multimedia 2022 Q2
+renders the new stimulus (755×271 natural) with the corrected stem, D marks correct;
+three Maths option-image questions still render `options-grid-2x2` at 2 columns. All
+five new images serve 200 OK; no console errors.
+
+**Still open.** The bare-letter sweep covered MC and written questions in all four
+subject files, but "options are prose descriptions of an uncropped picture" can only be
+caught by reading stems — the regex used here is a good net, not a proof. The six
+`variant: true` Maths graph questions describe graph shapes in text rather than showing
+them; that is a content-quality choice for authored variants, not a gap against a paper,
+and was left alone.

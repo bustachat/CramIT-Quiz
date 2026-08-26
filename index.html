@@ -297,6 +297,10 @@
     .options-grid-2x2 .option-img { height: auto; object-fit: unset; }
     /* Collapse to single column on very narrow screens (≤380px) */
     @media (max-width: 380px) { .options-grid-2x2 { grid-template-columns: 1fr; } }
+    /* Very wide, short option diagrams (e.g. VET 2021 Q15's cross-sections, ~4.6:1) stay
+       one-per-row at every width — side by side they render ~160×35px, too small to tell
+       a gentle dip from a sharp drop. Opt in per question with "optionImagesWide": true. */
+    .options-list-wide .option-img { height: auto; object-fit: unset; }
 
     /* Phone — full width, no cap */
     .device-phone .q-image-wrap img { max-width: 100%; }
@@ -1704,7 +1708,10 @@ function renderQuestion() {
     html += `<div id="tip-slot"></div>`;
     // Use 2x2 grid when all options are images — mirrors how NESA lays out option diagrams
     const hasImgOpts = q.optionImages && q.optionImages.length >= 4 && q.optionImages.every(Boolean);
-    html += `<div class="options-list${hasImgOpts ? ' options-grid-2x2' : ''}">`;
+    // Wide, short option diagrams opt out of the 2×2 grid — see .options-list-wide
+    const wideImgOpts = hasImgOpts && q.optionImagesWide === true;
+    const optsCls = wideImgOpts ? ' options-list-wide' : (hasImgOpts ? ' options-grid-2x2' : '');
+    html += `<div class="options-list${optsCls}">`;
     (q.options || []).forEach((opt, i) => {
       const correctIdx = q.answer !== undefined ? q.answer : q.correct;
       let cls = 'option-btn';

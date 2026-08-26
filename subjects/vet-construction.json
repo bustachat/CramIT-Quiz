@@ -273,6 +273,13 @@
       ],
       "answer": 0,
       "image": "/diagrams/vet-construction_2021_Q15_stimulus.jpg",
+      "optionImages": [
+        "/diagrams/vet-construction_2021_Q15_A.jpg",
+        "/diagrams/vet-construction_2021_Q15_B.jpg",
+        "/diagrams/vet-construction_2021_Q15_C.jpg",
+        "/diagrams/vet-construction_2021_Q15_D.jpg"
+      ],
+      "optionImagesWide": true,
       "optionExplanations": [
         "✓ Correct. Along Z–Z the contour values run from 10.500 at the northern end up to 12.500 at the southern end, so the ground gets steadily higher towards the south.",
         "This reverses the contours. A fall from north to south would put the highest value at the north, but 10.500 — the lowest — is the northernmost contour.",
