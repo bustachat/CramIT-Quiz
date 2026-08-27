@@ -10,7 +10,7 @@ Report is separate: `docs/paper-reports/mathematics-advanced.md` (verdict **GO**
 | 1 Survey | ✅ complete — 2026-08-27 | done |
 | 2 Syllabus grounding | ✅ complete — 2026-08-27 | done |
 | 3 Schema | ✅ complete — 2026-08-27 | done |
-| **4 Port + assets** | ⬜ **next — 0 of 6 papers** | **6 sessions, one per paper year** (2020 first) |
+| **4 Port + assets** | 🔶 **in progress — 1 of 6 papers** (2020 ✅ 2026-08-28) | **6 sessions, one per paper year**; 2023 is next |
 | 5 Assets | ➡️ folded into Stage 4 | method reference only — **121 crops + 28 tables**, split per year |
 | 6 Ground truth | ⬜ | 1 session |
 | 7 Release | ⬜ | 1 session |
@@ -61,6 +61,9 @@ Stage 4's tracker table says which year is next.
 | Ground truth, pre-verified | `extract_mc_key()` 10/10 every year; `parse_paper()` 37–42 parts/paper, **0 unresolved, exact 90/90 on all six** |
 | Official topic + marks | `data/mapping-grid/mathematics-advanced.json` — every part, all six papers, reconciled |
 | Schema | Fixed at Stage 3 — canonical field names, no deviations. **Two engine fixes are blocking for Stage 7**: the shared `NESA_CAT_LABELS` map collides on 5 of 14 codes, and the written-question badge reads `q.topic` not `category` |
+| Bank shape | **One entry per NESA question**, not per part (Stage 4, 2020) — matches Standard 2 and the `check_written_key.cjs` prefix-sum join |
+| Crop tool | `scripts/crop_maths_advanced.py --year {YEAR}` — points, not pixels; one registry block per year. **Never** add this subject to `diagram_registry.json` |
+| File format | `subjects/mathematics-advanced.json` round-trips **byte-for-byte** through `json.dumps(indent=2, ensure_ascii=False)` plus a trailing newline — safe to load, extend with a year, and dump |
 
 ---
 
@@ -557,8 +560,8 @@ above. "Corrupt" is that paper's share of parts carrying a detectable text-layer
 
 | Session | Year | Parts | Crops | Tables | Corrupt | Status |
 |---|---|---:|---:|---:|---:|---|
-| 1 | **2020** | 49 | 18 | 4 | 37% | ⬜ |
-| 2 | 2023 | 48 | 16 | 6 | 50% | ⬜ |
+| 1 | **2020** | 49 | 18 | 4 | 37% | ✅ 2026-08-28 |
+| 2 | **2023** | 48 | 16 | 6 | 50% | ⬜ **next** |
 | 3 | 2022 | 52 | 20 | 3 | 37% | ⬜ |
 | 4 | 2025 | 50 | 22 | 2 | 42% | ⬜ |
 | 5 | 2021 | 48 | 22 | 6 | 50% | ⬜ |
@@ -605,10 +608,102 @@ Section I, then Section II, then that year's crops, then validate.
 - `node scripts/validate_subjects.cjs` must be **green with `missingImages: 0`** before the
   session ends. That is now achievable, and it is the point of the merge.
 
-**GATE 4** — [ ] validator green, `missingImages: 0` · [ ] every part has `qNum` · [ ] omissions
-declared, and each paper's marks total 100 · [ ] every crop opened and compared against the
-paper, option by option · [ ] every table renders as HTML, not an image · [ ] any 7+ column
-table wrapped and checked at 430 px · [ ] the year's Status cell ticked above
+### Decisions the 2020 session took that every later year inherits
+
+The first porting session settled five things Stage 3 left open because they only surface
+once questions are actually being written. **Follow them; they are not per-year choices.**
+
+**1 · One bank entry per NESA question, not per part.** `subjects/mathematics-advanced.json`
+stores 2020's Section II as **19 written entries**, one per question, with the parts laid out
+in the stem and the model answer covering all of them. That matches Mathematics Standard 2
+(140 of its 151 written entries are merged this way) and it reconciles trivially with
+`check_written_key.cjs`, which sums every official leaf part under a bank entry's `qNum`
+prefix. Per-part entries are legal but were not used.
+
+**2 · A merged entry spanning parts with different codes takes one `category` and records
+the union in `gridCodes`.** Stage 3 decision 7 covers a *part* carrying two codes; merging
+creates the same problem one level up. Same rule: pick the code naming the skill the marks are
+awarded for, keep NESA's full list in `gridCodes`. 2020 used it on Q18 (`C2` of `C2/C4`),
+Q21 (`E1` of `C3/E1`), Q25 (`C3` of `C3/F1`), Q30 (`C4` of `C4/F1`) and Q31 (`T3` of `C3/T3`),
+alongside the three single-part multi-code cases Stage 3 already enumerated.
+
+**3 · An omitted part inside a question the bank still carries forces the merged form.**
+2020 Q11 loses part (a) — draw the model on a printed grid. If (b) and (c) were separate
+entries, each would match only its own leaf and the dropped mark would vanish silently, which
+is exactly what `omittedParts` exists to prevent. Stored as one entry `"11"` with
+`"marks": 3` and `omittedParts: [{part: "a", marks: 1}]`, the checker adds the mark back and
+reconciles against the official 4.
+
+**4 · NESA's part letters are kept even when a part is dropped.** Q11 presents "(b)" and "(c)"
+with no "(a)", followed by a visibly separate italic note saying part (a) asked for a graph on
+a printed grid and is not included. Re-lettering (b)→(a) would be rewording NESA; leaving the
+paper's "the grid on the previous page" dangling with no explanation would be worse for the
+student. The note is clearly ours, outside the quoted text.
+
+**5 · Options carrying `optionImages` must be plain text — no HTML.** The engine reuses the
+option string as `alt="${opt}"` (1739). 2020 Q5 and Q9 therefore describe their graphs in bare
+text with literal `μ`/`σ`, while every other option string in the paper uses `<em>`/`<sup>`.
+
+### 2020 — done (2026-08-28)
+
+10 MC + 19 written entries + 2 `omittedQuestions` (Q16, Q24) + 1 `omittedParts` (Q11(a)).
+**Marks reconcile to exactly 100/100** against the mapping grid, per question as well as per
+paper, and every `category` was asserted to be one of NESA's own codes for that question.
+
+**All ten MC answers were checked against the official key** before authoring, by calling
+`extract_mc_key()` from `build_answer_key.py` read-only on `2020_marking_guidelines.pdf` —
+`D B A B C B A A C D`. Ten independent derivations from the paper agreed with all ten. That
+does not replace Stage 6 (which commits the key and puts it under CI); it just means the port
+did not start from guesses.
+
+**Assets: 18 crops, via a new `scripts/crop_maths_advanced.py`.** Deliberately *not* an entry
+in `scripts/diagram_registry.json` — that registry's coordinates are raw pixels verified at
+`RENDER_DPI = 150`, `save_crop()` overwrites unconditionally, and a bare run re-cuts every
+Standard 2 crop. The new script stores **PDF points**, so its `RENDER_DPI` can change without
+moving a crop, and takes `--year`, so each remaining session adds one registry block.
+
+⚠️ **The option letter cannot be excluded with an x-cut on these papers.** It sits in the
+cell's top-left corner and the graph runs underneath it: on 2020 Q5 option A the letter spans
+x 100.8–111.3 pt and the graph's own x-axis starts at x 102.2 pt. A first pass cropped from
+x = 114 and silently amputated the left arm of the parabola and the end of the axis — plausible,
+non-empty, wrong, exactly the failure mode the DPI trap has. The script instead crops the whole
+cell and **paints a white `erase` rectangle over the letter's own bounding box**, each one
+checked against an ink profile of that x-strip first (nothing but the letter lies inside it).
+
+Coordinates came from an ink profile (dark pixels at 150 dpi, banded with a configurable gap)
+rather than the text layer, since the option letters and most axis labels are outline paths.
+All 18 crops were then rendered into contact sheets and compared against the paper option by
+option.
+
+**Measured in the browser at a 430 px viewport** (stem 390 px), not inferred:
+
+| Case | Measured | Verdict |
+|---|---|---|
+| Q3's 4-column table, bare `.q-table` | 390 px, `body.scrollWidth` 430 | fits |
+| Q20's **7-column** table in the `overflow-x:auto` wrapper | wrapper 390 px, scrolls to 520 px, `body.scrollWidth` **430** | decision 9 works |
+| Q23's piecewise brace (decision 1) | brace cell 38.0 px, two-row block 38.0 px, table 183 px | glyph spans the rows exactly |
+| Q5 option images in `.options-grid-2x2` | 160 × 143 px each | legible |
+| Q9 option images in `.options-grid-2x2` | 160 × 90 px each | legible |
+| Unicode set (`∫ ∞ √ ≠ → π σ μ − ≤ ² ³`) | 4.9–18.0 px, all distinct from `�` at 17.5 px | real glyphs, no notdef |
+
+**`optionImagesWide` confirmed unnecessary**, as Stage 1 predicted: at 160 px wide these render
+143 px and 90 px tall, nothing like the VET 160 × 35 px case that created the flag.
+
+**The file round-trips byte-for-byte** through `json.dumps(indent=2, ensure_ascii=False)` plus a
+trailing newline — verified. Unlike `multimedia.json`, which has hand-authored compact inline
+arrays and must never be round-tripped, this file is safe to load, extend with a year, and dump.
+That is how sessions 2–6 should append.
+
+**Not done here, and correct that it is not:** the subject is still registered nowhere —
+no `subjects/index.json` entry, no `SUBJECT_ID_MAP`, no `SUBJECT_CATALOGUE`, no subject card.
+That is Stage 7. `validate_subjects.cjs` picks the file up anyway (it globs `subjects/*.json`),
+so CI covers it from now on; the two key checkers skip it until Stage 6 commits its keys.
+
+**GATE 4** (ticked per year) — [x] validator green, `missingImages: 0` · [x] every part has
+`qNum` · [x] omissions declared, and each paper's marks total 100 · [x] every crop opened and
+compared against the paper, option by option · [x] every table renders as HTML, not an image ·
+[x] any 7+ column table wrapped and checked at 430 px · [x] the year's Status cell ticked above
+— **all ticked for 2020; reset them for the next paper.**
 
 ---
 
@@ -622,16 +717,27 @@ The dominant cost — roughly six times VET Construction's load, the heaviest so
 and 28 tables to reconstruct as HTML**, split per year in Stage 4's tracker. The per-question
 crop and table lists are in Stage 1; work from those, not from a fresh sweep.
 
-- Text layer has the option labels → `extract_maths_diagrams.py --calibrate` (registry, 150 dpi)
-- Text layer empty / labels are outline paths → **ink-profile segmentation at 300 dpi**
-  (`crop_vet_2021_q15_options.py` is the worked example)
-- ⚠️ **`RENDER_DPI` is load-bearing** — registry coordinates are raw pixels verified at 150 dpi.
-  Changing it without rescaling silently crops the wrong region: files still written, non-empty,
-  plausible, wrong. `save_crop()` overwrites unconditionally, and a bare run with no `--year`
-  re-cuts every registry entry.
-- **Exclude the paper's own `A.`/`B.` glyph** — `index.html` renders its own option label.
+**Use `scripts/crop_maths_advanced.py --year {YEAR}`** — written in the 2020 session, one
+registry block per year, coordinates in **PDF points** rather than pixels. Add this year's block
+and run it; the 2020 block is the worked example.
+
+- ⚠️ **Do not put this subject in `scripts/diagram_registry.json`.** That registry's coordinates
+  are raw pixels verified at `RENDER_DPI = 150`, `save_crop()` overwrites unconditionally, and a
+  bare run with no `--year` re-cuts every Mathematics Standard 2 crop. Changing its DPI without
+  rescaling silently crops the wrong region — files still written, non-empty, plausible, wrong.
+  Points sidestep the whole trap: `crop_maths_advanced.py`'s DPI can change freely.
+- `extract_maths_diagrams.py --calibrate` finds option labels through `get_text()`, and on these
+  papers **the option letters and most axis labels are outline paths**, so it finds nothing.
+  Derive boxes from an **ink profile** instead (dark pixels at 150 dpi, banded with a small gap);
+  `crop_vet_2021_q15_options.py` is the other worked example.
+- **Exclude the paper's own `A.`/`B.` glyph** — `index.html` renders its own option label — but
+  ⚠️ **not with an x-cut.** The letter sits in the cell's top-left corner with the graph running
+  underneath it (2020 Q5 option A: letter x 100.8–111.3 pt, x-axis starts x 102.2 pt), so
+  cropping to its right amputates the axis. Use the script's `erase` rectangle, and ink-profile
+  that x-strip first to confirm nothing but the letter is inside it.
 - Wide option images (> ~3:1) need `optionImagesWide: true`. **Stage 1 measured all 12 option
-  sets at 0.8:1 to 2.6:1, so none needs it** — re-check only 2024 Q8's histograms, whose ink
+  sets at 0.8:1 to 2.6:1, so none needs it**, and 2020 confirmed it in the browser (160 × 143 px
+  and 160 × 90 px in the 2×2 grid at 430 px) — re-check only 2024 Q8's histograms, whose ink
   extent measures 3.7:1 on the C/D row.
 
 **No Gate 5** — its three checks moved into Gate 4, where they are applied per year: every crop

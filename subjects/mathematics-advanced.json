@@ -1,0 +1,726 @@
+{
+  "id": "mathematics-advanced",
+  "name": "Mathematics Advanced",
+  "icon": "📈",
+  "accentColor": "#5B7FA6",
+  "omittedQuestions": [
+    {
+      "year": 2020,
+      "qNum": 16,
+      "marks": 4,
+      "reason": "The student must sketch the curve y = −x³ + 3x² − 1, labelling the stationary points and the point of inflection. The whole question asks for a hand-drawn graph, which the engine cannot accept or mark."
+    },
+    {
+      "year": 2020,
+      "qNum": 24,
+      "marks": 3,
+      "reason": "The student must sketch the circle x² − 6x + y² + 4y − 3 = 0 after reflection in the x-axis, showing the coordinates of the centre and the radius. The whole question asks for a hand-drawn graph, which the engine cannot accept or mark."
+    }
+  ],
+  "mcQuestions": [
+    {
+      "year": 2020,
+      "qNum": 1,
+      "category": "F1",
+      "q": "Which inequality gives the domain of <em>y</em> = &radic;(2<em>x</em> &minus; 3) ?",
+      "options": [
+        "<em>x</em> &lt; 3/2",
+        "<em>x</em> &gt; 3/2",
+        "<em>x</em> &le; 3/2",
+        "<em>x</em> &ge; 3/2"
+      ],
+      "answer": 3,
+      "optionExplanations": [
+        "Incorrect. This excludes every value that makes 2<em>x</em> &minus; 3 positive, which is exactly where the square root is defined.",
+        "Incorrect. The direction is right, but <em>x</em> = 3/2 gives &radic;0 = 0, which is defined, so the endpoint must be included.",
+        "Incorrect. 2<em>x</em> &minus; 3 is negative for <em>x</em> &lt; 3/2, so the square root is undefined there.",
+        "Correct. The radicand must satisfy 2<em>x</em> &minus; 3 &ge; 0, giving <em>x</em> &ge; 3/2."
+      ],
+      "solution": "<div class=\"step\"><span class=\"step-number\">1.</span> &radic;<em>u</em> is defined only when <em>u</em> &ge; 0, so require 2<em>x</em> &minus; 3 &ge; 0.</div>\n<div class=\"step\"><span class=\"step-number\">2.</span> Add 3 to both sides: 2<em>x</em> &ge; 3.</div>\n<div class=\"step\"><span class=\"step-number\">3.</span> Divide by 2: <em>x</em> &ge; 3/2.</div>\n<div class=\"step\"><span class=\"step-number\">4.</span> The endpoint is included because &radic;0 = 0 is defined. Domain: <em>x</em> &ge; 3/2.</div>"
+    },
+    {
+      "year": 2020,
+      "qNum": 2,
+      "category": "F2",
+      "gridCodes": [
+        "F2",
+        "S1"
+      ],
+      "q": "The function <em>f</em>(<em>x</em>) = <em>x</em>&sup3; is transformed to <em>g</em>(<em>x</em>) = (<em>x</em> &minus; 2)&sup3; + 5 by a horizontal translation of 2 units followed by a vertical translation of 5 units.<br><br>Which row of the table shows the directions of the translations?<br><br>Each option gives the <em>horizontal translation of 2 units</em> followed by the <em>vertical translation of 5 units</em>.",
+      "options": [
+        "Horizontal: Left &middot; Vertical: Up",
+        "Horizontal: Right &middot; Vertical: Up",
+        "Horizontal: Left &middot; Vertical: Down",
+        "Horizontal: Right &middot; Vertical: Down"
+      ],
+      "answer": 1,
+      "optionExplanations": [
+        "Incorrect. The vertical direction is right, but replacing <em>x</em> by <em>x</em> &minus; 2 moves the graph to the right, not the left.",
+        "Correct. <em>x</em> &minus; 2 inside the function shifts the graph 2 units right; the + 5 outside shifts it 5 units up.",
+        "Incorrect. Both directions are wrong: <em>x</em> &minus; 2 shifts right and + 5 shifts up.",
+        "Incorrect. The horizontal direction is right, but + 5 raises the graph rather than lowering it."
+      ],
+      "solution": "<div class=\"step\"><span class=\"step-number\">1.</span> Write the transformation as <em>g</em>(<em>x</em>) = <em>f</em>(<em>x</em> &minus; 2) + 5.</div>\n<div class=\"step\"><span class=\"step-number\">2.</span> A change <em>inside</em> the function, <em>x</em> &rarr; <em>x</em> &minus; 2, translates the graph horizontally by +2 &mdash; that is, 2 units to the <strong>right</strong>.</div>\n<div class=\"step\"><span class=\"step-number\">3.</span> A change <em>outside</em> the function, + 5, translates the graph vertically by +5 &mdash; that is, 5 units <strong>up</strong>.</div>\n<div class=\"step\"><span class=\"step-number\">4.</span> Check with the point of inflection: (0, 0) on <em>y</em> = <em>x</em>&sup3; maps to (2, 5). Right and up.</div>"
+    },
+    {
+      "year": 2020,
+      "qNum": 3,
+      "category": "S1",
+      "q": "John recently did a class test in each of three subjects. The class scores on each test were normally distributed.<br><br>The table shows the subjects and John&rsquo;s scores as well as the mean and standard deviation of the class scores on each test.<table class=\"q-table\"><tr><th>Subject</th><th>John&rsquo;s score</th><th>Mean</th><th>Standard deviation</th></tr><tr><td>French</td><td>82</td><td>70</td><td>8</td></tr><tr><td>Commerce</td><td>80</td><td>65</td><td>5</td></tr><tr><td>Music</td><td>74</td><td>50</td><td>12</td></tr></table>Relative to the rest of the class, which row of the table below shows John&rsquo;s strongest subject and his weakest subject?<br><br>Each option gives the <em>strongest subject</em> followed by the <em>weakest subject</em>.",
+      "options": [
+        "Strongest: Commerce &middot; Weakest: French",
+        "Strongest: French &middot; Weakest: Music",
+        "Strongest: Music &middot; Weakest: French",
+        "Strongest: Commerce &middot; Weakest: Music"
+      ],
+      "answer": 0,
+      "optionExplanations": [
+        "Correct. The <em>z</em>-scores are French 1.5, Commerce 3 and Music 2, so Commerce is the strongest and French the weakest.",
+        "Incorrect. French has the <em>lowest</em> <em>z</em>-score (1.5), so it is his weakest subject, not his strongest.",
+        "Incorrect. Music&rsquo;s <em>z</em>-score of 2 sits between the other two, so it is neither the strongest nor the weakest.",
+        "Incorrect. Commerce is indeed strongest, but Music&rsquo;s <em>z</em>-score of 2 beats French&rsquo;s 1.5, so French is the weakest."
+      ],
+      "solution": "<div class=\"step\"><span class=\"step-number\">1.</span> Raw scores from different tests cannot be compared directly &mdash; convert each to a <em>z</em>-score, <em>z</em> = (<em>x</em> &minus; &mu;)/&sigma;.</div>\n<div class=\"step\"><span class=\"step-number\">2.</span> French: <em>z</em> = (82 &minus; 70)/8 = 12/8 = 1.5.</div>\n<div class=\"step\"><span class=\"step-number\">3.</span> Commerce: <em>z</em> = (80 &minus; 65)/5 = 15/5 = 3.</div>\n<div class=\"step\"><span class=\"step-number\">4.</span> Music: <em>z</em> = (74 &minus; 50)/12 = 24/12 = 2.</div>\n<div class=\"step\"><span class=\"step-number\">5.</span> The highest <em>z</em>-score is the strongest performance relative to the class: Commerce (3).</div>\n<div class=\"step\"><span class=\"step-number\">6.</span> The lowest is the weakest: French (1.5).</div>"
+    },
+    {
+      "year": 2020,
+      "qNum": 4,
+      "category": "C4",
+      "q": "What is &int; <em>e</em> + <em>e</em><sup>3<em>x</em></sup> <em>dx</em> ?",
+      "options": [
+        "<em>ex</em> + 3<em>e</em><sup>3<em>x</em></sup> + <em>c</em>",
+        "<em>ex</em> + (1/3)<em>e</em><sup>3<em>x</em></sup> + <em>c</em>",
+        "<em>e</em> + 3<em>e</em><sup>3<em>x</em></sup> + <em>c</em>",
+        "<em>e</em> + (1/3)<em>e</em><sup>3<em>x</em></sup> + <em>c</em>"
+      ],
+      "answer": 1,
+      "optionExplanations": [
+        "Incorrect. The first term is right, but multiplying by 3 is what <em>differentiating</em> <em>e</em><sup>3<em>x</em></sup> does; integrating divides by 3.",
+        "Correct. <em>e</em> is a constant so it integrates to <em>ex</em>, and &int;<em>e</em><sup>3<em>x</em></sup> <em>dx</em> = (1/3)<em>e</em><sup>3<em>x</em></sup>.",
+        "Incorrect. Both terms are wrong: <em>e</em> is a constant (it integrates to <em>ex</em>) and <em>e</em><sup>3<em>x</em></sup> integrates with a factor of 1/3.",
+        "Incorrect. The second term is right, but <em>e</em> is a constant, not a function of <em>x</em>, so it integrates to <em>ex</em> rather than staying as <em>e</em>."
+      ],
+      "solution": "<div class=\"step\"><span class=\"step-number\">1.</span> Split the integral: &int;<em>e</em> <em>dx</em> + &int;<em>e</em><sup>3<em>x</em></sup> <em>dx</em>.</div>\n<div class=\"step\"><span class=\"step-number\">2.</span> <em>e</em> &asymp; 2.718 is a <strong>constant</strong>, not the exponential function, so &int;<em>e</em> <em>dx</em> = <em>ex</em>.</div>\n<div class=\"step\"><span class=\"step-number\">3.</span> For the second term use &int;<em>e</em><sup><em>ax</em></sup> <em>dx</em> = (1/<em>a</em>)<em>e</em><sup><em>ax</em></sup> + <em>c</em> with <em>a</em> = 3.</div>\n<div class=\"step\"><span class=\"step-number\">4.</span> So &int;<em>e</em><sup>3<em>x</em></sup> <em>dx</em> = (1/3)<em>e</em><sup>3<em>x</em></sup>.</div>\n<div class=\"step\"><span class=\"step-number\">5.</span> Combining: <em>ex</em> + (1/3)<em>e</em><sup>3<em>x</em></sup> + <em>c</em>.</div>"
+    },
+    {
+      "year": 2020,
+      "qNum": 5,
+      "category": "F1",
+      "q": "Which of the following could represent the graph of <em>y</em> = &minus;<em>x</em>&sup2; + <em>bx</em> + 1, where <em>b</em> &gt; 0?",
+      "optionImages": [
+        "/diagrams/mathematics-advanced_2020_Q5_A.jpg",
+        "/diagrams/mathematics-advanced_2020_Q5_B.jpg",
+        "/diagrams/mathematics-advanced_2020_Q5_C.jpg",
+        "/diagrams/mathematics-advanced_2020_Q5_D.jpg"
+      ],
+      "options": [
+        "Concave-up parabola with its vertex to the left of the y-axis and y-intercept 1",
+        "Concave-up parabola with its vertex to the right of the y-axis and y-intercept 1",
+        "Concave-down parabola with its vertex to the right of the y-axis and y-intercept 1",
+        "Concave-down parabola with its vertex to the left of the y-axis and y-intercept 1"
+      ],
+      "answer": 2,
+      "optionExplanations": [
+        "Incorrect. This parabola is concave up, but the coefficient of <em>x</em>&sup2; is &minus;1, so the graph must be concave down.",
+        "Incorrect. Concave up again &mdash; the leading coefficient &minus;1 rules this out no matter where the vertex sits.",
+        "Correct. Concave down (leading coefficient &minus;1), <em>y</em>-intercept 1, and the vertex at <em>x</em> = <em>b</em>/2 &gt; 0 lies to the right of the <em>y</em>-axis.",
+        "Incorrect. The concavity and intercept are right, but the vertex is drawn to the left of the <em>y</em>-axis, which needs <em>b</em> &lt; 0."
+      ],
+      "solution": "<div class=\"step\"><span class=\"step-number\">1.</span> The coefficient of <em>x</em>&sup2; is &minus;1, which is negative, so the parabola is <strong>concave down</strong>. That eliminates the two upward-opening graphs.</div>\n<div class=\"step\"><span class=\"step-number\">2.</span> Substitute <em>x</em> = 0: <em>y</em> = 1, so the <em>y</em>-intercept is 1 &mdash; true of every option here, so it does not separate them.</div>\n<div class=\"step\"><span class=\"step-number\">3.</span> The axis of symmetry is <em>x</em> = &minus;<em>b</em>/(2<em>a</em>) = &minus;<em>b</em>/(2 &times; &minus;1) = <em>b</em>/2.</div>\n<div class=\"step\"><span class=\"step-number\">4.</span> Since <em>b</em> &gt; 0, <em>b</em>/2 &gt; 0, so the vertex lies to the <strong>right</strong> of the <em>y</em>-axis.</div>\n<div class=\"step\"><span class=\"step-number\">5.</span> The graph that is concave down with its vertex right of the <em>y</em>-axis is option C.</div>"
+    },
+    {
+      "year": 2020,
+      "qNum": 6,
+      "category": "T3",
+      "q": "Which interval gives the range of the function <em>y</em> = 5 + 2 cos 3<em>x</em> ?",
+      "options": [
+        "[2, 8]",
+        "[3, 7]",
+        "[4, 6]",
+        "[5, 9]"
+      ],
+      "answer": 1,
+      "optionExplanations": [
+        "Incorrect. This uses an amplitude of 3 &mdash; the 3 is the coefficient of <em>x</em>, which changes the period, not the amplitude.",
+        "Correct. cos 3<em>x</em> ranges over [&minus;1, 1], so 2 cos 3<em>x</em> ranges over [&minus;2, 2] and <em>y</em> over [3, 7].",
+        "Incorrect. This uses an amplitude of 1, ignoring the factor of 2 in front of the cosine.",
+        "Incorrect. This treats 5 as the minimum rather than the centre; the graph oscillates both above and below <em>y</em> = 5."
+      ],
+      "solution": "<div class=\"step\"><span class=\"step-number\">1.</span> For any angle, &minus;1 &le; cos 3<em>x</em> &le; 1. The coefficient 3 changes the period, not the range.</div>\n<div class=\"step\"><span class=\"step-number\">2.</span> Multiply through by the amplitude 2: &minus;2 &le; 2 cos 3<em>x</em> &le; 2.</div>\n<div class=\"step\"><span class=\"step-number\">3.</span> Add the vertical shift 5: 3 &le; 5 + 2 cos 3<em>x</em> &le; 7.</div>\n<div class=\"step\"><span class=\"step-number\">4.</span> Both endpoints are attained (cos 3<em>x</em> reaches &plusmn;1), so the range is the closed interval [3, 7].</div>"
+    },
+    {
+      "year": 2020,
+      "qNum": 7,
+      "category": "C4",
+      "q": "The diagram shows the graph <em>y</em> = <em>f</em>(<em>x</em>), which is made up of line segments and a semicircle.<br><br>What is the value of &int;<sub>0</sub><sup>12</sup> <em>f</em>(<em>x</em>) <em>dx</em> ?",
+      "image": "/diagrams/mathematics-advanced_2020_Q7_stimulus.jpg",
+      "options": [
+        "24 + 2&pi;",
+        "24 + 4&pi;",
+        "30 + 2&pi;",
+        "30 + 4&pi;"
+      ],
+      "answer": 0,
+      "optionExplanations": [
+        "Correct. The two rectangles contribute 12 + 12 = 24, the semicircle 2&pi;, and the triangles above and below the axis cancel.",
+        "Incorrect. This uses the area of a <em>full</em> circle of radius 2; the graph carries only the upper semicircle.",
+        "Incorrect. This counts the triangle from <em>x</em> = 10 to <em>x</em> = 12 as positive area; it lies below the axis, so it is &minus;3, not +3.",
+        "Incorrect. It makes both errors &mdash; a full circle instead of a semicircle, and the region below the axis counted as positive."
+      ],
+      "solution": "<div class=\"step\"><span class=\"step-number\">1.</span> The definite integral is the <em>signed</em> area between the curve and the <em>x</em>-axis, so break the interval into pieces whose areas are known.</div>\n<div class=\"step\"><span class=\"step-number\">2.</span> 0 &le; <em>x</em> &le; 4: a rectangle of width 4 and height 3, area 12.</div>\n<div class=\"step\"><span class=\"step-number\">3.</span> 4 &le; <em>x</em> &le; 8: a rectangle of width 4 and height 3 (area 12) with a semicircle of radius 2 sitting on top, area &frac12;&pi;(2)&sup2; = 2&pi;.</div>\n<div class=\"step\"><span class=\"step-number\">4.</span> 8 &le; <em>x</em> &le; 10: a triangle above the axis with base 2 and height 3, area +3.</div>\n<div class=\"step\"><span class=\"step-number\">5.</span> 10 &le; <em>x</em> &le; 12: a triangle below the axis with base 2 and depth 3, area &minus;3. These two cancel.</div>\n<div class=\"step\"><span class=\"step-number\">6.</span> Total: 12 + 12 + 2&pi; + 3 &minus; 3 = 24 + 2&pi;.</div>"
+    },
+    {
+      "year": 2020,
+      "qNum": 8,
+      "category": "C3",
+      "q": "The graph of <em>y</em> = <em>f</em>(<em>x</em>) is shown.<br><br>Which of the following inequalities is correct?",
+      "image": "/diagrams/mathematics-advanced_2020_Q8_stimulus.jpg",
+      "options": [
+        "<em>f</em>&Prime;(1) &lt; 0 &lt; <em>f</em>&prime;(1) &lt; <em>f</em>(1)",
+        "<em>f</em>&Prime;(1) &lt; 0 &lt; <em>f</em>(1) &lt; <em>f</em>&prime;(1)",
+        "0 &lt; <em>f</em>&Prime;(1) &lt; <em>f</em>&prime;(1) &lt; <em>f</em>(1)",
+        "0 &lt; <em>f</em>&Prime;(1) &lt; <em>f</em>(1) &lt; <em>f</em>&prime;(1)"
+      ],
+      "answer": 0,
+      "optionExplanations": [
+        "Correct. The curve is concave down so <em>f</em>&Prime;(1) &lt; 0; it is increasing so <em>f</em>&prime;(1) &gt; 0; and the tangent there is shallower than the height of the marked point, so <em>f</em>&prime;(1) &lt; <em>f</em>(1).",
+        "Incorrect. The first two comparisons are right, but the tangent at <em>x</em> = 1 is shallower than the height of the point, so <em>f</em>&prime;(1) &lt; <em>f</em>(1).",
+        "Incorrect. The curve bends downwards, so the second derivative is negative, not positive.",
+        "Incorrect. It makes both errors &mdash; positive concavity, and the gradient placed above the function value."
+      ],
+      "solution": "<div class=\"step\"><span class=\"step-number\">1.</span> Read <em>f</em>(1) from the graph: the marked point is above the <em>x</em>-axis, roughly 1.3, so <em>f</em>(1) &gt; 0.</div>\n<div class=\"step\"><span class=\"step-number\">2.</span> The curve is <strong>increasing</strong> at <em>x</em> = 1, so the gradient <em>f</em>&prime;(1) &gt; 0. Estimating the tangent gives about 0.5.</div>\n<div class=\"step\"><span class=\"step-number\">3.</span> The curve is <strong>concave down</strong> (it flattens as <em>x</em> increases), so <em>f</em>&Prime;(1) &lt; 0.</div>\n<div class=\"step\"><span class=\"step-number\">4.</span> So far: <em>f</em>&Prime;(1) &lt; 0 &lt; <em>f</em>&prime;(1), and 0 &lt; <em>f</em>(1). Only the ordering of <em>f</em>&prime;(1) and <em>f</em>(1) is left.</div>\n<div class=\"step\"><span class=\"step-number\">5.</span> The tangent at the marked point is clearly shallower than the point&rsquo;s height, so <em>f</em>&prime;(1) &lt; <em>f</em>(1).</div>\n<div class=\"step\"><span class=\"step-number\">6.</span> Chaining these: <em>f</em>&Prime;(1) &lt; 0 &lt; <em>f</em>&prime;(1) &lt; <em>f</em>(1).</div>"
+    },
+    {
+      "year": 2020,
+      "qNum": 9,
+      "category": "S3",
+      "q": "Suppose the weight of melons is normally distributed with a mean of &mu; and a standard deviation of &sigma;.<br><br>A melon has a weight below the lower quartile of the distribution but NOT in the bottom 10% of the distribution.<br><br>Which of the following most accurately represents the region in which the weight of this melon lies?",
+      "optionImages": [
+        "/diagrams/mathematics-advanced_2020_Q9_A.jpg",
+        "/diagrams/mathematics-advanced_2020_Q9_B.jpg",
+        "/diagrams/mathematics-advanced_2020_Q9_C.jpg",
+        "/diagrams/mathematics-advanced_2020_Q9_D.jpg"
+      ],
+      "options": [
+        "Region from the far left tail up to a point between μ − 2σ and μ − σ",
+        "Region from the far left tail up to a point between μ − σ and μ",
+        "Band straddling μ − σ, from about μ − 1.3σ to about μ − 0.6σ",
+        "Narrow band between μ − 2σ and μ − σ, sitting closer to μ − 2σ"
+      ],
+      "answer": 2,
+      "optionExplanations": [
+        "Incorrect. This region includes the extreme left tail, which is exactly the bottom 10% the question excludes.",
+        "Incorrect. This is everything below the lower quartile, so it still contains the bottom 10%.",
+        "Correct. The lower quartile sits at about &mu; &minus; 0.67&sigma; and the 10th percentile at about &mu; &minus; 1.28&sigma;, so the melon lies in the band between them.",
+        "Incorrect. This band is entirely below about &mu; &minus; 1.28&sigma;, so it sits inside the bottom 10% rather than above it."
+      ],
+      "solution": "<div class=\"step\"><span class=\"step-number\">1.</span> The melon is below the lower quartile, so its weight is below the 25th percentile.</div>\n<div class=\"step\"><span class=\"step-number\">2.</span> It is NOT in the bottom 10%, so its weight is above the 10th percentile.</div>\n<div class=\"step\"><span class=\"step-number\">3.</span> The region wanted is therefore the band between the 10th and 25th percentiles.</div>\n<div class=\"step\"><span class=\"step-number\">4.</span> On the standard normal scale the 25th percentile is about <em>z</em> = &minus;0.67 and the 10th percentile about <em>z</em> = &minus;1.28.</div>\n<div class=\"step\"><span class=\"step-number\">5.</span> In terms of melon weights that band runs from about &mu; &minus; 1.28&sigma; to about &mu; &minus; 0.67&sigma; &mdash; a strip straddling &mu; &minus; &sigma;, clear of the tail.</div>\n<div class=\"step\"><span class=\"step-number\">6.</span> Option C is the only graph showing a band that both excludes the tail and stops short of the mean.</div>"
+    },
+    {
+      "year": 2020,
+      "qNum": 10,
+      "category": "C2",
+      "q": "The graph shows two functions <em>y</em> = <em>f</em>(<em>x</em>) and <em>y</em> = <em>g</em>(<em>x</em>).<br><br>Define <em>h</em>(<em>x</em>) = <em>f</em>(<em>g</em>(<em>x</em>)).<br><br>How many stationary points does <em>y</em> = <em>h</em>(<em>x</em>) have for 1 &le; <em>x</em> &le; 5?",
+      "image": "/diagrams/mathematics-advanced_2020_Q10_stimulus.jpg",
+      "options": [
+        "0",
+        "1",
+        "2",
+        "3"
+      ],
+      "answer": 3,
+      "optionExplanations": [
+        "Incorrect. The chain rule gives at least one stationary point at <em>x</em> = 3, where <em>g</em>&prime;(<em>x</em>) = 0.",
+        "Incorrect. This counts only <em>g</em>&prime;(<em>x</em>) = 0 and misses the points where <em>f</em>&prime;(<em>g</em>(<em>x</em>)) = 0.",
+        "Incorrect. This counts only the two solutions of <em>g</em>(<em>x</em>) = 1 and misses the vertex of <em>g</em> at <em>x</em> = 3.",
+        "Correct. <em>g</em>&prime;(<em>x</em>) = 0 once (at <em>x</em> = 3) and <em>g</em>(<em>x</em>) = 1 twice on this interval, giving three stationary points."
+      ],
+      "solution": "<div class=\"step\"><span class=\"step-number\">1.</span> By the chain rule, <em>h</em>&prime;(<em>x</em>) = <em>f</em>&prime;(<em>g</em>(<em>x</em>)) &times; <em>g</em>&prime;(<em>x</em>).</div>\n<div class=\"step\"><span class=\"step-number\">2.</span> A product is zero when either factor is zero, so solve <em>g</em>&prime;(<em>x</em>) = 0 and <em>f</em>&prime;(<em>g</em>(<em>x</em>)) = 0 separately.</div>\n<div class=\"step\"><span class=\"step-number\">3.</span> <em>g</em> is the parabola with its minimum at <em>x</em> = 3, so <em>g</em>&prime;(<em>x</em>) = 0 there &mdash; <strong>one</strong> stationary point.</div>\n<div class=\"step\"><span class=\"step-number\">4.</span> <em>f</em> has its only turning point at <em>x</em> = 1, so <em>f</em>&prime;(<em>g</em>(<em>x</em>)) = 0 requires <em>g</em>(<em>x</em>) = 1.</div>\n<div class=\"step\"><span class=\"step-number\">5.</span> On 1 &le; <em>x</em> &le; 5, <em>g</em> falls from about 3 to 0 and rises back to about 3, so the horizontal line <em>y</em> = 1 cuts it <strong>twice</strong>.</div>\n<div class=\"step\"><span class=\"step-number\">6.</span> Total: 1 + 2 = 3 stationary points.</div>"
+    }
+  ],
+  "writtenQuestions": [
+    {
+      "year": 2020,
+      "qNum": "11",
+      "section": "II",
+      "category": "F1",
+      "marks": 3,
+      "q": "There are two tanks on a property, Tank <em>A</em> and Tank <em>B</em>. Initially, Tank <em>A</em> holds 1000 litres of water and Tank <em>B</em> is empty. Tank <em>A</em> begins to lose water at a constant rate of 20 litres per minute. The volume of water in Tank <em>A</em> is modelled by <em>V</em> = 1000 &minus; 20<em>t</em> where <em>V</em> is the volume in litres and <em>t</em> is the time in minutes from when the tank begins to lose water.<br><br>(b) Tank <em>B</em> remains empty until <em>t</em> = 15 when water is added to it at a constant rate of 30 litres per minute.<br><br>By drawing a line on the grid on the previous page, or otherwise, find the value of <em>t</em> when the two tanks contain the same volume of water. <strong>(2 marks)</strong><br><br>(c) Using the graphs drawn, or otherwise, find the value of <em>t</em> (where <em>t</em> &gt; 0) when the total volume of water in the two tanks is 1000 litres. <strong>(1 mark)</strong><br><br><em style=\"opacity:0.75\">Part (a), which asked for the graph of <em>V</em> = 1000 &minus; 20<em>t</em> to be drawn on a printed grid, is not included here &mdash; answer both parts algebraically.</em>",
+      "image": null,
+      "answer": "(b) Tank A: V = 1000 − 20t. Tank B for t ≥ 15: V = 30(t − 15) = 30t − 450.\nEqual volumes: 1000 − 20t = 30t − 450\n1450 = 50t, so t = 29 minutes.\n\n(c) Total volume = (1000 − 20t) + (30t − 450) = 550 + 10t.\n550 + 10t = 1000, so 10t = 450 and t = 45 minutes.\n(Tank A does not run dry until t = 50, so t = 45 is valid.)",
+      "keywords": [
+        "29",
+        "45",
+        "1000 − 20t",
+        "30(t − 15)",
+        "equate",
+        "total"
+      ],
+      "minKeywords": 2,
+      "bandDescriptors": {
+        "full": "Both values correct — t = 29 for equal volumes and t = 45 for a combined 1000 litres, each supported by a correct expression for Tank B.",
+        "partial": "One value correct, or a correct method with an arithmetic slip. Check that Tank B's volume is 30(t − 15), not 30t.",
+        "minimal": "Set up an equation for each tank first: Tank A holds 1000 − 20t, Tank B holds 30(t − 15) once filling starts at t = 15."
+      },
+      "omittedParts": [
+        {
+          "part": "a",
+          "marks": 1,
+          "reason": "The student must draw the graph of V = 1000 − 20t on a printed grid and label it as Tank A. The engine cannot accept or mark a hand-drawn graph."
+        }
+      ]
+    },
+    {
+      "year": 2020,
+      "qNum": "12",
+      "section": "II",
+      "category": "M1",
+      "marks": 3,
+      "q": "Calculate the sum of the arithmetic series 4 + 10 + 16 + &middot;&middot;&middot; + 1354.",
+      "image": null,
+      "answer": "a = 4 and d = 10 − 4 = 6.\nFind how many terms: Tₙ = a + (n − 1)d = 4 + 6(n − 1) = 1354\n6(n − 1) = 1350, so n − 1 = 225 and n = 226.\nSₙ = (n/2)(a + l) = (226/2)(4 + 1354) = 113 × 1358 = 153 454.",
+      "keywords": [
+        "153454",
+        "153 454",
+        "226",
+        "d = 6",
+        "arithmetic",
+        "n/2"
+      ],
+      "minKeywords": 2,
+      "bandDescriptors": {
+        "full": "Correct sum of 153 454, with the number of terms found as n = 226 from Tₙ = 4 + 6(n − 1) = 1354.",
+        "partial": "Correct method — common difference 6, or the number of terms — but the final sum is wrong.",
+        "minimal": "Two steps are needed: first solve 4 + 6(n − 1) = 1354 for the number of terms, then apply Sₙ = (n/2)(a + l)."
+      }
+    },
+    {
+      "year": 2020,
+      "qNum": "13",
+      "section": "II",
+      "category": "C4",
+      "gridCodes": [
+        "C4",
+        "S1"
+      ],
+      "marks": 2,
+      "q": "Evaluate &int;<sub>0</sub><sup>&pi;/4</sup> sec&sup2; <em>x</em> <em>dx</em>.",
+      "image": null,
+      "answer": "The primitive of sec² x is tan x.\n∫₀^(π/4) sec² x dx = [tan x]₀^(π/4)\n= tan(π/4) − tan 0\n= 1 − 0\n= 1.",
+      "keywords": [
+        "tan",
+        "1",
+        "π/4",
+        "primitive"
+      ],
+      "minKeywords": 2,
+      "bandDescriptors": {
+        "full": "Correct value of 1, obtained from the primitive tan x evaluated between 0 and π/4.",
+        "partial": "Primitive tan x identified but the evaluation is wrong.",
+        "minimal": "Recall that d/dx (tan x) = sec² x, so the primitive of sec² x is tan x."
+      }
+    },
+    {
+      "year": 2020,
+      "qNum": "14",
+      "section": "II",
+      "category": "S1",
+      "marks": 5,
+      "q": "History and Geography are two of the subjects students may decide to study. For a group of 40 students, the following is known.<br>&bull; 7 students study neither History nor Geography<br>&bull; 20 students study History<br>&bull; 18 students study Geography<br><br>(a) A student is chosen at random. By using a Venn diagram, or otherwise, find the probability that the student studies both History and Geography. <strong>(2 marks)</strong><br><br>(b) A student is chosen at random. Given that the student studies Geography, what is the probability that the student does NOT study History? <strong>(1 mark)</strong><br><br>(c) Two different students are chosen at random, one after the other. What is the probability that the first student studies History and the second student does NOT study History? <strong>(2 marks)</strong>",
+      "image": null,
+      "answer": "(a) 40 − 7 = 33 students study at least one subject.\n|H ∪ G| = |H| + |G| − |H ∩ G|, so 33 = 20 + 18 − |H ∩ G|, giving |H ∩ G| = 5.\nP(both) = 5/40 = 1/8.\n\n(b) Of the 18 who study Geography, 5 also study History, so 13 do not.\nP(not History | Geography) = 13/18.\n\n(c) 20 study History and 20 do not. Choosing without replacement:\nP = (20/40) × (20/39) = 400/1560 = 10/39.",
+      "keywords": [
+        "1/8",
+        "5",
+        "13/18",
+        "10/39",
+        "Venn",
+        "39"
+      ],
+      "minKeywords": 3,
+      "bandDescriptors": {
+        "full": "All three probabilities correct — 1/8, 13/18 and 10/39 — with the overlap of 5 students established first.",
+        "partial": "The overlap of 5 students is found and at least one probability is correct, but not all three.",
+        "minimal": "Start with the union: 33 students study at least one subject, so the overlap is 20 + 18 − 33 = 5. In part (c) the second choice is from 39 students, not 40."
+      }
+    },
+    {
+      "year": 2020,
+      "qNum": "15",
+      "section": "II",
+      "category": "T1",
+      "marks": 5,
+      "q": "Mr Ali, Ms Brown and a group of students were camping at the site located at <em>P</em>. Mr Ali walked with some of the students on a bearing of 035&deg; for 7 km to location <em>A</em>. Ms Brown, with the rest of the students, walked on a bearing of 100&deg; for 9 km to location <em>B</em>.<img src=\"/diagrams/mathematics-advanced_2020_Q15_stimulus.jpg\" alt=\"Bearings diagram: P with north line, A on a bearing of 035 degrees at 7 km, B on a bearing of 100 degrees at 9 km. Not to scale.\" style=\"max-width:100%;height:auto;display:block;margin:14px auto\">(a) Show that the angle <em>APB</em> is 65&deg;. <strong>(1 mark)</strong><br><br>(b) Find the distance <em>AB</em>. <strong>(2 marks)</strong><br><br>(c) Find the bearing of Ms Brown&rsquo;s group from Mr Ali&rsquo;s group. Give your answer correct to the nearest degree. <strong>(2 marks)</strong>",
+      "image": null,
+      "answer": "(a) Both bearings are measured clockwise from the same north line at P, so\n∠APB = 100° − 35° = 65°.\n\n(b) Cosine rule in △APB:\nAB² = 7² + 9² − 2(7)(9) cos 65°\nAB² = 49 + 81 − 126 cos 65° = 130 − 53.25 = 76.75\nAB = 8.76 km (2 d.p.).\n\n(c) Sine rule to find ∠PAB:\nsin(∠PAB)/9 = sin 65°/8.76, so sin(∠PAB) = 0.9311 and ∠PAB = 68.6°.\nThe bearing of P from A is 035° + 180° = 215°.\nBearing of B from A = 215° − 68.6° = 146.4° ≈ 146°.",
+      "keywords": [
+        "65",
+        "8.76",
+        "146",
+        "cosine rule",
+        "sine rule",
+        "215"
+      ],
+      "minKeywords": 3,
+      "bandDescriptors": {
+        "full": "All three parts correct — ∠APB = 65°, AB = 8.76 km by the cosine rule, and a bearing of 146° found from the back bearing 215° less ∠PAB.",
+        "partial": "The angle and the distance are correct, but the bearing in (c) is wrong — usually because the back bearing of 215° was not used.",
+        "minimal": "Part (a) is the difference of the two bearings. Part (b) needs the cosine rule with the included angle 65°. For (c), work from the north line at A: the bearing of P from A is 215°."
+      }
+    },
+    {
+      "year": 2020,
+      "qNum": "17",
+      "section": "II",
+      "category": "C4",
+      "marks": 2,
+      "q": "Find &int; <em>x</em>/(4 + <em>x</em>&sup2;) <em>dx</em>.",
+      "image": null,
+      "answer": "The numerator is half the derivative of the denominator: d/dx (4 + x²) = 2x.\n∫ x/(4 + x²) dx = ½ ∫ 2x/(4 + x²) dx\n= ½ ln(4 + x²) + c.\n(No absolute value is needed because 4 + x² > 0 for all x.)",
+      "keywords": [
+        "ln",
+        "4 + x",
+        "1/2",
+        "derivative"
+      ],
+      "minKeywords": 2,
+      "bandDescriptors": {
+        "full": "Correct primitive ½ ln(4 + x²) + c, recognising the numerator as half the derivative of the denominator.",
+        "partial": "The logarithm form is recognised but the factor of ½ is missing or wrong.",
+        "minimal": "Look for the form ∫ f′(x)/f(x) dx = ln|f(x)| + c. Here f(x) = 4 + x² and f′(x) = 2x, so a factor of ½ is needed."
+      }
+    },
+    {
+      "year": 2020,
+      "qNum": "18",
+      "section": "II",
+      "category": "C2",
+      "gridCodes": [
+        "C2",
+        "C4"
+      ],
+      "marks": 3,
+      "q": "(a) Differentiate <em>e</em><sup>2<em>x</em></sup>(2<em>x</em> + 1). <strong>(2 marks)</strong><br><br>(b) Hence, find &int; (<em>x</em> + 1)<em>e</em><sup>2<em>x</em></sup> <em>dx</em>. <strong>(1 mark)</strong>",
+      "image": null,
+      "answer": "(a) Product rule with u = e^(2x) and v = 2x + 1:\nd/dx [e^(2x)(2x + 1)] = 2e^(2x)(2x + 1) + e^(2x)(2)\n= e^(2x)(4x + 2 + 2)\n= e^(2x)(4x + 4) = 4(x + 1)e^(2x).\n\n(b) From (a), ∫ 4(x + 1)e^(2x) dx = e^(2x)(2x + 1) + c.\nDivide by 4: ∫ (x + 1)e^(2x) dx = ¼ e^(2x)(2x + 1) + c.",
+      "keywords": [
+        "4(x + 1)e",
+        "product rule",
+        "1/4",
+        "(2x + 1)",
+        "hence"
+      ],
+      "minKeywords": 2,
+      "bandDescriptors": {
+        "full": "Derivative 4(x + 1)e^(2x) correct by the product rule, and (b) obtained by reversing it and dividing by 4 to give ¼ e^(2x)(2x + 1) + c.",
+        "partial": "The derivative is correct but (b) does not use it — or the factor of ¼ is missing.",
+        "minimal": "Use the product rule in (a). In (b), 'Hence' means read the answer to (a) backwards: since the derivative is 4(x + 1)e^(2x), the primitive of (x + 1)e^(2x) is a quarter of e^(2x)(2x + 1)."
+      }
+    },
+    {
+      "year": 2020,
+      "qNum": "19",
+      "section": "II",
+      "category": "T2",
+      "marks": 2,
+      "q": "Prove that sec &theta; &minus; cos &theta; = sin &theta; tan &theta;.",
+      "image": null,
+      "answer": "Work from the left-hand side.\nLHS = sec θ − cos θ\n= 1/cos θ − cos θ\n= (1 − cos² θ)/cos θ      [common denominator]\n= sin² θ/cos θ            [since sin² θ + cos² θ = 1]\n= sin θ × (sin θ/cos θ)\n= sin θ tan θ = RHS.",
+      "keywords": [
+        "1/cos",
+        "common denominator",
+        "Pythagorean",
+        "sin",
+        "tan",
+        "1 − cos"
+      ],
+      "minKeywords": 3,
+      "bandDescriptors": {
+        "full": "Complete proof — sec θ rewritten as 1/cos θ, combined over a common denominator, and 1 − cos² θ replaced by sin² θ to reach sin θ tan θ.",
+        "partial": "The correct approach is started — usually as far as (1 − cos² θ)/cos θ — but the identity is not completed.",
+        "minimal": "Start by writing sec θ = 1/cos θ and putting the left-hand side over a common denominator. The Pythagorean identity then converts 1 − cos² θ into sin² θ."
+      }
+    },
+    {
+      "year": 2020,
+      "qNum": "20",
+      "section": "II",
+      "category": "C4",
+      "marks": 2,
+      "q": "Kenzo is driving his car along a road while his friend records the velocity of the car, <em>v</em>(<em>t</em>), in km/h every minute over a 5-minute period. The table gives the velocity <em>v</em>(<em>t</em>) at time <em>t</em> hours.<div style=\"overflow-x:auto;-webkit-overflow-scrolling:touch;margin:14px 0\"><table class=\"q-table\" style=\"min-width:520px;margin:0\"><tr><th><em>t</em></th><th>0</th><th>1/60</th><th>2/60</th><th>3/60</th><th>4/60</th><th>5/60</th></tr><tr><td><em>v</em>(<em>t</em>)</td><td>60</td><td>55</td><td>65</td><td>68</td><td>70</td><td>67</td></tr></table></div>The distance covered by the car over the 5-minute period is given by &int;<sub>0</sub><sup>5/60</sup> <em>v</em>(<em>t</em>) <em>dt</em>.<br><br>Use the trapezoidal rule and the velocity at each of the six time values to find the approximate distance in kilometres the car has travelled in the 5-minute period. Give your answer correct to one decimal place.",
+      "image": null,
+      "answer": "There are 6 values, so 5 strips of width h = 1/60 hours.\nTrapezoidal rule: (h/2)[first + last + 2 × (sum of the middle values)]\n= (1/120)[60 + 67 + 2(55 + 65 + 68 + 70)]\n= (1/120)[127 + 2(258)]\n= (1/120)(643)\n= 5.358…\n≈ 5.4 km.",
+      "keywords": [
+        "5.4",
+        "trapezoidal",
+        "1/60",
+        "643",
+        "h/2"
+      ],
+      "minKeywords": 2,
+      "bandDescriptors": {
+        "full": "Correct distance of 5.4 km, using h = 1/60 hours and doubling only the four interior velocities.",
+        "partial": "The trapezoidal rule is applied but with the wrong strip width (minutes instead of hours) or with the endpoints doubled.",
+        "minimal": "The times are in hours, so h = 1/60. The rule doubles every value except the first and last."
+      }
+    },
+    {
+      "year": 2020,
+      "qNum": "21",
+      "section": "II",
+      "category": "E1",
+      "gridCodes": [
+        "C3",
+        "E1"
+      ],
+      "marks": 6,
+      "q": "Hot tea is poured into a cup. The temperature of tea can be modelled by <em>T</em> = 25 + 70(1.5)<sup>&minus;0.4<em>t</em></sup>, where <em>T</em> is the temperature of the tea, in degrees Celsius, <em>t</em> minutes after it is poured.<br><br>(a) What is the temperature of the tea 4 minutes after it has been poured? <strong>(1 mark)</strong><br><br>(b) At what rate is the tea cooling 4 minutes after it has been poured? <strong>(2 marks)</strong><br><br>(c) How long after the tea is poured will it take for its temperature to reach 55&deg;C? <strong>(3 marks)</strong>",
+      "image": null,
+      "answer": "(a) T = 25 + 70(1.5)^(−0.4 × 4) = 25 + 70(1.5)^(−1.6)\n= 25 + 70(0.5227) = 61.6°C (1 d.p.).\n\n(b) Differentiate: dT/dt = 70 × ln 1.5 × (−0.4)(1.5)^(−0.4t)\n= −28 ln 1.5 × (1.5)^(−0.4t).\nAt t = 4: dT/dt = −28(0.4055)(0.5227) = −5.93.\nThe tea is cooling at about 5.9°C per minute.\n\n(c) 55 = 25 + 70(1.5)^(−0.4t)\n30/70 = (1.5)^(−0.4t), so 3/7 = (1.5)^(−0.4t)\nln(3/7) = −0.4t ln 1.5\nt = −ln(3/7)/(0.4 ln 1.5) = 0.8473/0.1622\nt ≈ 5.2 minutes.",
+      "keywords": [
+        "61.6",
+        "5.9",
+        "5.2",
+        "ln 1.5",
+        "cooling",
+        "negative"
+      ],
+      "minKeywords": 3,
+      "bandDescriptors": {
+        "full": "All three parts correct — 61.6°C, a cooling rate of about 5.9°C per minute (negative derivative), and about 5.2 minutes to reach 55°C.",
+        "partial": "Parts (a) and (c) correct but the rate in (b) is wrong — most often because the ln 1.5 factor is missing when differentiating a base other than e.",
+        "minimal": "For (b), d/dt (a^(kt)) = a^(kt) × k ln a, so the ln 1.5 factor is essential. For (c), take logarithms of both sides after isolating the power."
+      }
+    },
+    {
+      "year": 2020,
+      "qNum": "22",
+      "section": "II",
+      "category": "T1",
+      "marks": 4,
+      "q": "The diagram shows a regular decagon (ten-sided shape with all sides equal and all interior angles equal). The decagon has centre <em>O</em>.<img src=\"/diagrams/mathematics-advanced_2020_Q22_stimulus.jpg\" alt=\"A regular decagon with centre O; dashed radii OA and OB drawn to two adjacent vertices A and B on the top edge, marked equal.\" style=\"max-width:100%;height:auto;display:block;margin:14px auto\">The perimeter of the shape is 80 cm.<br><br>By considering triangle <em>OAB</em>, calculate the area of the ten-sided shape. Give your answer in square centimetres correct to one decimal place.",
+      "image": null,
+      "answer": "Each side: AB = 80/10 = 8 cm.\nThe ten radii divide the decagon into 10 congruent triangles, so ∠AOB = 360°/10 = 36°.\nLet r = OA = OB. By the cosine rule in △OAB:\n8² = r² + r² − 2r² cos 36°\n64 = 2r²(1 − cos 36°), so r² = 32/(1 − cos 36°) = 167.55.\nArea of △OAB = ½ r² sin 36° = ½(167.55)(0.5878) = 49.24 cm².\nArea of decagon = 10 × 49.24 = 492.4 cm² (1 d.p.).",
+      "keywords": [
+        "492.4",
+        "36",
+        "8",
+        "cosine rule",
+        "10",
+        "1/2 ab sin"
+      ],
+      "minKeywords": 3,
+      "bandDescriptors": {
+        "full": "Correct area of 492.4 cm² — side 8 cm, central angle 36°, the triangle's area found with ½ r² sin 36° and multiplied by 10.",
+        "partial": "Correct central angle and side length with a correct method, but the final area is wrong — often from forgetting to multiply by 10.",
+        "minimal": "The ten radii cut the decagon into 10 congruent triangles, each with a central angle of 36° and a base of 8 cm. Find r first with the cosine rule, then use area = ½ r² sin 36°."
+      }
+    },
+    {
+      "year": 2020,
+      "qNum": "23",
+      "section": "II",
+      "category": "S3",
+      "marks": 4,
+      "q": "A continuous random variable, <em>X</em>, has the following probability density function.<br><br><em>f</em>(<em>x</em>) = <table style=\"display:inline-table;vertical-align:middle;border-collapse:collapse;margin:0 0 0 4px\"><tr><td rowspan=\"2\" style=\"border:0;padding:0 4px 0 0;font-size:2.6em;font-weight:300;line-height:0.86;vertical-align:middle\">{</td><td style=\"border:0;padding:1px 0;text-align:left;font-size:0.85em\">sin <em>x</em>&nbsp;&nbsp;&nbsp;for 0 &le; <em>x</em> &le; <em>k</em></td></tr><tr><td style=\"border:0;padding:1px 0;text-align:left;font-size:0.85em\">0&nbsp;&nbsp;&nbsp;for all other values of <em>x</em></td></tr></table><br><br>(a) Find the value of <em>k</em>. <strong>(2 marks)</strong><br><br>(b) Find <em>P</em>(<em>X</em> &le; 1). Give your answer correct to four decimal places. <strong>(2 marks)</strong>",
+      "image": null,
+      "answer": "(a) The total probability must be 1:\n∫₀^k sin x dx = 1\n[−cos x]₀^k = 1\n−cos k + cos 0 = 1, so 1 − cos k = 1\ncos k = 0, and since k > 0 the smallest solution is k = π/2.\n\n(b) P(X ≤ 1) = ∫₀¹ sin x dx\n= [−cos x]₀¹\n= 1 − cos 1\n= 1 − 0.5403\n= 0.4597 (4 d.p.).",
+      "keywords": [
+        "π/2",
+        "0.4597",
+        "1 − cos",
+        "total probability",
+        "integral"
+      ],
+      "minKeywords": 2,
+      "bandDescriptors": {
+        "full": "Both parts correct — k = π/2 from setting the total area to 1, and P(X ≤ 1) = 0.4597 from 1 − cos 1.",
+        "partial": "One part correct, or the right method with a calculator in degrees instead of radians.",
+        "minimal": "A probability density function integrates to 1 over its domain — that equation gives k. For (b), integrate the same function from 0 to 1, in radians."
+      }
+    },
+    {
+      "year": 2020,
+      "qNum": "25",
+      "section": "II",
+      "category": "C3",
+      "gridCodes": [
+        "C3",
+        "F1"
+      ],
+      "marks": 7,
+      "q": "A landscape gardener wants to build a garden bed in the shape of a rectangle attached to a quarter-circle. Let <em>x</em> and <em>y</em> be the dimensions of the rectangle in metres, as shown in the diagram.<img src=\"/diagrams/mathematics-advanced_2020_Q25_stimulus.jpg\" alt=\"A rectangle of height x and width y with a quarter-circle of radius x attached to its right-hand end.\" style=\"max-width:100%;height:auto;display:block;margin:14px auto\">The garden bed is required to have an area of 36 m&sup2; and to have a perimeter which is as small as possible. Let <em>P</em> metres be the perimeter of the garden bed.<br><br>(a) Show that <em>P</em> = 2<em>x</em> + 72/<em>x</em>. <strong>(3 marks)</strong><br><br>(b) Find the smallest possible perimeter of the garden bed, showing why this is the minimum perimeter. <strong>(4 marks)</strong>",
+      "image": null,
+      "answer": "(a) The quarter-circle has radius x, so\nArea = xy + ¼πx² = 36, giving y = 36/x − πx/4.\nThe boundary is: the left side x, the top y, the quarter-circle arc ¼(2πx) = πx/2, and the bottom y + x.\nP = x + y + πx/2 + y + x = 2x + 2y + πx/2.\nSubstituting y: P = 2x + 2(36/x − πx/4) + πx/2\n= 2x + 72/x − πx/2 + πx/2\n= 2x + 72/x.\n\n(b) dP/dx = 2 − 72/x².\nSetting dP/dx = 0: 2 = 72/x², so x² = 36 and x = 6 (x > 0).\nd²P/dx² = 144/x³, which is positive at x = 6, so this is a minimum.\nP = 2(6) + 72/6 = 12 + 12 = 24 metres.",
+      "keywords": [
+        "24",
+        "x = 6",
+        "72/x",
+        "second derivative",
+        "minimum",
+        "quarter"
+      ],
+      "minKeywords": 3,
+      "bandDescriptors": {
+        "full": "P = 2x + 72/x derived correctly, then x = 6 from dP/dx = 0 and a minimum perimeter of 24 m justified by the positive second derivative.",
+        "partial": "The perimeter is minimised correctly but the derivation in (a) is incomplete, or the minimum is not justified.",
+        "minimal": "In (a) the πx terms cancel — the bottom edge is y + x, not y. In (b), solve dP/dx = 0 and then test the second derivative to show it is a minimum, not just a stationary point."
+      }
+    },
+    {
+      "year": 2020,
+      "qNum": "26",
+      "section": "II",
+      "category": "M1",
+      "gridCodes": [
+        "M1",
+        "S2"
+      ],
+      "marks": 7,
+      "q": "Tina inherits $60 000 and invests it in an account earning interest at a rate of 0.5% per month. Each month, immediately after the interest has been paid, Tina withdraws $800.<br><br>The amount in the account immediately after the <em>n</em>th withdrawal can be determined using the recurrence relation <em>A</em><sub><em>n</em></sub> = <em>A</em><sub><em>n</em>&minus;1</sub>(1.005) &minus; 800, where <em>n</em> = 1, 2, 3, &hellip; and <em>A</em><sub>0</sub> = 60 000.<br><br>(a) Use the recurrence relation to find the amount of money in the account immediately after the third withdrawal. <strong>(2 marks)</strong><br><br>(b) Calculate the amount of interest earned in the first three months. <strong>(2 marks)</strong><br><br>(c) Calculate the amount of money in the account immediately after the 94th withdrawal. <strong>(3 marks)</strong>",
+      "image": null,
+      "answer": "(a) A₁ = 60 000(1.005) − 800 = 60 300 − 800 = $59 500\nA₂ = 59 500(1.005) − 800 = 59 797.50 − 800 = $58 997.50\nA₃ = 58 997.50(1.005) − 800 = 59 292.4875 − 800 = $58 492.49.\n\n(b) Interest is 0.5% of the balance at the start of each month:\n60 000(0.005) + 59 500(0.005) + 58 997.50(0.005)\n= 300 + 297.50 + 294.99 = $892.49.\n(Equivalently: 58 492.49 − 60 000 + 3 × 800 = 892.49.)\n\n(c) Expanding the recurrence gives\nAₙ = 60 000(1.005)ⁿ − 800[(1.005)ⁿ − 1]/0.005\n= 60 000(1.005)ⁿ − 160 000[(1.005)ⁿ − 1]\n= 160 000 − 100 000(1.005)ⁿ.\nA₉₄ = 160 000 − 100 000(1.005)⁹⁴ = 160 000 − 159 812.15\n= $187.85.",
+      "keywords": [
+        "58 492",
+        "892.49",
+        "187.85",
+        "geometric",
+        "1.005",
+        "160 000"
+      ],
+      "minKeywords": 3,
+      "bandDescriptors": {
+        "full": "All three amounts correct — $58 492.49 after the third withdrawal, $892.49 of interest, and $187.85 after the 94th — with a closed form used for (c).",
+        "partial": "Parts (a) and (b) correct, but (c) is wrong or attempted by iterating rather than by a closed form.",
+        "minimal": "In (b), interest each month is 0.5% of that month's opening balance. For (c), expand the recurrence into a geometric series: Aₙ = 160 000 − 100 000(1.005)ⁿ."
+      }
+    },
+    {
+      "year": 2020,
+      "qNum": "27",
+      "section": "II",
+      "category": "S2",
+      "marks": 5,
+      "q": "A cricket is an insect. The male cricket produces a chirping sound.<br><br>A scientist wants to explore the relationship between the temperature in degrees Celsius and the number of cricket chirps heard in a 15-second time interval.<br><br>Once a day for 20 days, the scientist collects data. Based on the 20 data points, the scientist provides the information below.<br><br>&bull; A box-plot of the temperature data is shown.<img src=\"/diagrams/mathematics-advanced_2020_Q27_stimulus.jpg\" alt=\"Box-plot of temperature in degrees Celsius: minimum 13, lower quartile 19, median 22, upper quartile 25, maximum 27.\" style=\"max-width:100%;height:auto;display:block;margin:14px auto\">&bull; The mean temperature in the dataset is 0.525&deg;C below the median temperature in the dataset.<br>&bull; A total of 684 chirps was counted when collecting the 20 data points.<br><br>The scientist fits a least-squares regression line using the data (<em>x</em>, <em>y</em>), where <em>x</em> is the temperature in degrees Celsius and <em>y</em> is the number of chirps heard in a 15-second time interval. The equation of this line is <em>y</em> = &minus;10.6063 + <em>bx</em>, where <em>b</em> is the slope of the regression line.<br><br>The least-squares regression line passes through the point (<em>x&#772;</em>, <em>y&#772;</em>) where <em>x&#772;</em> is the sample mean of the temperature data and <em>y&#772;</em> is the sample mean of the chirp data.<br><br>Calculate the number of chirps expected in a 15-second interval when the temperature is 19&deg; Celsius. Give your answer correct to the nearest whole number.",
+      "image": null,
+      "answer": "From the box-plot, the median temperature is 22°C.\nSo the mean is x̄ = 22 − 0.525 = 21.475°C.\nThe mean number of chirps is ȳ = 684/20 = 34.2.\nThe regression line passes through (21.475, 34.2):\n34.2 = −10.6063 + b(21.475)\nb = 44.8063/21.475 = 2.0864.\nSo y = −10.6063 + 2.0864x.\nAt x = 19: y = −10.6063 + 2.0864(19) = 29.04\n≈ 29 chirps.",
+      "keywords": [
+        "29",
+        "22",
+        "21.475",
+        "34.2",
+        "2.086",
+        "median"
+      ],
+      "minKeywords": 3,
+      "bandDescriptors": {
+        "full": "29 chirps — median 22°C read from the box-plot, mean 21.475°C, ȳ = 34.2, slope 2.0864, then substitution of x = 19.",
+        "partial": "The slope is found correctly but the final substitution is wrong, or the mean temperature is taken as the median.",
+        "minimal": "Three numbers are needed before the slope: the median from the box-plot (22), the mean temperature (22 − 0.525) and the mean chirp count (684/20). The line passes through (x̄, ȳ)."
+      }
+    },
+    {
+      "year": 2020,
+      "qNum": "28",
+      "section": "II",
+      "category": "S3",
+      "marks": 5,
+      "q": "In a particular country, the hourly rate of pay for adults who work is normally distributed with a mean of $25 and a standard deviation of $5.<br><br>(a) Two adults who both work are chosen at random. Find the probability that at least one of them earns between $15 and $30 per hour. <strong>(3 marks)</strong><br><br>(b) The number of adults who work is equal to three times the number of adults who do not work. One adult is chosen at random. Find the probability that the chosen adult works and earns more than $25 per hour. <strong>(2 marks)</strong>",
+      "image": null,
+      "answer": "(a) $15 is z = (15 − 25)/5 = −2 and $30 is z = (30 − 25)/5 = 1.\nUsing the empirical rule, P(−2 < z < 1) = 0.95/2 + 0.68/2 = 0.475 + 0.34 = 0.815.\nP(neither of the two) = (1 − 0.815)² = 0.185² = 0.034225.\nP(at least one) = 1 − 0.034225 = 0.9658.\n\n(b) If w adults do not work, then 3w work, out of 4w in total, so P(works) = 3/4.\n$25 is the mean, so P(earns more than $25 | works) = 0.5.\nP(works and earns more than $25) = (3/4)(1/2) = 3/8 = 0.375.",
+      "keywords": [
+        "0.9658",
+        "0.815",
+        "3/8",
+        "0.375",
+        "at least one",
+        "complement"
+      ],
+      "minKeywords": 3,
+      "bandDescriptors": {
+        "full": "Both parts correct — 0.9658 via the complement of 'neither', and 3/8 from P(works) = 3/4 multiplied by the half of the distribution above the mean.",
+        "partial": "The 0.815 region is found correctly but 'at least one' is not handled by the complement, or (b) uses the wrong proportion of workers.",
+        "minimal": "In (a), z = −2 and z = 1, and 'at least one' is easiest as 1 − P(neither). In (b), three times as many work as do not, so 3 in every 4 adults work; $25 is the mean, so exactly half of those earn more."
+      }
+    },
+    {
+      "year": 2020,
+      "qNum": "29",
+      "section": "II",
+      "category": "C2",
+      "marks": 4,
+      "q": "The diagram shows the graph of <em>y</em> = <em>c</em> ln <em>x</em>, <em>c</em> &gt; 0.<img src=\"/diagrams/mathematics-advanced_2020_Q29_stimulus.jpg\" alt=\"Graph of y = c ln x for c > 0, crossing the x-axis at x = 1 and increasing without bound.\" style=\"max-width:100%;height:auto;display:block;margin:14px auto\">(a) Show that the equation of the tangent to <em>y</em> = <em>c</em> ln <em>x</em> at <em>x</em> = <em>p</em>, where <em>p</em> &gt; 0, is <em>y</em> = (<em>c</em>/<em>p</em>)<em>x</em> &minus; <em>c</em> + <em>c</em> ln <em>p</em>. <strong>(2 marks)</strong><br><br>(b) Find the value of <em>c</em> such that the tangent from part (a) has a gradient of 1 and passes through the origin. <strong>(2 marks)</strong>",
+      "image": null,
+      "answer": "(a) y = c ln x, so dy/dx = c/x.\nAt x = p the gradient is c/p and the point of contact is (p, c ln p).\nPoint-gradient form: y − c ln p = (c/p)(x − p)\ny = (c/p)x − (c/p)(p) + c ln p\ny = (c/p)x − c + c ln p.\n\n(b) Gradient 1 means c/p = 1, so p = c.\nThrough the origin means (0, 0) satisfies the tangent:\n0 = 0 − c + c ln p, so c ln p = c.\nSince c > 0, ln p = 1 and p = e.\nTherefore c = p = e.",
+      "keywords": [
+        "c/x",
+        "point-gradient",
+        "p = e",
+        "c = e",
+        "origin",
+        "ln p = 1"
+      ],
+      "minKeywords": 3,
+      "bandDescriptors": {
+        "full": "Tangent derived correctly from dy/dx = c/x at the point (p, c ln p), then c = e found from the two conditions c/p = 1 and c ln p = c.",
+        "partial": "The tangent equation is correct but the two conditions in (b) are not combined to reach c = e.",
+        "minimal": "In (a) use the point (p, c ln p) with gradient c/p. In (b) the two conditions give p = c and ln p = 1 — solve them together."
+      }
+    },
+    {
+      "year": 2020,
+      "qNum": "30",
+      "section": "II",
+      "category": "C4",
+      "gridCodes": [
+        "C4",
+        "F1"
+      ],
+      "marks": 6,
+      "q": "The diagram shows two parabolas <em>y</em> = 4<em>x</em> &minus; <em>x</em>&sup2; and <em>y</em> = <em>ax</em>&sup2;, where <em>a</em> &gt; 0. The two parabolas intersect at the origin, <em>O</em>, and at <em>A</em>.<img src=\"/diagrams/mathematics-advanced_2020_Q30_stimulus.jpg\" alt=\"Two parabolas: y = 4x minus x squared and y = a x squared, intersecting at the origin and at A, with the region between them shaded.\" style=\"max-width:100%;height:auto;display:block;margin:14px auto\">(a) Show that the <em>x</em>-coordinate of <em>A</em> is 4/(<em>a</em> + 1). <strong>(2 marks)</strong><br><br>(b) Find the value of <em>a</em> such that the shaded area is 16/3. <strong>(4 marks)</strong>",
+      "image": null,
+      "answer": "(a) At an intersection the y-values are equal:\n4x − x² = ax²\n4x = ax² + x² = (a + 1)x²\nx[(a + 1)x − 4] = 0\nSo x = 0 (the origin) or x = 4/(a + 1), which is the x-coordinate of A.\n\n(b) Let k = 4/(a + 1). The shaded area is the region between the curves from 0 to k:\nArea = ∫₀^k [(4x − x²) − ax²] dx = ∫₀^k [4x − (a + 1)x²] dx\n= [2x² − (a + 1)x³/3]₀^k\n= 2k² − (a + 1)k³/3.\nSubstituting k = 4/(a + 1):\n= 32/(a + 1)² − 64/[3(a + 1)²]\n= 32/[3(a + 1)²].\nSet equal to 16/3: 32/[3(a + 1)²] = 16/3\n(a + 1)² = 2, so a + 1 = √2 (positive since a > 0)\na = √2 − 1.",
+      "keywords": [
+        "√2 − 1",
+        "4/(a + 1)",
+        "between the curves",
+        "32/3",
+        "upper minus lower"
+      ],
+      "minKeywords": 2,
+      "bandDescriptors": {
+        "full": "Intersection x = 4/(a + 1) established, the area between the curves integrated to 32/[3(a + 1)²], and a = √2 − 1 obtained.",
+        "partial": "The area integral is set up correctly as upper curve minus lower curve, but the algebra does not reach a = √2 − 1.",
+        "minimal": "In (a), equate the two expressions and factor out x. In (b), integrate (4x − x²) − ax² from 0 to the x-coordinate of A, then solve for a."
+      }
+    },
+    {
+      "year": 2020,
+      "qNum": "31",
+      "section": "II",
+      "category": "T3",
+      "gridCodes": [
+        "C3",
+        "T3"
+      ],
+      "marks": 7,
+      "q": "The population of mice on an isolated island can be modelled by the function <em>m</em>(<em>t</em>) = <em>a</em> sin((&pi;/26)<em>t</em>) + <em>b</em>, where <em>t</em> is the time in weeks and 0 &le; <em>t</em> &le; 52. The population of mice reaches a maximum of 35 000 when <em>t</em> = 13 and a minimum of 5000 when <em>t</em> = 39. The graph of <em>m</em>(<em>t</em>) is shown.<img src=\"/diagrams/mathematics-advanced_2020_Q31_stimulus.jpg\" alt=\"Graph of the mice population m(t) over 0 to 52 weeks, peaking at 35 000 and dipping to 5000.\" style=\"max-width:100%;height:auto;display:block;margin:14px auto\">(a) What are the values of <em>a</em> and <em>b</em>? <strong>(2 marks)</strong><br><br>(b) On the same island, the population of cats can be modelled by the function <em>c</em>(<em>t</em>) = &minus;80 cos((&pi;/26)(<em>t</em> &minus; 10)) + 120. Consider the graph of <em>m</em>(<em>t</em>) and the graph of <em>c</em>(<em>t</em>). Find the values of <em>t</em>, 0 &le; <em>t</em> &le; 52, for which both populations are increasing. <strong>(3 marks)</strong><br><br>(c) Find the rate of change of the mice population when the cat population reaches a maximum. <strong>(2 marks)</strong>",
+      "image": null,
+      "answer": "(a) The amplitude is half the range: a = (35 000 − 5000)/2 = 15 000.\nThe centre is the mean of the extremes: b = (35 000 + 5000)/2 = 20 000.\n\n(b) m′(t) = 15 000(π/26) cos((π/26)t), which is positive when cos((π/26)t) > 0,\ni.e. for 0 ≤ t < 13 and 39 < t ≤ 52.\nc′(t) = 80(π/26) sin((π/26)(t − 10)), which is positive when sin((π/26)(t − 10)) > 0,\ni.e. when 0 < (π/26)(t − 10) < π, giving 10 < t < 36.\nBoth increase on the overlap: 10 < t < 13.\n(The interval 39 < t ≤ 52 does not overlap 10 < t < 36.)\n\n(c) c(t) is greatest when cos((π/26)(t − 10)) = −1, i.e. (π/26)(t − 10) = π, so t = 36.\nm′(36) = 15 000(π/26) cos(36π/26)\n= 1812.4 × (−0.3546)\n≈ −643.\nThe mice population is falling at about 643 mice per week.",
+      "keywords": [
+        "15 000",
+        "20 000",
+        "10 < t < 13",
+        "643",
+        "t = 36",
+        "decreasing"
+      ],
+      "minKeywords": 3,
+      "bandDescriptors": {
+        "full": "a = 15 000 and b = 20 000; both populations increasing only on 10 < t < 13; and a rate of about −643 mice per week at t = 36.",
+        "partial": "The amplitude and centre are correct and one derivative is analysed correctly, but the overlap or the final rate is wrong.",
+        "minimal": "The amplitude is half the difference of the maximum and minimum, and b is their average. For (b), solve m′(t) > 0 and c′(t) > 0 separately and intersect. The cat population peaks where the cosine equals −1."
+      }
+    }
+  ]
+}

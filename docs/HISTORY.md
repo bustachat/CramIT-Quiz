@@ -1592,3 +1592,106 @@ cold session knows which paper is next.
 Documentation only. No code, no data, no subject JSON changed; nothing is ported and the subject
 is still registered nowhere. **Stage 4 is next: six sessions, one paper each, starting with 2020,
 on `port/maths-advanced`.**
+
+---
+
+## 2026-08-28 (later still) — Mathematics Advanced Stage 4, paper 1 of 6: the 2020 port
+
+First session of the six-session port, on a new `port/maths-advanced` branch. One paper: all
+49 question parts of the 2020 HSC, plus that year's 18 crops, finishing with local CI green.
+
+**What shipped.** A new `subjects/mathematics-advanced.json` — 10 MC, 19 written entries, 2
+`omittedQuestions`, 1 `omittedParts` — and 18 JPGs in `/diagrams/`, cut by a new
+`scripts/crop_maths_advanced.py`. The subject is deliberately registered **nowhere**: no
+`subjects/index.json` row, no `SUBJECT_ID_MAP`, no `SUBJECT_CATALOGUE`, no card. That is Stage 7.
+`validate_subjects.cjs` globs `subjects/*.json`, so CI covers the file from now on regardless;
+the two key checkers skip it until Stage 6 commits its keys.
+
+**Marks reconcile to exactly 100.** Not just as a paper total — per question, against
+`data/mapping-grid/mathematics-advanced.json`, using the same prefix-sum join
+`check_written_key.cjs` will apply at Stage 6. A build-time assertion also refuses to write the
+file unless every `category` is one of NESA's own codes for that question.
+
+**The MC answers were checked before they were authored.** `extract_mc_key()` from
+`build_answer_key.py`, called read-only on `2020_marking_guidelines.pdf`, returns
+`D B A B C B A A C D`. Ten independent derivations from the paper agreed with all ten. This is
+not a substitute for Stage 6 — it just means the port did not begin from guesses, and it cost
+one function call rather than an "audit", which CLAUDE.md §10 forbids for exactly the reason
+this avoids.
+
+### Five decisions Stage 3 could not have taken
+
+Stage 3 fixed every field name, character and markup form, and all ten of its decisions held.
+Five more things only surface once questions are actually being written, and they are now
+recorded in the runbook as inherited by every later year:
+
+1. **One bank entry per NESA question, not per part.** Mathematics Standard 2 stores 140 of its
+   151 written entries that way, and the checker's join sums every official leaf part under a
+   bank entry's `qNum` prefix, so merged storage reconciles trivially.
+2. **A merged entry spanning parts with different syllabus codes** takes one `category` — the
+   skill the marks are awarded for — and keeps NESA's full list in `gridCodes`. That is Stage 3
+   decision 7 applied one level up. Used on Q18, Q21, Q25, Q30 and Q31.
+3. **An omitted part inside a question the bank still carries forces the merged form.** 2020 Q11
+   loses part (a) (draw the model on a printed grid). Stored as two entries `11(b)` and `11(c)`,
+   each would match only its own leaf and the dropped mark would vanish with nothing reporting
+   it — precisely what `omittedParts` exists to prevent. Stored as one entry `"11"` with
+   `marks: 3` and `omittedParts: [{part: "a", marks: 1}]`, the checker adds it back to 4.
+4. **NESA's part letters stay even when a part is dropped.** Q11 presents "(b)" and "(c)" with no
+   "(a)", followed by a visibly separate italic note saying what part (a) asked for. Re-lettering
+   would be rewording NESA; leaving "the grid on the previous page" dangling unexplained would be
+   worse for the student.
+5. **Options carrying `optionImages` must be plain text.** The engine reuses the option string as
+   `alt="${opt}"`, so Q5 and Q9 describe their graphs in bare text with literal `μ`/`σ`, while
+   every other option string in the paper uses `<em>`/`<sup>`.
+
+### The crop that looked right and was wrong
+
+Cropping is where this port loses money, and the first pass lost some.
+
+The new `scripts/crop_maths_advanced.py` is deliberately **not** an entry in
+`scripts/diagram_registry.json`. That registry's coordinates are raw pixels verified at
+`RENDER_DPI = 150`, `save_crop()` overwrites unconditionally, and a bare run with no `--year`
+re-cuts every Mathematics Standard 2 crop — none of which this port needs to touch. The new
+script stores **PDF points**, so its DPI can change without moving a crop, and takes `--year`, so
+each remaining session adds one registry block.
+
+Its coordinates come from an **ink profile** — dark pixels at 150 dpi, grouped into bands with a
+configurable gap — because on these papers the option letters and most axis labels are outline
+paths, so `extract_maths_diagrams.py --calibrate`, which finds labels through `get_text()`, finds
+nothing at all.
+
+⚠️ **The standing rule "exclude the paper's own `A.`/`B.` glyph" cannot be met with an x-cut
+here.** The letter sits in the cell's top-left corner and the graph runs underneath it: on 2020
+Q5 option A the letter spans x 100.8–111.3 pt and the graph's own x-axis starts at x 102.2 pt.
+The first pass cropped from x = 114 pt and silently amputated the left arm of the parabola and
+the end of the axis. Files written, non-empty, plausible, wrong — the same failure signature as
+the `RENDER_DPI` trap, caught only by putting the crops in a contact sheet and looking at them.
+The fix is an `erase` rectangle: crop the whole cell, then paint white over the letter's own
+bounding box, with an ink profile of that x-strip confirming first that nothing but the letter
+is inside it. All 18 crops were then compared against the paper option by option.
+
+### Measured at 430 px, not inferred
+
+Stage 3 measured its rendering claims in a browser and this session re-measured them against the
+real questions:
+
+| Case | Measured | Verdict |
+|---|---|---|
+| Q3's 4-column table, bare `.q-table` | 390 px, `body.scrollWidth` 430 | fits |
+| Q20's **7-column** table in the `overflow-x:auto` wrapper | wrapper 390 px, scrolls to 520 px internally, `body.scrollWidth` **430** | decision 9 works |
+| Q23's piecewise brace (decision 1) | brace cell 38.0 px, two-row block 38.0 px | glyph spans the rows exactly |
+| Q5 / Q9 option images in `.options-grid-2x2` | 160 × 143 px and 160 × 90 px | legible |
+| `∫ ∞ √ ≠ → π σ μ − ≤ ² ³` | 4.9–18.0 px, all distinct from `�` at 17.5 px | real glyphs, no notdef |
+
+**`optionImagesWide` confirmed unnecessary**, as Stage 1 predicted — nothing like the VET
+160 × 35 px case that created the flag.
+
+One process note for sessions 2–6: `subjects/mathematics-advanced.json` round-trips
+**byte-for-byte** through `json.dumps(indent=2, ensure_ascii=False)` plus a trailing newline
+(verified). Unlike `multimedia.json`, which has hand-authored compact inline arrays and must
+never be round-tripped, this file is safe to load, extend with a year, and dump.
+
+**Local CI green:** `validate_subjects.cjs` reports `MC=656 Written=262 imageRefs=206
+missingImages=0`, 0 issues; the answer-key and written-key checks still pass on the three
+subjects that have keys. Gate 4 is ticked for 2020 in the runbook, and the tracker now says
+**2023 is next**.
