@@ -544,8 +544,12 @@ moment it is authored.
 
 ### Branch — do not commit these sessions to `main`
 
+**The branch already exists, locally and on `origin`** (created 2026-08-28, first push after
+the 2020 paper). Do not create it again:
+
 ```bash
-git checkout -b port/maths-advanced      # first session only; later sessions just check it out
+git checkout port/maths-advanced     # add `origin/` after a fresh clone
+git pull
 ```
 
 Merge to `main` only when the whole subject is ported, cropped, ground-truthed and green.
