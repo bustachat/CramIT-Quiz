@@ -7,11 +7,11 @@ Report is separate: `docs/paper-reports/mathematics-advanced.md` (verdict **GO**
 | Stage | Status | Session |
 |---|---|---|
 | 0 Feasibility | ✅ GO — 2026-08-27 | done |
-| **1 Survey** | ⬜ **next** | 1 session |
+| 1 Survey | ✅ complete — 2026-08-27 | done |
 | 2 Syllabus grounding | ✅ complete — 2026-08-27 | done |
-| 3 Schema | ⬜ | 1 short session, must follow Stage 1 |
+| **3 Schema** | ⬜ **next** | 1 short session |
 | 4 Port | ⬜ | **~6 sessions, one per paper year** |
-| 5 Assets | ⬜ | 2–3 sessions (~100 crops) |
+| 5 Assets | ⬜ | 3 sessions — **121 crops + 28 tables**, measured at Stage 1 |
 | 6 Ground truth | ⬜ | 1 session |
 | 7 Release | ⬜ | 1 session |
 
@@ -42,43 +42,164 @@ Paste this, changing the stage number:
 | Papers | 2020–2025, `{year}_exam.pdf` + `{year}_marking_guidelines.pdf` + `{year}_marking_feedback.pdf` |
 | Structure, every year | 100 marks = Section I 10 MC (Q1–10) + Section II 90 (Q11–31/32/34) |
 | Total workload | **294 question parts** — 60 MC + 234 Section II parts across 131 questions |
-| Section I assets | 24 stimulus images, 11 option-image sets (=44 crops), 9 tables → HTML, 24 plain text |
-| Section II assets | 39 questions reference a stimulus or table (crops vs HTML not yet split — Stage 1) |
-| Unportable | ~14 drawing parts, ~42 of 540 marks (~7.8%) → `omittedParts` |
-| Notation | `basic` — no ∑, matrices, vectors, complex numbers or radical sign |
-| **Text layer** | **garbled on every paper** — `(x − 1)²` extracts as `^x - 1h2`, `#` is ×, `ƒ` is *f* |
+| Section I assets | **25** stimulus images, **12** option-image sets (=48 crops), **10** tables → HTML, 22 plain-text stems (Stage 1 corrected Stage 0 — see Stage 1) |
+| Section II assets | **48 crops + 18 tables** across 46 questions/parts |
+| **Total assets** | **121 crops · 28 tables → HTML** (Stage 0's "~100" was low) |
+| Unportable | **17 drawing parts, 41 of 540 Section II marks (7.6%)** → `omittedParts` / `omittedQuestions`; portable share **93.2%** |
+| Notation | `basic` — no ∑, matrices, vectors or complex numbers. ⚠️ **Radicals DO occur** (2020 Q1, 2025 Q3/Q5): Stage 0 read "no radical sign" off the text layer, and √ is drawn as paths, so it is invisible there. Same for ∞ |
+| **Text layer** | **garbled on every paper, but not the same way each year** — 2024 alone uses the MathType `^…h` / `]…g` bracket mapping; every year loses ∞ and √ entirely, prints π as `p`, and re-orders stacked fractions. **124 of 294 parts (42%) carry a detectable corruption** |
 | Ground truth, pre-verified | `extract_mc_key()` 10/10 every year; `parse_paper()` 37–42 parts/paper, **0 unresolved, exact 90/90 on all six** |
 | Official topic + marks | `data/mapping-grid/mathematics-advanced.json` — every part, all six papers, reconciled |
 
 ---
 
-## Stage 1 — Survey ⬜ NEXT
+## Stage 1 — Survey ✅ COMPLETE
 
-**Goal:** every one of the 294 parts classified, so Stage 4 has no open questions.
+**All 294 parts classified. Nothing unresolved.** Every part in
+`data/mapping-grid/mathematics-advanced.json` was located in its exam paper by *(page, y)* and
+classified for presentation. The numbers below are measured, not estimated — do not re-derive them.
 
-Start from the mapping grid — it already gives each part's `category`, marks and outcome. What
-it does not give is *presentation*, which is what this stage adds.
+### Method (and where it under-detects)
 
-Per question, record: type (MC / short written / **unportable**), stimulus (none / raster /
-table), options (text / images / bare-letters-in-stimulus), option aspect ratio (wide > ~3:1 →
-`optionImagesWide`), and text-layer quality.
+Three independent detectors, unioned, then **every candidate rendered and looked at** across 23
+contact sheets:
 
-**Three traps the playbook requires you to actively test for:**
+1. **Text-gap bands** — a vertical band carrying ink but no body text.
+2. **`page.find_tables()`** — noisy in both directions: it reads graph axes as 2×2 tables, so
+   every hit was filtered to ≥6 cells and then confirmed by eye.
+3. **Ink profile** — dark pixels lying outside every text-block bbox, at 72 dpi.
 
-1. **Run the stem sweep** for prose standing in for a picture — not an option sweep:
-   `which (of the following )?(best )?(represents|shows|depicts|illustrates|could be|could represent)`
-   and `which (diagram|graph|drawing|image|picture|sketch|plan|symbol|section)`.
-   ⚠️ The Stage 0 pass used a regex missing `could represent` and undercounted; use the above.
-2. **Bare-letter options are not automatically a gap** — they are complete when all four
-   alternatives live inside one stimulus, and a gap when the paper prints four separate diagrams.
-3. **Array position is not the question number.** Join on `qNum` or not at all.
+⚠️ **No single detector was complete.** Detector 1 misses a chart whose axis labels are wide text
+blocks (it lost 2022 Q11(b)'s Pareto chart); detector 3 misses a diagram whose labels sit inside
+one large text block. Four Section II diagrams — 2022 Q28, 2024 Q20, 2025 Q28, 2025 Q29 — were
+found **only** by the union plus the visual pass. If Stage 5 ever re-derives this list, union all
+three and look at the pages; a single-detector sweep silently drops assets.
 
-**Do not trust vector-drawing counts to find diagram questions.** Tried at Stage 0 and it failed
-both ways — straight-line graphs have no curves and scored 0 (2024 Q1), while text underlines
-scored false positives. Read the stems, or render the page and look.
+Vector-path counting was not used: Stage 0 already showed it fails both ways.
 
-**GATE 1** — [ ] all 294 parts classified · [ ] crop list, table list and omission list produced ·
-[ ] stem sweep run and every hit resolved · [ ] text-layer quality recorded per paper
+### Section I — 60 questions
+
+| Year | Stimulus image | Option images (×4) | Table stimulus | Options as table rows | Plain text |
+|---|---|---|---|---|---|
+| 2020 | Q7, Q8, Q10 | Q5, Q9 | Q3 | Q2, Q3 | Q1, Q4, Q6 |
+| 2021 | Q4, Q6, Q7, Q8, Q10 | Q4, Q5 | Q2 | — | Q1, Q3, Q9 |
+| 2022 | Q3, Q7, Q8, Q10 | Q1, Q10 | — | Q2 | Q4, Q5, Q6, Q9 |
+| 2023 | Q1, Q2, Q4, Q5, Q10 | Q6 | Q2, Q6 | Q4 | Q3, Q7, Q8, Q9 |
+| 2024 | Q1, Q7, Q8, Q9, Q10 | Q7, Q8 | Q3 | — | Q2, Q4, Q5, Q6 |
+| 2025 | Q6, Q9, Q10 | Q2, Q4, Q6 | Q1 | — | Q3, Q5, Q7, Q8 |
+
+**Two corrections to Stage 0's table**, both found by rendering the page rather than reading the
+stem: **2020 Q9** has four option images (normal curves with different regions shaded) and was
+counted as plain text; **2021 Q6** has a probability-tree stimulus and was counted as plain text.
+Totals move to **25 stimulus images and 12 option sets (48 option crops)**.
+
+**A question can sit in two columns at once** — 2023 Q2 has a die/spinner picture *and* a
+partially completed table; 2023 Q6 has a table stimulus *and* four option graphs.
+
+**`optionImagesWide` is not needed anywhere.** All 12 option sets measure between 0.8:1 and
+2.6:1. The one worth re-checking at crop time is **2024 Q8** (four histograms): its C/D row's ink
+extent measures 3.7:1, an artefact of where the bars stop rather than the crop's real shape.
+
+**Trap 2 (bare-letter options) does not occur in this subject.** Every MC question whose options
+*look* like bare letters (2020 Q10, 2023 Q5, 2024 Q10, 2025 Q10) has numeric options — 0/1/2/3,
+not labels pointing into a shared stimulus. There is nothing here like VET 2021 Q15.
+
+**One presentation case Stage 0 did not record: options printed as rows of a table** — 2020 Q2,
+2020 Q3, 2022 Q2, 2023 Q4. The four alternatives are table rows with A./B./C./D. down a
+left-hand column. Portable as ordinary text options (join each row's cells), but *how* is a
+Stage 3 decision.
+
+### Section II — 234 parts across 131 questions
+
+| Year | Crops | Tables → HTML |
+|---|---|---|
+| 2020 | Q15, Q22, Q25, Q27, Q29, Q30, Q31 | Q20 |
+| 2021 | Q12, Q17, Q17(b), Q18, Q22, Q24, Q28, Q32, Q33 | Q22, Q25, Q32 (×2), Q34 |
+| 2022 | Q11(b), Q14, Q16, Q17, Q24, Q28, Q29(a), Q31 | Q11, Q21 |
+| 2023 | Q22, Q23, Q24, Q26, Q27, Q28, Q32 | Q12, Q15, Q23 |
+| 2024 | Q11, Q13, Q14, Q16, Q20, Q21, Q22, Q23, Q28, Q31 | Q11, Q13, Q22(b), Q23, Q24(b), Q26 |
+| 2025 | Q11, Q14, Q24, Q25(c), Q27, Q28, Q28(b) | Q20 |
+
+48 crops, 18 tables. Almost every crop is line art the paper drew itself — graphs, geometry
+diagrams, box plots, scatterplots, probability trees. **Two are illustrations rather than maths**:
+2022 Q17 (a pyramid of playing cards) and 2024 Q28 (a Ferris wheel).
+
+Six of the 18 tables are **future-value / z-score lookup tables** (2021 Q25, 2022 Q21, 2023 Q15,
+2024 Q24(b), 2024 Q26, 2025 Q20) — wide, and exactly what `.study-dtable`'s stacked-card collapse
+exists for. Three more are **blank tables the student fills in** (2022 Q12(b), 2024 Q11, Q13):
+reproduce the table as HTML and mark the answer as text — see Stage 3.
+
+### Unportable — 17 parts, 41 marks (7.6% of Section II, 6.8% of the paper)
+
+| Year | Parts (marks) | Total |
+|---|---|---|
+| 2020 | Q11(a) 1 · **Q16 4** · **Q24 3** | 8 |
+| 2021 | **Q19 3** · **Q21 2** · Q27(a) 2 · Q28(b) 2 | 9 |
+| 2022 | Q12(b) 2 · Q27(c) 3 | 5 |
+| 2023 | Q18(a) 3 · Q19(a) 2 · Q30(b) 2 | 7 |
+| 2024 | Q17(a) 2 · **Q19 5** · Q25(b) 2 | 9 |
+| 2025 | Q15(b) 2 · Q16(b) 1 | 3 |
+
+All 17 require the student to *produce* a drawing — sketch a curve, plot a point on a printed
+grid, complete a printed graph. **Bold entries are whole single-part questions** and belong in
+subject-level `omittedQuestions` (2020 Q16, Q24; 2021 Q19, Q21; 2024 Q19 — 17 marks); the other
+12 are `omittedParts` on their question. Portable share of the paper: **93.2%**, confirming
+Stage 0's estimate.
+
+**"Shaded region" is not a drawing task.** A verb sweep flags roughly 40 parts; most say *the*
+shaded region — the paper drew it and the student computes an area. Only the imperative
+("sketch", "plot", "complete the graph") is unportable. 2020 Q27 was a false positive twice over:
+"box-**plot**" matched the verb, and the box plot is a *given* stimulus.
+
+**Seven portable parts lean on a part we omit** — 2020 Q11(b), Q11(c); 2021 Q27(d), Q28(c);
+2023 Q18(b), Q19(b); 2025 Q15(c) (11 marks). Six say "or otherwise" or restate the function, so
+they stand alone. **2021 Q27(d) is the exception**: it says *"Explain your answer by referring to
+the graph drawn in part (a)"*, and (a) is omitted. Decide at Stage 4 — supply the graph as a
+stimulus, or omit (d) as well. Do not quietly reword NESA.
+
+### Stem sweep — run, every hit resolved
+
+The playbook's regex plus the two patterns it was missing (below) returns **13 hits**: 2020 Q5 ·
+2021 Q3, Q5, Q7, Q8 · 2022 Q1, Q10 · 2023 Q6 · 2024 Q1, Q7, Q8 · 2025 Q2, Q4.
+
+**Twelve are complete** — the paper prints four separate diagrams, already in the option-image
+list above. **One is genuinely text**: 2021 Q3 ("Which of the following represents the domain of
+ƒ(x) = ln(1 − x)?") has interval-notation options and no picture. **No question was found where
+prose stands in for a missing picture** — the Multimedia 2022 Q2 failure has no analogue here.
+
+⚠️ **The playbook's regex was incomplete, and is now fixed there.** It misses `which of these …`
+(2024 Q8) and `a possible sketch` (2023 Q6). Both are picture-option questions; both would have
+been missed by the sweep as written.
+
+### Text-layer quality — per paper, measured
+
+| Year | Corruption style | Parts needing manual transcription |
+|---|---|---|
+| 2020 | *f* → `â`/`ƒ`; integrals as `⌠⎮⌡`; π → `p` | 18 / 49 (37%) |
+| 2021 | same | 24 / 48 (50%) |
+| 2022 | same, **plus scrambled reading order** (`( ed.` then `a)  Jane borrows…`) | 19 / 52 (37%) |
+| 2023 | same | 24 / 48 (50%) |
+| 2024 | **MathType brackets** — `^x - 1h2` is `(x − 1)²`, `]xg` is `(x)`, `#` is × | 18 / 47 (38%) |
+| 2025 | *f* → `ƒ`; π → `p` | 21 / 50 (42%) |
+
+**Stage 0 said "garbled on every paper" and gave a 2024 example. It is garbled on every paper,
+but only 2024 uses the bracket mapping** — searching a 2021 paper for `^x - 1h2` finds nothing.
+Four defects are common to all six years:
+
+- **∞ and √ never appear in the text layer of any paper** — zero occurrences of either character
+  across 2020–2025, although both are printed. They are drawn as paths. 2022 Q4's options extract
+  as `( − , 1` for `(−∞, 1]`; 2025 Q3/Q5's surd options extract as bare digits.
+- **π extracts as the letter `p`** — `0 ≤ x ≤ 2p` means `0 ≤ x ≤ 2π`. Only 2020 contains a single
+  genuine `π` character in the whole paper.
+- **Stacked fractions are split and re-ordered.** "Show that P = 2x + 72/x" extracts as
+  `72 (a)  Show that P = 2x + . x`. **91 of 294 parts contain at least one stacked fraction**
+  (599 fraction bars across the six papers).
+- 42% of parts (124/294) carry a *detectable* corruption marker — and that is a **lower bound**,
+  since a re-ordered fraction with no other marker is invisible to the check. Treat the whole of
+  Section II as transcription work, exactly as Stage 4 already says.
+
+**GATE 1** — [x] all 294 parts classified · [x] crop list, table list and omission list produced ·
+[x] stem sweep run and every hit resolved · [x] text-layer quality recorded per paper
 
 ---
 
@@ -147,18 +268,33 @@ is the VET failure repeating. Full data: `data/exam-trends/mathematics-advanced.
 
 ---
 
-## Stage 3 — Schema ⬜ (short session, after Stage 1)
+## Stage 3 — Schema ⬜ NEXT (short session)
 
 Canonical names, per playbook Stage 3 — a new port uses these, existing deviations are debt:
 `year`, `qNum`, `category`, `optionExplanations`, `marks`, `answer`, `omittedParts`,
 `omittedQuestions`.
 
-Two decisions to take and record here:
+Six decisions to take and record here. The first two came from Stage 0; the last four are
+Stage 1 findings, each with the exact questions they affect.
 
 1. **Braced piecewise function** (2–3 across six papers, e.g. 2020 Q23) — borderless two-row
    table with a CSS brace, or a crop?
 2. **Integrals and stacked fractions** in MC stems/options (~6 of 60 MC) — `∫` U+222B with
    `<sub>`/`<sup>` limits, and inline `1/3`. Confirm against how Standard 2 already writes rates.
+3. **Options printed as rows of a table** — 2020 Q2, 2020 Q3, 2022 Q2, 2023 Q4. Either render the
+   table in the stem and make the options bare row references, or flatten each row into a text
+   option (`Median: Changes · Mean: Stays the same`). Flattening keeps the options meaningful on
+   the results screen and inside `optionExplanations`; the table-in-stem form is closer to the
+   paper. Pick one and apply it to all four.
+4. **Blank tables the student fills in** — 2022 Q12(b), 2024 Q11, 2024 Q13. The table is
+   reproduced as HTML in the stem and the answer is a short text list of the cell values, marked
+   on keywords. Fix the model-answer format before Stage 4 authors the first one, so all three
+   match. (2022 Q12(b) is omitted anyway — it also asks for a graph.)
+5. **The 12 `omittedParts` and 5 `omittedQuestions`** are enumerated in Stage 1. Confirm the
+   canonical shape of both keys against `subjects/multimedia.json`, the only existing file that
+   carries `omittedQuestions`.
+6. **π, ∞ and √** appear throughout and never survive extraction. Fix the characters now —
+   `π` U+03C0, `∞` U+221E, `√` U+221A — so Stage 4 is not re-deciding this per question.
 
 **GATE 3** — [ ] field mapping written down before any question is authored · [ ] every
 deviation deliberate and recorded
@@ -193,7 +329,10 @@ declared, and each paper's marks total 100
 
 ## Stage 5 — Assets ⬜ (2–3 sessions, ~100 crops)
 
-The dominant cost — roughly five times VET Construction's load, the heaviest so far.
+The dominant cost — roughly six times VET Construction's load, the heaviest so far.
+**Stage 1 measured it: 121 crops (25 Section I stimulus + 48 Section I option + 48 Section II)
+and 28 tables to reconstruct as HTML.** The per-question crop and table lists are in Stage 1;
+work from those, not from a fresh sweep.
 
 - Text layer has the option labels → `extract_maths_diagrams.py --calibrate` (registry, 150 dpi)
 - Text layer empty / labels are outline paths → **ink-profile segmentation at 300 dpi**
@@ -203,7 +342,9 @@ The dominant cost — roughly five times VET Construction's load, the heaviest s
   plausible, wrong. `save_crop()` overwrites unconditionally, and a bare run with no `--year`
   re-cuts every registry entry.
 - **Exclude the paper's own `A.`/`B.` glyph** — `index.html` renders its own option label.
-- Wide option images (> ~3:1) need `optionImagesWide: true`.
+- Wide option images (> ~3:1) need `optionImagesWide: true`. **Stage 1 measured all 12 option
+  sets at 0.8:1 to 2.6:1, so none needs it** — re-check only 2024 Q8's histograms, whose ink
+  extent measures 3.7:1 on the C/D row.
 
 **GATE 5** — [ ] every crop opened and compared against the paper, option by option · [ ] every
 table renders as HTML, not an image

@@ -71,8 +71,13 @@ There is no MathJax or KaTeX in this project. Full non-ASCII inventory across al
 – − • â ° ƒ ≤ ’ © ′ ″ ¯ ⌠⎮⌡ — · ≥ ⎧⎨⎩ ∠ π ‘
 ```
 
-What is **absent** is the decisive part: **no ∑, no matrices, no vectors, no complex numbers,
-no radical sign.** Mathematics Advanced's notation is `<sup>` / `<sub>` / `<em>` / Unicode
+What is **absent** is the decisive part: **no ∑, no matrices, no vectors, no complex numbers.**
+
+⚠️ **Corrected at Stage 1: "no radical sign" was wrong.** This inventory is of the *text layer*,
+and √ — like ∞ — is drawn as vector paths, so neither character appears in it while both are
+printed on the page (2020 Q1 `y = √(2x − 3)`; 2022 Q4's interval options; 2025 Q3/Q5's surds).
+Both are ordinary Unicode and neither threatens the no-MathJax constraint, so the GO stands
+unchanged — but do not carry the "no radical sign" line forward. Mathematics Advanced's notation is `<sup>` / `<sub>` / `<em>` / Unicode
 territory, which is exactly the constraint Standard 2's 318 questions already live inside
 (its bank uses ² ³ ⁻ ⁴ ¹ ⁿ ₁ ₂ π σ μ √ ∠ and only 14 `<sup>` tags in total).
 
@@ -201,7 +206,7 @@ five times VET Construction's, compounded by a text layer that cannot be trusted
 transcription. That is a scheduling fact, not a reason to say no — but Stage 1 should size it
 per-question before Stage 4 is committed to.
 
-**Next: Stage 1 (Survey).** ~~Stage 2 is blocked~~ — **Stage 2 was completed the same day**
+**Next: ~~Stage 1 (Survey)~~ — Stage 1 completed 2026-08-27; see the runbook. Stage 3 is next.** ~~Stage 2 is blocked~~ — **Stage 2 was completed the same day**
 (2026-08-27): the owner supplied the syllabus location, the official 2017 DOCX was downloaded
 and read, and the topic list now lives in `docs/subject-plans/mathematics-advanced.md`. The
 14 `MA-*` codes below are superseded by that document, which has the syllabus's own scope

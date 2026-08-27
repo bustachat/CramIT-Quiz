@@ -1401,3 +1401,80 @@ Stages 0 and 2 — but two overlapping handover documents is exactly the confusi
 cold session, so the redirect is unambiguous.
 
 Documentation only. No code, no data, no subject JSON changed.
+
+---
+
+## 2026-08-28 — Mathematics Advanced Stage 1 (Survey): all 294 parts classified
+
+First stage run under the new one-stage-per-session runbook. Every part in
+`data/mapping-grid/mathematics-advanced.json` was located in its exam paper by *(page, y)* and
+classified for presentation — type, stimulus, options, aspect ratio, text-layer quality. Nothing
+was left unresolved, and the full result is written into
+`docs/subject-plans/mathematics-advanced.md` under Stage 1, with Gate 1 ticked.
+
+**Method, and the finding that matters most about it: no single detector is complete.** Three
+were run and unioned — text-gap bands (ink in a band carrying no body text), `page.find_tables()`
+filtered to ≥6 cells, and an ink profile (dark pixels outside every text-block bbox at 72 dpi) —
+and then *every* candidate was rendered onto labelled contact sheets and looked at. Each detector
+missed assets the others caught: the band detector loses a chart whose axis labels are wide text
+blocks (it lost 2022 Q11(b)'s Pareto chart), the ink profile loses a diagram whose labels sit
+inside one large text block, and `find_tables()` reads graph axes as 2×2 tables in both
+directions. **Four Section II diagrams — 2022 Q28, 2024 Q20, 2025 Q28, 2025 Q29 — surfaced only
+in the union plus the visual pass.** Had this been a single-detector sweep, four questions would
+have shipped with a missing stimulus. This is now recorded in the playbook's Stage 1.
+
+**Numbers (all measured, none estimated):**
+
+- **121 crops and 28 tables**, against Stage 0's "~100 image assets". Section I: 25 stimulus
+  images, 12 option-image sets (48 crops), 10 tables, 22 plain-text stems. Section II: 48 crops,
+  18 tables. Stage 5's session estimate moves from 2–3 to 3.
+- **17 unportable parts, 41 marks** — 7.6% of Section II, 6.8% of the paper, portable share
+  **93.2%**, confirming Stage 0's ~93%. Five are whole single-part questions (2020 Q16, Q24;
+  2021 Q19, Q21; 2024 Q19 — 17 marks) and belong in `omittedQuestions`; the other 12 are
+  `omittedParts`.
+- **124 of 294 parts (42%) carry a detectable text-layer corruption**, and 91 contain at least
+  one stacked fraction (599 fraction bars across the six papers).
+
+**Two corrections to Stage 0's Section I table**, both found by rendering the page rather than
+reading the stem: **2020 Q9** has four option images (normal curves, different regions shaded)
+and **2021 Q6** has a probability-tree stimulus — both had been counted as plain text.
+
+**A correction to Stage 0's notation verdict.** Stage 0 recorded "no radical sign" from a
+non-ASCII inventory of the *text layer*. **√ and ∞ are printed on these papers but drawn as
+vector paths, so neither character exists in the text layer at all** — zero occurrences of either
+across 2020–2025. 2022 Q4's options extract as `( − , 1` for `(−∞, 1]`; 2020 Q1 is
+`y = √(2x − 3)`. Both are ordinary Unicode and the GO is unaffected, but the line would have
+misled Stage 4. Corrected in the Fit Report and the runbook.
+
+**A correction to "the text layer is garbled on every paper".** It is — but **not the same way
+each year, and only 2024 uses the MathType bracket mapping** that Stage 0 quoted (`^x - 1h2` for
+`(x − 1)²`). Searching a 2021 paper for that pattern finds nothing. What *is* common to all six:
+∞ and √ absent, **π extracting as the letter `p`** (`0 ≤ x ≤ 2p` means `2π`; only 2020 contains a
+single genuine `π`), and stacked fractions split and re-ordered — "Show that P = 2x + 72/x"
+extracts as `72 (a)  Show that P = 2x + . x`. 2022 additionally scrambles reading order.
+
+**Stem sweep run; 13 hits, all resolved.** Twelve are complete (the paper prints four separate
+diagrams, already in the option-image list); one — 2021 Q3 — is genuinely a text question with
+interval-notation options. **No question was found where prose stands in for a missing picture**,
+so the Multimedia 2022 Q2 failure has no analogue in this subject. **The playbook's regex was
+incomplete and has been fixed there**: it misses `which of these …` (2024 Q8) and
+`a possible sketch` (2023 Q6), both picture-option questions.
+
+**Trap 2 resolved as not-applicable.** Every MC question whose options look like bare letters
+(2020 Q10, 2023 Q5, 2024 Q10, 2025 Q10) has *numeric* options — 0/1/2/3, not labels pointing into
+a shared stimulus. Nothing here resembles VET 2021 Q15.
+
+**Two new schema cases were handed to Stage 3**, which now has six decisions rather than two:
+options printed as **rows of a table** (2020 Q2, 2020 Q3, 2022 Q2, 2023 Q4 — flatten each row
+into a text option, or render the table in the stem?), and **blank tables the student fills in**
+(2024 Q11, Q13 — reproduce as HTML, answer as a keyword-marked text list). Also recorded: seven
+portable parts lean on a part we omit, of which **2021 Q27(d) is the only one that cannot stand
+alone** ("Explain your answer by referring to the graph drawn in part (a)") — a Stage 4 decision,
+deliberately not resolved by rewording NESA.
+
+A false positive worth remembering: a drawing-verb sweep flags roughly 40 parts, but *the* shaded
+region means the paper drew it. 2020 Q27 was a false positive twice over — "box-**plot**" matched
+the verb, and the box plot is a given stimulus.
+
+Documentation only. No code, no data, no subject JSON changed; nothing is ported and the subject
+is still registered nowhere. Stage 3 is next.

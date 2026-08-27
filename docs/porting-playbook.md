@@ -236,6 +236,17 @@ reading it — this project's repeated failure mode is a confident impression of
 that turned out wrong. Where the survey cannot decide, it must **report the question as
 unresolved rather than guess** (the standard `backfill_qnum.py` already holds).
 
+⚠️ **No single detector finds every graphic — union three, then look at the pages.** The first
+live run (Mathematics Advanced) needed all of: text-gap bands (ink in a band with no body text),
+`page.find_tables()` filtered to ≥6 cells, and an ink profile (dark pixels outside every
+text-block bbox). Each missed assets the others caught — a band detector loses a chart whose axis
+labels are wide text blocks, an ink profile loses a diagram whose labels sit inside one large
+text block, and `find_tables()` reads graph axes as tables in both directions. Four Section II
+diagrams surfaced only in the union. Then render every candidate to a labelled contact sheet and
+classify by eye: crop-versus-table and aspect ratio are visual judgements, and the visual pass is
+also what catches a detector's silent miss. Counting vector paths does not work at all —
+straight-line graphs score zero and text underlines score false positives.
+
 ### Per-question classification
 
 | Dimension | Values | Consumes |
@@ -265,9 +276,15 @@ D. **Catch these with a stem sweep**, not an option sweep — the giveaway is pr
 in for a picture:
 
 ```
-which (of the following )?(best )?(represents|shows|depicts|illustrates)
-which (diagram|graph|drawing|image|picture|sketch|plan|symbol|section)
+which (of the following|of these)? ?(best )?(represents|shows|depicts|illustrates|could be|could represent)
+which (diagram|graph|drawing|image|picture|sketch|plan|symbol|section|histogram)
+(is a |a )?possible (sketch|graph|diagram)
 ```
+
+⚠️ **The first two lines alone are not enough — both have been caught short by a live run.**
+Stage 0 for Mathematics Advanced used a version missing `could represent` and undercounted;
+Stage 1 then found that `which of these …` (2024 Q8) and `a possible sketch of …` (2023 Q6) are
+also picture-option questions and match none of the original patterns. Use all three lines.
 
 **Array position is not the question number.** Multimedia 2022 stores its ten questions
 in the order 1, 3, 4, 5, 6, 8, 9, 10, 7, 2. Every *other* year in every subject happens
