@@ -9,8 +9,8 @@ Report is separate: `docs/paper-reports/mathematics-advanced.md` (verdict **GO**
 | 0 Feasibility | ✅ GO — 2026-08-27 | done |
 | 1 Survey | ✅ complete — 2026-08-27 | done |
 | 2 Syllabus grounding | ✅ complete — 2026-08-27 | done |
-| **3 Schema** | ⬜ **next** | 1 short session |
-| 4 Port | ⬜ | **~6 sessions, one per paper year** |
+| 3 Schema | ✅ complete — 2026-08-27 | done |
+| **4 Port** | ⬜ **next** | **~6 sessions, one per paper year** |
 | 5 Assets | ⬜ | 3 sessions — **121 crops + 28 tables**, measured at Stage 1 |
 | 6 Ground truth | ⬜ | 1 session |
 | 7 Release | ⬜ | 1 session |
@@ -33,7 +33,8 @@ Paste this, changing the stage number:
 - **`docs/HISTORY.md` entry is mandatory** at the end of any non-trivial session, plus CLAUDE.md
   if a file-structure, schema or instruction fact changed.
 - **If the playbook is wrong, fix `docs/porting-playbook.md` in the same session and say so.**
-  It has been corrected twice already from live runs; gaps found are expected, not failures.
+  It has been corrected in three sessions already (Stages 1, 2 and 3); gaps found are expected,
+  not failures.
 
 ### Established facts — carry these forward, do not re-measure
 
@@ -50,6 +51,7 @@ Paste this, changing the stage number:
 | **Text layer** | **garbled on every paper, but not the same way each year** — 2024 alone uses the MathType `^…h` / `]…g` bracket mapping; every year loses ∞ and √ entirely, prints π as `p`, and re-orders stacked fractions. **124 of 294 parts (42%) carry a detectable corruption** |
 | Ground truth, pre-verified | `extract_mc_key()` 10/10 every year; `parse_paper()` 37–42 parts/paper, **0 unresolved, exact 90/90 on all six** |
 | Official topic + marks | `data/mapping-grid/mathematics-advanced.json` — every part, all six papers, reconciled |
+| Schema | Fixed at Stage 3 — canonical field names, no deviations. **Two engine fixes are blocking for Stage 7**: the shared `NESA_CAT_LABELS` map collides on 5 of 14 codes, and the written-question badge reads `q.topic` not `category` |
 
 ---
 
@@ -106,8 +108,8 @@ not labels pointing into a shared stimulus. There is nothing here like VET 2021 
 
 **One presentation case Stage 0 did not record: options printed as rows of a table** — 2020 Q2,
 2020 Q3, 2022 Q2, 2023 Q4. The four alternatives are table rows with A./B./C./D. down a
-left-hand column. Portable as ordinary text options (join each row's cells), but *how* is a
-Stage 3 decision.
+left-hand column. Portable as ordinary text options (join each row's cells). **Stage 3
+decision 3 took this: flatten each row into a text option**, header row into the stem.
 
 ### Section II — 234 parts across 131 questions
 
@@ -125,9 +127,12 @@ diagrams, box plots, scatterplots, probability trees. **Two are illustrations ra
 2022 Q17 (a pyramid of playing cards) and 2024 Q28 (a Ferris wheel).
 
 Six of the 18 tables are **future-value / z-score lookup tables** (2021 Q25, 2022 Q21, 2023 Q15,
-2024 Q24(b), 2024 Q26, 2025 Q20) — wide, and exactly what `.study-dtable`'s stacked-card collapse
-exists for. Three more are **blank tables the student fills in** (2022 Q12(b), 2024 Q11, Q13):
-reproduce the table as HTML and mark the answer as text — see Stage 3.
+2024 Q24(b), 2024 Q26, 2025 Q20) — wide enough that Stage 3 measured them as clipped on a phone
+unless wrapped; see Stage 3 decision 9. *(This line originally said they were "exactly what
+`.study-dtable`'s stacked-card collapse exists for" — that class is Study Mode only and the
+question renderer never applies it.)* Three more are **blank tables the student fills in**
+(2022 Q12(b), 2024 Q11, Q13): reproduce the table as HTML and mark the answer as text — see
+Stage 3 decision 4.
 
 ### Unportable — 17 parts, 41 marks (7.6% of Section II, 6.8% of the paper)
 
@@ -268,38 +273,248 @@ is the VET failure repeating. Full data: `data/exam-trends/mathematics-advanced.
 
 ---
 
-## Stage 3 — Schema ⬜ NEXT (short session)
+## Stage 3 — Schema ✅ COMPLETE
 
-Canonical names, per playbook Stage 3 — a new port uses these, existing deviations are debt:
-`year`, `qNum`, `category`, `optionExplanations`, `marks`, `answer`, `omittedParts`,
-`omittedQuestions`.
+**Every field, character and markup form Stage 4 needs is fixed here.** Nothing below is a
+preference to revisit per question. The six decisions the runbook carried are taken; **four more
+surfaced from reading the engine** and are taken too. Every rendering claim was measured in a
+browser at a 430 px viewport against `index.html`'s own CSS — not inferred from the markup.
 
-Six decisions to take and record here. The first two came from Stage 0; the last four are
-Stage 1 findings, each with the exact questions they affect.
+### The engine, as it actually is
 
-1. **Braced piecewise function** (2–3 across six papers, e.g. 2020 Q23) — borderless two-row
-   table with a CSS brace, or a crop?
-2. **Integrals and stacked fractions** in MC stems/options (~6 of 60 MC) — `∫` U+222B with
-   `<sub>`/`<sup>` limits, and inline `1/3`. Confirm against how Standard 2 already writes rates.
-3. **Options printed as rows of a table** — 2020 Q2, 2020 Q3, 2022 Q2, 2023 Q4. Either render the
-   table in the stem and make the options bare row references, or flatten each row into a text
-   option (`Median: Changes · Mean: Stays the same`). Flattening keeps the options meaningful on
-   the results screen and inside `optionExplanations`; the table-in-stem form is closer to the
-   paper. Pick one and apply it to all four.
-4. **Blank tables the student fills in** — 2022 Q12(b), 2024 Q11, 2024 Q13. The table is
-   reproduced as HTML in the stem and the answer is a short text list of the cell values, marked
-   on keywords. Fix the model-answer format before Stage 4 authors the first one, so all three
-   match. (2022 Q12(b) is omitted anyway — it also asks for a graph.)
-5. **The 12 `omittedParts` and 5 `omittedQuestions`** are enumerated in Stage 1. Confirm the
-   canonical shape of both keys against `subjects/multimedia.json`, the only existing file that
-   carries `omittedQuestions`.
-6. **π, ∞ and √** appear throughout and never survive extraction. Fix the characters now —
-   `π` U+03C0, `∞` U+221E, `√` U+221A — so Stage 4 is not re-deciding this per question.
+Read this before doubting any decision below. Line numbers are `index.html`.
 
-**GATE 3** — [ ] field mapping written down before any question is authored · [ ] every
-deviation deliberate and recorded
+| Fact | Where | Consequence |
+|---|---|---|
+| `q.q` renders through `formatQuestionText()`, which passes HTML through untouched | 1630, 1706 | Raw `<table>`, `<img>`, `<em>`, `<sup>` all work in a stem |
+| `formatQuestionText()` also parses **pipe-delimited markdown tables** into `.q-table` | 1637–1652 | Unused by Maths — Standard 2 writes `<table>` HTML in all 34 of its tables |
+| Options are injected raw: `<span class="option-label">A.</span>${opt}` | 1744 | Option strings may contain HTML |
+| With `optionImages`, option text is **also** used as `alt="${opt}"` | 1739 | An option string carrying `"` breaks the tag. Never combine HTML options with `optionImages` |
+| The results breakdown injects `q.q` and `q.options[i]` **raw** into a 12 px div, bypassing `formatQuestionText()` | 2208–2210 | A `<table>` option renders a whole table into the results card |
+| `s.categories` is the sorted union of MC + written `category`, built at load | 730–734 | Filter chips are data-driven; nothing to register |
+| Category chip labels come from **one global flat map** `NESA_CAT_LABELS`, keyed on the bare code | 705–716, 991 | **Collides — see decision 8** |
+| The written-question badge reads `q.topic` only; the MC badge reads `q.category \|\| q.topic` | 1764 vs 1696 | **Canonical `category` renders no badge on written questions — decision 10** |
+| Marks badge reads `q.marks \|\| q.maxMark \|\| q.totalMarks` | 1760 | Canonical `marks` is correct |
+| `body { overflow-x: hidden }`; `.question-area { padding: 22px 20px }` | 60, 213 | Stem width is **390 px** at a 430 px viewport, and anything wider is **clipped, not scrolled** |
+| `validate_subjects.cjs` **fails** a written question with neither `keywords` nor `acceptableAnswers` | validator 74 | A scoring mechanism is mandatory, not optional |
+| `check_written_key.cjs` parses `qNum` with `^(\d+)(\([a-z]+\))*$` | checker 69 | `16`, `23(a)`, `19(b)(i)` parse; nothing else does |
+
+### Field mapping — the Gate 3 artifact
+
+Canonical throughout (playbook §4). **No deviations.** Maths Advanced has past papers, an
+official syllabus code per question and an official mark, so every canonical field is available.
+
+**MC question** — `subjects/mathematics-advanced.json` → `mcQuestions[]`
+
+| Field | Type | Rule |
+|---|---|---|
+| `year` | number | 2020–2025 |
+| `qNum` | number 1–10 | From the paper. **Carried from the first question authored** |
+| `category` | string | Bare syllabus code, `MA-` stripped — `C3`, `T1`. From the mapping grid (decision 7) |
+| `q` | string | Stem. HTML allowed |
+| `image` | string | `/diagrams/mathematics-advanced_{year}_Q{n}_stimulus.jpg`, omitted if none |
+| `optionImages` | array of 4 | `…_A.jpg` … `…_D.jpg`. Omitted if text options |
+| `optionImagesWide` | — | **Never set.** Stage 1 measured all 12 option sets at 0.8:1–2.6:1 |
+| `options` | array of exactly 4 strings | Required even with `optionImages` |
+| `answer` | int 0–3 | Indexes `options[]` in the paper's printed order |
+| `optionExplanations` | array of 4 strings | Canonical per-option rationale |
+| `solution` | string | `<div class="step"><span class="step-number">1.</span> …</div>`, matching Standard 2. Legitimately alongside `optionExplanations`, not instead of it |
+
+**Written question** → `writtenQuestions[]`
+
+| Field | Type | Rule |
+|---|---|---|
+| `year` | number | |
+| `qNum` | string | `"17"`, `"23(a)"`, `"19(b)(i)"` — **only** these shapes parse |
+| `section` | `"II"` | Standard 2 carries it on all 151; nothing reads it. Kept for symmetry |
+| `category` | string | Bare code |
+| `marks` | number | **From the mapping grid, never read off the paper.** Not `maxMark` |
+| `q` | string | Stem. HTML allowed; diagrams go inline as `<img>` |
+| `image` | `null` | Written diagrams are inline in `q`; Standard 2 has 71 inline `<img>` and **zero** populated `image` fields |
+| `answer` | string | Model answer. Not `modelAnswer`/`sampleAnswer` |
+| `keywords` + `minKeywords` | array + number | Non-numeric answers |
+| `acceptableAnswers` | array | Single-value numeric answers |
+| `bandDescriptors` | `{full, partial, minimal}` | Feeds the AI marking prompt. Standard 2 has it on 151/151 — match that |
+| `omittedParts` | array | Only where a part is dropped (decision 5) |
+
+⚠️ **At least one of `keywords` or `acceptableAnswers` is mandatory** — the validator fails the
+build without it, and `buildKeywordFeedback()` (1992) is the entire offline marking path.
+
+**Subject level:** `id` `mathematics-advanced` · `name` `Mathematics Advanced` · `icon` 📈 ·
+`accentColor` `#5B7FA6` (`--accent3`, distinguishing it from Standard 2's amber) ·
+`omittedQuestions` · `mcQuestions` · `writtenQuestions`. No `tips`, no `studyNotes` (deferred).
 
 ---
+
+### The ten decisions
+
+**1 · Braced piecewise functions — HTML, never a crop.** An inline borderless table with the
+brace in a `rowspan` cell. Measured at 430 px: the brace cell and the two-row block are both
+**48.3 px**, so the glyph spans the rows exactly, and the stem does not overflow.
+
+```html
+<table style="display:inline-table;vertical-align:middle;border-collapse:collapse;margin:0 0 0 4px">
+  <tr><td rowspan="2" style="border:0;padding:0 4px 0 0;font-size:2.6em;font-weight:300;line-height:0.86;vertical-align:middle">{</td>
+      <td style="border:0;padding:1px 0;text-align:left;font-size:0.85em"><em>x</em>&sup2; &minus; 1,&nbsp; <em>x</em> &lt; 2</td></tr>
+  <tr><td style="border:0;padding:1px 0;text-align:left;font-size:0.85em">3<em>x</em> &minus; 5,&nbsp; <em>x</em> &ge; 2</td></tr>
+</table>
+```
+
+Inline styles, not a class, so no `index.html` change is needed — matching the 29 inline-styled
+tables Standard 2 already ships.
+
+**2 · Integrals and fractions — inline Unicode, following Standard 2.** `∫` U+222B with
+`<sub>`/`<sup>` limits; `d<em>x</em>`; fractions written inline with `/`, parenthesised when the
+numerator or denominator is compound. Standard 2 has **no** stacked-fraction markup anywhere —
+it writes `1/48`, `(4/3)π`, `130/60 = 13/6` — so this matches an established bank rather than
+inventing a form. A stem carrying `∫₀^(π/4) sec²x dx`, `P = 2x + 72/x`, `0 ≤ x ≤ 2π` and
+`√3 ≠ ∞` measured 59.4 px over two lines, no overflow. Note `∫` renders narrow (4.9 px at 18 px
+display weight) — thin, but a real glyph, not a fallback box.
+
+**3 · Options printed as table rows → flatten to text options.** Affects **2020 Q2, 2020 Q3,
+2022 Q2, 2023 Q4**. Render the table's *header* row as the closing line of the stem so the
+columns are named once, then flatten each option: `Median: Changes · Mean: Stays the same`.
+
+Why flatten rather than keep a one-row table per option, which Standard 2 2020 Q8 does: the
+results breakdown injects `q.options[i]` raw into a 12 px card (2209), so a table option renders
+a whole table there, and `optionExplanations` then has to refer to a row the student cannot read
+back. A flattened option measured **52 px** — one option button, no wrap problem. Apply to all
+four; do not mix forms.
+
+**4 · Blank tables the student fills in.** Affects **2024 Q11** and **2024 Q13** (2022 Q12(b) is
+omitted anyway — it also asks for a graph). Reproduce the table as HTML with the blank cells
+present and empty (`<td>&nbsp;</td>`); the model answer is the cell values in row order, labelled
+by their column header:
+
+```jsonc
+"answer": "x = 1: y = 3\nx = 2: y = 9",
+"keywords": ["3", "9"], "minKeywords": 2
+```
+
+A 5-column blank table measured 390 px — fits. The stem HTML is what gets posted to
+`/mark-written` as `question` (2060), so the AI marker sees the table too.
+
+**5 · Omissions — shapes confirmed against `check_written_key.cjs`.** Stage 1 enumerated
+**12 `omittedParts` and 5 `omittedQuestions` (17 marks)**.
+
+```jsonc
+// subject level — 2020 Q16, 2020 Q24, 2021 Q19, 2021 Q21, 2024 Q19
+"omittedQuestions": [ { "year": 2020, "qNum": 16, "marks": 4, "reason": "…" } ]
+// on the question — the other 12 parts
+"omittedParts":    [ { "part": "a", "marks": 1, "reason": "…" } ]
+```
+
+The checker validates each `omittedQuestions` entry three ways (the question exists in the
+official key, the marks match, and it is *not* also present in the bank) and adds `omittedParts`
+marks back before comparing — so both keys are enforced, not decorative. `reason` is prose for a
+human and must say what the student is asked to *produce*.
+
+**6 · Mathematical characters — Unicode, fixed now.** Standard 2's live bank already uses
+`−` U+2212 (883×), `×` (1024×), `π` (61×), `√` (16×), `≤`/`≥`, `θ`, `σ`, `Δ` and the Unicode
+superscripts `⁰¹²³⁴⁵⁶ⁿ⁻` (over 300×, against 5 uses of `<sup>`). Match it exactly, and add
+`∫` U+222B, `∞` U+221E, `≠` U+2260, `→` U+2192.
+
+- **Unicode superscripts for single-character exponents** (`x²`, `e⁻ˣ`); `<sup>` only where the
+  exponent is a compound expression (`2<sup>x+1</sup>`).
+- `<em>` for variables — Standard 2 uses it 334×.
+- Every character above was width-measured in the app's own fonts: all render real glyphs, none
+  falls back to a notdef box.
+- ⚠️ These characters **do not exist in the text layer** (∞ and √ never; π extracts as `p`).
+  They are typed in from the rendered page, per Stage 4.
+
+**7 · A part with two syllabus codes — 21 of 294.** The mapping grid stores `codes` as a
+*sorted set*, so "take the first" means "take the alphabetically first", which is arbitrary:
+2025 Q28(b) would file a trig-graphs question under `T1` rather than `T3`.
+
+**Rule: the 273 single-code parts take their code mechanically. For these 21, Stage 4 picks the
+code naming the skill the marks are actually awarded for, at transcription time, and records the
+full official list on the question as `gridCodes: ["T1","T3"]`** — so the pick is auditable and
+NESA's tagging is not lost. `gridCodes` is inert data; the validator ignores unknown keys.
+
+| Year | Parts (codes) | n |
+|---|---|---|
+| 2020 | Q2 F2/S1 · Q13 C4/S1 · Q26(c) M1/S2 | 3 |
+| 2023 | Q27(b) C1/C4/F2 · Q28 C1/C4 | 2 |
+| 2024 | Q21 C2/S2 · Q22(a) C2/C3 · Q22(b) C3/C4 · Q29 C3/F2 · Q30 F2/M1 · Q31(a) M1/T1 | 6 |
+| 2025 | Q17(b) E1/M1 · Q17(c) E1/M1 · Q18 F1/M1 · Q21(a) E1/S3 · Q21(b) E1/S3 · Q27(b) C3/C4 · Q27(c) C3/C4/E1 · Q28(a) E1/T1 · Q28(b) T1/T3 · Q29(a) T1/T3 | 10 |
+
+2021 and 2022 have none. Only **one** is in Section I (2020 Q2).
+
+**8 · The category-label collision is real, and it is in the engine.** Stage 2 warned "never key
+a shared lookup on the bare code." `NESA_CAT_LABELS` (705) **is** that lookup — one flat global
+map, consulted for whichever subject is on screen. **Five of Advanced's 14 codes collide**, each
+meaning something different:
+
+| Code | Would render as (Standard 2's wording) | Should read |
+|---|---|---|
+| `F1` | F1 — Money Matters | Working with Functions |
+| `F2` | F2 — Investment | Graphing Techniques |
+| `M1` | M1 — Measurement | Modelling Financial Situations |
+| `S1` | S1 — Data Analysis | Probability & Discrete Probability Distributions |
+| `S2` | S2 — Probability | Descriptive Statistics & Bivariate Data |
+
+**Decision: the data keeps bare syllabus codes** — they match Standard 2's convention, the
+mapping grid and the syllabus, and prefixing them (`MA-C3`) would put a prefix in front of the
+student on every filter chip. **The map becomes subject-aware instead**, at Stage 7:
+`NESA_CAT_LABELS[subjectKey]?.[c] || c`, with today's entries moved under `maths`. Two chip call
+sites (991, 1170). Do **not** ship Advanced before this — five of fourteen filters would carry
+another subject's topic names. *(Noticed in passing: `M6` is live in the Standard 2 bank but
+absent from the map, so it already renders bare. Pre-existing; not this port's to fix.)*
+
+**9 · Wide lookup tables need a scroll wrapper — measured, not assumed.** Six of the 28 tables
+are future-value / z-score grids (2021 Q25, 2022 Q21, 2023 Q15, 2024 Q24(b), 2024 Q26, 2025 Q20).
+At a 430 px viewport the stem is **390 px** wide.
+
+| Case | Measured | Verdict |
+|---|---|---|
+| 6-column `.q-table` | 390 px | Fits — `width:100%` compresses it |
+| 8-column `.q-table`, bare | **513 px**, and `body.scrollWidth` 533 against a 430 px client | Overflows the page; with `body{overflow-x:hidden}` the far columns are **silently clipped** |
+| Same inside `<div style="overflow-x:auto">` | wrapper 390 px, scrolls to 520 px internally; `body.scrollWidth` back to 430 | **Correct** |
+
+**Rule: any table with 7 or more columns is wrapped.** Use `class="q-table"` (251) rather than
+inline-styled borders — it is the app's own question-table style, uses the design tokens, shades
+the header row and left-aligns the first column. Standard 2's 29 inline-styled `#ccc` tables are
+debt, not precedent.
+
+```html
+<div style="overflow-x:auto;-webkit-overflow-scrolling:touch;margin:14px 0">
+  <table class="q-table" style="min-width:520px;margin:0">…</table>
+</div>
+```
+
+⚠️ **The runbook and the playbook were both wrong about why this matters** — both said mobile
+tables need "`.study-dtable`'s stacked-card collapse." `.study-dtable` is applied in exactly one
+place (1343, `renderStudyBlock()`) and **the question renderer never uses it**. Question tables
+get `.q-table` or `.nesa-table`, and neither collapses *or* scrolls. Both documents are corrected
+in this session.
+
+**10 · Written questions render no topic badge.** The written path reads `q.topic` (1764); the MC
+path reads `q.category || q.topic` (1696). Canonical `category` therefore shows a year badge and
+no topic on every written question — the same class of defect as HMS's missing marks badge:
+nothing throws, nothing scores wrong, no validator sees it. **Decision: keep `category` (it is
+canonical, and it already drives the written filter at 779) and fix the engine at Stage 7** —
+one line, mirroring the MC path. That also lights up Standard 2's 151 written questions, which
+have carried `category` and shown no badge since their port.
+
+### Deliberate deviations from canonical
+
+**None.** The two additions — `gridCodes` (decision 7) and `section` (Standard 2 parity) — are
+extra provenance, not renames of a canonical field.
+
+### Carried into later stages
+
+| Stage | Item |
+|---|---|
+| 4 | Pick the code for the 21 multi-code parts; record `gridCodes` |
+| 5 | Wrap the 6 wide lookup tables; `class="q-table"`, no inline borders |
+| 7 | **Blocking:** make `NESA_CAT_LABELS` subject-aware (decision 8) |
+| 7 | One-line written-badge fix, `q.category \|\| q.topic` (decision 10) |
+
+**GATE 3** — [x] field mapping written down before any question is authored · [x] every
+deviation deliberate and recorded (there are none)
+
+---
+
 
 ## Stage 4 — Port ⬜ (~6 sessions, one paper per session)
 
@@ -308,15 +523,23 @@ deviation deliberate and recorded
 
 Per session: one year, Section I then Section II, ~49 parts.
 
+**Stage 3 fixed every field name, character and markup form — follow it, do not re-decide.**
+The field tables are the contract; decisions 1–6 cover piecewise braces, integrals and
+fractions, table-row options, blank tables, the two omission keys, and the Unicode set.
+
 - **Carry `qNum` from the first question authored.** Retrofitting needs `backfill_qnum.py`,
   which refuses to guess; skipping it left 135 questions unverifiable for months across
   Multimedia and VET.
 - **Take `category` and `marks` from `data/mapping-grid/mathematics-advanced.json`** — do not
-  read them off the paper.
+  read them off the paper. For the **21 parts carrying two or three codes** (enumerated in
+  Stage 3 decision 7 — 2020 ×3, 2023 ×2, 2024 ×6, 2025 ×10), pick the code naming the skill the
+  marks are awarded for and record the full official list as `gridCodes`.
 - **Transcribe Section II from rendered pages, not the text layer.** This is not optional:
   `^x - 1h2` is `(x − 1)²`. Render at ~140 dpi and read the image.
-- Tables become reconstructed `<table>` HTML, never a crop — mobile needs `.study-dtable`'s
-  stacked-card collapse.
+- Tables become reconstructed `<table class="q-table">` HTML, never a crop. **7 columns or more
+  goes inside an `overflow-x:auto` wrapper** — the stem is 390 px on a phone and `body` hides
+  its overflow, so a wide table is clipped rather than scrollable. Stage 3 decision 9 has the
+  markup and the measurements.
 - Drawing parts get an `omittedParts` entry; a whole unportable question gets
   subject-level `omittedQuestions`. Silent omission is how 2020 Standard 2 sat at 84/85 marks
   for over a year.
@@ -347,7 +570,8 @@ work from those, not from a fresh sweep.
   extent measures 3.7:1 on the C/D row.
 
 **GATE 5** — [ ] every crop opened and compared against the paper, option by option · [ ] every
-table renders as HTML, not an image
+table renders as HTML, not an image · [ ] the 6 wide lookup tables wrapped and checked at 430 px
+(Stage 3 decision 9)
 
 ---
 
@@ -388,12 +612,22 @@ questions compared by a human
 2. `index.html` — `SUBJECT_ID_MAP` (JSON fetch URL) **and** `SUBJECT_CATALOGUE` (billing id,
    written to Supabase `subject_selections.subject_id` — chosen once, expensive to change)
 3. Subject card + artwork
-4. **Browser-verify at mobile width**: load the subject, render questions carrying images,
+4. **Two engine fixes Stage 3 found — both blocking, both one-liners** (`index.html`):
+   - `NESA_CAT_LABELS` (705) is one flat global map keyed on the bare code, and **5 of
+     Advanced's 14 codes collide with Standard 2's** (`F1 F2 M1 S1 S2`). Make it subject-aware,
+     `NESA_CAT_LABELS[subjectKey]?.[c] || c`, moving today's entries under `maths`; two chip
+     call sites, 991 and 1170. Without it five filters carry another subject's topic names.
+   - The written-question badge (1764) reads `q.topic`, so canonical `category` renders no
+     topic badge at all. Mirror the MC path (1696): `q.category || q.topic`. This also fixes
+     Standard 2's 151 written questions.
+5. **Browser-verify at mobile width**: load the subject, render questions carrying images,
    answer one correctly and one incorrectly, confirm explanations render, no console errors.
    Images use `loading="lazy"` — force `loading='eager'` before asserting anything loaded.
-5. `docs/HISTORY.md` entry; CLAUDE.md §7 row + §11 roadmap
+   Include one wide lookup table and one category filter chip in what you actually look at.
+6. `docs/HISTORY.md` entry; CLAUDE.md §7 row + §11 roadmap
 
-**GATE 7** — [ ] full local CI green · [ ] exercised in a browser at mobile width · [ ] docs updated
+**GATE 7** — [ ] full local CI green · [ ] both engine fixes landed and seen working ·
+[ ] exercised in a browser at mobile width · [ ] docs updated
 
 ---
 

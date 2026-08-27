@@ -394,6 +394,13 @@ exactly once so far: HMS written questions rendered **no marks badge at all**, f
 port until 2026-08-27, because one display path read `q.marks || q.totalMarks` and HMS
 alone uses `maxMark`. Nothing threw, nothing scored wrong, and no validator could see it.
 
+**There is a second instance of the same defect, still live** (found 2026-08-27, Mathematics
+Advanced Stage 3): the MC renderer badges a topic with `q.category || q.topic`, but the
+**written** renderer reads `q.topic` alone. Every written question that follows the canonical
+`category` therefore displays **no topic badge** — which today means all 151 Mathematics
+Standard 2 written questions, since their port. Same signature: silent, invisible to CI, a
+one-line fix mirroring the MC path. A new port should not work around it by writing `topic`.
+
 **A new port uses the canonical field names.** Where an existing subject differs, that is
 technical debt to be migrated — not a precedent to copy.
 
@@ -454,8 +461,26 @@ Already in CLAUDE.md, filed under written questions; it applies to the whole por
 | Table | Reconstructed `<table>` HTML — **not** a crop |
 | Whole question the engine can't present | `omittedQuestions` entry |
 
-Tables as HTML matter for mobile: the app's `.study-dtable` pattern collapses to stacked
-cards, which a screenshot of a table cannot do.
+Tables as HTML matter for mobile: text reflows and can be scrolled, which a screenshot of a
+table cannot do.
+
+⚠️ **This paragraph used to say the app's `.study-dtable` pattern collapses a question table
+to stacked cards on mobile. It does not** — `.study-dtable` is applied in exactly one place,
+`renderStudyBlock()`, and the *question* renderer never uses it. Question tables get
+`.q-table` (hand-written HTML, or the pipe-markdown path in `formatQuestionText()`) or
+`.nesa-table`, and **neither collapses nor scrolls**. Measured at a 430 px viewport, where the
+stem is 390 px wide: a 6-column table fits; an 8-column table renders 513 px and, because
+`body` sets `overflow-x: hidden`, its right-hand columns are **silently clipped** — no
+scrollbar, no error, just missing data the student needs. Wrap any table of 7+ columns:
+
+```html
+<div style="overflow-x:auto;-webkit-overflow-scrolling:touch;margin:14px 0">
+  <table class="q-table" style="min-width:520px;margin:0">…</table>
+</div>
+```
+
+Corrected 2026-08-27 during Mathematics Advanced Stage 3, which measured it in a browser
+rather than inferring it. Lookup tables (future value, z-scores) are where this bites.
 
 ### Cropping method
 

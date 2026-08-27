@@ -1478,3 +1478,93 @@ the verb, and the box plot is a given stimulus.
 
 Documentation only. No code, no data, no subject JSON changed; nothing is ported and the subject
 is still registered nowhere. Stage 3 is next.
+
+---
+
+## 2026-08-28 (later) — Mathematics Advanced Stage 3 (Schema): ten decisions, measured in a browser
+
+Stage 3 is nominally the short stage — write the field mapping down before authoring any
+question. It stayed short in output and got longer in findings: **the six decisions the runbook
+carried are taken, and four more came out of reading the engine rather than the papers.** Two of
+those four are live defects that would have shipped.
+
+**Method.** Stage 3 is a documentation stage, so no code changed. But the decisions turn on how
+`index.html` actually renders things, and this project has a standing rule that correct data is
+not the same as correct output. Every rendering claim below was **measured in a browser at a
+430 px viewport**, on a scratch page carrying `index.html`'s own CSS rules verbatim — not
+inferred from reading markup. The scratch page lived in the git-ignored `diagrams/_debug/` and
+was deleted; the working tree is untouched.
+
+**The field mapping (the Gate 3 artifact) is fully canonical, with zero deviations.** Maths
+Advanced has past papers, an official syllabus code per question and an official mark, so every
+canonical field is available: `year`, `qNum`, `category`, `marks`, `answer`, `optionExplanations`,
+`omittedParts`, `omittedQuestions`. Two additions carry provenance rather than rename anything:
+`gridCodes` (below) and `section`, which Standard 2 already carries on all 151 written questions.
+
+**Four engine facts worth having written down**, all confirmed by reading `index.html`:
+
+- `q.q` renders through `formatQuestionText()`, which passes HTML through untouched — and also
+  parses **pipe-delimited markdown tables**, a path Maths has never used (Standard 2 writes
+  `<table>` HTML in all 34 of its tables).
+- Option strings may contain HTML, **but with `optionImages` the same string is reused as
+  `alt="${opt}"`** — an option carrying a double quote breaks the tag.
+- The results breakdown injects `q.q` and `q.options[i]` **raw** into a 12 px card, bypassing
+  `formatQuestionText()`. A table-shaped option renders a whole table there.
+- `validate_subjects.cjs` **fails** a written question with neither `keywords` nor
+  `acceptableAnswers`. A scoring mechanism is mandatory, not a nicety.
+
+**The two live defects.**
+
+*The category-label map collides.* Stage 2 warned abstractly: "never key a shared lookup on the
+bare code." `NESA_CAT_LABELS` **is** that lookup — one flat global map, consulted for whichever
+subject is on screen. **Five of Advanced's fourteen codes collide with Standard 2's**, each
+meaning something different: `F1` would render "Money Matters" for Working with Functions, `M1`
+"Measurement" for Modelling Financial Situations, `S1` "Data Analysis" for Probability, `S2`
+"Probability" for Descriptive Statistics, `F2` "Investment" for Graphing Techniques. Decision:
+**the data keeps bare syllabus codes** — they match Standard 2, the mapping grid and the syllabus,
+and prefixing them would put `MA-` in front of the student on every filter chip. The *map* becomes
+subject-aware instead, at Stage 7. Noticed in passing: `M6` is live in the Standard 2 bank and
+absent from the map, so it already renders bare — pre-existing, not this port's to fix.
+
+*Written questions render no topic badge.* The MC renderer badges with `q.category || q.topic`;
+the written renderer reads `q.topic` alone. Canonical `category` therefore shows a year badge and
+nothing else — **which means all 151 Standard 2 written questions have shown no topic since their
+port**. This is the HMS missing-marks-badge defect exactly: nothing throws, nothing scores wrong,
+no validator can see it. Decision: keep `category` (it is canonical, and it already drives the
+written *filter*), fix the one line at Stage 7, which lights up Standard 2 as a side-effect. The
+playbook now records this alongside the HMS case, so the next port does not work around it by
+writing `topic`.
+
+**A third finding corrects both the runbook and the playbook.** Both said mobile tables are fine
+because "`.study-dtable` collapses to stacked cards." **It does not** — that class is applied in
+exactly one place, `renderStudyBlock()`, and the question renderer never uses it. Question tables
+get `.q-table` or `.nesa-table`, and neither collapses *or* scrolls. Measured at 430 px, where the
+stem is 390 px wide: a 6-column table fits (`width:100%` compresses it); an **8-column table
+renders 513 px and pushes `body.scrollWidth` to 533** — and since `body` sets
+`overflow-x: hidden`, its right-hand columns are **silently clipped**. No scrollbar, no error,
+just missing data on a lookup table the student needs to answer the question. Six of the 28
+tables are future-value / z-score grids. Rule: **7 or more columns goes in an `overflow-x:auto`
+wrapper** — measured at 390 px visible, 520 px scrollable, page overflow gone. Corrected in
+`docs/porting-playbook.md` with the markup and the numbers.
+
+**The remaining decisions, each fixed so Stage 4 never re-decides:** piecewise braces as an
+inline `rowspan` table (measured — the brace cell and the two-row block are both 48.3 px, so it
+spans exactly), inline Unicode for integrals and fractions following Standard 2's existing bank
+(`1/48`, `(4/3)π` — it has no stacked-fraction markup anywhere), table-row options **flattened**
+to text (a flattened option measured 52 px, one button), blank tables reproduced as HTML with a
+keyword-marked cell-value answer, and the Unicode character set matched to Standard 2's live
+inventory (`−` U+2212 883×, `×` 1024×, `π` 61×, `√` 16×, Unicode superscripts over `<sup>` by
+300:5). Every character was width-measured in the app's fonts — all render real glyphs, none
+falls back to a notdef box. `∫` renders narrow but real.
+
+**One decision the runbook had not anticipated: 21 of 294 parts carry two or three syllabus
+codes.** The mapping grid stores `codes` as a *sorted set*, so "take the first" means "take the
+alphabetically first" — which would file 2025 Q28(b), a trig-graphs question, under `T1`. Rule:
+the 273 single-code parts take their code mechanically; for the 21 (2020 ×3, 2023 ×2, 2024 ×6,
+2025 ×10, all enumerated in the runbook) Stage 4 picks the code naming the skill the marks are
+awarded for and records the full official list as `gridCodes`, so the pick is auditable and
+NESA's tagging is not lost.
+
+Documentation only. No code, no data, no subject JSON changed; nothing is ported and the subject
+is still registered nowhere. Stage 4 (Port) is next — six sessions, one paper per session,
+starting with 2024.
