@@ -5,7 +5,7 @@
 
 > **Global rules (API cost optimisation, file safety, security, git, communication) also apply — see `~/.claude/CLAUDE.md`**
 
-> **This file is deliberately short.** Full session-by-session history (what changed, why, and how it was verified) lives in [`docs/HISTORY.md`](docs/HISTORY.md) — not auto-loaded, read it only when investigating why something was built a certain way. Agent-infrastructure planning (Stage 9) lives in [`docs/agents-plan.md`](docs/agents-plan.md) — not needed for day-to-day app/billing/content work.
+> **This file is deliberately short.** Full session-by-session history (what changed, why, and how it was verified) lives in [`docs/HISTORY.md`](docs/HISTORY.md) — not auto-loaded, read it only when investigating why something was built a certain way. Agent-infrastructure planning (Stage 9) lives in [`docs/agents-plan.md`](docs/agents-plan.md) — not needed for day-to-day app/billing/content work. **Adding a new subject? [`docs/porting-playbook.md`](docs/porting-playbook.md) is a mandatory read before you start** — §10's five steps are only its final stage.
 
 ---
 
@@ -239,6 +239,10 @@ cramit-quiz/
 ├── docs/
 │   ├── HISTORY.md              ← Full session log — read on demand, not auto-loaded
 │   ├── agents-plan.md          ← Stage 9 agent roster/build order — read on demand
+│   ├── porting-playbook.md     ← MANDATORY read before adding any new subject — the 9-stage
+│   │                             pipeline (feasibility → survey → syllabus → schema → port →
+│   │                             assets → ground truth → release → operate), each with a gate,
+│   │                             plus the canonical field names and how it scales to the agents
 │   └── paper-reports/          ← Content Agent triage reports ({subject}-{year}.md) — briefing docs for porting new subjects
 └── functions/                  ← Cloudflare Pages Functions — served at /{name} (NOT /functions/{name})
     ├── _lib/auth.js            ← Shared JWT verification + CORS allowlist (underscore = not routed)
@@ -525,6 +529,9 @@ An accuracy audit is not an editorial review. Verifying every claim against a so
 ⚠️ **`scripts/validate_subjects.cjs` only existence-checks images referenced by questions** (`image`/`optionImages`) — `studyNotes` block images are **not** covered, so a broken study-image path passes validation silently and `imageRefs` won't move when you add one. Study images must be browser-verified. Related gotcha: study images render with `loading="lazy"`, so `naturalWidth` reads 0 while the Browser pane is hidden — force `loading='eager'` before asserting they loaded.
 
 ### Adding a new subject
+
+> ⚠️ **Read [`docs/porting-playbook.md`](docs/porting-playbook.md) first — it is mandatory, and the five steps below are only its last stage.** The playbook is the full SDLC: feasibility (GO/NO-GO — not every HSC subject fits this engine, and the answer for Extension Maths is likely no), per-question survey, syllabus grounding, canonical schema, port, assets, ground truth, release, and ongoing operation — each with a gate. It also records the **canonical field names**: the four existing subjects drifted apart (`marks` vs `maxMark`, `category` vs `topic`, `solution` vs `optionExplanations`), the engine absorbed it in fallback chains, and it cost a live bug — HMS written questions rendered no marks badge at all until 2026-08-27. A new port uses canonical names; existing deviations are debt, not precedent.
+
 1. Create `subjects/{subject-id}.json` following the shape above.
 2. Add the filename to `subjects/index.json` (informational — the app itself still hardcodes the subject in `SUBJECT_ID_MAP`/`SUBJECT_CATALOGUE` in `index.html`, so add it there too).
 3. Add a subject card to `index.html`.

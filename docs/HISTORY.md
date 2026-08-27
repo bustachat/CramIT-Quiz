@@ -1068,3 +1068,61 @@ normalise HMS's 40 written questions onto `marks` and have
 `scripts/validate_subjects.cjs` enforce the canonical field names, since it is
 currently permissive of unknown keys and so cannot catch a new port inventing its own.
 That is a data migration and belongs with the porting playbook, not with a badge fix.
+
+## 2026-08-27 (later still) — Subject porting playbook
+
+Written in response to "if I said let's add Extension Maths 2020-2025, would Claude know
+how to execute this end to end?" The honest answer was no. CLAUDE.md §10's "Adding a new
+subject" is five steps that all begin *after* the hard part — step 1 is "Create
+`subjects/{id}.json`", i.e. the entire port compressed into one imperative. The rest was
+scattered across §10 as rules written reactively, each after the failure that motivated it.
+
+`docs/porting-playbook.md` is the missing procedure: nine stages, each with an artifact
+and a gate, covering feasibility through to long-term operation, and mapped onto the
+Blueprint's agent roster so each stage can later be handed to an agent without
+restructuring.
+
+**Stage 0 exists to make "no" cheap.** Four fit tests — format (portable mark share from
+the papers' own front pages), renderer (there is no MathJax or KaTeX in this project;
+every subject so far survived on `<sup>`/`<em>`/Unicode), content shape, and precedent.
+Extension Maths is the worked example of a NO-GO: roughly 10 MC marks of 70, the rest
+extended working, plus notation the app cannot display. Mathematics Advanced is named as
+the honest first candidate, because it passes all four and so exercises the *process*
+rather than the engine's limits.
+
+**The playbook is grounded in measurements of what shipped, not recollection** — and the
+measuring turned up a live bug, fixed separately this session (HMS marks badge). It also
+turned up the finding that gets its own stage:
+
+**The four ports do not share a schema.** `category`/`topic`/none, `solution`/
+`optionExplanations`/`explanation`, `marks`/`maxMark`, `bandDescriptors` in three of four,
+`acceptableAnswers` in three of four. The engine absorbed all of it in fallback chains —
+CLAUDE.md already documents `q.answer || q.modelAnswer || q.sampleAnswer` as the normal
+way to read a model answer, which is a symptom rather than a design. Stage 3 now fixes
+canonical names, separates legitimate deviation (HMS has no `year`/`qNum` because no HMS
+paper exists) from drift, and records that `validate_subjects.cjs` is permissive of
+unknown top-level keys and so cannot catch the next port inventing its own — extending it
+is named as the remediation, to land before the next port rather than after.
+
+**On scaling.** The Blueprint caps the Content Agent at autonomy Level 1 permanently
+("commits wrong questions to repo"). The playbook argues that Stage 6's human gate is
+therefore not transitional: five wrong Maths answers, six wrong VET answers and four
+questions whose option text described the wrong picture all passed every automated check
+that existed at the time, because `check_answer_key.cjs` compares the official *letter*
+and cannot see reordered options, wrong option text, or prose substituted for a missing
+picture. Two design consequences are recorded — ground truth must precede autonomy, and
+each stage emits a reviewable artifact so a human approves a *stage* rather than a diff,
+which is what makes Level 1 tolerable at volume.
+
+Claims were verified rather than asserted: no MathJax/KaTeX in `index.html` (0 matches),
+no unknown-key enforcement in `validate_subjects.cjs`, `studyNotes` images genuinely
+outside `imageRefs`, Maths 318 = 90 HSC + 228 variants, VET 19 image questions.
+
+CLAUDE.md updated in three places (header pointer, §6 file tree, §10 preamble) to make the
+playbook mandatory reading before a port. No code or question data changed.
+
+**Not yet done:** the playbook has never been run. It is prose until exercised against a
+real paper, which is the intended next step — Mathematics Advanced Stage 0, producing the
+first `docs/paper-reports/` entry (that directory still does not exist; the Content Agent
+has never run). `scripts/survey_paper.py` to automate Stage 1's mechanical measurements is
+deliberately deferred until the playbook has been exercised once and its gaps are known.
