@@ -1565,6 +1565,30 @@ the 273 single-code parts take their code mechanically; for the 21 (2020 ×3, 20
 awarded for and records the full official list as `gridCodes`, so the pick is auditable and
 NESA's tagging is not lost.
 
+**Closing out the session surfaced one more contradiction, and Stages 4 and 5 were merged.**
+`validate_subjects.cjs` **exits 1** on a question whose `image` path has no file yet — verified
+by running it, not assumed. Stage 4 authors questions; Stage 5 crops the 121 images. So porting
+all six papers before cropping would leave the validator, and CI on every push, red for six
+sessions — and **Gate 4's own wording, "validator green, `missingImages: 0`", is unsatisfiable
+under that order**. Owner's decision: **interleave**. Each session now ports one year *and*
+crops that year's assets, finishing green, with every question answerable the moment it is
+authored. Stage 5 survives as the asset *method* reference the sessions consult; its three
+checks moved into Gate 4, applied per year. Owner also chose to run the six sessions on a
+**`port/maths-advanced` branch**, merging to `main` only when the subject is complete — `main`
+keeps a clean CI signal, and Cloudflare's branch preview serves the mobile-width check instead
+of a half-ported subject going live.
+
+**That merge made per-year asset load the thing that sizes a session, which overturned the
+suggested order.** Splitting Stage 1's own lists per year (reconciling exactly to 121 crops and
+28 tables) shows **2024 is the heaviest paper at 30 assets, not the lightest**. The runbook had
+2024 leading on the strength of a Stage 0 sentence — "lightest asset load, 2 graphic-bearing
+MC" — that Stage 1's measurements had already contradicted without anyone noticing: 2024
+Section I has **seven** graphic-bearing MC. **2020 leads instead** (joint-lightest at 22 assets,
+lowest corruption rate at 37%, and it exercises three Stage 3 decisions early — options as table
+rows, two `omittedQuestions`, one `omittedParts`). Order is now 2020 → 2023 → 2022 → 2025 →
+2021 → 2024, with a per-year tracker table in the runbook that each session ticks so the next
+cold session knows which paper is next.
+
 Documentation only. No code, no data, no subject JSON changed; nothing is ported and the subject
-is still registered nowhere. Stage 4 (Port) is next — six sessions, one paper per session,
-starting with 2024.
+is still registered nowhere. **Stage 4 is next: six sessions, one paper each, starting with 2020,
+on `port/maths-advanced`.**

@@ -10,8 +10,8 @@ Report is separate: `docs/paper-reports/mathematics-advanced.md` (verdict **GO**
 | 1 Survey | ✅ complete — 2026-08-27 | done |
 | 2 Syllabus grounding | ✅ complete — 2026-08-27 | done |
 | 3 Schema | ✅ complete — 2026-08-27 | done |
-| **4 Port** | ⬜ **next** | **~6 sessions, one per paper year** |
-| 5 Assets | ⬜ | 3 sessions — **121 crops + 28 tables**, measured at Stage 1 |
+| **4 Port + assets** | ⬜ **next — 0 of 6 papers** | **6 sessions, one per paper year** (2020 first) |
+| 5 Assets | ➡️ folded into Stage 4 | method reference only — **121 crops + 28 tables**, split per year |
 | 6 Ground truth | ⬜ | 1 session |
 | 7 Release | ⬜ | 1 session |
 
@@ -22,6 +22,15 @@ Paste this, changing the stage number:
 > Read `docs/subject-plans/mathematics-advanced.md` and `docs/porting-playbook.md`.
 > Run **Stage N** for Mathematics Advanced. Do not re-derive anything the runbook already
 > records. Write the result back into the runbook and tick its gate before finishing.
+
+**For a Stage 4 session, name the paper** — the stage runs six times, once per year:
+
+> Read `docs/subject-plans/mathematics-advanced.md` and `docs/porting-playbook.md`.
+> Run **Stage 4 for the {YEAR} paper** — port it and crop its assets, on the
+> `port/maths-advanced` branch. Do not re-derive anything the runbook already records.
+> Tick that year's row in the Stage 4 tracker before finishing.
+
+Stage 4's tracker table says which year is next.
 
 ### Rules that apply in every session
 
@@ -506,7 +515,7 @@ extra provenance, not renames of a canonical field.
 | Stage | Item |
 |---|---|
 | 4 | Pick the code for the 21 multi-code parts; record `gridCodes` |
-| 5 | Wrap the 6 wide lookup tables; `class="q-table"`, no inline borders |
+| 4 | Wrap the 6 wide lookup tables; `class="q-table"`, no inline borders |
 | 7 | **Blocking:** make `NESA_CAT_LABELS` subject-aware (decision 8) |
 | 7 | One-line written-badge fix, `q.category \|\| q.topic` (decision 10) |
 
@@ -516,16 +525,64 @@ deviation deliberate and recorded (there are none)
 ---
 
 
-## Stage 4 — Port ⬜ (~6 sessions, one paper per session)
+## Stage 4 — Port + assets ⬜ (6 sessions, one paper per session)
 
-**Suggested order: 2024 → 2025 → 2023 → 2022 → 2021 → 2020.** 2024 is the lightest asset load
-(2 graphic-bearing MC) and the cleanest text, so it establishes the pattern; 2020 is heaviest.
+**Stage 5 is folded into this stage.** Each session ports **one year and crops that year's own
+assets**, finishing green. The asset *method* — crop tooling, the DPI trap, the option-label
+rule — is still written out below as Stage 5, as a reference these sessions consult; it is no
+longer a separate scheduling stage.
 
-Per session: one year, Section I then Section II, ~49 parts.
+⚠️ **Why they were merged** (decided 2026-08-28): `validate_subjects.cjs` **exits 1** on a
+question whose `image` path has no file yet — verified, not assumed. Porting all six papers
+first and cropping afterwards would leave the validator, and CI on every push, red for six
+sessions, and Gate 4's own wording ("validator green, `missingImages: 0`") is unsatisfiable
+under that order. Interleaving makes the gate honest and keeps every question answerable the
+moment it is authored.
+
+### Branch — do not commit these sessions to `main`
+
+```bash
+git checkout -b port/maths-advanced      # first session only; later sessions just check it out
+```
+
+Merge to `main` only when the whole subject is ported, cropped, ground-truthed and green.
+`main` stays a clean signal throughout, and Cloudflare gives the branch its own preview URL —
+use it for the mobile-width browser check rather than shipping a half-ported subject to
+`cramit-quiz.pages.dev`.
+
+### Per-year load and progress
+
+Derived from the Stage 1 lists; reconciles exactly to the 121 crops and 28 tables recorded
+above. "Corrupt" is that paper's share of parts carrying a detectable text-layer defect.
+
+| Session | Year | Parts | Crops | Tables | Corrupt | Status |
+|---|---|---:|---:|---:|---:|---|
+| 1 | **2020** | 49 | 18 | 4 | 37% | ⬜ |
+| 2 | 2023 | 48 | 16 | 6 | 50% | ⬜ |
+| 3 | 2022 | 52 | 20 | 3 | 37% | ⬜ |
+| 4 | 2025 | 50 | 22 | 2 | 42% | ⬜ |
+| 5 | 2021 | 48 | 22 | 6 | 50% | ⬜ |
+| 6 | 2024 | 47 | 23 | 7 | 38% | ⬜ |
+
+**Tick the Status cell at the end of each session** — that is how the next cold session knows
+which paper is next.
+
+⚠️ **The old suggested order (2024 first, "lightest asset load — 2 graphic-bearing MC") was
+wrong, and is corrected here.** 2024 Section I has **seven** graphic-bearing MC (five stimulus,
+two option sets), and 2024 is the **heaviest** paper of the six at 30 assets. That sentence came
+from Stage 0 and survived Stage 1's corrections uncaught. **2020 leads instead**: joint-lightest
+at 22 assets, the lowest corruption rate, and it exercises three Stage 3 decisions early where
+they are cheap to correct — options printed as table rows (Q2, Q3, decision 3), two whole
+`omittedQuestions` (Q16, Q24, decision 5) and an `omittedParts` entry (Q11(a)). 2024 goes last:
+heaviest, and the only paper using the MathType bracket mapping.
+
+### Per session
 
 **Stage 3 fixed every field name, character and markup form — follow it, do not re-decide.**
 The field tables are the contract; decisions 1–6 cover piecewise braces, integrals and
 fractions, table-row options, blank tables, the two omission keys, and the Unicode set.
+
+Section I, then Section II, then that year's crops, then validate.
 
 - **Carry `qNum` from the first question authored.** Retrofitting needs `backfill_qnum.py`,
   which refuses to guess; skipping it left 135 questions unverifiable for months across
@@ -543,19 +600,27 @@ fractions, table-row options, blank tables, the two omission keys, and the Unico
 - Drawing parts get an `omittedParts` entry; a whole unportable question gets
   subject-level `omittedQuestions`. Silent omission is how 2020 Standard 2 sat at 84/85 marks
   for over a year.
-- Run `node scripts/validate_subjects.cjs` before finishing each session.
+- **Crop this year's assets in this session**, using the method reference below, and open every
+  crop against the paper before finishing.
+- `node scripts/validate_subjects.cjs` must be **green with `missingImages: 0`** before the
+  session ends. That is now achievable, and it is the point of the merge.
 
 **GATE 4** — [ ] validator green, `missingImages: 0` · [ ] every part has `qNum` · [ ] omissions
-declared, and each paper's marks total 100
+declared, and each paper's marks total 100 · [ ] every crop opened and compared against the
+paper, option by option · [ ] every table renders as HTML, not an image · [ ] any 7+ column
+table wrapped and checked at 430 px · [ ] the year's Status cell ticked above
 
 ---
 
-## Stage 5 — Assets ⬜ (2–3 sessions, ~100 crops)
+## Stage 5 — Asset method 📖 (reference, not a scheduled stage)
+
+**Folded into Stage 4** — each porting session crops its own year. This section stays as the
+method the sessions consult; there is no separate Stage 5 session and no separate gate.
 
 The dominant cost — roughly six times VET Construction's load, the heaviest so far.
 **Stage 1 measured it: 121 crops (25 Section I stimulus + 48 Section I option + 48 Section II)
-and 28 tables to reconstruct as HTML.** The per-question crop and table lists are in Stage 1;
-work from those, not from a fresh sweep.
+and 28 tables to reconstruct as HTML**, split per year in Stage 4's tracker. The per-question
+crop and table lists are in Stage 1; work from those, not from a fresh sweep.
 
 - Text layer has the option labels → `extract_maths_diagrams.py --calibrate` (registry, 150 dpi)
 - Text layer empty / labels are outline paths → **ink-profile segmentation at 300 dpi**
@@ -569,9 +634,10 @@ work from those, not from a fresh sweep.
   sets at 0.8:1 to 2.6:1, so none needs it** — re-check only 2024 Q8's histograms, whose ink
   extent measures 3.7:1 on the C/D row.
 
-**GATE 5** — [ ] every crop opened and compared against the paper, option by option · [ ] every
-table renders as HTML, not an image · [ ] the 6 wide lookup tables wrapped and checked at 430 px
-(Stage 3 decision 9)
+**No Gate 5** — its three checks moved into Gate 4, where they are applied per year: every crop
+compared against the paper option by option, every table rendered as HTML rather than an image,
+and any 7+ column table wrapped and checked at 430 px (Stage 3 decision 9). The six wide lookup
+tables land in the 2021, 2022, 2023, 2024 (×2) and 2025 sessions.
 
 ---
 
