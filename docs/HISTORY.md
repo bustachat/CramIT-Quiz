@@ -1785,3 +1785,106 @@ missingImages=0`, 0 issues. The subject is still **registered nowhere in code** 
 `subjects/index.json` row, no `SUBJECT_ID_MAP`, no `SUBJECT_CATALOGUE`, no card; that is Stage 7,
 and the two key checkers skip the file until Stage 6. Gate 4 is ticked for 2023 in the runbook,
 and the tracker now says **2022 is next**.
+
+---
+
+## 2026-08-28 (later still, ×3) — Mathematics Advanced Stage 4, paper 3 of 6: the 2022 port
+
+**Branch `port/maths-advanced`, not `main`.** The 2022 HSC is ported and cropped:
+`subjects/mathematics-advanced.json` now holds **three years — 30 MC + 63 written entries**,
+with 2022 contributing 10 MC + 22 written entries and **2 `omittedParts`** (Q12(b) 2 marks, a
+blank table plus a graph on a printed grid; Q27(c) 3 marks, a curve sketch). **No new
+`omittedQuestions`** — no whole 2022 question is a drawing task, as Stage 1 predicted. Marks
+reconcile to **exactly 100**: 10 MC + 85 written + 5 omitted.
+
+**Ground truth first, as §10 requires.** All ten MC answers were confirmed against the official
+key *before* authoring, by calling `extract_mc_key()` read-only on `2022_marking_guidelines.pdf`
+— `A D B A D B C C A B`. Ten independent derivations from the paper agreed with all ten. The
+guidelines were not re-read for anything else.
+
+**The build script refuses to write** unless: the existing file round-trips byte-for-byte
+through `json.dumps(indent=2, ensure_ascii=False)` + newline; 2022 is not already present; every
+MC answer matches the official key; every bank entry's marks equal the prefix-sum of the
+official leaf parts under its `qNum` plus its own `omittedParts` (the join
+`check_written_key.cjs` applies); every `category` is one of NESA's own codes for that question;
+every `gridCodes` list is exactly NESA's union; every grid part has a bank entry; and every
+referenced image file exists.
+
+**Assets: 21 crops**, via a new 2022 registry block in `scripts/crop_maths_advanced.py`
+(PDF points, `--year 2022`). Section I: Q3, Q7, Q8 and Q10 stimulus, plus Q1's and Q10's four
+option cells each. Section II: Q11, Q14, Q16, Q17, Q24, Q28 (×2), Q29, Q31. Coordinates from an
+ink profile at 150 dpi, then every crop built into a contact sheet and compared against the
+paper.
+
+### Two things this paper taught, both inherited by the remaining three years
+
+⚠️ **Stage 1's crop list under-counts a second way: one list entry can be two diagrams.**
+2022 **Q28** appears once on the Section II list, but the paper draws the circle twice — with
+the sector shaded for part (a), then again on the next page with the hyperbola added for part
+(c). Both are needed and the stem carries both. A **naming convention is set here**: a second
+diagram inside one question takes the part letter as a suffix on the question number,
+`mathematics-advanced_2022_Q28b_stimulus.jpg` beside `…_Q28_stimulus.jpg`. 2025's list has
+`Q25(c)` and `Q28(b)` entries and will need it. The subject crop total moves 122 → **123**.
+(2023 corrected the same list the other way, by finding a question missing from it entirely.)
+
+⚠️ **Decision 1's piecewise brace is sized for two rows.** 2022 Q30's cumulative distribution
+function has three. At the template's `font-size:2.6em` the glyph no longer spans the block;
+`rowspan="3"` with **`3.9em`** matches it exactly — brace cell 72.5 px against a 72.5 px
+three-row block, measured at 430 px. Scale the em value with the row count and re-measure.
+Recorded in Stage 3 decision 1 as well as the session note.
+
+### The option-letter trap: checked, did not recur, but nearly mattered
+
+On 2022's option pages the `erase`-rectangle method held — `get_drawings()` reports **zero**
+vector paths intersecting any of the eight letter boxes. Two wrinkles worth recording:
+
+- **Page 2's text layer is garbled where the letters are.** Q1's `A.` glyph extracts as the
+  word `Mul` and `B.` as a 154 pt-wide span. `C.` and `D.` extract cleanly, and the two option
+  rows are a fixed 156.7 pt apart, which places `A.`/`B.` exactly on the garbled span's box.
+  Geometry, not the text layer, gave the erase boxes.
+- **An x-cut would still have been wrong on Q10.** Option A's lower-left branch starts at
+  x = 103.6 pt, *left* of the letter's right edge at 114.9 pt — they miss only in *y*. Cropping
+  to the right of the letter would have amputated the branch, exactly as it did on 2020 Q5.
+  Crop the whole cell and erase.
+
+### Category picks
+
+Three multi-code merges settled by the rules already in the runbook, NESA's full list kept in
+`gridCodes`: Q18 (`C2` of `C2`/`C4`, 2 marks against 1), Q27 (`C3` of `C2`/`C3` — `C3` carries
+5 of the 7 marks, counting the omitted part) and Q31 (`C3` of `C3`/`F1`, 4 against 2). Q28
+(`C4` of `C4`/`F1`/`T1`) and Q29 (`C4` of `C4`/`M1`) went the same way on mark weight. **Q20 is
+the year's even split** — `E1` 2 marks, `C3` 2 marks — so 2023's tie-break applies: take the
+part carrying the heavier mathematical demand, here differentiating the exponential model in
+(c), giving `C3`.
+
+### Browser verification at 430 px
+
+All 32 questions were rendered through `index.html`'s own CSS in a throwaway harness (fetched
+the app's `<style>` blocks at runtime and reproduced `renderQuestion()`'s markup), deleted
+afterwards. Screenshots were unavailable in this session (the Browser pane was not displayed),
+so everything below is a DOM measurement rather than an eyeball.
+
+| Case | Measured | Verdict |
+|---|---|---|
+| `body.scrollWidth`, all 32 questions | **430**, never more; no `.question-area` overflows | nothing clipped |
+| Q21's **7-column** future-value table in the `overflow-x:auto` wrapper | wrapper 390 px, scrolls to 560 px internally | decision 9 works |
+| Q11's 4-column complaints table, bare `.q-table` | 390 px | fits — no wrapper |
+| Q30's three-row piecewise brace | brace cell 72.5 px, block 72.5 px, table 171 px | spans exactly |
+| MC Q1 option images in `.options-grid-2x2` | 160 × 163 px (0.98:1) | legible |
+| MC Q10 option images in `.options-grid-2x2` | 160 × 174 px (0.92:1) | legible |
+| All 21 images | load, `naturalWidth` non-zero, stimulus 388–390 px | none broken |
+| 31 distinct non-ASCII characters | 3.4–18.0 px; `→` and `…` also rasterised — 74 and 30 ink pixels against notdef's 380 | real glyphs |
+| `<sup>` exponents (Q27, Q29, Q32, MC Q6) | 15 px against an 18 px base, `vertical-align: super` | real superscripts |
+
+Zero console errors. `optionImagesWide` unnecessary again.
+
+Note on **Q21**: it *is* on Stage 1's list of six "wide lookup tables" and it *is* 7 columns, so
+the wrapper was needed. That does not rehabilitate the list — 2023's listed table fitted while an
+unlisted one overflowed. The rule stays: **count the columns of every table you build**.
+
+**Local CI green:** `validate_subjects.cjs` reports `MC=676 Written=306 imageRefs=243
+missingImages=0`, 0 issues; `check_answer_key.cjs` and `check_written_key.cjs` still pass on the
+three ground-truthed subjects and correctly skip Mathematics Advanced until Stage 6. The subject
+is still **registered nowhere in code** — no `subjects/index.json` row, no `SUBJECT_ID_MAP`, no
+`SUBJECT_CATALOGUE`, no card; that is Stage 7. Gate 4 is ticked for 2022 in the runbook, and the
+tracker now says **2025 is next**.

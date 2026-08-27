@@ -10,8 +10,8 @@ Report is separate: `docs/paper-reports/mathematics-advanced.md` (verdict **GO**
 | 1 Survey | ✅ complete — 2026-08-27 | done |
 | 2 Syllabus grounding | ✅ complete — 2026-08-27 | done |
 | 3 Schema | ✅ complete — 2026-08-27 | done |
-| **4 Port + assets** | 🔶 **in progress — 2 of 6 papers** (2020 ✅, 2023 ✅ 2026-08-28) | **6 sessions, one per paper year**; **2022 is next** |
-| 5 Assets | ➡️ folded into Stage 4 | method reference only — **122 crops + 28 tables**, split per year |
+| **4 Port + assets** | 🔶 **in progress — 3 of 6 papers** (2020 ✅, 2023 ✅, 2022 ✅ 2026-08-28) | **6 sessions, one per paper year**; **2025 is next** |
+| 5 Assets | ➡️ folded into Stage 4 | method reference only — **123 crops + 28 tables**, split per year |
 | 6 Ground truth | ⬜ | 1 session |
 | 7 Release | ⬜ | 1 session |
 
@@ -54,7 +54,7 @@ Stage 4's tracker table says which year is next.
 | Total workload | **294 question parts** — 60 MC + 234 Section II parts across 131 questions |
 | Section I assets | **25** stimulus images, **12** option-image sets (=48 crops), **10** tables → HTML, 22 plain-text stems (Stage 1 corrected Stage 0 — see Stage 1) |
 | Section II assets | **48 crops + 18 tables** across 46 questions/parts |
-| **Total assets** | **122 crops · 28 tables → HTML** (Stage 0's "~100" was low). ⚠️ Stage 1's Section II crop list is a **lower bound** — 2023 Q16 was missing from it and surfaced only when the question was ported. Check each question's own page as you write it |
+| **Total assets** | **123 crops · 28 tables → HTML** (Stage 0's "~100" was low). ⚠️ Stage 1's Section II crop list is a **lower bound, twice over** — 2023 Q16 is missing from it, and a question listed once can carry **two** diagrams (2022 Q28). Read each question's own page as you write it |
 | Unportable | **17 drawing parts, 41 of 540 Section II marks (7.6%)** → `omittedParts` / `omittedQuestions`; portable share **93.2%** |
 | Notation | `basic` — no ∑, matrices, vectors or complex numbers. ⚠️ **Radicals DO occur** (2020 Q1, 2025 Q3/Q5): Stage 0 read "no radical sign" off the text layer, and √ is drawn as paths, so it is invisible there. Same for ∞ |
 | **Text layer** | **garbled on every paper, but not the same way each year** — 2024 alone uses the MathType `^…h` / `]…g` bracket mapping; every year loses ∞ and √ entirely, prints π as `p`, and re-orders stacked fractions. **124 of 294 parts (42%) carry a detectable corruption** |
@@ -378,6 +378,10 @@ brace in a `rowspan` cell. Measured at 430 px: the brace cell and the two-row bl
 Inline styles, not a class, so no `index.html` change is needed — matching the 29 inline-styled
 tables Standard 2 already ships.
 
+⚠️ **The `2.6em` is sized for two rows.** A three-row brace (2022 Q30) needs `rowspan="3"`
+and `font-size:3.9em` — measured, brace cell 72.5 px against a 72.5 px three-row block.
+Scale the em value with the row count and re-measure at 430 px.
+
 **2 · Integrals and fractions — inline Unicode, following Standard 2.** `∫` U+222B with
 `<sub>`/`<sup>` limits; `d<em>x</em>`; fractions written inline with `/`, parenthesised when the
 numerator or denominator is compound. Standard 2 has **no** stacked-fraction markup anywhere —
@@ -562,15 +566,15 @@ use it for the mobile-width browser check rather than shipping a half-ported sub
 
 ### Per-year load and progress
 
-Derived from the Stage 1 lists; reconciles to the 122 crops and 28 tables recorded
-above. Crop counts are a **lower bound** — 2023 came in one over its estimate. "Corrupt" is that paper's share of parts carrying a detectable text-layer defect.
+Derived from the Stage 1 lists; reconciles to the 123 crops and 28 tables recorded
+above. Crop counts are a **lower bound** — 2023 and 2022 each came in one over their estimate. "Corrupt" is that paper's share of parts carrying a detectable text-layer defect.
 
 | Session | Year | Parts | Crops | Tables | Corrupt | Status |
 |---|---|---:|---:|---:|---:|---|
 | 1 | **2020** | 49 | 18 | 4 | 37% | ✅ 2026-08-28 |
 | 2 | **2023** | 48 | 17 | 6 | 50% | ✅ 2026-08-28 |
-| 3 | **2022** | 52 | 20 | 3 | 37% | ⬜ **next** |
-| 4 | 2025 | 50 | 22 | 2 | 42% | ⬜ |
+| 3 | **2022** | 52 | 21 | 3 | 37% | ✅ 2026-08-28 |
+| 4 | **2025** | 50 | 22 | 2 | 42% | ⬜ **next** |
 | 5 | 2021 | 48 | 22 | 6 | 50% | ⬜ |
 | 6 | 2024 | 47 | 23 | 7 | 38% | ⬜ |
 
@@ -770,11 +774,89 @@ mark weight and by which skill the work sits in.
 "Hence, **or otherwise**, solve the inequality", so dropping the sketch in (a) costs the student
 nothing — unlike 2021 Q27(d), which is still open for that session.
 
+### 2022 — done (2026-08-28)
+
+10 MC + 22 written entries + **2 `omittedParts`** (Q12(b) 2, Q27(c) 3) and **no new
+`omittedQuestions`** — like 2023, no whole 2022 question is a drawing task, exactly as Stage 1
+predicted. **Marks reconcile to exactly 100**: 10 MC + 85 written + 5 omitted. The build script
+refuses to write unless the prefix-sum join, the paper total, every `category` being one of
+NESA's own codes for that question, every `gridCodes` list matching NESA's own union, and every
+grid part having a bank entry all hold — and unless the existing file round-trips byte-for-byte
+first.
+
+**All ten MC answers were confirmed against the official key before authoring**, by calling
+`extract_mc_key()` read-only on `2022_marking_guidelines.pdf` — `A D B A D B C C A B`. Ten
+independent derivations from the paper agreed with all ten.
+
+**Assets: 21 crops** via `scripts/crop_maths_advanced.py --year 2022` (a new registry block).
+Section I: Q3, Q7, Q8, Q10 stimulus + Q1's and Q10's four option cells each. Section II: Q11,
+Q14, Q16, Q17, Q24, Q28 (×2), Q29, Q31. Coordinates came from an ink profile at 150 dpi, then
+every crop was built into a contact sheet and compared against the paper.
+
+⚠️ **Stage 1's crop list under-counts a second way: one list entry can be two diagrams.**
+2022 **Q28** is a single entry on that list but the paper draws the circle twice — once for
+part (a) with the sector shaded, and again on the next page with the hyperbola added for
+part (c). Both are needed; the stem carries both. **Naming convention set here, inherited by
+later years: a second diagram inside one question takes the part letter as a suffix on the
+question number** — `mathematics-advanced_2022_Q28b_stimulus.jpg` beside
+`…_Q28_stimulus.jpg`. 2025's list has `Q25(c)` and `Q28(b)` entries and will need it. Subject
+total moves 122 → **123**.
+
+⚠️ **Q21 is the year's 7-column table, and it did need the wrapper.** Unlike 2023 — where the
+listed "wide lookup table" fitted and an unlisted one overflowed — 2022's future-value table
+*is* on Stage 1's list of six and *is* 7 columns wide. That does not rehabilitate the list:
+the rule remains **count the columns of every table you build**. Q11's 4-column complaints
+table needs nothing.
+
+**Option letters: the 2020 amputation trap did not recur, but was checked.** On page 2
+(Q1's options) the text layer is garbled — the `A.` glyph extracts as the word `Mul` — so the
+letter boxes were derived from the *geometry* instead: `C.`/`D.` extract cleanly, and the two
+option rows are a fixed 156.7 pt apart, which places `A.`/`B.` exactly where the garbled span
+sits. On page 7 (Q10's options) all four letters are real text. **`get_drawings()` reports zero
+vector paths intersecting any of the eight letter boxes**, so the white `erase` rectangle
+removes the letter and nothing else. ⚠️ But an x-cut would still have been wrong on Q10: option
+A's lower-left branch starts at x = 103.6 pt, *left* of the letter's right edge at 114.9 pt —
+they miss each other only in <em>y</em>. Crop the whole cell and erase.
+
+**Three multi-code merges, all settled by the rules already in the runbook**, with NESA's full
+list kept in `gridCodes`: Q18 (`C2` of `C2`/`C4`, 2 marks against 1), Q27 (`C3` of `C2`/`C3` —
+`C3` carries 5 of the 7 marks, counting the omitted part) and Q31 (`C3` of `C3`/`F1`, 4 against
+2). Q28 (`C4` of `C4`/`F1`/`T1`) and Q29 (`C4` of `C4`/`M1`) went the same way on mark weight.
+**Q20 is the year's even split** — `E1` 2 marks, `C3` 2 marks — so the 2023 tie-break applies:
+take the part carrying the heavier mathematical demand, here differentiating the exponential
+model in (c), giving `C3`.
+
+**Measured in the browser at a 430 px viewport** (stem 390 px), all 32 questions rendered
+through `index.html`'s own CSS in a throwaway harness:
+
+| Case | Measured | Verdict |
+|---|---|---|
+| `body.scrollWidth`, all 32 questions | **430**, never more; no `.question-area` overflows | nothing clipped |
+| Q21's **7-column** future-value table in the wrapper | wrapper 390 px, scrolls to 560 px internally | decision 9 works |
+| Q11's 4-column complaints table, bare `.q-table` | 390 px | fits — no wrapper needed |
+| Q30's **three-row** piecewise brace (decision 1) | brace cell **72.5 px**, three-row block **72.5 px**, table 171 px | glyph spans the rows exactly at `font-size:3.9em` |
+| MC Q1 option images in `.options-grid-2x2` | 160 × 163 px (0.98:1) | legible |
+| MC Q10 option images in `.options-grid-2x2` | 160 × 174 px (0.92:1) | legible |
+| All 21 images | load, `naturalWidth` non-zero, stimulus 388–390 px wide | none broken |
+| 31 distinct non-ASCII characters used | 3.4–18.0 px; `→` and `…` also rasterised and compared to `�` (74 and 30 ink pixels against notdef's 380) | real glyphs, no notdef |
+| `<sup>` exponents (Q27, Q29, Q32, MC Q6) | 15 px against an 18 px base, `vertical-align: super` | real superscripts |
+
+Zero console errors. `optionImagesWide` again unnecessary.
+
+⚠️ **Decision 1's brace needs `font-size:3.9em` for three rows**, not the 2.6em the two-row
+template uses. 2023's two-row brace measured 48.3 px; three rows measure 72.5 px, and 3.9em
+matches it exactly. Scale the em value with the row count and re-measure.
+
+**One note on the harness**: it badges written questions with `q.category || q.topic`, i.e.
+the *post-fix* engine. The live engine still reads `q.topic` alone (Stage 3 decision 10), so
+these questions show no topic badge until the Stage 7 one-liner lands. That is a known blocking
+item, not a new finding.
+
 **GATE 4** (ticked per year) — [x] validator green, `missingImages: 0` · [x] every part has
 `qNum` · [x] omissions declared, and each paper's marks total 100 · [x] every crop opened and
 compared against the paper, option by option · [x] every table renders as HTML, not an image ·
 [x] any 7+ column table wrapped and checked at 430 px · [x] the year's Status cell ticked above
-— **all ticked for 2020 and for 2023; reset them for 2022.**
+— **all ticked for 2020, 2023 and 2022; reset them for 2025.**
 
 ---
 
@@ -784,10 +866,10 @@ compared against the paper, option by option · [x] every table renders as HTML,
 method the sessions consult; there is no separate Stage 5 session and no separate gate.
 
 The dominant cost — roughly six times VET Construction's load, the heaviest so far.
-**Stage 1 measured it: 122 crops (25 Section I stimulus + 48 Section I option + 49 Section II)
+**Stage 1 measured it: 123 crops (25 Section I stimulus + 48 Section I option + 50 Section II)
 and 28 tables to reconstruct as HTML**, split per year in Stage 4's tracker. ⚠️ Treat the
-Section II crop list as a **lower bound** — 2023 Q16 was missing from it (see the 2023
-session note). The per-question
+Section II crop list as a **lower bound** — 2023 Q16 was missing from it, and 2022 Q28 is one
+list entry carrying **two** diagrams (see those session notes). The per-question
 crop and table lists are in Stage 1; work from those, not from a fresh sweep.
 
 **Use `scripts/crop_maths_advanced.py --year {YEAR}`** — written in the 2020 session, one
@@ -803,6 +885,10 @@ and run it; the 2020 block is the worked example.
   papers **the option letters and most axis labels are outline paths**, so it finds nothing.
   Derive boxes from an **ink profile** instead (dark pixels at 150 dpi, banded with a small gap);
   `crop_vet_2021_q15_options.py` is the other worked example.
+- **A question listed once in Stage 1 can carry two diagrams** (2022 Q28 draws its circle on
+  two pages). The second takes the part letter as a suffix on the question number:
+  `…_2022_Q28b_stimulus.jpg` beside `…_2022_Q28_stimulus.jpg`. 2025's `Q25(c)` and `Q28(b)`
+  list entries will need the same.
 - **Exclude the paper's own `A.`/`B.` glyph** — `index.html` renders its own option label — but
   ⚠️ **not with an x-cut.** The letter sits in the cell's top-left corner with the graph running
   underneath it (2020 Q5 option A: letter x 100.8–111.3 pt, x-axis starts x 102.2 pt), so

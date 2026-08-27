@@ -101,6 +101,35 @@ REGISTRY = {
         ("Q28_stimulus", 29, 110, 152, 478, 370),  # curve with two parallel tangents
         ("Q32_stimulus", 35,  99, 160, 484, 395),  # y = e^-2x and y = e^-x - 1/4
     ],
+    2022: [
+        # --- Section I ---
+        # Q1 option cells: crop the whole cell, then white out the option letter.
+        # The letter's own box carries no vector path (checked: 0 drawings intersect
+        # any of the eight letter boxes on pages 2 and 7), so the erase is safe here --
+        # unlike 2020, where the graph ran underneath it.
+        ("Q1_A",  1,  97, 219, 233, 357, [(99.9, 221.4, 112.4, 235.4)]),
+        ("Q1_B",  1, 313, 219, 449, 357, [(315.9, 221.4, 329.0, 235.4)]),
+        ("Q1_C",  1,  97, 376, 233, 513, [(99.9, 378.1, 112.4, 392.1)]),
+        ("Q1_D",  1, 313, 376, 449, 513, [(315.9, 378.1, 329.0, 392.1)]),
+        ("Q3_stimulus",  2, 176, 366, 417, 543),   # tower BT, incl. NOT TO SCALE
+        ("Q7_stimulus",  4, 134,  96, 461, 267),   # probability density function
+        ("Q8_stimulus",  5, 113, 131, 483, 270),   # even function, regions A and B
+        ("Q10_stimulus", 6, 101,  98, 498, 294),   # y = f(x) and y = g(x), side by side
+        ("Q10_A", 6, 100, 337, 283, 536, [(102.2, 338.6, 115.9, 352.6)]),
+        ("Q10_B", 6, 316, 337, 499, 536, [(318.2, 338.6, 331.2, 352.6)]),
+        ("Q10_C", 6, 100, 564, 283, 763, [(102.2, 565.3, 115.2, 579.3)]),
+        ("Q10_D", 6, 316, 564, 499, 763, [(318.2, 565.3, 331.9, 579.3)]),
+        # --- Section II ---
+        ("Q11_stimulus",  9, 100, 431, 497, 675),  # Pareto chart, incl. both axis captions
+        ("Q14_stimulus", 11,  69, 431, 522, 579),  # y = k sin(ax)
+        ("Q16_stimulus", 13, 188, 140, 402, 387),  # parabola meeting a line, shaded
+        ("Q17_stimulus", 14, 206, 163, 390, 340),  # house of cards, 3 rows
+        ("Q24_stimulus", 20, 114, 208, 448, 427),  # scatterplot + line of best fit
+        ("Q28_stimulus", 25, 156, 168, 439, 376),  # circle, interval to (1, 1), shaded
+        ("Q28b_stimulus", 26, 156, 158, 439, 366), # same circle with the hyperbola added
+        ("Q29_stimulus", 27, 169, 187, 427, 379),  # y = 2^-x with 5 rectangular strips
+        ("Q31_stimulus", 29, 164, 139, 433, 322),  # line through P(1, 2), triangle XOY
+    ],
 }
 
 
