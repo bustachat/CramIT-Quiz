@@ -285,10 +285,11 @@ cramit-quiz/
 ├── docs/
 │   ├── HISTORY.md              ← Full session log — read on demand, not auto-loaded
 │   ├── agents-plan.md          ← Stage 9 agent roster/build order — read on demand
-│   ├── subject-plans/          ← Stages 1–3 working document, one per in-flight port
-│   │   └── mathematics-advanced.md  ← Stage 2 COMPLETE: topic list from the primary 2017 syllabus
-│   │                                  (14 subtopics, 358 content dot points), the scope-vs-exam
-│   │                                  divergence, and the `category` code set. Stages 1 and 3 open.
+│   ├── subject-plans/          ← Port RUNBOOK, one per in-flight port — the single entry point a
+│   │   │                          fresh session opens. One stage per session, every established
+│   │   │                          fact carried forward so a cold session never re-derives them.
+│   │   └── mathematics-advanced.md  ← Stages 0 + 2 done; 1, 3–7 open with gates, traps, commands
+│   │                                  and a paste-in session prompt. 294 question parts to port.
 │   ├── porting-playbook.md     ← MANDATORY read before adding any new subject — the 9-stage
 │   │                             pipeline (feasibility → survey → syllabus → schema → port →
 │   │                             assets → ground truth → release → operate), each with a gate,

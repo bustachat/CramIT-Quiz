@@ -1,5 +1,15 @@
 # Handover — first live run of the porting playbook (Mathematics Advanced)
 
+> ## ⛔ SUPERSEDED — do not start here
+>
+> **Go to [`docs/subject-plans/mathematics-advanced.md`](subject-plans/mathematics-advanced.md).**
+> That is the runbook: one stage per session, with every established fact carried forward so a
+> cold session never re-derives them.
+>
+> This file is kept only as the historical record of the brief that produced Stages 0 and 2
+> (2026-08-27). Its "Start here: Stage 0" section is finished, and its sequencing notes have
+> been folded into the runbook and the playbook.
+
 **For:** the next fresh session. **Purpose:** run `docs/porting-playbook.md` for real,
 starting at Stage 0, against Mathematics Advanced. This is simultaneously two things —
 a candidate new subject, and the first test of whether the playbook actually works. Track

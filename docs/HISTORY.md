@@ -1369,3 +1369,35 @@ because it is a ratio of the two.
 No UI was built. This is the data layer only; where it renders in Study Mode is a design
 decision for the owner. `validate_subjects.cjs` green and unchanged (646 MC / 243 written /
 0 missing images); no subject JSON was modified; no PDF or DOCX is in the repo.
+
+---
+
+## 2026-08-27 (last) — Port runbook: one stage per session
+
+Owner will execute each remaining porting stage in its own fresh session. Restructured the
+Mathematics Advanced documentation so a cold session can open one file, run one stage, tick its
+gate and write the result back — without re-deriving anything.
+
+`docs/subject-plans/mathematics-advanced.md` is now the **runbook and single entry point**:
+a stage/status/session-count table, a paste-in session prompt, the standing rules, and an
+"established facts" block carrying forward every measured number (294 question parts — 60 MC
+plus 234 Section II parts across 131 questions; asset counts; the garbled text layer; the
+pre-verified ground-truth reconciliation). Each stage then has its own section with its gate,
+its traps and its exact commands.
+
+Session estimate recorded: Stage 4 is **~6 sessions, one paper per year**, suggested order
+2024 → 2025 → 2023 → 2022 → 2021 → 2020 (2024 is the lightest asset load and cleanest text, so
+it establishes the pattern; 2020 is heaviest). Stage 5 is 2–3 sessions for ~100 crops.
+
+Two things were carried into the runbook that would otherwise have been lost between sessions:
+the Stage 6 prerequisite to **fix `build_written_key.py`'s `-mg.pdf` glob** before registering
+the subject, and the correction that the Stage 0 stem sweep used a regex **missing
+`could represent`** and therefore undercounted pictorial MC stems — Stage 1 must use the
+corrected pattern.
+
+`docs/handover-maths-advanced-playbook-test.md` gets a **⛔ SUPERSEDED banner** redirecting to
+the runbook. It is kept, not deleted, as the historical record of the brief that produced
+Stages 0 and 2 — but two overlapping handover documents is exactly the confusion that damages a
+cold session, so the redirect is unambiguous.
+
+Documentation only. No code, no data, no subject JSON changed.
