@@ -34,6 +34,13 @@ Each stage produces an artifact and passes a gate. **Do not start a stage before
 predecessor's gate passes** — most historical defects are a stage skipped, not a stage
 done badly.
 
+⚠️ **One exception, found on the first live run: Stage 2 does not depend on Stage 1.** Stage 1
+surveys *questions*; Stage 2 reads the *syllabus*. Neither consumes the other's artifact, and
+Stage 2 is the one that needs the owner's go-ahead to download a document — so start it early
+rather than letting it queue behind the survey. Everything else is genuinely sequential:
+Stage 3 needs Stage 2's topics, Stage 4 needs Stage 3's field names, Stage 6 needs Stage 4's
+`qNum`.
+
 | # | Stage | Artifact | Gate | Owner today | Agent owner at scale |
 |---|---|---|---|---|---|
 | 0 | Feasibility | Fit Report | GO / NO-GO | Human + Claude Code | Content Agent (triage) |
@@ -61,7 +68,17 @@ discovering that after porting 200 questions is the expensive way to find out.
 |---|---|---|
 | Past papers, 5–6 years | `NESA Exams Folder/{subject}/` | **Stop.** No papers = no port (see HMS) |
 | Marking guidelines (`-mg` suffix) | same folder | **Stop.** No ground truth possible |
-| Official NESA syllabus | Usually *not* pre-saved — ask before downloading | Stage 2 cannot proceed |
+| Official NESA syllabus | Usually *not* pre-saved — **ask here, at Stage 0**, not at Stage 2 | Stage 2 cannot proceed |
+
+⚠️ **Filenames are not a convention, they are whatever the owner saved.** Maths Advanced uses
+`{year}_exam.pdf` / `{year}_marking_guidelines.pdf`, not the NESA-original `-mg` names the other
+four subjects carry. `find_papers()` in `build_answer_key.py` copes (it pattern-matches);
+`build_written_key.py` does **not** (see Stage 6). Check both before assuming a subject is
+tooling-ready.
+
+Some folders also hold a **third PDF per year** — `{year}_marking_feedback.pdf`, NESA's notes
+from the marking centre. No stage needs it. `find_papers()` classifies it correctly only because
+it tests `"feedback"` *before* `"marking"`; that ordering is load-bearing and easy to break.
 
 ### Source acquisition — who fetches what, and from where
 
@@ -141,11 +158,28 @@ Porting alongside a similar subject is far cheaper. Mathematics Advanced shares
 Standard 2's structure, notation and much of its topic space; Extension 1/2 shares
 almost none of it.
 
+### Dry-run the Stage 6 extractors here, not at Stage 6
+
+Both ground-truth builders can be run **read-only** against the marking guidelines before a
+single question is ported — import them and call `extract_mc_key()` / `parse_paper()` directly,
+writing nothing. On the Maths Advanced run this cost minutes and produced the strongest single
+feasibility signal in that Fit Report: every paper reconciled **exactly** to its front-page
+Section II total with zero unresolved parts. It also surfaced the `build_written_key.py` glob
+gap recorded in Stage 6, which would otherwise have appeared at Stage 6 as an empty result.
+
+A subject whose guidelines *don't* parse cleanly is not a NO-GO, but it is a cost the Fit Report
+must state up front.
+
 ### Output: the Fit Report
 
-Write to `docs/paper-reports/{subject}-{year}.md` — the directory the Content Agent
-already targets. **It does not exist yet; the agent has never run.** One report per
-paper, plus a subject-level verdict:
+Write to `docs/paper-reports/{subject}.md` — the directory the Content Agent already targets.
+**It did not exist until the Maths Advanced run; the agent has never run.**
+
+Per-paper files (`{subject}-{year}.md`) are the Content Agent's shape, because `triagePaper()`
+genuinely runs once per paper. A human Stage 0 on a subject whose paper format is stable across
+years should write **one subject-level report with per-year rows** instead — six near-identical
+files carry no more information. Split per paper only where the years actually differ in
+structure. Either way the report covers:
 
 ```
 sections[]          name, questionCount, type
@@ -168,15 +202,26 @@ fit lands well under 40%, and its notation fails test 2 outright. Expected verdi
 **NO-GO** until a maths renderer exists. That is the playbook working correctly — a
 fast, cheap no.
 
-**Mathematics Advanced is the honest first candidate** for exercising this playbook,
-precisely because it passes all four tests, so it tests the *process* rather than the
-engine's limits.
+### Worked example — Mathematics Advanced (assessed 2026-08-27, the first live run)
+
+**GO.** `docs/paper-reports/mathematics-advanced.md`. 10 MC + 90 written marks per paper across
+2020–2025; ~93% portable once ~42/540 drawing marks go to `omittedParts`; notation `basic` (no
+∑, matrices, vectors or complex numbers, so the no-MathJax constraint holds); Standard 2 is a
+near-exact structural precedent.
+
+The two findings worth carrying forward are the ones the tests were *not* designed to catch:
+test 3 came back at roughly **100 image assets**, about five times VET Construction's load, and
+the papers' **text layer is garbled** (NESA's MathType font mapping renders `(x − 1)²` as
+`^x - 1h2`), so Section II must be transcribed from rendered pages rather than extracted. Both
+are scheduling facts rather than blockers — but they are the port's actual cost, and neither
+appears in the mark-share arithmetic that drives the verdict.
 
 ### GATE 0
 
 - [ ] Papers **and** marking guidelines present for every year in scope
 - [ ] Portable mark share computed from the papers' front pages, not estimated
 - [ ] Notation verdict recorded
+- [ ] Stage 6 extractors dry-run read-only; reconciliation result recorded
 - [ ] Explicit GO / NO-GO written down, with the reason
 
 ---
@@ -246,6 +291,12 @@ by presenting a mapping-grid-derived topic list as syllabus-grounded.
    `site:nsw.gov.au` — syllabus hosting has moved for some subjects; old links 301).
 2. **Ask the owner before downloading**, then save into `NESA Exams Folder/{subject}/`
    (same copyright treatment as the papers — not committed to GitHub).
+
+   ⚠️ **Ask at Stage 0, not here.** On the first live run this rule read as a hard blocker
+   discovered three stages in, after the port had already been declared a GO — which is a
+   process failure, not caution. The syllabus is a known, predictable input for every subject;
+   raise it once, up front, in the same breath as confirming the papers are present. Once the
+   owner has said yes, that answer covers the download — do not re-ask at Stage 2.
 3. Read the actual content. For DOCX, `pandoc` is unavailable in this environment;
    `python-docx` works — extract **both** `document.paragraphs` **and**
    `document.tables`, because NESA's VET template puts the substantive
@@ -256,10 +307,52 @@ by presenting a mapping-grid-derived topic list as syllabus-grounded.
    anti-discrimination) that has **never appeared in any exam paper checked**.
 5. State plainly whether the topic list came from the primary source or a proxy.
 
+**Check whether the subject has more than one live syllabus.** NESA runs a new syllabus and the
+one it replaces in parallel for years. Mathematics Advanced has a 2017 syllabus (governing the
+2020–2025 papers *and* the 2026 HSC) and a 2024 syllabus (2027 HSC onwards, Year 11 teaching
+from Term 1 2026). Ground the port in the one the **papers** were written against — and record
+the other, because it dates the topic list to a known HSC year. New syllabuses may be web-only
+on curriculum.nsw.edu.au with no PDF or DOCX to download.
+
+### Derive `category` from the mapping grid — do not guess it
+
+Every NESA marking guideline ends with a **Mapping Grid**: one row per question part giving its
+marks, syllabus content code and outcome code. That is NESA's own answer to "what topic is this
+question?", and `scripts/build_mapping_grid.py` extracts it to
+`data/mapping-grid/{subject}.json` — committed, because CI can never regenerate it.
+
+This is a *different question* from the topic list. The grid says what was **examined**; the
+syllabus says what is in **scope**, and they diverge sharply. Measured on Mathematics Advanced,
+the first subject where both axes exist:
+
+| | Scope (syllabus dot points) | Examined (6 papers) |
+|---|---:|---:|
+| MA-C1 Introduction to Differentiation | 10.6% | **1.3%** |
+| MA-T3 Trigonometric Functions and Graphs | 1.7% | **6.8%** |
+| MA-C3 Applications of Differentiation | 5.3% | **15.7%** |
+
+**Use the grid for per-question `category`; use the syllabus for topic weighting.** Grid-derived
+weighting would have all but deleted MA-C1 — a Year 11 foundation subtopic every Year 12
+calculus question silently assumes. That is the VET failure in a different subject.
+
+The grid also **cross-checks the written key**: on Mathematics Advanced the two extractors agree
+on every Section II part across all six papers. Two traps live in its docstring, each of which
+produced a wrong number first — the code can split across words in the text layer (`MA- M1`),
+and a row's cell text is vertically centred so it can begin *above* its own label line.
+
+### Output: the working document
+
+Stages 1–3 share one living file per port, `docs/subject-plans/{subject}.md` — Work Plan, topic
+list and field mapping in the order the port produces them, with a status table at the top.
+Stage 0's Fit Report stays separate in `docs/paper-reports/`, because it is the artifact that
+decides whether the rest happens at all.
+
 ### GATE 2
 
 - [ ] Primary syllabus document located, saved, and read
+- [ ] Any second live syllabus identified, and the port's shelf life stated
 - [ ] Topic list proportional to scope-of-learning size, not exam frequency
+- [ ] Mapping grid extracted and reconciled to the paper's front-page total
 - [ ] Provenance stated explicitly
 
 ---
@@ -396,6 +489,19 @@ node   scripts/check_written_key.cjs
 
 Both builders need the local PDFs, which are **not in the repo** (copyright) — which is
 precisely why the generated keys are committed. CI can never regenerate them.
+
+⚠️ **The two builders disagree about how a marking guideline is recognised, and one of them
+fails silently.** `build_answer_key.py` finds files through the tolerant `find_papers()`
+(`(20\d{2})` prefix, then `feedback` / `-mg|marking` / else-paper). `build_written_key.py`
+instead globs `re.search(r"-mg\.pdf$", basename)`, so a subject saved as
+`2020_marking_guidelines.pdf` — Maths Advanced, today — never matches and the script exits with
+`"no marking-guideline PDFs (*-mg.pdf) in …"`. Nothing is wrong with the PDFs; the parse itself
+reconciles all six papers exactly when `parse_paper()` is called directly.
+
+**Reconciling the two selectors is a prerequisite for Stage 6 on any subject whose local
+filenames differ from the NESA originals.** Widen the written-key glob to `find_papers()`'s
+logic rather than adding a second pattern — and keep `feedback` excluded, or the notes from the
+marking centre get parsed as guidelines.
 
 **Reconcile every paper against the section totals printed on the exam's own front page**
 (Maths 85, Multimedia 30, VET 65). That is an independent check; a self-consistent one is

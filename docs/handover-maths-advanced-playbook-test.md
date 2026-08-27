@@ -38,7 +38,49 @@ filenames) will work as-is once the subject is registered — see below.
 
 ---
 
-## Start here: Stage 0
+## ✅ Stage 0 is DONE (2026-08-27) — verdict **GO**
+
+Read `docs/paper-reports/mathematics-advanced.md` and the `docs/HISTORY.md` entry
+"Stage 0 run for real" before anything else. Headline numbers: 10 MC + 90 written marks per
+paper, ~93% portable, notation `basic` (the predicted renderer blocker did not materialise),
+Standard 2 is a near-exact structural precedent.
+
+Two costs the fit tests do not price, both quantified in the report and both real:
+**~100 image assets** (roughly five times VET Construction's load) and a **garbled text layer**
+(NESA's MathType font mapping — `(x − 1)²` extracts as `^x - 1h2`), so Section II must be
+transcribed from rendered pages rather than extracted.
+
+Also already established, read-only, nothing written: `extract_mc_key()` returns 10/10 for all
+six years and `parse_paper()` reconciles **exactly to 90 marks on every paper with zero
+unresolved parts**. Stage 6 is de-risked before Stage 1 begins — with one caveat:
+**`build_written_key.py`'s `-mg.pdf` glob will not match this folder's filenames** and exits
+"no marking-guideline PDFs". Fix that when Stage 6 is actually reached, not before.
+
+## ✅ Stage 2 is also DONE (2026-08-27) — same session
+
+The owner supplied the syllabus location, so Stage 2 ran immediately rather than waiting for
+Stage 1. Working document: **`docs/subject-plans/mathematics-advanced.md`** (Stages 1–3 live
+there; Stage 0's Fit Report stays in `docs/paper-reports/`).
+
+- **Primary source read in full** — `mathematics-advanced-stage-6-syllabus-2017.docx`, saved
+  next to the papers. 14 subtopics, **358 content dot points**, both Year 11 and Year 12.
+- **Two live syllabuses.** The 2017 one governs every paper we hold *and* the 2026 HSC; the
+  **2024** one takes over from the **2027 HSC**. This topic list is dated — a deliberate product
+  decision, not something to discover in 2027.
+- **`category` is now derivable, not guessable.** New `scripts/build_mapping_grid.py` extracts
+  NESA's official question → syllabus-code grid to `data/mapping-grid/mathematics-advanced.json`.
+  All six papers reconcile to exactly 100 marks, zero uncoded rows, and it agrees with
+  `build_written_key.py` on **every Section II part in all six papers**.
+- **Scope and exam frequency diverge hard** — MA-C1 is 10.6% of the syllabus and 1.3% of six
+  years' marks; MA-T3 is 1.7% of scope and 6.8% of marks. Use the grid for per-question
+  `category`, the syllabus for any Study Mode weighting. Getting this backwards is the VET
+  failure repeating.
+
+**Next: Stage 1 (Survey)** — the only outstanding stage before Stage 3. Nothing is blocked.
+
+---
+
+## Original brief — Stage 0 (kept for reference)
 
 Playbook §1. Work through the four fit tests and produce the Fit Report. Two things to
 actually do, not just reason about:

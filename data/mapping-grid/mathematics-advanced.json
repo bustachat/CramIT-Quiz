@@ -1,0 +1,2690 @@
+{
+  "subject": "mathematics-advanced",
+  "source": "NESA HSC marking guidelines, Mapping Grid (not in repo - copyright)",
+  "note": "Official syllabus content code and outcome code per question part. Use this to derive `category` rather than guessing it. It reflects what was EXAMINED, not the syllabus's SCOPE - see the module docstring. Regenerate with scripts/build_mapping_grid.py; never hand-edit.",
+  "papers": {
+    "2020": {
+      "1": {
+        "marks": 1,
+        "codes": [
+          "MA-F1"
+        ],
+        "outcomes": [
+          "MA11-1"
+        ]
+      },
+      "2": {
+        "marks": 1,
+        "codes": [
+          "MA-F2",
+          "MA-S1"
+        ],
+        "outcomes": [
+          "MA12-1"
+        ]
+      },
+      "3": {
+        "marks": 1,
+        "codes": [
+          "MA-S1"
+        ],
+        "outcomes": [
+          "MA12-8"
+        ]
+      },
+      "4": {
+        "marks": 1,
+        "codes": [
+          "MA-C4"
+        ],
+        "outcomes": [
+          "MA12-7"
+        ]
+      },
+      "5": {
+        "marks": 1,
+        "codes": [
+          "MA-F1"
+        ],
+        "outcomes": [
+          "MA11-2"
+        ]
+      },
+      "6": {
+        "marks": 1,
+        "codes": [
+          "MA-T3"
+        ],
+        "outcomes": [
+          "MA12-5"
+        ]
+      },
+      "7": {
+        "marks": 1,
+        "codes": [
+          "MA-C4"
+        ],
+        "outcomes": [
+          "MA12-7"
+        ]
+      },
+      "8": {
+        "marks": 1,
+        "codes": [
+          "MA-C3"
+        ],
+        "outcomes": [
+          "MA12-3"
+        ]
+      },
+      "9": {
+        "marks": 1,
+        "codes": [
+          "MA-S3"
+        ],
+        "outcomes": [
+          "MA12-8"
+        ]
+      },
+      "10": {
+        "marks": 1,
+        "codes": [
+          "MA-C2"
+        ],
+        "outcomes": [
+          "MA12-6"
+        ]
+      },
+      "11(a)": {
+        "marks": 1,
+        "codes": [
+          "MA-F1"
+        ],
+        "outcomes": [
+          "MA11-2"
+        ]
+      },
+      "11(b)": {
+        "marks": 2,
+        "codes": [
+          "MA-F1"
+        ],
+        "outcomes": [
+          "MA11-1"
+        ]
+      },
+      "11(c)": {
+        "marks": 1,
+        "codes": [
+          "MA-F1"
+        ],
+        "outcomes": [
+          "MA11-2"
+        ]
+      },
+      "12": {
+        "marks": 3,
+        "codes": [
+          "MA-M1"
+        ],
+        "outcomes": []
+      },
+      "13": {
+        "marks": 2,
+        "codes": [
+          "MA-C4",
+          "MA-S1"
+        ],
+        "outcomes": [
+          "MA12-7"
+        ]
+      },
+      "14(a)": {
+        "marks": 2,
+        "codes": [
+          "MA-S1"
+        ],
+        "outcomes": [
+          "MA11-9"
+        ]
+      },
+      "14(b)": {
+        "marks": 1,
+        "codes": [
+          "MA-S1"
+        ],
+        "outcomes": [
+          "MA11-7"
+        ]
+      },
+      "14(c)": {
+        "marks": 2,
+        "codes": [
+          "MA-S1"
+        ],
+        "outcomes": [
+          "MA11-7"
+        ]
+      },
+      "15(a)": {
+        "marks": 1,
+        "codes": [
+          "MA-T1"
+        ],
+        "outcomes": [
+          "MA11-1"
+        ]
+      },
+      "15(b)": {
+        "marks": 2,
+        "codes": [
+          "MA-T1"
+        ],
+        "outcomes": [
+          "MA11-3"
+        ]
+      },
+      "15(c)": {
+        "marks": 2,
+        "codes": [
+          "MA-T1"
+        ],
+        "outcomes": [
+          "MA11-3"
+        ]
+      },
+      "16": {
+        "marks": 4,
+        "codes": [
+          "MA-C3"
+        ],
+        "outcomes": [
+          "MA12-3"
+        ]
+      },
+      "17": {
+        "marks": 2,
+        "codes": [
+          "MA-C4"
+        ],
+        "outcomes": [
+          "MA12-7"
+        ]
+      },
+      "18(a)": {
+        "marks": 2,
+        "codes": [
+          "MA-C2"
+        ],
+        "outcomes": [
+          "MA12-6"
+        ]
+      },
+      "18(b)": {
+        "marks": 1,
+        "codes": [
+          "MA-C4"
+        ],
+        "outcomes": [
+          "MA12-3"
+        ]
+      },
+      "19": {
+        "marks": 2,
+        "codes": [
+          "MA-T2"
+        ],
+        "outcomes": [
+          "MA11-4"
+        ]
+      },
+      "20": {
+        "marks": 2,
+        "codes": [
+          "MA-C4"
+        ],
+        "outcomes": [
+          "MA12-7"
+        ]
+      },
+      "21(a)": {
+        "marks": 1,
+        "codes": [
+          "MA-E1"
+        ],
+        "outcomes": [
+          "MA11-6"
+        ]
+      },
+      "21(b)": {
+        "marks": 2,
+        "codes": [
+          "MA-C3"
+        ],
+        "outcomes": [
+          "MA12-6"
+        ]
+      },
+      "21(c)": {
+        "marks": 3,
+        "codes": [
+          "MA-E1"
+        ],
+        "outcomes": [
+          "MA11-6"
+        ]
+      },
+      "22": {
+        "marks": 4,
+        "codes": [
+          "MA-T1"
+        ],
+        "outcomes": [
+          "MA11-9"
+        ]
+      },
+      "23(a)": {
+        "marks": 2,
+        "codes": [
+          "MA-S3"
+        ],
+        "outcomes": [
+          "MA12-8"
+        ]
+      },
+      "23(b)": {
+        "marks": 2,
+        "codes": [
+          "MA-S3"
+        ],
+        "outcomes": [
+          "MA12-8"
+        ]
+      },
+      "24": {
+        "marks": 3,
+        "codes": [
+          "MA-F2"
+        ],
+        "outcomes": [
+          "MA12-1"
+        ]
+      },
+      "25(a)": {
+        "marks": 3,
+        "codes": [
+          "MA-F1"
+        ],
+        "outcomes": [
+          "MA11-1"
+        ]
+      },
+      "25(b)": {
+        "marks": 4,
+        "codes": [
+          "MA-C3"
+        ],
+        "outcomes": [
+          "MA12-10"
+        ]
+      },
+      "26(a)": {
+        "marks": 2,
+        "codes": [
+          "MA-M1"
+        ],
+        "outcomes": [
+          "MA12-2"
+        ]
+      },
+      "26(b)": {
+        "marks": 2,
+        "codes": [
+          "MA-M1"
+        ],
+        "outcomes": [
+          "MA12-2"
+        ]
+      },
+      "26(c)": {
+        "marks": 3,
+        "codes": [
+          "MA-M1",
+          "MA-S2"
+        ],
+        "outcomes": []
+      },
+      "27": {
+        "marks": 5,
+        "codes": [
+          "MA-S2"
+        ],
+        "outcomes": [
+          "MA12-8"
+        ]
+      },
+      "28(a)": {
+        "marks": 3,
+        "codes": [
+          "MA-S3"
+        ],
+        "outcomes": [
+          "MA12-8"
+        ]
+      },
+      "28(b)": {
+        "marks": 2,
+        "codes": [
+          "MA-S3"
+        ],
+        "outcomes": [
+          "MA12-8"
+        ]
+      },
+      "29(a)": {
+        "marks": 2,
+        "codes": [
+          "MA-C2"
+        ],
+        "outcomes": [
+          "MA12-6"
+        ]
+      },
+      "29(b)": {
+        "marks": 2,
+        "codes": [
+          "MA-C2"
+        ],
+        "outcomes": [
+          "MA12-6"
+        ]
+      },
+      "30(a)": {
+        "marks": 2,
+        "codes": [
+          "MA-F1"
+        ],
+        "outcomes": [
+          "MA11-1"
+        ]
+      },
+      "30(b)": {
+        "marks": 4,
+        "codes": [
+          "MA-C4"
+        ],
+        "outcomes": [
+          "MA12-7"
+        ]
+      },
+      "31(a)": {
+        "marks": 2,
+        "codes": [
+          "MA-T3"
+        ],
+        "outcomes": [
+          "MA12-5"
+        ]
+      },
+      "31(b)": {
+        "marks": 3,
+        "codes": [
+          "MA-T3"
+        ],
+        "outcomes": [
+          "MA12-5"
+        ]
+      },
+      "31(c)": {
+        "marks": 2,
+        "codes": [
+          "MA-C3"
+        ],
+        "outcomes": [
+          "MA12-6"
+        ]
+      }
+    },
+    "2021": {
+      "1": {
+        "marks": 1,
+        "codes": [
+          "MA-T2"
+        ],
+        "outcomes": [
+          "MA11-1"
+        ]
+      },
+      "2": {
+        "marks": 1,
+        "codes": [
+          "MA-S1"
+        ],
+        "outcomes": [
+          "MA11-7"
+        ]
+      },
+      "3": {
+        "marks": 1,
+        "codes": [
+          "MA-E1"
+        ],
+        "outcomes": [
+          "MA12-1"
+        ]
+      },
+      "4": {
+        "marks": 1,
+        "codes": [
+          "MA-S2"
+        ],
+        "outcomes": [
+          "MA12-8"
+        ]
+      },
+      "5": {
+        "marks": 1,
+        "codes": [
+          "MA-E1"
+        ],
+        "outcomes": [
+          "MA12-1"
+        ]
+      },
+      "6": {
+        "marks": 1,
+        "codes": [
+          "MA-S1"
+        ],
+        "outcomes": [
+          "MA11-7"
+        ]
+      },
+      "7": {
+        "marks": 1,
+        "codes": [
+          "MA-C3"
+        ],
+        "outcomes": [
+          "MA12-3"
+        ]
+      },
+      "8": {
+        "marks": 1,
+        "codes": [
+          "MA-F1"
+        ],
+        "outcomes": [
+          "MA11-1"
+        ]
+      },
+      "9": {
+        "marks": 1,
+        "codes": [
+          "MA-C1"
+        ],
+        "outcomes": [
+          "MA11-1"
+        ]
+      },
+      "10": {
+        "marks": 1,
+        "codes": [
+          "MA-C3"
+        ],
+        "outcomes": [
+          "MA12-10"
+        ]
+      },
+      "11": {
+        "marks": 2,
+        "codes": [
+          "MA-F1"
+        ],
+        "outcomes": [
+          "MA11-1"
+        ]
+      },
+      "12(a)": {
+        "marks": 2,
+        "codes": [
+          "MA-T1"
+        ],
+        "outcomes": [
+          "MA11-3"
+        ]
+      },
+      "12(b)": {
+        "marks": 3,
+        "codes": [
+          "MA-T1"
+        ],
+        "outcomes": [
+          "MA11-3"
+        ]
+      },
+      "13": {
+        "marks": 3,
+        "codes": [
+          "MA-C2"
+        ],
+        "outcomes": [
+          "MA12-3"
+        ]
+      },
+      "14": {
+        "marks": 2,
+        "codes": [
+          "MA-M1"
+        ],
+        "outcomes": [
+          "MA12-4"
+        ]
+      },
+      "15": {
+        "marks": 2,
+        "codes": [
+          "MA-C4"
+        ],
+        "outcomes": [
+          "MA12-3"
+        ]
+      },
+      "16": {
+        "marks": 3,
+        "codes": [
+          "MA-C3"
+        ],
+        "outcomes": [
+          "MA12-6"
+        ]
+      },
+      "17(a)(i)": {
+        "marks": 1,
+        "codes": [
+          "MA-S2"
+        ],
+        "outcomes": [
+          "MA12-8"
+        ]
+      },
+      "17(a)(ii)": {
+        "marks": 2,
+        "codes": [
+          "MA-S2"
+        ],
+        "outcomes": [
+          "MA12-8"
+        ]
+      },
+      "17(b)": {
+        "marks": 1,
+        "codes": [
+          "MA-S2"
+        ],
+        "outcomes": [
+          "MA12-8"
+        ]
+      },
+      "18": {
+        "marks": 3,
+        "codes": [
+          "MA-T1"
+        ],
+        "outcomes": [
+          "MA11-3"
+        ]
+      },
+      "19": {
+        "marks": 3,
+        "codes": [
+          "MA-F2"
+        ],
+        "outcomes": [
+          "MA12-1"
+        ]
+      },
+      "20": {
+        "marks": 2,
+        "codes": [
+          "MA-T3"
+        ],
+        "outcomes": [
+          "MA12-5"
+        ]
+      },
+      "21": {
+        "marks": 2,
+        "codes": [
+          "MA-F2"
+        ],
+        "outcomes": [
+          "MA12-1"
+        ]
+      },
+      "22(a)": {
+        "marks": 1,
+        "codes": [
+          "MA-S3"
+        ],
+        "outcomes": [
+          "MA12-8"
+        ]
+      },
+      "22(b)": {
+        "marks": 3,
+        "codes": [
+          "MA-S3"
+        ],
+        "outcomes": [
+          "MA12-8"
+        ]
+      },
+      "23": {
+        "marks": 4,
+        "codes": [
+          "MA-C3"
+        ],
+        "outcomes": [
+          "MA12-3"
+        ]
+      },
+      "24": {
+        "marks": 3,
+        "codes": [
+          "MA-C4"
+        ],
+        "outcomes": [
+          "MA12-7"
+        ]
+      },
+      "25": {
+        "marks": 3,
+        "codes": [
+          "MA-M1"
+        ],
+        "outcomes": [
+          "MA12-2"
+        ]
+      },
+      "26(a)": {
+        "marks": 2,
+        "codes": [
+          "MA-C3"
+        ],
+        "outcomes": [
+          "MA12-6"
+        ]
+      },
+      "26(b)": {
+        "marks": 3,
+        "codes": [
+          "MA-C3"
+        ],
+        "outcomes": [
+          "MA12-6"
+        ]
+      },
+      "27(a)": {
+        "marks": 2,
+        "codes": [
+          "MA-T3"
+        ],
+        "outcomes": [
+          "MA12-5"
+        ]
+      },
+      "27(b)": {
+        "marks": 2,
+        "codes": [
+          "MA-C4"
+        ],
+        "outcomes": [
+          "MA12-3"
+        ]
+      },
+      "27(c)": {
+        "marks": 3,
+        "codes": [
+          "MA-T3"
+        ],
+        "outcomes": [
+          "MA12-5"
+        ]
+      },
+      "27(d)": {
+        "marks": 1,
+        "codes": [
+          "MA-C4"
+        ],
+        "outcomes": [
+          "MA12-10"
+        ]
+      },
+      "28(a)": {
+        "marks": 3,
+        "codes": [
+          "MA-C4"
+        ],
+        "outcomes": [
+          "MA12-7"
+        ]
+      },
+      "28(b)": {
+        "marks": 2,
+        "codes": [
+          "MA-F2"
+        ],
+        "outcomes": [
+          "MA12-1"
+        ]
+      },
+      "28(c)": {
+        "marks": 1,
+        "codes": [
+          "MA-C4"
+        ],
+        "outcomes": [
+          "MA12-7"
+        ]
+      },
+      "29(a)": {
+        "marks": 2,
+        "codes": [
+          "MA-M1"
+        ],
+        "outcomes": [
+          "MA12-4"
+        ]
+      },
+      "29(b)": {
+        "marks": 3,
+        "codes": [
+          "MA-M1"
+        ],
+        "outcomes": [
+          "MA12-2"
+        ]
+      },
+      "30": {
+        "marks": 2,
+        "codes": [
+          "MA-S3"
+        ],
+        "outcomes": [
+          "MA12-8"
+        ]
+      },
+      "31": {
+        "marks": 4,
+        "codes": [
+          "MA-C3"
+        ],
+        "outcomes": [
+          "MA12-10"
+        ]
+      },
+      "32": {
+        "marks": 4,
+        "codes": [
+          "MA-S3"
+        ],
+        "outcomes": [
+          "MA12-8"
+        ]
+      },
+      "33(a)": {
+        "marks": 2,
+        "codes": [
+          "MA-S3"
+        ],
+        "outcomes": [
+          "MA12-8"
+        ]
+      },
+      "33(b)": {
+        "marks": 2,
+        "codes": [
+          "MA-S3"
+        ],
+        "outcomes": [
+          "MA12-8"
+        ]
+      },
+      "33(c)": {
+        "marks": 2,
+        "codes": [
+          "MA-S1"
+        ],
+        "outcomes": []
+      },
+      "33(d)": {
+        "marks": 2,
+        "codes": [
+          "MA-S1"
+        ],
+        "outcomes": [
+          "MA11-7"
+        ]
+      },
+      "34": {
+        "marks": 3,
+        "codes": [
+          "MA-S1"
+        ],
+        "outcomes": [
+          "MA11-7"
+        ]
+      }
+    },
+    "2022": {
+      "1": {
+        "marks": 1,
+        "codes": [
+          "MA-F1"
+        ],
+        "outcomes": [
+          "MA11-1"
+        ]
+      },
+      "2": {
+        "marks": 1,
+        "codes": [
+          "MA-S2"
+        ],
+        "outcomes": [
+          "MA12-8"
+        ]
+      },
+      "3": {
+        "marks": 1,
+        "codes": [
+          "MA-T1"
+        ],
+        "outcomes": [
+          "MA11-3"
+        ]
+      },
+      "4": {
+        "marks": 1,
+        "codes": [
+          "MA-F1"
+        ],
+        "outcomes": [
+          "MA11-1"
+        ]
+      },
+      "5": {
+        "marks": 1,
+        "codes": [
+          "MA-C1"
+        ],
+        "outcomes": [
+          "MA11-5"
+        ]
+      },
+      "6": {
+        "marks": 1,
+        "codes": [
+          "MA-C4"
+        ],
+        "outcomes": [
+          "MA12-7"
+        ]
+      },
+      "7": {
+        "marks": 1,
+        "codes": [
+          "MA-S3"
+        ],
+        "outcomes": [
+          "MA12-8"
+        ]
+      },
+      "8": {
+        "marks": 1,
+        "codes": [
+          "MA-C4"
+        ],
+        "outcomes": [
+          "MA12-7"
+        ]
+      },
+      "9": {
+        "marks": 1,
+        "codes": [
+          "MA-S1"
+        ],
+        "outcomes": [
+          "MA11-7"
+        ]
+      },
+      "10": {
+        "marks": 1,
+        "codes": [
+          "MA-F2"
+        ],
+        "outcomes": [
+          "MA12-1"
+        ]
+      },
+      "11(a)": {
+        "marks": 2,
+        "codes": [
+          "MA-S2"
+        ],
+        "outcomes": [
+          "MA12-8"
+        ]
+      },
+      "11(b)": {
+        "marks": 1,
+        "codes": [
+          "MA-S2"
+        ],
+        "outcomes": [
+          "MA12-8"
+        ]
+      },
+      "12(a)": {
+        "marks": 2,
+        "codes": [
+          "MA-F1"
+        ],
+        "outcomes": [
+          "MA11-1"
+        ]
+      },
+      "12(b)": {
+        "marks": 2,
+        "codes": [
+          "MA-F1"
+        ],
+        "outcomes": [
+          "MA11-2"
+        ]
+      },
+      "13": {
+        "marks": 2,
+        "codes": [
+          "MA-C4"
+        ],
+        "outcomes": [
+          "MA12-7"
+        ]
+      },
+      "14": {
+        "marks": 2,
+        "codes": [
+          "MA-T3"
+        ],
+        "outcomes": [
+          "MA12-5"
+        ]
+      },
+      "15(a)": {
+        "marks": 1,
+        "codes": [
+          "MA-S1"
+        ],
+        "outcomes": [
+          "MA11-7"
+        ]
+      },
+      "15(b)": {
+        "marks": 1,
+        "codes": [
+          "MA-S1"
+        ],
+        "outcomes": [
+          "MA11-7"
+        ]
+      },
+      "16": {
+        "marks": 3,
+        "codes": [
+          "MA-C4"
+        ],
+        "outcomes": [
+          "MA12-7"
+        ]
+      },
+      "17(a)": {
+        "marks": 2,
+        "codes": [
+          "MA-M1"
+        ],
+        "outcomes": [
+          "MA12-4"
+        ]
+      },
+      "17(b)": {
+        "marks": 3,
+        "codes": [
+          "MA-M1"
+        ],
+        "outcomes": [
+          "MA12-4"
+        ]
+      },
+      "18(a)": {
+        "marks": 2,
+        "codes": [
+          "MA-C2"
+        ],
+        "outcomes": [
+          "MA12-6"
+        ]
+      },
+      "18(b)": {
+        "marks": 1,
+        "codes": [
+          "MA-C4"
+        ],
+        "outcomes": [
+          "MA12-7"
+        ]
+      },
+      "19": {
+        "marks": 3,
+        "codes": [
+          "MA-F2"
+        ],
+        "outcomes": [
+          "MA12-1"
+        ]
+      },
+      "20(a)": {
+        "marks": 1,
+        "codes": [
+          "MA-E1"
+        ],
+        "outcomes": [
+          "MA11-6"
+        ]
+      },
+      "20(b)": {
+        "marks": 1,
+        "codes": [
+          "MA-E1"
+        ],
+        "outcomes": [
+          "MA11-6"
+        ]
+      },
+      "20(c)": {
+        "marks": 2,
+        "codes": [
+          "MA-C3"
+        ],
+        "outcomes": [
+          "MA12-6"
+        ]
+      },
+      "21(a)": {
+        "marks": 2,
+        "codes": [
+          "MA-M1"
+        ],
+        "outcomes": [
+          "MA12-2"
+        ]
+      },
+      "21(b)": {
+        "marks": 2,
+        "codes": [
+          "MA-M1"
+        ],
+        "outcomes": [
+          "MA12-2"
+        ]
+      },
+      "22": {
+        "marks": 4,
+        "codes": [
+          "MA-C3"
+        ],
+        "outcomes": [
+          "MA12-6"
+        ]
+      },
+      "23(a)": {
+        "marks": 2,
+        "codes": [
+          "MA-T3"
+        ],
+        "outcomes": [
+          "MA12-5"
+        ]
+      },
+      "23(b)": {
+        "marks": 1,
+        "codes": [
+          "MA-T3"
+        ],
+        "outcomes": [
+          "MA12-5"
+        ]
+      },
+      "23(c)": {
+        "marks": 3,
+        "codes": [
+          "MA-T3"
+        ],
+        "outcomes": [
+          "MA12-5"
+        ]
+      },
+      "24": {
+        "marks": 4,
+        "codes": [
+          "MA-S2"
+        ],
+        "outcomes": [
+          "MA12-10"
+        ]
+      },
+      "25": {
+        "marks": 3,
+        "codes": [
+          "MA-C2"
+        ],
+        "outcomes": [
+          "MA12-6"
+        ]
+      },
+      "26": {
+        "marks": 3,
+        "codes": [
+          "MA-S3"
+        ],
+        "outcomes": [
+          "MA12-8"
+        ]
+      },
+      "27(a)": {
+        "marks": 2,
+        "codes": [
+          "MA-C2"
+        ],
+        "outcomes": [
+          "MA12-6"
+        ]
+      },
+      "27(b)": {
+        "marks": 2,
+        "codes": [
+          "MA-C3"
+        ],
+        "outcomes": [
+          "MA12-6"
+        ]
+      },
+      "27(c)": {
+        "marks": 3,
+        "codes": [
+          "MA-C3"
+        ],
+        "outcomes": [
+          "MA12-6"
+        ]
+      },
+      "28(a)": {
+        "marks": 2,
+        "codes": [
+          "MA-T1"
+        ],
+        "outcomes": [
+          "MA11-3"
+        ]
+      },
+      "28(b)": {
+        "marks": 2,
+        "codes": [
+          "MA-F1"
+        ],
+        "outcomes": [
+          "MA11-1"
+        ]
+      },
+      "28(c)": {
+        "marks": 3,
+        "codes": [
+          "MA-C4"
+        ],
+        "outcomes": [
+          "MA12-7"
+        ]
+      },
+      "29(a)": {
+        "marks": 1,
+        "codes": [
+          "MA-M1"
+        ],
+        "outcomes": [
+          "MA12-4"
+        ]
+      },
+      "29(b)": {
+        "marks": 2,
+        "codes": [
+          "MA-C4"
+        ],
+        "outcomes": [
+          "MA12-7"
+        ]
+      },
+      "29(c)": {
+        "marks": 2,
+        "codes": [
+          "MA-C4"
+        ],
+        "outcomes": [
+          "MA12-10"
+        ]
+      },
+      "30(a)": {
+        "marks": 1,
+        "codes": [
+          "MA-S3"
+        ],
+        "outcomes": [
+          "MA12-8"
+        ]
+      },
+      "30(b)": {
+        "marks": 2,
+        "codes": [
+          "MA-S3"
+        ],
+        "outcomes": [
+          "MA12-8"
+        ]
+      },
+      "31(a)": {
+        "marks": 2,
+        "codes": [
+          "MA-F1"
+        ],
+        "outcomes": [
+          "MA11-1"
+        ]
+      },
+      "31(b)": {
+        "marks": 4,
+        "codes": [
+          "MA-C3"
+        ],
+        "outcomes": [
+          "MA12-6"
+        ]
+      },
+      "32(a)": {
+        "marks": 2,
+        "codes": [
+          "MA-M1"
+        ],
+        "outcomes": [
+          "MA12-4"
+        ]
+      },
+      "32(b)": {
+        "marks": 3,
+        "codes": [
+          "MA-M1"
+        ],
+        "outcomes": [
+          "MA12-4"
+        ]
+      },
+      "32(c)": {
+        "marks": 2,
+        "codes": [
+          "MA-M1"
+        ],
+        "outcomes": [
+          "MA12-2"
+        ]
+      }
+    },
+    "2023": {
+      "1": {
+        "marks": 1,
+        "codes": [
+          "MA-S2"
+        ],
+        "outcomes": [
+          "MA12-8"
+        ]
+      },
+      "2": {
+        "marks": 1,
+        "codes": [
+          "MA-S1"
+        ],
+        "outcomes": [
+          "MA11-7"
+        ]
+      },
+      "3": {
+        "marks": 1,
+        "codes": [
+          "MA-F1"
+        ],
+        "outcomes": [
+          "MA11-1"
+        ]
+      },
+      "4": {
+        "marks": 1,
+        "codes": [
+          "MA-F1"
+        ],
+        "outcomes": [
+          "MA11-1"
+        ]
+      },
+      "5": {
+        "marks": 1,
+        "codes": [
+          "MA-C4"
+        ],
+        "outcomes": [
+          "MA12-7"
+        ]
+      },
+      "6": {
+        "marks": 1,
+        "codes": [
+          "MA-C3"
+        ],
+        "outcomes": [
+          "MA12-6"
+        ]
+      },
+      "7": {
+        "marks": 1,
+        "codes": [
+          "MA-C2"
+        ],
+        "outcomes": [
+          "MA12-6"
+        ]
+      },
+      "8": {
+        "marks": 1,
+        "codes": [
+          "MA-E1"
+        ],
+        "outcomes": [
+          "MA11-6"
+        ]
+      },
+      "9": {
+        "marks": 1,
+        "codes": [
+          "MA-F1"
+        ],
+        "outcomes": [
+          "MA11-2"
+        ]
+      },
+      "10": {
+        "marks": 1,
+        "codes": [
+          "MA-F2"
+        ],
+        "outcomes": [
+          "MA12-1"
+        ]
+      },
+      "11": {
+        "marks": 2,
+        "codes": [
+          "MA-M1"
+        ],
+        "outcomes": [
+          "MA12-6"
+        ]
+      },
+      "12(a)": {
+        "marks": 1,
+        "codes": [
+          "MA-S1"
+        ],
+        "outcomes": [
+          "MA11-7"
+        ]
+      },
+      "12(b)": {
+        "marks": 2,
+        "codes": [
+          "MA-S1"
+        ],
+        "outcomes": [
+          "MA11-7"
+        ]
+      },
+      "13": {
+        "marks": 2,
+        "codes": [
+          "MA-C4"
+        ],
+        "outcomes": [
+          "MA12-7"
+        ]
+      },
+      "14": {
+        "marks": 3,
+        "codes": [
+          "MA-C2"
+        ],
+        "outcomes": [
+          "MA12-6"
+        ]
+      },
+      "15(a)": {
+        "marks": 2,
+        "codes": [
+          "MA-M1"
+        ],
+        "outcomes": [
+          "MA12-2"
+        ]
+      },
+      "15(b)": {
+        "marks": 3,
+        "codes": [
+          "MA-M1"
+        ],
+        "outcomes": [
+          "MA12-2"
+        ]
+      },
+      "16": {
+        "marks": 4,
+        "codes": [
+          "MA-T1"
+        ],
+        "outcomes": [
+          "MA11-3"
+        ]
+      },
+      "17": {
+        "marks": 2,
+        "codes": [
+          "MA-C4"
+        ],
+        "outcomes": [
+          "MA12-7"
+        ]
+      },
+      "18(a)": {
+        "marks": 3,
+        "codes": [
+          "MA-S2"
+        ],
+        "outcomes": [
+          "MA12-8"
+        ]
+      },
+      "18(b)": {
+        "marks": 2,
+        "codes": [
+          "MA-S2"
+        ],
+        "outcomes": [
+          "MA12-8"
+        ]
+      },
+      "18(c)": {
+        "marks": 1,
+        "codes": [
+          "MA-S2"
+        ],
+        "outcomes": [
+          "MA12-10"
+        ]
+      },
+      "19(a)": {
+        "marks": 2,
+        "codes": [
+          "MA-F2"
+        ],
+        "outcomes": [
+          "MA12-1"
+        ]
+      },
+      "19(b)": {
+        "marks": 2,
+        "codes": [
+          "MA-F2"
+        ],
+        "outcomes": [
+          "MA12-1",
+          "MA12-10"
+        ]
+      },
+      "20": {
+        "marks": 3,
+        "codes": [
+          "MA-T2"
+        ],
+        "outcomes": [
+          "MA11-1"
+        ]
+      },
+      "21": {
+        "marks": 3,
+        "codes": [
+          "MA-M1"
+        ],
+        "outcomes": [
+          "MA12-4"
+        ]
+      },
+      "22": {
+        "marks": 3,
+        "codes": [
+          "MA-T1"
+        ],
+        "outcomes": [
+          "MA11-3"
+        ]
+      },
+      "23": {
+        "marks": 4,
+        "codes": [
+          "MA-S3"
+        ],
+        "outcomes": [
+          "MA12-8"
+        ]
+      },
+      "24(a)": {
+        "marks": 1,
+        "codes": [
+          "MA-F1"
+        ],
+        "outcomes": [
+          "MA11-2"
+        ]
+      },
+      "24(b)": {
+        "marks": 4,
+        "codes": [
+          "MA-C3"
+        ],
+        "outcomes": [
+          "MA12-10",
+          "MA12-3"
+        ]
+      },
+      "25(a)": {
+        "marks": 1,
+        "codes": [
+          "MA-M1"
+        ],
+        "outcomes": [
+          "MA12-10"
+        ]
+      },
+      "25(b)": {
+        "marks": 3,
+        "codes": [
+          "MA-M1"
+        ],
+        "outcomes": [
+          "MA12-4"
+        ]
+      },
+      "25(c)": {
+        "marks": 2,
+        "codes": [
+          "MA-M1"
+        ],
+        "outcomes": [
+          "MA12-2"
+        ]
+      },
+      "26(a)": {
+        "marks": 2,
+        "codes": [
+          "MA-C4"
+        ],
+        "outcomes": [
+          "MA12-3"
+        ]
+      },
+      "26(b)": {
+        "marks": 2,
+        "codes": [
+          "MA-T3"
+        ],
+        "outcomes": [
+          "MA12-5"
+        ]
+      },
+      "27(a)": {
+        "marks": 3,
+        "codes": [
+          "MA-F2"
+        ],
+        "outcomes": [
+          "MA12-1"
+        ]
+      },
+      "27(b)": {
+        "marks": 2,
+        "codes": [
+          "MA-C1",
+          "MA-C4",
+          "MA-F2"
+        ],
+        "outcomes": [
+          "MA12-1"
+        ]
+      },
+      "28": {
+        "marks": 4,
+        "codes": [
+          "MA-C1",
+          "MA-C4"
+        ],
+        "outcomes": [
+          "MA12-3"
+        ]
+      },
+      "29(a)": {
+        "marks": 2,
+        "codes": [
+          "MA-S3"
+        ],
+        "outcomes": [
+          "MA12-8"
+        ]
+      },
+      "29(b)": {
+        "marks": 2,
+        "codes": [
+          "MA-S3"
+        ],
+        "outcomes": [
+          "MA12-8"
+        ]
+      },
+      "29(c)": {
+        "marks": 2,
+        "codes": [
+          "MA-S3"
+        ],
+        "outcomes": [
+          "MA12-8"
+        ]
+      },
+      "30(a)": {
+        "marks": 3,
+        "codes": [
+          "MA-C3"
+        ],
+        "outcomes": [
+          "MA12-6"
+        ]
+      },
+      "30(b)": {
+        "marks": 2,
+        "codes": [
+          "MA-C3"
+        ],
+        "outcomes": [
+          "MA12-3"
+        ]
+      },
+      "31(a)": {
+        "marks": 1,
+        "codes": [
+          "MA-S1"
+        ],
+        "outcomes": [
+          "MA11-9"
+        ]
+      },
+      "31(b)": {
+        "marks": 2,
+        "codes": [
+          "MA-S1"
+        ],
+        "outcomes": [
+          "MA11-7"
+        ]
+      },
+      "31(c)": {
+        "marks": 2,
+        "codes": [
+          "MA-S1"
+        ],
+        "outcomes": [
+          "MA11-7"
+        ]
+      },
+      "32(a)": {
+        "marks": 3,
+        "codes": [
+          "MA-C4"
+        ],
+        "outcomes": [
+          "MA12-7"
+        ]
+      },
+      "32(b)": {
+        "marks": 3,
+        "codes": [
+          "MA-F1"
+        ],
+        "outcomes": [
+          "MA11-1"
+        ]
+      }
+    },
+    "2024": {
+      "1": {
+        "marks": 1,
+        "codes": [
+          "MA-F1"
+        ],
+        "outcomes": [
+          "MA11-1"
+        ]
+      },
+      "2": {
+        "marks": 1,
+        "codes": [
+          "MA-S1"
+        ],
+        "outcomes": [
+          "MA11-7"
+        ]
+      },
+      "3": {
+        "marks": 1,
+        "codes": [
+          "MA-S3"
+        ],
+        "outcomes": [
+          "MA12-8"
+        ]
+      },
+      "4": {
+        "marks": 1,
+        "codes": [
+          "MA-F2"
+        ],
+        "outcomes": [
+          "MA12-1"
+        ]
+      },
+      "5": {
+        "marks": 1,
+        "codes": [
+          "MA-C4"
+        ],
+        "outcomes": [
+          "MA12-3"
+        ]
+      },
+      "6": {
+        "marks": 1,
+        "codes": [
+          "MA-F1"
+        ],
+        "outcomes": [
+          "MA11-2"
+        ]
+      },
+      "7": {
+        "marks": 1,
+        "codes": [
+          "MA-F2"
+        ],
+        "outcomes": [
+          "MA12-10"
+        ]
+      },
+      "8": {
+        "marks": 1,
+        "codes": [
+          "MA-S2"
+        ],
+        "outcomes": [
+          "MA12-8"
+        ]
+      },
+      "9": {
+        "marks": 1,
+        "codes": [
+          "MA-S1"
+        ],
+        "outcomes": [
+          "MA11-7"
+        ]
+      },
+      "10": {
+        "marks": 1,
+        "codes": [
+          "MA-C3"
+        ],
+        "outcomes": [
+          "MA12-7"
+        ]
+      },
+      "11": {
+        "marks": 3,
+        "codes": [
+          "MA-C3"
+        ],
+        "outcomes": [
+          "MA12-6"
+        ]
+      },
+      "12": {
+        "marks": 3,
+        "codes": [
+          "MA-M1"
+        ],
+        "outcomes": [
+          "MA12-4"
+        ]
+      },
+      "13": {
+        "marks": 3,
+        "codes": [
+          "MA-E1"
+        ],
+        "outcomes": [
+          "MA11-6"
+        ]
+      },
+      "14(a)": {
+        "marks": 1,
+        "codes": [
+          "MA-F1"
+        ],
+        "outcomes": [
+          "MA11-1"
+        ]
+      },
+      "14(b)": {
+        "marks": 3,
+        "codes": [
+          "MA-C4"
+        ],
+        "outcomes": [
+          "MA12-3"
+        ]
+      },
+      "15": {
+        "marks": 3,
+        "codes": [
+          "MA-C4"
+        ],
+        "outcomes": [
+          "MA12-3"
+        ]
+      },
+      "16": {
+        "marks": 3,
+        "codes": [
+          "MA-S2"
+        ],
+        "outcomes": [
+          "MA12-10"
+        ]
+      },
+      "17(a)": {
+        "marks": 2,
+        "codes": [
+          "MA-F2"
+        ],
+        "outcomes": [
+          "MA12-1"
+        ]
+      },
+      "17(b)": {
+        "marks": 2,
+        "codes": [
+          "MA-C3"
+        ],
+        "outcomes": [
+          "MA12-3"
+        ]
+      },
+      "17(c)": {
+        "marks": 2,
+        "codes": [
+          "MA-C3"
+        ],
+        "outcomes": [
+          "MA12-3"
+        ]
+      },
+      "18(a)": {
+        "marks": 1,
+        "codes": [
+          "MA-S1"
+        ],
+        "outcomes": [
+          "MA11-7"
+        ]
+      },
+      "18(b)": {
+        "marks": 2,
+        "codes": [
+          "MA-E1"
+        ],
+        "outcomes": [
+          "MA11-6"
+        ]
+      },
+      "19": {
+        "marks": 5,
+        "codes": [
+          "MA-C3"
+        ],
+        "outcomes": [
+          "MA12-6"
+        ]
+      },
+      "20(a)": {
+        "marks": 1,
+        "codes": [
+          "MA-T1"
+        ],
+        "outcomes": [
+          "MA11-3"
+        ]
+      },
+      "20(b)": {
+        "marks": 3,
+        "codes": [
+          "MA-T1"
+        ],
+        "outcomes": [
+          "MA11-3"
+        ]
+      },
+      "21": {
+        "marks": 3,
+        "codes": [
+          "MA-C2",
+          "MA-S2"
+        ],
+        "outcomes": [
+          "MA12-10"
+        ]
+      },
+      "22(a)": {
+        "marks": 3,
+        "codes": [
+          "MA-C2",
+          "MA-C3"
+        ],
+        "outcomes": [
+          "MA12-6"
+        ]
+      },
+      "22(b)": {
+        "marks": 2,
+        "codes": [
+          "MA-C3",
+          "MA-C4"
+        ],
+        "outcomes": [
+          "MA12-7"
+        ]
+      },
+      "22(c)": {
+        "marks": 1,
+        "codes": [
+          "MA-C4"
+        ],
+        "outcomes": [
+          "MA12-10"
+        ]
+      },
+      "23(a)": {
+        "marks": 2,
+        "codes": [
+          "MA-S3"
+        ],
+        "outcomes": [
+          "MA12-8"
+        ]
+      },
+      "23(b)": {
+        "marks": 1,
+        "codes": [
+          "MA-S3"
+        ],
+        "outcomes": [
+          "MA12-8"
+        ]
+      },
+      "23(c)": {
+        "marks": 2,
+        "codes": [
+          "MA-S3"
+        ],
+        "outcomes": [
+          "MA12-8"
+        ]
+      },
+      "24(a)": {
+        "marks": 3,
+        "codes": [
+          "MA-M1"
+        ],
+        "outcomes": [
+          "MA12-4"
+        ]
+      },
+      "24(b)": {
+        "marks": 1,
+        "codes": [
+          "MA-M1"
+        ],
+        "outcomes": [
+          "MA12-4"
+        ]
+      },
+      "25(a)": {
+        "marks": 2,
+        "codes": [
+          "MA-S3"
+        ],
+        "outcomes": [
+          "MA12-8"
+        ]
+      },
+      "25(b)": {
+        "marks": 2,
+        "codes": [
+          "MA-S3"
+        ],
+        "outcomes": [
+          "MA12-8"
+        ]
+      },
+      "25(c)": {
+        "marks": 2,
+        "codes": [
+          "MA-S3"
+        ],
+        "outcomes": [
+          "MA12-8"
+        ]
+      },
+      "26": {
+        "marks": 4,
+        "codes": [
+          "MA-M1"
+        ],
+        "outcomes": [
+          "MA12-9"
+        ]
+      },
+      "27(a)": {
+        "marks": 2,
+        "codes": [
+          "MA-C2"
+        ],
+        "outcomes": [
+          "MA12-6"
+        ]
+      },
+      "27(b)": {
+        "marks": 3,
+        "codes": [
+          "MA-C4"
+        ],
+        "outcomes": [
+          "MA12-7"
+        ]
+      },
+      "28(a)": {
+        "marks": 2,
+        "codes": [
+          "MA-T3"
+        ],
+        "outcomes": [
+          "MA12-5"
+        ]
+      },
+      "28(b)": {
+        "marks": 1,
+        "codes": [
+          "MA-T3"
+        ],
+        "outcomes": [
+          "MA12-5"
+        ]
+      },
+      "28(c)": {
+        "marks": 4,
+        "codes": [
+          "MA-T3"
+        ],
+        "outcomes": [
+          "MA12-5"
+        ]
+      },
+      "29": {
+        "marks": 4,
+        "codes": [
+          "MA-C3",
+          "MA-F2"
+        ],
+        "outcomes": [
+          "MA12-6"
+        ]
+      },
+      "30": {
+        "marks": 3,
+        "codes": [
+          "MA-F2",
+          "MA-M1"
+        ],
+        "outcomes": [
+          "MA12-10",
+          "MA12-9"
+        ]
+      },
+      "31(a)": {
+        "marks": 3,
+        "codes": [
+          "MA-M1",
+          "MA-T1"
+        ],
+        "outcomes": [
+          "MA11-9"
+        ]
+      },
+      "31(b)": {
+        "marks": 3,
+        "codes": [
+          "MA-C3"
+        ],
+        "outcomes": [
+          "MA12-10"
+        ]
+      }
+    },
+    "2025": {
+      "1": {
+        "marks": 1,
+        "codes": [
+          "MA-S1"
+        ],
+        "outcomes": [
+          "MA11-7"
+        ]
+      },
+      "2": {
+        "marks": 1,
+        "codes": [
+          "MA-E1"
+        ],
+        "outcomes": [
+          "MA11-9"
+        ]
+      },
+      "3": {
+        "marks": 1,
+        "codes": [
+          "MA-F1"
+        ],
+        "outcomes": [
+          "MA11-1"
+        ]
+      },
+      "4": {
+        "marks": 1,
+        "codes": [
+          "MA-F1"
+        ],
+        "outcomes": [
+          "MA11-1"
+        ]
+      },
+      "5": {
+        "marks": 1,
+        "codes": [
+          "MA-C4"
+        ],
+        "outcomes": [
+          "MA12-7"
+        ]
+      },
+      "6": {
+        "marks": 1,
+        "codes": [
+          "MA-F1"
+        ],
+        "outcomes": [
+          "MA11-1"
+        ]
+      },
+      "7": {
+        "marks": 1,
+        "codes": [
+          "MA-S1"
+        ],
+        "outcomes": [
+          "MA11-7"
+        ]
+      },
+      "8": {
+        "marks": 1,
+        "codes": [
+          "MA-S3"
+        ],
+        "outcomes": [
+          "MA12-8"
+        ]
+      },
+      "9": {
+        "marks": 1,
+        "codes": [
+          "MA-C3"
+        ],
+        "outcomes": [
+          "MA12-10"
+        ]
+      },
+      "10": {
+        "marks": 1,
+        "codes": [
+          "MA-C3"
+        ],
+        "outcomes": [
+          "MA12-3"
+        ]
+      },
+      "11(a)": {
+        "marks": 2,
+        "codes": [
+          "MA-F1"
+        ],
+        "outcomes": [
+          "MA11-2"
+        ]
+      },
+      "11(b)": {
+        "marks": 1,
+        "codes": [
+          "MA-F1"
+        ],
+        "outcomes": [
+          "MA11-2"
+        ]
+      },
+      "12": {
+        "marks": 3,
+        "codes": [
+          "MA-C1"
+        ],
+        "outcomes": [
+          "MA11-5"
+        ]
+      },
+      "13": {
+        "marks": 2,
+        "codes": [
+          "MA-M1"
+        ],
+        "outcomes": [
+          "MA12-4"
+        ]
+      },
+      "14(a)": {
+        "marks": 2,
+        "codes": [
+          "MA-S2"
+        ],
+        "outcomes": [
+          "MA12-8"
+        ]
+      },
+      "14(b)": {
+        "marks": 2,
+        "codes": [
+          "MA-S2"
+        ],
+        "outcomes": [
+          "MA12-8"
+        ]
+      },
+      "14(c)": {
+        "marks": 1,
+        "codes": [
+          "MA-S2"
+        ],
+        "outcomes": [
+          "MA12-8"
+        ]
+      },
+      "14(d)": {
+        "marks": 1,
+        "codes": [
+          "MA-S2"
+        ],
+        "outcomes": [
+          "MA12-10"
+        ]
+      },
+      "15(a)": {
+        "marks": 2,
+        "codes": [
+          "MA-T3"
+        ],
+        "outcomes": [
+          "MA12-5"
+        ]
+      },
+      "15(b)": {
+        "marks": 2,
+        "codes": [
+          "MA-T3"
+        ],
+        "outcomes": [
+          "MA12-5"
+        ]
+      },
+      "15(c)": {
+        "marks": 2,
+        "codes": [
+          "MA-T3"
+        ],
+        "outcomes": [
+          "MA12-5"
+        ]
+      },
+      "16(a)": {
+        "marks": 4,
+        "codes": [
+          "MA-C3"
+        ],
+        "outcomes": [
+          "MA12-6"
+        ]
+      },
+      "16(b)": {
+        "marks": 1,
+        "codes": [
+          "MA-C3"
+        ],
+        "outcomes": [
+          "MA12-6"
+        ]
+      },
+      "17(a)": {
+        "marks": 2,
+        "codes": [
+          "MA-M1"
+        ],
+        "outcomes": [
+          "MA12-4"
+        ]
+      },
+      "17(b)": {
+        "marks": 3,
+        "codes": [
+          "MA-E1",
+          "MA-M1"
+        ],
+        "outcomes": [
+          "MA12-4"
+        ]
+      },
+      "17(c)": {
+        "marks": 2,
+        "codes": [
+          "MA-E1",
+          "MA-M1"
+        ],
+        "outcomes": [
+          "MA11-6",
+          "MA12-2"
+        ]
+      },
+      "18": {
+        "marks": 2,
+        "codes": [
+          "MA-F1",
+          "MA-M1"
+        ],
+        "outcomes": [
+          "MA11-2"
+        ]
+      },
+      "19": {
+        "marks": 3,
+        "codes": [
+          "MA-S1"
+        ],
+        "outcomes": [
+          "MA11-7"
+        ]
+      },
+      "20": {
+        "marks": 3,
+        "codes": [
+          "MA-M1"
+        ],
+        "outcomes": [
+          "MA12-2"
+        ]
+      },
+      "21(a)": {
+        "marks": 2,
+        "codes": [
+          "MA-E1",
+          "MA-S3"
+        ],
+        "outcomes": [
+          "MA12-8"
+        ]
+      },
+      "21(b)": {
+        "marks": 3,
+        "codes": [
+          "MA-E1",
+          "MA-S3"
+        ],
+        "outcomes": [
+          "MA11-6",
+          "MA12-8"
+        ]
+      },
+      "22": {
+        "marks": 2,
+        "codes": [
+          "MA-T2"
+        ],
+        "outcomes": [
+          "MA11-4"
+        ]
+      },
+      "23(a)": {
+        "marks": 4,
+        "codes": [
+          "MA-S3"
+        ],
+        "outcomes": [
+          "MA12-8"
+        ]
+      },
+      "23(b)": {
+        "marks": 1,
+        "codes": [
+          "MA-S3"
+        ],
+        "outcomes": [
+          "MA12-10"
+        ]
+      },
+      "24": {
+        "marks": 4,
+        "codes": [
+          "MA-C3"
+        ],
+        "outcomes": [
+          "MA12-6"
+        ]
+      },
+      "25(a)": {
+        "marks": 2,
+        "codes": [
+          "MA-C2"
+        ],
+        "outcomes": [
+          "MA12-3"
+        ]
+      },
+      "25(b)": {
+        "marks": 2,
+        "codes": [
+          "MA-C4"
+        ],
+        "outcomes": [
+          "MA12-7"
+        ]
+      },
+      "25(c)": {
+        "marks": 2,
+        "codes": [
+          "MA-M1"
+        ],
+        "outcomes": [
+          "MA12-4"
+        ]
+      },
+      "26(a)": {
+        "marks": 2,
+        "codes": [
+          "MA-C3"
+        ],
+        "outcomes": [
+          "MA12-3"
+        ]
+      },
+      "26(b)": {
+        "marks": 3,
+        "codes": [
+          "MA-C3"
+        ],
+        "outcomes": [
+          "MA12-10",
+          "MA12-3"
+        ]
+      },
+      "27(a)": {
+        "marks": 2,
+        "codes": [
+          "MA-C4"
+        ],
+        "outcomes": [
+          "MA12-7"
+        ]
+      },
+      "27(b)": {
+        "marks": 2,
+        "codes": [
+          "MA-C3",
+          "MA-C4"
+        ],
+        "outcomes": [
+          "MA12-7"
+        ]
+      },
+      "27(c)": {
+        "marks": 2,
+        "codes": [
+          "MA-C3",
+          "MA-C4",
+          "MA-E1"
+        ],
+        "outcomes": [
+          "MA12-10"
+        ]
+      },
+      "28(a)": {
+        "marks": 2,
+        "codes": [
+          "MA-E1",
+          "MA-T1"
+        ],
+        "outcomes": [
+          "MA11-3"
+        ]
+      },
+      "28(b)": {
+        "marks": 2,
+        "codes": [
+          "MA-T1",
+          "MA-T3"
+        ],
+        "outcomes": [
+          "MA11-3",
+          "MA12-9"
+        ]
+      },
+      "29(a)": {
+        "marks": 1,
+        "codes": [
+          "MA-T1",
+          "MA-T3"
+        ],
+        "outcomes": [
+          "MA11-3"
+        ]
+      },
+      "29(b)": {
+        "marks": 3,
+        "codes": [
+          "MA-T1"
+        ],
+        "outcomes": [
+          "MA11-3"
+        ]
+      },
+      "29(c)": {
+        "marks": 3,
+        "codes": [
+          "MA-T1"
+        ],
+        "outcomes": [
+          "MA11-3"
+        ]
+      },
+      "30": {
+        "marks": 3,
+        "codes": [
+          "MA-F2"
+        ],
+        "outcomes": [
+          "MA12-1"
+        ]
+      },
+      "31": {
+        "marks": 3,
+        "codes": [
+          "MA-T3"
+        ],
+        "outcomes": [
+          "MA12-10",
+          "MA12-5"
+        ]
+      }
+    }
+  }
+}

@@ -1154,3 +1154,218 @@ assigned to the Compliance Agent (12) in the Blueprint; nothing fetched by eithe
 committed or redistributed.
 
 No code changed — documentation only.
+
+---
+
+## 2026-08-27 (later still) — Stage 0 run for real: Mathematics Advanced is a GO
+
+First live use of `docs/porting-playbook.md`. Two things were being tested at once — whether
+Mathematics Advanced is portable, and whether the playbook actually works. Both got an answer.
+
+**Verdict: GO.** `docs/paper-reports/mathematics-advanced.md` — the first file ever written into
+`docs/paper-reports/`, which did not exist before this session.
+
+**What was measured, not assumed.** All six papers (2020–2025) are 100 marks: Section I = 10 MC,
+Section II = 90 written, identical every year, read off the papers' own front pages. Section II
+decomposes into 37–42 separately-marked parts per paper, almost all 1–5 marks — the same shape
+Standard 2 already ports as 151 written questions. The unportable content is drawing tasks:
+~42 of 540 marks across the six papers (~7.8%), about 14 parts, destined for `omittedParts`.
+Portable share ≈ 93%, well inside the playbook's >70% band.
+
+**The predicted blocker did not materialise.** Renderer fit was the flagged risk. The full
+non-ASCII inventory across all six papers contains **no ∑, no matrices, no vectors, no complex
+numbers and no radical sign** — Advanced lives inside the same `<sup>`/`<sub>`/Unicode constraint
+Standard 2's 318 questions already do. Three constructs need a Stage 3 decision and none blocks:
+integrals in a stem or option (~6 of 60 MC), stacked fractions in those same options, and a
+braced piecewise function (2–3 across six papers). Notation complexity recorded as `basic`.
+
+**The real cost is somewhere the four fit tests don't point.** Test 3 came back at roughly
+**100 image assets** — 24 MC stimulus crops, 11 MC option-image sets (44 crops), 39 Section II
+questions referencing a stimulus or table. The playbook's own appendix calls VET Construction's
+19 image questions the heaviest load of the four existing subjects; this is several times that.
+Compounding it, the papers' **text layer is garbled**: NESA typesets via a MathType-style font
+mapping where `(x − 1)²` extracts as `^x - 1h2`, `#` is ×, and `ƒ` stands in for *f*. Section II
+must be transcribed from rendered pages, not extracted. Both are scheduling facts rather than
+blockers, but neither shows up in the mark-share arithmetic that drives the verdict.
+
+**A Stage 6 dry run was done at Stage 0, and it was the best signal in the report.** Both
+ground-truth builders were run read-only, writing nothing: `find_papers()` classified all six
+years correctly, `extract_mc_key()` returned 10/10 answers for every year (60 total), and
+`parse_paper()` returned 37–42 parts per paper with **zero unresolved** and an **exact 90/90
+reconciliation against the front-page Section II total on all six papers**. Better than any
+existing subject managed first time. This is now a Gate 0 checklist item.
+
+**Playbook and tooling findings (recorded, not worked around):**
+
+1. **`build_written_key.py` would have silently skipped this subject.** It globs
+   `-mg\.pdf$`, so `2020_marking_guidelines.pdf` never matches and it exits with "no
+   marking-guideline PDFs". Its sibling `build_answer_key.py` uses the tolerant
+   `find_papers()` and handles the folder fine. Everything above came from calling
+   `parse_paper()` directly. Recorded in the playbook as a **Stage 6 prerequisite** — not
+   fixed here, because no gate has been passed that licenses editing shared tooling.
+2. **A third PDF per year exists in this folder** that no other subject has —
+   `{year}_marking_feedback.pdf`, NESA's notes from the marking centre. `find_papers()`
+   classifies it correctly *only* because it tests `"feedback"` before `"marking"`; that
+   ordering is load-bearing and invisible. Now stated in the playbook's input table.
+3. **"One report per paper" is redundant when the paper format is stable across years.** Six
+   near-identical files carry no more than one subject-level report with per-year rows. The
+   per-paper convention comes from `agent.js`'s `triagePaper()`, which genuinely runs once per
+   paper; a human Stage 0 does not. Playbook and CLAUDE.md §6 updated.
+4. **A naive digit regex over a marking-guideline block over-counts — confirmed live.** A first
+   pass here read Section II as 106 / 113 / 117 marks against a true 90, reproducing exactly the
+   failure CLAUDE.md §10 rule 8 documents for 2020 Standard 2. The positional Marks-column reader
+   got 90 on every paper. The rule holds.
+
+**Stage 2 is blocked.** The official Mathematics Advanced syllabus is not saved locally and must
+not be downloaded without asking the owner first. The 14 `MA-*` content codes pulled from the
+marking guidelines' mapping grids are recorded in the Fit Report **explicitly labelled a
+secondary proxy** — presenting a mapping-grid list as syllabus-grounded is the rule already
+broken twice (Multimedia, VET) and it was not broken a third time here.
+
+No code changed. Documentation and one new Fit Report only. Nothing was ported, no subject was
+registered in `build_answer_key.py`, `build_written_key.py` or `index.html`.
+
+---
+
+## 2026-08-27 (later again) — Stage 2 done the same day: the syllabus, and `category` becomes derivable
+
+Owner pushed back on Stage 2 being reported as "blocked" — correctly. The playbook's own
+"ask before downloading" rule had been raised three stages *after* the GO decision, which turned
+a predictable, known input into a stop. Owner supplied the NESA syllabus-development page and
+said go. Fixed in the playbook: **that question now belongs at Stage 0**, asked once alongside
+confirming the papers exist, and the answer covers the download — Stage 2 does not re-ask.
+
+Second playbook correction, found by doing it: **Stage 2 does not depend on Stage 1.** Stage 1
+surveys questions, Stage 2 reads the syllabus, neither consumes the other's artifact — and
+Stage 2 is the one needing owner sign-off, so it should start early rather than queue behind the
+survey. Everything else in the pipeline is genuinely sequential. Noted as the one exception to
+"do not start a stage before its predecessor's gate passes".
+
+**Stage 2 artifact:** `docs/subject-plans/mathematics-advanced.md` — a new convention. Stages
+1–3 now share one living working document per port; Stage 0's Fit Report stays separate in
+`docs/paper-reports/`, because it is the artifact that decides whether the rest happens.
+
+**The syllabus.** `mathematics-advanced-stage-6-syllabus-2017.docx` (1.63 MB) downloaded from
+nsw.gov.au and saved into `NESA Exams Folder/Maths Advanced/` under the same copyright treatment
+as the papers, with `mathematics-standard-and-advanced-common-content.pdf` alongside. Read with
+`python-docx`, paragraphs **and** tables: 1122 paragraphs, 10 tables, **14 subtopics, 358 content
+dot points** across Year 11 and Year 12. The first URL tried returned an HTML wrapper with a
+`.pdf` name — the real document is a DOCX, which is what the playbook already warns about.
+
+**Two live syllabuses, and this port has a shelf life.** The 2017 syllabus governs every paper
+we hold *and* the 2026 HSC; the **2024** syllabus takes over from the **2027 HSC** (Year 11
+teaching from Term 1 2026). Grounding in 2017 is correct for this bank, but the topic list is
+dated to a known HSC year — a decision to take deliberately, not discover. The 2024 syllabus is
+web-only on curriculum.nsw.edu.au with no downloadable file found. Recorded in the playbook.
+
+**The real find: `category` does not have to be guessed.** Every NESA marking guideline ends
+with a **Mapping Grid** giving each question part's marks, syllabus content code and outcome
+code. New `scripts/build_mapping_grid.py` extracts it to `data/mapping-grid/{subject}.json` —
+committed, because CI can never regenerate it, exactly like the answer keys. Results:
+
+- **All six papers reconcile to exactly 100 marks, zero uncoded rows** (the script refuses to
+  write otherwise).
+- Independently cross-checked against `build_written_key.py`'s positional reader: **the two
+  agree on every Section II part in all six papers**, with one benign structural difference
+  (2023 Q31 — the grid splits it as `31(b)`, the guidelines head it as `31`; totals match).
+- Two extraction traps, each of which produced a wrong number before being found, are recorded
+  in the script's docstring: the code can be **split across words** in the text layer (`MA- M1`,
+  the same family as the `9–1` + `0` mark-range split already documented), and a row's cell text
+  is **vertically centred so it can begin above its own label line** — reading forward from the
+  label attributes it to the previous row. First pass captured 583 of 600 marks and left six
+  rows uncoded; with both fixed, 600 of 600.
+
+**Scope vs examination, measured on both axes for the first time in this project.** This is the
+check the VET incident produced the rule for, and Advanced diverges harder than VET did:
+
+| | Syllabus scope | Examined, 6 papers |
+|---|---:|---:|
+| MA-C1 Introduction to Differentiation | 10.6% | **1.3%** |
+| MA-F1 Working with Functions | 15.6% | 6.8% |
+| MA-C3 Applications of Differentiation | 5.3% | **15.7%** |
+| MA-T3 Trigonometric Functions and Graphs | 1.7% | **6.8%** |
+
+MA-C1 is the second-largest subtopic in the syllabus and near-invisible across six years of
+papers — Year 11 foundation content that Year 12 calculus questions silently assume. A
+grid-derived topic list would have all but deleted it, and bloated T3 and C3. **Rule now in the
+playbook: use the grid for per-question `category`, the syllabus for topic weighting.**
+
+Also recorded: Advanced's `F1`, `M1`, `S1` and `S2` collide with Standard 2's category codes and
+mean different things (Standard 2's `F1` is financial "Money Matters"; Advanced's is "Working
+with Functions"). Nothing breaks — separate files, separate filters — but never key a shared
+lookup on the bare code.
+
+Nothing ported. The subject is still registered nowhere in `index.html`,
+`build_answer_key.py` or `build_written_key.py`. `validate_subjects.cjs` green and unchanged
+(646 MC / 243 written / 0 missing images).
+
+---
+
+## 2026-08-27 (later still, again) — Exam-trend data: both axes, measured, for two subjects
+
+Owner shared a 2025 Word document — *"Breakdown of Year 12 HSC Mathematics Standard 2 Exam
+Trends"* — from their Drive, wanting that kind of frequency/weighting analysis built into the
+app's Study Mode notes, and observed that the two-axis data from the Maths Advanced Stage 2 work
+already provides it per subject. Correct, and it turned out to be buildable the same session.
+
+**What the source document actually is** (stated plainly, because it should not be copied
+verbatim): despite the filename, its content is **Mathematics Standard 1**, not Standard 2 —
+its own title says so and it quotes Section II as 70 marks, where Standard 2 is 85. Its year
+table covers 2020, 2021, 2023, 2024 with **2022 missing**; one of its three tables is empty; and
+its weightings are explicitly *word-frequency* estimates ("Area & Measurement… 33 mentions",
+"Financial Mathematics (20–25% of Marks)"). Word counts are not marks. The *idea* is good; the
+numbers are not reusable. It also carries third-party study links (Khan Academy, MathSpace,
+HSC Study Lab) that would need their own decision before appearing in-app.
+
+**Built instead — two new scripts and two committed data sets.**
+
+`scripts/build_mapping_grid.py` extended from one subject to two. Findings on the way:
+
+- **All four subjects' marking guidelines carry a Mapping Grid**, but only the two maths
+  subjects state a syllabus *code*; Multimedia and VET give prose topic names, a different
+  parse. Only the coded ones are registered.
+- Standard 2 uses `MS-` content codes and `MS11-n` / `MS2-12-n` outcome codes. The old regex
+  conflated the two shapes; the rule that separates them cleanly is that **an outcome code has
+  digits before the hyphen**. Content is now `\b([A-Z]{2})-\s?([A-Z])\s?(\d)\b`.
+- **NESA has a typo in its own 2020 Standard 2 grid**: Q22 reads `MS2-F4` where every other row
+  in six years reads `MS-F4` (Q21 directly above, same topic and same outcome, is spelled
+  correctly). Handled by an explicit `SOURCE_TYPOS` table that prints every substitution it
+  makes — not by loosening the regex until it passes. The script's refusal-to-write caught this;
+  it reported `BAD 2020 << 22: no syllabus content code` and exited non-zero.
+- All twelve papers across both subjects now reconcile to **100 marks with zero uncoded rows**.
+
+**The grid validates the live bank.** Cross-checked against `subjects/mathematics-standard-2.json`:
+its 16 `category` codes match the grid's 16 exactly, and **all 90 original (non-variant) MC
+questions agree with NESA's official topic tagging — 0 disagreements, 0 unmatched**. That is
+the first independent verification the Standard 2 topic tags have ever had.
+
+`scripts/build_exam_trends.py` (new) joins syllabus **scope** to examined **marks** and emits
+`data/exam-trends/{subject}.json`: per topic, the dot-point count and share, marks and share
+across all papers, marks per paper, how many years it appeared in, the MC/written split, a
+per-year series for a sparkline, and a `yieldRatio` (examShare ÷ scopeShare). The Mathematics
+Standard syllabus DOCX was downloaded to `NESA Exams Folder/Maths Standard 2/` alongside the
+papers (the obvious URL 404s — the real link is `…-2017-syllabus-word.docx`).
+
+**The result is the point.** Standard 2, 6 papers, 600 marks, 282 syllabus dot points:
+
+| | scope | exam | yield |
+|---|---:|---:|---:|
+| F5 Annuities | 1.8% | 7.3% | **×4.14** (43 of its 44 marks are written) |
+| M6 Non-right-angled Trigonometry | 4.6% | 11.7% | ×2.53 |
+| M7 Rates and Ratios | 5.0% | 9.0% | ×1.81 |
+| S1 Data Analysis | **13.5%** | 3.9% | ×0.29 |
+| F1 Money Matters | 11.3% | 6.6% | ×0.58 |
+| A2 Linear Relationships | 3.2% | 1.3% | ×0.42 — only **3 of 6** papers |
+
+Mathematics Advanced runs the same way: C3 ×2.96, T3 ×4.03, against C1 ×0.12 and F1 ×0.44.
+
+**Both axes must be shown, never one.** Ranking study time by marks alone tells a Standard 2
+student to skip Data Analysis (13.5% of the syllabus) and an Advanced student to skip
+Introduction to Differentiation (10.6% of the syllabus, 1.3% of marks) — the Year 11 foundation
+every Year 12 calculus question assumes. Ranking by scope alone hides that Annuities is five
+dot points earning 7.3% of the paper. The `yieldRatio` is the interesting number precisely
+because it is a ratio of the two.
+
+No UI was built. This is the data layer only; where it renders in Study Mode is a design
+decision for the owner. `validate_subjects.cjs` green and unchanged (646 MC / 243 written /
+0 missing images); no subject JSON was modified; no PDF or DOCX is in the repo.
