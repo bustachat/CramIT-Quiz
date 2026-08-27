@@ -1126,3 +1126,31 @@ real paper, which is the intended next step — Mathematics Advanced Stage 0, pr
 first `docs/paper-reports/` entry (that directory still does not exist; the Content Agent
 has never run). `scripts/survey_paper.py` to automate Stage 1's mechanical measurements is
 deliberately deferred until the playbook has been exercised once and its gaps are known.
+
+### Follow-up — source acquisition documented (same day)
+
+Owner asked whether the code goes to NESA directly for papers, marking guidelines and
+syllabus banding. It does, but only for one of the three, and the playbook as first
+written did not distinguish the human and agent acquisition paths at all.
+
+Verified in `agent.js`: `discoverNewPapers()` uses Sonnet 5 with the `web_search` tool,
+system-scoped to `educationstandards.nsw.edu.au`, returning one direct `pdfUrl` per paper;
+`downloadFile()` is a plain `https.get` (3 redirects, rejects >25MB) that holds the PDF
+**in memory only** — base64'd for the API, never written to disk, never committed.
+
+**The gap: it fetches the exam paper and nothing else.** The discovery prompt asks only
+for "HSC exam papers"; marking guidelines are never requested and the syllabus is never
+referenced anywhere in the code. Since `build_answer_key.py` and `build_written_key.py`
+both parse the *marking guidelines* rather than the paper, the Content Agent can triage
+and generate but **cannot produce ground truth** — agent-generated questions are
+unverifiable by construction. That is a second, independent justification for the
+Blueprint's permanent Level 1 cap, alongside the accuracy history already recorded.
+
+Playbook updated with a "Source acquisition" subsection in Stage 0 (Path A human/local vs
+Path B agent/automated, with a per-source table), and §10 now names extending discovery to
+return the `-mg` URL as the highest-value single change to the agent. A compliance note was
+added: automated retrieval of NESA material is a terms-of-use question at Path B's cadence,
+assigned to the Compliance Agent (12) in the Blueprint; nothing fetched by either path is
+committed or redistributed.
+
+No code changed — documentation only.

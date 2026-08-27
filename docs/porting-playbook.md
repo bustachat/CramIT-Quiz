@@ -63,6 +63,49 @@ discovering that after porting 200 questions is the expensive way to find out.
 | Marking guidelines (`-mg` suffix) | same folder | **Stop.** No ground truth possible |
 | Official NESA syllabus | Usually *not* pre-saved — ask before downloading | Stage 2 cannot proceed |
 
+### Source acquisition — who fetches what, and from where
+
+Two different paths exist, and they are **not** equivalent. Know which one you are on.
+
+**Path A — human, local (every port done so far).** The owner saves NESA PDFs by hand
+into `NESA Exams Folder/{subject}/`: papers plus marking guidelines (`-mg` suffix), one
+subfolder per subject. These are **copyright and never committed to the repo** — which is
+exactly why the *generated* answer keys in `data/answer-key/` are committed, since CI can
+never regenerate them. The syllabus is fetched only after asking the owner, and is saved
+alongside under the same treatment.
+
+**Path B — Content Agent, automated (built, never run).** `discoverNewPapers()` uses
+Sonnet 5 with the `web_search` tool, system-scoped to `educationstandards.nsw.edu.au`, and
+returns a direct `pdfUrl` per newly published paper. `downloadFile()` (plain `https.get`,
+follows up to 3 redirects, rejects >25MB) pulls the PDF **into memory only** — it is
+base64'd for the API and never written to disk or committed.
+
+⚠️ **Path B fetches the exam paper and nothing else.** This is the single most important
+limitation to understand before relying on it:
+
+| Source | Path A (human) | Path B (agent) | Needed by |
+|---|---|---|---|
+| Exam paper | ✅ saved locally | ✅ discovered + downloaded | Stages 0, 1, 4 |
+| **Marking guidelines** | ✅ saved locally | ❌ **never fetched** — the discovery prompt asks only for "exam papers" | **Stage 6** |
+| **Syllabus** | ✅ on request | ❌ never referenced in the code | Stage 2 |
+| Band descriptors / marking criteria | manual | ❌ Agent 21, Phase 3, not built | AI marking, `bandDescriptors` |
+
+`build_answer_key.py` and `build_written_key.py` both parse the **marking guidelines**,
+not the paper. So the Content Agent as built can triage a paper and generate questions
+from it, but **cannot produce the ground truth needed to verify them.** Agent-generated
+questions arrive unverifiable by construction — which is a second, independent reason for
+the Level 1 cap in §10, on top of the accuracy history.
+
+**Closing this gap** means extending discovery to return the `-mg` URL alongside the paper
+(NESA publishes them on the same subject page, and Path A's local filenames already encode
+the convention). Until then, **Stage 6 is a human step even in a fully agentic pipeline.**
+
+⚠️ **Compliance.** Automated retrieval of NESA material is a terms-of-use question, not
+just a technical one, and the volume/cadence of Path B differs from a human saving a file.
+The Blueprint assigns this to the **Compliance Agent (12), Phase 5** — "monthly NESA terms
++ Privacy Act check". Confirm NESA's terms permit automated download before Path B runs at
+any scale. Nothing fetched by either path is ever committed or redistributed.
+
 ### The four fit tests
 
 **1. Format fit — does the paper's mark distribution survive the engine?**
@@ -466,7 +509,11 @@ Practical consequences for building the agent side:
 
 - **Ground truth must precede autonomy.** An agent may only port a subject whose answer
   and written keys already exist and pass; otherwise it is generating unverifiable
-  content and the human gate has nothing to check against.
+  content and the human gate has nothing to check against. This is not hypothetical:
+  the Content Agent **cannot fetch marking guidelines at all** (see Stage 0, Source
+  acquisition), so today it can only ever generate questions no automated check can
+  verify. Extending discovery to return the `-mg` URL is the highest-value single change
+  to the agent, and a prerequisite for it porting anything unsupervised.
 - **Each stage emits a reviewable artifact**, so a human approves a *stage* rather than a
   diff. That is what makes Level 1 tolerable at volume — reviewing a Fit Report and a
   Work Plan is bounded work; reviewing 200 generated questions is not.
