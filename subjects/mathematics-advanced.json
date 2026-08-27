@@ -236,6 +236,216 @@
         "Correct. <em>g</em>&prime;(<em>x</em>) = 0 once (at <em>x</em> = 3) and <em>g</em>(<em>x</em>) = 1 twice on this interval, giving three stationary points."
       ],
       "solution": "<div class=\"step\"><span class=\"step-number\">1.</span> By the chain rule, <em>h</em>&prime;(<em>x</em>) = <em>f</em>&prime;(<em>g</em>(<em>x</em>)) &times; <em>g</em>&prime;(<em>x</em>).</div>\n<div class=\"step\"><span class=\"step-number\">2.</span> A product is zero when either factor is zero, so solve <em>g</em>&prime;(<em>x</em>) = 0 and <em>f</em>&prime;(<em>g</em>(<em>x</em>)) = 0 separately.</div>\n<div class=\"step\"><span class=\"step-number\">3.</span> <em>g</em> is the parabola with its minimum at <em>x</em> = 3, so <em>g</em>&prime;(<em>x</em>) = 0 there &mdash; <strong>one</strong> stationary point.</div>\n<div class=\"step\"><span class=\"step-number\">4.</span> <em>f</em> has its only turning point at <em>x</em> = 1, so <em>f</em>&prime;(<em>g</em>(<em>x</em>)) = 0 requires <em>g</em>(<em>x</em>) = 1.</div>\n<div class=\"step\"><span class=\"step-number\">5.</span> On 1 &le; <em>x</em> &le; 5, <em>g</em> falls from about 3 to 0 and rises back to about 3, so the horizontal line <em>y</em> = 1 cuts it <strong>twice</strong>.</div>\n<div class=\"step\"><span class=\"step-number\">6.</span> Total: 1 + 2 = 3 stationary points.</div>"
+    },
+    {
+      "year": 2023,
+      "qNum": 1,
+      "category": "S2",
+      "q": "The number of bees leaving a hive was observed and recorded over 14 days at different times of the day.<br><br>Which Pearson&rsquo;s correlation coefficient best describes the observations?",
+      "image": "/diagrams/mathematics-advanced_2023_Q1_stimulus.jpg",
+      "options": [
+        "&minus;0.8",
+        "&minus;0.2",
+        "0.2",
+        "0.8"
+      ],
+      "answer": 3,
+      "optionExplanations": [
+        "Incorrect. &minus;0.8 describes a strong <em>negative</em> association &mdash; the number of bees would have to fall as the day went on.",
+        "Incorrect. This is a weak negative association; the points here clearly trend upwards, not downwards.",
+        "Incorrect. The direction is right, but 0.2 describes a very weak association &mdash; a cloud of points with almost no trend. These points sit close to a rising line.",
+        "Correct. The points rise steadily from about 20 bees at 8 am to about 50 at 12 pm with only modest scatter &mdash; a strong positive linear association, so <em>r</em> &asymp; 0.8."
+      ],
+      "solution": "<div class=\"step\"><span class=\"step-number\">1.</span> Read the <strong>direction</strong> first. As time increases the number of bees increases, so the association is <strong>positive</strong> and <em>r</em> &gt; 0. That rules out &minus;0.8 and &minus;0.2.</div>\n<div class=\"step\"><span class=\"step-number\">2.</span> Now read the <strong>strength</strong>. The points lie close to a straight line rather than scattering widely, so the association is strong.</div>\n<div class=\"step\"><span class=\"step-number\">3.</span> A weak association would give <em>r</em> &asymp; 0.2; a strong one gives <em>r</em> &asymp; 0.8.</div>\n<div class=\"step\"><span class=\"step-number\">4.</span> So the best description is <em>r</em> = 0.8.</div>"
+    },
+    {
+      "year": 2023,
+      "qNum": 2,
+      "category": "S1",
+      "q": "A game involves throwing a die and spinning a spinner.<img src=\"/diagrams/mathematics-advanced_2023_Q2_stimulus.jpg\" alt=\"A six-sided die and a spinner divided into four equal sectors numbered 1, 2, 3 and 4.\" style=\"max-width:100%;height:auto;display:block;margin:14px auto\">The sum of the two numbers obtained is the score.<br><br>The table of scores below is partially completed.<table class=\"q-table\"><tr><th></th><th></th><th colspan=\"4\">SPINNER</th></tr><tr><th></th><th></th><th>1</th><th>2</th><th>3</th><th>4</th></tr><tr><th rowspan=\"6\">DIE</th><th>1</th><td>2</td><td>3</td><td>4</td><td>&nbsp;</td></tr><tr><th>2</th><td>3</td><td>4</td><td>5</td><td>&nbsp;</td></tr><tr><th>3</th><td>&nbsp;</td><td>5</td><td>6</td><td>&nbsp;</td></tr><tr><th>4</th><td>&nbsp;</td><td>&nbsp;</td><td>7</td><td>&nbsp;</td></tr><tr><th>5</th><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr><tr><th>6</th><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr></table>What is the probability of getting a score of 7 or more?",
+      "options": [
+        "1/6",
+        "1/4",
+        "5/18",
+        "5/12"
+      ],
+      "answer": 3,
+      "optionExplanations": [
+        "Incorrect. 1/6 = 4/24 counts only the four scores from the die showing 6. The die showing 3, 4 or 5 can also reach 7.",
+        "Incorrect. 1/4 = 6/24 undercounts &mdash; there are 10 favourable cells, not 6.",
+        "Incorrect. 5/18 has 18 in the denominator, but there are 6 &times; 4 = 24 equally likely outcomes, not 18.",
+        "Correct. 10 of the 24 cells hold a score of 7 or more, and 10/24 = 5/12."
+      ],
+      "solution": "<div class=\"step\"><span class=\"step-number\">1.</span> The die has 6 faces and the spinner 4 sectors, so there are 6 &times; 4 = 24 equally likely outcomes &mdash; one per cell of the completed table.</div>\n<div class=\"step\"><span class=\"step-number\">2.</span> Complete the table mentally: each cell is die + spinner. The largest score is 6 + 4 = 10.</div>\n<div class=\"step\"><span class=\"step-number\">3.</span> Count the cells holding 7 or more, row by row: die 3 gives one (3 + 4); die 4 gives two (4 + 3, 4 + 4); die 5 gives three (5 + 2, 5 + 3, 5 + 4); die 6 gives four (6 + 1, 6 + 2, 6 + 3, 6 + 4).</div>\n<div class=\"step\"><span class=\"step-number\">4.</span> That is 1 + 2 + 3 + 4 = 10 favourable outcomes.</div>\n<div class=\"step\"><span class=\"step-number\">5.</span> <em>P</em>(score &ge; 7) = 10/24 = 5/12.</div>"
+    },
+    {
+      "year": 2023,
+      "qNum": 3,
+      "category": "F1",
+      "q": "What is the domain of <em>f</em>(<em>x</em>) = 1/&radic;(1 &minus; <em>x</em>)?",
+      "options": [
+        "<em>x</em> &lt; 1",
+        "<em>x</em> &le; 1",
+        "<em>x</em> &gt; 1",
+        "<em>x</em> &ge; 1"
+      ],
+      "answer": 0,
+      "optionExplanations": [
+        "Correct. The expression under the radical must be positive &mdash; it cannot be negative (no real square root) and it cannot be zero (division by zero) &mdash; so 1 &minus; <em>x</em> &gt; 0, giving <em>x</em> &lt; 1.",
+        "Incorrect. At <em>x</em> = 1 the radical is &radic;0 = 0 and the function divides by zero, so <em>x</em> = 1 must be excluded.",
+        "Incorrect. For <em>x</em> &gt; 1 the expression 1 &minus; <em>x</em> is negative and its square root is undefined.",
+        "Incorrect. This both includes <em>x</em> = 1, where the denominator is zero, and the values above 1, where the radicand is negative."
+      ],
+      "solution": "<div class=\"step\"><span class=\"step-number\">1.</span> The radical &radic;(1 &minus; <em>x</em>) requires 1 &minus; <em>x</em> &ge; 0.</div>\n<div class=\"step\"><span class=\"step-number\">2.</span> The radical is also in the <strong>denominator</strong>, so it cannot equal 0. That strengthens the condition to 1 &minus; <em>x</em> &gt; 0.</div>\n<div class=\"step\"><span class=\"step-number\">3.</span> Solve: 1 &minus; <em>x</em> &gt; 0 gives 1 &gt; <em>x</em>, that is <em>x</em> &lt; 1.</div>\n<div class=\"step\"><span class=\"step-number\">4.</span> Check <em>x</em> = 0: <em>f</em>(0) = 1/&radic;1 = 1, defined. Check <em>x</em> = 1: division by zero, undefined. Check <em>x</em> = 2: &radic;(&minus;1), undefined.</div>"
+    },
+    {
+      "year": 2023,
+      "qNum": 4,
+      "category": "F1",
+      "q": "The graph of a polynomial is shown.<br><br>Which row of the table is correct for this polynomial?<br><br>Each option gives the <em>equation</em>, then the <em>value of b</em>, then the <em>value of c</em>.",
+      "image": "/diagrams/mathematics-advanced_2023_Q4_stimulus.jpg",
+      "options": [
+        "Equation: <em>y</em> = &minus;(<em>x</em> &minus; <em>b</em>)(<em>x</em> &minus; <em>c</em>)&sup2; &middot; <em>b</em> &gt; 0 &middot; <em>c</em> &lt; 0",
+        "Equation: <em>y</em> = &minus;(<em>x</em> &minus; <em>b</em>)(<em>x</em> &minus; <em>c</em>)&sup2; &middot; <em>b</em> &lt; 0 &middot; <em>c</em> &gt; 0",
+        "Equation: <em>y</em> = &minus;<em>x</em>(<em>x</em> &minus; <em>b</em>)(<em>x</em> &minus; <em>c</em>) &middot; <em>b</em> &gt; 0 &middot; <em>c</em> &lt; 0",
+        "Equation: <em>y</em> = &minus;<em>x</em>(<em>x</em> &minus; <em>b</em>)(<em>x</em> &minus; <em>c</em>) &middot; <em>b</em> &lt; 0 &middot; <em>c</em> &gt; 0"
+      ],
+      "answer": 1,
+      "optionExplanations": [
+        "Incorrect. The equation is right, but the graph crosses the axis at a <strong>negative</strong> value and touches it at a <strong>positive</strong> one, so <em>b</em> &lt; 0 and <em>c</em> &gt; 0.",
+        "Correct. The single crossing at a negative <em>x</em> is the simple root <em>b</em> &lt; 0; the turning point resting on the axis at a positive <em>x</em> is the double root <em>c</em> &gt; 0.",
+        "Incorrect. The factor <em>x</em> forces a root at the origin, but the graph does not pass through <em>O</em> &mdash; and this form has three simple roots, so it would cross the axis three times rather than touching it.",
+        "Incorrect. Same problem: <em>y</em> = &minus;<em>x</em>(&hellip;) requires a root at <em>x</em> = 0, and this form crosses the axis rather than touching it at the positive root."
+      ],
+      "solution": "<div class=\"step\"><span class=\"step-number\">1.</span> Count the <em>x</em>-intercepts and note how the curve meets each one. The graph <strong>crosses</strong> the axis once, at a negative value of <em>x</em>, and <strong>touches</strong> it at a positive value, where it has a maximum.</div>\n<div class=\"step\"><span class=\"step-number\">2.</span> A root the curve crosses is a <strong>simple</strong> factor; a root the curve touches without crossing is a <strong>double</strong> factor. That points to (<em>x</em> &minus; <em>b</em>)(<em>x</em> &minus; <em>c</em>)&sup2;, not <em>x</em>(<em>x</em> &minus; <em>b</em>)(<em>x</em> &minus; <em>c</em>).</div>\n<div class=\"step\"><span class=\"step-number\">3.</span> The graph does not pass through the origin, so there is no factor of <em>x</em> &mdash; a second reason to eliminate the last two rows.</div>\n<div class=\"step\"><span class=\"step-number\">4.</span> The simple root is the crossing at a negative <em>x</em>, so <em>b</em> &lt; 0.</div>\n<div class=\"step\"><span class=\"step-number\">5.</span> The double root is the touch at a positive <em>x</em>, so <em>c</em> &gt; 0.</div>\n<div class=\"step\"><span class=\"step-number\">6.</span> Check the overall shape: with a leading coefficient of &minus;1 the cubic comes down from the top left and falls away to the bottom right, which is what the diagram shows.</div>"
+    },
+    {
+      "year": 2023,
+      "qNum": 5,
+      "category": "C4",
+      "q": "The diagram shows the graph <em>y</em> = <em>f</em>(<em>x</em>), where <em>f</em>(<em>x</em>) is an odd function. The shaded area is 1 square unit.<br><br>The number <em>a</em>, where <em>a</em> &gt; 1, is chosen so that &int;<sub>0</sub><sup><em>a</em></sup> <em>f</em>(<em>x</em>) <em>dx</em> = 0.<br><br>What is the value of &int;<sub>&minus;<em>a</em></sub><sup>1</sup> <em>f</em>(<em>x</em>) <em>dx</em>?",
+      "image": "/diagrams/mathematics-advanced_2023_Q5_stimulus.jpg",
+      "options": [
+        "&minus;1",
+        "0",
+        "1",
+        "3"
+      ],
+      "answer": 0,
+      "optionExplanations": [
+        "Correct. The integral from &minus;<em>a</em> to 0 is zero by oddness, leaving &int;<sub>0</sub><sup>1</sup> <em>f</em>(<em>x</em>) <em>dx</em>, which is &minus;1 because the shaded region of area 1 lies <em>below</em> the axis.",
+        "Incorrect. 0 is the value of &int;<sub>0</sub><sup><em>a</em></sup> <em>f</em>(<em>x</em>) <em>dx</em>, which the question gives. Here the upper limit is 1, not <em>a</em>.",
+        "Incorrect. 1 is the shaded <em>area</em>. The curve lies below the axis between 0 and 1, so the signed integral is negative.",
+        "Incorrect. Nothing in the diagram gives an area of 3; the only area stated is the shaded 1 square unit."
+      ],
+      "solution": "<div class=\"step\"><span class=\"step-number\">1.</span> Split the integral at 0: &int;<sub>&minus;<em>a</em></sub><sup>1</sup> = &int;<sub>&minus;<em>a</em></sub><sup>0</sup> + &int;<sub>0</sub><sup>1</sup>.</div>\n<div class=\"step\"><span class=\"step-number\">2.</span> For an <strong>odd</strong> function, &int;<sub>&minus;<em>a</em></sub><sup>0</sup> <em>f</em>(<em>x</em>) <em>dx</em> = &minus;&int;<sub>0</sub><sup><em>a</em></sup> <em>f</em>(<em>x</em>) <em>dx</em>.</div>\n<div class=\"step\"><span class=\"step-number\">3.</span> The question states &int;<sub>0</sub><sup><em>a</em></sup> <em>f</em>(<em>x</em>) <em>dx</em> = 0, so &int;<sub>&minus;<em>a</em></sub><sup>0</sup> <em>f</em>(<em>x</em>) <em>dx</em> = 0 as well.</div>\n<div class=\"step\"><span class=\"step-number\">4.</span> That leaves &int;<sub>0</sub><sup>1</sup> <em>f</em>(<em>x</em>) <em>dx</em>. Between 0 and 1 the curve lies below the <em>x</em>-axis, and that region is the shaded one of area 1.</div>\n<div class=\"step\"><span class=\"step-number\">5.</span> Area below the axis contributes a negative signed value, so &int;<sub>0</sub><sup>1</sup> <em>f</em>(<em>x</em>) <em>dx</em> = &minus;1.</div>"
+    },
+    {
+      "year": 2023,
+      "qNum": 6,
+      "category": "C3",
+      "q": "The following table gives the signs of the first and second derivatives of a function <em>y</em> = <em>f</em>(<em>x</em>) for different values of <em>x</em>.<table class=\"q-table\"><tr><th><em>x</em></th><th>&minus;2</th><th>0</th><th>2</th></tr><tr><td><em>f</em>&prime;(<em>x</em>)</td><td>+</td><td>0</td><td>+</td></tr><tr><td><em>f</em>&Prime;(<em>x</em>)</td><td>&minus;</td><td>0</td><td>+</td></tr></table>Which of the following is a possible sketch of <em>y</em> = <em>f</em>(<em>x</em>)?",
+      "optionImages": [
+        "/diagrams/mathematics-advanced_2023_Q6_A.jpg",
+        "/diagrams/mathematics-advanced_2023_Q6_B.jpg",
+        "/diagrams/mathematics-advanced_2023_Q6_C.jpg",
+        "/diagrams/mathematics-advanced_2023_Q6_D.jpg"
+      ],
+      "options": [
+        "A curve rising to a maximum left of the y-axis, then falling through the origin with a clear negative gradient to a minimum near x = 1.3, then rising steeply past x = 2",
+        "A W-shaped curve with a deep minimum on each side of the y-axis, touching the x-axis at the origin as a local maximum, falling steeply left of x = -2 and rising steeply right of x = 2",
+        "A curve rising to a maximum near x = -1.3, then falling through a flat point at the origin, continuing down to a minimum near x = 1.5, then rising steeply past x = 2",
+        "A curve with a peak on each side of the y-axis and a minimum touching the x-axis at the origin, rising steeply left of x = -2 and falling steeply right of x = 2"
+      ],
+      "answer": 2,
+      "optionExplanations": [
+        "Incorrect. The signs at <em>x</em> = &minus;2 and <em>x</em> = 2 match, but the curve crosses the origin with a clear negative gradient, so <em>f</em>&prime;(0) &ne; 0. The table requires a stationary point there.",
+        "Incorrect. To the left of <em>x</em> = &minus;2 this curve is falling, so <em>f</em>&prime;(&minus;2) is negative, not positive.",
+        "Correct. It rises at <em>x</em> = &minus;2 while bending downwards towards a maximum (<em>f</em>&prime; &gt; 0, <em>f</em>&Prime; &lt; 0), flattens at the origin with the curve decreasing on both sides (a horizontal point of inflection, so <em>f</em>&prime; = <em>f</em>&Prime; = 0), and rises while bending upwards at <em>x</em> = 2 (<em>f</em>&prime; &gt; 0, <em>f</em>&Prime; &gt; 0).",
+        "Incorrect. At <em>x</em> = 2 this curve is falling steeply, so <em>f</em>&prime;(2) is negative; and the origin is a minimum, where <em>f</em>&Prime; is positive rather than 0."
+      ],
+      "solution": "<div class=\"step\"><span class=\"step-number\">1.</span> Read the table one column at a time. At <em>x</em> = &minus;2: <em>f</em>&prime; &gt; 0, so the curve is <strong>increasing</strong>; <em>f</em>&Prime; &lt; 0, so it is <strong>concave down</strong>.</div>\n<div class=\"step\"><span class=\"step-number\">2.</span> At <em>x</em> = 2: <em>f</em>&prime; &gt; 0 and <em>f</em>&Prime; &gt; 0, so the curve is increasing and concave up. Any sketch falling at <em>x</em> = &minus;2 or at <em>x</em> = 2 is out.</div>\n<div class=\"step\"><span class=\"step-number\">3.</span> At <em>x</em> = 0 both derivatives are 0. A stationary point with zero second derivative, where the concavity changes from down to up, is a <strong>horizontal point of inflection</strong> &mdash; the curve flattens without turning around.</div>\n<div class=\"step\"><span class=\"step-number\">4.</span> That rules out any graph passing through the origin with a non-zero gradient, and any graph with a maximum or a minimum at the origin.</div>\n<div class=\"step\"><span class=\"step-number\">5.</span> The only sketch increasing and concave down at <em>x</em> = &minus;2, flat at the origin without turning, and increasing and concave up at <em>x</em> = 2 is option C.</div>"
+    },
+    {
+      "year": 2023,
+      "qNum": 7,
+      "category": "C2",
+      "q": "It is given that <em>y</em> = <em>f</em>(<em>g</em>(<em>x</em>)), where <em>f</em>(1) = 3, <em>f</em>&prime;(1) = &minus;4, <em>g</em>(5) = 1 and <em>g</em>&prime;(5) = 2.<br><br>What is the value of <em>y</em>&prime; at <em>x</em> = 5?",
+      "options": [
+        "&minus;8",
+        "&minus;4",
+        "3",
+        "6"
+      ],
+      "answer": 0,
+      "optionExplanations": [
+        "Correct. <em>y</em>&prime; = <em>f</em>&prime;(<em>g</em>(5)) &times; <em>g</em>&prime;(5) = <em>f</em>&prime;(1) &times; 2 = &minus;4 &times; 2 = &minus;8.",
+        "Incorrect. &minus;4 is <em>f</em>&prime;(1) on its own &mdash; the chain rule still requires multiplying by <em>g</em>&prime;(5) = 2.",
+        "Incorrect. 3 is <em>f</em>(1), a function value rather than a derivative. It does not appear in <em>y</em>&prime; at all.",
+        "Incorrect. 6 is <em>f</em>(1) &times; <em>g</em>&prime;(5) = 3 &times; 2, which uses <em>f</em> where the chain rule needs <em>f</em>&prime;."
+      ],
+      "solution": "<div class=\"step\"><span class=\"step-number\">1.</span> This is a composite function, so differentiate with the <strong>chain rule</strong>: <em>y</em>&prime; = <em>f</em>&prime;(<em>g</em>(<em>x</em>)) &times; <em>g</em>&prime;(<em>x</em>).</div>\n<div class=\"step\"><span class=\"step-number\">2.</span> Substitute <em>x</em> = 5: <em>y</em>&prime; = <em>f</em>&prime;(<em>g</em>(5)) &times; <em>g</em>&prime;(5).</div>\n<div class=\"step\"><span class=\"step-number\">3.</span> The question gives <em>g</em>(5) = 1, so the inner value is 1 and the first factor is <em>f</em>&prime;(1) = &minus;4.</div>\n<div class=\"step\"><span class=\"step-number\">4.</span> The second factor is <em>g</em>&prime;(5) = 2.</div>\n<div class=\"step\"><span class=\"step-number\">5.</span> <em>y</em>&prime; = &minus;4 &times; 2 = &minus;8. Note that <em>f</em>(1) = 3 is a distractor &mdash; it is never used.</div>"
+    },
+    {
+      "year": 2023,
+      "qNum": 8,
+      "category": "E1",
+      "q": "What is the solution of the equation log<sub><em>a</em></sub> <em>x</em>&sup3; = <em>b</em>, where <em>a</em> and <em>b</em> are positive constants?",
+      "options": [
+        "<em>x</em> = <em>b</em><sup><em>a</em>/3</sup>",
+        "<em>x</em> = <em>a</em><sup><em>b</em>/3</sup>",
+        "<em>x</em> = <em>b</em><sup><em>a</em></sup>/3",
+        "<em>x</em> = <em>a</em><sup><em>b</em></sup>/3"
+      ],
+      "answer": 1,
+      "optionExplanations": [
+        "Incorrect. The base of the logarithm becomes the base of the power, so it is <em>a</em> that is raised to a power, not <em>b</em>.",
+        "Correct. log<sub><em>a</em></sub> <em>x</em>&sup3; = 3 log<sub><em>a</em></sub> <em>x</em> = <em>b</em>, so log<sub><em>a</em></sub> <em>x</em> = <em>b</em>/3 and <em>x</em> = <em>a</em><sup><em>b</em>/3</sup>.",
+        "Incorrect. Two errors: the base is wrong, and the 3 divides the whole power instead of the index.",
+        "Incorrect. The 3 belongs in the <em>index</em>, dividing <em>b</em>. Taking the cube root of <em>a</em><sup><em>b</em></sup> gives <em>a</em><sup><em>b</em>/3</sup>, not <em>a</em><sup><em>b</em></sup>/3."
+      ],
+      "solution": "<div class=\"step\"><span class=\"step-number\">1.</span> Use the power law of logarithms: log<sub><em>a</em></sub> <em>x</em>&sup3; = 3 log<sub><em>a</em></sub> <em>x</em>.</div>\n<div class=\"step\"><span class=\"step-number\">2.</span> The equation becomes 3 log<sub><em>a</em></sub> <em>x</em> = <em>b</em>.</div>\n<div class=\"step\"><span class=\"step-number\">3.</span> Divide by 3: log<sub><em>a</em></sub> <em>x</em> = <em>b</em>/3.</div>\n<div class=\"step\"><span class=\"step-number\">4.</span> Rewrite in index form &mdash; log<sub><em>a</em></sub> <em>x</em> = <em>k</em> means <em>x</em> = <em>a</em><sup><em>k</em></sup> &mdash; giving <em>x</em> = <em>a</em><sup><em>b</em>/3</sup>.</div>\n<div class=\"step\"><span class=\"step-number\">5.</span> Check with <em>a</em> = 2 and <em>b</em> = 6: log<sub>2</sub> <em>x</em>&sup3; = 6 gives <em>x</em>&sup3; = 64 and <em>x</em> = 4, while 2<sup>6/3</sup> = 2&sup2; = 4.</div>"
+    },
+    {
+      "year": 2023,
+      "qNum": 9,
+      "category": "F1",
+      "q": "Let <em>f</em>(<em>x</em>) be any function with domain all real numbers.<br><br>Which of the following is an even function, regardless of the choice of <em>f</em>(<em>x</em>)?",
+      "options": [
+        "2<em>f</em>(<em>x</em>)",
+        "<em>f</em>(<em>f</em>(<em>x</em>))",
+        "(<em>f</em>(&minus;<em>x</em>))&sup2;",
+        "<em>f</em>(<em>x</em>)<em>f</em>(&minus;<em>x</em>)"
+      ],
+      "answer": 3,
+      "optionExplanations": [
+        "Incorrect. Doubling a function does not change its symmetry. If <em>f</em>(<em>x</em>) = <em>x</em>, then 2<em>f</em>(<em>x</em>) = 2<em>x</em>, which is odd.",
+        "Incorrect. Composing a function with itself preserves nothing in general: with <em>f</em>(<em>x</em>) = <em>x</em> + 1, <em>f</em>(<em>f</em>(<em>x</em>)) = <em>x</em> + 2, which is neither even nor odd.",
+        "Incorrect. Squaring makes the values non-negative but does not make the function symmetric. With <em>f</em>(<em>x</em>) = <em>x</em> + 1, (<em>f</em>(&minus;<em>x</em>))&sup2; = (1 &minus; <em>x</em>)&sup2;, and replacing <em>x</em> by &minus;<em>x</em> gives (1 + <em>x</em>)&sup2;, a different function.",
+        "Correct. Let <em>g</em>(<em>x</em>) = <em>f</em>(<em>x</em>)<em>f</em>(&minus;<em>x</em>). Then <em>g</em>(&minus;<em>x</em>) = <em>f</em>(&minus;<em>x</em>)<em>f</em>(<em>x</em>) = <em>g</em>(<em>x</em>) for every <em>f</em>, so it is always even."
+      ],
+      "solution": "<div class=\"step\"><span class=\"step-number\">1.</span> A function <em>g</em> is <strong>even</strong> when <em>g</em>(&minus;<em>x</em>) = <em>g</em>(<em>x</em>) for every <em>x</em>. Test each option by replacing <em>x</em> with &minus;<em>x</em>.</div>\n<div class=\"step\"><span class=\"step-number\">2.</span> 2<em>f</em>(&minus;<em>x</em>) is not 2<em>f</em>(<em>x</em>) unless <em>f</em> itself is even, and <em>f</em> here is arbitrary.</div>\n<div class=\"step\"><span class=\"step-number\">3.</span> <em>f</em>(<em>f</em>(&minus;<em>x</em>)) is not <em>f</em>(<em>f</em>(<em>x</em>)) in general, for the same reason.</div>\n<div class=\"step\"><span class=\"step-number\">4.</span> For (<em>f</em>(&minus;<em>x</em>))&sup2;, replacing <em>x</em> by &minus;<em>x</em> gives (<em>f</em>(<em>x</em>))&sup2; &mdash; a different function unless <em>f</em> happens to satisfy (<em>f</em>(<em>x</em>))&sup2; = (<em>f</em>(&minus;<em>x</em>))&sup2; for all <em>x</em>.</div>\n<div class=\"step\"><span class=\"step-number\">5.</span> For <em>g</em>(<em>x</em>) = <em>f</em>(<em>x</em>)<em>f</em>(&minus;<em>x</em>), replacing <em>x</em> by &minus;<em>x</em> swaps the two factors: <em>g</em>(&minus;<em>x</em>) = <em>f</em>(&minus;<em>x</em>)<em>f</em>(<em>x</em>) = <em>g</em>(<em>x</em>). Multiplication is commutative, so this holds whatever <em>f</em> is.</div>"
+    },
+    {
+      "year": 2023,
+      "qNum": 10,
+      "category": "F2",
+      "q": "The graph <em>y</em> = <em>x</em>&sup2; meets the line <em>y</em> = <em>k</em> (where <em>k</em> &gt; 0) at points <em>P</em> and <em>Q</em> as shown in the diagram. The length of the interval <em>PQ</em> is <em>L</em>.<br><br>Let <em>a</em> be a positive number. The graph <em>y</em> = <em>x</em>&sup2;/<em>a</em>&sup2; meets the line <em>y</em> = <em>k</em> at points <em>S</em> and <em>T</em>.<br><br>What is the length of <em>ST</em>?",
+      "image": "/diagrams/mathematics-advanced_2023_Q10_stimulus.jpg",
+      "options": [
+        "<em>L</em>/<em>a</em>",
+        "<em>L</em>/<em>a</em>&sup2;",
+        "<em>aL</em>",
+        "<em>a</em>&sup2;<em>L</em>"
+      ],
+      "answer": 2,
+      "optionExplanations": [
+        "Incorrect. Dividing by <em>a</em> would be a horizontal <em>compression</em>. Replacing <em>x</em> by <em>x</em>/<em>a</em> stretches the parabola outwards, so for <em>a</em> &gt; 1 the interval gets longer, not shorter.",
+        "Incorrect. The <em>a</em>&sup2; sits under <em>x</em>&sup2;, so it scales <em>x</em> by <em>a</em>, not by <em>a</em>&sup2;.",
+        "Correct. <em>x</em>&sup2;/<em>a</em>&sup2; = <em>k</em> gives <em>x</em> = &plusmn;<em>a</em>&radic;<em>k</em>, so <em>ST</em> = 2<em>a</em>&radic;<em>k</em> = <em>a</em> &times; 2&radic;<em>k</em> = <em>aL</em>.",
+        "Incorrect. Taking the square root of <em>a</em>&sup2;<em>k</em> leaves a factor of <em>a</em>, not <em>a</em>&sup2;."
+      ],
+      "solution": "<div class=\"step\"><span class=\"step-number\">1.</span> Find <em>L</em> first. Solving <em>x</em>&sup2; = <em>k</em> gives <em>x</em> = &plusmn;&radic;<em>k</em>, so <em>P</em> and <em>Q</em> sit at &minus;&radic;<em>k</em> and &radic;<em>k</em>, and <em>L</em> = 2&radic;<em>k</em>.</div>\n<div class=\"step\"><span class=\"step-number\">2.</span> Now solve <em>x</em>&sup2;/<em>a</em>&sup2; = <em>k</em>, that is <em>x</em>&sup2; = <em>a</em>&sup2;<em>k</em>.</div>\n<div class=\"step\"><span class=\"step-number\">3.</span> Taking square roots (<em>a</em> is positive), <em>x</em> = &plusmn;<em>a</em>&radic;<em>k</em>, so <em>ST</em> = 2<em>a</em>&radic;<em>k</em>.</div>\n<div class=\"step\"><span class=\"step-number\">4.</span> Compare the two: 2<em>a</em>&radic;<em>k</em> = <em>a</em>(2&radic;<em>k</em>) = <em>aL</em>.</div>\n<div class=\"step\"><span class=\"step-number\">5.</span> The transformation reading gives the same answer: replacing <em>x</em> by <em>x</em>/<em>a</em> stretches the graph horizontally by a factor of <em>a</em>, so every horizontal length is multiplied by <em>a</em>.</div>"
     }
   ],
   "writtenQuestions": [
@@ -720,6 +930,555 @@
         "full": "a = 15 000 and b = 20 000; both populations increasing only on 10 < t < 13; and a rate of about −643 mice per week at t = 36.",
         "partial": "The amplitude and centre are correct and one derivative is analysed correctly, but the overlap or the final rate is wrong.",
         "minimal": "The amplitude is half the difference of the maximum and minimum, and b is their average. For (b), solve m′(t) > 0 and c′(t) > 0 separately and intersect. The cat population peaks where the cosine equals −1."
+      }
+    },
+    {
+      "year": 2023,
+      "qNum": "11",
+      "section": "II",
+      "category": "M1",
+      "marks": 2,
+      "q": "The first three terms of an arithmetic sequence are 3, 7 and 11.<br><br>Find the 15th term.",
+      "image": null,
+      "answer": "a = 3 and d = 7 − 3 = 4.\nTₙ = a + (n − 1)d\nT₁₅ = 3 + (15 − 1) × 4\n= 3 + 56\n= 59.",
+      "acceptableAnswers": [
+        "59"
+      ],
+      "keywords": [
+        "59",
+        "a + (n − 1)d",
+        "d = 4"
+      ],
+      "minKeywords": 1,
+      "bandDescriptors": {
+        "full": "T₁₅ = 59, obtained from a = 3 and d = 4.",
+        "partial": "Correct method with an arithmetic slip — for example using n = 15 as 15d rather than 14d.",
+        "minimal": "Use Tₙ = a + (n − 1)d. Here a = 3 and d = 4, and note it is (n − 1) = 14 lots of d, not 15."
+      }
+    },
+    {
+      "year": 2023,
+      "qNum": "12",
+      "section": "II",
+      "category": "S1",
+      "marks": 3,
+      "q": "The table shows the probability distribution of a discrete random variable.<table class=\"q-table\"><tr><th><em>x</em></th><th>0</th><th>1</th><th>2</th><th>3</th><th>4</th></tr><tr><td><em>P</em>(<em>X</em> = <em>x</em>)</td><td>0</td><td>0.3</td><td>0.5</td><td>0.1</td><td>0.1</td></tr></table><br>(a) Show that the expected value <em>E</em>(<em>X</em>) = 2. <strong>(1 mark)</strong><br><br>(b) Calculate the standard deviation, correct to one decimal place. <strong>(2 marks)</strong>",
+      "image": null,
+      "answer": "(a) E(X) = Σ x P(X = x)\n= 0(0) + 1(0.3) + 2(0.5) + 3(0.1) + 4(0.1)\n= 0 + 0.3 + 1 + 0.3 + 0.4\n= 2.\n\n(b) E(X²) = 0²(0) + 1²(0.3) + 2²(0.5) + 3²(0.1) + 4²(0.1)\n= 0.3 + 2 + 0.9 + 1.6\n= 4.8\nVar(X) = E(X²) − [E(X)]² = 4.8 − 2² = 0.8\nσ = √0.8 = 0.894… = 0.9 (1 d.p.).",
+      "keywords": [
+        "0.9",
+        "0.8",
+        "4.8",
+        "E(X²)",
+        "variance"
+      ],
+      "minKeywords": 2,
+      "bandDescriptors": {
+        "full": "E(X) = 2 shown from Σ x P(X = x), then Var(X) = 4.8 − 4 = 0.8 and σ = 0.9 to one decimal place.",
+        "partial": "The expected value is shown but the standard deviation is wrong — commonly the variance 0.8 is given as the answer, or the square root is not taken.",
+        "minimal": "Var(X) = E(X²) − [E(X)]², where E(X²) uses x² against the same probabilities. The standard deviation is the square root of the variance."
+      }
+    },
+    {
+      "year": 2023,
+      "qNum": "13",
+      "section": "II",
+      "category": "C4",
+      "marks": 2,
+      "q": "Let <em>P</em>(<em>t</em>) be a function such that <em>dP</em>/<em>dt</em> = 3000<em>e</em><sup>2<em>t</em></sup>.<br><br>When <em>t</em> = 0, <em>P</em> = 4000.<br><br>Find an expression for <em>P</em>(<em>t</em>).",
+      "image": null,
+      "answer": "P(t) = ∫ 3000e²ᵗ dt = 1500e²ᵗ + C.\nWhen t = 0: 1500e⁰ + C = 4000, so 1500 + C = 4000 and C = 2500.\nP(t) = 1500e²ᵗ + 2500.",
+      "keywords": [
+        "1500",
+        "2500",
+        "e",
+        "C ="
+      ],
+      "minKeywords": 2,
+      "bandDescriptors": {
+        "full": "P(t) = 1500e²ᵗ + 2500 — correct antiderivative and the constant found from P(0) = 4000.",
+        "partial": "The antiderivative 1500e²ᵗ is right but the constant is wrong or omitted; or the constant is handled correctly after a slip in dividing by 2.",
+        "minimal": "Antidifferentiate: ∫ e^(kt) dt = e^(kt)/k, so the 3000 becomes 1500. Do not forget + C, then substitute t = 0 to find it."
+      }
+    },
+    {
+      "year": 2023,
+      "qNum": "14",
+      "section": "II",
+      "category": "C2",
+      "marks": 3,
+      "q": "Find the equation of the tangent to the curve <em>y</em> = (2<em>x</em> + 1)&sup3; at the point (0, 1).",
+      "image": null,
+      "answer": "Differentiate with the chain rule:\ndy/dx = 3(2x + 1)² × 2 = 6(2x + 1)².\nAt x = 0: dy/dx = 6(1)² = 6, so the tangent has gradient 6.\nUsing y − y₁ = m(x − x₁) at (0, 1):\ny − 1 = 6(x − 0)\ny = 6x + 1.",
+      "keywords": [
+        "y = 6x + 1",
+        "gradient 6",
+        "6(2x + 1)²",
+        "chain rule"
+      ],
+      "minKeywords": 2,
+      "bandDescriptors": {
+        "full": "y = 6x + 1, with the gradient 6 found by correctly applying the chain rule at x = 0.",
+        "partial": "The derivative is correct but the tangent equation is not formed properly, or the factor of 2 from the chain rule is dropped (giving gradient 3).",
+        "minimal": "Differentiate (2x + 1)³ with the chain rule — the derivative of the inside, 2, is a factor. Then substitute x = 0 for the gradient and use the point (0, 1)."
+      }
+    },
+    {
+      "year": 2023,
+      "qNum": "15",
+      "section": "II",
+      "category": "M1",
+      "marks": 5,
+      "q": "A table of future value interest factors for an annuity of $1 is shown.<table class=\"q-table\"><tr><th>Period</th><th>1.5%</th><th>3%</th><th>4.5%</th><th>6%</th></tr><tr><td>5</td><td>5.152</td><td>5.309</td><td>5.471</td><td>5.637</td></tr><tr><td>10</td><td>10.703</td><td>11.464</td><td>12.288</td><td>13.181</td></tr><tr><td>20</td><td>23.124</td><td>26.870</td><td>31.371</td><td>36.786</td></tr><tr><td>40</td><td>54.268</td><td>75.401</td><td>107.030</td><td>154.762</td></tr></table><br>(a) Micky wants to save $450&nbsp;000 over the next 10 years.<br><br>If the interest rate is 6% per annum compounding annually, how much should Micky contribute each year? Give your answer to the nearest dollar. <strong>(2 marks)</strong><br><br>(b) Instead, Micky decides to contribute $8535 every three months for 10 years to an annuity paying 6% per annum, compounding quarterly.<br><br>How much will Micky have at the end of 10 years? <strong>(3 marks)</strong>",
+      "image": null,
+      "answer": "(a) 10 years at 6% per annum: the future value interest factor is 13.181.\nFuture value = contribution × 13.181 = 450 000\ncontribution = 450 000 ÷ 13.181 = 34 140.05…\nMicky should contribute $34 140 each year.\n\n(b) Compounding quarterly for 10 years gives 40 periods at a rate of 6% ÷ 4 = 1.5% per period.\nThe factor for 40 periods at 1.5% is 54.268.\nFuture value = 8535 × 54.268 = 463 177.38.\nMicky will have $463 177.38 at the end of 10 years.",
+      "keywords": [
+        "34 140",
+        "13.181",
+        "54.268",
+        "463 177",
+        "40",
+        "1.5%"
+      ],
+      "minKeywords": 3,
+      "bandDescriptors": {
+        "full": "$34 140 in (a) from dividing by 13.181, and $463 177.38 in (b) from multiplying $8535 by the 40-period 1.5% factor 54.268.",
+        "partial": "One part correct, or the right factor chosen but used the wrong way round — (a) divides by the factor, (b) multiplies by it.",
+        "minimal": "Read the table by period and rate. In (b) the period is a quarter, so there are 4 × 10 = 40 periods and the rate per period is 6% ÷ 4 = 1.5%, not 10 periods at 6%."
+      }
+    },
+    {
+      "year": 2023,
+      "qNum": "16",
+      "section": "II",
+      "category": "T1",
+      "marks": 4,
+      "q": "The diagram shows a shape <em>APQBCD</em>. The shape consists of a rectangle <em>ABCD</em> with an arc <em>PQ</em> on side <em>AB</em> and with side lengths <em>BC</em> = 3.6 m and <em>CD</em> = 8.0 m.<br><br>The arc <em>PQ</em> is an arc of a circle with centre <em>O</em> and radius 2.1 m and &ang;<em>POQ</em> = 110&deg;.<img src=\"/diagrams/mathematics-advanced_2023_Q16_stimulus.jpg\" alt=\"Rectangle ABCD with an arc PQ bulging outwards from side AB, drawn from centre O with radius 2.1 m and angle POQ of 110 degrees. BC is 3.6 m and CD is 8.0 m. Not to scale.\" style=\"max-width:100%;height:auto;display:block;margin:14px auto\">What is the perimeter of the shape <em>APQBCD</em>? Give your answer correct to one decimal place.",
+      "image": null,
+      "answer": "The perimeter is AP + arc PQ + QB + BC + CD + DA.\n\nChord PQ (using the cosine rule, or twice the half-chord):\nPQ = 2 × 2.1 × sin 55° = 3.4404… m\nAP + QB = AB − PQ = 8.0 − 3.4404 = 4.5596 m\n\nArc PQ = rθ with θ in radians:\nθ = 110 × π/180 = 1.9199 radians\narc = 2.1 × 1.9199 = 4.0317 m\n\nPerimeter = 4.5596 + 4.0317 + 3.6 + 8.0 + 3.6\n= 23.791…\n≈ 23.8 m.",
+      "keywords": [
+        "23.8",
+        "4.03",
+        "3.44",
+        "arc",
+        "chord",
+        "rθ"
+      ],
+      "minKeywords": 3,
+      "bandDescriptors": {
+        "full": "23.8 m, with the chord PQ subtracted from AB and the arc length rθ added in its place.",
+        "partial": "Arc length and chord both found but combined incorrectly — commonly the whole of AB is counted as well as the arc, or the chord is added rather than subtracted.",
+        "minimal": "Walk the boundary: A to P, along the arc to Q, Q to B, then the three rectangle sides. AP + QB is 8.0 minus the straight chord PQ, and the arc itself is rθ with θ in radians."
+      }
+    },
+    {
+      "year": 2023,
+      "qNum": "17",
+      "section": "II",
+      "category": "C4",
+      "marks": 2,
+      "q": "Find &int; <em>x</em>&radic;(<em>x</em>&sup2; + 1) <em>dx</em>.",
+      "image": null,
+      "answer": "The derivative of x² + 1 is 2x, and the integrand already contains an x, so reverse the chain rule.\n∫ x(x² + 1)^(1/2) dx = ½ ∫ 2x(x² + 1)^(1/2) dx\n= ½ × (2/3)(x² + 1)^(3/2) + C\n= (1/3)(x² + 1)^(3/2) + C.\n\nCheck by differentiating: (1/3) × (3/2)(x² + 1)^(1/2) × 2x = x√(x² + 1).",
+      "keywords": [
+        "1/3",
+        "(x² + 1)",
+        "3/2",
+        "+ C"
+      ],
+      "minKeywords": 2,
+      "bandDescriptors": {
+        "full": "(1/3)(x² + 1)^(3/2) + C.",
+        "partial": "The power (3/2) is right but the coefficient is wrong — usually the ½ that compensates for the missing 2x is left out, or + C is omitted.",
+        "minimal": "This is a reverse chain rule: the x outside is (half of) the derivative of x² + 1. Raise the power by one to 3/2 and divide by 3/2, then fix the constant."
+      }
+    },
+    {
+      "year": 2023,
+      "qNum": "18",
+      "section": "II",
+      "category": "S2",
+      "marks": 3,
+      "q": "A university uses gas to heat its buildings. Over a period of 10 weekdays during winter, the gas used each day was measured in megawatts (MW) and the average outside temperature each day was recorded in degrees Celsius (&deg;C).<br><br>Using <em>x</em> as the average daily outside temperature and <em>y</em> as the total daily gas usage, the equation of the least-squares regression line was found.<br><br>The equation of the regression line predicts that when the temperature is 0&deg;C, the daily gas usage is 236 MW.<br><br>The ten temperatures measured were: 0&deg;, 0&deg;, 0&deg;, 2&deg;, 5&deg;, 7&deg;, 8&deg;, 9&deg;, 9&deg;, 10&deg;.<br><br>The total gas usage for the ten weekdays was 1840 MW.<br><br>In any bivariate dataset, the least-squares regression line passes through the point (<em>x&#772;</em>, <em>y&#772;</em>), where <em>x&#772;</em> is the sample mean of the <em>x</em>-values and <em>y&#772;</em> is the sample mean of the <em>y</em>-values.<br><br>(b) What is the equation of the regression line? <strong>(2 marks)</strong><br><br>(c) In the context of the dataset, identify ONE problem with using the regression line to predict gas usage when the average outside temperature is 23&deg;C. <strong>(1 mark)</strong><br><br><em style=\"opacity:0.75\">Part (a), which asked for the point (x&#772;, y&#772;) and the <em>y</em>-intercept to be plotted on a printed grid, is not included here &mdash; work with the numbers directly.</em>",
+      "image": null,
+      "answer": "(b) x̄ = (0 + 0 + 0 + 2 + 5 + 7 + 8 + 9 + 9 + 10) ÷ 10 = 50/10 = 5\nȳ = 1840/10 = 184\nThe line passes through (5, 184), and its y-intercept is (0, 236).\nGradient = (184 − 236)/(5 − 0) = −52/5 = −10.4\ny = −10.4x + 236.\n\n(c) The temperatures in the dataset run only from 0°C to 10°C, so predicting at 23°C is extrapolation — well outside the range of the data. There is no evidence the linear relationship continues that far, and the line in fact predicts a negative gas usage (236 − 10.4 × 23 ≈ −4 MW), which is impossible.",
+      "keywords": [
+        "−10.4",
+        "236",
+        "extrapolation",
+        "outside the range",
+        "184",
+        "5"
+      ],
+      "minKeywords": 2,
+      "bandDescriptors": {
+        "full": "y = −10.4x + 236 in (b), from the means (5, 184) and the intercept (0, 236); and (c) identifies extrapolation beyond the 0–10°C range of the data.",
+        "partial": "The means are found but the gradient is wrong (often the sign), or (c) says only that the answer 'looks wrong' without naming extrapolation.",
+        "minimal": "The regression line passes through (x̄, ȳ), and the intercept gives a second point (0, 236). Two points give the gradient. For (c), compare 23°C with the largest temperature actually measured."
+      },
+      "omittedParts": [
+        {
+          "part": "a",
+          "marks": 3,
+          "reason": "The student must plot the point (x̄, ȳ) and the y-intercept of the least-squares regression line on a printed grid. The engine cannot accept or mark points plotted by hand."
+        }
+      ]
+    },
+    {
+      "year": 2023,
+      "qNum": "19",
+      "section": "II",
+      "category": "F2",
+      "marks": 2,
+      "q": "(b) Hence, or otherwise, solve the inequality <em>x</em> &minus; 1 &lt; (1 &minus; <em>x</em>)(3 + <em>x</em>). <strong>(2 marks)</strong><br><br><em style=\"opacity:0.75\">Part (a), which asked for the graphs of <em>f</em>(<em>x</em>) = <em>x</em> &minus; 1 and <em>g</em>(<em>x</em>) = (1 &minus; <em>x</em>)(3 + <em>x</em>) to be sketched on a printed grid showing the <em>x</em>-intercepts, is not included here &mdash; solve part (b) algebraically.</em>",
+      "image": null,
+      "answer": "Expand the right-hand side:\n(1 − x)(3 + x) = 3 + x − 3x − x² = 3 − 2x − x²\n\nx − 1 < 3 − 2x − x²\nx² + x + 2x − 1 − 3 < 0\nx² + 3x − 4 < 0\n(x + 4)(x − 1) < 0\n\nThe parabola is concave up with roots −4 and 1, so it is negative between them:\n−4 < x < 1.",
+      "keywords": [
+        "−4 < x < 1",
+        "(x + 4)(x − 1)",
+        "x² + 3x − 4"
+      ],
+      "minKeywords": 1,
+      "bandDescriptors": {
+        "full": "−4 < x < 1, from x² + 3x − 4 < 0 factorised as (x + 4)(x − 1) < 0.",
+        "partial": "The correct quadratic inequality is formed but the solution is given the wrong way round (x < −4 or x > 1), or the endpoints are included.",
+        "minimal": "Bring everything to one side to get a quadratic inequality, factorise, and remember that a concave-up parabola is <em>below</em> the axis between its roots."
+      },
+      "omittedParts": [
+        {
+          "part": "a",
+          "marks": 2,
+          "reason": "The student must sketch the graphs of f(x) = x − 1 and g(x) = (1 − x)(3 + x) on a printed grid, showing the x-intercepts. The engine cannot accept or mark a hand-drawn graph."
+        }
+      ]
+    },
+    {
+      "year": 2023,
+      "qNum": "20",
+      "section": "II",
+      "category": "T2",
+      "marks": 3,
+      "q": "Find all the values of &theta;, where 0&deg; &le; &theta; &le; 360&deg;, such that sin(&theta; &minus; 60&deg;) = &minus;&radic;3/2.",
+      "image": null,
+      "answer": "Let u = θ − 60°. As θ runs from 0° to 360°, u runs from −60° to 300°.\n\nsin u = −√3/2, so the related angle is 60° and u lies in the third or fourth quadrant.\nIn −60° ≤ u ≤ 300° the solutions are\nu = −60°, u = 180° + 60° = 240°, and u = 360° − 60° = 300°.\n\nTherefore θ = u + 60° gives\nθ = 0°, 300°, 360°.",
+      "keywords": [
+        "0°",
+        "300°",
+        "360°",
+        "60",
+        "related angle"
+      ],
+      "minKeywords": 2,
+      "bandDescriptors": {
+        "full": "θ = 0°, 300° and 360° — all three, found by shifting the domain to −60° ≤ θ − 60° ≤ 300°.",
+        "partial": "Two of the three values found — typically the endpoints 0° and 360° are missed because the shifted domain was not used.",
+        "minimal": "Substitute u = θ − 60° and shift the domain with it, so u runs from −60° to 300°. The related angle is 60° and sine is negative in the third and fourth quadrants."
+      }
+    },
+    {
+      "year": 2023,
+      "qNum": "21",
+      "section": "II",
+      "category": "M1",
+      "marks": 3,
+      "q": "The fourth term of a geometric sequence is 48.<br><br>The eighth term of the same sequence is 3/16.<br><br>Find the possible value(s) of the common ratio and the corresponding first term(s).",
+      "image": null,
+      "answer": "T₄ = ar³ = 48 and T₈ = ar⁷ = 3/16.\n\nDividing: r⁴ = (3/16) ÷ 48 = 3/768 = 1/256\nr = ±1/4.\n\nIf r = 1/4: a(1/64) = 48, so a = 48 × 64 = 3072.\nIf r = −1/4: a(−1/64) = 48, so a = −3072.\n\nSo r = 1/4 with a = 3072, or r = −1/4 with a = −3072.",
+      "keywords": [
+        "1/4",
+        "−1/4",
+        "3072",
+        "−3072",
+        "r⁴"
+      ],
+      "minKeywords": 2,
+      "bandDescriptors": {
+        "full": "Both cases: r = 1/4 with a = 3072, and r = −1/4 with a = −3072.",
+        "partial": "Only the positive ratio found — r⁴ = 1/256 has a negative solution as well, since the index is even.",
+        "minimal": "Divide T₈ by T₄ to eliminate a; that leaves r⁴. An even power has two real fourth roots, so check both, then substitute each back into ar³ = 48."
+      }
+    },
+    {
+      "year": 2023,
+      "qNum": "22",
+      "section": "II",
+      "category": "T1",
+      "marks": 3,
+      "q": "In the rectangular prism shown, <em>AD</em> = 7 cm, <em>AE</em> = 8 cm, <em>EF</em> = 6 cm. Point <em>M</em> is the midpoint of <em>CD</em>.<img src=\"/diagrams/mathematics-advanced_2023_Q22_stimulus.jpg\" alt=\"A rectangular prism with vertices A, B, C, D on the top face and E, F, G below. AD is 7, AE is 8 and EF is 6. M is marked at the midpoint of CD, with EM drawn and a right angle marked at A. Not to scale.\" style=\"max-width:100%;height:auto;display:block;margin:14px auto\">Find &ang;<em>AEM</em>, to the nearest degree.",
+      "image": null,
+      "answer": "AE is vertical and AM lies in the top face, so triangle AEM is right-angled at A.\n\nFirst find AM. In the top face, AD = 7 and DM = ½ × CD = ½ × 6 = 3, so\nAM = √(7² + 3²) = √58 cm.\n\nThen in triangle AEM,\ntan ∠AEM = AM/AE = √58/8\n∠AEM = tan⁻¹(0.95197…)\n= 43.59°\n≈ 44°.",
+      "keywords": [
+        "44",
+        "√58",
+        "tan",
+        "right angle",
+        "midpoint"
+      ],
+      "minKeywords": 2,
+      "bandDescriptors": {
+        "full": "∠AEM ≈ 44°, using AM = √58 and the right angle at A.",
+        "partial": "AM found correctly but the wrong trigonometric ratio used, or DM taken as the full 6 rather than half of it.",
+        "minimal": "Work in two steps. Find AM inside the top face first (AD = 7 and DM is half of CD = 6). AE is perpendicular to that face, so triangle AEM is right-angled at A."
+      }
+    },
+    {
+      "year": 2023,
+      "qNum": "23",
+      "section": "II",
+      "category": "S3",
+      "marks": 4,
+      "q": "A random variable is normally distributed with a mean of 0 and a standard deviation of 1. The table gives the probability that this random variable lies below <em>z</em> for some positive values of <em>z</em>.<div style=\"overflow-x:auto;-webkit-overflow-scrolling:touch;margin:14px 0\"><table class=\"q-table\" style=\"min-width:640px;margin:0\"><tr><th><em>z</em></th><th>1.30</th><th>1.31</th><th>1.32</th><th>1.33</th><th>1.34</th><th>1.35</th><th>1.36</th><th>1.37</th><th>1.38</th><th>1.39</th></tr><tr><td>Probability</td><td>0.9032</td><td>0.9049</td><td>0.9066</td><td>0.9082</td><td>0.9099</td><td>0.9115</td><td>0.9131</td><td>0.9147</td><td>0.9162</td><td>0.9177</td></tr></table></div>The probability values given in the table are represented by the shaded area in the following diagram.<img src=\"/diagrams/mathematics-advanced_2023_Q23_stimulus.jpg\" alt=\"A normal curve with the region to the left of a value z shaded.\" style=\"max-width:100%;height:auto;display:block;margin:14px auto\">The weights of adult male koalas form a normal distribution with mean &mu; = 10.40 kg, and standard deviation &sigma; = 1.15 kg.<br><br>In a group of 400 adult male koalas, how many would be expected to weigh more than 11.93 kg?",
+      "image": null,
+      "answer": "Standardise 11.93 kg:\nz = (11.93 − 10.40)/1.15 = 1.53/1.15 = 1.33.\n\nFrom the table, P(Z < 1.33) = 0.9082, so\nP(Z > 1.33) = 1 − 0.9082 = 0.0918.\n\nExpected number = 400 × 0.0918 = 36.72,\nso about 37 koalas.",
+      "keywords": [
+        "1.33",
+        "0.0918",
+        "36.72",
+        "37",
+        "0.9082"
+      ],
+      "minKeywords": 2,
+      "bandDescriptors": {
+        "full": "z = 1.33, P(Z > 1.33) = 0.0918, and 400 × 0.0918 = 36.72, so about 37 koalas.",
+        "partial": "The z-score is correct but the table value is used directly — giving about 363 koalas — instead of subtracting from 1 for the upper tail.",
+        "minimal": "Standardise with z = (x − μ)/σ, then note the table gives the area <em>below</em> z while the question asks for the area <em>above</em> it."
+      }
+    },
+    {
+      "year": 2023,
+      "qNum": "24",
+      "section": "II",
+      "category": "C3",
+      "gridCodes": [
+        "C3",
+        "F1"
+      ],
+      "marks": 5,
+      "q": "A gardener wants to build a rectangular garden of area 50 m&sup2; against an existing wall as shown in the diagram. A concrete path of width 1 metre is to be built around the other three sides of the garden.<img src=\"/diagrams/mathematics-advanced_2023_Q24_stimulus.jpg\" alt=\"A garden of area 50 square metres set against an existing wall, with a 1 metre wide concrete path along the other three sides. The outer rectangle measures x metres by y metres.\" style=\"max-width:100%;height:auto;display:block;margin:14px auto\">Let <em>x</em> and <em>y</em> be the dimensions, in metres, of the outer rectangle as shown.<br><br>(a) Show that <em>y</em> = 50/(<em>x</em> &minus; 2) + 1. <strong>(1 mark)</strong><br><br>(b) Find the value of <em>x</em> such that the area of the concrete path is a minimum. Show that your answer gives a minimum area. <strong>(4 marks)</strong>",
+      "image": null,
+      "answer": "(a) The path is 1 m wide on both ends and along the bottom, so the garden measures (x − 2) by (y − 1).\n(x − 2)(y − 1) = 50\ny − 1 = 50/(x − 2)\ny = 50/(x − 2) + 1.\n\n(b) Area of path A = xy − 50\n= x[50/(x − 2) + 1] − 50\n= 50x/(x − 2) + x − 50.\n\nDifferentiate, using the quotient rule on the first term:\nd/dx [50x/(x − 2)] = [50(x − 2) − 50x]/(x − 2)² = −100/(x − 2)²\ndA/dx = 1 − 100/(x − 2)².\n\nSet dA/dx = 0:\n(x − 2)² = 100, so x − 2 = 10 (taking the positive root, since x > 2)\nx = 12.\n\nSecond derivative: d²A/dx² = 200/(x − 2)³, which at x = 12 is 200/1000 = 0.2 > 0, so the stationary point is a minimum.\n\nx = 12 m.",
+      "keywords": [
+        "x = 12",
+        "50x/(x − 2)",
+        "second derivative",
+        "minimum",
+        "(x − 2)"
+      ],
+      "minKeywords": 3,
+      "bandDescriptors": {
+        "full": "y = 50/(x − 2) + 1 derived from the garden's dimensions, then x = 12 from dA/dx = 0 with a positive second derivative confirming a minimum.",
+        "partial": "The area function is set up and differentiated correctly but the minimum is not justified, or the negative root x − 2 = −10 is kept.",
+        "minimal": "The garden is (x − 2) by (y − 1) — the path takes 1 m from each end and 1 m from the bottom, but not from the wall side. The path's area is the outer rectangle minus 50."
+      }
+    },
+    {
+      "year": 2023,
+      "qNum": "25",
+      "section": "II",
+      "category": "M1",
+      "marks": 6,
+      "q": "On the first day of November, Jia deposits $10&nbsp;000 into a new account which earns 0.4% interest per month, compounded monthly. At the end of each month, after the interest is added to the account, Jia intends to withdraw $<em>M</em> from the account.<br><br>Let <em>A</em><sub><em>n</em></sub> be the amount (in dollars) in Jia&rsquo;s account at the end of <em>n</em> months.<br><br>(a) Show that <em>A</em><sub>2</sub> = 10&nbsp;000(1.004)&sup2; &minus; <em>M</em>(1.004) &minus; <em>M</em>. <strong>(1 mark)</strong><br><br>(b) Show that <em>A</em><sub><em>n</em></sub> = (10&nbsp;000 &minus; 250<em>M</em>)(1.004)<sup><em>n</em></sup> + 250<em>M</em>. <strong>(3 marks)</strong><br><br>(c) Jia wants to be able to make at least 100 withdrawals.<br><br>What is the largest value of <em>M</em> that will enable Jia to do this? <strong>(2 marks)</strong>",
+      "image": null,
+      "answer": "(a) A₁ = 10 000(1.004) − M.\nA₂ = A₁(1.004) − M\n= [10 000(1.004) − M](1.004) − M\n= 10 000(1.004)² − M(1.004) − M.\n\n(b) Continuing the pattern,\nAₙ = 10 000(1.004)ⁿ − M[(1.004)ⁿ⁻¹ + … + 1.004 + 1]\nThe bracket is a geometric series with a = 1, r = 1.004 and n terms:\nsum = [(1.004)ⁿ − 1]/0.004 = 250[(1.004)ⁿ − 1]\nAₙ = 10 000(1.004)ⁿ − 250M[(1.004)ⁿ − 1]\n= (10 000 − 250M)(1.004)ⁿ + 250M.\n\n(c) To make 100 withdrawals the account must not run out, so A₁₀₀ ≥ 0.\n(1.004)¹⁰⁰ = 1.49063…\n(10 000 − 250M)(1.49063) + 250M ≥ 0\n14 906.35 − 372.66M + 250M ≥ 0\n14 906.35 ≥ 122.66M\nM ≤ 121.526…\n\nSo the largest withdrawal is M = $121.52 (to the nearest cent below the limit; M ≈ $121.53).",
+      "keywords": [
+        "121.5",
+        "geometric series",
+        "250",
+        "(1.004)",
+        "A₁₀₀ ≥ 0"
+      ],
+      "minKeywords": 2,
+      "bandDescriptors": {
+        "full": "Both 'show that' results established, with the geometric series summed correctly in (b), and M ≤ 121.526… in (c) from A₁₀₀ ≥ 0.",
+        "partial": "(a) and (b) correct but (c) sets A₁₀₀ = 0 with the wrong index (99 or 101), or rounds up past the limit.",
+        "minimal": "In (b) the withdrawals form a geometric series whose sum is [(1.004)ⁿ − 1]/0.004 = 250[(1.004)ⁿ − 1] — that is where the 250 comes from. In (c), 'at least 100 withdrawals' means the balance after the 100th is still non-negative."
+      }
+    },
+    {
+      "year": 2023,
+      "qNum": "26",
+      "section": "II",
+      "category": "C4",
+      "gridCodes": [
+        "C4",
+        "T3"
+      ],
+      "marks": 4,
+      "q": "A camera films the motion of a swing in a park.<br><br>Let <em>x</em>(<em>t</em>) be the horizontal distance, in metres, from the camera to the seat of the swing at <em>t</em> seconds.<br><br>The seat is released from rest at a horizontal distance of 11.2 m from the camera.<img src=\"/diagrams/mathematics-advanced_2023_Q26_stimulus.jpg\" alt=\"A camera at ground level filming a swing, with the horizontal distance from the camera to the seat marked as 11.2 m. Not to scale.\" style=\"max-width:100%;height:auto;display:block;margin:14px auto\">(a) The rate of change of <em>x</em> can be modelled by the equation <em>dx</em>/<em>dt</em> = &minus;1.5&pi; sin(5&pi;<em>t</em>/4).<br><br>Find an expression for <em>x</em>(<em>t</em>). <strong>(2 marks)</strong><br><br>(b) How many times does the swing reach the closest point to the camera during the first 10 seconds? <strong>(2 marks)</strong>",
+      "image": null,
+      "answer": "(a) x(t) = ∫ −1.5π sin(5πt/4) dt\n= −1.5π × [−cos(5πt/4)] ÷ (5π/4) + C\n= (1.5π × 4)/(5π) × cos(5πt/4) + C\n= 1.2 cos(5πt/4) + C.\n\nReleased from rest at 11.2 m means x(0) = 11.2:\n1.2 cos 0 + C = 11.2, so 1.2 + C = 11.2 and C = 10.\nx(t) = 1.2 cos(5πt/4) + 10.\n\n(b) The closest point to the camera is the minimum of x, where cos(5πt/4) = −1, that is 5πt/4 = π, 3π, 5π, …\nt = 0.8, 2.4, 4.0, 5.6, 7.2, 8.8, 10.4, … (one every full period of 2π ÷ (5π/4) = 1.6 seconds)\n\nWithin the first 10 seconds: t = 0.8, 2.4, 4.0, 5.6, 7.2, 8.8 — 6 times.",
+      "keywords": [
+        "1.2 cos",
+        "+ 10",
+        "6",
+        "1.6",
+        "period"
+      ],
+      "minKeywords": 2,
+      "bandDescriptors": {
+        "full": "x(t) = 1.2 cos(5πt/4) + 10, then 6 times in the first 10 seconds.",
+        "partial": "The integration is correct but the constant is not found from x(0) = 11.2, or the count in (b) is out by one — t = 10.4 lies outside the 10 seconds.",
+        "minimal": "Antidifferentiate sin(kt) to −cos(kt)/k. Then the closest approach is the minimum of x, once per period, and the period is 2π ÷ (5π/4) = 1.6 seconds."
+      }
+    },
+    {
+      "year": 2023,
+      "qNum": "27",
+      "section": "II",
+      "category": "F2",
+      "gridCodes": [
+        "C1",
+        "C4",
+        "F2"
+      ],
+      "marks": 5,
+      "q": "The graph of <em>y</em> = <em>f</em>(<em>x</em>), where <em>f</em>(<em>x</em>) = <em>a</em>|<em>x</em> &minus; <em>b</em>| + <em>c</em>, passes through the points (3, &minus;5), (6, 7) and (9, &minus;5) as shown in the diagram.<img src=\"/diagrams/mathematics-advanced_2023_Q27_stimulus.jpg\" alt=\"An inverted V-shaped absolute value graph with its vertex at (6, 7), passing through (3, -5) and (9, -5).\" style=\"max-width:100%;height:auto;display:block;margin:14px auto\">(a) Find the values of <em>a</em>, <em>b</em> and <em>c</em>. <strong>(3 marks)</strong><br><br>(b) The line <em>y</em> = <em>mx</em> cuts the graph of <em>y</em> = <em>f</em>(<em>x</em>) in two distinct places.<br><br>Find all possible values of <em>m</em>. <strong>(2 marks)</strong>",
+      "image": null,
+      "answer": "(a) The graph is symmetric about its vertex, which the diagram shows at (6, 7). For y = a|x − b| + c the vertex is (b, c), so b = 6 and c = 7.\nSubstitute (3, −5):\na|3 − 6| + 7 = −5\n3a = −12, so a = −4.\na = −4, b = 6, c = 7.\n\n(b) f(x) = −4|x − 6| + 7 has two straight branches:\nleft branch (x < 6): y = 4x − 17\nright branch (x ≥ 6): y = −4x + 31\n\nThe line y = mx passes through the origin. It meets the right branch where mx = −4x + 31, that is x = 31/(m + 4), and that intersection lies on the branch (x ≥ 6) only when −4 < m ≤ 7/6.\nIt meets the left branch where mx = 4x − 17, that is x = 17/(4 − m), and that lies on the branch (x < 6) only when m < 7/6 or m > 4.\n\nBoth branches are cut, in distinct points, exactly when\n−4 < m < 7/6.\n\n(At m = 7/6 the line passes through the vertex (6, 7) and touches at a single point; at m = −4 the line is parallel to the right branch.)",
+      "keywords": [
+        "−4",
+        "6",
+        "7",
+        "7/6",
+        "−4 < m < 7/6",
+        "vertex"
+      ],
+      "minKeywords": 3,
+      "bandDescriptors": {
+        "full": "a = −4, b = 6, c = 7 in (a), and −4 < m < 7/6 in (b), with both endpoints correctly excluded.",
+        "partial": "(a) fully correct but (b) gives only one boundary, or includes an endpoint — at m = 7/6 the line passes through the vertex and meets the graph once, and at m = −4 it is parallel to a branch.",
+        "minimal": "The vertex of y = a|x − b| + c is (b, c), which the diagram gives directly. For (b), write the two branches as separate straight lines and ask when y = mx meets each one on its own side of x = 6."
+      }
+    },
+    {
+      "year": 2023,
+      "qNum": "28",
+      "section": "II",
+      "category": "C4",
+      "gridCodes": [
+        "C1",
+        "C4"
+      ],
+      "marks": 4,
+      "q": "The curve <em>y</em> = <em>f</em>(<em>x</em>) is shown on the diagram. The equation of the tangent to the curve at point <em>T</em>(&minus;1, 6) is <em>y</em> = <em>x</em> + 7. At a point <em>R</em>, another tangent parallel to the tangent at <em>T</em> is drawn.<img src=\"/diagrams/mathematics-advanced_2023_Q28_stimulus.jpg\" alt=\"A cubic curve with a tangent y = x + 7 touching at T(-1, 6) and a second, parallel tangent touching at a point R lower down and to the right. Not to scale.\" style=\"max-width:100%;height:auto;display:block;margin:14px auto\">The gradient function of the curve is given by <em>dy</em>/<em>dx</em> = 3<em>x</em>&sup2; &minus; 6<em>x</em> &minus; 8.<br><br>Find the coordinates of <em>R</em>.",
+      "image": null,
+      "answer": "The tangent at T has gradient 1, so at R the gradient is also 1:\n3x² − 6x − 8 = 1\n3x² − 6x − 9 = 0\nx² − 2x − 3 = 0\n(x − 3)(x + 1) = 0, so x = 3 or x = −1.\nx = −1 is the point T, so R has x = 3.\n\nTo find the y-value, antidifferentiate:\ny = x³ − 3x² − 8x + C\nT(−1, 6) lies on the curve: −1 − 3 + 8 + C = 6, so C = 2.\ny = x³ − 3x² − 8x + 2\n\nAt x = 3: y = 27 − 27 − 24 + 2 = −22.\n\nR = (3, −22).",
+      "keywords": [
+        "(3, −22)",
+        "x = 3",
+        "gradient 1",
+        "C = 2",
+        "x³ − 3x² − 8x"
+      ],
+      "minKeywords": 2,
+      "bandDescriptors": {
+        "full": "R = (3, −22) — x = 3 from equating the gradient function to 1, and y from antidifferentiating and using T(−1, 6) to find the constant.",
+        "partial": "x = 3 found but the y-value is wrong, usually because the constant of integration was omitted or found from the tangent rather than the curve.",
+        "minimal": "Parallel tangents have equal gradients, and the tangent at T is y = x + 7, so its gradient is 1. Set the gradient function equal to 1 for the x-value, then antidifferentiate and use T to fix + C."
+      }
+    },
+    {
+      "year": 2023,
+      "qNum": "29",
+      "section": "II",
+      "category": "S3",
+      "marks": 6,
+      "q": "A continuous random variable <em>X</em> has probability density function <em>f</em>(<em>x</em>) given by <table style=\"display:inline-table;vertical-align:middle;border-collapse:collapse;margin:0 0 0 4px\"><tr><td rowspan=\"2\" style=\"border:0;padding:0 4px 0 0;font-size:2.6em;font-weight:300;line-height:0.86;vertical-align:middle\">{</td><td style=\"border:0;padding:1px 0;text-align:left;font-size:0.85em\">12<em>x</em>&sup2;(1 &minus; <em>x</em>),&nbsp;&nbsp;&nbsp;for 0 &le; <em>x</em> &le; 1</td></tr><tr><td style=\"border:0;padding:1px 0;text-align:left;font-size:0.85em\">0,&nbsp;&nbsp;&nbsp;for all other values of <em>x</em></td></tr></table><br><br>(a) Find the mode of <em>X</em>. <strong>(2 marks)</strong><br><br>(b) Find the cumulative distribution function for the given probability density function. <strong>(2 marks)</strong><br><br>(c) Without calculating the median, show that the mode is greater than the median. <strong>(2 marks)</strong>",
+      "image": null,
+      "answer": "(a) The mode is where f is greatest. Expand: f(x) = 12x² − 12x³.\nf′(x) = 24x − 36x² = 12x(2 − 3x)\nf′(x) = 0 at x = 0 and x = 2/3. Since f′ changes from positive to negative at x = 2/3, that is the maximum.\nMode = 2/3.\n\n(b) For 0 ≤ x ≤ 1,\nF(x) = ∫₀ˣ (12t² − 12t³) dt = [4t³ − 3t⁴]₀ˣ = 4x³ − 3x⁴.\nSo F(x) = 0 for x < 0, F(x) = 4x³ − 3x⁴ for 0 ≤ x ≤ 1, and F(x) = 1 for x > 1.\n(Check: F(1) = 4 − 3 = 1.)\n\n(c) Evaluate F at the mode:\nF(2/3) = 4(8/27) − 3(16/81) = 32/27 − 16/27 = 16/27 ≈ 0.593.\nThat is more than 0.5, so more than half the probability lies below x = 2/3. F is increasing, so the median — the value where F = 0.5 — must lie to the left of 2/3.\nTherefore the mode is greater than the median.",
+      "keywords": [
+        "2/3",
+        "4x³ − 3x⁴",
+        "16/27",
+        "0.5",
+        "cumulative"
+      ],
+      "minKeywords": 3,
+      "bandDescriptors": {
+        "full": "Mode 2/3, F(x) = 4x³ − 3x⁴ on [0, 1], and F(2/3) = 16/27 > 0.5 used to place the median below the mode.",
+        "partial": "Mode and cumulative distribution function correct, but (c) attempts to solve for the median instead of comparing F(2/3) with 0.5.",
+        "minimal": "The mode maximises f, so solve f′(x) = 0. The cumulative distribution function is ∫₀ˣ f(t) dt. For (c), the median is where F = 0.5 — so just work out F at the mode and compare."
+      }
+    },
+    {
+      "year": 2023,
+      "qNum": "30",
+      "section": "II",
+      "category": "C3",
+      "marks": 3,
+      "q": "Let <em>f</em>(<em>x</em>) = <em>e</em><sup>&minus;<em>x</em></sup> sin <em>x</em>.<br><br>(a) Find the coordinates of the stationary points of <em>f</em>(<em>x</em>) for 0 &le; <em>x</em> &le; 2&pi;. You do NOT need to check the nature of the stationary points. <strong>(3 marks)</strong><br><br><em style=\"opacity:0.75\">Part (b), which asked for the graph of <em>y</em> = <em>f</em>(<em>x</em>) to be sketched on a printed set of axes showing stationary points and intercepts, is not included here.</em>",
+      "image": null,
+      "answer": "Differentiate with the product rule:\nf′(x) = −e⁻ˣ sin x + e⁻ˣ cos x\n= e⁻ˣ(cos x − sin x).\n\ne⁻ˣ is never zero, so f′(x) = 0 when cos x = sin x, that is tan x = 1.\nFor 0 ≤ x ≤ 2π: x = π/4 and x = 5π/4.\n\nf(π/4) = e^(−π/4) × √2/2 ≈ 0.322\nf(5π/4) = e^(−5π/4) × (−√2/2) ≈ −0.014\n\nStationary points: (π/4, (√2/2)e^(−π/4)) ≈ (0.785, 0.322) and (5π/4, −(√2/2)e^(−5π/4)) ≈ (3.927, −0.014).",
+      "keywords": [
+        "π/4",
+        "5π/4",
+        "tan x = 1",
+        "product rule",
+        "0.322"
+      ],
+      "minKeywords": 2,
+      "bandDescriptors": {
+        "full": "Both stationary points, x = π/4 and x = 5π/4, with their y-coordinates.",
+        "partial": "The derivative and tan x = 1 are correct but only one solution is given in the domain, or the y-coordinates are not found.",
+        "minimal": "Use the product rule, then factor out e⁻ˣ — it is never zero, so the stationary points come from cos x = sin x alone. Look for every solution of tan x = 1 between 0 and 2π."
+      },
+      "omittedParts": [
+        {
+          "part": "b",
+          "marks": 2,
+          "reason": "The student must sketch y = e⁻ˣ sin x on printed axes for 0 ≤ x ≤ 2π, showing the stationary points and intercepts. The engine cannot accept or mark a hand-drawn graph."
+        }
+      ]
+    },
+    {
+      "year": 2023,
+      "qNum": "31",
+      "section": "II",
+      "category": "S1",
+      "marks": 5,
+      "q": "Four Year 12 students want to organise a graduation party. All four students have the same probability, <em>P</em>(<em>F</em>), of being available next Friday. All four students have the same probability, <em>P</em>(<em>S</em>), of being available next Saturday.<br><br>It is given that <em>P</em>(<em>F</em>) = 3/10, <em>P</em>(<em>S</em>|<em>F</em>) = 1/3, and <em>P</em>(<em>F</em>|<em>S</em>) = 1/8.<br><br>Kim is one of the four students.<br><br>(a) Is Kim&rsquo;s availability next Friday independent from his availability next Saturday? Justify your answer. <strong>(1 mark)</strong><br><br>(b) Show that the probability that Kim is available next Saturday is 4/5. <strong>(2 marks)</strong><br><br>(c) What is the probability that at least one of the four students is NOT available next Saturday? <strong>(2 marks)</strong>",
+      "image": null,
+      "answer": "(a) No. If F and S were independent then P(S|F) would equal P(S). Here P(S|F) = 1/3, while P(S) = 4/5 (found in part (b)), and 1/3 ≠ 4/5, so the two events are not independent.\n\n(b) P(F ∩ S) = P(S|F) × P(F) = (1/3)(3/10) = 1/10.\nP(F|S) = P(F ∩ S)/P(S), so\n1/8 = (1/10)/P(S)\nP(S) = (1/10) × 8 = 8/10 = 4/5.\n\n(c) P(a given student is available on Saturday) = 4/5, and the four students are independent of one another.\nP(at least one NOT available) = 1 − P(all four available)\n= 1 − (4/5)⁴\n= 1 − 256/625\n= 369/625\n= 0.5904.",
+      "keywords": [
+        "4/5",
+        "1/10",
+        "369/625",
+        "0.5904",
+        "not independent",
+        "complement"
+      ],
+      "minKeywords": 3,
+      "bandDescriptors": {
+        "full": "Not independent because P(S|F) ≠ P(S); P(S) = 4/5 shown from P(F ∩ S) = 1/10; and P(at least one not available) = 1 − (4/5)⁴ = 369/625.",
+        "partial": "(b) correct but (c) computes P(all four unavailable) as (1/5)⁴ instead of using the complement of 'all four available'.",
+        "minimal": "Start with P(F ∩ S) = P(S|F)P(F). That single value unlocks P(S) through the definition of P(F|S). For (c), 'at least one' almost always means 1 minus the probability of none."
+      }
+    },
+    {
+      "year": 2023,
+      "qNum": "32",
+      "section": "II",
+      "category": "C4",
+      "gridCodes": [
+        "C4",
+        "F1"
+      ],
+      "marks": 6,
+      "q": "The curves <em>y</em> = <em>e</em><sup>&minus;2<em>x</em></sup> and <em>y</em> = <em>e</em><sup>&minus;<em>x</em></sup> &minus; 1/4 intersect at exactly one point as shown in the diagram. The point of intersection has coordinates (ln 2, 1/4). (Do NOT prove this.)<img src=\"/diagrams/mathematics-advanced_2023_Q32_stimulus.jpg\" alt=\"Two decreasing exponential curves meeting at the point (ln 2, one quarter), with the region between them and the y-axis shaded.\" style=\"max-width:100%;height:auto;display:block;margin:14px auto\">(a) Show that the area bounded by the two curves and the <em>y</em>-axis, as shaded in the diagram, is (1/4)ln 2 &minus; 1/8. <strong>(3 marks)</strong><br><br>(b) Find the values of <em>k</em> such that the curves <em>y</em> = <em>e</em><sup>&minus;2<em>x</em></sup> and <em>y</em> = <em>e</em><sup>&minus;<em>x</em></sup> + <em>k</em> intersect at two points. <strong>(3 marks)</strong>",
+      "image": null,
+      "answer": "(a) Between x = 0 and x = ln 2 the upper curve is y = e⁻²ˣ and the lower is y = e⁻ˣ − 1/4.\nArea = ∫₀^(ln 2) [e⁻²ˣ − e⁻ˣ + 1/4] dx\n= [−½e⁻²ˣ + e⁻ˣ + x/4]₀^(ln 2)\n\nAt x = ln 2: e⁻ˣ = 1/2 and e⁻²ˣ = 1/4, giving\n−½(1/4) + 1/2 + (ln 2)/4 = 3/8 + (ln 2)/4\nAt x = 0: −½ + 1 + 0 = 1/2\n\nArea = 3/8 + (ln 2)/4 − 1/2 = (1/4)ln 2 − 1/8.\n\n(b) Set the curves equal: e⁻²ˣ = e⁻ˣ + k.\nLet u = e⁻ˣ, so u > 0, and every positive u corresponds to exactly one value of x.\nu² = u + k\nu² − u − k = 0\n\nTwo intersections means two distinct positive roots u.\nDiscriminant: 1 + 4k > 0, so k > −1/4.\nProduct of roots = −k > 0, so k < 0.\nSum of roots = 1 > 0, consistent.\n\nSo −1/4 < k < 0.",
+      "keywords": [
+        "−1/4 < k < 0",
+        "u = e⁻ˣ",
+        "discriminant",
+        "ln 2",
+        "(1/4)ln 2 − 1/8"
+      ],
+      "minKeywords": 3,
+      "bandDescriptors": {
+        "full": "The area established as (1/4)ln 2 − 1/8, and −1/4 < k < 0 in (b) from requiring two distinct positive roots of u² − u − k = 0.",
+        "partial": "(a) correct but (b) only applies the discriminant, giving k > −1/4 and missing the requirement that both roots be positive.",
+        "minimal": "In (a) integrate (upper − lower) from 0 to ln 2. In (b) substitute u = e⁻ˣ to get a quadratic, and remember u must be <em>positive</em> for a real x to exist — the discriminant alone is not enough."
       }
     }
   ]

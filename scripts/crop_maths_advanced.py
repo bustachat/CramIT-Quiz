@@ -79,6 +79,28 @@ REGISTRY = {
         ("Q30_stimulus", 33, 173, 133, 412, 326),  # two parabolas, shaded region
         ("Q31_stimulus", 35, 163, 222, 412, 382),  # mice population m(t)
     ],
+    2023: [
+        # --- Section I ---
+        ("Q1_stimulus",  1, 148, 227, 441, 430),  # bee scatterplot, incl. "Time" caption
+        ("Q2_stimulus",  2, 190,  89, 405, 175),  # die and 4-sector spinner (score table is HTML)
+        ("Q4_stimulus",  3, 185, 230, 371, 430),  # cubic with a double root
+        ("Q5_stimulus",  4, 102, 164, 495, 419),  # odd function, shaded region, incl. NOT TO SCALE
+        # Q6 option cells: crop the whole cell, then white out the option letter.
+        ("Q6_A",  5,  99, 212, 284, 364, [(99, 213, 114, 229)]),
+        ("Q6_B",  5, 314, 212, 500, 364, [(315, 213, 330, 229)]),
+        ("Q6_C",  5,  99, 388, 284, 540, [(99, 389, 114, 405)]),
+        ("Q6_D",  5, 314, 388, 500, 540, [(315, 389, 330, 405)]),
+        ("Q10_stimulus", 7, 177, 104, 412, 292),  # y = x^2 meeting y = k at P and Q
+        # --- Section II ---
+        ("Q16_stimulus", 13, 145, 161, 451, 284),  # shape APQBCD, incl. NOT TO SCALE
+        ("Q22_stimulus", 20, 194, 136, 402, 313),  # rectangular prism, incl. NOT TO SCALE
+        ("Q23_stimulus", 21, 182, 251, 413, 352),  # normal curve shaded below z
+        ("Q24_stimulus", 23, 122, 150, 462, 288),  # garden bed and concrete path
+        ("Q26_stimulus", 27, 116, 180, 437, 317),  # camera filming a swing, incl. NOT TO SCALE
+        ("Q27_stimulus", 28, 167, 138, 423, 349),  # y = a|x - b| + c through three points
+        ("Q28_stimulus", 29, 110, 152, 478, 370),  # curve with two parallel tangents
+        ("Q32_stimulus", 35,  99, 160, 484, 395),  # y = e^-2x and y = e^-x - 1/4
+    ],
 }
 
 

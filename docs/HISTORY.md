@@ -1695,3 +1695,93 @@ never be round-tripped, this file is safe to load, extend with a year, and dump.
 missingImages=0`, 0 issues; the answer-key and written-key checks still pass on the three
 subjects that have keys. Gate 4 is ticked for 2020 in the runbook, and the tracker now says
 **2023 is next**.
+
+---
+
+## 2026-08-28 (later still, again) — Mathematics Advanced Stage 4, paper 2 of 6: the 2023 port
+
+**The 2023 HSC paper is ported and cropped, on the `port/maths-advanced` branch.** Same shape as
+the 2020 session: Section I, then Section II, then that year's crops, then the validator — and
+the session finishes green rather than leaving CI red for a later asset stage.
+
+**What landed.** `subjects/mathematics-advanced.json` gains **10 MC + 22 written entries**, one
+bank entry per NESA question, plus **three `omittedParts`** — Q18(a) (plot the mean point and
+the intercept on a printed grid, 3 marks), Q19(a) (sketch two functions on a printed grid, 2)
+and Q30(b) (sketch *y* = e⁻ˣ sin *x*, 2). **2023 adds nothing to `omittedQuestions`**: no whole
+question on this paper is a drawing task, exactly as Stage 1's survey predicted. The file now
+holds 20 MC and 41 written entries across two years.
+
+**Marks reconcile to exactly 100** — 10 MC + 83 written + 7 omitted — against
+`data/mapping-grid/mathematics-advanced.json`, using the same prefix-sum join
+`check_written_key.cjs` applies. The build script refuses to write unless four things hold at
+once: that join, the paper total, every `category` being one of NESA's own codes for that
+question, and every `gridCodes` list equalling NESA's own union. It also refuses if the existing
+file does not round-trip byte-for-byte first, so a reformatting accident cannot ride along with
+the append.
+
+**Answers were confirmed before authoring, not audited afterwards.** `extract_mc_key()` from
+`build_answer_key.py` was called read-only on `2023_marking_guidelines.pdf` — **`D D A B A C A B
+D C`** — and ten independent derivations from the paper agreed with all ten. That is not a substitute for Stage 6, which commits the key and puts it
+under CI; it just means the port did not start from guesses. (CLAUDE.md §10 forbids re-reading
+a marking guideline to "audit" answers; calling the extractor is the sanctioned path.)
+
+**Assets: 17 crops**, via a new `--year 2023` registry block in `scripts/crop_maths_advanced.py`.
+Section I: Q1, Q2, Q4, Q5 and Q10 stimulus, plus Q6's four option cells. Section II: Q16, Q22,
+Q23, Q24, Q26, Q27, Q28, Q32. Boxes came from an ink profile at 150 dpi rather than the text
+layer; every crop was then assembled into contact sheets and compared against the paper, option
+by option.
+
+**Two findings that correct the Stage 1 survey, both recorded in the runbook.**
+
+1. **The Section II crop list was one short.** 2023 **Q16** — the shape *APQBCD*, a labelled
+   geometry diagram with an arc, a radius and an angle — is not on Stage 1's list and surfaced
+   only when the question was read for porting. Stage 1 unioned three detectors and looked at 23
+   contact sheets, and still missed it, so the list is now documented as a **lower bound**; the
+   subject total moves 121 → 122 crops. Each remaining session should read its own questions'
+   pages rather than trusting the list to be complete.
+2. **"Lookup table" is not the test for the scroll wrapper — the column count is.** Stage 1
+   flagged six "future-value / z-score lookup tables" as needing Stage 3 decision 9's
+   `overflow-x:auto` wrapper, and 2023 Q15 is on that list. It has **5 columns** and fits at
+   390 px unwrapped. The table that actually needed the wrapper on this paper is **Q23's
+   11-column z-table**, which is not on the list at all. Measured: Q23's wrapper stays 390 px
+   wide and scrolls to 694 px internally, with `body.scrollWidth` unchanged at 430.
+
+**A tie-break the merged-entry rule needed.** Stage 3 decision 7 and the 2020 session both say a
+merged entry spanning several syllabus codes takes "the code naming the skill the marks are
+actually awarded for". Two 2023 questions split their marks **evenly** between two codes, so
+that rule decides nothing: Q26 (`C4`/`T3`, 2 marks each) and Q32 (`C4`/`F1`, 3 each). The
+tie-break taken, and inherited by the remaining four papers: **take the part carrying the heavier
+mathematical demand** — the calculus part in both cases — and keep NESA's full list in
+`gridCodes`. It agrees with 2020's Q30, which took `C4` of `C4/F1`. Q24 (`C3` of `C3/F1`),
+Q27 (`F2` of `C1/C4/F2`) and Q28 (`C4` of `C1/C4`) were settled by mark weight.
+
+**The option-letter trap did not recur here — but it was checked, not assumed.** On 2020's paper
+the `A.`/`B.` glyphs are outline paths sitting on top of the graph, and a first pass amputated a
+parabola by cropping to their right. On 2023 page 6 the letters are real **text**
+(`get_text("words")` returns exact boxes) and `get_drawings()` reports **zero** vector paths
+intersecting any of the four letter boxes, so the white `erase` rectangle removes the letter and
+nothing else. Every remaining year should be checked the same way rather than inheriting either
+answer.
+
+**Verified in a browser at a 430 px viewport** (stem 390 px), rendering all 32 questions through
+the app's own CSS and `formatQuestionText()`:
+
+| Case | Measured | Verdict |
+|---|---|---|
+| `body.scrollWidth`, all 32 questions | **430**, never more | nothing clipped |
+| Q23's 11-column z-table, wrapped | wrapper 390 px, scrolls to 694 px | decision 9 works |
+| Q15's 5-column table, bare `.q-table` | 390 px | fits |
+| Q12 (6 col), MC Q2 (6 col), MC Q6 (4 col) | 390 px each | fit |
+| Q29's piecewise brace | brace cell **48.3 px**, two-row block **48.3 px** | glyph spans the rows exactly |
+| MC Q6 option images in `.options-grid-2x2` | 160 × 131 px each | legible |
+| MC Q4's flattened table-row options | 52 px per button | one line each, no wrap |
+| All 17 stimulus/option images | load, `naturalWidth` non-zero | none broken |
+| 40 distinct non-ASCII characters | 3.4–15.7 px, all distinct from `�` at 17.5 px | real glyphs, no notdef |
+
+Zero console errors. `optionImagesWide` again unnecessary — the option crops are 1.22:1.
+
+**Local CI green:** `validate_subjects.cjs` reports `MC=666 Written=284 imageRefs=222
+missingImages=0`, 0 issues. The subject is still **registered nowhere in code** — no
+`subjects/index.json` row, no `SUBJECT_ID_MAP`, no `SUBJECT_CATALOGUE`, no card; that is Stage 7,
+and the two key checkers skip the file until Stage 6. Gate 4 is ticked for 2023 in the runbook,
+and the tracker now says **2022 is next**.
