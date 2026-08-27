@@ -1018,3 +1018,53 @@ parses and the step order is correct.
 reviewer-facing diff of bank `answer` against the official `sampleAnswer` for the subjects
 where the extraction is clean prose (Multimedia and VET; Maths is mathematical layout and
 extracts badly). That is a human-judgement pass, not a CI check.
+
+## 2026-08-27 (later) — HMS written questions were rendering no marks badge
+
+Found while measuring the four subject files to see whether a porting playbook could
+be grounded in what shipped rather than in recollection. It could not, quite: the four
+ports do not share a schema, and one of the divergences was live on production.
+
+**`index.html`'s written-question badge read `q.marks || q.totalMarks || ''`.** All 40
+HMS written questions store the value as **`maxMark`** and carry no `marks` field, so
+the expression fell through to `''` and the badge was suppressed entirely — a student
+practising HMS written responses was never told what a question was out of.
+
+Scoring was never affected. Every scoring path already reads `q.maxMark || q.marks`
+(`renderResults()`, the AI-marking result, the keyword fallback, the submission
+payload), and one other display path reads `q.marks || q.maxMark || q.totalMarks`.
+Line ~1758 was the only read that omitted `maxMark`, so this was display-only and
+silent — nothing threw, nothing scored wrong, the badge simply wasn't there.
+
+Fixed by matching the order already used elsewhere: `q.marks || q.maxMark ||
+q.totalMarks || ''`.
+
+**Verified in the browser**, not from the diff: served the app and rendered the first
+three HMS written questions (badges now read `4 marks`, `5 marks`, `4 marks`, matching
+their `maxMark` values) plus two each from VET, Multimedia and Maths, all unchanged and
+still correct on singular/plural (`1 mark` vs `2 marks`). No console errors. Local CI
+green — validate (MC=646, Written=243, 0 issues, 0 missing images), answer key 225/0/0,
+written marks 203/0/0.
+
+**The underlying cause is schema drift between ports, and this fix does not address
+it.** Measured across the four subject files:
+
+| | Maths | Multimedia / VET | HMS |
+|---|---|---|---|
+| Topic field | `category` | *(none)* | `topic` |
+| MC explanation | `solution` | `optionExplanations` | `explanation` |
+| Written marks | `marks` | `marks` | `maxMark` |
+| Paper identity | `year` + `qNum` | `year` + `qNum` | *(none)* |
+| `bandDescriptors` | yes | Multimedia yes, VET no | yes |
+| `acceptableAnswers` / `minKeywords` | yes | yes | no |
+
+Some of this is legitimate — HMS has no `year`/`qNum` because no HMS paper exists and
+none can until after the 2026 HSC. The rest is accidental, and the engine has been
+absorbing it through fallback chains rather than the data being normalised;
+CLAUDE.md §10 already documents `q.answer || q.modelAnswer || q.sampleAnswer` as the
+normal way to read a model answer. **This fix deliberately continues that pattern** —
+it is the safe change for a display bug, touching no data. The real remediation is to
+normalise HMS's 40 written questions onto `marks` and have
+`scripts/validate_subjects.cjs` enforce the canonical field names, since it is
+currently permissive of unknown keys and so cannot catch a new port inventing its own.
+That is a data migration and belongs with the porting playbook, not with a badge fix.

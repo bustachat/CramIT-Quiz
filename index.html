@@ -1755,7 +1755,9 @@ function renderQuestion() {
       }
     }
   } else {
-    const marks = q.marks || q.totalMarks || '';
+    // maxMark is HMS's field name for the same value (see docs/HISTORY.md — schema
+    // drift between ports). Order matches the other marks reads, e.g. renderResults().
+    const marks = q.marks || q.maxMark || q.totalMarks || '';
     if (marks) html += `<span class="marks-badge">${marks} mark${marks > 1 ? 's' : ''}</span>`;
     const wBadges = [];
     if (q.year)  wBadges.push(`<span class="year-badge">${q.year}</span>`);
