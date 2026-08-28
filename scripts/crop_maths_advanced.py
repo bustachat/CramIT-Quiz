@@ -130,6 +130,40 @@ REGISTRY = {
         ("Q29_stimulus", 27, 169, 187, 427, 379),  # y = 2^-x with 5 rectangular strips
         ("Q31_stimulus", 29, 164, 139, 433, 322),  # line through P(1, 2), triangle XOY
     ],
+    2025: [
+        # --- Section I ---
+        # Option letters are real TEXT on pages 3, 4 and 5, and `get_drawings()` reports
+        # ZERO vector paths intersecting any of the twelve letter boxes -- checked, not
+        # assumed, so the 2020 amputation trap does not arise here and the white `erase`
+        # rectangle removes the letter and nothing else.
+        ("Q2_A", 2,  96,  92, 255, 219, [(99.3, 95.1, 110.9, 110.9)]),
+        ("Q2_B", 2, 312,  92, 471, 219, [(315.9, 95.1, 326.9, 110.9)]),
+        ("Q2_C", 2,  96, 228, 255, 356, [(99.9, 231.5, 110.9, 247.3)]),
+        ("Q2_D", 2, 312, 228, 471, 356, [(315.3, 231.5, 326.9, 247.3)]),
+        ("Q4_A", 3,  96,  99, 290, 286, [(99.3, 102.0, 110.9, 117.8)]),
+        ("Q4_B", 3, 312,  99, 506, 286, [(315.3, 102.0, 326.3, 117.8)]),
+        ("Q4_C", 3,  96, 311, 290, 499, [(99.3, 314.6, 110.3, 330.4)]),
+        ("Q4_D", 3, 312, 311, 506, 499, [(315.3, 314.6, 326.9, 330.4)]),
+        ("Q6_stimulus", 4, 196,  93, 397, 293),   # y = f(x), asymptotes x = -2 and y = 1
+        ("Q6_A", 4,  97, 331, 295, 536, [(100.7, 334.7, 112.3, 350.5)]),
+        ("Q6_B", 4, 313, 331, 511, 536, [(316.7, 334.7, 327.7, 350.5)]),
+        ("Q6_C", 4,  97, 543, 295, 749, [(100.7, 547.3, 111.7, 563.1)]),
+        ("Q6_D", 4, 313, 543, 511, 749, [(316.7, 547.3, 328.3, 563.1)]),
+        ("Q9_stimulus",  6, 126,  91, 455, 325),  # y = f'(x) on a printed grid
+        ("Q10_stimulus", 7, 176, 100, 406, 330),  # y = f(x) with all stationary points
+        # --- Section II ---
+        ("Q11_stimulus",  9, 205, 142, 388, 308),  # h = t^2 - 8t + 12
+        ("Q14_stimulus", 11,  95, 147, 488, 392),  # scatterplot, incl. both axis captions
+        ("Q24_stimulus", 24, 163, 130, 437, 319),  # y = e ln x, y = ax^2 + c, y = x
+        ("Q25_stimulus", 26, 159, 129, 423, 279),  # regions under y = x sin x, shaded
+        ("Q27_stimulus", 29, 160, 133, 420, 279),  # shaded region under y = (1/2)^x
+        ("Q28_stimulus", 31, 202, 176, 438, 328),  # circular paddock, shaded segment
+        # x0 = 74, not 85: the y-axis labels 1/2/3 start at x = 78.4 and a first pass at
+        # 85 clipped every one of them -- the ink band understated it, the text layer did not.
+        ("Q28b_stimulus", 32, 74, 134, 527, 362),  # y = sin(theta) + pi/2 on a grid
+        # Q29 is NOT on Stage 1's crop list for 2025 -- found by reading the page.
+        ("Q29_stimulus", 33, 154, 169, 432, 385),  # mountain peak T, points O, Y, F
+    ],
 }
 
 

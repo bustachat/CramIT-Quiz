@@ -42,10 +42,6 @@
       "year": 2020,
       "qNum": 2,
       "category": "F2",
-      "gridCodes": [
-        "F2",
-        "S1"
-      ],
       "q": "The function <em>f</em>(<em>x</em>) = <em>x</em>&sup3; is transformed to <em>g</em>(<em>x</em>) = (<em>x</em> &minus; 2)&sup3; + 5 by a horizontal translation of 2 units followed by a vertical translation of 5 units.<br><br>Which row of the table shows the directions of the translations?<br><br>Each option gives the <em>horizontal translation of 2 units</em> followed by the <em>vertical translation of 5 units</em>.",
       "options": [
         "Horizontal: Left &middot; Vertical: Up",
@@ -662,6 +658,227 @@
         "Incorrect. This is not even either, and the straight branch through the third quadrant does not match a composite that flattens towards a horizontal asymptote."
       ],
       "solution": "<div class=\"step\"><span class=\"step-number\">1.</span> <em>f</em> is a concave-up parabola with its vertex at the origin, so <em>f</em> is <strong>even</strong> and <em>f</em>(<em>x</em>) &ge; 0.</div>\n<div class=\"step\"><span class=\"step-number\">2.</span> Since <em>f</em>(&minus;<em>x</em>) = <em>f</em>(<em>x</em>), the composite <em>g</em>(<em>f</em>(<em>x</em>)) is also even, so its graph must be symmetric in the <em>y</em>-axis. That eliminates the two lopsided options.</div>\n<div class=\"step\"><span class=\"step-number\">3.</span> <em>g</em> has a vertical asymptote, so <em>g</em>(<em>f</em>(<em>x</em>)) is undefined at the two values of <em>x</em> where <em>f</em>(<em>x</em>) reaches it &minus; one either side of the <em>y</em>-axis.</div>\n<div class=\"step\"><span class=\"step-number\">4.</span> Between those two asymptotes <em>f</em>(<em>x</em>) is small, where <em>g</em> is negative; outside them <em>f</em>(<em>x</em>) is large, where <em>g</em> is positive and flattens towards its horizontal asymptote.</div>\n<div class=\"step\"><span class=\"step-number\">5.</span> Only one graph has both features: a dip below the axis between two asymptotes, and two positive branches flattening out either side.</div>"
+    },
+    {
+      "year": 2025,
+      "qNum": 1,
+      "category": "S1",
+      "q": "The probability distribution table for a discrete random variable <em>X</em> is shown.<table class=\"q-table\" style=\"margin:14px 0\"><tr><th><em>x</em></th><th><em>P</em>(<em>X</em> = <em>x</em>)</th></tr><tr><td>1</td><td>0.4</td></tr><tr><td>2</td><td>0.2</td></tr><tr><td>3</td><td>&nbsp;</td></tr></table>What is the value of <em>P</em>(<em>X</em> = 3)?",
+      "options": [
+        "0.2",
+        "0.4",
+        "1.2",
+        "2.0"
+      ],
+      "answer": 1,
+      "optionExplanations": [
+        "Incorrect. 0.2 is <em>P</em>(<em>X</em> = 2), which the table already gives. The missing entry is whatever is left over from 1, not a repeat of a listed value.",
+        "Correct. The probabilities in a distribution must sum to 1, so <em>P</em>(<em>X</em> = 3) = 1 &minus; 0.4 &minus; 0.2 = 0.4.",
+        "Incorrect. 1.2 is what you get by adding 0.4 and 0.2 to the total 1 instead of subtracting them. No probability can exceed 1.",
+        "Incorrect. 2.0 would make the three probabilities total 2.6. They must total exactly 1."
+      ],
+      "solution": "<div class=\"step\"><span class=\"step-number\">1.</span> For a discrete probability distribution, every outcome is listed and the probabilities add to 1.</div>\n<div class=\"step\"><span class=\"step-number\">2.</span> So 0.4 + 0.2 + <em>P</em>(<em>X</em> = 3) = 1.</div>\n<div class=\"step\"><span class=\"step-number\">3.</span> <em>P</em>(<em>X</em> = 3) = 1 &minus; 0.6 = <strong>0.4</strong>.</div>"
+    },
+    {
+      "year": 2025,
+      "qNum": 2,
+      "category": "E1",
+      "q": "Which graph could represent <em>y</em> = 4<sup><em>x</em></sup>?",
+      "optionImages": [
+        "/diagrams/mathematics-advanced_2025_Q2_A.jpg",
+        "/diagrams/mathematics-advanced_2025_Q2_B.jpg",
+        "/diagrams/mathematics-advanced_2025_Q2_C.jpg",
+        "/diagrams/mathematics-advanced_2025_Q2_D.jpg"
+      ],
+      "options": [
+        "A curve rising from just above the x-axis on the left and increasing ever more steeply to the right",
+        "A curve starting high on the y-axis and falling towards the x-axis as x increases",
+        "A straight line with negative gradient, from a positive y-intercept down to the x-axis",
+        "A straight line with positive gradient through the origin"
+      ],
+      "answer": 0,
+      "optionExplanations": [
+        "Correct. The base 4 is greater than 1, so <em>y</em> = 4<sup><em>x</em></sup> is exponential growth: always positive, always increasing, and steepening as <em>x</em> increases.",
+        "Incorrect. A falling exponential needs a base between 0 and 1, for example <em>y</em> = (&frac14;)<sup><em>x</em></sup>. Base 4 grows.",
+        "Incorrect. This is a straight line, so its gradient is constant. An exponential curve has a gradient that changes at every point.",
+        "Incorrect. This line passes through the origin, but 4<sup><em>x</em></sup> is never 0 &mdash; at <em>x</em> = 0 it equals 1."
+      ],
+      "solution": "<div class=\"step\"><span class=\"step-number\">1.</span> Check the <em>y</em>-intercept: 4<sup>0</sup> = 1, so the curve cuts the <em>y</em>-axis at a positive value.</div>\n<div class=\"step\"><span class=\"step-number\">2.</span> Check the behaviour: the base 4 is greater than 1, so <em>y</em> increases as <em>x</em> increases, and 4<sup><em>x</em></sup> &gt; 0 for every <em>x</em>, so the curve never reaches the <em>x</em>-axis.</div>\n<div class=\"step\"><span class=\"step-number\">3.</span> Only the increasing curve that stays above the <em>x</em>-axis fits &mdash; <strong>option A</strong>.</div>"
+    },
+    {
+      "year": 2025,
+      "qNum": 3,
+      "category": "F1",
+      "q": "What is the domain of the function <em>y</em> = &radic;(6 &minus; <em>x</em>&sup2;)?",
+      "options": [
+        "(0, &radic;6)",
+        "[0, &radic;6]",
+        "(&minus;&radic;6, &radic;6)",
+        "[&minus;&radic;6, &radic;6]"
+      ],
+      "answer": 3,
+      "optionExplanations": [
+        "Incorrect. This drops every negative value of <em>x</em>, but (&minus;2)&sup2; = 4, so <em>x</em> = &minus;2 gives &radic;2 and is perfectly valid.",
+        "Incorrect. The endpoints are the right size but the negative half of the domain is missing: the expression depends on <em>x</em>&sup2;, so it is symmetric about 0.",
+        "Incorrect. The endpoints do belong in the domain. At <em>x</em> = &plusmn;&radic;6 the expression under the root is exactly 0, and &radic;0 = 0 is defined.",
+        "Correct. The square root needs 6 &minus; <em>x</em>&sup2; &ge; 0, so <em>x</em>&sup2; &le; 6 and &minus;&radic;6 &le; <em>x</em> &le; &radic;6, with both endpoints included."
+      ],
+      "solution": "<div class=\"step\"><span class=\"step-number\">1.</span> A square root is defined only when what is under it is greater than or equal to zero: 6 &minus; <em>x</em>&sup2; &ge; 0.</div>\n<div class=\"step\"><span class=\"step-number\">2.</span> Rearrange: <em>x</em>&sup2; &le; 6.</div>\n<div class=\"step\"><span class=\"step-number\">3.</span> Solving <em>x</em>&sup2; &le; 6 gives &minus;&radic;6 &le; <em>x</em> &le; &radic;6.</div>\n<div class=\"step\"><span class=\"step-number\">4.</span> The inequality is not strict, so the endpoints are included: the domain is <strong>[&minus;&radic;6, &radic;6]</strong>.</div>"
+    },
+    {
+      "year": 2025,
+      "qNum": 4,
+      "category": "F1",
+      "q": "Which of the following best represents the graph of <em>y</em> = &minus;5<em>x</em>(<em>x</em> &minus; 2)(3 &minus; <em>x</em>)?",
+      "optionImages": [
+        "/diagrams/mathematics-advanced_2025_Q4_A.jpg",
+        "/diagrams/mathematics-advanced_2025_Q4_B.jpg",
+        "/diagrams/mathematics-advanced_2025_Q4_C.jpg",
+        "/diagrams/mathematics-advanced_2025_Q4_D.jpg"
+      ],
+      "options": [
+        "A cubic with x-intercepts at 0, 2 and 3 that falls away steeply to the right",
+        "A cubic with x-intercepts near minus 3, 0 and 2 that falls away steeply to the right",
+        "A cubic with x-intercepts at 0, 2 and 3 that rises steeply to the right",
+        "A cubic with x-intercepts near minus 3, 0 and 2 that rises steeply to the right"
+      ],
+      "answer": 2,
+      "optionExplanations": [
+        "Incorrect. The <em>x</em>-intercepts are right, but this curve falls to the right. Multiplying the leading terms gives +5<em>x</em>&sup3;, so the curve must rise.",
+        "Incorrect. Neither feature matches: the roots come from <em>x</em> = 0, <em>x</em> = 2 and <em>x</em> = 3, and the leading coefficient is positive.",
+        "Correct. The factors give <em>x</em>-intercepts at 0, 2 and 3, and the leading term (&minus;5<em>x</em>) &times; (<em>x</em>) &times; (&minus;<em>x</em>) = +5<em>x</em>&sup3; is positive, so the curve rises to the right.",
+        "Incorrect. The rising shape is right, but a root at <em>x</em> = &minus;3 would need a factor (<em>x</em> + 3). The factor here is (3 &minus; <em>x</em>), which gives a root at <em>x</em> = +3."
+      ],
+      "solution": "<div class=\"step\"><span class=\"step-number\">1.</span> Set each factor to zero: <em>x</em> = 0, <em>x</em> &minus; 2 = 0 and 3 &minus; <em>x</em> = 0, so the <em>x</em>-intercepts are 0, 2 and 3. Note that (3 &minus; <em>x</em>) gives +3, not &minus;3.</div>\n<div class=\"step\"><span class=\"step-number\">2.</span> Find the leading term without expanding fully: (&minus;5<em>x</em>) &times; (<em>x</em>) &times; (&minus;<em>x</em>) = +5<em>x</em>&sup3;.</div>\n<div class=\"step\"><span class=\"step-number\">3.</span> A positive <em>x</em>&sup3; term means the curve comes up from the bottom left and rises to the top right.</div>\n<div class=\"step\"><span class=\"step-number\">4.</span> The graph with roots 0, 2 and 3 that rises to the right is <strong>option C</strong>.</div>"
+    },
+    {
+      "year": 2025,
+      "qNum": 5,
+      "category": "C4",
+      "q": "What is &int; 1/&radic;(<em>x</em> + 5) d<em>x</em>?",
+      "options": [
+        "&frac12;&radic;(<em>x</em> + 5) + <em>C</em>",
+        "2&radic;(<em>x</em> + 5) + <em>C</em>",
+        "&minus;&frac12;&radic;(<em>x</em> + 5) + <em>C</em>",
+        "&minus;2&radic;(<em>x</em> + 5) + <em>C</em>"
+      ],
+      "answer": 1,
+      "optionExplanations": [
+        "Incorrect. &frac12; is the new index, not the multiplier. Dividing by the new index &frac12; means multiplying by 2.",
+        "Correct. Write the integrand as (<em>x</em> + 5)<sup>&minus;&frac12;</sup>. Adding 1 to the index gives &frac12;, and dividing by &frac12; multiplies by 2, giving 2(<em>x</em> + 5)<sup>&frac12;</sup> + <em>C</em>.",
+        "Incorrect. Both the sign and the multiplier are wrong. Nothing here introduces a negative &mdash; the derivative of <em>x</em> + 5 is +1.",
+        "Incorrect. The size is right but the sign is not. A negative would appear only if the bracket had a negative derivative, such as 5 &minus; <em>x</em>."
+      ],
+      "solution": "<div class=\"step\"><span class=\"step-number\">1.</span> Rewrite the integrand with an index: 1/&radic;(<em>x</em> + 5) = (<em>x</em> + 5)<sup>&minus;&frac12;</sup>.</div>\n<div class=\"step\"><span class=\"step-number\">2.</span> Use &int;(<em>ax</em> + <em>b</em>)<sup><em>n</em></sup> d<em>x</em> = (<em>ax</em> + <em>b</em>)<sup><em>n</em>+1</sup> &divide; [<em>a</em>(<em>n</em> + 1)] + <em>C</em>, with <em>a</em> = 1 and <em>n</em> = &minus;&frac12;.</div>\n<div class=\"step\"><span class=\"step-number\">3.</span> The new index is &minus;&frac12; + 1 = &frac12;, and dividing by &frac12; is the same as multiplying by 2.</div>\n<div class=\"step\"><span class=\"step-number\">4.</span> So the integral is <strong>2&radic;(<em>x</em> + 5) + <em>C</em></strong>.</div>"
+    },
+    {
+      "year": 2025,
+      "qNum": 6,
+      "category": "F1",
+      "q": "The graph of <em>y</em> = <em>f</em>(<em>x</em>) is shown.<br><br>Which of the following is the graph of <em>y</em> = &minus;<em>f</em>(&minus;<em>x</em>)?",
+      "image": "/diagrams/mathematics-advanced_2025_Q6_stimulus.jpg",
+      "optionImages": [
+        "/diagrams/mathematics-advanced_2025_Q6_A.jpg",
+        "/diagrams/mathematics-advanced_2025_Q6_B.jpg",
+        "/diagrams/mathematics-advanced_2025_Q6_C.jpg",
+        "/diagrams/mathematics-advanced_2025_Q6_D.jpg"
+      ],
+      "options": [
+        "A curve with vertical asymptote x = 2 and horizontal asymptote y = 1, passing through the point (0, 3)",
+        "A curve with vertical asymptote x = minus 2 and horizontal asymptote y = 1, passing through the point (0, 3)",
+        "A curve with vertical asymptote x = 2 and horizontal asymptote y = minus 1, passing through the point (0, minus 3)",
+        "A curve with vertical asymptote x = minus 2 and horizontal asymptote y = minus 1, passing through the point (0, minus 3)"
+      ],
+      "answer": 2,
+      "optionExplanations": [
+        "Incorrect. This is <em>y</em> = <em>f</em>(&minus;<em>x</em>) only: the graph has been reflected in the <em>y</em>-axis but not in the <em>x</em>-axis, so the horizontal asymptote is still <em>y</em> = 1 and the intercept is still +3.",
+        "Incorrect. This is the original graph, unchanged.",
+        "Correct. &minus;<em>f</em>(&minus;<em>x</em>) reflects in both axes, which is a rotation of 180&deg; about the origin. The asymptotes <em>x</em> = &minus;2 and <em>y</em> = 1 become <em>x</em> = 2 and <em>y</em> = &minus;1, and (0, 3) becomes (0, &minus;3).",
+        "Incorrect. This is <em>y</em> = &minus;<em>f</em>(<em>x</em>) only: reflected in the <em>x</em>-axis but not in the <em>y</em>-axis, so the vertical asymptote is still <em>x</em> = &minus;2."
+      ],
+      "solution": "<div class=\"step\"><span class=\"step-number\">1.</span> Read the original graph: a vertical asymptote at <em>x</em> = &minus;2, a horizontal asymptote at <em>y</em> = 1, and the point (0, 3).</div>\n<div class=\"step\"><span class=\"step-number\">2.</span> <em>f</em>(&minus;<em>x</em>) reflects the graph in the <em>y</em>-axis; the minus sign in front reflects it in the <em>x</em>-axis as well. Together that is a rotation of 180&deg; about the origin.</div>\n<div class=\"step\"><span class=\"step-number\">3.</span> Apply it to each feature: <em>x</em> = &minus;2 becomes <em>x</em> = 2, <em>y</em> = 1 becomes <em>y</em> = &minus;1, and (0, 3) becomes (0, &minus;3).</div>\n<div class=\"step\"><span class=\"step-number\">4.</span> The graph with asymptotes <em>x</em> = 2 and <em>y</em> = &minus;1 through (0, &minus;3) is <strong>option C</strong>.</div>"
+    },
+    {
+      "year": 2025,
+      "qNum": 7,
+      "category": "S1",
+      "q": "A ten-sided die has faces numbered 1 to 10.<br><br>The die is constructed so that the probability of obtaining the number 1 is greater than the probability of obtaining any of the other numbers. The numbers 2 to 10 are equally likely to occur.<br><br>When the die is rolled 153 times, a 1 is obtained 72 times.<br><br>By using the relative frequency of rolling a 1, which of the following is the best estimate for the probability of rolling a 10?",
+      "options": [
+        "1/17",
+        "1/11",
+        "1/10",
+        "1/9"
+      ],
+      "answer": 0,
+      "optionExplanations": [
+        "Correct. The relative frequency of a 1 is 72/153 = 8/17, leaving 9/17 to be shared equally among the nine numbers 2 to 10, so each has probability 1/17.",
+        "Incorrect. 1/11 does not follow from either the relative frequency or an equal-share argument.",
+        "Incorrect. 1/10 assumes all ten faces are equally likely, which the question explicitly rules out.",
+        "Incorrect. 1/9 shares the whole probability of 1 among the nine remaining numbers, forgetting that 8/17 of it has already gone to the number 1."
+      ],
+      "solution": "<div class=\"step\"><span class=\"step-number\">1.</span> Estimate <em>P</em>(1) from the relative frequency: 72/153. Dividing top and bottom by 9 gives 8/17.</div>\n<div class=\"step\"><span class=\"step-number\">2.</span> The probability left over for the other nine numbers is 1 &minus; 8/17 = 9/17.</div>\n<div class=\"step\"><span class=\"step-number\">3.</span> That 9/17 is shared equally among the nine outcomes 2, 3, &hellip;, 10.</div>\n<div class=\"step\"><span class=\"step-number\">4.</span> So <em>P</em>(10) = (9/17) &divide; 9 = <strong>1/17</strong>.</div>"
+    },
+    {
+      "year": 2025,
+      "qNum": 8,
+      "category": "S3",
+      "q": "The minimum daily temperature, in degrees, of a town each year follows a normal distribution with its mean equal to its standard deviation. The minimum daily temperature was recorded over one year.<br><br>What percentage of the recorded minimum daily temperatures was above zero degrees?",
+      "options": [
+        "16%",
+        "50%",
+        "68%",
+        "84%"
+      ],
+      "answer": 3,
+      "optionExplanations": [
+        "Incorrect. 16% is the percentage lying <em>below</em> one standard deviation under the mean. Zero sits below the mean here, so more than half the values are above it.",
+        "Incorrect. 50% would be the answer only if zero were the mean itself. Here zero is one standard deviation below the mean.",
+        "Incorrect. 68% is the percentage lying <em>between</em> one standard deviation either side of the mean, not the percentage above <em>z</em> = &minus;1.",
+        "Correct. With &mu; = &sigma;, zero has <em>z</em> = (0 &minus; &mu;)/&sigma; = &minus;1. The empirical rule puts 68% within one standard deviation, so 16% lies below <em>z</em> = &minus;1 and 100% &minus; 16% = 84% lies above it."
+      ],
+      "solution": "<div class=\"step\"><span class=\"step-number\">1.</span> Let the mean be &mu;. The question says the standard deviation equals the mean, so &sigma; = &mu;.</div>\n<div class=\"step\"><span class=\"step-number\">2.</span> Convert zero to a <em>z</em>-score: <em>z</em> = (0 &minus; &mu;)/&sigma; = &minus;&mu;/&mu; = &minus;1.</div>\n<div class=\"step\"><span class=\"step-number\">3.</span> By the empirical rule, 68% of values lie within one standard deviation of the mean, so 32% lie outside and, by symmetry, 16% lie below <em>z</em> = &minus;1.</div>\n<div class=\"step\"><span class=\"step-number\">4.</span> Therefore the percentage above zero is 100% &minus; 16% = <strong>84%</strong>.</div>"
+    },
+    {
+      "year": 2025,
+      "qNum": 9,
+      "category": "C3",
+      "q": "The diagram shows the graph of <em>y</em> = <em>f</em>&prime;(<em>x</em>).<br><br>Given <em>f</em>(1) = 6, which interval includes the best estimate for <em>f</em>(1.1)?",
+      "image": "/diagrams/mathematics-advanced_2025_Q9_stimulus.jpg",
+      "options": [
+        "[6.2, 6.4)",
+        "[6.0, 6.2)",
+        "[5.8, 6.0)",
+        "[5.6, 5.8)"
+      ],
+      "answer": 1,
+      "optionExplanations": [
+        "Incorrect. 6.2 is what the straight-line estimate 6 + 0.1 &times; 2 gives, but <em>f</em>&prime; is <em>decreasing</em> across [1, 1.1], so the true rise is strictly less than 0.2 and 6.2 is just out of reach.",
+        "Correct. <em>f</em>&prime;(1) = 2, so <em>f</em> rises by a little less than 0.1 &times; 2 = 0.2 over the interval, because <em>f</em>&prime; is falling there. That puts <em>f</em>(1.1) just under 6.2.",
+        "Incorrect. This would need <em>f</em> to be decreasing or almost flat, but the graph shows <em>f</em>&prime;(1) = 2 &gt; 0, so <em>f</em> is increasing at <em>x</em> = 1.",
+        "Incorrect. This is well below <em>f</em>(1) = 6, which would need a large negative gradient. The graph gives a gradient of +2."
+      ],
+      "solution": "<div class=\"step\"><span class=\"step-number\">1.</span> Read the gradient from the graph: at <em>x</em> = 1 the curve <em>y</em> = <em>f</em>&prime;(<em>x</em>) passes through <em>y</em> = 2, so <em>f</em>&prime;(1) = 2.</div>\n<div class=\"step\"><span class=\"step-number\">2.</span> Estimate the change: &Delta;<em>f</em> &asymp; <em>f</em>&prime;(1) &times; &Delta;<em>x</em> = 2 &times; 0.1 = 0.2, giving <em>f</em>(1.1) &asymp; 6.2.</div>\n<div class=\"step\"><span class=\"step-number\">3.</span> Refine it. Across 1 &le; <em>x</em> &le; 1.1 the graph of <em>f</em>&prime; is falling, so every gradient in that interval is less than 2 and the actual rise is less than 0.2.</div>\n<div class=\"step\"><span class=\"step-number\">4.</span> So <em>f</em>(1.1) sits a little below 6.2 &mdash; inside <strong>[6.0, 6.2)</strong>.</div>"
+    },
+    {
+      "year": 2025,
+      "qNum": 10,
+      "category": "C3",
+      "q": "The graph of <em>y</em> = <em>f</em>(<em>x</em>), with all its stationary points, is shown.<br><br>How many stationary points does the graph of <em>y</em> = <em>f</em>(e<sup><em>x</em></sup>) have?",
+      "image": "/diagrams/mathematics-advanced_2025_Q10_stimulus.jpg",
+      "options": [
+        "0",
+        "1",
+        "2",
+        "3"
+      ],
+      "answer": 2,
+      "optionExplanations": [
+        "Incorrect. e<sup><em>x</em></sup> does reach the positive stationary values of <em>f</em>, so stationary points do exist.",
+        "Incorrect. This counts only one of the two positive stationary points. The graph of <em>f</em> is stationary at two positive values of <em>x</em>.",
+        "Correct. Differentiating gives d<em>y</em>/d<em>x</em> = e<sup><em>x</em></sup><em>f</em>&prime;(e<sup><em>x</em></sup>). Since e<sup><em>x</em></sup> is never 0, stationary points need <em>f</em>&prime;(e<sup><em>x</em></sup>) = 0, and e<sup><em>x</em></sup> &gt; 0 can equal only the two positive stationary <em>x</em>-values of <em>f</em>.",
+        "Incorrect. This counts all three of the stationary points of <em>f</em>, but one of them is at a negative value of <em>x</em>, and e<sup><em>x</em></sup> is never negative."
+      ],
+      "solution": "<div class=\"step\"><span class=\"step-number\">1.</span> Differentiate with the chain rule: if <em>y</em> = <em>f</em>(e<sup><em>x</em></sup>) then d<em>y</em>/d<em>x</em> = e<sup><em>x</em></sup> &times; <em>f</em>&prime;(e<sup><em>x</em></sup>).</div>\n<div class=\"step\"><span class=\"step-number\">2.</span> e<sup><em>x</em></sup> &gt; 0 for every <em>x</em>, so it never makes the derivative zero. Stationary points occur exactly when <em>f</em>&prime;(e<sup><em>x</em></sup>) = 0.</div>\n<div class=\"step\"><span class=\"step-number\">3.</span> That means e<sup><em>x</em></sup> must equal one of the <em>x</em>-values where <em>f</em> is stationary. The graph shows three such values: one negative and two positive.</div>\n<div class=\"step\"><span class=\"step-number\">4.</span> e<sup><em>x</em></sup> takes every positive value but no negative one, so only the two positive ones are reachable &mdash; <strong>2 stationary points</strong>.</div>"
     }
   ],
   "writtenQuestions": [
@@ -725,10 +942,6 @@
       "qNum": "13",
       "section": "II",
       "category": "C4",
-      "gridCodes": [
-        "C4",
-        "S1"
-      ],
       "marks": 2,
       "q": "Evaluate &int;<sub>0</sub><sup>&pi;/4</sup> sec&sup2; <em>x</em> <em>dx</em>.",
       "image": null,
@@ -998,10 +1211,6 @@
       "qNum": "26",
       "section": "II",
       "category": "M1",
-      "gridCodes": [
-        "M1",
-        "S2"
-      ],
       "marks": 7,
       "q": "Tina inherits $60 000 and invests it in an account earning interest at a rate of 0.5% per month. Each month, immediately after the interest has been paid, Tina withdraws $800.<br><br>The amount in the account immediately after the <em>n</em>th withdrawal can be determined using the recurrence relation <em>A</em><sub><em>n</em></sub> = <em>A</em><sub><em>n</em>&minus;1</sub>(1.005) &minus; 800, where <em>n</em> = 1, 2, 3, &hellip; and <em>A</em><sub>0</sub> = 60 000.<br><br>(a) Use the recurrence relation to find the amount of money in the account immediately after the third withdrawal. <strong>(2 marks)</strong><br><br>(b) Calculate the amount of interest earned in the first three months. <strong>(2 marks)</strong><br><br>(c) Calculate the amount of money in the account immediately after the 94th withdrawal. <strong>(3 marks)</strong>",
       "image": null,
@@ -1542,11 +1751,6 @@
       "qNum": "27",
       "section": "II",
       "category": "F2",
-      "gridCodes": [
-        "C1",
-        "C4",
-        "F2"
-      ],
       "marks": 5,
       "q": "The graph of <em>y</em> = <em>f</em>(<em>x</em>), where <em>f</em>(<em>x</em>) = <em>a</em>|<em>x</em> &minus; <em>b</em>| + <em>c</em>, passes through the points (3, &minus;5), (6, 7) and (9, &minus;5) as shown in the diagram.<img src=\"/diagrams/mathematics-advanced_2023_Q27_stimulus.jpg\" alt=\"An inverted V-shaped absolute value graph with its vertex at (6, 7), passing through (3, -5) and (9, -5).\" style=\"max-width:100%;height:auto;display:block;margin:14px auto\">(a) Find the values of <em>a</em>, <em>b</em> and <em>c</em>. <strong>(3 marks)</strong><br><br>(b) The line <em>y</em> = <em>mx</em> cuts the graph of <em>y</em> = <em>f</em>(<em>x</em>) in two distinct places.<br><br>Find all possible values of <em>m</em>. <strong>(2 marks)</strong>",
       "image": null,
@@ -2242,6 +2446,520 @@
         "full": "(a) M = $1381.16 from A₁₈₀ = 0. (b) n ≈ 83.67, so 83 more full repayments. (c) A₈₃ ≈ $928.29 and the final payment is about $931.54.",
         "partial": "Parts (a) and (b) correct but the answer to (b) is rounded up to 84, or (c) gives the balance $928.29 without adding the final month's interest.",
         "minimal": "Sum the bracket as a geometric series, then set A_n = 0 to find M. In (b), restart the same formula with the new rate, the new balance and the same repayment, and solve for n — then read the non-integer answer carefully: a partial month is not a full payment."
+      }
+    },
+    {
+      "year": 2025,
+      "qNum": "11",
+      "section": "II",
+      "category": "F1",
+      "marks": 3,
+      "q": "The graph of a quadratic function represented by the equation <em>h</em> = <em>t</em>&sup2; &minus; 8<em>t</em> + 12 is shown.<img src=\"/diagrams/mathematics-advanced_2025_Q11_stimulus.jpg\" alt=\"A parabola opening upwards, cutting the vertical h-axis at 12 and the horizontal t-axis at t = 2 and t = 6.\" style=\"max-width:100%;height:auto;display:block;margin:14px auto\">(a) Find the values of <em>t</em> and <em>h</em> at the turning point of the graph. <strong>(2 marks)</strong><br><br>(b) The graph shows <em>h</em> = 12 when <em>t</em> = 0.<br>What is the other value of <em>t</em> for which <em>h</em> = 12? <strong>(1 mark)</strong>",
+      "image": null,
+      "answer": "(a) The turning point of h = t² − 8t + 12 lies midway between the zeros t = 2 and t = 6, so t = 4. (Equivalently, t = −b/(2a) = 8/2 = 4.)\nh = 4² − 8(4) + 12 = 16 − 32 + 12 = −4.\nThe turning point is (4, −4), so t = 4 and h = −4.\n\n(b) Set h = 12: t² − 8t + 12 = 12, so t² − 8t = 0 and t(t − 8) = 0.\nThat gives t = 0 or t = 8, so the other value is t = 8.",
+      "keywords": [
+        "4",
+        "-4",
+        "8",
+        "turning point"
+      ],
+      "minKeywords": 3,
+      "bandDescriptors": {
+        "full": "The turning point is t = 4, h = −4, and the other value giving h = 12 is t = 8.",
+        "partial": "t = 4 is found but h is not evaluated, or part (b) is attempted without setting t² − 8t + 12 equal to 12.",
+        "minimal": "The turning point sits halfway between the two zeros. For part (b), put h = 12 into the equation and solve t² − 8t = 0 by factorising, not by the quadratic formula."
+      }
+    },
+    {
+      "year": 2025,
+      "qNum": "12",
+      "section": "II",
+      "category": "C1",
+      "marks": 3,
+      "q": "Find the equation of the tangent to <em>y</em> = 5<em>x</em>&sup3; &minus; 2/<em>x</em>&sup2; &minus; 9 at the point (1, &minus;6). <strong>(3 marks)</strong>",
+      "image": null,
+      "answer": "Write the middle term with an index: y = 5x³ − 2x⁻² − 9.\n\nDifferentiate:\ndy/dx = 15x² + 4x⁻³ = 15x² + 4/x³.\n\nAt x = 1: dy/dx = 15 + 4 = 19, so the tangent has gradient 19.\n\nUse the point-gradient form through (1, −6):\ny + 6 = 19(x − 1)\ny = 19x − 19 − 6\ny = 19x − 25.",
+      "keywords": [
+        "19",
+        "y = 19x - 25",
+        "gradient",
+        "-25"
+      ],
+      "minKeywords": 2,
+      "bandDescriptors": {
+        "full": "The derivative is 15x² + 4/x³, the gradient at x = 1 is 19, and the tangent is y = 19x − 25.",
+        "partial": "The derivative or the gradient 19 is correct but the equation of the line is not formed, or a sign slip turns 4x⁻³ into −4x⁻³.",
+        "minimal": "Rewrite 2/x² as 2x⁻² before differentiating. Differentiating −2x⁻² gives +4x⁻³ — two negatives make a plus."
+      }
+    },
+    {
+      "year": 2025,
+      "qNum": "13",
+      "section": "II",
+      "category": "M1",
+      "marks": 2,
+      "q": "The numbers 75, <em>p</em>, <em>q</em>, 2025 form a geometric sequence.<br><br>Find the values of <em>p</em> and <em>q</em>. <strong>(2 marks)</strong>",
+      "image": null,
+      "answer": "In a geometric sequence each term is the previous one times the common ratio r.\nThe fourth term is the first term times r³:\n75r³ = 2025\nr³ = 27\nr = 3.\n\nSo p = 75 × 3 = 225 and q = 225 × 3 = 675.",
+      "keywords": [
+        "225",
+        "675",
+        "3",
+        "r"
+      ],
+      "minKeywords": 2,
+      "bandDescriptors": {
+        "full": "The common ratio is 3, giving p = 225 and q = 675.",
+        "partial": "r = 3 is found but p and q are not both stated, or the sequence is treated as arithmetic and a common difference is used instead.",
+        "minimal": "There are three steps from 75 to 2025, so r³ = 2025 ÷ 75 = 27, not r = 27."
+      }
+    },
+    {
+      "year": 2025,
+      "qNum": "14",
+      "section": "II",
+      "category": "S2",
+      "marks": 6,
+      "q": "In a research study, participants were asked to record the number of minutes they spent watching television and the number of minutes they spent exercising each day over a period of 3 months. The averages for each participant were recorded and graphed.<img src=\"/diagrams/mathematics-advanced_2025_Q14_stimulus.jpg\" alt=\"A scatterplot of average minutes per day exercising against average minutes per day watching television, showing a loose downward trend from about 0 to 60 minutes of television.\" style=\"max-width:100%;height:auto;display:block;margin:14px auto\">The equation of the least-squares regression line for this dataset is <em>y</em> = 64.3 &minus; 0.7<em>x</em>.<br><br>(a) Describe the bivariate dataset in terms of its form and direction. <strong>(2 marks)</strong><br><br>(b) Interpret the values of the slope and <em>y</em>-intercept of the regression line in the context of this dataset. <strong>(2 marks)</strong><br><br>(c) Jo spends an average of 42 minutes per day watching television.<br>Use the equation of the regression line to determine how many minutes on average Jo is expected to exercise each day. <strong>(1 mark)</strong><br><br>(d) Explain why it is NOT appropriate to extrapolate the regression line to predict the average number of minutes of exercise per day for someone who watches an average of 2 hours of television per day. <strong>(1 mark)</strong>",
+      "image": null,
+      "answer": "(a) Form: linear. Direction: negative.\n\n(b) The slope −0.7 means that for each extra minute per day spent watching television, the average time spent exercising falls by about 0.7 minutes.\nThe y-intercept 64.3 means a participant who watches no television is predicted to exercise about 64.3 minutes per day.\n\n(c) y = 64.3 − 0.7 × 42 = 64.3 − 29.4 = 34.9 minutes.\n\n(d) 2 hours is 120 minutes, which is well outside the range of the data (0 to about 60 minutes). The linear relationship has not been shown to hold beyond that range, so a prediction there is unreliable.",
+      "keywords": [
+        "linear",
+        "negative",
+        "0.7",
+        "64.3",
+        "34.9",
+        "outside",
+        "120"
+      ],
+      "minKeywords": 4,
+      "bandDescriptors": {
+        "full": "Linear and negative; the slope is a fall of 0.7 exercise minutes per extra television minute and the intercept is 64.3 minutes at zero television; Jo is predicted 34.9 minutes; and 120 minutes lies outside the data range of 0–60.",
+        "partial": "Some parts are right but the slope or intercept is stated as a bare number without being tied to minutes of television and exercise, or the extrapolation answer says only that 120 is 'too big'.",
+        "minimal": "Interpreting a slope means saying what one extra unit of x does to y, in the units of the question. The extrapolation argument must name the range of the data."
+      }
+    },
+    {
+      "year": 2025,
+      "qNum": "15",
+      "section": "II",
+      "category": "T3",
+      "marks": 4,
+      "q": "A sound wave can be modelled using a function <em>P</em>(<em>t</em>) = <em>k</em> sin <em>at</em>, where <em>P</em> is air pressure in Pascals, <em>t</em> is time in milliseconds (ms) and <em>k</em> and <em>a</em> are constants.<br><br>(a) Write the equation for a sound wave <em>P</em><sub>1</sub>(<em>t</em>) that has an amplitude of 2 Pascals and a period of 5 ms. <strong>(2 marks)</strong><br><br>(c) Hence, find the values of <em>t</em>, where 0 &lt; <em>t</em> &lt; 10, for which functions <em>P</em><sub>1</sub>(<em>t</em>) and <em>P</em><sub>2</sub>(<em>t</em>) = 4 sin(&pi;<em>t</em>/10) are BOTH decreasing. <strong>(2 marks)</strong><br><br><em style=\"opacity:0.75\">Part (b), which asked for the graph of <em>P</em><sub>2</sub>(<em>t</em>) = 4 sin(&pi;<em>t</em>/10) to be sketched on a printed diagram, is not included here. Its definition of <em>P</em><sub>2</sub> has been repeated in part (c) above, which is otherwise NESA&rsquo;s wording and is answerable from the two equations alone.</em>",
+      "image": null,
+      "answer": "(a) The amplitude is k, so k = 2.\nThe period of k sin at is 2π/a, so 2π/a = 5 and a = 2π/5.\nP₁(t) = 2 sin(2πt/5).\n\n(c) A sine curve decreases on the part of its cycle from the maximum to the minimum.\n\nP₁ has period 5, with a maximum at t = 1.25 and a minimum at t = 3.75, so it is decreasing for 1.25 < t < 3.75 and again for 6.25 < t < 8.75.\n\nP₂ has period 2π ÷ (π/10) = 20, with a maximum at t = 5 and a minimum at t = 15, so on 0 < t < 10 it is decreasing for 5 < t < 10.\n\nBoth are decreasing on the overlap: 6.25 < t < 8.75.",
+      "keywords": [
+        "2 sin",
+        "2π/5",
+        "6.25",
+        "8.75",
+        "decreasing"
+      ],
+      "minKeywords": 3,
+      "bandDescriptors": {
+        "full": "P₁(t) = 2 sin(2πt/5), and both functions are decreasing for 6.25 < t < 8.75.",
+        "partial": "The equation in part (a) is correct but the overlap is not found, or only one of the two decreasing intervals of P₁ is considered.",
+        "minimal": "Amplitude gives k directly; the period gives a through period = 2π/a. For the second part, find where each curve falls and take the values of t common to both."
+      },
+      "omittedParts": [
+        {
+          "part": "b",
+          "marks": 2,
+          "reason": "The student must sketch the graph of P₂(t) = 4 sin(πt/10) on a printed diagram that already carries the graph of P₁(t). The engine cannot accept or mark a hand-drawn graph."
+        }
+      ]
+    },
+    {
+      "year": 2025,
+      "qNum": "16",
+      "section": "II",
+      "category": "C3",
+      "marks": 4,
+      "q": "Consider the function <em>f</em>(<em>x</em>) = <em>x</em>&sup2;/e<sup><em>x</em></sup>.<br><br>(a) Find the stationary points of the function and determine their nature. <strong>(4 marks)</strong><br><br><em style=\"opacity:0.75\">Part (b), which asked for a partially completed printed graph of <em>f</em>(<em>x</em>) to be completed, is not included here.</em>",
+      "image": null,
+      "answer": "Write f(x) = x²e⁻ˣ and differentiate with the product rule:\nf′(x) = 2xe⁻ˣ − x²e⁻ˣ = e⁻ˣ x(2 − x).\n\ne⁻ˣ is never zero, so f′(x) = 0 when x = 0 or x = 2.\n\nf(0) = 0 and f(2) = 4/e² ≈ 0.54, so the stationary points are (0, 0) and (2, 4/e²).\n\nTest the sign of f′ = e⁻ˣ x(2 − x), whose sign is the sign of x(2 − x):\nx < 0: negative;  0 < x < 2: positive;  x > 2: negative.\n\nSo (0, 0) is a minimum turning point and (2, 4/e²) is a maximum turning point.",
+      "keywords": [
+        "(0, 0)",
+        "minimum",
+        "maximum",
+        "4/e",
+        "2 - x"
+      ],
+      "minKeywords": 3,
+      "bandDescriptors": {
+        "full": "f′(x) = e⁻ˣx(2 − x), giving a minimum at (0, 0) and a maximum at (2, 4/e²), with the nature justified.",
+        "partial": "Both stationary points are found but their nature is not tested, or only one of the two is found.",
+        "minimal": "Use the product rule on x²e⁻ˣ, then factor out e⁻ˣ — it is always positive, so the sign of f′ is decided by x(2 − x) alone."
+      },
+      "omittedParts": [
+        {
+          "part": "b",
+          "marks": 1,
+          "reason": "The student must complete a partially drawn printed graph of f(x) using the stationary points found in part (a). The engine cannot accept or mark a hand-drawn graph."
+        }
+      ]
+    },
+    {
+      "year": 2025,
+      "qNum": "17",
+      "section": "II",
+      "category": "M1",
+      "gridCodes": [
+        "E1",
+        "M1"
+      ],
+      "marks": 7,
+      "q": "A borrower obtains a reducing-balance loan of $800&nbsp;000 to buy a house.<br><br>Interest is charged at 0.5% monthly, compounded monthly.<br><br>On the last day of each month, interest is added to the balance owing on the loan and then the monthly repayment of $5740 is made.<br><br>Let $<em>A<sub>n</sub></em> be the balance owing on the loan at the end of <em>n</em> months.<br><br>(a) Show that <em>A</em><sub>2</sub> = 800&nbsp;000(1.005)&sup2; &minus; 5740(1.005) &minus; 5740. <strong>(2 marks)</strong><br><br>(b) Show that <em>A<sub>n</sub></em> = 1&nbsp;148&nbsp;000 &minus; 348&nbsp;000(1.005)<sup><em>n</em></sup>. <strong>(3 marks)</strong><br><br>(c) After how many months will the balance owing on the loan first be less than $400&nbsp;000? <strong>(2 marks)</strong>",
+      "image": null,
+      "answer": "(a) Each month the balance is multiplied by 1.005 and then $5740 is repaid.\nA₁ = 800 000(1.005) − 5740.\nA₂ = A₁(1.005) − 5740 = [800 000(1.005) − 5740](1.005) − 5740\n   = 800 000(1.005)² − 5740(1.005) − 5740.\n\n(b) Continuing the pattern,\nAₙ = 800 000(1.005)ⁿ − 5740[(1.005)ⁿ⁻¹ + (1.005)ⁿ⁻² + … + 1].\nThe bracket is a geometric series with first term 1, ratio 1.005 and n terms, so it sums to [(1.005)ⁿ − 1] ÷ 0.005 = 200[(1.005)ⁿ − 1].\nAₙ = 800 000(1.005)ⁿ − 5740 × 200[(1.005)ⁿ − 1]\n   = 800 000(1.005)ⁿ − 1 148 000(1.005)ⁿ + 1 148 000\n   = 1 148 000 − 348 000(1.005)ⁿ.\n\n(c) Solve 1 148 000 − 348 000(1.005)ⁿ < 400 000:\n748 000 < 348 000(1.005)ⁿ\n(1.005)ⁿ > 748/348 ≈ 2.14943\nn ln 1.005 > ln 2.14943\nn > 0.76520 ÷ 0.0049875 ≈ 153.4.\nn must be a whole number of months, so the balance first falls below $400 000 after 154 months.",
+      "keywords": [
+        "154",
+        "geometric",
+        "1148000",
+        "348000",
+        "153.4"
+      ],
+      "minKeywords": 3,
+      "bandDescriptors": {
+        "full": "A₂ is built by applying interest then a repayment twice, the geometric series is summed to give Aₙ = 1 148 000 − 348 000(1.005)ⁿ, and solving Aₙ < 400 000 gives 154 months.",
+        "partial": "The recursive set-up or the closed form is correct but the inequality is not solved, or n ≈ 153.4 is rounded down to 153 instead of up to 154.",
+        "minimal": "The repayments form a geometric series with ratio 1.005. In part (c) the inequality gives n > 153.4, and since the balance is only checked at whole months the answer rounds UP."
+      }
+    },
+    {
+      "year": 2025,
+      "qNum": "18",
+      "section": "II",
+      "category": "F1",
+      "marks": 2,
+      "q": "Find the range of <em>g</em>(<em>f</em>(<em>x</em>)), given <em>f</em>(<em>x</em>) = 3/(<em>x</em> &minus; 1) and <em>g</em>(<em>x</em>) = <em>x</em> + 5. <strong>(2 marks)</strong>",
+      "image": null,
+      "answer": "g(f(x)) = f(x) + 5 = 3/(x − 1) + 5.\n\nThe fraction 3/(x − 1) can take any real value except 0 (a fraction with a non-zero numerator is never zero).\n\nAdding 5 shifts every value up by 5, so g(f(x)) takes every real value except 5.\n\nRange: y ≠ 5, that is (−∞, 5) ∪ (5, ∞).",
+      "keywords": [
+        "5",
+        "y ≠ 5",
+        "all real",
+        "except"
+      ],
+      "minKeywords": 2,
+      "bandDescriptors": {
+        "full": "g(f(x)) = 3/(x − 1) + 5, so the range is all real numbers except 5.",
+        "partial": "The composite is formed correctly but the range is given as all real numbers, or the excluded value is given as 0 rather than 5.",
+        "minimal": "Substitute f into g, not g into f. Then ask which values the expression can never take: 3/(x − 1) is never 0, so the sum is never 5."
+      }
+    },
+    {
+      "year": 2025,
+      "qNum": "19",
+      "section": "II",
+      "category": "S1",
+      "marks": 3,
+      "q": "Three girls, Amara, Bala and Cassie, have nominated themselves for the local soccer team. Exactly one of the girls will be selected. The chances of their selection are in the ratio 1 : 2 : 3, respectively.<br><br>The probability that the team wins when:<br>&bull; Amara is selected is 0.5<br>&bull; Bala is selected is 0.4<br>&bull; Cassie is selected is 0.2.<br><br>Given that the team wins, find the probability that Amara was selected. <strong>(3 marks)</strong>",
+      "image": null,
+      "answer": "The ratio 1 : 2 : 3 gives selection probabilities 1/6, 2/6 and 3/6.\n\nP(win) = (1/6)(0.5) + (2/6)(0.4) + (3/6)(0.2)\n       = 0.5/6 + 0.8/6 + 0.6/6\n       = 1.9/6.\n\nP(Amara and win) = (1/6)(0.5) = 0.5/6.\n\nP(Amara | win) = (0.5/6) ÷ (1.9/6) = 0.5/1.9 = 5/19 ≈ 0.263.",
+      "keywords": [
+        "5/19",
+        "0.263",
+        "1.9",
+        "conditional"
+      ],
+      "minKeywords": 2,
+      "bandDescriptors": {
+        "full": "P(win) = 1.9/6 and P(Amara ∩ win) = 0.5/6, giving P(Amara | win) = 5/19 ≈ 0.263.",
+        "partial": "The total probability of a win is found but the conditional step is missing, or the ratio 1 : 2 : 3 is read as probabilities 1, 2 and 3 rather than sixths.",
+        "minimal": "Convert the ratio to probabilities that add to 1, find the overall probability of a win, then divide the Amara branch by that total."
+      }
+    },
+    {
+      "year": 2025,
+      "qNum": "20",
+      "section": "II",
+      "category": "M1",
+      "marks": 3,
+      "q": "The table shows future value interest factors for an annuity of $1.<div style=\"overflow-x:auto;-webkit-overflow-scrolling:touch;margin:14px 0\"><table class=\"q-table\" style=\"min-width:540px;margin:0\"><tr><th>Period (<em>n</em>) \\ Rate (<em>r</em>)</th><th>0.005</th><th>0.01</th><th>0.015</th><th>0.02</th><th>0.03</th><th>0.06</th></tr><tr><td>7</td><td>7.10588</td><td>7.21354</td><td>7.32300</td><td>7.43428</td><td>7.66246</td><td>8.39384</td></tr><tr><td>28</td><td>29.97452</td><td>32.12910</td><td>34.48148</td><td>37.05121</td><td>42.93092</td><td>68.52811</td></tr><tr><td>56</td><td>64.44140</td><td>74.58098</td><td>86.79754</td><td>101.55826</td><td>141.15377</td><td>418.82235</td></tr><tr><td>84</td><td>104.07393</td><td>130.67227</td><td>166.17264</td><td>213.86661</td><td>365.88054</td><td>2209.41674</td></tr></table></div>Lin invests a lump sum of $21&nbsp;000 for 7 years at an interest rate of 6% per annum, compounding monthly.<br><br>Yemi wants to achieve the same future value as Lin by using an annuity. Yemi plans to deposit a fixed amount into an investment account at the end of each month for 7 years. The investment account pays 6% per annum, compounding monthly.<br><br>Using the table provided, determine how much Yemi needs to deposit each month. <strong>(3 marks)</strong>",
+      "image": null,
+      "answer": "Monthly rate r = 0.06 ÷ 12 = 0.005 and n = 7 × 12 = 84 periods.\n\nFrom the table the future value interest factor is 104.07393. That factor equals [(1.005)⁸⁴ − 1] ÷ 0.005, so\n(1.005)⁸⁴ = 1 + 0.005 × 104.07393 = 1.52036965.\n\nLin's future value = 21 000 × 1.52036965 ≈ $31 927.76.\n\nFor Yemi, deposit M each month:\nM × 104.07393 = 31 927.76\nM ≈ $306.78.",
+      "keywords": [
+        "104.07393",
+        "0.005",
+        "84",
+        "306.78",
+        "31 927"
+      ],
+      "minKeywords": 3,
+      "bandDescriptors": {
+        "full": "r = 0.005 and n = 84 give the factor 104.07393; Lin's future value is about $31 927.76 and Yemi must deposit about $306.78 per month.",
+        "partial": "The correct row and column of the table are used but Lin's future value is computed with the annual rate, or the final division is not carried out.",
+        "minimal": "Both investments run for 84 monthly periods at 0.005 per period. The table's factor also gives (1.005)⁸⁴ = 1 + 0.005 × factor, which is Lin's compounding multiplier."
+      }
+    },
+    {
+      "year": 2025,
+      "qNum": "21",
+      "section": "II",
+      "category": "S3",
+      "gridCodes": [
+        "E1",
+        "S3"
+      ],
+      "marks": 5,
+      "q": "A continuous random variable <em>X</em> has a probability density function given by<br><br><em>f</em>(<em>x</em>) = <table style=\"display:inline-table;vertical-align:middle;border-collapse:collapse;margin:0 0 0 4px\"><tr><td rowspan=\"3\" style=\"border:0;padding:0 4px 0 0;font-size:3.9em;font-weight:300;line-height:0.86;vertical-align:middle\">{</td><td style=\"border:0;padding:1px 0;text-align:left;font-size:0.85em\">0&nbsp;&nbsp;&nbsp;<em>x</em> &lt; 1</td></tr><tr><td style=\"border:0;padding:1px 0;text-align:left;font-size:0.85em\">1/<em>x</em>&nbsp;&nbsp;&nbsp;1 &le; <em>x</em> &le; <em>e</em></td></tr><tr><td style=\"border:0;padding:1px 0;text-align:left;font-size:0.85em\">0&nbsp;&nbsp;&nbsp;<em>x</em> &gt; <em>e</em></td></tr></table><br><br>(a) Find the mode of the given probability density function. Justify your answer. <strong>(2 marks)</strong><br><br>(b) Calculate the value of the 25th percentile (<em>Q</em><sub>1</sub>) of this distribution. Give your answer correct to 3 decimal places. <strong>(3 marks)</strong>",
+      "image": null,
+      "answer": "(a) The mode is the value of x at which f(x) is greatest.\nOn 1 ≤ x ≤ e, f(x) = 1/x is a decreasing function, so its largest value occurs at the left endpoint x = 1, where f(1) = 1.\nThe mode is x = 1.\n\n(b) The 25th percentile q satisfies ∫₁^q (1/x) dx = 0.25.\n[ln x]₁^q = ln q − ln 1 = ln q.\nln q = 0.25\nq = e^0.25 ≈ 1.2840254.\n\nQ₁ ≈ 1.284.",
+      "keywords": [
+        "1",
+        "decreasing",
+        "1.284",
+        "ln",
+        "0.25"
+      ],
+      "minKeywords": 3,
+      "bandDescriptors": {
+        "full": "The mode is x = 1 because 1/x is decreasing on [1, e], and Q₁ = e^0.25 ≈ 1.284.",
+        "partial": "The mode is stated without justification, or the integral is set up correctly but not solved for q, or the answer is not given to 3 decimal places.",
+        "minimal": "The mode of a continuous distribution is where the density is highest, not where the area is half. For the quartile, integrate the density from 1 up to q and set the area equal to 0.25."
+      }
+    },
+    {
+      "year": 2025,
+      "qNum": "22",
+      "section": "II",
+      "category": "T2",
+      "marks": 2,
+      "q": "Prove that (sin&#8308;&theta; + cos&#8308;&theta;)/(sin&sup2;&theta; cos&sup2;&theta;) + 2 = sec&sup2;&theta; cosec&sup2;&theta;. <strong>(2 marks)</strong>",
+      "image": null,
+      "answer": "Start with the left-hand side and put the 2 over the common denominator:\n\nLHS = (sin⁴θ + cos⁴θ)/(sin²θ cos²θ) + 2\n    = (sin⁴θ + cos⁴θ + 2sin²θ cos²θ)/(sin²θ cos²θ).\n\nThe numerator is a perfect square:\nsin⁴θ + 2sin²θ cos²θ + cos⁴θ = (sin²θ + cos²θ)² = 1² = 1.\n\nSo LHS = 1/(sin²θ cos²θ) = (1/cos²θ)(1/sin²θ) = sec²θ cosec²θ = RHS.",
+      "keywords": [
+        "perfect square",
+        "sin²θ + cos²θ",
+        "1",
+        "common denominator"
+      ],
+      "minKeywords": 2,
+      "bandDescriptors": {
+        "full": "The 2 is written over the common denominator, the numerator is recognised as (sin²θ + cos²θ)² = 1, and the result reduces to sec²θ cosec²θ.",
+        "partial": "The common denominator is formed but the perfect square is not recognised, or the proof starts from both sides at once without connecting them.",
+        "minimal": "Multiply the 2 by sin²θcos²θ/sin²θcos²θ so everything sits over one denominator. The numerator is then a perfect square of the Pythagorean identity."
+      }
+    },
+    {
+      "year": 2025,
+      "qNum": "23",
+      "section": "II",
+      "category": "S3",
+      "marks": 5,
+      "q": "(a) In a flock of 12&nbsp;600 sheep, the ratio of males to females is 1 : 20.<br><br>The weights of the male sheep are normally distributed with a mean of 76.2 kg and a standard deviation of 6.8 kg.<br><br>In the flock, 15 of the male sheep each weigh more than <em>x</em> kg.<br><br>Find the value of <em>x</em>. <strong>(4 marks)</strong><br><br>(b) The weights of the female sheep are also normally distributed but have a smaller mean and smaller standard deviation than the weights of male sheep.<br><br>Explain whether it could be expected that 300 of the females from the flock each weigh more than <em>x</em> kg, where <em>x</em> is the value found in part (a). <strong>(1 mark)</strong>",
+      "image": null,
+      "answer": "(a) The ratio 1 : 20 splits the flock into 21 parts, so the number of males is 12 600 ÷ 21 = 600 (and there are 12 000 females).\n\nThe proportion of males above x kg is 15/600 = 0.025, that is 2.5%.\n\nFor a normal distribution, 95% of values lie within two standard deviations of the mean, so 2.5% lie above μ + 2σ.\n\nx = 76.2 + 2(6.8) = 76.2 + 13.6 = 89.8 kg.\n\n(b) 300 out of 12 000 females is also 2.5%. But the females have a smaller mean and a smaller standard deviation, so 89.8 kg is more than two standard deviations above the female mean. The proportion of females above 89.8 kg is therefore well under 2.5%, and far fewer than 300 would be expected.",
+      "keywords": [
+        "600",
+        "89.8",
+        "2.5",
+        "12 000",
+        "fewer"
+      ],
+      "minKeywords": 3,
+      "bandDescriptors": {
+        "full": "There are 600 males, 15 of them is 2.5%, which is two standard deviations above the mean, so x = 89.8 kg; and fewer than 300 females would be expected because 89.8 kg is more than two female standard deviations above a smaller female mean.",
+        "partial": "x = 89.8 is found but part (b) is answered as 'yes, also 2.5%', or the flock is split as 12 600 ÷ 20 rather than ÷ 21.",
+        "minimal": "The ratio 1 : 20 means 21 equal parts, not 20. Then turn 15 out of the male total into a percentage and match it to the empirical rule."
+      }
+    },
+    {
+      "year": 2025,
+      "qNum": "24",
+      "section": "II",
+      "category": "C3",
+      "marks": 4,
+      "q": "The graphs of <em>y</em> = <em>e</em> ln <em>x</em> and <em>y</em> = <em>ax</em>&sup2; + <em>c</em> are shown. The line <em>y</em> = <em>x</em> is a tangent to both graphs at their point of intersection.<img src=\"/diagrams/mathematics-advanced_2025_Q24_stimulus.jpg\" alt=\"A logarithmic curve y = e ln x and an upward parabola y = ax squared + c touching the line y = x at their common point.\" style=\"max-width:100%;height:auto;display:block;margin:14px auto\">Find the values of <em>a</em> and <em>c</em>. <strong>(4 marks)</strong>",
+      "image": null,
+      "answer": "The line y = x has gradient 1, so both curves have gradient 1 at the point of contact.\n\nFor y = e ln x: dy/dx = e/x. Setting e/x = 1 gives x = e.\nThen y = e ln e = e, so the point of contact is (e, e). It lies on y = x, as expected.\n\nFor y = ax² + c: dy/dx = 2ax. At x = e this must equal 1:\n2ae = 1, so a = 1/(2e).\n\nThe parabola also passes through (e, e):\na e² + c = e\ne²/(2e) + c = e\ne/2 + c = e\nc = e/2.\n\nSo a = 1/(2e) and c = e/2.",
+      "keywords": [
+        "1/(2e)",
+        "e/2",
+        "(e, e)",
+        "gradient 1"
+      ],
+      "minKeywords": 3,
+      "bandDescriptors": {
+        "full": "The point of contact is (e, e), found from e/x = 1; then 2ae = 1 gives a = 1/(2e) and substituting the point gives c = e/2.",
+        "partial": "The point of contact is found but only one of a and c follows, or the gradient condition is used without also substituting the point into the parabola.",
+        "minimal": "A common tangent of gradient 1 means each curve has derivative 1 there. Find the x-value from the logarithmic curve first, since it fixes the point."
+      }
+    },
+    {
+      "year": 2025,
+      "qNum": "25",
+      "section": "II",
+      "category": "C4",
+      "gridCodes": [
+        "C2",
+        "C4",
+        "M1"
+      ],
+      "marks": 6,
+      "q": "(a) Show that d/d<em>x</em> (sin <em>x</em> &minus; <em>x</em> cos <em>x</em>) = <em>x</em> sin <em>x</em>. <strong>(2 marks)</strong><br><br>(b) Hence, find the value of &int;<sub>0</sub><sup>2025&pi;</sup> <em>x</em> sin <em>x</em> d<em>x</em>. <strong>(2 marks)</strong><br><br>(c) The regions bounded by the <em>x</em>-axis and the graph of <em>y</em> = <em>x</em> sin <em>x</em> for <em>x</em> &ge; 0 are shown.<img src=\"/diagrams/mathematics-advanced_2025_Q25_stimulus.jpg\" alt=\"The curve y = x sin x for x from 0 to about 4 pi, with the regions between the curve and the x-axis shaded; the regions grow in size as x increases.\" style=\"max-width:100%;height:auto;display:block;margin:14px auto\">Let <em>A<sub>n</sub></em> = &int;<sub>(<em>n</em>&minus;1)&pi;</sub><sup><em>n</em>&pi;</sup> <em>x</em> sin <em>x</em> d<em>x</em>, where <em>n</em> is a positive integer.<br><br>It can be shown that |<em>A<sub>n</sub></em>| = (2<em>n</em> &minus; 1)&pi;. (Do NOT prove this.)<br><br>Find the exact total area of the regions bounded by the curve <em>y</em> = <em>x</em> sin <em>x</em> and the <em>x</em>-axis between <em>x</em> = 0 and <em>x</em> = 2025&pi;. <strong>(2 marks)</strong>",
+      "image": null,
+      "answer": "(a) Differentiate term by term, using the product rule on x cos x:\nd/dx (sin x) = cos x\nd/dx (x cos x) = cos x − x sin x\nSo d/dx (sin x − x cos x) = cos x − (cos x − x sin x) = x sin x.\n\n(b) Part (a) makes sin x − x cos x a primitive of x sin x:\n∫₀^2025π x sin x dx = [sin x − x cos x]₀^2025π\n= (sin 2025π − 2025π cos 2025π) − (sin 0 − 0)\n2025 is odd, so cos 2025π = −1 and sin 2025π = 0.\n= 0 − 2025π(−1) = 2025π.\n\n(c) Area, unlike the integral, adds the size of every region:\nTotal area = Σ from n = 1 to 2025 of |Aₙ| = Σ (2n − 1)π.\nThe sum 1 + 3 + 5 + … + (2 × 2025 − 1) is the sum of the first 2025 odd numbers, which is 2025².\nTotal area = 2025²π = 4 100 625π square units.",
+      "keywords": [
+        "2025π",
+        "4 100 625",
+        "2025²",
+        "odd",
+        "area"
+      ],
+      "minKeywords": 3,
+      "bandDescriptors": {
+        "full": "The product rule gives the primitive, the definite integral evaluates to 2025π, and summing |Aₙ| = (2n − 1)π for n = 1 to 2025 gives a total area of 2025²π = 4 100 625π.",
+        "partial": "Parts (a) and (b) are correct but part (c) reports the integral 2025π as the area, ignoring the regions below the axis.",
+        "minimal": "The integral cancels regions below the axis; area does not. Sum the 2025 values of (2n − 1)π — the first n odd numbers add to n²."
+      }
+    },
+    {
+      "year": 2025,
+      "qNum": "26",
+      "section": "II",
+      "category": "C3",
+      "marks": 5,
+      "q": "A piece of wire is 100 cm long. Some of the wire is to be used to make a circle of radius <em>r</em> cm. The remainder of the wire is used to make an equilateral triangle of side length <em>x</em> cm.<br><br>(a) Show that the combined area of the circle and equilateral triangle is given by <em>A</em>(<em>x</em>) = &frac14;(&radic;3<em>x</em>&sup2; + (100 &minus; 3<em>x</em>)&sup2;/&pi;). <strong>(2 marks)</strong><br><br>(b) By considering the quadratic function in part (a), show that the maximum value of <em>A</em>(<em>x</em>) occurs when all the wire is used for the circle. <strong>(3 marks)</strong>",
+      "image": null,
+      "answer": "(a) The triangle uses 3x cm of wire, so the circle uses 100 − 3x cm.\nThat is the circumference: 2πr = 100 − 3x, so r = (100 − 3x)/(2π).\n\nCircle area = πr² = π(100 − 3x)²/(4π²) = (100 − 3x)²/(4π).\nEquilateral triangle area = (√3/4)x².\n\nA(x) = (√3/4)x² + (100 − 3x)²/(4π) = ¼(√3x² + (100 − 3x)²/π).\n\n(b) A(x) is a quadratic in x. Expanding, the coefficient of x² is ¼(√3 + 9/π), which is positive, so the parabola is concave up and its vertex is a MINIMUM, not a maximum.\n\nThe maximum of a concave-up quadratic on a closed interval must therefore occur at an endpoint. The domain is 0 ≤ x ≤ 100/3, since the triangle cannot use more wire than there is.\n\nA(0) = ¼ × 10000/π = 2500/π ≈ 795.8 cm² (all the wire in the circle)\nA(100/3) = ¼ × √3 × (100/3)² = 2500√3/9 ≈ 481.1 cm² (all the wire in the triangle)\n\nA(0) is the larger, so the maximum area occurs at x = 0, that is when all the wire is used for the circle.",
+      "keywords": [
+        "concave up",
+        "minimum",
+        "endpoint",
+        "2500/π",
+        "x = 0"
+      ],
+      "minKeywords": 3,
+      "bandDescriptors": {
+        "full": "The circumference gives r = (100 − 3x)/(2π) and hence A(x); the coefficient of x² is positive so the vertex is a minimum, and comparing the endpoints x = 0 and x = 100/3 shows the maximum is at x = 0.",
+        "partial": "The expression in (a) is derived but (b) sets A′(x) = 0 and reports that stationary point as the maximum.",
+        "minimal": "A concave-up parabola has its lowest point at the vertex, so the largest value on a closed domain is at one of the two ends. Test both."
+      }
+    },
+    {
+      "year": 2025,
+      "qNum": "27",
+      "section": "II",
+      "category": "C4",
+      "gridCodes": [
+        "C3",
+        "C4",
+        "E1"
+      ],
+      "marks": 6,
+      "q": "The shaded region is bounded by the graph <em>y</em> = (&frac12;)<sup><em>x</em></sup>, the coordinate axes and <em>x</em> = 2.<img src=\"/diagrams/mathematics-advanced_2025_Q27_stimulus.jpg\" alt=\"The decreasing curve y = one half to the power x from x = 0 to x = 2, with the region between it and the x-axis shaded.\" style=\"max-width:100%;height:auto;display:block;margin:14px auto\">(a) Use two applications of the trapezoidal rule to estimate the area of the shaded region. <strong>(2 marks)</strong><br><br>(b) Show that the exact area of the shaded region is 3/(4 ln 2). <strong>(2 marks)</strong><br><br>(c) Using your answers from part (a) and part (b), deduce <em>e</em> &lt; 2&radic;2. <strong>(2 marks)</strong>",
+      "image": null,
+      "answer": "(a) Two applications over 0 ≤ x ≤ 2 use h = 1 and the three values x = 0, 1, 2:\ny(0) = 1,  y(1) = ½,  y(2) = ¼.\n\nArea ≈ (h/2)[y₀ + 2y₁ + y₂] = (1/2)[1 + 2(½) + ¼] = (1/2)(9/4) = 9/8.\n\n(b) (½)ˣ = 2⁻ˣ, and ∫2⁻ˣ dx = −2⁻ˣ/ln 2.\nArea = ∫₀² 2⁻ˣ dx = [−2⁻ˣ/ln 2]₀² = −(¼)/ln 2 + 1/ln 2 = (1 − ¼)/ln 2 = 3/(4 ln 2).\n\n(c) The curve y = (½)ˣ is concave up, so each trapezium lies above the curve and the trapezoidal rule OVERESTIMATES the area:\n9/8 > 3/(4 ln 2).\nMultiply both sides by 4 ln 2 (positive):\n(9/2) ln 2 > 3\nln 2 > 2/3\n2 > e^(2/3)\nCube both sides: 8 > e², so e < √8 = 2√2.",
+      "keywords": [
+        "9/8",
+        "overestimate",
+        "concave up",
+        "ln 2 > 2/3",
+        "2√2"
+      ],
+      "minKeywords": 3,
+      "bandDescriptors": {
+        "full": "The trapezoidal estimate is 9/8, the exact area is 3/(4 ln 2), and because the curve is concave up the estimate exceeds the exact value, which rearranges to ln 2 > 2/3 and hence e < 2√2.",
+        "partial": "Parts (a) and (b) are correct but part (c) does not justify the direction of the inequality, or asserts the estimate is an underestimate.",
+        "minimal": "For a concave-up curve the chords lie above it, so the trapezoidal rule gives too much area. That single inequality between (a) and (b) is the whole of part (c)."
+      }
+    },
+    {
+      "year": 2025,
+      "qNum": "28",
+      "section": "II",
+      "category": "T1",
+      "gridCodes": [
+        "T1",
+        "T3"
+      ],
+      "marks": 4,
+      "q": "A farmer wants to use a straight fence to divide a circular paddock of radius 10 metres into two segments. The smaller segment is &frac14; of the paddock and is shaded in the diagram. The fence subtends an angle of &theta; radians at the centre of the circle as shown.<img src=\"/diagrams/mathematics-advanced_2025_Q28_stimulus.jpg\" alt=\"A circle of radius 10 m with a chord cutting off a shaded minor segment on the right; two radii to the ends of the chord meet at the centre at an angle theta. Not to scale.\" style=\"max-width:100%;height:auto;display:block;margin:14px auto\">(a) Show that &theta; = sin &theta; + &pi;/2. <strong>(2 marks)</strong><br><br>(b) The graph of <em>y</em> = sin &theta; + &pi;/2 is shown.<img src=\"/diagrams/mathematics-advanced_2025_Q28b_stimulus.jpg\" alt=\"The curve y = sin theta + pi over 2 drawn on a fine grid for theta from 0 to about 7.3, oscillating between about 0.57 and 2.57.\" style=\"max-width:100%;height:auto;display:block;margin:14px auto\">Use the graph and the result in part (a) to estimate the arc length of the smaller segment to the nearest metre. <strong>(2 marks)</strong>",
+      "image": null,
+      "answer": "(a) Area of a segment = ½r²(θ − sin θ), and the whole circle has area πr².\nThe segment is ¼ of the paddock:\n½r²(θ − sin θ) = ¼ πr²\nDivide both sides by r² and multiply by 2:\nθ − sin θ = π/2\nθ = sin θ + π/2.\n\n(b) The solution of θ = sin θ + π/2 is where the line y = θ meets the curve y = sin θ + π/2. Drawing y = θ on the given grid, the graphs cross at about θ = 2.3 radians.\n\nArc length = rθ = 10 × 2.3 = 23 metres (to the nearest metre).",
+      "keywords": [
+        "½r²(θ - sin θ)",
+        "π/2",
+        "2.3",
+        "23",
+        "arc length"
+      ],
+      "minKeywords": 3,
+      "bandDescriptors": {
+        "full": "Equating the segment area ½r²(θ − sin θ) to a quarter of πr² gives θ = sin θ + π/2; drawing y = θ on the grid gives θ ≈ 2.3, so the arc length is 10θ ≈ 23 m.",
+        "partial": "The equation in (a) is derived but (b) uses the chord length instead of the arc, or reads a value of θ without drawing the line y = θ.",
+        "minimal": "The r² cancels in part (a), which is why the radius never appears. In part (b) the equation θ = sin θ + π/2 says the line y = θ crosses the printed curve — draw it and read off θ, then use arc = rθ."
+      }
+    },
+    {
+      "year": 2025,
+      "qNum": "29",
+      "section": "II",
+      "category": "T1",
+      "marks": 7,
+      "q": "The point <em>T</em> is the peak of a mountain and the point <em>O</em> is directly below the mountain&rsquo;s peak. The point <em>Y</em> is due east of <em>O</em> and the angle of elevation of <em>T</em> from <em>Y</em> is 60&deg;. The point <em>F</em> is 4 km south-west of <em>Y</em>. The points <em>O</em>, <em>Y</em> and <em>F</em> are on level ground. The angle of elevation of <em>T</em> from <em>F</em> is 45&deg;.<img src=\"/diagrams/mathematics-advanced_2025_Q29_stimulus.jpg\" alt=\"A three-dimensional diagram: the vertical mountain OT of height h, with Y due east of O at an angle of elevation of 60 degrees, and F south-west of Y at 4 km, with an angle of elevation of 45 degrees. Not to scale.\" style=\"max-width:100%;height:auto;display:block;margin:14px auto\">(a) Let the height of the mountain be <em>h</em>.<br>Show that <em>OY</em> = <em>h</em>/&radic;3. <strong>(1 mark)</strong><br><br>(b) Hence, or otherwise, find the value of <em>h</em>, correct to 2 decimal places. <strong>(3 marks)</strong><br><br>(c) Find the bearing of point <em>O</em> from point <em>F</em>, correct to the nearest degree. <strong>(3 marks)</strong>",
+      "image": null,
+      "answer": "(a) Triangle TOY is right-angled at O, with the angle of elevation 60° at Y.\ntan 60° = h/OY, so OY = h/tan 60° = h/√3.\n\n(b) From F the elevation is 45°, so OF = h/tan 45° = h.\n\nSet up coordinates on the level ground with O at the origin, east as x and north as y.\nY is due east: Y = (h/√3, 0).\nF is 4 km south-west of Y, so F = (h/√3 − 4/√2, −4/√2) = (h/√3 − 2√2, −2√2).\n\nOF² = h² gives\n(h/√3 − 2√2)² + (2√2)² = h²\nh²/3 − (4√6/3)h + 8 + 8 = h²\nMultiply by 3: h² − 4√6 h + 48 = 3h²\n2h² + 4√6 h − 48 = 0\nh² + 2√6 h − 24 = 0\nh = (−2√6 + √(24 + 96))/2 = −√6 + √30 ≈ 3.03.\n\nh ≈ 3.03 km.\n\n(c) With h = 3.0277, OY = h/√3 = 1.7481, so\nF = (1.7481 − 2.8284, −2.8284) = (−1.0804, −2.8284).\n\nFrom F, the point O lies 1.0804 km east and 2.8284 km north.\nThe angle east of north is arctan(1.0804/2.8284) = arctan(0.3820) = 20.9°.\n\nThe bearing of O from F is 021° (to the nearest degree).",
+      "keywords": [
+        "h/√3",
+        "3.03",
+        "021",
+        "21",
+        "south-west",
+        "bearing"
+      ],
+      "minKeywords": 3,
+      "bandDescriptors": {
+        "full": "OY = h/√3 and OF = h; resolving the 4 km south-west step gives h² + 2√6h − 24 = 0 and h ≈ 3.03 km, and the bearing of O from F is about 021°.",
+        "partial": "Part (a) and OF = h are correct but the south-west displacement is not resolved into east and north components, or the bearing is measured from the wrong end (the bearing of F from O rather than O from F).",
+        "minimal": "South-west is 4/√2 km west and 4/√2 km south. Put O at the origin, write F's coordinates, and use OF = h. A bearing is measured clockwise from north at the point you are standing on — here that is F."
+      }
+    },
+    {
+      "year": 2025,
+      "qNum": "30",
+      "section": "II",
+      "category": "F2",
+      "marks": 3,
+      "q": "The parabola with equation <em>y</em> = (<em>x</em> &minus; 1)(<em>x</em> &minus; 5) is translated both horizontally to the right and vertically up by <em>k</em> units, where <em>k</em> is positive.<br><br>The translated parabola passes through the point (6, 11).<br><br>Find the value of <em>k</em>. <strong>(3 marks)</strong>",
+      "image": null,
+      "answer": "Translating right by k replaces x with x − k; translating up by k adds k:\ny = (x − k − 1)(x − k − 5) + k.\n\nSubstitute the point (6, 11):\n11 = (6 − k − 1)(6 − k − 5) + k\n11 = (5 − k)(1 − k) + k\n11 = 5 − 5k − k + k² + k\n11 = k² − 5k + 5\nk² − 5k − 6 = 0\n(k − 6)(k + 1) = 0\nk = 6 or k = −1.\n\nk is positive, so k = 6.",
+      "keywords": [
+        "6",
+        "(x - k - 1)",
+        "k² - 5k - 6",
+        "positive"
+      ],
+      "minKeywords": 2,
+      "bandDescriptors": {
+        "full": "The translated parabola is y = (x − k − 1)(x − k − 5) + k; substituting (6, 11) gives k² − 5k − 6 = 0 and, since k > 0, k = 6.",
+        "partial": "The quadratic in k is formed but both roots are given, or the horizontal translation is applied as x + k instead of x − k.",
+        "minimal": "A shift to the RIGHT by k replaces every x with x − k. Substitute the point and solve the resulting quadratic, then discard the negative root."
+      }
+    },
+    {
+      "year": 2025,
+      "qNum": "31",
+      "section": "II",
+      "category": "T3",
+      "marks": 3,
+      "q": "The equation cos <em>px</em> = &frac12; has 2 solutions where 0 &le; <em>x</em> &le; 2&pi; and <em>p</em> &gt; 0.<br><br>Find all possible values of <em>p</em>. <strong>(3 marks)</strong>",
+      "image": null,
+      "answer": "Let u = px. As x runs over 0 ≤ x ≤ 2π and p > 0, u runs over 0 ≤ u ≤ 2πp.\n\ncos u = ½ has solutions u = π/3, 5π/3, 7π/3, 11π/3, … (that is π/3 + 2kπ and 5π/3 + 2kπ).\n\nThere are exactly 2 solutions when the upper limit 2πp reaches the second solution but not the third:\n5π/3 ≤ 2πp < 7π/3.\n\nDivide through by 2π:\n5/6 ≤ p < 7/6.",
+      "keywords": [
+        "5/6",
+        "7/6",
+        "π/3",
+        "5π/3",
+        "2πp"
+      ],
+      "minKeywords": 3,
+      "bandDescriptors": {
+        "full": "Substituting u = px stretches the domain to 0 ≤ u ≤ 2πp; the solutions of cos u = ½ are π/3, 5π/3, 7π/3, …, so exactly two are captured when 5/6 ≤ p < 7/6.",
+        "partial": "The list of solutions of cos u = ½ is correct but the endpoints are both made strict or both inclusive, or only p ≥ 5/6 is given with no upper bound.",
+        "minimal": "Rewrite the domain in terms of u = px. The endpoint 5π/3 must be reached (so ≤) but 7π/3 must not be (so <) — the two inequalities are not the same kind."
       }
     }
   ]

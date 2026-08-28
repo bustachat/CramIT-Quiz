@@ -964,7 +964,6 @@
       "39(b)": {
         "marks": 3,
         "codes": [
-          "MS-F5",
           "MS-M6"
         ],
         "outcomes": [
@@ -984,7 +983,6 @@
       "41": {
         "marks": 4,
         "codes": [
-          "MS-F4",
           "MS-S5"
         ],
         "outcomes": [
@@ -1907,8 +1905,7 @@
       "32(b)": {
         "marks": 2,
         "codes": [
-          "MS-F4",
-          "MS-M1"
+          "MS-F4"
         ],
         "outcomes": [
           "MS2-12-9"
@@ -1927,7 +1924,6 @@
       "34(a)": {
         "marks": 3,
         "codes": [
-          "MS-M6",
           "MS-S4"
         ],
         "outcomes": [
@@ -2288,7 +2284,6 @@
       "28": {
         "marks": 3,
         "codes": [
-          "MS-F1",
           "MS-S1"
         ],
         "outcomes": [
@@ -2309,7 +2304,6 @@
       "30": {
         "marks": 3,
         "codes": [
-          "MS-F4",
           "MS-S4"
         ],
         "outcomes": [

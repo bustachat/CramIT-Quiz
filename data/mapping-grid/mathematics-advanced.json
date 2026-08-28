@@ -16,8 +16,7 @@
       "2": {
         "marks": 1,
         "codes": [
-          "MA-F2",
-          "MA-S1"
+          "MA-F2"
         ],
         "outcomes": [
           "MA12-1"
@@ -132,8 +131,7 @@
       "13": {
         "marks": 2,
         "codes": [
-          "MA-C4",
-          "MA-S1"
+          "MA-C4"
         ],
         "outcomes": [
           "MA12-7"
@@ -349,8 +347,7 @@
       "26(c)": {
         "marks": 3,
         "codes": [
-          "MA-M1",
-          "MA-S2"
+          "MA-M1"
         ],
         "outcomes": []
       },
@@ -1677,8 +1674,6 @@
       "27(b)": {
         "marks": 2,
         "codes": [
-          "MA-C1",
-          "MA-C4",
           "MA-F2"
         ],
         "outcomes": [
@@ -2015,7 +2010,6 @@
       "21": {
         "marks": 3,
         "codes": [
-          "MA-C2",
           "MA-S2"
         ],
         "outcomes": [
@@ -2035,7 +2029,6 @@
       "22(b)": {
         "marks": 2,
         "codes": [
-          "MA-C3",
           "MA-C4"
         ],
         "outcomes": [
@@ -2180,8 +2173,7 @@
       "29": {
         "marks": 4,
         "codes": [
-          "MA-C3",
-          "MA-F2"
+          "MA-C3"
         ],
         "outcomes": [
           "MA12-6"
@@ -2201,7 +2193,6 @@
       "31(a)": {
         "marks": 3,
         "codes": [
-          "MA-M1",
           "MA-T1"
         ],
         "outcomes": [
@@ -2438,7 +2429,6 @@
       "17(b)": {
         "marks": 3,
         "codes": [
-          "MA-E1",
           "MA-M1"
         ],
         "outcomes": [
@@ -2459,8 +2449,7 @@
       "18": {
         "marks": 2,
         "codes": [
-          "MA-F1",
-          "MA-M1"
+          "MA-F1"
         ],
         "outcomes": [
           "MA11-2"
@@ -2487,7 +2476,6 @@
       "21(a)": {
         "marks": 2,
         "codes": [
-          "MA-E1",
           "MA-S3"
         ],
         "outcomes": [
@@ -2599,7 +2587,6 @@
       "27(b)": {
         "marks": 2,
         "codes": [
-          "MA-C3",
           "MA-C4"
         ],
         "outcomes": [
@@ -2620,7 +2607,6 @@
       "28(a)": {
         "marks": 2,
         "codes": [
-          "MA-E1",
           "MA-T1"
         ],
         "outcomes": [
@@ -2641,8 +2627,7 @@
       "29(a)": {
         "marks": 1,
         "codes": [
-          "MA-T1",
-          "MA-T3"
+          "MA-T1"
         ],
         "outcomes": [
           "MA11-3"

@@ -1888,3 +1888,144 @@ three ground-truthed subjects and correctly skip Mathematics Advanced until Stag
 is still **registered nowhere in code** — no `subjects/index.json` row, no `SUBJECT_ID_MAP`, no
 `SUBJECT_CATALOGUE`, no card; that is Stage 7. Gate 4 is ticked for 2022 in the runbook, and the
 tracker now says **2025 is next**.
+
+---
+
+## 2026-08-28 (later still, ×4) — Mathematics Advanced Stage 4, paper 4 of 6: the 2025 port, and a ground-truth extractor fixed
+
+**Branch: `port/maths-advanced`, not `main`.** Runbook:
+`docs/subject-plans/mathematics-advanced.md`.
+
+### What was ported
+
+`subjects/mathematics-advanced.json` now carries **four years — 40 MC + 84 written entries + 2
+`omittedQuestions` + 8 `omittedParts`**. 2025 adds 10 MC + 21 written and **two `omittedParts`
+worth 3 marks** (Q15(b) sketch 2, Q16(b) complete-the-graph 1); no whole 2025 question is a
+drawing task, so there are no new `omittedQuestions` — exactly as the Stage 1 survey predicted.
+
+Marks reconcile to **exactly 100**: 10 MC + 87 written + 3 omitted. A build script refuses to
+write unless six things hold — the `check_written_key.cjs` prefix-sum join per question, the paper
+total, every `category` being one of NESA's own codes for that question, every `gridCodes` list
+matching NESA's union, every grid part having a bank entry, and every referenced image file
+existing — and unless the existing file round-trips byte-for-byte first.
+
+All ten MC answers were confirmed against the official key **before** authoring, by calling
+`extract_mc_key()` read-only on `2025_marking_guidelines.pdf` — `B A D C B C A D B C`. Ten
+independent derivations from the paper agreed with all ten. That is not a substitute for Stage 6;
+it just means the port did not start from guesses. §10 forbids re-reading a marking guideline to
+"audit the answers", and this session did not.
+
+### The mapping grid was wrong, and the extractor was fixed rather than worked around
+
+Porting Q18 — a plain composite-functions question — turned up `codes: ["MA-F1","MA-M1"]` in
+`data/mapping-grid/mathematics-advanced.json`. Modelling Financial Situations on a function
+question is not plausible, so NESA's printed Mapping Grid page was rendered and read: it says
+`MA-F1` alone.
+
+The cause is in `scripts/build_mapping_grid.py`. Its Pass 2 gave each row *"the lines from just
+after the PREVIOUS label to just before the NEXT one, because vertically-centred cell text can
+start above its own label line"* — a comment that names the very failure it produces. A Content
+cell holding two or three codes is centred vertically, so its **first** line sits above its own
+label line and its **last** line below, and the codes leak into the neighbouring rows in *both*
+directions. 2025 Q17(c) (`E1`/`M1`) pushed `E1` up into Q17(b) and `M1` down into Q18; Q27(c)
+(`C3`/`C4`/`E1`) pushed `C3` up into Q27(b) and `E1` down into Q28(a).
+
+**20 rows across the two maths subjects carried a code NESA never assigned** — 14 in Mathematics
+Advanced (2020 Q2, Q13, Q26(c); 2023 Q27(b); 2024 Q21, Q22(b), Q29, Q31(a); 2025 Q17(b), Q18,
+Q21(a), Q27(b), Q28(a), Q29(a)) and 6 in Mathematics Standard 2 (2021 39(b), 2021 41, 2023 32(b), 2023 34(a), 2024 28, 2024 30). **Marks were never
+affected**, which is precisely why nothing caught it: every paper still reconciled to its
+front-page total with zero uncoded rows, and the build script's own gate passed.
+
+**The fix reads the grid's own drawn horizontal rules.** The Mapping Grid is a real ruled table,
+so its row boundaries are printed on the page; new `row_rules()` collects the y positions of every
+horizontal rule spanning the Content column, `band_of()` bisects a y into its band, and each text
+line is assigned to the band it falls in. The old label-bracketing path survives only as a
+fallback for a page carrying no usable rules. All twelve papers across both subjects still
+reconcile to 100 marks with zero uncoded rows.
+
+Consequences, all handled in this session:
+
+- Both mapping grids regenerated; `data/exam-trends/` rebuilt on top of them (small shifts —
+  Advanced `E1` moves 3.6% → 3.0% of examined marks, `C2` 4.7% → 4.4%; no ranking changes).
+- The Standard 2 corrections are **all in Section II**, so CLAUDE.md §10's statement that all 90
+  original Standard 2 MC questions agree with NESA's tagging is untouched.
+- Four already-ported Mathematics Advanced questions carried a `gridCodes` list that became
+  spurious once corrected (2020 MC Q2, 2020 Q13, 2020 Q26, 2023 Q27). The key is now absent on
+  all four. **No `category` changed anywhere in any subject, and no answer or mark moved.**
+- The runbook's Stage 3 decision 7 table drops from **21 multi-code parts to 7 of 294**, and 2020,
+  2021 and 2022 turn out to have none at all.
+
+### Assets — 23 crops
+
+`scripts/crop_maths_advanced.py --year 2025`, a new registry block. Section I: Q6, Q9, Q10
+stimulus plus Q2's, Q4's and Q6's four option cells each. Section II: Q11, Q14, Q24, Q25, Q27,
+Q28 (×2), Q29. Boxes came from an ink profile at 150 dpi; every crop was then built into a contact
+sheet and compared against the paper, option by option.
+
+⚠️ **Stage 1's Section II crop list under-counts a third way: 2025 Q29 is missing from it.** The
+mountain-peak diagram is not in Stage 1's 2025 row, even though Stage 1's own *method* paragraph
+names "2025 Q29" among the four Section II diagrams that only the union of its three detectors
+found. The table and the prose disagreed and the table was believed. Subject crop total moves
+123 → **124**. Conversely, **Q25 needed no part-letter suffix**: its only diagram sits in part (c),
+so it is `…_2025_Q25_stimulus.jpg`; the suffix convention set in the 2022 session is for a *second*
+diagram inside one question, which for 2025 means only Q28.
+
+⚠️ **A crop can be clipped by trusting the ink profile alone.** Q28(b)'s first cut used the ink
+band's left edge, x = 85 pt, and silently removed the graph's y-axis labels 1, 2 and 3 — those
+start at x = 78.4 pt, which `get_text("words")` gives exactly and the banded profile had merged
+away. Files written, non-empty, plausible, wrong. Found by looking at the contact sheet. Rule
+recorded: cross-check any crop edge running close to axis labels against the text layer before
+accepting it.
+
+**The 2020 option-letter amputation trap did not recur, and was checked rather than assumed.** On
+pages 3, 4 and 5 all twelve `A.`/`B.`/`C.`/`D.` glyphs are real text with exact boxes, and
+`get_drawings()` reports **zero** vector paths intersecting any of the twelve — so the white
+`erase` rectangle removes the letter and nothing else. On Q2 an x-cut would also have been safe (a
+blank column separates the letter at x ≤ 109.4 from the graph at x ≥ 127.7), but on Q4 and Q6 the
+graph runs straight through the letter's x-range, so `erase` stays the uniform method.
+
+### Port decisions this paper needed
+
+- **Q25 is the year's even three-way split** (`C2` 2 / `C4` 2 / `M1` 2, one code per part) and the
+  hardest call of the four papers so far. The 2023 tie-break — heavier mathematical demand —
+  does not settle it, since the sting is in (c)'s arithmetic series. Filed under **`C4`**: (a)
+  exists only to supply the primitive that (b) and (c) integrate with, and the series is a step
+  inside an area calculation rather than the subject of the question. Same reading that put 2022
+  Q28 under `C4`. NESA's full list is kept in `gridCodes`.
+- **Q15 is the "leans on an omitted part" case for 2025, and it is kept.** Part (b) asks for P₂
+  to be sketched on the printed diagram and is dropped; part (c) says "Hence, find the values of
+  t … for which P₁ and P₂ are BOTH decreasing." Unlike 2021 Q27(d) — which points at "the graph
+  drawn in part (a)" and nothing else — part (c) names two functions whose **equations are both
+  given**, so it is fully answerable analytically. P₂'s definition is repeated inline in (c), and
+  the omission note says so explicitly rather than letting the substitution pass as NESA's
+  wording. **Q15's diagram was deliberately not cropped**: it exists to be drawn on, and supplying
+  a grid carrying only P₁ would invite the student to read P₂ off a curve that is not there.
+- Q9 is the MC worth re-reading: the straight-line estimate lands exactly on 6.2, and the answer
+  is `[6.0, 6.2)` because `f′` is *falling* across the interval, so the true rise is strictly under
+  0.2. The half-open intervals are deliberate on NESA's part.
+
+### Verified in the browser at 430 px
+
+All 31 questions rendered through `index.html`'s own CSS in a throwaway harness (stem 390 px):
+`body.scrollWidth` never exceeds **430** and no `.question-area` overflows; Q20's **7-column**
+future-value table sits in the `overflow-x:auto` wrapper at 390 px and scrolls to 564 px
+internally; MC Q1's 2-column table fits bare; Q21's **three-row** piecewise brace measures
+**72.5 px against a 72.5 px three-row block** at `font-size:3.9em`, confirming the 2022 session's
+scaling rule exactly; option images render 160×128, 160×154 and 160×166 px in the 2×2 grid, so
+`optionImagesWide` is again unnecessary; plain-text option buttons are 52 px single-line; all 23
+images load; all **38** distinct non-ASCII characters used render real glyphs (each rasterised and
+compared against the notdef glyph's ink count); and `<sup>` exponents render 15 px against an
+18 px base. Zero console errors.
+
+As in the 2022 session, **screenshots were unavailable** — the Browser pane was not displayed, so
+these are DOM measurements rather than pictures. The harness badges written questions with
+`q.category || q.topic`, i.e. the *post-fix* engine; the live engine still reads `q.topic` alone
+(Stage 3 decision 10), so these show no topic badge until the Stage 7 one-liner lands. Known
+blocking item, not a new finding.
+
+**Local CI green:** `validate_subjects.cjs` reports `MC=686 Written=327 imageRefs=266
+missingImages=0`, 0 issues; `check_answer_key.cjs` (225) and `check_written_key.cjs` (203) still
+pass on the three ground-truthed subjects and correctly skip Mathematics Advanced until Stage 6.
+The subject is still **registered nowhere in code** — no `subjects/index.json` row, no
+`SUBJECT_ID_MAP`, no `SUBJECT_CATALOGUE`, no card; that is Stage 7. Gate 4 is ticked for 2025 in
+the runbook, and the tracker now says **2021 is next**.

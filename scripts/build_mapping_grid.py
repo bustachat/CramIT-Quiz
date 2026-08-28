@@ -97,6 +97,49 @@ def page_lines(page):
     return [(y, sorted(toks, key=lambda t: t[0])) for y, toks in sorted(lines.items())]
 
 
+def row_rules(page):
+    """Y positions of the grid's own horizontal rules, across the Content column.
+
+    The grid is a real ruled table, so its row boundaries are drawn on the page. Using them
+    is exact, where inferring a row's extent from the label lines above and below it is not:
+    a cell holding two or three codes is vertically CENTRED, so its first line starts above
+    its own label line and its last line ends below it. Bracketing by labels therefore leaks
+    those lines into the neighbouring rows in BOTH directions -- which is how 2025's 17(b),
+    18, 21(a), 27(b), 28(a) and 29(a) each acquired a code NESA never gave them.
+    """
+    ys = []
+    for drawing in page.get_drawings():
+        for item in drawing["items"]:
+            if item[0] == "l":
+                a, b = item[1], item[2]
+                if abs(a.y - b.y) < 0.6 and abs(a.x - b.x) > 100:
+                    ys.append(a.y)
+            elif item[0] == "re":
+                r = item[1]
+                if r.height < 1.5 and r.width > 100:
+                    ys.append(r.y0)
+    ys.sort()
+    merged = []
+    for y in ys:
+        if not merged or y - merged[-1] > 1.5:
+            merged.append(y)
+    return merged
+
+
+def band_of(y, rules):
+    """Index of the ruled band containing y, or None when the rules do not bracket it."""
+    if len(rules) < 3 or y < rules[0] or y > rules[-1]:
+        return None
+    lo, hi = 0, len(rules) - 1
+    while lo < hi - 1:
+        mid = (lo + hi) // 2
+        if rules[mid] <= y:
+            lo = mid
+        else:
+            hi = mid
+    return lo
+
+
 def parse_grid(pdf_path):
     """Return {question-label: {marks, codes[], outcomes[]}} for one marking-guideline PDF."""
     doc = fitz.open(pdf_path)
@@ -126,15 +169,23 @@ def parse_grid(pdf_path):
         marks = int(words[i]) if i < len(words) and re.fullmatch(r"\d{1,2}", words[i]) else None
         anchors.append((k, pi, label, marks))
 
-    # Pass 2 -- a row owns the lines from just after the PREVIOUS label to just before the
-    # NEXT one, because vertically-centred cell text can start above its own label line.
+    # Pass 2 -- a row owns exactly the lines inside its own ruled band. Falls back to
+    # bracketing by neighbouring labels only where a page carries no usable rules.
+    rules = {pi: row_rules(doc[pi]) for pi in pages}
     out, problems, fixed = {}, [], []
     for n, (k, pi, label, marks) in enumerate(anchors):
-        lo = anchors[n - 1][0] + 1 if n > 0 and anchors[n - 1][1] == pi else k
-        hi = anchors[n + 1][0] if n + 1 < len(anchors) and anchors[n + 1][1] == pi else len(rows)
+        own = band_of(rows[k][1], rules[pi])
+        if own is None:
+            lo = anchors[n - 1][0] + 1 if n > 0 and anchors[n - 1][1] == pi else k
+            hi = anchors[n + 1][0] if n + 1 < len(anchors) and anchors[n + 1][1] == pi else len(rows)
+            span = range(lo, hi)
+        else:
+            span = range(len(rows))
         codes, outcomes = [], []
-        for j in range(lo, hi):
+        for j in span:
             if rows[j][0] != pi:
+                continue
+            if own is not None and band_of(rows[j][1], rules[pi]) != own:
                 continue
             line = " ".join(t[4] for t in rows[j][2])
             for typo, correct in SOURCE_TYPOS.items():

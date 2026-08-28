@@ -10,8 +10,8 @@ Report is separate: `docs/paper-reports/mathematics-advanced.md` (verdict **GO**
 | 1 Survey | ✅ complete — 2026-08-27 | done |
 | 2 Syllabus grounding | ✅ complete — 2026-08-27 | done |
 | 3 Schema | ✅ complete — 2026-08-27 | done |
-| **4 Port + assets** | 🔶 **in progress — 3 of 6 papers** (2020 ✅, 2023 ✅, 2022 ✅ 2026-08-28) | **6 sessions, one per paper year**; **2025 is next** |
-| 5 Assets | ➡️ folded into Stage 4 | method reference only — **123 crops + 28 tables**, split per year |
+| **4 Port + assets** | 🔶 **in progress — 4 of 6 papers** (2020 ✅, 2023 ✅, 2022 ✅, 2025 ✅ 2026-08-28) | **6 sessions, one per paper year**; **2021 is next** |
+| 5 Assets | ➡️ folded into Stage 4 | method reference only — **124 crops + 28 tables**, split per year |
 | 6 Ground truth | ⬜ | 1 session |
 | 7 Release | ⬜ | 1 session |
 
@@ -53,13 +53,13 @@ Stage 4's tracker table says which year is next.
 | Structure, every year | 100 marks = Section I 10 MC (Q1–10) + Section II 90 (Q11–31/32/34) |
 | Total workload | **294 question parts** — 60 MC + 234 Section II parts across 131 questions |
 | Section I assets | **25** stimulus images, **12** option-image sets (=48 crops), **10** tables → HTML, 22 plain-text stems (Stage 1 corrected Stage 0 — see Stage 1) |
-| Section II assets | **48 crops + 18 tables** across 46 questions/parts |
-| **Total assets** | **123 crops · 28 tables → HTML** (Stage 0's "~100" was low). ⚠️ Stage 1's Section II crop list is a **lower bound, twice over** — 2023 Q16 is missing from it, and a question listed once can carry **two** diagrams (2022 Q28). Read each question's own page as you write it |
+| Section II assets | **49 crops + 18 tables** across 46 questions/parts |
+| **Total assets** | **124 crops · 28 tables → HTML** (Stage 0's "~100" was low). ⚠️ Stage 1's Section II crop list is a **lower bound, three times over** — 2023 Q16 is missing from it, 2025 Q29 is missing from it (although Stage 1's own method paragraph names it), and a question listed once can carry **two** diagrams (2022 Q28). Read each question's own page as you write it |
 | Unportable | **17 drawing parts, 41 of 540 Section II marks (7.6%)** → `omittedParts` / `omittedQuestions`; portable share **93.2%** |
 | Notation | `basic` — no ∑, matrices, vectors or complex numbers. ⚠️ **Radicals DO occur** (2020 Q1, 2025 Q3/Q5): Stage 0 read "no radical sign" off the text layer, and √ is drawn as paths, so it is invisible there. Same for ∞ |
 | **Text layer** | **garbled on every paper, but not the same way each year** — 2024 alone uses the MathType `^…h` / `]…g` bracket mapping; every year loses ∞ and √ entirely, prints π as `p`, and re-orders stacked fractions. **124 of 294 parts (42%) carry a detectable corruption** |
 | Ground truth, pre-verified | `extract_mc_key()` 10/10 every year; `parse_paper()` 37–42 parts/paper, **0 unresolved, exact 90/90 on all six** |
-| Official topic + marks | `data/mapping-grid/mathematics-advanced.json` — every part, all six papers, reconciled |
+| Official topic + marks | `data/mapping-grid/mathematics-advanced.json` — every part, all six papers, reconciled. ⚠️ **Regenerated 2026-08-28** after `build_mapping_grid.py` was found to bleed a multi-line Content cell into the rows above and below it; 20 rows across the two maths subjects carried a code NESA never gave them (see the 2025 session note) |
 | Schema | Fixed at Stage 3 — canonical field names, no deviations. **Two engine fixes are blocking for Stage 7**: the shared `NESA_CAT_LABELS` map collides on 5 of 14 codes, and the written-question badge reads `q.topic` not `category` |
 | Bank shape | **One entry per NESA question**, not per part (Stage 4, 2020) — matches Standard 2 and the `check_written_key.cjs` prefix-sum join |
 | Crop tool | `scripts/crop_maths_advanced.py --year {YEAR}` — points, not pixels; one registry block per year. **Never** add this subject to `diagram_registry.json` |
@@ -132,7 +132,7 @@ decision 3 took this: flatten each row into a text option**, header row into the
 | 2022 | Q11(b), Q14, Q16, Q17, Q24, Q28, Q29(a), Q31 | Q11, Q21 |
 | 2023 | Q16, Q22, Q23, Q24, Q26, Q27, Q28, Q32 | Q12, Q15, Q23 |
 | 2024 | Q11, Q13, Q14, Q16, Q20, Q21, Q22, Q23, Q28, Q31 | Q11, Q13, Q22(b), Q23, Q24(b), Q26 |
-| 2025 | Q11, Q14, Q24, Q25(c), Q27, Q28, Q28(b) | Q20 |
+| 2025 | Q11, Q14, Q24, Q25(c), Q27, Q28, Q28(b), **Q29** | Q20 |
 
 49 crops, 18 tables. Almost every crop is line art the paper drew itself — graphs, geometry
 diagrams, box plots, scatterplots, probability trees. **Two are illustrations rather than maths**:
@@ -441,23 +441,39 @@ superscripts `⁰¹²³⁴⁵⁶ⁿ⁻` (over 300×, against 5 uses of `<sup>`).
 - ⚠️ These characters **do not exist in the text layer** (∞ and √ never; π extracts as `p`).
   They are typed in from the rendered page, per Stage 4.
 
-**7 · A part with two syllabus codes — 21 of 294.** The mapping grid stores `codes` as a
+**7 · A part with two syllabus codes — 7 of 294.** The mapping grid stores `codes` as a
 *sorted set*, so "take the first" means "take the alphabetically first", which is arbitrary:
 2025 Q28(b) would file a trig-graphs question under `T1` rather than `T3`.
 
-**Rule: the 273 single-code parts take their code mechanically. For these 21, Stage 4 picks the
+**Rule: the 287 single-code parts take their code mechanically. For these 7, Stage 4 picks the
 code naming the skill the marks are actually awarded for, at transcription time, and records the
 full official list on the question as `gridCodes: ["T1","T3"]`** — so the pick is auditable and
 NESA's tagging is not lost. `gridCodes` is inert data; the validator ignores unknown keys.
 
 | Year | Parts (codes) | n |
 |---|---|---|
-| 2020 | Q2 F2/S1 · Q13 C4/S1 · Q26(c) M1/S2 | 3 |
-| 2023 | Q27(b) C1/C4/F2 · Q28 C1/C4 | 2 |
-| 2024 | Q21 C2/S2 · Q22(a) C2/C3 · Q22(b) C3/C4 · Q29 C3/F2 · Q30 F2/M1 · Q31(a) M1/T1 | 6 |
-| 2025 | Q17(b) E1/M1 · Q17(c) E1/M1 · Q18 F1/M1 · Q21(a) E1/S3 · Q21(b) E1/S3 · Q27(b) C3/C4 · Q27(c) C3/C4/E1 · Q28(a) E1/T1 · Q28(b) T1/T3 · Q29(a) T1/T3 | 10 |
+| 2023 | Q28 C1/C4 | 1 |
+| 2024 | Q22(a) C2/C3 · Q30 F2/M1 | 2 |
+| 2025 | Q17(c) E1/M1 · Q21(b) E1/S3 · Q27(c) C3/C4/E1 · Q28(b) T1/T3 | 4 |
 
-2021 and 2022 have none. Only **one** is in Section I (2020 Q2).
+2020, 2021 and 2022 have none, and **none is in Section I**.
+
+⚠️ **This table said 21 until 2026-08-28, and 14 of those 21 were an extraction artefact.**
+`build_mapping_grid.py` gave each row "the lines from just after the PREVIOUS label to just
+before the NEXT one" — a comment that names the very problem it causes. A Content cell holding
+two or three codes is **vertically centred**, so its first line sits above its own label line and
+its last line below: the codes leaked into the neighbouring rows in *both* directions. 2025
+Q17(c) (`E1`/`M1`) pushed `E1` up into Q17(b) and `M1` down into Q18; Q27(c) (`C3`/`C4`/`E1`)
+pushed `C3` up into Q27(b) and `E1` down into Q28(a). Marks were never affected, so every paper
+still reconciled to 100 and nothing flagged it. **The fix reads the grid's own drawn horizontal
+rules and assigns each line to the ruled band it falls in** (`row_rules()` / `band_of()`);
+the label-bracketing path survives only as a fallback for a page with no usable rules. Six
+Mathematics Standard 2 rows were wrong the same way (2021 39(b), 2021 41, 2023 32(b), 2023 34(a),
+2024 28, 2024 30) — all in Section II, so §10's claim that all 90 Standard 2 MC questions agree
+with NESA's tagging is untouched. Both subjects were regenerated and `data/exam-trends/` rebuilt
+on top of them. Four already-ported questions carried a `gridCodes` list that was spurious once
+corrected (2020 MC Q2, 2020 Q13, 2020 Q26, 2023 Q27); the key is now absent on all four, and no
+`category` changed.
 
 **8 · The category-label collision is real, and it is in the engine.** Stage 2 warned "never key
 a shared lookup on the bare code." `NESA_CAT_LABELS` (705) **is** that lookup — one flat global
@@ -524,7 +540,7 @@ extra provenance, not renames of a canonical field.
 
 | Stage | Item |
 |---|---|
-| 4 | Pick the code for the 21 multi-code parts; record `gridCodes` |
+| 4 | Pick the code for the 7 multi-code parts; record `gridCodes` |
 | 4 | Wrap the 6 wide lookup tables; `class="q-table"`, no inline borders |
 | 7 | **Blocking:** make `NESA_CAT_LABELS` subject-aware (decision 8) |
 | 7 | One-line written-badge fix, `q.category \|\| q.topic` (decision 10) |
@@ -566,7 +582,7 @@ use it for the mobile-width browser check rather than shipping a half-ported sub
 
 ### Per-year load and progress
 
-Derived from the Stage 1 lists; reconciles to the 123 crops and 28 tables recorded
+Derived from the Stage 1 lists; reconciles to the 124 crops and 28 tables recorded
 above. Crop counts are a **lower bound** — 2023 and 2022 each came in one over their estimate. "Corrupt" is that paper's share of parts carrying a detectable text-layer defect.
 
 | Session | Year | Parts | Crops | Tables | Corrupt | Status |
@@ -574,8 +590,8 @@ above. Crop counts are a **lower bound** — 2023 and 2022 each came in one over
 | 1 | **2020** | 49 | 18 | 4 | 37% | ✅ 2026-08-28 |
 | 2 | **2023** | 48 | 17 | 6 | 50% | ✅ 2026-08-28 |
 | 3 | **2022** | 52 | 21 | 3 | 37% | ✅ 2026-08-28 |
-| 4 | **2025** | 50 | 22 | 2 | 42% | ⬜ **next** |
-| 5 | 2021 | 48 | 22 | 6 | 50% | ⬜ |
+| 4 | **2025** | 50 | 23 | 2 | 42% | ✅ 2026-08-28 |
+| 5 | 2021 | 48 | 22 | 6 | 50% | ⬜ **next** |
 | 6 | 2024 | 47 | 23 | 7 | 38% | ⬜ |
 
 **Tick the Status cell at the end of each session** — that is how the next cold session knows
@@ -852,11 +868,111 @@ the *post-fix* engine. The live engine still reads `q.topic` alone (Stage 3 deci
 these questions show no topic badge until the Stage 7 one-liner lands. That is a known blocking
 item, not a new finding.
 
+### 2025 — done (2026-08-28)
+
+10 MC + 21 written entries + **2 `omittedParts` worth 3 marks** (Q15(b) 2, Q16(b) 1) and **no new
+`omittedQuestions`** — as in 2023 and 2022, no whole 2025 question is a drawing task, exactly as
+Stage 1 predicted. **Marks reconcile to exactly 100**: 10 MC + 87 written + 3 omitted. The build
+script refuses to write unless the prefix-sum join, the paper total, every `category` being one of
+NESA's own codes for that question, every `gridCodes` list matching NESA's union, every grid part
+having a bank entry and every referenced image file existing all hold — and unless the existing
+file round-trips byte-for-byte first.
+
+**All ten MC answers were confirmed against the official key before authoring**, by calling
+`extract_mc_key()` read-only on `2025_marking_guidelines.pdf` — `B A D C B C A D B C`. Ten
+independent derivations from the paper agreed with all ten. Q9 is the one worth re-reading: the
+straight-line estimate lands exactly on 6.2, and the answer is `[6.0, 6.2)` **because `f′` is
+falling across the interval**, so the true rise is strictly under 0.2. The half-open intervals are
+deliberate.
+
+⚠️ **`data/mapping-grid/` was wrong, and this session fixed the extractor rather than working
+around it.** Porting Q18 (composite functions) turned up `codes: ["MA-F1","MA-M1"]` — Modelling
+Financial Situations on a function question. NESA's printed grid says `MA-F1` alone.
+`build_mapping_grid.py` was giving each row "the lines from just after the PREVIOUS label to just
+before the NEXT one", and a Content cell holding two or three codes is **vertically centred**, so
+its lines leak into the rows above *and* below. **20 rows across the two maths subjects carried a
+code NESA never assigned**, and because marks were untouched every paper still reconciled to 100
+and nothing flagged it. The fix reads the grid's **own drawn horizontal rules** and assigns each
+text line to the ruled band containing it. Full detail, and the corrected multi-code table
+(21 → **7 of 294**), are in Stage 3 decision 7. Both mapping grids were regenerated,
+`data/exam-trends/` rebuilt on top of them, and four stale `gridCodes` keys removed from
+already-ported questions. **No `category` changed anywhere, and no answer or mark moved.**
+
+**Assets: 23 crops** via `scripts/crop_maths_advanced.py --year 2025` (a new registry block).
+Section I: Q6, Q9, Q10 stimulus + Q2's, Q4's and Q6's four option cells each. Section II: Q11,
+Q14, Q24, Q25, Q27, Q28 (×2), Q29. Coordinates came from an ink profile at 150 dpi, then every
+crop was built into a contact sheet and compared against the paper.
+
+⚠️ **Stage 1's Section II crop list under-counts a third way: 2025 Q29.** The mountain-peak
+diagram (T above O, with Y and F on level ground) is not in Stage 1's 2025 row, even though
+Stage 1's own *method* paragraph names "2025 Q29" among the four diagrams found only by the union
+of its three detectors. The table and the prose disagreed and the table was believed. Subject
+total moves 123 → **124**. **Q25 needed no part-letter suffix** after all — its only diagram is in
+part (c), so it is `…_2025_Q25_stimulus.jpg`; the suffix convention is for a *second* diagram in
+one question, which here is only Q28.
+
+⚠️ **A crop can be clipped by trusting the ink profile alone.** Q28(b)'s first cut used the ink
+band's left edge, x = 85 pt, and silently removed the graph's y-axis labels 1, 2 and 3 — they
+start at x = 78.4 pt, which the text layer gives exactly and the banded profile had merged away.
+Cross-check any left or bottom edge that runs close to axis labels against `get_text("words")`
+before accepting it. Caught by looking at the contact sheet, not by any assertion.
+
+**Option letters: the 2020 amputation trap did not recur, and was checked.** On pages 3, 4 and 5
+all twelve `A.`/`B.`/`C.`/`D.` glyphs are real text with exact boxes, and `get_drawings()` reports
+**zero** vector paths intersecting any of the twelve, so the white `erase` rectangle removes the
+letter and nothing else. On Q2 an x-cut would also have been safe (a blank column separates the
+letter at x ≤ 109.4 from the graph at x ≥ 127.7) but on Q4 and Q6 the graph runs straight through
+the letter's x-range — so erase stays the uniform method.
+
+**Four multi-code parts, all genuine after the extractor fix**, with NESA's full list kept in
+`gridCodes`: Q17 (`M1` of `E1`/`M1` — M1 carries 5 of the 7 marks, E1 only the logarithmic solve
+in (c)), Q21 (`S3` of `E1`/`S3` — S3 owns (a) outright), Q27 (`C4` of `C3`/`C4`/`E1` — C4 carries
+4 of 6) and Q28 (`T1` of `T1`/`T3` — T1 owns (a) outright). **Q25 is the year's even split** and
+the hardest call: `C2` 2 marks, `C4` 2, `M1` 2, one per part. The 2023 tie-break (heavier
+mathematical demand) does not settle it cleanly either, since the sting is in (c)'s arithmetic
+series. It is filed under **`C4`**, because (a) exists only to supply the primitive that (b) and
+(c) integrate with, and the series is a step inside an area calculation rather than the subject of
+the question — the same reading that put 2022 Q28 under `C4`.
+
+**Q15 is the "leans on an omitted part" case for 2025, and it is kept.** Part (b) asks for
+P₂ to be sketched on the printed diagram and is dropped; part (c) says "Hence, find the values of
+t … for which P₁ and P₂ are BOTH decreasing." Unlike 2021 Q27(d) — which points at "the graph
+drawn in part (a)" and nothing else — part (c) names two functions whose **equations are both
+given**, so it is fully answerable analytically. P₂'s definition is repeated inline in (c), and
+the omission note says so explicitly rather than letting the substitution pass as NESA's wording.
+Stage 1's other 2025 flag, Q16(b), is a plain "complete the printed graph" and is simply dropped.
+**Q15's diagram was deliberately not cropped**: it exists to be drawn on, and supplying a grid
+carrying only P₁ would invite the student to read P₂ off a curve that is not there.
+
+**Measured in the browser at a 430 px viewport** (stem 390 px), all 31 questions rendered through
+`index.html`'s own CSS in a throwaway harness:
+
+| Case | Measured | Verdict |
+|---|---|---|
+| `body.scrollWidth`, all 31 questions | **430**, never more; no `.question-area` overflows | nothing clipped |
+| Q20's **7-column** future-value table in the wrapper | wrapper 390 px, scrolls to 564 px internally | decision 9 works |
+| MC Q1's 2-column distribution table, bare `.q-table` | 390 px | fits — no wrapper needed |
+| Q21's **three-row** piecewise brace (decision 1) | brace cell **72.5 px**, three-row block **72.5 px**, table 121 px | glyph spans the rows exactly at `font-size:3.9em` |
+| MC Q2 / Q4 / Q6 option images in `.options-grid-2x2` | 160 × 128, 160 × 154, 160 × 166 px | legible |
+| Plain-text option buttons | 52 px, single line | no wrap |
+| All 23 images | load, `naturalWidth` non-zero | none broken |
+| 38 distinct non-ASCII characters used | none matches the notdef glyph's ink count (50 px²); only `&nbsp;` is blank | real glyphs, no notdef |
+| `<sup>` exponents (MC Q2, Q10, Q16, Q27) | 15 px against an 18 px base, `vertical-align: super` | real superscripts |
+
+Zero console errors. `optionImagesWide` again unnecessary (0.97:1 to 1.25:1). As in the 2022
+session, **screenshots were unavailable** — the Browser pane was not displayed, so these are DOM
+measurements rather than pictures. The harness badges written questions with
+`q.category || q.topic`, the *post-fix* engine; the live engine still reads `q.topic` alone
+(Stage 3 decision 10), so these show no topic badge until the Stage 7 one-liner lands.
+
+Local CI green: `MC=686 Written=327 imageRefs=266 missingImages=0`; both key checkers still pass
+203 written and 225 MC questions on the other subjects, which this session did not touch.
+
 **GATE 4** (ticked per year) — [x] validator green, `missingImages: 0` · [x] every part has
 `qNum` · [x] omissions declared, and each paper's marks total 100 · [x] every crop opened and
 compared against the paper, option by option · [x] every table renders as HTML, not an image ·
 [x] any 7+ column table wrapped and checked at 430 px · [x] the year's Status cell ticked above
-— **all ticked for 2020, 2023 and 2022; reset them for 2025.**
+— **all ticked for 2020, 2023, 2022 and 2025; reset them for 2021.**
 
 ---
 
@@ -866,11 +982,11 @@ compared against the paper, option by option · [x] every table renders as HTML,
 method the sessions consult; there is no separate Stage 5 session and no separate gate.
 
 The dominant cost — roughly six times VET Construction's load, the heaviest so far.
-**Stage 1 measured it: 123 crops (25 Section I stimulus + 48 Section I option + 50 Section II)
+**Stage 1 measured it: 124 crops (25 Section I stimulus + 48 Section I option + 51 Section II)
 and 28 tables to reconstruct as HTML**, split per year in Stage 4's tracker. ⚠️ Treat the
-Section II crop list as a **lower bound** — 2023 Q16 was missing from it, and 2022 Q28 is one
-list entry carrying **two** diagrams (see those session notes). The per-question
-crop and table lists are in Stage 1; work from those, not from a fresh sweep.
+Section II crop list as a **lower bound** — 2023 Q16 and 2025 Q29 were both missing from it,
+and 2022 Q28 is one list entry carrying **two** diagrams (see those session notes). The
+per-question crop and table lists are in Stage 1; work from those, not from a fresh sweep.
 
 **Use `scripts/crop_maths_advanced.py --year {YEAR}`** — written in the 2020 session, one
 registry block per year, coordinates in **PDF points** rather than pixels. Add this year's block

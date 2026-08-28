@@ -25,7 +25,7 @@
       "marksPerPaper": 15.7,
       "yearsPresent": 6,
       "yearsTotal": 6,
-      "questionParts": 39,
+      "questionParts": 37,
       "mcMarks": 7.0,
       "writtenMarks": 87.2,
       "perYear": {
@@ -33,8 +33,8 @@
         "2021": 18.0,
         "2022": 15.0,
         "2023": 10.0,
-        "2024": 20.5,
-        "2025": 17.7
+        "2024": 21.5,
+        "2025": 16.7
       },
       "yieldRatio": 2.96
     },
@@ -44,23 +44,23 @@
       "title": "Modelling Financial Situations",
       "scopeDotPoints": 30,
       "scopeShare": 0.0838,
-      "examMarks": 78.0,
-      "examShare": 0.13,
-      "marksPerPaper": 13.0,
+      "examMarks": 78.5,
+      "examShare": 0.1308,
+      "marksPerPaper": 13.1,
       "yearsPresent": 6,
       "yearsTotal": 6,
-      "questionParts": 36,
+      "questionParts": 34,
       "mcMarks": 0,
-      "writtenMarks": 78.0,
+      "writtenMarks": 78.5,
       "perYear": {
-        "2020": 8.5,
+        "2020": 10.0,
         "2021": 10.0,
         "2022": 17.0,
         "2023": 16.0,
-        "2024": 14.0,
-        "2025": 12.5
+        "2024": 12.5,
+        "2025": 13.0
       },
-      "yieldRatio": 1.55
+      "yieldRatio": 1.56
     },
     {
       "code": "MA-C4",
@@ -68,23 +68,23 @@
       "title": "Integral Calculus",
       "scopeDotPoints": 37,
       "scopeShare": 0.1034,
-      "examMarks": 70.3,
-      "examShare": 0.1172,
-      "marksPerPaper": 11.7,
+      "examMarks": 72.7,
+      "examShare": 0.1211,
+      "marksPerPaper": 12.1,
       "yearsPresent": 6,
       "yearsTotal": 6,
-      "questionParts": 39,
+      "questionParts": 38,
       "mcMarks": 7.0,
-      "writtenMarks": 63.3,
+      "writtenMarks": 65.7,
       "perYear": {
-        "2020": 12.0,
+        "2020": 13.0,
         "2021": 12.0,
         "2022": 15.0,
-        "2023": 12.7,
-        "2024": 12.0,
-        "2025": 6.7
+        "2023": 12.0,
+        "2024": 13.0,
+        "2025": 7.7
       },
-      "yieldRatio": 1.13
+      "yieldRatio": 1.17
     },
     {
       "code": "MA-S3",
@@ -92,47 +92,23 @@
       "title": "Random Variables",
       "scopeDotPoints": 31,
       "scopeShare": 0.0866,
-      "examMarks": 61.5,
-      "examShare": 0.1025,
-      "marksPerPaper": 10.2,
+      "examMarks": 62.5,
+      "examShare": 0.1042,
+      "marksPerPaper": 10.4,
       "yearsPresent": 6,
       "yearsTotal": 6,
       "questionParts": 31,
       "mcMarks": 4.0,
-      "writtenMarks": 57.5,
+      "writtenMarks": 58.5,
       "perYear": {
         "2020": 10.0,
         "2021": 14.0,
         "2022": 7.0,
         "2023": 10.0,
         "2024": 12.0,
-        "2025": 8.5
+        "2025": 9.5
       },
-      "yieldRatio": 1.18
-    },
-    {
-      "code": "MA-F1",
-      "category": "F1",
-      "title": "Working with Functions",
-      "scopeDotPoints": 56,
-      "scopeShare": 0.1564,
-      "examMarks": 41.0,
-      "examShare": 0.0683,
-      "marksPerPaper": 6.8,
-      "yearsPresent": 6,
-      "yearsTotal": 6,
-      "questionParts": 29,
-      "mcMarks": 13.0,
-      "writtenMarks": 28.0,
-      "perYear": {
-        "2020": 11.0,
-        "2021": 3.0,
-        "2022": 10.0,
-        "2023": 7.0,
-        "2024": 3.0,
-        "2025": 7.0
-      },
-      "yieldRatio": 0.44
+      "yieldRatio": 1.2
     },
     {
       "code": "MA-T1",
@@ -140,23 +116,47 @@
       "title": "Trigonometry and Measure of Angles",
       "scopeDotPoints": 21,
       "scopeShare": 0.0587,
-      "examMarks": 41.0,
-      "examShare": 0.0683,
-      "marksPerPaper": 6.8,
+      "examMarks": 44.0,
+      "examShare": 0.0733,
+      "marksPerPaper": 7.3,
       "yearsPresent": 6,
       "yearsTotal": 6,
       "questionParts": 19,
       "mcMarks": 1.0,
-      "writtenMarks": 40.0,
+      "writtenMarks": 43.0,
       "perYear": {
         "2020": 9.0,
         "2021": 8.0,
         "2022": 3.0,
         "2023": 7.0,
-        "2024": 5.5,
-        "2025": 8.5
+        "2024": 7.0,
+        "2025": 10.0
       },
-      "yieldRatio": 1.16
+      "yieldRatio": 1.25
+    },
+    {
+      "code": "MA-F1",
+      "category": "F1",
+      "title": "Working with Functions",
+      "scopeDotPoints": 56,
+      "scopeShare": 0.1564,
+      "examMarks": 42.0,
+      "examShare": 0.07,
+      "marksPerPaper": 7.0,
+      "yearsPresent": 6,
+      "yearsTotal": 6,
+      "questionParts": 29,
+      "mcMarks": 13.0,
+      "writtenMarks": 29.0,
+      "perYear": {
+        "2020": 11.0,
+        "2021": 3.0,
+        "2022": 10.0,
+        "2023": 7.0,
+        "2024": 3.0,
+        "2025": 8.0
+      },
+      "yieldRatio": 0.45
     },
     {
       "code": "MA-T3",
@@ -164,23 +164,23 @@
       "title": "Trigonometric Functions and Graphs",
       "scopeDotPoints": 6,
       "scopeShare": 0.0168,
-      "examMarks": 40.5,
-      "examShare": 0.0675,
-      "marksPerPaper": 6.8,
+      "examMarks": 40.0,
+      "examShare": 0.0667,
+      "marksPerPaper": 6.7,
       "yearsPresent": 6,
       "yearsTotal": 6,
-      "questionParts": 20,
+      "questionParts": 19,
       "mcMarks": 1.0,
-      "writtenMarks": 39.5,
+      "writtenMarks": 39.0,
       "perYear": {
         "2020": 6.0,
         "2021": 7.0,
         "2022": 8.0,
         "2023": 2.0,
         "2024": 7.0,
-        "2025": 10.5
+        "2025": 10.0
       },
-      "yieldRatio": 4.03
+      "yieldRatio": 3.98
     },
     {
       "code": "MA-S2",
@@ -193,15 +193,15 @@
       "marksPerPaper": 6.3,
       "yearsPresent": 6,
       "yearsTotal": 6,
-      "questionParts": 21,
+      "questionParts": 20,
       "mcMarks": 4.0,
       "writtenMarks": 34.0,
       "perYear": {
-        "2020": 6.5,
+        "2020": 5.0,
         "2021": 5.0,
         "2022": 8.0,
         "2023": 7.0,
-        "2024": 5.5,
+        "2024": 7.0,
         "2025": 6.0
       },
       "yieldRatio": 0.78
@@ -212,23 +212,23 @@
       "title": "Probability and Discrete Probability Distributions",
       "scopeDotPoints": 26,
       "scopeShare": 0.0726,
-      "examMarks": 36.5,
-      "examShare": 0.0608,
-      "marksPerPaper": 6.1,
+      "examMarks": 35.0,
+      "examShare": 0.0583,
+      "marksPerPaper": 5.8,
       "yearsPresent": 6,
       "yearsTotal": 6,
-      "questionParts": 26,
-      "mcMarks": 9.5,
-      "writtenMarks": 27.0,
+      "questionParts": 24,
+      "mcMarks": 9.0,
+      "writtenMarks": 26.0,
       "perYear": {
-        "2020": 7.5,
+        "2020": 6.0,
         "2021": 9.0,
         "2022": 3.0,
         "2023": 9.0,
         "2024": 3.0,
         "2025": 5.0
       },
-      "yieldRatio": 0.84
+      "yieldRatio": 0.8
     },
     {
       "code": "MA-F2",
@@ -236,23 +236,23 @@
       "title": "Graphing Techniques",
       "scopeDotPoints": 10,
       "scopeShare": 0.0279,
-      "examMarks": 33.7,
-      "examShare": 0.0561,
+      "examMarks": 33.5,
+      "examShare": 0.0558,
       "marksPerPaper": 5.6,
       "yearsPresent": 6,
       "yearsTotal": 6,
-      "questionParts": 18,
-      "mcMarks": 4.5,
-      "writtenMarks": 29.2,
+      "questionParts": 17,
+      "mcMarks": 5.0,
+      "writtenMarks": 28.5,
       "perYear": {
-        "2020": 3.5,
+        "2020": 4.0,
         "2021": 7.0,
         "2022": 4.0,
-        "2023": 8.7,
-        "2024": 7.5,
+        "2023": 10.0,
+        "2024": 5.5,
         "2025": 3.0
       },
-      "yieldRatio": 2.01
+      "yieldRatio": 2.0
     },
     {
       "code": "MA-C2",
@@ -260,23 +260,23 @@
       "title": "Differential Calculus",
       "scopeDotPoints": 15,
       "scopeShare": 0.0419,
-      "examMarks": 28.0,
-      "examShare": 0.0467,
-      "marksPerPaper": 4.7,
+      "examMarks": 26.5,
+      "examShare": 0.0442,
+      "marksPerPaper": 4.4,
       "yearsPresent": 6,
       "yearsTotal": 6,
-      "questionParts": 14,
+      "questionParts": 13,
       "mcMarks": 2.0,
-      "writtenMarks": 26.0,
+      "writtenMarks": 24.5,
       "perYear": {
         "2020": 7.0,
         "2021": 3.0,
         "2022": 7.0,
         "2023": 4.0,
-        "2024": 5.0,
+        "2024": 3.5,
         "2025": 2.0
       },
-      "yieldRatio": 1.11
+      "yieldRatio": 1.05
     },
     {
       "code": "MA-E1",
@@ -284,23 +284,23 @@
       "title": "Logarithms and Exponentials",
       "scopeDotPoints": 31,
       "scopeShare": 0.0866,
-      "examMarks": 21.7,
-      "examShare": 0.0361,
-      "marksPerPaper": 3.6,
+      "examMarks": 18.2,
+      "examShare": 0.0303,
+      "marksPerPaper": 3.0,
       "yearsPresent": 6,
       "yearsTotal": 6,
-      "questionParts": 16,
+      "questionParts": 13,
       "mcMarks": 4.0,
-      "writtenMarks": 17.7,
+      "writtenMarks": 14.2,
       "perYear": {
         "2020": 4.0,
         "2021": 2.0,
         "2022": 2.0,
         "2023": 1.0,
         "2024": 5.0,
-        "2025": 7.7
+        "2025": 4.2
       },
-      "yieldRatio": 0.42
+      "yieldRatio": 0.35
     },
     {
       "code": "MA-T2",
@@ -332,23 +332,23 @@
       "title": "Introduction to Differentiation",
       "scopeDotPoints": 38,
       "scopeShare": 0.1061,
-      "examMarks": 7.7,
-      "examShare": 0.0128,
-      "marksPerPaper": 1.3,
+      "examMarks": 7.0,
+      "examShare": 0.0117,
+      "marksPerPaper": 1.2,
       "yearsPresent": 4,
       "yearsTotal": 6,
-      "questionParts": 5,
+      "questionParts": 4,
       "mcMarks": 2.0,
-      "writtenMarks": 5.7,
+      "writtenMarks": 5.0,
       "perYear": {
         "2020": 0,
         "2021": 1.0,
         "2022": 1.0,
-        "2023": 2.7,
+        "2023": 2.0,
         "2024": 0,
         "2025": 3.0
       },
-      "yieldRatio": 0.12
+      "yieldRatio": 0.11
     }
   ]
 }
