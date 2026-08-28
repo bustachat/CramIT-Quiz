@@ -2029,3 +2029,182 @@ pass on the three ground-truthed subjects and correctly skip Mathematics Advance
 The subject is still **registered nowhere in code** — no `subjects/index.json` row, no
 `SUBJECT_ID_MAP`, no `SUBJECT_CATALOGUE`, no card; that is Stage 7. Gate 4 is ticked for 2025 in
 the runbook, and the tracker now says **2021 is next**.
+
+---
+
+## 2026-08-29 — Mathematics Advanced Stage 4, paper 5 of 6: the 2021 port, and a silent image-clipping defect found
+
+Fifth of six Stage 4 sessions, on the `port/maths-advanced` branch. **2021 is ported and
+cropped**, leaving only 2024. `subjects/mathematics-advanced.json` now holds five years —
+**50 MC + 106 written entries + 4 `omittedQuestions` + 4 `omittedParts`** — and **101 crops**
+are in `/diagrams/`.
+
+### What 2021 added
+
+10 MC + 22 written entries, **2 `omittedParts`** (Q27(a) 2, Q28(b) 2) and **2 new
+`omittedQuestions`** (Q19 3 marks, Q21 2 marks). 2021 is the second paper after 2020 to carry a
+whole unportable question, and it carries two — Q19 asks for a sketch of *y* = 2 + 1/(*x* + 4)
+without calculus, Q21 for a sketch of *y* = 4*f*(2*x*) from a printed graph. Both are the whole
+question, so both are subject-level.
+
+Marks reconcile to **exactly 100**: 10 MC + 81 written + 4 omitted parts + 5 omitted questions.
+The build script refuses to write unless the file first round-trips byte-for-byte and then six
+content gates hold — the `check_written_key.cjs` prefix-sum join per entry, the paper total,
+every `category` being one of NESA's own codes for that question, every `gridCodes` list equalling
+NESA's own union, **every one of the 48 official parts being covered by a bank entry or a declared
+omission**, and every referenced image file existing on disk. That fifth gate is new this session
+and is worth keeping: it is the one that would catch a question quietly dropped rather than
+declared.
+
+**All ten MC answers were confirmed against the official key before authoring**, by calling
+`extract_mc_key()` read-only on `2021_marking_guidelines.pdf` — `B C D C A D A C B B`. Ten
+independent derivations from the paper agreed with all ten. §10 forbids re-reading a marking
+guideline to audit answers, and this is not that: the extractor is the committed path, called
+read-only, and the derivations came from the paper.
+
+Q7 is the one worth re-reading. It compares *f*″(−2), *f*(0) and *f*′(3) on a printed cubic, and
+the answer turns on *f*(0) being **negative** — which the question never states and which is only
+visible by rendering the origin at 400 dpi and looking: the curve crosses the *x*-axis just to the
+*right* of the *y*-axis. At the paper's printed scale that is a few points of ink.
+
+### The headline finding: nine stem images were being silently cut off
+
+The browser pass at 430px flagged **eight `.question-area` elements whose `scrollWidth` ran to
+975–1767px against a `clientWidth` of 430**. The cause: `index.html` has **no `.q-text img` rule
+at all**. The only `max-width` on a question image is `.device-phone .q-image-wrap img` (line
+306), which governs the separate `image` field — not an `<img>` written inline inside `q`, which
+is how every written-question diagram in this project is embedded. An unstyled stem image
+therefore renders at its natural crop width, and `body { overflow-x: hidden }` swallows the
+overflow instead of scrolling it.
+
+**Nothing reports this.** `body.scrollWidth` still read 430. `validate_subjects.cjs` was green
+with `missingImages: 0` — it only existence-checks the path. No console error fired. The
+diagrams simply had their right-hand side cut off, with Q17's 1767px scatterplot losing roughly
+four-fifths of its width inside a 390px stem.
+
+Every 2020/2022/2023/2025 entry carries
+`style="max-width:100%;height:auto;display:block;margin:14px auto"` inline, and Mathematics
+Standard 2 has carried the same inline style on all 71 of its stem images since its port — so
+this is an established convention that the 2021 authoring simply failed to apply, not a new
+engine defect. All nine 2021 tags were patched and the overflow list is now empty.
+
+The check that found it is per-question, not page-level, and is now a Gate 4 item in the runbook
+and a Gate 4/5 item in the playbook:
+
+```js
+[...document.querySelectorAll('.question-area')]
+  .filter(a => a.scrollWidth > a.clientWidth + 1)   // must be empty
+```
+
+It is recorded as **Stage 4 decision 6** in `docs/subject-plans/mathematics-advanced.md`,
+alongside the five decisions the 2020 session took, so the 2024 session inherits it. A
+side-note found while sweeping for other unstyled tags: a naive `<img[^>]*>` regex reports a
+false positive on 2020 Q29, whose `alt` text contains `c > 0` — a raw `>` inside an attribute
+value is legal HTML and the browser parses it correctly; the regex was the thing that broke.
+
+### `optionImagesWide` is needed after all — Stage 1 and Stage 3 were both wrong
+
+Stage 1 measured all 12 of this subject's option-image sets at 0.8:1 to 2.6:1 and concluded
+`optionImagesWide` was "not needed anywhere". Stage 3 hardened that into a field-table row
+reading "**Never set.**" 2021 Q4 — four cumulative-download bar charts — crops at **2.94:1**
+(1446 × 492px), outside the range Stage 1 quoted, and the browser settles it:
+
+| Layout | Measured at 430px | Verdict |
+|---|---|---|
+| `.options-grid-2x2` (the default) | **160 × 54px** each | a 20-bar chart with a *y*-axis to 800 and days 1–20 labelled, in 54px |
+| `.options-list-wide` (`optionImagesWide: true`) | **360 × 122px** each | legible |
+
+160 × 54px is much closer to the VET 160 × 35px case that created the flag than to the
+160 × 143px case that was cited to retire it. **The rule is not an aspect-ratio threshold and
+never was — render the option set and read the height off the DOM.** Corrected in the runbook
+(Stage 1 paragraph, Stage 3 field table, Stage 5 asset bullet) and in the playbook (the asset
+bullet, the Stage 1 classification table, and Gate 4/5). 2024 Q8's histograms, whose ink extent
+Stage 1 measured at 3.7:1, are the last set to check.
+
+### Port decisions
+
+**Q27(d) is the "leans on an omitted part" case Stage 1 left open for this session, and it is
+kept.** Stage 1 singled it out as *the* exception across all six papers: it says *"Explain your
+answer by referring to the graph drawn in part (a)"*, and (a) — sketch *P* for 0 ≤ *t* ≤ 12 — is
+omitted. Neither of Stage 1's two suggested outs was taken. **Supplying the graph was rejected**:
+NESA does not print it, so it would have to be drawn by us, and a fabricated diagram presented
+inside a NESA question is not a crop. **Dropping (d) was rejected too**: the graph is just the
+curve *P*(*t*) = 400 sin(π*t*/12), whose equation the stem already gives, so (d) is fully
+answerable — the reasoning is that *P* peaks at *t* = 6, which reads straight off the function.
+NESA's wording of (d) is kept **verbatim**, including the reference to part (a), and the visibly
+separate italic note says what (a) asked for and describes the curve it produces. Contrast 2025
+Q15, where the omitted part's *definition* had to be repeated inline because it was not in the
+stem; here nothing needs repeating.
+
+**Q33 is the year's even split and the hardest call**: (a) and (b) are `S3`, (c) and (d) are
+`S1`, 4 marks each, and the 2023 tie-break on "heavier mathematical demand" does not separate
+them cleanly. Filed under **`S3`**, because three of the four parts operate directly on the
+continuous probability density function and the pdf is the question's subject — (d) is one
+conditional-probability application of the result (c) produces. Same reading that put 2025 Q25
+and 2022 Q28 under `C4`. Q27 (`T3` of `C4`/`T3`, 5 of 8 marks counting the omitted part) and
+Q28 (`C4` of `C4`/`F2`, 4 of 6) went on mark weight, with NESA's full list kept in `gridCodes`.
+
+### Assets
+
+**22 crops** via a new 2021 block in `scripts/crop_maths_advanced.py`. Section I: Q4, Q6, Q7,
+Q8, Q10 stimulus plus Q4's and Q5's four option cells each. Section II: Q12, Q17 (×2), Q18, Q22,
+Q24, Q28, Q32, Q33. **Stage 1's counts were exactly right for this paper — 22 crops, 6 tables —
+the first year they have been**, after 2023, 2022 and 2025 each came in over.
+
+Q17 is the year's two-diagram question (height-vs-temperature and latitude-vs-temperature
+scatterplots), taking the part-letter suffix convention set by 2022 Q28:
+`…_2021_Q17b_stimulus.jpg` beside `…_2021_Q17_stimulus.jpg`. Q21 has a printed stimulus but the
+whole question is omitted, so it is deliberately not cropped.
+
+**The 2020 option-letter amputation trap did not recur, but was checked.** On both option pages
+the letters are *not* real text — page 3's `A.` extracts as the word `Mul`, page 4's as `ap`,
+the same garbling 2022 page 2 showed — so the letter boxes came from an **ink profile of the
+x-strip they sit in** rather than the text layer, cross-checked against the fixed 128.8pt spacing
+between option rows. `get_drawings()` then reported **zero vector paths intersecting any of the
+eight letter boxes**, so the white `erase` rectangle removes the letter and nothing else. One
+geometric wrinkle worth recording: Q5's two columns are **not symmetric about the page centre** —
+the left cell's content runs x 100.6–249.4 and the right cell's x 345.1–493.9, so a mirrored
+crop box would have been wrong.
+
+### Browser verification, 430px viewport, all 32 questions
+
+Rendered through `index.html`'s own `<style>` block and its own option/stem markup in a
+throwaway harness. Measured, not inferred:
+
+- `body.scrollWidth` **430**, never more.
+- `.question-area` scrollWidth equals clientWidth on all 32 **after** the `max-width` fix; **8
+  overflowed to 975–1767px before it**.
+- Q22's **7-column** *z*-table and Q34's **8-column** distribution table both wrap correctly —
+  wrapper 390px, scrolling to 520px internally.
+- Q25's **6-column** future-value table renders **399.1px** bare, spanning x 20 → 419.1 in a
+  430px viewport: it spills 9px into the question-area's 20px right padding but **nothing is
+  clipped**. Decision 9's "7 or more columns" threshold stands, with that measurement recorded.
+- Q30 and Q33's two-row piecewise braces measure **51.0px and 48.4px** against two-row blocks of
+  **51.0px and 48.4px** — the glyph spans the rows exactly at `font-size:2.6em`, confirming
+  decision 1's two-row template (2022 and 2025 confirmed the three-row `3.9em` variant).
+- All 17 images load with non-zero `naturalWidth`; the 9 stem images render at 390px.
+- All 32 plain-text option buttons are 52px, single line.
+- **27 distinct non-ASCII characters** used (`° ² ³ × θ μ π σ ′ ″ ⁰ ⁴ ∑ − √ ∞ ∠ ∫ ≈ ≤ ≥` and
+  punctuation): each rasterised in the app's own font and compared against the notdef box's ink
+  count of 50px² — **none matches**, and only `&nbsp;` is blank.
+- `<sup>` exponents render 15px against an 18px base with `vertical-align: super`.
+- Q17 renders both its diagrams; Q27 and Q28 show NESA's remaining part letters with the omitted
+  one absent and the italic note present.
+- Zero console errors.
+
+As in the 2022 and 2025 sessions, **screenshots were unavailable** — the Browser pane was not
+displayed, so the page does not composite frames — so these are DOM measurements rather than
+pictures. The harness badges written questions with `q.category || q.topic`, i.e. the *post-fix*
+engine; the live engine still reads `q.topic` alone (Stage 3 decision 10), so these show no topic
+badge until the Stage 7 one-liner lands.
+
+### Verification
+
+Local CI green: `validate_subjects.cjs` reports `MC=696 Written=349 imageRefs=288
+missingImages=0`, 0 issues; `check_answer_key.cjs` (225) and `check_written_key.cjs` (203) still
+pass on the three ground-truthed subjects and correctly skip Mathematics Advanced until Stage 6.
+No other subject's content was touched.
+
+The subject is still **registered nowhere in code** — no `subjects/index.json` row, no
+`SUBJECT_ID_MAP`, no `SUBJECT_CATALOGUE`, no card; that is Stage 7. Gate 4 is ticked for 2021 in
+the runbook, and the tracker now says **2024 is next, and last**.

@@ -254,7 +254,7 @@ straight-line graphs score zero and text underlines score false positives.
 | Question type | MC / short written / extended / **unportable** | `omittedQuestions` |
 | Stimulus | none / raster / vector / table | Stage 5 |
 | Options | text / images / bare letters-in-stimulus | `optionImages` |
-| Option aspect ratio | normal / wide (> ~3:1) | `optionImagesWide` |
+| Option image height | measure the RENDERED height at 430px, not the ratio | `optionImagesWide` |
 | Text-layer quality | clean / garbled / absent | Stage 5 method choice |
 | Marks | integer, from the guidelines' Marks column | Stage 6 |
 
@@ -457,7 +457,7 @@ Already in CLAUDE.md, filed under written questions; it applies to the whole por
 | Source content | Becomes |
 |---|---|
 | Plain text | `q` field |
-| Diagram / photo | Cropped JPG, `<img>`; never an SVG redraw |
+| Diagram / photo | Cropped JPG, `<img>` **carrying its own `max-width:100%` style**; never an SVG redraw |
 | Table | Reconstructed `<table>` HTML — **not** a crop |
 | Whole question the engine can't present | `omittedQuestions` entry |
 
@@ -503,15 +503,43 @@ Two further asset rules:
 
 - **Exclude the paper's own `A.`/`B.` glyph** from option crops. `index.html` renders its
   own `<span class="option-label">`, so a baked-in letter prints twice.
-- **Wide option images** (> ~3:1) need `optionImagesWide: true`. In the 2×2 grid at a
-  430px viewport they render ~160×35px; the existing 380px single-column fallback does
-  not catch this.
+- **Short option images need `optionImagesWide: true` — and the test is the rendered
+  height, not the aspect ratio.** ⚠️ This bullet said "> ~3:1" until 2026-08-29, when
+  Mathematics Advanced 2021 Q4 cropped at **2.94:1** — inside the supposed safe range —
+  and rendered **160 × 54px** in the 2×2 grid at a 430px viewport, against 360 × 122px
+  one-per-row. The 380px single-column fallback does not catch either case. **Render the
+  option set and read the height off the DOM**; treat "> ~3:1" as a prompt to look, not
+  as the threshold.
+
+- **An inline `<img>` inside a `q` stem must carry its own
+  `style="max-width:100%;height:auto;display:block;margin:14px auto"`.** ⚠️ There is
+  **no `.q-text img` rule in `index.html`** — the only `max-width` on a question image
+  is `.device-phone .q-image-wrap img`, which governs the separate `image` field. An
+  unstyled stem image renders at its natural crop width (1767px inside a 390px stem, in
+  the worst real case) and `body { overflow-x: hidden }` swallows the overflow rather
+  than scrolling it. **Nothing reports this**: `body.scrollWidth` still reads 430,
+  `validate_subjects.cjs` only existence-checks the path, and no console error fires —
+  the diagram is simply cut off on the right. Found on Mathematics Advanced 2021, where
+  nine stem images shipped without it; Mathematics Standard 2 has carried the inline
+  style on all 71 of its stem images since its port. Verify with:
+
+  ```js
+  [...document.querySelectorAll('.question-area')]
+    .filter(a => a.scrollWidth > a.clientWidth + 1)   // must be empty
+  ```
 
 ### GATE 4/5
 
 - [ ] `node scripts/validate_subjects.cjs` green, `missingImages: 0`
 - [ ] Every crop opened and compared against the paper, option by option
 - [ ] Every table renders as HTML, not as an image
+- [ ] **No `.question-area` overflows its own client width at 430px** — the check that
+      catches an unstyled stem image or an unwrapped wide table. `body.scrollWidth` does
+      **not** catch either, because `body { overflow-x: hidden }` hides the overflow:
+      `[...document.querySelectorAll('.question-area')].filter(a => a.scrollWidth > a.clientWidth + 1)`
+      must be empty
+- [ ] **Every option-image set rendered and its height read off the DOM** — the aspect
+      ratio is not the test for `optionImagesWide`
 
 ---
 

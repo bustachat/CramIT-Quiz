@@ -164,6 +164,40 @@ REGISTRY = {
         # Q29 is NOT on Stage 1's crop list for 2025 -- found by reading the page.
         ("Q29_stimulus", 33, 154, 169, 432, 385),  # mountain peak T, points O, Y, F
     ],
+    2021: [
+        # --- Section I ---
+        # Option letters extract as GARBLED words on both option pages (`A.` comes out
+        # as `Mu` on page 3, `ap` on page 4), so the letter boxes come from the ink
+        # profile of the x-strip they sit in, not from the text layer.  `get_drawings()`
+        # reports ZERO vector paths intersecting any of the eight boxes -- checked, so
+        # the 2020 amputation trap does not arise and the white `erase` removes the
+        # letter and nothing else.
+        ("Q4_stimulus", 2, 126, 103, 429, 213),   # downloads per day, incl. both axis captions
+        ("Q4_A", 2, 97, 260, 444, 378, [(99, 262.0, 117, 274.5)]),
+        ("Q4_B", 2, 97, 389, 444, 507, [(99, 391.1, 117, 403.6)]),
+        ("Q4_C", 2, 97, 518, 444, 636, [(99, 519.8, 117, 532.3)]),
+        ("Q4_D", 2, 97, 646, 444, 764, [(99, 648.4, 117, 660.9)]),
+        # Q5's two columns are NOT symmetric about the page centre: the left cell's
+        # content runs x 100.6-249.4, the right cell's x 345.1-493.9.
+        ("Q5_A", 3,  97,  96, 253, 216, [(98, 97.5, 115, 110.5)]),
+        ("Q5_B", 3, 341,  96, 497, 216, [(343, 97.5, 360, 110.5)]),
+        ("Q5_C", 3,  97, 247, 253, 367, [(98, 248.8, 115, 261.8)]),
+        ("Q5_D", 3, 341, 247, 497, 367, [(343, 248.8, 360, 261.8)]),
+        ("Q6_stimulus",  4, 219, 178, 371, 297),  # partially completed probability tree
+        ("Q7_stimulus",  5, 172, 108, 421, 284),  # y = f(x), local min x = -2, local max x = 3
+        ("Q8_stimulus",  6, 168,  96, 426, 267),  # quartic, simple root left, triple root right
+        ("Q10_stimulus", 7, 105, 110, 484, 266),  # y = mx tangent to y = cos x at x = a
+        # --- Section II ---
+        ("Q12_stimulus", 10, 145, 133, 451, 284),  # semicircle, triangle XYZ, incl. NOT TO SCALE
+        ("Q17_stimulus", 13,  68, 164, 487, 414),  # height vs temperature scatterplot + regression
+        ("Q17b_stimulus", 14, 96, 150, 510, 400),  # latitude vs temperature, the SECOND graph
+        ("Q18_stimulus", 15, 166, 136, 427, 268),  # triangle ABC, incl. NOT TO SCALE
+        ("Q22_stimulus", 18, 183, 252, 412, 343),  # normal curve, strip between 0 and z shaded
+        ("Q24_stimulus", 20, 160, 198, 429, 384),  # y = 3/(x-1) meeting y = 3x/2, shaded
+        ("Q28_stimulus", 25, 137, 138, 458, 284),  # f(x) = 8 - 2^x, region against the axes
+        ("Q32_stimulus", 33, 162, 405, 433, 487),  # unlabelled normal curve with 7 tick marks
+        ("Q33_stimulus", 34, 163, 269, 430, 406),  # pdf f(x) = Ax/(x^2 + 4) on 0 <= x <= 6
+    ],
 }
 
 
