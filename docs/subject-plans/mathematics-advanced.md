@@ -1197,8 +1197,9 @@ Local CI green: `MC=706 Written=369 imageRefs=311 missingImages=0`; both key che
 225 MC and 203 written questions on the other subjects, which this session did not touch.
 
 **Stage 4 is complete.** All six papers are ported and cropped: **60 MC + 126 written entries +
-5 `omittedQuestions` + 10 `omittedParts`**, 124 crops in `/diagrams/`, every paper reconciling to
-exactly 100 marks. The subject is still **registered nowhere in code** — that is Stage 7 — and
+5 `omittedQuestions` + 12 `omittedParts`**, 124 crops in `/diagrams/`, every paper reconciling to
+exactly 100 marks. **Stage 1 predicted exactly 12 `omittedParts` and 5 `omittedQuestions`
+(17 marks), and the port landed on both.** The subject is still **registered nowhere in code** — that is Stage 7 — and
 its answer keys are not yet committed, which is Stage 6, **next**.
 
 **GATE 4** (ticked per year) — [x] validator green, `missingImages: 0` · [x] every part has

@@ -2215,8 +2215,8 @@ the runbook, and the tracker now says **2024 is next, and last**.
 
 **What changed.** The 2024 HSC Mathematics Advanced paper is ported and cropped, on the
 `port/maths-advanced` branch. `subjects/mathematics-advanced.json` now holds **all six years —
-60 MC + 126 written entries + 5 `omittedQuestions` + 10 `omittedParts`** — and **124 crops** are
-in `/diagrams/`. Local CI green: `MC=706 Written=369 imageRefs=311 missingImages=0`.
+60 MC + 126 written entries + 5 `omittedQuestions` + 12 `omittedParts`** — and **124 crops** are
+in `/diagrams/`. Stage 1 predicted exactly 12 and 5, and the port landed on both. Local CI green: `MC=706 Written=369 imageRefs=311 missingImages=0`.
 
 2024 adds 10 MC + 20 written entries, **two `omittedParts`** (Q17(a), sketch a graph, 2 marks;
 Q25(b), find a cumulative distribution function and sketch it, 2 marks) and **one new
