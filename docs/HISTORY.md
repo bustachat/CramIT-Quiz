@@ -2208,3 +2208,133 @@ No other subject's content was touched.
 The subject is still **registered nowhere in code** — no `subjects/index.json` row, no
 `SUBJECT_ID_MAP`, no `SUBJECT_CATALOGUE`, no card; that is Stage 7. Gate 4 is ticked for 2021 in
 the runbook, and the tracker now says **2024 is next, and last**.
+
+---
+
+## 2026-08-31 — Mathematics Advanced Stage 4, paper 6 of 6: the 2024 port. **Stage 4 complete.**
+
+**What changed.** The 2024 HSC Mathematics Advanced paper is ported and cropped, on the
+`port/maths-advanced` branch. `subjects/mathematics-advanced.json` now holds **all six years —
+60 MC + 126 written entries + 5 `omittedQuestions` + 10 `omittedParts`** — and **124 crops** are
+in `/diagrams/`. Local CI green: `MC=706 Written=369 imageRefs=311 missingImages=0`.
+
+2024 adds 10 MC + 20 written entries, **two `omittedParts`** (Q17(a), sketch a graph, 2 marks;
+Q25(b), find a cumulative distribution function and sketch it, 2 marks) and **one new
+`omittedQuestion`** (Q19, 5 marks — sketch a quartic from its
+stationary points and inflections). Marks reconcile to **exactly 100**: 10 MC + 81 written +
+4 omitted parts + 5 omitted question, joined against `data/mapping-grid/` with the same
+prefix-sum rule `check_written_key.cjs` applies. The build script refused to write until six
+content gates held — the prefix-sum join, the paper total, every `category` being one of NESA's
+own codes for that question, every `gridCodes` union (**and no spurious `gridCodes` on a
+single-code question**), every official grid part being covered by a bank entry or a declared
+omission, and every referenced image file existing — and until the existing file round-tripped
+byte-for-byte first.
+
+**Ground truth was consulted, not re-derived.** All ten MC answers were confirmed against the
+official key *before* authoring, by calling `extract_mc_key()` read-only on
+`2024_marking_guidelines.pdf` — `C B A C A D C D B B`. Ten independent derivations from the paper
+agreed with all ten. Separately, the twenty written model answers were cross-checked against
+NESA's own sample answers via `build_written_key.py`'s `parse_paper()` in dry-run (37 leaf parts,
+reconciling to 90/90); every derivation agreed. Neither is the thing §10 forbids — that rule bans
+*re-reading a marking guideline to audit answers by eye*, and both of these are the committed
+extractors run read-only.
+
+**Q8 was the question worth slowing down on.** Its box plot carries **no printed scale**, so the
+quartiles have to be read off the seven histogram columns rather than off an axis. Measured from
+the drawn rectangles: whiskers at columns 1 and 7, box from 2 to 6, median line on 4. Option D is
+the only histogram whose running totals (1, 3, 7, 9, 13, 15, 16) put the 4th and 5th values in
+column 3, giving a lower quartile of 3 instead of 2 — so D is the one that is *not* possible.
+
+### The last open `optionImagesWide` question is closed — and Stage 1's flag was wrong
+
+Stage 1 named **2024 Q8**'s four histograms as the subject's remaining `optionImagesWide`
+candidate, having measured their ink extent at **3.7:1**. That measurement did not survive
+cropping: it had banded the C/D *row* of the page, not a single option cell. Each Q8 crop is
+**1.75:1** (184 × 105 pt) and renders **160 × 96 px** in `.options-grid-2x2` at a 430 px
+viewport — squarely in 2020's 160 × 90 px territory, nowhere near 2021 Q4's 160 × 54 px. Q7's
+four graphs render 160 × 161 px.
+
+Both sets were re-rendered offline at exactly those measured boxes and read: every bar height,
+the 0–4 axis and the −1/1/2/3 tick labels are legible. So the flag is not set here, and with all
+twelve option sets across the six papers now measured, **2021 Q4 is the subject's only
+`optionImagesWide`**. Corrected in the runbook in three places.
+
+### Everything else that could have gone wrong, didn't — but was checked
+
+- **The 2020 option-letter amputation trap did not recur.** All eight letters (Q7 A–D page 5,
+  Q8 A–D page 6) are real text, `get_text("words")` returns their exact boxes, and
+  `get_drawings()` reports **zero** vector paths intersecting any of the eight — so each white
+  `erase` rectangle removes the letter and nothing else. Confirmed on contact sheets: every axis
+  and curve intact.
+- **Stage 1's asset counts were exactly right for this paper** — 23 crops and 7 tables (Section I
+  Q3 plus six in Section II). That is the second year running after 2021, and the only two of the
+  six. Unlike 2023, 2025 and 2022, no question turned up an unlisted diagram or a second diagram
+  of its own.
+- **The 2021 stem-image clipping defect did not recur**: all ten inline `<img>` tags carry
+  `max-width:100%`, and no `.question-area` overflows its own client width.
+
+### Port decisions this paper needed
+
+**Stage 3 decision 4 (blank tables) is used for the first and only time.** 2024 Q11 and Q13 are
+the subject's only two blank-table questions — 2022 Q12(b), the third on Stage 1's list, is
+omitted anyway. Both are reproduced as `.q-table` HTML with `<td>&nbsp;</td>` in the blanks
+(measured: every empty cell renders 34 px tall, so it reads as a table to fill in) and the model
+answer lists the cell values labelled by their column. Q13's table is *partially* completed in
+the paper — NESA prints *A* = 34 and the 61 — and those printed values are kept in place.
+
+**Three multi-code calls, two of them even splits.** Q22 (`C3` of `C2`/`C3`/`C4`) splits 3 marks
+of concavity against 3 of trapezoidal rule and is filed under **`C3`**, because part (c) is
+answered *from* part (a)'s concavity result — the mirror of the 2025 Q25 reading, where (a)
+existed only to serve (b) and (c). Q31 (`C3` of `C3`/`T1`) splits 3–3 between sector geometry and
+minimisation and is filed under **`C3`** on the 2023 tie-break of heavier mathematical demand.
+**Q30 was the hardest call in the paper**: a single 3-mark part carrying `F2`/`M1`, where most of
+the working is a reciprocal-graph transformation but the question's subject is the limiting sum
+of a geometric series. Filed under **`M1`**, because the stem offers the graph as *"or
+otherwise"* — an optional scaffold — while the mark-bearing insight is that a limiting sum exists
+only for −1 < *x* < 1. That is the 2021 Q33 reading (file under the question's subject) applied
+to a single part rather than to a merge. Four merged entries also span codes: Q14 (`C4` of
+`C4`/`F1`), Q17 (`C3` of `C3`/`F2`), Q18 (`E1` of `E1`/`S1`) and Q27 (`C4` of `C2`/`C4`).
+
+**Both omissions sit inside a question the bank still carries, so both force the merged form.**
+Q17 keeps NESA's part letters (b) and (c) with a visibly separate italic note saying (a) asked
+for a sketch of *V*(*t*); (b) and (c) work from the equation alone, so nothing needed repeating.
+Q25 keeps (a) and (c) with a note about the omitted (b); (c) asks for the median of *f*(*x*)
+itself and needs only *h* from (a). Contrast 2025 Q15, where the omitted part's definition had to
+be repeated inline.
+
+### Verified in the browser at 430 px
+
+All 30 questions rendered through `index.html`'s own CSS in a throwaway harness (stem 390 px):
+`body.scrollWidth` never exceeds **430**; **no `.question-area` overflows its own client width**;
+Q23's **10-column** *z*-table works inside the `overflow-x:auto` wrapper (wrapper 390 px,
+scrolling to 630 px); the six narrower tables (3–6 columns) all fit bare at 390 px; Q25's
+**three-row** piecewise brace measures **72.5 px against a 72.5 px block** at `font-size:3.9em`,
+confirming 2022's scaling rule a second time; all 23 images load with stem images 390 px wide;
+all 32 plain-text option buttons are 52 px single-line; all 31 distinct non-ASCII characters
+rasterise to something other than the notdef glyph; `<sup>` exponents render 15 px against an
+18 px base; and both omission notes render with the dropped part letter appearing only inside
+the note. Zero console errors.
+
+As in the 2021, 2022 and 2025 sessions, **screenshots were unavailable** — the Browser pane was
+not displayed — so these are DOM measurements. Option-image legibility was therefore judged by
+re-rendering each crop offline at its measured display box and reading it, which is the honest
+substitute for looking at a screenshot, not a claim to have seen one.
+
+Both existing key checkers still pass untouched: 225 MC and 203 written questions across the
+other three subjects.
+
+### Where the port stands
+
+**Stage 4 is complete** — all six papers ported and cropped, every one reconciling to exactly
+100 marks. The subject is still **registered nowhere in code**: no `subjects/index.json` row, no
+`SUBJECT_ID_MAP`, no `SUBJECT_CATALOGUE` entry, no card. That is Stage 7, and it is still blocked
+on the two one-line `index.html` fixes recorded at Stage 3 — the subject-aware `NESA_CAT_LABELS`
+(5 of Advanced's 14 codes collide with Standard 2's) and the written-question badge reading
+`q.category || q.topic`. **Stage 6 (ground truth — commit and CI-enforce this subject's answer
+and written keys) is next.** Work stays on the `port/maths-advanced` branch until the subject is
+complete.
+
+**Files touched:** `subjects/mathematics-advanced.json`, `scripts/crop_maths_advanced.py` (new
+2024 registry block), 23 new files in `diagrams/`, `docs/subject-plans/mathematics-advanced.md`,
+`docs/HISTORY.md`, `CLAUDE.md`. No credential, schema, pricing or engine fact changed; no other
+subject's questions, answers or marks were altered.

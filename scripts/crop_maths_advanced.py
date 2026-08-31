@@ -198,6 +198,34 @@ REGISTRY = {
         ("Q32_stimulus", 33, 162, 405, 433, 487),  # unlabelled normal curve with 7 tick marks
         ("Q33_stimulus", 34, 163, 269, 430, 406),  # pdf f(x) = Ax/(x^2 + 4) on 0 <= x <= 6
     ],
+    2024: [
+        # --- Section I ---
+        ("Q1_stimulus",  1, 194, 216, 418, 372),  # decreasing line, incl. NOT TO SCALE
+        ("Q7_stimulus",  4, 165,  94, 429, 299),  # y = f(x), zeros at 0, 2 and 4
+        # Q7/Q8 option cells: crop the whole cell, then white out the option letter.
+        ("Q7_A",  4, 100, 336, 303, 540, [(99, 337, 114, 353)]),
+        ("Q7_B",  4, 325, 336, 529, 540, [(324, 337, 339, 353)]),
+        ("Q7_C",  4, 100, 557, 303, 761, [(99, 558, 114, 574)]),
+        ("Q7_D",  4, 325, 557, 529, 761, [(324, 558, 339, 574)]),
+        ("Q8_stimulus",  5, 203,  91, 392, 125),  # single box plot, no scale printed
+        ("Q8_A",  5, 100, 197, 289, 310, [(99, 199, 114, 215)]),
+        ("Q8_B",  5, 316, 197, 505, 310, [(315, 199, 330, 215)]),
+        ("Q8_C",  5, 100, 330, 289, 444, [(99, 332, 114, 348)]),
+        ("Q8_D",  5, 316, 330, 505, 444, [(315, 332, 330, 348)]),
+        ("Q9_stimulus",  6, 186, 120, 408, 303),  # two-stage probability tree
+        ("Q10_stimulus", 7, 110,  94, 472, 318),  # quartic with horizontal inflection Q
+        # --- Section II ---
+        ("Q11_stimulus", 10, 167, 122, 429, 347),  # y = g(x), incl. the y = g(x) label
+        ("Q13_stimulus", 12,  86, 207, 474, 502),  # populations W and K, incl. both axis captions
+        ("Q14_stimulus", 13, 137, 133, 458, 316),  # two parabolas, shaded region, incl. NOT TO SCALE
+        ("Q16_stimulus", 15, 106, 197, 450, 290),  # parallel box plots, incl. the 140-185 scale
+        ("Q20_stimulus", 19, 156, 162, 443, 334),  # tower TC with A and B, incl. NOT TO SCALE
+        ("Q21_stimulus", 20,  98, 194, 499, 521),  # anaconda scatterplot, incl. KEY and axis captions
+        ("Q22_stimulus", 21,  73, 121, 483, 330),  # f(x) = ln(1 + x^2), two shaded strips
+        ("Q23_stimulus", 23, 181, 237, 414, 343),  # standard normal curve shaded up to z
+        ("Q28_stimulus", 29, 208, 210, 463, 398),  # Ferris wheel illustration, incl. NOT TO SCALE
+        ("Q31_stimulus", 33, 216, 175, 380, 338),  # concentric circles, region QRST shaded
+    ],
 }
 
 

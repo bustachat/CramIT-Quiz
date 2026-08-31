@@ -10,7 +10,7 @@ Report is separate: `docs/paper-reports/mathematics-advanced.md` (verdict **GO**
 | 1 Survey | ✅ complete — 2026-08-27 | done |
 | 2 Syllabus grounding | ✅ complete — 2026-08-27 | done |
 | 3 Schema | ✅ complete — 2026-08-27 | done |
-| **4 Port + assets** | 🔶 **in progress — 5 of 6 papers** (2020 ✅, 2023 ✅, 2022 ✅, 2025 ✅, 2021 ✅ 2026-08-29) | **6 sessions, one per paper year**; **2024 is last** |
+| **4 Port + assets** | ✅ **complete — all 6 papers** (2020, 2023, 2022, 2025, 2021, 2024 ✅ 2026-08-31) | 6 sessions, one per paper year |
 | 5 Assets | ➡️ folded into Stage 4 | method reference only — **124 crops + 28 tables**, split per year |
 | 6 Ground truth | ⬜ | 1 session |
 | 7 Release | ⬜ | 1 session |
@@ -114,9 +114,10 @@ partially completed table; 2023 Q6 has a table stimulus *and* four option graphs
 ⚠️ **This paragraph said "`optionImagesWide` is not needed anywhere" and was wrong.** The
 measurement behind it — all 12 option sets between 0.8:1 and 2.6:1 — did not survive cropping:
 **2021 Q4 cuts at 2.94:1** and renders **160 × 54 px** in the 2×2 grid at 430 px, so it is set
-there (see the 2021 session note). **The ratio is not the test; the rendered height is.** Still
-worth re-checking at crop time: **2024 Q8** (four histograms), whose C/D row's ink extent
-measures 3.7:1.
+there (see the 2021 session note). **The ratio is not the test; the rendered height is.** The
+other candidate named here, **2024 Q8** (four histograms, C/D row ink extent 3.7:1), was
+measured at crop time and does **not** need it: that 3.7:1 banded the C/D *row*, and a single
+cell cuts at 1.75:1 and renders 160 × 96 px. **2021 Q4 is the subject's only one.**
 
 **Trap 2 (bare-letter options) does not occur in this subject.** Every MC question whose options
 *look* like bare letters (2020 Q10, 2023 Q5, 2024 Q10, 2025 Q10) has numeric options — 0/1/2/3,
@@ -333,7 +334,7 @@ official syllabus code per question and an official mark, so every canonical fie
 | `q` | string | Stem. HTML allowed |
 | `image` | string | `/diagrams/mathematics-advanced_{year}_Q{n}_stimulus.jpg`, omitted if none |
 | `optionImages` | array of 4 | `…_A.jpg` … `…_D.jpg`. Omitted if text options |
-| `optionImagesWide` | bool | ⚠️ **Set where the 2×2 grid renders the option unreadably short — measure it, do not trust the ratio.** This row said "**Never set**, Stage 1 measured all 12 option sets at 0.8:1–2.6:1" until 2026-08-29. **2021 Q4 crops at 2.94:1 and renders 160 × 54 px in the grid against 360 × 122 px one-per-row**, so it is set there. 2024 Q8 is the remaining candidate |
+| `optionImagesWide` | bool | ⚠️ **Set where the 2×2 grid renders the option unreadably short — measure it, do not trust the ratio.** This row said "**Never set**, Stage 1 measured all 12 option sets at 0.8:1–2.6:1" until 2026-08-29. **2021 Q4 crops at 2.94:1 and renders 160 × 54 px in the grid against 360 × 122 px one-per-row**, so it is set there. The other candidate, 2024 Q8, was measured (160 × 96 px) and does not need it &mdash; **2021 Q4 is the only one in the subject** |
 | `options` | array of exactly 4 strings | Required even with `optionImages` |
 | `answer` | int 0–3 | Indexes `options[]` in the paper's printed order |
 | `optionExplanations` | array of 4 strings | Canonical per-option rationale |
@@ -555,7 +556,7 @@ deviation deliberate and recorded (there are none)
 ---
 
 
-## Stage 4 — Port + assets ⬜ (6 sessions, one paper per session)
+## Stage 4 — Port + assets ✅ COMPLETE (6 sessions, one paper per session)
 
 **Stage 5 is folded into this stage.** Each session ports **one year and crops that year's own
 assets**, finishing green. The asset *method* — crop tooling, the DPI trap, the option-label
@@ -596,7 +597,7 @@ above. Crop counts are a **lower bound** — 2023 and 2022 each came in one over
 | 3 | **2022** | 52 | 21 | 3 | 37% | ✅ 2026-08-28 |
 | 4 | **2025** | 50 | 23 | 2 | 42% | ✅ 2026-08-28 |
 | 5 | **2021** | 48 | 22 | 6 | 50% | ✅ 2026-08-29 |
-| 6 | 2024 | 47 | 23 | 7 | 38% | ⬜ **next — last paper** |
+| 6 | **2024** | 47 | 23 | 7 | 38% | ✅ 2026-08-31 |
 
 **Tick the Status cell at the end of each session** — that is how the next cold session knows
 which paper is next.
@@ -1094,12 +1095,118 @@ one-liner lands.
 Local CI green: `MC=696 Written=349 imageRefs=288 missingImages=0`; both key checkers still pass
 225 MC and 203 written questions on the other subjects, which this session did not touch.
 
+### 2024 — done (2026-08-31), the last paper
+
+10 MC + 20 written entries + **2 `omittedParts`** (Q17(a) 2, Q25(b) 2) and **1 new
+`omittedQuestion`** (Q19 5 — sketch a quartic from its stationary points and inflections).
+**Marks reconcile to exactly 100**: 10 MC + 81 written + 4 omitted parts + 5 omitted question.
+The build script refuses to write unless the file first round-trips byte-for-byte and then all
+six content gates hold — the prefix-sum join, the paper total, every `category` being one of
+NESA's own codes, every `gridCodes` union (and no *spurious* `gridCodes` on a single-code
+question), every official grid part being covered by a bank entry or a declared omission, and
+every referenced image file existing.
+
+**All ten MC answers were confirmed against the official key before authoring**, by calling
+`extract_mc_key()` read-only on `2024_marking_guidelines.pdf` — `C B A C A D C D B B`. Ten
+independent derivations from the paper agreed with all ten. Q8 is the one worth re-reading: the
+box plot carries **no printed scale**, so the quartiles have to be read off the seven histogram
+columns — measured from the drawn rectangles, the box spans columns 2 to 6 with the median line
+on column 4, and option D is the only histogram whose 4th and 5th values fall in column 3.
+
+**The written model answers were cross-checked against NESA's own sample answers**, obtained by
+calling `build_written_key.py`'s `parse_paper()` read-only: 37 leaf parts reconciling to 90/90.
+Every derivation agreed. This is not the same thing as re-deriving MC answers by reading, which
+§10 forbids — it is the extractor Stage 6 will commit, run in dry-run.
+
+**Assets: 23 crops** via `scripts/crop_maths_advanced.py --year 2024` (a new registry block).
+Section I: Q1, Q7, Q8, Q9, Q10 stimulus + Q7's and Q8's four option cells each. Section II: Q11,
+Q13, Q14, Q16, Q20, Q21, Q22, Q23, Q28, Q31. **Stage 1's counts were exactly right for this
+paper — 23 crops and 7 tables (Section I Q3 plus six in Section II), the second year running
+after 2021 and the only two of the six.** Section II's list needed no additions: unlike 2023,
+2025 and 2022, no question turned up an unlisted diagram or a second diagram of its own.
+
+⚠️ **`optionImagesWide` is NOT needed here, and that closes the question for the subject.**
+Stage 1 flagged **2024 Q8**'s four histograms as the last candidate, having measured their ink
+extent at 3.7:1. That measurement did not survive cropping: it banded the C/D *row* rather than a
+single cell. Each Q8 crop is **1.75:1** (184 × 105 pt) and renders **160 × 96 px** in the
+`.options-grid-2x2` — squarely in 2020's 160 × 90 px territory, not 2021 Q4's 160 × 54 px. Q7's
+four graphs render **160 × 161 px**. Both sets were re-rendered offline at exactly those boxes
+and read: every bar height, the 0–4 axis and the −1/1/2/3 tick labels are legible. **2021 Q4
+remains the subject's only `optionImagesWide`.**
+
+**The 2020 option-letter amputation trap did not recur, and was checked rather than assumed.**
+All eight letters (Q7 A–D on page 5, Q8 A–D on page 6) are real text — `get_text("words")`
+returns their exact boxes — and `get_drawings()` reports **zero** vector paths intersecting any
+of the eight, so the white `erase` rectangle removes the letter and nothing else. Confirmed by
+eye on the contact sheets: every axis and curve is intact.
+
+**Stage 3 decision 4 (blank tables) is used here for the first and only time.** 2024 Q11 and
+Q13 are the subject's only two blank-table questions — 2022 Q12(b), the third on Stage 1's list,
+is omitted anyway. Both are reproduced as `.q-table` HTML with `<td>&nbsp;</td>` in the blanks
+(measured: every empty cell renders 34 px tall, so the grid reads as a table to fill in), and the
+model answer lists the cell values labelled by their column. Q13's table is *partially*
+completed — NESA prints *A* = 34 and the 61 — and those printed values are kept in place.
+
+**Three multi-code calls, two of them even splits.** Q22 (`C3` of `C2`/`C3`/`C4`) splits 3 marks
+of concavity against 3 of trapezoidal rule; filed under **`C3`** because part (c) is answered
+*from* part (a)'s concavity result, so the concavity is the question's spine — the mirror of the
+2025 Q25 reading, where (a) existed only to serve (b) and (c). Q31 (`C3` of `C3`/`T1`) splits 3–3
+between sector geometry and minimisation; filed under **`C3`**, the 2023 tie-break on heavier
+mathematical demand — (b) needs the derivative, the second-derivative test and a substitution
+back. **Q30 is the harder call**: a single 3-mark part carrying `F2`/`M1`, where most of the
+working is a reciprocal-graph transformation but the question's subject is the limiting sum of a
+geometric series. Filed under **`M1`**, because the stem offers the graph as *"or otherwise"* —
+an optional scaffold — while the mark-bearing insight is that a limiting sum exists only for
+−1 < *x* < 1. That is the 2021 Q33 reading (file under the question's subject), applied to a
+single part rather than to a merge. Four merged entries also span codes: Q14 (`C4` of `C4`/`F1`,
+3 of 4 marks), Q17 (`C3` of `C3`/`F2`, both surviving parts), Q18 (`E1` of `E1`/`S1`, 2 of 3) and
+Q27 (`C4` of `C2`/`C4`, 3 of 5).
+
+**Both omissions sit inside a question the bank still carries, so both force the merged form**
+(decision 3). Q17 keeps NESA's part letters (b) and (c) with a visibly separate italic note
+saying (a) asked for a sketch of *V*(*t*); parts (b) and (c) work from the equation alone, so
+nothing needed repeating. Q25 keeps (a) and (c) with a note about the omitted (b); (c) asks for
+the median of *f*(*x*) itself and needs only *h* from (a), so again nothing was substituted —
+contrast 2025 Q15, where the omitted part's definition had to be repeated inline.
+
+**Measured in the browser at a 430 px viewport** (stem 390 px), all 30 questions rendered through
+`index.html`'s own CSS in a throwaway harness:
+
+| Case | Measured | Verdict |
+|---|---|---|
+| `body.scrollWidth`, all 30 questions | **430**, never more | nothing clipped |
+| `.question-area` scrollWidth vs clientWidth, all 30 | equal on all 30 | decision 6's check is clean |
+| Q23's **10-column** *z*-table in the wrapper | wrapper 390 px, scrolls to 630 px internally | decision 9 works |
+| MC Q3 (4 col), Q11 and Q13 (3 col), Q22 (6 col), Q24 (4 col), Q26 (5 col), bare | 390 px each | fit |
+| Q25's piecewise brace (decision 1, **three rows**) | brace cell **72.5 px** against a 72.5 px block at `font-size:3.9em` | confirms 2022's scaling rule a second time |
+| MC Q7 option images in `.options-grid-2x2` | 160 × 161 px | legible — see above |
+| MC Q8 option images in `.options-grid-2x2` | 160 × 96 px | legible — `optionImagesWide` not set |
+| All 23 images (10 stem, 5 MC stimulus, 8 option) | load, `naturalWidth` non-zero, stem images 390 px wide | none broken |
+| Plain-text option buttons, all 32 | **52 px**, single line | no wrap |
+| 31 distinct non-ASCII characters used | rasterised; **none** matches the notdef glyph's ink count of 84 | real glyphs, no notdef |
+| `<sup>` exponents | 15 px against an 18 px base | real superscripts |
+| Q17 and Q25 omission notes | present; the dropped part letter appears only inside the note | omissions read correctly |
+| Blank table cells (Q11 ×6, Q24 ×13) | 34 px tall each | render as fillable cells |
+
+Zero console errors. As in the 2021, 2022 and 2025 sessions, **screenshots were unavailable** —
+the Browser pane was not displayed — so these are DOM measurements. Option-image legibility was
+therefore judged by re-rendering each crop offline at its measured display box and reading it,
+which is the honest substitute.
+
+Local CI green: `MC=706 Written=369 imageRefs=311 missingImages=0`; both key checkers still pass
+225 MC and 203 written questions on the other subjects, which this session did not touch.
+
+**Stage 4 is complete.** All six papers are ported and cropped: **60 MC + 126 written entries +
+5 `omittedQuestions` + 10 `omittedParts`**, 124 crops in `/diagrams/`, every paper reconciling to
+exactly 100 marks. The subject is still **registered nowhere in code** — that is Stage 7 — and
+its answer keys are not yet committed, which is Stage 6, **next**.
+
 **GATE 4** (ticked per year) — [x] validator green, `missingImages: 0` · [x] every part has
 `qNum` · [x] omissions declared, and each paper's marks total 100 · [x] every crop opened and
 compared against the paper, option by option · [x] every table renders as HTML, not an image ·
 [x] any 7+ column table wrapped and checked at 430 px · [x] **no `.question-area` overflows its
 own client width** (added 2021 — see decision 6) · [x] the year's Status cell ticked above
-— **all ticked for 2020, 2023, 2022, 2025 and 2021; reset them for 2024.**
+— **all ticked for all six papers. Stage 4 is closed; Stage 6 is next.**
 
 ---
 
@@ -1141,8 +1248,9 @@ and run it; the 2020 block is the worked example.
   not the aspect ratio.** This bullet used to say Stage 1's 0.8:1–2.6:1 range meant "none needs
   it"; **2021 Q4 cropped at 2.94:1 and rendered 160 × 54 px in the 2×2 grid**, against 360 × 122 px
   one-per-row, so it is set there. 2020's sets are genuinely fine (160 × 143 px, 160 × 90 px) and
-  so are 2022's, 2023's and 2025's. **Render each option set at 430 px and read the height off
-  the DOM** — 2024 Q8's histograms are the last set to check.
+  so are 2022's, 2023's, 2025's and 2024's (160 × 96 px and 160 × 161 px). **Render each option
+  set at 430 px and read the height off the DOM** — all twelve sets have now been measured, and
+  2021 Q4 is the only one that needed the flag.
 
 **No Gate 5** — its three checks moved into Gate 4, where they are applied per year: every crop
 compared against the paper option by option, every table rendered as HTML rather than an image,
