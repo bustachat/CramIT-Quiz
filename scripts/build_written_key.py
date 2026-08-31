@@ -53,6 +53,7 @@ NESA = r"C:\Claude Code Space\CRAMIT QUIZ Code Folder\NESA Exams Folder"
 OUT_DIR = os.path.join(REPO, "data", "answer-key", "written")
 
 SUBJECTS = {
+    "mathematics-advanced": "Maths Advanced",
     "mathematics-standard-2": "Maths Standard 2",
     "multimedia": "Industrial Technology - Multimedia",
     "vet-construction": "VET - Construction",
@@ -76,6 +77,25 @@ ANSWER_HEAD = re.compile(r"^\s*(Sample answer|Answers? could include)\b:?\s*", r
 # highest band. Note the text layer can split a range across two words on the same line
 # ("9-1" + "0"), which is why the marks column is joined per line before parsing.
 MARK_VALUE = re.compile(r"^(\d+)(?:\s*[\u2013\u2212-]\s*(\d+))?$")
+
+
+def is_guidelines(name):
+    """True for a marking-guidelines PDF, mirroring build_answer_key.find_papers().
+
+    Filenames are not consistent across subjects: Maths Standard 2, Multimedia and
+    VET use `{year}-hsc-...-mg.pdf`, while Maths Advanced uses
+    `{year}_marking_guidelines.pdf`. An `-mg.pdf$` test alone matches only the
+    former and exits "no marking-guideline PDFs" on the latter.
+
+    `feedback` is tested FIRST and excluded: the marking-centre notes are a third
+    PDF per year in some folders, named either `{year}_marking_feedback.pdf` or
+    `{year} ... HSC Marking Feedback.pdf` -- both of which contain "marking" and
+    would otherwise be parsed as guidelines.
+    """
+    lowered = name.lower()
+    if "feedback" in lowered:
+        return False
+    return bool(re.search(r"-mg\b|marking", lowered))
 
 
 def page_lines(page):
@@ -154,9 +174,9 @@ def build_subject(subject_id, dry_run=False):
         sys.exit("NESA folder not found (not in the repo, by copyright): " + folder)
 
     pdfs = sorted(p for p in glob.glob(os.path.join(folder, "*.pdf"))
-                  if re.search(r"-mg\.pdf$", os.path.basename(p), re.I))
+                  if is_guidelines(os.path.basename(p)))
     if not pdfs:
-        sys.exit("no marking-guideline PDFs (*-mg.pdf) in " + folder)
+        sys.exit("no marking-guideline PDFs in " + folder)
 
     papers, total_parts = {}, 0
     for pdf in pdfs:

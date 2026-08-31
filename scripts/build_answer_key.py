@@ -50,6 +50,11 @@ OUT_DIR = os.path.join(REPO_ROOT, "data", "answer-key")
 # subject id (matches subjects/{id}.json) -> where its papers live and how many
 # multiple-choice questions each paper is expected to have.
 SUBJECTS = {
+    "mathematics-advanced": {
+        "name": "Mathematics Advanced",
+        "folder": "Maths Advanced",
+        "mc_count": 10,
+    },
     "mathematics-standard-2": {
         "name": "Mathematics Standard 2",
         "folder": "Maths Standard 2",

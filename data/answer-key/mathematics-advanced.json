@@ -1,0 +1,142 @@
+{
+  "schemaVersion": 1,
+  "subjectId": "mathematics-advanced",
+  "subjectName": "Mathematics Advanced",
+  "generatedAt": "2026-08-31T12:12:53Z",
+  "generator": "scripts/build_answer_key.py",
+  "source": {
+    "publisher": "NSW Education Standards Authority",
+    "folder": "Maths Advanced",
+    "extractedFrom": "Multiple-choice Answer Key table, page 1 of each marking guidelines PDF",
+    "note": "Official HSC answers are immutable. Do not hand-edit this file -- regenerate it with the script above."
+  },
+  "papers": [
+    {
+      "year": 2025,
+      "markingGuidelines": "2025_marking_guidelines.pdf",
+      "examPaper": "2025_exam.pdf",
+      "sectionI": {
+        "questionCount": 10,
+        "sourcePage": 1,
+        "answers": {
+          "1": "B",
+          "2": "A",
+          "3": "D",
+          "4": "C",
+          "5": "B",
+          "6": "C",
+          "7": "A",
+          "8": "D",
+          "9": "B",
+          "10": "C"
+        }
+      }
+    },
+    {
+      "year": 2024,
+      "markingGuidelines": "2024_marking_guidelines.pdf",
+      "examPaper": "2024_exam.pdf",
+      "sectionI": {
+        "questionCount": 10,
+        "sourcePage": 1,
+        "answers": {
+          "1": "C",
+          "2": "B",
+          "3": "A",
+          "4": "C",
+          "5": "A",
+          "6": "D",
+          "7": "C",
+          "8": "D",
+          "9": "B",
+          "10": "B"
+        }
+      }
+    },
+    {
+      "year": 2023,
+      "markingGuidelines": "2023_marking_guidelines.pdf",
+      "examPaper": "2023_exam.pdf",
+      "sectionI": {
+        "questionCount": 10,
+        "sourcePage": 1,
+        "answers": {
+          "1": "D",
+          "2": "D",
+          "3": "A",
+          "4": "B",
+          "5": "A",
+          "6": "C",
+          "7": "A",
+          "8": "B",
+          "9": "D",
+          "10": "C"
+        }
+      }
+    },
+    {
+      "year": 2022,
+      "markingGuidelines": "2022_marking_guidelines.pdf",
+      "examPaper": "2022_exam.pdf",
+      "sectionI": {
+        "questionCount": 10,
+        "sourcePage": 1,
+        "answers": {
+          "1": "A",
+          "2": "D",
+          "3": "B",
+          "4": "A",
+          "5": "D",
+          "6": "B",
+          "7": "C",
+          "8": "C",
+          "9": "A",
+          "10": "B"
+        }
+      }
+    },
+    {
+      "year": 2021,
+      "markingGuidelines": "2021_marking_guidelines.pdf",
+      "examPaper": "2021_exam.pdf",
+      "sectionI": {
+        "questionCount": 10,
+        "sourcePage": 1,
+        "answers": {
+          "1": "B",
+          "2": "C",
+          "3": "D",
+          "4": "C",
+          "5": "A",
+          "6": "D",
+          "7": "A",
+          "8": "C",
+          "9": "B",
+          "10": "B"
+        }
+      }
+    },
+    {
+      "year": 2020,
+      "markingGuidelines": "2020_marking_guidelines.pdf",
+      "examPaper": "2020_exam.pdf",
+      "sectionI": {
+        "questionCount": 10,
+        "sourcePage": 1,
+        "answers": {
+          "1": "D",
+          "2": "B",
+          "3": "A",
+          "4": "B",
+          "5": "C",
+          "6": "B",
+          "7": "A",
+          "8": "A",
+          "9": "C",
+          "10": "D"
+        }
+      }
+    }
+  ],
+  "extractionProblems": []
+}

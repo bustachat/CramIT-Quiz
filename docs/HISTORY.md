@@ -2338,3 +2338,131 @@ complete.
 2024 registry block), 23 new files in `diagrams/`, `docs/subject-plans/mathematics-advanced.md`,
 `docs/HISTORY.md`, `CLAUDE.md`. No credential, schema, pricing or engine fact changed; no other
 subject's questions, answers or marks were altered.
+
+---
+
+## 2026-08-31 (later) — Mathematics Advanced Stage 6: ground truth built, committed and CI-enforced
+
+**Stage 6 of the Mathematics Advanced port. The bank was right on its first check — nothing
+needed correcting.** That is the outcome Stage 0's read-only dry runs predicted back on
+2026-08-27, and it is the first stage of this port to find no defect in anything.
+
+### What was built
+
+| File | Contents |
+|---|---|
+| `data/answer-key/mathematics-advanced.json` | 6 papers, **60 MC answers**, 0 extraction problems |
+| `data/answer-key/written/mathematics-advanced.json` | 6 papers, **234 parts, exactly 90 marks each**, 0 unresolved |
+
+Results, first run, no iteration:
+
+```
+OK  mathematics-advanced:  60 answers   checked, 0 wrong, 0 unverifiable
+OK  mathematics-advanced: 126 questions checked, 0 wrong, 0 unverifiable, 5 declared omissions
+```
+
+Subject-wide totals move to **285 MC answers** and **329 written questions** enforced in CI.
+
+**No workflow edit was needed.** `validate.yml` already runs both checkers, and both enumerate
+their key directory rather than naming subjects — so committing the two files is what wires
+them in. The 60 MC answers match, letter for letter, the six strings recorded in `CLAUDE.md`
+during the Stage 4 sessions, each of which was taken from `extract_mc_key()` read-only *before*
+authoring that year's questions. This is the first time those six independent reads have been
+compared against each other, and they agree.
+
+### Tooling changes
+
+1. `build_answer_key.py` — registered the subject (`Maths Advanced`, `mc_count: 10`).
+2. `build_written_key.py` — registered the subject.
+3. **The `-mg.pdf$` glob is fixed**, exactly as the runbook predicted at Stage 0. It selected
+   guidelines with `re.search(r"-mg\.pdf$", …)`, which never matches Maths Advanced's
+   `{year}_marking_guidelines.pdf` and exited *"no marking-guideline PDFs"*. It is now
+   `is_guidelines()`, mirroring `build_answer_key.find_papers()`: `feedback` is tested
+   **first** and excluded, then `-mg\b|marking` matches. That ordering is load-bearing —
+   Multimedia's third PDF per year is named `{year} … HSC Marking Feedback.pdf`, which
+   contains *both* words, and reversing the tests would parse marking-centre notes as
+   guidelines. **Verified inert**: all three existing subjects regenerate byte-identical
+   written keys.
+4. Regenerating the other three **MC** keys changed only their `generatedAt` timestamp — the
+   answers are byte-identical — so those three files were reverted. The committed data diff is
+   the two new files alone.
+
+### A hole in the written checker, now reported
+
+`check_written_key.cjs` compares each bank entry against the key. It therefore sees a mark that
+is *wrong*, but has never been able to see a question that is simply **absent** — which is the
+exact failure that left 2020 Mathematics Standard 2 at 84/85 for over a year (`CLAUDE.md` §10
+rule 5). It now also computes the reverse direction: how many official leaf parts are claimed by
+a bank entry or a declared omission.
+
+| Subject | Coverage |
+|---|---|
+| **mathematics-advanced** | **234 / 234** |
+| mathematics-standard-2 | 235 / 235 |
+| multimedia | 30 / 42 — Section III (Q16, 15 marks/paper) never ported |
+| vet-construction | 23 / 76 — written bank covers 23 of 65 marks/paper |
+
+It is **reported, not enforced**. Those last two gaps are deliberate, documented decisions
+(Multimedia's Section III is a scheduled upgrade phase; VET's written port is partial), and
+making this blocking would turn CI red on work already scoped out rather than on a regression.
+The line is there so the gap is *visible in the check* instead of only in prose. If either gap
+is closed, promote it to a hard assertion.
+
+### Reconciliation — all six papers, both directions
+
+| Year | MC | written | omittedParts | omittedQuestions | total |
+|---|---|---|---|---|---|
+| 2020 | 10 | 82 | 1 | 7 | **100** |
+| 2021 | 10 | 81 | 4 | 5 | **100** |
+| 2022 | 10 | 85 | 5 | 0 | **100** |
+| 2023 | 10 | 83 | 7 | 0 | **100** |
+| 2024 | 10 | 81 | 4 | 5 | **100** |
+| 2025 | 10 | 87 | 3 | 0 | **100** |
+
+Every official leaf part is claimed **exactly once** — 0 unclaimed, 0 double-claimed.
+
+### The residual human gate, and why eyeballing was not the method
+
+Gate 6's one item CI cannot cover: a passing check compares only the official *letter*, so it is
+blind to reordered options, wrong option text, and a description standing in for a missing
+picture (`CLAUDE.md` §10 rules 6 and 7). Reading 124 crops by eye is not a method, so three
+checks were used, each covering what the others miss:
+
+1. **Twelve option-set contact sheets, read one at a time.** Each sheet puts the NESA page's own
+   option area above the four committed crops **in bank array order**, with the keyed option
+   marked. All twelve match the paper's A/B/C/D ordering — no reordering, no wrong-picture
+   pairing, and every crop's baked-in option letter cleanly erased. The two closest calls are
+   **2024 Q7**, where options C and D differ only by a horizontal shift, and **2024 Q8**, four
+   similar histograms; both are correct. 2021 Q4's sheet also shows visually why it is the
+   subject's only `optionImagesWide`, and 2024 Q8's shows why it is not one.
+2. **All 124 crops re-rendered from the PDF at their registry rectangle and pixel-compared to
+   the committed file — 0 mismatches.** Every file on disk is a faithful cut of the paper at the
+   place it claims to come from. This is the check that would have caught the 2020 option-letter
+   amputation while it was happening.
+3. **All 124 position-checked against the paper's own question labels — 0 mismatches.** No crop
+   is attached to the wrong question.
+
+⚠️ **Two traps in writing check 3**, both hit before it was right. A bare number in the left
+margin is only a question label on a **Section I** page: on Section II pages body text starts at
+x = 70.7, so `x = 4` in 2021 Q24's stem posed as "Q4" and flagged that crop spuriously. But
+tightening the x threshold to exclude it breaks Section I entirely — its question numbers sit in
+the *same* x band, and every one of the 73 Section I crops then reported "no label above". The
+separator is not a coordinate, it is the **`Question N` header**: use headers on pages that have
+them, bare margin numbers on pages that do not.
+
+Crop reconciliation: **124 referenced, 124 on disk, 0 orphans, 0 missing.** One process note —
+a first pass reported `mathematics-advanced_2023_Q2_stimulus.jpg` as an orphan, because it
+scanned `image`/`optionImages` plus *written* stems. **MC stems carry inline `<img>` too**
+(2023 Q2 embeds its die-and-spinner picture that way, between two sentences), so a reference
+scan must read the `q` field of both question arrays.
+
+### Verification
+
+Full local CI green: `validate_subjects.cjs` `MC=706 Written=369 imageRefs=311 missingImages=0`,
+`Issues: 0`; both key checkers pass; all Cloudflare functions syntax-check; `npm test` 67 pass,
+0 fail. The other subjects' answers and marks were not touched and still pass.
+
+No credential, schema, pricing or engine fact changed. No question content was altered — this
+stage only reads the bank. The subject is still **registered nowhere in code**; that is Stage 7,
+still blocked on the two one-line `index.html` fixes Stage 3 found. Work stays on the
+`port/maths-advanced` branch.

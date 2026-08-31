@@ -12,7 +12,7 @@ Report is separate: `docs/paper-reports/mathematics-advanced.md` (verdict **GO**
 | 3 Schema | ✅ complete — 2026-08-27 | done |
 | **4 Port + assets** | ✅ **complete — all 6 papers** (2020, 2023, 2022, 2025, 2021, 2024 ✅ 2026-08-31) | 6 sessions, one per paper year |
 | 5 Assets | ➡️ folded into Stage 4 | method reference only — **124 crops + 28 tables**, split per year |
-| 6 Ground truth | ⬜ | 1 session |
+| **6 Ground truth** | ✅ **complete — 2026-08-31** | done |
 | 7 Release | ⬜ | 1 session |
 
 ### How to start each session
@@ -1260,34 +1260,90 @@ tables land in the 2021, 2022, 2023, 2024 (×2) and 2025 sessions.
 
 ---
 
-## Stage 6 — Ground truth ⬜
+## Stage 6 — Ground truth ✅ COMPLETE (2026-08-31)
 
-Pre-verified at Stage 0: both extractors already reconcile exactly on all six papers. Two things
-must happen first:
+Both keys are built, committed and enforced. **Nothing needed correcting** — the bank was
+right on its first check, which is what Stage 0's dry runs predicted.
 
-1. **Register the subject in both key builders.** `build_answer_key.py` `SUBJECTS`:
-   `"mathematics-advanced": {"name": "Mathematics Advanced", "folder": "Maths Advanced", "mc_count": 10}`.
-   `build_written_key.py` `SUBJECTS`: `"mathematics-advanced": "Maths Advanced"`.
-2. ⚠️ **Fix `build_written_key.py`'s file glob first.** It selects guidelines with
-   `re.search(r"-mg\.pdf$", …)`, which never matches `2020_marking_guidelines.pdf` — it exits
-   `"no marking-guideline PDFs (*-mg.pdf) in …"`. Widen it to `find_papers()`'s logic (as
-   `build_answer_key.py` and `build_mapping_grid.py` already use), and **keep `feedback`
-   excluded** or the marking-centre notes get parsed as guidelines.
+| | |
+|---|---|
+| `data/answer-key/mathematics-advanced.json` | 6 papers, **60 MC answers** |
+| `data/answer-key/written/mathematics-advanced.json` | 6 papers, **234 parts, 90 marks each** |
+| `check_answer_key.cjs` | **60 checked, 0 wrong, 0 unverifiable** (subject total now 285) |
+| `check_written_key.cjs` | **126 checked, 0 wrong, 0 unverifiable, 5 declared omissions** (total 329) |
 
-```bash
-python scripts/build_answer_key.py  mathematics-advanced
-python scripts/build_written_key.py mathematics-advanced
-node   scripts/check_answer_key.cjs
-node   scripts/check_written_key.cjs
-```
+**No workflow edit was needed.** Both checkers enumerate their key directory, so committing
+the two files is what wires them into `validate.yml`.
 
-**The residual human gate CI cannot cover:** a passing check compares only the official *letter*,
-so it is blind to reordered options, wrong option text, and a description standing in for a
-missing picture. For every question with an `image` or `optionImages`, compare the paper and the
-committed crop option by option. Prefer the paper's own wording.
+### What was changed in the tooling
 
-**GATE 6** — [ ] 0 wrong, 0 unverifiable · [ ] every paper reconciles to 100 · [ ] image
-questions compared by a human
+1. `build_answer_key.py` `SUBJECTS` — added the subject (`Maths Advanced`, `mc_count: 10`).
+2. `build_written_key.py` `SUBJECTS` — added `"mathematics-advanced": "Maths Advanced"`.
+3. ⚠️ **The `-mg.pdf$` glob is fixed**, as this runbook predicted. It is now
+   `is_guidelines()`, mirroring `build_answer_key.find_papers()`: `feedback` is tested
+   **first** and excluded, then `-mg|marking` matches. Verified inert for the other three
+   subjects — all three regenerate byte-identical written keys, and Multimedia's
+   `{year} ... HSC Marking Feedback.pdf` files stay excluded.
+4. Regenerating the other three **MC** keys changes only their `generatedAt` timestamp, so
+   those three files were reverted — the committed diff is the two new files alone.
+
+### New: reverse coverage, reported not enforced
+
+`check_written_key.cjs` could only see a question whose mark was *wrong*, never one that was
+simply **absent** — the failure that left 2020 Standard 2 at 84/85 for over a year. It now
+also reports, per subject, how many official leaf parts are claimed by a bank entry or a
+declared omission:
+
+| Subject | Coverage |
+|---|---|
+| **mathematics-advanced** | **234 / 234** |
+| mathematics-standard-2 | 235 / 235 |
+| multimedia | 30 / 42 — Section III (Q16, 15 marks/paper) never ported |
+| vet-construction | 23 / 76 — written bank covers 23 of 65 marks/paper |
+
+It is **reported, not enforced**: those last two gaps are deliberate, documented decisions,
+and failing on them would turn CI red on work already scoped out. If either is ever closed,
+promote this to a hard assertion.
+
+### Reconciliation — all six papers, both directions
+
+| Year | MC | written | omittedParts | omittedQuestions | total |
+|---|---|---|---|---|---|
+| 2020 | 10 | 82 | 1 | 7 | **100** |
+| 2021 | 10 | 81 | 4 | 5 | **100** |
+| 2022 | 10 | 85 | 5 | 0 | **100** |
+| 2023 | 10 | 83 | 7 | 0 | **100** |
+| 2024 | 10 | 81 | 4 | 5 | **100** |
+| 2025 | 10 | 87 | 3 | 0 | **100** |
+
+Every official leaf part is claimed **exactly once** — 0 unclaimed, 0 double-claimed.
+
+### The residual human gate — how it was actually discharged
+
+Eyeballing 124 crops is not a method. Three checks, each covering what the others miss:
+
+1. **12 option-set contact sheets, read one by one.** Each puts the NESA page's own option
+   area above the four committed crops **in bank array order**, with the key marked. All 12
+   match the paper's A/B/C/D ordering; no reordering, no wrong-picture pairing. The two
+   closest calls are **2024 Q7** (C and D differ only by a horizontal shift) and **2024 Q8**
+   (four similar histograms) — both correct.
+2. **All 124 crops re-rendered from the PDF at their registry rectangle and pixel-compared
+   to the committed file. 0 mismatches**, so every file on disk is a faithful cut of the
+   paper at the place it claims.
+3. **All 124 position-checked against the paper's own question labels. 0 mismatches**, so no
+   crop is attached to the wrong question. ⚠️ Two traps in writing that check: a bare number
+   in the left margin is only a question label on a **Section I** page — on Section II pages
+   body text starts at x = 70.7 and `x = 4` posed as "Q4" (2021 Q24 was flagged spuriously);
+   and tightening the x threshold instead breaks Section I, whose numbers sit in the *same*
+   band. The separator is the **`Question N` header**: use headers where a page has them,
+   bare margin numbers where it does not.
+
+Crop reconciliation: **124 referenced, 124 on disk, 0 orphans, 0 missing.** Note MC stems
+carry inline `<img>` too (2023 Q2), not only the `image` field — a scan that reads
+`image`/`optionImages` plus written stems alone reports a phantom orphan.
+
+**GATE 6** — [x] 0 wrong, 0 unverifiable · [x] every paper reconciles to 100 ·
+[x] image questions compared by a human
 
 ---
 

@@ -187,6 +187,40 @@ for (const keyFile of keyFiles.sort()) {
     }
   }
 
+  // Reverse direction: every official leaf part should be claimed by exactly one
+  // bank entry or omission. The forward check above cannot see a question that is
+  // simply ABSENT, which is how 2020 Standard 2 sat at 84/85 for over a year.
+  //
+  // REPORTED, NOT ENFORCED. Two subjects have large, deliberate, documented gaps:
+  // Multimedia has never ported Section III (Q16, 15 marks/paper) and VET's written
+  // bank covers 23 of its 65 marks. Failing on those would turn CI red on decisions
+  // already taken, so this prints a coverage line and leaves the exit code alone.
+  const owners = [];
+  for (const q of written) {
+    const parsed = parseQNum(q.qNum);
+    if (parsed) owners.push({ year: String(q.year), ...parsed });
+  }
+  for (const o of declaredOmissions) {
+    const parsed = parseQNum(o.qNum);
+    if (parsed) owners.push({ year: String(o.year), ...parsed });
+  }
+  let officialParts = 0;
+  const unclaimed = [];
+  for (const [year, parts] of Object.entries(key.papers)) {
+    for (const p of parts) {
+      officialParts += 1;
+      const leaf = pathOf(p.part);
+      const claimed = owners.some(
+        (o) => o.year === year && o.base === p.question && startsWith(leaf, o.path)
+      );
+      if (!claimed) {
+        unclaimed.push(
+          `${year} Q${p.question}${leaf.length ? `(${leaf.join(')(')})` : ''} = ${p.marks}`
+        );
+      }
+    }
+  }
+
   checkedTotal += checked;
   wrongTotal += wrong.length;
   unverifiableTotal += unverifiable.length;
@@ -201,6 +235,13 @@ for (const keyFile of keyFiles.sort()) {
   );
   for (const line of wrong) console.log(`        ✗ ${line}`);
   for (const line of unverifiable) console.log(`        ? ${line}`);
+  console.log(
+    `        coverage: ${officialParts - unclaimed.length}/${officialParts} official ` +
+      `parts claimed by a bank entry or a declared omission` +
+      (unclaimed.length ? ` — ${unclaimed.length} not ported (reported, not enforced)` : '')
+  );
+  for (const line of unclaimed.slice(0, 6)) console.log(`        • ${line}`);
+  if (unclaimed.length > 6) console.log(`        • ... and ${unclaimed.length - 6} more`);
 }
 
 console.log(
