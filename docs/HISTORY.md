@@ -2466,3 +2466,93 @@ No credential, schema, pricing or engine fact changed. No question content was a
 stage only reads the bank. The subject is still **registered nowhere in code**; that is Stage 7,
 still blocked on the two one-line `index.html` fixes Stage 3 found. Work stays on the
 `port/maths-advanced` branch.
+
+---
+
+## 2026-09-01 — Multimedia Section III planned as its own runbook; an audit gap recorded
+
+Planning and record-keeping only. **No code, data, credential, schema or pricing fact changed,
+and no question content was touched.**
+
+### Multimedia Section III — the gap, and the plan
+
+Prompted by the reverse-coverage line added at Mathematics Advanced Stage 6, which reported
+Multimedia at **30/42** official written parts claimed. Confirmed from the data: the bank holds
+**Q11–Q15 for all six years and no Q16 at all** — Section III, **15 marks per paper, 12 official
+parts, 90 marks across 2020–2025**, never ported.
+
+Read from the papers (page 9 in all six years):
+
+| Year | (a) | marks | (b) | marks |
+|---|---|---|---|---|
+| 2020 | Environmental factors in site selection | 5 | Minimising continuing environmental impact | 10 |
+| 2021 | Industrial Relations issues from modified operations | 5 | Career and training opportunities | 10 |
+| 2022 | Role of WHS legislation | 5 | Strategies to improve workplace safety | 10 |
+| 2023 | How ONE new technology is improving the industry | **3** | Mass production and automation, with examples | **12** |
+| 2024 | Marketing across a hierarchical partnership vs a flat sole trader | 5 | Organisational structure vs production/efficiency | 10 |
+| 2025 | Legislative requirements and sustainable practices | 5 | Historical developments in manufacturing | 10 |
+
+The shape is stable — (a) *Describe* 5, (b) *Discuss/Explain/Analyse* 10 — with **2023 the only
+year that shifts, at 3 + 12**.
+
+**This is a different strand from everything already in the subject.** Environment/
+sustainability, industrial relations, WHS, careers, automation, organisational structure,
+marketing, historical development — **none of the seven Study Mode topics touches any of it**
+(Text & Document Design, Graphics, Animation, Video, Audio, WWW, IP & Ethics are all Section I/II
+*production* content). There is no existing bank content to build from, which is exactly what
+made Study Mode topics 1–7 comparatively cheap and makes this one not.
+
+**New runbook: `docs/subject-plans/multimedia-section-iii.md`**, scheduled **after Mathematics
+Advanced Stage 7** (owner decision). That supersedes the 2026-07-29 "after VET Study Mode"
+sequencing, whose precondition was met on 2026-07-30 and then sat unstarted for a month.
+
+**It is not a new subject port, and the runbook says so.** Multimedia is live, so Stage 0
+(feasibility), Stage 2 (syllabus grounding, done for the 7 Study Mode topics) and Stage 3
+(schema, fixed by the live file) do not re-run in their usual form. **It starts at Stage 1**,
+and **Stage 6 is already complete** — `data/answer-key/written/multimedia.json` already holds
+all 12 parts' official marks *and* NESA's sample answers, committed at Maths Advanced Stage 6,
+so the marks cannot go wrong without CI catching it immediately.
+
+⚠️ **The one genuine feasibility risk is flagged for Stage 1 to resolve or escalate:** whether
+`mark-written.js` can mark a **10–12 mark band-marked extended response**. Its longest to date
+is 5 marks. If it needs a different prompt, a band rubric or a larger `max_tokens`, that is an
+engine change and must be known *before* Stage 4 starts, not discovered mid-port. HMS's
+`writingScaffolds` (6–10 and 12 mark bands) are the nearest existing precedent.
+
+Two smaller traps recorded in the runbook: **2024 carries shared stimulus prose** that both
+parts depend on, so whatever bank shape Stage 1 picks must keep it attached to both; and
+`multimedia.json` must **never** be round-tripped through `json.dumps` (it reformatted into a
+461-line diff once by expanding `studyNotes`' compact inline arrays).
+
+### The audit question, answered from the record
+
+Owner asked directly whether the same audit checks against the marking guides had been done for
+VET and Multimedia. Checked, changed nothing. The answer splits:
+
+**Yes, for MC answers — and it was done properly.** 2026-08-27 (`docs/HISTORY.md:689`): all 11
+answer-key tables read **from rendered page images** rather than trusted from the text layer;
+`qNum` backfilled for all 135 questions on **exact option-set equality**, never a similarity
+score; **option order verified separately**, because the official letter indexes the paper's
+order. It found **6 wrong VET answers in 75 (8%)** — 2021 Q1, 2022 Q13, 2022 Q15, 2023 Q11,
+2024 Q11, 2025 Q1 — each re-derived from the source rather than flipped to match the key.
+Multimedia came back clean at 60/60. The same pass, plus its follow-up, also caught four
+questions whose option *text* described the wrong picture (VET 2021 Q15, VET 2022 Q7/Q13,
+Multimedia 2021 Q1, then Multimedia 2022 Q2's stimulus) — answers right, pictures wrong, which
+the key check is structurally blind to. All 285 MC answers are now CI-enforced.
+
+**No, for written model answers — and not for any subject.** `check_written_key.cjs` enforces
+the **mark only**; the written-key session's own words were that the official sample answer is
+committed *"as the source a reviewer needs when a bank answer looks wrong — not as an
+assertion."* Prose cannot be compared for equality. So the **52 authored model answers** across
+`multimedia.json` (29) and `vet-construction.json` (23) have never been read back against
+NESA's sample answers by any session. The only time that comparison has ever been run in this
+project was inside the Maths Advanced 2024 port session, on questions being authored right then
+— never retrospectively.
+
+Why it is worth a decision rather than a shrug: **every one of the six defective VET questions
+also carried an `optionExplanations` entry arguing for the wrong answer.** Same authoring, same
+subjects, same period — and the written prose from that period has never been read back. Ground
+truth already sits in `data/answer-key/written/` from Stage 6, so the work is reading, not
+extraction.
+
+Recorded as a §11 roadmap row. **No decision taken, nothing changed.**
