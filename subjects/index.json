@@ -5,6 +5,11 @@
     "name": "Mathematics Standard 2"
   },
   {
+    "file": "mathematics-advanced.json",
+    "id": "mathematics-advanced",
+    "name": "Mathematics Advanced"
+  },
+  {
     "file": "health-movement-science.json",
     "id": "health-movement-science",
     "name": "Health & Movement Science"

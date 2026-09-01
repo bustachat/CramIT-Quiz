@@ -2669,3 +2669,92 @@ scoped prerequisite — worth doing once, not per subject.
 - The Multimedia runbook, written earlier today, said `mark-written.js` marks against
   `keywords` + `modelAnswer`. It does not — `keywords` + `bandDescriptors`. Corrected, and it is
   the finding the whole design turns on.
+
+---
+
+## 2026-09-01 (Maths Advanced Stage 7) — Mathematics Advanced released: the subject is live in the app
+
+**Stage 7 is the last stage, and the port is finished.** Through Stages 4–6 the subject was
+deliberately **registered nowhere in code** — 60 MC + 126 written questions, 124 crops and two
+committed ground-truth keys, all sitting in the repo with no way for a student to reach them.
+This session wired it in, landed the two engine fixes Stage 3 predicted, found a third Stage 3
+did not, and exercised the whole bank in a browser. Runbook:
+`docs/subject-plans/mathematics-advanced.md`; branch `port/maths-advanced`, **not merged**.
+
+### Registered
+
+`subjects/index.json` gains the file. `index.html` gains `SUBJECT_ID_MAP.mathsadv`, a
+`SUBJECTS.mathsadv` config (year + category filters, `hasMC`/`hasWritten`, **no `hasStudy`** —
+Study Mode is deferred), a `SUBJECT_CATALOGUE` row, a `.subject-card.mathsadv` teal gradient, a
+new `CARD_ART` SVG (axis + cubic curve + shaded area under it + ∫) and a `CLASS_MAP` entry.
+
+⚠️ **Two identifiers were chosen once and are expensive to change**, the same way
+`pdhpe-hms` is: `id` (`mathematics-advanced`) is written to Supabase
+`subject_selections.subject_id`, and `quizKey` (`mathsadv`) to `user_progress.subject_key`.
+`quizKey` is deliberately **not** `maths` — four call sites branch on
+`currentSubjectKey === 'maths'` for Standard 2 alone (Extended-318 toggle, Formula Hint button,
+Key Concepts suppression, trial-wall copy), and a distinct key keeps Advanced out of three of
+them by construction.
+
+### The two engine fixes Stage 3 flagged as blocking
+
+**`NESA_CAT_LABELS` is now subject-aware.** It was one flat global map keyed on the bare
+syllabus code, and **five of Advanced's fourteen codes collide with Standard 2's** — Advanced's
+`M1` is Modelling Financial Situations, Standard 2's is Measurement. It is now
+`{ maths: {…}, mathsadv: {…} }`, read through a new `catLabel()` helper doing
+`NESA_CAT_LABELS[currentSubjectKey]?.[code] || code`, with Standard 2's entries moved under
+`maths` unchanged and the two chip call sites switched. **Seen working in the browser**:
+Advanced's `F1` chip reads *Working with Functions*, Standard 2's still reads *Money Matters*.
+Subjects with no map entry still fall through to the bare code.
+
+**The written-question topic badge now reads `q.category || q.topic`**, mirroring the MC path
+one function above it. This one is worth stating plainly because it was never about this port:
+**Standard 2's 151 written questions carry `category` and zero carry `topic`, so every one of
+them has shown no topic badge since their port** — the HMS missing-marks-badge defect, second
+instance. Measured before and after: 151/151 now show one, as do Advanced's 126. HMS's 40
+(which use `topic`) are unaffected; Multimedia's 29 and VET's 23 still show none, correctly —
+those banks carry neither field.
+
+### A third fix Stage 3 did not predict
+
+`buildKeywordFeedback()` hid its **Key Concepts** checklist behind
+`currentSubjectKey !== 'maths'`. Advanced's keywords are the same kind of thing as Standard 2's
+— answer fragments (`3 ln 3`, `0.0918`, `z = 0.8`), not concepts — so on the offline fallback
+grid the checklist would have listed the answer for the student. The test is now a
+`MATHS_SUBJECT_KEYS` array. Confirmed suppressed for `maths` and `mathsadv`, still shown for
+`vet`, with the score line and the NESA-derived band descriptor rendering either way.
+
+### Verified
+
+The Browser pane went hidden partway through, so pointer clicks timed out and the flow was
+driven through the page's own handlers (`.click()` on the real elements, `renderQuestion()` on
+the real renderer) — the home and picker screenshots did come through.
+
+- Real flow: card → picker → **Start Practice** → **2020 Q7 answered correctly** (score 1,
+  correct option green, all four `optionExplanations` shown, 6-step solution rendered) →
+  **2025 Q4 answered incorrectly** (chosen red, correct green, score held) — and that second
+  question happened to carry `optionImages`.
+- **All 186 questions rendered at 430 px**: **0** `.question-area` overflows, `body.scrollWidth`
+  never above 430, **60/60 MC and 126/126 written topic badges**, **126/126 marks badges**.
+- **All 7 tables of 7+ columns wrapped and scrolling inside their wrapper** — 2023 Q23's
+  11-column *z*-table widest at 694 px inside a 390 px stem.
+- **All 124 crops load**, 0 failures (forced `loading='eager'` first — lazy images read
+  `naturalWidth` 0 while the pane is hidden).
+- Billing surfaces: subscribe modal lists `mathematics-advanced`; trial wall reads
+  *"Unlock all 60 questions in Mathematics Advanced"*.
+- **No console errors** at any point.
+- Full local CI green: `MC=706 Written=369 imageRefs=311 missingImages=0`, `Issues: 0`;
+  **285** MC answers and **329** written questions checked, 0 wrong, 0 unverifiable; all 5
+  Cloudflare functions syntax-check; `npm test` 67 pass / 0 fail.
+
+No credential, schema, pricing or ground-truth fact changed, and **no question content was
+altered** — this stage only registers and renders the bank.
+
+### Still open on this subject, deliberately
+
+**Study Mode** (`studyNotes`), the **Exam Trends panel** (data already built at
+`data/exam-trends/mathematics-advanced.json`; UI placement is an open design decision) and
+**Extended variant questions** are all deferred and recorded as such in the runbook. The card
+gradient (teal, `#7FA9A0 → #55867D`) and the 14 shortened chip labels were picked this session
+to sit beside Standard 2's amber without colliding with HMS green, Multimedia blue or VET
+slate — a routine port choice, but a visual one, so it is called out rather than buried.

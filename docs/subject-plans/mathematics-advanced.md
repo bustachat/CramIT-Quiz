@@ -13,7 +13,7 @@ Report is separate: `docs/paper-reports/mathematics-advanced.md` (verdict **GO**
 | **4 Port + assets** | ✅ **complete — all 6 papers** (2020, 2023, 2022, 2025, 2021, 2024 ✅ 2026-08-31) | 6 sessions, one per paper year |
 | 5 Assets | ➡️ folded into Stage 4 | method reference only — **124 crops + 28 tables**, split per year |
 | **6 Ground truth** | ✅ **complete — 2026-08-31** | done |
-| 7 Release | ⬜ | 1 session |
+| **7 Release** | ✅ **complete — 2026-09-01** | done — **the port is finished** |
 
 ### How to start each session
 
@@ -60,7 +60,7 @@ Stage 4's tracker table says which year is next.
 | **Text layer** | **garbled on every paper, but not the same way each year** — 2024 alone uses the MathType `^…h` / `]…g` bracket mapping; every year loses ∞ and √ entirely, prints π as `p`, and re-orders stacked fractions. **124 of 294 parts (42%) carry a detectable corruption** |
 | Ground truth, pre-verified | `extract_mc_key()` 10/10 every year; `parse_paper()` 37–42 parts/paper, **0 unresolved, exact 90/90 on all six** |
 | Official topic + marks | `data/mapping-grid/mathematics-advanced.json` — every part, all six papers, reconciled. ⚠️ **Regenerated 2026-08-28** after `build_mapping_grid.py` was found to bleed a multi-line Content cell into the rows above and below it; 20 rows across the two maths subjects carried a code NESA never gave them (see the 2025 session note) |
-| Schema | Fixed at Stage 3 — canonical field names, no deviations. **Two engine fixes are blocking for Stage 7**: the shared `NESA_CAT_LABELS` map collides on 5 of 14 codes, and the written-question badge reads `q.topic` not `category` |
+| Schema | Fixed at Stage 3 — canonical field names, no deviations. The two engine fixes it flagged **landed at Stage 7** (2026-09-01): `NESA_CAT_LABELS` is subject-aware, and the written badge reads `q.category \|\| q.topic` |
 | Bank shape | **One entry per NESA question**, not per part (Stage 4, 2020) — matches Standard 2 and the `check_written_key.cjs` prefix-sum join |
 | Stem images | ⚠️ **An inline `<img>` inside `q` needs its own `max-width:100%` style** — there is no `.q-text img` rule, so an unstyled one renders at natural crop width and `body{overflow-x:hidden}` silently cuts it off. Stage 4 decision 6 (found 2026-08-29) |
 | Crop tool | `scripts/crop_maths_advanced.py --year {YEAR}` — points, not pixels; one registry block per year. **Never** add this subject to `diagram_registry.json` |
@@ -1347,28 +1347,90 @@ carry inline `<img>` too (2023 Q2), not only the `image` field — a scan that r
 
 ---
 
-## Stage 7 — Release ⬜
+## Stage 7 — Release ✅ COMPLETE (2026-09-01)
 
-1. `subjects/index.json` — add the filename
-2. `index.html` — `SUBJECT_ID_MAP` (JSON fetch URL) **and** `SUBJECT_CATALOGUE` (billing id,
-   written to Supabase `subject_selections.subject_id` — chosen once, expensive to change)
-3. Subject card + artwork
-4. **Two engine fixes Stage 3 found — both blocking, both one-liners** (`index.html`):
-   - `NESA_CAT_LABELS` (705) is one flat global map keyed on the bare code, and **5 of
-     Advanced's 14 codes collide with Standard 2's** (`F1 F2 M1 S1 S2`). Make it subject-aware,
-     `NESA_CAT_LABELS[subjectKey]?.[c] || c`, moving today's entries under `maths`; two chip
-     call sites, 991 and 1170. Without it five filters carry another subject's topic names.
-   - The written-question badge (1764) reads `q.topic`, so canonical `category` renders no
-     topic badge at all. Mirror the MC path (1696): `q.category || q.topic`. This also fixes
-     Standard 2's 151 written questions.
-5. **Browser-verify at mobile width**: load the subject, render questions carrying images,
-   answer one correctly and one incorrectly, confirm explanations render, no console errors.
-   Images use `loading="lazy"` — force `loading='eager'` before asserting anything loaded.
-   Include one wide lookup table and one category filter chip in what you actually look at.
-6. `docs/HISTORY.md` entry; CLAUDE.md §7 row + §11 roadmap
+**The subject is live.** It was registered nowhere in code through Stages 4–6; this session
+wired it in, landed the two engine fixes Stage 3 found, and exercised it in a browser.
 
-**GATE 7** — [ ] full local CI green · [ ] both engine fixes landed and seen working ·
-[ ] exercised in a browser at mobile width · [ ] docs updated
+### What was registered
+
+| Where | Value |
+|---|---|
+| `subjects/index.json` | `mathematics-advanced.json`, second row (grouped with Standard 2) |
+| `SUBJECT_ID_MAP` | `mathsadv: 'mathematics-advanced'` — builds the JSON fetch URL |
+| `SUBJECTS.mathsadv` | year + category filters, `hasMC`/`hasWritten`, **no `hasStudy`** (Study Mode is deferred) |
+| `SUBJECT_CATALOGUE` | `id: 'mathematics-advanced'`, `quizKey: 'mathsadv'`, meta `60 MC + 126 written · 2020–2025` |
+| Card | `.subject-card.mathsadv` teal gradient + a new `CARD_ART` SVG, `CLASS_MAP` entry |
+
+⚠️ **Two identifiers were chosen once here and are expensive to change.** `id`
+(`mathematics-advanced`) is written to Supabase `subject_selections.subject_id` and
+`quizKey` (`mathsadv`) to `user_progress.subject_key`; renaming either later needs a
+migration against live user rows, exactly as `pdhpe-hms` does. `quizKey` is deliberately
+**not** `maths`: four call sites branch on `currentSubjectKey === 'maths'` for
+Standard 2 only — the Extended-318 toggle (932), the Formula Hint button (1698), the
+Key Concepts suppression (2093) and the trial-wall copy (3289) — and a distinct key keeps
+Advanced out of the first two and the fourth by construction.
+
+### The two engine fixes
+
+**1 · `NESA_CAT_LABELS` is now subject-aware** (decision 8). It became
+`{ maths: {…}, mathsadv: {…} }`, read through a new `catLabel(code)` helper doing
+`NESA_CAT_LABELS[currentSubjectKey]?.[code] || code`; the two chip call sites now call it.
+Standard 2's entries moved under `maths` unchanged. **Verified in the browser**: Advanced's
+`F1` chip reads *Working with Functions* and Standard 2's still reads *Money Matters*, with
+`M1`, `S1`, `S2` and `F2` likewise separated. Subjects with no map entry (HMS, Multimedia,
+VET) fall through to the bare code, as before.
+
+Advanced's 14 labels shorten NESA's titles for a chip — `S1 — Probability & Distributions`,
+`S2 — Descriptive & Bivariate Statistics`, `T1 — Trigonometry & Angles` — matching Standard
+2's house style. `.seg-btn` is `white-space: nowrap` inside a horizontally scrolling
+`.seg-control`, so length costs scroll distance, not wrapping.
+
+**2 · The written badge reads `q.category || q.topic`** (decision 10), mirroring the MC path.
+**Measured before and after**: Standard 2's 151 written questions carry `category` and **zero**
+carry `topic`, so all 151 had shown no topic badge since their port; they now all show one, as
+do Advanced's 126. HMS's 40 (which use `topic`) are unaffected. Multimedia's 29 and VET's 23
+still show none — correct, those banks carry neither field.
+
+### One fix Stage 3 did not predict
+
+`buildKeywordFeedback()` hid its **Key Concepts** checklist behind
+`currentSubjectKey !== 'maths'`. Advanced's keywords are the same kind of thing as Standard
+2's — answer fragments (`3 ln 3`, `0.0918`, `z = 0.8`), not concepts — so listing them
+would have handed the student the answer in the offline fallback grid. The test is now a
+`MATHS_SUBJECT_KEYS` array. Confirmed: checklist suppressed for `maths` and `mathsadv`,
+still shown for `vet`, and the score line and NESA-derived band descriptor render either way.
+
+### Browser verification — 430 px, the whole bank
+
+The Browser pane was hidden for part of the session, so pointer clicks timed out and the flow
+was driven through the page's own handlers (`.click()` on the real elements, `renderQuestion()`
+on the real renderer); the home and picker screenshots did come through.
+
+- Real flow: card → picker → **Start Practice** → answered **2020 Q7 correctly** (score 1,
+  correct option green, all four `optionExplanations` shown, 6-step solution rendered) →
+  **2025 Q4 incorrectly** (chosen red, correct green, score held at 1) — and that second one
+  happened to be an `optionImages` question.
+- **All 186 questions rendered** (60 MC + 126 written): **0** `.question-area` overflows,
+  `body.scrollWidth` never above 430, **60/60 MC and 126/126 written topic badges**,
+  **126/126 marks badges**.
+- **All 7 tables of 7+ columns are wrapped and scroll inside their wrapper** — 2023 Q23's
+  11-column *z*-table is the widest at 694 px inside a 390 px stem; also 2024 Q23 (10 col),
+  2021 Q34 (8), and 2020 Q20 / 2021 Q22 / 2022 Q21 / 2025 Q20 (7).
+- **All 124 crops load** (`naturalWidth > 0`, forced `loading='eager'` — lazy images read 0
+  while the pane is hidden). 0 failures.
+- Billing surfaces: the subscribe modal lists it as `mathematics-advanced`, and the trial wall
+  reads *"Unlock all 60 questions in Mathematics Advanced"*.
+- **No console errors** at any point.
+
+### Local CI — green
+
+`MC=706 Written=369 imageRefs=311 missingImages=0`, `Issues: 0`; **285** MC answers and
+**329** written questions checked, 0 wrong, 0 unverifiable; all 5 Cloudflare functions
+syntax-check; `npm test` 67 pass / 0 fail.
+
+**GATE 7** — [x] full local CI green · [x] both engine fixes landed and seen working ·
+[x] exercised in a browser at mobile width · [x] docs updated
 
 ---
 
