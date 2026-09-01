@@ -228,8 +228,8 @@ Measured 2026-09-01, across every written question in the repo:
 | mathematics-advanced | 126 | 126 | 126 | 126 |
 | mathematics-standard-2 | 151 | 151 | **111** | 151 |
 | multimedia | 29 | 29 | **25** | **25** |
-| vet-construction | 23 | 23 | ~~20~~ **23** | ~~0~~ **23** |
-| **Total** | **369** | 369 | **322** | **342** |
+| vet-construction | ~~23~~ **72** | **72** | ~~20~~ **72** | ~~0~~ **72** |
+| **Total** | ~~369~~ **418** | **418** | ~~322~~ **371** | ~~342~~ **391** |
 
 ~~**None of the 369 model answers has ever been reviewed against NESA's sample answers.**~~
 
@@ -239,7 +239,10 @@ than an unreviewed field, and **6 of its 23 written questions carried a real def
 invisible to CI because the mark was right. See
 `docs/subject-plans/vet-construction-written-review.md` — it is the reference implementation
 for this runbook's own Stage 6b, and the mechanism (ledger, fingerprints, CI ramp, triage tool)
-now exists rather than being designed. **Remaining: 346 of 369.**
+now exists rather than being designed. VET was also **COMPLETED** in the same session — its
+written bank went 23 → **72** questions and 23/76 → **76/76** official parts, so
+**Multimedia's Section III is now the only remaining reverse-coverage gap in the repo**.
+**Remaining to review: 346 of 418.**
 
 Two findings worth carrying into whoever picks up the rest:
 

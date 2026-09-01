@@ -1,6 +1,21 @@
-# VET Construction — Written-Answer Review (Stage 6b)
+# VET Construction — Written-Answer Review AND Completion Port
 
-**Status: COMPLETE, 2026-09-01. Gate passed.** Branch `review/vet-written`, **not merged**.
+**Status: COMPLETE, 2026-09-01. Both gates passed.** Branch `review/vet-written`, **not merged**.
+
+Two pieces of work, in order:
+
+1. **Written-answer review** (§ below) — the 23 questions then in the bank, reviewed
+   against NESA. Six carried real defects.
+2. **Completion port** (§ at the end) — the 53 official parts the bank had never held.
+   **VET written coverage is now 76/76**, and all **72** bank questions are reviewed.
+
+| | Session start | Now |
+|---|---|---|
+| Written questions in bank | 23 | **72** |
+| Official parts covered | 23/76 | **76/76** |
+| `keywords` | 20/23 | **72/72** |
+| `bandDescriptors` | **0**/23 | **72/72** |
+| Reviewed against NESA | **0** | **72/72** |
 
 The first written-answer review ever run in this project. It takes one subject to 100% and
 builds the standing mechanism the playbook designed (`docs/porting-playbook.md` §6) so the
@@ -357,3 +372,204 @@ confirm `marksAwarded` lands in the band the rubric implies.
 scheduled follow-up; the mechanism and the tooling are now in place for it. Remaining backlog:
 **346 of 369** written answers unreviewed — Maths Advanced 126, Standard 2 151, Multimedia 29,
 HMS 40. Standard 2 also still has **40 missing `keywords`** and Multimedia **4**.
+
+---
+
+# Part 2 — The completion port
+
+The review above covered the 23 questions the bank held. It held **23 of the 76 official
+written parts** — VET's written section is 65 marks a paper and the bank carried roughly a
+third of it. This closes that.
+
+## Result
+
+**76/76 official parts claimed**, up from 23/76. 49 questions added, plus one declared
+omission covering 4 more parts. Bank: 23 → **72 written questions**.
+
+| Year | Was | Added | Omitted | Now |
+|---|---|---|---|---|
+| 2021 | 2/15 | 13 | — | 15/15 |
+| 2022 | 3/16 | 13 | — | 16/16 |
+| 2023 | 3/15 | 12 | — | 15/15 |
+| 2024 | 4/15 | 11 | — | 15/15 |
+| 2025 | 11/15 | 0 | 4 (Q19) | 15/15 |
+
+`check_written_key.cjs` now reads, for the first time, **`coverage: 76/76`** with no
+"not ported" line — the gap CLAUDE.md §10 rule 8 names as deliberate and documented for
+this subject is closed, so that reverse-coverage check can be promoted to a hard assertion
+for VET whenever someone wants to.
+
+## ⚠️ The one thing that could not be ported: 2025 Q19
+
+**NESA redacted the stimulus from the published paper.** Page 16 of
+`2025-hsc-vet-construction.pdf` carries only:
+
+> Due to copyright restrictions, this material cannot be displayed until permission has
+> been obtained.
+
+All four parts — (a) slab cost, (b) where surface water exits, (c) fence panels required,
+(d) paver pallets required — read dimensions and levels off that site plan. There is
+nothing to crop and the parts are unanswerable without it.
+
+Declared as a subject-level `omittedQuestions` entry (2025 Q19, 11 marks), which
+`check_written_key.cjs` validates against the key. **This is an absent source, not an
+engine limitation** — the distinction is recorded in the entry's `reason`, because every
+other omission in the repo is "the engine cannot present a drawing task" and this one is
+categorically different.
+
+⚠️ **The same redaction hits 2025 Q16**, whose tool photo is also absent from the paper —
+but that question was ported long ago and carries
+`/diagrams/vet-construction_2025_Q16_stimulus.jpg`, **a substituted third-party line
+drawing of a plunge router with a visible brand mark**, migrated from Imgur in commit
+`221e377`. It is self-hosted and it does depict the right tool (NESA's own sample answer
+confirms "the tool/router pictured"), so the question works — but its provenance is not
+NESA and its licence is unknown. Flagged, deliberately not changed: swapping or removing a
+working image is the owner's call, and it sits with the unplaced Flaticon attribution as a
+licensing question rather than a correctness one.
+
+## Assets — only two new crops were needed
+
+The survey expected far more. It found:
+
+- **2021 Q18** — concrete slab for a picnic table: a 6 m × 5 m rectangle with a
+  semicircular end. NEW crop, serves parts (b) perimeter and (c) volume.
+- **2022 Q19(b)** — L-shaped bathroom plan dimensioned 1200/2400 across and 1200/1500
+  down. NEW crop, serves part (b).
+- Everything else **reuses an existing crop** (2023 Q16(a)'s saw for the new (a)(ii);
+  2023 Q19(b)'s footing drawing for the new (b)(ii)) or needs none at all — the 2021,
+  2023 and 2024 Section III/IV extended responses are pure prose, and the Q19 calculation
+  parts carry their data in the stem.
+- **2022 Q16(b)** is a table, not a crop: reconstructed as HTML per §10. 3 columns, renders
+  390 px inside a 430 px viewport, so no scroll wrapper (the §10 test is the column count,
+  and 7+ is the threshold). Blank `&nbsp;` cells render 34 px tall — the same measurement
+  the Maths Advanced port recorded for its blank tables.
+
+**New tool: `scripts/crop_vet_construction.py`**, the same mechanism as
+`crop_maths_advanced.py` — PDF **points** not pixels, one registry block per year, and
+deliberately **not** an entry in `scripts/diagram_registry.json`, whose coordinates are
+pixels-at-150-dpi and whose `save_crop()` would re-cut all 36 existing VET images. The
+registry holds only the two new crops, so running it can never disturb them.
+
+⚠️ **On these papers a diagram's dimension labels are outline PATHS, not text.** The only
+strings the text layer carries near either figure are broken caption fragments — `Pic`,
+`nic`, `table` for 2021, and `Bath`, `room`, `pla`, `n` for 2022 — so `get_text()` cannot
+find "5 m" or "1200" at all. The boxes therefore come from `get_drawings()`, widened. An
+ink profile alone is not enough either: the Maths port lost a graph's y-axis labels exactly
+that way. So the script has a **`--verify`** mode that renders a 6 pt band inside each edge
+and fails if any dark pixel touches the boundary. Both crops report **clear on all four
+edges**, and both were then opened and read.
+
+The question's own caption ("A concrete slab is to be laid … as shown.") is **stem text and
+is outside both boxes** — it belongs in `q`, not baked into the image.
+
+## An extractor bug found by the survey, and fixed
+
+Surveying 2021 Q20 showed a criteria table with **4 bands where the paper prints 5**. The
+fifth band's sentence wraps so its last word `a` lands at x 441.9–447.9 — past
+`MARKS_COL_MIN_X = 440` — while the real mark `1–3` sits at x 479.1. Joining everything
+past the boundary produced `a1-3`, `MARK_VALUE` rejected it, and `criteria_rows()` drops a
+bandless row, so **the band vanished entirely**.
+
+`marks_cell()` now takes the **rightmost cluster** of tokens past the boundary, split on a
+15 pt gap — which still joins the case the concatenation exists for, a range split across
+two words on one line (`9-1` + `0`). The criteria wording is now defined by **exclusion** of
+the marks cell rather than by the x threshold, so a wrapped sentence keeps its last word.
+
+**Blast radius, measured across all four committed keys: exactly one row recovered, 0 marks
+changed, 0 sample answers changed, 0 existing criteria text changed.** The part's own
+`marks` was never wrong — it is a `max()` over the bands and the surviving four still gave
+15 — which is precisely why nothing caught it. 2021 Q20 was not yet in the bank, so no
+already-committed `bandDescriptors` moved (`_vet_review_apply.py` reported 0 field values
+changed).
+
+Committed separately as `743e13b`, before any content was ported.
+
+## How the questions were authored
+
+**Stems from the exam papers; marks, sample answers and criteria from the committed key.**
+The marking guidelines were never re-read to derive a mark — §10 rules 5–8. Every stem was
+checked against the paper for section, question number, marks and wording.
+
+**Every stem is self-contained**, because the engine shuffles the question list — a stem
+reading "this tool" with no stimulus is unanswerable alone. Where NESA's wording depends on
+surrounding context, the **stimulus was attached rather than the wording changed**. Exactly
+one stem needed a word altered, recorded in the script's `STEM_NOTES` and in its ledger
+entry: 2021 18(d) reads "on this building site" in the paper, referring to Q18's
+picnic-table project, and is rendered "on a building site".
+
+**`bandDescriptors` are not written by the port script.** They are regenerated for every
+question by `_vet_review_apply.py` from the committed criteria rows, so the 1-to-N band
+collapse rule has exactly one implementation and new questions cannot drift from it.
+
+The port script refuses to write unless, for every question: an official part joins to it,
+the marks match the key exactly, and `answer`/`keywords`/`minKeywords` are all present — and
+unless the bank round-trips byte-for-byte first.
+
+## Verdicts across all 72
+
+**55 `ok`, 6 `corrected`, 11 `divergent-accepted`.**
+
+The 6 corrected are the review findings in Part 1. Of the 11 `divergent-accepted`, 2 were
+found in the review and **9 are calculation questions from the port** whose NESA sample
+extracts as mangled equation layout — `× = 2.5 $62.00 $155.00 (Tradesperson)`,
+`(0.5 2 3.14 (pi) 2.5) 5 6 6 24.85 m`, `m3 m3 ÷ 11.6 6 parts = 1 part = 1.93`. The bank's
+worked prose necessarily reads nothing like those, so each was compared **numerically** and
+the agreeing figures are quoted in its ledger note. This is the standing Maths exception
+appearing across VET's calculation questions; it is never a silent pass.
+
+Two authoring decisions are flagged in their ledger entries rather than buried:
+
+- **2023 Q21** — NESA prints the hierarchy as Eliminate / Substitute / Engineering (Isolate,
+  Modify) / Administration / PPE. The answer separates **Isolate** as its own level, the
+  standard six-level form. A presentation choice, not a change of content.
+- **2022 Q20** — NESA's extracted sample truncates partway through the "impact on employers"
+  list and never reaches clients, which the question explicitly asks about. That section is
+  written from the syllabus, and the note says so.
+
+## Verification
+
+Full local CI green: `validate_subjects.cjs` (`MC=706 Written=418 imageRefs=318
+missingImages=0`, `Issues: 0`), `check_answer_key.cjs` (**285 answers, 0 wrong, 0
+unverifiable**), `check_written_key.cjs` (**378 written questions, 0 wrong, 0 unverifiable**;
+VET **76/76 coverage**, **72/72 reviewed**), `node --check` on all five Cloudflare function
+files, `npm test` **67 pass / 0 fail**.
+
+Browser at **430 px**, all **72** VET written questions rendered one at a time:
+
+- **0** `.question-area` overflows and `body.scrollWidth` never exceeds 430
+- every question has a non-empty `answer`, at least one `keyword`, and **all three**
+  `bandDescriptors` — asserted, not spot-checked
+- all **20** image-bearing questions load their stimulus (15 distinct files), forced to
+  `loading='eager'` and awaited first, or `naturalWidth` reads 0
+- **2022 Q16(b)**'s table: 3 columns, 390 px inside a 430 px viewport, blank cells 34 px
+- **2021 Q18(b)** screenshotted end-to-end: new crop renders at 388 px with both dimensions
+  legible, badge reads `3 marks`, a correct answer scores 3/3 at 88% matched, and the
+  feedback is NESA's own top criteria row
+
+⚠️ **The live AI marking call still has not been made** — no `ANTHROPIC_API_KEY` in this
+environment. Unchanged from Part 1: verified to the prompt boundary only.
+
+## GATE — completion port
+
+- [x] Every official written part claimed by a bank entry or a declared omission — **76/76**
+- [x] Marks validated against the committed key for all 49 new questions, 0 wrong
+- [x] Stems verified against the exam papers; the single wording change recorded
+- [x] The unportable question declared, with the reason distinguishing an absent source
+      from an engine limitation
+- [x] New crops verified clear of their boundaries, then opened and read
+- [x] All 49 new questions reviewed and in the ledger at authoring time — **72/72**
+- [x] Full local CI green; browser-verified at 430 px
+- [ ] Live AI marking on a 10+ mark question — still not verifiable here
+
+## What is left on VET
+
+1. **Live AI marking**, above — needs a key.
+2. **The 2025 Q16 substituted router image** — provenance and licence, above.
+3. **Flaticon attribution** for the 27 tool/PPE icons is still unplaced (CLAUDE.md §11).
+4. **Ten VET 2025 stems end with a literal `(N marks)`**, duplicating the badge — and
+   **Mathematics Standard 2 has the same on 90 stems**, so it wants one pass across both
+   rather than a VET-only fix.
+5. **Study Mode** for VET is complete (9 topics, done 2026-07-30) and untouched here.
+
+None of these blocks the subject: VET's MC and written banks are now both complete against
+every official question in the five papers, and both are enforced in CI.
