@@ -2556,3 +2556,116 @@ truth already sits in `data/answer-key/written/` from Stage 6, so the work is re
 extraction.
 
 Recorded as a §11 roadmap row. **No decision taken, nothing changed.**
+
+---
+
+## 2026-09-01 (later) — Written-answer review designed as a standing mechanism
+
+Design and planning only. **No code, data, credential, schema or pricing fact changed.**
+
+Follows the audit gap recorded earlier today. Owner's direction: add the written model answer
+to the plan, and **design it so it generalises to future subject additions** — so the output is
+a playbook mechanism, not a Multimedia to-do.
+
+### The finding that reframed the design
+
+Read `mark-written.js` and the client call site rather than assuming. **The AI marker is never
+sent the model answer.** It receives `question`, `maxMarks`, `keywords`, `studentAnswer`,
+`bandDescriptors` (`functions/mark-written.js:38`, `index.html:2057`). Meanwhile `index.html`
+renders `q.answer || q.modelAnswer || q.sampleAnswer` **directly to the student** after they
+answer (lines 1823 and 2227).
+
+So the intuition that the AI is where the risk sits is backwards. **A wrong model answer is a
+pure teaching defect** — no AI involved, no error thrown, nothing reporting it. It is the most
+invisible failure in the pipeline, and it is the one CI can never assert on.
+
+That splits one vague "model answer review" into three artefacts with different consumers:
+
+| Field | Consumer | Failure mode |
+|---|---|---|
+| `modelAnswer` | **Shown directly to the student** | Teaches the wrong thing, silently |
+| `keywords` | `mark-written.js` **and** the offline keyword-grid fallback | Mis-marked in both paths |
+| `bandDescriptors` | `mark-written.js` band rubric | Marked against the wrong standard; absent, falls back to a generic 0/50%/100% scale |
+
+### Measured coverage — all 369 written questions in the repo
+
+| Subject | Written | `modelAnswer` | `keywords` | `bandDescriptors` |
+|---|---|---|---|---|
+| health-movement-science | 40 | 40 | 40 | 40 |
+| mathematics-advanced | 126 | 126 | 126 | 126 |
+| mathematics-standard-2 | 151 | 151 | **111** | 151 |
+| multimedia | 29 | 29 | **25** | **25** |
+| vet-construction | 23 | 23 | **20** | **0** |
+| **Total** | **369** | 369 | **322** | **342** |
+
+**0 of 369 have ever been reviewed against NESA's sample answers.**
+
+⚠️ **VET has 0 of 23 `bandDescriptors`** — every VET written question is AI-marked on the
+generic fallback rubric. That is the worst cell in the table, and it is *missing data*, not an
+unreviewed one. VET is also the subject where the 2026-08-27 pass found 6 wrong MC answers in
+75, **each carrying an `optionExplanations` entry arguing for the wrong answer** — same
+authoring, same period, and its written prose has never been read back. **If the backlog is
+ever prioritised rather than done in full, VET goes first.**
+
+### The design — make the review the artifact
+
+The project's own rule is that *an audit is a claim about one moment; a test is a standing
+guarantee*. Prose cannot be asserted on — but **whether a human compared it, and whether that
+comparison is still current, can be.** So the review itself becomes committed and checkable.
+
+**A ledger at `data/answer-key/written/reviews/{subject-id}.json`**, holding per part a
+`reviewedAt`, a verdict (`ok` / `corrected` / `divergent-accepted`), which fields were covered,
+and a **fingerprint of NESA's sample answer as it read at review time**.
+
+Three decisions worth recording:
+
+- **Sidecar, not a field on the question.** `subjects/*.json` is downloaded by every student, so
+  review metadata there is dead weight on the wire; `validate_subjects.cjs` globs that folder
+  and would have to learn to ignore it; and the ledger belongs beside the ground truth it cites,
+  exactly as the keys do.
+- **The fingerprint is the whole point.** Regenerate the key and any part whose official text
+  changed has its fingerprint diverge, so the review is **automatically void** rather than
+  quietly stale. That is the standing guarantee prose otherwise cannot have.
+- **Report before enforcing**, the same ramp used for reverse coverage on 2026-08-31: print
+  per-subject review coverage and stale reviews, exit 0; promote to a hard failure per subject
+  once that subject reaches 100%. A new port lands reviewed and stays reviewed, without turning
+  CI red on subjects carrying historical debt.
+
+⚠️ **Mechanical triage orders the reading queue and never decides anything.** This project has
+been burned repeatedly by similarity scoring — `backfill_qnum.py` exists because of it, and §10
+rule 3 is explicit that fuzzy text-matching is not a join. Keyword-absent-from-model-answer,
+keyword-absent-from-sample-answer, low substantive-term overlap and length-vs-marks are *read
+this one first* signals. They are never verdicts and never a substitute for reading.
+
+**Legitimate divergence is recorded, not hidden.** Maths sample answers extract as mangled
+equation layout (`x2 102 82 = + 2 = 164`), so a Maths model answer *should* read nothing like
+NESA's — that is `divergent-accepted` with a note, neither a silent pass nor a failure.
+
+⚠️ **`bandDescriptors` have no ground truth.** `build_written_key.py` extracts the mark and the
+sample answer but **not the criteria table** the marks are banded against, so band descriptors
+can only be reviewed for plausibility. Extending the extractor to capture the criteria rows is a
+scoped prerequisite — worth doing once, not per subject.
+
+### Where it landed
+
+- **`docs/porting-playbook.md` §6** — the full design, as "the second residual gate", symmetric
+  with the existing image/option gate. Added to **Gate 6** and to **§11 Definition of Done**, so
+  it applies to every future port rather than to Multimedia alone.
+- **`docs/subject-plans/multimedia-section-iii.md`** — a new **Stage 6b**, covering Section III's
+  12 new parts **and** Multimedia's existing 29 in one session. Doing them together is
+  deliberate: the reviewer is already holding the sample answers and the subject's conventions,
+  and it takes one subject to 100% as the reference the others are measured against. It also
+  flags the 4 Multimedia questions with **neither** `keywords` nor `bandDescriptors`, and notes
+  that Section III's 10–12 mark band-marked responses are exactly where a generic rubric
+  produces a meaningless mark.
+- **CLAUDE.md** — §10 rule 8 now states plainly that the mark is the only thing CI sees, and the
+  roadmap row is rewritten from "never reviewed" to the designed, scheduled mechanism.
+
+### Two corrections made in passing
+
+- The playbook's `-mg.pdf$` glob warning described a live bug that was **fixed on 2026-08-31**.
+  Marked fixed, keeping the rule that outlives it: **test `feedback` FIRST, then `-mg|marking`**,
+  because some folders carry a third PDF per year containing both words.
+- The Multimedia runbook, written earlier today, said `mark-written.js` marks against
+  `keywords` + `modelAnswer`. It does not — `keywords` + `bandDescriptors`. Corrected, and it is
+  the finding the whole design turns on.

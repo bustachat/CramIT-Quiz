@@ -17,7 +17,8 @@ not re-run in their usual form. **This runbook starts at Stage 1.**
 | **1 Survey** | ⬜ **next** | 1 session |
 | 2 Syllabus grounding (Section III scope only) | ⬜ | 1 session |
 | 4 Port | ⬜ | 1–2 sessions |
-| 6 Ground truth | ➡️ already done — folded into Stage 4's gate | — |
+| 6 Ground truth — **marks** | ➡️ already done — folded into Stage 4's gate | — |
+| **6b Written-answer review** | ⬜ **NEW** — covers Section III's 12 new parts **and** Multimedia's existing 29 | 1 session |
 | 7 Release | ⬜ | 1 session |
 | 8 Study Mode topic (optional) | ⬜ | separate project — playbook §9 |
 
@@ -80,8 +81,9 @@ four real decisions must be taken and recorded, not assumed.
    booklets in four of the six years. **Both shapes reconcile under the prefix-sum join**, so
    this is a UX call, not a correctness one. Record which and why.
 2. ⚠️ **Does the engine present and mark a 10–12 mark extended response acceptably?** Measure
-   it; do not assume. `mark-written.js` marks against `keywords` + `modelAnswer`, and the
-   longest thing it has ever handled is a 5-mark answer. **This is the one genuine feasibility
+   it; do not assume. `mark-written.js` marks against `keywords` + `bandDescriptors` — it is
+   **never sent the model answer** — and the longest thing it has ever handled is a 5-mark
+   answer. **This is the one genuine feasibility
    risk in the whole runbook.** If a band-marked 12-mark response needs a different prompt, a
    band rubric, or a larger `max_tokens`, that is a `mark-written.js` change and must be flagged
    here **before** Stage 4 starts — not discovered mid-port. HMS's `writingScaffolds` (two
@@ -137,15 +139,67 @@ Stage 4 the marks **cannot go wrong without CI catching it immediately**.
 
 ---
 
-## Stage 6 — Ground truth ➡️ ALREADY DONE
+## Stage 6 — Ground truth (marks) ➡️ ALREADY DONE
 
 `data/answer-key/written/multimedia.json` was built at Maths Advanced Stage 6 (2026-08-31) and
 already holds all 12 Section III parts with official marks and sample answers. **Nothing to
 build**; the stage collapses into Stage 4's gate.
 
-The one thing Stage 6 cannot do here: NESA's sample answers are prose and are **never
-enforced**, only committed for review. Whoever ports these is the *only* check on whether the
-authored `modelAnswer` reflects NESA's — read them side by side.
+---
+
+## Stage 6b — Written-answer review ⬜ NEW
+
+**The marks are ground truth and CI-enforced. Everything a written question actually teaches
+is not.** `check_written_key.cjs` enforces the mark only — prose cannot be compared for
+equality — so `modelAnswer`, `keywords` and `bandDescriptors` all sit outside CI.
+
+**Design lives in `docs/porting-playbook.md` §6** (the review ledger, the fingerprint, the
+report-then-enforce ramp, the triage-never-decides rule). Read it before starting; this
+section records only what is specific to Multimedia.
+
+### Scope for this session
+
+| | |
+|---|---|
+| Section III's new parts | **12** — reviewed as they are authored in Stage 4, so they land reviewed |
+| Multimedia's existing written bank | **29** — never reviewed, ported before the ledger existed |
+| **Total** | **41**, the whole subject |
+
+Do the existing 29 in the same session. The reviewer is already holding the marking
+guidelines' sample answers and the subject's conventions in their head; splitting it wastes
+that context, and it takes Multimedia to 100% review coverage in one pass — the first subject
+to get there, and the reference the others are measured against.
+
+### Multimedia's measured artefact coverage — 2026-09-01
+
+| Field | Present | Missing |
+|---|---|---|
+| `modelAnswer` | 29 / 29 | — |
+| `keywords` | **25 / 29** | 4 |
+| `bandDescriptors` | **25 / 29** | 4 |
+
+⚠️ **Four questions have neither `keywords` nor `bandDescriptors`.** Those are AI-marked
+against a generic 0/50%/100% fallback rubric with no key concepts at all. Identify them and
+decide whether to author both — this is a real marking-quality defect, not a tidiness issue,
+and it is invisible to every check in the repo today.
+
+⚠️ **Section III raises the stakes on `bandDescriptors` specifically.** A 10–12 mark
+band-marked extended response is exactly where a generic rubric produces a meaningless mark.
+Whatever Stage 1 concludes about `mark-written.js` handling long responses, these 12 parts
+need real band descriptors, not the fallback.
+
+⚠️ **`bandDescriptors` have no ground truth.** `build_written_key.py` extracts the mark and
+the sample answer but **not the criteria table** they are banded against, so band descriptors
+can only be reviewed for plausibility. Extending the extractor to capture the criteria rows is
+the prerequisite (playbook §6) — worth doing once, before this session, since Section III's
+criteria are the most band-dependent content in the subject.
+
+### Gate
+
+**GATE 6b** — [ ] all 41 Multimedia written questions reviewed against NESA's sample answers ·
+[ ] ledger committed at `data/answer-key/written/reviews/multimedia.json`, coverage 41/41 ·
+[ ] the 4 questions missing `keywords`/`bandDescriptors` resolved or explicitly deferred with a
+reason · [ ] any deliberate divergence recorded as `divergent-accepted` with a note
 
 ---
 
@@ -163,15 +217,31 @@ marking tested on a 10+ mark response · [ ] docs updated
 
 ---
 
-## Known adjacent gap — deliberately NOT part of this runbook
+## The rest of the backlog — not part of this runbook
 
-**Multimedia and VET written model answers have never been checked against NESA's committed
-sample answers.** Only the *mark* is CI-enforced; the prose is not, and cannot be. That is
-29 + 23 = **52 existing questions** whose authored model answers no session has ever reviewed.
+Multimedia is the **first** subject to get review coverage, not the only one that needs it.
+Measured 2026-09-01, across every written question in the repo:
 
-Weight it against this: the 2026-08-27 MC pass found the same subject pair's authored
-`optionExplanations` arguing for the wrong answer on **all six** defective VET questions — the
-same authoring, on the same subjects, in the same period. Ground truth for the review already
-sits in `data/answer-key/written/`, so the work is reading, not extraction.
+| Subject | Written | `modelAnswer` | `keywords` | `bandDescriptors` |
+|---|---|---|---|---|
+| health-movement-science | 40 | 40 | 40 | 40 |
+| mathematics-advanced | 126 | 126 | 126 | 126 |
+| mathematics-standard-2 | 151 | 151 | **111** | 151 |
+| multimedia | 29 | 29 | **25** | **25** |
+| vet-construction | 23 | 23 | **20** | **0** |
+| **Total** | **369** | 369 | **322** | **342** |
 
-Raised 2026-09-01. A separate decision, deliberately not folded into this port.
+**None of the 369 model answers has ever been reviewed against NESA's sample answers.**
+
+Two findings worth carrying into whoever picks up the rest:
+
+- ⚠️ **VET has 0 of 23 `bandDescriptors`** — every VET written question is AI-marked against
+  the generic fallback rubric. That is the single worst cell in the table and it is not a
+  review problem, it is missing data.
+- ⚠️ **VET is also the subject where the 2026-08-27 MC pass found 6 wrong answers in 75**, and
+  **every one carried an `optionExplanations` entry arguing for the wrong answer**. Same
+  authoring, same period, and its written prose has never been read back. If the backlog is
+  ever prioritised rather than done in full, **VET goes first** — worst data coverage and the
+  only subject with a demonstrated authoring-accuracy problem.
+
+Tracked as a §11 roadmap row in CLAUDE.md. Sequencing beyond Multimedia is undecided.

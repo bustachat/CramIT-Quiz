@@ -560,18 +560,17 @@ node   scripts/check_written_key.cjs
 Both builders need the local PDFs, which are **not in the repo** (copyright) — which is
 precisely why the generated keys are committed. CI can never regenerate them.
 
-⚠️ **The two builders disagree about how a marking guideline is recognised, and one of them
-fails silently.** `build_answer_key.py` finds files through the tolerant `find_papers()`
-(`(20\d{2})` prefix, then `feedback` / `-mg|marking` / else-paper). `build_written_key.py`
-instead globs `re.search(r"-mg\.pdf$", basename)`, so a subject saved as
-`2020_marking_guidelines.pdf` — Maths Advanced, today — never matches and the script exits with
-`"no marking-guideline PDFs (*-mg.pdf) in …"`. Nothing is wrong with the PDFs; the parse itself
-reconciles all six papers exactly when `parse_paper()` is called directly.
+✅ **Fixed 2026-08-31 (Maths Advanced Stage 6) — kept here because the failure mode recurs.**
+The two builders used to disagree about how a marking guideline is recognised, and one failed
+silently: `build_written_key.py` globbed `re.search(r"-mg\.pdf$", basename)`, so a subject saved
+as `2020_marking_guidelines.pdf` never matched and the script exited `"no marking-guideline
+PDFs"` — with nothing wrong with the PDFs at all. Both now share the same tolerant selector
+(`build_answer_key.find_papers()` / `build_written_key.is_guidelines()`).
 
-**Reconciling the two selectors is a prerequisite for Stage 6 on any subject whose local
-filenames differ from the NESA originals.** Widen the written-key glob to `find_papers()`'s
-logic rather than adding a second pattern — and keep `feedback` excluded, or the notes from the
-marking centre get parsed as guidelines.
+**The rule that outlives the bug: test `feedback` FIRST, then `-mg|marking`.** Some folders carry
+a *third* PDF per year — `{year}_marking_feedback.pdf`, or Multimedia's
+`{year} … HSC Marking Feedback.pdf`, which contains **both** words. Reverse the order and the
+marking-centre notes get parsed as guidelines.
 
 **Reconcile every paper against the section totals printed on the exam's own front page**
 (Maths 85, Multimedia 30, VET 65). That is an independent check; a self-consistent one is
@@ -590,12 +589,103 @@ or `optionImages`, a human compares the paper and the committed crop, option by 
 Prefer the paper's own wording: if it prints bare `W / X / Y / Z`, the options are
 `W / X / Y / Z`, not invented descriptions.
 
+### The second residual gate — written answers
+
+Symmetric with the image gate above, and larger. `check_written_key.cjs` enforces the
+**mark only**. Prose cannot be compared for equality, so **everything a written question
+teaches or is marked on is outside CI**. Three artefacts, three different consumers, three
+different failure modes — review all three, not just the model answer:
+
+| Field | Who consumes it | What a wrong value does |
+|---|---|---|
+| `modelAnswer` (stored as `answer` on most files) | **Shown directly to the student** after they answer — `index.html` reads `q.answer \|\| q.modelAnswer \|\| q.sampleAnswer` | **Teaches the student the wrong thing.** No AI involved, no error, nothing reports it |
+| `keywords` | Sent to `mark-written.js`, **and** used by the offline keyword-grid fallback | Student is mis-marked, in both the AI and the no-AI path |
+| `bandDescriptors` | Sent to `mark-written.js` as the band rubric | AI marks against the wrong standard; absent, it silently falls back to a generic 0/50%/100% rubric |
+
+⚠️ **The model answer is student-facing and never reaches the AI marker.** This is the
+opposite of the intuition that the AI is the risk. `mark-written.js` receives
+`question`, `maxMarks`, `keywords`, `studentAnswer`, `bandDescriptors` — **not** the model
+answer. A wrong model answer is a pure teaching defect, and the most invisible one in the
+whole pipeline.
+
+### Making the review a standing guarantee, not a one-off audit
+
+The project's own rule is that *an audit is a claim about one moment; a test is a standing
+guarantee*. Prose can't be asserted on — but **whether a human has compared it, and whether
+that comparison is still current, absolutely can be.** So the review itself becomes the
+committed, checkable artifact.
+
+**A review ledger, beside the ground truth it reviews against:**
+
+```
+data/answer-key/written/reviews/{subject-id}.json
+```
+
+```jsonc
+{ "subject": "multimedia",
+  "reviews": {
+    "2020": {
+      "16(a)": {
+        "reviewedAt": "2026-09-01",
+        "verdict": "ok",                    // ok | corrected | divergent-accepted
+        "fields": ["modelAnswer", "keywords", "bandDescriptors"],
+        "sampleAnswerFingerprint": "sha256:1f3a…",   // the OFFICIAL answer, as at review time
+        "note": null                        // required when verdict is divergent-accepted
+      }
+    }
+  }
+}
+```
+
+**Why a sidecar and not a field on the question.** `subjects/*.json` is downloaded by every
+student, so review metadata there is dead weight on the wire; `validate_subjects.cjs` globs
+that folder and would have to learn to ignore it; and the ledger belongs next to the ground
+truth it cites, exactly as the keys do.
+
+**What the fingerprint buys you — this is the whole point.** It is a hash of NESA's sample
+answer *as it read when the review happened*. Regenerate the key, and any part whose official
+text changed has its fingerprint diverge, so the review is **automatically void** rather than
+quietly stale. That is the standing guarantee prose otherwise can't have.
+
+**The checker reports before it enforces**, the same ramp used for reverse coverage: print
+per-subject review coverage and any stale reviews, exit 0. Promote to a hard failure per
+subject once that subject reaches 100% — a new port should land reviewed and stay reviewed,
+without turning CI red on subjects carrying known historical debt.
+
+**Mechanical triage orders the reading queue. It never decides anything.**
+⚠️ This project has been burned repeatedly by similarity scoring (`backfill_qnum.py` exists
+because of it, and §10 rule 3 is explicit that fuzzy text-matching is not a join). These
+signals say *read this one first* — they are never a verdict, and never a substitute for
+reading:
+
+- a `keyword` that appears nowhere in the `modelAnswer` (it drives marking but the model
+  answer never demonstrates it)
+- a `keyword` that appears nowhere in NESA's `sampleAnswer`
+- lowest substantive-term overlap between `modelAnswer` and `sampleAnswer` — the bottom of
+  that list is where an answer to a *different question* hides
+- `modelAnswer` length wildly out of step with the mark value
+
+⚠️ **`bandDescriptors` have no ground truth today.** `build_written_key.py` extracts the
+mark and the sample answer, but **not the criteria table** the marks are banded against — so
+band descriptors can be reviewed for plausibility but not against NESA. Extending the
+extractor to capture the criteria rows is a scoped prerequisite for reviewing that third
+field properly, and is worth doing once rather than per subject.
+
+**Where a subject legitimately diverges, say so in the ledger.** Maths sample answers extract
+as mangled equation layout (`x2 102 82 = + 2 = 164`), so a Maths model answer *should* read
+nothing like NESA's. That is `divergent-accepted` with a note — not a silent pass, and not a
+failure.
+
 ### GATE 6
 
 - [ ] 100% of MC questions verifiable (`0 unverifiable`), `0 wrong`
 - [ ] Written marks check `0 wrong`; every omission declared
 - [ ] Every paper reconciles to its front-page totals
 - [ ] Image questions manually compared against the paper
+- [ ] **Every written question reviewed against NESA's sample answer, and the review
+      committed to the ledger** — `modelAnswer`, `keywords` and `bandDescriptors`, with
+      `divergent-accepted` used and noted where the official text is unusable
+- [ ] **Review coverage 100% for this subject**, and no stale fingerprints
 
 ---
 
@@ -717,6 +807,9 @@ coordination tables.
 - [ ] Answer key **and** written key: 0 wrong, 0 unverifiable (Stage 6)
 - [ ] Papers reconcile to front-page totals (Stage 6)
 - [ ] Image questions compared against the paper by a human (Stage 6)
+- [ ] **Written answers reviewed against NESA's sample answers and the review committed to
+      `data/answer-key/written/reviews/{subject}.json` — 100% coverage, no stale
+      fingerprints (Stage 6)**
 - [ ] Browser-verified at mobile width, no console errors (Stage 7)
 - [ ] `subjects/index.json`, `SUBJECT_ID_MAP`, `SUBJECT_CATALOGUE`, subject card (CLAUDE.md §10)
 - [ ] `docs/HISTORY.md` entry; CLAUDE.md §7 row added
