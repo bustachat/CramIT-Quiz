@@ -127,6 +127,34 @@ def page_lines(page):
     return [(y, sorted(toks, key=lambda t: t[0])) for y, toks in sorted(lines.items())]
 
 
+def marks_cell(toks, gap=15.0):
+    """The line's Marks-column text: the RIGHTMOST cluster of tokens past MARKS_COL_MIN_X.
+
+    Not simply everything past the boundary. A criteria sentence can wrap so that its
+    last word spills over it while the real mark sits further right -- 2021 VET Q20's
+    fifth band ends "...something to do with a" at x 441.9-447.9 with its "1-3" at
+    x 479.1, and joining the two yields "a1-3", which MARK_VALUE rejects. The mark was
+    then lost and, because criteria_rows() drops a bandless row, that band vanished
+    from the criteria table entirely (the part's own `marks` survived only because it
+    is a max() over the other bands).
+
+    Clustering on a gap keeps the case the join exists for: a range split across two
+    words on the same line ("9-1" + "0") is contiguous, so it stays in one cluster.
+
+    Returns (text, tokens) so the caller can define the criteria wording by EXCLUSION --
+    a wrapped sentence's last word must stay in the wording, not be dropped with the mark.
+    """
+    right = sorted((t for t in toks if t[0] > MARKS_COL_MIN_X), key=lambda t: t[0])
+    if not right:
+        return "", []
+    cluster = [right[-1]]
+    for tok in reversed(right[:-1]):
+        if cluster[0][0] - tok[2] > gap:
+            break
+        cluster.insert(0, tok)
+    return "".join(t[4] for t in cluster).strip(), cluster
+
+
 def row_rules(page):
     """Y positions of the criteria table's own horizontal rules on this page.
 
@@ -241,17 +269,17 @@ def parse_paper(pdf_path):
                 continue
             # Criteria row: join the marks column left-to-right before parsing, so a
             # range split across two words ("9-1" + "0") reads as one value.
-            col = "".join(t[4] for t in toks if t[0] > MARKS_COL_MIN_X).strip()
+            col, cell_toks = marks_cell(toks)
             m = MARK_VALUE.match(col)
             value = int(m.group(2) or m.group(1)) if m else None
             if m:
                 marks.append(value)
-            # The row's WORDING is everything left of the marks column, collected with the
-            # line's ruled band so criteria_rows() can rejoin a row split over 2-3 lines.
-            # Purely additive: `marks` above is untouched, so every previously committed
-            # field regenerates byte-identical.
+            # The row's WORDING is every token that is NOT in the marks cell, collected
+            # with the line's ruled band so criteria_rows() can rejoin a row split over
+            # 2-3 lines. Defined by exclusion rather than by the x threshold so a
+            # criteria sentence that wraps past MARKS_COL_MIN_X keeps its last word.
             crit_lines.append((pi, y, band_of(y, rules[pi]),
-                               " ".join(t[4] for t in toks if t[0] <= MARKS_COL_MIN_X).strip(),
+                               " ".join(t[4] for t in toks if t not in cell_toks).strip(),
                                value))
 
         label = "Q%d%s" % (qnum, "".join("(%s)" % p for p in parts))
