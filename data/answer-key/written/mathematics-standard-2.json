@@ -1,242 +1,660 @@
 {
   "subject": "mathematics-standard-2",
   "source": "NESA HSC marking guidelines (not in repo - copyright)",
-  "note": "Official maximum marks per question part, plus the official sample answer for reference. Marks are enforced by scripts/check_written_key.cjs; sample answers are not - prose cannot be compared for equality. Regenerate with scripts/build_written_key.py; never hand-edit.",
+  "note": "Official maximum marks per question part, plus the official sample answer and criteria rows for reference. Marks are enforced by scripts/check_written_key.cjs; sample answers and criteria are not - prose cannot be compared for equality. The criteria rows are the ground truth a question's bandDescriptors are authored from. Regenerate with scripts/build_written_key.py; never hand-edit.",
   "papers": {
     "2020": [
       {
         "question": 16,
         "part": "a",
         "marks": 2,
-        "sampleAnswer": "8 tanθ = 10 θ = 39° (nearest degree)"
+        "sampleAnswer": "8 tanθ = 10 θ = 39° (nearest degree)",
+        "criteria": [
+          {
+            "marks": 2,
+            "text": "Provides correct solution"
+          },
+          {
+            "marks": 1,
+            "text": "Uses the correct trigonometric ratio, or equivalent merit"
+          }
+        ]
       },
       {
         "question": 16,
         "part": "b",
         "marks": 2,
-        "sampleAnswer": "x2 102 82 = + 2 = 164 x = 164 x = x 12.8 (one decimal place)"
+        "sampleAnswer": "x2 102 82 = + 2 = 164 x = 164 x = x 12.8 (one decimal place)",
+        "criteria": [
+          {
+            "marks": 2,
+            "text": "Provides correct solution"
+          },
+          {
+            "marks": 1,
+            "text": "Attempts to use a relevant trigonometric ratio or attempts to use Pythagoras’ Theorem"
+          }
+        ]
       },
       {
         "question": 17,
         "part": null,
         "marks": 2,
-        "sampleAnswer": "8 x = where x is the required number of trees × × 5 5 1000 1000 8 000 000 ∴ = x 25 = 320 000 spanning trees"
+        "sampleAnswer": "8 x = where x is the required number of trees × × 5 5 1000 1000 8 000 000 ∴ = x 25 = 320 000 spanning trees",
+        "criteria": [
+          {
+            "marks": 2,
+            "text": "Provides correct solution"
+          },
+          {
+            "marks": 1,
+            "text": "Provides correct area of the block of land, or equivalent merit"
+          }
+        ]
       },
       {
         "question": 18,
         "part": "a",
         "marks": 3,
-        "sampleAnswer": "The length of the minimum spanning tree is 14."
+        "sampleAnswer": "The length of the minimum spanning tree is 14.",
+        "criteria": [
+          {
+            "marks": 3,
+            "text": "Draws a minimum spanning tree and states minimum length"
+          },
+          {
+            "marks": 2,
+            "text": "Draws a spanning tree (which is not minimum) and calculates its length"
+          },
+          {
+            "marks": 1,
+            "text": "Provides correct length based on the diagram drawn"
+          }
+        ]
       },
       {
         "question": 18,
         "part": "b",
         "marks": 1,
-        "sampleAnswer": "+ = 14 10 24"
+        "sampleAnswer": "+ = 14 10 24",
+        "criteria": [
+          {
+            "marks": 1,
+            "text": "Adds 10 to the length found in part (a)"
+          }
+        ]
       },
       {
         "question": 19,
         "part": "a",
         "marks": 1,
-        "sampleAnswer": "200"
+        "sampleAnswer": "200",
+        "criteria": [
+          {
+            "marks": 1,
+            "text": "Provides the correct answer"
+          }
+        ]
       },
       {
         "question": 19,
         "part": "b",
         "marks": 2,
-        "sampleAnswer": "= x 150 + = 3x 2y 900 + = 3(150) 2y 900 = 2y 450 = y 225"
+        "sampleAnswer": "= x 150 + = 3x 2y 900 + = 3(150) 2y 900 = 2y 450 = y 225",
+        "criteria": [
+          {
+            "marks": 2,
+            "text": "Provides correct values for and x y"
+          },
+          {
+            "marks": 1,
+            "text": "Provides correct value for x, or equivalent merit"
+          }
+        ]
       },
       {
         "question": 19,
         "part": "c",
         "marks": 1,
-        "sampleAnswer": "= A xy = × 150 225 = m2 33 750"
+        "sampleAnswer": "= A xy = × 150 225 = m2 33 750",
+        "criteria": [
+          {
+            "marks": 1,
+            "text": "Provides correct solution"
+          }
+        ]
       },
       {
         "question": 20,
         "part": null,
         "marks": 3,
-        "sampleAnswer": "= + Tax 20 797 0.37 (122 680 – 90 000) = $32 888.60 = × PAYG tax 3000 12 = $36 000 = Refund 36 000 – 32 888.60 = $3111.40"
+        "sampleAnswer": "= + Tax 20 797 0.37 (122 680 – 90 000) = $32 888.60 = × PAYG tax 3000 12 = $36 000 = Refund 36 000 – 32 888.60 = $3111.40",
+        "criteria": [
+          {
+            "marks": 3,
+            "text": "Provides correct solution"
+          },
+          {
+            "marks": 2,
+            "text": "Provides correct calculation of tax, or equivalent merit"
+          },
+          {
+            "marks": 1,
+            "text": "Makes some progress towards calculating the tax payable, or equivalent merit"
+          }
+        ]
       },
       {
         "question": 21,
         "part": null,
         "marks": 2,
-        "sampleAnswer": "122 + 1 0.02 = $119.61"
+        "sampleAnswer": "122 + 1 0.02 = $119.61",
+        "criteria": [
+          {
+            "marks": 2,
+            "text": "Provides correct solution"
+          },
+          {
+            "marks": 1,
+            "text": "Attempts to use the compound interest formula, or equivalent merit"
+          }
+        ]
       },
       {
         "question": 22,
         "part": null,
         "marks": 3,
-        "sampleAnswer": "15 0.17 ⎛ ⎞ − = + 500 250 1 Amount owing ⎝ ⎠ 365 = $253.50"
+        "sampleAnswer": "15 0.17 ⎛ ⎞ − = + 500 250 1 Amount owing ⎝ ⎠ 365 = $253.50",
+        "criteria": [
+          {
+            "marks": 3,
+            "text": "Provides correct solution"
+          },
+          {
+            "marks": 2,
+            "text": "Applies the compound interest formula correctly, or equivalent merit"
+          },
+          {
+            "marks": 1,
+            "text": "Attempts to apply the compound interest formula, or equivalent merit"
+          }
+        ]
       },
       {
         "question": 23,
         "part": "a",
         "marks": 2,
-        "sampleAnswer": "3 = 1 part of pineapple juice L 15 4 parts of orange juice are required. 3 ∴ × 4 15 = 0.8 L or 800 mL of orange juice required"
+        "sampleAnswer": "3 = 1 part of pineapple juice L 15 4 parts of orange juice are required. 3 ∴ × 4 15 = 0.8 L or 800 mL of orange juice required",
+        "criteria": [
+          {
+            "marks": 2,
+            "text": "Provides correct solution"
+          },
+          {
+            "marks": 1,
+            "text": "Identifies a relevant ratio, or equivalent merit"
+          }
+        ]
       },
       {
         "question": 23,
         "part": "b",
         "marks": 3,
-        "sampleAnswer": "Capacity of container = × × 40 20 35 = cm3 28 000 = 28 L Total number of parts = + + 15 9 4 = 28 Amount of mango juice required 9 = × 28 28 = 9 L graph"
+        "sampleAnswer": "Capacity of container = × × 40 20 35 = cm3 28 000 = 28 L Total number of parts = + + 15 9 4 = 28 Amount of mango juice required 9 = × 28 28 = 9 L graph",
+        "criteria": [
+          {
+            "marks": 3,
+            "text": "Provides correct solution"
+          },
+          {
+            "marks": 2,
+            "text": "Provides correct capacity of the container and attempts to calculate the amount of mango juice required"
+          },
+          {
+            "marks": 1,
+            "text": "Provides correct volume of the container, or equivalent merit"
+          }
+        ]
       },
       {
         "question": 24,
         "part": "a",
         "marks": 1,
-        "sampleAnswer": ""
+        "sampleAnswer": "",
+        "criteria": [
+          {
+            "marks": 1,
+            "text": "Provides the correct solution"
+          }
+        ]
       },
       {
         "question": 24,
         "part": "b",
         "marks": 2,
-        "sampleAnswer": "29 minutes"
+        "sampleAnswer": "29 minutes",
+        "criteria": [
+          {
+            "marks": 2,
+            "text": "Provides the correct solution"
+          },
+          {
+            "marks": 1,
+            "text": "Draws the graph of volume for tank B, or equivalent merit"
+          }
+        ]
       },
       {
         "question": 24,
         "part": "c",
         "marks": 1,
-        "sampleAnswer": "45 minutes"
+        "sampleAnswer": "45 minutes",
+        "criteria": [
+          {
+            "marks": 1,
+            "text": "Provides the correct answer"
+          }
+        ]
       },
       {
         "question": 25,
         "part": null,
         "marks": 3,
-        "sampleAnswer": "Height of triangle = 11 – 8 = 3 = × 82 Five square faces 5 = 320 × 3 8 = × Two triangular faces 2 2 = 24 = × × Two rectangular faces 5 8 2 = 80 = + + Total surface area 320 24 80 = cm2 424 diagram"
+        "sampleAnswer": "Height of triangle = 11 – 8 = 3 = × 82 Five square faces 5 = 320 × 3 8 = × Two triangular faces 2 2 = 24 = × × Two rectangular faces 5 8 2 = 80 = + + Total surface area 320 24 80 = cm2 424 diagram",
+        "criteria": [
+          {
+            "marks": 3,
+            "text": "Provides correct solution"
+          },
+          {
+            "marks": 2,
+            "text": "Calculates the area of two different relevant faces, or equivalent merit"
+          },
+          {
+            "marks": 1,
+            "text": "Calculates the area of one relevant face, or equivalent merit"
+          }
+        ]
       },
       {
         "question": 26,
         "part": "a",
         "marks": 1,
-        "sampleAnswer": "= Minimum time 46 minutes"
+        "sampleAnswer": "= Minimum time 46 minutes",
+        "criteria": [
+          {
+            "marks": 1,
+            "text": "Provides correct answer"
+          }
+        ]
       },
       {
         "question": 26,
         "part": "b",
         "marks": 2,
-        "sampleAnswer": "C – D – E – F – H – I"
+        "sampleAnswer": "C – D – E – F – H – I",
+        "criteria": [
+          {
+            "marks": 2,
+            "text": "Provides correct sequence of activities"
+          },
+          {
+            "marks": 1,
+            "text": "Provides a sequence of activities from start to finish"
+          }
+        ]
       },
       {
         "question": 26,
         "part": "c",
         "marks": 2,
-        "sampleAnswer": "Activity Earliest Float start time time A 0 12 G 20 15"
+        "sampleAnswer": "Activity Earliest Float start time time A 0 12 G 20 15",
+        "criteria": [
+          {
+            "marks": 2,
+            "text": "Provides correct solution"
+          },
+          {
+            "marks": 1,
+            "text": "Provides two correct values, or equivalent merit"
+          }
+        ]
       },
       {
         "question": 27,
         "part": "a",
         "marks": 3,
-        "sampleAnswer": "d iagram 20 20 (25 ) (20 ) + + + 20 20 2 2 = m2 850"
+        "sampleAnswer": "d iagram 20 20 (25 ) (20 ) + + + 20 20 2 2 = m2 850",
+        "criteria": [
+          {
+            "marks": 3,
+            "text": "Provides correct solution"
+          },
+          {
+            "marks": 2,
+            "text": "Provides calculation with incorrect scale, or equivalent merit"
+          },
+          {
+            "marks": 1,
+            "text": "Provides calculation of the area of a trapezium, or equivalent merit"
+          }
+        ]
       },
       {
         "question": 27,
         "part": "b",
         "marks": 2,
-        "sampleAnswer": "More than the actual area because the trapezia include the area of the garden as well as some area not in the garden, ie the area bounded by the (invisible) side of each trapezium and the curved part of the garden edge, as shown in the diagram in part (a)."
+        "sampleAnswer": "More than the actual area because the trapezia include the area of the garden as well as some area not in the garden, ie the area bounded by the (invisible) side of each trapezium and the curved part of the garden edge, as shown in the diagram in part (a).",
+        "criteria": [
+          {
+            "marks": 2,
+            "text": "Provides correct answer with reason"
+          },
+          {
+            "marks": 1,
+            "text": "Provides correct answer, or equivalent merit"
+          }
+        ]
       },
       {
         "question": 28,
         "part": null,
         "marks": 4,
-        "sampleAnswer": "= Mean of first set of data 8 + 40 x = Mean of second set of data 6 = Median of first set of data 9 = Median of second set of data 9.5 + 40 x (9.5 9) − = − 8 10 6 + 40 x − = 8 5 6 + 40 x = 13 6 + = × 40 13 6 x = 78 = 38 x"
+        "sampleAnswer": "= Mean of first set of data 8 + 40 x = Mean of second set of data 6 = Median of first set of data 9 = Median of second set of data 9.5 + 40 x (9.5 9) − = − 8 10 6 + 40 x − = 8 5 6 + 40 x = 13 6 + = × 40 13 6 x = 78 = 38 x",
+        "criteria": [
+          {
+            "marks": 4,
+            "text": "Provides correct solution"
+          },
+          {
+            "marks": 3,
+            "text": "Calculates the mean and median of the first dataset and the mean of the second dataset, or equivalent merit"
+          },
+          {
+            "marks": 2,
+            "text": "Calculates mean and median of first dataset, or equivalent merit"
+          },
+          {
+            "marks": 1,
+            "text": "Calculates median of first dataset, or equivalent merit"
+          }
+        ]
       },
       {
         "question": 29,
         "part": null,
         "marks": 3,
-        "sampleAnswer": "Total dividend from company ABC = × × 200 0.06 5.5 = 66 = Dividend for XYZ 149.52 – 66 = 83.52 × × = (Number of shares in XYZ) (0.04) (6) 83.52 ∴ 348 shares in XYZ"
+        "sampleAnswer": "Total dividend from company ABC = × × 200 0.06 5.5 = 66 = Dividend for XYZ 149.52 – 66 = 83.52 × × = (Number of shares in XYZ) (0.04) (6) 83.52 ∴ 348 shares in XYZ",
+        "criteria": [
+          {
+            "marks": 3,
+            "text": "Provides correct solution"
+          },
+          {
+            "marks": 2,
+            "text": "Provides correct dividend for XYZ, or equivalent merit"
+          },
+          {
+            "marks": 1,
+            "text": "Calculates the dividend for ABC, or equivalent merit"
+          }
+        ]
       },
       {
         "question": 30,
         "part": "a",
         "marks": 2,
-        "sampleAnswer": "The minimum cut passes through BD, BE, CE and CF. ∴ = Maximum flow 275"
+        "sampleAnswer": "The minimum cut passes through BD, BE, CE and CF. ∴ = Maximum flow 275",
+        "criteria": [
+          {
+            "marks": 2,
+            "text": "Provides correct solution"
+          },
+          {
+            "marks": 1,
+            "text": "Identifies a cut, or equivalent merit"
+          }
+        ]
       },
       {
         "question": 30,
         "part": "b",
         "marks": 1,
-        "sampleAnswer": "= + + Weight of cut 200 75 50 = 325 This is not equal to the value of the maximum flow. Hence the cut is not a minimum cut."
+        "sampleAnswer": "= + + Weight of cut 200 75 50 = 325 This is not equal to the value of the maximum flow. Hence the cut is not a minimum cut.",
+        "criteria": [
+          {
+            "marks": 1,
+            "text": "Provides correct solution"
+          }
+        ]
       },
       {
         "question": 31,
         "part": "a",
         "marks": 1,
-        "sampleAnswer": "= 100° – 35° 65° diagram"
+        "sampleAnswer": "= 100° – 35° 65° diagram",
+        "criteria": [
+          {
+            "marks": 1,
+            "text": "Provides the correct solution"
+          }
+        ]
       },
       {
         "question": 31,
         "part": "b",
         "marks": 2,
-        "sampleAnswer": "= + − × × AB2 72 92 2 7 9 cos65° = 76.75… = AB 8.76 km"
+        "sampleAnswer": "= + − × × AB2 72 92 2 7 9 cos65° = 76.75… = AB 8.76 km",
+        "criteria": [
+          {
+            "marks": 2,
+            "text": "Provides the correct solution"
+          },
+          {
+            "marks": 1,
+            "text": "Attempts to use the cosine rule to find the distance AB"
+          }
+        ]
       },
       {
         "question": 31,
         "part": "c",
         "marks": 2,
-        "sampleAnswer": "sin65° sin A = 8.76… 9 = A 68.6… ≑ 69° = − − Bearing 180° (69° 35°) = 146°"
+        "sampleAnswer": "sin65° sin A = 8.76… 9 = A 68.6… ≑ 69° = − − Bearing 180° (69° 35°) = 146°",
+        "criteria": [
+          {
+            "marks": 2,
+            "text": "Provides the correct solution"
+          },
+          {
+            "marks": 1,
+            "text": "rAPB, Finds another angle in or equivalent merit"
+          }
+        ]
       },
       {
         "question": 32,
         "part": null,
         "marks": 4,
-        "sampleAnswer": "triangle = AB 80 ÷ 10 = 8 cm ∠AOB = = 360° ÷ 10 36° 180° − 36° ∠OAB = 2 = 72° 8 r = sin72° sin36° = r 12.944… 1 = × × × (12.944…)2 Area 10 sin 36° 2 cm2 ≑ 492.4"
+        "sampleAnswer": "triangle = AB 80 ÷ 10 = 8 cm ∠AOB = = 360° ÷ 10 36° 180° − 36° ∠OAB = 2 = 72° 8 r = sin72° sin36° = r 12.944… 1 = × × × (12.944…)2 Area 10 sin 36° 2 cm2 ≑ 492.4",
+        "criteria": [
+          {
+            "marks": 4,
+            "text": "Provides a correct solution"
+          },
+          {
+            "marks": 3,
+            "text": "rAOB, Calculates area of or equivalent merit"
+          },
+          {
+            "marks": 2,
+            "text": "Finds OA, or equivalent merit"
+          },
+          {
+            "marks": 1,
+            "text": "Finds AB, or equivalent merit"
+          }
+        ]
       },
       {
         "question": 33,
         "part": "a",
         "marks": 1,
-        "sampleAnswer": "4000 bacteria"
+        "sampleAnswer": "4000 bacteria",
+        "criteria": [
+          {
+            "marks": 1,
+            "text": "Provides correct answer"
+          }
+        ]
       },
       {
         "question": 33,
         "part": "b",
         "marks": 2,
-        "sampleAnswer": "= × b20 2000 1000 After trial and error = 1000(1.03)20 1806.11 = 1000(1.04)20 2191.12 ∴ lower estimate = 1.03, upper estimate = 1.04"
+        "sampleAnswer": "= × b20 2000 1000 After trial and error = 1000(1.03)20 1806.11 = 1000(1.04)20 2191.12 ∴ lower estimate = 1.03, upper estimate = 1.04",
+        "criteria": [
+          {
+            "marks": 2,
+            "text": "Provides correct solution"
+          },
+          {
+            "marks": 1,
+            "text": "Substitutes a value for into an appropriate formula, or equivalent merit b"
+          }
+        ]
       },
       {
         "question": 34,
         "part": "a",
         "marks": 2,
-        "sampleAnswer": "= − 60 000(1.005) 800 A1 = $59 500 ( 1.005) = − 59 500 800 A2 = $58 997.50 ( 1.005) = − 58 997.50 800 A3 = $58 492.49 !!"
+        "sampleAnswer": "= − 60 000(1.005) 800 A1 = $59 500 ( 1.005) = − 59 500 800 A2 = $58 997.50 ( 1.005) = − 58 997.50 800 A3 = $58 492.49 !!",
+        "criteria": [
+          {
+            "marks": 2,
+            "text": "Provides the correct solution"
+          },
+          {
+            "marks": 1,
+            "text": "Finds the value of A1, or equivalent merit"
+          }
+        ]
       },
       {
         "question": 34,
         "part": "b",
         "marks": 2,
-        "sampleAnswer": "Total withdrawals after 3 months = × 800 3 = $2400 Balance is reduced by = 60 000 – 58 492.49 = $1507.51 Interest = $2400 – $1507.51 = $892.49"
+        "sampleAnswer": "Total withdrawals after 3 months = × 800 3 = $2400 Balance is reduced by = 60 000 – 58 492.49 = $1507.51 Interest = $2400 – $1507.51 = $892.49",
+        "criteria": [
+          {
+            "marks": 2,
+            "text": "Provides the correct solution"
+          },
+          {
+            "marks": 1,
+            "text": "Finds by how much the balance is reduced, or equivalent merit"
+          }
+        ]
       },
       {
         "question": 35,
         "part": "a",
         "marks": 2,
-        "sampleAnswer": "128 corresponds to 2 standard deviations above the mean 5% ∴ = 2.5% have an IQ score higher than Yin’s. 2"
+        "sampleAnswer": "128 corresponds to 2 standard deviations above the mean 5% ∴ = 2.5% have an IQ score higher than Yin’s. 2",
+        "criteria": [
+          {
+            "marks": 2,
+            "text": "Provides correct solution"
+          },
+          {
+            "marks": 1,
+            "text": "Demonstrates that 97.5% relates to 2 standard deviations above the mean, or equivalent merit"
+          }
+        ]
       },
       {
         "question": 35,
         "part": "b",
         "marks": 2,
-        "sampleAnswer": "= Mean of City B 112 1 standard deviation above the mean for City B = 112 + 16 = 128 So Yin’s IQ score is 1 standard deviation above the mean of IQ scores in City B. 1 ∴ + × = 50% 68% 84% percentage of population that have IQ score lower than Yin’s is 2 ∴ × expected number of adults = 1 000 000 0.84 = 840 000"
+        "sampleAnswer": "= Mean of City B 112 1 standard deviation above the mean for City B = 112 + 16 = 128 So Yin’s IQ score is 1 standard deviation above the mean of IQ scores in City B. 1 ∴ + × = 50% 68% 84% percentage of population that have IQ score lower than Yin’s is 2 ∴ × expected number of adults = 1 000 000 0.84 = 840 000",
+        "criteria": [
+          {
+            "marks": 2,
+            "text": "Provides correct solution"
+          },
+          {
+            "marks": 1,
+            "text": "Demonstrates Yin is 1 standard deviation above the mean in City B, or equivalent merit"
+          }
+        ]
       },
       {
         "question": 35,
         "part": "c",
         "marks": 3,
-        "sampleAnswer": "Let x be Simon’s IQ score. − 108 x = z-score in City A 10 − 112 x = z-score in City B 16 − − 108 112 x x = 10 16 (x ) (x ) = − − 16 10 108 112 − = − 16x 1728 10x 1120 − = − 16x 10x 1728 1120 = 6x 608 =!! 101.3 x"
+        "sampleAnswer": "Let x be Simon’s IQ score. − 108 x = z-score in City A 10 − 112 x = z-score in City B 16 − − 108 112 x x = 10 16 (x ) (x ) = − − 16 10 108 112 − = − 16x 1728 10x 1120 − = − 16x 10x 1728 1120 = 6x 608 =!! 101.3 x",
+        "criteria": [
+          {
+            "marks": 3,
+            "text": "Provides correct solution"
+          },
+          {
+            "marks": 2,
+            "text": "Provides correct equation linking City A with City B"
+          },
+          {
+            "marks": 1,
+            "text": "Provides correct expression for the z-score for City A or City B, or equivalent merit"
+          }
+        ]
       },
       {
         "question": 36,
         "part": null,
         "marks": 5,
-        "sampleAnswer": "= − 22 0.525 x = 21.475 684 = y 20 = 34.2 (x, ) y Substituting into the regression equation, we have b(21.475) = −10.6063 + 34.2 44.8063 = b 21.475 = 2.08644… b = = + × When x 19, y –10.6063 2.08644… 19 = 29.03606… ∴ 29 chirps are expected."
+        "sampleAnswer": "= − 22 0.525 x = 21.475 684 = y 20 = 34.2 (x, ) y Substituting into the regression equation, we have b(21.475) = −10.6063 + 34.2 44.8063 = b 21.475 = 2.08644… b = = + × When x 19, y –10.6063 2.08644… 19 = 29.03606… ∴ 29 chirps are expected.",
+        "criteria": [
+          {
+            "marks": 5,
+            "text": "Provides the correct solution"
+          },
+          {
+            "marks": 4,
+            "text": "Finds value of b, or equivalent merit"
+          },
+          {
+            "marks": 3,
+            "text": "y x Substitutes and into the regression equation, or equivalent merit"
+          },
+          {
+            "marks": 2,
+            "text": "y x Finds the value of and , or equivalent merit"
+          },
+          {
+            "marks": 1,
+            "text": "y x Finds the value of or or the median of the temperature, or equivalent merit"
+          }
+        ]
       },
       {
         "question": 37,
         "part": null,
         "marks": 3,
-        "sampleAnswer": "Present value of $1000 annuity for 20 years × 16.351 1000 = $16 351 Present value of $3000 annuity for 30 years × 22.396 3000 = $67 188 Present value of $3000 annuity for 20 years × 16.351 3000 = $49 053 Present value = 16 351 + 67 188 – 49 053 = $34 486 Alternate solution × 3000 8.983 Present value of $3000 annuity for the last 10 years = )20 (1 + 0.02 × 3000 8.983 × Total present value = 16.351 1000 + )20 (1 + 0.02 = $34 486.90 2020 HSC Mathematics Standard 2 Mapping Grid Section I Question Marks Content Syllabus outcomes 1 1 MS-A4 Types of Relationships MS2-12-1 2 1 MS-M1 Applications of Measurement MS11-3 3 1 MS-M7 Rates and Ratios MS2-12-6 4 1 MS-F4 Investments and Loans MS2-12-5 5 1 MS-M1 Applications of Measurement MS11-3 6 1 MS-A2 Linear Relationships MS11-6 7 1 MS-S1 Data Analysis MS11-10 8 1 MS-S5 The Normal Distribution MS2-12-7 9 1 MS-N2 Network Concepts MS2-12-8 10 1 MS-A2 Linear Relationships MS11-6 11 1 MS-F4 Investments and Loans MS2-12-5 12 1 MS-S4 Bivariate Data Analysis MS2-12-2 13 1 MS-A1 Formulae and Equations MS11-6 14 1 MS-F5 Annuities MS2-12-5 15 1 MS-S2 Relative Frequency and Probability MS11-8 Section II Question Marks Content Syllabus outcomes 16 (a) 2 MS-M6 Non-right-angled Trigonometry MS2-12-4 16 (b) 2 MS-M6 Non-right-angled Trigonometry MS2-12-4 17 2 MS-M7 Rates and Ratios MS2-12-1 18 (a) 3 MS-N2 Network Concepts MS2-12-8 18 (b) 1 MS-N2 Network Concepts MS2-12-8 19 (a) 1 MS-A4 Types of Relationships MS2-12-6 19 (b) 2 MS-A4 Types of Relationships MS2-12-6 19 (c) 1 MS-A4 Types of Relationships MS2-12-1 20 3 MS-F1 Money Matters MS11-5 21 2 MS-F4 Investments And Loans MS2-12-5 22 3 MS2-F4 Investments and Loans MS2-12-5 Question Marks Content Syllabus outcomes 23 (a) 2 MS-M7 Rates and Ratios MS2-12-3 23 (b) 3 MS-M7 Rates and Ratios MS2-12-4 24 (a) 1 MS-A2 Linear Relationships MS11-2 24 (b) 2 MS-A4 Types of Relationships MS2-12-6 24 (c) 1 MS-A4 Types of Relationships MS2-12-6 25 3 MS-M1 Applications of Measurement MS11-4 26 (a) 1 MS-N3 Critical Path Analysis MS2-12-8 26 (b) 2 MS-N3 Critical Path Analysis MS2-12-8 26 (c) 2 MS-N3 Critical Path Analysis MS2-12-8 27 (a) 3 MS-M7 Rates and Ratios MS2-12-4 27 (b) 2 MS-M7 Rates and Ratios MS2-12-4 28 4 MS-S1 Data Analysis MS11-7 29 3 MS-F4 Investments and Loans MS2-12-5 30 (a) 2 MS-N2 Network Concepts MS2-12-8 30 (b) 1 MS-N2 Network Concepts MS2-12-8 31 (a) 1 MS-M6 Non-right-angled Trigonometry MS2-12-4 31 (b) 2 MS-M6 Non-right-angled Trigonometry MS2-12-4 31 (c) 2 MS-M6 Non-right-angled Trigonometry MS2-12-4 32 4 MS-M6 Non-right-angled Trigonometry MS2-12-4 33 (a) 1 MS-A4 Types of Relationships MS2-12-6 33 (b) 2 MS-A4 Types of Relationships MS2-12-6 34 (a) 2 MS-F5 Annuities MS2-12-5 34 (b) 2 MS-F5 Annuities MS2-12-5 35 (a) 2 MS-S5 The Normal Distribution MS2-12-7 35 (b) 2 MS-S5 The Normal Distribution MS2-12-7 35 (c) 3 MS-S5 The Normal Distribution MS2-12-7 36 5 MS-S4 Bivariate Data Analysis MS2-12-7 37 3 MS-F5 Annuities MS2-12-5"
+        "sampleAnswer": "Present value of $1000 annuity for 20 years × 16.351 1000 = $16 351 Present value of $3000 annuity for 30 years × 22.396 3000 = $67 188 Present value of $3000 annuity for 20 years × 16.351 3000 = $49 053 Present value = 16 351 + 67 188 – 49 053 = $34 486 Alternate solution × 3000 8.983 Present value of $3000 annuity for the last 10 years = )20 (1 + 0.02 × 3000 8.983 × Total present value = 16.351 1000 + )20 (1 + 0.02 = $34 486.90 2020 HSC Mathematics Standard 2 Mapping Grid Section I Question Marks Content Syllabus outcomes 1 1 MS-A4 Types of Relationships MS2-12-1 2 1 MS-M1 Applications of Measurement MS11-3 3 1 MS-M7 Rates and Ratios MS2-12-6 4 1 MS-F4 Investments and Loans MS2-12-5 5 1 MS-M1 Applications of Measurement MS11-3 6 1 MS-A2 Linear Relationships MS11-6 7 1 MS-S1 Data Analysis MS11-10 8 1 MS-S5 The Normal Distribution MS2-12-7 9 1 MS-N2 Network Concepts MS2-12-8 10 1 MS-A2 Linear Relationships MS11-6 11 1 MS-F4 Investments and Loans MS2-12-5 12 1 MS-S4 Bivariate Data Analysis MS2-12-2 13 1 MS-A1 Formulae and Equations MS11-6 14 1 MS-F5 Annuities MS2-12-5 15 1 MS-S2 Relative Frequency and Probability MS11-8 Section II Question Marks Content Syllabus outcomes 16 (a) 2 MS-M6 Non-right-angled Trigonometry MS2-12-4 16 (b) 2 MS-M6 Non-right-angled Trigonometry MS2-12-4 17 2 MS-M7 Rates and Ratios MS2-12-1 18 (a) 3 MS-N2 Network Concepts MS2-12-8 18 (b) 1 MS-N2 Network Concepts MS2-12-8 19 (a) 1 MS-A4 Types of Relationships MS2-12-6 19 (b) 2 MS-A4 Types of Relationships MS2-12-6 19 (c) 1 MS-A4 Types of Relationships MS2-12-1 20 3 MS-F1 Money Matters MS11-5 21 2 MS-F4 Investments And Loans MS2-12-5 22 3 MS2-F4 Investments and Loans MS2-12-5 Question Marks Content Syllabus outcomes 23 (a) 2 MS-M7 Rates and Ratios MS2-12-3 23 (b) 3 MS-M7 Rates and Ratios MS2-12-4 24 (a) 1 MS-A2 Linear Relationships MS11-2 24 (b) 2 MS-A4 Types of Relationships MS2-12-6 24 (c) 1 MS-A4 Types of Relationships MS2-12-6 25 3 MS-M1 Applications of Measurement MS11-4 26 (a) 1 MS-N3 Critical Path Analysis MS2-12-8 26 (b) 2 MS-N3 Critical Path Analysis MS2-12-8 26 (c) 2 MS-N3 Critical Path Analysis MS2-12-8 27 (a) 3 MS-M7 Rates and Ratios MS2-12-4 27 (b) 2 MS-M7 Rates and Ratios MS2-12-4 28 4 MS-S1 Data Analysis MS11-7 29 3 MS-F4 Investments and Loans MS2-12-5 30 (a) 2 MS-N2 Network Concepts MS2-12-8 30 (b) 1 MS-N2 Network Concepts MS2-12-8 31 (a) 1 MS-M6 Non-right-angled Trigonometry MS2-12-4 31 (b) 2 MS-M6 Non-right-angled Trigonometry MS2-12-4 31 (c) 2 MS-M6 Non-right-angled Trigonometry MS2-12-4 32 4 MS-M6 Non-right-angled Trigonometry MS2-12-4 33 (a) 1 MS-A4 Types of Relationships MS2-12-6 33 (b) 2 MS-A4 Types of Relationships MS2-12-6 34 (a) 2 MS-F5 Annuities MS2-12-5 34 (b) 2 MS-F5 Annuities MS2-12-5 35 (a) 2 MS-S5 The Normal Distribution MS2-12-7 35 (b) 2 MS-S5 The Normal Distribution MS2-12-7 35 (c) 3 MS-S5 The Normal Distribution MS2-12-7 36 5 MS-S4 Bivariate Data Analysis MS2-12-7 37 3 MS-F5 Annuities MS2-12-5",
+        "criteria": [
+          {
+            "marks": 3,
+            "text": "Provides correct solution"
+          },
+          {
+            "marks": 2,
+            "text": "Provides calculation for the value of the $1000 annuity for 20 years, or equivalent merit"
+          },
+          {
+            "marks": 1,
+            "text": "Identifies an appropriate annuity factor, or equivalent merit"
+          }
+        ]
       }
     ],
     "2021": [
@@ -244,241 +662,661 @@
         "question": 16,
         "part": null,
         "marks": 2,
-        "sampleAnswer": "1 4 = × × π × 23 V 2 3 = m3 16.8 (one decimal place)"
+        "sampleAnswer": "1 4 = × × π × 23 V 2 3 = m3 16.8 (one decimal place)",
+        "criteria": [
+          {
+            "marks": 2,
+            "text": "Provides correct solution"
+          },
+          {
+            "marks": 1,
+            "text": "4 = πr3 Attempts to use , or equivalent merit V 3"
+          }
+        ]
       },
       {
         "question": 17,
         "part": null,
         "marks": 2,
-        "sampleAnswer": "= − (IQR) Q3 Q1 Interquartile range = − 10 4 = 6 + × = + × Q3 IQR 1.5 10 1.5 6 = 19 > 20 is an outlier as 20 19."
+        "sampleAnswer": "= − (IQR) Q3 Q1 Interquartile range = − 10 4 = 6 + × = + × Q3 IQR 1.5 10 1.5 6 = 19 > 20 is an outlier as 20 19.",
+        "criteria": [
+          {
+            "marks": 2,
+            "text": "Provides correct solution"
+          },
+          {
+            "marks": 1,
+            "text": "+ × Attempts to use or calculates interquartile range Q3 IQR 1.5"
+          }
+        ]
       },
       {
         "question": 18,
         "part": null,
         "marks": 2,
-        "sampleAnswer": "1560 = × × Fuel cost 6.7 1.45 100 = $151.55"
+        "sampleAnswer": "1560 = × × Fuel cost 6.7 1.45 100 = $151.55",
+        "criteria": [
+          {
+            "marks": 2,
+            "text": "Provides correct solution"
+          },
+          {
+            "marks": 1,
+            "text": "Calculates the amount of fuel used, or equivalent merit"
+          }
+        ]
       },
       {
         "question": 19,
         "part": null,
         "marks": 2,
-        "sampleAnswer": "= − × V0 7500 5 2300 ∴ = + × Initial value 7500 5 2300 = $19 000"
+        "sampleAnswer": "= − × V0 7500 5 2300 ∴ = + × Initial value 7500 5 2300 = $19 000",
+        "criteria": [
+          {
+            "marks": 2,
+            "text": "Provides correct solution"
+          },
+          {
+            "marks": 1,
+            "text": "= − Correct substitution into or equivalent merit S V0 Dn"
+          }
+        ]
       },
       {
         "question": 20,
         "part": null,
         "marks": 3,
-        "sampleAnswer": "Both cities have longitude to the East. = − Longitude difference 151° 16° = 135° = Time difference 135 ÷ 15 = 9 hours A. Sydney is 9 hours ahead of City ∴ Time in Sydney is 2 am Friday."
+        "sampleAnswer": "Both cities have longitude to the East. = − Longitude difference 151° 16° = 135° = Time difference 135 ÷ 15 = 9 hours A. Sydney is 9 hours ahead of City ∴ Time in Sydney is 2 am Friday.",
+        "criteria": [
+          {
+            "marks": 3,
+            "text": "Provides correct solution"
+          },
+          {
+            "marks": 2,
+            "text": "Calculates time difference, or equivalent merit"
+          },
+          {
+            "marks": 1,
+            "text": "Calculates longitude difference, or equivalent merit"
+          }
+        ]
       },
       {
         "question": 21,
         "part": null,
         "marks": 3,
-        "sampleAnswer": "18.75 = × Monthly rate of interest 100% 12 500 = 0.15% = × = Interest 15 624.20 0.0015 $23.44 Final row is 7 15 624.20 23.44 500 16 147.64"
+        "sampleAnswer": "18.75 = × Monthly rate of interest 100% 12 500 = 0.15% = × = Interest 15 624.20 0.0015 $23.44 Final row is 7 15 624.20 23.44 500 16 147.64",
+        "criteria": [
+          {
+            "marks": 3,
+            "text": "Provides correct solution"
+          },
+          {
+            "marks": 2,
+            "text": "Calculates interest correctly, or equivalent merit"
+          },
+          {
+            "marks": 1,
+            "text": "Calculates the monthly rate of interest, or equivalent merit"
+          }
+        ]
       },
       {
         "question": 22,
         "part": null,
         "marks": 3,
-        "sampleAnswer": "= − − Taxable income 84 000 900 474 = $82 626 = + × − Income tax payable 5092 0.325 (82 626 45 000) = $17 320.45 = × Medicare levy 0.02 82 626 = $1652.52 = + Total to be paid $17 320.45 $1652.52 = $18 972.97"
+        "sampleAnswer": "= − − Taxable income 84 000 900 474 = $82 626 = + × − Income tax payable 5092 0.325 (82 626 45 000) = $17 320.45 = × Medicare levy 0.02 82 626 = $1652.52 = + Total to be paid $17 320.45 $1652.52 = $18 972.97",
+        "criteria": [
+          {
+            "marks": 3,
+            "text": "Provides correct solution"
+          },
+          {
+            "marks": 2,
+            "text": "Calculates income tax payable, or equivalent merit"
+          },
+          {
+            "marks": 1,
+            "text": "Calculates taxable income, or equivalent merit"
+          }
+        ]
       },
       {
         "question": 23,
         "part": "a",
         "marks": 3,
-        "sampleAnswer": "= Length of minimum spanning tree 160 minutes"
+        "sampleAnswer": "= Length of minimum spanning tree 160 minutes",
+        "criteria": [
+          {
+            "marks": 3,
+            "text": "Provides correct solution"
+          },
+          {
+            "marks": 2,
+            "text": "Provides a minimum spanning tree or provides a spanning tree (not minimum) and correctly determines its length, or equivalent merit"
+          },
+          {
+            "marks": 1,
+            "text": "Provides a spanning tree (not minimum), or equivalent merit"
+          }
+        ]
       },
       {
         "question": 23,
         "part": "b",
         "marks": 1,
-        "sampleAnswer": "= + Time 45 20 = 65 minutes"
+        "sampleAnswer": "= + Time 45 20 = 65 minutes",
+        "criteria": [
+          {
+            "marks": 1,
+            "text": "Provides correct answer"
+          }
+        ]
       },
       {
         "question": 24,
         "part": "a",
         "marks": 1,
-        "sampleAnswer": "= t When 0 = 2000(1.2)0 P = 2000"
+        "sampleAnswer": "= t When 0 = 2000(1.2)0 P = 2000",
+        "criteria": [
+          {
+            "marks": 1,
+            "text": "Provides correct answer"
+          }
+        ]
       },
       {
         "question": 24,
         "part": "b",
         "marks": 1,
-        "sampleAnswer": "= t When 5 = 2000(1.2)5 P = 4977 (nearest integer)"
+        "sampleAnswer": "= t When 5 = 2000(1.2)5 P = 4977 (nearest integer)",
+        "criteria": [
+          {
+            "marks": 1,
+            "text": "Provides correct answer"
+          }
+        ]
       },
       {
         "question": 24,
         "part": "c",
         "marks": 2,
-        "sampleAnswer": ""
+        "sampleAnswer": "",
+        "criteria": [
+          {
+            "marks": 2,
+            "text": "Provides correct graph"
+          },
+          {
+            "marks": 1,
+            "text": "Draws an exponential function with positive slope, or equivalent merit"
+          }
+        ]
       },
       {
         "question": 25,
         "part": null,
         "marks": 4,
-        "sampleAnswer": "= × + Perimeter of diagram 2 (8 5) = 26 cm = × Actual perimeter 26 3000 cm = 78 000 cm = 780 m 780 = = Speed 65 m/minute 12 × 65 60 = km/hour 1000 = 3.9 km/hour"
+        "sampleAnswer": "= × + Perimeter of diagram 2 (8 5) = 26 cm = × Actual perimeter 26 3000 cm = 78 000 cm = 780 m 780 = = Speed 65 m/minute 12 × 65 60 = km/hour 1000 = 3.9 km/hour",
+        "criteria": [
+          {
+            "marks": 4,
+            "text": "Provides correct solution"
+          },
+          {
+            "marks": 3,
+            "text": "Finds the distance Kerry walked and a correct expression for speed not in km/h, or equivalent merit"
+          },
+          {
+            "marks": 2,
+            "text": "Finds the distance Kerry walked, or equivalent merit"
+          },
+          {
+            "marks": 1,
+            "text": "Calculates the perimeter as 26 (cm), or equivalent merit"
+          }
+        ]
       },
       {
         "question": 26,
         "part": "a",
         "marks": 2,
-        "sampleAnswer": "= 6% ÷ 12 0.5% per month = + 0.005)12 A Future value of Option 35 000 (1 = $37 158.72"
+        "sampleAnswer": "= 6% ÷ 12 0.5% per month = + 0.005)12 A Future value of Option 35 000 (1 = $37 158.72",
+        "criteria": [
+          {
+            "marks": 2,
+            "text": "Provides correct solution"
+          },
+          {
+            "marks": 1,
+            "text": "Attempts to use compound interest formula with correct interest rate or correct number of periods, or equivalent merit"
+          }
+        ]
       },
       {
         "question": 26,
         "part": "b",
         "marks": 2,
-        "sampleAnswer": "= − A Interest in Option $37 158.72 $35 000 = $2158.72 r = × × 2158.72 35 000 1 100 = r 6.17 (two decimal places)"
+        "sampleAnswer": "= − A Interest in Option $37 158.72 $35 000 = $2158.72 r = × × 2158.72 35 000 1 100 = r 6.17 (two decimal places)",
+        "criteria": [
+          {
+            "marks": 2,
+            "text": "Provides correct solution"
+          },
+          {
+            "marks": 1,
+            "text": "Correct substitution into the simple interest formula, or equivalent merit"
+          }
+        ]
       },
       {
         "question": 27,
         "part": "a",
         "marks": 2,
-        "sampleAnswer": "× × = 160 3 365 ÷ 1000 175.2 kW × 175.2kW 0.25 = $43.80 = − Saving in electricity 48.18 43.80 = $4.38"
+        "sampleAnswer": "× × = 160 3 365 ÷ 1000 175.2 kW × 175.2kW 0.25 = $43.80 = − Saving in electricity 48.18 43.80 = $4.38",
+        "criteria": [
+          {
+            "marks": 2,
+            "text": "Provides correct solution"
+          },
+          {
+            "marks": 1,
+            "text": "Finds the power usage for Television B for one year, or equivalent merit"
+          }
+        ]
       },
       {
         "question": 27,
         "part": "b",
         "marks": 2,
-        "sampleAnswer": "A Saving if Television is purchased = − 921.90 900 = $21.90 = Number of years 21.90 ÷ 4.38 = 5 years"
+        "sampleAnswer": "A Saving if Television is purchased = − 921.90 900 = $21.90 = Number of years 21.90 ÷ 4.38 = 5 years",
+        "criteria": [
+          {
+            "marks": 2,
+            "text": "Provides correct solution"
+          },
+          {
+            "marks": 1,
+            "text": "Calculates $21.90, or equivalent merit"
+          }
+        ]
       },
       {
         "question": 28,
         "part": "a",
         "marks": 2,
-        "sampleAnswer": "− 18 2 = Using the graph, the least-squares regression line has gradient − 5 0 = 3.2 = + y 3.2x. The equation of the least-squares regression line is 2"
+        "sampleAnswer": "− 18 2 = Using the graph, the least-squares regression line has gradient − 5 0 = 3.2 = + y 3.2x. The equation of the least-squares regression line is 2",
+        "criteria": [
+          {
+            "marks": 2,
+            "text": "Provides correct answer"
+          },
+          {
+            "marks": 1,
+            "text": "Finds the intercept or finds the gradient or writes down a linear equation"
+          }
+        ]
       },
       {
         "question": 28,
         "part": "b",
         "marks": 1,
-        "sampleAnswer": "It would increase."
+        "sampleAnswer": "It would increase.",
+        "criteria": [
+          {
+            "marks": 1,
+            "text": "Provides correct answer"
+          }
+        ]
       },
       {
         "question": 29,
         "part": null,
         "marks": 2,
-        "sampleAnswer": "− x 1 + = x 9 2 + − = 2x x 1 18 = 3x 19 19 = x 3"
+        "sampleAnswer": "− x 1 + = x 9 2 + − = 2x x 1 18 = 3x 19 19 = x 3",
+        "criteria": [
+          {
+            "marks": 2,
+            "text": "Provides correct solution"
+          },
+          {
+            "marks": 1,
+            "text": "Writes fraction using a common denominator, or equivalent merit"
+          }
+        ]
       },
       {
         "question": 30,
         "part": null,
         "marks": 2,
-        "sampleAnswer": "810 = Dividend for 1 share: $0.54 1500 0.54 ∴ = × Dividend yield 100% 27 = 2%"
+        "sampleAnswer": "810 = Dividend for 1 share: $0.54 1500 0.54 ∴ = × Dividend yield 100% 27 = 2%",
+        "criteria": [
+          {
+            "marks": 2,
+            "text": "Provides correct solution"
+          },
+          {
+            "marks": 1,
+            "text": "Calculates total value of shares or calculates the dividend per share, or equivalent merit"
+          }
+        ]
       },
       {
         "question": 31,
         "part": null,
         "marks": 2,
-        "sampleAnswer": "0.015 = Monthly rate of interest 12 = 0.00125 500 000 = Monthly payment 289.75411 = $1725.60 (nearest cent)"
+        "sampleAnswer": "0.015 = Monthly rate of interest 12 = 0.00125 500 000 = Monthly payment 289.75411 = $1725.60 (nearest cent)",
+        "criteria": [
+          {
+            "marks": 2,
+            "text": "Provides correct solution"
+          },
+          {
+            "marks": 1,
+            "text": "Identifies the correct present value interest factor or divides 500 000 by any value"
+          }
+        ]
       },
       {
         "question": 32,
         "part": "a",
         "marks": 2,
-        "sampleAnswer": "XYZ In XY = cos 30° 16 = XY 13.86 cm (two decimal places)"
+        "sampleAnswer": "XYZ In XY = cos 30° 16 = XY 13.86 cm (two decimal places)",
+        "criteria": [
+          {
+            "marks": 2,
+            "text": "Provides correct solution"
+          },
+          {
+            "marks": 1,
+            "text": "Uses correct trigonometric ratio, or equivalent merit"
+          }
+        ]
       },
       {
         "question": 32,
         "part": "b",
         "marks": 3,
-        "sampleAnswer": "1 1 ( ) 2 = π − × × × sin30° Shaded area 8 13.86 16 2 2 cm2 = 45.1 (one decimal place)"
+        "sampleAnswer": "1 1 ( ) 2 = π − × × × sin30° Shaded area 8 13.86 16 2 2 cm2 = 45.1 (one decimal place)",
+        "criteria": [
+          {
+            "marks": 3,
+            "text": "Provides correct solution"
+          },
+          {
+            "marks": 2,
+            "text": "Calculates the area of XYZ and the semicircle or equivalent merit"
+          },
+          {
+            "marks": 1,
+            "text": "Calculates the area of a semicircle, or equivalent merit"
+          }
+        ]
       },
       {
         "question": 33,
         "part": "a.i",
         "marks": 1,
-        "sampleAnswer": "− × y = 29.2 0.011 540 = 23.3°C"
+        "sampleAnswer": "− × y = 29.2 0.011 540 = 23.3°C",
+        "criteria": [
+          {
+            "marks": 1,
+            "text": "Provides correct answer"
+          }
+        ]
       },
       {
         "question": 33,
         "part": "a.ii",
         "marks": 2,
-        "sampleAnswer": "For a one metre increase in the height above sea level, we expect a 0.011°C drop in average maximum daily temperature."
+        "sampleAnswer": "For a one metre increase in the height above sea level, we expect a 0.011°C drop in average maximum daily temperature.",
+        "criteria": [
+          {
+            "marks": 2,
+            "text": "Provides correct solution"
+          },
+          {
+            "marks": 1,
+            "text": "Provides a correct relevant statement relating temperature to height above sea level or equivalent merit"
+          }
+        ]
       },
       {
         "question": 33,
         "part": "b",
         "marks": 1,
-        "sampleAnswer": "It would be better to use the latitude. From the information given, the average maximum daily temperature has a stronger correlation with latitude than with height above sea level."
+        "sampleAnswer": "It would be better to use the latitude. From the information given, the average maximum daily temperature has a stronger correlation with latitude than with height above sea level.",
+        "criteria": [
+          {
+            "marks": 1,
+            "text": "Provides correct solution"
+          }
+        ]
       },
       {
         "question": 34,
         "part": null,
         "marks": 4,
-        "sampleAnswer": "+ = 4x 2y 76 ∴ + = 2x y 38 ∴ 7 goannas and 24 emus"
+        "sampleAnswer": "+ = 4x 2y 76 ∴ + = 2x y 38 ∴ 7 goannas and 24 emus",
+        "criteria": [
+          {
+            "marks": 4,
+            "text": "Provides correct solution"
+          },
+          {
+            "marks": 3,
+            "text": "States the other relevant correct equation and graphs two equations correctly, or equivalent merit"
+          },
+          {
+            "marks": 2,
+            "text": "States the other relevant correct equation and graphs one equation correctly, or equivalent merit"
+          },
+          {
+            "marks": 1,
+            "text": "States the other relevant correct equation, or equivalent merit"
+          }
+        ]
       },
       {
         "question": 35,
         "part": "a",
         "marks": 2,
-        "sampleAnswer": "= x By symmetry, to maximise revenue, choose 45. + 45 10 = 55 Then, price is $55 in order to maximise the revenue."
+        "sampleAnswer": "= x By symmetry, to maximise revenue, choose 45. + 45 10 = 55 Then, price is $55 in order to maximise the revenue.",
+        "criteria": [
+          {
+            "marks": 2,
+            "text": "Provides correct solution"
+          },
+          {
+            "marks": 1,
+            "text": "= Finds 45, or equivalent merit x"
+          }
+        ]
       },
       {
         "question": 35,
         "part": "b",
         "marks": 1,
-        "sampleAnswer": "Intercept is 50 000."
+        "sampleAnswer": "Intercept is 50 000.",
+        "criteria": [
+          {
+            "marks": 1,
+            "text": "Provides correct answer"
+          }
+        ]
       },
       {
         "question": 36,
         "part": "a",
         "marks": 1,
-        "sampleAnswer": "40 minutes"
+        "sampleAnswer": "40 minutes",
+        "criteria": [
+          {
+            "marks": 1,
+            "text": "Provides correct answer"
+          }
+        ]
       },
       {
         "question": 36,
         "part": "b",
         "marks": 1,
-        "sampleAnswer": "A C D E G J K — — — — — —"
+        "sampleAnswer": "A C D E G J K — — — — — —",
+        "criteria": [
+          {
+            "marks": 1,
+            "text": "Provides correct answer"
+          }
+        ]
       },
       {
         "question": 36,
         "part": "c",
         "marks": 2,
-        "sampleAnswer": "X Task is labelled on the diagram as above. X Float time for task is 1 minute."
+        "sampleAnswer": "X Task is labelled on the diagram as above. X Float time for task is 1 minute.",
+        "criteria": [
+          {
+            "marks": 2,
+            "text": "Provides correct solution"
+          },
+          {
+            "marks": 1,
+            "text": "States the float time or adds to the network diagram X"
+          }
+        ]
       },
       {
         "question": 37,
         "part": null,
         "marks": 3,
-        "sampleAnswer": "ˆ sin28° A BC sin = 25 16 ˆ ∴ = A BC 0.733… sin ˆ ∴ = − A BC 180° 47.18…° = 133° (nearest degree)"
+        "sampleAnswer": "ˆ sin28° A BC sin = 25 16 ˆ ∴ = A BC 0.733… sin ˆ ∴ = − A BC 180° 47.18…° = 133° (nearest degree)",
+        "criteria": [
+          {
+            "marks": 3,
+            "text": "Provides correct solution"
+          },
+          {
+            "marks": 2,
+            "text": "Calculates or equivalent merit 47.18°,"
+          },
+          {
+            "marks": 1,
+            "text": "Substitutes into the sine rule correctly, or equivalent merit"
+          }
+        ]
       },
       {
         "question": 38,
         "part": "a",
         "marks": 1,
-        "sampleAnswer": "= − Probability 0.5 0.1179 = 0.3821"
+        "sampleAnswer": "= − Probability 0.5 0.1179 = 0.3821",
+        "criteria": [
+          {
+            "marks": 1,
+            "text": "Provides correct solution"
+          }
+        ]
       },
       {
         "question": 38,
         "part": "b",
         "marks": 3,
-        "sampleAnswer": "3471− 3300 = z 570 = 0.3 > = P (Z From part (a), 0.3) 0.3821 ∴ × = Expect 1000 0.3821 382.1 babies born to have a birth weight greater than 3471 grams."
+        "sampleAnswer": "3471− 3300 = z 570 = 0.3 > = P (Z From part (a), 0.3) 0.3821 ∴ × = Expect 1000 0.3821 382.1 babies born to have a birth weight greater than 3471 grams.",
+        "criteria": [
+          {
+            "marks": 3,
+            "text": "Provides correct solution"
+          },
+          {
+            "marks": 2,
+            "text": "Calculates z-score and uses associated probability, or equivalent merit"
+          },
+          {
+            "marks": 1,
+            "text": "Calculates z-score, or equivalent merit"
+          }
+        ]
       },
       {
         "question": 39,
         "part": "a",
         "marks": 2,
-        "sampleAnswer": "1 ˆOB = × × × 466 28 35 sinC 2 ˆ ∴ = sinC OB 0.95102… ˆOB ∴ = C 72° (nearest degree)"
+        "sampleAnswer": "1 ˆOB = × × × 466 28 35 sinC 2 ˆ ∴ = sinC OB 0.95102… ˆOB ∴ = C 72° (nearest degree)",
+        "criteria": [
+          {
+            "marks": 2,
+            "text": "Provides correct solution"
+          },
+          {
+            "marks": 1,
+            "text": "1 = Substitutes correctly into , or equivalent merit absinC Area 2"
+          }
+        ]
       },
       {
         "question": 39,
         "part": "b",
         "marks": 3,
-        "sampleAnswer": "ˆOC = − − D 330° 150° 72° = 108° = + − × × × CD2 312 282 2 31 28 cos108° = 2281.45… ∴ = CD 47.76 ∴ = + + Fencing required 31 28 47.76… = 106.8 m (one decimal place)"
+        "sampleAnswer": "ˆOC = − − D 330° 150° 72° = 108° = + − × × × CD2 312 282 2 31 28 cos108° = 2281.45… ∴ = CD 47.76 ∴ = + + Fencing required 31 28 47.76… = 106.8 m (one decimal place)",
+        "criteria": [
+          {
+            "marks": 3,
+            "text": "Provides correct solution"
+          },
+          {
+            "marks": 2,
+            "text": "Finds the length of CD, or equivalent merit"
+          },
+          {
+            "marks": 1,
+            "text": "Finds angle DOC, or equivalent merit"
+          }
+        ]
       },
       {
         "question": 40,
         "part": null,
         "marks": 3,
-        "sampleAnswer": "= × Money in account after 8 years 1000 8.2132 = $8213.20 = (1.0125)2 Amount after 2 more years 8213.20 = $8419.81"
+        "sampleAnswer": "= × Money in account after 8 years 1000 8.2132 = $8213.20 = (1.0125)2 Amount after 2 more years 8213.20 = $8419.81",
+        "criteria": [
+          {
+            "marks": 3,
+            "text": "Provides correct solution"
+          },
+          {
+            "marks": 2,
+            "text": "Finds the correct future value of the annuity and attempts to apply the compound interest formula, or equivalent merit"
+          },
+          {
+            "marks": 1,
+            "text": "Identifies the correct interest factor from the table, or equivalent merit"
+          }
+        ]
       },
       {
         "question": 41,
         "part": null,
         "marks": 4,
-        "sampleAnswer": "− 175 160.6 σ = 3 = 4.8 μ = + 160.6 4.8 = 165.4 Selected male is taller than 84% of population ∴ Selected male is 1 standard deviation above mean. = × = Mean height for males 1.05 165.4 173.67 = × = Standard deviation of height for males 4.8 1.1 5.28 ∴ = 1.05μ + 1.1σ Height = + 173.67 5.28 = 178.95 cm 2021 HSC Mathematics Standard 2 Mapping Grid Section I Question Marks Content Syllabus outcomes 1 1 MS-M1 Applications of Measurement MS11-4 2 1 MS-N2 Network Concepts MS2-12-8 3 1 MS-S1 Data Analysis MS11-7 4 1 MS-F4 Investments and Loans MS2-12-5 5 1 MS-F4 Investments and Loans MS2-12-5 6 1 MS-A1 Formulae and Equations MS11-1 7 1 MS-S1 Data Analysis MS11-2 8 1 MS-S5 The Normal Distribution MS2-12-7 9 1 MS-A1 Formulae and Equations MS11-1 10 1 MS-A4 Types of Relationships MS2-12-6 11 1 MS-S2 Relative Frequency and Probability MS11-8 12 1 MS-M1 Applications of Measurement MS11-4 13 1 MS-A4 Types of Relationships MS2-12-6 14 1 MS-M6 Non-right-angled Trigonometry MS2-12-4 15 1 MS-M7 Rates and Ratios MS2-12-10 Section II Question Marks Content Syllabus outcomes 16 2 MS-M1 Applications of Measurement MS11-4 17 2 MS-S1 Data Analysis MS11-7 18 2 MS-M7 Rates and Ratios MS2-12-3 19 2 MS-F1 Money Matters MS11-5 20 3 MS-M2 Working with Time MS11-3 21 3 MS-F5 Annuities MS2-12-9 22 3 MS-F1 Money Matters MS11-10 23 (a) 3 MS-N2 Network Concepts MS2-12-8 23 (b) 1 MS-N2 Network Concepts MS2-12-8 24 (a) 1 MS-A4 Types of Relationships MS2-12-1 24 (b) 1 MS-A4 Types of Relationships MS2-12-1 Question Marks Content Syllabus outcomes 24 (c) 2 MS-A4 Types of Relationships MS2-12-6 25 4 MS-M1 Applications of Measurement MS2-12-3 26 (a) 2 MS-F4 Investments and Loans MS2-12-5 26 (b) 2 MS-F4 Investments and Loans MS2-12-5 27 (a) 2 MS-M7 Rates and Ratios MS2-12-3 27 (b) 2 MS-A1 Formulae and Equations MS11-6 28 (a) 2 MS-S4 Bivariate Data Analysis MS2-12-9 28 (b) 1 MS-S4 Bivariate Data Analysis MS2-12-7 29 2 MS-A1 Formulae and Equations MS11-1 30 2 MS-F4 Investments and Loans MS2-12-5 31 2 MS-F5 Annuities MS2-12-5 32 (a) 2 MS-M6 Non-right-angled Trigonometry MS2-12-4 32 (b) 3 MS-M6 Non-right-angled Trigonometry MS2-12-4 33 (a) (i) 1 MS-S4 Bivariate Data Analysis MS2-12-2 33 (a) (ii) 2 MS-S4 Bivariate Data Analysis MS2-12-2 33 (b) 1 MS-S4 Bivariate Data Analysis MS2-12-2 34 4 MS-A4 Types of Relationships MS2-12-6 35 (a) 2 MS-A4 Types of Relationships MS2-12-6 35 (b) 1 MS-A4 Types of Relationships MS2-12-1 36 (a) 1 MS-N3 Critical Path Analysis MS2-12-8 36 (b) 1 MS-N3 Critical Path Analysis MS2-12-8 36 (c) 2 MS-N3 Critical Path Analysis MS2-12-8 37 3 MS-M6 Non-right-angled Trigonometry MS2-12-3; MS2-12-4 38 (a) 1 MS-S5 The Normal Distribution MS2-12-7 38 (b) 3 MS-S5 The Normal Distribution MS2-12-7 39 (a) 2 MS-M6 Non-right-angled Trigonometry MS2-12-4 39 (b) 3 MS-M6 Non-right-angled Trigonometry MS2-12-4 MS-F5 Annuities 40 3 MS2-12-5 MS-F4 Investments and Loans 41 4 MS-S5 The Normal Distribution MS2-12-7"
+        "sampleAnswer": "− 175 160.6 σ = 3 = 4.8 μ = + 160.6 4.8 = 165.4 Selected male is taller than 84% of population ∴ Selected male is 1 standard deviation above mean. = × = Mean height for males 1.05 165.4 173.67 = × = Standard deviation of height for males 4.8 1.1 5.28 ∴ = 1.05μ + 1.1σ Height = + 173.67 5.28 = 178.95 cm 2021 HSC Mathematics Standard 2 Mapping Grid Section I Question Marks Content Syllabus outcomes 1 1 MS-M1 Applications of Measurement MS11-4 2 1 MS-N2 Network Concepts MS2-12-8 3 1 MS-S1 Data Analysis MS11-7 4 1 MS-F4 Investments and Loans MS2-12-5 5 1 MS-F4 Investments and Loans MS2-12-5 6 1 MS-A1 Formulae and Equations MS11-1 7 1 MS-S1 Data Analysis MS11-2 8 1 MS-S5 The Normal Distribution MS2-12-7 9 1 MS-A1 Formulae and Equations MS11-1 10 1 MS-A4 Types of Relationships MS2-12-6 11 1 MS-S2 Relative Frequency and Probability MS11-8 12 1 MS-M1 Applications of Measurement MS11-4 13 1 MS-A4 Types of Relationships MS2-12-6 14 1 MS-M6 Non-right-angled Trigonometry MS2-12-4 15 1 MS-M7 Rates and Ratios MS2-12-10 Section II Question Marks Content Syllabus outcomes 16 2 MS-M1 Applications of Measurement MS11-4 17 2 MS-S1 Data Analysis MS11-7 18 2 MS-M7 Rates and Ratios MS2-12-3 19 2 MS-F1 Money Matters MS11-5 20 3 MS-M2 Working with Time MS11-3 21 3 MS-F5 Annuities MS2-12-9 22 3 MS-F1 Money Matters MS11-10 23 (a) 3 MS-N2 Network Concepts MS2-12-8 23 (b) 1 MS-N2 Network Concepts MS2-12-8 24 (a) 1 MS-A4 Types of Relationships MS2-12-1 24 (b) 1 MS-A4 Types of Relationships MS2-12-1 Question Marks Content Syllabus outcomes 24 (c) 2 MS-A4 Types of Relationships MS2-12-6 25 4 MS-M1 Applications of Measurement MS2-12-3 26 (a) 2 MS-F4 Investments and Loans MS2-12-5 26 (b) 2 MS-F4 Investments and Loans MS2-12-5 27 (a) 2 MS-M7 Rates and Ratios MS2-12-3 27 (b) 2 MS-A1 Formulae and Equations MS11-6 28 (a) 2 MS-S4 Bivariate Data Analysis MS2-12-9 28 (b) 1 MS-S4 Bivariate Data Analysis MS2-12-7 29 2 MS-A1 Formulae and Equations MS11-1 30 2 MS-F4 Investments and Loans MS2-12-5 31 2 MS-F5 Annuities MS2-12-5 32 (a) 2 MS-M6 Non-right-angled Trigonometry MS2-12-4 32 (b) 3 MS-M6 Non-right-angled Trigonometry MS2-12-4 33 (a) (i) 1 MS-S4 Bivariate Data Analysis MS2-12-2 33 (a) (ii) 2 MS-S4 Bivariate Data Analysis MS2-12-2 33 (b) 1 MS-S4 Bivariate Data Analysis MS2-12-2 34 4 MS-A4 Types of Relationships MS2-12-6 35 (a) 2 MS-A4 Types of Relationships MS2-12-6 35 (b) 1 MS-A4 Types of Relationships MS2-12-1 36 (a) 1 MS-N3 Critical Path Analysis MS2-12-8 36 (b) 1 MS-N3 Critical Path Analysis MS2-12-8 36 (c) 2 MS-N3 Critical Path Analysis MS2-12-8 37 3 MS-M6 Non-right-angled Trigonometry MS2-12-3; MS2-12-4 38 (a) 1 MS-S5 The Normal Distribution MS2-12-7 38 (b) 3 MS-S5 The Normal Distribution MS2-12-7 39 (a) 2 MS-M6 Non-right-angled Trigonometry MS2-12-4 39 (b) 3 MS-M6 Non-right-angled Trigonometry MS2-12-4 MS-F5 Annuities 40 3 MS2-12-5 MS-F4 Investments and Loans 41 4 MS-S5 The Normal Distribution MS2-12-7",
+        "criteria": [
+          {
+            "marks": 4,
+            "text": "Provides correct solution"
+          },
+          {
+            "marks": 3,
+            "text": "Finds the mean and standard deviation for the heights of adult males, or equivalent merit"
+          },
+          {
+            "marks": 2,
+            "text": "σ, Finds or equivalent merit"
+          },
+          {
+            "marks": 1,
+            "text": "Labels the diagram, or equivalent merit"
+          }
+        ]
       }
     ],
     "2022": [
@@ -486,241 +1324,661 @@
         "question": 16,
         "part": "a",
         "marks": 1,
-        "sampleAnswer": "Maximum heart rate = 220 − 25 = 195"
+        "sampleAnswer": "Maximum heart rate = 220 − 25 = 195",
+        "criteria": [
+          {
+            "marks": 1,
+            "text": "Provides correct answer"
+          }
+        ]
       },
       {
         "question": 16,
         "part": "b",
         "marks": 2,
-        "sampleAnswer": "50% of 195 = 97.5 bpm 85% of 195 = 165.75 bpm"
+        "sampleAnswer": "50% of 195 = 97.5 bpm 85% of 195 = 165.75 bpm",
+        "criteria": [
+          {
+            "marks": 2,
+            "text": "Provides correct answer"
+          },
+          {
+            "marks": 1,
+            "text": "Provides a correct percentage"
+          }
+        ]
       },
       {
         "question": 17,
         "part": "a",
         "marks": 2,
-        "sampleAnswer": "6 2 = Probability Bob wins is 9 3"
+        "sampleAnswer": "6 2 = Probability Bob wins is 9 3",
+        "criteria": [
+          {
+            "marks": 2,
+            "text": "Provides correct solution"
+          },
+          {
+            "marks": 1,
+            "text": "Completes the tree diagram, or equivalent merit"
+          }
+        ]
       },
       {
         "question": 17,
         "part": "b",
         "marks": 1,
-        "sampleAnswer": "2 × 30 = 20 times 3"
+        "sampleAnswer": "2 × 30 = 20 times 3",
+        "criteria": [
+          {
+            "marks": 1,
+            "text": "Provides correct answer"
+          }
+        ]
       },
       {
         "question": 18,
         "part": null,
         "marks": 2,
-        "sampleAnswer": "µ s = 60 = 15 − 90 60 z = = 2 15 1 % marks higher: × 5% =2.5% 2 2.5% of scores are higher than 90."
+        "sampleAnswer": "µ s = 60 = 15 − 90 60 z = = 2 15 1 % marks higher: × 5% =2.5% 2 2.5% of scores are higher than 90.",
+        "criteria": [
+          {
+            "marks": 2,
+            "text": "Provides correct solution"
+          },
+          {
+            "marks": 1,
+            "text": "Finds the z-score, or equivalent merit"
+          }
+        ]
       },
       {
         "question": 19,
         "part": "a",
         "marks": 2,
-        "sampleAnswer": "A = 98 + 62 = 160 192 96 = B = = 96% 200 100"
+        "sampleAnswer": "A = 98 + 62 = 160 192 96 = B = = 96% 200 100",
+        "criteria": [
+          {
+            "marks": 2,
+            "text": "Finds the correct values of A and B"
+          },
+          {
+            "marks": 1,
+            "text": "Finds the correct value of A or B"
+          }
+        ]
       },
       {
         "question": 19,
         "part": "b",
         "marks": 1,
-        "sampleAnswer": "Stock shortage and delivery fee"
+        "sampleAnswer": "Stock shortage and delivery fee",
+        "criteria": [
+          {
+            "marks": 1,
+            "text": "Provides correct answer"
+          }
+        ]
       },
       {
         "question": 20,
         "part": "a",
         "marks": 2,
-        "sampleAnswer": ""
+        "sampleAnswer": "",
+        "criteria": [
+          {
+            "marks": 2,
+            "text": "Provides the correct network diagram"
+          },
+          {
+            "marks": 1,
+            "text": "Draws a network diagram with vertices shown, or equivalent merit"
+          }
+        ]
       },
       {
         "question": 20,
         "part": "b",
         "marks": 3,
-        "sampleAnswer": "+ + + Length of minimum spanning tree = 275 150 60 530 = 1015 km"
+        "sampleAnswer": "+ + + Length of minimum spanning tree = 275 150 60 530 = 1015 km",
+        "criteria": [
+          {
+            "marks": 3,
+            "text": "Provides correct solution"
+          },
+          {
+            "marks": 2,
+            "text": "Draws the minimum spanning tree, or equivalent merit"
+          },
+          {
+            "marks": 1,
+            "text": "Draws a spanning tree, or equivalent merit"
+          }
+        ]
       },
       {
         "question": 21,
         "part": null,
         "marks": 2,
-        "sampleAnswer": "2% of 800 000 + 1.5% of (1 500 000 − 800 000) × × = 0.02 800 000 + 0.015 700 000 = $26 500"
+        "sampleAnswer": "2% of 800 000 + 1.5% of (1 500 000 − 800 000) × × = 0.02 800 000 + 0.015 700 000 = $26 500",
+        "criteria": [
+          {
+            "marks": 2,
+            "text": "Provides correct solution"
+          },
+          {
+            "marks": 1,
+            "text": "Calculates a correct percentage, or equivalent merit"
+          }
+        ]
       },
       {
         "question": 22,
         "part": "a",
         "marks": 1,
-        "sampleAnswer": "C = 100n + b C = 100 × 1943 + 20 180 = 214 480 Cost = $214 480"
+        "sampleAnswer": "C = 100n + b C = 100 × 1943 + 20 180 = 214 480 Cost = $214 480",
+        "criteria": [
+          {
+            "marks": 1,
+            "text": "Provides correct answer"
+          }
+        ]
       },
       {
         "question": 22,
         "part": "b",
         "marks": 2,
-        "sampleAnswer": "a = 26 C = 97 040 b = 20 180 97 040 = 100n + 26n + 20 180 97 040 = 126n + 20 180 76 860 = 126n 610 = n"
+        "sampleAnswer": "a = 26 C = 97 040 b = 20 180 97 040 = 100n + 26n + 20 180 97 040 = 126n + 20 180 76 860 = 126n 610 = n",
+        "criteria": [
+          {
+            "marks": 2,
+            "text": "Provides correct solution"
+          },
+          {
+            "marks": 1,
+            "text": "Makes the correct substitution, or equivalent merit"
+          }
+        ]
       },
       {
         "question": 23,
         "part": "a",
         "marks": 2,
-        "sampleAnswer": ""
+        "sampleAnswer": "",
+        "criteria": [
+          {
+            "marks": 2,
+            "text": "Plots both points correctly"
+          },
+          {
+            "marks": 1,
+            "text": "Plots one point correctly, or equivalent merit"
+          }
+        ]
       },
       {
         "question": 23,
         "part": "b",
         "marks": 2,
-        "sampleAnswer": "Line added above. Student who uses the phone for 2 hours will get 9 hours of sleep per day based on the line of best fit as shown on the scatterplot."
+        "sampleAnswer": "Line added above. Student who uses the phone for 2 hours will get 9 hours of sleep per day based on the line of best fit as shown on the scatterplot.",
+        "criteria": [
+          {
+            "marks": 2,
+            "text": "Provides correct solution"
+          },
+          {
+            "marks": 1,
+            "text": "Estimates the number of hours of sleep using their line of best fit, or equivalent merit"
+          }
+        ]
       },
       {
         "question": 24,
         "part": "a",
         "marks": 2,
-        "sampleAnswer": "k = M T When T = 15 M = 12 k = 12 15 × k = 15 12 =180 180 = M T"
+        "sampleAnswer": "k = M T When T = 15 M = 12 k = 12 15 × k = 15 12 =180 180 = M T",
+        "criteria": [
+          {
+            "marks": 2,
+            "text": "Provides correct solution"
+          },
+          {
+            "marks": 1,
+            "text": "Writes down an equation representing inverse variation, or equivalent merit"
+          }
+        ]
       },
       {
         "question": 24,
         "part": "b",
         "marks": 2,
-        "sampleAnswer": "T 5 15 30 M 36 12 6"
+        "sampleAnswer": "T 5 15 30 M 36 12 6",
+        "criteria": [
+          {
+            "marks": 2,
+            "text": "Provides correct solution"
+          },
+          {
+            "marks": 1,
+            "text": "Completes the table, or equivalent merit"
+          }
+        ]
       },
       {
         "question": 25,
         "part": "a",
         "marks": 2,
-        "sampleAnswer": "÷ $15 000 4.184 = $3585.09"
+        "sampleAnswer": "÷ $15 000 4.184 = $3585.09",
+        "criteria": [
+          {
+            "marks": 2,
+            "text": "Provides correct solution"
+          },
+          {
+            "marks": 1,
+            "text": "Finds the correct interest factor, or equivalent merit"
+          }
+        ]
       },
       {
         "question": 25,
         "part": "b",
         "marks": 2,
-        "sampleAnswer": "× Amount deposited = 4 $3585.09 = $14 340.36 Interest = $15 000 − $14 340.36 = $659.64 Interest is $660 (to nearest dollar)"
+        "sampleAnswer": "× Amount deposited = 4 $3585.09 = $14 340.36 Interest = $15 000 − $14 340.36 = $659.64 Interest is $660 (to nearest dollar)",
+        "criteria": [
+          {
+            "marks": 2,
+            "text": "Provides correct solution"
+          },
+          {
+            "marks": 1,
+            "text": "Finds the total amount deposited, or equivalent merit"
+          }
+        ]
       },
       {
         "question": 26,
         "part": null,
         "marks": 4,
-        "sampleAnswer": "Using ABC, AB tan 41° = 35 so AB = 35 tan 41° Using ABD, AB sinθ = 93 35tan41° θ ie sin = 93 θ = 19.0959… ≑ 19°6' (to the nearest minute)"
+        "sampleAnswer": "Using ABC, AB tan 41° = 35 so AB = 35 tan 41° Using ABD, AB sinθ = 93 35tan41° θ ie sin = 93 θ = 19.0959… ≑ 19°6' (to the nearest minute)",
+        "criteria": [
+          {
+            "marks": 4,
+            "text": "Provides correct solution"
+          },
+          {
+            "marks": 3,
+            "text": "sinθ, Finds the value of or equivalent merit"
+          },
+          {
+            "marks": 2,
+            "text": "Finds the length of AB, or equivalent merit"
+          },
+          {
+            "marks": 1,
+            "text": "Provides a correct trigonometric ratio related to one of the triangles, or equivalent merit"
+          }
+        ]
       },
       {
         "question": 27,
         "part": "a.i",
         "marks": 1,
-        "sampleAnswer": "× (0.80)n S = V0 Rate of depreciation is 20%."
+        "sampleAnswer": "× (0.80)n S = V0 Rate of depreciation is 20%.",
+        "criteria": [
+          {
+            "marks": 1,
+            "text": "Provides correct answer"
+          }
+        ]
       },
       {
         "question": 27,
         "part": "a.ii",
         "marks": 1,
-        "sampleAnswer": "× (0.8)3 S = 50 000 = 25 600"
+        "sampleAnswer": "× (0.8)3 S = 50 000 = 25 600",
+        "criteria": [
+          {
+            "marks": 1,
+            "text": "Provides correct solution"
+          }
+        ]
       },
       {
         "question": 27,
         "part": "b",
         "marks": 2,
-        "sampleAnswer": "× Annual depreciated amount = 12.2% 50 000 = $6100 25 600 = 50 000 − 6100n −24 400 = −6100n −24 400 = n −6100 4 = n ∴ n = 4 years"
+        "sampleAnswer": "× Annual depreciated amount = 12.2% 50 000 = $6100 25 600 = 50 000 − 6100n −24 400 = −6100n −24 400 = n −6100 4 = n ∴ n = 4 years",
+        "criteria": [
+          {
+            "marks": 2,
+            "text": "Provides correct solution"
+          },
+          {
+            "marks": 1,
+            "text": "Finds the annual depreciated amount, or equivalent merit"
+          }
+        ]
       },
       {
         "question": 28,
         "part": null,
         "marks": 4,
-        "sampleAnswer": "1 Area of the triangle = ab sinC 2 1 × × = 25 × 25 sin150° 2 2 = 156.25 m × Volume of dam = 156.25 50 m3 = 7812.5 m3 1 = 1000 L × Number of litres = 7812.5 1000 = 7 812 500 L"
+        "sampleAnswer": "1 Area of the triangle = ab sinC 2 1 × × = 25 × 25 sin150° 2 2 = 156.25 m × Volume of dam = 156.25 50 m3 = 7812.5 m3 1 = 1000 L × Number of litres = 7812.5 1000 = 7 812 500 L",
+        "criteria": [
+          {
+            "marks": 4,
+            "text": "Provides correct solution"
+          },
+          {
+            "marks": 3,
+            "text": "3 Finds the volume of the dam in m , or equivalent merit"
+          },
+          {
+            "marks": 2,
+            "text": "Finds the area of the base triangle, or equivalent merit"
+          },
+          {
+            "marks": 1,
+            "text": "Attempts to find the area of the base, or equivalent merit"
+          }
+        ]
       },
       {
         "question": 29,
         "part": null,
         "marks": 3,
-        "sampleAnswer": "Time difference = 10 −−5 = 15 hours 8:20 pm on Wednesday (Sydney) plus 20 hours 24 minutes = 4:44 pm Thursday (Sydney) 4:44 pm − 15 hours = 1:44 am New York In New York it will be 1:44 am Thursday."
+        "sampleAnswer": "Time difference = 10 −−5 = 15 hours 8:20 pm on Wednesday (Sydney) plus 20 hours 24 minutes = 4:44 pm Thursday (Sydney) 4:44 pm − 15 hours = 1:44 am New York In New York it will be 1:44 am Thursday.",
+        "criteria": [
+          {
+            "marks": 3,
+            "text": "Provides correct solution"
+          },
+          {
+            "marks": 2,
+            "text": "Finds the time in Sydney when the plane lands in New York, or equivalent merit"
+          },
+          {
+            "marks": 1,
+            "text": "Finds the time difference between Sydney and New York, or equivalent merit"
+          }
+        ]
       },
       {
         "question": 30,
         "part": "a",
         "marks": 2,
-        "sampleAnswer": "× P = 40 000, r = 1.2% pa compounded monthly, N = 10 12 = 120 120 0.012 ⎛ ⎞ = + 40 000 1 FV ⎝ ⎠ 12 = $45 097.17"
+        "sampleAnswer": "× P = 40 000, r = 1.2% pa compounded monthly, N = 10 12 = 120 120 0.012 ⎛ ⎞ = + 40 000 1 FV ⎝ ⎠ 12 = $45 097.17",
+        "criteria": [
+          {
+            "marks": 2,
+            "text": "Provides correct solution"
+          },
+          {
+            "marks": 1,
+            "text": "Writes an expression for the future value with some correct element(s), or equivalent merit"
+          }
+        ]
       },
       {
         "question": 30,
         "part": "b",
         "marks": 2,
-        "sampleAnswer": "Option 2 = × 10 years quarterly ===> N 10 4 = 40 2.4% 0.024 = = = 0.006 r 4 4 From table: 45.05630 × So FV = 45.05630 1000 = 45 056.30 As Option 1 = $45 097.17, the difference is $40.87 ."
+        "sampleAnswer": "Option 2 = × 10 years quarterly ===> N 10 4 = 40 2.4% 0.024 = = = 0.006 r 4 4 From table: 45.05630 × So FV = 45.05630 1000 = 45 056.30 As Option 1 = $45 097.17, the difference is $40.87 .",
+        "criteria": [
+          {
+            "marks": 2,
+            "text": "Provides correct solution"
+          },
+          {
+            "marks": 1,
+            "text": "Calculates the future value using the interest factor table, or equivalent merit"
+          }
+        ]
       },
       {
         "question": 31,
         "part": "a",
         "marks": 1,
-        "sampleAnswer": "Capacity of cut is 40."
+        "sampleAnswer": "Capacity of cut is 40.",
+        "criteria": [
+          {
+            "marks": 1,
+            "text": "Provides correct answer"
+          }
+        ]
       },
       {
         "question": 31,
         "part": "b",
         "marks": 2,
-        "sampleAnswer": "For the maximum flow capacity to be 40, there must be a minimum cut of 40. Since there is a cut of 35 (see above in diagram) then the maximum flow must be less than 40."
+        "sampleAnswer": "For the maximum flow capacity to be 40, there must be a minimum cut of 40. Since there is a cut of 35 (see above in diagram) then the maximum flow must be less than 40.",
+        "criteria": [
+          {
+            "marks": 2,
+            "text": "Provides correct solution"
+          },
+          {
+            "marks": 1,
+            "text": "Shows a cut of less than 40, or equivalent merit"
+          }
+        ]
       },
       {
         "question": 31,
         "part": "c",
         "marks": 2,
-        "sampleAnswer": "The path from C to B can be increased by 5. Answers could include: The path from A to E, increased by 5 The path from D to E, increased by 5"
+        "sampleAnswer": "The path from C to B can be increased by 5. Answers could include: The path from A to E, increased by 5 The path from D to E, increased by 5",
+        "criteria": [
+          {
+            "marks": 2,
+            "text": "Provides correct solution"
+          },
+          {
+            "marks": 1,
+            "text": "Gives the correct path OR the current amount, or equivalent merit"
+          }
+        ]
       },
       {
         "question": 32,
         "part": "a",
         "marks": 2,
-        "sampleAnswer": "1 1 × × × × A = 100 (160 + 150) + 100 (150 + 250) 2 2 × × = 50 310 + 50 400 m2 Area = 35 500"
+        "sampleAnswer": "1 1 × × × × A = 100 (160 + 150) + 100 (150 + 250) 2 2 × × = 50 310 + 50 400 m2 Area = 35 500",
+        "criteria": [
+          {
+            "marks": 2,
+            "text": "Provides correct solution"
+          },
+          {
+            "marks": 1,
+            "text": "Applies the trapezoidal rule, or equivalent merit"
+          }
+        ]
       },
       {
         "question": 32,
         "part": "b",
         "marks": 2,
-        "sampleAnswer": "Total area = rectangle + semicircle 1 p × 1002 = 200 × 250 + × 2 = 65 707.96 ≈ 2 65 708 m Lake area = total area − grassed section = 65 708 − 35 500 2 = 30 208 m"
+        "sampleAnswer": "Total area = rectangle + semicircle 1 p × 1002 = 200 × 250 + × 2 = 65 707.96 ≈ 2 65 708 m Lake area = total area − grassed section = 65 708 − 35 500 2 = 30 208 m",
+        "criteria": [
+          {
+            "marks": 2,
+            "text": "Provides correct solution"
+          },
+          {
+            "marks": 1,
+            "text": "Finds the area of the rectangle and semicircle, or equivalent merit"
+          }
+        ]
       },
       {
         "question": 33,
         "part": "a",
         "marks": 2,
-        "sampleAnswer": "Using cosine rule. c2 a2 b2 = + − 2 ab cosC × × 502 202 = + − 2 20 50 cos 45° c2 = 1485.78… c = 38.5 (correct to 1 decimal place)"
+        "sampleAnswer": "Using cosine rule. c2 a2 b2 = + − 2 ab cosC × × 502 202 = + − 2 20 50 cos 45° c2 = 1485.78… c = 38.5 (correct to 1 decimal place)",
+        "criteria": [
+          {
+            "marks": 2,
+            "text": "Provides correct solution"
+          },
+          {
+            "marks": 1,
+            "text": "Attempts to use the cosine rule, or equivalent merit"
+          }
+        ]
       },
       {
         "question": 33,
         "part": "b",
         "marks": 2,
-        "sampleAnswer": "sin(∠OBA) sin45° = 20 38.5 20sin45° sin(∠OBA) = 38.5 = 0.3673… ∠OBA = 22° (nearest degree)"
+        "sampleAnswer": "sin(∠OBA) sin45° = 20 38.5 20sin45° sin(∠OBA) = 38.5 = 0.3673… ∠OBA = 22° (nearest degree)",
+        "criteria": [
+          {
+            "marks": 2,
+            "text": "Provides correct solution"
+          },
+          {
+            "marks": 1,
+            "text": "Attempts to use the sine rule"
+          }
+        ]
       },
       {
         "question": 33,
         "part": "c",
         "marks": 1,
-        "sampleAnswer": "180° + 22° = 202°"
+        "sampleAnswer": "180° + 22° = 202°",
+        "criteria": [
+          {
+            "marks": 1,
+            "text": "Provides correct answer"
+          }
+        ]
       },
       {
         "question": 34,
         "part": null,
         "marks": 4,
-        "sampleAnswer": "Surface area of: 4pr2 Sphere = (diameter of 6 cm so radius of 3 cm) 1 × 4p × 32 Curved bottom of hemisphere = 2 p 32 Top of hemisphere = × − (bottom of cylinder) p p × 32 22 = × − p × 22 Top of cylinder = 2p × Curved side of cylinder = × 2 3 1 × 4p × p × p × p × p × 32 32 22 22 Total surface area = + − + + 2 6 2 cm2 = 122.5"
+        "sampleAnswer": "Surface area of: 4pr2 Sphere = (diameter of 6 cm so radius of 3 cm) 1 × 4p × 32 Curved bottom of hemisphere = 2 p 32 Top of hemisphere = × − (bottom of cylinder) p p × 32 22 = × − p × 22 Top of cylinder = 2p × Curved side of cylinder = × 2 3 1 × 4p × p × p × p × p × 32 32 22 22 Total surface area = + − + + 2 6 2 cm2 = 122.5",
+        "criteria": [
+          {
+            "marks": 4,
+            "text": "Provides correct solution"
+          },
+          {
+            "marks": 3,
+            "text": "Calculates the curved area of the cylinder AND of the hemisphere"
+          },
+          {
+            "marks": 2,
+            "text": "Calculates the curved area of the cylinder OR of the hemisphere"
+          },
+          {
+            "marks": 1,
+            "text": "Calculates any relevant area"
+          }
+        ]
       },
       {
         "question": 35,
         "part": null,
         "marks": 4,
-        "sampleAnswer": "The data show that: • The relationship is linear and positive/increasing. The correlation of 0.4564 is weak/moderate. • As character age increases by 1 year, the actor age increases by almost 2 years. • The actors playing teenagers do not need to be teenagers themselves. The ages of characters range from 14 to 17 but the ages of actors playing these characters range from 14 to 30. This means that there is no need for just young actors but older people can play teenage characters. • There are only a few characters of age 14 and they are played by actors ranging in age between 14−23. • Characters of age 15 is the largest group and they are played by actors with the widest age range (14−27). • Characters older than 15 are all played by older actors. The youngest actors in the dataset are playing characters close to their own age."
+        "sampleAnswer": "The data show that: • The relationship is linear and positive/increasing. The correlation of 0.4564 is weak/moderate. • As character age increases by 1 year, the actor age increases by almost 2 years. • The actors playing teenagers do not need to be teenagers themselves. The ages of characters range from 14 to 17 but the ages of actors playing these characters range from 14 to 30. This means that there is no need for just young actors but older people can play teenage characters. • There are only a few characters of age 14 and they are played by actors ranging in age between 14−23. • Characters of age 15 is the largest group and they are played by actors with the widest age range (14−27). • Characters older than 15 are all played by older actors. The youngest actors in the dataset are playing characters close to their own age.",
+        "criteria": [
+          {
+            "marks": 4,
+            "text": "Provides a comprehensive description and interpretation of the data and other information, in the given context"
+          },
+          {
+            "marks": 3,
+            "text": "Provides a sound description and interpretation of the data and other information, in the given context"
+          },
+          {
+            "marks": 2,
+            "text": "Provides some description and interpretation of the data and/or other information"
+          },
+          {
+            "marks": 1,
+            "text": "Provides some relevant information"
+          }
+        ]
       },
       {
         "question": 36,
         "part": "a",
         "marks": 2,
-        "sampleAnswer": "r = 7.2% pa monthly × A = 199 715 0.006 = $1198.29 B = 199 428.29 + 1196.57 − 1485 = $199 139.86"
+        "sampleAnswer": "r = 7.2% pa monthly × A = 199 715 0.006 = $1198.29 B = 199 428.29 + 1196.57 − 1485 = $199 139.86",
+        "criteria": [
+          {
+            "marks": 2,
+            "text": "Provides correct solution"
+          },
+          {
+            "marks": 1,
+            "text": "Calculates either A or B"
+          }
+        ]
       },
       {
         "question": 36,
         "part": "b",
         "marks": 3,
-        "sampleAnswer": "Number of repayments = 50 + 146 = 196 Total amount repaid = 196 × $1485 + $40 000 = $331 060 × × Repayment under original conditions = 23 12 $1485 = $409 860 Frankie saves = $409 860 − $331 060 = $78 800"
+        "sampleAnswer": "Number of repayments = 50 + 146 = 196 Total amount repaid = 196 × $1485 + $40 000 = $331 060 × × Repayment under original conditions = 23 12 $1485 = $409 860 Frankie saves = $409 860 − $331 060 = $78 800",
+        "criteria": [
+          {
+            "marks": 3,
+            "text": "Provides correct solution"
+          },
+          {
+            "marks": 2,
+            "text": "Calculates the total amount repaid"
+          },
+          {
+            "marks": 1,
+            "text": "Calculates the total repayments under the original arrangements OR finds the total number of repayments made"
+          }
+        ]
       },
       {
         "question": 37,
         "part": null,
         "marks": 3,
-        "sampleAnswer": "60% have a life span < 860. ∴ 10% have a life span between 840 and 860. ∴ 10% have a life span between 820 and 840. 68% have a life span between 760 and 920. ∴ 34% have a life span between 840 and 920. ∴ percentage with life span between 820 and 920 hours is 10% + 34% = 44%."
+        "sampleAnswer": "60% have a life span < 860. ∴ 10% have a life span between 840 and 860. ∴ 10% have a life span between 820 and 840. 68% have a life span between 760 and 920. ∴ 34% have a life span between 840 and 920. ∴ percentage with life span between 820 and 920 hours is 10% + 34% = 44%.",
+        "criteria": [
+          {
+            "marks": 3,
+            "text": "Provides correct solution"
+          },
+          {
+            "marks": 2,
+            "text": "Recognises that 34% have a life span between 840 and 920 AND attempts to use the information given regarding the statistical tables"
+          },
+          {
+            "marks": 1,
+            "text": "Recognises that 68% have a life span between 760 and 920, or equivalent merit"
+          }
+        ]
       },
       {
         "question": 38,
         "part": null,
         "marks": 3,
-        "sampleAnswer": "4.8 L cordial to water 1: 3 Remove 1.2 L 3.6 L in ratio 1: 3 3.6 L of cordial = 0.9 L cordial 4 × 3.6 3 L of water = 2.7 L water 4 Add 1.2 L of water New ratio = 0.9 L cordial : 3.9 L water = 3 cordial :13 water 3 :13 cordial to water. 2022 HSC Mathematics Standard 2 Mapping Grid Section I Question Marks Content Syllabus outcomes 1 1 MS-S1 Data Analysis MS11-2 2 1 MS-A2 Linear Relationships MS11-2 3 1 MS-N3 Critical Path Analysis MS2-12-8 4 1 MS-M7 Rates and Ratios MS2-12-3 5 1 MS-S1 Data Analysis MS11-7 6 1 MS-M7 Rates and Ratios MS2-12-3 7 1 MS-F1 Money Matters MS11-10 8 1 MS-M6 Non-right-angled Trigonometry MS2-12-4 9 1 MS-A4 Types of Relationships MS2-12-6 10 1 MS-F4 Investments and Loans MS2-12-5 11 1 MS-F4 Investments and Loans MS2-12-5 12 1 MS-S4 Bivariate Data Analysis MS2-12-2 13 1 MS-S5 The Normal Distribution MS2-12-7 14 1 MS-A1 Formulae and Equations MS11-1 15 1 MS-S1 Data Analysis MS11-2 Section II Question Marks Content Syllabus outcomes 16 (a) 1 MS-M7 Rates and Ratios MS2-12-3 16 (b) 2 MS-M7 Rates and Ratios MS2-12-3 17 (a) 2 MS-S2 Relative Frequency and Probability MS11-8 17 (b) 1 MS-S2 Relative Frequency and Probability MS11-8 18 2 MS-S5 The Normal Distribution MS2-12-7 19 (a) 2 MS-S1 Data Analysis MS11-2 19 (b) 1 MS-S1 Data Analysis MS11-2 20 (a) 2 MS-N2 Network Concepts MS2-12-8 20 (b) 3 MS-N2 Network Concepts MS2-12-8 21 2 MS-F1 Money Matters MS11-5 22 (a) 1 MS-A2 Linear Relationships MS11-6 Question Marks Content Syllabus outcomes 22 (b) 2 MS-A2 Linear Relationships MS11-6 23 (a) 2 MS-S4 Bivariate Data Analysis MS2-12-2 23 (b) 2 MS-S4 Bivariate Data Analysis MS2-12-10 24 (a) 2 MS-A4 Types of Relationships MS2-12-6 24 (b) 2 MS-A4 Types of Relationships MS2-12-6 25 (a) 2 MS-F5 Annuities MS2-12-5 25 (b) 2 MS-F5 Annuities MS2-12-5 26 4 MS-M6 Non-right-angled Trigonometry MS2-12-4 27 (a) (i) 1 MS-F4 Investments and Loans MS2-12-5 27 (a) (ii) 1 MS-F4 Investments and Loans MS2-12-5 27 (b) 2 MS-F4 Investments and Loans MS2-12-5 28 4 MS-M6 Non-right-angled Trigonometry MS2-12-4 29 3 MS-M2 Working with Time MS11-10 30 (a) 2 MS-F4 Investments and Loans MS2-12-10 30 (b) 2 MS-F5 Annuities MS2-12-10 31 (a) 1 MS-N3 Critical Path Analysis MS2-12-8 31 (b) 2 MS-N3 Critical Path Analysis MS2-12-8 31 (c) 2 MS-N3 Critical Path Analysis MS2-12-8 32 (a) 2 MS-M7 Rates and Ratios MS2-12-4 32 (b) 2 MS-M7 Rates and Ratios MS2-12-4 33 (a) 2 MS-M6 Non-right-angled Trigonometry MS2-12-4 33 (b) 2 MS-M6 Non-right-angled Trigonometry MS2-12-4 33 (c) 1 MS-M6 Non-right-angled Trigonometry MS2-12-4 34 4 MS-M1 Applications of Measurement MS2-11-4 35 4 MS-S4 Bivariate Data Analysis MS2-12-10 36 (a) 2 MS-F5 Annuities MS2-12-5 36 (b) 3 MS-F5 Annuities MS2-12-10 37 3 MS-S5 The Normal Distribution MS2-12-7 38 3 MS-M7 Rates and Ratios MS2-12-3"
+        "sampleAnswer": "4.8 L cordial to water 1: 3 Remove 1.2 L 3.6 L in ratio 1: 3 3.6 L of cordial = 0.9 L cordial 4 × 3.6 3 L of water = 2.7 L water 4 Add 1.2 L of water New ratio = 0.9 L cordial : 3.9 L water = 3 cordial :13 water 3 :13 cordial to water. 2022 HSC Mathematics Standard 2 Mapping Grid Section I Question Marks Content Syllabus outcomes 1 1 MS-S1 Data Analysis MS11-2 2 1 MS-A2 Linear Relationships MS11-2 3 1 MS-N3 Critical Path Analysis MS2-12-8 4 1 MS-M7 Rates and Ratios MS2-12-3 5 1 MS-S1 Data Analysis MS11-7 6 1 MS-M7 Rates and Ratios MS2-12-3 7 1 MS-F1 Money Matters MS11-10 8 1 MS-M6 Non-right-angled Trigonometry MS2-12-4 9 1 MS-A4 Types of Relationships MS2-12-6 10 1 MS-F4 Investments and Loans MS2-12-5 11 1 MS-F4 Investments and Loans MS2-12-5 12 1 MS-S4 Bivariate Data Analysis MS2-12-2 13 1 MS-S5 The Normal Distribution MS2-12-7 14 1 MS-A1 Formulae and Equations MS11-1 15 1 MS-S1 Data Analysis MS11-2 Section II Question Marks Content Syllabus outcomes 16 (a) 1 MS-M7 Rates and Ratios MS2-12-3 16 (b) 2 MS-M7 Rates and Ratios MS2-12-3 17 (a) 2 MS-S2 Relative Frequency and Probability MS11-8 17 (b) 1 MS-S2 Relative Frequency and Probability MS11-8 18 2 MS-S5 The Normal Distribution MS2-12-7 19 (a) 2 MS-S1 Data Analysis MS11-2 19 (b) 1 MS-S1 Data Analysis MS11-2 20 (a) 2 MS-N2 Network Concepts MS2-12-8 20 (b) 3 MS-N2 Network Concepts MS2-12-8 21 2 MS-F1 Money Matters MS11-5 22 (a) 1 MS-A2 Linear Relationships MS11-6 Question Marks Content Syllabus outcomes 22 (b) 2 MS-A2 Linear Relationships MS11-6 23 (a) 2 MS-S4 Bivariate Data Analysis MS2-12-2 23 (b) 2 MS-S4 Bivariate Data Analysis MS2-12-10 24 (a) 2 MS-A4 Types of Relationships MS2-12-6 24 (b) 2 MS-A4 Types of Relationships MS2-12-6 25 (a) 2 MS-F5 Annuities MS2-12-5 25 (b) 2 MS-F5 Annuities MS2-12-5 26 4 MS-M6 Non-right-angled Trigonometry MS2-12-4 27 (a) (i) 1 MS-F4 Investments and Loans MS2-12-5 27 (a) (ii) 1 MS-F4 Investments and Loans MS2-12-5 27 (b) 2 MS-F4 Investments and Loans MS2-12-5 28 4 MS-M6 Non-right-angled Trigonometry MS2-12-4 29 3 MS-M2 Working with Time MS11-10 30 (a) 2 MS-F4 Investments and Loans MS2-12-10 30 (b) 2 MS-F5 Annuities MS2-12-10 31 (a) 1 MS-N3 Critical Path Analysis MS2-12-8 31 (b) 2 MS-N3 Critical Path Analysis MS2-12-8 31 (c) 2 MS-N3 Critical Path Analysis MS2-12-8 32 (a) 2 MS-M7 Rates and Ratios MS2-12-4 32 (b) 2 MS-M7 Rates and Ratios MS2-12-4 33 (a) 2 MS-M6 Non-right-angled Trigonometry MS2-12-4 33 (b) 2 MS-M6 Non-right-angled Trigonometry MS2-12-4 33 (c) 1 MS-M6 Non-right-angled Trigonometry MS2-12-4 34 4 MS-M1 Applications of Measurement MS2-11-4 35 4 MS-S4 Bivariate Data Analysis MS2-12-10 36 (a) 2 MS-F5 Annuities MS2-12-5 36 (b) 3 MS-F5 Annuities MS2-12-10 37 3 MS-S5 The Normal Distribution MS2-12-7 38 3 MS-M7 Rates and Ratios MS2-12-3",
+        "criteria": [
+          {
+            "marks": 3,
+            "text": "Provides correct solution"
+          },
+          {
+            "marks": 2,
+            "text": "Calculates the amount of cordial and of water in the mixture of 3.6 L"
+          },
+          {
+            "marks": 1,
+            "text": "Attempts to apply the ratio 1: 3 to the mixture of 3.6 L"
+          }
+        ]
       }
     ],
     "2023": [
@@ -728,241 +1986,661 @@
         "question": 16,
         "part": "a",
         "marks": 1,
-        "sampleAnswer": "120 bpm"
+        "sampleAnswer": "120 bpm",
+        "criteria": [
+          {
+            "marks": 1,
+            "text": "Provides correct answer"
+          }
+        ]
       },
       {
         "question": 16,
         "part": "b",
         "marks": 1,
-        "sampleAnswer": "10:30 am"
+        "sampleAnswer": "10:30 am",
+        "criteria": [
+          {
+            "marks": 1,
+            "text": "Provides correct answer"
+          }
+        ]
       },
       {
         "question": 17,
         "part": "a",
         "marks": 2,
-        "sampleAnswer": ""
+        "sampleAnswer": "",
+        "criteria": [
+          {
+            "marks": 2,
+            "text": "Completes the network diagram"
+          },
+          {
+            "marks": 1,
+            "text": "Provides a diagram that is substantially correct"
+          }
+        ]
       },
       {
         "question": 17,
         "part": "b",
         "marks": 1,
-        "sampleAnswer": "Kilometres travelled = 1040 km + 3150 km = 4190 km"
+        "sampleAnswer": "Kilometres travelled = 1040 km + 3150 km = 4190 km",
+        "criteria": [
+          {
+            "marks": 1,
+            "text": "Provides correct answer"
+          }
+        ]
       },
       {
         "question": 18,
         "part": null,
         "marks": 2,
-        "sampleAnswer": "The histogram is symmetrical. The histogram is unimodal."
+        "sampleAnswer": "The histogram is symmetrical. The histogram is unimodal.",
+        "criteria": [
+          {
+            "marks": 2,
+            "text": "Provides two correct features"
+          },
+          {
+            "marks": 1,
+            "text": "Provides one correct feature"
+          }
+        ]
       },
       {
         "question": 19,
         "part": "a",
         "marks": 2,
-        "sampleAnswer": "Path ABFGD Answers could include:"
+        "sampleAnswer": "Path ABFGD Answers could include:",
+        "criteria": [
+          {
+            "marks": 2,
+            "text": "Provides correct answer"
+          },
+          {
+            "marks": 1,
+            "text": "Provides a path from A to D, or equivalent merit"
+          }
+        ]
       },
       {
         "question": 19,
         "part": "b",
         "marks": 2,
-        "sampleAnswer": "It is not a minimum spanning tree as BC is not the shortest path to join C to the tree."
+        "sampleAnswer": "It is not a minimum spanning tree as BC is not the shortest path to join C to the tree.",
+        "criteria": [
+          {
+            "marks": 2,
+            "text": "Provides correct answer with a correct reason"
+          },
+          {
+            "marks": 1,
+            "text": "Provides an explanation or spanning tree, or equivalent merit"
+          }
+        ]
       },
       {
         "question": 20,
         "part": "a",
         "marks": 1,
-        "sampleAnswer": "Maximum height reached = 24 m"
+        "sampleAnswer": "Maximum height reached = 24 m",
+        "criteria": [
+          {
+            "marks": 1,
+            "text": "Provides correct answer"
+          }
+        ]
       },
       {
         "question": 20,
         "part": "b",
         "marks": 2,
-        "sampleAnswer": "3 24 × = 18 m 4 The ball reached 18 m at 1 second and 3 seconds."
+        "sampleAnswer": "3 24 × = 18 m 4 The ball reached 18 m at 1 second and 3 seconds.",
+        "criteria": [
+          {
+            "marks": 2,
+            "text": "Provides correct answers"
+          },
+          {
+            "marks": 1,
+            "text": "3 Calculates of the maximum height, or equivalent merit 4"
+          }
+        ]
       },
       {
         "question": 21,
         "part": "a",
         "marks": 1,
-        "sampleAnswer": "Electricity used in a 0 400 1000 month (kWh) Monthly charge ($) 40 140 290"
+        "sampleAnswer": "Electricity used in a 0 400 1000 month (kWh) Monthly charge ($) 40 140 290",
+        "criteria": [
+          {
+            "marks": 1,
+            "text": "Completes the table correctly"
+          }
+        ]
       },
       {
         "question": 21,
         "part": "b",
         "marks": 1,
-        "sampleAnswer": ""
+        "sampleAnswer": "",
+        "criteria": [
+          {
+            "marks": 1,
+            "text": "Graphs Provider A’s charges"
+          }
+        ]
       },
       {
         "question": 21,
         "part": "c",
         "marks": 1,
-        "sampleAnswer": "They charge the same amount at 400 kWh."
+        "sampleAnswer": "They charge the same amount at 400 kWh.",
+        "criteria": [
+          {
+            "marks": 1,
+            "text": "Provides correct answer"
+          }
+        ]
       },
       {
         "question": 21,
         "part": "d",
         "marks": 2,
-        "sampleAnswer": "Provider B at 800 kWh charges $280 Provider A at 800 kWh charges $240 ∴ Provider A would be the cheaper option by $40."
+        "sampleAnswer": "Provider B at 800 kWh charges $280 Provider A at 800 kWh charges $240 ∴ Provider A would be the cheaper option by $40.",
+        "criteria": [
+          {
+            "marks": 2,
+            "text": "Provides correct solution"
+          },
+          {
+            "marks": 1,
+            "text": "Demonstrates some progress towards identifying the cheaper option, or equivalent merit"
+          }
+        ]
       },
       {
         "question": 22,
         "part": "a",
         "marks": 2,
-        "sampleAnswer": "2 Braking distance = k × (speed) (50)2 20 = k × 20 k = (50)2 k = 0.008"
+        "sampleAnswer": "2 Braking distance = k × (speed) (50)2 20 = k × 20 k = (50)2 k = 0.008",
+        "criteria": [
+          {
+            "marks": 2,
+            "text": "Provides correct solution"
+          },
+          {
+            "marks": 1,
+            "text": "Correctly substitutes values into the formula, or equivalent merit"
+          }
+        ]
       },
       {
         "question": 22,
         "part": "b",
         "marks": 1,
-        "sampleAnswer": "(speed)2 Braking distance = k × 902 = 0.008 × = 64.8 m"
+        "sampleAnswer": "(speed)2 Braking distance = k × 902 = 0.008 × = 64.8 m",
+        "criteria": [
+          {
+            "marks": 1,
+            "text": "Provides correct answer"
+          }
+        ]
       },
       {
         "question": 23,
         "part": null,
         "marks": 2,
-        "sampleAnswer": "5 4 × P(wins both prizes) = 100 99 20 = 9900 1 = 495"
+        "sampleAnswer": "5 4 × P(wins both prizes) = 100 99 20 = 9900 1 = 495",
+        "criteria": [
+          {
+            "marks": 2,
+            "text": "Provides correct answer"
+          },
+          {
+            "marks": 1,
+            "text": "Calculates the probability that Hazel wins the first prize, or equivalent merit"
+          }
+        ]
       },
       {
         "question": 24,
         "part": "a",
         "marks": 2,
-        "sampleAnswer": "4.0 4.0 (1.9 2.7) (2.7 1.7) + + + A = 2 2 2 = 18 m"
+        "sampleAnswer": "4.0 4.0 (1.9 2.7) (2.7 1.7) + + + A = 2 2 2 = 18 m",
+        "criteria": [
+          {
+            "marks": 2,
+            "text": "Provides correct solution"
+          },
+          {
+            "marks": 1,
+            "text": "Attempts to use the trapezoidal rule"
+          }
+        ]
       },
       {
         "question": 24,
         "part": "b",
         "marks": 3,
-        "sampleAnswer": "V = 18 × 0.8 m3 = 14.4 Tonnes of concrete = 14.4 × 3.52 tonnes = 50.688 tonnes = 51 tonnes (2 significant figures)"
+        "sampleAnswer": "V = 18 × 0.8 m3 = 14.4 Tonnes of concrete = 14.4 × 3.52 tonnes = 50.688 tonnes = 51 tonnes (2 significant figures)",
+        "criteria": [
+          {
+            "marks": 3,
+            "text": "Provides correct solution to two significant figures"
+          },
+          {
+            "marks": 2,
+            "text": "Provides the weight of concrete (unrounded), or equivalent merit"
+          },
+          {
+            "marks": 1,
+            "text": "Provides the volume of the wall, or equivalent merit"
+          }
+        ]
       },
       {
         "question": 25,
         "part": "a",
         "marks": 2,
-        "sampleAnswer": "$450 000 Amount = 13.181 = $34 140 (to the nearest dollar)"
+        "sampleAnswer": "$450 000 Amount = 13.181 = $34 140 (to the nearest dollar)",
+        "criteria": [
+          {
+            "marks": 2,
+            "text": "Provides correct solution"
+          },
+          {
+            "marks": 1,
+            "text": "Identifies the correct factor from the table"
+          }
+        ]
       },
       {
         "question": 25,
         "part": "b",
         "marks": 3,
-        "sampleAnswer": "6 % r = 4 = 1.5% n = 10 × 4 = 40 Amount = $8535 × 54.268 = $463 177.38"
+        "sampleAnswer": "6 % r = 4 = 1.5% n = 10 × 4 = 40 Amount = $8535 × 54.268 = $463 177.38",
+        "criteria": [
+          {
+            "marks": 3,
+            "text": "Provides correct solution"
+          },
+          {
+            "marks": 2,
+            "text": "Provides the correct interest rate and the correct number of periods, or equivalent merit"
+          },
+          {
+            "marks": 1,
+            "text": "Multiplies a factor from the table by $8535, or equivalent merit"
+          }
+        ]
       },
       {
         "question": 26,
         "part": "a",
         "marks": 2,
-        "sampleAnswer": "Area of path = (3 m × 8 m) − (7 m × 2.5 m) 2 = 6.5 m"
+        "sampleAnswer": "Area of path = (3 m × 8 m) − (7 m × 2.5 m) 2 = 6.5 m",
+        "criteria": [
+          {
+            "marks": 2,
+            "text": "Calculates the correct area of the path"
+          },
+          {
+            "marks": 1,
+            "text": "Attempts to calculate the area of the path, or equivalent merit"
+          }
+        ]
       },
       {
         "question": 26,
         "part": "b",
         "marks": 3,
-        "sampleAnswer": "R S C 4 : 2 : 1 1 Amount of cement = × 2.1 tonnes 7 = 0.3 tonnes = 300 kg 300 Number of bags = 15 = 20 bags"
+        "sampleAnswer": "R S C 4 : 2 : 1 1 Amount of cement = × 2.1 tonnes 7 = 0.3 tonnes = 300 kg 300 Number of bags = 15 = 20 bags",
+        "criteria": [
+          {
+            "marks": 3,
+            "text": "Calculates the number of bags of cement required"
+          },
+          {
+            "marks": 2,
+            "text": "Calculates the weight of cement required, or equivalent merit"
+          },
+          {
+            "marks": 1,
+            "text": "Identifies the proportion of cement in the mixture, or equivalent merit"
+          }
+        ]
       },
       {
         "question": 27,
         "part": "a",
         "marks": 2,
-        "sampleAnswer": "∠PXY = 180° − 120° = 60° XP = 15 km × cos 60° = 7.5 km"
+        "sampleAnswer": "∠PXY = 180° − 120° = 60° XP = 15 km × cos 60° = 7.5 km",
+        "criteria": [
+          {
+            "marks": 2,
+            "text": "Provides the correct solution"
+          },
+          {
+            "marks": 1,
+            "text": "Identifies an angle in triangle PXY, or equivalent merit"
+          }
+        ]
       },
       {
         "question": 27,
         "part": "b",
         "marks": 2,
-        "sampleAnswer": "θ = ∠CXP Let 7.5 cosθ = 40 θ = 79°12' ∴ Bearing of C = 180° + 79°12' = 259°12' = 259° (to the nearest degree)"
+        "sampleAnswer": "θ = ∠CXP Let 7.5 cosθ = 40 θ = 79°12' ∴ Bearing of C = 180° + 79°12' = 259°12' = 259° (to the nearest degree)",
+        "criteria": [
+          {
+            "marks": 2,
+            "text": "Provides the correct solution"
+          },
+          {
+            "marks": 1,
+            "text": "Calculates one of the acute angles in the triangle CXP, or equivalent merit"
+          }
+        ]
       },
       {
         "question": 28,
         "part": null,
         "marks": 3,
-        "sampleAnswer": "Straight-line method: S = V0 − Dn = $60 000 − $3500 × 3 = $49 500 r)n Declining-balance method: S = V0 (1 − 12%)3 = $60 000 (1 − (0.88)3 = $60 000 = $40 888.32 ∴ Declining-balance method would provide a lower salvage value."
+        "sampleAnswer": "Straight-line method: S = V0 − Dn = $60 000 − $3500 × 3 = $49 500 r)n Declining-balance method: S = V0 (1 − 12%)3 = $60 000 (1 − (0.88)3 = $60 000 = $40 888.32 ∴ Declining-balance method would provide a lower salvage value.",
+        "criteria": [
+          {
+            "marks": 3,
+            "text": "Provides the correct solution"
+          },
+          {
+            "marks": 2,
+            "text": "Correctly calculates the salvage value using the declining-balance method, or equivalent merit"
+          },
+          {
+            "marks": 1,
+            "text": "Attempts to calculate the salvage value using the declining-balance method, or equivalent merit"
+          }
+        ]
       },
       {
         "question": 29,
         "part": "a",
         "marks": 3,
-        "sampleAnswer": "Amount repaid per month = ($520 000 ÷ 1000) × 7.72 = $4014.40 Total amount repaid = $4014.40 × 12 × 25 = $1 204 320"
+        "sampleAnswer": "Amount repaid per month = ($520 000 ÷ 1000) × 7.72 = $4014.40 Total amount repaid = $4014.40 × 12 × 25 = $1 204 320",
+        "criteria": [
+          {
+            "marks": 3,
+            "text": "Provides correct solution"
+          },
+          {
+            "marks": 2,
+            "text": "Calculates the monthly repayment, or equivalent merit"
+          },
+          {
+            "marks": 1,
+            "text": "Identifies the correct factor from the table, or equivalent merit"
+          }
+        ]
       },
       {
         "question": 29,
         "part": "b",
         "marks": 1,
-        "sampleAnswer": "Amount borrowed = ($3596 ÷ 8.99) × 1000 = $400 000"
+        "sampleAnswer": "Amount borrowed = ($3596 ÷ 8.99) × 1000 = $400 000",
+        "criteria": [
+          {
+            "marks": 1,
+            "text": "Provides correct answer"
+          }
+        ]
       },
       {
         "question": 30,
         "part": null,
         "marks": 3,
-        "sampleAnswer": "10% × n = 3.86 n = $38.60 Value of goods without GST = $124.87 − $38.60 − $3.86 = $82.41"
+        "sampleAnswer": "10% × n = 3.86 n = $38.60 Value of goods without GST = $124.87 − $38.60 − $3.86 = $82.41",
+        "criteria": [
+          {
+            "marks": 3,
+            "text": "Provides the correct solution"
+          },
+          {
+            "marks": 2,
+            "text": "Calculates the difference between the total and the amount on which GST is charged, or equivalent merit"
+          },
+          {
+            "marks": 1,
+            "text": "Calculates the amount on which GST is charged, or equivalent merit"
+          }
+        ]
       },
       {
         "question": 31,
         "part": "a",
         "marks": 2,
-        "sampleAnswer": "Critical paths are H, I, G, C and H, I, K"
+        "sampleAnswer": "Critical paths are H, I, G, C and H, I, K",
+        "criteria": [
+          {
+            "marks": 2,
+            "text": "Correctly identifies TWO critical paths"
+          },
+          {
+            "marks": 1,
+            "text": "Identifies a critical path, or equivalent merit"
+          }
+        ]
       },
       {
         "question": 31,
         "part": "b",
         "marks": 2,
-        "sampleAnswer": "Decrease one task by 3 hours. H and I are common. H is only 2 hours. So task I should take 4 hours."
+        "sampleAnswer": "Decrease one task by 3 hours. H and I are common. H is only 2 hours. So task I should take 4 hours.",
+        "criteria": [
+          {
+            "marks": 2,
+            "text": "Provides correct answer"
+          },
+          {
+            "marks": 1,
+            "text": "Shortens a task on the critical path by 3 hours, or equivalent merit"
+          }
+        ]
       },
       {
         "question": 32,
         "part": "a",
         "marks": 2,
-        "sampleAnswer": "21 13.5 ⎛ ⎞ + 1 % Full amount on card = $450 ⎝ ⎠ 365 = $453.51 ∴ Interest charged = $453.51 − $450 = $3.51"
+        "sampleAnswer": "21 13.5 ⎛ ⎞ + 1 % Full amount on card = $450 ⎝ ⎠ 365 = $453.51 ∴ Interest charged = $453.51 − $450 = $3.51",
+        "criteria": [
+          {
+            "marks": 2,
+            "text": "Provides correct answer"
+          },
+          {
+            "marks": 1,
+            "text": "Substitutes some correct values into the compound interest formula, or equivalent merit"
+          }
+        ]
       },
       {
         "question": 32,
         "part": "b",
         "marks": 2,
-        "sampleAnswer": "$3.51 Percentage = × 100 $453.51 = 0.77%"
+        "sampleAnswer": "$3.51 Percentage = × 100 $453.51 = 0.77%",
+        "criteria": [
+          {
+            "marks": 2,
+            "text": "Provides correct percentage"
+          },
+          {
+            "marks": 1,
+            "text": "Attempts to do a percentage calculation, or equivalent merit"
+          }
+        ]
       },
       {
         "question": 33,
         "part": null,
         "marks": 4,
-        "sampleAnswer": "110 × × π × 2 2.1 Arc length PQ = 360 = 4.03171… 2.12 2.12 + − × × × cos110° 2 2.1 2.1 Length PQ = = 3.4404… Total perimeter = (3.6 × 2) + 8.0 + (8.0 − 3.4404) + 4.0317 = 23.7913 = 23.8 m"
+        "sampleAnswer": "110 × × π × 2 2.1 Arc length PQ = 360 = 4.03171… 2.12 2.12 + − × × × cos110° 2 2.1 2.1 Length PQ = = 3.4404… Total perimeter = (3.6 × 2) + 8.0 + (8.0 − 3.4404) + 4.0317 = 23.7913 = 23.8 m",
+        "criteria": [
+          {
+            "marks": 4,
+            "text": "Provides correct solution"
+          },
+          {
+            "marks": 3,
+            "text": "Calculates the arc length AND the length of line segment PQ, or equivalent merit"
+          },
+          {
+            "marks": 2,
+            "text": "Calculates the arc length OR the length of line segment PQ, or equivalent merit"
+          },
+          {
+            "marks": 1,
+            "text": "Attempts to calculate the perimeter of the shape by adding some appropriate portions, or equivalent merit"
+          }
+        ]
       },
       {
         "question": 34,
         "part": "a",
         "marks": 3,
-        "sampleAnswer": "+ + + + + + + + + 0 0 0 2 5 7 8 9 9 10 x = 10 = 5 1840 y = 10 = 184 (x, ) y ∴ = (5, 184)"
+        "sampleAnswer": "+ + + + + + + + + 0 0 0 2 5 7 8 9 9 10 x = 10 = 5 1840 y = 10 = 184 (x, ) y ∴ = (5, 184)",
+        "criteria": [
+          {
+            "marks": 3,
+            "text": "Correctly plots both points on the graph"
+          },
+          {
+            "marks": 2,
+            "text": "y Calculates and , and plots this point on the grid, or equivalent merit x"
+          },
+          {
+            "marks": 1,
+            "text": "y Calculates or , or equivalent merit x"
+          }
+        ]
       },
       {
         "question": 34,
         "part": "b",
         "marks": 2,
-        "sampleAnswer": "− 184 236 Slope of regression line = 5 = – 10.4 Gas usage = 236 − 10.4 × temperature ie y = 236 – 10.4x"
+        "sampleAnswer": "− 184 236 Slope of regression line = 5 = – 10.4 Gas usage = 236 − 10.4 × temperature ie y = 236 – 10.4x",
+        "criteria": [
+          {
+            "marks": 2,
+            "text": "Provides correct solution"
+          },
+          {
+            "marks": 1,
+            "text": "Finds the slope of the regression line, or equivalent merit"
+          }
+        ]
       },
       {
         "question": 34,
         "part": "c",
         "marks": 1,
-        "sampleAnswer": "When temperature is 23°C, the regression equation provides a negative answer, which is not physically possible (negative gas usage)."
+        "sampleAnswer": "When temperature is 23°C, the regression equation provides a negative answer, which is not physically possible (negative gas usage).",
+        "criteria": [
+          {
+            "marks": 1,
+            "text": "Identifies one problem with predicting using the regression line"
+          }
+        ]
       },
       {
         "question": 35,
         "part": null,
         "marks": 3,
-        "sampleAnswer": "12 x = sin60° sin25° × sin60° 12 = x sin25° x = 24.59 1 absinC Area = 2 1 × × × sin95° 12 24.59 = 2 m2 = 146.98 m2 m2) = 147 (to nearest"
+        "sampleAnswer": "12 x = sin60° sin25° × sin60° 12 = x sin25° x = 24.59 1 absinC Area = 2 1 × × × sin95° 12 24.59 = 2 m2 = 146.98 m2 m2) = 147 (to nearest",
+        "criteria": [
+          {
+            "marks": 3,
+            "text": "Finds correct solution"
+          },
+          {
+            "marks": 2,
+            "text": "Uses the sine rule to fi nd a missin g sid e, or equivalent merit"
+          },
+          {
+            "marks": 1,
+            "text": "Attempts to use the sin e rule, o r equiva lent merit"
+          }
+        ]
       },
       {
         "question": 36,
         "part": null,
         "marks": 4,
-        "sampleAnswer": "− 10N 7.5H BACmale = 6.8M ( H) (1 3) × − × 0 7.5 0.02 = ) (6.8 × 75 10.2 = 30 − (7.5 × H) − 30 10.2 H = 7.5 H = 2.64 hours H = 2 h 38 min 9:00 pm − 2 h 38 min = 6:22 pm ∴ Cameron began drinking at 6:22 pm."
+        "sampleAnswer": "− 10N 7.5H BACmale = 6.8M ( H) (1 3) × − × 0 7.5 0.02 = ) (6.8 × 75 10.2 = 30 − (7.5 × H) − 30 10.2 H = 7.5 H = 2.64 hours H = 2 h 38 min 9:00 pm − 2 h 38 min = 6:22 pm ∴ Cameron began drinking at 6:22 pm.",
+        "criteria": [
+          {
+            "marks": 4,
+            "text": "Provides correct solution"
+          },
+          {
+            "marks": 3,
+            "text": "Finds the correct value of H"
+          },
+          {
+            "marks": 2,
+            "text": "Attempts to solve for H"
+          },
+          {
+            "marks": 1,
+            "text": "Substitutes values into the BAC formula, or equivalent merit"
+          }
+        ]
       },
       {
         "question": 37,
         "part": null,
         "marks": 3,
-        "sampleAnswer": "$90 000 × 25.8% = $23 220 Amount over $78 800 = $90 000 − $78 800 = $11 200 Additional tax paid for amount over $78 800 = $23 220 − $18 292 = $4928 $11 200 × X = $4928 $4928 X = $11 200 X = $0.44 ∴ X = 44 cents"
+        "sampleAnswer": "$90 000 × 25.8% = $23 220 Amount over $78 800 = $90 000 − $78 800 = $11 200 Additional tax paid for amount over $78 800 = $23 220 − $18 292 = $4928 $11 200 × X = $4928 $4928 X = $11 200 X = $0.44 ∴ X = 44 cents",
+        "criteria": [
+          {
+            "marks": 3,
+            "text": "Provides correct solution"
+          },
+          {
+            "marks": 2,
+            "text": "Finds the amount to which X cents applies, or equivalent merit"
+          },
+          {
+            "marks": 1,
+            "text": "Calculates 25.8% of 90 000, or equivalent merit"
+          }
+        ]
       },
       {
         "question": 38,
         "part": null,
         "marks": 4,
-        "sampleAnswer": "− µ x z = σ − 11.93 10.40 = 1.15 = 1.33 (2 decimal places) ∴ Probability from table = 0.9082 P(more than 11.93) = 1 − 0.9082 = 0.0918 Number of koalas = 0.0918 × 400 = 36.72 = 36 (accept 37 as well) 2023 HSC Mathematics Standard 2 Mapping Grid Section I Question Marks Content Syllabus outcomes 1 1 MS-F1 Money Matters MS11-5 2 1 MS-S5 The Normal Distribution MS2-12-7 3 1 MS-S4 Bivariate Data Analysis MS2-12-2 4 1 MS-F1 Money Matters MS11-10 5 1 MS-M7 Rates and Ratios MS2-12-10 6 1 MS-F1 Money Matters MS11-10 7 1 MS-M2 Working with Time MS11-4 8 1 MS-S2 Relative Frequency and Probability MS11-8 9 1 MS-M1 Applications of Measurement MS11-3 10 1 MS-F4 Investments and Loans MS2-12-5 11 1 MS-M7 Rates and Ratios MS2-12-3 12 1 MS-M1 Applications of Measurement MS11-3 13 1 MS-F1 Money Matters MS11-5 14 1 MS-N3 Critical Path Analysis MS2-12-10 15 1 MS-S1 Data Analysis MS11-7 Section II Question Marks Content Syllabus outcomes 16 (a) 1 MS-M7 Rates and Ratios MS2-12-3 16 (b) 1 MS-M7 Rates and Ratios MS2-12-3 17 (a) 2 MS-N2 Network Concepts MS2-12-8 17 (b) 1 MS-N2 Network Concepts MS2-12-8 18 2 MS-S5 The Normal Distribution MS2-12-10 19 (a) 2 MS-N2 Network Concepts MS2-12-8 19 (b) 2 MS-N2 Network Concepts MS2-12-8 20 (a) 1 MS-A4 Types of Relationships MS2-12-6 20 (b) 2 MS-A4 Types of Relationships MS2-12-6 21 (a) 1 MS-A4 Types of Relationships MS2-12-6 21 (b) 1 MS-A4 Types of Relationships MS2-12-6 21 (c) 1 MS-A4 Types of Relationships MS2-12-6 21 (d) 2 MS-A4 Types of Relationships MS2-12-10 22 (a) 2 MS-A4 Linear Relationships MS2-12-6 22 (b) 1 MS-A4 Linear Relationships MS2-12-6 23 2 MS-S2 Relative Frequency and Probability MS11-8 24 (a) 2 MS-M1 Applications of Measurement MS11-4 24 (b) 3 MS-M1 Applications of Measurement MS11-3 Question Marks Content Syllabus outcomes 25 (a) 2 MS-F5 Annuities MS2-12-5 25 (b) 3 MS-F5 Annuities MS2-12-5 26 (a) 2 MS-M1 Applications of Measurement MS11-4 26 (b) 3 MS-M7 Rates and Ratios MS2-12-10 27 (a) 2 MS-M6 Non-right-angled Trigonometry MS2-12-4 27 (b) 2 MS-M6 Non-right-angled Trigonometry MS2-12-4 28 3 MS-F4 Investments and Loans MS2-12-10 29 (a) 3 MS-F4 Investments and Loans MS2-12-5 29 (b) 1 MS-F4 Investments and Loans MS2-12-5 30 3 MS-F1 Money Matters MS11-5 31 (a) 2 MS-N3 Critical Path Analysis MS2-12-10 31 (b) 2 MS-N3 Critical Path Analysis MS2-12-10 32 (a) 2 MS-F4 Investments and Loans MS2-12-5 32 (b) 2 MS-F4 Investments and Loans MS2-12-9 MS-M1 Applications of Measurement 33 4 MS2-12-4 MS-M6 Non-right-angled Trigonometry 34 (a) 3 MS-S4 Bivariate Data Analysis MS2-12-2 34 (b) 2 MS-S4 Bivariate Data Analysis MS2-12-2 34 (c) 1 MS-S4 Bivariate Data Analysis MS2-12-10 35 3 MS-M6 Non-right-angled Trigonometry MS2-12-4 36 4 MS-A1 Formulae and Equations MS11-6 37 3 MS-F1 Money Matters MS11-6 38 4 MS-S5 The Normal Distribution MS2-12-7"
+        "sampleAnswer": "− µ x z = σ − 11.93 10.40 = 1.15 = 1.33 (2 decimal places) ∴ Probability from table = 0.9082 P(more than 11.93) = 1 − 0.9082 = 0.0918 Number of koalas = 0.0918 × 400 = 36.72 = 36 (accept 37 as well) 2023 HSC Mathematics Standard 2 Mapping Grid Section I Question Marks Content Syllabus outcomes 1 1 MS-F1 Money Matters MS11-5 2 1 MS-S5 The Normal Distribution MS2-12-7 3 1 MS-S4 Bivariate Data Analysis MS2-12-2 4 1 MS-F1 Money Matters MS11-10 5 1 MS-M7 Rates and Ratios MS2-12-10 6 1 MS-F1 Money Matters MS11-10 7 1 MS-M2 Working with Time MS11-4 8 1 MS-S2 Relative Frequency and Probability MS11-8 9 1 MS-M1 Applications of Measurement MS11-3 10 1 MS-F4 Investments and Loans MS2-12-5 11 1 MS-M7 Rates and Ratios MS2-12-3 12 1 MS-M1 Applications of Measurement MS11-3 13 1 MS-F1 Money Matters MS11-5 14 1 MS-N3 Critical Path Analysis MS2-12-10 15 1 MS-S1 Data Analysis MS11-7 Section II Question Marks Content Syllabus outcomes 16 (a) 1 MS-M7 Rates and Ratios MS2-12-3 16 (b) 1 MS-M7 Rates and Ratios MS2-12-3 17 (a) 2 MS-N2 Network Concepts MS2-12-8 17 (b) 1 MS-N2 Network Concepts MS2-12-8 18 2 MS-S5 The Normal Distribution MS2-12-10 19 (a) 2 MS-N2 Network Concepts MS2-12-8 19 (b) 2 MS-N2 Network Concepts MS2-12-8 20 (a) 1 MS-A4 Types of Relationships MS2-12-6 20 (b) 2 MS-A4 Types of Relationships MS2-12-6 21 (a) 1 MS-A4 Types of Relationships MS2-12-6 21 (b) 1 MS-A4 Types of Relationships MS2-12-6 21 (c) 1 MS-A4 Types of Relationships MS2-12-6 21 (d) 2 MS-A4 Types of Relationships MS2-12-10 22 (a) 2 MS-A4 Linear Relationships MS2-12-6 22 (b) 1 MS-A4 Linear Relationships MS2-12-6 23 2 MS-S2 Relative Frequency and Probability MS11-8 24 (a) 2 MS-M1 Applications of Measurement MS11-4 24 (b) 3 MS-M1 Applications of Measurement MS11-3 Question Marks Content Syllabus outcomes 25 (a) 2 MS-F5 Annuities MS2-12-5 25 (b) 3 MS-F5 Annuities MS2-12-5 26 (a) 2 MS-M1 Applications of Measurement MS11-4 26 (b) 3 MS-M7 Rates and Ratios MS2-12-10 27 (a) 2 MS-M6 Non-right-angled Trigonometry MS2-12-4 27 (b) 2 MS-M6 Non-right-angled Trigonometry MS2-12-4 28 3 MS-F4 Investments and Loans MS2-12-10 29 (a) 3 MS-F4 Investments and Loans MS2-12-5 29 (b) 1 MS-F4 Investments and Loans MS2-12-5 30 3 MS-F1 Money Matters MS11-5 31 (a) 2 MS-N3 Critical Path Analysis MS2-12-10 31 (b) 2 MS-N3 Critical Path Analysis MS2-12-10 32 (a) 2 MS-F4 Investments and Loans MS2-12-5 32 (b) 2 MS-F4 Investments and Loans MS2-12-9 MS-M1 Applications of Measurement 33 4 MS2-12-4 MS-M6 Non-right-angled Trigonometry 34 (a) 3 MS-S4 Bivariate Data Analysis MS2-12-2 34 (b) 2 MS-S4 Bivariate Data Analysis MS2-12-2 34 (c) 1 MS-S4 Bivariate Data Analysis MS2-12-10 35 3 MS-M6 Non-right-angled Trigonometry MS2-12-4 36 4 MS-A1 Formulae and Equations MS11-6 37 3 MS-F1 Money Matters MS11-6 38 4 MS-S5 The Normal Distribution MS2-12-7",
+        "criteria": [
+          {
+            "marks": 4,
+            "text": "Provides correct solution"
+          },
+          {
+            "marks": 3,
+            "text": "Finds the correct proportion of the group of koalas, or equivalent merit"
+          },
+          {
+            "marks": 2,
+            "text": "Finds the correct probability from the table, or equivalent merit"
+          },
+          {
+            "marks": 1,
+            "text": "Calculates the correct z value, or equivalent merit"
+          }
+        ]
       }
     ],
     "2024": [
@@ -970,229 +2648,645 @@
         "question": 16,
         "part": "a",
         "marks": 2,
-        "sampleAnswer": "TYWH"
+        "sampleAnswer": "TYWH",
+        "criteria": [
+          {
+            "marks": 2,
+            "text": "Provides the correct path"
+          },
+          {
+            "marks": 1,
+            "text": "Provides a continuous path from T to H"
+          }
+        ]
       },
       {
         "question": 16,
         "part": "b",
         "marks": 2,
-        "sampleAnswer": "YWHMG is 89 km"
+        "sampleAnswer": "YWHMG is 89 km",
+        "criteria": [
+          {
+            "marks": 2,
+            "text": "Provides correct solution"
+          },
+          {
+            "marks": 1,
+            "text": "Provides a continuous path from Y to G, without C to G"
+          }
+        ]
       },
       {
         "question": 17,
         "part": null,
         "marks": 2,
-        "sampleAnswer": "650 # # 6 $0.3013 1000 = $1.18"
+        "sampleAnswer": "650 # # 6 $0.3013 1000 = $1.18",
+        "criteria": [
+          {
+            "marks": 2,
+            "text": "Provides correct answer"
+          },
+          {
+            "marks": 1,
+            "text": "Performs an appropriate conversion, or equivalent merit"
+          }
+        ]
       },
       {
         "question": 18,
         "part": "a",
         "marks": 2,
-        "sampleAnswer": "B C 4 D A 1 2 2 F E 4 3 1 4 G J H 3 I = Weight 24"
+        "sampleAnswer": "B C 4 D A 1 2 2 F E 4 3 1 4 G J H 3 I = Weight 24",
+        "criteria": [
+          {
+            "marks": 2,
+            "text": "Provides correct solution"
+          },
+          {
+            "marks": 1,
+            "text": "Draws a spanning tree, or equivalent merit"
+          }
+        ]
       },
       {
         "question": 18,
         "part": "b",
         "marks": 1,
-        "sampleAnswer": "Yes, use BC instead of FC as the weight of BC is the same as the weight of FC."
+        "sampleAnswer": "Yes, use BC instead of FC as the weight of BC is the same as the weight of FC.",
+        "criteria": [
+          {
+            "marks": 1,
+            "text": "Provides a correct reason for why it is possible to find another spanning tree with the same weight"
+          }
+        ]
       },
       {
         "question": 19,
         "part": "a",
         "marks": 2,
-        "sampleAnswer": "14 = m 10 = 1.4 = + y 1.4 x 6"
+        "sampleAnswer": "14 = m 10 = 1.4 = + y 1.4 x 6",
+        "criteria": [
+          {
+            "marks": 2,
+            "text": "Provides correct solution"
+          },
+          {
+            "marks": 1,
+            "text": "Finds the y-intercept or gradient, or equivalent merit"
+          }
+        ]
       },
       {
         "question": 19,
         "part": "b",
         "marks": 1,
-        "sampleAnswer": "Worse as the predicted test mark was 13 instead of 12."
+        "sampleAnswer": "Worse as the predicted test mark was 13 instead of 12.",
+        "criteria": [
+          {
+            "marks": 1,
+            "text": "Provides correct reason"
+          }
+        ]
       },
       {
         "question": 20,
         "part": "a",
         "marks": 1,
-        "sampleAnswer": "# $200 10.0266 = $2005.32"
+        "sampleAnswer": "# $200 10.0266 = $2005.32",
+        "criteria": [
+          {
+            "marks": 1,
+            "text": "Provides correct answer"
+          }
+        ]
       },
       {
         "question": 20,
         "part": "b",
         "marks": 2,
-        "sampleAnswer": "4 = r % 2 = 2% # = n 3 2 = 6 4500 = Investment per 6 months 6.4343 = 699.37... = $700 rounded to nearest $10"
+        "sampleAnswer": "4 = r % 2 = 2% # = n 3 2 = 6 4500 = Investment per 6 months 6.4343 = 699.37... = $700 rounded to nearest $10",
+        "criteria": [
+          {
+            "marks": 2,
+            "text": "Provides correct solution"
+          },
+          {
+            "marks": 1,
+            "text": "Finds the correct rate, or equivalent merit"
+          }
+        ]
       },
       {
         "question": 21,
         "part": "a",
         "marks": 2,
-        "sampleAnswer": "A B C D E Interest Amount Balance 1 Month Principal charged repaid owing 2 1 $5590.00 $111.80 $110.00 $5591.80 3 2 $5591.80 $111.84 $110.00 $5593.64 ` = Balance owing $5593.64"
+        "sampleAnswer": "A B C D E Interest Amount Balance 1 Month Principal charged repaid owing 2 1 $5590.00 $111.80 $110.00 $5591.80 3 2 $5591.80 $111.84 $110.00 $5593.64 ` = Balance owing $5593.64",
+        "criteria": [
+          {
+            "marks": 2,
+            "text": "Provides correct solution"
+          },
+          {
+            "marks": 1,
+            "text": "Provides one correct entry in the table"
+          }
+        ]
       },
       {
         "question": 21,
         "part": "b",
         "marks": 1,
-        "sampleAnswer": "Loan will never be repaid as the interest charged per month is more than the monthly repayment of $110. Answers could include: The balance owing on the loan is increasing."
+        "sampleAnswer": "Loan will never be repaid as the interest charged per month is more than the monthly repayment of $110. Answers could include: The balance owing on the loan is increasing.",
+        "criteria": [
+          {
+            "marks": 1,
+            "text": "Provides a correct reason"
+          }
+        ]
       },
       {
         "question": 22,
         "part": null,
         "marks": 3,
-        "sampleAnswer": "Population W Population K Population in 1985 = = A 34 B 280 Percentage yearly change in the population 5.5% -3% = 494 61 Population when x 50 ^1.055h50 34 = 494.426... = 494"
+        "sampleAnswer": "Population W Population K Population in 1985 = = A 34 B 280 Percentage yearly change in the population 5.5% -3% = 494 61 Population when x 50 ^1.055h50 34 = 494.426... = 494",
+        "criteria": [
+          {
+            "marks": 3,
+            "text": "Completes the table correctly"
+          },
+          {
+            "marks": 2,
+            "text": "Provides two correct entries"
+          },
+          {
+            "marks": 1,
+            "text": "Provides one correct entry"
+          }
+        ]
       },
       {
         "question": 23,
         "part": null,
         "marks": 3,
-        "sampleAnswer": "# = Normal time earnings 38 45 = 1710 = - Overtime paid 2790 1710 = 1080 $1080 = Overtime hours ^45 1.5h # = 16 hours Therefore 16 hours overtime."
+        "sampleAnswer": "# = Normal time earnings 38 45 = 1710 = - Overtime paid 2790 1710 = 1080 $1080 = Overtime hours ^45 1.5h # = 16 hours Therefore 16 hours overtime.",
+        "criteria": [
+          {
+            "marks": 3,
+            "text": "Provides correct solution"
+          },
+          {
+            "marks": 2,
+            "text": "Finds Zazu’s normal time earnings and overtime hourly rate, or equivalent merit"
+          },
+          {
+            "marks": 1,
+            "text": "Finds Zazu’s normal time earnings, or equivalent merit"
+          }
+        ]
       },
       {
         "question": 24,
         "part": "a",
         "marks": 2,
-        "sampleAnswer": "10^1.2 3h # # -7.5 2.5 = BAC # 5.5 60 = 0.0522... = 0.052 (to 3 decimal places)"
+        "sampleAnswer": "10^1.2 3h # # -7.5 2.5 = BAC # 5.5 60 = 0.0522... = 0.052 (to 3 decimal places)",
+        "criteria": [
+          {
+            "marks": 2,
+            "text": "Provides correct answer"
+          },
+          {
+            "marks": 1,
+            "text": "Attempts to use the BAC formula"
+          }
+        ]
       },
       {
         "question": 24,
         "part": "b",
         "marks": 2,
-        "sampleAnswer": "0.052 = Time 0.015 = 3 hours 28 minutes"
+        "sampleAnswer": "0.052 = Time 0.015 = 3 hours 28 minutes",
+        "criteria": [
+          {
+            "marks": 2,
+            "text": "Provides correct answer in hours and minutes"
+          },
+          {
+            "marks": 1,
+            "text": "Correct substitution of previous answer, or equivalent merit"
+          }
+        ]
       },
       {
         "question": 25,
         "part": null,
         "marks": 3,
-        "sampleAnswer": "# # = Alex’s interest after 5 years 1800 7.5% 5 = $675 4 × 5 d1 %n 6 # = + Jun’s investment at 5 years 1800 4 = 2424.339... = - Interest 2424.34 1800 = $624.34 ` Alex earns more interest."
+        "sampleAnswer": "# # = Alex’s interest after 5 years 1800 7.5% 5 = $675 4 × 5 d1 %n 6 # = + Jun’s investment at 5 years 1800 4 = 2424.339... = - Interest 2424.34 1800 = $624.34 ` Alex earns more interest.",
+        "criteria": [
+          {
+            "marks": 3,
+            "text": "Provides correct solution"
+          },
+          {
+            "marks": 2,
+            "text": "Calculates Jun’s interest, or equivalent merit"
+          },
+          {
+            "marks": 1,
+            "text": "Calculates Alex’s interest, or equivalent merit"
+          }
+        ]
       },
       {
         "question": 26,
         "part": null,
         "marks": 3,
-        "sampleAnswer": "-0.5w2 = + A 20w = Maximum area when width 20 -0.5^20h2 20^20h = + A cm2 = 200 # = A h w # = 200 h 20 = h 10 ` = = width 20 cm, height 10 cm"
+        "sampleAnswer": "-0.5w2 = + A 20w = Maximum area when width 20 -0.5^20h2 20^20h = + A cm2 = 200 # = A h w # = 200 h 20 = h 10 ` = = width 20 cm, height 10 cm",
+        "criteria": [
+          {
+            "marks": 3,
+            "text": "Provides correct solution"
+          },
+          {
+            "marks": 2,
+            "text": "Finds correct maximum area, or equivalent merit"
+          },
+          {
+            "marks": 1,
+            "text": "Finds the width corresponding to maximum area, or equivalent merit"
+          }
+        ]
       },
       {
         "question": 27,
         "part": null,
         "marks": 3,
-        "sampleAnswer": "# # = Repayments for 5 years at 280 280 12 5 = 16 800 = Repayments for 7 years at 250 21 000 = + Total repayment 16 800 21 000 = 37 800 = Repayment for 10 years at 280 33 600 ` = - Difference $37 800 $33 600 = $4200"
+        "sampleAnswer": "# # = Repayments for 5 years at 280 280 12 5 = 16 800 = Repayments for 7 years at 250 21 000 = + Total repayment 16 800 21 000 = 37 800 = Repayment for 10 years at 280 33 600 ` = - Difference $37 800 $33 600 = $4200",
+        "criteria": [
+          {
+            "marks": 3,
+            "text": "Provides correct answer"
+          },
+          {
+            "marks": 2,
+            "text": "Finds two of the repayments required, or equivalent merit"
+          },
+          {
+            "marks": 1,
+            "text": "Finds a relevant repayment amount, or equivalent merit"
+          }
+        ]
       },
       {
         "question": 28,
         "part": null,
         "marks": 3,
-        "sampleAnswer": "The dataset for Garden A is negatively skewed while the dataset for Garden B is positively skewed. The median for Garden A is higher than the median for Garden B. The IQR of Garden A is larger than the IQR of Garden B. Answers could include: The range of Garden A is larger than the range of Garden B."
+        "sampleAnswer": "The dataset for Garden A is negatively skewed while the dataset for Garden B is positively skewed. The median for Garden A is higher than the median for Garden B. The IQR of Garden A is larger than the IQR of Garden B. Answers could include: The range of Garden A is larger than the range of Garden B.",
+        "criteria": [
+          {
+            "marks": 3,
+            "text": "Compares the two datasets on skewness, central tendency and spread"
+          },
+          {
+            "marks": 2,
+            "text": "Compares two of the measures of centre and spread and skewness for the two gardens, or equivalent merit"
+          },
+          {
+            "marks": 1,
+            "text": "Compares skewness, measures of centre or spread for the two gardens, or equivalent merit"
+          }
+        ]
       },
       {
         "question": 29,
         "part": null,
         "marks": 4,
-        "sampleAnswer": "Value after 4 years: # = - Using straight-line method 50 000 1500 4 = 44 000 Value after the next 6 years: 000^1- 35%h6 = Using declining-balance method 44 = 3318.43... = - Total depreciation 50 000 3318.43 = $46 681.57"
+        "sampleAnswer": "Value after 4 years: # = - Using straight-line method 50 000 1500 4 = 44 000 Value after the next 6 years: 000^1- 35%h6 = Using declining-balance method 44 = 3318.43... = - Total depreciation 50 000 3318.43 = $46 681.57",
+        "criteria": [
+          {
+            "marks": 4,
+            "text": "Provides correct solution"
+          },
+          {
+            "marks": 3,
+            "text": "Uses the declining-balance method with correct values for r, and V0, n or equivalent merit"
+          },
+          {
+            "marks": 2,
+            "text": "Attempts to use the declining-balance method with an initial value from the straight-line method, or equivalent merit"
+          },
+          {
+            "marks": 1,
+            "text": "Attempts to use straight-line method, or equivalent merit"
+          }
+        ]
       },
       {
         "question": 30,
         "part": null,
         "marks": 3,
-        "sampleAnswer": "• Female anacondas grow at a faster rate than males. • Both females and males continue to grow after 4 years. • Females are longer than males."
+        "sampleAnswer": "• Female anacondas grow at a faster rate than males. • Both females and males continue to grow after 4 years. • Females are longer than males.",
+        "criteria": [
+          {
+            "marks": 3,
+            "text": "Provides three correct observations"
+          },
+          {
+            "marks": 2,
+            "text": "Provides two correct observations"
+          },
+          {
+            "marks": 1,
+            "text": "Provides one correct observation"
+          }
+        ]
       },
       {
         "question": 31,
         "part": "a",
         "marks": 1,
-        "sampleAnswer": "2 3"
+        "sampleAnswer": "2 3",
+        "criteria": [
+          {
+            "marks": 1,
+            "text": "Provides correct answer"
+          }
+        ]
       },
       {
         "question": 31,
         "part": "b",
         "marks": 2,
-        "sampleAnswer": "1 1 # = P(no heads) 3 3 1 = 9 1 ` = - P(at least 1 head) 1 9 8 = 9"
+        "sampleAnswer": "1 1 # = P(no heads) 3 3 1 = 9 1 ` = - P(at least 1 head) 1 9 8 = 9",
+        "criteria": [
+          {
+            "marks": 2,
+            "text": "Provides correct solution"
+          },
+          {
+            "marks": 1,
+            "text": "Finds probability of no heads, or equivalent merit"
+          }
+        ]
       },
       {
         "question": 32,
         "part": null,
         "marks": 4,
-        "sampleAnswer": "2 p = A r circle 302 p # = = 2827.433... 1 = A ab sin C 3 2 1 # # = 30 30 sin 72° 2 = 427.975... # = A 5 427.975... pentagon = 2139.877... = - Shaded area 2827.433 2139.877 = 687.5... cm2 = 690 (2 significant figures)"
+        "sampleAnswer": "2 p = A r circle 302 p # = = 2827.433... 1 = A ab sin C 3 2 1 # # = 30 30 sin 72° 2 = 427.975... # = A 5 427.975... pentagon = 2139.877... = - Shaded area 2827.433 2139.877 = 687.5... cm2 = 690 (2 significant figures)",
+        "criteria": [
+          {
+            "marks": 4,
+            "text": "Provides correct solution to 2 significant figures"
+          },
+          {
+            "marks": 3,
+            "text": "Finds the shaded area, or equivalent merit"
+          },
+          {
+            "marks": 2,
+            "text": "Finds the area of both the circle and a triangle, or equivalent merit"
+          },
+          {
+            "marks": 1,
+            "text": "Finds the area of the circle or a triangle, or equivalent merit"
+          }
+        ]
       },
       {
         "question": 33,
         "part": null,
         "marks": 3,
-        "sampleAnswer": "Distance = Speed Time 0.15 km = 40 km/h T 0.15 = T 40 = T 0.00375 hours # = T 0.00375 3600 seconds = 13.5 seconds"
+        "sampleAnswer": "Distance = Speed Time 0.15 km = 40 km/h T 0.15 = T 40 = T 0.00375 hours # = T 0.00375 3600 seconds = 13.5 seconds",
+        "criteria": [
+          {
+            "marks": 3,
+            "text": "Provides correct solution"
+          },
+          {
+            "marks": 2,
+            "text": "Provides correct calculations in hours, or equivalent merit"
+          },
+          {
+            "marks": 1,
+            "text": "Provides correct distance conversion, or equivalent merit"
+          }
+        ]
       },
       {
         "question": 34,
         "part": null,
         "marks": 4,
-        "sampleAnswer": "2 d n 23 p # # = Surface area of sphere 4 2 ^23 2h 23 p # # # # = Surface area curved cylindrical body 2 2 2 f4 d n p d 46n 23 23 p p ` # # # # # = + Total surface area 2 2 2 = 4985.707... cm2 = 4985.7 m2 = 0.5 (correct to 1 decimal place)"
+        "sampleAnswer": "2 d n 23 p # # = Surface area of sphere 4 2 ^23 2h 23 p # # # # = Surface area curved cylindrical body 2 2 2 f4 d n p d 46n 23 23 p p ` # # # # # = + Total surface area 2 2 2 = 4985.707... cm2 = 4985.7 m2 = 0.5 (correct to 1 decimal place)",
+        "criteria": [
+          {
+            "marks": 4,
+            "text": "Provides correct solution in square metres"
+          },
+          {
+            "marks": 3,
+            "text": "Finds the total surface area, or equivalent merit"
+          },
+          {
+            "marks": 2,
+            "text": "Finds the surface area of the cylinder or sphere"
+          },
+          {
+            "marks": 1,
+            "text": "Attempts to find surface area of sphere, or equivalent merit"
+          }
+        ]
       },
       {
         "question": 35,
         "part": "a",
         "marks": 2,
-        "sampleAnswer": "- 70 58 = z 15 = 0.8 = P from table 0.7881 = - = P required 0.7881 0.5 0.2881 ` 28.81%"
+        "sampleAnswer": "- 70 58 = z 15 = 0.8 = P from table 0.7881 = - = P required 0.7881 0.5 0.2881 ` 28.81%",
+        "criteria": [
+          {
+            "marks": 2,
+            "text": "Provides correct solution, including a correct z-score"
+          },
+          {
+            "marks": 1,
+            "text": "Finds z-score corresponding to 70, or equivalent merit"
+          }
+        ]
       },
       {
         "question": 35,
         "part": "b",
         "marks": 1,
-        "sampleAnswer": "-0.8 The z-score for 46 is . By symmetry the area between 46 and 58 is equal to the area between 58 and 70. So, the percentage of scores between 46 and 70 is twice 28.81%."
+        "sampleAnswer": "-0.8 The z-score for 46 is . By symmetry the area between 46 and 58 is equal to the area between 58 and 70. So, the percentage of scores between 46 and 70 is twice 28.81%.",
+        "criteria": [
+          {
+            "marks": 1,
+            "text": "Provides correct answer"
+          }
+        ]
       },
       {
         "question": 35,
         "part": "c",
         "marks": 2,
-        "sampleAnswer": "- x 58 = 1.3 15 = x 77.5 ` = Approximate minimum score 77 Answers could include: 78"
+        "sampleAnswer": "- x 58 = 1.3 15 = x 77.5 ` = Approximate minimum score 77 Answers could include: 78",
+        "criteria": [
+          {
+            "marks": 2,
+            "text": "Provides correct solution, with evidence of using the table"
+          },
+          {
+            "marks": 1,
+            "text": "Finds the z-score corresponding to 90th percentile, or equivalent merit"
+          }
+        ]
       },
       {
         "question": 36,
         "part": "a",
         "marks": 2,
-        "sampleAnswer": "BE 53.8 = sin 27° sin 106° 53.8 # = BE sin 27° sin 106° = 25.408... = 25.4 m"
+        "sampleAnswer": "BE 53.8 = sin 27° sin 106° 53.8 # = BE sin 27° sin 106° = 25.408... = 25.4 m",
+        "criteria": [
+          {
+            "marks": 2,
+            "text": "Provides correct answer"
+          },
+          {
+            "marks": 1,
+            "text": "Attempts to use sine rule, or equivalent merit"
+          }
+        ]
       },
       {
         "question": 36,
         "part": "b",
         "marks": 2,
-        "sampleAnswer": "= - EEBC 180° 106° = 74° 20 = tan 74° BX 20 = BX tan 74° = 5.73... ` = - CD 25.4 5.73 = 19.7 m (1 decimal place)"
+        "sampleAnswer": "= - EEBC 180° 106° = 74° 20 = tan 74° BX 20 = BX tan 74° = 5.73... ` = - CD 25.4 5.73 = 19.7 m (1 decimal place)",
+        "criteria": [
+          {
+            "marks": 2,
+            "text": "Provides correct solution"
+          },
+          {
+            "marks": 1,
+            "text": "Finds the length of BX, or equivalent merit"
+          }
+        ]
       },
       {
         "question": 37,
         "part": null,
         "marks": 2,
-        "sampleAnswer": "- Rio flight time = - 3 pm 20 hours = 7 pm Tuesday 19th July + time difference 13 hours = 8 am Wednesday 20th July Alternative: + Rio time difference = + 3 pm 13 hours = 4 am Thursday 21st July - flight time = 8 am Wednesday 20th July"
+        "sampleAnswer": "- Rio flight time = - 3 pm 20 hours = 7 pm Tuesday 19th July + time difference 13 hours = 8 am Wednesday 20th July Alternative: + Rio time difference = + 3 pm 13 hours = 4 am Thursday 21st July - flight time = 8 am Wednesday 20th July",
+        "criteria": [
+          {
+            "marks": 2,
+            "text": "Provides correct solution"
+          },
+          {
+            "marks": 1,
+            "text": "Provides 7 pm Tuesday or 4 am Thursday, or equivalent merit"
+          }
+        ]
       },
       {
         "question": 38,
         "part": null,
         "marks": 3,
-        "sampleAnswer": "= Volume of cylinder : volume of top 5 : 1 152 p # # = Volume of cylinder 6 = 4241.150. .. = 5 parts = Volume of cake 6 parts 6 # = 4241.150 5 = 5089.38. .. cm3 Volume of each slice is 212 5089.38 ` = Number of slices 212 = 24.0065... = 24 slices (to the nearest whole slice)"
+        "sampleAnswer": "= Volume of cylinder : volume of top 5 : 1 152 p # # = Volume of cylinder 6 = 4241.150. .. = 5 parts = Volume of cake 6 parts 6 # = 4241.150 5 = 5089.38. .. cm3 Volume of each slice is 212 5089.38 ` = Number of slices 212 = 24.0065... = 24 slices (to the nearest whole slice)",
+        "criteria": [
+          {
+            "marks": 3,
+            "text": "Provides correct solution"
+          },
+          {
+            "marks": 2,
+            "text": "Calculates the volume of the cake, or equivalent merit"
+          },
+          {
+            "marks": 1,
+            "text": "Calculates the volume of the cylinder, or equivalent merit"
+          }
+        ]
       },
       {
         "question": 39,
         "part": "a",
         "marks": 1,
-        "sampleAnswer": "As there are float-times for A and C, the critical path is BEGI."
+        "sampleAnswer": "As there are float-times for A and C, the critical path is BEGI.",
+        "criteria": [
+          {
+            "marks": 1,
+            "text": "Provides correct answer"
+          }
+        ]
       },
       {
         "question": 39,
         "part": "b",
         "marks": 1,
-        "sampleAnswer": "- = 19 12 7 hours"
+        "sampleAnswer": "- = 19 12 7 hours",
+        "criteria": [
+          {
+            "marks": 1,
+            "text": "Provides correct answer"
+          }
+        ]
       },
       {
         "question": 39,
         "part": "c",
         "marks": 1,
-        "sampleAnswer": "- = 12 3 9 hours - = 9 1 8 hours"
+        "sampleAnswer": "- = 12 3 9 hours - = 9 1 8 hours",
+        "criteria": [
+          {
+            "marks": 1,
+            "text": "Provides correct answer"
+          }
+        ]
       },
       {
         "question": 40,
         "part": null,
         "marks": 3,
-        "sampleAnswer": "UODA: In 382 422 67.52 + - = EAOD cos # # 2 38 42 = -0.42238... = EAOD 114.985... . 115° Bearing of D from O is 285° ` = EDON 75° = + EAOD EDON EAON = + EAON ie 115° 75° ` = EAON 40° = + Bearing of C from O 40° 180° (as AC is a straight line) = 220° (nearest degree)"
+        "sampleAnswer": "UODA: In 382 422 67.52 + - = EAOD cos # # 2 38 42 = -0.42238... = EAOD 114.985... . 115° Bearing of D from O is 285° ` = EDON 75° = + EAOD EDON EAON = + EAON ie 115° 75° ` = EAON 40° = + Bearing of C from O 40° 180° (as AC is a straight line) = 220° (nearest degree)",
+        "criteria": [
+          {
+            "marks": 3,
+            "text": "Provides correct solution"
+          },
+          {
+            "marks": 2,
+            "text": "Attempts to find bearing of from O, or equivalent merit C"
+          },
+          {
+            "marks": 1,
+            "text": "UODA Uses cosine rule in to find an angle, or equivalent merit"
+          }
+        ]
       },
       {
         "question": 41,
         "part": null,
         "marks": 4,
-        "sampleAnswer": "2.4% = = r 0.002 12 0 15 25 # = For 25 years need 1200 225.430 270 516 # = For 15 years need extra 800 151.036 120 828.80 = Total $391 344.80 2024 HSC Mathematics Standard 2 Mapping Grid Section I Question Marks Content Syllabus outcomes 1 1 MS-M1 Application of Measurement MS11-3 2 1 MS-A2 Linear Relationships MS11-9 3 1 MS-S1 Data Analysis MS11-10 4 1 MS-N2 Network Concepts MS2-12-8 5 1 MS-S5 The Normal Distribution MS2-12-7 6 1 MS-M6 Non-right-angled Trigonometry MS2-12-3 7 1 MS-F1 Money Matters MS11-6 8 1 MS-F1 Money Matters MS11-5 9 1 MS-A4 Types of Relationships MS2-12-6 10 1 MS-A1 Formulae and Equations MS11-10 11 1 MS-M7 Rates and Ratios MS2-12-3 12 1 MS-S2 Relative Frequency and Probability MS11-10 13 1 MS-F1 Money Matters MS11-6 14 1 MS-A4 Types of Relationships MS2-12-6 15 1 MS-S1 Data Analysis MS11–10 Section II Question Marks Content Syllabus outcomes 16 (a) 2 MS-N2 Network Concepts MS2-12-8 16 (b) 2 MS-N2 Network Concepts MS2-12-8 17 2 MS-M7 Rates and Ratios MS2-12-3 18 (a) 2 MS-N2 Network Concepts MS2-12-8 18 (b) 1 MS-N2 Network Concepts MS2-12-10 19 (a) 2 MS-S4 Bivariate Data Analysis MS2-12-7 19 (b) 1 MS-S4 Bivariate Data Analysis MS2-12-2 20 (a) 1 MS-F5 Annuities MS2-12-5 20 (b) 2 MS-F5 Annuities MS2-12-5 21 (a) 2 MS-F4 Investments and Loans MS2-12-5 21 (b) 1 MS-F4 Investments and Loans MS2-12-10 22 3 MS-A4 Types of Relationships MS2-12-6 23 3 MS-F1 Money Matters MS11-6 24 (a) 2 MS-A1 Formulae and Equations MS11-6 24 (b) 2 MS-A1 Formulae and Equations MS11-10 25 3 MS-F4 Investments and Loans MS2-12-10 26 3 MS-A4 Types of Relationships MS2-12-6 27 3 MS-F4 Investments and Loans MS2-12-10 Question Marks Content Syllabus outcomes 28 3 MS-S1 Data Analysis MS11-10 MS-F1 Money Matters 29 4 MS11-10, MS2-12-10 MS-F4 Investments and Loans 30 3 MS-S4 Bivariate Data Analysis MS2-12-10 31 (a) 1 MS-S2 Relative Frequency and Probability MS11–10 31 (b) 2 MS-S2 Relative Frequency and Probability MS11–10 32 4 MS-M6 Non-right-angled Trigonometry MS2-12-9 33 3 MS-M7 Rates and Ratios MS2-12-3 34 4 MS-M1 Applications of Measurement MS11-10 35 (a) 2 MS-S5 The Normal Distribution MS2-12-7 35 (b) 1 MS-S5 The Normal Distribution MS2-12-7 35 (c) 2 MS-S5 The Normal Distribution MS2-12-7 36 (a) 2 MS-M6 Non-right-angled Trigonometry MS2-12-9 36 (b) 2 MS-M6 Non-right-angled Trigonometry MS2-12-9 37 2 MS-M2 Working with Time MS11-3 38 3 MS-M1 Applications of Measurement MS11-4 39 (a) 1 MS-N3 Critical Path Analysis MS2-12-10 39 (b) 1 MS-N3 Critical Path Analysis MS2-12-10 39 (c) 1 MS-N3 Critical Path Analysis MS2-12-10 40 3 MS-M6 Non-right-angled Trigonometry MS2-12-4 41 4 MS-F5 Annuities MS2-12-9"
+        "sampleAnswer": "2.4% = = r 0.002 12 0 15 25 # = For 25 years need 1200 225.430 270 516 # = For 15 years need extra 800 151.036 120 828.80 = Total $391 344.80 2024 HSC Mathematics Standard 2 Mapping Grid Section I Question Marks Content Syllabus outcomes 1 1 MS-M1 Application of Measurement MS11-3 2 1 MS-A2 Linear Relationships MS11-9 3 1 MS-S1 Data Analysis MS11-10 4 1 MS-N2 Network Concepts MS2-12-8 5 1 MS-S5 The Normal Distribution MS2-12-7 6 1 MS-M6 Non-right-angled Trigonometry MS2-12-3 7 1 MS-F1 Money Matters MS11-6 8 1 MS-F1 Money Matters MS11-5 9 1 MS-A4 Types of Relationships MS2-12-6 10 1 MS-A1 Formulae and Equations MS11-10 11 1 MS-M7 Rates and Ratios MS2-12-3 12 1 MS-S2 Relative Frequency and Probability MS11-10 13 1 MS-F1 Money Matters MS11-6 14 1 MS-A4 Types of Relationships MS2-12-6 15 1 MS-S1 Data Analysis MS11–10 Section II Question Marks Content Syllabus outcomes 16 (a) 2 MS-N2 Network Concepts MS2-12-8 16 (b) 2 MS-N2 Network Concepts MS2-12-8 17 2 MS-M7 Rates and Ratios MS2-12-3 18 (a) 2 MS-N2 Network Concepts MS2-12-8 18 (b) 1 MS-N2 Network Concepts MS2-12-10 19 (a) 2 MS-S4 Bivariate Data Analysis MS2-12-7 19 (b) 1 MS-S4 Bivariate Data Analysis MS2-12-2 20 (a) 1 MS-F5 Annuities MS2-12-5 20 (b) 2 MS-F5 Annuities MS2-12-5 21 (a) 2 MS-F4 Investments and Loans MS2-12-5 21 (b) 1 MS-F4 Investments and Loans MS2-12-10 22 3 MS-A4 Types of Relationships MS2-12-6 23 3 MS-F1 Money Matters MS11-6 24 (a) 2 MS-A1 Formulae and Equations MS11-6 24 (b) 2 MS-A1 Formulae and Equations MS11-10 25 3 MS-F4 Investments and Loans MS2-12-10 26 3 MS-A4 Types of Relationships MS2-12-6 27 3 MS-F4 Investments and Loans MS2-12-10 Question Marks Content Syllabus outcomes 28 3 MS-S1 Data Analysis MS11-10 MS-F1 Money Matters 29 4 MS11-10, MS2-12-10 MS-F4 Investments and Loans 30 3 MS-S4 Bivariate Data Analysis MS2-12-10 31 (a) 1 MS-S2 Relative Frequency and Probability MS11–10 31 (b) 2 MS-S2 Relative Frequency and Probability MS11–10 32 4 MS-M6 Non-right-angled Trigonometry MS2-12-9 33 3 MS-M7 Rates and Ratios MS2-12-3 34 4 MS-M1 Applications of Measurement MS11-10 35 (a) 2 MS-S5 The Normal Distribution MS2-12-7 35 (b) 1 MS-S5 The Normal Distribution MS2-12-7 35 (c) 2 MS-S5 The Normal Distribution MS2-12-7 36 (a) 2 MS-M6 Non-right-angled Trigonometry MS2-12-9 36 (b) 2 MS-M6 Non-right-angled Trigonometry MS2-12-9 37 2 MS-M2 Working with Time MS11-3 38 3 MS-M1 Applications of Measurement MS11-4 39 (a) 1 MS-N3 Critical Path Analysis MS2-12-10 39 (b) 1 MS-N3 Critical Path Analysis MS2-12-10 39 (c) 1 MS-N3 Critical Path Analysis MS2-12-10 40 3 MS-M6 Non-right-angled Trigonometry MS2-12-4 41 4 MS-F5 Annuities MS2-12-9",
+        "criteria": [
+          {
+            "marks": 4,
+            "text": "Provides correct solution"
+          },
+          {
+            "marks": 3,
+            "text": "Makes substantial progress towards a solution"
+          },
+          {
+            "marks": 2,
+            "text": "Demonstrates in calculations understanding of importance of 15 years and 25 years"
+          },
+          {
+            "marks": 1,
+            "text": "Identifies the required interest rate, or equivalent merit"
+          }
+        ]
       }
     ],
     "2025": [
@@ -1200,229 +3294,645 @@
         "question": 16,
         "part": null,
         "marks": 2,
-        "sampleAnswer": "Cost of ten-litre cans: $205 × 8 $1640 = Cost of four-litre cans: $90 × 20 $1800 = Savings = $1800 − $1640 $160 ="
+        "sampleAnswer": "Cost of ten-litre cans: $205 × 8 $1640 = Cost of four-litre cans: $90 × 20 $1800 = Savings = $1800 − $1640 $160 =",
+        "criteria": [
+          {
+            "marks": 2,
+            "text": "Provides correct solution"
+          },
+          {
+            "marks": 1,
+            "text": "Finds the cost of ten-litre cans, or equivalent merit"
+          }
+        ]
       },
       {
         "question": 17,
         "part": null,
         "marks": 3,
-        "sampleAnswer": "y 18 18 16 16 14 14 12 12 10 10 8 6 4 2 0 0 1 2 3 4 5 6 x rise m = run 10 m = − 5 −2 = Using c: y mx = + −2, 14 m c = = −2x 14 y = +"
+        "sampleAnswer": "y 18 18 16 16 14 14 12 12 10 10 8 6 4 2 0 0 1 2 3 4 5 6 x rise m = run 10 m = − 5 −2 = Using c: y mx = + −2, 14 m c = = −2x 14 y = +",
+        "criteria": [
+          {
+            "marks": 3,
+            "text": "Provides correct solution"
+          },
+          {
+            "marks": 2,
+            "text": "y-intercept, Finds correct gradient and or equivalent merit"
+          },
+          {
+            "marks": 1,
+            "text": "Plots both points on the graph, or equivalent merit"
+          }
+        ]
       },
       {
         "question": 18,
         "part": null,
         "marks": 2,
-        "sampleAnswer": "Amount $5000 12.288 = × $61 440 ="
+        "sampleAnswer": "Amount $5000 12.288 = × $61 440 =",
+        "criteria": [
+          {
+            "marks": 2,
+            "text": "Provides correct answer"
+          },
+          {
+            "marks": 1,
+            "text": "Multiplies $5000 by an entry from table, or equivalent merit"
+          }
+        ]
       },
       {
         "question": 19,
         "part": "a",
         "marks": 2,
-        "sampleAnswer": "Activity Immediate prerequisite(s) B C, E D F E"
+        "sampleAnswer": "Activity Immediate prerequisite(s) B C, E D F E",
+        "criteria": [
+          {
+            "marks": 2,
+            "text": "Provides correct solution"
+          },
+          {
+            "marks": 1,
+            "text": "Provides one correct entry"
+          }
+        ]
       },
       {
         "question": 19,
         "part": "b",
         "marks": 2,
-        "sampleAnswer": "Critical path is BDEFH Minimum duration 4 5 5 7 5 = + + + + 26 ="
+        "sampleAnswer": "Critical path is BDEFH Minimum duration 4 5 5 7 5 = + + + + 26 =",
+        "criteria": [
+          {
+            "marks": 2,
+            "text": "Provides correct path and duration"
+          },
+          {
+            "marks": 1,
+            "text": "Provides a correct path, or equivalent merit"
+          }
+        ]
       },
       {
         "question": 19,
         "part": "c",
         "marks": 1,
-        "sampleAnswer": "No, as the float time for activity is 3. A"
+        "sampleAnswer": "No, as the float time for activity is 3. A",
+        "criteria": [
+          {
+            "marks": 1,
+            "text": "Provides correct reason"
+          }
+        ]
       },
       {
         "question": 20,
         "part": "a",
         "marks": 2,
-        "sampleAnswer": "6 2 + t = 2 4 = 42 8 4 12 h = − × + −4 ="
+        "sampleAnswer": "6 2 + t = 2 4 = 42 8 4 12 h = − × + −4 =",
+        "criteria": [
+          {
+            "marks": 2,
+            "text": "Provides correct answer"
+          },
+          {
+            "marks": 1,
+            "text": "t, Finds correct value of or equivalent merit"
+          }
+        ]
       },
       {
         "question": 20,
         "part": "b",
         "marks": 1,
-        "sampleAnswer": "4 4 8 using axis of symmetry t = + = 8 t = `"
+        "sampleAnswer": "4 4 8 using axis of symmetry t = + = 8 t = `",
+        "criteria": [
+          {
+            "marks": 1,
+            "text": "Provides correct answer"
+          }
+        ]
       },
       {
         "question": 21,
         "part": "a",
         "marks": 1,
-        "sampleAnswer": ""
+        "sampleAnswer": "",
+        "criteria": [
+          {
+            "marks": 1,
+            "text": "Provides correct answer"
+          }
+        ]
       },
       {
         "question": 21,
         "part": "b",
         "marks": 2,
-        "sampleAnswer": "640 OR $640 92 0.29 3.2 h = × × × Cost per day = 92 $640 85.376h = 640 6.956 . . . = h = 85.376 Cost per hour 3.2 0.29 0.928 = × = 7.49 h . . . = 6.956 . . . Number of hours = 7.5 hours ≈ 0.928 7.49 . . . = 7.5 hours ≈"
+        "sampleAnswer": "640 OR $640 92 0.29 3.2 h = × × × Cost per day = 92 $640 85.376h = 640 6.956 . . . = h = 85.376 Cost per hour 3.2 0.29 0.928 = × = 7.49 h . . . = 6.956 . . . Number of hours = 7.5 hours ≈ 0.928 7.49 . . . = 7.5 hours ≈",
+        "criteria": [
+          {
+            "marks": 2,
+            "text": "Provides correct solution"
+          },
+          {
+            "marks": 1,
+            "text": "Finds cost per day, or equivalent merit"
+          }
+        ]
       },
       {
         "question": 22,
         "part": "a",
         "marks": 1,
-        "sampleAnswer": ""
+        "sampleAnswer": "",
+        "criteria": [
+          {
+            "marks": 1,
+            "text": "Provides correct answer"
+          }
+        ]
       },
       {
         "question": 22,
         "part": "b.i",
         "marks": 2,
-        "sampleAnswer": "Outflow of 5 13 12 30 C = + + = Inflow must equal outflow. 30 x = `"
+        "sampleAnswer": "Outflow of 5 13 12 30 C = + + = Inflow must equal outflow. 30 x = `",
+        "criteria": [
+          {
+            "marks": 2,
+            "text": "Provides correct solution"
+          },
+          {
+            "marks": 1,
+            "text": "x = Provides 30, or equivalent merit"
+          }
+        ]
       },
       {
         "question": 22,
         "part": "b.ii",
         "marks": 1,
-        "sampleAnswer": "DE, CF, DG, FG"
+        "sampleAnswer": "DE, CF, DG, FG",
+        "criteria": [
+          {
+            "marks": 1,
+            "text": "Provides correct answer"
+          }
+        ]
       },
       {
         "question": 22,
         "part": "b.iii",
         "marks": 1,
-        "sampleAnswer": "ACEG"
+        "sampleAnswer": "ACEG",
+        "criteria": [
+          {
+            "marks": 1,
+            "text": "Provides correct answer"
+          }
+        ]
       },
       {
         "question": 23,
         "part": null,
         "marks": 2,
-        "sampleAnswer": "4.92 Company A yield 100 = × 25.43 19% ≈ 0.45 Company B yield 100 = × 2.13 21% ≈ Company B would be better to invest in. `"
+        "sampleAnswer": "4.92 Company A yield 100 = × 25.43 19% ≈ 0.45 Company B yield 100 = × 2.13 21% ≈ Company B would be better to invest in. `",
+        "criteria": [
+          {
+            "marks": 2,
+            "text": "Provides correct solution"
+          },
+          {
+            "marks": 1,
+            "text": "Calculates correct dividend yield for one company, or equivalent merit"
+          }
+        ]
       },
       {
         "question": 24,
         "part": null,
         "marks": 2,
-        "sampleAnswer": "18 20 4 snails × = 90"
+        "sampleAnswer": "18 20 4 snails × = 90",
+        "criteria": [
+          {
+            "marks": 2,
+            "text": "Provides correct solution"
+          },
+          {
+            "marks": 1,
+            "text": "Provides a correct ratio for tagged snails, or equivalent merit"
+          }
+        ]
       },
       {
         "question": 25,
         "part": "a",
         "marks": 2,
-        "sampleAnswer": "Form: Linear Direction: Negative"
+        "sampleAnswer": "Form: Linear Direction: Negative",
+        "criteria": [
+          {
+            "marks": 2,
+            "text": "Provides correct form and direction"
+          },
+          {
+            "marks": 1,
+            "text": "Provides correct direction, or equivalent merit"
+          }
+        ]
       },
       {
         "question": 25,
         "part": "b",
         "marks": 2,
-        "sampleAnswer": "Slope: For every 1 minute increase in time spent watching television per day the time spent exercising decreases by 0.7 minutes per day. y-intercept: If someone doesn’t watch television they are expected to exercise for 64.3 minutes per day."
+        "sampleAnswer": "Slope: For every 1 minute increase in time spent watching television per day the time spent exercising decreases by 0.7 minutes per day. y-intercept: If someone doesn’t watch television they are expected to exercise for 64.3 minutes per day.",
+        "criteria": [
+          {
+            "marks": 2,
+            "text": "y-intercept Provides correct interpretation of both slope and"
+          },
+          {
+            "marks": 1,
+            "text": "y-intercept, Provides correct interpretation of or equivalent merit"
+          }
+        ]
       },
       {
         "question": 25,
         "part": "c",
         "marks": 1,
-        "sampleAnswer": "64.3 0.7x y = − 64.3 0.7 42 y = − × 34.9 minutes ="
+        "sampleAnswer": "64.3 0.7x y = − 64.3 0.7 42 y = − × 34.9 minutes =",
+        "criteria": [
+          {
+            "marks": 1,
+            "text": "Provides correct answer"
+          }
+        ]
       },
       {
         "question": 25,
         "part": "d",
         "marks": 1,
-        "sampleAnswer": "– 2 hours or 120 minutes of television suggests –19.7 minutes of exercise and can’t do negative minutes of exercise. Alternative answer: – 2 hours or 120 minutes is outside the dataset so extrapolating is not reliable."
+        "sampleAnswer": "– 2 hours or 120 minutes of television suggests –19.7 minutes of exercise and can’t do negative minutes of exercise. Alternative answer: – 2 hours or 120 minutes is outside the dataset so extrapolating is not reliable.",
+        "criteria": [
+          {
+            "marks": 1,
+            "text": "Provides correct reason"
+          }
+        ]
       },
       {
         "question": 26,
         "part": "a",
         "marks": 2,
-        "sampleAnswer": "5.1 5.1 (6 3.8) (3.8 0) A ≈ + + + 2 2 cm2 34.68 ≈"
+        "sampleAnswer": "5.1 5.1 (6 3.8) (3.8 0) A ≈ + + + 2 2 cm2 34.68 ≈",
+        "criteria": [
+          {
+            "marks": 2,
+            "text": "Provides correct answer"
+          },
+          {
+            "marks": 1,
+            "text": "Attempts to use 2 applications of the trapezoidal rule, or equivalent merit"
+          }
+        ]
       },
       {
         "question": 26,
         "part": "b",
         "marks": 2,
-        "sampleAnswer": ""
+        "sampleAnswer": "",
+        "criteria": [
+          {
+            "marks": 2,
+            "text": "Provides correct solution"
+          },
+          {
+            "marks": 1,
+            "text": "Finds at least 2 correct areas as part of a surface area calculation, or equivalent merit"
+          }
+        ]
       },
       {
         "question": 26,
         "part": "c",
         "marks": 2,
-        "sampleAnswer": "1"
+        "sampleAnswer": "1",
+        "criteria": [
+          {
+            "marks": 2,
+            "text": "Provides correct solution including correct significant figures"
+          },
+          {
+            "marks": 1,
+            "text": "Provides correct absolute error, or equivalent merit"
+          }
+        ]
       },
       {
         "question": 27,
         "part": null,
         "marks": 3,
-        "sampleAnswer": "Interest days 68 45 23 = − = 23 13.74 Amount $392 1 + % = 365 $395.41 = Interest charged $395.41 $392 = − $3.41 ="
+        "sampleAnswer": "Interest days 68 45 23 = − = 23 13.74 Amount $392 1 + % = 365 $395.41 = Interest charged $395.41 $392 = − $3.41 =",
+        "criteria": [
+          {
+            "marks": 3,
+            "text": "Provides correct solution"
+          },
+          {
+            "marks": 2,
+            "text": "r, Uses the compound interest formula with correct or equivalent merit"
+          },
+          {
+            "marks": 1,
+            "text": "Attempts to use compound interest formula, or equivalent merit"
+          }
+        ]
       },
       {
         "question": 28,
         "part": null,
         "marks": 3,
-        "sampleAnswer": "From the graph the five-number summary is: Minimum 130 135 Q1 Median 140 160 Q3 Maximum 180 130 135 140 145 150 155 160 165 170 175 180 Height (cm)"
+        "sampleAnswer": "From the graph the five-number summary is: Minimum 130 135 Q1 Median 140 160 Q3 Maximum 180 130 135 140 145 150 155 160 165 170 175 180 Height (cm)",
+        "criteria": [
+          {
+            "marks": 3,
+            "text": "Provides correct box-plot"
+          },
+          {
+            "marks": 2,
+            "text": "Provides correct five-number summary, or equivalent merit"
+          },
+          {
+            "marks": 1,
+            "text": "Provides correct median, or equivalent merit"
+          }
+        ]
       },
       {
         "question": 29,
         "part": null,
         "marks": 2,
-        "sampleAnswer": "6 Blue 15 Blue 7 9 Yellow 16 15 7 9 Blue 15 16 Yellow 8 Yellow 15 (BB) (YY) P P + 7 6 9 8 = × + × 16 15 16 15 19 = 40"
+        "sampleAnswer": "6 Blue 15 Blue 7 9 Yellow 16 15 7 9 Blue 15 16 Yellow 8 Yellow 15 (BB) (YY) P P + 7 6 9 8 = × + × 16 15 16 15 19 = 40",
+        "criteria": [
+          {
+            "marks": 2,
+            "text": "Provides correct solution"
+          },
+          {
+            "marks": 1,
+            "text": "Provides a calculation that shows evidence of understanding without replacement, or equivalent merit"
+          }
+        ]
       },
       {
         "question": 30,
         "part": null,
         "marks": 2,
-        "sampleAnswer": "11B P = $465P $350B $494 000 000 + ="
+        "sampleAnswer": "11B P = $465P $350B $494 000 000 + =",
+        "criteria": [
+          {
+            "marks": 2,
+            "text": "Provides correct answer"
+          },
+          {
+            "marks": 1,
+            "text": "Provides one correct linear equation"
+          }
+        ]
       },
       {
         "question": 31,
         "part": null,
         "marks": 3,
-        "sampleAnswer": "(taxable 000) $47 420 $31 288 0.37 income $135 = + − (taxable 000) $16 132 0.37 income $135 = − $43 600 taxable income $135 000 = −"
+        "sampleAnswer": "(taxable 000) $47 420 $31 288 0.37 income $135 = + − (taxable 000) $16 132 0.37 income $135 = − $43 600 taxable income $135 000 = −",
+        "criteria": [
+          {
+            "marks": 3,
+            "text": "Provides correct solution"
+          },
+          {
+            "marks": 2,
+            "text": "Provides evidence of using 0.37 in a tax calculation, or equivalent merit"
+          },
+          {
+            "marks": 1,
+            "text": "Shows evidence of using correct line in the table, or equivalent merit"
+          }
+        ]
       },
       {
         "question": 32,
         "part": null,
         "marks": 3,
-        "sampleAnswer": "4"
+        "sampleAnswer": "4",
+        "criteria": [
+          {
+            "marks": 3,
+            "text": "Provides correct solution"
+          },
+          {
+            "marks": 2,
+            "text": "h, Provides evidence of equating volumes to find or equivalent merit"
+          },
+          {
+            "marks": 1,
+            "text": "Finds the volume of a sphere, or equivalent merit"
+          }
+        ]
       },
       {
         "question": 33,
         "part": null,
         "marks": 5,
-        "sampleAnswer": ""
+        "sampleAnswer": "",
+        "criteria": [
+          {
+            "marks": 5,
+            "text": "Provides correct solution"
+          },
+          {
+            "marks": 4,
+            "text": "Provides total amount to be repaid, or equivalent merit"
+          },
+          {
+            "marks": 3,
+            "text": "Calculates the interest on the loan, or equivalent merit"
+          },
+          {
+            "marks": 2,
+            "text": "Finds the total amount to be borrowed, or equivalent merit"
+          },
+          {
+            "marks": 1,
+            "text": "Finds the number of $100 needed to calculate stamp duty, or equivalent merit"
+          }
+        ]
       },
       {
         "question": 34,
         "part": null,
         "marks": 3,
-        "sampleAnswer": "7 12 6 n = × r = 12 84 periods = 84 6 21 000 1 % + 12 31 927.76 = Monthly deposit = $31 927.76 104.07393 ÷ ` = $306.78"
+        "sampleAnswer": "7 12 6 n = × r = 12 84 periods = 84 6 21 000 1 % + 12 31 927.76 = Monthly deposit = $31 927.76 104.07393 ÷ ` = $306.78",
+        "criteria": [
+          {
+            "marks": 3,
+            "text": "Provides correct solution"
+          },
+          {
+            "marks": 2,
+            "text": "Finds Lin’s correct future value, or equivalent merit"
+          },
+          {
+            "marks": 1,
+            "text": "Finds the correct rate and number of periods, or equivalent merit"
+          }
+        ]
       },
       {
         "question": 35,
         "part": null,
         "marks": 3,
-        "sampleAnswer": "T 36° q 51 36° P A 75"
+        "sampleAnswer": "T 36° q 51 36° P A 75",
+        "criteria": [
+          {
+            "marks": 3,
+            "text": "Provides correct solution"
+          },
+          {
+            "marks": 2,
+            "text": "Correctly uses the sine rule, or equivalent merit"
+          },
+          {
+            "marks": 1,
+            "text": "Attempts to use the sine rule, or equivalent merit"
+          }
+        ]
       },
       {
         "question": 36,
         "part": null,
         "marks": 4,
-        "sampleAnswer": "( ) $44 000 $55 000 1 OR 55 000 44 000 11 000 r = − − = 44 000 11 000 1 100% 20% r r = − = × = 55 000 55 000 0.8 1 r = − 0.2 r = ` 20% r = Value after 9 years Value after 9 years OR ( ) 9 ( )9 $55 000 1 0.2 $55 000 1 0.2 = − = − $7381.98 $7381.98 = = Value after 10 years Value of depreciation ( ) 10 $55 000 1 0.2 $7381.98 0.2 = − = × $5905.58 $1476.40 = = Difference $1476.40 ="
+        "sampleAnswer": "( ) $44 000 $55 000 1 OR 55 000 44 000 11 000 r = − − = 44 000 11 000 1 100% 20% r r = − = × = 55 000 55 000 0.8 1 r = − 0.2 r = ` 20% r = Value after 9 years Value after 9 years OR ( ) 9 ( )9 $55 000 1 0.2 $55 000 1 0.2 = − = − $7381.98 $7381.98 = = Value after 10 years Value of depreciation ( ) 10 $55 000 1 0.2 $7381.98 0.2 = − = × $5905.58 $1476.40 = = Difference $1476.40 =",
+        "criteria": [
+          {
+            "marks": 4,
+            "text": "Provides correct solution"
+          },
+          {
+            "marks": 3,
+            "text": "Finds value after 9 years, or equivalent merit"
+          },
+          {
+            "marks": 2,
+            "text": "Provides correct rate, or equivalent merit"
+          },
+          {
+            "marks": 1,
+            "text": "Uses 44 000 correctly in an appropriate formula, or equivalent merit"
+          }
+        ]
       },
       {
         "question": 37,
         "part": null,
         "marks": 4,
-        "sampleAnswer": "3 60° 9 c"
+        "sampleAnswer": "3 60° 9 c",
+        "criteria": [
+          {
+            "marks": 4,
+            "text": "Provides correct solution"
+          },
+          {
+            "marks": 3,
+            "text": "Finds the area of the grassed section, or equivalent merit"
+          },
+          {
+            "marks": 2,
+            "text": "Finds the length of a side of the grassed section, or equivalent merit"
+          },
+          {
+            "marks": 1,
+            "text": "Identifies an angle of 60°, or equivalent merit"
+          }
+        ]
       },
       {
         "question": 38,
         "part": null,
         "marks": 3,
-        "sampleAnswer": "1 US gallon 3.8 L = 30 miles 30 1.6 km 48 km = × = 3.8 L 100 Fuel efficiency = × 48 km 100 7.916 L . . . = 100 km 7.9 L /100 km (1 decimal place) ="
+        "sampleAnswer": "1 US gallon 3.8 L = 30 miles 30 1.6 km 48 km = × = 3.8 L 100 Fuel efficiency = × 48 km 100 7.916 L . . . = 100 km 7.9 L /100 km (1 decimal place) =",
+        "criteria": [
+          {
+            "marks": 3,
+            "text": "Provides correct solution"
+          },
+          {
+            "marks": 2,
+            "text": "Performs two correct conversions"
+          },
+          {
+            "marks": 1,
+            "text": "Performs one correct conversion"
+          }
+        ]
       },
       {
         "question": 39,
         "part": null,
         "marks": 3,
-        "sampleAnswer": "x y ka = At 0, 15, therefore 15 x y k = = = When 2, 9 x y = = 15a2 9 = 9 a2 = 15 0.6 0.7746 a = = . . . When 4 x = (0.7746 .)4 15 y = × . . 5.4 mg ="
+        "sampleAnswer": "x y ka = At 0, 15, therefore 15 x y k = = = When 2, 9 x y = = 15a2 9 = 9 a2 = 15 0.6 0.7746 a = = . . . When 4 x = (0.7746 .)4 15 y = × . . 5.4 mg =",
+        "criteria": [
+          {
+            "marks": 3,
+            "text": "Provides correct solution"
+          },
+          {
+            "marks": 2,
+            "text": "a, Finds the value of or equivalent merit"
+          },
+          {
+            "marks": 1,
+            "text": "k, Finds the value of or equivalent merit"
+          }
+        ]
       },
       {
         "question": 40,
         "part": "a",
         "marks": 4,
-        "sampleAnswer": "12 600 Number of male sheep 600 = = 21 Percentage of 15 100 2.5% males weighing = × = 600 2.5% more than kg x 76.2 2 6.8 x z = + × 76.2 x 76.2 13.6 x = + 89.8 kg x ="
+        "sampleAnswer": "12 600 Number of male sheep 600 = = 21 Percentage of 15 100 2.5% males weighing = × = 600 2.5% more than kg x 76.2 2 6.8 x z = + × 76.2 x 76.2 13.6 x = + 89.8 kg x =",
+        "criteria": [
+          {
+            "marks": 4,
+            "text": "Provides correct solution"
+          },
+          {
+            "marks": 3,
+            "text": "z-score Attempt to use a in a calculation, or equivalent merit kg"
+          },
+          {
+            "marks": 2,
+            "text": "x Calculates the percentage of males that weigh more than"
+          },
+          {
+            "marks": 1,
+            "text": "Calculates the number of male sheep, or equivalent merit"
+          }
+        ]
       },
       {
         "question": 40,
         "part": "b",
         "marks": 1,
-        "sampleAnswer": "x −m will be larger than 2 as the mean and standard deviation for females is smaller. z = s The percentage of female sheep with weight greater than kg will be smaller than 2.5%. x So less than 300 females will weigh more than kg. x Answer could include: 2.5% z x Females Males <2.5% 300 sheep ≈ 2025 HSC Mathematics Standard 2 Mapping Grid Section I Question Marks Content Syllabus outcomes 1 1 MS-N2 Network Concepts MS2-12-8 2 1 MS-A4 Types of Relationships MS2-12-1 3 1 MS-N2 Network Concepts MS2-12-8 4 1 MS-F1 Money Matters MS11-5 5 1 MS-M1 Applications of Measurement MS11-3 6 1 MS-A1 Formulae and Equations MS11-1 7 1 MS-S1 Data Analysis MS11-7 8 1 MS-S2 Relative Frequency and Probability MS11-10 9 1 MS-M7 Rates and Ratios MS2-12-3 10 1 MS-A1 Formulae and Equations MS11-1 11 1 MS-A4 Types of Relationships MS2-12-6 12 1 MS-M2 Working with Time MS11-3 13 1 MS-S2 Relative Frequency and Probability MS11-10 14 1 MS-M6 Non-right-angled Trigonometry MS2-12-4 15 1 MS-S5 The Normal Distribution MS2-12-7 Section II Question Marks Content Syllabus outcomes 16 2 MS-M7 Rates and Ratios MS2-12-3 17 3 MS-S4 Bivariate Data Analysis MS2-12-2 18 2 MS-F5 Annuities MS2-12-5 19 (a) 2 MS-N3 Critical Path Analysis MS2-12-8 19 (b) 2 MS-N3 Critical Path Analysis MS2-12-8 19 (c) 1 MS-N3 Critical Path Analysis MS2-12-8, MS2-12-10 20 (a) 2 MS-A4 Types of Relationships MS2-12-6 20 (b) 1 MS-A4 Types of Relationships MS2-12-6 21 (a) 1 MS-M7 Rates and Ratios MS2-12-3 21 (b) 2 MS-M7 Rates and Ratios MS2-12-3, MS2-12-10 22 (a) 1 MS-N3 Critical Path Analysis MS2-12-8 22 (b) (i) 2 MS-N3 Critical Path Analysis MS2-12-8, MS2-12-10 22 (b) (ii) 1 MS-N3 Critical Path Analysis MS2-12-8 22 (b) (iii) 1 MS-N3 Critical Path Analysis MS2-12-8, MS2-12-10 23 2 MS-F4 Investment and Loans MS2-12-5 24 2 MS-M7 Rates and Ratios MS2-12-3 Question Marks Content Syllabus outcomes 25 (a) 2 MS-S4 Bivariate Data Analysis MS2-12-2 25 (b) 2 MS-S4 Bivariate Data Analysis MS2-12-2 25 (c) 1 MS-S4 Bivariate Data Analysis MS2-12-7 25 (d) 1 MS-S4 Bivariate Data Analysis MS2-12-10 26 (a) 2 MS-M1 Applications of Measurement MS11-4 26 (b) 2 MS-M1 Applications of Measurement MS11-4 26 (c) 2 MS-M1 Applications of Measurement MS11-3 27 3 MS-F4 Investment and Loans MS2-12-5 28 3 MS-S1 Data Analysis MS11-7, MS11-9 29 2 MS-S2 Relative Frequency and Probability MS11-8 30 2 MS-A4 Types of Relationships MS2-12-6 31 3 MS-F1 Money Matters MS11-5 32 3 MS-M1 Applications of Measurement MS11-4, MS11-10 33 5 MS-F1 Money Matters MS11-5, MS11-10 34 3 MS-F5 Annuities MS2-12-5, MS2-12-10 35 3 MS-M6 Non-right-angled Trigonometry MS2-12-4 36 4 MS-F4 Investment and Loans MS2-12-5 37 4 MS-M6 Non-right-angled Trigonometry MS2-12-4 38 3 MS-M7 Rates and Ratios MS2-12-3 39 3 MS-A4 Types of Relationships MS2-12-6 40 (a) 4 MS-S5 The Normal Distribution MS2-12-7 40 (b) 1 MS-S5 The Normal Distribution MS2-12-7, MS2-12-10"
+        "sampleAnswer": "x −m will be larger than 2 as the mean and standard deviation for females is smaller. z = s The percentage of female sheep with weight greater than kg will be smaller than 2.5%. x So less than 300 females will weigh more than kg. x Answer could include: 2.5% z x Females Males <2.5% 300 sheep ≈ 2025 HSC Mathematics Standard 2 Mapping Grid Section I Question Marks Content Syllabus outcomes 1 1 MS-N2 Network Concepts MS2-12-8 2 1 MS-A4 Types of Relationships MS2-12-1 3 1 MS-N2 Network Concepts MS2-12-8 4 1 MS-F1 Money Matters MS11-5 5 1 MS-M1 Applications of Measurement MS11-3 6 1 MS-A1 Formulae and Equations MS11-1 7 1 MS-S1 Data Analysis MS11-7 8 1 MS-S2 Relative Frequency and Probability MS11-10 9 1 MS-M7 Rates and Ratios MS2-12-3 10 1 MS-A1 Formulae and Equations MS11-1 11 1 MS-A4 Types of Relationships MS2-12-6 12 1 MS-M2 Working with Time MS11-3 13 1 MS-S2 Relative Frequency and Probability MS11-10 14 1 MS-M6 Non-right-angled Trigonometry MS2-12-4 15 1 MS-S5 The Normal Distribution MS2-12-7 Section II Question Marks Content Syllabus outcomes 16 2 MS-M7 Rates and Ratios MS2-12-3 17 3 MS-S4 Bivariate Data Analysis MS2-12-2 18 2 MS-F5 Annuities MS2-12-5 19 (a) 2 MS-N3 Critical Path Analysis MS2-12-8 19 (b) 2 MS-N3 Critical Path Analysis MS2-12-8 19 (c) 1 MS-N3 Critical Path Analysis MS2-12-8, MS2-12-10 20 (a) 2 MS-A4 Types of Relationships MS2-12-6 20 (b) 1 MS-A4 Types of Relationships MS2-12-6 21 (a) 1 MS-M7 Rates and Ratios MS2-12-3 21 (b) 2 MS-M7 Rates and Ratios MS2-12-3, MS2-12-10 22 (a) 1 MS-N3 Critical Path Analysis MS2-12-8 22 (b) (i) 2 MS-N3 Critical Path Analysis MS2-12-8, MS2-12-10 22 (b) (ii) 1 MS-N3 Critical Path Analysis MS2-12-8 22 (b) (iii) 1 MS-N3 Critical Path Analysis MS2-12-8, MS2-12-10 23 2 MS-F4 Investment and Loans MS2-12-5 24 2 MS-M7 Rates and Ratios MS2-12-3 Question Marks Content Syllabus outcomes 25 (a) 2 MS-S4 Bivariate Data Analysis MS2-12-2 25 (b) 2 MS-S4 Bivariate Data Analysis MS2-12-2 25 (c) 1 MS-S4 Bivariate Data Analysis MS2-12-7 25 (d) 1 MS-S4 Bivariate Data Analysis MS2-12-10 26 (a) 2 MS-M1 Applications of Measurement MS11-4 26 (b) 2 MS-M1 Applications of Measurement MS11-4 26 (c) 2 MS-M1 Applications of Measurement MS11-3 27 3 MS-F4 Investment and Loans MS2-12-5 28 3 MS-S1 Data Analysis MS11-7, MS11-9 29 2 MS-S2 Relative Frequency and Probability MS11-8 30 2 MS-A4 Types of Relationships MS2-12-6 31 3 MS-F1 Money Matters MS11-5 32 3 MS-M1 Applications of Measurement MS11-4, MS11-10 33 5 MS-F1 Money Matters MS11-5, MS11-10 34 3 MS-F5 Annuities MS2-12-5, MS2-12-10 35 3 MS-M6 Non-right-angled Trigonometry MS2-12-4 36 4 MS-F4 Investment and Loans MS2-12-5 37 4 MS-M6 Non-right-angled Trigonometry MS2-12-4 38 3 MS-M7 Rates and Ratios MS2-12-3 39 3 MS-A4 Types of Relationships MS2-12-6 40 (a) 4 MS-S5 The Normal Distribution MS2-12-7 40 (b) 1 MS-S5 The Normal Distribution MS2-12-7, MS2-12-10",
+        "criteria": [
+          {
+            "marks": 1,
+            "text": "Provides correct reason"
+          }
+        ]
       }
     ]
   }

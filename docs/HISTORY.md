@@ -2669,3 +2669,197 @@ scoped prerequisite — worth doing once, not per subject.
 - The Multimedia runbook, written earlier today, said `mark-written.js` marks against
   `keywords` + `modelAnswer`. It does not — `keywords` + `bandDescriptors`. Corrected, and it is
   the finding the whole design turns on.
+
+---
+
+## 2026-09-01 (later still) — VET Construction written-answer review: the first one ever run, and six real defects
+
+Branch `review/vet-written` (cut from `port/maths-advanced`, because `main` does not yet
+carry the Mathematics Advanced keys and the inertness check below needed all four written
+keys present). **Not merged.** Runbook:
+`docs/subject-plans/vet-construction-written-review.md`.
+
+The mechanism designed earlier today (`docs/porting-playbook.md` §6) run for real, on the
+subject the Multimedia runbook's backlog table nominated to go first: worst data coverage
+in the repo (**0 of 23 `bandDescriptors`**) and the only subject with a demonstrated
+authoring-accuracy problem — the 2026-08-27 MC pass found 6 wrong answers in 75, every one
+carrying an `optionExplanations` entry arguing for the wrong answer. **That expectation was
+right. Six of the 23 written questions carried a real defect, and CI passed on all six
+throughout, because the mark was correct in every case.**
+
+### Prerequisite: `bandDescriptors` now have ground truth
+
+`scripts/build_written_key.py` previously extracted a part's mark and NESA's sample answer
+but **not the criteria table**, so band descriptors could be reviewed for plausibility and
+nothing else. It now also keeps each criteria row's **text** beside the mark it already read
+positionally, as `criteria: [{marks, text}]`.
+
+⚠️ **A criteria row's mark is vertically CENTRED in its cell.** 2024 VET Q16(a) is the proof:
+its `2` sits beside the bare word `OR`, on the middle of the row's three lines, between the
+two clauses it applies to. Bracketing a row by the mark-bearing lines around it leaks wording
+in **both** directions — bit-for-bit the bug `build_mapping_grid.py` was fixed for on
+2026-08-28, in a different file, three days apart. These tables are genuinely ruled, so
+`row_rules()`/`band_of()` were lifted from that script and read the boundaries the page
+itself draws. An unruled table degrades to one row per mark-bearing line; it never merges
+rows silently.
+
+**Inertness was the condition on the change and it was machine-checked, not asserted.** All
+four committed written keys regenerate with **every previously existing field byte-identical**
+— verified by stripping `criteria` from the regenerated files and comparing against `HEAD`:
+all four inert, **1 446 criteria rows added** (Maths Advanced 540, Standard 2 510, Multimedia
+146, VET 250), **0 parts with no criteria**, every paper still reconciling to its front-page
+total. The raw diff corroborates: of 591 removed lines, **587 are `sampleAnswer` lines that
+gained a trailing comma** and 4 are the `note` blocks. HMS has no key and is untouched.
+
+### The decision: N official bands to the engine's three
+
+`bandDescriptors` is fixed at `{full, partial, minimal}` (both consumers read exactly those
+keys), while VET's criteria tables carry 1–5 rows: 3 questions with 1 band, 7 with 2, 7 with
+3, 1 with 4, and 5 with 5 — including the 10- and 15-mark extended responses banded
+`[10,8,6,4,2]` and `[15,12,9,6,3]`.
+
+**Rule adopted, applied to all 23 without exception: `full` = NESA's top row verbatim,
+`minimal` = NESA's bottom row verbatim, `partial` = every row between them, verbatim, joined
+with " OR ".**
+
+Rejected: mapping the slots onto the engine's mark arithmetic. `buildKeywordFeedback()` picks
+`full` at 70% or more of the maximum, `partial` above zero and `minimal` at exactly zero — **and
+NESA prints no row for zero at all**, so honouring that arithmetic would force *authored* prose
+into the `minimal` slot on every question. Top/middle/bottom keeps all three slots as NESA's
+own sentences, which is the whole point of building the extractor, and it lines up with the
+prompt `mark-written.js` already sends (10 / 5–9 / 0–4 against NESA's 10 / 8-6-4 / 2).
+
+Two degenerate shapes: **N = 2** has no middle row, so `partial` repeats the bottom row —
+repeating an official sentence is truthful where inventing a third is not. **N = 1** (the
+three 1-mark identify questions) has neither, so `partial` and `minimal` state the row's
+non-attainment. ⚠️ **That is the only authored, non-NESA descriptor text in the subject**, it
+is flagged on all three ledger entries, and it is low-consequence: those three questions score
+through `acceptableAnswers`, where the engine reads only `full` and `minimal`.
+
+One presentation liberty: NESA prints some criteria as separate bulleted lines in one cell,
+which the extractor faithfully joins into a run-on; nine substitutions across 2025 20(b) and
+2025 21 punctuate them ("…industry Provides…" becomes "…industry; provides…"). **No word
+added, removed or reordered**, and every substitution printed at build time — `SOURCE_TYPOS`
+discipline.
+
+### The six corrections
+
+1. **2023 Q19(b)(i) — the model answer's headline result was simply wrong: 2.61 m³ against
+   NESA's 2.99 m³.** It computed the footing volume from the shed's outer perimeter,
+   **omitting the centre beam entirely** and double-counting the corners — on a stimulus NESA
+   itself captions *"the hidden detail of the edge and centre beams"*, with the centre beam
+   drawn on the page. It then explained the gap away as *"corners (overlap) giving
+   approximately 2.61–2.99 m³ depending on method"*: a fabricated reconciliation of its own
+   error. The bank stem compounded it, saying *"300mm × 300mm **perimeter** beam footings"*.
+   Stem restored to the paper's wording, answer rewritten to NESA's method (17 m of long beams
+   at 1.53 m³ plus three 5.4 m cross beams at 1.46 m³ = 2.99 m³), with 2.61 kept and *named*
+   as the common error. Keywords `29` and `2.61` removed — they credited the wrong method.
+2. **2022 Q19(a) — both of the stimulus table's band labels were fabricated.** The answer
+   claimed 3700 kg falls in a "3001–4000 kg" range and 54 km in a "51–60 km" range. The table
+   (crop opened and read) is in **tonnes** — 0–2.99 / 3.00–4.99 / 5.00–6.99 / 7.00–8.99 — with
+   columns 1–30 / 31–50 / **51–70**. Neither quoted band exists on the page, and the kg to
+   tonne conversion the question actually tests was absent. `$450` was right, so nothing
+   reported it. **The same failure class as Multimedia 2022 Q2 (§10 rule 7), in the model
+   answer this time.**
+3. **2023 Q16(a)(i) — `acceptableAnswers` omitted one of NESA's own accepted answers.** NESA
+   lists *"Sliding saw • Compound saw • Mitre saw • Cut off saw"*; "sliding" was missing, so a
+   student writing NESA's first listed alternative was marked **incorrect**.
+4. **2022 Q17(c) — the stem gave away one of the two marks**, reading *"…the symbols shown
+   (RWT and **tree symbol**)"* where the paper says only *"Identify each of the architectural
+   symbols shown."* The answer also attributed removal to *"(the specific marking on the
+   plan)"*, which says nothing — the real indicator, visible in the committed crop, is the
+   **broken outline** against RWT's continuous one.
+5. **2025 Q18(b) — the stem gave away the third of three marks**, naming *"the **horizontal
+   sliding window** symbol shown"*. Restored to the paper's wording.
+6. **2021 Q16(a) — no keywords at all** (with 2022 19(a) and 2023 16(a)(i)). All three score
+   through `acceptableAnswers`, so `validate_subjects.cjs`'s "no scoring mechanism" warning
+   never fired — but `mark-written.js` was being sent an **empty concept list**. Filled from
+   NESA's own alternatives; the offline path is unchanged because `acceptableAnswers` takes
+   priority, verified in the browser rather than assumed.
+
+Two questions are **`divergent-accepted`**: 2024 Q19(a) and Q19(b), whose NESA samples extract
+as mangled equation layout (`!3! 4! + = 5 …`, `pr2 12 ´ ´ ´ depth`), compared numerically
+instead — 5 and 26 m; 7.2, 0.471 and 6.73 m³ — all agreeing. The standing Maths exception,
+appearing in a VET calculation question. Never a silent pass.
+
+### The standing mechanism
+
+- **Ledger** at `data/answer-key/written/reviews/vet-construction.json` — a sidecar, not
+  fields on the question, because `subjects/*.json` is downloaded by every student. Built by
+  new **`scripts/build_review_ledger.py`** from a hand-typed verdict table at new
+  **`scripts/reviews/vet_construction.py`**; the script computes fingerprints and shape and
+  **decides nothing**, refusing to write on a missing question, an unknown verdict, or a
+  non-`ok` verdict with no note.
+- **Fingerprint** — sha256 of NESA's sample answer for that entry, whitespace-normalised, *as
+  it read at review time*, so regenerating the key **voids** an affected review rather than
+  letting it go quietly stale.
+- **Checker ramp** — `check_written_key.cjs` prints review coverage for every subject and
+  **enforces it for any subject that has committed a ledger**. Opting in by committing a
+  ledger is what makes the ramp work: the four subjects with historical debt report 0% and
+  stay green, while VET can no longer regress. **Proved, not assumed** — corrupting one
+  fingerprint byte yields `1 STALE`, the right message and **exit 1**; restoring it, exit 0.
+- **Triage** — `scripts/review_triage.py <subject-id>` (generalised from the VET-only version;
+  smoke-tested on Multimedia) prints each question beside NESA's mark, sample and criteria so
+  no marking guideline is ever re-read, and `--triage` orders the queue. ⚠️ **Ordering only.**
+  Worth recording how weak the signals proved: the queue's **top** entry was a
+  `divergent-accepted`, while **2022 17(c) and 2025 18(b) sat at the very bottom on overlap
+  1.00** — a stem that gives the answer away and an answer that misdescribes a picture both
+  score as *perfect agreement*. Two of six defects were invisible to every mechanical signal.
+
+### Schema drift — the brief's premise corrected
+
+VET stores its model answer as `answer`, and carries `acceptableAnswers` and `minKeywords`.
+All three are **load-bearing** (`acceptableAnswers` is a complete all-or-nothing scoring
+branch at `index.html:1994` that **takes priority over `keywords`**; `minKeywords` is the
+half-marks threshold at `:2012`) and **none was canonicalised**. But the premise that these
+are VET-only fields is **wrong**, and it would have misdirected the next reviewer: measured
+across all five subject files, `acceptableAnswers` appears on Maths Advanced (6), Standard 2
+(47), Multimedia (4) and VET (3), and `minKeywords` on 126 / 111 / 25 / 23. **No subject
+anywhere uses `modelAnswer`** — `answer` is the de facto canonical name. The real outlier is
+**HMS**, which uses `topic`/`maxMark` and carries no `year` or `section`. Nothing was changed
+on that basis.
+
+### Verified
+
+Full local CI green: `validate_subjects.cjs` (`MC=706 Written=369 imageRefs=311
+missingImages=0`, `Issues: 0`), `check_answer_key.cjs` (**285 answers, 0 wrong, 0
+unverifiable**), `check_written_key.cjs` (**329 written questions, 0 wrong, 0 unverifiable**;
+VET review **23/23**), `node --check` on all five Cloudflare function files, `npm test`
+**67 pass / 0 fail**.
+
+Browser at **430 px** against the local preview: all 23 VET written questions rendered one by
+one — `body.scrollWidth` never exceeds 430 and **no `.question-area` overflows**; all 13
+stimulus images load at 388 px (⚠️ forced to `loading='eager'` and awaited first, or every one
+reads `naturalWidth` 0). **2025 Q20(b), 10 marks**: badge renders `10 marks`, a deliberately
+partial answer scores **4/10, 36% matched**, and the feedback is now **NESA's own middle band**
+in place of the old generic "Good — solid understanding…"; the model answer renders in full.
+All five corrected questions re-read on screen with their restored stems live.
+
+⚠️ **The live AI marking call was NOT made.** The client payload was captured from
+`tryAiMarking()` with `fetch` stubbed — it now carries the three real descriptors where it
+previously sent `bandDescriptors: null` — and that payload was run through
+`functions/mark-written.js`'s **own prompt source, sliced from the file rather than retyped**,
+confirming the band block is well formed for a 10-mark question with no `undefined` in it. But
+no `ANTHROPIC_API_KEY` exists in this environment (only `ANTHROPIC_BASE_URL`), and the function
+also needs a verified Supabase JWT and an active subscription row. **Marking behaviour is
+verified to the prompt boundary and no further**; whoever next has a key should submit one
+10-mark and one 15-mark VET answer against the deployed function.
+
+### Found and deliberately not acted on
+
+- ⚠️ **Ten VET 2025 stems end with a literal `(N marks)`**, duplicating the badge the renderer
+  already draws — and **Mathematics Standard 2 has the same on 90 stems**. Fixing VET's ten
+  alone would leave the repo *less* consistent, so it is left for one pass across both.
+- ⚠️ **`parse_paper()` swallows the Mapping Grid into the last question of every paper**
+  (the final `Question N` header has no successor, so its sample block runs to the end of the
+  document). **Pre-existing**, harmless to the mark check, noted on the 2025 Q21 ledger entry
+  because that fingerprint therefore covers more text than the sample alone. Fixing it would
+  change committed `sampleAnswer` bytes in every subject and break this session's inertness
+  guarantee.
+- Loose keywords (`pi` is two characters, so `keywordHit()` fires on "pipe"). An engine change,
+  not a data one.
+
+**No mark, MC answer, `omittedParts` or `omittedQuestions` declaration was altered anywhere.**
+No credential, schema, pricing or engine fact changed. Remaining backlog: **346 of 369**
+written answers unreviewed — Maths Advanced 126, Standard 2 151, Multimedia 29, HMS 40;
+Standard 2 also still missing 40 `keywords`, Multimedia 4.

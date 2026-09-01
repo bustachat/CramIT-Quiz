@@ -1396,7 +1396,20 @@
         "mortice",
         "mortise"
       ],
-      "image": "/diagrams/vet-construction_2021_Q16_stimulus.jpg"
+      "image": "/diagrams/vet-construction_2021_Q16_stimulus.jpg",
+      "bandDescriptors": {
+        "full": "Correctly identifies a chisel",
+        "partial": "Does not correctly identify a chisel. The mark is awarded in full or not at all.",
+        "minimal": "Does not correctly identify a chisel. The mark is awarded in full or not at all."
+      },
+      "keywords": [
+        "chisel",
+        "firmer",
+        "bevelled",
+        "mortice",
+        "mortise"
+      ],
+      "minKeywords": 1
     },
     {
       "year": 2021,
@@ -1417,7 +1430,12 @@
         "cut",
         "timber"
       ],
-      "minKeywords": 3
+      "minKeywords": 3,
+      "bandDescriptors": {
+        "full": "Outlines TWO suitable uses for a chisel",
+        "partial": "Outlines ONE suitable use for a chisel",
+        "minimal": "Outlines ONE suitable use for a chisel"
+      }
     },
     {
       "year": 2022,
@@ -1438,25 +1456,35 @@
         "wall"
       ],
       "minKeywords": 3,
-      "image": "/diagrams/vet-construction_2022_Q16a_stimulus.jpg"
+      "image": "/diagrams/vet-construction_2022_Q16a_stimulus.jpg",
+      "bandDescriptors": {
+        "full": "Correctly names tool and outlines its function",
+        "partial": "Either names tool or a use of the tool",
+        "minimal": "Either names tool or a use of the tool"
+      }
     },
     {
       "year": 2022,
       "marks": 2,
       "section": "II",
       "qNum": "17(c)",
-      "q": "Identify the meaning of the symbols shown (RWT and tree symbol).",
-      "answer": "RWT = Rainwater Tank (an underground or above-ground tank collecting rainwater from roof downpipes for reuse). The tree symbol with a circle = Tree to be removed during construction (indicated by the specific marking on the plan).",
+      "q": "Identify each of the architectural symbols shown.",
+      "answer": "RWT = rainwater tank.<br><br>The second symbol — a broken (dashed) circle with a small circle at its centre — is a tree to be removed. On a site plan a feature drawn with a continuous outline is to remain, while a broken outline marks one that is to be removed or demolished; the small centre circle is the trunk.",
       "keywords": [
         "rainwater",
         "tank",
         "tree",
         "removed",
-        "water",
-        "collection"
+        "demolished",
+        "broken"
       ],
       "minKeywords": 3,
-      "image": "/diagrams/vet-construction_2022_Q17c_stimulus.jpg"
+      "image": "/diagrams/vet-construction_2022_Q17c_stimulus.jpg",
+      "bandDescriptors": {
+        "full": "Correctly labels TWO architectural symbols",
+        "partial": "Either correctly labels ONE architectural symbol or provides some relevant information",
+        "minimal": "Either correctly labels ONE architectural symbol or provides some relevant information"
+      }
     },
     {
       "year": 2022,
@@ -1464,12 +1492,25 @@
       "section": "II",
       "qNum": "19(a)",
       "q": "Using the delivery cost table shown, calculate the cost to deliver 3700 kg of sand from 54 km away.",
-      "answer": "$450. From the table: 3700 kg falls in the 3001–4000 kg range, and 54 km falls in the 51–60 km distance range, giving a delivery cost of $450.",
+      "answer": "$450. Convert the load to the units the table uses: 3700 kg = 3.7 tonnes, which falls in the <em>3.00–4.99</em> tonne row. 54 km falls in the <em>51–70</em> km column. Reading across to that column gives a delivery cost of $450.",
       "acceptableAnswers": [
         "450",
         "$450"
       ],
-      "image": "/diagrams/vet-construction_2022_Q19a_stimulus.jpg"
+      "image": "/diagrams/vet-construction_2022_Q19a_stimulus.jpg",
+      "bandDescriptors": {
+        "full": "Correctly reads the graph and selects the correct answer",
+        "partial": "Does not correctly read the table and select the correct answer. The mark is awarded in full or not at all.",
+        "minimal": "Does not correctly read the table and select the correct answer. The mark is awarded in full or not at all."
+      },
+      "keywords": [
+        "450",
+        "tonne",
+        "3.00–4.99",
+        "51–70",
+        "table"
+      ],
+      "minKeywords": 2
     },
     {
       "year": 2023,
@@ -1482,10 +1523,25 @@
         "drop saw",
         "mitre",
         "compound",
+        "sliding",
         "cut-off",
         "chop saw"
       ],
-      "image": "/diagrams/vet-construction_2023_Q16a_stimulus.jpg"
+      "image": "/diagrams/vet-construction_2023_Q16a_stimulus.jpg",
+      "bandDescriptors": {
+        "full": "Correctly names the saw pictured",
+        "partial": "Does not correctly name the saw pictured. The mark is awarded in full or not at all.",
+        "minimal": "Does not correctly name the saw pictured. The mark is awarded in full or not at all."
+      },
+      "keywords": [
+        "drop saw",
+        "mitre",
+        "compound",
+        "sliding",
+        "cut-off",
+        "chop saw"
+      ],
+      "minKeywords": 1
     },
     {
       "year": 2023,
@@ -1504,28 +1560,39 @@
         "cooktop"
       ],
       "minKeywords": 4,
-      "image": "/diagrams/vet-construction_2023_Q18b_stimulus.jpg"
+      "image": "/diagrams/vet-construction_2023_Q18b_stimulus.jpg",
+      "bandDescriptors": {
+        "full": "Correctly labels ALL symbols on the plan",
+        "partial": "Correctly labels some symbols on the plan",
+        "minimal": "Provides some relevant information"
+      }
     },
     {
       "year": 2023,
       "marks": 5,
       "section": "II",
       "qNum": "19(b)(i)",
-      "q": "Calculate the volume of concrete required for the footings of an 8.5m × 6m shed with 300mm × 300mm perimeter beam footings.",
-      "answer": "Perimeter of shed = 2 × (8.5 + 6) = 2 × 14.5 = 29 m\n\nVolume of footing = Perimeter × Width × Depth\n= 29 m × 0.3 m × 0.3 m\n= 2.61 m³\n\nNote: Some calculations account for corners (overlap) giving approximately 2.61–2.99 m³ depending on method. Show all working for full marks.",
+      "q": "A shed is to be built on a concrete slab with concrete footings. The drawing shows the hidden detail of the edge and centre beams required for the footings of the shed. Calculate how many cubic metres of concrete are required for the footings.",
+      "answer": "The footings are 300 mm × 300 mm, i.e. 0.3 m × 0.3 m in section. The drawing shows FIVE beams: two running the 8500 length, and THREE running the 6000 width — the two edge beams and a centre beam.<br><br>Long beams (8500 direction), taken full length: 2 × 8.5 = 17 m. Volume = 17 × 0.3 × 0.3 = 1.53 m³.<br>Cross beams (6000 direction): shorten each by the 300 mm width of a long beam at each end so the overlaps are not counted twice — 6.0 − (2 × 0.3) = 5.4 m each, and 3 × 5.4 = 16.2 m. Volume = 16.2 × 0.3 × 0.3 = 1.46 m³.<br><br>Total concrete = 1.53 + 1.46 = 2.99 m³.<br><br>The centre beam is the part most often missed. Working from the outer perimeter alone — 2 × (8.5 + 6) = 29 m, giving 29 × 0.3 × 0.3 = 2.61 m³ — omits it and also double-counts the four corners, so it is not the required answer.",
       "keywords": [
-        "29",
-        "perimeter",
+        "2.99",
+        "1.53",
+        "1.46",
+        "5.4",
+        "16.2",
+        "centre beam",
+        "edge beam",
         "0.3",
         "volume",
-        "2.61",
-        "2.99",
-        "footing",
-        "width",
-        "depth"
+        "footing"
       ],
-      "minKeywords": 3,
-      "image": "/diagrams/vet-construction_2023_Q19b_stimulus.jpg"
+      "minKeywords": 4,
+      "image": "/diagrams/vet-construction_2023_Q19b_stimulus.jpg",
+      "bandDescriptors": {
+        "full": "Calculates the cubic metres of concrete required correctly",
+        "partial": "Calculates the cubic metres of concrete required with minor errors OR Provides some correct calculations to determine the cubic metres of concrete required OR Provides some relevant calculation",
+        "minimal": "Provides some relevant information"
+      }
     },
     {
       "year": 2024,
@@ -1546,7 +1613,12 @@
         "floor"
       ],
       "minKeywords": 4,
-      "image": "/diagrams/vet-construction_2024_Q16a_stimulus.jpg"
+      "image": "/diagrams/vet-construction_2024_Q16a_stimulus.jpg",
+      "bandDescriptors": {
+        "full": "Correctly names the tool and outlines TWO uses",
+        "partial": "Correctly outlines TWO uses OR Correctly names the tool AND outlines ONE use",
+        "minimal": "Correctly names the tool OR outlines ONE use"
+      }
     },
     {
       "year": 2024,
@@ -1568,7 +1640,12 @@
         "electrical"
       ],
       "minKeywords": 4,
-      "image": "/diagrams/vet-construction_2024_Q16b_stimulus.jpg"
+      "image": "/diagrams/vet-construction_2024_Q16b_stimulus.jpg",
+      "bandDescriptors": {
+        "full": "Describes a range of safety checks before using a belt sander",
+        "partial": "Outlines some safety checks before using a belt sander",
+        "minimal": "Provides some relevant information"
+      }
     },
     {
       "year": 2024,
@@ -1586,7 +1663,12 @@
         "sides"
       ],
       "minKeywords": 2,
-      "image": "/diagrams/vet-construction_2024_Q19a_stimulus.jpg"
+      "image": "/diagrams/vet-construction_2024_Q19a_stimulus.jpg",
+      "bandDescriptors": {
+        "full": "Correctly calculates the perimeter",
+        "partial": "Shows some logical steps",
+        "minimal": "Shows some logical steps"
+      }
     },
     {
       "year": 2024,
@@ -1606,7 +1688,12 @@
         "0.15"
       ],
       "minKeywords": 3,
-      "image": "/diagrams/vet-construction_2024_Q19b_stimulus.jpg"
+      "image": "/diagrams/vet-construction_2024_Q19b_stimulus.jpg",
+      "bandDescriptors": {
+        "full": "Correctly calculates the volume of the concrete slab minus the hole",
+        "partial": "Correctly calculates the volume of the concrete slab",
+        "minimal": "Shows a relevant calculation"
+      }
     },
     {
       "year": 2025,
@@ -1628,7 +1715,12 @@
         "timber"
       ],
       "minKeywords": 3,
-      "image": "/diagrams/vet-construction_2025_Q16_stimulus.jpg"
+      "image": "/diagrams/vet-construction_2025_Q16_stimulus.jpg",
+      "bandDescriptors": {
+        "full": "Outlines a suitable use for the tool",
+        "partial": "Provides some relevant information",
+        "minimal": "Provides some relevant information"
+      }
     },
     {
       "year": 2025,
@@ -1649,7 +1741,12 @@
         "adjust",
         "setting"
       ],
-      "minKeywords": 4
+      "minKeywords": 4,
+      "bandDescriptors": {
+        "full": "Describes TWO settings or adjustments that may be required before using the tool",
+        "partial": "Identifies a setting/s or adjustment/s that may be required before using the tool",
+        "minimal": "Provides some relevant information"
+      }
     },
     {
       "year": 2025,
@@ -1670,7 +1767,12 @@
         "cloth",
         "paper"
       ],
-      "minKeywords": 3
+      "minKeywords": 3,
+      "bandDescriptors": {
+        "full": "Outlines considerations for selection of abrasives on electric sander",
+        "partial": "Provides some relevant information",
+        "minimal": "Provides some relevant information"
+      }
     },
     {
       "year": 2025,
@@ -1691,7 +1793,12 @@
         "heat",
         "burning"
       ],
-      "minKeywords": 4
+      "minKeywords": 4,
+      "bandDescriptors": {
+        "full": "Describes TWO indicators which show that a tool is not performing efficiently or has a fault",
+        "partial": "Outlines an indicator/s which shows that a tool is not performing efficiently or has a fault",
+        "minimal": "Provides some relevant information"
+      }
     },
     {
       "year": 2025,
@@ -1716,7 +1823,12 @@
         "register",
         "storage"
       ],
-      "minKeywords": 6
+      "minKeywords": 6,
+      "bandDescriptors": {
+        "full": "Provides a thorough explanation of how builders can protect their tools and equipment from theft and damage on site",
+        "partial": "Provides a sound explanation of how builders can protect their tools and equipment from theft and damage on site OR Provides an explanation of how builders can protect their tools and equipment from theft OR damage on site OR Outlines ways builders can protect their tools and equipment",
+        "minimal": "Provides some relevant information"
+      }
     },
     {
       "year": 2025,
@@ -1739,14 +1851,19 @@
         "colour",
         "finish"
       ],
-      "minKeywords": 4
+      "minKeywords": 4,
+      "bandDescriptors": {
+        "full": "Lists information provided in a building specification",
+        "partial": "Provides some relevant information",
+        "minimal": "Provides some relevant information"
+      }
     },
     {
       "year": 2025,
       "marks": 3,
       "section": "II",
       "qNum": "18(b)",
-      "q": "Identify the meaning of the following symbols or abbreviations found on construction drawings: HW, RWP, and the horizontal sliding window symbol shown. (3 marks)",
+      "q": "Identify the meaning of the following symbols or abbreviations that are found on construction drawings.",
       "answer": "HW = Hot Water (refers to the hot water supply pipe or hot water service connection on plumbing/services drawings)\nRWP = Rainwater Pipe (the vertical downpipe that carries rainwater from the roof gutters to the stormwater drainage system)\nHorizontal sliding window symbol (two rectangles with arrows pointing toward each other) = a window where the sashes slide horizontally past each other to open",
       "keywords": [
         "hot water",
@@ -1759,7 +1876,12 @@
         "downpipe"
       ],
       "minKeywords": 4,
-      "image": "/diagrams/vet-construction_2025_Q18b_stimulus.jpg"
+      "image": "/diagrams/vet-construction_2025_Q18b_stimulus.jpg",
+      "bandDescriptors": {
+        "full": "Correctly identifies THREE symbols or abbreviations found on construction drawings",
+        "partial": "Correctly identifies TWO symbols or abbreviations found on construction drawings",
+        "minimal": "Correctly identifies ONE symbol or abbreviation found on construction drawings"
+      }
     },
     {
       "year": 2025,
@@ -1783,7 +1905,12 @@
         "appliance",
         "structure"
       ],
-      "minKeywords": 6
+      "minKeywords": 6,
+      "bandDescriptors": {
+        "full": "Describes a range of information that is provided on a floor plan",
+        "partial": "Outlines some information that is provided on a floor plan OR Identifies some information that is provided on a floor plan",
+        "minimal": "Provides some relevant information"
+      }
     },
     {
       "year": 2025,
@@ -1807,7 +1934,12 @@
         "soil",
         "protect"
       ],
-      "minKeywords": 6
+      "minKeywords": 6,
+      "bandDescriptors": {
+        "full": "Provides a detailed description of the control measures used to minimise soil erosion on a construction site",
+        "partial": "Provides a sound description of the control measures used to minimise soil erosion on a construction site OR Outlines the control measures used to minimise soil erosion on a construction site OR Outlines a control measure that minimises soil erosion",
+        "minimal": "Provides some relevant information"
+      }
     },
     {
       "year": 2025,
@@ -1832,7 +1964,12 @@
         "weight",
         "strain"
       ],
-      "minKeywords": 8
+      "minKeywords": 8,
+      "bandDescriptors": {
+        "full": "Provides a thorough explanation of techniques to minimise harm to workers from manual handling; uses relevant workplace examples",
+        "partial": "Provides a sound explanation of techniques to minimise harm to workers from manual handling; uses some workplace examples OR Provides a sound explanation of techniques to minimise harm to workers from manual handling OR Demonstrates some knowledge of manual handling",
+        "minimal": "Provides some relevant information"
+      }
     },
     {
       "year": 2025,
@@ -1860,7 +1997,12 @@
         "waste",
         "cost"
       ],
-      "minKeywords": 9
+      "minKeywords": 9,
+      "bandDescriptors": {
+        "full": "Provides a comprehensive explanation of a range of strategies to improve resource efficiency in the construction industry; provides a precise logical and cohesive response; uses relevant industry terminology; uses industry examples",
+        "partial": "Provides a thorough explanation of a range of strategies to improve resource efficiency in the construction industry; provides a logical and cohesive response; uses industry terminology; uses industry examples OR Provides a general explanation of a range of strategies to improve resource efficiency in the construction industry; uses industry terminology and/or includes some examples OR Shows an understanding of resource efficiency in the construction industry",
+        "minimal": "Provides some relevant information"
+      }
     }
   ],
   "studyNotes": [
