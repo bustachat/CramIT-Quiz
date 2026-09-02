@@ -44,11 +44,13 @@
 
 'use strict';
 
+const crypto = require('crypto');
 const fs = require('fs');
 const path = require('path');
 
 const REPO = path.join(__dirname, '..');
 const KEY_DIR = path.join(REPO, 'data', 'answer-key', 'written');
+const REVIEW_DIR = path.join(KEY_DIR, 'reviews');
 const SUBJECT_DIR = path.join(REPO, 'subjects');
 
 function readJson(file) {
@@ -83,6 +85,16 @@ function startsWith(leafPath, prefix) {
   return prefix.every((seg, i) => seg === leafPath[i]);
 }
 
+/**
+ * Fingerprint of NESA's sample answer, whitespace-normalised. Must stay identical to
+ * scripts/build_review_ledger.py:fingerprint() -- an irrelevant re-wrap of the PDF text
+ * layer must not void a review, but any change of WORDS must.
+ */
+function fingerprint(text) {
+  const norm = String(text || '').replace(/\s+/g, ' ').trim();
+  return 'sha256:' + crypto.createHash('sha256').update(norm, 'utf8').digest('hex');
+}
+
 if (!fs.existsSync(KEY_DIR)) {
   console.log('No data/answer-key/written/ directory — nothing to check.');
   process.exit(0);
@@ -97,6 +109,7 @@ if (keyFiles.length === 0) {
 let wrongTotal = 0;
 let checkedTotal = 0;
 let unverifiableTotal = 0;
+let reviewFailures = 0;
 
 for (const keyFile of keyFiles.sort()) {
   const subjectId = keyFile.replace(/\.json$/, '');
@@ -112,6 +125,7 @@ for (const keyFile of keyFiles.sort()) {
 
   const wrong = [];
   const unverifiable = [];
+  const officialSample = new Map(); // "year|qNum" -> NESA's sample text for that entry
   let checked = 0;
 
   for (const q of written) {
@@ -137,6 +151,8 @@ for (const keyFile of keyFiles.sort()) {
       );
       continue;
     }
+
+    officialSample.set(`${year}|${q.qNum}`, matches.map((p) => p.sampleAnswer || '').join(' '));
 
     const official = matches.reduce((sum, p) => sum + p.marks, 0);
     const omitted = (q.omittedParts || []).reduce((sum, p) => sum + (p.marks || 0), 0);
@@ -242,6 +258,62 @@ for (const keyFile of keyFiles.sort()) {
   );
   for (const line of unclaimed.slice(0, 6)) console.log(`        • ${line}`);
   if (unclaimed.length > 6) console.log(`        • ... and ${unclaimed.length - 6} more`);
+
+  // ── Written-answer review coverage ──────────────────────────────────────────────
+  //
+  // The mark is the ONLY thing enforced above. Everything a written question teaches
+  // or is marked on -- modelAnswer (shown straight to the student), keywords (AI
+  // marking AND the offline grid) and bandDescriptors (the AI's band rubric) -- is
+  // prose, and prose cannot be compared for equality. What CAN be checked is whether
+  // a human compared it against NESA, and whether that comparison is still current.
+  //
+  // The ledger stores a fingerprint of NESA's sample answer AS AT REVIEW TIME, so
+  // regenerating the key VOIDS any review whose official text moved rather than
+  // letting it go quietly stale. See docs/porting-playbook.md section 6.
+  //
+  // REPORT-THEN-ENFORCE, opted in per subject by committing a ledger: a subject with
+  // no ledger is reported at 0% and does not fail (four subjects carry historical
+  // debt); a subject WITH one must stay fully reviewed, so an unreviewed or stale
+  // question fails the build.
+  const ledgerFile = path.join(REVIEW_DIR, `${subjectId}.json`);
+  if (!fs.existsSync(ledgerFile)) {
+    console.log(
+      `        review:   0/${written.length} model answers reviewed against NESA ` +
+        `— no ledger (reported, not enforced)`
+    );
+  } else {
+    const ledger = readJson(ledgerFile);
+    const unreviewed = [];
+    const stale = [];
+    const verdicts = {};
+    for (const q of written) {
+      const entry = (ledger.reviews[String(q.year)] || {})[String(q.qNum)];
+      if (!entry) {
+        unreviewed.push(`${q.year} Q${q.qNum}`);
+        continue;
+      }
+      verdicts[entry.verdict] = (verdicts[entry.verdict] || 0) + 1;
+      const sample = officialSample.get(`${q.year}|${q.qNum}`);
+      if (sample !== undefined && fingerprint(sample) !== entry.sampleAnswerFingerprint) {
+        stale.push(`${q.year} Q${q.qNum} (reviewed ${entry.reviewedAt})`);
+      }
+    }
+    const reviewed = written.length - unreviewed.length;
+    const summary = Object.keys(verdicts)
+      .sort()
+      .map((v) => `${verdicts[v]} ${v}`)
+      .join(', ');
+    console.log(
+      `        review:   ${reviewed}/${written.length} reviewed against NESA` +
+        (summary ? ` — ${summary}` : '') +
+        (stale.length ? ` — ${stale.length} STALE` : '')
+    );
+    for (const line of unreviewed) console.log(`        ✗ unreviewed: ${line}`);
+    for (const line of stale) {
+      console.log(`        ✗ stale review: ${line} — NESA's sample answer has changed`);
+    }
+    reviewFailures += unreviewed.length + stale.length;
+  }
 }
 
 console.log(
@@ -254,6 +326,17 @@ if (wrongTotal > 0) {
     '\nWritten mark check FAILED. The official marks are ground truth — fix the ' +
       'question in subjects/, or declare a deliberately dropped part with ' +
       '`omittedParts` (CLAUDE.md section 10, rule 5). Never edit data/answer-key/ by hand.'
+  );
+  process.exit(1);
+}
+if (reviewFailures > 0) {
+  console.error(
+    `\nWritten-answer review check FAILED (${reviewFailures} question(s)). This subject ` +
+      'has a committed review ledger, so every written question must stay reviewed. ' +
+      'Read the question against NESA\'s sample answer and criteria in ' +
+      'data/answer-key/written/, add or update its verdict in scripts/reviews/, then ' +
+      'rebuild with scripts/build_review_ledger.py. A STALE entry means the official ' +
+      'text itself moved — re-read that one, do not just re-fingerprint it.'
   );
   process.exit(1);
 }

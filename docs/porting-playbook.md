@@ -647,12 +647,19 @@ answer *as it read when the review happened*. Regenerate the key, and any part w
 text changed has its fingerprint diverge, so the review is **automatically void** rather than
 quietly stale. That is the standing guarantee prose otherwise can't have.
 
-**The checker reports before it enforces**, the same ramp used for reverse coverage: print
-per-subject review coverage and any stale reviews, exit 0. Promote to a hard failure per
-subject once that subject reaches 100% — a new port should land reviewed and stay reviewed,
-without turning CI red on subjects carrying known historical debt.
+**The checker reports before it enforces**, the same ramp used for reverse coverage. Built
+2026-09-01: `check_written_key.cjs` prints per-subject review coverage and any stale reviews,
+and **enforces for any subject that has committed a ledger**. Committing the ledger is how a
+subject opts in — a new port lands reviewed and can never regress, while the subjects
+carrying historical debt report 0% and keep CI green. Tooling: `scripts/build_review_ledger.py`
+(from a hand-typed verdict table in `scripts/reviews/{subject_id}.py`) and
+`scripts/review_triage.py <subject-id>` for the queue.
 
 **Mechanical triage orders the reading queue. It never decides anything.**
+⚠️ The VET run put numbers on how weak it is: its queue's **top** entry was a benign
+`divergent-accepted`, and **two of the six real defects sat at the very bottom, on term
+overlap 1.00** — a stem that gives away its own answer, and an answer that misdescribes a
+picture, both score as *perfect agreement* with NESA. Read every question regardless of rank.
 ⚠️ This project has been burned repeatedly by similarity scoring (`backfill_qnum.py` exists
 because of it, and §10 rule 3 is explicit that fuzzy text-matching is not a join). These
 signals say *read this one first* — they are never a verdict, and never a substitute for
@@ -665,11 +672,27 @@ reading:
   that list is where an answer to a *different question* hides
 - `modelAnswer` length wildly out of step with the mark value
 
-⚠️ **`bandDescriptors` have no ground truth today.** `build_written_key.py` extracts the
-mark and the sample answer, but **not the criteria table** the marks are banded against — so
-band descriptors can be reviewed for plausibility but not against NESA. Extending the
-extractor to capture the criteria rows is a scoped prerequisite for reviewing that third
-field properly, and is worth doing once rather than per subject.
+✅ **`bandDescriptors` HAVE ground truth since 2026-09-01.** `build_written_key.py` now keeps
+each criteria row's **text** beside the mark it already read positionally, so a descriptor is
+derived from NESA's own wording instead of authored for plausibility. 1 446 criteria rows
+across the four subjects with papers; the extension is inert for every previously committed
+field.
+
+⚠️ **A criteria row's mark is vertically CENTRED in its cell**, so a row whose wording runs
+over three lines carries its mark on the *middle* line — bracketing a row by the mark lines
+around it leaks wording in BOTH directions, exactly the bug `build_mapping_grid.py` was fixed
+for. Read the table's own **drawn horizontal rules** (`row_rules()`/`band_of()`).
+
+**Collapsing N official bands to the engine's fixed `{full, partial, minimal}`** (VET's tables
+carry 1 to 5 rows): `full` = NESA's top row verbatim, `minimal` = NESA's bottom row verbatim,
+`partial` = every row between them, verbatim, joined with `" OR "`. Do **not** try to map the
+slots onto the engine's mark arithmetic — it treats `minimal` as *zero* marks, and NESA
+prints no row for zero, so that mapping forces authored prose into every question. Two
+degenerate shapes: N = 2 has no middle row, so `partial` repeats the bottom row (repeating an
+official sentence beats inventing a third); N = 1 (all-or-nothing 1-mark questions) has
+neither, so `partial`/`minimal` state the row's non-attainment — the one place a descriptor
+is not NESA's wording, and it must be flagged in the ledger. Worked through in
+`docs/subject-plans/vet-construction-written-review.md`.
 
 **Where a subject legitimately diverges, say so in the ledger.** Maths sample answers extract
 as mangled equation layout (`x2 102 82 = + 2 = 164`), so a Maths model answer *should* read

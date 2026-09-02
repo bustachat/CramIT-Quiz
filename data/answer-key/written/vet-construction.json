@@ -1,98 +1,332 @@
 {
   "subject": "vet-construction",
   "source": "NESA HSC marking guidelines (not in repo - copyright)",
-  "note": "Official maximum marks per question part, plus the official sample answer for reference. Marks are enforced by scripts/check_written_key.cjs; sample answers are not - prose cannot be compared for equality. Regenerate with scripts/build_written_key.py; never hand-edit.",
+  "note": "Official maximum marks per question part, plus the official sample answer and criteria rows for reference. Marks are enforced by scripts/check_written_key.cjs; sample answers and criteria are not - prose cannot be compared for equality. The criteria rows are the ground truth a question's bandDescriptors are authored from. Regenerate with scripts/build_written_key.py; never hand-edit.",
   "papers": {
     "2021": [
       {
         "question": 16,
         "part": "a",
         "marks": 1,
-        "sampleAnswer": "Chisel. Answers could include: Firmer chisel, bevelled edge, mortice."
+        "sampleAnswer": "Chisel. Answers could include: Firmer chisel, bevelled edge, mortice.",
+        "criteria": [
+          {
+            "marks": 1,
+            "text": "Correctly identifies a chisel"
+          }
+        ]
       },
       {
         "question": 16,
         "part": "b",
         "marks": 2,
-        "sampleAnswer": "Cutting joints such as rebate and housing. Answers could include: Housing; cleaning off dry glue; fitting hinges or locks; removing or paring timber."
+        "sampleAnswer": "Cutting joints such as rebate and housing. Answers could include: Housing; cleaning off dry glue; fitting hinges or locks; removing or paring timber.",
+        "criteria": [
+          {
+            "marks": 2,
+            "text": "Outlines TWO suitable uses for a chisel"
+          },
+          {
+            "marks": 1,
+            "text": "Outlines ONE suitable use for a chisel"
+          }
+        ]
       },
       {
         "question": 16,
         "part": "c",
         "marks": 2,
-        "sampleAnswer": "A blunt chisel becomes unsafe and increases the risk of injury. Bluntness results in longer time to complete projects therefore increasing costs. Poor quality cuts result in poor finish."
+        "sampleAnswer": "A blunt chisel becomes unsafe and increases the risk of injury. Bluntness results in longer time to complete projects therefore increasing costs. Poor quality cuts result in poor finish.",
+        "criteria": [
+          {
+            "marks": 2,
+            "text": "Describes one consequence of a poorly maintained chisel"
+          },
+          {
+            "marks": 1,
+            "text": "Provides some relevant information"
+          }
+        ]
       },
       {
         "question": 16,
         "part": "d",
         "marks": 3,
-        "sampleAnswer": "To take care of the chisel it is important to use it only for its intended tasks such as cutting joints, paring timber. It should be stored to protect the cutting edge. To maintain the chisel it needs to be honed and stropped. Answers could include: Care: Only use for cutting of appropriate materials • Store safely and to protect cutting edge • To be used as a chisel not for opening paint tins or to remove nails • Use appropriate hammer/mallet. • Maintenance: Grind, hone, strop or deburr • Check ferrule is secure and in place • Check handle, replace as needed. •"
+        "sampleAnswer": "To take care of the chisel it is important to use it only for its intended tasks such as cutting joints, paring timber. It should be stored to protect the cutting edge. To maintain the chisel it needs to be honed and stropped. Answers could include: Care: Only use for cutting of appropriate materials • Store safely and to protect cutting edge • To be used as a chisel not for opening paint tins or to remove nails • Use appropriate hammer/mallet. • Maintenance: Grind, hone, strop or deburr • Check ferrule is secure and in place • Check handle, replace as needed. •",
+        "criteria": [
+          {
+            "marks": 3,
+            "text": "Describes both care and maintenance procedures"
+          },
+          {
+            "marks": 2,
+            "text": "Outlines care and/or maintenance procedures"
+          },
+          {
+            "marks": 1,
+            "text": "Provides some relevant information"
+          }
+        ]
       },
       {
         "question": 17,
         "part": null,
         "marks": 5,
-        "sampleAnswer": "There are many personal attributes that construction workers should display to ensure they are successful within the industry. All workers should be well groomed and well presented. This includes being appropriately dressed and groomed for their roles. Items which could interfere with their role or cause a problem should not be taken to work. Attendance and punctuality require workers to be physically on the work site and adequately prepared prior to the expected starting time. Workers are required to perform tasks as per their skill level and to industry standards. They should also avoid practices in their private lives that could impair their ability and judgement on site. All safe work practices must be adhered to at all times. Workers should adhere to safe housekeeping and be aware of duty of care requirements and code of conduct compliance. Answers could include: Any combination of the following: Attendance and punctuality • Ethical behaviour • Honesty • Work performance • Taking directives • Attention to detail • Personal presentation and grooming • Attitude • Confidentiality • Consistency of service • Safe work practices. •"
+        "sampleAnswer": "There are many personal attributes that construction workers should display to ensure they are successful within the industry. All workers should be well groomed and well presented. This includes being appropriately dressed and groomed for their roles. Items which could interfere with their role or cause a problem should not be taken to work. Attendance and punctuality require workers to be physically on the work site and adequately prepared prior to the expected starting time. Workers are required to perform tasks as per their skill level and to industry standards. They should also avoid practices in their private lives that could impair their ability and judgement on site. All safe work practices must be adhered to at all times. Workers should adhere to safe housekeeping and be aware of duty of care requirements and code of conduct compliance. Answers could include: Any combination of the following: Attendance and punctuality • Ethical behaviour • Honesty • Work performance • Taking directives • Attention to detail • Personal presentation and grooming • Attitude • Confidentiality • Consistency of service • Safe work practices. •",
+        "criteria": [
+          {
+            "marks": 5,
+            "text": "Demonstrates in-depth knowledge of personal attributes"
+          },
+          {
+            "marks": 4,
+            "text": "Demonstrates sound knowledge of personal attributes"
+          },
+          {
+            "marks": 3,
+            "text": "Demonstrates general knowledge of personal attributes"
+          },
+          {
+            "marks": 2,
+            "text": "Shows a basic understanding of personal attributes"
+          },
+          {
+            "marks": 1,
+            "text": "Provides some relevant information"
+          }
+        ]
       },
       {
         "question": 18,
         "part": "a",
         "marks": 2,
-        "sampleAnswer": "× = 2.5 $62.00 $155.00 (Tradesperson) × = 2.5 $21.00 $52.50 (Apprentice) = Add together $207.50 (Total) Or × = 2.5 $83.00 $207.50 = Total answer $207.50"
+        "sampleAnswer": "× = 2.5 $62.00 $155.00 (Tradesperson) × = 2.5 $21.00 $52.50 (Apprentice) = Add together $207.50 (Total) Or × = 2.5 $83.00 $207.50 = Total answer $207.50",
+        "criteria": [
+          {
+            "marks": 2,
+            "text": "Correctly calculates the total labour cost"
+          },
+          {
+            "marks": 1,
+            "text": "Shows some logical steps in calculating the labour costs"
+          }
+        ]
       },
       {
         "question": 18,
         "part": "b",
         "marks": 3,
-        "sampleAnswer": "+ + + = Semi-circle perimeter 5 6 6 total perimeter × × × + + + = (0.5 2 3.14 (pi) 2.5) 5 6 6 24.85 m + + + = (7.85 m 5 6 6 24.85)"
+        "sampleAnswer": "+ + + = Semi-circle perimeter 5 6 6 total perimeter × × × + + + = (0.5 2 3.14 (pi) 2.5) 5 6 6 24.85 m + + + = (7.85 m 5 6 6 24.85)",
+        "criteria": [
+          {
+            "marks": 3,
+            "text": "Correctly calculates the perimeter for the concrete slab"
+          },
+          {
+            "marks": 2,
+            "text": "Shows some relevant calculations for the concrete slab"
+          },
+          {
+            "marks": 1,
+            "text": "Shows a relevant calculation"
+          }
+        ]
       },
       {
         "question": 18,
         "part": "c",
         "marks": 4,
-        "sampleAnswer": "Area: 39.81m2 × × × + × = 0.5 (semi-circle) 3.14(pi) (2.5 2.5) (radius squared) 5 (width) 6 (length) Volume: 39.81m2 3.98m3 × = (area) 0.1m (slab thickness) 4.38m3 × = Then add 10% wastage. 3.98 1.1"
+        "sampleAnswer": "Area: 39.81m2 × × × + × = 0.5 (semi-circle) 3.14(pi) (2.5 2.5) (radius squared) 5 (width) 6 (length) Volume: 39.81m2 3.98m3 × = (area) 0.1m (slab thickness) 4.38m3 × = Then add 10% wastage. 3.98 1.1",
+        "criteria": [
+          {
+            "marks": 4,
+            "text": "m3 Calculates the correct volume of concrete needed in (including 10% wastage)"
+          },
+          {
+            "marks": 3,
+            "text": "Calculates the volume with minor errors in correct answer without 10% wastage"
+          },
+          {
+            "marks": 2,
+            "text": "Shows some relevant calculations for the concrete needed"
+          },
+          {
+            "marks": 1,
+            "text": "Shows a relevant calculation"
+          }
+        ]
       },
       {
         "question": 18,
         "part": "d",
         "marks": 4,
-        "sampleAnswer": "The factors that need to be considered include: all workers must have a valid White Card to gain access to the site; the employer must provide appropriate and correct training for machinery and plant operation; employer must provide clean drinking water and amenities; all electrical equipment must be in a serviceable condition and fitted with a current electrical tag before use. Answers could include: Sun protection, weather conditions, good housekeeping, correct training, PPE, electrical tags, ELCB, site access, first aid station, toilet facilities, drinking water, site must be well organised, site accessibility, waste material has been removed, appropriate load lifting is considered."
+        "sampleAnswer": "The factors that need to be considered include: all workers must have a valid White Card to gain access to the site; the employer must provide appropriate and correct training for machinery and plant operation; employer must provide clean drinking water and amenities; all electrical equipment must be in a serviceable condition and fitted with a current electrical tag before use. Answers could include: Sun protection, weather conditions, good housekeeping, correct training, PPE, electrical tags, ELCB, site access, first aid station, toilet facilities, drinking water, site must be well organised, site accessibility, waste material has been removed, appropriate load lifting is considered.",
+        "criteria": [
+          {
+            "marks": 4,
+            "text": "Describes in detail a range of WHS considerations"
+          },
+          {
+            "marks": 3,
+            "text": "Describes a range of WHS considerations"
+          },
+          {
+            "marks": 2,
+            "text": "Identifies WHS considerations"
+          },
+          {
+            "marks": 1,
+            "text": "Provides a piece of relevant information"
+          }
+        ]
       },
       {
         "question": 19,
         "part": "a",
         "marks": 2,
-        "sampleAnswer": "Cross-sectional plans show information such as footing size, wall thickness and construction, design of sub-floor, floor construction, roof construction, roof pitch, section sizes and spacing of structural members. This type of plan shows detail and information not found on any other plans."
+        "sampleAnswer": "Cross-sectional plans show information such as footing size, wall thickness and construction, design of sub-floor, floor construction, roof construction, roof pitch, section sizes and spacing of structural members. This type of plan shows detail and information not found on any other plans.",
+        "criteria": [
+          {
+            "marks": 2,
+            "text": "Lists TWO reasons why cross-sectional plans are used"
+          },
+          {
+            "marks": 1,
+            "text": "Lists ONE reason why cross-sectional plans are used"
+          }
+        ]
       },
       {
         "question": 19,
         "part": "b",
         "marks": 3,
-        "sampleAnswer": "Provides information relating to vertical measurements and external finishes, eg height of finished floor level (FFL), finished ceiling level (FCL), design of the building, position of doors, window sill height above floor level, finish to external walls."
+        "sampleAnswer": "Provides information relating to vertical measurements and external finishes, eg height of finished floor level (FFL), finished ceiling level (FCL), design of the building, position of doors, window sill height above floor level, finish to external walls.",
+        "criteria": [
+          {
+            "marks": 3,
+            "text": "Describes the features found on an elevation"
+          },
+          {
+            "marks": 2,
+            "text": "Identifies some features found on an elevation"
+          },
+          {
+            "marks": 1,
+            "text": "Provides some relevant information"
+          }
+        ]
       },
       {
         "question": 19,
         "part": "c",
         "marks": 4,
-        "sampleAnswer": "The specifications are a precise description of all construction detail that is shown on the plans. Plans show the overall appearance and position of the building. Specifications must be used in conjunction with the plans to complete the project to ensure: the customer receives what they have requested; the project is delivered and complies with industry standards. Both the documents are legally required to be approved by council prior to the commencement of any work. This will ensure the safety and integrity of the building and that the building will minimise interference with the environment and neighbouring structures. Builders must follow details, such as the strength and steel reinforcement used in concrete and grades of timber beams, to ensure stability. Answers could include: Features found on specifications may contain the composition of concrete used for footings, species and grades of timber used, brick type, mortar colour, colour of internal and external finishes. Plans and specifications are both needed to obtain council approval before any building can commence. These are legal requirements. Section III"
+        "sampleAnswer": "The specifications are a precise description of all construction detail that is shown on the plans. Plans show the overall appearance and position of the building. Specifications must be used in conjunction with the plans to complete the project to ensure: the customer receives what they have requested; the project is delivered and complies with industry standards. Both the documents are legally required to be approved by council prior to the commencement of any work. This will ensure the safety and integrity of the building and that the building will minimise interference with the environment and neighbouring structures. Builders must follow details, such as the strength and steel reinforcement used in concrete and grades of timber beams, to ensure stability. Answers could include: Features found on specifications may contain the composition of concrete used for footings, species and grades of timber used, brick type, mortar colour, colour of internal and external finishes. Plans and specifications are both needed to obtain council approval before any building can commence. These are legal requirements. Section III",
+        "criteria": [
+          {
+            "marks": 4,
+            "text": "Explains why the relationship between plans and specifications is important in construction"
+          },
+          {
+            "marks": 3,
+            "text": "Describes the relationship between plans and specifications"
+          },
+          {
+            "marks": 2,
+            "text": "Identifies the importance of either plans OR specifications"
+          },
+          {
+            "marks": 1,
+            "text": "Provides some relevant information"
+          }
+        ]
       },
       {
         "question": 20,
         "part": null,
         "marks": 15,
-        "sampleAnswer": "The Work Health and Safety Act 2011 (NSW) provides a framework to protect the health, • safety and welfare of everyone with regards to NSW workplaces, worksites and all related work activities. It replaces the previous Act which was the Occupational Health and Safety Act (OHS.) The WHS Regulations require stakeholders to ensure provision of general workplace • facilities for workers, first aid, emergency plans, training and instructions and to impose duties or isolate work. The current aims of the WHS Act are to: • Ensure the health and safety of all employees on all work sites including construction – sites Protect visitors on work sites, such as suppliers or contractors – Promote a work environment that meets the physical, mental and psychological – needs of workers Include codes of practice standards and joint consultation procedures to improve – workplace health and safety Key bodies and authorities have a primary responsibility to improve work, health and • safety and workers compensation arrangements. This is a partnership between governments, unions and industry, working together towards the goal of improving worker safety by eliminating death and reducing injury and disease in the workplace. SafeWork NSW also provides licences and registration for potentially dangerous work • and/or advice. They also investigate workplace incidents and accidents and enforce all work, health and safety laws. SafeWork NSW can inspect workplaces at any time without notice and impose fines. • They can collect evidence and seize machinery that is needed as evidence for any court action involving serious injury and/or death. SafeWork NSW also have the power to close any work sites that do not comply with safety regulations or that are deemed dangerous. SafeWork NSW can provide the following services to help prevent injury: • Free advisory visits to work sites – Workplace inspections – Financial support for education, training and development projects in workplace – safety and injury management Partnership events in rural and remote communities to spread safety messages – Provide awareness programs and advertising programs – Government regulation for example COVID conditions such as QR codes, PPE, – square metre rules, hand sanitising. Section IV"
+        "sampleAnswer": "The Work Health and Safety Act 2011 (NSW) provides a framework to protect the health, • safety and welfare of everyone with regards to NSW workplaces, worksites and all related work activities. It replaces the previous Act which was the Occupational Health and Safety Act (OHS.) The WHS Regulations require stakeholders to ensure provision of general workplace • facilities for workers, first aid, emergency plans, training and instructions and to impose duties or isolate work. The current aims of the WHS Act are to: • Ensure the health and safety of all employees on all work sites including construction – sites Protect visitors on work sites, such as suppliers or contractors – Promote a work environment that meets the physical, mental and psychological – needs of workers Include codes of practice standards and joint consultation procedures to improve – workplace health and safety Key bodies and authorities have a primary responsibility to improve work, health and • safety and workers compensation arrangements. This is a partnership between governments, unions and industry, working together towards the goal of improving worker safety by eliminating death and reducing injury and disease in the workplace. SafeWork NSW also provides licences and registration for potentially dangerous work • and/or advice. They also investigate workplace incidents and accidents and enforce all work, health and safety laws. SafeWork NSW can inspect workplaces at any time without notice and impose fines. • They can collect evidence and seize machinery that is needed as evidence for any court action involving serious injury and/or death. SafeWork NSW also have the power to close any work sites that do not comply with safety regulations or that are deemed dangerous. SafeWork NSW can provide the following services to help prevent injury: • Free advisory visits to work sites – Workplace inspections – Financial support for education, training and development projects in workplace – safety and injury management Partnership events in rural and remote communities to spread safety messages – Provide awareness programs and advertising programs – Government regulation for example COVID conditions such as QR codes, PPE, – square metre rules, hand sanitising. Section IV",
+        "criteria": [
+          {
+            "marks": 15,
+            "text": "Demonstrates a comprehensive understanding of the roles that key bodies and authorities have in ensuring worker safety Provides a logical and cohesive response, using relevant examples"
+          },
+          {
+            "marks": 12,
+            "text": "Demonstrates a sound understanding of the roles that key bodies and authorities have in ensuring worker safety Provides a clear and organised response, using relevant examples"
+          },
+          {
+            "marks": 9,
+            "text": "Demonstrates an understanding of the roles that key bodies and authorities have in ensuring worker safety Uses some general examples"
+          },
+          {
+            "marks": 6,
+            "text": "Demonstrates an understanding of the roles that key bodies and authorities have in ensuring worker safety or uses some general examples"
+          },
+          {
+            "marks": 3,
+            "text": "Provides limited information about a role of either key bodies OR authorities in ensuring worker safety OR considers something to do with a government act or legislation"
+          }
+        ]
       },
       {
         "question": 21,
         "part": "a",
         "marks": 5,
-        "sampleAnswer": "The benefits of teamwork on a construction site are many and varied. Teamwork can reduce the time required to perform or complete a task which results in a reduction of labour costs and improved profits of the business. Working as a team can reduce the risk of injury to workers eg using a two-person lift instead of a one-person lift. Reduced injuries results in fewer sick days, lower workers compensation insurance costs and less down time. Teamwork provides the opportunity for the sharing and development of skills amongst employees. This in turn makes each employee more valuable to the employer which allows greater scope of work possible. All these factors combined increase the business viability and job security and make for a more harmonious workplace. Answers could include: Teaches conflict resolution • Promotes a wider sense of ownership • Fosters creativity and learning • Blends complementary strengths. •"
+        "sampleAnswer": "The benefits of teamwork on a construction site are many and varied. Teamwork can reduce the time required to perform or complete a task which results in a reduction of labour costs and improved profits of the business. Working as a team can reduce the risk of injury to workers eg using a two-person lift instead of a one-person lift. Reduced injuries results in fewer sick days, lower workers compensation insurance costs and less down time. Teamwork provides the opportunity for the sharing and development of skills amongst employees. This in turn makes each employee more valuable to the employer which allows greater scope of work possible. All these factors combined increase the business viability and job security and make for a more harmonious workplace. Answers could include: Teaches conflict resolution • Promotes a wider sense of ownership • Fosters creativity and learning • Blends complementary strengths. •",
+        "criteria": [
+          {
+            "marks": 5,
+            "text": "Describes in detail the benefits of teamwork in a construction workplace"
+          },
+          {
+            "marks": 4,
+            "text": "Describes benefits of teamwork in a construction workplace"
+          },
+          {
+            "marks": 3,
+            "text": "Outlines some benefits of teamwork in a construction workplace"
+          },
+          {
+            "marks": 2,
+            "text": "Identifies some benefits of teamwork in a construction workplace"
+          },
+          {
+            "marks": 1,
+            "text": "Provides some relevant information"
+          }
+        ]
       },
       {
         "question": 21,
         "part": "b",
         "marks": 10,
-        "sampleAnswer": "Speech is one of the most common, efficient, effective and important methods of • workplace communication. It is used consistently as feedback can be provided instantaneously and the receiver of the message is able to repeat the message to the sender to ensure the correct understanding. The use of correct terminology and industry terms will avoid confusion, for example correct tool names and processes. Written communication is very effective as it provides a permanent record that is less • likely to be misunderstood. However, it does require people to be able to read and write to an appropriate level. Effective written communication will enable people to: • Read and interpret plans – Follow safety warnings and procedures – Correctly follow instructions – Prepare accurate estimates – Prepare and follow builders’ quantities – Order materials. – Signage is an important part of written communication, including safety signage. These • signs are universal and can be understood by people once they have received training. When providing any form of written communication it should be written neatly and in • plain language making this form of communication easier to understand. Non-verbal forms of communication are also of benefit. This type of communication can • be used in noisy situations, over long distances and to overcome any language barriers. It is important to note that there are cultural differences with some hand signals and gestures. Other forms of non-verbal communication include alarms, signals, whistles, buzzers and • bells. These can be used to signify an emergency, lunch breaks and stoppages in work, or to warn of moving equipment such as reversing trucks, fork lifts or dangerous machinery. Electronic devices can be used for various types of verbal and written communication. • Verbal communication can be conducted with the use of phones, mobile phones and two-way radios. Written communication can use laptops and mobile phones and includes emails and SMS messaging. The overall benefits of effective communication may include: • Increased efficiency – Improved production quality and quantity – Reduced number of accidents and injuries – More efficient use of time – Improved financial benefit – Increased staff loyalty – Good team building – Reduced conflict – Increased employee engagement – Reduced staff absence. – Section Mapping 2021 NESA Question 14 13 12 11 10 9 8 7 6 5 4 3 2 1 2021 I HSC HSC Marks 1 1 1 1 1 1 1 1 1 1 1 1 1 1 Construction Grid Construction CPCCCM1015A construction CPCCOHS2001A CPCCWHS1001 page CPCCCM1012A CPCCWHS1001 construction CPCCOHS2001A CPCCCM2005B Page CPCCCM1012A CPCCCM2005B CPCCCM2001A CPCCCM1013A page CPCCCM1012A page CPCCCM1012A CPCCCM2005B 12 23 15 26 Marking industry industry – – – – – – – – – – – – – – Carry Work Use Work Use Read Plan Work Work Use Prepare Prepare Unit Guidelines Apply Apply – – page page construction construction construction and of effectively effectively effectively effectively and out OHS OHS competency to to organise measurements 6 2 interpret work work requirements, requirements, and and and and safely safely tools tools tools work plans sustainably sustainably sustainably sustainably / and and and Element in in – – and the the page equipment equipment page equipment policies policies construction construction calculations 31 of in in 56 in in competency the the the the and and – – – construction construction construction construction procedures procedures page page page – industry industry page 70 70 70 49 – – industry industry industry industry in in page page the the 5 3 – – – – Communica­ X tion (Please Teamwork X Problem- Employability X X X put solving an Initiative and X enterprise X where Planning and X X organising skills appropriate) Self- management Learning X X X X X Technology X Page 14 of 16 Section NESA Question Question 19 19 18 18 18 16 16 16 19 18 16 17 15 (d) (b) (a) (b) (a) (d) (b) (a) (c) (c) (c) 2021 II HSC Marks Marks 4 3 2 4 4 3 2 5 3 2 2 1 1 Construction CPCCCM2001A CPCCCM2001A CPCCCM2001A construction CPCCOHS2001A CPCCWHS1001 CPCCCM1015A CPCCCM1015A CPCCCM1015A page CPCCCM1012A CPCCCM2005B CPCCCM2005B CPCCCM2005B CPCCCM2005B CPCCCM2001A 14 Marking industry – – – – – – – – – – – – – – Read Read Read Read Carry Carry Carry Work Use Use Use Use Prepare Unit Unit Guidelines Apply – page construction construction construction construction of of effectively and and and and out out out OHS competency competency to measurements 1 measurements measurements interpret interpret interpret interpret work and requirements, 2 and safely tools tools tools tools plans plans plans plans sustainably / / and and and and Element Element in and and and and and and and the equipment equipment equipment equipment policies construction specifications specifications specifications specifications calculations calculations calculations of of in competency competency the and – – – – construction procedures page page page page industry – – – – – – – page page page page page page page 70 70 70 70 49 49 49 – 57 58 57 57 industry in page the 1 and – 2 Communica­ Communica­ X X tion tion (Please (Please Teamwork Teamwork X X Problem- Problem- Employability Employability X X X X X X X X X X X X put put solving solving an an Initiative and Initiative and X X X X enterprise enterprise X X where where Planning and Planning and X X X X X X X X X X organising organising skills skills appropriate) appropriate) Self- Self- X management management Learning Learning X X X X Technology Technology Page 15 of 16 Section Section NESA Question Question 21 21 20 (b) (a) 2021 III IV HSC Marks Marks 10 15 5 Construction CPCCCM1013A CPCCCM1014A construction CPCCOHS2001A CPCCWHS1001 CPCCCM1012A Marking industry – – – – – Plan Conduct Work Unit Prepare Unit Guidelines Apply – page and of of effectively OHS competency competency to workplace organise 1 work and requirements, 2 – safely page work communication / / Element Element in 20 – the page policies construction 32 of of competency competency – and page procedures industry 40 and 41 – in page the 1 and 2 Communica­ Communica­ X X X tion tion (Please (Please Teamwork Teamwork X X X Problem- Problem- Employability Employability X X X put put solving solving an an Initiative and Initiative and X X X enterprise enterprise X X where where Planning and Planning and X X X organising organising skills skills appropriate) appropriate) Self- Self- X X management management Learning Learning X X X Technology Technology X X Page 16 of 16"
+        "sampleAnswer": "Speech is one of the most common, efficient, effective and important methods of • workplace communication. It is used consistently as feedback can be provided instantaneously and the receiver of the message is able to repeat the message to the sender to ensure the correct understanding. The use of correct terminology and industry terms will avoid confusion, for example correct tool names and processes. Written communication is very effective as it provides a permanent record that is less • likely to be misunderstood. However, it does require people to be able to read and write to an appropriate level. Effective written communication will enable people to: • Read and interpret plans – Follow safety warnings and procedures – Correctly follow instructions – Prepare accurate estimates – Prepare and follow builders’ quantities – Order materials. – Signage is an important part of written communication, including safety signage. These • signs are universal and can be understood by people once they have received training. When providing any form of written communication it should be written neatly and in • plain language making this form of communication easier to understand. Non-verbal forms of communication are also of benefit. This type of communication can • be used in noisy situations, over long distances and to overcome any language barriers. It is important to note that there are cultural differences with some hand signals and gestures. Other forms of non-verbal communication include alarms, signals, whistles, buzzers and • bells. These can be used to signify an emergency, lunch breaks and stoppages in work, or to warn of moving equipment such as reversing trucks, fork lifts or dangerous machinery. Electronic devices can be used for various types of verbal and written communication. • Verbal communication can be conducted with the use of phones, mobile phones and two-way radios. Written communication can use laptops and mobile phones and includes emails and SMS messaging. The overall benefits of effective communication may include: • Increased efficiency – Improved production quality and quantity – Reduced number of accidents and injuries – More efficient use of time – Improved financial benefit – Increased staff loyalty – Good team building – Reduced conflict – Increased employee engagement – Reduced staff absence. – Section Mapping 2021 NESA Question 14 13 12 11 10 9 8 7 6 5 4 3 2 1 2021 I HSC HSC Marks 1 1 1 1 1 1 1 1 1 1 1 1 1 1 Construction Grid Construction CPCCCM1015A construction CPCCOHS2001A CPCCWHS1001 page CPCCCM1012A CPCCWHS1001 construction CPCCOHS2001A CPCCCM2005B Page CPCCCM1012A CPCCCM2005B CPCCCM2001A CPCCCM1013A page CPCCCM1012A page CPCCCM1012A CPCCCM2005B 12 23 15 26 Marking industry industry – – – – – – – – – – – – – – Carry Work Use Work Use Read Plan Work Work Use Prepare Prepare Unit Guidelines Apply Apply – – page page construction construction construction and of effectively effectively effectively effectively and out OHS OHS competency to to organise measurements 6 2 interpret work work requirements, requirements, and and and and safely safely tools tools tools work plans sustainably sustainably sustainably sustainably / and and and Element in in – – and the the page equipment equipment page equipment policies policies construction construction calculations 31 of in in 56 in in competency the the the the and and – – – construction construction construction construction procedures procedures page page page – industry industry page 70 70 70 49 – – industry industry industry industry in in page page the the 5 3 – – – – Communica­ X tion (Please Teamwork X Problem- Employability X X X put solving an Initiative and X enterprise X where Planning and X X organising skills appropriate) Self- management Learning X X X X X Technology X Page 14 of 16 Section NESA Question Question 19 19 18 18 18 16 16 16 19 18 16 17 15 (d) (b) (a) (b) (a) (d) (b) (a) (c) (c) (c) 2021 II HSC Marks Marks 4 3 2 4 4 3 2 5 3 2 2 1 1 Construction CPCCCM2001A CPCCCM2001A CPCCCM2001A construction CPCCOHS2001A CPCCWHS1001 CPCCCM1015A CPCCCM1015A CPCCCM1015A page CPCCCM1012A CPCCCM2005B CPCCCM2005B CPCCCM2005B CPCCCM2005B CPCCCM2001A 14 Marking industry – – – – – – – – – – – – – – Read Read Read Read Carry Carry Carry Work Use Use Use Use Prepare Unit Unit Guidelines Apply – page construction construction construction construction of of effectively and and and and out out out OHS competency competency to measurements 1 measurements measurements interpret interpret interpret interpret work and requirements, 2 and safely tools tools tools tools plans plans plans plans sustainably / / and and and and Element Element in and and and and and and and the equipment equipment equipment equipment policies construction specifications specifications specifications specifications calculations calculations calculations of of in competency competency the and – – – – construction procedures page page page page industry – – – – – – – page page page page page page page 70 70 70 70 49 49 49 – 57 58 57 57 industry in page the 1 and – 2 Communica­ Communica­ X X tion tion (Please (Please Teamwork Teamwork X X Problem- Problem- Employability Employability X X X X X X X X X X X X put put solving solving an an Initiative and Initiative and X X X X enterprise enterprise X X where where Planning and Planning and X X X X X X X X X X organising organising skills skills appropriate) appropriate) Self- Self- X management management Learning Learning X X X X Technology Technology Page 15 of 16 Section Section NESA Question Question 21 21 20 (b) (a) 2021 III IV HSC Marks Marks 10 15 5 Construction CPCCCM1013A CPCCCM1014A construction CPCCOHS2001A CPCCWHS1001 CPCCCM1012A Marking industry – – – – – Plan Conduct Work Unit Prepare Unit Guidelines Apply – page and of of effectively OHS competency competency to workplace organise 1 work and requirements, 2 – safely page work communication / / Element Element in 20 – the page policies construction 32 of of competency competency – and page procedures industry 40 and 41 – in page the 1 and 2 Communica­ Communica­ X X X tion tion (Please (Please Teamwork Teamwork X X X Problem- Problem- Employability Employability X X X put put solving solving an an Initiative and Initiative and X X X enterprise enterprise X X where where Planning and Planning and X X X organising organising skills skills appropriate) appropriate) Self- Self- X X management management Learning Learning X X X Technology Technology X X Page 16 of 16",
+        "criteria": [
+          {
+            "marks": 10,
+            "text": "Provides a comprehensive explanation of the benefits of effective workplace communication with good workplace examples"
+          },
+          {
+            "marks": 9,
+            "text": "Provides a sound explanation of the benefits of effective workplace communication with workplace examples"
+          },
+          {
+            "marks": 7,
+            "text": "Provides an explanation of the benefits of effective workplace communication with some workplace examples"
+          },
+          {
+            "marks": 5,
+            "text": "Demonstrates a general knowledge of the benefits of effective workplace communication and/or gives some workplace examples"
+          },
+          {
+            "marks": 3,
+            "text": "Outlines the benefits of effective workplace communication in general terms or gives some workplace examples"
+          },
+          {
+            "marks": 1,
+            "text": "Provides some information about effective workplace communication"
+          }
+        ]
       }
     ],
     "2022": [
@@ -100,97 +334,329 @@
         "question": 16,
         "part": "a",
         "marks": 2,
-        "sampleAnswer": "Plumb bob To establish or check a plumb line • To establish a vertical datum. •"
+        "sampleAnswer": "Plumb bob To establish or check a plumb line • To establish a vertical datum. •",
+        "criteria": [
+          {
+            "marks": 2,
+            "text": "Correctly names tool and outlines its function"
+          },
+          {
+            "marks": 1,
+            "text": "Either names tool or a use of the tool"
+          }
+        ]
       },
       {
         "question": 16,
         "part": "b",
         "marks": 2,
-        "sampleAnswer": "Tool Technique Description of technique Chisel Honing Part of the sharpening process Handsaw Ripping To cut timber along the direction of its grain"
+        "sampleAnswer": "Tool Technique Description of technique Chisel Honing Part of the sharpening process Handsaw Ripping To cut timber along the direction of its grain",
+        "criteria": [
+          {
+            "marks": 2,
+            "text": "Correctly describes both techniques"
+          },
+          {
+            "marks": 1,
+            "text": "Correctly describes ONE technique"
+          }
+        ]
       },
       {
         "question": 16,
         "part": "c",
         "marks": 4,
-        "sampleAnswer": "The cost of purchase of plant should be considered to determine if the expense is worth it. Purchasing the right item of equipment can increase job efficiency and safety on site resulting in fewer delays and an increased profit. Maintenance should also be considered as this entails time and additional expense which is required to prolong the life of the tool. Answers could include: The frequency of use. Hiring could be a better choice for one-off jobs • Training or licensing requirements for safe and correct use • Method of storage and space needed • Transporting to and from the job site • PPE needed to be worn • Registration and insurance costs. •"
+        "sampleAnswer": "The cost of purchase of plant should be considered to determine if the expense is worth it. Purchasing the right item of equipment can increase job efficiency and safety on site resulting in fewer delays and an increased profit. Maintenance should also be considered as this entails time and additional expense which is required to prolong the life of the tool. Answers could include: The frequency of use. Hiring could be a better choice for one-off jobs • Training or licensing requirements for safe and correct use • Method of storage and space needed • Transporting to and from the job site • PPE needed to be worn • Registration and insurance costs. •",
+        "criteria": [
+          {
+            "marks": 4,
+            "text": "Explains considerations regarding plant and equipment purchasing"
+          },
+          {
+            "marks": 3,
+            "text": "Describes considerations regarding plant and equipment purchasing"
+          },
+          {
+            "marks": 2,
+            "text": "Outlines considerations regarding plant and equipment purchasing"
+          },
+          {
+            "marks": 1,
+            "text": "Provides some relevant information"
+          }
+        ]
       },
       {
         "question": 17,
         "part": "a",
         "marks": 2,
-        "sampleAnswer": "Location of datum or benchmark • Contour lines indicating the rise and fall of the land. • Answers could include: Finished floor level • Finished ceiling level/height • Reduced levels. •"
+        "sampleAnswer": "Location of datum or benchmark • Contour lines indicating the rise and fall of the land. • Answers could include: Finished floor level • Finished ceiling level/height • Reduced levels. •",
+        "criteria": [
+          {
+            "marks": 2,
+            "text": "Outlines TWO examples of levelling information found on plans"
+          },
+          {
+            "marks": 1,
+            "text": "Lists a type of levelling information found on plans"
+          }
+        ]
       },
       {
         "question": 17,
         "part": "b",
         "marks": 2,
-        "sampleAnswer": "Detail drawings can be used to clarify the information that cannot be clearly illustrated on sectional views. They can also be used to show compliance with building regulations. Answers could include: To enlarge specific aspects of construction for greater clarity (1:20, 1:10, 1:5) • To provide detailed information about the assembly, joining or finishing of components • To provide precise dimensions and tolerances • To clearly identify all components in an assembly • To provide clarity and minimise confusion. •"
+        "sampleAnswer": "Detail drawings can be used to clarify the information that cannot be clearly illustrated on sectional views. They can also be used to show compliance with building regulations. Answers could include: To enlarge specific aspects of construction for greater clarity (1:20, 1:10, 1:5) • To provide detailed information about the assembly, joining or finishing of components • To provide precise dimensions and tolerances • To clearly identify all components in an assembly • To provide clarity and minimise confusion. •",
+        "criteria": [
+          {
+            "marks": 2,
+            "text": "Describes the use of detail drawings in the construction industry"
+          },
+          {
+            "marks": 1,
+            "text": "Outlines the use of detail drawings in the construction industry"
+          }
+        ]
       },
       {
         "question": 17,
         "part": "c",
         "marks": 2,
-        "sampleAnswer": "Rainwater tank Tree to be removed"
+        "sampleAnswer": "Rainwater tank Tree to be removed",
+        "criteria": [
+          {
+            "marks": 2,
+            "text": "Correctly labels TWO architectural symbols"
+          },
+          {
+            "marks": 1,
+            "text": "Either correctly labels ONE architectural symbol or provides some relevant information"
+          }
+        ]
       },
       {
         "question": 17,
         "part": "d",
         "marks": 4,
-        "sampleAnswer": "A drawing specification is a detailed written description of the project being constructed. It must be used in conjunction with the construction plans. A specification is used to convey information that cannot be included on a set of drawings. Specifications are used to provide instructions on how the work should be completed. Examples could include: How the site should be set up • Materials to be used (bricks, weatherboards, roofing etc) • Paint colours and number of coats • Flooring materials to be used and in which rooms (bathroom tiles, carpet, timber flooring • etc) Types of lights and switches • Tap fittings and bathroom fixtures • Brand and model number of appliances • Architrave and skirting size and profile • Kitchen bench tops and cabinetry • Cleanup of the site and final inspections • Specification sets out sequence of trades • Includes information on quality of work, Australian Standards, material choices, sizes, • colours and positioning."
+        "sampleAnswer": "A drawing specification is a detailed written description of the project being constructed. It must be used in conjunction with the construction plans. A specification is used to convey information that cannot be included on a set of drawings. Specifications are used to provide instructions on how the work should be completed. Examples could include: How the site should be set up • Materials to be used (bricks, weatherboards, roofing etc) • Paint colours and number of coats • Flooring materials to be used and in which rooms (bathroom tiles, carpet, timber flooring • etc) Types of lights and switches • Tap fittings and bathroom fixtures • Brand and model number of appliances • Architrave and skirting size and profile • Kitchen bench tops and cabinetry • Cleanup of the site and final inspections • Specification sets out sequence of trades • Includes information on quality of work, Australian Standards, material choices, sizes, • colours and positioning.",
+        "criteria": [
+          {
+            "marks": 4,
+            "text": "Explains the use of drawing specifications and provides examples"
+          },
+          {
+            "marks": 3,
+            "text": "Describes the use of drawing specifications and provides example(s)"
+          },
+          {
+            "marks": 2,
+            "text": "Outlines the use of drawing specifications"
+          },
+          {
+            "marks": 1,
+            "text": "Provides some relevant information"
+          }
+        ]
       },
       {
         "question": 18,
         "part": "a",
         "marks": 2,
-        "sampleAnswer": "Training staff on the correct techniques to select, measure, handle and store materials to minimise mistakes and damage. Answers could include: Use of material lists • Sorting of waste for reuse or recycling • Ordering materials in a timely fashion • Not over-ordering materials • Correct storage and transport of materials • Double check quantity calculations • The most current version of the plans are being used. •"
+        "sampleAnswer": "Training staff on the correct techniques to select, measure, handle and store materials to minimise mistakes and damage. Answers could include: Use of material lists • Sorting of waste for reuse or recycling • Ordering materials in a timely fashion • Not over-ordering materials • Correct storage and transport of materials • Double check quantity calculations • The most current version of the plans are being used. •",
+        "criteria": [
+          {
+            "marks": 2,
+            "text": "Outlines a work practice that reduces material waste"
+          },
+          {
+            "marks": 1,
+            "text": "Lists a work practice"
+          }
+        ]
       },
       {
         "question": 18,
         "part": "b",
         "marks": 4,
-        "sampleAnswer": "To carry out a formal on-site meeting, a series of steps should be followed. These include appointing a chairperson to run the meeting, publish the time, location and agenda for the meeting. The meeting should be controlled by the chairperson to keep discussions on track. A record of attendees and minutes should be kept and follow up planned. Answers could include: Chair of the meeting • Scheduling • Agenda • Time and duration • Location • Follow a set procedure • Purpose of a meeting • Outcome • Minutes • Attendees / apologies • Follow up. •"
+        "sampleAnswer": "To carry out a formal on-site meeting, a series of steps should be followed. These include appointing a chairperson to run the meeting, publish the time, location and agenda for the meeting. The meeting should be controlled by the chairperson to keep discussions on track. A record of attendees and minutes should be kept and follow up planned. Answers could include: Chair of the meeting • Scheduling • Agenda • Time and duration • Location • Follow a set procedure • Purpose of a meeting • Outcome • Minutes • Attendees / apologies • Follow up. •",
+        "criteria": [
+          {
+            "marks": 4,
+            "text": "Clearly describes the steps/process followed in undertaking an on-site meeting"
+          },
+          {
+            "marks": 3,
+            "text": "Describes the process followed in undertaking an on-site meeting"
+          },
+          {
+            "marks": 2,
+            "text": "Outlines parts of an on-site meeting"
+          },
+          {
+            "marks": 1,
+            "text": "Provides some relevant information"
+          }
+        ]
       },
       {
         "question": 18,
         "part": "c",
         "marks": 5,
-        "sampleAnswer": "Methods used to plan and organise work could include the reading and interpretation of construction plans and specifications to establish job requirements. The use of Gantt charts to provide the planned sequencing and duration of tasks. Toolbox and site meetings can be used to inform workers about daily work conditions, changes and site goods or deadlines. Cutting lists and delivery dockets are used to obtain information about material quantities and sizes. SafeWork method statements and safety data sheets can be used to determine correct procedures for using, handling and storing hazardous materials. Answers could include: The use of rosters and timetables • Use checklists • Delegation of work duties • Quantity surveyor to establish site costs and material quantities • Consultation with industry professionals • Building code of Australia • Council regulations • Weather forecast • Engage professional contractors and trades, eg plumber and electrician • Testing of new materials and techniques • CAD (computer aided drawing) • Product manuals and technical data sheets. •"
+        "sampleAnswer": "Methods used to plan and organise work could include the reading and interpretation of construction plans and specifications to establish job requirements. The use of Gantt charts to provide the planned sequencing and duration of tasks. Toolbox and site meetings can be used to inform workers about daily work conditions, changes and site goods or deadlines. Cutting lists and delivery dockets are used to obtain information about material quantities and sizes. SafeWork method statements and safety data sheets can be used to determine correct procedures for using, handling and storing hazardous materials. Answers could include: The use of rosters and timetables • Use checklists • Delegation of work duties • Quantity surveyor to establish site costs and material quantities • Consultation with industry professionals • Building code of Australia • Council regulations • Weather forecast • Engage professional contractors and trades, eg plumber and electrician • Testing of new materials and techniques • CAD (computer aided drawing) • Product manuals and technical data sheets. •",
+        "criteria": [
+          {
+            "marks": 5,
+            "text": "Clearly describes a range of methods used in construction to plan and organise work"
+          },
+          {
+            "marks": 4,
+            "text": "Describes some methods to plan and organise work"
+          },
+          {
+            "marks": 3,
+            "text": "Outlines methods to plan and organise work or describes one method"
+          },
+          {
+            "marks": 2,
+            "text": "Lists methods to plan and organise work"
+          },
+          {
+            "marks": 1,
+            "text": "Provides some relevant information"
+          }
+        ]
       },
       {
         "question": 19,
         "part": "a",
         "marks": 1,
-        "sampleAnswer": "3700 kg 3.00–4.99 tonne weight range 51–70 km distance = $450.00"
+        "sampleAnswer": "3700 kg 3.00–4.99 tonne weight range 51–70 km distance = $450.00",
+        "criteria": [
+          {
+            "marks": 1,
+            "text": "Correctly reads the graph and selects the correct answer"
+          }
+        ]
       },
       {
         "question": 19,
         "part": "b",
         "marks": 3,
-        "sampleAnswer": "Bathroom area 2 × = 1.2 m 1.2 m 1.44 m 2 × = 2.4 2.7 6.48 m m2 m2 m2 + = 1.44 6.48 7.92 Tile area 2 × = 0.3 0.3 0.09 m Number of tiles m2 m2 ÷ = 7.92 0.09 88 tiles × = 88 tiles 1.05% 92.4 tiles 93 tiles"
+        "sampleAnswer": "Bathroom area 2 × = 1.2 m 1.2 m 1.44 m 2 × = 2.4 2.7 6.48 m m2 m2 m2 + = 1.44 6.48 7.92 Tile area 2 × = 0.3 0.3 0.09 m Number of tiles m2 m2 ÷ = 7.92 0.09 88 tiles × = 88 tiles 1.05% 92.4 tiles 93 tiles",
+        "criteria": [
+          {
+            "marks": 3,
+            "text": "Correctly calculates the number of tiles including wastage"
+          },
+          {
+            "marks": 2,
+            "text": "Provides one or more calculations of the area"
+          },
+          {
+            "marks": 1,
+            "text": "Provides some relevant calculation"
+          }
+        ]
       },
       {
         "question": 19,
         "part": "c",
         "marks": 2,
-        "sampleAnswer": "÷ = 15 60 0.25 + = 8.00 0.25 8.25 × = 8.25 $62.00 $511.50 Section III"
+        "sampleAnswer": "÷ = 15 60 0.25 + = 8.00 0.25 8.25 × = 8.25 $62.00 $511.50 Section III",
+        "criteria": [
+          {
+            "marks": 2,
+            "text": "Correctly calculates the total labour cost"
+          },
+          {
+            "marks": 1,
+            "text": "Provides some relevant calculations"
+          }
+        ]
       },
       {
         "question": 20,
         "part": null,
         "marks": 15,
-        "sampleAnswer": "Possible causes of conflict: Poor communication style • Unrealistic timeframes and workloads • Lack of organisation • Opposing priorities or viewpoints • Equipment and materials not available when needed • Stress • Inequity / favouritism • Mistakes • Safety concerns over dangerous work • Near miss • Workers turning up late, not having the necessary tools or being under the influence of • drugs or alcohol Not following workplace policies and procedures • Cultural differences (language barriers, lack of respect) • Religious beliefs • Lack of knowledge and skill • Inappropriate behaviour • Bullying and harassment • Offensive language. • Impact on workers: Ineffective teamwork / disharmony • Job dissatisfaction / low morale • Decreased safety • Increased absenteeism • Bad judgement • Can inspire creativity to solve problems • Termination of employment. • Impact on employers: Less productivity • Poor workplace culture • Increased workplace accidents • Job delays • Reduced profits / pay disputes • Damage to business reputation • High rate of employee turnover • Legal ramifications • Provide arbitration / mediation to resolve disputes • Dismissal of workers, loss of expertise. • Impact on clients: Delayed completion or incomplete project • Loss of confidence in the building company • Reduced quality of the final project or increased number of errors • Unresolvable differences • Legal ramifications • Builder / trades refusing to return (must find new tradespeople / building contractors) • Stressful and unpleasant. • Section IV"
+        "sampleAnswer": "Possible causes of conflict: Poor communication style • Unrealistic timeframes and workloads • Lack of organisation • Opposing priorities or viewpoints • Equipment and materials not available when needed • Stress • Inequity / favouritism • Mistakes • Safety concerns over dangerous work • Near miss • Workers turning up late, not having the necessary tools or being under the influence of • drugs or alcohol Not following workplace policies and procedures • Cultural differences (language barriers, lack of respect) • Religious beliefs • Lack of knowledge and skill • Inappropriate behaviour • Bullying and harassment • Offensive language. • Impact on workers: Ineffective teamwork / disharmony • Job dissatisfaction / low morale • Decreased safety • Increased absenteeism • Bad judgement • Can inspire creativity to solve problems • Termination of employment. • Impact on employers: Less productivity • Poor workplace culture • Increased workplace accidents • Job delays • Reduced profits / pay disputes • Damage to business reputation • High rate of employee turnover • Legal ramifications • Provide arbitration / mediation to resolve disputes • Dismissal of workers, loss of expertise. • Impact on clients: Delayed completion or incomplete project • Loss of confidence in the building company • Reduced quality of the final project or increased number of errors • Unresolvable differences • Legal ramifications • Builder / trades refusing to return (must find new tradespeople / building contractors) • Stressful and unpleasant. • Section IV",
+        "criteria": [
+          {
+            "marks": 15,
+            "text": "Shows an extensive knowledge and explanation of how conflict may arise in the construction workplace and the impact on workers, employers and clients Provides relevant industry examples for workers, employers and clients Provides precise industry terminology in a logical and cohesive response"
+          },
+          {
+            "marks": 12,
+            "text": "Shows a thorough knowledge and explanation of how conflict may arise in the construction workplace and the impact on workers, employers and clients Provides relevant industry examples for workers, employers and clients Provides industry terminology in a logical and cohesive response"
+          },
+          {
+            "marks": 9,
+            "text": "Shows a sound knowledge and explains how conflict may arise in the construction workplace and the impact on workers, employers and clients Provides relevant industry examples for workers, employers and clients Provides industry terminology in a logical and cohesive response"
+          },
+          {
+            "marks": 6,
+            "text": "Shows an understanding of conflict within the construction workplace and the impact on workers or employers or clients Provides examples for workers or employers or clients Provides some industry terminology"
+          },
+          {
+            "marks": 3,
+            "text": "Shows an awareness of conflict within the construction workplace Provides some relevant information about workers or employers or clients"
+          }
+        ]
       },
       {
         "question": 21,
         "part": "a",
         "marks": 5,
-        "sampleAnswer": "It is important to check the tyres for general wear and tear. They should also be tested to ensure the correct inflation pressure for ease of transport and stability during use. The mixer must be cleaned with a hose to remove any residual cement and the interior of the drum lightly oiled to prevent corrosion during storage periods. The drive belt should be checked for correct tension and general condition and replaced if needed. All moving mechanical parts that require periodic greasing should be done so on a regular basis. Answers could include: Testing and tagging • Electrical cord inspection prior to each use • Handles and grips in place and good condition • All guarding in place and operational • Electrical switch is operational • Overall appearance for rust, corrosion • Check engine oil level for petrol-powered machine • Fuel system check cleaned and checked for leaks • Ensure all nuts and bolts are correctly tightened. •"
+        "sampleAnswer": "It is important to check the tyres for general wear and tear. They should also be tested to ensure the correct inflation pressure for ease of transport and stability during use. The mixer must be cleaned with a hose to remove any residual cement and the interior of the drum lightly oiled to prevent corrosion during storage periods. The drive belt should be checked for correct tension and general condition and replaced if needed. All moving mechanical parts that require periodic greasing should be done so on a regular basis. Answers could include: Testing and tagging • Electrical cord inspection prior to each use • Handles and grips in place and good condition • All guarding in place and operational • Electrical switch is operational • Overall appearance for rust, corrosion • Check engine oil level for petrol-powered machine • Fuel system check cleaned and checked for leaks • Ensure all nuts and bolts are correctly tightened. •",
+        "criteria": [
+          {
+            "marks": 5,
+            "text": "Demonstrates extensive knowledge of the maintenance of this machine Uses relevant industry terminology"
+          },
+          {
+            "marks": 4,
+            "text": "Demonstrates sound knowledge of the maintenance of this machine Uses some relevant industry terminology"
+          },
+          {
+            "marks": 2,
+            "text": "Describes basic knowledge of the maintenance of this machine"
+          },
+          {
+            "marks": 1,
+            "text": "Provides some relevant information"
+          }
+        ]
       },
       {
         "question": 21,
         "part": "b",
         "marks": 10,
-        "sampleAnswer": "Training and instruction of construction workers (accredited courses, licences, tickets, • mentoring etc). Construction induction training (white card) Correct storage and maintenance of tools and equipment • Test and tag of electrical equipment • Correct storage of hazardous materials and chemicals. Worksite materials stacked and • stored correctly Workplace signage, posters and tags • Use of correct manual handling techniques. Use of mechanical lifting aides • Scaffolding and railing installed when working at heights • Conduct risk assessments and follow the hierarchy of hazard control • Designated waste disposal and recycling. Regular worksite clean ups • Use of safety documentation such as SDS, SWMS, SOP, product labels, manuals, • incident reports etc Temporary fencing, barricades and hoarding • Personal protective equipment worn by workers • Trained first aid personnel and supplies • Emergency procedures and evacuation processes • Effective leadership and clear expectations of construction workers • Effective on-site communication (verbal and non-verbal) • Clear and established worksite policies and procedures • Realistic work goals and timeframes • Correct scheduling of construction tasks • Scheduled breaks and rotation of repetitive or hazardous tasks • Toolbox talks and formal on-site meetings • WHS committee. • 2022 HSC Construction Mapping Grid Section I Employability skills (Please put an X where appropriate) and management and Communica- Technology organising Teamwork enterprise Question Marks Unit of competency / Element of competency Problem- Learning solving Self- Planning Initiative tion 1 1 Use construction tools and equipment — element 2.1 – page 69 X X 2 1 Work effectively and sustainably in the construction industry — element 1.2 – page 14 X 3 1 Use construction tools and equipment — element 2.1 – page 70 X 4 1 Work effectively and sustainably in the construction industry — element 5.3 – page 26 X X Apply OHS requirements, policies and procedures in the construction industry — 5 1 X element Incidents accidents and emergencies – page 6 Prepare to work safely in the construction industry — element Safe work procedures 6 1 X and practices – page 4 7 1 Conduct workplace communication — element 1.3 – page 40 X 8 1 Plan and organise work — element 3.1 – page 33 X 9 1 Carry out measurements and calculations — element 3.1 – page 52 X 10 1 Work effectively and sustainably in the construction industry — element 1.1 – page 13 X 11 1 Read and interpret plans and specifications — element 1.2 – page 58 X Prepare to work safely in the construction industry — element Risk management – 12 1 X page 3 13 1 Use construction tools and equipment — element 2.1 – page 70 X 14 1 Carry out measurements and calculations — element 3.1 – page 52 X 15 1 Carry out measurements and calculations — element 3.1 – page 52 X Section II Employability skills (Please put an X where appropriate) and management and Communica­ Technology organising Teamwork enterprise Question Marks Unit of competency / Element of competency Problem- Learning solving Planning Self­ Initiative tion 16 (a) 2 Use construction tools and equipment — element 2.1 – page 69–70 X 16 (b) 2 Use construction tools and equipment — element 2.1 – page 69–70 X X 16 (c) 4 Use construction tools and equipment — element 4.1 – page 72 X X X X Read and interpret plans and specifications — element 1.2, 3.1, 4.2 – page 57–58, 60, 17 (a) 2 X 61 17 (b) 2 Read and interpret plans and specifications — element 1.2 – page 58 X X 17 (c) 2 Read and interpret plans and specifications — element 3.1, 4.3 – page 60–61 X 17 (d) 4 Read and interpret plans and specifications — element 1.2 – page 58 X X X 18 (a) 2 Work effectively and sustainably in the construction industry — element 5.1 – page 22 X X X 18 (b) 4 Conduct workplace communication — element 4.1 – page 46 X X X X 18 (c) 5 Plan and organise work — element 2.1 – page 34 X X X X X 19 (a) 1 Carry out measurements and calculations — element 3.1 – page 52–53 X X 19 (b) 3 Carry out measurements and calculations — element 4.2 – page 53 X X X X 19 (c) 2 Carry out measurements and calculations — element 3.1 – page 52 X X X X Section III Employability skills (Please put an X where appropriate) and management and Communica­ Technology organising Teamwork enterprise Question Marks Unit of competency / Element of competency Problem- Learning solving Planning Self­ Initiative tion Work effectively and sustainably in the construction industry — element 3.5 – page 21 20 15 Conduct workplace communication — element 42.2 – page 43 X X X X X X X X Plan and organise work — element 1.1 – page 31 Section IV Employability skills (Please put an X where appropriate) and management and Communica­ Technology organising Teamwork enterprise Question Marks Unit of competency / Element of competency Problem- Learning solving Planning Self­ Initiative tion Use construction tools and equipment — element 1.4, 2.2, 4.1, 5.2 – page 68, 71, 72, 21 (a) 5 X X X X 74 Apply OHS requirements, policies and procedures in the construction industry — element Safety – page 3–4 21 (b) 10 X X X X X X X X Prepare to work safely in the construction industry — element Safe work procedures and practices – page 4–5"
+        "sampleAnswer": "Training and instruction of construction workers (accredited courses, licences, tickets, • mentoring etc). Construction induction training (white card) Correct storage and maintenance of tools and equipment • Test and tag of electrical equipment • Correct storage of hazardous materials and chemicals. Worksite materials stacked and • stored correctly Workplace signage, posters and tags • Use of correct manual handling techniques. Use of mechanical lifting aides • Scaffolding and railing installed when working at heights • Conduct risk assessments and follow the hierarchy of hazard control • Designated waste disposal and recycling. Regular worksite clean ups • Use of safety documentation such as SDS, SWMS, SOP, product labels, manuals, • incident reports etc Temporary fencing, barricades and hoarding • Personal protective equipment worn by workers • Trained first aid personnel and supplies • Emergency procedures and evacuation processes • Effective leadership and clear expectations of construction workers • Effective on-site communication (verbal and non-verbal) • Clear and established worksite policies and procedures • Realistic work goals and timeframes • Correct scheduling of construction tasks • Scheduled breaks and rotation of repetitive or hazardous tasks • Toolbox talks and formal on-site meetings • WHS committee. • 2022 HSC Construction Mapping Grid Section I Employability skills (Please put an X where appropriate) and management and Communica- Technology organising Teamwork enterprise Question Marks Unit of competency / Element of competency Problem- Learning solving Self- Planning Initiative tion 1 1 Use construction tools and equipment — element 2.1 – page 69 X X 2 1 Work effectively and sustainably in the construction industry — element 1.2 – page 14 X 3 1 Use construction tools and equipment — element 2.1 – page 70 X 4 1 Work effectively and sustainably in the construction industry — element 5.3 – page 26 X X Apply OHS requirements, policies and procedures in the construction industry — 5 1 X element Incidents accidents and emergencies – page 6 Prepare to work safely in the construction industry — element Safe work procedures 6 1 X and practices – page 4 7 1 Conduct workplace communication — element 1.3 – page 40 X 8 1 Plan and organise work — element 3.1 – page 33 X 9 1 Carry out measurements and calculations — element 3.1 – page 52 X 10 1 Work effectively and sustainably in the construction industry — element 1.1 – page 13 X 11 1 Read and interpret plans and specifications — element 1.2 – page 58 X Prepare to work safely in the construction industry — element Risk management – 12 1 X page 3 13 1 Use construction tools and equipment — element 2.1 – page 70 X 14 1 Carry out measurements and calculations — element 3.1 – page 52 X 15 1 Carry out measurements and calculations — element 3.1 – page 52 X Section II Employability skills (Please put an X where appropriate) and management and Communica­ Technology organising Teamwork enterprise Question Marks Unit of competency / Element of competency Problem- Learning solving Planning Self­ Initiative tion 16 (a) 2 Use construction tools and equipment — element 2.1 – page 69–70 X 16 (b) 2 Use construction tools and equipment — element 2.1 – page 69–70 X X 16 (c) 4 Use construction tools and equipment — element 4.1 – page 72 X X X X Read and interpret plans and specifications — element 1.2, 3.1, 4.2 – page 57–58, 60, 17 (a) 2 X 61 17 (b) 2 Read and interpret plans and specifications — element 1.2 – page 58 X X 17 (c) 2 Read and interpret plans and specifications — element 3.1, 4.3 – page 60–61 X 17 (d) 4 Read and interpret plans and specifications — element 1.2 – page 58 X X X 18 (a) 2 Work effectively and sustainably in the construction industry — element 5.1 – page 22 X X X 18 (b) 4 Conduct workplace communication — element 4.1 – page 46 X X X X 18 (c) 5 Plan and organise work — element 2.1 – page 34 X X X X X 19 (a) 1 Carry out measurements and calculations — element 3.1 – page 52–53 X X 19 (b) 3 Carry out measurements and calculations — element 4.2 – page 53 X X X X 19 (c) 2 Carry out measurements and calculations — element 3.1 – page 52 X X X X Section III Employability skills (Please put an X where appropriate) and management and Communica­ Technology organising Teamwork enterprise Question Marks Unit of competency / Element of competency Problem- Learning solving Planning Self­ Initiative tion Work effectively and sustainably in the construction industry — element 3.5 – page 21 20 15 Conduct workplace communication — element 42.2 – page 43 X X X X X X X X Plan and organise work — element 1.1 – page 31 Section IV Employability skills (Please put an X where appropriate) and management and Communica­ Technology organising Teamwork enterprise Question Marks Unit of competency / Element of competency Problem- Learning solving Planning Self­ Initiative tion Use construction tools and equipment — element 1.4, 2.2, 4.1, 5.2 – page 68, 71, 72, 21 (a) 5 X X X X 74 Apply OHS requirements, policies and procedures in the construction industry — element Safety – page 3–4 21 (b) 10 X X X X X X X X Prepare to work safely in the construction industry — element Safe work procedures and practices – page 4–5",
+        "criteria": [
+          {
+            "marks": 10,
+            "text": "Show extensive knowledge of a range of harm minimisation on a construction site Accurately addresses all aspects of the question Uses relevant industry terminology Provides relevant industry examples"
+          },
+          {
+            "marks": 9,
+            "text": "Shows thorough knowledge and understanding of a range of harm minimisation strategies on a construction site Addresses all aspects of the question Provides industry examples"
+          },
+          {
+            "marks": 7,
+            "text": "Shows a sound understanding of harm minimisation strategies Includes relevant examples"
+          },
+          {
+            "marks": 5,
+            "text": "Shows a general understanding of a range of harm minimisation strategies"
+          },
+          {
+            "marks": 3,
+            "text": "Shows some awareness of strategies to minimise harm on a construction site"
+          },
+          {
+            "marks": 1,
+            "text": "Provides some relevant information"
+          }
+        ]
       }
     ],
     "2023": [
@@ -198,91 +664,321 @@
         "question": 16,
         "part": "a.i",
         "marks": 1,
-        "sampleAnswer": "Drop saw Answers could include: Sliding saw • Compound saw • Mitre saw • Cut off saw. •"
+        "sampleAnswer": "Drop saw Answers could include: Sliding saw • Compound saw • Mitre saw • Cut off saw. •",
+        "criteria": [
+          {
+            "marks": 1,
+            "text": "Correctly names the saw pictured"
+          }
+        ]
       },
       {
         "question": 16,
         "part": "a.ii",
         "marks": 2,
-        "sampleAnswer": "Safety glasses/goggles, hearing protection Answers could Include: Face shield • Dust mask • Protective footwear • Hair tied back/restrained. •"
+        "sampleAnswer": "Safety glasses/goggles, hearing protection Answers could Include: Face shield • Dust mask • Protective footwear • Hair tied back/restrained. •",
+        "criteria": [
+          {
+            "marks": 2,
+            "text": "Lists TWO correct items of PPE"
+          },
+          {
+            "marks": 1,
+            "text": "Lists ONE correct item of PPE"
+          }
+        ]
       },
       {
         "question": 16,
         "part": "b",
         "marks": 3,
-        "sampleAnswer": "They are portable, so not restricted to the length of extension leads, and they can quickly and easily be set up in a variety of locations. They are safer to use as there are no cords, which can be a trip hazard, and no frayed leads to check. Answers could include: No generators needed • Easier to work outdoors • Quicker and easier to set and begin work • Can work on remote sites that don’t have power • Easy to work on new dwellings where power hasn’t been connected • No machine leads that require testing and tagging. •"
+        "sampleAnswer": "They are portable, so not restricted to the length of extension leads, and they can quickly and easily be set up in a variety of locations. They are safer to use as there are no cords, which can be a trip hazard, and no frayed leads to check. Answers could include: No generators needed • Easier to work outdoors • Quicker and easier to set and begin work • Can work on remote sites that don’t have power • Easy to work on new dwellings where power hasn’t been connected • No machine leads that require testing and tagging. •",
+        "criteria": [
+          {
+            "marks": 3,
+            "text": "Outlines advantages of using battery powered tools and equipment"
+          },
+          {
+            "marks": 2,
+            "text": "Lists advantages of using battery powered tools"
+          },
+          {
+            "marks": 1,
+            "text": "Provides some relevant information"
+          }
+        ]
       },
       {
         "question": 17,
         "part": "a",
         "marks": 2,
-        "sampleAnswer": "The worker or employer could contact government regulators to obtain clarification about award pay rates. Answers could include: Professional associations • Trade unions • Industry groups such as HIA and MBA. •"
+        "sampleAnswer": "The worker or employer could contact government regulators to obtain clarification about award pay rates. Answers could include: Professional associations • Trade unions • Industry groups such as HIA and MBA. •",
+        "criteria": [
+          {
+            "marks": 2,
+            "text": "Outlines a method of resolving the situation"
+          },
+          {
+            "marks": 1,
+            "text": "Provides some relevant information"
+          }
+        ]
       },
       {
         "question": 17,
         "part": "b",
         "marks": 3,
-        "sampleAnswer": "The construction industry values workers who display a variety of personal attributes. The industry values workers who attend work regularly and are always punctual. They also value workers who complete tasks within a scheduled time frame and take pride in their work. Answers could include: Attitude – positive demeanour • Confidentiality • Ethical behaviour • Honesty • Personal presentation and grooming • Work performance • taking directions – attention to detail – consistency of service – safe work practices. –"
+        "sampleAnswer": "The construction industry values workers who display a variety of personal attributes. The industry values workers who attend work regularly and are always punctual. They also value workers who complete tasks within a scheduled time frame and take pride in their work. Answers could include: Attitude – positive demeanour • Confidentiality • Ethical behaviour • Honesty • Personal presentation and grooming • Work performance • taking directions – attention to detail – consistency of service – safe work practices. –",
+        "criteria": [
+          {
+            "marks": 3,
+            "text": "Describes the personal attributes valued in the construction industry"
+          },
+          {
+            "marks": 2,
+            "text": "Outlines personal attributes valued in the construction industry"
+          },
+          {
+            "marks": 1,
+            "text": "Provides some relevant information"
+          }
+        ]
       },
       {
         "question": 17,
         "part": "c",
         "marks": 5,
-        "sampleAnswer": "Workers would need to arrange all materials and substances into categories and place into the correct bins. This is done firstly to collect all like material ready for disposal. For example, all treated pine off cuts should be placed in a loose stacking bin which would then be taken to an approved disposal site. Also remaining liquids would need to be stored in approved sealed containers then taken to a chemical waste disposal plant. Left over bricks can be taken to a recycling centre that accepts construction and demolition debris. Metal waste should be collected and then taken to the metal recycle centre. Any useable materials should be stored correctly for future use. Answers could include: Liquids stored in suitable containers • Use approved disposal collection sites • Use of different bins/collection areas methods • Correct handling process followed • Using alternative resources that are biodegradable, non-toxic, recoverable or reusable. •"
+        "sampleAnswer": "Workers would need to arrange all materials and substances into categories and place into the correct bins. This is done firstly to collect all like material ready for disposal. For example, all treated pine off cuts should be placed in a loose stacking bin which would then be taken to an approved disposal site. Also remaining liquids would need to be stored in approved sealed containers then taken to a chemical waste disposal plant. Left over bricks can be taken to a recycling centre that accepts construction and demolition debris. Metal waste should be collected and then taken to the metal recycle centre. Any useable materials should be stored correctly for future use. Answers could include: Liquids stored in suitable containers • Use approved disposal collection sites • Use of different bins/collection areas methods • Correct handling process followed • Using alternative resources that are biodegradable, non-toxic, recoverable or reusable. •",
+        "criteria": [
+          {
+            "marks": 5,
+            "text": "Accurately describes clean-up processes to dispose of a variety of substances and materials"
+          },
+          {
+            "marks": 4,
+            "text": "Describes some clean-up processes to dispose of substances and materials"
+          },
+          {
+            "marks": 3,
+            "text": "Outlines some clean-up processes to dispose of substances or materials"
+          },
+          {
+            "marks": 2,
+            "text": "Lists ways to remove materials or substances"
+          },
+          {
+            "marks": 1,
+            "text": "Provides some relevant information"
+          }
+        ]
       },
       {
         "question": 18,
         "part": "a",
         "marks": 3,
-        "sampleAnswer": "To limit the noise of the generator it should be positioned outside away from workers. Also keep the generator clear from materials that will cause potential echoing when being used. Only use the generator when needed and during allowable construction time frames. Answers could include: Ensure machine is operating correctly • Machine is serviced regularly • Correct operating procedures are followed • Use of all PPE. •"
+        "sampleAnswer": "To limit the noise of the generator it should be positioned outside away from workers. Also keep the generator clear from materials that will cause potential echoing when being used. Only use the generator when needed and during allowable construction time frames. Answers could include: Ensure machine is operating correctly • Machine is serviced regularly • Correct operating procedures are followed • Use of all PPE. •",
+        "criteria": [
+          {
+            "marks": 3,
+            "text": "Describes methods used to limit noise of a generator on a construction site"
+          },
+          {
+            "marks": 2,
+            "text": "Identifies methods used to limit noise of a generator on a construction site"
+          },
+          {
+            "marks": 1,
+            "text": "Provides some relevant information"
+          }
+        ]
       },
       {
         "question": 18,
         "part": "b",
         "marks": 3,
-        "sampleAnswer": "Number Name 1 Window 2 Sink 3 Stove top 4 Toilet 5 Sliding door Answers could include: Double sink • WC/Water closet • Sliding window • Casement window • Sash window • Oven. •"
+        "sampleAnswer": "Number Name 1 Window 2 Sink 3 Stove top 4 Toilet 5 Sliding door Answers could include: Double sink • WC/Water closet • Sliding window • Casement window • Sash window • Oven. •",
+        "criteria": [
+          {
+            "marks": 3,
+            "text": "Correctly labels ALL symbols on the plan"
+          },
+          {
+            "marks": 2,
+            "text": "Correctly labels some symbols on the plan"
+          },
+          {
+            "marks": 1,
+            "text": "Provides some relevant information"
+          }
+        ]
       },
       {
         "question": 18,
         "part": "c",
         "marks": 4,
-        "sampleAnswer": "These symbols are used so that a standard set of conventions are able to be understood by all users within the construction industry. They are a fast and easy way to recognise layout and provide clarity on plans. These symbols reduce issues associated with language barriers. They provide options when finalising interior fitouts. For example, not all fixtures are the same size and shape. So, adjustments can be made simply to suit the needs of the client and the space. Answers could include: They are an Australian standard • Comply with AS1100 • Reduce literacy barriers • They provide clarity and limit confusion • Indicate where things need to be built and installed • To represent every element in the plan • They provide a reference to specifications. •"
+        "sampleAnswer": "These symbols are used so that a standard set of conventions are able to be understood by all users within the construction industry. They are a fast and easy way to recognise layout and provide clarity on plans. These symbols reduce issues associated with language barriers. They provide options when finalising interior fitouts. For example, not all fixtures are the same size and shape. So, adjustments can be made simply to suit the needs of the client and the space. Answers could include: They are an Australian standard • Comply with AS1100 • Reduce literacy barriers • They provide clarity and limit confusion • Indicate where things need to be built and installed • To represent every element in the plan • They provide a reference to specifications. •",
+        "criteria": [
+          {
+            "marks": 4,
+            "text": "Explains why symbols are used on construction plans"
+          },
+          {
+            "marks": 3,
+            "text": "Describes why symbols are used on construction plans"
+          },
+          {
+            "marks": 2,
+            "text": "Identifies why symbols are used on construction plans"
+          },
+          {
+            "marks": 1,
+            "text": "Provides some relevant information"
+          }
+        ]
       },
       {
         "question": 19,
         "part": "a",
         "marks": 2,
-        "sampleAnswer": "Pallets of bricks needed: × = 10% 15 000 1500 + = 15 000 1500 16 500 ÷ = 16 500 500 33 Need to order 33 pallets"
+        "sampleAnswer": "Pallets of bricks needed: × = 10% 15 000 1500 + = 15 000 1500 16 500 ÷ = 16 500 500 33 Need to order 33 pallets",
+        "criteria": [
+          {
+            "marks": 2,
+            "text": "Correctly calculates the number of pallets required"
+          },
+          {
+            "marks": 1,
+            "text": "Shows some correct calculations"
+          }
+        ]
       },
       {
         "question": 19,
         "part": "b.i",
         "marks": 5,
-        "sampleAnswer": "− × = 6.0 (2 0.3) 5.4 length of side beams × = 5.4 3 16.2 total length of side beams × × = 16.2 0.3 0.3 1.46 volume of side beams × = 2 8.5 17 length of top and bottom beams × × = 17 0.3 0.3 1.53 volume of top and bottom beam s + = 1.53 1.46 2.99 total volume Answers could include: − = 8.5 0.6 7.9 length of top and bottom beam s minus side beams × = 7.9 2 15.8 total length of top and bottom beams × × = 15.8 0.3 0.3 1.42 volume of top and bottom beam s × = 6.0 2 12 length of end beams − = 6.0 0.6 5.4 length of centre beam + = 12 5.4 17.4 total length of beams × × = 17.4 0.3 0.3 1.57 volume of all beams + = 1.42 1.57 2.99 total volume"
+        "sampleAnswer": "− × = 6.0 (2 0.3) 5.4 length of side beams × = 5.4 3 16.2 total length of side beams × × = 16.2 0.3 0.3 1.46 volume of side beams × = 2 8.5 17 length of top and bottom beams × × = 17 0.3 0.3 1.53 volume of top and bottom beam s + = 1.53 1.46 2.99 total volume Answers could include: − = 8.5 0.6 7.9 length of top and bottom beam s minus side beams × = 7.9 2 15.8 total length of top and bottom beams × × = 15.8 0.3 0.3 1.42 volume of top and bottom beam s × = 6.0 2 12 length of end beams − = 6.0 0.6 5.4 length of centre beam + = 12 5.4 17.4 total length of beams × × = 17.4 0.3 0.3 1.57 volume of all beams + = 1.42 1.57 2.99 total volume",
+        "criteria": [
+          {
+            "marks": 5,
+            "text": "Calculates the cubic metres of concrete required correctly"
+          },
+          {
+            "marks": 4,
+            "text": "Calculates the cubic metres of concrete required with minor errors"
+          },
+          {
+            "marks": 3,
+            "text": "Provides some correct calculations to determine the cubic metres of concrete required"
+          },
+          {
+            "marks": 2,
+            "text": "Provides some relevant calculation"
+          },
+          {
+            "marks": 1,
+            "text": "Provides some relevant information"
+          }
+        ]
       },
       {
         "question": 19,
         "part": "b.ii",
         "marks": 2,
-        "sampleAnswer": "× × Length Width Thickness Convert dimensions from p lan to metres m3 × × = 8.5 6 0.1 5.1 Section III"
+        "sampleAnswer": "× × Length Width Thickness Convert dimensions from p lan to metres m3 × × = 8.5 6 0.1 5.1 Section III",
+        "criteria": [
+          {
+            "marks": 2,
+            "text": "Correctly calculates the amount of concrete required in cubic metres"
+          },
+          {
+            "marks": 1,
+            "text": "Shows some relevant calculations"
+          }
+        ]
       },
       {
         "question": 20,
         "part": "a",
         "marks": 5,
-        "sampleAnswer": "As construction begins, most trades in the build would need to be involved to establish a current sequence. The site supervisor could arrange both informal and formal meetings through face-to-face discussions, while on-site there are many methods of communication such as non-verbal which includes signage and drawings. Notice boards can be used to inform trades of toolbox talks and WHS meetings. Answers could include: Verbal communication • Non-verbal communication • Signage • Written communication • Formal meetings • Informal meetings • Notice boards • Using plans to discuss the build • Toolbox talks • WHS meetings • Hard signals • Equipment that could be used: • two-way radios – speakers – phones, SMS. –"
+        "sampleAnswer": "As construction begins, most trades in the build would need to be involved to establish a current sequence. The site supervisor could arrange both informal and formal meetings through face-to-face discussions, while on-site there are many methods of communication such as non-verbal which includes signage and drawings. Notice boards can be used to inform trades of toolbox talks and WHS meetings. Answers could include: Verbal communication • Non-verbal communication • Signage • Written communication • Formal meetings • Informal meetings • Notice boards • Using plans to discuss the build • Toolbox talks • WHS meetings • Hard signals • Equipment that could be used: • two-way radios – speakers – phones, SMS. –",
+        "criteria": [
+          {
+            "marks": 5,
+            "text": "Provides a detailed description of appropriate ways of communicating on a building site"
+          },
+          {
+            "marks": 4,
+            "text": "Provides a description of appropriate ways of communicating on a building site"
+          },
+          {
+            "marks": 3,
+            "text": "Provides an outline of ways of communicating on a building site"
+          },
+          {
+            "marks": 2,
+            "text": "Provides some basic information about ways of communicating on a building site"
+          },
+          {
+            "marks": 1,
+            "text": "Provides some relevant information"
+          }
+        ]
       },
       {
         "question": 20,
         "part": "b",
         "marks": 10,
-        "sampleAnswer": "Gantt Chart is regularly referred to and adjusted as needed • Work sequencing when trades are required • Task management • Logical order of tasks • Working within completion timeframes • Working according to quality measures • Determine logistics and task dependencies • Planning and monitoring progress, setting goals • Overall goals, objectives, priorities and outcomes • Plan and sequence tasks within a construct schedule and coordinate with other work • processes Assess what needs to be done for each component and how it is to be done • Prepare written work plan and resource list • Estimate time and number of personnel required • Ordering supplies • Planning delivery. • Section IV"
+        "sampleAnswer": "Gantt Chart is regularly referred to and adjusted as needed • Work sequencing when trades are required • Task management • Logical order of tasks • Working within completion timeframes • Working according to quality measures • Determine logistics and task dependencies • Planning and monitoring progress, setting goals • Overall goals, objectives, priorities and outcomes • Plan and sequence tasks within a construct schedule and coordinate with other work • processes Assess what needs to be done for each component and how it is to be done • Prepare written work plan and resource list • Estimate time and number of personnel required • Ordering supplies • Planning delivery. • Section IV",
+        "criteria": [
+          {
+            "marks": 10,
+            "text": "Provides a comprehensive explanation of work sequencing and planning on a building site Provides relevant industry examples to support response"
+          },
+          {
+            "marks": 8,
+            "text": "Provides an explanation of work sequencing and planning on a building site Provides relevant industry examples to support response"
+          },
+          {
+            "marks": 6,
+            "text": "Provides a description of work sequencing and planning on a building site Provides some relevant industry examples to support response"
+          },
+          {
+            "marks": 4,
+            "text": "Provides an outline of work sequencing and/or planning on a building site Provides example(s)"
+          },
+          {
+            "marks": 2,
+            "text": "Shows some relevant information"
+          }
+        ]
       },
       {
         "question": 21,
         "part": null,
         "marks": 15,
-        "sampleAnswer": "Control Measures Include: Eliminate • Substitute • Engineering (Isolate, Modify) • Administration • PPE • Other control methods could include: Safe work practices • Monitor and review • There are many potential hazards in the construction industry. They include: Hazards to self, colleagues and the general public • Hazardous materials • Human factors • Manual handling • Tools, equipment, machinery and plant • Work environment • Weather • Work processes and practices • Working alone • Working at heights • Working in and around excavations • Working near traffic and water • Working with compressed air, electricity and liquids • Noise • Chemicals • Substances. • 2023 HSC Construction Mapping Grid Section I Question Marks HSC content – focus area Skills in construction – measurement and calculation terminology and equipment – 1 1 page 32 2 1 Skills in construction – plans, drawings and specifications – page 30 3 1 Safety – safe work procedures and practices – page 26 Skills in construction – measurement and calculation terminology and equipment – 4 1 page 32 5 1 Working in the industry – working sustainably – page 47 6 1 Safety – WHS compliance – page 24 7 1 Tools of the trade – power and pneumatic tools and equipment – page 37 8 1 Safety – safe work procedures and practices – page 26 9 1 Safety – safe work procedures and practices – page 26 10 1 Skills in construction – plans, drawings and specifications – page 31 11 1 Working in the industry – nature of the industry – page 41 12 1 Tools of the trade – clean, maintain, store and secure – page 39 13 1 Safety – safe work procedures and practices – page 26 Skills in construction – measurement and calculation terminology and equipment – 14 1 page 32 15 1 Skills in construction – plans, drawings and specifications – page 31 Section II Question Marks HSC content – focus area 16 (a) 1 Tools of the trade – power and pneumatic tools and equipment – page 37 16 (b) 2 Tools of the trade – selection and safety – page 38 16 (c) 3 Tools of the trade – power and pneumatic tools and equipment – page 37 17 (a) 2 Working in the industry – employment – page 43 17 (b) 3 Working in the industry – employment – page 43 17 (c) 5 Working in the industry – working sustainably – page 47 18 (a) 3 Working in the industry – working sustainably – page 47 18 (b) 3 Skills in construction – plans, drawings and specifications – page 31 18 (c) 4 Skills in construction – plans, drawings and specifications – page 31 Skills in construction – measurement and calculation terminology and equipment – 19 (a) 2 page 33 Skills in construction – measurement and calculation terminology and equipment – 19 (b) 5 page 33 Skills in construction – measurement and calculation terminology and equipment – 19 (c) 2 page 33 Section III Question Marks HSC content – focus area 20 (a) 5 Working in the industry – teamwork – page 45 20 (b) 10 Working in the industry – task planning – page 44 Section IV Question Marks HSC content – focus area 21 15 Safety – risk management – page 25"
+        "sampleAnswer": "Control Measures Include: Eliminate • Substitute • Engineering (Isolate, Modify) • Administration • PPE • Other control methods could include: Safe work practices • Monitor and review • There are many potential hazards in the construction industry. They include: Hazards to self, colleagues and the general public • Hazardous materials • Human factors • Manual handling • Tools, equipment, machinery and plant • Work environment • Weather • Work processes and practices • Working alone • Working at heights • Working in and around excavations • Working near traffic and water • Working with compressed air, electricity and liquids • Noise • Chemicals • Substances. • 2023 HSC Construction Mapping Grid Section I Question Marks HSC content – focus area Skills in construction – measurement and calculation terminology and equipment – 1 1 page 32 2 1 Skills in construction – plans, drawings and specifications – page 30 3 1 Safety – safe work procedures and practices – page 26 Skills in construction – measurement and calculation terminology and equipment – 4 1 page 32 5 1 Working in the industry – working sustainably – page 47 6 1 Safety – WHS compliance – page 24 7 1 Tools of the trade – power and pneumatic tools and equipment – page 37 8 1 Safety – safe work procedures and practices – page 26 9 1 Safety – safe work procedures and practices – page 26 10 1 Skills in construction – plans, drawings and specifications – page 31 11 1 Working in the industry – nature of the industry – page 41 12 1 Tools of the trade – clean, maintain, store and secure – page 39 13 1 Safety – safe work procedures and practices – page 26 Skills in construction – measurement and calculation terminology and equipment – 14 1 page 32 15 1 Skills in construction – plans, drawings and specifications – page 31 Section II Question Marks HSC content – focus area 16 (a) 1 Tools of the trade – power and pneumatic tools and equipment – page 37 16 (b) 2 Tools of the trade – selection and safety – page 38 16 (c) 3 Tools of the trade – power and pneumatic tools and equipment – page 37 17 (a) 2 Working in the industry – employment – page 43 17 (b) 3 Working in the industry – employment – page 43 17 (c) 5 Working in the industry – working sustainably – page 47 18 (a) 3 Working in the industry – working sustainably – page 47 18 (b) 3 Skills in construction – plans, drawings and specifications – page 31 18 (c) 4 Skills in construction – plans, drawings and specifications – page 31 Skills in construction – measurement and calculation terminology and equipment – 19 (a) 2 page 33 Skills in construction – measurement and calculation terminology and equipment – 19 (b) 5 page 33 Skills in construction – measurement and calculation terminology and equipment – 19 (c) 2 page 33 Section III Question Marks HSC content – focus area 20 (a) 5 Working in the industry – teamwork – page 45 20 (b) 10 Working in the industry – task planning – page 44 Section IV Question Marks HSC content – focus area 21 15 Safety – risk management – page 25",
+        "criteria": [
+          {
+            "marks": 15,
+            "text": "Provides a comprehensive explanation of how the risk control hierarchy can be used to manage hazards on a construction site Communicates ideas and information using workplace examples and industry terminology Presents a logical and cohesive response"
+          },
+          {
+            "marks": 12,
+            "text": "Provides a thorough explanation of how the risk control hierarchy can be used to manage hazards on a construction site Communicates information using workplace examples and industry terminology Presents a logical and cohesive response"
+          },
+          {
+            "marks": 9,
+            "text": "Provides an explanation of how the risk control hierarchy can be used to managed hazards on a construction site Provides workplace examples Uses industry terminology"
+          },
+          {
+            "marks": 6,
+            "text": "Provides a description of how hazards are managed using risk control/s Provides workplace example(s) Uses some industry terminology"
+          },
+          {
+            "marks": 3,
+            "text": "Shows an awareness of a risk control Provides some relevant information"
+          }
+        ]
       }
     ],
     "2024": [
@@ -290,91 +986,321 @@
         "question": 16,
         "part": "a",
         "marks": 3,
-        "sampleAnswer": "Spirit level, used to test if a surface is level or plumb and also can be used as a straight edge."
+        "sampleAnswer": "Spirit level, used to test if a surface is level or plumb and also can be used as a straight edge.",
+        "criteria": [
+          {
+            "marks": 3,
+            "text": "Correctly names the tool and outlines TWO uses"
+          },
+          {
+            "marks": 2,
+            "text": "Correctly outlines TWO uses OR Correctly names the tool AND outlines ONE use"
+          },
+          {
+            "marks": 1,
+            "text": "Correctly names the tool OR outlines ONE use"
+          }
+        ]
       },
       {
         "question": 16,
         "part": "b",
         "marks": 3,
-        "sampleAnswer": "Preoperational safety checks could include checking the wear of the belt and that it is fitted facing the correct direction. Power cords would need to be checked for fraying, cuts, and any breakages. Answers could include: • Check condition of the belt • Check testing and tagging is up to date • Inspect cords and plug • Inspect casing and overall machine • Ensure all guards are fitted • Ensure correct dust extraction is fitted and ready for use • User has completed relevant training."
+        "sampleAnswer": "Preoperational safety checks could include checking the wear of the belt and that it is fitted facing the correct direction. Power cords would need to be checked for fraying, cuts, and any breakages. Answers could include: • Check condition of the belt • Check testing and tagging is up to date • Inspect cords and plug • Inspect casing and overall machine • Ensure all guards are fitted • Ensure correct dust extraction is fitted and ready for use • User has completed relevant training.",
+        "criteria": [
+          {
+            "marks": 3,
+            "text": "Describes a range of safety checks before using a belt sander"
+          },
+          {
+            "marks": 2,
+            "text": "Outlines some safety checks before using a belt sander"
+          },
+          {
+            "marks": 1,
+            "text": "Provides some relevant information"
+          }
+        ]
       },
       {
         "question": 17,
         "part": "a",
         "marks": 2,
-        "sampleAnswer": "Advantage – reduced time needed to complete measurement. Disadvantage – will periodically need the battery to be replaced or recharged. Answers could include: Advantages: • They can hold information • Portable • Easy to use • Convenient. Disadvantages: • Are expensive • Need to be maintained • Need a clear line of sight • Only measure internal dimensions."
+        "sampleAnswer": "Advantage – reduced time needed to complete measurement. Disadvantage – will periodically need the battery to be replaced or recharged. Answers could include: Advantages: • They can hold information • Portable • Easy to use • Convenient. Disadvantages: • Are expensive • Need to be maintained • Need a clear line of sight • Only measure internal dimensions.",
+        "criteria": [
+          {
+            "marks": 2,
+            "text": "Identifies ONE advantage and ONE disadvantage"
+          },
+          {
+            "marks": 1,
+            "text": "Identifies either an advantage or disadvantage"
+          }
+        ]
       },
       {
         "question": 17,
         "part": "b",
         "marks": 3,
-        "sampleAnswer": "Incorrect measurements can affect the amount of materials ordered therefore leading to higher overall costs to both the customer and builder. This can also affect project completion time. Answers could include: • If not enough materials are ordered this would affect the project completion time and increase costs due to reordering and delivery costs."
+        "sampleAnswer": "Incorrect measurements can affect the amount of materials ordered therefore leading to higher overall costs to both the customer and builder. This can also affect project completion time. Answers could include: • If not enough materials are ordered this would affect the project completion time and increase costs due to reordering and delivery costs.",
+        "criteria": [
+          {
+            "marks": 3,
+            "text": "Outlines how incorrect measurements can affect a construction project"
+          },
+          {
+            "marks": 2,
+            "text": "Identifies consequences of incorrect measurements"
+          },
+          {
+            "marks": 1,
+            "text": "Provide some relevant information"
+          }
+        ]
       },
       {
         "question": 17,
         "part": "c",
         "marks": 5,
-        "sampleAnswer": "In managing a hot and dusty work environment, engineering controls play a pivotal role by directly modifying physical conditions to reduce risks. One effective engineering control is the installation of specialised ventilation on systems that help regulate both temperature and dust levels. These systems are designed to provide adequate air exchange, removing hot and contaminated air and replacing it with cooler, cleaner air. This process not only cools the environment but also prevents dust from accum ulating, which can significantly reduce the respiratory risk to workers. Additionally, the use of water spray systems to control dust at the source is another key strategy. Strategic placement of cooling units in areas where workers are concentrated helps mitigate the heat risk. When combined, these engineering controls create a safer and more manageable environment for workers. Answers could include: Provide shade, heat reflective materials, cool drinking water, water misters, water suppression, dust extraction, ventilation, dust monitoring, air filtration and automation/mechanisation."
+        "sampleAnswer": "In managing a hot and dusty work environment, engineering controls play a pivotal role by directly modifying physical conditions to reduce risks. One effective engineering control is the installation of specialised ventilation on systems that help regulate both temperature and dust levels. These systems are designed to provide adequate air exchange, removing hot and contaminated air and replacing it with cooler, cleaner air. This process not only cools the environment but also prevents dust from accum ulating, which can significantly reduce the respiratory risk to workers. Additionally, the use of water spray systems to control dust at the source is another key strategy. Strategic placement of cooling units in areas where workers are concentrated helps mitigate the heat risk. When combined, these engineering controls create a safer and more manageable environment for workers. Answers could include: Provide shade, heat reflective materials, cool drinking water, water misters, water suppression, dust extraction, ventilation, dust monitoring, air filtration and automation/mechanisation.",
+        "criteria": [
+          {
+            "marks": 5,
+            "text": "Describes in detail how engineering controls can be used to manage a hot and dusty work environment"
+          },
+          {
+            "marks": 4,
+            "text": "Describes how engi neering controls can be used to manage a hot and dusty work environment"
+          },
+          {
+            "marks": 3,
+            "text": "Outlines the use of engineering controls to manage a hot and dusty work environment OR Describes the engineering controls for either a hot or dusty work environment"
+          },
+          {
+            "marks": 2,
+            "text": "Shows a basic understanding of engineering controls in a work environment"
+          },
+          {
+            "marks": 1,
+            "text": "Provides some relevant information"
+          }
+        ]
       },
       {
         "question": 18,
         "part": "a",
         "marks": 3,
-        "sampleAnswer": "Feedback is important in all communication as it allows the sender and receiver to confirm the communication. Feedback ensures both parties understand the message and any issues or problems have been addressed. Answers could include: • To ensure the correct message has been delivered • Feedback helps the sender to check the correct message has been understood • Acts as the bridge between sender and receiver • Clarification • Validation • Continuous improvement • Problem s olving."
+        "sampleAnswer": "Feedback is important in all communication as it allows the sender and receiver to confirm the communication. Feedback ensures both parties understand the message and any issues or problems have been addressed. Answers could include: • To ensure the correct message has been delivered • Feedback helps the sender to check the correct message has been understood • Acts as the bridge between sender and receiver • Clarification • Validation • Continuous improvement • Problem s olving.",
+        "criteria": [
+          {
+            "marks": 3,
+            "text": "Outlines the importance of feedback in communication with clients/customers"
+          },
+          {
+            "marks": 2,
+            "text": "Identifies the importance of feedback in communication with clients/customers"
+          },
+          {
+            "marks": 1,
+            "text": "Provides some relevant information"
+          }
+        ]
       },
       {
         "question": 18,
         "part": "b",
         "marks": 3,
-        "sampleAnswer": "The importance is that when materials are stored correctly, they are easy to access and ready for use. This reduces delays and improves efficiency. Storing materials correctly also has a positive effect on the environment as they can be reused many times. Answers could include: • Cost efficiency – prevents damage, means materials are ready to be used at all times. • Resource conservation – by preserving and reusing materials building sites will have a reduced demand for new materials which promotes sustainability which in turn saves money and the environment. • Stacking – correct stacking will maintain the integrity of the material for example will reduce timber lengths twisting or bowing • Packing – correct packing improves life of materials • Strapping – correct strapping increases the usefulness of materials, reduces damage."
+        "sampleAnswer": "The importance is that when materials are stored correctly, they are easy to access and ready for use. This reduces delays and improves efficiency. Storing materials correctly also has a positive effect on the environment as they can be reused many times. Answers could include: • Cost efficiency – prevents damage, means materials are ready to be used at all times. • Resource conservation – by preserving and reusing materials building sites will have a reduced demand for new materials which promotes sustainability which in turn saves money and the environment. • Stacking – correct stacking will maintain the integrity of the material for example will reduce timber lengths twisting or bowing • Packing – correct packing improves life of materials • Strapping – correct strapping increases the usefulness of materials, reduces damage.",
+        "criteria": [
+          {
+            "marks": 3,
+            "text": "Describes the importance of correctly storing reusable materials on a building site"
+          },
+          {
+            "marks": 2,
+            "text": "Outlines the importance of correctly storing reusable materials on a building site"
+          },
+          {
+            "marks": 1,
+            "text": "List storage methods on a building site"
+          }
+        ]
       },
       {
         "question": 18,
         "part": "c",
         "marks": 4,
-        "sampleAnswer": "Factors that need to be considered during planning and preparation on a building site include estimating the number and type of workers needed. It also sets goals and stage completion dates to keep the build moving smoothly. It also allows for the correct tools, equipment, materials, and consumables to be ready and onsite as well as being planned and sequenced efficiently. Answers could include: Optimum resource use – not wasting money having equipment sitting idle Timing – realistic timelines and deadlines for parts of the construction process are crucial. It provides a map of what and when things should be completed. This ensures the correct number and correct type of workers are onsite as needed and this prevents delays in construction. Risk mitigation – thorough planning involves identifying potential risks or problems such as weather or supply issues. Planning and preparation allows for contingency plans to be developed to ensure a smooth flowing build."
+        "sampleAnswer": "Factors that need to be considered during planning and preparation on a building site include estimating the number and type of workers needed. It also sets goals and stage completion dates to keep the build moving smoothly. It also allows for the correct tools, equipment, materials, and consumables to be ready and onsite as well as being planned and sequenced efficiently. Answers could include: Optimum resource use – not wasting money having equipment sitting idle Timing – realistic timelines and deadlines for parts of the construction process are crucial. It provides a map of what and when things should be completed. This ensures the correct number and correct type of workers are onsite as needed and this prevents delays in construction. Risk mitigation – thorough planning involves identifying potential risks or problems such as weather or supply issues. Planning and preparation allows for contingency plans to be developed to ensure a smooth flowing build.",
+        "criteria": [
+          {
+            "marks": 4,
+            "text": "Clearly explains factors that need to be considered during the planning and preparation stage of a project"
+          },
+          {
+            "marks": 3,
+            "text": "Describes factors to be considered during the planning and preparation stage of a project"
+          },
+          {
+            "marks": 2,
+            "text": "Outlines planning and preparation of a project"
+          },
+          {
+            "marks": 1,
+            "text": "Lists factors of planning and preparation"
+          }
+        ]
       },
       {
         "question": 19,
         "part": "a",
         "marks": 2,
-        "sampleAnswer": "!3! 4! + = 5 4 + 6 + 8 + 3 + 5 = 26 m"
+        "sampleAnswer": "!3! 4! + = 5 4 + 6 + 8 + 3 + 5 = 26 m",
+        "criteria": [
+          {
+            "marks": 2,
+            "text": "Correctly calculates the perimeter"
+          },
+          {
+            "marks": 1,
+            "text": "Shows some logical steps"
+          }
+        ]
       },
       {
         "question": 19,
         "part": "b",
         "marks": 3,
-        "sampleAnswer": "m3 ´ ´ 8 6 .15 = 7.2 (concrete slab) pr2 12 ´ ´ ´ depth = 3.14 0.15 = 0.471 m3 7.2 – 0.471 = 6.73"
+        "sampleAnswer": "m3 ´ ´ 8 6 .15 = 7.2 (concrete slab) pr2 12 ´ ´ ´ depth = 3.14 0.15 = 0.471 m3 7.2 – 0.471 = 6.73",
+        "criteria": [
+          {
+            "marks": 3,
+            "text": "Correctly calculates the volume of the concrete slab minus the hole"
+          },
+          {
+            "marks": 2,
+            "text": "Correctly calculates the volume of the concrete slab"
+          },
+          {
+            "marks": 1,
+            "text": "Shows a relevant calculation"
+          }
+        ]
       },
       {
         "question": 19,
         "part": "c",
         "marks": 2,
-        "sampleAnswer": "m3 m3 ÷ 11.6 6 parts = 1 part = 1.93 ´ Sand 2 parts = 1.93 2 m3 = 3.86"
+        "sampleAnswer": "m3 m3 ÷ 11.6 6 parts = 1 part = 1.93 ´ Sand 2 parts = 1.93 2 m3 = 3.86",
+        "criteria": [
+          {
+            "marks": 2,
+            "text": "Correctly calculates the volume of sand"
+          },
+          {
+            "marks": 1,
+            "text": "Shows a relevant calculation"
+          }
+        ]
       },
       {
         "question": 19,
         "part": "d",
         "marks": 2,
-        "sampleAnswer": "´ 8 tonnes $1.18 = $9.44 ´ $9.44 13 km = $122.72 Section III"
+        "sampleAnswer": "´ 8 tonnes $1.18 = $9.44 ´ $9.44 13 km = $122.72 Section III",
+        "criteria": [
+          {
+            "marks": 2,
+            "text": "Correctly calculates cost"
+          },
+          {
+            "marks": 1,
+            "text": "Shows a relevant calculation"
+          }
+        ]
       },
       {
         "question": 20,
         "part": "a",
         "marks": 5,
-        "sampleAnswer": "During the completion of a carport many power or pneumatic tools could be used. One of these tools is a drop and slide saw to dock timber to length. Also, an impact driver could be used to drive in screws or screw down roofing sheets. A pneumatic nail gun could be used to shoot nails into the frame and attach the roofing battens. Answers could include: • Cordless drill • Drop saw • Circular saw • Angle grinder • Nibbler • Nail gun."
+        "sampleAnswer": "During the completion of a carport many power or pneumatic tools could be used. One of these tools is a drop and slide saw to dock timber to length. Also, an impact driver could be used to drive in screws or screw down roofing sheets. A pneumatic nail gun could be used to shoot nails into the frame and attach the roofing battens. Answers could include: • Cordless drill • Drop saw • Circular saw • Angle grinder • Nibbler • Nail gun.",
+        "criteria": [
+          {
+            "marks": 5,
+            "text": "Correctly describes in detail TWO appropriate power or pneumatic tools"
+          },
+          {
+            "marks": 4,
+            "text": "Correctly describes TWO a ppropriate power or pneumatic tools"
+          },
+          {
+            "marks": 3,
+            "text": "Identifies TWO a ppropriate tools"
+          },
+          {
+            "marks": 2,
+            "text": "Outlines the use of an appropriate tool"
+          },
+          {
+            "marks": 1,
+            "text": "Lists an appropriate tool"
+          }
+        ]
       },
       {
         "question": 20,
         "part": "b",
         "marks": 10,
-        "sampleAnswer": "• White cards • Workplace signage • Identify hazards • Hierarchy of risk management • Comply with Safe Work NSW • Site induction • First aid • Safety data sheets (SDS) • Workplace signage • Manual handling/training • Job sequencing • Job safety analysis (JSA) • Safe work method statement (SWMS) • Standard operating procedure • Workplace documentation and plans • Personal protective equipment (PPE) • Electrical safety • Good housekeeping • Ergonomics/posture. Section IV"
+        "sampleAnswer": "• White cards • Workplace signage • Identify hazards • Hierarchy of risk management • Comply with Safe Work NSW • Site induction • First aid • Safety data sheets (SDS) • Workplace signage • Manual handling/training • Job sequencing • Job safety analysis (JSA) • Safe work method statement (SWMS) • Standard operating procedure • Workplace documentation and plans • Personal protective equipment (PPE) • Electrical safety • Good housekeeping • Ergonomics/posture. Section IV",
+        "criteria": [
+          {
+            "marks": 10,
+            "text": "Provides a comprehensive explanation of the safe work procedures and practices"
+          },
+          {
+            "marks": 8,
+            "text": "Provides a sound explanation of the safe work procedures and practices"
+          },
+          {
+            "marks": 6,
+            "text": "Provides an explanation of the safe work procedures and practices"
+          },
+          {
+            "marks": 4,
+            "text": "Outlines safe work practices"
+          },
+          {
+            "marks": 2,
+            "text": "Provides some relevant information"
+          }
+        ]
       },
       {
         "question": 21,
         "part": null,
         "marks": 15,
-        "sampleAnswer": "Minimising negative impacts on the environment through environmentally sustainable work practices: • Approved disposal of waste • Complying with Basix requirements • Limiting noise and dust • Maintenance of tools, equipment and machinery • Management of chemicals/gas spillage/leakage and clean-up processes • Monitoring vibrations • Protecting discharge into waterways/stormwater • Safe handling and storage of hazardous materials • Testing pipes and using efficient fittings • Utilising alternative energy sources • Protecting wildlife habitats • Reducing soil erosion • Using resources that are biodegradable, non-toxic, recoverable, recyclable, renewable, reusable. 2024 HSC Construction Mapping Grid Section I Question Marks HSC content – focus area Safety — safety signage colour meaning pg 24 1 1 Tools of the trade — hammer type/use pg 36 2 1 Tools of the trade — hacksaw us e pg 36 3 1 Skills in construction — equipment used to measure pg 32 4 1 Skills in construction — scales on site plan pg 31 5 1 Tools of the trade — faults – safety guards pg 39 6 1 Working in the industry — communication sender receiver pg 45 7 1 Safety — fire extinguisher colour use fire hose use pg 27 8 1 Skills in construction — calculation conversion of units pg 32 9 1 Working in the industry — sustainable practice pg 47 10 1 Skills in construction — site/block plan pg 31 11 1 Working in the industry — trade unions pg 43 12 1 Safety — confined spaces or working at heights or working alone pg 25 13 1 Skills in construction — symbols – datum pg 30 14 1 Tools of the trade — compressor regulator pg 37 15 1 Section II Question Marks HSC content – focus area 16 (a) 3 Tools — hand tool pg 36 16 (b) 3 Tools — maintenance – hand tool pg 37 17 (a) 2 Skills — advantage/disadvantage of using laser measure device pg 32 17 (b) 3 Skills — incorrect measurements pg 32 Safety — hierarchy of risk control: Impact on industry – with relevant 17 (c) 5 industry example pg 25 18 (a) 3 Industry — methods of communication on a jobsite pg 45 18 (b) 3 Industry — site clean up pg 38 18 (c) 4 Industry — work sequencing, planning, and organising pg 44 19 (a) 2 Skills — area, volume, ratio pg 33 19 (b) 3 Skills — area, volume, ratio pg 33 19 (c) 2 Skills — area, volume, ratio pg 33 19 (d) 2 Skills — area, volume, ratio pg 33 Section III Question Marks HSC content – focus area 20 (a) 5 Tools — selection and safety pg 36–38 20 (b) 10 Safety — safe work procedures and practices pg 25–27 Section IV Question Marks HSC content – focus area 21 15 Industry — working sustainably pg 46–48"
+        "sampleAnswer": "Minimising negative impacts on the environment through environmentally sustainable work practices: • Approved disposal of waste • Complying with Basix requirements • Limiting noise and dust • Maintenance of tools, equipment and machinery • Management of chemicals/gas spillage/leakage and clean-up processes • Monitoring vibrations • Protecting discharge into waterways/stormwater • Safe handling and storage of hazardous materials • Testing pipes and using efficient fittings • Utilising alternative energy sources • Protecting wildlife habitats • Reducing soil erosion • Using resources that are biodegradable, non-toxic, recoverable, recyclable, renewable, reusable. 2024 HSC Construction Mapping Grid Section I Question Marks HSC content – focus area Safety — safety signage colour meaning pg 24 1 1 Tools of the trade — hammer type/use pg 36 2 1 Tools of the trade — hacksaw us e pg 36 3 1 Skills in construction — equipment used to measure pg 32 4 1 Skills in construction — scales on site plan pg 31 5 1 Tools of the trade — faults – safety guards pg 39 6 1 Working in the industry — communication sender receiver pg 45 7 1 Safety — fire extinguisher colour use fire hose use pg 27 8 1 Skills in construction — calculation conversion of units pg 32 9 1 Working in the industry — sustainable practice pg 47 10 1 Skills in construction — site/block plan pg 31 11 1 Working in the industry — trade unions pg 43 12 1 Safety — confined spaces or working at heights or working alone pg 25 13 1 Skills in construction — symbols – datum pg 30 14 1 Tools of the trade — compressor regulator pg 37 15 1 Section II Question Marks HSC content – focus area 16 (a) 3 Tools — hand tool pg 36 16 (b) 3 Tools — maintenance – hand tool pg 37 17 (a) 2 Skills — advantage/disadvantage of using laser measure device pg 32 17 (b) 3 Skills — incorrect measurements pg 32 Safety — hierarchy of risk control: Impact on industry – with relevant 17 (c) 5 industry example pg 25 18 (a) 3 Industry — methods of communication on a jobsite pg 45 18 (b) 3 Industry — site clean up pg 38 18 (c) 4 Industry — work sequencing, planning, and organising pg 44 19 (a) 2 Skills — area, volume, ratio pg 33 19 (b) 3 Skills — area, volume, ratio pg 33 19 (c) 2 Skills — area, volume, ratio pg 33 19 (d) 2 Skills — area, volume, ratio pg 33 Section III Question Marks HSC content – focus area 20 (a) 5 Tools — selection and safety pg 36–38 20 (b) 10 Safety — safe work procedures and practices pg 25–27 Section IV Question Marks HSC content – focus area 21 15 Industry — working sustainably pg 46–48",
+        "criteria": [
+          {
+            "marks": 15,
+            "text": "Demonstrates a comprehensive knowledge and understanding of how industry can minimise its impact on the environment Provides a logical and cohesive response using relevant examples"
+          },
+          {
+            "marks": 12,
+            "text": "Shows a sound knowledge and understanding of how industry can minimise its impact on the environment Provides a clear and organised response using relevant examples"
+          },
+          {
+            "marks": 9,
+            "text": "Shows a general understanding of how industry can minimise its impact on the environment Uses some general examples"
+          },
+          {
+            "marks": 6,
+            "text": "Shows a basic understanding of either impacts or the environment"
+          },
+          {
+            "marks": 3,
+            "text": "Provides some awareness of impacts in the construction industry"
+          }
+        ]
       }
     ],
     "2025": [
@@ -382,91 +1308,321 @@
         "question": 16,
         "part": "a",
         "marks": 2,
-        "sampleAnswer": "The tool/router pictured could be used to create a rebate for joint construction. Answers could include: • Edge profiling • Flush cutting/pattern cutting • Mortising • Grooves, housings, rebates • Joints."
+        "sampleAnswer": "The tool/router pictured could be used to create a rebate for joint construction. Answers could include: • Edge profiling • Flush cutting/pattern cutting • Mortising • Grooves, housings, rebates • Joints.",
+        "criteria": [
+          {
+            "marks": 2,
+            "text": "Outlines a suitable use for the tool"
+          },
+          {
+            "marks": 1,
+            "text": "Provides some relevant information"
+          }
+        ]
       },
       {
         "question": 16,
         "part": "b",
         "marks": 3,
-        "sampleAnswer": "Two settings or adjustments that can be made on the router are firstly, depth of cut which is adjusted on the depth gauge on the tool and secondly, the width of the cut which is adjusted by altering the position of the fence. Answers could include: • Appropriate speed setting (RPM) • Correct cutter profile/shape."
+        "sampleAnswer": "Two settings or adjustments that can be made on the router are firstly, depth of cut which is adjusted on the depth gauge on the tool and secondly, the width of the cut which is adjusted by altering the position of the fence. Answers could include: • Appropriate speed setting (RPM) • Correct cutter profile/shape.",
+        "criteria": [
+          {
+            "marks": 3,
+            "text": "Describes TWO settings or adjustments that may be required before using the tool"
+          },
+          {
+            "marks": 2,
+            "text": "Identifies a setting/s or adjustment/s that may be required before using the tool"
+          },
+          {
+            "marks": 1,
+            "text": "Provides some relevant information"
+          }
+        ]
       },
       {
         "question": 17,
         "part": "a",
         "marks": 2,
-        "sampleAnswer": "When selecting an abrasive for an electric sander you would need to consider the type of timber being sanded and the amount of material that needs to be removed. Answers could include: • Grit size • Abrasive type (Silicon carbide, garnet, aluminium o xide) • Size of the sander (sheets, belts, discs) • Backing type (cloth, paper, Velcro) • Cost."
+        "sampleAnswer": "When selecting an abrasive for an electric sander you would need to consider the type of timber being sanded and the amount of material that needs to be removed. Answers could include: • Grit size • Abrasive type (Silicon carbide, garnet, aluminium o xide) • Size of the sander (sheets, belts, discs) • Backing type (cloth, paper, Velcro) • Cost.",
+        "criteria": [
+          {
+            "marks": 2,
+            "text": "Outlines considerations for selection of abrasives on electric sander"
+          },
+          {
+            "marks": 1,
+            "text": "Provides some relevant information"
+          }
+        ]
       },
       {
         "question": 17,
         "part": "b",
         "marks": 3,
-        "sampleAnswer": "Indicators of an inefficient or faulty tool could include smoke being produced, slower operation of the tool or poor results. Also, excessive vibration or noise could indicate a fault or inefficiency. Answers could include: • Blockages • Broken or missing safety guards • Failure to start • Excessive time to complete task • Overheating."
+        "sampleAnswer": "Indicators of an inefficient or faulty tool could include smoke being produced, slower operation of the tool or poor results. Also, excessive vibration or noise could indicate a fault or inefficiency. Answers could include: • Blockages • Broken or missing safety guards • Failure to start • Excessive time to complete task • Overheating.",
+        "criteria": [
+          {
+            "marks": 3,
+            "text": "Describes TWO indicators which show that a tool is not performing efficiently or has a fault"
+          },
+          {
+            "marks": 2,
+            "text": "Outlines an indicator/s which shows that a tool is not performing efficiently or has a fault"
+          },
+          {
+            "marks": 1,
+            "text": "Provides some relevant information"
+          }
+        ]
       },
       {
         "question": 17,
         "part": "c",
         "marks": 5,
-        "sampleAnswer": "Builders can protect their tools and equipment by using secure storage such as lockable toolboxes or containers. Builders can follow a lock-up procedure and ensure there are protocols for signing tools in and out on site. They could also ensure the site is well secured with fencing, lighting and security cameras. Correct tool storage to protect tools from the weather and also the use of storage racks to prevent damage are other considerations. Answers could include: • Security guards and cameras • Site fencing, chains, locks • Site sheds/shipping containers • Protective covers against weather and to conceal contents • Isolate power."
+        "sampleAnswer": "Builders can protect their tools and equipment by using secure storage such as lockable toolboxes or containers. Builders can follow a lock-up procedure and ensure there are protocols for signing tools in and out on site. They could also ensure the site is well secured with fencing, lighting and security cameras. Correct tool storage to protect tools from the weather and also the use of storage racks to prevent damage are other considerations. Answers could include: • Security guards and cameras • Site fencing, chains, locks • Site sheds/shipping containers • Protective covers against weather and to conceal contents • Isolate power.",
+        "criteria": [
+          {
+            "marks": 5,
+            "text": "Provides a thorough explanation of how builders can protect their tools and equipment from theft and damage on site"
+          },
+          {
+            "marks": 4,
+            "text": "Provides a sound explanation of how builders can protect their tools and equipment from theft and damage on site"
+          },
+          {
+            "marks": 3,
+            "text": "Provides an explanation of how builders can protect their tools and equipment from theft OR damage on site"
+          },
+          {
+            "marks": 2,
+            "text": "Outlines ways builders can protect their tools and equipment"
+          },
+          {
+            "marks": 1,
+            "text": "Provides some relevant information"
+          }
+        ]
       },
       {
         "question": 18,
         "part": "a",
         "marks": 2,
-        "sampleAnswer": "A building specification can include details on materials, construction methods, finishes and compliance requirements. It can also state the colours of fixtures and fittings. Answers could include: Description of construction and finishing which is not shown on the drawings, including: • Composition of concrete in footings • Species and grades of timber • Brick type • Mortar quality • Paint colours • PC items (hot water, bath, shower, appliances, tapware)."
+        "sampleAnswer": "A building specification can include details on materials, construction methods, finishes and compliance requirements. It can also state the colours of fixtures and fittings. Answers could include: Description of construction and finishing which is not shown on the drawings, including: • Composition of concrete in footings • Species and grades of timber • Brick type • Mortar quality • Paint colours • PC items (hot water, bath, shower, appliances, tapware).",
+        "criteria": [
+          {
+            "marks": 2,
+            "text": "Lists information provided in a building specification"
+          },
+          {
+            "marks": 1,
+            "text": "Provides some relevant information"
+          }
+        ]
       },
       {
         "question": 18,
         "part": "b",
         "marks": 3,
-        "sampleAnswer": "Hot water RWP Rainwater pipe Horizontal sliding window"
+        "sampleAnswer": "Hot water RWP Rainwater pipe Horizontal sliding window",
+        "criteria": [
+          {
+            "marks": 3,
+            "text": "Correctly identifies THREE symbols or abbreviations found on construction drawings"
+          },
+          {
+            "marks": 2,
+            "text": "Correctly identifies TWO symbols or abbreviations found on construction drawings"
+          },
+          {
+            "marks": 1,
+            "text": "Correctly identifies ONE symbol or abbreviation found on construction drawings"
+          }
+        ]
       },
       {
         "question": 18,
         "part": "c",
         "marks": 4,
-        "sampleAnswer": "A floor plan provides a range of relevant information including the layout of rooms and spaces, dimensions and overall building footprint. It also indicates location of walls, doors, windows and structural features like columns. Floor plans also show the arrangement of appliances and permanent fixtures such as baths and ovens. Answers could include: • Room n ame/use and location • Wall thickness • Floor coverings • Positions of cupboards, and appliances • Roof outline and eaves overhang • Position of downpipes."
+        "sampleAnswer": "A floor plan provides a range of relevant information including the layout of rooms and spaces, dimensions and overall building footprint. It also indicates location of walls, doors, windows and structural features like columns. Floor plans also show the arrangement of appliances and permanent fixtures such as baths and ovens. Answers could include: • Room n ame/use and location • Wall thickness • Floor coverings • Positions of cupboards, and appliances • Roof outline and eaves overhang • Position of downpipes.",
+        "criteria": [
+          {
+            "marks": 4,
+            "text": "Describes a range of information that is provided on a floor plan"
+          },
+          {
+            "marks": 3,
+            "text": "Outlines some information that is provided on a floor plan"
+          },
+          {
+            "marks": 2,
+            "text": "Identifies some information that is provided on a floor plan"
+          },
+          {
+            "marks": 1,
+            "text": "Provides some relevant information"
+          }
+        ]
       },
       {
         "question": 19,
         "part": "a",
         "marks": 2,
-        "sampleAnswer": "´ = m2 m3 52 (area of slab) 0.150 (depth of slab) 7.8 ´ = m3 7.8 $320.00 (cost of concrete) $2496"
+        "sampleAnswer": "´ = m2 m3 52 (area of slab) 0.150 (depth of slab) 7.8 ´ = m3 7.8 $320.00 (cost of concrete) $2496",
+        "criteria": [
+          {
+            "marks": 2,
+            "text": "Correctly calculates the cost of the concrete slab"
+          },
+          {
+            "marks": 1,
+            "text": "Provides some relevant information"
+          }
+        ]
       },
       {
         "question": 19,
         "part": "b",
         "marks": 2,
-        "sampleAnswer": "The water is likely to exit along the southern or front boundary of the property as the property falls 1.5 m in a southerly direction as per the contour lines."
+        "sampleAnswer": "The water is likely to exit along the southern or front boundary of the property as the property falls 1.5 m in a southerly direction as per the contour lines.",
+        "criteria": [
+          {
+            "marks": 2,
+            "text": "Explains where surface water is likely to exit off the site"
+          },
+          {
+            "marks": 1,
+            "text": "Provides some relevant information"
+          }
+        ]
       },
       {
         "question": 19,
         "part": "c",
         "marks": 3,
-        "sampleAnswer": "÷ = 55.2 2.4 23 ÷ = 33.6 2.4 14 ÷ = 55.2 2.4 23 ÷ = 33.6 2.4 14 + + + = 23 14 23 14 74 panels"
+        "sampleAnswer": "÷ = 55.2 2.4 23 ÷ = 33.6 2.4 14 ÷ = 55.2 2.4 23 ÷ = 33.6 2.4 14 + + + = 23 14 23 14 74 panels",
+        "criteria": [
+          {
+            "marks": 3,
+            "text": "Correctly calculates how many fence panels are required to completely surround the site"
+          },
+          {
+            "marks": 2,
+            "text": "Calculates how many fence panels required to completely surround the site, with some errors"
+          },
+          {
+            "marks": 1,
+            "text": "Provides some relevant information"
+          }
+        ]
       },
       {
         "question": 19,
         "part": "d",
         "marks": 4,
-        "sampleAnswer": "´ 0.2 0.1 0.02 = ÷ = m2 175 0.02 8750 pavers ´ = 8750 1.12 9800 pavers ÷ = = 9800 pavers 500 19.6 pallets 20 pallets ordered Section III"
+        "sampleAnswer": "´ 0.2 0.1 0.02 = ÷ = m2 175 0.02 8750 pavers ´ = 8750 1.12 9800 pavers ÷ = = 9800 pavers 500 19.6 pallets 20 pallets ordered Section III",
+        "criteria": [
+          {
+            "marks": 4,
+            "text": "Correctly calculates how many pallets of pavers are required"
+          },
+          {
+            "marks": 3,
+            "text": "Correctly calculates how many pavers are required"
+          },
+          {
+            "marks": 2,
+            "text": "Calculates how many pallets or pavers are required with some errors"
+          },
+          {
+            "marks": 1,
+            "text": "Provides some relevant information"
+          }
+        ]
       },
       {
         "question": 20,
         "part": "a",
         "marks": 5,
-        "sampleAnswer": "Control measures that can be used to minimise soil erosion on a construction site would include installing a silt fence to contain run off or sediment barriers to prevent soil displacement, using erosion control blankets or mats to stabilise exposed areas, and establishing temporary vegetation or keeping vegetation to hold soil in place. Grading the site to reduce steep slopes and directing rain runoff can further limit erosion on a building site. Answers could include: • Apply mulch to worksite surfaces • Restrict vehicle access • Minimal disturbance of natural vegetation and trees • Installation of silt socks around stormwater drains • Establish temporary site driveway using coarse aggregate • Vehicle wash bays."
+        "sampleAnswer": "Control measures that can be used to minimise soil erosion on a construction site would include installing a silt fence to contain run off or sediment barriers to prevent soil displacement, using erosion control blankets or mats to stabilise exposed areas, and establishing temporary vegetation or keeping vegetation to hold soil in place. Grading the site to reduce steep slopes and directing rain runoff can further limit erosion on a building site. Answers could include: • Apply mulch to worksite surfaces • Restrict vehicle access • Minimal disturbance of natural vegetation and trees • Installation of silt socks around stormwater drains • Establish temporary site driveway using coarse aggregate • Vehicle wash bays.",
+        "criteria": [
+          {
+            "marks": 5,
+            "text": "Provides a detailed description of the control measures used to minimise soil erosion on a construction site"
+          },
+          {
+            "marks": 4,
+            "text": "Provides a sound description of the control measures used to minimise soil erosion on a construction site"
+          },
+          {
+            "marks": 3,
+            "text": "Outlines the control measures used to minimise soil erosion on a construction site"
+          },
+          {
+            "marks": 2,
+            "text": "Outlines a control measure that minimises soil erosion"
+          },
+          {
+            "marks": 1,
+            "text": "Provides some relevant information"
+          }
+        ]
       },
       {
         "question": 20,
         "part": "b",
         "marks": 10,
-        "sampleAnswer": "• To minimise the risk of harm f rom m anual handling involves the implementation of a range of techniques focused on reducing physical strain and improving safety • Tasks need to be assessed and planned to identify risks including the weight of the load, the distance to be moved, and the physical condition of the workers • Using mechanical aids such as trolleys, pallet jacks or hoists can significantly reduce the need for manual lifting. Workers should be trained properly in lifting techniques such as bending the knees, keeping back straight and holding load close to the body • Team l ifting should be used when lifting heavy or awkward loads • Ergonomic workplace design such as adjusting storage heights and organising materials to avoid excessive reaching or bending further minimises risks • Regular breaks and job rotation can also help and ensuring workers are fit and healthy for manual handling tasks is essential for safety • Provide workers with proper training and instruction • Minimising bending, twisting, overreaching • Activate core muscles to brace back and reduce strain • Testing the load • PPE such as safety boots, gloves. Section IV"
+        "sampleAnswer": "• To minimise the risk of harm f rom m anual handling involves the implementation of a range of techniques focused on reducing physical strain and improving safety • Tasks need to be assessed and planned to identify risks including the weight of the load, the distance to be moved, and the physical condition of the workers • Using mechanical aids such as trolleys, pallet jacks or hoists can significantly reduce the need for manual lifting. Workers should be trained properly in lifting techniques such as bending the knees, keeping back straight and holding load close to the body • Team l ifting should be used when lifting heavy or awkward loads • Ergonomic workplace design such as adjusting storage heights and organising materials to avoid excessive reaching or bending further minimises risks • Regular breaks and job rotation can also help and ensuring workers are fit and healthy for manual handling tasks is essential for safety • Provide workers with proper training and instruction • Minimising bending, twisting, overreaching • Activate core muscles to brace back and reduce strain • Testing the load • PPE such as safety boots, gloves. Section IV",
+        "criteria": [
+          {
+            "marks": 10,
+            "text": "Provides a thorough explanation of techniques to minimise harm to workers from manual handling Uses relevant workplace examples"
+          },
+          {
+            "marks": 8,
+            "text": "Provides a sound explanation of techniques to minimise harm to workers from manual handling Uses some workplace examples"
+          },
+          {
+            "marks": 6,
+            "text": "Provides a sound explanation of techniques to minimise harm to workers from manual handling"
+          },
+          {
+            "marks": 4,
+            "text": "Demonstrates some knowledge of manual handling"
+          },
+          {
+            "marks": 2,
+            "text": "Provides some relevant information"
+          }
+        ]
       },
       {
         "question": 21,
         "part": null,
         "marks": 15,
-        "sampleAnswer": "• A resource in the construction industry can be described as an input or an asset needed to successfully perform the job. Resources can include but are not limited to building materials, labour, knowledge, skills, experience, technology, equipment, tools, time, money and land. • Efficiency is concerned with utilising these resources in such a way as to extract as much benefit and value from t hem as possible while minimising waste. Waste is more than offcuts, rubbish and byproducts of the building process, it can also include time, money skills and space. For example, getting a skilled tradesperson to pick up a materials order could be considered a waste of expertise if a labourer or apprentice were available to perform t he task. • Depending on the goals and the objectives of the building project or the PCBU, resource efficiency can essentially reduce environmental impact, improve safety and working conditions, minimise production costs and maximise productivity. • Resource efficiency can be influenced by the design of a building or structure. For instance, giving appropriate thought to the availability, size and characteristics of proposed materials can result in waste reduction and cost savings. Designing spaces and components to suit standard material sizes can reduce the need for cutting and joining. For example, plasterboard makes up a large percentage of building waste and can be difficult to recycle. • Designing wall and ceiling heights to match full sheet widths would limit waste, speed up installation and decrease clean up time, resulting in less labour and waste disposal costs, not to mention the environmental benefit. • Sequencing material deliveries so that they arrive just as they are needed can also improve resource efficiency. Having materials stockpiled or stored on site takes up valuable space that can impede the access of workers and equipment. Navigating and working around these obstacles can decrease productivity and increase the likelihood of damage, resulting in unnecessary waste and financial consequences. • The correct sequencing of trades and rostering of staff is also crucial to achieving resource efficiency. A lot of time can be wasted if trades can’t freely access the site to perform t heir work or if preceding trades have not completed their stage of the project. Making sure that the correct number of workers are available is vital for an efficiently run site. Too few workers, and the job can become unnecessarily arduous, unsafe and time-consuming, too many and the site can become congested, also posing safety concerns, potential for conflict and workers being under-utilised. The use of Gantt charts and construction schedules can help to manage labour resources. • Correct calculation of material quantities and the use of material lists. • Not over or under ordering. • Knowledge and skill in the latest construction methods. • Providing workers with clear instruction, procedures and training. • Keeping up to date with new developments (environmental, legislative, or building regulations). • Maintaining tools and equipment to ensure correct operation. 2025 HSC Construction Mapping Grid Section I Question Marks HSC content – focus area Safety – incidents accidents and emergency – fire extinguisher (p27) 1 1 Safety – WHS consultation and participation – WHS committee (p24) 2 1 Safety – safe work procedures and practices – SWMS (p25) 3 1 Skills in construction – plans, drawings and specifications – roof shape (p31) 4 1 Tools of the trade – hand tools – nibbler (p37) 5 1 Tools of the trade – hand tools – hand saws (p37) 6 1 7 1 Working in the industry – task planning – organising (p41) Tools of the trade – hand tools – string line (p36) 8 1 Skills in construction – taking measurements and performing calculations – 9 1 perimeter (p33) Tools of the trade – hand tools – mattock, crowbar, shovel (p36) 10 1 Working in the industry – teamwork – communicate urgent change (p45) 11 1 Working in the industry – nature of the industry (p41), task planning – construction 12 1 sequencing (p44) 13 1 Working in the industry – working sustainably – bio-degradable (p47) Skills in construction – project documentation (p30) 14 1 Skills in construction – taking measurements and performing calculations – wage 15 1 calculation (p33) Section II Question Marks HSC content – focus area 16 (a) 2 Tools of the trade – power and pneumatic tools and equipment (p37) 16 (b) 3 Tools of the trade – power and pneumatic tools and equipment (p37) 17 (a) 2 Tools of the trade – power and pneumatic tools and equipment (p37) 17 (b) 3 Tools of the trade – clean, maintain, store and secure (p39) 17 (c) 5 Tools of the trade – clean, maintain, store and secure (p39) 18 (a) 2 Skills in construction – plans, drawings and specifications (p32) 18 (b) 3 Skills in construction – plans, drawings and specifications (p30) 18 (c) 4 Skills in construction – plans, drawings and specifications (p31) 19 (a) 2 Skills in construction – taking measurements and performing calculations (p32) 19 (b) 2 Skills in construction – taking measurements and performing calculations (p30) 19 (c) 3 Skills in construction – taking measurements and performing calculations (p33) 19 (d) 4 Skills in construction – taking measurements and performing calculations (p33) Section III Question Marks HSC content – focus area 20 (a) 5 Working in the industry – sustainability – soil erosion (p47) 20 (b) 10 Safety – safe work procedures and practices (p26) Section IV Question Marks HSC content – focus area Working in the industry – work instructions (p44), task planning (p44–45), work 21 15 sustainability (p46–47)"
+        "sampleAnswer": "• A resource in the construction industry can be described as an input or an asset needed to successfully perform the job. Resources can include but are not limited to building materials, labour, knowledge, skills, experience, technology, equipment, tools, time, money and land. • Efficiency is concerned with utilising these resources in such a way as to extract as much benefit and value from t hem as possible while minimising waste. Waste is more than offcuts, rubbish and byproducts of the building process, it can also include time, money skills and space. For example, getting a skilled tradesperson to pick up a materials order could be considered a waste of expertise if a labourer or apprentice were available to perform t he task. • Depending on the goals and the objectives of the building project or the PCBU, resource efficiency can essentially reduce environmental impact, improve safety and working conditions, minimise production costs and maximise productivity. • Resource efficiency can be influenced by the design of a building or structure. For instance, giving appropriate thought to the availability, size and characteristics of proposed materials can result in waste reduction and cost savings. Designing spaces and components to suit standard material sizes can reduce the need for cutting and joining. For example, plasterboard makes up a large percentage of building waste and can be difficult to recycle. • Designing wall and ceiling heights to match full sheet widths would limit waste, speed up installation and decrease clean up time, resulting in less labour and waste disposal costs, not to mention the environmental benefit. • Sequencing material deliveries so that they arrive just as they are needed can also improve resource efficiency. Having materials stockpiled or stored on site takes up valuable space that can impede the access of workers and equipment. Navigating and working around these obstacles can decrease productivity and increase the likelihood of damage, resulting in unnecessary waste and financial consequences. • The correct sequencing of trades and rostering of staff is also crucial to achieving resource efficiency. A lot of time can be wasted if trades can’t freely access the site to perform t heir work or if preceding trades have not completed their stage of the project. Making sure that the correct number of workers are available is vital for an efficiently run site. Too few workers, and the job can become unnecessarily arduous, unsafe and time-consuming, too many and the site can become congested, also posing safety concerns, potential for conflict and workers being under-utilised. The use of Gantt charts and construction schedules can help to manage labour resources. • Correct calculation of material quantities and the use of material lists. • Not over or under ordering. • Knowledge and skill in the latest construction methods. • Providing workers with clear instruction, procedures and training. • Keeping up to date with new developments (environmental, legislative, or building regulations). • Maintaining tools and equipment to ensure correct operation. 2025 HSC Construction Mapping Grid Section I Question Marks HSC content – focus area Safety – incidents accidents and emergency – fire extinguisher (p27) 1 1 Safety – WHS consultation and participation – WHS committee (p24) 2 1 Safety – safe work procedures and practices – SWMS (p25) 3 1 Skills in construction – plans, drawings and specifications – roof shape (p31) 4 1 Tools of the trade – hand tools – nibbler (p37) 5 1 Tools of the trade – hand tools – hand saws (p37) 6 1 7 1 Working in the industry – task planning – organising (p41) Tools of the trade – hand tools – string line (p36) 8 1 Skills in construction – taking measurements and performing calculations – 9 1 perimeter (p33) Tools of the trade – hand tools – mattock, crowbar, shovel (p36) 10 1 Working in the industry – teamwork – communicate urgent change (p45) 11 1 Working in the industry – nature of the industry (p41), task planning – construction 12 1 sequencing (p44) 13 1 Working in the industry – working sustainably – bio-degradable (p47) Skills in construction – project documentation (p30) 14 1 Skills in construction – taking measurements and performing calculations – wage 15 1 calculation (p33) Section II Question Marks HSC content – focus area 16 (a) 2 Tools of the trade – power and pneumatic tools and equipment (p37) 16 (b) 3 Tools of the trade – power and pneumatic tools and equipment (p37) 17 (a) 2 Tools of the trade – power and pneumatic tools and equipment (p37) 17 (b) 3 Tools of the trade – clean, maintain, store and secure (p39) 17 (c) 5 Tools of the trade – clean, maintain, store and secure (p39) 18 (a) 2 Skills in construction – plans, drawings and specifications (p32) 18 (b) 3 Skills in construction – plans, drawings and specifications (p30) 18 (c) 4 Skills in construction – plans, drawings and specifications (p31) 19 (a) 2 Skills in construction – taking measurements and performing calculations (p32) 19 (b) 2 Skills in construction – taking measurements and performing calculations (p30) 19 (c) 3 Skills in construction – taking measurements and performing calculations (p33) 19 (d) 4 Skills in construction – taking measurements and performing calculations (p33) Section III Question Marks HSC content – focus area 20 (a) 5 Working in the industry – sustainability – soil erosion (p47) 20 (b) 10 Safety – safe work procedures and practices (p26) Section IV Question Marks HSC content – focus area Working in the industry – work instructions (p44), task planning (p44–45), work 21 15 sustainability (p46–47)",
+        "criteria": [
+          {
+            "marks": 15,
+            "text": "Provides a comprehensive explanation of a range of strategies to improve resource efficiency in the construction industry Provides a precise logical and cohesive response Uses relevant industry terminology Uses industry examples"
+          },
+          {
+            "marks": 12,
+            "text": "Provides a thorough explanation of a range of strategies to improve resource efficiency in the construction industry Provides a logical and cohesive response Uses industry terminology Uses industry examples"
+          },
+          {
+            "marks": 9,
+            "text": "Provides a general explanation of a range of strategies to improve resource efficiency in the construction industry Uses industry terminology and/or includes some examples"
+          },
+          {
+            "marks": 6,
+            "text": "Shows an understanding of resource efficiency in the construction industry"
+          },
+          {
+            "marks": 3,
+            "text": "Provides some relevant information"
+          }
+        ]
       }
     ]
   }

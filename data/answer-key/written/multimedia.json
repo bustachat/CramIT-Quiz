@@ -1,50 +1,160 @@
 {
   "subject": "multimedia",
   "source": "NESA HSC marking guidelines (not in repo - copyright)",
-  "note": "Official maximum marks per question part, plus the official sample answer for reference. Marks are enforced by scripts/check_written_key.cjs; sample answers are not - prose cannot be compared for equality. Regenerate with scripts/build_written_key.py; never hand-edit.",
+  "note": "Official maximum marks per question part, plus the official sample answer and criteria rows for reference. Marks are enforced by scripts/check_written_key.cjs; sample answers and criteria are not - prose cannot be compared for equality. The criteria rows are the ground truth a question's bandDescriptors are authored from. Regenerate with scripts/build_written_key.py; never hand-edit.",
   "papers": {
     "2020": [
       {
         "question": 11,
         "part": null,
         "marks": 1,
-        "sampleAnswer": "Real Time Streaming Protocol."
+        "sampleAnswer": "Real Time Streaming Protocol.",
+        "criteria": [
+          {
+            "marks": 1,
+            "text": "Correctly identifies RTSP"
+          }
+        ]
       },
       {
         "question": 12,
         "part": null,
         "marks": 2,
-        "sampleAnswer": "Optical systems track markers on the actor to record their movements or features in 3D. Computers then assemble the data to approximate the character’s movements."
+        "sampleAnswer": "Optical systems track markers on the actor to record their movements or features in 3D. Computers then assemble the data to approximate the character’s movements.",
+        "criteria": [
+          {
+            "marks": 2,
+            "text": "Sketches in general terms motion capture technology"
+          },
+          {
+            "marks": 1,
+            "text": "Provides some relevant information"
+          }
+        ]
       },
       {
         "question": 13,
         "part": null,
         "marks": 3,
-        "sampleAnswer": "Item Cost per item Number required Cost Paper (ream) $25.00 30 750.00 Black toner $45.00 7.5 round up to 8 360.00 Colour toner $65.00 23.07 round up to 24 1560.00 Total cost 2670.00"
+        "sampleAnswer": "Item Cost per item Number required Cost Paper (ream) $25.00 30 750.00 Black toner $45.00 7.5 round up to 8 360.00 Colour toner $65.00 23.07 round up to 24 1560.00 Total cost 2670.00",
+        "criteria": [
+          {
+            "marks": 3,
+            "text": "Correctly calculates the cost of consumables"
+          },
+          {
+            "marks": 2,
+            "text": "Calculates the cost with minor errors"
+          },
+          {
+            "marks": 1,
+            "text": "Provides a relevant calculation"
+          }
+        ]
       },
       {
         "question": 14,
         "part": null,
         "marks": 4,
-        "sampleAnswer": "You can convert to a smaller sized format such as WMV. This could be done by opening the original file within Windows Media Player, and saving the file with a different file extension, thus reducing the file size. You could trim unwanted parts of the video by using video editing software which would also reduce the file size. Answers could include: FLV program will also compress MP4 in the same manner as it is a smaller file format. Changing the bit rate causes less information to be stored, causing a reduction in file size. Changing the file image resolution and the frame rate also reduce the size of the saved file. Use proprietary software to reduce file size, such as Windows Movie Maker, iMovie etc. There are also online apps that will reduce the size of your files, but may involve a fee for service."
+        "sampleAnswer": "You can convert to a smaller sized format such as WMV. This could be done by opening the original file within Windows Media Player, and saving the file with a different file extension, thus reducing the file size. You could trim unwanted parts of the video by using video editing software which would also reduce the file size. Answers could include: FLV program will also compress MP4 in the same manner as it is a smaller file format. Changing the bit rate causes less information to be stored, causing a reduction in file size. Changing the file image resolution and the frame rate also reduce the size of the saved file. Use proprietary software to reduce file size, such as Windows Movie Maker, iMovie etc. There are also online apps that will reduce the size of your files, but may involve a fee for service.",
+        "criteria": [
+          {
+            "marks": 4,
+            "text": "Provides a description of how MP4 file sizes can be reduced"
+          },
+          {
+            "marks": 3,
+            "text": "Outlines feature(s) of file size reduction"
+          },
+          {
+            "marks": 1,
+            "text": "Identifies some relevant information regarding file size reduction"
+          }
+        ]
       },
       {
         "question": 15,
         "part": null,
         "marks": 5,
-        "sampleAnswer": "A company needs links to all of its services to be present on the homepage of its website. The homepage should include a clear logo, identifying the business. There should be a headline announcing the company’s name and purpose including address and contact details. A site map, to allow the user to easily navigate around the site including return links to the homepage. It should also include photos or graphics illustrating the purpose of the company. There should be a search function working within the site allowing the user to locate specific information. Answers could include: Content blocks with links to things about the company. Social proof such as testimonials about the company. May also feature special offers or subscriptions for visitors to the site. Section III"
+        "sampleAnswer": "A company needs links to all of its services to be present on the homepage of its website. The homepage should include a clear logo, identifying the business. There should be a headline announcing the company’s name and purpose including address and contact details. A site map, to allow the user to easily navigate around the site including return links to the homepage. It should also include photos or graphics illustrating the purpose of the company. There should be a search function working within the site allowing the user to locate specific information. Answers could include: Content blocks with links to things about the company. Social proof such as testimonials about the company. May also feature special offers or subscriptions for visitors to the site. Section III",
+        "criteria": [
+          {
+            "marks": 5,
+            "text": "Comprehensively describes features of an effective homepage"
+          },
+          {
+            "marks": 4,
+            "text": "Describes some features of an effective homepage"
+          },
+          {
+            "marks": 3,
+            "text": "Describes one features of an effective homepage and outlines another"
+          },
+          {
+            "marks": 2,
+            "text": "Outlines some features of an effective homepage"
+          },
+          {
+            "marks": 1,
+            "text": "Provides some relevant information"
+          }
+        ]
       },
       {
         "question": 16,
         "part": "a",
         "marks": 5,
-        "sampleAnswer": "The company needs to consider how the location of its operation will affect endangered species. For example, if an Environmental Impact Statement were to highlight a negative impact on endangered species, the business may need to be relocated or strategies implemented that minimise its impact on the endangered species. Transportation also needs to be considered. For example, receiving raw materials and distributing finished products to market would require access to arterial roads, rail, air/seaports. Being in close proximity to such distribution networks reduces the impact on the environment. Personal and public transport should also provide efficient access to a workforce. Fewer cars on the road means fewer emissions. Answers could include: Alternative resources: Location: • • power land costs and availability – – materials transportation facilities – – processes workforce – – limitations. impact on surrounding population – – Recycling and reusing resource availability • – Waste management and minimisation geographical factors • – Pollution waste management • – Sustainable development environmental studies. • – Rehabilitation of commercial sites • Legislative requirements: • local – state – federal. –"
+        "sampleAnswer": "The company needs to consider how the location of its operation will affect endangered species. For example, if an Environmental Impact Statement were to highlight a negative impact on endangered species, the business may need to be relocated or strategies implemented that minimise its impact on the endangered species. Transportation also needs to be considered. For example, receiving raw materials and distributing finished products to market would require access to arterial roads, rail, air/seaports. Being in close proximity to such distribution networks reduces the impact on the environment. Personal and public transport should also provide efficient access to a workforce. Fewer cars on the road means fewer emissions. Answers could include: Alternative resources: Location: • • power land costs and availability – – materials transportation facilities – – processes workforce – – limitations. impact on surrounding population – – Recycling and reusing resource availability • – Waste management and minimisation geographical factors • – Pollution waste management • – Sustainable development environmental studies. • – Rehabilitation of commercial sites • Legislative requirements: • local – state – federal. –",
+        "criteria": [
+          {
+            "marks": 5,
+            "text": "Provides comprehensive understanding of the characteristics and features of environmental factors that need to be considered when selecting a new site for the company"
+          },
+          {
+            "marks": 4,
+            "text": "Provides a sound understanding of the characteristics and features of environmental factors that need to be considered when selecting a new site"
+          },
+          {
+            "marks": 3,
+            "text": "Sketches in general terms environmental factors that need to be considered when selecting a new site OR Provides characteristics and features of one environmental factor"
+          },
+          {
+            "marks": 2,
+            "text": "Shows some understanding of environmental factors that need to be considered when selecting a new site"
+          },
+          {
+            "marks": 1,
+            "text": "Provides some relevant information"
+          }
+        ]
       },
       {
         "question": 16,
         "part": "b",
         "marks": 10,
-        "sampleAnswer": "Recycling • ‘Green’ energy • Use of off peak electricity • Paperless office • Use alternative resources • Look for power-saving alternatives like LED light bulbs, motion-sensing to control lighting, • LED computer monitors etc Prioritise buying or replacing equipment and appliances with their better energy rating • alternatives. The company must develop an environmental policy to show its commitment to the regulations, laws as well as other policy mechanisms that are concerned with environmental issues. Environmental policy affects businesses because the law impels organisations to change their operational procedures and equipment – which can cost businesses a lot of money – in order to meet those standards. Companies must consider using fuel saving measures – power supply for machines, fuel for trucks, routes taken by trucks, operations at night near communities. Collecting of old products from roadsides and communities – scheme for metal buy back, recycling bins in communities for dumping unwanted metal to be collected. Use of solar energy, use of batteries to store extra solar power to be used at night. Reduce carbon footprint. 2020 HSC Industrial Technology Multimedia Technologies Mapping Grid Section I Question Marks Content Syllabus outcomes 1 1 Multimedia elements – text H5.1 2 1 World Wide Web – text H1.2 3 1 Multimedia elements – graphics H4.3 4 1 Multimedia elements – video H1.2 5 1 Multimedia elements – graphics H1.2 6 1 Multimedia elements – graphics H4.3 7 1 Intellectual property and ethics H7.1 8 1 Multimedia elements – animation H1.2 9 1 Multimedia elements – text H5.1 10 1 World Wide Web – video H1.2, H4.3 Section II Question Marks Content Syllabus outcomes 11 1 World Wide Web – video H5.1 12 2 Multimedia element H5.1 13 3 Key competencies – problem solving H3.2, H5.2 14 4 World wide web H3.2, H4.3 15 5 World wide web H4.3, H5.1 Section III Question Marks Content Syllabus outcomes 16 (a) 5 Environmental and sociological considerations H1.2, H5.1, H7.1, H7.2 16 (b) 10 Environmental and sociological considerations H1.2, H5.1, H7.1, H7.2"
+        "sampleAnswer": "Recycling • ‘Green’ energy • Use of off peak electricity • Paperless office • Use alternative resources • Look for power-saving alternatives like LED light bulbs, motion-sensing to control lighting, • LED computer monitors etc Prioritise buying or replacing equipment and appliances with their better energy rating • alternatives. The company must develop an environmental policy to show its commitment to the regulations, laws as well as other policy mechanisms that are concerned with environmental issues. Environmental policy affects businesses because the law impels organisations to change their operational procedures and equipment – which can cost businesses a lot of money – in order to meet those standards. Companies must consider using fuel saving measures – power supply for machines, fuel for trucks, routes taken by trucks, operations at night near communities. Collecting of old products from roadsides and communities – scheme for metal buy back, recycling bins in communities for dumping unwanted metal to be collected. Use of solar energy, use of batteries to store extra solar power to be used at night. Reduce carbon footprint. 2020 HSC Industrial Technology Multimedia Technologies Mapping Grid Section I Question Marks Content Syllabus outcomes 1 1 Multimedia elements – text H5.1 2 1 World Wide Web – text H1.2 3 1 Multimedia elements – graphics H4.3 4 1 Multimedia elements – video H1.2 5 1 Multimedia elements – graphics H1.2 6 1 Multimedia elements – graphics H4.3 7 1 Intellectual property and ethics H7.1 8 1 Multimedia elements – animation H1.2 9 1 Multimedia elements – text H5.1 10 1 World Wide Web – video H1.2, H4.3 Section II Question Marks Content Syllabus outcomes 11 1 World Wide Web – video H5.1 12 2 Multimedia element H5.1 13 3 Key competencies – problem solving H3.2, H5.2 14 4 World wide web H3.2, H4.3 15 5 World wide web H4.3, H5.1 Section III Question Marks Content Syllabus outcomes 16 (a) 5 Environmental and sociological considerations H1.2, H5.1, H7.1, H7.2 16 (b) 10 Environmental and sociological considerations H1.2, H5.1, H7.1, H7.2",
+        "criteria": [
+          {
+            "marks": 10,
+            "text": "Provides detailed strategies the company could implement to minimise its continuing environmental impact and provides points for and/or against"
+          },
+          {
+            "marks": 8,
+            "text": "Provides sound strategies the company could implement to minimise its continuing environmental impact and provides points for and/or against"
+          },
+          {
+            "marks": 6,
+            "text": "Describes some strategies the company could implement to minimise its continuing environmental impact OR Identifies a strategy the company could implement to minimise its continuing environmental impact and provides points for and/or against"
+          },
+          {
+            "marks": 4,
+            "text": "Outlines strategies the company could implement to minimise its continuing environmental impact"
+          },
+          {
+            "marks": 2,
+            "text": "Provides some relevant information"
+          }
+        ]
       }
     ],
     "2021": [
@@ -52,43 +162,153 @@
         "question": 11,
         "part": null,
         "marks": 1,
-        "sampleAnswer": "Vector based drawing package. Answers could include: Corel Draw, Adobe Fireworks, Adobe Illustrator Draw, PaintShop Pro, Affinity Designer, Inkscape, Lunacy, Draw Pad, Vecteezy Editor, Snappa, Artboard, Vector Magic, Vectornator Pro, Designimo."
+        "sampleAnswer": "Vector based drawing package. Answers could include: Corel Draw, Adobe Fireworks, Adobe Illustrator Draw, PaintShop Pro, Affinity Designer, Inkscape, Lunacy, Draw Pad, Vecteezy Editor, Snappa, Artboard, Vector Magic, Vectornator Pro, Designimo.",
+        "criteria": [
+          {
+            "marks": 1,
+            "text": "Correctly identifies an authoring software used for creating vector graphics"
+          }
+        ]
       },
       {
         "question": 12,
         "part": null,
         "marks": 2,
-        "sampleAnswer": ""
+        "sampleAnswer": "",
+        "criteria": [
+          {
+            "marks": 2,
+            "text": "Sketches a diagram of a stepped waveform depicting varying volume"
+          },
+          {
+            "marks": 1,
+            "text": "Sketches a diagram with minimal steps"
+          }
+        ]
       },
       {
         "question": 13,
         "part": null,
         "marks": 3,
-        "sampleAnswer": "× = 1920 1080 2 073 600 pixels = × Bit depth 2 073 600 32 = 66 355 200 Convert bit to MB × × = 66 355 200 / (8 1024 1024) 66 355 200 / 8388608 = 7.91MB"
+        "sampleAnswer": "× = 1920 1080 2 073 600 pixels = × Bit depth 2 073 600 32 = 66 355 200 Convert bit to MB × × = 66 355 200 / (8 1024 1024) 66 355 200 / 8388608 = 7.91MB",
+        "criteria": [
+          {
+            "marks": 3,
+            "text": "Correctly calculates file size in MB with working"
+          },
+          {
+            "marks": 2,
+            "text": "Shows correct answer but no working shown OR Calculates with minor errors"
+          },
+          {
+            "marks": 1,
+            "text": "Provides some relevant information"
+          }
+        ]
       },
       {
         "question": 14,
         "part": null,
         "marks": 4,
-        "sampleAnswer": "Compression is used to reduce the file size of video in order to share it or send it to others. Lossy compression is a type of compression in which file sizes are typically smaller, but quality is lost. MP4 is an example of Lossy Compression type. Lossless Compression is a type of compression in which quality is not lost. This results in very high quality and large file sizes which require large data storage capacity for video. Many high-end video cameras can shoot raw lossless video but the file sizes are extremely large and normally require post processing. Answers could include: Lossy Codecs use algorithms to compress the video by removing still pixels and reducing the colour depth of the video to save data storage. Interlaced video is a compression technique for doubling the perceived frame rate of a video display without consuming extra bandwidth. The interlaced signal contains two fields of a video frame captured at two different times. This enhances motion perception for the viewer, and reduces flicker by taking advantage of the phi phenomenon."
+        "sampleAnswer": "Compression is used to reduce the file size of video in order to share it or send it to others. Lossy compression is a type of compression in which file sizes are typically smaller, but quality is lost. MP4 is an example of Lossy Compression type. Lossless Compression is a type of compression in which quality is not lost. This results in very high quality and large file sizes which require large data storage capacity for video. Many high-end video cameras can shoot raw lossless video but the file sizes are extremely large and normally require post processing. Answers could include: Lossy Codecs use algorithms to compress the video by removing still pixels and reducing the colour depth of the video to save data storage. Interlaced video is a compression technique for doubling the perceived frame rate of a video display without consuming extra bandwidth. The interlaced signal contains two fields of a video frame captured at two different times. This enhances motion perception for the viewer, and reduces flicker by taking advantage of the phi phenomenon.",
+        "criteria": [
+          {
+            "marks": 4,
+            "text": "Provides how and why video compression affects image quality and data storage"
+          },
+          {
+            "marks": 3,
+            "text": "Provides how and why video compression affects image quality or data storage"
+          },
+          {
+            "marks": 2,
+            "text": "Provides how or why video compression affects image quality or data storage"
+          },
+          {
+            "marks": 1,
+            "text": "Provides some relevant information"
+          }
+        ]
       },
       {
         "question": 15,
         "part": null,
         "marks": 5,
-        "sampleAnswer": "Multimedia designers need to ensure that they pay the appropriate licensing fees for software they are using to prevent licensing infringement. Users also need to ensure that they have permission to use the photos and videos provided and that the appropriate copyright licensing has been acquired to prevent legal action. When producing multimedia content for sale it must be given an Australian classification eg MA so viewers can choose if it is appropriate for a particular audience. Consumers are required to follow Australian copyright laws which prevent the illegal copying and distribution of multimedia content. This protects the intellectual property of producers. Answers could include: References to work, health and safety. Section III"
+        "sampleAnswer": "Multimedia designers need to ensure that they pay the appropriate licensing fees for software they are using to prevent licensing infringement. Users also need to ensure that they have permission to use the photos and videos provided and that the appropriate copyright licensing has been acquired to prevent legal action. When producing multimedia content for sale it must be given an Australian classification eg MA so viewers can choose if it is appropriate for a particular audience. Consumers are required to follow Australian copyright laws which prevent the illegal copying and distribution of multimedia content. This protects the intellectual property of producers. Answers could include: References to work, health and safety. Section III",
+        "criteria": [
+          {
+            "marks": 5,
+            "text": "Provides comprehensive understanding of ethical issues in the development and use of multimedia products"
+          },
+          {
+            "marks": 4,
+            "text": "Provides sound understanding of ethical issues in the development and use of multimedia products"
+          },
+          {
+            "marks": 3,
+            "text": "Sketches in general terms ethical issues in the development and use of multimedia products OR Provides sound understanding of ONE ethical issue in the development and use of multimedia products"
+          },
+          {
+            "marks": 1,
+            "text": "Provides some relevant information"
+          }
+        ]
       },
       {
         "question": 16,
         "part": "a",
         "marks": 5,
-        "sampleAnswer": "If the company is going to downsize this could lead to employee job losses and retrenchments. This requires redundancy packages and union negotiation in regards to individual contracts. The company needs to ensure that employees’ rights are protected in accordance with government legislation and policies. The retrenchment process needs to be conducted in an equitable fashion. If the company is going to expand, recruitment of new staff will be necessary. Existing staff can be retained and upskilled. Unions play a major role in the negotiation of group and individual contracts. Equal Employment Opportunity legislation has implications for the hiring of new staff. This includes new employees and the promotion of existing staff."
+        "sampleAnswer": "If the company is going to downsize this could lead to employee job losses and retrenchments. This requires redundancy packages and union negotiation in regards to individual contracts. The company needs to ensure that employees’ rights are protected in accordance with government legislation and policies. The retrenchment process needs to be conducted in an equitable fashion. If the company is going to expand, recruitment of new staff will be necessary. Existing staff can be retained and upskilled. Unions play a major role in the negotiation of group and individual contracts. Equal Employment Opportunity legislation has implications for the hiring of new staff. This includes new employees and the promotion of existing staff.",
+        "criteria": [
+          {
+            "marks": 5,
+            "text": "Demonstrates comprehensive understanding of the characteristics and features of industrial relations issues that would occur to adapt to the company’s changes"
+          },
+          {
+            "marks": 4,
+            "text": "Demonstrates a sound understanding of the characteristics and features of industrial relations issues that would occur to adapt to the company’s changes"
+          },
+          {
+            "marks": 3,
+            "text": "Sketches in general terms industrial relations issues that would occur to adapt to the company’s changes OR Provides characteristics and features of one industrial issue"
+          },
+          {
+            "marks": 2,
+            "text": "Shows some understanding of industrial relations issues that would occur"
+          },
+          {
+            "marks": 1,
+            "text": "Provides some relevant information"
+          }
+        ]
       },
       {
         "question": 16,
         "part": "b",
         "marks": 10,
-        "sampleAnswer": "Strategies for company expansion: Employees have opportunities to train and further develop their knowledge and skills in • the industry they work in If the company brings in a new machinery or technology, it must make sure all employees • get trained to use the machinery or technology All employees must be provided with the opportunity to further their career by training • through TAFE or universities Training to use special machines or technologies through outside agencies or in-house • training On the job training where employees get trained while they are working • Multi-skilling of employees • Management opportunities/change structure/leadership opportunities/internship • traineeships Recruitment/hiring of new staff to meet the significant change in demand. • Strategies for downsizing: Employees can be retrained • Voluntary redundancies • Employees who go for regular training in new courses are not likely to be made redundant • Part time / casual work • Government subsidy • Management structure change. • 2021 HSC Industrial Technology Multimedia Technologies Mapping Grid Section I Question Marks Content Syllabus outcomes 1 1 Text fonts serif, sans serif H1.2, H4.1, H5.1 2 1 Graphics – importing images – still H5.1 3 1 Video – buffering / streaming H1.2 4 1 Graphics – file formats H1.2, H5.1 5 1 3D animation – animation / motion capture H1.2, H4.3 6 1 Graphics – image enhancements – anti-aliasing H1.2, H5.1 7 1 Animation – 2D animation – tweening H1.2, H4.3 8 1 Video – compression lossless H1.2, H4.1 9 1 Video – video editing H1.2, H3.3 World wide web – video 10 1 H1.2 Connection speed Section II Question Marks Content Syllabus outcomes 11 1 Multimedia elements – graphics H1.2, H4.1, H5.1 Audio – sound waves 12 2 H1.3, H3.1 Analogue and digital wave patterns 13 3 File size and colour depth H1.2, H4.2, H4.3 14 4 Video – video compression H4.3 Intellectual property and ethics – copyright and 15 5 H1.3, H4.3, H7.1, H7.2 multimedia Section III Question Marks Content Syllabus outcomes 16 (a) 5 Personnel issues H1.2, H7.1, H7.2 16 (b) 10 Personnel issues H1.2, H7.1, H7.2"
+        "sampleAnswer": "Strategies for company expansion: Employees have opportunities to train and further develop their knowledge and skills in • the industry they work in If the company brings in a new machinery or technology, it must make sure all employees • get trained to use the machinery or technology All employees must be provided with the opportunity to further their career by training • through TAFE or universities Training to use special machines or technologies through outside agencies or in-house • training On the job training where employees get trained while they are working • Multi-skilling of employees • Management opportunities/change structure/leadership opportunities/internship • traineeships Recruitment/hiring of new staff to meet the significant change in demand. • Strategies for downsizing: Employees can be retrained • Voluntary redundancies • Employees who go for regular training in new courses are not likely to be made redundant • Part time / casual work • Government subsidy • Management structure change. • 2021 HSC Industrial Technology Multimedia Technologies Mapping Grid Section I Question Marks Content Syllabus outcomes 1 1 Text fonts serif, sans serif H1.2, H4.1, H5.1 2 1 Graphics – importing images – still H5.1 3 1 Video – buffering / streaming H1.2 4 1 Graphics – file formats H1.2, H5.1 5 1 3D animation – animation / motion capture H1.2, H4.3 6 1 Graphics – image enhancements – anti-aliasing H1.2, H5.1 7 1 Animation – 2D animation – tweening H1.2, H4.3 8 1 Video – compression lossless H1.2, H4.1 9 1 Video – video editing H1.2, H3.3 World wide web – video 10 1 H1.2 Connection speed Section II Question Marks Content Syllabus outcomes 11 1 Multimedia elements – graphics H1.2, H4.1, H5.1 Audio – sound waves 12 2 H1.3, H3.1 Analogue and digital wave patterns 13 3 File size and colour depth H1.2, H4.2, H4.3 14 4 Video – video compression H4.3 Intellectual property and ethics – copyright and 15 5 H1.3, H4.3, H7.1, H7.2 multimedia Section III Question Marks Content Syllabus outcomes 16 (a) 5 Personnel issues H1.2, H7.1, H7.2 16 (b) 10 Personnel issues H1.2, H7.1, H7.2",
+        "criteria": [
+          {
+            "marks": 10,
+            "text": "Provides detailed strategies the company could implement to provide career and training opportunities to its employees and links the strategy to desired outcome"
+          },
+          {
+            "marks": 8,
+            "text": "Provides sound strategies the company could implement to provide career and training opportunities to its employees and makes some link to the outcome"
+          },
+          {
+            "marks": 6,
+            "text": "Describes some strategies the company could implement to provide career and training opportunities to its employees OR Identifies a strategy the company could implement to provide career and training opportunities to its employees and provides points for and/or against the strategy"
+          },
+          {
+            "marks": 4,
+            "text": "Outlines strategies the company could implement to provide career and training opportunities to its employees"
+          },
+          {
+            "marks": 2,
+            "text": "Provides some relevant information"
+          }
+        ]
       }
     ],
     "2022": [
@@ -96,43 +316,157 @@
         "question": 11,
         "part": null,
         "marks": 1,
-        "sampleAnswer": "PDF files allow formatting to be maintained across different software platforms. Answers could include: PDF format can prevent files from being edited by unauthorised personnel."
+        "sampleAnswer": "PDF files allow formatting to be maintained across different software platforms. Answers could include: PDF format can prevent files from being edited by unauthorised personnel.",
+        "criteria": [
+          {
+            "marks": 1,
+            "text": "Correctly identifies an advantage of using PDF files"
+          }
+        ]
       },
       {
         "question": 12,
         "part": null,
         "marks": 2,
-        "sampleAnswer": "A thumbnail is a smaller copy of the original image, used on a web page to reduce download time. It also provides a small preview of the document or image so that it does not need to be downloaded to be viewed."
+        "sampleAnswer": "A thumbnail is a smaller copy of the original image, used on a web page to reduce download time. It also provides a small preview of the document or image so that it does not need to be downloaded to be viewed.",
+        "criteria": [
+          {
+            "marks": 2,
+            "text": "Correctly identifies the purpose of a thumbnail with relevant detail"
+          },
+          {
+            "marks": 1,
+            "text": "Correctly identifies relevant information"
+          }
+        ]
       },
       {
         "question": 13,
         "part": null,
         "marks": 3,
-        "sampleAnswer": "´ Convert megabytes to megabits 550 8 = 4400 megabits. Then divide the file size by the transfer rate 4400 / 80 = 55 seconds."
+        "sampleAnswer": "´ Convert megabytes to megabits 550 8 = 4400 megabits. Then divide the file size by the transfer rate 4400 / 80 = 55 seconds.",
+        "criteria": [
+          {
+            "marks": 3,
+            "text": "Correctly calculates time required including all working out"
+          },
+          {
+            "marks": 2,
+            "text": "Calculates with minor errors"
+          },
+          {
+            "marks": 1,
+            "text": "Provides some relevant information"
+          }
+        ]
       },
       {
         "question": 14,
         "part": null,
         "marks": 4,
-        "sampleAnswer": "An advantage of virtual reality is that it allows dangerous activities to be completed safely in an immersive virtual environment with a low risk of injury. This can be used for training in specialist fields such as the army and for pilots, however, specialist hardware and software are required which can be expensive to setup and maintain. Answers could include: Advantages: Users can be immersed into a virtual world and interact with virtual assets which creates an engaging experience. A client can see and experience a VR product before it has been finished. VR Training can be completed without risk. Disadvantages: VR is expensive to set up. VR can cause motion sickness."
+        "sampleAnswer": "An advantage of virtual reality is that it allows dangerous activities to be completed safely in an immersive virtual environment with a low risk of injury. This can be used for training in specialist fields such as the army and for pilots, however, specialist hardware and software are required which can be expensive to setup and maintain. Answers could include: Advantages: Users can be immersed into a virtual world and interact with virtual assets which creates an engaging experience. A client can see and experience a VR product before it has been finished. VR Training can be completed without risk. Disadvantages: VR is expensive to set up. VR can cause motion sickness.",
+        "criteria": [
+          {
+            "marks": 4,
+            "text": "Provides a detailed description of an advantage and a disadvantage of virtual reality"
+          },
+          {
+            "marks": 3,
+            "text": "Provides some description of an advantage and/or a disadvantage of virtual reality"
+          },
+          {
+            "marks": 2,
+            "text": "Provides an outline of an advantage and/or a disadvantage of virtual reality"
+          },
+          {
+            "marks": 1,
+            "text": "Provides some relevant information"
+          }
+        ]
       },
       {
         "question": 15,
         "part": null,
         "marks": 5,
-        "sampleAnswer": "The mouth shapes allow quality dialogue in the animation as they provide the animator with a pre-made reference bank of high-quality assets. This saves the animator time when creating their animation. The animator can use animation techniques such as tweening and morphing when placing the mouth shapes onto the timeline. This will create a smoother and realistic final animation as each shape is matched to its corresponding audio sound. Synchronising the mouths to the audio will be the final step to ensure that the animation is realistic and produces a quality dialogue. Section III"
+        "sampleAnswer": "The mouth shapes allow quality dialogue in the animation as they provide the animator with a pre-made reference bank of high-quality assets. This saves the animator time when creating their animation. The animator can use animation techniques such as tweening and morphing when placing the mouth shapes onto the timeline. This will create a smoother and realistic final animation as each shape is matched to its corresponding audio sound. Synchronising the mouths to the audio will be the final step to ensure that the animation is realistic and produces a quality dialogue. Section III",
+        "criteria": [
+          {
+            "marks": 5,
+            "text": "Provides thorough explanation of how to animate dialogue"
+          },
+          {
+            "marks": 4,
+            "text": "Provides some explanation of how to animate dialogue"
+          },
+          {
+            "marks": 3,
+            "text": "Provides a description of how to animate dialogue"
+          },
+          {
+            "marks": 2,
+            "text": "Outlines how to animate dialogue"
+          },
+          {
+            "marks": 1,
+            "text": "Provides some relevant information"
+          }
+        ]
       },
       {
         "question": 16,
         "part": "a",
         "marks": 5,
-        "sampleAnswer": "Workplaces must ensure the safety of their employees by law. The law exists to protect the welfare of employees. Failure to comply with legal requirements may result in penalties or prosecution. WHS law requires employers to provide safety training, safe equipment, safety inspection, evacuation procedures, safety signage and safety committees to ensure a safe workplace."
+        "sampleAnswer": "Workplaces must ensure the safety of their employees by law. The law exists to protect the welfare of employees. Failure to comply with legal requirements may result in penalties or prosecution. WHS law requires employers to provide safety training, safe equipment, safety inspection, evacuation procedures, safety signage and safety committees to ensure a safe workplace.",
+        "criteria": [
+          {
+            "marks": 5,
+            "text": "Provides a detailed description of the role WHS legislation has on workplace safety"
+          },
+          {
+            "marks": 4,
+            "text": "Provides a sound description of the role WHS legislation has on workplace safety"
+          },
+          {
+            "marks": 3,
+            "text": "Provides some description of the role WHS legislation has on workplace safety"
+          },
+          {
+            "marks": 2,
+            "text": "Provides a limited description of the role of WHS"
+          },
+          {
+            "marks": 1,
+            "text": "Provides some relevant information"
+          }
+        ]
       },
       {
         "question": 16,
         "part": "b",
         "marks": 10,
-        "sampleAnswer": "Hierarchy of control Tagging & testing • • Employee training Regular equipment inspections • • WHS signage Taking regular breaks • • Provision of PPE Have regular WHS meetings and • • discussions Fire safety equipment • Access to First Aid • Ergonomic workstations • Accident log review • Manual handling techniques and • equipment Chemical signage / storage. • RCD electrical safety • 2022 HSC Industrial Technology Multimedia Technologies Mapping Grid Section I Question Marks Content Syllabus outcomes 1 1 Multimedia Elements – Audio – MIDI H1.3 2 1 Multimedia Elements – stroke & fill H1.2 3 1 Multimedia Elements – motion capture H1.2 4 1 Multimedia Elements – Graphics – resolution H1.2 5 1 World Wide Web – Video Transfer H7.2 6 1 World Wide Web – Graphics – progressive JPEG H1.2 7 1 Multimedia Elements – Filters – colour balance H1.2 8 1 Multimedia Elements – Audio – sound wave H6.2 9 1 World Wide Web – Video H1.2 10 1 Compose camera shots H4.1 Section II Question Marks Content Syllabus outcomes 11 1 World Wide Web – Text – PDF H4.3 12 2 World Wide Web – Text – Thumbnail H7.2 13 3 World Wide Web – Video – Connection speed H4.3 14 4 Multimedia Elements – Virtual Reality H6.1 15 5 Multimedia Elements – Animation H1.2, 1.3 Section III Question Marks Content Syllabus outcomes 16 (a) 5 Work, health and safety H7.1 16 (b) 10 Work, health and safety H7.1 ASSESS: 14 March 2022 Page 5 of 5"
+        "sampleAnswer": "Hierarchy of control Tagging & testing • • Employee training Regular equipment inspections • • WHS signage Taking regular breaks • • Provision of PPE Have regular WHS meetings and • • discussions Fire safety equipment • Access to First Aid • Ergonomic workstations • Accident log review • Manual handling techniques and • equipment Chemical signage / storage. • RCD electrical safety • 2022 HSC Industrial Technology Multimedia Technologies Mapping Grid Section I Question Marks Content Syllabus outcomes 1 1 Multimedia Elements – Audio – MIDI H1.3 2 1 Multimedia Elements – stroke & fill H1.2 3 1 Multimedia Elements – motion capture H1.2 4 1 Multimedia Elements – Graphics – resolution H1.2 5 1 World Wide Web – Video Transfer H7.2 6 1 World Wide Web – Graphics – progressive JPEG H1.2 7 1 Multimedia Elements – Filters – colour balance H1.2 8 1 Multimedia Elements – Audio – sound wave H6.2 9 1 World Wide Web – Video H1.2 10 1 Compose camera shots H4.1 Section II Question Marks Content Syllabus outcomes 11 1 World Wide Web – Text – PDF H4.3 12 2 World Wide Web – Text – Thumbnail H7.2 13 3 World Wide Web – Video – Connection speed H4.3 14 4 Multimedia Elements – Virtual Reality H6.1 15 5 Multimedia Elements – Animation H1.2, 1.3 Section III Question Marks Content Syllabus outcomes 16 (a) 5 Work, health and safety H7.1 16 (b) 10 Work, health and safety H7.1 ASSESS: 14 March 2022 Page 5 of 5",
+        "criteria": [
+          {
+            "marks": 10,
+            "text": "Provides a detailed explanation of strategies that could be implemented to improve safety in the workplace"
+          },
+          {
+            "marks": 8,
+            "text": "Provides a sound explanation of strategies that could be implemented to improve safety in the workplace"
+          },
+          {
+            "marks": 6,
+            "text": "Provides some explanation of strategies that could be implemented to improve safety in the workplace"
+          },
+          {
+            "marks": 4,
+            "text": "Outlines some strategies that could be implemented to improve safety in the workplace"
+          },
+          {
+            "marks": 2,
+            "text": "Provides some relevant information"
+          }
+        ]
       }
     ],
     "2023": [
@@ -140,43 +474,149 @@
         "question": 11,
         "part": null,
         "marks": 1,
-        "sampleAnswer": "Interactivity Answers could include: Sensory feedback • Believability. •"
+        "sampleAnswer": "Interactivity Answers could include: Sensory feedback • Believability. •",
+        "criteria": [
+          {
+            "marks": 1,
+            "text": "Identifies a key characteristic of fully immersive virtual reality"
+          }
+        ]
       },
       {
         "question": 12,
         "part": null,
         "marks": 2,
-        "sampleAnswer": "A disadvantage using high resolution graphics when creating a multimedia product is that it can significantly increase the file size of the product. This can lead to longer loading times and require more storage space. Answers could include: Input resolutions may not match the output resolution • High-resolution images can have poor quality if your display is poor • Using high-resolution graphics when creating a multimedia product can also require more • processing power and system resources, which can cause performance issues on lower- end or older devices. This can result in slower frame rates, choppy animations, and a lower quality user experience Some older devices or systems may not be able to display or process high-resolution • graphics properly, resulting in reduced quality or even complete incompatibility. This can limit the audience that can access and enjoy the multimedia product Slower internet connection. •"
+        "sampleAnswer": "A disadvantage using high resolution graphics when creating a multimedia product is that it can significantly increase the file size of the product. This can lead to longer loading times and require more storage space. Answers could include: Input resolutions may not match the output resolution • High-resolution images can have poor quality if your display is poor • Using high-resolution graphics when creating a multimedia product can also require more • processing power and system resources, which can cause performance issues on lower- end or older devices. This can result in slower frame rates, choppy animations, and a lower quality user experience Some older devices or systems may not be able to display or process high-resolution • graphics properly, resulting in reduced quality or even complete incompatibility. This can limit the audience that can access and enjoy the multimedia product Slower internet connection. •",
+        "criteria": [
+          {
+            "marks": 2,
+            "text": "Outlines ONE disadvantage of using high-resolution graphics when creating a multimedia product"
+          },
+          {
+            "marks": 1,
+            "text": "Provides some relevant information"
+          }
+        ]
       },
       {
         "question": 13,
         "part": null,
         "marks": 3,
-        "sampleAnswer": "BUSINESS CARD COSTING Cost per unit Number of units required Total $0.85 800 $680 Print finish Gloss $0.10 800 $80 Matte $0.00 0 $0 Design services $60 1 $60 Total $820 Answers could include: Design services $40, Total = $800"
+        "sampleAnswer": "BUSINESS CARD COSTING Cost per unit Number of units required Total $0.85 800 $680 Print finish Gloss $0.10 800 $80 Matte $0.00 0 $0 Design services $60 1 $60 Total $820 Answers could include: Design services $40, Total = $800",
+        "criteria": [
+          {
+            "marks": 3,
+            "text": "Demonstrates a clear understanding of how to calculate the cost of producing business cards"
+          },
+          {
+            "marks": 2,
+            "text": "Demonstrates some understanding of how to calculate the cost of producing business cards"
+          },
+          {
+            "marks": 1,
+            "text": "Provides some relevant calculation"
+          }
+        ]
       },
       {
         "question": 14,
         "part": null,
         "marks": 4,
-        "sampleAnswer": "To add sound effects, the chosen audio file is added to the editing software library. Then select the sound effect and place it in the desired location on the timeline. Ensure the sound effect fades in and fades out as abrupt cuts in sound can have a deliberate aesthetic purpose, otherwise, they tend to sound unnatural. Select audio to adjust the volume accordingly and test and playback for accuracy and natural fit. Repeat as necessary."
+        "sampleAnswer": "To add sound effects, the chosen audio file is added to the editing software library. Then select the sound effect and place it in the desired location on the timeline. Ensure the sound effect fades in and fades out as abrupt cuts in sound can have a deliberate aesthetic purpose, otherwise, they tend to sound unnatural. Select audio to adjust the volume accordingly and test and playback for accuracy and natural fit. Repeat as necessary.",
+        "criteria": [
+          {
+            "marks": 4,
+            "text": "Provides a thorough description of the process of adding sound effects to video footage"
+          },
+          {
+            "marks": 3,
+            "text": "Provides some description of the process of adding sound effects to video footage"
+          },
+          {
+            "marks": 2,
+            "text": "Demonstrates a basic understanding the process of adding sound effects to video footage"
+          },
+          {
+            "marks": 1,
+            "text": "Provides some relevant information"
+          }
+        ]
       },
       {
         "question": 15,
         "part": null,
         "marks": 5,
-        "sampleAnswer": "Before incorporating pre-existing components into a multimedia presentation, it is crucial for a project team to address ethical and legal concerns. Ethically, they should consider issues related to intellectual property rights, ensuring they have the appropriate permissions or licenses to use third-party content. This involves respecting copyright laws and adhering to fair use guidelines when applicable which can potentially prevent reputational damage. Legally, the team must assess potential liabilities regarding any copyrighted material or trademarks they intend to include. This includes verifying that their usage complies with relevant copyright laws, licenses, and agreements. Moreover, they should be cautious about any potential defamation or privacy issues that might arise from using certain content. Answers could include: Give proper attribution • If you use components that are protected by copyright, you must give proper credit to the creator or owner of the material. This includes the name of the creator and the source of the material. Be mindful of trademark law • If you use trademarks or logos in your multimedia presentation, you should also make sure that you are not violating trademark law. This may include obtaining permission from the trademark owner or ensuring that the use of the trademark is considered ‘fair use’. Protect the privacy rights of individuals • If you use images or videos of individuals in your presentation, make sure you have obtained their consent or that the use of their image is protected by law. Section III"
+        "sampleAnswer": "Before incorporating pre-existing components into a multimedia presentation, it is crucial for a project team to address ethical and legal concerns. Ethically, they should consider issues related to intellectual property rights, ensuring they have the appropriate permissions or licenses to use third-party content. This involves respecting copyright laws and adhering to fair use guidelines when applicable which can potentially prevent reputational damage. Legally, the team must assess potential liabilities regarding any copyrighted material or trademarks they intend to include. This includes verifying that their usage complies with relevant copyright laws, licenses, and agreements. Moreover, they should be cautious about any potential defamation or privacy issues that might arise from using certain content. Answers could include: Give proper attribution • If you use components that are protected by copyright, you must give proper credit to the creator or owner of the material. This includes the name of the creator and the source of the material. Be mindful of trademark law • If you use trademarks or logos in your multimedia presentation, you should also make sure that you are not violating trademark law. This may include obtaining permission from the trademark owner or ensuring that the use of the trademark is considered ‘fair use’. Protect the privacy rights of individuals • If you use images or videos of individuals in your presentation, make sure you have obtained their consent or that the use of their image is protected by law. Section III",
+        "criteria": [
+          {
+            "marks": 5,
+            "text": "Provides a thorough explanation of the ethical and legal implications if using pre-existing components"
+          },
+          {
+            "marks": 4,
+            "text": "Provides a sound explanation of the ethical and legal implications if using pre-existing components"
+          },
+          {
+            "marks": 3,
+            "text": "Provides some explanation of the ethical and/or legal implications if using pre-existing components"
+          },
+          {
+            "marks": 2,
+            "text": "Shows some understanding of the implications if using pre-existing components"
+          },
+          {
+            "marks": 1,
+            "text": "Provides some relevant information"
+          }
+        ]
       },
       {
         "question": 16,
         "part": "a",
         "marks": 3,
-        "sampleAnswer": "Virtual reality is a simulated 3D environment. In the multimedia industry, one purpose of Virtual reality is to allow users to explore and interact with a virtual surrounding in a way that approximates reality, such as in games. As a result, a more immersive experience is created for the user. Answers could include: 3D printing • Laser cutting • Robotics • Augmented reality. •"
+        "sampleAnswer": "Virtual reality is a simulated 3D environment. In the multimedia industry, one purpose of Virtual reality is to allow users to explore and interact with a virtual surrounding in a way that approximates reality, such as in games. As a result, a more immersive experience is created for the user. Answers could include: 3D printing • Laser cutting • Robotics • Augmented reality. •",
+        "criteria": [
+          {
+            "marks": 3,
+            "text": "Provides a sound description of how ONE new technology is being used to improve the multimedia industry"
+          },
+          {
+            "marks": 2,
+            "text": "Demonstrates some understanding of ONE new technology used to improve the multimedia industry"
+          },
+          {
+            "marks": 1,
+            "text": "Provides some relevant information"
+          }
+        ]
       },
       {
         "question": 16,
         "part": "b",
         "marks": 12,
-        "sampleAnswer": "Advantages Increase efficiency and therefore production rates • More products can be produced in a shorter amount of time, leading to increased profits • Consistency across products • Minimisation of errors • Cost saving as automated machines incur less costs in the long term • Allow the meeting of consumer demands at a lower cost • Reduced labour costs • Lower product prices. • Disadvantages Does not allow customisation • Negative impact on the environment • High initial investment in equipment • Decreased quality • Lost of jobs due to machinery and automated processes taking over • Need of train employees to operate new machinery. • 2023 HSC Industrial Technology Multimedia Technologies Mapping Grid Section I Question Marks Content Syllabus outcomes 1 1 Multimedia elements – formatting H4.1 2 1 Multimedia elements – animation 2D – looping H4.1 3 1 Multimedia elements – object layering H4.3 4 1 World Wide Web – sound, streaming H4.3 Multimedia elements – image enhancements – anti- 5 1 H4.3 aliasing 6 1 Multimedia elements video compression H6.2 7 1 Multimedia elements – animation 3D objects H4.3 World Wide Web – text – font compatibility, font sets, 8 1 H4.3 font substitution 9 1 Major project – appropriate software – authoring H4.3 Intellectual property and ethics – ease of copying, 10 1 H4.3 manipulation and incorporating multimedia objects Section II Question Marks Content Syllabus outcomes 11 1 Animation – virtual reality H4.3 12 2 Graphics – resolution H6.1 13 3 Multimedia elements file major project H5.1 14 4 Multimedia elements – video – synchronising sound H4.1 Intellectual property and ethics – ease of copying, 15 5 H4.3 manipulation, and incorporating multimedia objects Section III Question Marks Content Syllabus outcomes 16 (a) 3 Technical considerations – new technologies H7.2 16 (b) 12 Automation and mass production H1.3"
+        "sampleAnswer": "Advantages Increase efficiency and therefore production rates • More products can be produced in a shorter amount of time, leading to increased profits • Consistency across products • Minimisation of errors • Cost saving as automated machines incur less costs in the long term • Allow the meeting of consumer demands at a lower cost • Reduced labour costs • Lower product prices. • Disadvantages Does not allow customisation • Negative impact on the environment • High initial investment in equipment • Decreased quality • Lost of jobs due to machinery and automated processes taking over • Need of train employees to operate new machinery. • 2023 HSC Industrial Technology Multimedia Technologies Mapping Grid Section I Question Marks Content Syllabus outcomes 1 1 Multimedia elements – formatting H4.1 2 1 Multimedia elements – animation 2D – looping H4.1 3 1 Multimedia elements – object layering H4.3 4 1 World Wide Web – sound, streaming H4.3 Multimedia elements – image enhancements – anti- 5 1 H4.3 aliasing 6 1 Multimedia elements video compression H6.2 7 1 Multimedia elements – animation 3D objects H4.3 World Wide Web – text – font compatibility, font sets, 8 1 H4.3 font substitution 9 1 Major project – appropriate software – authoring H4.3 Intellectual property and ethics – ease of copying, 10 1 H4.3 manipulation and incorporating multimedia objects Section II Question Marks Content Syllabus outcomes 11 1 Animation – virtual reality H4.3 12 2 Graphics – resolution H6.1 13 3 Multimedia elements file major project H5.1 14 4 Multimedia elements – video – synchronising sound H4.1 Intellectual property and ethics – ease of copying, 15 5 H4.3 manipulation, and incorporating multimedia objects Section III Question Marks Content Syllabus outcomes 16 (a) 3 Technical considerations – new technologies H7.2 16 (b) 12 Automation and mass production H1.3",
+        "criteria": [
+          {
+            "marks": 12,
+            "text": "Provides a comprehensive discussion of the impact of mass production and automation on the multimedia industry Integrates relevant industry examples to support response"
+          },
+          {
+            "marks": 10,
+            "text": "Provides a sound discussion of the impact of mass production and automation on the multimedia industry Makes detailed reference to industry examples to support response"
+          },
+          {
+            "marks": 7,
+            "text": "Provides some discussion of the impact of mass production and automation on the multimedia industry Makes some reference to industry examples to support response"
+          },
+          {
+            "marks": 4,
+            "text": "Demonstrates some understanding of the impact of mass production and/or automation on the multimedia industry"
+          },
+          {
+            "marks": 2,
+            "text": "Provides some relevant information"
+          }
+        ]
       }
     ],
     "2024": [
@@ -184,43 +624,157 @@
         "question": 11,
         "part": null,
         "marks": 1,
-        "sampleAnswer": "MP3 audio file – MPEG Audio Layer III Answers could include: MIDI – Musical instrument digital interface wav – Waveform audio file wma – Windows media audio file"
+        "sampleAnswer": "MP3 audio file – MPEG Audio Layer III Answers could include: MIDI – Musical instrument digital interface wav – Waveform audio file wma – Windows media audio file",
+        "criteria": [
+          {
+            "marks": 1,
+            "text": "Correctly identifies an audio file type"
+          }
+        ]
       },
       {
         "question": 12,
         "part": null,
         "marks": 2,
-        "sampleAnswer": "Serif fonts help distinguish the letterforms and are easier to read, particularly when small font sizes are used in a paragraph. Serif fonts are clearer when printed on paper in books and newspapers. The serif letters are easier for the eye to track and recognise words quickly."
+        "sampleAnswer": "Serif fonts help distinguish the letterforms and are easier to read, particularly when small font sizes are used in a paragraph. Serif fonts are clearer when printed on paper in books and newspapers. The serif letters are easier for the eye to track and recognise words quickly.",
+        "criteria": [
+          {
+            "marks": 2,
+            "text": "Outlines TWO advantages of using a serif font"
+          },
+          {
+            "marks": 1,
+            "text": "Outlines ONE advantage of using a serif font"
+          }
+        ]
       },
       {
         "question": 13,
         "part": null,
         "marks": 3,
-        "sampleAnswer": "Bitmap images are made up of pixels, vector files are made up of lines described by equations. This means that as you zoom in on a bitmap image it will become ‘grainy’ while a vector file will stay smooth and sharp."
+        "sampleAnswer": "Bitmap images are made up of pixels, vector files are made up of lines described by equations. This means that as you zoom in on a bitmap image it will become ‘grainy’ while a vector file will stay smooth and sharp.",
+        "criteria": [
+          {
+            "marks": 3,
+            "text": "Describes the differences between vector and bitmapped images"
+          },
+          {
+            "marks": 2,
+            "text": "Demonstrates some understanding of differences between vector and bitmapped images"
+          },
+          {
+            "marks": 1,
+            "text": "Provides some relevant information"
+          }
+        ]
       },
       {
         "question": 14,
         "part": null,
         "marks": 4,
-        "sampleAnswer": "While close-up shots are strategically employed during moments of intense emotion or character introspection, the use of wide shots in the film serves to establish the vastness and sets the scene. Low angle shots are employed to emphasise the power or authority of certain characters, while tracking shots contribute to the overall cinematic experience and the impact of the narrative."
+        "sampleAnswer": "While close-up shots are strategically employed during moments of intense emotion or character introspection, the use of wide shots in the film serves to establish the vastness and sets the scene. Low angle shots are employed to emphasise the power or authority of certain characters, while tracking shots contribute to the overall cinematic experience and the impact of the narrative.",
+        "criteria": [
+          {
+            "marks": 4,
+            "text": "Provides a comprehensive explanation of the process of using different camera shots, using examples"
+          },
+          {
+            "marks": 3,
+            "text": "Provides an explanation of the process of using different camera shots, using an example"
+          },
+          {
+            "marks": 2,
+            "text": "Outlines the process of using different camera shots"
+          },
+          {
+            "marks": 1,
+            "text": "Provides some relevant information"
+          }
+        ]
       },
       {
         "question": 15,
         "part": null,
         "marks": 5,
-        "sampleAnswer": "Create a detailed storyboard that outlines the specific scenes where special effects will be applied. Assess the technical requirements and constraints of each effect, considering factors such as software, hardware and skill sets. For live-action videos, use green screens for chroma keying on set to interact with the actors. Develop the necessary assets, including 3D models, textures, and digital elements, depending on the nature of the special effects. Ensure proper lighting and coordination for seamless integration during post-production. Add new effects layers and include digital assets. Seamlessly integrate the special effects into the multimedia production, ensuring they complement the overall aesthetic and narrative. Examples include computer-generated imagery (CGI) is used to create realistic and convincing creatures and robots in various marvel movies live-action scenes. Section III"
+        "sampleAnswer": "Create a detailed storyboard that outlines the specific scenes where special effects will be applied. Assess the technical requirements and constraints of each effect, considering factors such as software, hardware and skill sets. For live-action videos, use green screens for chroma keying on set to interact with the actors. Develop the necessary assets, including 3D models, textures, and digital elements, depending on the nature of the special effects. Ensure proper lighting and coordination for seamless integration during post-production. Add new effects layers and include digital assets. Seamlessly integrate the special effects into the multimedia production, ensuring they complement the overall aesthetic and narrative. Examples include computer-generated imagery (CGI) is used to create realistic and convincing creatures and robots in various marvel movies live-action scenes. Section III",
+        "criteria": [
+          {
+            "marks": 5,
+            "text": "Demonstrates a thorough understanding of the process of using special effects, using examples"
+          },
+          {
+            "marks": 4,
+            "text": "Demonstrates a sound understanding of the process of using special effects, using an example"
+          },
+          {
+            "marks": 3,
+            "text": "Demonstrates some understanding of the process of using special effects"
+          },
+          {
+            "marks": 2,
+            "text": "Demonstrates a basic understanding of the process of using special effects"
+          },
+          {
+            "marks": 1,
+            "text": "Provides some relevant information"
+          }
+        ]
       },
       {
         "question": 16,
         "part": "a",
         "marks": 5,
-        "sampleAnswer": "Organisation A, a partnership-owned firm w ith a hierarchical structure, tends to have a formal approach to marketing and advertising. This means that decisions about how t o promote their products or services go through different levels of management before being put into action. Each partner might have a say in these decisions, which can take time. They may have specialised teams for different marketing tasks, like research or branding. In contrast, Organisation B, a sole trader-owned firm w ith a flat management structure, takes a more flexible approach. This means that decisions about marketing are made more quickly because there are fewer levels of management. A sm all team m ight handle marketing directly, allowing for faster reactions to changes in market conditions."
+        "sampleAnswer": "Organisation A, a partnership-owned firm w ith a hierarchical structure, tends to have a formal approach to marketing and advertising. This means that decisions about how t o promote their products or services go through different levels of management before being put into action. Each partner might have a say in these decisions, which can take time. They may have specialised teams for different marketing tasks, like research or branding. In contrast, Organisation B, a sole trader-owned firm w ith a flat management structure, takes a more flexible approach. This means that decisions about marketing are made more quickly because there are fewer levels of management. A sm all team m ight handle marketing directly, allowing for faster reactions to changes in market conditions.",
+        "criteria": [
+          {
+            "marks": 5,
+            "text": "Provides a comprehensive comparison that highlights differences in approach to marketing and advertising of both firms"
+          },
+          {
+            "marks": 4,
+            "text": "Provides a sound comparison of the differences in approach to marketing and advertising of both firms"
+          },
+          {
+            "marks": 3,
+            "text": "Provides a description of the two firms’ approaches to marketing and advertising OR Provides a sound description of the approach to marketing and advertising used by an organisation"
+          },
+          {
+            "marks": 2,
+            "text": "Shows some understanding of marketing and advertising"
+          },
+          {
+            "marks": 1,
+            "text": "Provides some relevant information"
+          }
+        ]
       },
       {
         "question": 16,
         "part": "b",
         "marks": 10,
-        "sampleAnswer": "• Decision-making speed – Hierarchical structures (Organisation A) may experience slower decision-making due to the various levels of approval required. – Flat structures (Organisation B) typically allow for quicker decisions due to fewer layers of management. • Responsiveness to change – Organisation A might be less responsive to change because of its many tiers of management, which can slow down the implementation of new ideas. – Organisation B is likely more agile and can adapt quickly due to its simpler structure. • Quality control – In a hierarchical structure, quality control can be more standardised and rigorous, although potentially slower. – Flat structures might have more flexible quality control processes, allowing for quicker adjustments but possibly less consistency. • Resource allocation – Hierarchical firms may have more complex resource allocation processes, potentially leading to inefficiencies. – Flat structures might allocate resources more dynamically and efficiently due to less bureaucracy. • Innovation • Communication • Employee autonomy • Management overhead • Cost efficiency • Risk management. 2024 HSC Industrial Technology Multimedia Technologies Mapping Grid Section I Syllabus Question Marks Content outcomes 1 1 Multimedia elements – text – alignment H1.2, H5.1 2 1 Multimedia elements – graphics H1.2, H5.1 3 1 World wide web – text H1.2, H5.1, H6.2 4 1 Animation – 3D H1.2, H4.3, H6.1 5 1 Multimedia elements – video – video compression H1.2, H4.3 6 1 Multimedia elements – graphics H1.2, H4.3 7 1 Multimedia elements – graphics – image adjustment H1.2, H4.3, H5.1 8 1 World wide web – graphics H1.2, H4.3, H7.1 9 1 Multimedia elements – video – video types H1.2, H1.3, H5.1 10 1 Multimedia elements – animation – 3D H1.2, H4.1, H4.3 Section II Syllabus Question Marks Content outcomes 11 1 Multimedia elements – audio – file formats H1.2, H3.3 12 2 Multimedia elements – text H1.2, H6.1 13 3 Multimedia elements – graphics H1.2, H3.1, H5.1 14 4 Multimedia elements – importing images H1.2, H4.3, H6.1 Multimedia elements – video editing – image 15 5 H1.2, H4.3, H6.1 enhancements Section III Question Marks Content Syllabus outcomes 16 (a) 5 Structural considerations H1.1 16 (b) 10 Structural considerations H1.1, H1.2"
+        "sampleAnswer": "• Decision-making speed – Hierarchical structures (Organisation A) may experience slower decision-making due to the various levels of approval required. – Flat structures (Organisation B) typically allow for quicker decisions due to fewer layers of management. • Responsiveness to change – Organisation A might be less responsive to change because of its many tiers of management, which can slow down the implementation of new ideas. – Organisation B is likely more agile and can adapt quickly due to its simpler structure. • Quality control – In a hierarchical structure, quality control can be more standardised and rigorous, although potentially slower. – Flat structures might have more flexible quality control processes, allowing for quicker adjustments but possibly less consistency. • Resource allocation – Hierarchical firms may have more complex resource allocation processes, potentially leading to inefficiencies. – Flat structures might allocate resources more dynamically and efficiently due to less bureaucracy. • Innovation • Communication • Employee autonomy • Management overhead • Cost efficiency • Risk management. 2024 HSC Industrial Technology Multimedia Technologies Mapping Grid Section I Syllabus Question Marks Content outcomes 1 1 Multimedia elements – text – alignment H1.2, H5.1 2 1 Multimedia elements – graphics H1.2, H5.1 3 1 World wide web – text H1.2, H5.1, H6.2 4 1 Animation – 3D H1.2, H4.3, H6.1 5 1 Multimedia elements – video – video compression H1.2, H4.3 6 1 Multimedia elements – graphics H1.2, H4.3 7 1 Multimedia elements – graphics – image adjustment H1.2, H4.3, H5.1 8 1 World wide web – graphics H1.2, H4.3, H7.1 9 1 Multimedia elements – video – video types H1.2, H1.3, H5.1 10 1 Multimedia elements – animation – 3D H1.2, H4.1, H4.3 Section II Syllabus Question Marks Content outcomes 11 1 Multimedia elements – audio – file formats H1.2, H3.3 12 2 Multimedia elements – text H1.2, H6.1 13 3 Multimedia elements – graphics H1.2, H3.1, H5.1 14 4 Multimedia elements – importing images H1.2, H4.3, H6.1 Multimedia elements – video editing – image 15 5 H1.2, H4.3, H6.1 enhancements Section III Question Marks Content Syllabus outcomes 16 (a) 5 Structural considerations H1.1 16 (b) 10 Structural considerations H1.1, H1.2",
+        "criteria": [
+          {
+            "marks": 10,
+            "text": "Provides an analysis of the influence of management approaches to production and efficiency"
+          },
+          {
+            "marks": 8,
+            "text": "Provides an explanation of the influence of management approaches to production and/or efficiency"
+          },
+          {
+            "marks": 6,
+            "text": "Describes the influence of management approaches to production and efficiency"
+          },
+          {
+            "marks": 4,
+            "text": "Demonstrates some understanding of the influence of management approaches to production and/or efficiency"
+          },
+          {
+            "marks": 2,
+            "text": "Provides some relevant information"
+          }
+        ]
       }
     ],
     "2025": [
@@ -228,43 +782,157 @@
         "question": 11,
         "part": null,
         "marks": 2,
-        "sampleAnswer": "PNG f ile format is used instead of JPEG because PNG supports lossless compression, which ensures that image quality is not compromised during file compression. Answers could include: PNG s upports transparent backgrounds, which is particularly useful for web design and graphics that require layering or complex backgrounds."
+        "sampleAnswer": "PNG f ile format is used instead of JPEG because PNG supports lossless compression, which ensures that image quality is not compromised during file compression. Answers could include: PNG s upports transparent backgrounds, which is particularly useful for web design and graphics that require layering or complex backgrounds.",
+        "criteria": [
+          {
+            "marks": 2,
+            "text": "Outlines why a PNG file format would be used instead of JPEG"
+          },
+          {
+            "marks": 1,
+            "text": "Provides some relevant information"
+          }
+        ]
       },
       {
         "question": 12,
         "part": null,
         "marks": 2,
-        "sampleAnswer": "Adjust the image’s colours, saturation and overlays to match the brand aesthetic. Ensure the banner is of a suitable aspect ratio. Answers could include: • Ensure text readability with contrast adjustments • Optimise the image for fast loading • Test responsiveness across devices and refine based on feedback"
+        "sampleAnswer": "Adjust the image’s colours, saturation and overlays to match the brand aesthetic. Ensure the banner is of a suitable aspect ratio. Answers could include: • Ensure text readability with contrast adjustments • Optimise the image for fast loading • Test responsiveness across devices and refine based on feedback",
+        "criteria": [
+          {
+            "marks": 2,
+            "text": "Outlines steps required to manipulate the banner image"
+          },
+          {
+            "marks": 1,
+            "text": "Provides some relevant information"
+          }
+        ]
       },
       {
         "question": 13,
         "part": null,
         "marks": 2,
-        "sampleAnswer": "Analogue video types use continuous signals to represent video, resulting in smooth and natural transitions. Digital video types use discrete signals, allowing better quality, easier editing and correction."
+        "sampleAnswer": "Analogue video types use continuous signals to represent video, resulting in smooth and natural transitions. Digital video types use discrete signals, allowing better quality, easier editing and correction.",
+        "criteria": [
+          {
+            "marks": 2,
+            "text": "Describes how analogue and digital video types differ"
+          },
+          {
+            "marks": 1,
+            "text": "Provides some relevant information"
+          }
+        ]
       },
       {
         "question": 14,
         "part": null,
         "marks": 4,
-        "sampleAnswer": "Motion capture (MoCap) enhances animation by creating realistic, fluid movements while reducing the need for labour-intensive keyframing. It improves efficiency, captures subtle emotions and makes characters more expressive. MoCap data is reusable, adding long-term value. Selectively using MoCap for complex scenes balances cost and quality, making the film more engaging and marketable."
+        "sampleAnswer": "Motion capture (MoCap) enhances animation by creating realistic, fluid movements while reducing the need for labour-intensive keyframing. It improves efficiency, captures subtle emotions and makes characters more expressive. MoCap data is reusable, adding long-term value. Selectively using MoCap for complex scenes balances cost and quality, making the film more engaging and marketable.",
+        "criteria": [
+          {
+            "marks": 4,
+            "text": "Explains the potential advantages of using motion capture technology in a short, animated film"
+          },
+          {
+            "marks": 3,
+            "text": "Describes potential advantages of using motion capture technology in a short, animated film"
+          },
+          {
+            "marks": 2,
+            "text": "Outlines potential advantages of using motion capture technology in a short, animated film"
+          },
+          {
+            "marks": 1,
+            "text": "Provides some relevant information"
+          }
+        ]
       },
       {
         "question": 15,
         "part": null,
         "marks": 5,
-        "sampleAnswer": "Image manipulation and enhancement in the multimedia industry raise ethical concerns regarding authenticity, misinformation and consumer deception. Over-editing can create unrealistic beauty standards, impacting mental health and self-perception. In journalism, altered images can mislead the public, distorting facts and eroding trust. Alternatively, a positive ethical example could be a newsworthy image of a traumatic scene that is pixelated or blurred to protect privacy. Copyright and ownership issues arise when modifying images without proper attribution or consent. Ethical editing should balance creativity with honesty, ensuring transparency in advertising and media. Section III"
+        "sampleAnswer": "Image manipulation and enhancement in the multimedia industry raise ethical concerns regarding authenticity, misinformation and consumer deception. Over-editing can create unrealistic beauty standards, impacting mental health and self-perception. In journalism, altered images can mislead the public, distorting facts and eroding trust. Alternatively, a positive ethical example could be a newsworthy image of a traumatic scene that is pixelated or blurred to protect privacy. Copyright and ownership issues arise when modifying images without proper attribution or consent. Ethical editing should balance creativity with honesty, ensuring transparency in advertising and media. Section III",
+        "criteria": [
+          {
+            "marks": 5,
+            "text": "Describes the ethical implications of image manipulation and enhancement"
+          },
+          {
+            "marks": 4,
+            "text": "Describes some aspects of the ethical implications of image manipulation and enhancement"
+          },
+          {
+            "marks": 3,
+            "text": "Outlines the ethical implications of image manipulation and enhancement"
+          },
+          {
+            "marks": 2,
+            "text": "Identifies the ethical implications of image manipulation and enhancement"
+          },
+          {
+            "marks": 1,
+            "text": "Provides some relevant information"
+          }
+        ]
       },
       {
         "question": 16,
         "part": "a",
         "marks": 5,
-        "sampleAnswer": "Legislation mandates that electronic waste, including multimedia equipment, must be collected and recycled responsibly. It has led to a reduction in the amount of e-waste being sent to landfills, thus minimising the environmental footprint of the industry. Companies are now m ore committed to designing products that are easier to recycle and contain fewer hazardous materials. For example, many multimedia companies have started using recyclable materials in their products and have set up take-back programs to ensur e proper recycling. Regulation has significantly improved the industry’s sustainable practices by promoting responsible disposal and recycling of electronic waste."
+        "sampleAnswer": "Legislation mandates that electronic waste, including multimedia equipment, must be collected and recycled responsibly. It has led to a reduction in the amount of e-waste being sent to landfills, thus minimising the environmental footprint of the industry. Companies are now m ore committed to designing products that are easier to recycle and contain fewer hazardous materials. For example, many multimedia companies have started using recyclable materials in their products and have set up take-back programs to ensur e proper recycling. Regulation has significantly improved the industry’s sustainable practices by promoting responsible disposal and recycling of electronic waste.",
+        "criteria": [
+          {
+            "marks": 5,
+            "text": "Describes in detail how legislative requirements have affected sustainable practices and environmental impacts of the industry"
+          },
+          {
+            "marks": 4,
+            "text": "Describes how legislative requirements have affected sustainable practices and/or environmental impacts of the industry"
+          },
+          {
+            "marks": 3,
+            "text": "Outlines the effects of legislative requirements on the sustainable practices and/or environmental impacts of the industry"
+          },
+          {
+            "marks": 2,
+            "text": "Demonstrates some understanding of legislative requirements or sustainable practices or environmental impacts"
+          },
+          {
+            "marks": 1,
+            "text": "Provides some relevant information"
+          }
+        ]
       },
       {
         "question": 16,
         "part": "b",
         "marks": 10,
-        "sampleAnswer": "The multimedia industry has been significantly affected by various historical developments in manufacturing processes. During the late 20th century, the introduction of digital technology revolutionised the production and distribution of multimedia content. This shift from analogue to digital allowed for higher quality production, easier editing and faster distribution. In the 21st century, advancements in microprocessor technology have further transformed the industry. These developments have led to the creation of more powerful and compact devices, such as smartphones and tablets, which have become primary tools for consuming multimedia content. The miniaturisation of components has also allowed for the integration of multiple functions into single devices, enhancing user experience. The rise of cloud computing has had a profound impact on the multimedia industry as well. Cloud technology enables the storage and streaming of vast amounts of content, making it easily accessible to users worldwide. This has led to the growth of streaming services like Netflix and Spotify, which have revolutionised how m ultimedia content is consumed and distributed. These historical advancements have collectively enhanced the efficiency, accessibility and quality of multimedia production and distribution. They have also opened up new possi bilities for innovation and creativity, shaping the industry into what it is today. Answers could include: • Mechanisation and automation revolutionised production, increasing efficiency and reducing labour costs. • Mass production methods enabled affordability and wider accessibility of products. • Digital and computer-aided technologies enhanced precision, consistency and design flexibility. • Miniaturisation of components improved functionality, portability and material efficiency. • Robotics, AI, CNC and the like systems optimised manufacturing processes, reducing waste and errors. • CAD, CAM, modelling and authoring software led to improved designs, customisation and manufacturing processes and improved precision and automation. • Standardisation of materials and components ensured quality control and interoperability. • Cloud computing and digital storage transformed data accessibility, distribution and collaboration. • Adoption of sustainable manufacturing practices minimised environmental impact and waste. • Increased use of recycled, biodegradable and eco-friendly materials across industries. • Energy-efficient production methods reduced resource consumption and carbon emissions. • Circular economy principles promoted waste reduction, material reuse and sustainability. • Integration of renewable energy sources reduced reliance on fossil fuels in industrial operations. • Digital solutions such as cloud storage and on-demand production minimised material waste. • Green technologies advanced the creation of environmentally friendly and energy-efficient products. • Ethical and sustainable sourcing practices ensured responsible use of resources. • Ongoing research and technological innovation continue to shape modern industry and sustainability efforts. 2025 HSC Industrial Technology Multimedia Technologies Mapping Grid Section I Question Marks Content Syllabus outcomes 1 1 Multimedia elements – text – formatting paragraphs H1.2 2 1 Graphics – importing images – screen capture H1.2, H6.2 3 1 World Wide Web (www) – sound – sound quality H6.2 4 1 Video editing – filters – contrast H1.2 5 1 Video editing – special effects H1.2 6 1 Animation – 3D H1.2 7 1 Video – video players H1.2, H6.1 8 1 World Wide Web (www) – PDF H1.2, H6.2 9 1 Multimedia elements – animation H1.2 10 1 World Wide Web (www) – age controls H1.3, H6.2 Section II Question Marks Content Syllabus outcomes 11 2 Graphics – file formats H6.1, H6.2 12 2 Graphics – image manipulation H1.2, H4.3 13 2 Video – video types H1.2, H4.3 14 4 Animation – motion capture H6.1, H6.2 15 5 Intellectual property and ethics H4.3, H7.2 Section III Question Marks Content Syllabus outcomes Historical developments 16 (a) 5 H1.3, H7.1 Environmental and sociological considerations – legislative requirements Historical developments 16 (b) 10 H1.3 Environmental and sociological considerations – sustainable developments"
+        "sampleAnswer": "The multimedia industry has been significantly affected by various historical developments in manufacturing processes. During the late 20th century, the introduction of digital technology revolutionised the production and distribution of multimedia content. This shift from analogue to digital allowed for higher quality production, easier editing and faster distribution. In the 21st century, advancements in microprocessor technology have further transformed the industry. These developments have led to the creation of more powerful and compact devices, such as smartphones and tablets, which have become primary tools for consuming multimedia content. The miniaturisation of components has also allowed for the integration of multiple functions into single devices, enhancing user experience. The rise of cloud computing has had a profound impact on the multimedia industry as well. Cloud technology enables the storage and streaming of vast amounts of content, making it easily accessible to users worldwide. This has led to the growth of streaming services like Netflix and Spotify, which have revolutionised how m ultimedia content is consumed and distributed. These historical advancements have collectively enhanced the efficiency, accessibility and quality of multimedia production and distribution. They have also opened up new possi bilities for innovation and creativity, shaping the industry into what it is today. Answers could include: • Mechanisation and automation revolutionised production, increasing efficiency and reducing labour costs. • Mass production methods enabled affordability and wider accessibility of products. • Digital and computer-aided technologies enhanced precision, consistency and design flexibility. • Miniaturisation of components improved functionality, portability and material efficiency. • Robotics, AI, CNC and the like systems optimised manufacturing processes, reducing waste and errors. • CAD, CAM, modelling and authoring software led to improved designs, customisation and manufacturing processes and improved precision and automation. • Standardisation of materials and components ensured quality control and interoperability. • Cloud computing and digital storage transformed data accessibility, distribution and collaboration. • Adoption of sustainable manufacturing practices minimised environmental impact and waste. • Increased use of recycled, biodegradable and eco-friendly materials across industries. • Energy-efficient production methods reduced resource consumption and carbon emissions. • Circular economy principles promoted waste reduction, material reuse and sustainability. • Integration of renewable energy sources reduced reliance on fossil fuels in industrial operations. • Digital solutions such as cloud storage and on-demand production minimised material waste. • Green technologies advanced the creation of environmentally friendly and energy-efficient products. • Ethical and sustainable sourcing practices ensured responsible use of resources. • Ongoing research and technological innovation continue to shape modern industry and sustainability efforts. 2025 HSC Industrial Technology Multimedia Technologies Mapping Grid Section I Question Marks Content Syllabus outcomes 1 1 Multimedia elements – text – formatting paragraphs H1.2 2 1 Graphics – importing images – screen capture H1.2, H6.2 3 1 World Wide Web (www) – sound – sound quality H6.2 4 1 Video editing – filters – contrast H1.2 5 1 Video editing – special effects H1.2 6 1 Animation – 3D H1.2 7 1 Video – video players H1.2, H6.1 8 1 World Wide Web (www) – PDF H1.2, H6.2 9 1 Multimedia elements – animation H1.2 10 1 World Wide Web (www) – age controls H1.3, H6.2 Section II Question Marks Content Syllabus outcomes 11 2 Graphics – file formats H6.1, H6.2 12 2 Graphics – image manipulation H1.2, H4.3 13 2 Video – video types H1.2, H4.3 14 4 Animation – motion capture H6.1, H6.2 15 5 Intellectual property and ethics H4.3, H7.2 Section III Question Marks Content Syllabus outcomes Historical developments 16 (a) 5 H1.3, H7.1 Environmental and sociological considerations – legislative requirements Historical developments 16 (b) 10 H1.3 Environmental and sociological considerations – sustainable developments",
+        "criteria": [
+          {
+            "marks": 10,
+            "text": "Provides a comprehensive analysis of how historical developments and advancements in manufacturing processes have affected the multimedia industry Integrates relevant industry examples to support response"
+          },
+          {
+            "marks": 8,
+            "text": "Provides a sound analysis of how historical developments and advancements in manufacturing processes have affected the multimedia industry Makes reference to industry examples to support response"
+          },
+          {
+            "marks": 6,
+            "text": "Provides an analysis of how historical developments and/or advancements in manufacturing processes have affected the multimedia industry OR Provides a description of how historical developments and advancements in manufacturing processes have affected the multimedia industry with some reference to industry examples"
+          },
+          {
+            "marks": 4,
+            "text": "Demonstrates some understanding of historical developments and/or advancements in manufacturing processes and/or effects on industry"
+          },
+          {
+            "marks": 2,
+            "text": "Provides some relevant information"
+          }
+        ]
       }
     ]
   }

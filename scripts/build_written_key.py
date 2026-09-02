@@ -7,11 +7,26 @@ CI can never regenerate this: the PDFs are not in the repo, by copyright.
 
 What is extracted, and what is not
 ----------------------------------
-For every question part the guidelines define, this records the **maximum mark** and the
-official **sample answer** text. Only the mark is machine-checkable and only the mark is
-enforced; the sample answer is stored for human reference, because prose cannot be
-compared for equality. Storing it is still worthwhile -- it is the source a reviewer
-needs when a bank answer looks wrong.
+For every question part the guidelines define, this records the **maximum mark**, the
+official **sample answer** text, and the official **criteria rows** (each band's wording
+beside the mark it earns). Only the mark is machine-checkable and only the mark is
+enforced; the sample answer and criteria are stored for human reference, because prose
+cannot be compared for equality. Storing them is still worthwhile -- they are the source
+a reviewer needs when a bank answer looks wrong, and the criteria rows are the ONLY
+ground truth for a question's `bandDescriptors` (added 2026-09-01, for the VET written
+review; before that, band descriptors could be reviewed for plausibility but not against
+NESA).
+
+Why the criteria rows are bracketed by the table's drawn rules
+--------------------------------------------------------------
+A criteria row's mark is vertically CENTRED in its cell, so a row whose wording runs over
+three lines has its mark on the middle line -- see 2024 VET Q16(a), where "2" sits beside
+the word "OR" between the two clauses it applies to. Bracketing a row by the mark lines
+above and below it therefore leaks wording in BOTH directions, which is exactly the bug
+`build_mapping_grid.py` was fixed for on 2026-08-28. These tables are really ruled, so
+`row_rules()`/`band_of()` (same technique, same reason) read the boundaries the page
+itself draws. Where a table has no usable rules, each mark-bearing line falls back to
+being its own row -- reported by shape, never silently merged.
 
 Why the marks are read positionally
 -----------------------------------
@@ -78,6 +93,11 @@ ANSWER_HEAD = re.compile(r"^\s*(Sample answer|Answers? could include)\b:?\s*", r
 # ("9-1" + "0"), which is why the marks column is joined per line before parsing.
 MARK_VALUE = re.compile(r"^(\d+)(?:\s*[\u2013\u2212-]\s*(\d+))?$")
 
+# The criteria bullet glyph has no Unicode mapping in these PDFs and extracts as U+FFFD
+# (or, in some years, a literal bullet). It is layout, not wording -- strip it so a
+# descriptor authored from a criteria row does not inherit a replacement character.
+BULLET = re.compile("[\ufffd\u2022\u25cf\u25aa\uf0b7]" + r"\s*")
+
 
 def is_guidelines(name):
     """True for a marking-guidelines PDF, mirroring build_answer_key.find_papers().
@@ -107,11 +127,109 @@ def page_lines(page):
     return [(y, sorted(toks, key=lambda t: t[0])) for y, toks in sorted(lines.items())]
 
 
-def parse_paper(pdf_path):
-    """Return ([{question, part, marks, sampleAnswer}], [unresolved-labels])."""
-    doc = fitz.open(pdf_path)
+def marks_cell(toks, gap=15.0):
+    """The line's Marks-column text: the RIGHTMOST cluster of tokens past MARKS_COL_MIN_X.
+
+    Not simply everything past the boundary. A criteria sentence can wrap so that its
+    last word spills over it while the real mark sits further right -- 2021 VET Q20's
+    fifth band ends "...something to do with a" at x 441.9-447.9 with its "1-3" at
+    x 479.1, and joining the two yields "a1-3", which MARK_VALUE rejects. The mark was
+    then lost and, because criteria_rows() drops a bandless row, that band vanished
+    from the criteria table entirely (the part's own `marks` survived only because it
+    is a max() over the other bands).
+
+    Clustering on a gap keeps the case the join exists for: a range split across two
+    words on the same line ("9-1" + "0") is contiguous, so it stays in one cluster.
+
+    Returns (text, tokens) so the caller can define the criteria wording by EXCLUSION --
+    a wrapped sentence's last word must stay in the wording, not be dropped with the mark.
+    """
+    right = sorted((t for t in toks if t[0] > MARKS_COL_MIN_X), key=lambda t: t[0])
+    if not right:
+        return "", []
+    cluster = [right[-1]]
+    for tok in reversed(right[:-1]):
+        if cluster[0][0] - tok[2] > gap:
+            break
+        cluster.insert(0, tok)
+    return "".join(t[4] for t in cluster).strip(), cluster
+
+
+def row_rules(page):
+    """Y positions of the criteria table's own horizontal rules on this page.
+
+    Mirrors build_mapping_grid.row_rules(). The width test (> 100 pt) keeps cell-border
+    stubs and the page's header/footer hairlines from inventing bands; those two rules do
+    appear, but they sit outside every criteria block and so bracket nothing.
+    """
+    ys = []
+    for drawing in page.get_drawings():
+        for item in drawing["items"]:
+            if item[0] == "l":
+                a, b = item[1], item[2]
+                if abs(a.y - b.y) < 0.6 and abs(a.x - b.x) > 100:
+                    ys.append(a.y)
+            elif item[0] == "re":
+                r = item[1]
+                if r.height < 1.5 and r.width > 100:
+                    ys.append(r.y0)
+    ys.sort()
+    merged = []
+    for y in ys:
+        if not merged or y - merged[-1] > 1.5:
+            merged.append(y)
+    return merged
+
+
+def band_of(y, rules):
+    """Index of the ruled band containing y, or None when the rules do not bracket it."""
+    if len(rules) < 3 or y < rules[0] or y > rules[-1]:
+        return None
+    lo, hi = 0, len(rules) - 1
+    while lo < hi - 1:
+        mid = (lo + hi) // 2
+        if rules[mid] <= y:
+            lo = mid
+        else:
+            hi = mid
+    return lo
+
+
+def criteria_rows(lines):
+    """Collapse scanned criteria lines into official rows: [{marks, text}], top band first.
+
+    `lines` is [(page-index, y, ruled-band-index or None, criteria-text, mark or None)] in
+    page order. Lines sharing a (page, band) are one row. A line the rules do not bracket
+    stands alone, so an unruled table degrades to one row per mark-bearing line rather
+    than merging rows that were never merged.
+    """
+    groups, order = {}, []
+    for i, (pi, _y, band, text, mark) in enumerate(lines):
+        key = (pi, band) if band is not None else ("solo", i)
+        if key not in groups:
+            groups[key] = {"text": [], "marks": None}
+            order.append(key)
+        if text:
+            groups[key]["text"].append(text)
+        if mark is not None and groups[key]["marks"] is None:
+            groups[key]["marks"] = mark
     rows = []
+    for key in order:
+        g = groups[key]
+        text = re.sub(r"\s+", " ", " ".join(g["text"])).strip()
+        text = BULLET.sub("", text).strip()
+        if g["marks"] is None or not text:
+            continue          # the "Criteria / Marks" header band, and any empty spacer
+        rows.append({"marks": g["marks"], "text": text})
+    return rows
+
+
+def parse_paper(pdf_path):
+    """Return ([{question, part, marks, sampleAnswer, criteria}], [unresolved-labels])."""
+    doc = fitz.open(pdf_path)
+    rows, rules = [], {}
     for pi in range(doc.page_count):
+        rules[pi] = row_rules(doc[pi])
         for y, toks in page_lines(doc[pi]):
             rows.append((pi, y, toks))
 
@@ -134,8 +252,9 @@ def parse_paper(pdf_path):
     for n, (idx, qnum, parts) in enumerate(headers):
         end = headers[n + 1][0] if n + 1 < len(headers) else len(rows)
         marks, sample, in_sample = [], [], False
+        crit_lines = []
         for j in range(idx + 1, end):
-            _, _, toks = rows[j]
+            pi, y, toks = rows[j]
             text = " ".join(t[4] for t in toks)
             if RUNNING.match(text):
                 continue
@@ -150,10 +269,18 @@ def parse_paper(pdf_path):
                 continue
             # Criteria row: join the marks column left-to-right before parsing, so a
             # range split across two words ("9-1" + "0") reads as one value.
-            col = "".join(t[4] for t in toks if t[0] > MARKS_COL_MIN_X).strip()
+            col, cell_toks = marks_cell(toks)
             m = MARK_VALUE.match(col)
+            value = int(m.group(2) or m.group(1)) if m else None
             if m:
-                marks.append(int(m.group(2) or m.group(1)))
+                marks.append(value)
+            # The row's WORDING is every token that is NOT in the marks cell, collected
+            # with the line's ruled band so criteria_rows() can rejoin a row split over
+            # 2-3 lines. Defined by exclusion rather than by the x threshold so a
+            # criteria sentence that wraps past MARKS_COL_MIN_X keeps its last word.
+            crit_lines.append((pi, y, band_of(y, rules[pi]),
+                               " ".join(t[4] for t in toks if t not in cell_toks).strip(),
+                               value))
 
         label = "Q%d%s" % (qnum, "".join("(%s)" % p for p in parts))
         if not marks:
@@ -164,6 +291,7 @@ def parse_paper(pdf_path):
             "part": ".".join(parts) if parts else None,
             "marks": max(marks),
             "sampleAnswer": re.sub(r"\s+", " ", " ".join(sample)).strip(),
+            "criteria": criteria_rows(crit_lines),
         })
     return out, unresolved
 
@@ -202,8 +330,10 @@ def build_subject(subject_id, dry_run=False):
         "subject": subject_id,
         "source": "NESA HSC marking guidelines (not in repo - copyright)",
         "note": ("Official maximum marks per question part, plus the official sample answer "
-                 "for reference. Marks are enforced by scripts/check_written_key.cjs; sample "
-                 "answers are not - prose cannot be compared for equality. "
+                 "and criteria rows for reference. Marks are enforced by "
+                 "scripts/check_written_key.cjs; sample answers and criteria are not - prose "
+                 "cannot be compared for equality. The criteria rows are the ground truth a "
+                 "question's bandDescriptors are authored from. "
                  "Regenerate with scripts/build_written_key.py; never hand-edit."),
         "papers": papers,
     }
