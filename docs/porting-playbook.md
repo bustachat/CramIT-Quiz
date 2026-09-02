@@ -427,10 +427,43 @@ cannot currently catch a new port inventing its own field names. Extending it to
 canonical names is the remediation for the drift above, and should land before the next
 port rather than after it.
 
+### A multi-part written question is ONE bank entry — decide this here, not mid-port
+
+**Found 2026-09-02, VET Construction — three separately-reported symptoms (an image showing
+on some parts of a question but not others, a shared intro sentence duplicated across parts,
+an oversized image) turned out to be one bug.** `getWritten()` calls `shuffle()` on the whole
+bank array, so if a NESA question's parts are stored as separate entries, a student can see
+part (a) now and part (d) minutes later as an unrelated card, and a shared stimulus can render
+on one part while its sibling shows nothing. Mathematics Advanced and Standard 2 never had
+this defect because they already store **one bank entry per whole NESA question** (confirmed
+by reading a live example: Advanced 2020 Q14, three sub-parts folded into one `q` field, one
+`keywords` list, one mark total, each part carrying its own inline `<strong>(N marks)</strong>`
+badge). VET's 18 split Section II questions were merged into that same shape — not a new one.
+
+**The decision test, and it resolves the call rather than leaving it a preference: does
+NESA's own paper put these parts on the same page in one continuous answer space, or does it
+send them to separate writing booklets** (*"Answer part (a) of the question in a writing
+booklet… Use the other writing booklet to answer part (b)"*)? Same space → **one merged bank
+entry**: one inline `<img>` positioned where NESA's text introduces it (never the top-level
+`image` field on a written question — see the canonical table above), one combined `keywords`
+list, a freshly **authored** `bandDescriptors` (NESA grades each part separately, so there is
+no official combined rubric to copy). Separate booklets → **keep every part its own entry** —
+those are genuinely independent responses on different topics with no shared stimulus, and
+merging them would misrepresent the exam, not fix anything. VET's own Q20/Q21 (Section
+III/IV) are the worked example of this second branch.
+
+**This is mandatory for every future port, and for every existing subject's multi-part
+written questions when next touched.** It is not folded into "canonical field names" above
+because it is a bank-*shape* decision, not a field-name one, and `check_written_key.cjs`
+being tolerant of either shape (its prefix-sum join, §6) is not permission for the rendering
+to be wrong — only the ground truth is shape-agnostic, the shuffle is not.
+
 ### GATE 3
 
 - [ ] Field mapping written down before any question is authored
 - [ ] Every deviation from canonical is deliberate and recorded
+- [ ] Every multi-part written question's bank shape decided by the same-page-vs-separate-
+      booklet test above, before any question in that group is authored
 
 ---
 
@@ -826,6 +859,9 @@ coordination tables.
 - [ ] Every question classified; no unresolved items (Stage 1)
 - [ ] Topic list from the primary syllabus (Stage 2)
 - [ ] Canonical field names; deviations deliberate and recorded (Stage 3)
+- [ ] Every multi-part written question's bank shape decided by the same-page-vs-separate-
+      booklet test (Stage 3) — never one entry per part unless NESA sends those parts to
+      separate writing booklets
 - [ ] `validate_subjects.cjs` green, `missingImages: 0` (Stage 4/5)
 - [ ] Answer key **and** written key: 0 wrong, 0 unverifiable (Stage 6)
 - [ ] Papers reconcile to front-page totals (Stage 6)

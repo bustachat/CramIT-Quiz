@@ -764,6 +764,42 @@ Rules:
      Reconcile every paper against the section totals printed on the exam's own front page —
      Maths 85, Multimedia 30, VET 65 — an independent check, not a self-consistent one.
 
+9. **A multi-part written question is rendered as ONE quiz card — never split into
+   independently-shuffled parts — unless NESA itself sends those parts to separate writing
+   booklets.** `check_written_key.cjs`'s prefix-sum join (rule 8 above) tolerates a bank
+   storing a question's parts three ways, but the **mark check being tolerant is not
+   permission for the rendering to be wrong**: `getWritten()` calls `shuffle()` on the whole
+   bank array, so if a NESA question's four parts are stored as four separate entries, the
+   quiz can show part (a) now and part (d) minutes later as an unrelated card. **Found
+   2026-09-02, VET Construction, from three reports that turned out to be one bug**: a
+   shared stimulus image rendered on some parts of a question and not others (2021 Q16 —
+   the chisel showed on (a)/(c)/(d) but not (b)), and a shared intro sentence had to be
+   duplicated verbatim into every part because each was authored to stand alone for the
+   shuffle (2023 Q19(b)(i)/(ii), "A shed is to be built on a concrete slab…" twice).
+   Mathematics Advanced and Standard 2 never had this defect because they already store
+   **one bank entry per whole NESA question** — confirmed by reading a live example
+   (Advanced 2020 Q14: three sub-parts, one `keywords` list, one mark total, one `q` field
+   with each part's own inline `<strong>(N marks)</strong>` badge) — so VET's 18 split
+   Section II questions (59 sub-entries → merged into 18) were brought in line with that
+   shape, not a new one invented. **The one legitimate exception, and it is NOT a UX
+   preference**: NESA's Section III/IV extended-response questions sometimes explicitly
+   instruct *"Answer part (a) of the question in a writing booklet… Use the other writing
+   booklet to answer part (b)"* — those parts are genuinely independent responses on
+   different topics, sharing no stimulus and no response space, so merging them would
+   **misrepresent the exam**, not fix anything; VET's Q20/Q21 were correctly left split for
+   exactly this reason. **The test, concretely: does NESA's own paper put these parts on
+   the same page in one continuous answer space, or does it send them to separate
+   booklets?** Same space → merge into one entry, one inline `<img>` (never the top-level
+   `image` field — the "Written question stimulus text" rule above), one combined
+   `keywords` list, a freshly authored `bandDescriptors` (NESA grades each part separately,
+   so there is no official combined rubric to copy — it must be synthesised in the bank's
+   existing house style). Separate
+   booklets → keep every part its own entry. **This is now mandatory for every future
+   port and every existing subject when next touched** — Multimedia's own Section III
+   (Q16, not yet ported) is exactly this shape: (a)/(b) are answered in separate writing
+   booklets in four of its six years, which the decision test above resolves directly
+   rather than leaving it as an open "UX call".
+
 ⚠️ **HMS has no past papers, and cannot have any yet.** Health and Movement Science is a **new subject for 2026**, superseding PDHPE — **2026 is the first year it is examined**, so no historical HMS HSC paper exists. `NESA Exams Folder/Health and Movement Science/` holds only NESA's **sample** materials (`HMS SAMPLE HSC PAPER 2026.pdf`, `health-and-movement-science-11-12-2023-annotated-sample-examination-materials.pdf`) plus study resources — no past papers, and none to come until after the 2026 HSC. **PDHPE (2020–2024, in `NESA Exams Folder/PDHE/`) is a legitimate reference point with real content overlap, but a PDHPE question is not an HMS question:** cite it explicitly as PDHPE with its year, never as HMS, and never imply an HMS exam precedent that doesn't exist. The same applies to the Content Agent — there is no HMS paper for it to discover. (Legacy naming: the subject id is still `pdhpe-hms` and §7 still lists it as "PDHPE — HMS Depth Study", from when this content was a PDHPE depth study. The id is load-bearing across `subjects/`, `index.html` and `/diagrams/` filenames — don't rename it casually.)
 
 ### Editing an existing Study Mode topic — diff before you insert

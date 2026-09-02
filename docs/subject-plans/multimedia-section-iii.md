@@ -74,12 +74,22 @@ keep it attached to both.
 **Purpose: decide the bank shape and classify all 12 parts.** Small enough for one session, but
 four real decisions must be taken and recorded, not assumed.
 
-1. **One bank entry per question, or one per part?** The project rule (Maths Advanced Stage 4,
-   and `check_written_key.cjs`'s prefix-sum join) is **one entry per NESA question**, and
-   Multimedia's existing Q11–Q15 already store it that way. But a merged 15-mark entry is far
-   larger than anything else in this bank, and (a) and (b) are answered in separate writing
-   booklets in four of the six years. **Both shapes reconcile under the prefix-sum join**, so
-   this is a UX call, not a correctness one. Record which and why.
+1. **One bank entry per question, or one per part? This is now a resolved decision test, not
+   an open UX call** (CLAUDE.md §10 rule 9 and `docs/porting-playbook.md` §4, both added
+   2026-09-02 after VET Construction's Section II shipped with exactly this defect — a shared
+   stimulus rendered on some parts of a merged-looking question and not others, because the
+   parts were actually stored, and shuffled, as independent cards). **The test: does NESA's
+   own paper put the parts on the same page in one continuous answer space, or send them to
+   separate writing booklets?** Same space → one merged entry, one inline `<img>`, one
+   `keywords` list, an authored `bandDescriptors`. Separate booklets → keep every part its own
+   entry, exactly as VET's own Section III/IV (Q20/Q21) were correctly left split. **Section
+   III's own text already says (a)/(b) go to separate writing booklets in four of the six
+   years** — that points at keeping this **split**, matching VET's Q20/Q21 precedent, not
+   Q16–19's. Read all six years' instruction line before authoring anything: if the other two
+   years genuinely differ (no separate-booklet instruction), the bank may legitimately need a
+   **mixed shape across years** — record that explicitly rather than forcing one shape on all
+   six for consistency's own sake. Whatever is decided, record which and why, per year if it
+   varies.
 2. ⚠️ **Does the engine present and mark a 10–12 mark extended response acceptably?** Measure
    it; do not assume. `mark-written.js` marks against `keywords` + `bandDescriptors` — it is
    **never sent the model answer** — and the longest thing it has ever handled is a 5-mark
