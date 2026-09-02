@@ -271,11 +271,16 @@
       text-align: center;
     }
     .q-image-wrap img {
-      /* Fill container width — height follows aspect ratio, never overflows on mobile */
+      /* Fill container width — height follows aspect ratio, never overflows on mobile.
+         max-height + object-fit:contain guards against a genuinely tall/narrow source
+         crop (e.g. a plumb bob) dominating the screen — normal landscape crops never
+         hit this cap, since their natural height already sits well under it. */
       display: block;
       width: 100%;
       max-width: min(100%, 600px); /* cap at 600px on large screens */
       height: auto;
+      max-height: 50vh;
+      object-fit: contain;
       margin: 0 auto;
       border-radius: 10px;
       cursor: zoom-in;

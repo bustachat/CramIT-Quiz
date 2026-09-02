@@ -3139,3 +3139,74 @@ other subjects' `getWritten({year})` against `getWritten({})` — all filter cor
 changed behaviour. Full local CI green: `MC=706 Written=369 imageRefs=311 missingImages=0`,
 `Issues: 0`; all 5 Cloudflare functions syntax-check; `npm test` 67/0. No JSON, schema, pricing
 or credential fact changed — `index.html` only.
+
+---
+
+## 2026-09-02 (later) — Two VET written questions with no stimulus, and a genuinely tall crop capped
+
+The owner reported three things while reviewing VET Construction's expanded written bank
+(23 → 72 questions, merged earlier today): an oversized picture, a chisel question where
+"some parts show it, others don't," and a 2023 two-part question repeating text between the
+picture and the stem. They also asked directly whether multi-part questions should be
+shuffled at all.
+
+**Two real missing-image bugs found and fixed, not one.** 2021 Q16(b) ("Describe TWO
+suitable uses for the chisel shown") had no `image`, while its siblings 16(a)/(c)/(d) all
+carry `/diagrams/vet-construction_2021_Q16_stimulus.jpg` — the exact bug reported. A text
+sweep for "shown"/"this tool"/"pictured"/similar phrasing across every VET written question
+with no `image` field turned up a second, unreported instance of the same defect: **2025
+Q16(b)** ("...using the router shown") also had no `image`, while sibling 16(a) carries
+`/diagrams/vet-construction_2025_Q16_stimulus.jpg`. Both fixed by adding the sibling's image
+path. The sweep's one other hit, 2022 17(a) ("levelling information can be shown on
+construction plans"), is not a defect — it isn't referring to a picture at all.
+
+⚠️ **The apparent "many inconsistent" pattern was mostly a false trail.** Grouping all 72
+written questions by NESA question number found 23 of 29 questions are multi-part, and a
+crude same-image-across-siblings check flagged 13 of those 23 as "inconsistent." Reading each
+one showed nearly all of them are legitimately different: 2022 Q19's three parts have three
+different stimuli (a vehicle-load table, a bathroom plan, and no image at all for the
+calculation part), and 2021 Q18's (a) and (d) are a labour-cost calculation and a WHS
+question that were never about the concrete-slab diagram (b)/(c) share. Only a stem that
+explicitly points at a picture ("shown", "this tool") with no `image` attached is a genuine
+bug — checking for that directly, not for whether siblings' images merely differ, is what
+actually catches these.
+
+**The oversized picture is 2022 Q16(a)'s stimulus, and it isn't a bad crop.** The image is
+246×644px, a 0.38 aspect ratio versus every other VET stimulus's 1.0–2.6 landscape range.
+Rendering the source PDF page confirmed why: the tool NESA drew is a **plumb bob** —
+genuinely a long thin string above a tall narrow cone — and the crop is tight and accurate.
+At `.q-image-wrap img`'s existing `width:100%; height:auto` (uncapped), that renders roughly
+390×1020px on a phone, nearly two full screens for one image. Fixed with `max-height:50vh`
+plus `object-fit:contain` on `.q-image-wrap img` (`index.html`) — measured in the browser:
+the plumb bob now renders 333×406px (aspect ratio preserved, no distortion), while a normal
+landscape crop (2021 Q16(c), ratio 1.46) is untouched at 333×228px, well under the 50vh cap.
+This protects every subject's stimulus images against any future outlier crop, not just this
+one.
+
+**The direct question — "are we handling multi-part questions the right way?" — the answer
+is no, and this is the real root cause behind all three reports, not three separate issues.**
+Mathematics Advanced and Standard 2 already store one bank entry per whole NESA question,
+with every part's text, its own `(N marks)` badge, and one shared image folded into a single
+`q` field (e.g. Advanced 2020 Q14: three sub-parts, one `keywords` list spanning all three,
+one 5-mark total) — confirmed by reading a live example. **VET's bank instead stores each
+part as its own array entry**, so `getWritten()`'s `shuffle()` treats every sub-part as an
+independent quiz card: a shared stimulus can land on-screen for one part and be gone by the
+time a sibling part is drawn minutes later, and a genuinely shared intro sentence (2023 Q19(b)
+i/ii, both "A shed is to be built on a concrete slab...") gets restated verbatim in both cards
+because each was authored to be self-contained for exactly this shuffle. **VET is the outlier
+subject, not the norm** — the fix that would resolve all three symptoms at once is re-merging
+VET's split multi-part entries into the same one-entry-per-question shape Advanced and
+Standard 2 already use, matching a proven, already-shipped pattern rather than inventing a new
+one. **Not done in this session**: it touches 23 of 29 NESA questions (66 of 72 sub-entries),
+the review ledger (`data/answer-key/written/reviews/vet-construction.json`, keyed per current
+qNum), and needs editorial judgment merging `bandDescriptors`/`keywords` per question rather
+than mechanical concatenation — recorded as a scoped follow-up, not executed without the
+owner's sign-off on approach.
+
+**Verified**: full local CI green (`MC=706 Written=418 imageRefs=320 missingImages=0`,
+`Issues: 0`; VET still 76/76 coverage, 72/72 reviewed — adding an `image` field doesn't touch
+marks/keywords/bandDescriptors, so no review verdict was invalidated; 285 MC answers checked,
+0 wrong; 5 functions syntax-check; `npm test` 67/0); both fixed questions confirmed to carry
+the correct image in the browser; the plumb bob and a normal landscape image measured
+side-by-side post-fix. No mark, MC answer, `category`, or review verdict was altered —
+`index.html` (CSS only) and `subjects/vet-construction.json` (two `image` fields added) only.
