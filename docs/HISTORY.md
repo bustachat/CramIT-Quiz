@@ -2758,3 +2758,42 @@ altered** — this stage only registers and renders the bank.
 gradient (teal, `#7FA9A0 → #55867D`) and the 14 shortened chip labels were picked this session
 to sit beside Standard 2's amber without colliding with HMS green, Multimedia blue or VET
 slate — a routine port choice, but a visual one, so it is called out rather than buried.
+
+---
+
+## 2026-09-02 — VET Construction's Written Response count silently ignored the year filter
+
+The owner reviewed VET Construction in the app and noticed two things: the Written Response
+card always read "23 questions" regardless of which year chip was selected, while the Start
+Test (MC) card's count did change. Both observations were correct, and only one was a bug.
+
+**23 total written questions is correct, not a defect.** VET's written bank is a deliberate
+partial port — 23 of 76 official written parts, documented in CLAUDE.md §6/§11 and reported
+(not enforced) by `check_written_key.cjs`'s reverse-coverage line. Nothing to fix there.
+
+**The year filter genuinely did nothing for Written Response, and it was a real bug, not just
+a display glitch.** `SUBJECTS.vet.getWritten` (`index.html`) was defined as
+`() => shuffle([...(subjectCache.vet?.writtenQuestions ?? [])])` — no `filters` parameter at
+all — while every other subject's `getWritten` takes `filters` and applies
+`if (filters.year && filters.year !== 'all') qs = qs.filter(...)`, matching its own `getMC`.
+VET's `getMC` already filtered correctly, which is why Start Test's count changed and Written
+Response's did not. Fixed to match the other four subjects' pattern exactly.
+
+⚠️ **This was not a display-only bug.** `startQuiz('written')` calls
+`s.getWritten(pickerFilters)` to build the actual question set a student answers, not just the
+picker's preview count. A subscribed student who selected a single year and started Written
+Response was silently served all 23 questions across every year, not the year they picked —
+confirmed in the browser before the fix (`activeQuestions.length` stayed 23 for `year: '2025'`)
+and after (`11`, all `year === 2025`). VET's 23 written questions carry `year` on every one
+(2021: 2, 2022: 3, 2023: 3, 2024: 4, 2025: 11), so the filter was never a no-op by data shape,
+only by code.
+
+**Verified**: simulated a subscribed user (trial users see a different mode-card markup with no
+`#written-count`/`#mc-count` span at all, so `updateModeCounts()` cannot be exercised in trial
+regardless of this fix — that is existing, unrelated behaviour). With `pickerFilters.year`
+toggled via `applyFilter('year', ...)`, `#written-count` moved 23 → 11 for 2025 and
+`startQuiz('written')` then produced exactly those 11 questions. Regression-checked all four
+other subjects' `getWritten({year})` against `getWritten({})` — all filter correctly, none
+changed behaviour. Full local CI green: `MC=706 Written=369 imageRefs=311 missingImages=0`,
+`Issues: 0`; all 5 Cloudflare functions syntax-check; `npm test` 67/0. No JSON, schema, pricing
+or credential fact changed — `index.html` only.

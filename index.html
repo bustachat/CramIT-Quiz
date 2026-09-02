@@ -887,7 +887,11 @@ const SUBJECTS = {
       if (filters.year && filters.year !== 'all') qs = qs.filter(q => String(q.year) === filters.year);
       return shuffle(qs);
     },
-    getWritten: () => shuffle([...(subjectCache.vet?.writtenQuestions ?? [])]),
+    getWritten: (filters) => {
+      let qs = [...(subjectCache.vet?.writtenQuestions ?? [])];
+      if (filters.year && filters.year !== 'all') qs = qs.filter(q => String(q.year) === filters.year);
+      return shuffle(qs);
+    },
     years: ['all','2021','2022','2023','2024','2025'],
   },
 };
