@@ -1,10 +1,20 @@
 # -*- coding: utf-8 -*-
 """Hand-typed verdicts from the VET Construction written-answer review, 2026-09-01.
 
-Every one of the 23 questions was read against NESA's committed sample answer and
-criteria rows in data/answer-key/written/vet-construction.json. Mechanical triage
-(keyword absent from the answer, low term overlap, length vs marks) ordered the reading
-queue and decided nothing -- see docs/porting-playbook.md section 6.
+Every one of the 23 written questions ported that day was read against NESA's committed
+sample answer and criteria rows in data/answer-key/written/vet-construction.json. Mechanical
+triage (keyword absent from the answer, low term overlap, length vs marks) ordered the
+reading queue and decided nothing -- see docs/porting-playbook.md section 6.
+
+2026-09-02: Section II's split per-part entries (16(a)/16(b)/... etc, 23 questions,
+59 sub-entries) were merged into one bank entry per NESA question, matching Mathematics
+Advanced/Standard 2's convention -- see docs/HISTORY.md 2026-09-02 (multi-part questions).
+The verdict below is the MERGED group's: "corrected" if any constituent part required a
+correction, else "divergent-accepted" if any part was divergent, else "ok". Notes are every
+constituent part's original note concatenated, prefixed by its old part label, so no
+reviewing history is lost. Section III/IV (Q20/Q21) were left split -- NESA directs those to
+be answered in SEPARATE writing booklets, genuinely independent responses, not a shared
+short-answer sequence.
 
 Consumed by scripts/build_review_ledger.py, which adds the sample-answer fingerprints.
 
@@ -20,350 +30,38 @@ REVIEWED_AT = "2026-09-01"
 _ALL = ["modelAnswer", "keywords", "bandDescriptors"]
 
 REVIEWED = {
-    # --- 2021 -------------------------------------------------------------------------
-    ("2021", "16(a)"): {
-        "verdict": "corrected", "fields": _ALL,
-        "note": ("Model answer and acceptableAnswers already matched NESA (chisel; firmer, "
-                 "bevelled edge, mortice). Corrected only in that it had NO keywords at all "
-                 "— the AI marker was being sent an empty concept list. keywords/minKeywords "
-                 "added from NESA's own alternatives; the offline path is unchanged because "
-                 "acceptableAnswers takes priority over keywords in buildKeywordFeedback(). "
-                 "bandDescriptors: NESA prints ONE criteria row (all-or-nothing), so partial "
-                 "and minimal state its non-attainment — authored text, not NESA's."),
-    },
-    ("2021", "16(b)"): {
-        "verdict": "ok", "fields": _ALL,
-        "note": None,
-    },
-
-    # --- 2021, ported 2026-09-01 (written-completion port) -----------------------------
-    # Authored directly FROM the committed ground truth: NESA's sample answer supplies the
-    # substance and the criteria rows supply the bandDescriptors, so the comparison is
-    # contemporaneous with the authoring rather than a later audit.
-    ("2021", "16(c)"): {
-        "verdict": "ok", "fields": _ALL,
-        "note": "Ported this session from NESA's sample (blunt chisel: unsafe, longer time and cost, poor finish).",
-    },
-    ("2021", "16(d)"): {
-        "verdict": "ok", "fields": _ALL,
-        "note": ("Ported this session. Covers NESA's care list (intended use only, protected "
-                 "storage, appropriate mallet) and maintenance list (grind/hone/strop/deburr, "
-                 "ferrule secure, handle checked)."),
-    },
-    ("2021", "17"): {
-        "verdict": "ok", "fields": _ALL,
-        "note": ("Ported this session. Structured on NESA's own attribute list: attendance and "
-                 "punctuality, presentation and grooming, work performance and taking "
-                 "directives, ethical behaviour, safe work practices and duty of care."),
-    },
-    ("2021", "18(a)"): {
-        "verdict": "divergent-accepted", "fields": _ALL,
-        "note": ("NESA's sample extracts as mangled equation layout ('x = 2.5 $62.00 $155.00 "
-                 "(Tradesperson)'), so the bank's worked prose necessarily reads unlike it. "
-                 "Compared numerically: $155.00 + $52.50 = $207.50, and NESA's alternative "
-                 "route 2.5 x $83.00 = $207.50 is given too. Both agree."),
-    },
-    ("2021", "18(b)"): {
-        "verdict": "divergent-accepted", "fields": _ALL,
-        "note": ("NESA's sample extracts as mangled equation layout ('(0.5 2 3.14 (pi) 2.5) 5 6 "
-                 "6 24.85 m'). Compared numerically: arc 7.85 m plus 5 + 6 + 6 = 24.85 m, "
-                 "agreeing. The answer also states explicitly that the 5 m right-hand edge is "
-                 "NOT part of the perimeter, which is the step the mark hinges on."),
-    },
-    ("2021", "18(c)"): {
-        "verdict": "divergent-accepted", "fields": _ALL,
-        "note": ("NESA's sample extracts as mangled equation layout ('39.81m2 ... 3.98m3 ... "
-                 "4.38m3'). Compared numerically: area 39.81 m2, volume 3.98 m3, plus 10% "
-                 "wastage 4.38 m3, all agreeing. The mm-to-m thickness conversion is called out "
-                 "because NESA's band 3 exists for answers that omit the wastage step."),
-    },
-    ("2021", "18(d)"): {
-        "verdict": "ok", "fields": _ALL,
-        "note": ("Ported this session; covers NESA's list (White Card, training, electrical "
-                 "tagging and ELCB, amenities and drinking water, first aid, PPE, sun and "
-                 "weather, housekeeping, site access, manual handling). ⚠️ STEM WORDING: NESA "
-                 "reads 'on this building site', referring to Q18's picnic-table project; "
-                 "rendered as 'on a building site' because the engine shuffles questions and "
-                 "the stem must stand alone. Nothing else changed."),
-    },
-    ("2021", "19(a)"): {
-        "verdict": "ok", "fields": _ALL,
-        "note": ("Ported this session. NESA's sample is one paragraph listing what a section "
-                 "shows; split into the TWO reasons the question asks for."),
-    },
-    ("2021", "19(b)"): {"verdict": "ok", "fields": _ALL,
-        "note": "Ported this session from NESA's sample (FFL, FCL, sill heights, doors and windows, external finishes)."},
-    ("2021", "19(c)"): {
-        "verdict": "ok", "fields": _ALL,
-        "note": ("Ported this session. Keeps NESA's three strands: what each document carries, "
-                 "why both are needed for compliance and structural integrity, and that both "
-                 "are legally required for council approval."),
-    },
-    ("2021", "20"): {
-        "verdict": "ok", "fields": _ALL,
-        "note": ("Ported this session. ⚠️ This is the question whose FIFTH criteria band was "
-                 "being dropped by the extractor before the marks_cell() fix committed earlier "
-                 "today -- its bandDescriptors are built from the full five-band table. NESA's "
-                 "sample covers the WHS Act and Regulations and SafeWork NSW; the named roles "
-                 "of Safe Work Australia, SIRA/icare, unions and employer associations, and the "
-                 "PCBU/HSR/committee structure are standard syllabus content added to reach the "
-                 "breadth the 15-mark top band asks for."),
-    },
-    ("2021", "21(a)"): {"verdict": "ok", "fields": _ALL,
-        "note": "Ported this session; follows NESA's sample (time and cost, two-person lift and injury, skill sharing, conflict resolution, ownership, harmonious workplace)."},
-    ("2021", "21(b)"): {
-        "verdict": "ok", "fields": _ALL,
-        "note": ("Ported this session. Follows NESA's four-way structure -- verbal, written, "
-                 "signage, non-verbal -- including the cultural-difference caveat on hand "
-                 "signals, and adds the workplace examples the top band requires."),
-    },
-
-    # --- 2022 -------------------------------------------------------------------------
-    ("2022", "16(a)"): {
-        "verdict": "ok", "fields": _ALL,
-        "note": None,
-    },
-    ("2022", "17(c)"): {
-        "verdict": "corrected", "fields": _ALL,
-        "note": ("Two defects. (1) The stem read 'Identify the meaning of the symbols shown "
-                 "(RWT and tree symbol)' — naming the tree GIVES AWAY one of the two marks. "
-                 "Restored to the paper's own wording, 'Identify each of the architectural "
-                 "symbols shown.' (2) The model answer attributed removal to '(the specific "
-                 "marking on the plan)', which says nothing; the actual indicator, visible in "
-                 "the committed crop, is the BROKEN (dashed) outline against the solid one "
-                 "used for RWT. Both answers themselves were right and unchanged."),
-    },
-    ("2022", "19(a)"): {
-        "verdict": "corrected", "fields": _ALL,
-        "note": ("Model answer fabricated BOTH of the stimulus table's band labels: it said "
-                 "3700 kg falls in a '3001-4000 kg' range and 54 km in a '51-60 km' range. "
-                 "The table (crop verified) is in TONNES — 0-2.99 / 3.00-4.99 / 5.00-6.99 / "
-                 "7.00-8.99 — with distance columns 1-30 / 31-50 / 51-70. Neither quoted band "
-                 "exists, and the kg-to-tonne conversion that the question actually tests was "
-                 "absent. NESA's sample reads '3700 kg 3.00-4.99 tonne weight range 51-70 km "
-                 "distance = $450.00'. The $450 answer was right, so CI passed throughout — "
-                 "the same failure class as Multimedia 2022 Q2. Also had no keywords; added."),
-    },
-
-    # --- 2023 -------------------------------------------------------------------------
-    ("2023", "16(a)(i)"): {
-        "verdict": "corrected", "fields": _ALL,
-        "note": ("acceptableAnswers omitted 'sliding', which is the FIRST alternative NESA "
-                 "lists ('Sliding saw, Compound saw, Mitre saw, Cut off saw'), so a student "
-                 "writing NESA's own accepted answer was marked incorrect. Added, along with "
-                 "the missing keywords/minKeywords. 'chop saw' is kept: not in NESA's list, "
-                 "but a genuine synonym. bandDescriptors: one official row, as 2021 16(a)."),
-    },
-    ("2023", "18(b)"): {
-        "verdict": "ok", "fields": _ALL,
-        "note": ("All five symbol identifications match NESA (window, sink, stove top, "
-                 "toilet, sliding door). The bank's parenthetical descriptions of each plan "
-                 "symbol were checked against the committed crop and are accurate."),
-    },
-    ("2023", "19(b)(i)"): {
-        "verdict": "corrected", "fields": _ALL,
-        "note": ("The worst defect found. The model answer's headline result was 2.61 m3, "
-                 "computed from the shed's OUTER PERIMETER only; NESA's answer is 2.99 m3 "
-                 "and the drawing is captioned 'the hidden detail of the EDGE AND CENTRE "
-                 "beams'. The bank omitted the centre beam entirely and then explained the "
-                 "discrepancy away as 'corners (overlap) giving approximately 2.61-2.99 m3 "
-                 "depending on method' — a fabricated reconciliation. The stem compounded it "
-                 "by describing '300mm x 300mm PERIMETER beam footings'; restored to the "
-                 "paper's own wording. Answer rewritten to NESA's method (2 x 8.5 = 17 m at "
-                 "1.53 m3; three cross beams at 6.0 - 2 x 0.3 = 5.4 m, 16.2 m at 1.46 m3; "
-                 "total 2.99 m3), keeping the 2.61 route named as the common error. keywords "
-                 "'29' and '2.61' removed — they credited the wrong method."),
-    },
-
-    # --- 2024 -------------------------------------------------------------------------
-    ("2024", "16(a)"): {
-        "verdict": "ok", "fields": _ALL,
-        "note": None,
-    },
-    ("2024", "16(b)"): {
-        "verdict": "ok", "fields": _ALL,
-        "note": ("Bank lists cord, test-and-tag, guards, belt condition/fitting and dust "
-                 "extraction — a subset of NESA's list, which also offers casing inspection "
-                 "and operator training. A subset is what a 3-mark answer needs; not a gap."),
-    },
-    ("2024", "19(a)"): {
-        "verdict": "divergent-accepted", "fields": _ALL,
-        "note": ("NESA's sample answer extracts as mangled equation layout — '!3! 4! + = 5 4 "
-                 "+ 6 + 8 + 3 + 5 = 26 m' — so the bank's worked prose necessarily reads "
-                 "nothing like it. Compared numerically instead: hypotenuse 5, perimeter 26 m, "
-                 "both agree. Same standing exception as the Maths subjects."),
-    },
-    ("2024", "19(b)"): {
-        "verdict": "divergent-accepted", "fields": _ALL,
-        "note": ("NESA's sample extracts as mangled equation layout — 'pr2 12 ... 0.471 m3'. "
-                 "Compared numerically: slab 7.2 m3, hole 0.471 m3, net 6.73 m3, all agree. "
-                 "Keyword 'pi' is two characters, so keywordHit() can fire on any student "
-                 "word beginning 'pi' (e.g. 'pipe'); left as authored, noted as loose."),
-    },
-
-    # --- 2025 -------------------------------------------------------------------------
-    ("2025", "16(a)"): {"verdict": "ok", "fields": _ALL, "note": None},
-    ("2025", "16(b)"): {"verdict": "ok", "fields": _ALL, "note": None},
-    ("2025", "17(a)"): {"verdict": "ok", "fields": _ALL, "note": None},
-    ("2025", "17(b)"): {"verdict": "ok", "fields": _ALL, "note": None},
-    ("2025", "17(c)"): {
-        "verdict": "ok", "fields": _ALL,
-        "note": ("Covers NESA's secure storage, sign-in/out, fencing/lighting/cameras, racks "
-                 "and covers, and adds asset engraving — a reasonable extension, not a "
-                 "divergence."),
-    },
-    ("2025", "18(a)"): {"verdict": "ok", "fields": _ALL, "note": None},
-    ("2025", "18(b)"): {
-        "verdict": "corrected", "fields": _ALL,
-        "note": ("The stem named 'the horizontal sliding window symbol shown', which IS the "
-                 "answer to the third of three marks. Restored to the paper's own wording: "
-                 "'Identify the meaning of the following symbols or abbreviations that are "
-                 "found on construction drawings.' The three meanings themselves match NESA "
-                 "(hot water, rainwater pipe, horizontal sliding window) and the model "
-                 "answer's description of the arrow symbol matches the committed crop."),
-    },
-    ("2025", "18(c)"): {"verdict": "ok", "fields": _ALL, "note": None},
-    ("2025", "20(a)"): {"verdict": "ok", "fields": _ALL, "note": None},
-    ("2025", "20(b)"): {
-        "verdict": "ok", "fields": _ALL,
-        "note": ("Follows NESA point for point (assess and plan, mechanical aids, lifting "
-                 "technique, team lifting, ergonomic design, breaks and rotation, PPE) and "
-                 "carries the workplace examples the top band requires."),
-    },
-    ("2025", "21"): {
-        "verdict": "ok", "fields": _ALL,
-        "note": ("Matches NESA's substance across design for standard sizes, just-in-time "
-                 "delivery, trade sequencing and Gantt charts, quantity calculation, "
-                 "training and instruction, and tool maintenance. NOTE an extractor artefact, "
-                 "pre-existing and not introduced by this review: because this is the LAST "
-                 "question header in the document, parse_paper() runs its sample block to the "
-                 "end of the PDF, so the committed sampleAnswer for the final question of "
-                 "every paper also swallows the Mapping Grid. Harmless to the mark check; it "
-                 "does mean this fingerprint covers more text than the sample alone."),
-    },
-
-    # ======================================================================================
-    # Written-completion port, 2026-09-01. 36 further questions, taking the bank from 23 of
-    # the 76 official parts to 76/76. All authored directly FROM the committed ground truth
-    # -- NESA's sample answer supplies the substance, the criteria rows supply the
-    # bandDescriptors -- so the comparison is contemporaneous with the authoring.
-    #
-    # `divergent-accepted` is used for the calculation questions whose NESA sample extracts
-    # as mangled equation layout: the bank's worked prose necessarily reads nothing like it,
-    # so each was compared NUMERICALLY instead and the figures are quoted in the note.
-    # ======================================================================================
-
-    # --- 2022 ---------------------------------------------------------------------------
-    ("2022", "16(b)"): {"verdict": "ok", "fields": _ALL,
-        "note": ("Ported. NESA's sample is the completed table (honing = part of the sharpening "
-                 "process; ripping = cutting along the grain); the bank keeps the blank table as "
-                 "the stimulus and gives both descriptions in the answer.")},
-    ("2022", "16(c)"): {"verdict": "ok", "fields": _ALL,
-        "note": "Ported; covers NESA's cost/efficiency, frequency-of-use-vs-hire, maintenance, training and licensing, storage, transport, PPE and insurance."},
-    ("2022", "17(a)"): {"verdict": "ok", "fields": _ALL,
-        "note": "Ported from NESA's sample (datum/benchmark, contour lines) plus its listed alternatives (FFL, FCL, reduced levels)."},
-    ("2022", "17(b)"): {"verdict": "ok", "fields": _ALL,
-        "note": "Ported; keeps NESA's scales (1:20, 1:10, 1:5), assembly/joining detail, dimensions and tolerances, and building-regulation compliance."},
-    ("2022", "17(d)"): {"verdict": "ok", "fields": _ALL,
-        "note": "Ported; NESA's example list is long, so the answer gives the purpose first and then a representative subset of its examples."},
-    ("2022", "18(a)"): {"verdict": "ok", "fields": _ALL,
-        "note": "Ported. NESA's sample answer is the training practice; its 'answers could include' list supplies the alternatives given afterwards."},
-    ("2022", "18(b)"): {"verdict": "ok", "fields": _ALL,
-        "note": "Ported; organised into before/during/after, which is how NESA's own step list reads (chair, agenda, time and location, procedure, minutes, attendees, follow-up)."},
-    ("2022", "18(c)"): {"verdict": "ok", "fields": _ALL,
-        "note": "Ported; keeps NESA's named methods (plans and specifications, Gantt charts, toolbox and site meetings, cutting lists and delivery dockets, SWMS and SDS)."},
-    ("2022", "19(b)"): {"verdict": "divergent-accepted", "fields": _ALL,
-        "note": ("NESA's sample extracts as mangled equation layout ('Bathroom area 2 x = 1.2 m "
-                 "1.2 m 1.44 m 2'). Compared numerically: 1.44 + 6.48 = 7.92 m2, tile 0.09 m2, "
-                 "88 tiles, x 1.05 = 92.4 so 93 tiles. Every figure agrees. Uses the new "
-                 "vet-construction_2022_Q19b_stimulus.jpg crop.")},
-    ("2022", "19(c)"): {"verdict": "divergent-accepted", "fields": _ALL,
-        "note": ("NESA's sample extracts as mangled equation layout. Compared numerically: "
-                 "15/60 = 0.25, 8.25 hours, x $62.00 = $511.50, agreeing. The answer names the "
-                 "8.15-vs-8.25 error explicitly because that is what band 1 exists for.")},
-    ("2022", "20"): {"verdict": "ok", "fields": _ALL,
-        "note": ("Ported. NESA's sample is three bulleted lists (causes, impact on workers, "
-                 "impact on employers); the client section is written from the syllabus, since "
-                 "the extracted sample truncates there, and the question explicitly asks for it.")},
-    ("2022", "21(a)"): {"verdict": "ok", "fields": _ALL,
-        "note": "Ported; covers NESA's tyres and pressure, hose cleaning and drum oiling, drive belt tension, greasing, plus its listed tag/cord/guard/switch/bolt checks."},
-    ("2022", "21(b)"): {"verdict": "ok", "fields": _ALL,
-        "note": "Ported; follows NESA's list and groups it under the hierarchy of control, training, plant, hazardous materials, physical controls, manual handling, documentation, housekeeping and culture."},
-
-    # --- 2023 ---------------------------------------------------------------------------
-    ("2023", "16(a)(ii)"): {"verdict": "ok", "fields": _ALL,
-        "note": "Ported; NESA's sample names safety glasses and hearing protection, with face shield, dust mask, footwear and restrained hair as alternatives. Reuses the existing Q16(a) saw crop."},
-    ("2023", "16(b)"): {"verdict": "ok", "fields": _ALL,
-        "note": "Ported; keeps NESA's portability, no-cord safety (trip hazard, no leads to test and tag), remote/unconnected sites and quicker set-up."},
-    ("2023", "17(a)"): {"verdict": "ok", "fields": _ALL,
-        "note": ("Ported. NESA's sample says 'contact government regulators to obtain "
-                 "clarification about award pay rates'; Fair Work Ombudsman/Commission is named "
-                 "as the specific NSW regulator, with NESA's unions, professional associations "
-                 "and HIA/MBA kept.")},
-    ("2023", "17(b)"): {"verdict": "ok", "fields": _ALL,
-        "note": "Ported; attendance and punctuality, work performance within timeframes and pride in work, then NESA's listed attitude/confidentiality/ethics/honesty/presentation/safe-work items."},
-    ("2023", "17(c)"): {"verdict": "ok", "fields": _ALL,
-        "note": "Ported; keeps NESA's worked examples (treated pine to a loose stacking bin and approved disposal site, liquids in approved sealed containers to a chemical waste plant, bricks to C&D recycling, metal to a metal recycler, usable material stored)."},
-    ("2023", "18(a)"): {"verdict": "ok", "fields": _ALL,
-        "note": "Ported; NESA's position-away, avoid echoing off materials, use only when needed within allowable construction hours, correct operation and regular servicing."},
-    ("2023", "18(c)"): {"verdict": "ok", "fields": _ALL,
-        "note": "Ported; keeps NESA's standard conventions and AS1100, speed and clarity, reduced literacy and language barriers, and the fitout-flexibility point about fixtures differing in size and shape."},
-    ("2023", "19(a)"): {"verdict": "divergent-accepted", "fields": _ALL,
-        "note": ("NESA's sample extracts as mangled equation layout ('x = 10% 15 000 1500 + = "
-                 "15 000 1500 16 500'). Compared numerically: 1500 wastage, 16 500 total, "
-                 "/500 = 33 pallets, agreeing.")},
-    ("2023", "19(b)(ii)"): {"verdict": "divergent-accepted", "fields": _ALL,
-        "note": ("NESA's sample extracts as mangled equation layout ('x x Length Width Thickness "
-                 "... 8.5 6 0.1 5.1'). Compared numerically: 8.5 x 6 x 0.1 = 5.1 m3, agreeing. "
-                 "⚠️ Note this part is the SLAB, not the footings of (b)(i) -- a different "
-                 "calculation on the same drawing, which the answer states explicitly.")},
-    ("2023", "20(a)"): {"verdict": "ok", "fields": _ALL,
-        "note": "Ported; keeps NESA's formal and informal meetings, notice boards, toolbox talks and WHS meetings, signage and drawings, hand signals, and its equipment list (two-way radios, speakers, phones/SMS)."},
-    ("2023", "20(b)"): {"verdict": "ok", "fields": _ALL,
-        "note": ("Ported. NESA's sample is a bare bullet list (Gantt chart, sequencing, task "
-                 "dependencies, timeframes, quality measures, resource lists, ordering and "
-                 "delivery); the worked trade-order examples are added because the question and "
-                 "the top band both demand relevant workplace examples.")},
-    ("2023", "21"): {"verdict": "ok", "fields": _ALL,
-        "note": ("Ported. NESA's sample lists the control levels and the hazards but does not "
-                 "work them through; each level is given a construction example, which is what "
-                 "the top band asks for. ⚠️ NESA prints the hierarchy as Eliminate / Substitute "
-                 "/ Engineering (Isolate, Modify) / Administration / PPE; the answer separates "
-                 "Isolate as its own level, the standard six-level form, which is a presentation "
-                 "choice and not a change of content.")},
-
-    # --- 2024 ---------------------------------------------------------------------------
-    ("2024", "17(a)"): {"verdict": "ok", "fields": _ALL,
-        "note": "Ported; NESA's advantage (reduced measuring time) and disadvantage (battery replacement/recharge), plus its listed alternatives on both sides."},
-    ("2024", "17(b)"): {"verdict": "ok", "fields": _ALL,
-        "note": "Ported; NESA's material quantity, reordering and delivery costs, higher cost to customer and builder, and effect on completion time, with fit/quality/safety added as the third consequence."},
-    ("2024", "17(c)"): {"verdict": "ok", "fields": _ALL,
-        "note": "Ported; follows NESA's sample closely (ventilation and air exchange, dust accumulation and respiratory risk, water spray at the source, strategic cooling units) and places engineering controls in the hierarchy, which is what makes them 'engineering' controls."},
-    ("2024", "18(a)"): {"verdict": "ok", "fields": _ALL,
-        "note": "Ported; NESA's confirm-the-message, bridge between sender and receiver, clarification and validation, problem solving and continuous improvement."},
-    ("2024", "18(b)"): {"verdict": "ok", "fields": _ALL,
-        "note": "Ported; NESA's easy access and reduced delays, cost efficiency and damage prevention, resource conservation and sustainability, and its stacking/packing/strapping examples (timber twisting or bowing)."},
-    ("2024", "18(c)"): {"verdict": "ok", "fields": _ALL,
-        "note": "Ported; NESA's worker numbers and types, goals and stage completion dates, tools/equipment/materials ready and sequenced, optimum resource use, timing and risk mitigation."},
-    ("2024", "19(c)"): {"verdict": "divergent-accepted", "fields": _ALL,
-        "note": ("NESA's sample extracts as mangled equation layout ('m3 m3 / 11.6 6 parts = 1 "
-                 "part = 1.93'). Compared numerically: 6 parts, 1 part = 1.93 m3, sand = 2 x "
-                 "1.93 = 3.86 m3, agreeing.")},
-    ("2024", "19(d)"): {"verdict": "divergent-accepted", "fields": _ALL,
-        "note": ("NESA's sample extracts as mangled equation layout ('8 tonnes $1.18 = $9.44 ... "
-                 "$9.44 13 km = $122.72'). Compared numerically: $9.44 per km, x 13 = $122.72, "
-                 "agreeing.")},
-    ("2024", "20(a)"): {"verdict": "ok", "fields": _ALL,
-        "note": "Ported; NESA's drop/slide saw for docking to length and pneumatic nail gun for the frame and battens are described in the detail the top band asks for, with its impact driver, drill, circular saw, grinder and nibbler listed as alternatives."},
-    ("2024", "20(b)"): {"verdict": "ok", "fields": _ALL,
-        "note": ("Ported. NESA's sample is a bare bullet list of ~19 items; they are grouped into "
-                 "before-work, documentation, on-site, working at height, PPE and emergency, and "
-                 "sequencing, and tied to the carport the question specifies, since the top band "
-                 "requires an explanation rather than a list.")},
-    ("2024", "21"): {"verdict": "ok", "fields": _ALL,
-        "note": ("Ported; every item in NESA's list is covered (approved waste disposal, BASIX, "
-                 "noise and dust, plant maintenance, chemical spill management, vibration "
-                 "monitoring, stormwater discharge, hazardous material handling, efficient "
-                 "fittings, alternative energy, wildlife habitat, soil erosion, and the "
-                 "biodegradable/recyclable/renewable/reusable material criteria).")},
+    ('2021', '16'): {"verdict": 'corrected', "fields": _ALL, "note": "(16(a)) Model answer and acceptableAnswers already matched NESA (chisel; firmer, bevelled edge, mortice). Corrected only in that it had NO keywords at all — the AI marker was being sent an empty concept list. keywords/minKeywords added from NESA's own alternatives; the offline path is unchanged because acceptableAnswers takes priority over keywords in buildKeywordFeedback(). bandDescriptors: NESA prints ONE criteria row (all-or-nothing), so partial and minimal state its non-attainment — authored text, not NESA's. (16(c)) Ported this session from NESA's sample (blunt chisel: unsafe, longer time and cost, poor finish). (16(d)) Ported this session. Covers NESA's care list (intended use only, protected storage, appropriate mallet) and maintenance list (grind/hone/strop/deburr, ferrule secure, handle checked)."},
+    ('2021', '17'): {"verdict": 'ok', "fields": _ALL, "note": "Ported this session. Structured on NESA's own attribute list: attendance and punctuality, presentation and grooming, work performance and taking directives, ethical behaviour, safe work practices and duty of care."},
+    ('2021', '18'): {"verdict": 'divergent-accepted', "fields": _ALL, "note": "(18(a)) NESA's sample extracts as mangled equation layout ('x = 2.5 $62.00 $155.00 (Tradesperson)'), so the bank's worked prose necessarily reads unlike it. Compared numerically: $155.00 + $52.50 = $207.50, and NESA's alternative route 2.5 x $83.00 = $207.50 is given too. Both agree. (18(b)) NESA's sample extracts as mangled equation layout ('(0.5 2 3.14 (pi) 2.5) 5 6 6 24.85 m'). Compared numerically: arc 7.85 m plus 5 + 6 + 6 = 24.85 m, agreeing. The answer also states explicitly that the 5 m right-hand edge is NOT part of the perimeter, which is the step the mark hinges on. (18(c)) NESA's sample extracts as mangled equation layout ('39.81m2 ... 3.98m3 ... 4.38m3'). Compared numerically: area 39.81 m2, volume 3.98 m3, plus 10% wastage 4.38 m3, all agreeing. The mm-to-m thickness conversion is called out because NESA's band 3 exists for answers that omit the wastage step. (18(d)) Ported this session; covers NESA's list (White Card, training, electrical tagging and ELCB, amenities and drinking water, first aid, PPE, sun and weather, housekeeping, site access, manual handling). ⚠️ STEM WORDING: NESA reads 'on this building site', referring to Q18's picnic-table project; rendered as 'on a building site' because the engine shuffles questions and the stem must stand alone. Nothing else changed."},
+    ('2021', '19'): {"verdict": 'ok', "fields": _ALL, "note": "(19(a)) Ported this session. NESA's sample is one paragraph listing what a section shows; split into the TWO reasons the question asks for. (19(b)) Ported this session from NESA's sample (FFL, FCL, sill heights, doors and windows, external finishes). (19(c)) Ported this session. Keeps NESA's three strands: what each document carries, why both are needed for compliance and structural integrity, and that both are legally required for council approval."},
+    ('2021', '20'): {"verdict": 'ok', "fields": _ALL, "note": "Ported this session. ⚠️ This is the question whose FIFTH criteria band was being dropped by the extractor before the marks_cell() fix committed earlier today -- its bandDescriptors are built from the full five-band table. NESA's sample covers the WHS Act and Regulations and SafeWork NSW; the named roles of Safe Work Australia, SIRA/icare, unions and employer associations, and the PCBU/HSR/committee structure are standard syllabus content added to reach the breadth the 15-mark top band asks for."},
+    ('2021', '21(a)'): {"verdict": 'ok', "fields": _ALL, "note": "Ported this session; follows NESA's sample (time and cost, two-person lift and injury, skill sharing, conflict resolution, ownership, harmonious workplace)."},
+    ('2021', '21(b)'): {"verdict": 'ok', "fields": _ALL, "note": "Ported this session. Follows NESA's four-way structure -- verbal, written, signage, non-verbal -- including the cultural-difference caveat on hand signals, and adds the workplace examples the top band requires."},
+    ('2022', '16'): {"verdict": 'ok', "fields": _ALL, "note": "(16(b)) Ported. NESA's sample is the completed table (honing = part of the sharpening process; ripping = cutting along the grain); the bank keeps the blank table as the stimulus and gives both descriptions in the answer. (16(c)) Ported; covers NESA's cost/efficiency, frequency-of-use-vs-hire, maintenance, training and licensing, storage, transport, PPE and insurance."},
+    ('2022', '17'): {"verdict": 'corrected', "fields": _ALL, "note": "(17(a)) Ported from NESA's sample (datum/benchmark, contour lines) plus its listed alternatives (FFL, FCL, reduced levels). (17(b)) Ported; keeps NESA's scales (1:20, 1:10, 1:5), assembly/joining detail, dimensions and tolerances, and building-regulation compliance. (17(c)) Two defects. (1) The stem read 'Identify the meaning of the symbols shown (RWT and tree symbol)' — naming the tree GIVES AWAY one of the two marks. Restored to the paper's own wording, 'Identify each of the architectural symbols shown.' (2) The model answer attributed removal to '(the specific marking on the plan)', which says nothing; the actual indicator, visible in the committed crop, is the BROKEN (dashed) outline against the solid one used for RWT. Both answers themselves were right and unchanged. (17(d)) Ported; NESA's example list is long, so the answer gives the purpose first and then a representative subset of its examples."},
+    ('2022', '18'): {"verdict": 'ok', "fields": _ALL, "note": "(18(a)) Ported. NESA's sample answer is the training practice; its 'answers could include' list supplies the alternatives given afterwards. (18(b)) Ported; organised into before/during/after, which is how NESA's own step list reads (chair, agenda, time and location, procedure, minutes, attendees, follow-up). (18(c)) Ported; keeps NESA's named methods (plans and specifications, Gantt charts, toolbox and site meetings, cutting lists and delivery dockets, SWMS and SDS)."},
+    ('2022', '19'): {"verdict": 'corrected', "fields": _ALL, "note": "(19(a)) Model answer fabricated BOTH of the stimulus table's band labels: it said 3700 kg falls in a '3001-4000 kg' range and 54 km in a '51-60 km' range. The table (crop verified) is in TONNES — 0-2.99 / 3.00-4.99 / 5.00-6.99 / 7.00-8.99 — with distance columns 1-30 / 31-50 / 51-70. Neither quoted band exists, and the kg-to-tonne conversion that the question actually tests was absent. NESA's sample reads '3700 kg 3.00-4.99 tonne weight range 51-70 km distance = $450.00'. The $450 answer was right, so CI passed throughout — the same failure class as Multimedia 2022 Q2. Also had no keywords; added. (19(b)) NESA's sample extracts as mangled equation layout ('Bathroom area 2 x = 1.2 m 1.2 m 1.44 m 2'). Compared numerically: 1.44 + 6.48 = 7.92 m2, tile 0.09 m2, 88 tiles, x 1.05 = 92.4 so 93 tiles. Every figure agrees. Uses the new vet-construction_2022_Q19b_stimulus.jpg crop. (19(c)) NESA's sample extracts as mangled equation layout. Compared numerically: 15/60 = 0.25, 8.25 hours, x $62.00 = $511.50, agreeing. The answer names the 8.15-vs-8.25 error explicitly because that is what band 1 exists for."},
+    ('2022', '20'): {"verdict": 'ok', "fields": _ALL, "note": "Ported. NESA's sample is three bulleted lists (causes, impact on workers, impact on employers); the client section is written from the syllabus, since the extracted sample truncates there, and the question explicitly asks for it."},
+    ('2022', '21(a)'): {"verdict": 'ok', "fields": _ALL, "note": "Ported; covers NESA's tyres and pressure, hose cleaning and drum oiling, drive belt tension, greasing, plus its listed tag/cord/guard/switch/bolt checks."},
+    ('2022', '21(b)'): {"verdict": 'ok', "fields": _ALL, "note": "Ported; follows NESA's list and groups it under the hierarchy of control, training, plant, hazardous materials, physical controls, manual handling, documentation, housekeeping and culture."},
+    ('2023', '16'): {"verdict": 'corrected', "fields": _ALL, "note": "(16(a)(i)) acceptableAnswers omitted 'sliding', which is the FIRST alternative NESA lists ('Sliding saw, Compound saw, Mitre saw, Cut off saw'), so a student writing NESA's own accepted answer was marked incorrect. Added, along with the missing keywords/minKeywords. 'chop saw' is kept: not in NESA's list, but a genuine synonym. bandDescriptors: one official row, as 2021 16(a). (16(a)(ii)) Ported; NESA's sample names safety glasses and hearing protection, with face shield, dust mask, footwear and restrained hair as alternatives. Reuses the existing Q16(a) saw crop. (16(b)) Ported; keeps NESA's portability, no-cord safety (trip hazard, no leads to test and tag), remote/unconnected sites and quicker set-up."},
+    ('2023', '17'): {"verdict": 'ok', "fields": _ALL, "note": "(17(a)) Ported. NESA's sample says 'contact government regulators to obtain clarification about award pay rates'; Fair Work Ombudsman/Commission is named as the specific NSW regulator, with NESA's unions, professional associations and HIA/MBA kept. (17(b)) Ported; attendance and punctuality, work performance within timeframes and pride in work, then NESA's listed attitude/confidentiality/ethics/honesty/presentation/safe-work items. (17(c)) Ported; keeps NESA's worked examples (treated pine to a loose stacking bin and approved disposal site, liquids in approved sealed containers to a chemical waste plant, bricks to C&D recycling, metal to a metal recycler, usable material stored)."},
+    ('2023', '18'): {"verdict": 'ok', "fields": _ALL, "note": "(18(a)) Ported; NESA's position-away, avoid echoing off materials, use only when needed within allowable construction hours, correct operation and regular servicing. (18(b)) All five symbol identifications match NESA (window, sink, stove top, toilet, sliding door). The bank's parenthetical descriptions of each plan symbol were checked against the committed crop and are accurate. (18(c)) Ported; keeps NESA's standard conventions and AS1100, speed and clarity, reduced literacy and language barriers, and the fitout-flexibility point about fixtures differing in size and shape."},
+    ('2023', '19'): {"verdict": 'corrected', "fields": _ALL, "note": "(19(a)) NESA's sample extracts as mangled equation layout ('x = 10% 15 000 1500 + = 15 000 1500 16 500'). Compared numerically: 1500 wastage, 16 500 total, /500 = 33 pallets, agreeing. (19(b)(i)) The worst defect found. The model answer's headline result was 2.61 m3, computed from the shed's OUTER PERIMETER only; NESA's answer is 2.99 m3 and the drawing is captioned 'the hidden detail of the EDGE AND CENTRE beams'. The bank omitted the centre beam entirely and then explained the discrepancy away as 'corners (overlap) giving approximately 2.61-2.99 m3 depending on method' — a fabricated reconciliation. The stem compounded it by describing '300mm x 300mm PERIMETER beam footings'; restored to the paper's own wording. Answer rewritten to NESA's method (2 x 8.5 = 17 m at 1.53 m3; three cross beams at 6.0 - 2 x 0.3 = 5.4 m, 16.2 m at 1.46 m3; total 2.99 m3), keeping the 2.61 route named as the common error. keywords '29' and '2.61' removed — they credited the wrong method. (19(b)(ii)) NESA's sample extracts as mangled equation layout ('x x Length Width Thickness ... 8.5 6 0.1 5.1'). Compared numerically: 8.5 x 6 x 0.1 = 5.1 m3, agreeing. ⚠️ Note this part is the SLAB, not the footings of (b)(i) -- a different calculation on the same drawing, which the answer states explicitly."},
+    ('2023', '20(a)'): {"verdict": 'ok', "fields": _ALL, "note": "Ported; keeps NESA's formal and informal meetings, notice boards, toolbox talks and WHS meetings, signage and drawings, hand signals, and its equipment list (two-way radios, speakers, phones/SMS)."},
+    ('2023', '20(b)'): {"verdict": 'ok', "fields": _ALL, "note": "Ported. NESA's sample is a bare bullet list (Gantt chart, sequencing, task dependencies, timeframes, quality measures, resource lists, ordering and delivery); the worked trade-order examples are added because the question and the top band both demand relevant workplace examples."},
+    ('2023', '21'): {"verdict": 'ok', "fields": _ALL, "note": "Ported. NESA's sample lists the control levels and the hazards but does not work them through; each level is given a construction example, which is what the top band asks for. ⚠️ NESA prints the hierarchy as Eliminate / Substitute / Engineering (Isolate, Modify) / Administration / PPE; the answer separates Isolate as its own level, the standard six-level form, which is a presentation choice and not a change of content."},
+    ('2024', '16'): {"verdict": 'ok', "fields": _ALL, "note": "(16(b)) Bank lists cord, test-and-tag, guards, belt condition/fitting and dust extraction — a subset of NESA's list, which also offers casing inspection and operator training. A subset is what a 3-mark answer needs; not a gap."},
+    ('2024', '17'): {"verdict": 'ok', "fields": _ALL, "note": "(17(a)) Ported; NESA's advantage (reduced measuring time) and disadvantage (battery replacement/recharge), plus its listed alternatives on both sides. (17(b)) Ported; NESA's material quantity, reordering and delivery costs, higher cost to customer and builder, and effect on completion time, with fit/quality/safety added as the third consequence. (17(c)) Ported; follows NESA's sample closely (ventilation and air exchange, dust accumulation and respiratory risk, water spray at the source, strategic cooling units) and places engineering controls in the hierarchy, which is what makes them 'engineering' controls."},
+    ('2024', '18'): {"verdict": 'ok', "fields": _ALL, "note": "(18(a)) Ported; NESA's confirm-the-message, bridge between sender and receiver, clarification and validation, problem solving and continuous improvement. (18(b)) Ported; NESA's easy access and reduced delays, cost efficiency and damage prevention, resource conservation and sustainability, and its stacking/packing/strapping examples (timber twisting or bowing). (18(c)) Ported; NESA's worker numbers and types, goals and stage completion dates, tools/equipment/materials ready and sequenced, optimum resource use, timing and risk mitigation."},
+    ('2024', '19'): {"verdict": 'divergent-accepted', "fields": _ALL, "note": "(19(a)) NESA's sample answer extracts as mangled equation layout — '!3! 4! + = 5 4 + 6 + 8 + 3 + 5 = 26 m' — so the bank's worked prose necessarily reads nothing like it. Compared numerically instead: hypotenuse 5, perimeter 26 m, both agree. Same standing exception as the Maths subjects. (19(b)) NESA's sample extracts as mangled equation layout — 'pr2 12 ... 0.471 m3'. Compared numerically: slab 7.2 m3, hole 0.471 m3, net 6.73 m3, all agree. Keyword 'pi' is two characters, so keywordHit() can fire on any student word beginning 'pi' (e.g. 'pipe'); left as authored, noted as loose. (19(c)) NESA's sample extracts as mangled equation layout ('m3 m3 / 11.6 6 parts = 1 part = 1.93'). Compared numerically: 6 parts, 1 part = 1.93 m3, sand = 2 x 1.93 = 3.86 m3, agreeing. (19(d)) NESA's sample extracts as mangled equation layout ('8 tonnes $1.18 = $9.44 ... $9.44 13 km = $122.72'). Compared numerically: $9.44 per km, x 13 = $122.72, agreeing."},
+    ('2024', '20(a)'): {"verdict": 'ok', "fields": _ALL, "note": "Ported; NESA's drop/slide saw for docking to length and pneumatic nail gun for the frame and battens are described in the detail the top band asks for, with its impact driver, drill, circular saw, grinder and nibbler listed as alternatives."},
+    ('2024', '20(b)'): {"verdict": 'ok', "fields": _ALL, "note": "Ported. NESA's sample is a bare bullet list of ~19 items; they are grouped into before-work, documentation, on-site, working at height, PPE and emergency, and sequencing, and tied to the carport the question specifies, since the top band requires an explanation rather than a list."},
+    ('2024', '21'): {"verdict": 'ok', "fields": _ALL, "note": "Ported; every item in NESA's list is covered (approved waste disposal, BASIX, noise and dust, plant maintenance, chemical spill management, vibration monitoring, stormwater discharge, hazardous material handling, efficient fittings, alternative energy, wildlife habitat, soil erosion, and the biodegradable/recyclable/renewable/reusable material criteria)."},
+    ('2025', '16'): {"verdict": 'ok', "fields": _ALL, "note": None},
+    ('2025', '17'): {"verdict": 'ok', "fields": _ALL, "note": "(17(c)) Covers NESA's secure storage, sign-in/out, fencing/lighting/cameras, racks and covers, and adds asset engraving — a reasonable extension, not a divergence."},
+    ('2025', '18'): {"verdict": 'corrected', "fields": _ALL, "note": "(18(b)) The stem named 'the horizontal sliding window symbol shown', which IS the answer to the third of three marks. Restored to the paper's own wording: 'Identify the meaning of the following symbols or abbreviations that are found on construction drawings.' The three meanings themselves match NESA (hot water, rainwater pipe, horizontal sliding window) and the model answer's description of the arrow symbol matches the committed crop."},
+    ('2025', '20(a)'): {"verdict": 'ok', "fields": _ALL, "note": None},
+    ('2025', '20(b)'): {"verdict": 'ok', "fields": _ALL, "note": "Follows NESA point for point (assess and plan, mechanical aids, lifting technique, team lifting, ergonomic design, breaks and rotation, PPE) and carries the workplace examples the top band requires."},
+    ('2025', '21'): {"verdict": 'ok', "fields": _ALL, "note": "Matches NESA's substance across design for standard sizes, just-in-time delivery, trade sequencing and Gantt charts, quantity calculation, training and instruction, and tool maintenance. NOTE an extractor artefact, pre-existing and not introduced by this review: because this is the LAST question header in the document, parse_paper() runs its sample block to the end of the PDF, so the committed sampleAnswer for the final question of every paper also swallows the Mapping Grid. Harmless to the mark check; it does mean this fingerprint covers more text than the sample alone."},
 }

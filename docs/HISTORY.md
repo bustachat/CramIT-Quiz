@@ -3210,3 +3210,82 @@ marks/keywords/bandDescriptors, so no review verdict was invalidated; 285 MC ans
 the correct image in the browser; the plumb bob and a normal landscape image measured
 side-by-side post-fix. No mark, MC answer, `category`, or review verdict was altered —
 `index.html` (CSS only) and `subjects/vet-construction.json` (two `image` fields added) only.
+
+---
+
+## 2026-09-02 (later still) — VET Construction's Section II multi-part questions merged into one bank entry per NESA question
+
+The owner asked directly whether multi-part written questions were being handled correctly,
+after the chisel/oversized-image/duplicate-text reports turned out to share one root cause:
+VET's written bank stored each NESA sub-part (`"16(a)"`, `"16(b)"`, `"16(c)"`, `"16(d)"`, …)
+as its own independent array entry, so `shuffle()` in `getWritten()` scattered a single NESA
+question's parts across the quiz session as unrelated cards — a shared stimulus could render
+on one part and be absent minutes later on a sibling, and a genuinely shared intro sentence had
+to be duplicated into every part because each was authored to stand alone.
+
+**Mathematics Advanced and Standard 2 already do this correctly** — confirmed by reading a
+live example (Advanced 2020 Q14: three sub-parts, one `keywords` list, one 5-mark total, one
+`q` field with each part's own `<strong>(N marks)</strong>` badge inline). VET was the outlier,
+not the norm, so this port re-merges VET's split entries into that same established shape
+rather than inventing a new one.
+
+**Scope: Section II (Q16–19) only — 23 NESA questions, 18 of them split (59 sub-entries) —
+not Section III/IV (Q20/Q21).** Re-reading all five papers' Section II AND Section III/IV text
+directly from the source PDFs (not reconstructed from the already-split JSON) surfaced a
+structural difference the initial ask hadn't accounted for: Section III/IV explicitly directs
+students to answer each part **in a separate writing booklet** ("Answer part (a) of the
+question in a writing booklet... Use the other writing booklet to answer part (b)"). Those are
+genuinely independent responses on different topics, not a shared short-answer sequence —
+merging them into one card would misrepresent the real exam rather than fix anything, so they
+were left as they were. Q17 (2021), Q20 (2022) and Q21 (2023/2024/2025) were already single,
+un-split entries in the bank; nothing there needed touching either.
+
+**Method**: a one-off script (`scripts/archive/vet_merge_multipart.py`, run then archived, not
+part of CI) merges the 18 groups. Marks are summed and validated against
+`data/answer-key/written/vet-construction.json` **before** any write — all 18 reconciled
+exactly on the first attempt (e.g. 2021 Q16: 1+2+2+3=8, 2022 Q17: 2+2+2+4=10). `keywords` are
+the union of all constituent parts' lists (352 total → no duplicates within a merged entry);
+`acceptableAnswers` on a short identification part (e.g. 2021 16(a)'s chisel ID) is folded into
+the merged `keywords` list instead, since `acceptableAnswers`' exact-match mechanism doesn't
+suit a combined multi-sentence response. **Every merged question also switches from the
+top-level `image` field to an inline `<img>`** (matching Advanced/Standard 2's own convention,
+which never uses the top-level field on a written question), positioned in the stem exactly
+where the sentence introducing the picture sits — critical for questions like 2022 Q19, whose
+three parts have three different stimuli (a delivery-cost table, a bathroom plan, no image at
+all), where a single top-level image field could never have placed each picture correctly.
+
+⚠️ **`bandDescriptors` needed fresh synthesis, not concatenation.** NESA's marking guidelines
+grade each part separately; there is no official combined rubric for an 8-or-13-mark merged
+question. Each of the 18 merged entries got a newly authored three-tier `{full, partial,
+minimal}` descriptor summarising performance across all its parts, in the same concise,
+mark-tied style as the rest of the bank (e.g. 2021 Q16: "Correctly identifies the chisel,
+describes TWO suitable uses, ONE consequence of poor maintenance, and both care and
+maintenance procedures in detail").
+
+**The review ledger was rebuilt through the project's own tooling, not hand-edited.**
+`scripts/reviews/vet_construction.py`'s 72 per-part verdicts were consolidated to 34
+per-question verdicts — `corrected` if any constituent part required a correction, else
+`divergent-accepted` if any part was divergent, else `ok` — with every constituent part's
+original note concatenated and prefixed by its old part label, so none of the hard-won
+review history (six real defects found across the subject) was lost. `check_written_key.cjs`'s
+strict 1:1 bank↔table check caught a real bug in the process: the merge script's `qNum` was
+written as a bare Python int (`16`) where every other VET entry uses a string (`"17"`,
+`"21(a)"`); fixed before the ledger rebuild, verified with an explicit missing/extra diff
+against the live bank (both empty) before running `scripts/build_review_ledger.py
+vet-construction`.
+
+**Verified**: full local CI green (`MC=706 Written=380 imageRefs=313 missingImages=0`,
+`Issues: 0`; VET **76/76 coverage unchanged, 34/34 reviewed — 6 corrected, 2
+divergent-accepted, 26 ok**; 285 MC answers checked, 0 wrong; `npm test` 67/0). Browser-verified
+at 430px: **all 34 written questions render with 0 `.question-area` overflow and a marks
+badge on every one**; all 15 distinct inline images load; the 2021 chisel card now shows the
+tool **once** with all four parts flowing beneath it (previously 4 separate cards, one with no
+image); the 2023 shed question's shared intro sentence now appears **once** before (i) and
+(ii) (previously duplicated); a full practice-mode answer flow was exercised end-to-end on the
+merged chisel question — typed answer → scored 2/8 against the unified 35-keyword list → the
+newly authored "partial" band text displayed → the four-part model answer revealed correctly
+labelled. The one console error seen (`POST /mark-written → 404`) is pre-existing and
+unrelated: the local static file server has no Cloudflare Functions runtime, so AI marking
+always falls back to the offline keyword grid in this environment, which is exactly what was
+observed working. No MC question, MC answer, or `omittedQuestions`/`omittedParts` declaration
+was touched — only VET's written bank shape, its `image` mechanism, and its review ledger.
