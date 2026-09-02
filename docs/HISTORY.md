@@ -3335,3 +3335,53 @@ to the same keyword-matching grid described above, against the same union list. 
 not marked at all, by design, in either the old or new bank shape.
 
 No mark, MC answer, `category`, or review verdict was altered. `index.html` was not touched.
+
+---
+
+## 2026-09-02 (later still, again) — Split written parts now shuffle adjacently, and show a "Part X of Y" indicator
+
+The owner asked, of VET's 2025 Q20 (deliberately kept as two separate bank entries,
+5 marks + 10 marks, because NESA sends them to separate writing booklets — CLAUDE.md §10
+rule 9): if `shuffle()` scatters the whole written array, how would a student ever know
+their two separate scores belong to one original NESA question? They suggested keeping such
+parts adjacent instead of fully random, and asked if there's a better way.
+
+**There was, and it's a general engine fix, not a VET patch.** Two additions to `index.html`:
+
+- **`shuffleGrouped(arr)`** groups written questions by `(year, base NESA question number)`
+  before shuffling, so the shuffle happens at the whole-question level — a group's internal
+  order and adjacency are fixed (NESA's own (a)/(b) order), only the order *between* groups
+  is randomised. A no-op for any question with no split siblings, so it's safe to wire into
+  every subject's `getWritten()` unconditionally, which it now is (all 5: maths, mathsadv,
+  hms, multimedia, vet) — not just VET.
+- **`writtenPartInfo(subjectKey, q)`** returns `{ index, total, base }` for a question that
+  has 2+ siblings sharing its base number, or `null` otherwise. Rendered as a
+  "Q20 · Part 2 of 2" badge next to the year badge in `renderQuestion()`, and as "— Q20,
+  part 2 of 2" in the Test Mode results breakdown — the two places a student could otherwise
+  see two disconnected scores with nothing telling them they're related, since `qNum` itself
+  is never shown anywhere in the UI.
+
+⚠️ **Checking whether this needed to be VET-specific surfaced a second subject with the
+exact defect the 2026-09-02 merge fixed for VET, still live.** Mathematics Standard 2 has
+**11 split entries across five 2020/2021 questions** (Q23, Q34, Q35, Q26, Q27) with the same
+signature as VET's pre-merge state — shared context sentences duplicated verbatim across
+sibling parts (2020 Q23(a) and Q23(b) both open "In a tropical drink, the ratio of pineapple
+juice..."). These are genuine Section II short-answer sub-parts sharing one response space
+on the page, **not** NESA-directed separate-booklet responses, so per CLAUDE.md §10 rule 9
+the correct fix is the same merge treatment VET got — not a permanent "Part X of Y" badge.
+**Not done in this session** — today's fix makes the current state safe and honest (adjacent,
+labelled) for whichever subject has split siblings at any given time, but it is explicitly a
+safety net, not a substitute for merging Standard 2's 11 entries. Recorded here as a known
+gap, not actioned without the owner's sign-off, matching how the Multimedia Section III
+finding was handled the same session.
+
+**Verified**: `shuffleGrouped` swept 50 shuffles each for VET's 2025 Q20(a)/(b) and Standard
+2's 2020 Q23(a)/(b) — 100% adjacent, always in NESA's own order, in both directions;
+non-split subjects (Advanced, Multimedia) unaffected, confirmed `writtenPartInfo` returns
+null for every one of their questions. Browser-verified the badge renders "Q20 · Part 1 of 2"
+/ "Part 2 of 2" correctly on the live question card and in the Test Mode results screen;
+full local CI green (`MC=706 Written=380 imageRefs=313 missingImages=0`; `npm test` 67/0);
+no console errors. `getMC()` was deliberately left on plain `shuffle()` for every subject —
+Standard 2's Extended-318 MC variants share a base qNum with their original question but are
+meant to be fully independent draws, not grouped, so grouping was scoped to written mode
+only. No mark, MC answer, or review verdict was touched — `index.html` only.

@@ -811,7 +811,7 @@ const SUBJECTS = {
       let qs = [...(subjectCache.maths?.writtenQuestions ?? [])];
       if (filters.year && filters.year !== 'all') qs = qs.filter(q => String(q.year) === filters.year);
       if (filters.categories?.length) qs = qs.filter(q => filters.categories.includes(q.category));
-      return shuffle(qs);
+      return shuffleGrouped(qs);
     },
     years: ['all','2020','2021','2022','2023','2024','2025'],
     categories: null, // set by loadSubjectData()
@@ -831,7 +831,7 @@ const SUBJECTS = {
       let qs = [...(subjectCache.mathsadv?.writtenQuestions ?? [])];
       if (filters.year && filters.year !== 'all') qs = qs.filter(q => String(q.year) === filters.year);
       if (filters.categories?.length) qs = qs.filter(q => filters.categories.includes(q.category));
-      return shuffle(qs);
+      return shuffleGrouped(qs);
     },
     years: ['all','2020','2021','2022','2023','2024','2025'],
     categories: null, // set by loadSubjectData()
@@ -861,7 +861,7 @@ const SUBJECTS = {
         qs = qs.filter(q => group.includes(q.topic));
       }
       if (filters.topic && filters.topic !== 'all') qs = qs.filter(q => q.topic === filters.topic);
-      return shuffle(qs);
+      return shuffleGrouped(qs);
     },
     topics: null, // set by loadSubjectData()
   },
@@ -878,7 +878,7 @@ const SUBJECTS = {
     getWritten: (filters) => {
       let qs = [...(subjectCache.multimedia?.writtenQuestions ?? [])];
       if (filters.year && filters.year !== 'all') qs = qs.filter(q => String(q.year) === filters.year);
-      return shuffle(qs);
+      return shuffleGrouped(qs);
     },
     years: ['all','2020','2021','2022','2023','2024','2025'],
   },
@@ -895,7 +895,7 @@ const SUBJECTS = {
     getWritten: (filters) => {
       let qs = [...(subjectCache.vet?.writtenQuestions ?? [])];
       if (filters.year && filters.year !== 'all') qs = qs.filter(q => String(q.year) === filters.year);
-      return shuffle(qs);
+      return shuffleGrouped(qs);
     },
     years: ['all','2021','2022','2023','2024','2025'],
   },
@@ -908,6 +908,48 @@ function shuffle(arr) {
     [a[i], a[j]] = [a[j], a[i]];
   }
   return a;
+}
+
+// Base NESA question number from a qNum like "20(b)" or "16(a)(i)" -> "20"/"16".
+// A bare qNum with no letter suffix ("17", "21") has no siblings and is its own group.
+function qNumBase(qNum) {
+  const m = String(qNum).match(/^(\d+)/);
+  return m ? m[1] : String(qNum);
+}
+
+// Shuffles written questions at the WHOLE-NESA-QUESTION level, not the individual
+// bank-entry level. A multi-part question kept deliberately split — e.g. Section
+// III/IV parts NESA sends to separate writing booklets, CLAUDE.md §10 rule 9 — must
+// still always render consecutively and in NESA's own part order, even though each
+// part is its own scored card: otherwise a student can meet part (b) of a question
+// many unrelated cards after part (a), with nothing telling them the two scores
+// belong to one original question. Group order is still shuffled for variety; only
+// each group's internal order and adjacency are fixed. A no-op for any subject with
+// no split siblings — grouping by (year, base number) then shuffling groups of size
+// 1 is identical to shuffling the flat array.
+function shuffleGrouped(arr) {
+  const groups = new Map();
+  arr.forEach(q => {
+    const key = q.year + '|' + qNumBase(q.qNum);
+    if (!groups.has(key)) groups.set(key, []);
+    groups.get(key).push(q);
+  });
+  return shuffle([...groups.values()]).flat();
+}
+
+// For a written question that is one of several bank entries sharing the same NESA
+// question number (e.g. "20(a)"/"20(b)"), returns its position and sibling count so
+// the UI can show "Part 2 of 2". Returns null for a question with no such siblings —
+// including every question already merged into one entry per CLAUDE.md §10 rule 9.
+function writtenPartInfo(subjectKey, q) {
+  if (!/^\d+\([a-z]+\)$/i.test(String(q.qNum))) return null;
+  const base = qNumBase(q.qNum);
+  const data = subjectCache[subjectKey];
+  const siblings = (data?.writtenQuestions ?? [])
+    .filter(sq => sq.year === q.year && qNumBase(sq.qNum) === base && /^\d+\([a-z]+\)$/i.test(String(sq.qNum)));
+  if (siblings.length < 2) return null;
+  const index = siblings.findIndex(sq => sq.qNum === q.qNum);
+  return { index: index + 1, total: siblings.length, base };
 }
 
 // ── NAV ──
@@ -1826,6 +1868,12 @@ function renderQuestion() {
     // HMS's older spelling. Reading q.topic alone showed no badge on any question
     // following the canonical schema — Standard 2's 151 written questions included.
     if (q.category || q.topic) wBadges.push(`<span class="topic-badge">${q.category || q.topic}</span>`);
+    // Deliberately-split multi-part question (e.g. Section III/IV parts NESA sends to
+    // separate writing booklets — CLAUDE.md §10 rule 9): shuffleGrouped() keeps the
+    // parts adjacent, and this tells the student the two separate scores belong to
+    // one original question, since qNum itself is never otherwise shown.
+    const partInfo = writtenPartInfo(currentSubjectKey, q);
+    if (partInfo) wBadges.push(`<span class="topic-badge">Q${partInfo.base} · Part ${partInfo.index} of ${partInfo.total}</span>`);
     if (wBadges.length) html += `<div class="q-meta-row">${wBadges.join('')}</div>`;
     const imgUrl2 = q.image;
     if (imgUrl2) {
@@ -2291,8 +2339,10 @@ function showResults() {
       const model = q.answer || q.modelAnswer || q.sampleAnswer || '';
       const modelHtml = model.includes('<') ? model : model.replace(/\n/g, '<br>');
       const marksVal = q.marks || q.maxMark || q.totalMarks || 0;
+      const partInfo = writtenPartInfo(currentSubjectKey, q);
+      const partNote = partInfo ? ` <span style="color:var(--muted);font-weight:400;font-size:11px">— Q${partInfo.base}, part ${partInfo.index} of ${partInfo.total}</span>` : '';
       bhtml += `<div style="border:1px solid var(--border);border-radius:12px;padding:14px 16px;margin-bottom:12px;font-size:13px;background:var(--surface)">
-        <div style="font-weight:700;margin-bottom:6px;color:var(--text)">${i+1}. ${formatQuestionText(q.q || q.text || '')}${marksVal ? ` <span style="color:var(--muted);font-weight:400;font-size:11px">(${marksVal} mark${marksVal > 1 ? 's' : ''})</span>` : ''}</div>
+        <div style="font-weight:700;margin-bottom:6px;color:var(--text)">${i+1}. ${formatQuestionText(q.q || q.text || '')}${marksVal ? ` <span style="color:var(--muted);font-weight:400;font-size:11px">(${marksVal} mark${marksVal > 1 ? 's' : ''})</span>` : ''}${partNote}</div>
         <div style="margin-bottom:8px">
           <div style="font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--muted);margin-bottom:4px">Your answer</div>
           <div style="background:${skipped?'#FDF6F0':'#F2EFE9'};border-radius:8px;padding:10px 12px;color:${skipped?'var(--muted)':'var(--text)'};font-style:${skipped?'italic':'normal'};white-space:pre-wrap">${skipped ? 'Skipped' : saSafe}</div>
