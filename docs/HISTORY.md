@@ -3289,3 +3289,49 @@ unrelated: the local static file server has no Cloudflare Functions runtime, so 
 always falls back to the offline keyword grid in this environment, which is exactly what was
 observed working. No MC question, MC answer, or `omittedQuestions`/`omittedParts` declaration
 was touched — only VET's written bank shape, its `image` mechanism, and its review ledger.
+
+---
+
+## 2026-09-02 (later still, again) — Checked how the merged VET questions are actually marked; one harmless tidy-up, one claim retracted after testing it
+
+The owner asked how a merged 3-part written question is marked now, from a screenshot of
+**Test Mode**. Traced the render path directly rather than assuming: Test Mode has never
+auto-marked written answers, before or after the merge — `nextQuestion()`'s test-mode branch
+says so in its own comment ("no AI marking"), and `showResults()` for written Test Mode only
+lays the student's answer next to the model answer for self-comparison. Unaffected by
+2026-09-02's merge.
+
+That prompted a closer look at **Practice Mode**, where written answers genuinely are scored,
+since omitting `minKeywords` on all 18 merged entries and letting the engine default to
+`Math.ceil(keywords.length / 2)` looked, on paper, like it raised the threshold above the sum
+of the three-or-four original per-part values (e.g. 2021 Q16: auto 18 vs the original parts'
+1+3+3+5=12). ⚠️ **That concern does not survive testing and is retracted as a real
+scoring difference.** `buildKeywordFeedback()`'s cap rule is
+`if (matched < minKw) marksEarned = min(marksEarned, floor(maxMark/2))` — a sweep of every
+possible `matched` value from 0 to `keywords.length`, on five representative merged questions,
+produced **zero cases** where the auto-default and the original-sum threshold gave a different
+`marksEarned`. The reason: `Math.ceil(N/2)` sits almost exactly at the same "matched ⁄ N > 0.5"
+point where the cap's own condition (`raw > floor(maxMark/2)`) stops being reachable, so the
+cap is structurally near-inert whenever `minKeywords` is anywhere close to half the keyword
+count — which both the auto-default and the original per-part sums are, for every one of
+these 18 questions.
+
+**`minKeywords` was still set explicitly** (`subjects/vet-construction.json`, sum of each
+merged question's original constituent parts, matching the position convention
+`keywords` → `minKeywords` → `bandDescriptors` used everywhere else in the file) — not
+because it changes any score, but because it documents the actually-tuned intent rather than
+silently deferring to a formula default, and costs nothing (`check_written_key.cjs`'s
+review-ledger fingerprint only tracks `modelAnswer`/`keywords`/`bandDescriptors`, so this
+touches nothing CI enforces). **Verified inert, not verified beneficial** — stated plainly
+rather than oversold.
+
+**How the merged questions are actually marked, confirmed by reading the code, not
+assumed:** Practice Mode with a signed-in user sends `mark-written.js` the **whole merged
+`q` text** (all parts), `maxMarks` (the summed total, e.g. 10), the **union `keywords`
+list**, the **freshly authored merged `bandDescriptors`**, and the student's one combined
+answer — Claude marks it as **one holistic assessment across all parts**, not per-part.
+Practice Mode without a signed-in user (or while the AI call is pending/erroring) falls back
+to the same keyword-matching grid described above, against the same union list. Test Mode:
+not marked at all, by design, in either the old or new bank shape.
+
+No mark, MC answer, `category`, or review verdict was altered. `index.html` was not touched.

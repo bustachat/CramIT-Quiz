@@ -1426,6 +1426,7 @@
         "ferrule",
         "handle"
       ],
+      "minKeywords": 12,
       "bandDescriptors": {
         "full": "Correctly identifies the chisel, describes TWO suitable uses, ONE consequence of poor maintenance, and both care and maintenance procedures in detail",
         "partial": "Identifies the chisel and describes uses, a consequence and care/maintenance with reasonable but incomplete detail",
@@ -1509,6 +1510,7 @@
         "weather",
         "access"
       ],
+      "minKeywords": 15,
       "bandDescriptors": {
         "full": "Correctly calculates the labour cost, the perimeter and the volume of concrete (with 10% wastage), and describes a range of WHS factors in detail",
         "partial": "Shows correct working for some calculations and describes some relevant WHS factors, with minor errors or omissions",
@@ -1556,6 +1558,7 @@
         "legal",
         "customer"
       ],
+      "minKeywords": 12,
       "bandDescriptors": {
         "full": "Provides TWO reasons for cross-sectional drawings, describes the features found on an elevation, and explains why plans and specifications are used together",
         "partial": "Addresses some parts with reasonable detail — for example lists a reason for cross-sections, identifies some elevation features, or describes the plan/specification relationship",
@@ -1698,6 +1701,7 @@
         "PPE",
         "insurance"
       ],
+      "minKeywords": 12,
       "bandDescriptors": {
         "full": "Correctly identifies the plumb bob and its function, describes both the honing and ripping techniques, and explains a range of purchasing considerations",
         "partial": "Addresses some parts with reasonable detail — identifies the tool or its function, describes one technique, or outlines some purchasing considerations",
@@ -1754,6 +1758,7 @@
         "sequence",
         "quality"
       ],
+      "minKeywords": 15,
       "bandDescriptors": {
         "full": "Outlines TWO examples of levelling information, provides reasons for detail drawings, correctly identifies both symbols, and explains the purpose of a written specification with examples",
         "partial": "Addresses some parts with reasonable detail — for example lists a type of levelling information, outlines the use of detail drawings, or correctly labels one symbol",
@@ -1806,6 +1811,7 @@
         "council",
         "weather"
       ],
+      "minKeywords": 14,
       "bandDescriptors": {
         "full": "Outlines a work practice that reduces material waste, clearly describes the steps in running an on-site meeting, and describes a range of methods used to plan and organise work on a new house",
         "partial": "Addresses some parts with reasonable detail — lists a waste-reduction practice, describes part of the meeting process, or outlines some planning methods",
@@ -1844,6 +1850,7 @@
         "hour",
         "minute"
       ],
+      "minKeywords": 9,
       "bandDescriptors": {
         "full": "Correctly reads the delivery table, calculates the number of tiles including wastage, and calculates the total labour cost",
         "partial": "Correctly completes two of the three calculations, or shows correct working with minor errors",
@@ -1995,6 +2002,7 @@
         "quick",
         "outdoor"
       ],
+      "minKeywords": 7,
       "bandDescriptors": {
         "full": "Correctly names the saw, lists TWO items of PPE required, and outlines the advantages of battery-powered tools",
         "partial": "Addresses some parts with reasonable detail — names the saw or one PPE item, and lists some advantages",
@@ -2050,6 +2058,7 @@
         "reuse",
         "stormwater"
       ],
+      "minKeywords": 12,
       "bandDescriptors": {
         "full": "Outlines a method of resolving a pay dispute, describes the personal attributes valued in the industry, and accurately describes clean-up processes for a range of substances and materials",
         "partial": "Addresses some parts with reasonable detail — outlines a resolution method, some valued attributes, or some disposal processes",
@@ -2098,6 +2107,7 @@
         "specification",
         "fixture"
       ],
+      "minKeywords": 13,
       "bandDescriptors": {
         "full": "Describes methods to limit generator noise, correctly labels ALL five symbols on the plan, and explains why symbols are used on construction plans",
         "partial": "Addresses some parts with reasonable detail — identifies noise-limiting methods, labels some symbols correctly, or describes why symbols are used",
@@ -2140,6 +2150,7 @@
         "metre",
         "convert"
       ],
+      "minKeywords": 10,
       "bandDescriptors": {
         "full": "Correctly calculates the number of pallets, the concrete for the footings (including the centre beam), and the concrete for the slab",
         "partial": "Correctly completes two of the three calculations, or shows correct working with minor errors",
@@ -2272,6 +2283,7 @@
         "safe",
         "electrical"
       ],
+      "minKeywords": 8,
       "bandDescriptors": {
         "full": "Correctly names the spirit level and outlines TWO uses, and describes a range of safety checks before using a belt sander",
         "partial": "Names the tool or outlines one use, and outlines some safety checks",
@@ -2327,6 +2339,7 @@
         "enclosure",
         "hierarchy"
       ],
+      "minKeywords": 12,
       "bandDescriptors": {
         "full": "Identifies an advantage and disadvantage of a laser tool, outlines how incorrect measurements affect a project, and describes in detail how engineering controls manage a hot and dusty environment",
         "partial": "Addresses some parts with reasonable detail — identifies an advantage or disadvantage, identifies consequences of incorrect measurement, or outlines some engineering controls",
@@ -2386,6 +2399,7 @@
         "council",
         "budget"
       ],
+      "minKeywords": 13,
       "bandDescriptors": {
         "full": "Outlines the importance of feedback with clients, explains why correct storage of reusable materials matters, and clearly explains the factors considered during planning and preparation",
         "partial": "Addresses some parts with reasonable detail — identifies the importance of feedback, outlines storage importance, or describes some planning factors",
@@ -2431,6 +2445,7 @@
         "km",
         "delivery"
       ],
+      "minKeywords": 11,
       "bandDescriptors": {
         "full": "Correctly calculates the perimeter, the net slab volume, the sand volume and the delivery cost",
         "partial": "Correctly completes two or three of the four calculations, or shows correct working with minor errors",
@@ -2572,6 +2587,7 @@
         "adjust",
         "setting"
       ],
+      "minKeywords": 7,
       "bandDescriptors": {
         "full": "Outlines a suitable use for the router and describes TWO settings or adjustments required before using it",
         "partial": "Provides some relevant information about the tool's use or a setting",
@@ -2621,6 +2637,7 @@
         "register",
         "storage"
       ],
+      "minKeywords": 13,
       "bandDescriptors": {
         "full": "Outlines abrasive-selection considerations, describes TWO fault indicators, and provides a thorough explanation of how builders protect tools from theft and damage",
         "partial": "Addresses some parts with reasonable detail — outlines a consideration, an indicator, or some protection strategies",
@@ -2667,6 +2684,7 @@
         "layout",
         "structure"
       ],
+      "minKeywords": 14,
       "bandDescriptors": {
         "full": "Lists information found in a building specification, correctly identifies THREE symbols or abbreviations, and describes a range of information found on a floor plan",
         "partial": "Addresses some parts with reasonable detail — lists some specification information, identifies one or two symbols, or outlines some floor-plan information",
