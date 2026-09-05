@@ -381,9 +381,12 @@
        part. Accordion so a 4-part question stays about one screen tall on a
        phone instead of four (see docs/HISTORY.md 2026-09-05). */
     /* Sticky so a stimulus shared by every part stays on screen while the
-       student works down them. Capped, or a tall diagram eats the viewport. */
-    .parts-stem { position: sticky; top: 0; z-index: 3; max-height: 34vh; overflow-y: auto; background: var(--surface2); border: 1px solid var(--border); border-radius: 11px; padding: 12px 14px; margin: 4px 0 14px; font-size: 14px; line-height: 1.6; }
-    .parts-stem img { max-width: 100%; height: auto; display: block; margin: 10px auto; }
+       student works down them. Capped, or a tall diagram eats the viewport —
+       46vh leaves the open part visible while still showing most of a graph;
+       the block scrolls, and its images open in the lightbox at full size. */
+    .parts-stem { position: sticky; top: 0; z-index: 3; max-height: 46vh; overflow-y: auto; background: var(--surface2); border: 1px solid var(--border); border-radius: 11px; padding: 12px 14px; margin: 4px 0 14px; font-size: 14px; line-height: 1.6; }
+    .parts-stem img { max-width: 100%; height: auto; display: block; margin: 10px auto; cursor: zoom-in; }
+    .part-body img { cursor: zoom-in; }
     .parts-stem-label { font-size: 10px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin-bottom: 6px; }
     .parts-progress { font-size: 11px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); margin: 0 0 10px; }
     .part-row { display: flex; align-items: center; justify-content: space-between; gap: 8px; border: 1px solid var(--border); border-radius: 12px; padding: 12px 13px; margin-bottom: 9px; background: var(--surface); cursor: pointer; min-height: 52px; }
@@ -4155,6 +4158,13 @@ function openLightbox(src) {
   document.getElementById('img-lightbox').classList.add('open');
   document.body.style.overflow = 'hidden';
 }
+// Multi-part stems and part prompts are rendered from stored HTML, so their
+// <img> tags carry no onclick of their own. Delegated, so it survives every
+// re-render of the accordion (a part toggle rebuilds the whole block).
+document.addEventListener('click', e => {
+  const img = e.target.closest && e.target.closest('.parts-stem img, .part-body img');
+  if (img && img.src) openLightbox(img.src);
+});
 function closeLightbox() {
   document.getElementById('img-lightbox').classList.remove('open');
   document.body.style.overflow = '';

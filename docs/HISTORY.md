@@ -3479,3 +3479,86 @@ anywhere in the file**. Their per-part *marks* are recoverable from `data/answer
 but the scoring data would have to be authored from NESA's criteria rows — a content job per
 subject, not a port of existing data. Those subjects keep the single box until then, which is
 exactly the behaviour they have today.
+
+---
+
+## 2026-09-05 (later) — Mathematics Standard 2 on the per-part standard, and three defects it exposed
+
+**What changed.** `subjects/mathematics-standard-2.json`: **66 questions gained `parts[]`**, the
+last **11 one-entry-per-part stragglers were merged into 5** (rule 9), **57 questions'
+`bandDescriptors` were made readable by the engine**, and **31 model answers had literal `**bold**`
+markdown converted to `<strong>`**. Written entries go **151 → 145**; official coverage stays
+**235/235**. Built by `scripts/archive/ms2_add_parts.py`. Also `index.html`: the sticky shared stem
+cap goes 34vh → 46vh and stem/part images now open in the lightbox on tap.
+
+**Three defects were found by surveying the subject, not by looking for them:**
+
+1. ⚠️ **57 of 151 questions showed the student the literal word `undefined` as their feedback.**
+   The engine reads `bandDescriptors.full/.partial/.minimal`; 38 Standard 2 questions were keyed
+   `{high, mid, low}` and 19 were keyed `{1, 2, 3, …}`, so the lookup returned `undefined` and it
+   was rendered verbatim. **Confirmed in the browser before fixing** (2025 Q25: `Score: 2 / 6
+   marks`, `33% matched`, feedback `undefined`) and screenshotted. Standard 2 only — Advanced,
+   VET, Multimedia and HMS are all clean. `{high,mid,low}` was a pure key rename with the wording
+   untouched; the numbered ones were rebuilt from NESA's own criteria rows.
+2. **31 model answers printed raw markdown**: `**34.9 minutes per day**` rendered with the
+   asterisks, because the field is HTML, not markdown. Standard 2 only.
+3. **11 entries were still one-per-part**, the rule 9 backlog (2020 Q23/Q34/Q35, 2021 Q26/Q27).
+
+**Nothing was authored.** Per-part marks come from `data/answer-key/written/` (ground truth);
+prompts are split out of the stem, model answers out of `answer`, and per-part `bandDescriptors`
+from that part's own criteria rows via the same top/middle/bottom collapse rule VET's review
+established.
+
+**Per-part keywords needed an acceptance gate, and the gate earned its keep.** Standard 2 has no
+per-part keyword lists, so each keyword is assigned to the part(s) whose **model answer** contains
+it. A first attempt used weaker evidence (the official sample answer and criteria wording too) and
+handed parts keywords their own model answer did not contain — making those parts unwinnable. The
+gate caught it: **every part must score full marks when fed its own model answer, or the build
+fails.** 18 questions failed on the first run; the rule was tightened to model-answer evidence
+only and the count went to 0. Two further fixes came out of the same loop: `(a)(i)`/`(a)(ii)`
+compound stem labels (2021 Q33) and separator-insensitive matching so a path keyword `abfgd`
+matches a model answer written `A → B → F → G → D` (2023 Q19).
+
+**Where it stopped, deliberately:**
+- **2 questions get no `parts[]`** — 2022 Q23(a) *"Plot these two data points on the
+  scatterplot"* and 2025 Q19(a) *"Complete the table"*. Neither has anything a keyword can match,
+  and a part that can only ever score 0 is worse than today's single box.
+- **21 keywords across 14 questions appear in no part's model answer** and so take no part in
+  per-part scoring. They are left on the question untouched, not deleted.
+- **`omittedParts` is respected**: 2020 Q24(a) is a declared graph-drawing omission, so it is not
+  turned into a part — treating it as missing text would have disqualified the whole question.
+
+⚠️ **A fourth defect, in the ground truth itself, and it is now a known issue.** Deriving band
+descriptors from the criteria rows exposed that some rows are **word-order scrambled** by the PDF
+extractor: 2025 Q25(b) reads *"y-intercept Provides correct interpretation of both slope and"*.
+It tracks inline mathematical notation — measured **Advanced 42/540 rows, Standard 2 20/510,
+VET 1/251, Multimedia 0/146**. Marks and sample answers are unaffected, which is why CI never saw
+it, and why VET's human review didn't either (1 row). The real fix is ordering spans by x within
+each line in `build_written_key.py`, which needs the local PDFs — its own task. **Until then a
+part whose criteria row trips the detector gets no `bandDescriptors` at all and falls back to the
+engine's generic wording (6 parts), so scrambled NESA text is never shown to a student.** The
+detector is an explicit smell test (row starts lowercase, or ends on a dangling `and`/`of`/`or`),
+not a parser, and is described as such.
+
+**One UI change came out of looking at it.** The first Standard 2 screenshot showed the sticky
+shared stem cropping a scatterplot at 34vh. Raised to 46vh — which fits the graph and still leaves
+the open part on screen — and stem/part images now open in the existing lightbox on tap, via a
+delegated handler (the accordion rebuilds its DOM on every part toggle, so a per-image `onclick`
+would not survive).
+
+**Verified.**
+- Across **all five subjects, all 374 written questions**: **0** questions whose `bandDescriptors`
+  the engine cannot read, **0** literal `**` left, **0** parts-marks mismatches, **0** parts
+  without a scoring mechanism, **0** split entries left, **0** render errors, **0** occurrences of
+  `undefined` on screen, and **0** parts that fail to score full marks from their own model answer.
+- Rendered at **430 px walking every part of every multi-part question**: **0** overflows in
+  Standard 2, VET, Multimedia and HMS. The single Maths Advanced hit is 2021 Q25's `q-text` at
+  399 px in a 390 px box — the 9 px padding spill already recorded on 2026-08-29, no horizontal
+  scroll and nothing clipped. Pre-existing, untouched.
+- The exact question that showed `undefined` now reports **Part (a) 2/2** against NESA's own
+  criterion *"Provides correct form and direction"*. A full flow scored **5 / 6** with
+  `(a) 2/2, (b) 2/2, (c) 0/1, (d) 1/1`, part (b) correctly falling back to generic wording because
+  its criteria row is damaged, and the model answer rendering `34.9 minutes per day` in bold.
+- Full local CI: `MC=706 Written=374 imageRefs=333 missingImages=0`, `Issues: 0`; 285 MC answers
+  and **334** written questions checked, 0 wrong, 0 unverifiable; **Standard 2 coverage still
+  235/235**; `npm test` 73/73; no console errors.
