@@ -381,12 +381,31 @@
        part. Accordion so a 4-part question stays about one screen tall on a
        phone instead of four (see docs/HISTORY.md 2026-09-05). */
     /* Sticky so a stimulus shared by every part stays on screen while the
-       student works down them. Capped, or a tall diagram eats the viewport —
-       46vh leaves the open part visible while still showing most of a graph;
-       the block scrolls, and its images open in the lightbox at full size. */
+       student works down them, capped so it can't eat the viewport.
+       A stem that does not fit the cap gets .parts-stem-tall from
+       fitPartsStem() and simply flows at its natural height instead — a
+       scrollbar nested inside a question is worse than a long question, and
+       chasing the cap with tuned numbers just moves which questions get one. */
     .parts-stem { position: sticky; top: 0; z-index: 3; max-height: 46vh; overflow-y: auto; background: var(--surface2); border: 1px solid var(--border); border-radius: 11px; padding: 12px 14px; margin: 4px 0 14px; font-size: 14px; line-height: 1.6; }
-    .parts-stem img { max-width: 100%; height: auto; display: block; margin: 10px auto; cursor: zoom-in; }
-    .part-body img { cursor: zoom-in; }
+    .parts-stem.parts-stem-tall { position: static; max-height: none; overflow-y: visible; }
+    /* Question diagrams must be bounded in BOTH directions, matching the app's
+       existing convention for `.q-image-wrap img` (min(100%,600px) / 50vh /
+       contain). max-width alone is not enough: on a wide screen the image
+       scales to the container and renders enormous — measured 1115x375px at a
+       1400px viewport — which then overflowed .parts-stem's 46vh cap and put a
+       scrollbar inside the question.
+       !important on max-width is deliberate and is the narrowest fix available:
+       every one of these images carries its own inline style="max-width:100%"
+       (see §10 — inline sizing is REQUIRED on question images because there was
+       no rule for them), and an inline declaration beats a stylesheet one. On a
+       tall window the height cap alone lets the width grow past 1000px again,
+       so the width cap has to win. Tap opens full size in the lightbox. */
+    .parts-stem img, .part-body img, .q-text img {
+      width: auto; height: auto;
+      max-width: min(100%, 600px) !important; max-height: 30vh;
+      object-fit: contain; cursor: zoom-in;
+    }
+    .parts-stem img { display: block; margin: 10px auto; }
     .parts-stem-label { font-size: 10px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin-bottom: 6px; }
     .parts-progress { font-size: 11px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); margin: 0 0 10px; }
     .part-row { display: flex; align-items: center; justify-content: space-between; gap: 8px; border: 1px solid var(--border); border-radius: 12px; padding: 12px 13px; margin-bottom: 9px; background: var(--surface); cursor: pointer; min-height: 52px; }
@@ -2167,6 +2186,7 @@ function renderQuestion() {
 
   document.getElementById('question-area').innerHTML = html;
   document.getElementById('question-area').scrollTop = 0;
+  fitPartsStem();
 
   // Previous button
   const pb = document.getElementById('prev-btn');
@@ -2416,6 +2436,23 @@ function renderPartsReview(q, val) {
     </div>`;
   }).join('');
   return `<div class="student-answer-box"><div class="student-answer-label">Your answers</div>${rows}</div>`;
+}
+
+// A shared stem is sticky and capped, but only while it actually fits. If it
+// doesn't, it flows at full height instead of scrolling inside itself. Must
+// re-run once images load — an unloaded <img> has no height, so a stem measured
+// too early looks like it fits and then overflows.
+function fitPartsStem() {
+  const stem = document.querySelector('#question-area .parts-stem');
+  if (!stem) return;
+  const check = () => {
+    stem.classList.remove('parts-stem-tall');
+    if (stem.scrollHeight > stem.clientHeight + 1) stem.classList.add('parts-stem-tall');
+  };
+  check();
+  stem.querySelectorAll('img').forEach(img => {
+    if (!img.complete) img.addEventListener('load', check, { once: true });
+  });
 }
 
 // Open a different part. Reads the DOM into state FIRST — re-rendering throws

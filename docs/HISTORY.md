@@ -3562,3 +3562,60 @@ would not survive).
 - Full local CI: `MC=706 Written=374 imageRefs=333 missingImages=0`, `Issues: 0`; 285 MC answers
   and **334** written questions checked, 0 wrong, 0 unverifiable; **Standard 2 coverage still
   235/235**; `npm test` 73/73; no console errors.
+
+---
+
+## 2026-09-05 (later still) — Question diagrams were rendering huge on wide screens; bounded properly
+
+**Reported by the owner with a screenshot**: the shared-stimulus block on a multi-part question
+showed a diagram filling the full width with a **scrollbar inside the question**. Reproduced
+immediately at a 1400px viewport: the image rendered **1115 × 375 px**, the stem's content was
+572 px against its 412 px cap, so it scrolled.
+
+**What went wrong, and it was mine.** When I added `.parts-stem img` on 2026-09-05 I wrote only
+`max-width: 100%`. The app already had a convention for question images — `.q-image-wrap img` caps
+at `min(100%, 600px)` **and** `max-height: 50vh` with `object-fit: contain` — and I did not follow
+it. With no height cap, the image scales to whatever the container is; on a wide screen that is
+enormous, and it then overflowed the `max-height: 46vh` I had put on `.parts-stem`, producing the
+nested scrollbar.
+
+**Why my verification missed it: I only ever measured at 430 px.** At phone width `max-width: 100%`
+is a perfectly good constraint and every check passed — 0 overflows, 0 clipped images. The defect
+only exists above roughly 800 px. A viewport sweep, not a single width, is the check that would
+have caught it.
+
+**Two fixes:**
+1. `.parts-stem img, .part-body img, .q-text img` are now bounded in both directions:
+   `width:auto; height:auto; max-width:min(100%,600px) !important; max-height:30vh; object-fit:contain`.
+   ⚠️ **The `!important` is load-bearing and deliberate**: every question image carries its own
+   inline `style="max-width:100%"` (§10 requires it), and an inline declaration beats a stylesheet
+   one — without `!important` the width cap silently does nothing, which is exactly what the first
+   attempt measured (image still 691 px wide, constrained only by height).
+2. A capped, scrollable box is the wrong shape for a question, and tuning the cap only moves which
+   questions get a scrollbar — measured, the tallest stem uncapped is **599 px / 67 vh** (2024 Q21,
+   table-heavy), so the cap cannot simply be removed either. New `fitPartsStem()` measures after
+   render (and again on image load, since an unloaded `<img>` has no height and makes a stem look
+   like it fits) and adds `.parts-stem-tall`, which drops `position:sticky`, the cap and the
+   overflow. **Short stems stay sticky; tall ones flow at natural height. No stem ever scrolls
+   inside itself.**
+
+**Verified at three viewport widths, not one.**
+- **1180 × 820**: Standard 2 and Advanced both **0 overflows, 0 nested scrollbars**, largest
+  question image **600 × 233**; VET re-measured with proper image-load waits — 24 images, 0 still
+  unloaded, largest **600 × 228**, none wider than the question area.
+- **1920 × 1080**: 63 shared stems across Standard 2 and VET, **0 nested scrollbars**, largest stem
+  image **600 × 324** (was 1115 × 375).
+- **430 × 900**: Standard 2 **0 overflows, 0 nested scrollbars**, largest image 360 × 140; VET and
+  Multimedia/HMS clean. The single Advanced hit is 2021 Q25's documented 9 px table spill, which is
+  a table not an image and is unchanged.
+- 9 stems at 430 px and 4 at 1920 px now flow instead of scrolling — the intended behaviour.
+- Full local CI green: `Issues: 0`, 285 MC and 334 written checks 0 wrong, `npm test` 73/73, no
+  console errors.
+
+**Side effect worth noting**: the `.q-text img` cap also removed Maths Advanced's long-standing
+2021 Q25 *image* overflow at 1180 px. Its remaining 430 px hit is the table, untouched.
+
+⚠️ **CLAUDE.md §10 was corrected.** It stated as a hard fact that `index.html` has **no
+`.q-text img` rule** and that inline sizing is the only protection. That is no longer true, and a
+future session reading the old wording would have drawn the wrong conclusion about why an image was
+sized the way it was. The rule to keep writing the inline style stands.
