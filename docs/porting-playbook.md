@@ -458,12 +458,50 @@ because it is a bank-*shape* decision, not a field-name one, and `check_written_
 being tolerant of either shape (its prefix-sum join, §6) is not permission for the rendering
 to be wrong — only the ground truth is shape-agnostic, the shuffle is not.
 
+### …and a merged question needs `parts[]`: an answer box and a mark per part
+
+**Added 2026-09-05.** Merging the parts into one card fixed the shuffle, and left the
+*answering* wrong: one textarea for a four-part, 9-mark question, scored as a single lump,
+so a student who nailed (a), (b) and (d) and skipped (c) saw `6 / 9` with nothing saying
+where the 3 marks went. **NESA's own paper prints a separate ruled answer space under every
+lettered part**, so one box per part is the faithful shape, not a UX preference.
+
+A merged entry therefore also carries, **alongside** its unchanged fields:
+
+```jsonc
+"q":     "…full combined text, UNCHANGED…",   // CI and the results screen still read this
+"stem":  "…intro shared by every part, rendered once, sticky…",   // omit if there isn't one
+"parts": [ { "label": "(a)", "marks": 2, "q": "…this part's prompt…",
+             "intro": "…optional, shared by the (a)(i)/(a)(ii) sub-parts under it…",
+             "answer": "…", "keywords": [...], "acceptableAnswers": [...],
+             "minKeywords": 2, "bandDescriptors": {...} } ]
+```
+
+- **Never empty `q`.** `validate_subjects.cjs` requires it non-empty and `check_written_key.cjs`
+  joins on the question's own `marks`, so `parts[]` is purely additive — a question without it
+  renders and scores exactly as before. The engine supports `parts[]` for every subject; a
+  subject opts in by adding the data.
+- `validate_subjects.cjs` **asserts `sum(parts[].marks) === marks`** plus unique labels and a
+  prompt/model answer/scoring mechanism per part. The per-part marks are the only ones the
+  student sees on such a question, so without that they could drift from the NESA-verified
+  total silently.
+- **Per-part `keywords` and `bandDescriptors` must be derived, not invented.** For a *new*
+  port that means authoring them from NESA's per-part criteria rows (which
+  `build_written_key.py` already extracts — §6) at the same time as the merged entry, while
+  the guidelines are open. Retro-fitting them later is a content job, which is exactly why
+  four of the five existing subjects still don't have them.
+- The AI marker takes all parts in **one** request and returns a mark per part; do not call
+  it per part, or the student's monthly quota is multiplied by the part count.
+
 ### GATE 3
 
 - [ ] Field mapping written down before any question is authored
 - [ ] Every deviation from canonical is deliberate and recorded
 - [ ] Every multi-part written question's bank shape decided by the same-page-vs-separate-
       booklet test above, before any question in that group is authored
+- [ ] Every merged multi-part entry carries `parts[]` with per-part marks, prompt, model
+      answer, keywords and NESA-derived `bandDescriptors`, and the marks sum to the
+      question total (`validate_subjects.cjs` enforces the sum)
 
 ---
 
@@ -862,6 +900,9 @@ coordination tables.
 - [ ] Every multi-part written question's bank shape decided by the same-page-vs-separate-
       booklet test (Stage 3) — never one entry per part unless NESA sends those parts to
       separate writing booklets
+- [ ] Every merged multi-part entry carries `parts[]` — per-part marks, prompt, model answer,
+      keywords and NESA-derived `bandDescriptors`, marks summing to the question total
+      (Stage 3/4), so the student gets an answer box and a mark per part
 - [ ] `validate_subjects.cjs` green, `missingImages: 0` (Stage 4/5)
 - [ ] Answer key **and** written key: 0 wrong, 0 unverifiable (Stage 6)
 - [ ] Papers reconcile to front-page totals (Stage 6)

@@ -3385,3 +3385,97 @@ no console errors. `getMC()` was deliberately left on plain `shuffle()` for ever
 Standard 2's Extended-318 MC variants share a base qNum with their original question but are
 meant to be fully independent draws, not grouped, so grouping was scoped to written mode
 only. No mark, MC answer, or review verdict was touched — `index.html` only.
+
+---
+
+## 2026-09-05 — Per-part answer boxes and per-part marks, as the engine-wide standard
+
+**What changed.** A written question that NESA prints with lettered parts now gets **an
+answer box and a mark per part**, instead of one box scored as a lump. `subjects/vet-construction.json`'s
+18 merged multi-part questions carry a new `parts[]` array; `index.html` renders them as an
+accordion with auto-advance; `functions/mark-written.js` marks every part in one API call and
+returns a mark for each; `scripts/validate_subjects.cjs` asserts the per-part marks total the
+question's own mark; `tests/mark-written.test.js` gains 6 tests. Schema and rationale are
+CLAUDE.md §10 rule 10; the gate for future ports is in `docs/porting-playbook.md` Stage 3.
+
+**Why.** The 2026-09-02 merge fixed the *card* (parts no longer scatter across a shuffled
+quiz) and left the *answering* wrong. 2024 Q19 is four parts worth 2+3+2+2; a student who
+answered (a), (b) and (d) and skipped (c) saw `6 / 9` and one paragraph of general feedback,
+with nothing saying which part cost them the 3 marks. The owner asked how a student would
+know "whether they got 5 out 5 and 5 out 10".
+
+**The design was mocked up before it was built**, twice, at the owner's request — first a
+current-vs-proposed side-by-side, then three mobile layouts (straight scroll / accordion /
+step-through) live in a 390×720 frame. Straight scroll is the most faithful to the printed
+paper but runs 2.1 screens for 2024 Q19; step-through is the most focused but forces a linear
+order, which the real paper does not. **Accordion won** — 1.0 screens, free navigation between
+parts, progress visible without scrolling — with a **Next part** button added afterwards for
+forward momentum. A shared `stem` is sticky (capped `34vh`) so a stimulus every part refers to
+stays on screen; that is what the 2021 chisel question needs, and it renders once, not four times.
+
+**Nothing in the data was authored.** Per-part marks came from the merged `q`'s own
+`<strong>(N marks)</strong>` badges; per-part `answer`/`keywords`/`acceptableAnswers`/
+`minKeywords`/`bandDescriptors` came from the **pre-merge bank recovered from git at
+`12a2c31^`**, where every part was its own entry. `scripts/archive/vet_add_parts.py` refuses to
+write unless, for every question, the split finds exactly as many parts as the pre-merge group,
+every label matches, every part's marks match its pre-merge entry, and the parts sum to the
+question total. 18/18 passed, 0 failures.
+
+**Two bugs the build itself hit, both found by running it rather than reading it:**
+- The marks badge is **not always last in a part** — on 2022 Q19(a) and Q16(a) the stimulus
+  image is printed *after* it. Anchoring the regex to end-of-segment silently reclassified
+  those parts as intros and lost them (2 of 18 questions). Fixed by not anchoring.
+- **In-progress text cannot live in `answers[]`.** `renderQuestion()` derives `answered` from
+  `answers[currentIdx] !== null`, so writing a draft there on a part toggle flipped the
+  question straight into its already-checked state on the first *Next part* click. Drafts now
+  live in `partDrafts`, and a single `saveWritten()` keeps the two in step — a second bug,
+  where a stale draft outranked a fresher committed answer after Next/Prev, showed up in
+  test-mode navigation and is fixed by the same helper.
+
+**Verified.**
+- **The scorer refactor is proven inert**: `scoreOne()` is now the single implementation of
+  the offline marking formula, shared by `buildKeywordFeedback()` and the per-part path. It
+  was compared against a reimplementation of the original inline formula over **2 280
+  comparisons** — every written question in all five subjects × six probe answers each —
+  with **0 mismatches**.
+- **All 380 written questions in all five subjects render at 430 px with 0 overflow** and a
+  marks badge on every one; VET's 18 multi-part questions were walked **part by part**, every
+  part rendered and measured. All 15 distinct part images load.
+- Real practice-mode flow driven end to end: (a)→(b)→(c)→(d) via *Next part*, progress
+  tracking 0→3 of 4, text surviving jumps back to earlier parts, then submitted for
+  **`6 / 9 marks`** with rows `(a) 2/2`, `(b) 2/3`, `(c) 0/2`, `(d) 2/2` — genuinely
+  computed, not the mockup's typed-in numbers. Part (b)'s note is NESA's own *partial*
+  band wording ("the volume of the concrete slab", against full's "minus the hole"),
+  which is exactly what that answer omitted.
+- **Single-part questions are untouched**: one `#written-input`, no accordion, keyword grid,
+  no part rows — checked on 2025 Q21.
+- Test mode: per-part editor, answers surviving Next/Prev, **still never auto-scores**, and
+  the results breakdown flattens to labelled lines (`(a) … (d) …`) with skipped parts omitted.
+- *Try again* fully resets a multi-part question; all 34 VET written questions re-rendered in
+  a loop with **0 errors**; no console errors anywhere.
+- Full local CI: `MC=706 Written=380 imageRefs=327 missingImages=0`, `Issues: 0`; 285 MC
+  answers and 340 written questions checked, 0 wrong, 0 unverifiable; VET coverage 76/76 and
+  34/34 reviewed, unchanged; 5 functions syntax-check; **`npm test` 73/73** (was 67).
+
+⚠️ **The live AI marking call was still NOT made** — there is no `ANTHROPIC_API_KEY` in this
+environment — so the multi-part marking path is verified to the prompt boundary and no
+further: the prompt is built from `mark-written.js`'s **own source**, sliced from the file,
+and carries every part with its own maximum, key concepts and band descriptors, no
+`undefined`, and an explicit instruction not to pool marks across parts. The *response*
+handling **is** covered by real tests: a part awarded more than its own maximum is clamped, a
+negative is floored at 0, an invented label is discarded, the total is derived from the parts
+rather than trusted, and a one-element `parts` array falls back to the single-question shape.
+
+**One improvement to the prompt, deliberately scoped to the new path only:** part questions
+are sent as plain text with `<img>` collapsed to `[diagram: <alt text>]`. The model cannot see
+an image, so the tag was pure noise while the alt text is a real description (3 847 → 3 584
+chars on 2024 Q19). The **single-question** prompt still sends raw HTML — left alone on
+purpose, so this change cannot move any existing question's mark.
+
+**Not done, and recorded as backlog rather than missing:** only VET carries `parts[]`.
+Mathematics Advanced (126 written), Standard 2 (151), Multimedia (29) and HMS (40) store
+multi-part questions as one merged entry with **no per-part keywords or band descriptors
+anywhere in the file**. Their per-part *marks* are recoverable from `data/answer-key/written/`,
+but the scoring data would have to be authored from NESA's criteria rows — a content job per
+subject, not a port of existing data. Those subjects keep the single box until then, which is
+exactly the behaviour they have today.

@@ -376,6 +376,38 @@
     .model-answer.show { display: block; animation: fadeUp 0.25s ease; }
     .model-answer-label { font-family: var(--font-display); font-size: 10px; font-weight: 700; letter-spacing: 2px; color: var(--accent3); text-transform: uppercase; margin-bottom: 8px; }
 
+    /* ── MULTI-PART WRITTEN QUESTIONS ──
+       One NESA question, one card, but an answer box and a mark per lettered
+       part. Accordion so a 4-part question stays about one screen tall on a
+       phone instead of four (see docs/HISTORY.md 2026-09-05). */
+    /* Sticky so a stimulus shared by every part stays on screen while the
+       student works down them. Capped, or a tall diagram eats the viewport. */
+    .parts-stem { position: sticky; top: 0; z-index: 3; max-height: 34vh; overflow-y: auto; background: var(--surface2); border: 1px solid var(--border); border-radius: 11px; padding: 12px 14px; margin: 4px 0 14px; font-size: 14px; line-height: 1.6; }
+    .parts-stem img { max-width: 100%; height: auto; display: block; margin: 10px auto; }
+    .parts-stem-label { font-size: 10px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin-bottom: 6px; }
+    .parts-progress { font-size: 11px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); margin: 0 0 10px; }
+    .part-row { display: flex; align-items: center; justify-content: space-between; gap: 8px; border: 1px solid var(--border); border-radius: 12px; padding: 12px 13px; margin-bottom: 9px; background: var(--surface); cursor: pointer; min-height: 52px; }
+    .part-open { border: 1px solid var(--accent); border-radius: 12px; margin-bottom: 9px; box-shadow: 0 0 0 2px rgba(193,125,60,0.10); overflow: hidden; }
+    .part-open .part-row { border: 0; border-radius: 0; margin: 0; box-shadow: none; }
+    .part-body { padding: 0 13px 13px; }
+    .part-label { font-family: var(--font-display); font-weight: 800; font-size: 16px; color: var(--text); }
+    .part-right { display: flex; gap: 7px; align-items: center; }
+    .part-row .marks-badge { margin-bottom: 0; }
+    .part-chip { font-size: 10px; font-weight: 700; padding: 3px 8px; border-radius: 20px; white-space: nowrap; }
+    .part-chip.done { background: rgba(123,158,107,0.16); color: #4C6B3E; }
+    .part-chip.todo { background: var(--surface2); color: var(--muted); }
+    .part-chev { color: var(--muted); font-size: 12px; }
+    .part-body .written-area { margin-top: 10px; min-height: 96px; }
+    .part-next-btn { width: 100%; margin-top: 11px; padding: 13px; border: 0; border-radius: 12px; background: var(--accent); color: #fff; font-family: var(--font-body); font-weight: 700; font-size: 15px; cursor: pointer; min-height: 52px; }
+    .part-intro { font-size: 14px; line-height: 1.6; margin-bottom: 6px; }
+    .part-score-row { display: flex; justify-content: space-between; align-items: center; border-radius: 9px; padding: 9px 11px; font-size: 13px; font-weight: 700; margin-top: 10px; }
+    .part-score-row.full { background: rgba(123,158,107,0.16); color: #4C6B3E; }
+    .part-score-row.partial { background: rgba(193,125,60,0.14); color: #9A6B25; }
+    .part-score-row.minimal { background: rgba(244,63,94,0.10); color: #9E4636; }
+    .part-score-note { font-size: 12px; color: var(--muted); line-height: 1.5; margin-top: 6px; }
+    .part-answer-shown { background: var(--surface2); border: 1px solid var(--border); border-radius: 9px; padding: 9px 11px; font-size: 13px; line-height: 1.6; white-space: pre-wrap; }
+    .part-answer-shown.empty { color: var(--muted); font-style: italic; }
+
     /* ── STUDY MODE & EXAM MODE ── */
     .study-card { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; margin-bottom: 12px; overflow: hidden; }
     .study-card-header { padding: 14px 16px; display: flex; align-items: center; gap: 10px; cursor: pointer; background: var(--surface2); border-left: 4px solid var(--study-accent, var(--accent)); }
@@ -952,6 +984,152 @@ function writtenPartInfo(subjectKey, q) {
   return { index: index + 1, total: siblings.length, base };
 }
 
+// ── MULTI-PART WRITTEN QUESTIONS ────────────────────────────────────────────
+// A NESA question printed with lettered parts, each with its own answer space
+// and its own marks, is ONE bank entry (CLAUDE.md §10 rule 9) but is answered
+// and marked part by part. A question opts in purely by carrying `parts[]`;
+// every question without it renders and scores exactly as before, so this is
+// subject-agnostic and additive. Schema per part:
+//   { label, marks, q, intro?, answer, keywords?, acceptableAnswers?,
+//     minKeywords?, bandDescriptors? }
+function isMultiPart(q) {
+  return Array.isArray(q?.parts) && q.parts.length > 1;
+}
+
+// Which part of a multi-part question is expanded, keyed by question index.
+let openPartIdx = {};
+
+// In-progress per-part text, keyed by question index. Deliberately NOT stored in
+// `answers` until the student actually submits: renderQuestion() derives
+// `answered` from `answers[currentIdx] !== null`, so parking a draft there would
+// flip the question into its already-checked state the moment they opened a
+// second part.
+let partDrafts = {};
+
+// A multi-part answer is stored as an object keyed by part label; a single-part
+// answer stays a plain string. These four helpers are the ONLY places that need
+// to know the difference — every caller goes through them.
+function blankAnswerFor(q) {
+  if (!isMultiPart(q)) return '';
+  const o = {};
+  q.parts.forEach(p => { o[p.label] = ''; });
+  return o;
+}
+function hasWrittenAnswer(val) {
+  if (typeof val === 'string') return val.trim() !== '';
+  if (val && typeof val === 'object') return Object.values(val).some(v => String(v || '').trim() !== '');
+  return false;
+}
+// Flattened plain text, for the results breakdown and progress storage.
+function writtenAnswerText(q, val) {
+  if (typeof val === 'string') return val;
+  if (!val || typeof val !== 'object') return '';
+  return (q.parts || [])
+    .filter(p => String(val[p.label] || '').trim())
+    .map(p => `${p.label} ${String(val[p.label]).trim()}`)
+    .join('\n\n');
+}
+// Reads whatever the student has typed. Only the OPEN part of a multi-part
+// question is in the DOM, so the on-screen values are layered over the saved
+// draft rather than replacing it — otherwise collapsing a part would erase it.
+function readWrittenInputs(q) {
+  if (!isMultiPart(q)) {
+    const single = document.getElementById('written-input');
+    return single ? single.value : '';
+  }
+  const out = { ...blankAnswerFor(q), ...(partDraftFor(q, currentIdx)) };
+  q.parts.forEach(p => {
+    const el = document.querySelector(`.written-area[data-part="${cssEscapeAttr(p.label)}"]`);
+    if (el) out[p.label] = el.value;
+  });
+  return out;
+}
+// Current draft for a multi-part question: the live draft if there is one,
+// otherwise whatever was already submitted.
+function partDraftFor(q, idx) {
+  if (partDrafts[idx]) return partDrafts[idx];
+  const a = answers[idx];
+  return (a && typeof a === 'object') ? a : blankAnswerFor(q);
+}
+// The one place a written answer is committed. Keeps the draft in step with it —
+// the draft takes precedence when rendering, so leaving it behind here would let
+// a stale draft overwrite a fresher saved answer after Next/Prev.
+function saveWritten(idx, val) {
+  answers[idx] = val;
+  if (val && typeof val === 'object') partDrafts[idx] = { ...val };
+}
+// Part labels are "(a)" / "(b)(i)" — safe in an attribute selector, but escape
+// quotes defensively so a future label can never break the selector.
+function cssEscapeAttr(s) { return String(s).replace(/"/g, '\\"'); }
+
+// Scores one answer against one set of expectations. This is the single
+// implementation of the offline (non-AI) marking formula — buildKeywordFeedback()
+// calls it for a whole question, and the per-part renderer calls it per part, so
+// the two can never drift. Formula is unchanged from the original inline version.
+function scoreOne(spec, studentAns) {
+  const sa = String(studentAns || '').toLowerCase();
+  const maxMark = spec.maxMark || 0;
+  if (spec.acceptableAnswers && spec.acceptableAnswers.length) {
+    const correct = spec.acceptableAnswers.some(a => sa.includes(a.toLowerCase()));
+    return {
+      kind: 'acceptable', correct, maxMark,
+      marksEarned: correct ? maxMark : 0,
+      tier: correct ? 'full' : 'minimal',
+      kwResults: [], matched: 0, percentage: correct ? 100 : 0,
+    };
+  }
+  const keywords = spec.keywords || [];
+  if (!keywords.length || maxMark <= 0) return null;
+  const minKw = spec.minKeywords || Math.ceil(keywords.length / 2);
+  const kwResults = keywords.map(kw => ({ label: kw, hit: keywordHit(kw.toLowerCase(), sa) }));
+  const matched = kwResults.filter(r => r.hit).length;
+  let marksEarned = Math.round((matched / keywords.length) * maxMark);
+  if (matched < minKw) marksEarned = Math.min(marksEarned, Math.floor(maxMark / 2));
+  const tier = marksEarned >= maxMark * 0.7 ? 'full' : marksEarned > 0 ? 'partial' : 'minimal';
+  return {
+    kind: 'keywords', maxMark, marksEarned, tier, kwResults, matched,
+    percentage: Math.round((matched / keywords.length) * 100),
+  };
+}
+
+// Default wording when a part carries no NESA-derived bandDescriptors.
+const GENERIC_BAND = {
+  full: 'Excellent — demonstrates detailed knowledge with key terminology.',
+  partial: 'Good — solid understanding, could include more specific detail.',
+  minimal: 'Developing — key concepts partially covered, review the model answer.',
+};
+function bandTextFor(spec, tier) {
+  return (spec.bandDescriptors && spec.bandDescriptors[tier]) || GENERIC_BAND[tier];
+}
+
+// Offline (no-AI) marking of a whole multi-part question: score each part
+// against its OWN keywords and marks, then total. This is what makes a per-part
+// mark real rather than cosmetic.
+function scoreAllParts(q, ansObj) {
+  const rows = q.parts.map(p => {
+    const studentAns = (ansObj && ansObj[p.label]) || '';
+    const spec = {
+      maxMark: p.marks, keywords: p.keywords, minKeywords: p.minKeywords,
+      acceptableAnswers: p.acceptableAnswers, bandDescriptors: p.bandDescriptors,
+    };
+    const attempted = String(studentAns).trim() !== '';
+    const res = attempted ? scoreOne(spec, studentAns) : null;
+    return {
+      part: p, studentAns, attempted,
+      marksEarned: res ? res.marksEarned : 0,
+      tier: res ? res.tier : 'minimal',
+      note: attempted
+        ? (res ? bandTextFor(spec, res.tier) : '')
+        : 'Not attempted — this part scores 0.',
+    };
+  });
+  return {
+    rows,
+    marksEarned: rows.reduce((t, r) => t + r.marksEarned, 0),
+    maxMark: q.parts.reduce((t, p) => t + p.marks, 0),
+  };
+}
+
 // ── NAV ──
 function goHome() {
   document.getElementById('home').style.display = 'flex';
@@ -1359,6 +1537,8 @@ function startQuiz(mode) {
   // can never surface on this one, and invalidate in-flight AI responses.
   aiResults = [];
   aiMarkingPending.clear();
+  openPartIdx = {};   // multi-part accordion state is per-quiz, like answers
+  partDrafts = {};
   trialCounted = new Set();
   quizSession++;
   document.getElementById('quiz-name').textContent = s.icon + ' ' + s.name;
@@ -1879,17 +2059,35 @@ function renderQuestion() {
     if (imgUrl2) {
       html += `<div class="q-image-wrap"><img src="${imgUrl2}" alt="Question diagram" loading="lazy" onclick="openLightbox(this.src)"/></div>`;
     }
-    html += `<div class="q-text">${formatQuestionText(q.q || q.question || q.text || '')}</div>`;
+    // A multi-part question shows only its shared stem here (often nothing);
+    // each part's own prompt renders inside that part's block below. A
+    // single-part question is unchanged: its whole stem renders here.
+    const multi = isMultiPart(q);
+    const stemHtml = multi ? (q.stem || '') : (q.q || q.question || q.text || '');
+    if (stemHtml) {
+      html += multi
+        ? `<div class="parts-stem"><div class="parts-stem-label">For all parts</div>${formatQuestionText(stemHtml)}</div>`
+        : `<div class="q-text">${formatQuestionText(stemHtml)}</div>`;
+    }
     // In test mode, always show editable textarea (never lock to model answer view)
     if (!isPracticeMode && currentMode === 'written') {
-      const savedVal = typeof answers[currentIdx] === 'string' ? answers[currentIdx] : '';
-      html += `<textarea class="written-area" id="written-input" placeholder="Write your answer here… (leave blank to skip)" rows="5">${savedVal.replace(/</g,'&lt;').replace(/>/g,'&gt;')}</textarea>`;
+      if (multi) {
+        html += renderPartsEditor(q, answers[currentIdx]);
+      } else {
+        const savedVal = typeof answers[currentIdx] === 'string' ? answers[currentIdx] : '';
+        html += `<textarea class="written-area" id="written-input" placeholder="Write your answer here… (leave blank to skip)" rows="5">${savedVal.replace(/</g,'&lt;').replace(/>/g,'&gt;')}</textarea>`;
+      }
     } else if (answered) {
-      const studentAns = typeof answers[currentIdx] === 'string' ? answers[currentIdx] : '';
+      const rawAns = answers[currentIdx];
+      const studentAns = multi ? rawAns : (typeof rawAns === 'string' ? rawAns : '');
       let feedbackHtml = '';
 
-      // Show student's own typed answer so they can compare against model answer
-      if (studentAns) {
+      // Show what the student wrote, so they can compare against the model
+      // answer. Multi-part questions show each part's own response under its
+      // own label rather than one run-together block.
+      if (multi) {
+        html += renderPartsReview(q, rawAns);
+      } else if (studentAns) {
         const saDisplay = studentAns.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/\n/g,'<br>');
         html += `<div class="student-answer-box"><div class="student-answer-label">Your answer</div><div class="student-answer-text">${saDisplay}</div></div>`;
       }
@@ -1915,12 +2113,27 @@ function renderQuestion() {
           const improvHtml = ai.improvement
             ? `<div class="ai-improvement"><div class="ai-improvement-label">To improve</div>${ai.improvement}</div>`
             : '';
+          // Per-part breakdown when the server marked each part separately.
+          // Falls back silently to the single total if it didn't.
+          const partRows = (multi && Array.isArray(ai.partResults) && ai.partResults.length)
+            ? ai.partResults.map(pr => {
+                const def = q.parts.find(p => p.label === pr.label);
+                const pMax = def ? def.marks : (pr.maxMarks || 0);
+                const got = Math.max(0, Math.min(pMax, Number(pr.marksAwarded) || 0));
+                const tier = got >= pMax ? 'full' : got > 0 ? 'partial' : 'minimal';
+                return `<div class="part-score-row ${tier}">
+                    <span>Part ${pr.label}</span><span>${got} / ${pMax}</span>
+                  </div>
+                  ${pr.feedback ? `<div class="part-score-note">${pr.feedback}</div>` : ''}`;
+              }).join('')
+            : '';
           feedbackHtml = `<div class="ai-result-box">
             <div class="ai-score-summary">
               <span class="score-big">Score: ${ai.marksAwarded} / ${maxMark} mark${maxMark !== 1 ? 's' : ''}</span>
               <span class="score-pct-pill ${pillClass}">${gradeLabel}</span>
               <span class="ai-pill">\u2736 AI marked</span>
             </div>
+            ${partRows}
             <div class="ai-feedback">${ai.feedback}</div>
             ${improvHtml}
             ${remainNote}
@@ -1940,6 +2153,10 @@ function renderQuestion() {
         <div class="model-answer-label">Model Answer</div>
         ${ansHtml}
       </div>`;
+    } else if (multi) {
+      // Practice mode, not yet checked \u2014 same per-part editor as test mode,
+      // carrying anything already typed (a part toggle re-renders the DOM).
+      html += renderPartsEditor(q, answers[currentIdx]);
     } else {
       html += `<textarea class="written-area" id="written-input" placeholder="Write your answer here\u2026" rows="5"></textarea>`;
     }
@@ -2029,19 +2246,18 @@ function prevQuestion() {
   if (currentIdx > 0) {
     // In written test mode, save current textarea before going back
     if (!isPracticeMode && currentMode === 'written') {
-      const input = document.getElementById('written-input');
-      if (input) answers[currentIdx] = input.value;
+      saveWritten(currentIdx, readWrittenInputs(activeQuestions[currentIdx]));
     }
     currentIdx--;
     answered = !isPracticeMode && currentMode === 'written'
-      ? typeof answers[currentIdx] === 'string'
+      ? (answers[currentIdx] !== null && answers[currentIdx] !== undefined)
       : answers[currentIdx] !== null;
     renderQuestion();
   }
 }
 
 function showSubmitTestModal() {
-  const answered_count = answers.filter(a => typeof a === 'string' && a.trim() !== '').length;
+  const answered_count = answers.filter(a => hasWrittenAnswer(a)).length;
   const skipped = activeQuestions.length - answered_count;
   const modal = document.getElementById('reset-modal');
   const title = document.getElementById('reset-modal-title');
@@ -2078,8 +2294,13 @@ function clearWrittenAnswer() {
   aiMarkingPending.delete(currentIdx);
   answers[currentIdx] = null;  // null = unanswered; '' would make renderQuestion() treat it as answered
   answered = false;
+  openPartIdx[currentIdx] = 0; // reopen a multi-part question at part (a)
+  delete partDrafts[currentIdx];
   renderQuestion();
-  setTimeout(() => { const inp = document.getElementById('written-input'); if (inp) inp.focus(); }, 50);
+  setTimeout(() => {
+    const inp = document.querySelector('#written-input, .part-open .written-area');
+    if (inp) inp.focus();
+  }, 50);
 }
 
 // ── KEYWORD HIT — stem matching ──────────────────────────────────────
@@ -2102,17 +2323,20 @@ function keywordHit(kw, sa) {
 
 // ── BUILD KEYWORD FEEDBACK (immediate self-assessment) ───────────────
 function buildKeywordFeedback(q, studentAns) {
-  const sa = studentAns.toLowerCase();
+  // Multi-part questions are scored part by part against each part's own
+  // keywords and marks, then totalled.
+  if (isMultiPart(q)) return buildPartFeedback(q, studentAns);
   if (q.acceptableAnswers && q.acceptableAnswers.length) {
     const maxMark = q.maxMark || q.marks || 1;
-    const correct = q.acceptableAnswers.some(a => sa.includes(a.toLowerCase()));
+    const res = scoreOne({ maxMark, acceptableAnswers: q.acceptableAnswers }, studentAns);
+    const correct = res.correct;
     const pillClass = correct ? 'pill-excellent' : 'pill-developing';
     const feedbackText = q.bandDescriptors
         ? (correct ? q.bandDescriptors.full : q.bandDescriptors.minimal)
         : (correct ? 'Correct!' : 'Check the model answer for the correct response.');
     return `<div class="written-score-box">
       <div class="score-summary">
-        <span class="score-big">Score: ${correct ? maxMark : 0} / ${maxMark} mark${maxMark > 1 ? 's' : ''}</span>
+        <span class="score-big">Score: ${res.marksEarned} / ${maxMark} mark${maxMark > 1 ? 's' : ''}</span>
         <span class="score-pct-pill ${pillClass}">${correct ? '\u2713 Correct' : '\u2717 Incorrect'}</span>
       </div>
       ${feedbackText ? `<div class="score-feedback-text">${feedbackText}</div>` : ''}
@@ -2120,22 +2344,12 @@ function buildKeywordFeedback(q, studentAns) {
     </div>`;
   }
   if (q.keywords && q.keywords.length) {
-    const maxMark  = q.maxMark || q.marks || 0;
-    const minKw    = q.minKeywords || Math.ceil(q.keywords.length / 2);
-    const kwResults = q.keywords.map(kw => ({ label: kw, hit: keywordHit(kw.toLowerCase(), sa) }));
-    const matched   = kwResults.filter(r => r.hit).length;
-    const percentage = Math.round((matched / q.keywords.length) * 100);
-    if (maxMark > 0) {
-      let marksEarned = Math.round((matched / q.keywords.length) * maxMark);
-      if (matched < minKw) marksEarned = Math.min(marksEarned, Math.floor(maxMark / 2));
-      const grade     = marksEarned >= maxMark * 0.7 ? 'correct' : marksEarned > 0 ? 'partial' : 'wrong';
-      const tier      = grade === 'correct' ? 'full' : grade === 'partial' ? 'partial' : 'minimal';
-      const pillClass = grade === 'correct' ? 'pill-excellent' : grade === 'partial' ? 'pill-good' : 'pill-developing';
-      const feedbackText = q.bandDescriptors ? q.bandDescriptors[tier]
-          : grade === 'correct' ? 'Excellent \u2014 demonstrates detailed knowledge with key terminology.'
-          : grade === 'partial' ? 'Good \u2014 solid understanding, could include more specific detail.'
-          : 'Developing \u2014 key concepts partially covered, review the model answer.';
-      const checklistHTML = kwResults.map((r, i) =>
+    const maxMark = q.maxMark || q.marks || 0;
+    const res = scoreOne({ maxMark, keywords: q.keywords, minKeywords: q.minKeywords }, studentAns);
+    if (res) {
+      const pillClass = res.tier === 'full' ? 'pill-excellent' : res.tier === 'partial' ? 'pill-good' : 'pill-developing';
+      const feedbackText = q.bandDescriptors ? q.bandDescriptors[res.tier] : GENERIC_BAND[res.tier];
+      const checklistHTML = res.kwResults.map((r, i) =>
           `<div class="kw-item ${r.hit ? 'kw-hit' : 'kw-miss'}">
             <span class="kw-icon">${r.hit ? '\u2713' : '\u2717'}</span>
             <span class="kw-label">${i + 1}. ${r.label}</span>
@@ -2143,8 +2357,8 @@ function buildKeywordFeedback(q, studentAns) {
       ).join('');
       return `<div class="written-score-box">
         <div class="score-summary">
-          <span class="score-big">Score: ${marksEarned} / ${maxMark} marks</span>
-          <span class="score-pct-pill ${pillClass}">${percentage}% matched</span>
+          <span class="score-big">Score: ${res.marksEarned} / ${maxMark} marks</span>
+          <span class="score-pct-pill ${pillClass}">${res.percentage}% matched</span>
         </div>
         <div class="score-feedback-text">${feedbackText}</div>
         ${!MATHS_SUBJECT_KEYS.includes(currentSubjectKey) ? `<div class="concepts-heading">Key Concepts</div><div class="keyword-checklist">${checklistHTML}</div>` : ''}
@@ -2153,6 +2367,97 @@ function buildKeywordFeedback(q, studentAns) {
     }
   }
   return '';
+}
+
+// Accordion editor: one collapsible block per NESA part, each with its own
+// answer box. Keeps a four-part question about one screen tall on a phone
+// rather than four, while still letting the student jump between parts the way
+// they would flip between them on the printed paper.
+function renderPartsEditor(q, val) {
+  const ans = partDrafts[currentIdx] || ((val && typeof val === 'object') ? val : blankAnswerFor(q));
+  const openIdx = Math.min(openPartIdx[currentIdx] ?? 0, q.parts.length - 1);
+  const doneCount = q.parts.filter(p => String(ans[p.label] || '').trim()).length;
+  let h = `<div class="parts-progress">${doneCount} of ${q.parts.length} parts answered</div>`;
+  q.parts.forEach((p, i) => {
+    const done = String(ans[p.label] || '').trim() !== '';
+    const isOpen = i === openIdx;
+    const row = `<div class="part-row" onclick="togglePart(${i})">
+        <span class="part-label">${p.label}</span>
+        <span class="part-right">
+          <span class="marks-badge">${p.marks} mark${p.marks > 1 ? 's' : ''}</span>
+          <span class="part-chip ${done ? 'done' : 'todo'}">${done ? 'Answered' : 'Not answered'}</span>
+          <span class="part-chev">${isOpen ? '▾' : '▸'}</span>
+        </span></div>`;
+    if (!isOpen) { h += row; return; }
+    const safe = String(ans[p.label] || '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+    h += `<div class="part-open">${row}<div class="part-body">
+      ${p.intro ? `<div class="part-intro">${formatQuestionText(p.intro)}</div>` : ''}
+      <div class="q-text">${formatQuestionText(p.q)}</div>
+      <textarea class="written-area" data-part="${p.label}" placeholder="Write your answer for part ${p.label}…" rows="4">${safe}</textarea>
+      ${i < q.parts.length - 1 ? `<button class="part-next-btn" onclick="nextPart(${i + 1})">Next part →</button>` : ''}
+    </div></div>`;
+  });
+  return h;
+}
+
+// After checking: what the student wrote, kept under its own part label rather
+// than run together into one block.
+function renderPartsReview(q, val) {
+  const ans = (val && typeof val === 'object') ? val : {};
+  const rows = q.parts.map(p => {
+    const raw = String(ans[p.label] || '').trim();
+    const safe = raw.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+    return `<div style="margin-bottom:8px">
+      <div class="student-answer-label">Part ${p.label} · ${p.marks} mark${p.marks > 1 ? 's' : ''}</div>
+      <div class="part-answer-shown${raw ? '' : ' empty'}">${raw ? safe : 'Left blank'}</div>
+    </div>`;
+  }).join('');
+  return `<div class="student-answer-box"><div class="student-answer-label">Your answers</div>${rows}</div>`;
+}
+
+// Open a different part. Reads the DOM into state FIRST — re-rendering throws
+// the textareas away, so anything typed and not yet saved would be lost.
+function togglePart(i) {
+  const q = activeQuestions[currentIdx];
+  if (!isMultiPart(q)) return;
+  partDrafts[currentIdx] = readWrittenInputs(q);
+  openPartIdx[currentIdx] = i;
+  renderQuestion();
+}
+
+// Auto-advance. Scrolls the newly opened part up under the shared stem —
+// explicitly, because scrollIntoView does not reliably move a nested scroller,
+// and a sticky stem would otherwise sit over the row.
+function nextPart(i) {
+  togglePart(i);
+  const area = document.getElementById('question-area');
+  const open = area && area.querySelector('.part-open');
+  if (!area || !open) return;
+  const stem = area.querySelector('.parts-stem');
+  const pad = (stem ? stem.getBoundingClientRect().height : 0) + 10;
+  area.scrollTo({ top: Math.max(0, open.offsetTop - area.offsetTop - pad), behavior: 'smooth' });
+}
+
+// Offline per-part result: a total, then a row per part with its own mark and
+// the band wording NESA's criteria produced for that part.
+function buildPartFeedback(q, ansObj) {
+  const s = scoreAllParts(q, ansObj);
+  const pct = s.maxMark ? Math.round((s.marksEarned / s.maxMark) * 100) : 0;
+  const pillClass = pct >= 70 ? 'pill-excellent' : pct > 0 ? 'pill-good' : 'pill-developing';
+  const rowsHtml = s.rows.map(r => `
+    <div class="part-score-row ${r.tier}">
+      <span>Part ${r.part.label}</span>
+      <span>${r.marksEarned} / ${r.part.marks}</span>
+    </div>
+    ${r.note ? `<div class="part-score-note">${r.note}</div>` : ''}`).join('');
+  return `<div class="written-score-box">
+    <div class="score-summary">
+      <span class="score-big">Score: ${s.marksEarned} / ${s.maxMark} marks</span>
+      <span class="score-pct-pill ${pillClass}">${pct}%</span>
+    </div>
+    ${rowsHtml}
+    <button class="written-clear-btn" onclick="clearWrittenAnswer()">\u21a9 Try again</button>
+  </div>`;
 }
 
 // ── AI MARKING ─────────────────────────────────────────────────
@@ -2173,9 +2478,22 @@ async function tryAiMarking(questionIdx, q, studentAnswer) {
         question:        q.q || q.question || q.text || '',
         maxMarks:        q.maxMark || q.marks || 0,
         keywords:        q.keywords || [],
-        studentAnswer:   studentAnswer,
+        // Flattened text is still sent so the server has a single studentAnswer
+        // to fall back on; `parts` is what drives per-part marking.
+        studentAnswer:   writtenAnswerText(q, studentAnswer),
         bandDescriptors: q.bandDescriptors || null,
         subject:         currentSubjectKey,
+        // Multi-part: every part goes in ONE request, and the server returns a
+        // mark per part. Deliberately not one call per part — that would
+        // multiply the student's monthly AI-marking quota by the part count.
+        parts: isMultiPart(q) ? q.parts.map(p => ({
+          label:           p.label,
+          question:        [p.intro, p.q].filter(Boolean).join(' '),
+          maxMarks:        p.marks,
+          keywords:        p.keywords || p.acceptableAnswers || [],
+          bandDescriptors: p.bandDescriptors || null,
+          studentAnswer:   String((studentAnswer && studentAnswer[p.label]) || ''),
+        })) : null,
       }),
     });
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
@@ -2196,8 +2514,7 @@ async function tryAiMarking(questionIdx, q, studentAnswer) {
 function nextQuestion() {
   // Written + TEST mode: free navigation — save silently, no AI marking, submit on last Q
   if (!isPracticeMode && currentMode === 'written') {
-    const input = document.getElementById('written-input');
-    answers[currentIdx] = input ? input.value : '';
+    saveWritten(currentIdx, readWrittenInputs(activeQuestions[currentIdx]));
     const isLast = currentIdx + 1 >= activeQuestions.length;
     if (isLast) {
       // Show confirm modal before revealing results
@@ -2205,17 +2522,19 @@ function nextQuestion() {
       return;
     }
     currentIdx++;
-    answered = typeof answers[currentIdx] === 'string';
+    answered = answers[currentIdx] !== null && answers[currentIdx] !== undefined;
     renderQuestion();
     return;
   }
 
   // Written + PRACTICE mode: force answer before advancing
   if (currentMode === 'written' && !answered) {
-    const input = document.getElementById('written-input');
-    const val = input ? input.value.trim() : '';
-    if (!val) {
-      // Empty submission — shake the textarea and bail
+    const qNow = activeQuestions[currentIdx];
+    const val = readWrittenInputs(qNow);
+    if (!hasWrittenAnswer(val)) {
+      // Nothing written anywhere — shake the box (the open one, on a
+      // multi-part question) and bail.
+      const input = document.querySelector('#written-input, .part-open .written-area');
       if (input) {
         input.classList.remove('shake');
         void input.offsetWidth; // force reflow to restart animation
@@ -2225,12 +2544,12 @@ function nextQuestion() {
       }
       return;
     }
-    answers[currentIdx] = val;
+    saveWritten(currentIdx, typeof val === 'string' ? val.trim() : val);
     answered = true;
     renderQuestion();
     // Fire AI marking in the background (non-blocking, silent fallback)
     const _q = activeQuestions[currentIdx];
-    if (answers[currentIdx] && currentUser && (_q.keywords || _q.acceptableAnswers)) {
+    if (answers[currentIdx] && currentUser && (_q.keywords || _q.acceptableAnswers || isMultiPart(_q))) {
       tryAiMarking(currentIdx, _q, answers[currentIdx]);
     }
     return;
@@ -2330,7 +2649,9 @@ function showResults() {
     let bhtml = '<div style="text-align:left;margin-top:16px">';
     bhtml += '<div style="font-family:var(--font-display);font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:10px">Your Responses</div>';
     activeQuestions.forEach((q, i) => {
-      const studentAns = (answers[i] || '').trim();
+      // A multi-part answer is an object keyed by part label — flatten it to
+      // labelled lines so each part's response stays attributed.
+      const studentAns = writtenAnswerText(q, answers[i] || '').trim();
       const skipped = !studentAns;
       // Escape the student's free-text answer before injecting into innerHTML
       const saSafe = studentAns.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');

@@ -80,6 +80,40 @@ for (const file of files) {
       const imgs = q.q.match(/<img[^>]+src="([^"]+)"/g) || [];
       imgs.forEach(tag => { const m = tag.match(/src="([^"]+)"/); if (m) checkImg(m[1], ctx + ' inline img'); });
     }
+
+    // ── Multi-part written questions (CLAUDE.md §10 rule 9) ──
+    // A question carrying parts[] is answered and marked part by part. The
+    // per-part marks are the only ones the student ever sees on such a
+    // question, so they must total the question's own mark — which
+    // check_written_key.cjs verifies against NESA. Without this assertion the
+    // two could drift and nothing would report it.
+    if (q.parts !== undefined) {
+      if (!Array.isArray(q.parts) || q.parts.length < 2) {
+        warn(file, `${ctx}: parts must be an array of 2 or more (got ${Array.isArray(q.parts) ? q.parts.length : typeof q.parts})`);
+      } else {
+        const seen = new Set();
+        let sum = 0;
+        q.parts.forEach((p, j) => {
+          const pctx = `${ctx} parts[${j}]`;
+          if (typeof p.label !== 'string' || !p.label.trim()) warn(file, `${pctx}: missing/empty label`);
+          else if (seen.has(p.label)) warn(file, `${pctx}: duplicate label ${p.label}`);
+          else seen.add(p.label);
+          if (!Number.isInteger(p.marks) || p.marks < 1) warn(file, `${pctx}: marks must be a positive integer (got ${p.marks})`);
+          else sum += p.marks;
+          if (typeof p.q !== 'string' || !p.q.trim()) warn(file, `${pctx}: missing/empty q`);
+          if (!p.keywords?.length && !p.acceptableAnswers?.length) warn(file, `${pctx}: no scoring mechanism (keywords or acceptableAnswers)`);
+          if (!p.answer) warn(file, `${pctx}: no model answer`);
+          [p.q, p.intro].forEach(html => {
+            if (!html) return;
+            const imgs = html.match(/<img[^>]+src="([^"]+)"/g) || [];
+            imgs.forEach(tag => { const m = tag.match(/src="([^"]+)"/); if (m) checkImg(m[1], `${pctx} inline img`); });
+          });
+        });
+        const qMarks = q.marks || q.maxMark || q.totalMarks || 0;
+        if (sum !== qMarks) warn(file, `${ctx}: parts marks total ${sum} but question is ${qMarks}`);
+      }
+    }
+    if (q.stem !== undefined && !q.parts) warn(file, `${ctx}: has stem but no parts[]`);
   });
 }
 

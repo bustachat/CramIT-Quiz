@@ -38,6 +38,13 @@ export async function onRequestPost(context) {
   const { question, maxMarks, keywords, studentAnswer, bandDescriptors, subject } = body;
   const userId = user.id; // verified — never from the body
 
+  // A multi-part NESA question sends every lettered part in this ONE request and
+  // gets a mark back for each. Deliberately not one request per part: that would
+  // multiply the student's monthly quota by the part count for no extra value.
+  const parts = Array.isArray(body.parts) && body.parts.length > 1
+    ? body.parts.filter(p => p && p.label && Number(p.maxMarks) > 0)
+    : null;
+
   if (!question || !studentAnswer || !maxMarks) {
     return new Response(
       JSON.stringify({ error: 'Missing required fields: question, maxMarks, studentAnswer' }),
@@ -109,7 +116,71 @@ export async function onRequestPost(context) {
 
   const systemPrompt = `You are an expert HSC marker for NSW students. You mark written responses fairly and constructively, following NESA marking guidelines. Always respond with valid JSON only — no prose outside the JSON object.`;
 
-  const userPrompt = `Mark the following student response to an HSC ${subject || 'written'} question.
+  const userPrompt = parts
+    ? buildPartsPrompt(parts, subject)
+    : buildSinglePrompt({ question, maxMarks, keywordList, bandContext, studentAnswer, subject });
+
+  // ── 4. Call Claude API ─────────────────────────────────────────────────
+  let aiResponse;
+  try {
+    aiResponse = await callClaude(systemPrompt, userPrompt, ANTHROPIC_API_KEY, parts ? 1024 : 512);
+  } catch (err) {
+    console.error('mark-written: Claude API error:', err.message);
+    return new Response(JSON.stringify({ error: 'AI marking unavailable' }), { status: 500, headers: CORS });
+  }
+
+  // ── 5. Increment quota counter ─────────────────────────────────────────
+  try {
+    await incrementQuota(userId, daysSinceReset >= 30, SUPABASE_URL, SUPABASE_SERVICE_KEY);
+  } catch (err) {
+    console.error('mark-written: quota increment error:', err.message);
+  }
+
+  const marksRemaining = quota - aiMarksUsed - 1;
+
+  if (parts) {
+    // Clamp each part to its own maximum, and derive the total from the parts
+    // rather than trusting a separately-stated total to add up.
+    const byLabel = new Map(parts.map(p => [String(p.label), p]));
+    const partResults = (aiResponse.partResults || [])
+      .filter(pr => byLabel.has(String(pr.label)))
+      .map(pr => {
+        const def = byLabel.get(String(pr.label));
+        const max = Number(def.maxMarks);
+        const got = Math.max(0, Math.min(max, Math.round(Number(pr.marksAwarded) || 0)));
+        return { label: String(pr.label), marksAwarded: got, maxMarks: max, feedback: pr.feedback || '' };
+      });
+    const totalMax = parts.reduce((t, p) => t + Number(p.maxMarks), 0);
+    const totalGot = partResults.reduce((t, p) => t + p.marksAwarded, 0);
+    const pct = totalMax ? totalGot / totalMax : 0;
+    return new Response(JSON.stringify({
+      aiMarked:       true,
+      marksAwarded:   totalGot,
+      maxMarks:       totalMax,
+      grade:          pct >= 0.85 ? 'excellent' : pct >= 0.5 ? 'good' : 'developing',
+      feedback:       aiResponse.feedback || '',
+      improvement:    aiResponse.improvement || '',
+      partResults,
+      marksRemaining: Math.max(0, marksRemaining),
+    }), { status: 200, headers: { 'Content-Type': 'application/json', ...CORS } });
+  }
+
+  return new Response(JSON.stringify({
+    aiMarked:         true,
+    marksAwarded:     aiResponse.marksAwarded,
+    maxMarks:         maxMarks,
+    grade:            aiResponse.grade,
+    feedback:         aiResponse.feedback,
+    improvement:      aiResponse.improvement,
+    keyConceptsFound: aiResponse.keyConceptsFound || [],
+    marksRemaining:   Math.max(0, marksRemaining),
+  }), { status: 200, headers: { 'Content-Type': 'application/json', ...CORS } });
+}
+
+// ── Prompt builders ──────────────────────────────────────────────────────────
+
+function buildSinglePrompt({ question, maxMarks, keywordList, bandContext, studentAnswer, subject }) {
+  return `Mark the following student response to an HSC ${subject || 'written'} question.
 
 QUESTION: ${question}
 MAXIMUM MARKS: ${maxMarks}
@@ -132,35 +203,63 @@ Grading guide:
 - "developing": 0–${Math.floor(maxMarks * 0.4)} marks (key concepts missing or incorrect)
 
 Return ONLY the JSON object. No markdown, no explanation.`;
+}
 
-  // ── 4. Call Claude API ─────────────────────────────────────────────────
-  let aiResponse;
-  try {
-    aiResponse = await callClaude(systemPrompt, userPrompt, ANTHROPIC_API_KEY);
-  } catch (err) {
-    console.error('mark-written: Claude API error:', err.message);
-    return new Response(JSON.stringify({ error: 'AI marking unavailable' }), { status: 500, headers: CORS });
-  }
+// Question stems carry inline HTML — diagrams especially. The model cannot see
+// an image, so the <img> tag is pure noise, but its alt text is a description of
+// the diagram and is worth keeping. Tables collapse to their cell text.
+// (The single-question prompt still sends raw HTML; left as-is deliberately so
+// this change cannot move any existing question's mark.)
+function plainText(html) {
+  return String(html || '')
+    .replace(/<img[^>]*\balt="([^"]*)"[^>]*>/gi, (_, alt) => (alt ? ` [diagram: ${alt}] ` : ' '))
+    .replace(/<img[^>]*>/gi, ' ')
+    .replace(/<br\s*\/?>/gi, '\n')
+    .replace(/<\/(p|div|tr|li)>/gi, '\n')
+    .replace(/<\/t[dh]>/gi, ' | ')
+    .replace(/<[^>]+>/g, '')
+    .replace(/&nbsp;/g, ' ').replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>')
+    .replace(/[ \t]+/g, ' ')
+    .replace(/\n{3,}/g, '\n\n')
+    .trim();
+}
 
-  // ── 5. Increment quota counter ─────────────────────────────────────────
-  try {
-    await incrementQuota(userId, daysSinceReset >= 30, SUPABASE_URL, SUPABASE_SERVICE_KEY);
-  } catch (err) {
-    console.error('mark-written: quota increment error:', err.message);
-  }
+// Multi-part: every part in one prompt, one mark back per part. NESA marks each
+// part against its own criteria, so each part carries its own max, key concepts
+// and band descriptors here rather than being pooled.
+function buildPartsPrompt(parts, subject) {
+  const total = parts.reduce((t, p) => t + Number(p.maxMarks), 0);
+  const blocks = parts.map(p => {
+    const kw = (p.keywords || []).join(', ') || 'See question context';
+    const band = p.bandDescriptors
+      ? `\nBAND DESCRIPTORS — full: ${p.bandDescriptors.full} | partial: ${p.bandDescriptors.partial} | minimal: ${p.bandDescriptors.minimal}`
+      : '';
+    const ans = String(p.studentAnswer || '').trim();
+    return `PART ${p.label} (${p.maxMarks} marks)
+QUESTION: ${plainText(p.question)}
+KEY CONCEPTS EXPECTED: ${kw}${band}
+STUDENT ANSWER: ${ans ? `"${ans}"` : '(left blank — award 0)'}`;
+  }).join('\n\n');
 
-  const marksRemaining = quota - aiMarksUsed - 1;
+  return `Mark the following student response to an HSC ${subject || 'written'} question. The question has ${parts.length} parts, worth ${total} marks in total. Mark EACH PART SEPARATELY against its own maximum and its own criteria — do not pool the marks, and do not let a strong answer on one part raise the mark on another.
 
-  return new Response(JSON.stringify({
-    aiMarked:         true,
-    marksAwarded:     aiResponse.marksAwarded,
-    maxMarks:         maxMarks,
-    grade:            aiResponse.grade,
-    feedback:         aiResponse.feedback,
-    improvement:      aiResponse.improvement,
-    keyConceptsFound: aiResponse.keyConceptsFound || [],
-    marksRemaining:   Math.max(0, marksRemaining),
-  }), { status: 200, headers: { 'Content-Type': 'application/json', ...CORS } });
+${blocks}
+
+Return a JSON object with exactly these fields:
+{
+  "partResults": [
+${parts.map(p => `    { "label": "${p.label}", "marksAwarded": <integer 0–${p.maxMarks}>, "feedback": "<1–2 sentences on THIS part only: what earned the marks, or what was missing. Do not quote the student's words back.>" }`).join(',\n')}
+  ],
+  "feedback": "<2–3 sentences on the response as a whole, naming which parts were strongest and weakest.>",
+  "improvement": "<1–2 sentences: the single most important thing to fix, naming the part it belongs to. If all parts are at full marks, write 'Great response — aim to maintain this level of detail in your exam.'>"
+}
+
+Rules:
+- Return one entry in "partResults" for every part listed above, in the same order, using the exact label strings.
+- A blank answer scores 0 for that part.
+- "marksAwarded" must never exceed that part's own maximum.
+
+Return ONLY the JSON object. No markdown, no explanation.`;
 }
 
 // ── Helpers ──────────────────────────────────────────────────────────────────
@@ -228,7 +327,7 @@ async function incrementQuota(userId, resetMonth, supabaseUrl, serviceKey) {
   }
 }
 
-async function callClaude(systemPrompt, userPrompt, apiKey) {
+async function callClaude(systemPrompt, userPrompt, apiKey, maxTokens = 512) {
   const res = await fetch('https://api.anthropic.com/v1/messages', {
     method:  'POST',
     headers: {
@@ -244,7 +343,9 @@ async function callClaude(systemPrompt, userPrompt, apiKey) {
       // claude-haiku-4-5: 10x cheaper than sonnet, sufficient for structured JSON marking.
       // Switch back to claude-sonnet-4-6 if marking quality complaints arise.
       model:      'claude-haiku-4-5',
-      max_tokens: 512,
+      // 512 for a single question; a multi-part question returns one feedback
+      // line per part as well as the overall pair, so it needs more headroom.
+      max_tokens: maxTokens,
       // Cache the system prompt — it never changes between calls.
       system: [{ type: 'text', text: systemPrompt, cache_control: { type: 'ephemeral' } }],
       messages: [{ role: 'user', content: userPrompt }],

@@ -1431,7 +1431,109 @@
         "full": "Correctly identifies the chisel, describes TWO suitable uses, ONE consequence of poor maintenance, and both care and maintenance procedures in detail",
         "partial": "Identifies the chisel and describes uses, a consequence and care/maintenance with reasonable but incomplete detail",
         "minimal": "Provides limited relevant information addressing one or two parts of the question"
-      }
+      },
+      "stem": "A tool is shown.<img src=\"/diagrams/vet-construction_2021_Q16_stimulus.jpg\" alt=\"A chisel with a bevelled cutting edge and wooden handle\" style=\"max-width:100%;height:auto;display:block;margin:14px auto\">",
+      "parts": [
+        {
+          "label": "(a)",
+          "marks": 1,
+          "q": "Name the tool shown.",
+          "answer": "Chisel (Firmer chisel, Bevelled-edge chisel, or Mortice chisel are all acceptable answers).",
+          "keywords": [
+            "chisel",
+            "firmer",
+            "bevelled",
+            "mortice",
+            "mortise"
+          ],
+          "acceptableAnswers": [
+            "chisel",
+            "firmer",
+            "bevelled",
+            "mortice",
+            "mortise"
+          ],
+          "minKeywords": 1,
+          "bandDescriptors": {
+            "full": "Correctly identifies a chisel",
+            "partial": "Does not correctly identify a chisel. The mark is awarded in full or not at all.",
+            "minimal": "Does not correctly identify a chisel. The mark is awarded in full or not at all."
+          }
+        },
+        {
+          "label": "(b)",
+          "marks": 2,
+          "q": "Describe TWO suitable uses for this tool.",
+          "answer": "A chisel can be used to: (1) Cut joints such as rebates, housings, mortices and dovetails by paring or chopping timber with a mallet. (2) Clean out recesses for hinges, locks and strike plates to ensure they sit flush with the timber surface. Other acceptable uses include: fitting and trimming joints in timber framing, removing glue squeeze-out from joints, or paring end grain for a clean fit.",
+          "keywords": [
+            "joint",
+            "rebate",
+            "housing",
+            "mortice",
+            "hinge",
+            "lock",
+            "pare",
+            "trim",
+            "cut",
+            "timber"
+          ],
+          "minKeywords": 3,
+          "bandDescriptors": {
+            "full": "Outlines TWO suitable uses for a chisel",
+            "partial": "Outlines ONE suitable use for a chisel",
+            "minimal": "Outlines ONE suitable use for a chisel"
+          }
+        },
+        {
+          "label": "(c)",
+          "marks": 2,
+          "q": "Describe ONE consequence if this tool is poorly maintained.",
+          "answer": "A poorly maintained chisel becomes blunt, and a blunt chisel is both unsafe and inefficient.<br><br><strong>Safety:</strong> a blunt edge needs far more force to drive, so it is much more likely to skid off the timber and strike the user's hand — blunt tools cause more injuries than sharp ones.<br><strong>Quality and cost:</strong> a blunt chisel tears rather than slices the fibres, leaving a rough, inaccurate cut and a poor finish. It also takes longer to complete the same work, which increases labour time and therefore the cost of the job.",
+          "keywords": [
+            "blunt",
+            "unsafe",
+            "injury",
+            "force",
+            "slip",
+            "finish",
+            "quality",
+            "time",
+            "cost"
+          ],
+          "minKeywords": 3,
+          "bandDescriptors": {
+            "full": "Describes one consequence of a poorly maintained chisel",
+            "partial": "Provides some relevant information",
+            "minimal": "Provides some relevant information"
+          }
+        },
+        {
+          "label": "(d)",
+          "marks": 3,
+          "q": "Describe both care and maintenance procedures that should be carried out to ensure the long life of this tool.",
+          "answer": "<strong>Care</strong> — use the chisel only for the work it is designed for: cutting joints and paring timber. It should never be used to open paint tins, lever or remove nails, or cut masonry. Strike it only with an appropriate mallet or hammer, and store it so the cutting edge is protected — in a roll, rack or guard rather than loose in a toolbox where the edge will be chipped.<br><br><strong>Maintenance</strong> — keep the edge sharp by grinding to restore the bevel, then honing on an oilstone and stropping to remove the burr (deburring). Check that the ferrule is secure and in place so the handle does not split, and inspect the handle for damage, replacing it as needed.",
+          "keywords": [
+            "care",
+            "intended",
+            "store",
+            "protect",
+            "edge",
+            "mallet",
+            "maintenance",
+            "grind",
+            "hone",
+            "strop",
+            "ferrule",
+            "handle"
+          ],
+          "minKeywords": 5,
+          "bandDescriptors": {
+            "full": "Describes both care and maintenance procedures",
+            "partial": "Outlines care and/or maintenance procedures",
+            "minimal": "Provides some relevant information"
+          }
+        }
+      ]
     },
     {
       "year": 2021,
@@ -1515,7 +1617,107 @@
         "full": "Correctly calculates the labour cost, the perimeter and the volume of concrete (with 10% wastage), and describes a range of WHS factors in detail",
         "partial": "Shows correct working for some calculations and describes some relevant WHS factors, with minor errors or omissions",
         "minimal": "Shows a relevant calculation or identifies a WHS consideration"
-      }
+      },
+      "stem": "A concrete slab is to be laid for an outdoor picnic table as shown.<img src=\"/diagrams/vet-construction_2021_Q18_stimulus.jpg\" alt=\"A rectangular concrete slab with a semicircular end, dimensioned 6 m by 5 m\" style=\"max-width:100%;height:auto;display:block;margin:14px auto\">",
+      "parts": [
+        {
+          "label": "(a)",
+          "marks": 2,
+          "q": "One tradesperson and one apprentice are required to complete the formwork for this project. The total time to complete this task will be 2.5 hours each.<br>The tradesperson charges $62.00 per hour and the apprentice charges $21.00 per hour. These prices include GST.<br>What is the total labour cost for this project?",
+          "answer": "Cost each worker separately, then add:<br><br>Tradesperson: 2.5 × $62.00 = <strong>$155.00</strong><br>Apprentice: 2.5 × $21.00 = <strong>$52.50</strong><br>Total labour cost = $155.00 + $52.50 = <strong>$207.50</strong><br><br>Or combine the rates first, since both work the same 2.5 hours: $62.00 + $21.00 = $83.00 per hour, and 2.5 × $83.00 = <strong>$207.50</strong>.",
+          "keywords": [
+            "207.50",
+            "155",
+            "52.50",
+            "2.5",
+            "62",
+            "21",
+            "83",
+            "labour"
+          ],
+          "minKeywords": 3,
+          "bandDescriptors": {
+            "full": "Correctly calculates the total labour cost",
+            "partial": "Shows some logical steps in calculating the labour costs",
+            "minimal": "Shows some logical steps in calculating the labour costs"
+          }
+        },
+        {
+          "label": "(b)",
+          "marks": 3,
+          "q": "Calculate the perimeter of the concrete slab.",
+          "answer": "The slab is a 6 m × 5 m rectangle with a semicircular end. The semicircle's diameter is the 5 m width, so its radius is 2.5 m.<br><br>Curved edge (half a circumference) = 0.5 × 2 × π × 2.5 = <strong>7.85 m</strong><br>Straight edges = 5 m (left end) + 6 m (top) + 6 m (bottom) = 17 m<br><br>Perimeter = 7.85 + 5 + 6 + 6 = <strong>24.85 m</strong><br><br>Note that the 5 m right-hand edge is <em>not</em> part of the perimeter — the semicircle replaces it.",
+          "keywords": [
+            "24.85",
+            "7.85",
+            "semicircle",
+            "radius",
+            "2.5",
+            "perimeter",
+            "circumference",
+            "pi"
+          ],
+          "minKeywords": 3,
+          "bandDescriptors": {
+            "full": "Correctly calculates the perimeter for the concrete slab",
+            "partial": "Shows some relevant calculations for the concrete slab",
+            "minimal": "Shows a relevant calculation"
+          }
+        },
+        {
+          "label": "(c)",
+          "marks": 4,
+          "q": "Calculate the volume of concrete needed in cubic metres (m<sup>3</sup>) if the slab is 100 mm thick. Include 10% wastage in your answer.",
+          "answer": "Work out the area first, then the volume, then add the wastage.<br><br><strong>Area</strong> = rectangle + semicircle<br>= (6 × 5) + (0.5 × π × 2.5<sup>2</sup>)<br>= 30 + 9.81 = <strong>39.81 m<sup>2</sup></strong><br><br><strong>Volume</strong> = area × thickness. 100 mm = 0.1 m<br>= 39.81 × 0.1 = <strong>3.98 m<sup>3</sup></strong><br><br><strong>Add 10% wastage</strong> = 3.98 × 1.1 = <strong>4.38 m<sup>3</sup></strong><br><br>Converting the thickness from millimetres to metres before multiplying is the step most often missed.",
+          "keywords": [
+            "4.38",
+            "3.98",
+            "39.81",
+            "area",
+            "volume",
+            "0.1",
+            "wastage",
+            "10%",
+            "semicircle",
+            "thickness"
+          ],
+          "minKeywords": 4,
+          "bandDescriptors": {
+            "full": "m3 Calculates the correct volume of concrete needed in (including 10% wastage)",
+            "partial": "Calculates the volume with minor errors in correct answer without 10% wastage OR Shows some relevant calculations for the concrete needed",
+            "minimal": "Shows a relevant calculation"
+          }
+        },
+        {
+          "label": "(d)",
+          "marks": 4,
+          "q": "Describe the work health and safety factors that need to be considered before work commences on this building site.",
+          "answer": "<strong>Site access and induction</strong> — all workers must hold a valid White Card (general construction induction) before they are allowed on site, and site access must be controlled so unauthorised people cannot enter.<br><strong>Training and competency</strong> — the employer must provide correct training for the operation of any machinery and plant being used, and workers must hold the relevant licences.<br><strong>Plant and electrical safety</strong> — all electrical equipment must be in serviceable condition and carry a current test-and-tag before use, and supply must be protected by an earth leakage circuit breaker (ELCB).<br><strong>Amenities and welfare</strong> — clean drinking water, toilet facilities and a first aid station must be provided.<br><strong>Site conditions</strong> — PPE appropriate to the work, sun protection and allowance for weather conditions, good housekeeping so the site is well organised and accessible, waste material removed, and safe manual handling arrangements for lifting loads.",
+          "keywords": [
+            "white card",
+            "induction",
+            "training",
+            "licence",
+            "PPE",
+            "electrical",
+            "tag",
+            "ELCB",
+            "first aid",
+            "amenities",
+            "drinking water",
+            "housekeeping",
+            "sun",
+            "weather",
+            "access"
+          ],
+          "minKeywords": 5,
+          "bandDescriptors": {
+            "full": "Describes in detail a range of WHS considerations",
+            "partial": "Describes a range of WHS considerations OR Identifies WHS considerations",
+            "minimal": "Provides a piece of relevant information"
+          }
+        }
+      ]
     },
     {
       "year": 2021,
@@ -1563,7 +1765,86 @@
         "full": "Provides TWO reasons for cross-sectional drawings, describes the features found on an elevation, and explains why plans and specifications are used together",
         "partial": "Addresses some parts with reasonable detail — for example lists a reason for cross-sections, identifies some elevation features, or describes the plan/specification relationship",
         "minimal": "Provides some relevant information addressing one part of the question"
-      }
+      },
+      "parts": [
+        {
+          "label": "(a)",
+          "marks": 2,
+          "q": "Provide TWO reasons for using cross-sectional drawings in construction planning.",
+          "answer": "A cross-sectional drawing cuts through the building, so it shows detail and information that appears on no other plan.<br><br>1. It shows how the building is <strong>constructed</strong> below and behind the finished surfaces — footing size and depth, wall thickness and construction, sub-floor design, floor construction, and roof construction including the roof pitch.<br>2. It gives the <strong>sizes and spacing of structural members</strong> (bearers, joists, studs, rafters), which the builder needs to order materials and set out the frame correctly.",
+          "keywords": [
+            "footing",
+            "wall",
+            "thickness",
+            "sub-floor",
+            "floor",
+            "roof",
+            "pitch",
+            "structural",
+            "member",
+            "spacing",
+            "detail"
+          ],
+          "minKeywords": 3,
+          "bandDescriptors": {
+            "full": "Lists TWO reasons why cross-sectional plans are used",
+            "partial": "Lists ONE reason why cross-sectional plans are used",
+            "minimal": "Lists ONE reason why cross-sectional plans are used"
+          }
+        },
+        {
+          "label": "(b)",
+          "marks": 3,
+          "q": "Describe the information that can be obtained from an elevation on a plan.",
+          "answer": "An elevation is a straight-on view of one face of the building, so it carries the <strong>vertical</strong> information and the external appearance.<br><br>It shows vertical measurements such as the finished floor level (FFL), the finished ceiling level (FCL), and the height of window sills above floor level. It shows the overall design and shape of the building, including the roof line and pitch.<br><br>It also shows the position of doors and windows in each wall, and the finishes to the external walls — for example brickwork, cladding or render.",
+          "keywords": [
+            "vertical",
+            "height",
+            "FFL",
+            "floor level",
+            "ceiling",
+            "sill",
+            "door",
+            "window",
+            "external",
+            "finish",
+            "design"
+          ],
+          "minKeywords": 4,
+          "bandDescriptors": {
+            "full": "Describes the features found on an elevation",
+            "partial": "Identifies some features found on an elevation",
+            "minimal": "Provides some relevant information"
+          }
+        },
+        {
+          "label": "(c)",
+          "marks": 4,
+          "q": "Explain why construction plans and specifications need to be used together when constructing a building.",
+          "answer": "The two documents do different jobs and are incomplete on their own.<br><br><strong>Plans</strong> show the overall appearance, layout and position of the building — where things go and what size they are. <strong>Specifications</strong> are a precise written description of the construction detail that the drawings cannot show: the composition and strength of concrete in footings, the species and grades of timber, brick type and mortar colour, and the colours of internal and external finishes.<br><br>Used together they ensure the <strong>customer receives what they requested</strong> and that the project complies with industry standards. Builders must follow specification details such as concrete strength, steel reinforcement and timber beam grades to ensure the building is structurally stable.<br><br>Both documents are also a <strong>legal requirement</strong> — they must be approved by council before any work commences, which is what ensures the safety and integrity of the building and that it minimises interference with the environment and neighbouring structures.",
+          "keywords": [
+            "plan",
+            "specification",
+            "detail",
+            "concrete",
+            "timber",
+            "grade",
+            "finish",
+            "standard",
+            "council",
+            "approval",
+            "legal",
+            "customer",
+            "structural"
+          ],
+          "minKeywords": 5,
+          "bandDescriptors": {
+            "full": "Explains why the relationship between plans and specifications is important in construction",
+            "partial": "Describes the relationship between plans and specifications OR Identifies the importance of either plans OR specifications",
+            "minimal": "Provides some relevant information"
+          }
+        }
+      ]
     },
     {
       "year": 2021,
@@ -1706,7 +1987,82 @@
         "full": "Correctly identifies the plumb bob and its function, describes both the honing and ripping techniques, and explains a range of purchasing considerations",
         "partial": "Addresses some parts with reasonable detail — identifies the tool or its function, describes one technique, or outlines some purchasing considerations",
         "minimal": "Provides some relevant information addressing one part of the question"
-      }
+      },
+      "parts": [
+        {
+          "label": "(a)",
+          "marks": 2,
+          "q": "A tool is shown.<img src=\"/diagrams/vet-construction_2022_Q16a_stimulus.jpg\" alt=\"A plumb bob: a weighted cone hanging from a string\" style=\"max-width:100%;height:auto;display:block;margin:14px auto\"><br>Identify the tool and outline its function.",
+          "answer": "The tool shown is a plumb bob. Its function is to establish a true vertical (plumb) line from a fixed overhead point. When suspended freely on a line, gravity causes the weighted bob to hang directly below the attachment point, creating a precise vertical reference. It is used to transfer vertical datum points, check the plumb of walls and columns, and set out vertical lines in building construction.",
+          "keywords": [
+            "plumb",
+            "vertical",
+            "gravity",
+            "bob",
+            "hang",
+            "datum",
+            "line",
+            "check",
+            "wall"
+          ],
+          "minKeywords": 3,
+          "bandDescriptors": {
+            "full": "Correctly names tool and outlines its function",
+            "partial": "Either names tool or a use of the tool",
+            "minimal": "Either names tool or a use of the tool"
+          }
+        },
+        {
+          "label": "(b)",
+          "marks": 2,
+          "q": "The table shows techniques related to tools.<br>Describe each technique when using the given tool. <table class=\"q-table\"><tr><th>Tool</th><th>Technique</th><th>Description of technique</th></tr><tr><td>Chisel</td><td>Honing</td><td>&nbsp;</td></tr><tr><td>Handsaw</td><td>Ripping</td><td>&nbsp;</td></tr></table>",
+          "answer": "<strong>Chisel — honing.</strong> Honing is part of the sharpening process. After grinding restores the bevel, the edge is rubbed on an oilstone or waterstone at a consistent angle to produce a fine, keen cutting edge, and the burr is then removed by stropping.<br><br><strong>Handsaw — ripping.</strong> Ripping means cutting timber ALONG the direction of its grain, as opposed to crosscutting, which cuts across the grain. A rip saw has chisel-shaped teeth designed for that cut.",
+          "keywords": [
+            "hone",
+            "sharpen",
+            "edge",
+            "stone",
+            "bevel",
+            "rip",
+            "along",
+            "grain",
+            "timber",
+            "crosscut"
+          ],
+          "minKeywords": 4,
+          "bandDescriptors": {
+            "full": "Correctly describes both techniques",
+            "partial": "Correctly describes ONE technique",
+            "minimal": "Correctly describes ONE technique"
+          }
+        },
+        {
+          "label": "(c)",
+          "marks": 4,
+          "q": "Explain considerations required before purchasing plant and equipment.",
+          "answer": "<strong>Cost against benefit.</strong> The purchase price must be weighed against what the item will return. The right equipment increases job efficiency and safety on site, which means fewer delays and increased profit; the wrong purchase is capital tied up in an item that does not earn.<br><strong>Frequency of use.</strong> For a one-off job, hiring is often the better choice than buying — no capital outlay, no storage and no maintenance burden.<br><strong>Ongoing maintenance.</strong> Maintenance costs both time and money and is required to prolong the life of the tool, so it must be budgeted for at the point of purchase, not after.<br><strong>Training and licensing.</strong> Some plant requires operators to hold a licence or complete training before it can be used safely and legally.<br><strong>Practical logistics.</strong> How the item will be stored and how much space it needs, how it will be transported to and from the job site, what PPE operators will need, and any registration and insurance costs.",
+          "keywords": [
+            "cost",
+            "efficiency",
+            "profit",
+            "frequency",
+            "hire",
+            "maintenance",
+            "training",
+            "licence",
+            "storage",
+            "transport",
+            "PPE",
+            "insurance"
+          ],
+          "minKeywords": 5,
+          "bandDescriptors": {
+            "full": "Explains considerations regarding plant and equipment purchasing",
+            "partial": "Describes considerations regarding plant and equipment purchasing OR Outlines considerations regarding plant and equipment purchasing",
+            "minimal": "Provides some relevant information"
+          }
+        }
+      ]
     },
     {
       "year": 2022,
@@ -1763,7 +2119,106 @@
         "full": "Outlines TWO examples of levelling information, provides reasons for detail drawings, correctly identifies both symbols, and explains the purpose of a written specification with examples",
         "partial": "Addresses some parts with reasonable detail — for example lists a type of levelling information, outlines the use of detail drawings, or correctly labels one symbol",
         "minimal": "Provides some relevant information addressing one part of the question"
-      }
+      },
+      "parts": [
+        {
+          "label": "(a)",
+          "marks": 2,
+          "q": "Outline TWO examples of how levelling information can be shown on construction plans.",
+          "answer": "1. <strong>A datum or benchmark</strong> — a fixed reference point of known height marked on the plan, from which all other levels on the site are measured.<br>2. <strong>Contour lines</strong> — lines joining points of equal height, which show the rise and fall of the land across the site.<br><br>Levels are also shown as reduced levels (RLs) and as the finished floor level (FFL) and finished ceiling level (FCL).",
+          "keywords": [
+            "datum",
+            "benchmark",
+            "contour",
+            "rise",
+            "fall",
+            "reduced level",
+            "RL",
+            "floor level",
+            "FFL",
+            "ceiling"
+          ],
+          "minKeywords": 3,
+          "bandDescriptors": {
+            "full": "Outlines TWO examples of levelling information found on plans",
+            "partial": "Lists a type of levelling information found on plans",
+            "minimal": "Lists a type of levelling information found on plans"
+          }
+        },
+        {
+          "label": "(b)",
+          "marks": 2,
+          "q": "Provide reasons for the use of detail drawings in the construction industry.",
+          "answer": "A detail drawing enlarges a specific part of the construction to a larger scale (typically 1:20, 1:10 or 1:5) so it can be shown clearly.<br><br>They are used to clarify information that cannot be clearly illustrated on a sectional view, to provide detailed information about the assembly, joining or finishing of components, and to give precise dimensions and tolerances. They clearly identify all components in an assembly, which minimises confusion on site, and they can be used to demonstrate compliance with building regulations.",
+          "keywords": [
+            "enlarge",
+            "scale",
+            "1:20",
+            "1:10",
+            "1:5",
+            "clarify",
+            "assembly",
+            "joining",
+            "dimension",
+            "tolerance",
+            "compliance",
+            "regulation"
+          ],
+          "minKeywords": 4,
+          "bandDescriptors": {
+            "full": "Describes the use of detail drawings in the construction industry",
+            "partial": "Outlines the use of detail drawings in the construction industry",
+            "minimal": "Outlines the use of detail drawings in the construction industry"
+          }
+        },
+        {
+          "label": "(c)",
+          "marks": 2,
+          "q": "Identify each of the architectural symbols shown.<img src=\"/diagrams/vet-construction_2022_Q17c_stimulus.jpg\" alt=\"Two site-plan symbols: a rainwater tank symbol and a tree symbol drawn with a broken outline\" style=\"max-width:100%;height:auto;display:block;margin:14px auto\">",
+          "answer": "RWT = rainwater tank.<br><br>The second symbol — a broken (dashed) circle with a small circle at its centre — is a tree to be removed. On a site plan a feature drawn with a continuous outline is to remain, while a broken outline marks one that is to be removed or demolished; the small centre circle is the trunk.",
+          "keywords": [
+            "rainwater",
+            "tank",
+            "tree",
+            "removed",
+            "demolished",
+            "broken"
+          ],
+          "minKeywords": 3,
+          "bandDescriptors": {
+            "full": "Correctly labels TWO architectural symbols",
+            "partial": "Either correctly labels ONE architectural symbol or provides some relevant information",
+            "minimal": "Either correctly labels ONE architectural symbol or provides some relevant information"
+          }
+        },
+        {
+          "label": "(d)",
+          "marks": 4,
+          "q": "Explain the purpose of a written specification when reading and interpreting plans. Support your answer with examples of information that would be included in a written specification.",
+          "answer": "A written specification is a detailed written description of the project being constructed. It must be used in conjunction with the construction plans, because its purpose is to convey the information that <em>cannot</em> be shown on a set of drawings — the drawings show size and position, the specification says what things are made of and how the work is to be done.<br><br>It provides instructions on how the work should be completed and sets out the sequence of trades, the quality of work expected, and the Australian Standards that apply.<br><br><strong>Examples of what it includes:</strong> how the site should be set up; materials to be used (brick type, weatherboards, roofing); paint colours and the number of coats; flooring materials and which rooms they go in (bathroom tiles, carpet, timber); types of lights and switches; tap fittings and bathroom fixtures; brand and model numbers of appliances; architrave and skirting size and profile; kitchen bench tops and cabinetry; and the site clean-up and final inspections.",
+          "keywords": [
+            "written",
+            "description",
+            "conjunction",
+            "plan",
+            "instruction",
+            "material",
+            "paint",
+            "coat",
+            "fixture",
+            "appliance",
+            "standard",
+            "sequence",
+            "quality"
+          ],
+          "minKeywords": 5,
+          "bandDescriptors": {
+            "full": "Explains the use of drawing specifications and provides examples",
+            "partial": "Describes the use of drawing specifications and provides example(s) OR Outlines the use of drawing specifications",
+            "minimal": "Provides some relevant information"
+          }
+        }
+      ]
     },
     {
       "year": 2022,
@@ -1816,7 +2271,89 @@
         "full": "Outlines a work practice that reduces material waste, clearly describes the steps in running an on-site meeting, and describes a range of methods used to plan and organise work on a new house",
         "partial": "Addresses some parts with reasonable detail — lists a waste-reduction practice, describes part of the meeting process, or outlines some planning methods",
         "minimal": "Provides some relevant information addressing one part of the question"
-      }
+      },
+      "parts": [
+        {
+          "label": "(a)",
+          "marks": 2,
+          "q": "Outline ONE work practice that would reduce the amount of material waste produced on a construction site.",
+          "answer": "<strong>Train staff in the correct techniques for selecting, measuring, handling and storing materials.</strong> Most material waste on site comes from avoidable mistakes and damage — a member cut to the wrong length, sheets left out in the weather, or bricks damaged by careless handling. Training removes the cause rather than dealing with the waste afterwards.<br><br>Other effective practices include working from an accurate material list and double-checking quantity calculations so materials are not over-ordered; ordering in a timely fashion so stock is not stored on site longer than necessary; storing and transporting materials correctly; sorting waste for reuse or recycling; and confirming the most current version of the plans is being used.",
+          "keywords": [
+            "training",
+            "measure",
+            "handle",
+            "storage",
+            "damage",
+            "material list",
+            "over-order",
+            "quantity",
+            "recycle",
+            "reuse",
+            "current",
+            "plan"
+          ],
+          "minKeywords": 3,
+          "bandDescriptors": {
+            "full": "Outlines a work practice that reduces material waste",
+            "partial": "Lists a work practice",
+            "minimal": "Lists a work practice"
+          }
+        },
+        {
+          "label": "(b)",
+          "marks": 4,
+          "q": "Describe the processes to be followed when organising and conducting a formal 'on-site' meeting.",
+          "answer": "<strong>Before the meeting.</strong> Appoint a chairperson to run it. Set and publish the time, duration and location, and circulate an agenda in advance so attendees know the purpose and can prepare.<br><br><strong>During the meeting.</strong> Follow a set procedure and work through the agenda. The chairperson controls the discussion to keep it on track and ensures everyone has the opportunity to contribute. A record of attendees and apologies is taken, and minutes are kept of what was discussed and decided.<br><br><strong>After the meeting.</strong> Distribute the minutes, record the outcomes and any actions with the person responsible, and plan the follow-up so decisions are actually carried out and can be reviewed at the next meeting.",
+          "keywords": [
+            "chairperson",
+            "agenda",
+            "time",
+            "location",
+            "procedure",
+            "minutes",
+            "attendee",
+            "apolog",
+            "outcome",
+            "follow up",
+            "record"
+          ],
+          "minKeywords": 5,
+          "bandDescriptors": {
+            "full": "Clearly describes the steps/process followed in undertaking an on-site meeting",
+            "partial": "Describes the process followed in undertaking an on-site meeting OR Outlines parts of an on-site meeting",
+            "minimal": "Provides some relevant information"
+          }
+        },
+        {
+          "label": "(c)",
+          "marks": 5,
+          "q": "A new house is to be built.<br>Describe methods that construction workers use to plan and organise their work.",
+          "answer": "<strong>Read and interpret the documentation.</strong> Construction plans and specifications are read first to establish exactly what the job requires.<br><strong>Gantt charts and construction programs</strong> set out the planned sequencing of tasks and the duration of each, so trades can be scheduled in the right order and the critical path is visible.<br><strong>Toolbox talks and site meetings</strong> inform workers about the day's conditions, any changes, and site goals or deadlines.<br><strong>Cutting lists and delivery dockets</strong> provide material quantities and sizes, and confirm what has actually arrived on site.<br><strong>Safe Work Method Statements (SWMS) and Safety Data Sheets (SDS)</strong> determine the correct procedures for using, handling and storing hazardous materials before the work starts.<br><br>Workers also use rosters, timetables and checklists, delegate duties, consult industry professionals and engage specialist trades such as plumbers and electricians, check the Building Code of Australia and council regulations, allow for the weather forecast, and refer to product manuals and technical data sheets.",
+          "keywords": [
+            "plan",
+            "specification",
+            "gantt",
+            "sequence",
+            "duration",
+            "toolbox",
+            "meeting",
+            "cutting list",
+            "docket",
+            "SWMS",
+            "SDS",
+            "roster",
+            "checklist",
+            "council",
+            "weather"
+          ],
+          "minKeywords": 6,
+          "bandDescriptors": {
+            "full": "Clearly describes a range of methods used in construction to plan and organise work",
+            "partial": "Describes some methods to plan and organise work OR Outlines methods to plan and organise work or describes one method OR Lists methods to plan and organise work",
+            "minimal": "Provides some relevant information"
+          }
+        }
+      ]
     },
     {
       "year": 2022,
@@ -1855,7 +2392,78 @@
         "full": "Correctly reads the delivery table, calculates the number of tiles including wastage, and calculates the total labour cost",
         "partial": "Correctly completes two of the three calculations, or shows correct working with minor errors",
         "minimal": "Shows a relevant calculation for one part of the question"
-      }
+      },
+      "parts": [
+        {
+          "label": "(a)",
+          "marks": 1,
+          "q": "Using the delivery cost table shown, calculate the cost to deliver 3700 kg of sand from 54 km away. <img src=\"/diagrams/vet-construction_2022_Q19a_stimulus.jpg\" alt=\"A delivery-charge table with weight of sand in tonnes down the rows and distance of delivery in km across the columns\" style=\"max-width:100%;height:auto;display:block;margin:14px auto\">",
+          "answer": "$450. Convert the load to the units the table uses: 3700 kg = 3.7 tonnes, which falls in the <em>3.00–4.99</em> tonne row. 54 km falls in the <em>51–70</em> km column. Reading across to that column gives a delivery cost of $450.",
+          "keywords": [
+            "450",
+            "tonne",
+            "3.00–4.99",
+            "51–70",
+            "table"
+          ],
+          "acceptableAnswers": [
+            "450",
+            "$450"
+          ],
+          "minKeywords": 2,
+          "bandDescriptors": {
+            "full": "Correctly reads the graph and selects the correct answer",
+            "partial": "Does not correctly read the table and select the correct answer. The mark is awarded in full or not at all.",
+            "minimal": "Does not correctly read the table and select the correct answer. The mark is awarded in full or not at all."
+          }
+        },
+        {
+          "label": "(b)",
+          "marks": 3,
+          "q": "A bathroom plan is shown.<img src=\"/diagrams/vet-construction_2022_Q19b_stimulus.jpg\" alt=\"An L-shaped bathroom floor plan dimensioned 1.2 m by 1.2 m and 2.4 m by 2.7 m\" style=\"max-width:100%;height:auto;display:block;margin:14px auto\"><br>Calculate the number of 300 × 300 floor tiles required to tile the area shown. Allow an additional 5% for wastage.",
+          "answer": "Split the L-shaped floor into two rectangles, in metres.<br><br>Upper section: 1.2 × 1.2 = <strong>1.44 m<sup>2</sup></strong><br>Lower section: 2.4 × 2.7 = <strong>6.48 m<sup>2</sup></strong><br>Total floor area = 1.44 + 6.48 = <strong>7.92 m<sup>2</sup></strong><br><br>Tile area = 0.3 × 0.3 = <strong>0.09 m<sup>2</sup></strong><br>Tiles needed = 7.92 ÷ 0.09 = <strong>88 tiles</strong><br><br>Add 5% wastage: 88 × 1.05 = 92.4, so order <strong>93 tiles</strong> — always round UP, since part of a tile cannot be bought.",
+          "keywords": [
+            "7.92",
+            "1.44",
+            "6.48",
+            "0.09",
+            "88",
+            "93",
+            "92.4",
+            "area",
+            "wastage",
+            "round"
+          ],
+          "minKeywords": 4,
+          "bandDescriptors": {
+            "full": "Correctly calculates the number of tiles including wastage",
+            "partial": "Provides one or more calculations of the area",
+            "minimal": "Provides some relevant calculation"
+          }
+        },
+        {
+          "label": "(c)",
+          "marks": 2,
+          "q": "The total time required to complete the tiling is 8 hours 15 minutes.<br>Calculate the total cost for labour based on an hourly rate of $62 per hour including GST.",
+          "answer": "Convert the minutes to a decimal part of an hour first:<br><br>15 ÷ 60 = <strong>0.25 hours</strong><br>Total time = 8.00 + 0.25 = <strong>8.25 hours</strong><br><br>Labour cost = 8.25 × $62.00 = <strong>$511.50</strong><br><br>Multiplying 8.15 by the rate is the common error — 8 hours 15 minutes is 8.25 hours, not 8.15.",
+          "keywords": [
+            "511.50",
+            "8.25",
+            "0.25",
+            "60",
+            "62",
+            "labour",
+            "hour",
+            "minute"
+          ],
+          "minKeywords": 3,
+          "bandDescriptors": {
+            "full": "Correctly calculates the total labour cost",
+            "partial": "Provides some relevant calculations",
+            "minimal": "Provides some relevant calculations"
+          }
+        }
+      ]
     },
     {
       "year": 2022,
@@ -2007,7 +2615,89 @@
         "full": "Correctly names the saw, lists TWO items of PPE required, and outlines the advantages of battery-powered tools",
         "partial": "Addresses some parts with reasonable detail — names the saw or one PPE item, and lists some advantages",
         "minimal": "Provides some relevant information addressing one part of the question"
-      }
+      },
+      "parts": [
+        {
+          "label": "(a)(i)",
+          "marks": 1,
+          "q": "What type of saw is this?",
+          "intro": "A common type of saw used in construction is shown.<img src=\"/diagrams/vet-construction_2023_Q16a_stimulus.jpg\" alt=\"A drop saw (compound mitre saw) mounted on a pivot arm\" style=\"max-width:100%;height:auto;display:block;margin:14px auto\">",
+          "answer": "Drop saw (also acceptable: mitre saw, compound mitre saw, cut-off saw). A drop saw is a power saw mounted on a pivot arm that drops down to make precise cross cuts and mitre cuts in timber.",
+          "keywords": [
+            "drop saw",
+            "mitre",
+            "compound",
+            "sliding",
+            "cut-off",
+            "chop saw"
+          ],
+          "acceptableAnswers": [
+            "drop saw",
+            "mitre",
+            "compound",
+            "sliding",
+            "cut-off",
+            "chop saw"
+          ],
+          "minKeywords": 1,
+          "bandDescriptors": {
+            "full": "Correctly names the saw pictured",
+            "partial": "Does not correctly name the saw pictured. The mark is awarded in full or not at all.",
+            "minimal": "Does not correctly name the saw pictured. The mark is awarded in full or not at all."
+          }
+        },
+        {
+          "label": "(a)(ii)",
+          "marks": 2,
+          "q": "List TWO items of personal protective equipment (PPE) required when using this saw.",
+          "intro": "A common type of saw used in construction is shown.<img src=\"/diagrams/vet-construction_2023_Q16a_stimulus.jpg\" alt=\"A drop saw (compound mitre saw) mounted on a pivot arm\" style=\"max-width:100%;height:auto;display:block;margin:14px auto\">",
+          "answer": "1. <strong>Safety glasses or goggles</strong> — a drop saw throws timber chips and dust directly back towards the operator's face.<br>2. <strong>Hearing protection</strong> — earmuffs or earplugs, because the blade noise is well above the level at which hearing damage occurs.<br><br>Other acceptable items are a face shield, a dust mask, protective footwear, and hair tied back or restrained so it cannot be caught by the blade.",
+          "keywords": [
+            "safety glasses",
+            "goggles",
+            "eye",
+            "hearing",
+            "earmuff",
+            "earplug",
+            "face shield",
+            "dust mask",
+            "footwear",
+            "hair"
+          ],
+          "minKeywords": 2,
+          "bandDescriptors": {
+            "full": "Lists TWO correct items of PPE",
+            "partial": "Lists ONE correct item of PPE",
+            "minimal": "Lists ONE correct item of PPE"
+          }
+        },
+        {
+          "label": "(b)",
+          "marks": 3,
+          "q": "Outline the advantages of using battery-powered tools and equipment.",
+          "answer": "<strong>Portability.</strong> Battery tools are not restricted to the length of an extension lead, so they can be set up quickly and easily in a variety of locations. They allow work on remote sites with no mains power and on new dwellings where power has not yet been connected, and they remove the need for a generator.<br><br><strong>Safety.</strong> With no cords there are no trip hazards dragged across the site and no frayed leads to check, which also means no machine leads requiring testing and tagging.<br><br><strong>Efficiency.</strong> Set-up is quicker — there is no cord to run out, no power point to find and no generator to start — so work begins sooner, and working outdoors and at height is easier.",
+          "keywords": [
+            "portable",
+            "cord",
+            "lead",
+            "extension",
+            "trip",
+            "hazard",
+            "generator",
+            "remote",
+            "power",
+            "tag",
+            "quick",
+            "outdoor"
+          ],
+          "minKeywords": 4,
+          "bandDescriptors": {
+            "full": "Outlines advantages of using battery powered tools and equipment",
+            "partial": "Lists advantages of using battery powered tools",
+            "minimal": "Provides some relevant information"
+          }
+        }
+      ]
     },
     {
       "year": 2023,
@@ -2063,7 +2753,91 @@
         "full": "Outlines a method of resolving a pay dispute, describes the personal attributes valued in the industry, and accurately describes clean-up processes for a range of substances and materials",
         "partial": "Addresses some parts with reasonable detail — outlines a resolution method, some valued attributes, or some disposal processes",
         "minimal": "Provides some relevant information addressing one part of the question"
-      }
+      },
+      "parts": [
+        {
+          "label": "(a)",
+          "marks": 2,
+          "q": "A construction worker and the employer cannot agree on the correct amount the worker should be paid.<br>How could this disagreement be resolved?",
+          "answer": "Either party can seek clarification of the correct award pay rate from an independent authority rather than trying to settle it between themselves.<br><br>The worker or employer could contact a <strong>government regulator</strong> — the Fair Work Ombudsman or Fair Work Commission — to obtain a ruling on the applicable award rate.<br><br>They could also seek advice from a <strong>trade union</strong> (for the worker), a <strong>professional association</strong> or an <strong>industry group</strong> such as the HIA or MBA (for the employer). If the disagreement cannot be resolved that way, it can be taken to formal dispute resolution.",
+          "keywords": [
+            "award",
+            "rate",
+            "regulator",
+            "fair work",
+            "ombudsman",
+            "union",
+            "association",
+            "industry",
+            "HIA",
+            "MBA",
+            "dispute"
+          ],
+          "minKeywords": 2,
+          "bandDescriptors": {
+            "full": "Outlines a method of resolving the situation",
+            "partial": "Provides some relevant information",
+            "minimal": "Provides some relevant information"
+          }
+        },
+        {
+          "label": "(b)",
+          "marks": 3,
+          "q": "Describe the personal attributes that the construction industry values in its workers.",
+          "answer": "The industry values workers who <strong>attend work regularly and are punctual</strong>, because the whole site's programme depends on trades being there when scheduled.<br><br>It values <strong>work performance</strong> — completing tasks within the scheduled timeframe, taking pride in the work, taking directions from supervisors, paying attention to detail and giving consistent service.<br><br>It values <strong>ethical behaviour</strong>: honesty, confidentiality, and a positive attitude and demeanour towards workmates and clients. Good <strong>personal presentation and grooming</strong> matter because workers represent the business in front of clients, and <strong>safe work practices</strong> are valued because an unsafe worker is a risk to everyone on site.",
+          "keywords": [
+            "attendance",
+            "punctual",
+            "performance",
+            "timeframe",
+            "pride",
+            "direction",
+            "attention to detail",
+            "ethical",
+            "honesty",
+            "confidentiality",
+            "attitude",
+            "presentation",
+            "safe work"
+          ],
+          "minKeywords": 4,
+          "bandDescriptors": {
+            "full": "Describes the personal attributes valued in the construction industry",
+            "partial": "Outlines personal attributes valued in the construction industry",
+            "minimal": "Provides some relevant information"
+          }
+        },
+        {
+          "label": "(c)",
+          "marks": 5,
+          "q": "Following the renovation of a residential house, many left over substances and materials require disposal.<br>Describe the process of disposal of these substances and materials during the final stages of clean-up.",
+          "answer": "<strong>Sort first.</strong> Arrange all materials and substances into categories and place them into the correct bins, so that like material is collected together ready for its own disposal route. Anything still usable should be set aside and stored correctly for future use rather than thrown out.<br><br><strong>Timber.</strong> Treated pine offcuts must be kept separate — treated timber cannot be burnt or mulched. They go into a loose stacking bin and then to an approved disposal site.<br><br><strong>Liquids and chemicals.</strong> Remaining paints, solvents and adhesives are stored in approved sealed and labelled containers and taken to a chemical waste disposal facility. They must never be poured onto the ground or into a stormwater drain.<br><br><strong>Masonry and metal.</strong> Left-over bricks and rubble go to a recycling centre that accepts construction and demolition debris; metal waste is collected and taken to a metal recycling centre, where it has scrap value.<br><br>Throughout, use approved disposal collection sites and different bins for each waste stream, and keep the documentation for any regulated waste.",
+          "keywords": [
+            "sort",
+            "categor",
+            "bin",
+            "treated",
+            "timber",
+            "approved",
+            "disposal",
+            "liquid",
+            "sealed",
+            "container",
+            "chemical",
+            "brick",
+            "recycl",
+            "metal",
+            "reuse",
+            "stormwater"
+          ],
+          "minKeywords": 6,
+          "bandDescriptors": {
+            "full": "Accurately describes clean-up processes to dispose of a variety of substances and materials",
+            "partial": "Describes some clean-up processes to dispose of substances and materials OR Outlines some clean-up processes to dispose of substances or materials OR Lists ways to remove materials or substances",
+            "minimal": "Provides some relevant information"
+          }
+        }
+      ]
     },
     {
       "year": 2023,
@@ -2112,7 +2886,84 @@
         "full": "Describes methods to limit generator noise, correctly labels ALL five symbols on the plan, and explains why symbols are used on construction plans",
         "partial": "Addresses some parts with reasonable detail — identifies noise-limiting methods, labels some symbols correctly, or describes why symbols are used",
         "minimal": "Provides some relevant information addressing one part of the question"
-      }
+      },
+      "parts": [
+        {
+          "label": "(a)",
+          "marks": 3,
+          "q": "Describe methods that can be used to limit the noise of a generator on a construction site.",
+          "answer": "<strong>Position it away from people.</strong> Site the generator outside and well away from where workers are concentrated, and away from neighbouring boundaries. Keep it clear of walls and stacked materials that would cause the sound to echo and amplify.<br><br><strong>Limit when it runs.</strong> Only operate the generator when it is actually needed, and only within the allowable construction hours set by the council.<br><br><strong>Keep it in good order.</strong> Ensure the machine is operating correctly and is serviced regularly — a poorly maintained or faulty exhaust is markedly louder — and follow the correct operating procedures.<br><br>Where noise cannot be reduced far enough at the source, acoustic enclosures or barriers can be used, and workers nearby must wear hearing protection as PPE.",
+          "keywords": [
+            "position",
+            "away",
+            "outside",
+            "echo",
+            "material",
+            "hours",
+            "council",
+            "service",
+            "maintain",
+            "operating",
+            "PPE",
+            "hearing",
+            "enclosure"
+          ],
+          "minKeywords": 4,
+          "bandDescriptors": {
+            "full": "Describes methods used to limit noise of a generator on a construction site",
+            "partial": "Identifies methods used to limit noise of a generator on a construction site",
+            "minimal": "Provides some relevant information"
+          }
+        },
+        {
+          "label": "(b)",
+          "marks": 3,
+          "q": "The drawing shows the plan of a house. Some features have been numbered.<img src=\"/diagrams/vet-construction_2023_Q18b_stimulus.jpg\" alt=\"A floor plan with five numbered features: a window, a sink, a stove, a toilet and a sliding door\" style=\"max-width:100%;height:auto;display:block;margin:14px auto\"><br>Complete the table by identifying the numbered features.",
+          "answer": "1. Window (shown by a break in the wall with a line through it)\n2. Sink (shown by a rectangular symbol with a circle or oval)\n3. Stove/Cooktop (shown by a rectangular symbol with burner circles)\n4. Toilet (shown by a D-shape or oval attached to the wall)\n5. Sliding door (shown by a line with a track symbol parallel to the wall)",
+          "keywords": [
+            "window",
+            "sink",
+            "stove",
+            "toilet",
+            "sliding",
+            "door",
+            "cooktop"
+          ],
+          "minKeywords": 4,
+          "bandDescriptors": {
+            "full": "Correctly labels ALL symbols on the plan",
+            "partial": "Correctly labels some symbols on the plan",
+            "minimal": "Provides some relevant information"
+          }
+        },
+        {
+          "label": "(c)",
+          "marks": 4,
+          "q": "Explain why symbols are used on construction plans.",
+          "answer": "<strong>They are a standard, shared language.</strong> Symbols follow a set of conventions — an Australian Standard, AS 1100 — so the same symbol means the same thing to every user in the industry, no matter who drew the plan.<br><br><strong>They are fast to read and reduce confusion.</strong> A symbol is a quick and easy way to recognise the layout and provides clarity on a crowded drawing. They indicate where things need to be built and installed, represent every element in the plan, and provide a reference back to the specifications.<br><br><strong>They overcome literacy and language barriers.</strong> A worker who does not read English fluently can still read a plan drawn in standard symbols, which matters on a multilingual site.<br><br><strong>They keep the drawing flexible.</strong> A symbol represents the function rather than a specific product — not all fixtures are the same size and shape — so adjustments can be made during fitout to suit the client's needs and the space without redrawing the plan.",
+          "keywords": [
+            "standard",
+            "AS1100",
+            "convention",
+            "understood",
+            "clarity",
+            "confusion",
+            "quick",
+            "layout",
+            "language",
+            "literacy",
+            "barrier",
+            "specification",
+            "fixture"
+          ],
+          "minKeywords": 5,
+          "bandDescriptors": {
+            "full": "Explains why symbols are used on construction plans",
+            "partial": "Describes why symbols are used on construction plans OR Identifies why symbols are used on construction plans",
+            "minimal": "Provides some relevant information"
+          }
+        }
+      ]
     },
     {
       "year": 2023,
@@ -2155,7 +3006,81 @@
         "full": "Correctly calculates the number of pallets, the concrete for the footings (including the centre beam), and the concrete for the slab",
         "partial": "Correctly completes two of the three calculations, or shows correct working with minor errors",
         "minimal": "Shows a relevant calculation for one part of the question"
-      }
+      },
+      "parts": [
+        {
+          "label": "(a)",
+          "marks": 2,
+          "q": "A builder is constructing a house that requires 15 000 bricks. A full pallet of bricks has 500 bricks.<br>How many pallets of bricks will need to be ordered? Allow for 10% wastage.",
+          "answer": "Add the wastage to the brick count first, then convert to pallets.<br><br>Wastage = 10% × 15 000 = <strong>1500 bricks</strong><br>Total bricks = 15 000 + 1500 = <strong>16 500 bricks</strong><br><br>Pallets = 16 500 ÷ 500 = <strong>33 pallets</strong><br><br>The builder needs to order <strong>33 pallets</strong>. Note that the division comes out exactly here; where it does not, always round UP, because a part pallet still has to be ordered as a whole one.",
+          "keywords": [
+            "33",
+            "16 500",
+            "16500",
+            "1500",
+            "10%",
+            "wastage",
+            "500",
+            "pallet"
+          ],
+          "minKeywords": 3,
+          "bandDescriptors": {
+            "full": "Correctly calculates the number of pallets required",
+            "partial": "Shows some correct calculations",
+            "minimal": "Shows some correct calculations"
+          }
+        },
+        {
+          "label": "(b)(i)",
+          "marks": 5,
+          "q": "Calculate how many cubic metres of concrete are required for the footings.",
+          "intro": "A shed is to be built on a concrete slab with concrete footings. The drawing shows the hidden detail of the edge and centre beams required for the footings of the shed.<img src=\"/diagrams/vet-construction_2023_Q19b_stimulus.jpg\" alt=\"A shed footing plan dimensioned 8500 mm by 6000 mm, showing edge and centre beams 300 mm wide, with a 100 mm thick slab noted\" style=\"max-width:100%;height:auto;display:block;margin:14px auto\">",
+          "answer": "The footings are 300 mm × 300 mm, i.e. 0.3 m × 0.3 m in section. The drawing shows FIVE beams: two running the 8500 length, and THREE running the 6000 width — the two edge beams and a centre beam.<br><br>Long beams (8500 direction), taken full length: 2 × 8.5 = 17 m. Volume = 17 × 0.3 × 0.3 = 1.53 m³.<br>Cross beams (6000 direction): shorten each by the 300 mm width of a long beam at each end so the overlaps are not counted twice — 6.0 − (2 × 0.3) = 5.4 m each, and 3 × 5.4 = 16.2 m. Volume = 16.2 × 0.3 × 0.3 = 1.46 m³.<br><br>Total concrete = 1.53 + 1.46 = 2.99 m³.<br><br>The centre beam is the part most often missed. Working from the outer perimeter alone — 2 × (8.5 + 6) = 29 m, giving 29 × 0.3 × 0.3 = 2.61 m³ — omits it and also double-counts the four corners, so it is not the required answer.",
+          "keywords": [
+            "2.99",
+            "1.53",
+            "1.46",
+            "5.4",
+            "16.2",
+            "centre beam",
+            "edge beam",
+            "0.3",
+            "volume",
+            "footing"
+          ],
+          "minKeywords": 4,
+          "bandDescriptors": {
+            "full": "Calculates the cubic metres of concrete required correctly",
+            "partial": "Calculates the cubic metres of concrete required with minor errors OR Provides some correct calculations to determine the cubic metres of concrete required OR Provides some relevant calculation",
+            "minimal": "Provides some relevant information"
+          }
+        },
+        {
+          "label": "(b)(ii)",
+          "marks": 2,
+          "q": "How many cubic metres of concrete are required for the slab?",
+          "intro": "A shed is to be built on a concrete slab with concrete footings. The drawing shows the hidden detail of the edge and centre beams required for the footings of the shed.<img src=\"/diagrams/vet-construction_2023_Q19b_stimulus.jpg\" alt=\"A shed footing plan dimensioned 8500 mm by 6000 mm, showing edge and centre beams 300 mm wide, with a 100 mm thick slab noted\" style=\"max-width:100%;height:auto;display:block;margin:14px auto\">",
+          "answer": "This part is the <strong>slab</strong> only, not the footings. The note on the drawing gives the slab thickness as 100 mm.<br><br>Convert the plan dimensions to metres: 8500 mm = 8.5 m, 6000 mm = 6 m, and 100 mm = 0.1 m.<br><br>Volume = length × width × thickness<br>= 8.5 × 6 × 0.1 = <strong>5.1 m<sup>3</sup></strong><br><br>Converting the millimetre dimensions on the plan to metres before multiplying is the step the mark depends on.",
+          "keywords": [
+            "5.1",
+            "8.5",
+            "0.1",
+            "volume",
+            "length",
+            "width",
+            "thickness",
+            "slab",
+            "metre",
+            "convert"
+          ],
+          "minKeywords": 3,
+          "bandDescriptors": {
+            "full": "Correctly calculates the amount of concrete required in cubic metres",
+            "partial": "Shows some relevant calculations",
+            "minimal": "Shows some relevant calculations"
+          }
+        }
+      ]
     },
     {
       "year": 2023,
@@ -2288,7 +3213,56 @@
         "full": "Correctly names the spirit level and outlines TWO uses, and describes a range of safety checks before using a belt sander",
         "partial": "Names the tool or outlines one use, and outlines some safety checks",
         "minimal": "Provides some relevant information addressing one part of the question"
-      }
+      },
+      "parts": [
+        {
+          "label": "(a)",
+          "marks": 3,
+          "q": "A tool is shown.<img src=\"/diagrams/vet-construction_2024_Q16a_stimulus.jpg\" alt=\"A spirit level with two vials\" style=\"max-width:100%;height:auto;display:block;margin:14px auto\"><br>Identify this hand tool and outline TWO uses for it.",
+          "answer": "The tool is a spirit level. Uses: (1) Checking that horizontal surfaces (floors, window sills, formwork) are level — the bubble in the horizontal vial sits centred between the lines when the surface is true level. (2) Checking that vertical elements (walls, door frames, columns) are plumb — the bubble in the vertical vial sits centred when the surface is truly vertical. Can also be used as a straight edge for marking lines across flat surfaces.",
+          "keywords": [
+            "spirit level",
+            "level",
+            "plumb",
+            "horizontal",
+            "vertical",
+            "bubble",
+            "wall",
+            "frame",
+            "floor"
+          ],
+          "minKeywords": 4,
+          "bandDescriptors": {
+            "full": "Correctly names the tool and outlines TWO uses",
+            "partial": "Correctly outlines TWO uses OR Correctly names the tool AND outlines ONE use",
+            "minimal": "Correctly names the tool OR outlines ONE use"
+          }
+        },
+        {
+          "label": "(b)",
+          "marks": 3,
+          "q": "A belt sander is shown.<img src=\"/diagrams/vet-construction_2024_Q16b_stimulus.jpg\" alt=\"A 240-volt electric belt sander\" style=\"max-width:100%;height:auto;display:block;margin:14px auto\"><br>Describe the pre-operational safety checks needed before using a 240-volt belt sander.",
+          "answer": "Pre-operation safety checks for a 240V belt sander include: (1) Inspect the power cord for cuts, fraying, kinking or damage to the insulation — damaged cords must be removed from service. (2) Check the current test-and-tag label to confirm the tool has been recently inspected and is electrically safe for use. (3) Ensure all guards are correctly in place and secure — particularly the belt guard that covers the sanding belt in motion. (4) Check the sanding belt for correct installation, damage and tension — an incorrectly fitted belt can break and cause injury. (5) Inspect the dust bag/extraction port and ensure it is connected and functioning to control dust hazards.",
+          "keywords": [
+            "cord",
+            "tag",
+            "guard",
+            "belt",
+            "dust",
+            "bag",
+            "inspection",
+            "damage",
+            "safe",
+            "electrical"
+          ],
+          "minKeywords": 4,
+          "bandDescriptors": {
+            "full": "Describes a range of safety checks before using a belt sander",
+            "partial": "Outlines some safety checks before using a belt sander",
+            "minimal": "Provides some relevant information"
+          }
+        }
+      ]
     },
     {
       "year": 2024,
@@ -2344,7 +3318,92 @@
         "full": "Identifies an advantage and disadvantage of a laser tool, outlines how incorrect measurements affect a project, and describes in detail how engineering controls manage a hot and dusty environment",
         "partial": "Addresses some parts with reasonable detail — identifies an advantage or disadvantage, identifies consequences of incorrect measurement, or outlines some engineering controls",
         "minimal": "Provides some relevant information addressing one part of the question"
-      }
+      },
+      "parts": [
+        {
+          "label": "(a)",
+          "marks": 2,
+          "q": "Identify ONE advantage and ONE disadvantage of using a laser measuring tool.",
+          "answer": "<strong>Advantage:</strong> it reduces the time needed to complete a measurement — one person can measure a long distance instantly, where a tape would need two people or repeated set-ups. Laser tools are also portable, easy to use, and can hold and recall stored measurements.<br><br><strong>Disadvantage:</strong> the battery periodically needs replacing or recharging, so the tool can fail mid-job. They are also expensive compared with a tape, need to be maintained and calibrated, require a clear line of sight to the target, and generally measure internal dimensions only.",
+          "keywords": [
+            "time",
+            "quick",
+            "one person",
+            "portable",
+            "store",
+            "battery",
+            "recharge",
+            "expensive",
+            "maintain",
+            "line of sight",
+            "internal"
+          ],
+          "minKeywords": 2,
+          "bandDescriptors": {
+            "full": "Identifies ONE advantage and ONE disadvantage",
+            "partial": "Identifies either an advantage or disadvantage",
+            "minimal": "Identifies either an advantage or disadvantage"
+          }
+        },
+        {
+          "label": "(b)",
+          "marks": 3,
+          "q": "Outline how incorrect measurements can affect a construction project.",
+          "answer": "<strong>Materials and cost.</strong> Incorrect measurements change the quantity of material ordered. Ordering too little means reordering, with additional delivery costs and a wait; ordering too much means paying for material that is wasted. Either way the overall cost rises for both the builder and the customer.<br><br><strong>Time.</strong> Reordering or remaking components delays project completion, and a delay to one trade pushes back every trade scheduled after it.<br><br><strong>Quality and safety.</strong> Components cut to the wrong size do not fit properly, which produces a poor finish, may require the work to be pulled down and redone, and in structural work can compromise the strength and safety of the building.",
+          "keywords": [
+            "material",
+            "quantity",
+            "order",
+            "reorder",
+            "cost",
+            "delivery",
+            "waste",
+            "time",
+            "delay",
+            "completion",
+            "fit",
+            "rework",
+            "quality",
+            "safety"
+          ],
+          "minKeywords": 4,
+          "bandDescriptors": {
+            "full": "Outlines how incorrect measurements can affect a construction project",
+            "partial": "Identifies consequences of incorrect measurements",
+            "minimal": "Provide some relevant information"
+          }
+        },
+        {
+          "label": "(c)",
+          "marks": 5,
+          "q": "Describe how engineering controls can be used to manage a hot and dusty work environment.",
+          "answer": "Engineering controls sit above administrative controls and PPE in the risk control hierarchy because they modify the physical conditions themselves rather than relying on workers to behave differently.<br><br><strong>Ventilation.</strong> Installing specialised ventilation and extraction systems regulates both temperature and dust levels. They provide adequate air exchange, removing hot and contaminated air and replacing it with cooler, cleaner air. This cools the environment and prevents dust from accumulating, significantly reducing the respiratory risk to workers.<br><br><strong>Dust suppression at the source.</strong> Water spray systems and on-tool water suppression capture dust as it is generated, rather than after it has become airborne. On-tool dust extraction fitted to concrete saws and grinders does the same job by vacuum.<br><br><strong>Cooling.</strong> Strategic placement of cooling units, fans or evaporative coolers in areas where workers are concentrated mitigates the heat risk, and shade structures or temporary roofing remove the radiant heat load.<br><br><strong>Isolation and enclosure.</strong> Enclosing or screening a dusty process keeps the dust within a defined area so the rest of the site is not affected.<br><br>Combined, these controls reduce the hazard for everyone on site at once, which is why they are preferred over relying on respirators and rest breaks alone — though those remain as supporting administrative controls and PPE.",
+          "keywords": [
+            "engineering",
+            "ventilation",
+            "extraction",
+            "air",
+            "exchange",
+            "dust",
+            "respiratory",
+            "water",
+            "spray",
+            "suppression",
+            "on-tool",
+            "cooling",
+            "fan",
+            "shade",
+            "enclosure",
+            "hierarchy"
+          ],
+          "minKeywords": 6,
+          "bandDescriptors": {
+            "full": "Describes in detail how engineering controls can be used to manage a hot and dusty work environment",
+            "partial": "Describes how engi neering controls can be used to manage a hot and dusty work environment OR Outlines the use of engineering controls to manage a hot and dusty work environment OR Describes the engineering controls for either a hot or dusty work environment OR Shows a basic understanding of engineering controls in a work environment",
+            "minimal": "Provides some relevant information"
+          }
+        }
+      ]
     },
     {
       "year": 2024,
@@ -2404,7 +3463,96 @@
         "full": "Outlines the importance of feedback with clients, explains why correct storage of reusable materials matters, and clearly explains the factors considered during planning and preparation",
         "partial": "Addresses some parts with reasonable detail — identifies the importance of feedback, outlines storage importance, or describes some planning factors",
         "minimal": "Provides some relevant information addressing one part of the question"
-      }
+      },
+      "parts": [
+        {
+          "label": "(a)",
+          "marks": 3,
+          "q": "Outline the importance of feedback in the communication process when working with clients/customers.",
+          "answer": "Feedback is what closes the communication loop. It allows both the sender and the receiver to confirm that a message has actually been received and understood, rather than assumed.<br><br>It <strong>ensures the correct message has been delivered</strong> — the client restating what they want, or the builder confirming a variation in writing, shows whether the two parties share the same understanding. It acts as the bridge between sender and receiver, providing clarification and validation.<br><br>It <strong>surfaces problems early</strong>, so issues can be addressed while they are still cheap to fix rather than after the work is built. It also supports continuous improvement, since a client's feedback on finished work tells the builder what to do differently next time — and it builds the client's confidence and the business's reputation.",
+          "keywords": [
+            "confirm",
+            "understand",
+            "message",
+            "sender",
+            "receiver",
+            "clarif",
+            "validat",
+            "problem",
+            "issue",
+            "improvement",
+            "client",
+            "expectation"
+          ],
+          "minKeywords": 4,
+          "bandDescriptors": {
+            "full": "Outlines the importance of feedback in communication with clients/customers",
+            "partial": "Identifies the importance of feedback in communication with clients/customers",
+            "minimal": "Provides some relevant information"
+          }
+        },
+        {
+          "label": "(b)",
+          "marks": 3,
+          "q": "Why is it important to correctly store reusable materials on a building site?",
+          "answer": "<strong>Availability and efficiency.</strong> Correctly stored materials are easy to access and ready for use, which reduces delays and improves efficiency — workers are not hunting for material or waiting for a replacement.<br><br><strong>Cost.</strong> Correct storage prevents damage, so materials do not have to be bought twice. Correct stacking maintains the integrity of the material — stacking timber flat and evenly supported stops lengths twisting or bowing — and correct packing and strapping extend the usable life of the material.<br><br><strong>Sustainability.</strong> Materials that can be reused many times reduce the demand for new materials, conserving resources and reducing waste sent to landfill. That saves money and lessens the environmental impact of the project.<br><br><strong>Safety.</strong> Correctly stacked and stored material also cannot topple or collapse onto workers, and keeps access ways clear.",
+          "keywords": [
+            "access",
+            "ready",
+            "delay",
+            "efficiency",
+            "damage",
+            "cost",
+            "stack",
+            "twist",
+            "bow",
+            "strap",
+            "reuse",
+            "sustainab",
+            "waste",
+            "safety"
+          ],
+          "minKeywords": 4,
+          "bandDescriptors": {
+            "full": "Describes the importance of correctly storing reusable materials on a building site",
+            "partial": "Outlines the importance of correctly storing reusable materials on a building site",
+            "minimal": "List storage methods on a building site"
+          }
+        },
+        {
+          "label": "(c)",
+          "marks": 4,
+          "q": "Explain the factors that need to be considered by a builder during the planning and preparation stage of a construction project.",
+          "answer": "<strong>Labour.</strong> Estimate the number and type of workers needed at each stage, so the correct trades are on site as required — too few causes delays, too many causes congestion and idle time.<br><br><strong>Timing.</strong> Set realistic timelines, stage completion dates and deadlines for each part of the process. This provides a map of what should be completed and when, and keeps the build moving smoothly.<br><br><strong>Resources.</strong> Ensure the correct tools, equipment, materials and consumables are ready and on site when needed, planned and sequenced efficiently. Optimum resource use also means not wasting money on plant sitting idle — hiring it for the window it is actually needed.<br><br><strong>Risk.</strong> Thorough planning involves identifying hazards and constraints in advance — site access, ground conditions, weather, services location, working at heights — and putting controls in place before work starts.<br><br><strong>Compliance and cost.</strong> Confirm approvals, the Building Code of Australia and council requirements, and prepare accurate estimates and a budget so the project is financially viable.",
+          "keywords": [
+            "worker",
+            "labour",
+            "estimate",
+            "timeline",
+            "deadline",
+            "stage",
+            "tool",
+            "equipment",
+            "material",
+            "sequence",
+            "resource",
+            "idle",
+            "risk",
+            "hazard",
+            "weather",
+            "approval",
+            "council",
+            "budget",
+            "cost"
+          ],
+          "minKeywords": 5,
+          "bandDescriptors": {
+            "full": "Clearly explains factors that need to be considered during the planning and preparation stage of a project",
+            "partial": "Describes factors to be considered during the planning and preparation stage of a project OR Outlines planning and preparation of a project",
+            "minimal": "Lists factors of planning and preparation"
+          }
+        }
+      ]
     },
     {
       "year": 2024,
@@ -2450,7 +3598,95 @@
         "full": "Correctly calculates the perimeter, the net slab volume, the sand volume and the delivery cost",
         "partial": "Correctly completes two or three of the four calculations, or shows correct working with minor errors",
         "minimal": "Shows a relevant calculation for one part of the question"
-      }
+      },
+      "parts": [
+        {
+          "label": "(a)",
+          "marks": 2,
+          "q": "Calculate the perimeter of the shape shown (which includes a right-angle triangle section).<img src=\"/diagrams/vet-construction_2024_Q19a_stimulus.jpg\" alt=\"An irregular shape dimensioned 8 m, 6 m, 3 m and 4 m, with a right-angle triangle section, not to scale\" style=\"max-width:100%;height:auto;display:block;margin:14px auto\">",
+          "answer": "Calculate the hypotenuse using Pythagoras: √(3² + 4²) = √(9 + 16) = √25 = 5 m\n\nSum all sides: 8 + 6 + 3 + 4 + 5 = 26 m\n\n(Dimensions vary with plan — show all working including Pythagoras theorem)",
+          "keywords": [
+            "pythagoras",
+            "26",
+            "hypotenuse",
+            "5",
+            "perimeter",
+            "sides"
+          ],
+          "minKeywords": 2,
+          "bandDescriptors": {
+            "full": "Correctly calculates the perimeter",
+            "partial": "Shows some logical steps",
+            "minimal": "Shows some logical steps"
+          }
+        },
+        {
+          "label": "(b)",
+          "marks": 3,
+          "q": "A concrete slab with a circular hole in the middle is shown.<img src=\"/diagrams/vet-construction_2024_Q19b_stimulus.jpg\" alt=\"A rectangular concrete slab 8 m by 6 m, 150 mm thick, with a circular hole of 1 m radius in the middle\" style=\"max-width:100%;height:auto;display:block;margin:14px auto\"><br>Calculate the volume of the concrete slab.",
+          "answer": "Slab volume = 8 × 6 × 0.15 = 7.2 m³\n\nCircular hole volume = π × r² × depth = π × 1² × 0.15 = 0.471 m³\n\nNet concrete volume = 7.2 − 0.471 = 6.729 m³ ≈ 6.73 m³",
+          "keywords": [
+            "7.2",
+            "0.471",
+            "6.73",
+            "pi",
+            "radius",
+            "circle",
+            "slab",
+            "0.15"
+          ],
+          "minKeywords": 3,
+          "bandDescriptors": {
+            "full": "Correctly calculates the volume of the concrete slab minus the hole",
+            "partial": "Correctly calculates the volume of the concrete slab",
+            "minimal": "Shows a relevant calculation"
+          }
+        },
+        {
+          "label": "(c)",
+          "marks": 2,
+          "q": "The ratio for concrete is 3 parts aggregate, 2 parts sand and 1 part cement (3 : 2 : 1).<br>Calculate the volume of sand required for a concrete slab with a volume of 11.6 m<sup>3</sup>.",
+          "answer": "Add the ratio parts to find how many parts make the whole:<br><br>3 + 2 + 1 = <strong>6 parts</strong><br><br>One part = 11.6 ÷ 6 = <strong>1.93 m<sup>3</sup></strong><br><br>Sand is 2 parts, so sand = 1.93 × 2 = <strong>3.86 m<sup>3</sup></strong><br><br>Dividing by 2 instead of by the total of 6 parts is the common error.",
+          "keywords": [
+            "3.86",
+            "1.93",
+            "6 parts",
+            "6",
+            "ratio",
+            "sand",
+            "2 parts",
+            "11.6"
+          ],
+          "minKeywords": 3,
+          "bandDescriptors": {
+            "full": "Correctly calculates the volume of sand",
+            "partial": "Shows a relevant calculation",
+            "minimal": "Shows a relevant calculation"
+          }
+        },
+        {
+          "label": "(d)",
+          "marks": 2,
+          "q": "The delivery cost for aggregate is $1.18/km per tonne.<br>Calculate the delivery cost of 8 tonnes to a site 13 km away.",
+          "answer": "The rate is per kilometre AND per tonne, so multiply by both.<br><br>8 tonnes × $1.18 = <strong>$9.44</strong> (cost per kilometre)<br>$9.44 × 13 km = <strong>$122.72</strong><br><br>The order does not matter — 8 × 1.18 × 13 gives the same $122.72 — but both quantities must be used. Multiplying by only the distance or only the tonnage is the common error.",
+          "keywords": [
+            "122.72",
+            "9.44",
+            "1.18",
+            "8",
+            "13",
+            "tonne",
+            "km",
+            "delivery"
+          ],
+          "minKeywords": 3,
+          "bandDescriptors": {
+            "full": "Correctly calculates cost",
+            "partial": "Shows a relevant calculation",
+            "minimal": "Shows a relevant calculation"
+          }
+        }
+      ]
     },
     {
       "year": 2024,
@@ -2592,7 +3828,58 @@
         "full": "Outlines a suitable use for the router and describes TWO settings or adjustments required before using it",
         "partial": "Provides some relevant information about the tool's use or a setting",
         "minimal": "Provides some relevant information addressing one part of the question"
-      }
+      },
+      "stem": "A tool is shown.<img src=\"/diagrams/vet-construction_2025_Q16_stimulus.jpg\" alt=\"A wood router\" style=\"max-width:100%;height:auto;display:block;margin:14px auto\">",
+      "parts": [
+        {
+          "label": "(a)",
+          "marks": 2,
+          "q": "Outline a suitable use for this tool.",
+          "answer": "The tool shown is a router. A suitable use for this tool is to create a rebate (a step-shaped recess) along the edge of a timber board for joint construction, such as a rebate joint used when making drawers or cabinets. Other suitable uses include: edge profiling (decorative shaping of timber edges), cutting grooves and housings in timber, flush/pattern cutting using a template, and mortising.",
+          "keywords": [
+            "router",
+            "rebate",
+            "groove",
+            "housing",
+            "edge",
+            "profile",
+            "joint",
+            "mortise",
+            "pattern",
+            "timber"
+          ],
+          "minKeywords": 3,
+          "bandDescriptors": {
+            "full": "Outlines a suitable use for the tool",
+            "partial": "Provides some relevant information",
+            "minimal": "Provides some relevant information"
+          }
+        },
+        {
+          "label": "(b)",
+          "marks": 3,
+          "q": "Describe TWO settings or adjustments that may be required before using this tool.",
+          "answer": "Two settings or adjustments required before using a router are:\n\n1. Depth of cut: The depth gauge on the router is adjusted to set how deeply the cutter will enter the timber. This determines the depth of the rebate, groove or profile being cut and must be set precisely before beginning the cut.\n\n2. Width of cut: The side fence (parallel guide) position is adjusted to control the distance from the edge of the timber to the cutting position, determining the width of the cut. Other acceptable adjustments include: selecting the appropriate cutter profile/shape for the operation, and setting the spindle speed (RPM) to suit the material and cutter diameter being used.",
+          "keywords": [
+            "depth",
+            "gauge",
+            "width",
+            "fence",
+            "speed",
+            "rpm",
+            "cutter",
+            "profile",
+            "adjust",
+            "setting"
+          ],
+          "minKeywords": 4,
+          "bandDescriptors": {
+            "full": "Describes TWO settings or adjustments that may be required before using the tool",
+            "partial": "Identifies a setting/s or adjustment/s that may be required before using the tool",
+            "minimal": "Provides some relevant information"
+          }
+        }
+      ]
     },
     {
       "year": 2025,
@@ -2642,7 +3929,85 @@
         "full": "Outlines abrasive-selection considerations, describes TWO fault indicators, and provides a thorough explanation of how builders protect tools from theft and damage",
         "partial": "Addresses some parts with reasonable detail — outlines a consideration, an indicator, or some protection strategies",
         "minimal": "Provides some relevant information addressing one part of the question"
-      }
+      },
+      "parts": [
+        {
+          "label": "(a)",
+          "marks": 2,
+          "q": "Outline considerations when selecting an abrasive for use with electric sanders.",
+          "answer": "When selecting an abrasive for an electric sander, key considerations include: the grit size — coarser grits (e.g. 40–80 grit) for initial material removal and fine grits (e.g. 180–240 grit) for final finishing; the material being sanded — hardwoods require different abrasives to softwoods; the abrasive type — silicon carbide, aluminium oxide or garnet each suit different materials and applications; and the backing type — paper, cloth or Velcro/hook-and-loop backing depending on the sander type and the required durability of the abrasive sheet.",
+          "keywords": [
+            "grit",
+            "coarse",
+            "fine",
+            "material",
+            "timber",
+            "aluminium oxide",
+            "silicon carbide",
+            "backing",
+            "cloth",
+            "paper"
+          ],
+          "minKeywords": 3,
+          "bandDescriptors": {
+            "full": "Outlines considerations for selection of abrasives on electric sander",
+            "partial": "Provides some relevant information",
+            "minimal": "Provides some relevant information"
+          }
+        },
+        {
+          "label": "(b)",
+          "marks": 3,
+          "q": "Describe TWO indicators which show that a tool is not performing efficiently, or has a fault.",
+          "answer": "Two indicators that a tool is not performing efficiently or has a fault are:\n\n1. Smoke or burning smell: If a power tool produces smoke or a burning smell during operation, this indicates the motor is overloading, overheating, or that there is an electrical fault. This is a serious safety indicator and the tool must be immediately switched off and removed from service.\n\n2. Excessive vibration or unusual noise: A tool that vibrates more than normal, produces grinding noises, rattles or makes unfamiliar sounds indicates worn bearings, a loose or damaged component, or an unbalanced cutting tool. These symptoms indicate a fault that could lead to failure or injury. Other valid indicators include: slower operation than normal, poor results/finish quality, failure to start, blockages, or excessive heat.",
+          "keywords": [
+            "smoke",
+            "vibration",
+            "noise",
+            "overheating",
+            "bearing",
+            "fault",
+            "slow",
+            "poor",
+            "heat",
+            "burning"
+          ],
+          "minKeywords": 4,
+          "bandDescriptors": {
+            "full": "Describes TWO indicators which show that a tool is not performing efficiently or has a fault",
+            "partial": "Outlines an indicator/s which shows that a tool is not performing efficiently or has a fault",
+            "minimal": "Provides some relevant information"
+          }
+        },
+        {
+          "label": "(c)",
+          "marks": 5,
+          "q": "Explain how builders can protect their tools and equipment from theft and damage on site.",
+          "answer": "Builders can implement a range of strategies to protect their tools and equipment from both theft and physical damage on site.\n\nTo prevent theft, builders should use secure, lockable storage such as purpose-built toolboxes, steel job site boxes or shipping containers with heavy-duty padlocks and hasp-and-staple fixings. A sign-in/sign-out register should be maintained so tool location is always known. The site perimeter should be secured with fencing, gates and padlocks to restrict unauthorised access, and security lighting and CCTV cameras installed to deter theft and provide evidence if items are stolen. High-value items such as laser levels and power tools should be engraved with identification numbers or asset tags.\n\nTo prevent damage, tools should be stored in dedicated racks or cases to prevent them from being knocked or dropped. Power tools must be stored away from moisture, dust and extreme temperatures that can damage electronics and motors. Tools should be returned to storage after each use rather than left lying on site where they can be driven over or stepped on. Protective covers and blade guards should always be in place during storage and transport.",
+          "keywords": [
+            "lockable",
+            "secure",
+            "container",
+            "sign-in",
+            "fence",
+            "lighting",
+            "camera",
+            "cctv",
+            "rack",
+            "cover",
+            "guard",
+            "identify",
+            "register",
+            "storage"
+          ],
+          "minKeywords": 6,
+          "bandDescriptors": {
+            "full": "Provides a thorough explanation of how builders can protect their tools and equipment from theft and damage on site",
+            "partial": "Provides a sound explanation of how builders can protect their tools and equipment from theft and damage on site OR Provides an explanation of how builders can protect their tools and equipment from theft OR damage on site OR Outlines ways builders can protect their tools and equipment",
+            "minimal": "Provides some relevant information"
+          }
+        }
+      ]
     },
     {
       "year": 2025,
@@ -2689,7 +4054,84 @@
         "full": "Lists information found in a building specification, correctly identifies THREE symbols or abbreviations, and describes a range of information found on a floor plan",
         "partial": "Addresses some parts with reasonable detail — lists some specification information, identifies one or two symbols, or outlines some floor-plan information",
         "minimal": "Provides some relevant information addressing one part of the question"
-      }
+      },
+      "parts": [
+        {
+          "label": "(a)",
+          "marks": 2,
+          "q": "List the type of information that can be found in a building specification.",
+          "answer": "A building specification contains detailed written information that complements the drawings, including: the species and grade of timber to be used; brick type, mortar mix ratios and quality; the composition and strength of concrete in footings and slabs; paint colours, brands and number of coats; PC (Prime Cost) items such as hot water systems, tapware, baths, appliances and light fittings; floor and wall tile types and fixing methods; roofing material types and fixing requirements; and waterproofing membrane specifications.",
+          "keywords": [
+            "timber",
+            "concrete",
+            "brick",
+            "mortar",
+            "paint",
+            "pc items",
+            "tapware",
+            "appliance",
+            "specification",
+            "material",
+            "colour",
+            "finish"
+          ],
+          "minKeywords": 4,
+          "bandDescriptors": {
+            "full": "Lists information provided in a building specification",
+            "partial": "Provides some relevant information",
+            "minimal": "Provides some relevant information"
+          }
+        },
+        {
+          "label": "(b)",
+          "marks": 3,
+          "q": "Identify the meaning of the following symbols or abbreviations that are found on construction drawings.<img src=\"/diagrams/vet-construction_2025_Q18b_stimulus.jpg\" alt=\"A symbol/abbreviation table with HW, RWP and a horizontal sliding window symbol\" style=\"max-width:100%;height:auto;display:block;margin:14px auto\">",
+          "answer": "HW = Hot Water (refers to the hot water supply pipe or hot water service connection on plumbing/services drawings)\nRWP = Rainwater Pipe (the vertical downpipe that carries rainwater from the roof gutters to the stormwater drainage system)\nHorizontal sliding window symbol (two rectangles with arrows pointing toward each other) = a window where the sashes slide horizontally past each other to open",
+          "keywords": [
+            "hot water",
+            "HW",
+            "rainwater pipe",
+            "RWP",
+            "sliding",
+            "window",
+            "horizontal",
+            "downpipe"
+          ],
+          "minKeywords": 4,
+          "bandDescriptors": {
+            "full": "Correctly identifies THREE symbols or abbreviations found on construction drawings",
+            "partial": "Correctly identifies TWO symbols or abbreviations found on construction drawings",
+            "minimal": "Correctly identifies ONE symbol or abbreviation found on construction drawings"
+          }
+        },
+        {
+          "label": "(c)",
+          "marks": 4,
+          "q": "Describe the range of information that can be found on a floor plan.",
+          "answer": "A floor plan provides a comprehensive range of information about the internal layout and dimensions of a building. It shows the overall building footprint and dimensions, including the layout and names of all rooms and spaces (bedrooms, kitchen, bathroom, living areas). Wall locations and thicknesses are shown, along with the positions of all doors (and their swing direction) and windows. Structural elements such as columns and loadbearing walls are identified. Fixed appliances and fixtures are shown including kitchens (sink, stove, dishwasher), bathrooms (bath, shower, toilet, vanity) and laundries. Staircase location and direction of travel (with step count) are indicated. Built-in joinery such as wardrobes, pantries and linen cupboards are shown. Some floor plans also indicate floor coverings, ceiling heights, roof outline and eaves overhang, and the locations of downpipes.",
+          "keywords": [
+            "room",
+            "dimension",
+            "wall",
+            "door",
+            "window",
+            "fixture",
+            "toilet",
+            "kitchen",
+            "stair",
+            "footprint",
+            "layout",
+            "appliance",
+            "structure"
+          ],
+          "minKeywords": 6,
+          "bandDescriptors": {
+            "full": "Describes a range of information that is provided on a floor plan",
+            "partial": "Outlines some information that is provided on a floor plan OR Identifies some information that is provided on a floor plan",
+            "minimal": "Provides some relevant information"
+          }
+        }
+      ]
     },
     {
       "year": 2025,

@@ -102,3 +102,114 @@ describe('mark-written.js quota logic', () => {
     assert.notEqual(body.quotaExceeded, true);
   });
 });
+
+// ── Multi-part marking (CLAUDE.md §10 rule 9) ────────────────────────────────
+// A multi-part NESA question sends every part in ONE request and gets a mark per
+// part back. The student sees those per-part marks, so a malformed or overgenerous
+// model response must not be able to hand out marks the part isn't worth.
+
+// Mocks Supabase as above AND the Anthropic call, returning `aiJson` as Claude's reply.
+function mockFetchWithClaude(aiJson, capture = {}) {
+  globalThis.fetch = async (url, init) => {
+    const u = String(url);
+    if (u.includes('/auth/v1/user')) {
+      return new Response(JSON.stringify({ id: 'user-1', email: 'a@b.com' }), { status: 200 });
+    }
+    if (u.includes('/rest/v1/subscriptions') || u.includes('/rest/v1/rpc/')) {
+      return new Response(JSON.stringify([{ plan: 'base', status: 'active', ai_marks_used: 0 }]), { status: 200 });
+    }
+    if (u.includes('api.anthropic.com')) {
+      capture.body = JSON.parse(init.body);
+      return new Response(JSON.stringify({
+        content: [{ text: JSON.stringify(aiJson) }],
+        usage: { input_tokens: 1, output_tokens: 1 },
+      }), { status: 200 });
+    }
+    throw new Error(`Unexpected fetch call in test: ${u}`);
+  };
+}
+
+const PARTS = [
+  { label: '(a)', question: 'Name the tool.', maxMarks: 1, keywords: ['chisel'], studentAnswer: 'chisel' },
+  { label: '(b)', question: 'Describe TWO uses.', maxMarks: 2, keywords: ['pare'], studentAnswer: 'paring' },
+  { label: '(c)', question: 'Describe ONE consequence.', maxMarks: 3, keywords: ['blunt'], studentAnswer: '' },
+];
+const partsBody = (overrides = {}) => ({
+  question: 'A tool is shown.', maxMarks: 6, studentAnswer: '(a) chisel', keywords: [],
+  parts: PARTS, ...overrides,
+});
+
+describe('mark-written.js multi-part marking', () => {
+  test('returns a mark per part and totals them', async () => {
+    mockFetchWithClaude({
+      partResults: [
+        { label: '(a)', marksAwarded: 1, feedback: 'Correct.' },
+        { label: '(b)', marksAwarded: 1, feedback: 'One use only.' },
+        { label: '(c)', marksAwarded: 0, feedback: 'Not attempted.' },
+      ],
+      feedback: 'Solid start.', improvement: 'Attempt part (c).',
+    });
+    const res = await onRequestPost({ request: goodRequest(partsBody()), env: ENV });
+    const body = await res.json();
+    assert.equal(res.status, 200);
+    assert.equal(body.partResults.length, 3);
+    assert.deepEqual(body.partResults.map(p => p.marksAwarded), [1, 1, 0]);
+    assert.equal(body.marksAwarded, 2);   // derived from the parts, not stated separately
+    assert.equal(body.maxMarks, 6);
+  });
+
+  test('a part awarded more than its own maximum is clamped', async () => {
+    mockFetchWithClaude({
+      partResults: [
+        { label: '(a)', marksAwarded: 99, feedback: 'x' },   // part is worth 1
+        { label: '(b)', marksAwarded: -5, feedback: 'x' },   // negative
+        { label: '(c)', marksAwarded: 3, feedback: 'x' },
+      ],
+      feedback: 'f', improvement: 'i',
+    });
+    const res = await onRequestPost({ request: goodRequest(partsBody()), env: ENV });
+    const body = await res.json();
+    assert.deepEqual(body.partResults.map(p => p.marksAwarded), [1, 0, 3]);
+    assert.equal(body.marksAwarded, 4);
+  });
+
+  test('a part the question does not have is discarded', async () => {
+    mockFetchWithClaude({
+      partResults: [
+        { label: '(a)', marksAwarded: 1, feedback: 'x' },
+        { label: '(z)', marksAwarded: 5, feedback: 'invented' },
+      ],
+      feedback: 'f', improvement: 'i',
+    });
+    const res = await onRequestPost({ request: goodRequest(partsBody()), env: ENV });
+    const body = await res.json();
+    assert.deepEqual(body.partResults.map(p => p.label), ['(a)']);
+    assert.equal(body.marksAwarded, 1);
+  });
+
+  test('every part goes in ONE Claude call, so quota cost does not scale with part count', async () => {
+    const capture = {};
+    mockFetchWithClaude({ partResults: PARTS.map(p => ({ label: p.label, marksAwarded: 0, feedback: '' })), feedback: '', improvement: '' }, capture);
+    await onRequestPost({ request: goodRequest(partsBody()), env: ENV });
+    const prompt = capture.body.messages[0].content;
+    PARTS.forEach(p => assert.ok(prompt.includes(`PART ${p.label} (${p.maxMarks} marks)`), `prompt missing ${p.label}`));
+    assert.ok(prompt.includes('Mark EACH PART SEPARATELY'));
+  });
+
+  test('a single-part question is unaffected — no partResults, original shape', async () => {
+    mockFetchWithClaude({ marksAwarded: 3, grade: 'good', feedback: 'f', improvement: 'i', keyConceptsFound: ['Y'] });
+    const res = await onRequestPost({ request: goodRequest(VALID_BODY), env: ENV });
+    const body = await res.json();
+    assert.equal(body.partResults, undefined);
+    assert.equal(body.marksAwarded, 3);
+    assert.equal(body.maxMarks, 4);
+    assert.deepEqual(body.keyConceptsFound, ['Y']);
+  });
+
+  test('a one-element parts array is treated as a single question, not multi-part', async () => {
+    mockFetchWithClaude({ marksAwarded: 2, grade: 'good', feedback: 'f', improvement: 'i' });
+    const res = await onRequestPost({ request: goodRequest(partsBody({ parts: [PARTS[0]] })), env: ENV });
+    const body = await res.json();
+    assert.equal(body.partResults, undefined);
+  });
+});
