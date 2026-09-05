@@ -3619,3 +3619,42 @@ have caught it.
 `.q-text img` rule** and that inline sizing is the only protection. That is no longer true, and a
 future session reading the old wording would have drawn the wrong conclusion about why an image was
 sized the way it was. The rule to keep writing the inline style stands.
+
+---
+
+## 2026-09-05 (later still, again) — Mathematics Advanced surveyed for the per-part port (planning only)
+
+**No code or data changed.** A portability survey ahead of applying the per-part standard
+(CLAUDE.md §10 rule 10) to Mathematics Advanced, recorded so the next session starts from it
+instead of re-deriving it.
+
+**Result: it is a clean scripted port.** 69 multi-part questions — **65 portable with
+`scripts/archive/ms2_add_parts.py`'s existing rules**, and the remaining 4 collapse to single-part
+once `omittedParts` is excluded. **0 problem cases.** It also needs none of the pre-work Standard 2
+required: **0** questions with `bandDescriptors` the engine can't read, **0** literal `**` markdown
+in model answers, **0** one-entry-per-part stragglers.
+
+⚠️ **The survey was run twice and was wrong the first time — this is the finding worth keeping.**
+A first pass reported only **40 of 69** portable, which would have set up the next session to expect
+29 questions of manual work that does not exist. Two causes, both the same mistake: *the survey did
+not apply the rules the build script already applies.*
+
+1. **`omittedParts` was not excluded** before deriving a question's official parts. A declared
+   drawing omission then looks like a missing stem or answer label — 2020 Q11 (answer has (b),(c),
+   official has (a),(b),(c), where (a) is the omitted graph-drawing part) and 2022 Q12 (answer has
+   no labels at all because only one part survives the omission).
+2. **The stem label regex was too strict.** It required a newline, `<br>` or block-close before a
+   label, but Advanced prints `…[IMG](a)` with the label straight after an inline tag. That alone
+   produced 17 phantom failures, every one of them "missing part (a)" — a suspiciously uniform
+   signature that should have prompted a look at the data before the number was believed.
+
+**Rule for next time: a portability survey must reuse the build script's own parsing and omission
+rules, not an approximation of them.** An approximate survey does not fail safe — it invents work.
+
+**Two things the port will hit, both already known:**
+- Advanced has the **worst criteria-row damage of any subject — 32 of 234 official parts** (the
+  `build_written_key.py` known issue). Those parts will correctly fall back to the engine's generic
+  band wording rather than showing scrambled NESA text.
+- Its keywords are answer fragments (`3 ln 3`, `0.0918`), and `MATHS_SUBJECT_KEYS` already
+  suppresses the Key Concepts checklist for `mathsadv`, so the model-answer acceptance gate
+  ("every part must score full marks when fed its own model answer") applies unchanged.
