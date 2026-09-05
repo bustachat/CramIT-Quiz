@@ -95,6 +95,23 @@ function fingerprint(text) {
   return 'sha256:' + crypto.createHash('sha256').update(norm, 'utf8').digest('hex');
 }
 
+/**
+ * Fingerprint of the same text with word ORDER discarded. Must stay identical to
+ * scripts/build_review_ledger.py:word_fingerprint().
+ *
+ * Separates the two ways a sample answer can stop matching its review:
+ *   - the WORDS changed  -> NESA's official text moved. The review is void; re-read it.
+ *   - only the ORDER changed -> our extractor re-laid the line out. NESA did not move,
+ *     so the review still stands, and the entry is reported rather than failed.
+ * The second case is real: fixing build_written_key.py's word-order bug on 2026-09-05
+ * re-laid out 45 of VET's 76 sample answers with an IDENTICAL word multiset -- not one
+ * word added, removed or altered anywhere.
+ */
+function wordFingerprint(text) {
+  const words = (String(text || '').toLowerCase().match(/[^\W_]+/gu) || []).sort();
+  return 'sha256:' + crypto.createHash('sha256').update(words.join(' '), 'utf8').digest('hex');
+}
+
 if (!fs.existsSync(KEY_DIR)) {
   console.log('No data/answer-key/written/ directory — nothing to check.');
   process.exit(0);
@@ -285,6 +302,7 @@ for (const keyFile of keyFiles.sort()) {
     const ledger = readJson(ledgerFile);
     const unreviewed = [];
     const stale = [];
+    const relaidOut = [];
     const verdicts = {};
     for (const q of written) {
       const entry = (ledger.reviews[String(q.year)] || {})[String(q.qNum)];
@@ -294,7 +312,16 @@ for (const keyFile of keyFiles.sort()) {
       }
       verdicts[entry.verdict] = (verdicts[entry.verdict] || 0) + 1;
       const sample = officialSample.get(`${q.year}|${q.qNum}`);
-      if (sample !== undefined && fingerprint(sample) !== entry.sampleAnswerFingerprint) {
+      if (sample === undefined || fingerprint(sample) === entry.sampleAnswerFingerprint) continue;
+      // The exact text moved. Only NESA's WORDS moving voids the review; a pure
+      // re-layout by our own extractor does not. An older ledger with no word
+      // fingerprint gets the strict answer, so this can never weaken an existing one.
+      if (
+        entry.sampleAnswerWordsFingerprint &&
+        wordFingerprint(sample) === entry.sampleAnswerWordsFingerprint
+      ) {
+        relaidOut.push(`${q.year} Q${q.qNum}`);
+      } else {
         stale.push(`${q.year} Q${q.qNum} (reviewed ${entry.reviewedAt})`);
       }
     }
@@ -306,11 +333,20 @@ for (const keyFile of keyFiles.sort()) {
     console.log(
       `        review:   ${reviewed}/${written.length} reviewed against NESA` +
         (summary ? ` — ${summary}` : '') +
-        (stale.length ? ` — ${stale.length} STALE` : '')
+        (stale.length ? ` — ${stale.length} STALE` : '') +
+        (relaidOut.length ? ` — ${relaidOut.length} re-laid out (wording unchanged)` : '')
     );
     for (const line of unreviewed) console.log(`        ✗ unreviewed: ${line}`);
     for (const line of stale) {
       console.log(`        ✗ stale review: ${line} — NESA's sample answer has changed`);
+    }
+    if (relaidOut.length) {
+      console.log(
+        `        · ${relaidOut.length} sample answer(s) re-laid out by the extractor since ` +
+          'review — identical words, different order, so the reviews still stand: ' +
+          relaidOut.slice(0, 6).join(', ') +
+          (relaidOut.length > 6 ? `, +${relaidOut.length - 6} more` : '')
+      );
     }
     reviewFailures += unreviewed.length + stale.length;
   }

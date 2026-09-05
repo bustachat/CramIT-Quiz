@@ -29,18 +29,24 @@ each found by running it, not by reading it:
      `keyword_hit()` fires on that part's model answer — so a part is never
      scored against a concept the engine cannot credit there.
 
-  3. ONE RECOVERED PART LABEL. `build_written_key.py` lost the `(b)` label on
-     2023 Q31, swallowing it into the END of part (a)'s sample answer ("No,
-     since P(F S) P(F) != (b)") and leaving the row itself labelled None. The
-     label was read back off NESA's own marking guidelines (2023, page 27,
-     "Question 31 (b)") rather than inferred, and is recovered through the
-     explicit LABEL_RECOVERY table below, which asserts the row's shape and
-     fails if the committed key ever changes underneath it. It is the only such
-     row in the whole subject.
+  3. (WAS: one recovered part label.) `build_written_key.py` used to lose the `(b)`
+     label on 2023 Q31, swallowing it into the END of part (a)'s sample answer, and this
+     script carried an explicit LABEL_RECOVERY table to put it back. The extractor was
+     fixed at the root on 2026-09-05 -- the label was a casualty of the same word-order
+     bug -- so it now reads `a`, `b`, `c` directly and the workaround is DELETED. Its
+     shape assertion is what reported the change, rather than silently re-patching data
+     that no longer needed patching.
 
 Everything else is deliberately unchanged from the Standard 2 build, including
 the acceptance gate that a part must score full marks when fed its own model
 answer, so both subjects are built by the same rules.
+
+⚠️ DO NOT RE-RUN THIS TO REFRESH BAND DESCRIPTORS. Since 2026-09-05 they are
+maintained by `scripts/refresh_band_descriptors.py`, which re-derives them from
+the committed criteria rows and carries the RELAXED damage test. The detector
+below is the strict version written against the pre-fix, scrambled rows; on the
+repaired rows it is mostly false positives, so re-running this would strip real
+NESA wording from ~7 parts and replace it with the engine's generic text.
 
 Run:  python scripts/archive/mathsadv_add_parts.py [--write]
 """
@@ -69,44 +75,6 @@ STEM_LAB = re.compile(
 ANS_LAB = re.compile(r"(?:^|\n)\s*\(([a-z]{1,3})\)\s*", re.M)
 # Trailing "(2 marks)" on a stem prompt — the renderer draws its own badge.
 STEM_MARKS = re.compile(r"\s*\(\s*\d+\s*marks?\s*\)\s*$", re.I)
-
-# A part label the committed key lost, read back off NESA's own marking
-# guidelines (see docstring item 3). Keyed (year, question) -> the ordered list
-# of labels that question's key rows MUST already have, with None standing for
-# the missing one, and the label to put in its place. The whole shape is
-# asserted, so this cannot silently apply to different data later.
-LABEL_RECOVERY = {
-    (2023, "31"): {
-        "expect": ["a", "None", "c"],
-        "expect_marks": ["1", "2", "2"],
-        "index": 1,
-        "label": "b",
-        "source": "NESA 2023 HSC Mathematics Advanced Marking Guidelines, "
-                  "page 27: 'Question 31 (b)'",
-    },
-}
-
-
-def recover_labels(rows, year, qn, failures):
-    """Restore a part label the extractor dropped. Returns rows unchanged unless
-    this exact question is in LABEL_RECOVERY and its rows match the recorded
-    shape exactly."""
-    spec = LABEL_RECOVERY.get((year, qn))
-    if not spec:
-        return rows
-    got = [str(r["part"]) for r in rows]
-    got_marks = [str(r["marks"]) for r in rows]
-    if got != spec["expect"] or got_marks != spec["expect_marks"]:
-        failures.append(
-            f"{year} Q{qn}: LABEL_RECOVERY no longer matches the committed key "
-            f"(expected parts {spec['expect']} marks {spec['expect_marks']}, "
-            f"got parts {got} marks {got_marks}) — re-read the guidelines "
-            f"before touching this")
-        return rows
-    rows = [dict(r) for r in rows]
-    rows[spec["index"]]["part"] = spec["label"]
-    return rows
-
 
 def split_labelled(text, rx):
     """-> (prefix before the first label, {top-level letter: chunk}).
@@ -290,8 +258,7 @@ def main():
 
     for q in W:
         qn = str(q["qNum"])
-        o_all = recover_labels(official.get((q["year"], qn), []),
-                               q["year"], qn, failures)
+        o_all = official.get((q["year"], qn), [])
         # A part the bank deliberately excludes (a drawing task the engine
         # cannot present) is declared in omittedParts. It has no stem, no model
         # answer and no marks in the bank, so it must not become a part[].

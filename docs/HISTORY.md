@@ -3806,3 +3806,144 @@ environment — so the multi-part marking path remains verified only to the prom
   Section III port, not as a separate backlog item. **HMS has no answer key at all** and cannot have
   one until after the 2026 HSC, so its 40 written questions have no ground truth to derive per-part
   marks from. There is nothing further to convert today.
+
+---
+
+## 2026-09-05 (later still, ×4) — The criteria-row scrambling is fixed at the root, in `build_written_key.py`
+
+**What changed.** `scripts/build_written_key.py` now lays a PDF line out in reading order.
+All four written keys were regenerated; **147 of 1 447 criteria rows were scrambled, 30 now are —
+117 repaired, 80%**, with **0 marks changed anywhere**. The repaired wording was pushed through to
+the bank by a new `scripts/refresh_band_descriptors.py`: **45 parts gained NESA's real band wording**
+(they had been falling back to the engine's generic text) and **7 had scrambled wording corrected**.
+
+This closes the known issue opened on 2026-09-05, which recorded the real fix as "order the spans by
+x within each line, and it needs the local PDFs".
+
+### Three distinct causes, not one
+
+The known issue assumed a single mechanism. There were three, and only the first is what it
+described:
+
+1. **Lines were keyed on `round(y0, 1)` — the glyph TOP.** An inline superscript sits ~2 pt higher
+   than the words around it, so it became its own "line", and since lines are emitted in y order it
+   was hoisted in front of the sentence it belongs inside: 2020 Advanced Q13 read *"sec2 Finds the
+   anti-derivative of x"*. Its centre differs from the body line's by **0.7 pt** while its top
+   differs by 2.0 pt — so lines are now grouped by vertical **centre**, tolerance 0.6 × the page's
+   own median glyph height, then sorted left to right. Real lines on these pages are ~22 pt apart
+   with ~12 pt glyphs, so they never overlap and cannot be merged.
+
+2. **Stacked fractions cannot be fixed by any line rule** — the numerator genuinely *is* above the
+   line and the denominator genuinely *is* below it. 2020 Advanced Q14(c) is *"…studying History as
+   **20/40**, or equivalent merit"*: the `20` and the `40` sit at x≈361 between "as" and the comma,
+   and y-ordering put one at the very front and stranded the other at the back. Reading order comes
+   from the **bar the page draws between them** — a 13.97 pt rect — so `frac_bars()`/
+   `assemble_fractions()` fold each stacked fraction into one `num/den` token sitting on its own bar.
+
+3. **Words split mid-token by span boundaries** — `studyin`+`g`, `fi`+`nd`, `equiv`+`alent`,
+   `quadrat`+`ic`. `get_text("words")` splits on whitespace, so two tokens whose boxes *touch* had no
+   space between them. Real word gaps here are ~3 pt, so joining at ≤ 0.2 pt is unambiguous.
+
+### Two traps hit while building it, both caught by measuring rather than reading
+
+⚠️ **"Shorter than `row_rules()`' 100 pt" is not a sufficient test for a fraction bar, and assuming
+it was destroyed 145 of Advanced's 234 parts on the first run.** The criteria table is **two** cells,
+so every row is ruled twice — once across the criteria column (~380 pt) and once across the Marks
+column (**70.32 pt**). The second is short, so it posed as a fraction bar and folded the mark digits
+of adjacent rows into `1/2` tokens, emptying the marks column. Papers reconciled to 3 and 15 marks
+instead of 90. A table rule is now recognised by **sharing its y with the full-width rule of the same
+row**, which needs no assumption about column widths. *The dry run that caught this was the first
+thing run after the change; the fix would otherwise have looked plausible and been catastrophic.*
+
+⚠️ **An image's label is reported with the IMAGE's box, not a glyph box.** 2020 Advanced p5 has
+`solution`/`diagram` **138 pt tall (11×)**, centred on the *next question's* first criteria row; 2020
+Standard 2 p2 has `spanning`/`trees` **313 pt tall starting at y = −79.9**, off the top of the page.
+Grouping either by centre files NESA's picture caption inside a criteria row, which is then shown to
+a student as band wording — the first attempt did exactly that, and separately dropped
+*"spanning trees"* out of Q17. Measured across all 23 guideline PDFs, **> 5 × body height selects
+exactly these 63 tokens and nothing else** (genuine oversize tops out at 4.7×, on the mapping-grid
+page this parser discards). They are kept — *"solution diagram"* tells a reviewer the official answer
+has a picture — but as their own line ordered by their **top**, which is the block they visually
+begin in.
+
+### Blast radius, measured field by field against the committed keys
+
+- **0 of 587 parts changed marks.** The CI-enforced ground truth is untouched.
+- **No criteria row was gained or lost** in any subject (540 / 510 / 146 / 251, unchanged).
+- Flagged-as-damaged rows: **Advanced 103 → 19, Standard 2 43 → 11, VET 1 → 0, Multimedia 0 → 0.**
+- Every remaining word-set change is a split-word rejoin. **VET and Multimedia have zero** — their
+  changes are pure reordering.
+- The **5 rows still genuinely damaged** are all multi-line stretched delimiters (`⌠⎮⌡`, `⎛⎝⎞⎠`),
+  which are 2-D layout no line model can place. They still trip the damage test, so those parts fall
+  back to generic wording — exactly as intended.
+
+**It also fixed 2023 Advanced Q31's lost part label as a side effect.** The `(b)` had been swallowed
+into the end of part (a)'s sample answer (*"No, since P(F S) P(F) ≠ (b)"*) by the same bug. The
+previous session had recovered it with an explicit `LABEL_RECOVERY` table in
+`mathsadv_add_parts.py`; the extractor now reads `a`, `b`, `c` directly, so **that workaround is
+deleted** — and its shape assertion is what reported the change rather than silently re-patching data
+that no longer needed patching.
+
+### The review ledger, and why it was not simply re-fingerprinted
+
+Regenerating the keys re-laid out **45 of VET Construction's 76 official sample answers**, which
+voided **23 of its 34 completed human reviews** and turned CI red. The runbook is explicit: *"a STALE
+entry means the official text itself moved — re-read that one, do not just re-fingerprint it."*
+
+But that rule describes a scenario, and this is not it. **Measured: all 45 have an identical word
+multiset — not one word added, removed or altered.** NESA's text did not move; our reading of it
+improved. So rather than override the guarantee, the guarantee now distinguishes the two cases:
+
+- `build_review_ledger.py` records a second, **order-insensitive** `sampleAnswerWordsFingerprint`.
+- `check_written_key.cjs` fails **STALE** only when the *words* moved. When only the order changed it
+  reports `re-laid out (wording unchanged)` and the reviews stand — visibly, in the CI output, not
+  silently.
+- An older ledger with no word fingerprint gets the strict answer, so this can never weaken one.
+
+⚠️ **The first attempt at this was wrong and was backed out.** Rebuilding the ledger with
+`build_review_ledger.py` computes *both* hashes from today's key, which makes the new one
+tautologically true and throws away exactly what the ledger is for. The word fingerprint has to
+record the multiset of the text **as at review time**, so `scripts/archive/add_word_fingerprints.py`
+recovers the pre-fix key **from git**, verifies each entry's existing exact fingerprint against it
+first (34/34 matched, proving the ledger was built from that text), and only then backfills. It
+refuses to write if any entry fails.
+
+**The guarantee was then tested, not assumed:** injecting a single extra word into one sample answer
+makes that entry STALE and fails the build, while the other 22 re-layouts still pass.
+
+### Verified
+
+- Full local CI: `MC=706 Written=374 imageRefs=337 missingImages=0`, `Issues: 0`; **285** MC answers
+  and **334** written questions checked, 0 wrong, 0 unverifiable; VET 76/76 coverage and 34/34
+  reviewed; `npm test` **73/73**. No console errors.
+- **Four viewport widths — 320, 430, 1180, 1920** — each running a scored sweep that fills every part
+  of every multi-part question with its own model answer and submits: **Advanced 60 questions / 141
+  part rows, Standard 2 66 / 148, VET 18 / 52**, and at every width **0 occurrences of `undefined`,
+  0 band strings tripping the damage test, 0 overflows, 0 render errors, and every question scoring
+  full**. Standard 2's parts on generic fallback went **6 → 0**; Advanced's **44 → 1** (2021 Q27(b),
+  the genuine stretched-bracket case).
+- The row that started this now renders NESA's real wording to the student — 2020 Q14 scored
+  **3 / 5** with part (c) reading **"Obtains the probability of a student studying History as 20/40,
+  or equivalent merit"**, against the generic fallback it had before and the scrambled *"20 Obtains
+  the probability of a student studyin g History as , or equivalent 40 merit"* before that.
+  Screenshotted.
+- `refresh_band_descriptors.py` is **idempotent** — a second run reports 0 changes.
+
+### Two things deliberately preserved
+
+- **VET's hand-authored N=1 band wording.** NESA prints no row for non-attainment, so on an
+  all-or-nothing 1-mark part `partial`/`minimal` are the only authored text this pipeline produces,
+  and VET's were written during its 2026-09-01 human review (*"Does not correctly identify a chisel.
+  The mark is awarded in full or not at all."*), which reads better than the mechanical default. The
+  refresh updates only `full` on those parts. Without this it would have clobbered 3 of them.
+- **`subjects/multimedia.json` is untouched.** The refresh writes a subject only when it actually
+  changed something — round-tripping it through `json.dumps` reformats the compact inline arrays in
+  `studyNotes` into a 456-line diff, the trap CLAUDE.md already records, and it was hit and backed
+  out here.
+
+⚠️ **Not done, and recorded rather than missing:** the 5 stretched-delimiter rows, and the fact that
+`ms2_add_parts.py`/`mathsadv_add_parts.py` in `scripts/archive/` still carry the *strict* damage test
+written against the pre-fix rows. On the repaired rows that test is mostly false positives, so
+re-running either would strip real NESA wording from ~7 parts — a warning to that effect is now at
+the top of `mathsadv_add_parts.py`. `refresh_band_descriptors.py` is the authoritative path and
+carries the relaxed test.

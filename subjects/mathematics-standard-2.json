@@ -6447,7 +6447,7 @@
           ],
           "minKeywords": 1,
           "bandDescriptors": {
-            "full": "Provides correct values for and x y",
+            "full": "Provides correct values for x and y",
             "partial": "Provides correct value for x, or equivalent merit",
             "minimal": "Provides correct value for x, or equivalent merit"
           }
@@ -8291,7 +8291,12 @@
             "8",
             "turning point"
           ],
-          "minKeywords": 2
+          "minKeywords": 2,
+          "bandDescriptors": {
+            "full": "Provides correct answer",
+            "partial": "Finds correct value of t, or equivalent merit",
+            "minimal": "Finds correct value of t, or equivalent merit"
+          }
         },
         {
           "label": "(b)",
@@ -8453,7 +8458,12 @@
             "0.7",
             "64.3"
           ],
-          "minKeywords": 1
+          "minKeywords": 1,
+          "bandDescriptors": {
+            "full": "Provides correct interpretation of both slope and y-intercept",
+            "partial": "Provides correct interpretation of y-intercept, or equivalent merit",
+            "minimal": "Provides correct interpretation of y-intercept, or equivalent merit"
+          }
         },
         {
           "label": "(c)",
@@ -8750,7 +8760,12 @@
             "8.76",
             "146"
           ],
-          "minKeywords": 2
+          "minKeywords": 2,
+          "bandDescriptors": {
+            "full": "Provides the correct solution",
+            "partial": "Finds another angle in rAPB, or equivalent merit",
+            "minimal": "Finds another angle in rAPB, or equivalent merit"
+          }
         }
       ]
     },
@@ -8823,8 +8838,8 @@
           "minKeywords": 2,
           "bandDescriptors": {
             "full": "Provides correct solution",
-            "partial": "Substitutes a value for into an appropriate formula, or equivalent merit b",
-            "minimal": "Substitutes a value for into an appropriate formula, or equivalent merit b"
+            "partial": "Substitutes a value for b into an appropriate formula, or equivalent merit",
+            "minimal": "Substitutes a value for b into an appropriate formula, or equivalent merit"
           }
         }
       ]
@@ -9212,8 +9227,8 @@
           "minKeywords": 1,
           "bandDescriptors": {
             "full": "Provides correct solution",
-            "partial": "= Finds 45, or equivalent merit x",
-            "minimal": "= Finds 45, or equivalent merit x"
+            "partial": "Finds x = 45, or equivalent merit",
+            "minimal": "Finds x = 45, or equivalent merit"
           }
         },
         {
@@ -9303,8 +9318,8 @@
           "minKeywords": 2,
           "bandDescriptors": {
             "full": "Provides correct solution",
-            "partial": "States the float time or adds to the network diagram X",
-            "minimal": "States the float time or adds to the network diagram X"
+            "partial": "States the float time or adds X to the network diagram",
+            "minimal": "States the float time or adds X to the network diagram"
           }
         }
       ]
@@ -9419,8 +9434,8 @@
           "minKeywords": 1,
           "bandDescriptors": {
             "full": "Provides correct solution",
-            "partial": "1 = Substitutes correctly into , or equivalent merit absinC Area 2",
-            "minimal": "1 = Substitutes correctly into , or equivalent merit absinC Area 2"
+            "partial": "Substitutes correctly into Area = 1/2 absinC, or equivalent merit",
+            "minimal": "Substitutes correctly into Area = 1/2 absinC, or equivalent merit"
           }
         },
         {
@@ -10162,8 +10177,8 @@
           "minKeywords": 2,
           "bandDescriptors": {
             "full": "Provides correct answers",
-            "partial": "3 Calculates of the maximum height, or equivalent merit 4",
-            "minimal": "3 Calculates of the maximum height, or equivalent merit 4"
+            "partial": "Calculates 3/4 of the maximum height, or equivalent merit",
+            "minimal": "Calculates 3/4 of the maximum height, or equivalent merit"
           }
         }
       ]
@@ -10639,7 +10654,12 @@
             "236",
             "184"
           ],
-          "minKeywords": 1
+          "minKeywords": 1,
+          "bandDescriptors": {
+            "full": "Correctly plots both points on the graph",
+            "partial": "Calculates x and y, and plots this point on the grid, or equivalent merit",
+            "minimal": "Calculates x or y, or equivalent merit"
+          }
         },
         {
           "label": "(b)",
@@ -11541,7 +11561,12 @@
             "FG",
             "ACEG"
           ],
-          "minKeywords": 3
+          "minKeywords": 3,
+          "bandDescriptors": {
+            "full": "Provides correct solution",
+            "partial": "Provides x = 30, or equivalent merit OR Provides correct answer",
+            "minimal": "Provides correct answer"
+          }
         }
       ]
     },
@@ -11798,7 +11823,12 @@
             "1.96",
             "89.5"
           ],
-          "minKeywords": 2
+          "minKeywords": 2,
+          "bandDescriptors": {
+            "full": "Provides correct solution",
+            "partial": "Attempt to use a z-score in a calculation, or equivalent merit OR Calculates the percentage of males that weigh more than x kg",
+            "minimal": "Calculates the number of male sheep, or equivalent merit"
+          }
         },
         {
           "label": "(b)",

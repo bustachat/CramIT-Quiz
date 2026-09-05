@@ -41,6 +41,25 @@ def fingerprint(text):
     return "sha256:" + hashlib.sha256(norm.encode("utf-8")).hexdigest()
 
 
+def word_fingerprint(text):
+    """sha256 of the sample answer's WORD MULTISET, order discarded.
+
+    The companion to fingerprint(). It answers a different question: did NESA's WORDS
+    change, or did only our reading order change?
+
+    That distinction became load-bearing on 2026-09-05, when build_written_key.py was
+    fixed to lay a line out left-to-right. Every VET sample answer it re-read came back
+    with an identical word multiset -- not one word added, removed or altered, on all 45
+    that changed -- because the official text had not moved at all; the extractor had
+    simply been emitting a superscript or a fraction numerator ahead of the sentence it
+    sits inside. Failing 23 completed human reviews for that would have been wrong, and
+    silently re-fingerprinting them would have thrown away the guarantee. Recording both
+    hashes lets the checker tell the two cases apart for good.
+    """
+    words = sorted(re.findall(r"[^\W_]+", (text or "").lower()))
+    return "sha256:" + hashlib.sha256(" ".join(words).encode("utf-8")).hexdigest()
+
+
 def leaves(key, year, qnum):
     m = re.match(r"^(\d+)((?:\([a-z0-9ivx]+\))*)$", str(qnum))
     want = [m.group(1)] + re.findall(r"\(([a-z0-9ivx]+)\)", m.group(2))
@@ -92,6 +111,7 @@ def main():
             "verdict": entry["verdict"],
             "fields": entry["fields"],
             "sampleAnswerFingerprint": fingerprint(sample),
+            "sampleAnswerWordsFingerprint": word_fingerprint(sample),
             "note": entry.get("note"),
         }
         counts[entry["verdict"]] = counts.get(entry["verdict"], 0) + 1
@@ -103,7 +123,10 @@ def main():
                  "bandDescriptors against NESA's official sample answer and criteria in "
                  "data/answer-key/written/. `sampleAnswerFingerprint` hashes the OFFICIAL "
                  "answer as at review time: regenerate the key and any review whose "
-                 "official text moved is void, not stale. See docs/porting-playbook.md "
+                 "official WORDS moved is void, not stale. `sampleAnswerWordsFingerprint` "
+                 "hashes the same text with word ORDER discarded, so a pure re-layout by "
+                 "the extractor is reported rather than treated as NESA changing. See "
+                 "docs/porting-playbook.md "
                  "section 6. Rebuild with scripts/build_review_ledger.py; never hand-edit."),
         "reviewer": "human review, assisted (session of %s)" % mod.REVIEWED_AT,
         "reviews": reviews,

@@ -48,7 +48,7 @@
         "question": 12,
         "part": null,
         "marks": 3,
-        "sampleAnswer": "+ + + + … 4 10 16 1354 = = d 6 a 4 = + − × 1354 4 (n 1) 6 1350 = − n 1 6 = n 226 n (a ℓ) = + S n 2 226 (4 ) = + 1354 2 = 153 454",
+        "sampleAnswer": "4 + 10 + 16 + … + 1354 d = 6 a = 4 1354 = 4 + (n − 1) × 6 1350/6 = n − 1 n = 226 Sn = n/2 (a + ℓ) = 226/2 (4 + 1354 ) = 153 454",
         "criteria": [
           {
             "marks": 3,
@@ -60,7 +60,7 @@
           },
           {
             "marks": 1,
-            "text": "Finds the values of and d, or equivalent merit a"
+            "text": "Finds the values of a and d, or equivalent merit"
           }
         ]
       },
@@ -68,7 +68,7 @@
         "question": 13,
         "part": null,
         "marks": 2,
-        "sampleAnswer": "π ⌠ 4 sec2 x dx ⎮⌡ 0 π ⎡ ⎤ 4 = tan x ⎢ ⎥ ⎣ ⎦ 0 π ⎡ ⎤ = − tan tan0 ⎢ ⎦⎥ ⎣ 4 = 1",
+        "sampleAnswer": "⌠ π/4 sec2 x dx ⎮⌡ 0 ⎡ ⎤ π/4 = ⎢ tan x ⎥ ⎣ ⎦ 0 = ⎡ tan π/4 − tan0 ⎤ ⎣ ⎢ ⎦⎥ = 1",
         "criteria": [
           {
             "marks": 2,
@@ -76,7 +76,7 @@
           },
           {
             "marks": 1,
-            "text": "sec2 Finds the anti-derivative of x, or equivalent merit"
+            "text": "Finds the anti-derivative of sec2 x, or equivalent merit"
           }
         ]
       },
@@ -84,7 +84,7 @@
         "question": 14,
         "part": "a",
         "marks": 2,
-        "sampleAnswer": "= 40 – 7 33 + = 20 18 – 33 5 5 1 = 40 8",
+        "sampleAnswer": "40 – 7 = 33 20 + 18 – 33 = 5 5/40 = 1/8",
         "criteria": [
           {
             "marks": 2,
@@ -100,7 +100,7 @@
         "question": 14,
         "part": "b",
         "marks": 1,
-        "sampleAnswer": "13 P(H G) = 18",
+        "sampleAnswer": "P(H G) = 13/18",
         "criteria": [
           {
             "marks": 1,
@@ -112,7 +112,7 @@
         "question": 14,
         "part": "c",
         "marks": 2,
-        "sampleAnswer": "20 20 10 × = 40 39 39",
+        "sampleAnswer": "20/40 × 20/39 = 10/39",
         "criteria": [
           {
             "marks": 2,
@@ -120,7 +120,7 @@
           },
           {
             "marks": 1,
-            "text": "20 Obtains the probability of a student studyin g History as , or equivalent 40 merit"
+            "text": "Obtains the probability of a student studying History as 20/40, or equivalent merit"
           }
         ]
       },
@@ -128,7 +128,7 @@
         "question": 15,
         "part": "a",
         "marks": 1,
-        "sampleAnswer": "= 100° – 35° 65° solution diagram",
+        "sampleAnswer": "100° – 35° = 65° solution diagram",
         "criteria": [
           {
             "marks": 1,
@@ -140,7 +140,7 @@
         "question": 15,
         "part": "b",
         "marks": 2,
-        "sampleAnswer": "= + − × × AB2 72 92 2 7 9 cos65° = 76.75… = AB 8.76 km",
+        "sampleAnswer": "AB2 = 72 + 92 − 2 × 7 × 9 cos65° = 76.75… AB = 8.76 km",
         "criteria": [
           {
             "marks": 2,
@@ -156,7 +156,7 @@
         "question": 15,
         "part": "c",
         "marks": 2,
-        "sampleAnswer": "sin65° sin A = 8.76… 9 = A 68.6… ≑ 69° = − − Bearing 180° (69° 35°) = 146°",
+        "sampleAnswer": "sinA/9 = sin65°/8.76… A = 68.6… ≑ 69° Bearing = 180° − (69° − 35°) = 146°",
         "criteria": [
           {
             "marks": 2,
@@ -164,7 +164,7 @@
           },
           {
             "marks": 1,
-            "text": "rAPB, Finds another angle in or equivalent merit"
+            "text": "Finds another angle in rAPB, or equivalent merit"
           }
         ]
       },
@@ -172,7 +172,7 @@
         "question": 16,
         "part": null,
         "marks": 4,
-        "sampleAnswer": "–x3 3x2 = + − 1 y dy –3x2 = + 6x dx 3x(2 x) = − dy = = When 0, we have 3x(2 – x) 0. dx = = x 0, x 2 = −1 = −23 + − 3(2)2 y y 1 = 3 Stationary points are (0, –1) and (2, 3). d2 graph y = + –6x 6 2 dx d2 y = = When 0, we have 6(1 – x) 0. 2 dx = x 1 = −13 + × − 12 y 3 1 = 1 The point of inflection is (1, 1).",
+        "sampleAnswer": "y = –x3 + 3x2 − 1 dy/dx = –3x2 + 6x = 3x(2 − x) When dy/dx = 0, we have 3x(2 – x) = 0. x = 0, x = 2 y = −1 y = −23 + 3(2)2 − 1 = 3 Stationary points are (0, –1) and (2, 3). graph d2y/dx2 = –6x + 6 When d2y/dx2 = 0, we have 6(1 – x) = 0. x = 1 y = −13 + 3 × 12 − 1 = 1 The point of inflection is (1, 1).",
         "criteria": [
           {
             "marks": 4,
@@ -196,7 +196,7 @@
         "question": 17,
         "part": null,
         "marks": 2,
-        "sampleAnswer": "⌠ ⌠ 1 2x x = dx dx ⎮⌡ ⎮⌡ 2 2 + + 2 4 4 x x ( ) 1 2 = + + ln 4 x c 2",
+        "sampleAnswer": "⌠ ⌠ ⎮⌡ x/4+x2 dx = 1/2 ⎮⌡ 2x/4+x2 dx = 1/2 ln ( 4 + x 2 ) + c",
         "criteria": [
           {
             "marks": 2,
@@ -212,7 +212,7 @@
         "question": 18,
         "part": "a",
         "marks": 2,
-        "sampleAnswer": "2x 2x (2x 1) + + 2e 2e 2x (2x 1) = + + 2e 1 2x (2x 2) = + 2e 2x (x 1) = + 4e",
+        "sampleAnswer": "2e 2x (2x + 1) + 2e 2x = 2e 2x (2x + 1 + 1) = 2e 2x (2x + 2) = 4e 2x (x + 1)",
         "criteria": [
           {
             "marks": 2,
@@ -228,7 +228,7 @@
         "question": 18,
         "part": "b",
         "marks": 1,
-        "sampleAnswer": "⌠ 1)e2x (x + dx ⎮⌡ ⌠ 1 1)e2x 4(x = + dx ⎮⌡ 4 1 2x (2x 1) = + + e c 4",
+        "sampleAnswer": "⌠ (x + 1)e2x dx ⎮⌡ ⌠ = 1/4 4(x + 1)e2x dx ⎮⌡ = 1/4 e 2x (2x + 1) + c",
         "criteria": [
           {
             "marks": 1,
@@ -240,7 +240,7 @@
         "question": 19,
         "part": null,
         "marks": 2,
-        "sampleAnswer": "secθ − cosθ = sinθ tanθ 1 = − cosθ LHS cosθ cos2θ − 1 = cosθ sin2θ = cosθ sinθ = sinθ × cosθ = sinθ × tanθ = RHS",
+        "sampleAnswer": "secθ − cosθ = sinθtanθ LHS = 1/cosθ − cosθ = 1−cos2θ/cosθ = sin2θ/cosθ = sinθ × sinθ/cosθ = sinθ × tanθ = RHS",
         "criteria": [
           {
             "marks": 2,
@@ -248,7 +248,7 @@
           },
           {
             "marks": 1,
-            "text": "cos2θ − 1 Shows that the LHS is equal to , or equivalent merit cosθ"
+            "text": "Shows that the LHS is equal to 1−cos2θ/cosθ, or equivalent merit"
           }
         ]
       },
@@ -256,7 +256,7 @@
         "question": 20,
         "part": null,
         "marks": 2,
-        "sampleAnswer": "5 − 0 [ )] 60 ( + + + + + 60 67 2 55 65 68 70 5( ) 2 643 = 120 !!= 5.4 km",
+        "sampleAnswer": "5/60 − 0 [ 60 + 67 + 2 ( 55 + 65 + 68 + 70 )] 2 5( ) = 643/120 !!= 5.4 km",
         "criteria": [
           {
             "marks": 2,
@@ -272,7 +272,7 @@
         "question": 21,
         "part": "a",
         "marks": 1,
-        "sampleAnswer": "× = + 70(1.5)–0.4 4 T 25 = 61.5891… ≑ 61.6°",
+        "sampleAnswer": "T = 25 + 70(1.5)–0.4 × 4 = 61.5891… ≑ 61.6°",
         "criteria": [
           {
             "marks": 1,
@@ -284,7 +284,7 @@
         "question": 21,
         "part": "b",
         "marks": 2,
-        "sampleAnswer": "dT )−0.4t ( (−0.4 )ln ( 1.5) = 70 1.5 dt = When t 4, dT 1.5)−1.6 ( (−0.4)ln ( 1.5) = 70 dt = −5.934… = Therefore at t 4 the tea is cooling at 5.9°C per minute.",
+        "sampleAnswer": "dT/dt = 70 ( 1.5 )−0.4t (−0.4 )ln ( 1.5) When t = 4, dT/dt = 70 ( 1.5)−1.6 (−0.4)ln ( 1.5) = −5.934… Therefore at t = 4 the tea is cooling at 5.9°C per minute.",
         "criteria": [
           {
             "marks": 2,
@@ -300,7 +300,7 @@
         "question": 21,
         "part": "c",
         "marks": 3,
-        "sampleAnswer": "70(1.5)−0.4t = + 55 25 30 1.5−0.4t = 70 ⎛3 ⎞ (1 .5) = −0.4t ln ln ⎝ ⎠ 7 ⎛3 ⎞ ln ⎝ ⎠ 7 = − t (1 .5) 0.4ln =!! 5.22 minutes",
+        "sampleAnswer": "55 = 25 + 70(1.5)−0.4t 30/70 = 1.5−0.4t ln ⎛3⎞ = −0.4t ln (1.5) ⎝ 7⎠ ln ⎛3⎞ t = − ⎝7⎠/0.4ln(1.5) =!! 5.22 minutes",
         "criteria": [
           {
             "marks": 3,
@@ -312,7 +312,7 @@
           },
           {
             "marks": 1,
-            "text": "1.5–0.4t Makes the subject of the equation, or equivalent merit"
+            "text": "Makes 1.5–0.4t the subject of the equation, or equivalent merit"
           }
         ]
       },
@@ -320,7 +320,7 @@
         "question": 22,
         "part": null,
         "marks": 4,
-        "sampleAnswer": "diagram = AB 80 ÷ 10 = 8 cm ∠AOB = = 360° ÷ 10 36° 180° − 36° ∠OAB = 2 = 72° 8 r = sin72° sin36° = r 12.944… 1 = × × × (12.944…)2 Area 10 sin 36° 2 cm2 ≑ 492.4",
+        "sampleAnswer": "diagram AB = 80 ÷ 10 = 8 cm ∠AOB = 360° ÷ 10 = 36° ∠OAB = 180°−36°/2 = 72° r/sin72° = 8/sin36° r = 12.944… Area = 10 × 1/2 × (12.944…)2 × sin 36° ≑ 492.4 cm2",
         "criteria": [
           {
             "marks": 4,
@@ -328,7 +328,7 @@
           },
           {
             "marks": 3,
-            "text": "rAOB, Calculates area of or equivalent merit"
+            "text": "Calculates area of rAOB, or equivalent merit"
           },
           {
             "marks": 2,
@@ -344,7 +344,7 @@
         "question": 23,
         "part": "a",
         "marks": 2,
-        "sampleAnswer": "k ⌠ = ⎮sin 1 x dx ⌡0 k ⎡ ⎤ − = cos 1 x ⎣⎢ ⎦⎥ 0 − + = cos cos0 1 k = cos 0 k π = k 2",
+        "sampleAnswer": "⌠ k ⎮sin x dx = 1 ⌡0 ⎡ ⎤ k ⎣⎢ − cos x ⎦⎥ = 1 0 − cos k + cos0 = 1 cos k = 0 k = π/2",
         "criteria": [
           {
             "marks": 2,
@@ -360,7 +360,7 @@
         "question": 23,
         "part": "b",
         "marks": 2,
-        "sampleAnswer": "1 ⌠ sin x dx ⎮ ⌡0 1 ⎡ ⎤ = − cos x ⎣⎢ ⎦⎥0 = − + cos1 1 = 0.4597 !!",
+        "sampleAnswer": "⌠ 1 ⎮ sin x dx ⌡0 ⎡ ⎤ 1 = ⎣⎢ − cos x ⎦⎥0 = − cos1 + 1 = !! 0.4597",
         "criteria": [
           {
             "marks": 2,
@@ -376,7 +376,7 @@
         "question": 24,
         "part": null,
         "marks": 3,
-        "sampleAnswer": "2 2 − + + − = 6x 4y 3 0 x y x2 y2 − + + + + = + + 6x 9 4y 4 3 9 4 (y 2)2 3)2 (x + + = − 16 The original circle has centre (3, –2) and radius 4. The reflected circle has centre (3, 2) and radius 4.",
+        "sampleAnswer": "x 2 − 6x + y 2 + 4y − 3 = 0 x2 − 6x + 9 + y2 + 4y + 4 = 3 + 9 + 4 (x − 3)2 + (y + 2)2 = 16 The original circle has centre (3, –2) and radius 4. The reflected circle has centre (3, 2) and radius 4.",
         "criteria": [
           {
             "marks": 3,
@@ -396,7 +396,7 @@
         "question": 25,
         "part": "a",
         "marks": 3,
-        "sampleAnswer": "1 x2 + π = 36 xy 4 1 x2 = π 36 – xy 4 36 1 = − π y x 4 x 1 = + + × 2π 2y 2x P x 4 1 36 1 ⎛ ⎞ = + + π − π 2 2x x x⎠ ⎝ 2 4 x 72 1 1 = − π + + π 2x x x 2 2 x 72 = + 2x x",
+        "sampleAnswer": "xy + 1/4 π x2 = 36 xy = 36 – 1/4 π x2 y = 36/x − 1/4 π x P = 2y + 2x + 1/4 × 2π x = 2 ⎛ 36/x − 1/4 π ⎞ + 2x + 1/2 π x ⎝ x⎠ = 72/x − 1/2 π x + 2x + 1/2 π x = 2x + 72/x",
         "criteria": [
           {
             "marks": 3,
@@ -404,11 +404,11 @@
           },
           {
             "marks": 2,
-            "text": "Writes an expression for the perimeter in terms of and and finds a x y correct expression for in terms of x, or equivalent merit y"
+            "text": "Writes an expression for the perimeter in terms of x and y and finds a correct expression for y in terms of x, or equivalent merit"
           },
           {
             "marks": 1,
-            "text": "Writes an expression for a perimeter in terms of and which includes x y the curved length of a quadrant, or equivalent merit"
+            "text": "Writes an expression for a perimeter in terms of x and y which includes the curved length of a quadrant, or equivalent merit"
           }
         ]
       },
@@ -416,7 +416,7 @@
         "question": 25,
         "part": "b",
         "marks": 4,
-        "sampleAnswer": "72 dP = − 2 2 dx x dP = 0 Setting , we have dx 72 = 2 2 x 2 = 36 x = > 6 (since 0) x x d2P 144 = dx2 x3 = When x 6, d2P 144 = which is greater than zero. dx2 63 ∴ = 6. x P is a minimum when 72 = × + 2 6 The minimum perimeter 6 = + 12 12 = 24 m",
+        "sampleAnswer": "dP/dx = 2 − 72/x2 Setting dP/dx = 0, we have 2 = 72/x2 x 2 = 36 x = 6 (since x > 0) d2P/dx2 = 144/x3 When x = 6, d2P/dx2 = 144/63 which is greater than zero. ∴ P is a minimum when x = 6. The minimum perimeter = 2 × 6 + 72/6 = 12 + 12 = 24 m",
         "criteria": [
           {
             "marks": 4,
@@ -424,15 +424,15 @@
           },
           {
             "marks": 3,
-            "text": "Verifies that at there is a minimum turning point, or equivalent merit x = 6"
+            "text": "Verifies that at x = 6 there is a minimum turning point, or equivalent merit"
           },
           {
             "marks": 2,
-            "text": "dP = 0 Solves , or equivalent merit dx"
+            "text": "Solves dP/dx = 0, or equivalent merit"
           },
           {
             "marks": 1,
-            "text": "dP Finds , or equivalent merit dx"
+            "text": "Finds dP/dx, or equivalent merit"
           }
         ]
       },
@@ -440,7 +440,7 @@
         "question": 26,
         "part": "a",
         "marks": 2,
-        "sampleAnswer": "= − 60 000(1.005) 800 A1 = $59 500 ( 1.005) = − 59 500 800 A2 = $58 997.50 ( 1.005) = − 58 997.50 800 A3 = $58 492.49 !!",
+        "sampleAnswer": "A1 = 60 000(1.005) − 800 = $59 500 A2 = 59 500 ( 1.005) − 800 = $58 997.50 A3 = 58 997.50 ( 1.005) − 800 = !! $58 492.49",
         "criteria": [
           {
             "marks": 2,
@@ -456,7 +456,7 @@
         "question": 26,
         "part": "b",
         "marks": 2,
-        "sampleAnswer": "Total withdrawals after 3 months = × 800 3 = $2400 Balance is reduced by = 60 000 – 58 492.49 = $1507.51 Interest = $2400 – $1507.51 = $892.49",
+        "sampleAnswer": "Total withdrawals after 3 months = 800 × 3 = $2400 Balance is reduced by = 60 000 – 58 492.49 = $1507.51 Interest = $2400 – $1507.51 = $892.49",
         "criteria": [
           {
             "marks": 2,
@@ -472,7 +472,7 @@
         "question": 26,
         "part": "c",
         "marks": 3,
-        "sampleAnswer": "= − 60 000(1.005) 800 A1 000(1.005)2 = − − 60 800(1.005) 800 A2 ! ( ) ( )94 1.00593 = − + + + 60 000 1.005 800 1 1.005 \" A94 1.00594 − 1 ( 1.005)94 = − 60 000 800 0.005 = $187.85",
+        "sampleAnswer": "A1 = 60 000(1.005) − 800 A2 = 60 000(1.005)2 − 800(1.005) − 800 ! A94 = 60 000 ( 1.005 )94 − 800 ( 1 + 1.005 + \" + 1.00593 ) = 60 000 ( 1.005)94 − 800 1.00594−1/0.005 = $187.85",
         "criteria": [
           {
             "marks": 3,
@@ -492,7 +492,7 @@
         "question": 27,
         "part": null,
         "marks": 5,
-        "sampleAnswer": "= − 22 0.525 x = 21.475 684 = y 20 = 34.2 (x, ) y Substituting into the regression equation, we have b(21.475) = −10.6063 + 34.2 44.8063 = b 21.475 = 2.08644… b = = + × When x 19, y –10.6063 2.08644… 19 = 29.03606… ∴ 29 chirps are expected.",
+        "sampleAnswer": "x = 22 − 0.525 = 21.475 y = 684/20 = 34.2 Substituting (x, y ) into the regression equation, we have 34.2 = −10.6063 + b(21.475) 44.8063/21.475 = b b = 2.08644… When x = 19, y = –10.6063 + 2.08644… × 19 = 29.03606… ∴ 29 chirps are expected.",
         "criteria": [
           {
             "marks": 5,
@@ -504,15 +504,15 @@
           },
           {
             "marks": 3,
-            "text": "y x Substitutes and into the regression equation, or equivalent merit"
+            "text": "Substitutes x and y into the regression equation, or equivalent merit"
           },
           {
             "marks": 2,
-            "text": "y x Finds the value of and , or equivalent merit"
+            "text": "Finds the value of x and y, or equivalent merit"
           },
           {
             "marks": 1,
-            "text": "y x Finds the value of or or the median of the temperature, or equivalent merit"
+            "text": "Finds the value of x or y or the median of the temperature, or equivalent merit"
           }
         ]
       },
@@ -520,7 +520,7 @@
         "question": 28,
         "part": "a",
         "marks": 3,
-        "sampleAnswer": "< < P($15 hourly rate of pay $30) − 95% 68% = + 68% 2 = + 68% 13.5% = 81.5% P(at least one earns between $15 and $30 per hour) = − 1 P(neither earns between $15 and $30 per hour) (1 )2 = − − 1 0.815 = 0.965775",
+        "sampleAnswer": "P($15 < hourly rate of pay < $30) = 68% + 95%−68%/2 = 68% + 13.5% = 81.5% P(at least one earns between $15 and $30 per hour) = 1 − P(neither earns between $15 and $30 per hour) = 1 − (1 − 0.815)2 = 0.965775",
         "criteria": [
           {
             "marks": 3,
@@ -528,11 +528,11 @@
           },
           {
             "marks": 2,
-            "text": "Finds the percentage of adults earning between $15 and $30 and finds a probability using ...), or equivalent merit 1 – P(neither earns"
+            "text": "Finds the percentage of adults earning between $15 and $30 and finds a probability using 1 – P(neither earns...), or equivalent merit"
           },
           {
             "marks": 1,
-            "text": "Finds a probability using ...), or equivalent merit 1 – P(neither earns OR diagram Finds the percentage of adults earning between $15 and $30, or equivalent merit"
+            "text": "Finds a probability using 1 – P(neither earns...), or equivalent merit OR diagram Finds the percentage of adults earning between $15 and $30, or equivalent merit"
           }
         ]
       },
@@ -540,7 +540,7 @@
         "question": 28,
         "part": "b",
         "marks": 2,
-        "sampleAnswer": "3 = P(chosen adult works) 4 3 1 ∴ = × P(chosen adult works and earns more than $25 per hour) 4 2 3 = 8",
+        "sampleAnswer": "P(chosen adult works) = 3/4 ∴ P(chosen adult works and earns more than $25 per hour) = 3/4 × 1/2 = 3/8",
         "criteria": [
           {
             "marks": 2,
@@ -556,7 +556,7 @@
         "question": 29,
         "part": "a",
         "marks": 2,
-        "sampleAnswer": "= cln y x dy c = dx x c = The gradient of the tangent at x p is . p = = At cln x p y p c ( ) − ∴ − = x p cln y p p c ∴ − = − cln y p x c p c ∴ = − + cln y x c p p",
+        "sampleAnswer": "y = cln x dy/dx = c/x The gradient of the tangent at x = p is c/p. At x = p y = cln p ∴ y − cln p = c/p (x − p ) ∴ y − cln p = c/p x − c ∴ y = c/p x − c + cln p",
         "criteria": [
           {
             "marks": 2,
@@ -564,7 +564,7 @@
           },
           {
             "marks": 1,
-            "text": "= Finds the gradient of the tangent at p, or equivalent merit x"
+            "text": "Finds the gradient of the tangent at x = p, or equivalent merit"
           }
         ]
       },
@@ -572,7 +572,7 @@
         "question": 29,
         "part": "b",
         "marks": 2,
-        "sampleAnswer": "c = 1 (since the tangent has a gradient of 1) p ∴ = c p −c + = cln 0 p (since the tangent passes through the origin) −c + = clnc 0 c(−1 ) = + 0 lnc = = 0, lnc 1 c = > (as 0) c e c",
+        "sampleAnswer": "c/p = 1 (since the tangent has a gradient of 1) ∴ c = p −c + cln p = 0 (since the tangent passes through the origin) −c + clnc = 0 c(−1 + lnc ) = 0 c = 0, lnc = 1 c = e (as c > 0)",
         "criteria": [
           {
             "marks": 2,
@@ -580,7 +580,7 @@
           },
           {
             "marks": 1,
-            "text": "c = −c + = cln 0 1 p States that or , or equivalent merit p"
+            "text": "States that c/p = 1 or −c + cln p = 0, or equivalent merit"
           }
         ]
       },
@@ -588,7 +588,7 @@
         "question": 30,
         "part": "a",
         "marks": 2,
-        "sampleAnswer": "2 2 = − 4x ax x (a 1)x2 + − = 4x 0 x[(a 4] 1) + − = 0 x (a 1) = + − = 0, 4 0 x x (a 1) + = 4 x 4 = x + 1 a",
+        "sampleAnswer": "ax 2 = 4x − x 2 (a + 1)x2 − 4x = 0 x[(a + 1) x − 4] = 0 x = 0, (a + 1) x − 4 = 0 (a + 1) x = 4 x = 4/a+1",
         "criteria": [
           {
             "marks": 2,
@@ -604,7 +604,7 @@
         "question": 30,
         "part": "b",
         "marks": 4,
-        "sampleAnswer": "4 ⌠ 16 a+1 (4x ax2)dx x2 − − = ⎮ 3 ⌡ 0 4 ⌠ 16 a+1 ( x2)dx (a 1) ∴ = − + 4x ⎮ 3 ⌡ 0 4 x3⎤ ⎡ (a 1) 16 + a+1 = 2 − ⎢2 x ⎥ 3 ⎣ ⎦0 3 (a 1) × + 2 16 64 16 − × −0 = 1)2 1)3 (a (a + + 3 3 32 64 16 − = 1)2 1)2 (a 3(a + + 3 − 96 64 16 = 1)2 3(a + 3 32 16 = )2 3(a + 3 1 1)2 (a ∴ = + 2 = − > 2 1 (since 0) a a",
+        "sampleAnswer": "⌠ 4/a+1 ⎮ (4x − x2 − ax2)dx = 16/3 ⌡ 0 ⌠ 4/a+1 ∴ ⎮ ( 4x − (a + 1) x2)dx = 16/3 ⌡ 0 ⎡ x3⎤ 4/a+1 ⎢2 x 2 − (a+1)/3⎥ = 16/3 ⎣ ⎦0 2×16/(a+1)2 − (a+1)/3 × 64/(a+1)3 −0 = 16/3 32/(a+1)2 − 64/3(a+1)2 = 16/3 96−64/3(a+1)2 = 16/3 32/3(a+1)2 = 16/3 ∴ (a + 1)2 = 2 a = 2 − 1 (since a > 0)",
         "criteria": [
           {
             "marks": 4,
@@ -628,15 +628,15 @@
         "question": 31,
         "part": "a",
         "marks": 2,
-        "sampleAnswer": "− 35 000 5000 = a 2 = 15 000 + 35 000 5000 = b 2 = 20 000",
+        "sampleAnswer": "35 000 − 5000 a = 2 = 15 000 35 000 + 5000 b = 2 = 20 000 graph",
         "criteria": [
           {
             "marks": 2,
-            "text": "Provides the correct values for and a b"
+            "text": "Provides the correct values for a and b"
           },
           {
             "marks": 1,
-            "text": "Provides the correct value of or the correct value of b, or equivalent a merit"
+            "text": "Provides the correct value of a or the correct value of b, or equivalent merit"
           }
         ]
       },
@@ -644,7 +644,7 @@
         "question": 31,
         "part": "b",
         "marks": 3,
-        "sampleAnswer": "< < < < The population of mice increases for 0 t 13 and 39 t 52. < < The population of cats increases for 10 t 36. < < Therefore both populations are increasing for 10 t 13.",
+        "sampleAnswer": "The population of mice increases for 0 < t < 13 and 39 < t < 52. The population of cats increases for 10 < t < 36. Therefore both populations are increasing for 10 < t < 13.",
         "criteria": [
           {
             "marks": 3,
@@ -652,11 +652,11 @@
           },
           {
             "marks": 2,
-            "text": "Finds the values of when the population of mice increases and the t values of when the population of cats increases t"
+            "text": "Finds the values of t when the population of mice increases and the values of t when the population of cats increases"
           },
           {
             "marks": 1,
-            "text": "Finds the values of when the population of mice increases, or equivalent t merit"
+            "text": "Finds the values of t when the population of mice increases, or equivalent merit"
           }
         ]
       },
@@ -664,7 +664,7 @@
         "question": 31,
         "part": "c",
         "marks": 2,
-        "sampleAnswer": "= The cat population reaches a maximum at t 36. π ⎛π ⎞ m′( ) = × 15 000cos t t ⎝ ⎠ 26 26 π ⎛π ⎞ m′(36) = × × 36 15 000cos ⎝ ⎠ 26 26 = −642.7… Therefore the mice population is decreasing at 643 mice per week. 2020 HSC Mathematics Advanced Mapping Grid Section I Question Marks Content Syllabus outcomes 1 1 MA-F1 Working with Functions MA11-1 2 1 MA-F2 Graphing Techniques MA12-1 MA-S1 Probability and Discrete Probability 3 1 MA12-8 Distributions 4 1 MA-C4 Integral Calculus MA12-7 5 1 MA-F1 Working with Functions MA11-2 6 1 MA-T3 Trigonometric Functions MA12-5 7 1 MA-C4 Integral Calculus MA12-7 8 1 MA-C3 Applications of Differentiation MA12-3 9 1 MA-S3 Random Variables MA12-8 10 1 MA-C2 Differential Calculus MA12-6 Section II Question Marks Content Syllabus outcomes 11 (a) 1 MA-F1 Working with Functions MA11-2 11 (b) 2 MA-F1 Working with Functions MA11-1 11 (c) 1 MA-F1 Working with Functions MA11-2 12 3 MA-M1 Modelling Financial Situations MA12–4 13 2 MA-C4 Integral Calculus MA12-7 MA-S1 Probability and Discrete Probability 14 (a) 2 MA11-9 Distributions MA-S1 Probability and Discrete Probability 14 (b) 1 MA11-7 Distributions MA-S1 Probability and Discrete Probability 14 (c) 2 MA11-7 Distributions 15 (a) 1 MA-T1 Trigonometry and Measuring Angles MA11-1 15 (b) 2 MA-T1 Trigonometry and Measuring Angles MA11-3 15 (c) 2 MA-T1 Trigonometry and Measuring Angles MA11-3 16 4 MA-C3 Applications of Differentiation MA12-3, 6,10 17 2 MA-C4 Integral Calculus MA12-7 18 (a) 2 MA-C2 Differential Calculus MA12-6 18 (b) 1 MA-C4 Integral Calculus MA12-3 19 2 MA-T2 Trigonometric Functions and Identities MA11-4 Question Marks Content Syllabus outcomes 20 2 MA-C4 Integral Calculus MA12-7 21 (a) 1 MA-E1 Exponentials and Logarithms MA11-6 21 (b) 2 MA-C3 Applications of Differentiation MA12-6 21 (c) 3 MA-E1 Exponentials and Logarithms MA11-6 22 4 MA-T1 Trigonometry and Measuring Angles MA11-9 23 (a) 2 MA-S3 Random Variables MA12-8 23 (b) 2 MA-S3 Random Variables MA12-8 24 3 MA-F2 Graphing Techniques MA12-1 25 (a) 3 MA-F1 Working with Functions MA11-1 25 (b) 4 MA-C3 Applications of Differentiation MA12-10 26 (a) 2 MA-M1 Modelling Financial Situations MA12-2 26 (b) 2 MA-M1 Modelling Financial Situations MA12-2 26 (c) 3 MA-M1 Modelling Financial Situations MA12–4 MA-S2 Descriptive Statistics and Bivariate Data 27 5 MA12-8 Analysis 28 (a) 3 MA-S3 Random Variables MA12-8 28 (b) 2 MA-S3 Random Variables MA12-8 29 (a) 2 MA-C2 Differential Calculus MA12-6 29 (b) 2 MA-C2 Differential Calculus MA12-6 30 (a) 2 MA-F1 Working with Functions MA11-1 30 (b) 4 MA-C4 Integral Calculus MA12-7 31 (a) 2 MA-T3 Trigonometric Functions MA12-5 31 (b) 3 MA-T3 Trigonometric Functions MA12-5 31 (c) 2 MA-C3 Applications of Differentiation MA12-6",
+        "sampleAnswer": "The cat population reaches a maximum at t = 36. m′( t) = π/26 × 15 000cos ⎛π t ⎞ ⎝ 26 ⎠ m′(36) = π/26 × 15 000cos ⎛π × 36 ⎞ ⎝ 26 ⎠ = −642.7… Therefore the mice population is decreasing at 643 mice per week. 2020 HSC Mathematics Advanced Mapping Grid Section I Question Marks Content Syllabus outcomes 1 1 MA-F1 Working with Functions MA11-1 2 1 MA-F2 Graphing Techniques MA12-1 3 1 MA-S1 Probability and Discrete Probability MA12-8 Distributions 4 1 MA-C4 Integral Calculus MA12-7 5 1 MA-F1 Working with Functions MA11-2 6 1 MA-T3 Trigonometric Functions MA12-5 7 1 MA-C4 Integral Calculus MA12-7 8 1 MA-C3 Applications of Differentiation MA12-3 9 1 MA-S3 Random Variables MA12-8 10 1 MA-C2 Differential Calculus MA12-6 Section II Question Marks Content Syllabus outcomes 11 (a) 1 MA-F1 Working with Functions MA11-2 11 (b) 2 MA-F1 Working with Functions MA11-1 11 (c) 1 MA-F1 Working with Functions MA11-2 12 3 MA-M1 Modelling Financial Situations MA12–4 13 2 MA-C4 Integral Calculus MA12-7 14 (a) 2 MA-S1 Probability and Discrete Probability MA11-9 Distributions 14 (b) 1 MA-S1 Probability and Discrete Probability MA11-7 Distributions 14 (c) 2 MA-S1 Probability and Discrete Probability MA11-7 Distributions 15 (a) 1 MA-T1 Trigonometry and Measuring Angles MA11-1 15 (b) 2 MA-T1 Trigonometry and Measuring Angles MA11-3 15 (c) 2 MA-T1 Trigonometry and Measuring Angles MA11-3 16 4 MA-C3 Applications of Differentiation MA12-3, 6,10 17 2 MA-C4 Integral Calculus MA12-7 18 (a) 2 MA-C2 Differential Calculus MA12-6 18 (b) 1 MA-C4 Integral Calculus MA12-3 19 2 MA-T2 Trigonometric Functions and Identities MA11-4 Question Marks Content Syllabus outcomes 20 2 MA-C4 Integral Calculus MA12-7 21 (a) 1 MA-E1 Exponentials and Logarithms MA11-6 21 (b) 2 MA-C3 Applications of Differentiation MA12-6 21 (c) 3 MA-E1 Exponentials and Logarithms MA11-6 22 4 MA-T1 Trigonometry and Measuring Angles MA11-9 23 (a) 2 MA-S3 Random Variables MA12-8 23 (b) 2 MA-S3 Random Variables MA12-8 24 3 MA-F2 Graphing Techniques MA12-1 25 (a) 3 MA-F1 Working with Functions MA11-1 25 (b) 4 MA-C3 Applications of Differentiation MA12-10 26 (a) 2 MA-M1 Modelling Financial Situations MA12-2 26 (b) 2 MA-M1 Modelling Financial Situations MA12-2 26 (c) 3 MA-M1 Modelling Financial Situations MA12–4 27 5 MA-S2 Descriptive Statistics and Bivariate Data MA12-8 Analysis 28 (a) 3 MA-S3 Random Variables MA12-8 28 (b) 2 MA-S3 Random Variables MA12-8 29 (a) 2 MA-C2 Differential Calculus MA12-6 29 (b) 2 MA-C2 Differential Calculus MA12-6 30 (a) 2 MA-F1 Working with Functions MA11-1 30 (b) 4 MA-C4 Integral Calculus MA12-7 31 (a) 2 MA-T3 Trigonometric Functions MA12-5 31 (b) 3 MA-T3 Trigonometric Functions MA12-5 31 (c) 2 MA-C3 Applications of Differentiation MA12-6",
         "criteria": [
           {
             "marks": 2,
@@ -682,7 +682,7 @@
         "question": 11,
         "part": null,
         "marks": 2,
-        "sampleAnswer": "− x 1 + = x 9 2 + − = 2x x 1 18 = 3x 19 19 = x 3",
+        "sampleAnswer": "x + x−1/2 = 9 2x + x − 1 = 18 3x = 19 x = 19/3",
         "criteria": [
           {
             "marks": 2,
@@ -698,7 +698,7 @@
         "question": 12,
         "part": "a",
         "marks": 2,
-        "sampleAnswer": "XYZ In XY = cos 30° 16 = XY 13.86 cm (two decimal places)",
+        "sampleAnswer": "In XYZ cos 30° = XY/16 XY = 13.86 cm (two decimal places)",
         "criteria": [
           {
             "marks": 2,
@@ -714,7 +714,7 @@
         "question": 12,
         "part": "b",
         "marks": 3,
-        "sampleAnswer": "1 1 ( ) 2 = π − × × × sin30° Shaded area 8 13.86 16 2 2 cm2 = 45.1 (one decimal place)",
+        "sampleAnswer": "Shaded area = 1/2 π (8 )2 − 1/2 × 13.86 × 16 × sin30° = 45.1 cm2 (one decimal place)",
         "criteria": [
           {
             "marks": 3,
@@ -734,7 +734,7 @@
         "question": 13,
         "part": null,
         "marks": 3,
-        "sampleAnswer": "= y x tanx dy = + 2 x x tanx sec dx π π π ⎛ ⎞ ⎛ ⎞ = + 2 Gradient of tangent sec tan ⎝ ⎠ ⎝ ⎠ 3 3 3 π 1 = + 3 2 ⎛ 1⎞ 3 ⎝ 2⎠ 4π = + 3 3",
+        "sampleAnswer": "y = x tanx dy/dx = x sec2x + tanx Gradient of tangent = π/3 sec 2 ⎛ π/3 ⎞ + tan ⎛ π/3 ⎞ ⎝ ⎠ ⎝ ⎠ = π/3 1/⎛1⎞2 + 3 ⎝ 2⎠ = 4π/3 + 3",
         "criteria": [
           {
             "marks": 3,
@@ -754,7 +754,7 @@
         "question": 14,
         "part": null,
         "marks": 2,
-        "sampleAnswer": "= = a S43 5, 2021 43 (2 1)d) (43 ∴ = × + − 2021 5 2 = + 42d 94 10 = d 2",
+        "sampleAnswer": "a = 5, S43 = 2021 ∴ 2021 = 43/2 (2 × 5 + (43 − 1)d) 94 = 10 + 42d d = 2",
         "criteria": [
           {
             "marks": 2,
@@ -770,7 +770,7 @@
         "question": 15,
         "part": null,
         "marks": 2,
-        "sampleAnswer": "1 0 0 ⌠ ⌠ ⎮(2x 4)2 + = + 2x dx dx 4 ⎮ ⌡−2 ⌡−2 0 3 ⎡ ⎤ 1 2 = ⋅ ( ) 2 ⎢ ⎥ + 2x 4 2 3 ⎣ ⎦ −2 3 ⎛ ⎞ 1 2 = − ⎜4 0⎟ ⎜ ⎟ 3 ⎝ ⎠ 8 = 3",
+        "sampleAnswer": "⌠ 0 ⌠ 0 1 ⎮ 2x + 4 dx = ⎮(2x + 4)2 dx ⌡−2 ⌡−2 ⎡ 3/2 ⎤ 0 = 1/2 ⋅ 2/3 ⎢( 2x + 4 ) ⎥ ⎣ ⎦ −2 ⎛ 3/2 ⎞ = 1/3 ⎜4 − 0⎟ ⎜ ⎝ ⎟ ⎠ = 8/3",
         "criteria": [
           {
             "marks": 2,
@@ -778,7 +778,7 @@
           },
           {
             "marks": 1,
-            "text": "+ Finds the anti-derivative of , or equivalent merit 2x 4"
+            "text": "Finds the anti-derivative of 2x + 4, or equivalent merit"
           }
         ]
       },
@@ -786,7 +786,7 @@
         "question": 16,
         "part": null,
         "marks": 3,
-        "sampleAnswer": "Diagram − x2 3 f (x) 2x = ′(x) − 6x2 f 2x = ′(x) > f (x) f For to be increasing, we need 0. − > 6x2 2x 0 − > 2x 3x) (1 0 1 ∴ < < x 0 3",
+        "sampleAnswer": "f (x) = x2 − 2x 3 f ′(x) = 2x − 6x2 For f (x) to be increasing, we need f ′(x) > 0. 2x − 6x2 > 0 2x (1 − 3x) > 0 ∴ 0 < x < 1/3",
         "criteria": [
           {
             "marks": 3,
@@ -794,7 +794,7 @@
           },
           {
             "marks": 2,
-            "text": "− > 6x2 States 0, or equivalent merit 2x"
+            "text": "States 2x − 6x2 > 0, or equivalent merit"
           },
           {
             "marks": 1,
@@ -806,7 +806,7 @@
         "question": 17,
         "part": "a.i",
         "marks": 1,
-        "sampleAnswer": "− × y = 29.2 0.011 540 = 23.3°C",
+        "sampleAnswer": "y = 29.2 − 0.011 × 540 = 23.3°C",
         "criteria": [
           {
             "marks": 1,
@@ -846,7 +846,7 @@
         "question": 18,
         "part": null,
         "marks": 3,
-        "sampleAnswer": "ˆ sin28° A BC sin = 25 16 ˆ ∴ = A BC 0.733… sin ˆ ∴ = − A BC 180° 47.18…° = 133° (nearest degree)",
+        "sampleAnswer": "sinABCˆ/25 = sin28°/16 ∴ sin A BC ˆ = 0.733… ∴ A BC ˆ = 180° − 47.18…° = 133° (nearest degree)",
         "criteria": [
           {
             "marks": 3,
@@ -854,7 +854,7 @@
           },
           {
             "marks": 2,
-            "text": "Calculates or equivalent merit 47.18°,"
+            "text": "Calculates 47.18°, or equivalent merit"
           },
           {
             "marks": 1,
@@ -866,7 +866,7 @@
         "question": 19,
         "part": null,
         "marks": 3,
-        "sampleAnswer": "Geomet 1 = + y-intercept: y 2 4 9 = 4 1 = + x-intercept: 0 2 + x 4 9 = − x 2",
+        "sampleAnswer": "Geomet y-intercept: y = 2 + 1/4 = 9/4 x-intercept: 0 = 2 + 1/x+4 x = − 9/2",
         "criteria": [
           {
             "marks": 3,
@@ -886,7 +886,7 @@
         "question": 20,
         "part": null,
         "marks": 2,
-        "sampleAnswer": "π ≤ ≤ ⇒ ≤ ≤π x 4x 0 0 4 = sin4x 2 1 1 = sin4x 2 π 5π = 4x , 6 6 π 5π Geometry = x , 24 24",
+        "sampleAnswer": "0 ≤ x ≤ π/4 ⇒ 0 ≤ 4x ≤π 2 sin4x = 1 sin4x = 1/2 4x = π/6, 5π/6 Geometry x = π/24, 5π/24",
         "criteria": [
           {
             "marks": 2,
@@ -894,7 +894,7 @@
           },
           {
             "marks": 1,
-            "text": "π Provides , or equivalent merit 6"
+            "text": "Provides π/6, or equivalent merit"
           }
         ]
       },
@@ -918,7 +918,7 @@
         "question": 22,
         "part": "a",
         "marks": 1,
-        "sampleAnswer": "= − Probability 0.1915 0.0398 = 0.1517",
+        "sampleAnswer": "Probability = 0.1915 − 0.0398 = 0.1517",
         "criteria": [
           {
             "marks": 1,
@@ -930,7 +930,7 @@
         "question": 22,
         "part": "b",
         "marks": 3,
-        "sampleAnswer": "− 3528 3300 = z 570 = 0.4 > = − = P (Z 0.4) 0.5 0.1554 0.3446 ∴ × = Expect 1000 0.3446 344.6 babies born to have a birth weight greater than 3528 grams.",
+        "sampleAnswer": "3528 − 3300 z = 570 = 0.4 P (Z > 0.4) = 0.5 − 0.1554 = 0.3446 ∴ Expect 1000 × 0.3446 = 344.6 babies born to have a birth weight greater than 3528 grams.",
         "criteria": [
           {
             "marks": 3,
@@ -950,7 +950,7 @@
         "question": 23,
         "part": null,
         "marks": 4,
-        "sampleAnswer": "t − = 10 P 5000b = = t P 20, 1250 = b–2 1250 5000 1 b−2 = 4 = b (b 2 > 0) t )− ( ∴ = P 5000 2 10 −t −1 dP = × × × 10 5000 ln2 2 dt 10 dP = −30 = t ? dt −t −30 = −500 × × 210 ln2 t 500ln2 = 10 2 30 t = 11.55… 10 2 t = ln11.55… ln2 10 = t 35.3",
+        "sampleAnswer": "− t/10 P = 5000b t = 20, P = 1250 1250 = 5000 b–2 b−2 = 1/4 b = 2 (b > 0) ∴ P = 5000 ( 2 )− t/10 −t/10 dP/dt = 5000 × ln2 × −1/10 × 2 dP/dt = −30 t = ? −t −30 = −500 × ln2 × 210 t/10 2 = 500ln2/30 t/10 2 = 11.55… t/10 ln2 = ln11.55… t = 35.3",
         "criteria": [
           {
             "marks": 4,
@@ -958,7 +958,7 @@
           },
           {
             "marks": 3,
-            "text": "= Equates –30 to a correct derivative, with b 2, or equivalent merit"
+            "text": "Equates –30 to a correct derivative, with b = 2, or equivalent merit"
           },
           {
             "marks": 2,
@@ -974,7 +974,7 @@
         "question": 24,
         "part": null,
         "marks": 3,
-        "sampleAnswer": "4 ⌠ × 2 3 3 = + dx Area ⎮ − x 2 ⌡2 1 [ 1)]2 (x 4 = + − 3 3 ln = + units2 (3 3ln3)",
+        "sampleAnswer": "⌠ 4 Area = 2×3/2 + ⎮ 3/x−1 dx ⌡2 = 3 + 3[ ln (x − 1)]2 4 = (3 + 3ln3) units2",
         "criteria": [
           {
             "marks": 3,
@@ -982,7 +982,7 @@
           },
           {
             "marks": 2,
-            "text": "4 ⌠ 3 Evaluates , or equivalent merit dx ⎮ − x ⌡2 1"
+            "text": "⌠ 4 Evaluates ⎮ 3/x−1 dx, or equivalent merit ⌡2"
           },
           {
             "marks": 1,
@@ -994,7 +994,7 @@
         "question": 25,
         "part": null,
         "marks": 3,
-        "sampleAnswer": "= × Money in account after 8 years 1000 8.2132 = $8213.20 = (1.0125)2 Amount after 2 more years 8213.20 = $8419.81",
+        "sampleAnswer": "Money in account after 8 years = 1000 × 8.2132 = $8213.20 Amount after 2 more years = 8213.20 (1.0125)2 = $8419.81",
         "criteria": [
           {
             "marks": 3,
@@ -1014,7 +1014,7 @@
         "question": 26,
         "part": "a",
         "marks": 2,
-        "sampleAnswer": "−5t + + 2 y(t) 70t = 100 y′(t) −10t + = 70 y′(t) ∴−10t + = = 0 70 0 = t 7 = = −5(7)2 + + t y At 7, 70(7) 100 = 345 m",
+        "sampleAnswer": "y(t) = −5t 2 + 70t + 100 y′(t) = −10t + 70 y′(t) = 0 ∴−10t + 70 = 0 t = 7 At t = 7, y = −5(7)2 + 70(7) + 100 = 345 m",
         "criteria": [
           {
             "marks": 2,
@@ -1030,7 +1030,7 @@
         "question": 26,
         "part": "b",
         "marks": 3,
-        "sampleAnswer": "To find when the particle hits the ground, we solve −5t2 + + = 70t 100 0 − − = t2 14t 20 0 ± + 14 196 80 = t 2 = ± 7 69 = + > t t 7 , since 0 69 y′(7 + −10 + + 69 ) = (7 69 ) 70 = −10 69 ∴ = − = a b 10 and 69",
+        "sampleAnswer": "To find when the particle hits the ground, we solve −5t2 + 70t + 100 = 0 t2 − 14t − 20 = 0 14 ± 196 + 80 t = 2 = 7 ± 69 t = 7 + 69, since t > 0 y′(7 + 69 ) = −10 (7 + 69 ) + 70 = −10 69 ∴ a = − 10 and b = 69 Geometry",
         "criteria": [
           {
             "marks": 3,
@@ -1042,7 +1042,7 @@
           },
           {
             "marks": 1,
-            "text": "= 0, or equivalent merit Attempts to solve to find the time y(t)"
+            "text": "Attempts to solve to find the time y(t) = 0, or equivalent merit"
           }
         ]
       },
@@ -1050,7 +1050,7 @@
         "question": 27,
         "part": "a",
         "marks": 2,
-        "sampleAnswer": "2π = Period π 12 = 24 hours",
+        "sampleAnswer": "Period = 2π/π 12 = 24 hours",
         "criteria": [
           {
             "marks": 2,
@@ -1066,7 +1066,7 @@
         "question": 27,
         "part": "b",
         "marks": 2,
-        "sampleAnswer": "b ⌠ t( )dt = E P ⎮⌡a b ⌠ ⎛π ⎞ = t⎠ dt 400sin ⎮ ⎝ ⌡a 12 ( ) b π ⎡ ⎞⎤ ⎛ 400 12 = − t cos ⎣⎢ ⎦⎥ ⎝ ⎠ π 12 a bπ aπ ⎛ ⎞ 4800 = − − cos cos ⎝ ⎠ π 12 12 aπ bπ ⎛ ⎞ 4800 = − cos cos ⎝ ⎠ π 12 12",
+        "sampleAnswer": "⌠ b E = P t( )dt ⎮⌡a ⌠ b = 400sin ⎛π ⎞ dt ⎮ ⎝ 12 t⎠ ⌡a ⎡ ⎛ ⎞⎤ b = − 400(12)/π cos ⎝ π/12 t ⎠ ⎣⎢ ⎦⎥ a = − 4800/π ⎛ cos bπ/12 − cos aπ/12 ⎞ ⎝ ⎠ = 4800/π ⎛ cos aπ/12 − cos bπ/12 ⎞ ⎝ ⎠",
         "criteria": [
           {
             "marks": 2,
@@ -1074,7 +1074,7 @@
           },
           {
             "marks": 1,
-            "text": "π ⎛ t⎞ Provides correct anti-derivative ofsin , or equivalent merit ⎝ ⎠ 12"
+            "text": "Provides correct anti-derivative ofsin ⎛ π/12 t⎞, or equivalent merit ⎝ ⎠"
           }
         ]
       },
@@ -1082,7 +1082,7 @@
         "question": 27,
         "part": "c",
         "marks": 3,
-        "sampleAnswer": "3π bπ ⎛ ⎞ 4800 = − 300 cos cos ⎝ ⎠ π 12 12 π bπ 1 = − cos 16 2 12 bπ π 1 = − cos 12 2 16 π ⎛ ⎞ 1 12 −1 − = ⎝⎜ ⎠⎟ b cos π 2 16 = b 3.95 ∴ × = He needs to wait 0.95 60 57 minutes (to the nearest minute)",
+        "sampleAnswer": "300 = 4800/π ⎛ cos 3π/12 − cos bπ/12 ⎞ ⎝ ⎠ π/16 = 1/2 − cos bπ/12 cos bπ/12 = 1/2 − π/16 b = 12/π −1 ⎛ 1/2 − π/16 ⎞ cos ⎝⎜ ⎠⎟ b = 3.95 ∴ He needs to wait 0.95 × 60 = 57 minutes (to the nearest minute)",
         "criteria": [
           {
             "marks": 3,
@@ -1114,7 +1114,7 @@
         "question": 28,
         "part": "a",
         "marks": 3,
-        "sampleAnswer": "3 ⌠ − 2x dx 8 ⎮⌡0 3 ⎡ ⎤ 2x = − 8x ⎣⎢ ⎦⎥ ln2 0 ⎛ ⎞ ⎛ ⎞ 8 1 = − ⎠− − 24 0 ⎝ ⎝ ⎠ ln2 ln2 8 1 = − + 24 ln2 ln2 7 = − 24 ln2 Geometry",
+        "sampleAnswer": "⌠ 3 8 − 2x dx ⎮⌡0 ⎡ ⎤ 3 = 8x − 2x/ln2 ⎣⎢ ⎦⎥ 0 = ⎛ 24 − 8/ln2 ⎞ ⎛ 0 − 1/ln2 ⎞ ⎝ ⎠− ⎝ ⎠ = 24 − 8/ln2 + 1/ln2 = 24 − 7/ln2 Geometry",
         "criteria": [
           {
             "marks": 3,
@@ -1142,7 +1142,7 @@
           },
           {
             "marks": 1,
-            "text": "( ) = −x Draws the graph or equivalent merit y ƒ ,"
+            "text": "Draws the graph y = ƒ ( −x ), or equivalent merit"
           }
         ]
       },
@@ -1150,7 +1150,7 @@
         "question": 28,
         "part": "c",
         "marks": 1,
-        "sampleAnswer": "5 ⌠ 7 ( ) = − g x dx 24 ⎮ ⌡2 ln2",
+        "sampleAnswer": "⌠ 5 ⎮ g ( x ) dx = 7/ln2 − 24 ⌡2",
         "criteria": [
           {
             "marks": 1,
@@ -1162,7 +1162,7 @@
         "question": 29,
         "part": "a",
         "marks": 2,
-        "sampleAnswer": "= A0 $5000 = + A1 5000(1.03) 1000 = $6150 = + A2 6150(1.03) 1000 = $7334.50 = + A3 7334.50(1.03) 1000 = $8554.54",
+        "sampleAnswer": "A0 = $5000 A1 = 5000(1.03) + 1000 = $6150 A2 = 6150(1.03) + 1000 = $7334.50 A3 = 7334.50(1.03) + 1000 = $8554.54",
         "criteria": [
           {
             "marks": 2,
@@ -1170,7 +1170,7 @@
           },
           {
             "marks": 1,
-            "text": "Finds the correct value of or equivalent merit A1,"
+            "text": "Finds the correct value of A1, or equivalent merit"
           }
         ]
       },
@@ -1178,7 +1178,7 @@
         "question": 29,
         "part": "b",
         "marks": 3,
-        "sampleAnswer": "= B n Let the amount in the account after withdrawals n = B0 Then 30 025.83 = − B1 30 025.83(1.03) 2000 = − − 025.83(1.03)2 B2 30 2000(1.03) 2000 (1.03)n−1 (1.03) ⎡⎣1 ⎤⎦ = − + + + 025.83(1.03)n B 30 2000 n < B We want 0. n = n B Find so that 0. n ⎡(1.03)n 1⎤ − ( )n = ⎢ ⎥ 30 025.83 1.03 2000 − 1.03 1 ⎣ ⎦ × 0.03 30 025.83 (1.03)n (1.03)n = − 1 2000 ( )n (1.03)n = − 0.45039 1.03 1 ( 1.03)n = 0.54961 1 (1.03)n = 1.8194… ( 1.03) ( 1.8194) = n ln ln ( 1.8194) ln = n ( 1.03) ln ≅ n 20.25 ∴ Megan makes 20 withdrawals of $2000.",
+        "sampleAnswer": "Let B n = the amount in the account after n withdrawals Then B0 = 30 025.83 B1 = 30 025.83(1.03) − 2000 B2 = 30 025.83(1.03)2 − 2000(1.03) − 2000 B n = 30 025.83(1.03)n − 2000 ⎡⎣1 + (1.03) + + (1.03)n−1 ⎤⎦ We want B n < 0. Find n so that Bn = 0. ⎡(1.03)n 1⎤ 30 025.83 ( 1.03)n = 2000 ⎢ −/1.03−1 ⎥ ⎣ ⎦ 0.03 × 30 025.83 (1.03)n (1.03)n = − 1 2000 0.45039 ( 1.03)n = (1.03)n − 1 0.54961 ( 1.03)n = 1 (1.03)n = 1.8194… n ln ( 1.03) = ln ( 1.8194) n = ln(1.8194)/ln(1.03) n ≅ 20.25 ∴ Megan makes 20 withdrawals of $2000.",
         "criteria": [
           {
             "marks": 3,
@@ -1198,7 +1198,7 @@
         "question": 30,
         "part": null,
         "marks": 2,
-        "sampleAnswer": "= F(x) 0.99 −0.01x − = e 1 0.99 −0.01x = e 0.01 −0.01x = ln(0.01) = x 460.517… = 460.52 hours (two decimal places)",
+        "sampleAnswer": "F(x) = 0.99 1 − e −0.01x = 0.99 e −0.01x = 0.01 −0.01x = ln(0.01) x = 460.517… = 460.52 hours (two decimal places)",
         "criteria": [
           {
             "marks": 2,
@@ -1206,7 +1206,7 @@
           },
           {
             "marks": 1,
-            "text": "−0.01x − = Writes 0.99, or equivalent merit e 1"
+            "text": "Writes 1 − e−0.01x = 0.99, or equivalent merit"
           }
         ]
       },
@@ -1214,7 +1214,7 @@
         "question": 31,
         "part": null,
         "marks": 4,
-        "sampleAnswer": "− x2 y = 1 y′ 2x = x a 2a. Gradient of tangent at = is ∴ − a2 (a, Equation of tangent at 1) is ( ) ( ) − − = − a2 y 2a x a 1 − + = − a2 2 y 2ax 2a 1 = − − a2 y 2ax 1 −8) Since the tangent passes through (3, then −8 = − − a2 6a 1 − − = a2 6a 7 0 Geometry − + = (a 7)(a 1) 0 = = −1 a a 7, ∴ The equations of the two tangents are = = − − 72 a y 2(7)x When 7, 1 = − y 14x 50 = −1, = 2(−1)x − (−1) − 2 a y and when 1 = −2x − y 2",
+        "sampleAnswer": "y = x2 − 1 y′ = 2x Gradient of tangent at x = a is 2a. ∴ Equation of tangent at (a, a2 − 1) is y − ( a2 − 1 ) = 2a ( x − a ) y − a2 + 1 = 2ax − 2a 2 y = 2ax − a2 − 1 Since the tangent passes through (3, −8) then −8 = 6a − a2 − 1 a2 − 6a − 7 = 0 Geometry (a − 7)(a + 1) = 0 a = 7, a = −1 ∴ The equations of the two tangents are When a = 7, y = 2(7)x − 72 − 1 y = 14x − 50 and when a = −1, y = 2(−1)x − (−1) 2 − 1 y = −2x − 2",
         "criteria": [
           {
             "marks": 4,
@@ -1222,15 +1222,15 @@
           },
           {
             "marks": 3,
-            "text": "−8) = Substitute into the equation of the tangent at a, or equivalent x (3, merit"
+            "text": "Substitute (3, −8) into the equation of the tangent at x = a, or equivalent merit"
           },
           {
             "marks": 2,
-            "text": "= Finds the equation of the tangent at a, or equivalent merit x"
+            "text": "Finds the equation of the tangent at x = a, or equivalent merit"
           },
           {
             "marks": 1,
-            "text": "= Finds the gradient of the tangent at a, or equivalent merit x"
+            "text": "Finds the gradient of the tangent at x = a, or equivalent merit"
           }
         ]
       },
@@ -1238,11 +1238,11 @@
         "question": 32,
         "part": null,
         "marks": 4,
-        "sampleAnswer": "− 175 160.6 σ = 3 = 4.8 μ = + 160.6 4.8 = 165.4 Selected male is taller than 84% of population ∴ Selected male is 1 standard deviation above mean. = × = Mean height for males 1.05 165.4 173.67 = × = Standard deviation of height for males 4.8 1.1 5.28 ∴ = 1.05μ + 1.1σ Height = + 173.67 5.28 = 178.95 cm",
+        "sampleAnswer": "σ = 175−160.6/3 = 4.8 μ = 160.6 + 4.8 = 165.4 Selected male is taller than 84% of population ∴ Selected male is 1 standard deviation above mean. Mean height for males = 1.05 × 165.4 = 173.67 Standard deviation of height for males = 4.8 × 1.1 = 5.28 ∴ Height = 1.05μ + 1.1σ = 173.67 + 5.28 = 178.95 cm",
         "criteria": [
           {
             "marks": 4,
-            "text": "Provides correct solution Geometry"
+            "text": "Geometry Provides correct solution"
           },
           {
             "marks": 3,
@@ -1250,7 +1250,7 @@
           },
           {
             "marks": 2,
-            "text": "σ, Finds or equivalent merit"
+            "text": "Finds σ, or equivalent merit"
           },
           {
             "marks": 1,
@@ -1262,7 +1262,7 @@
         "question": 33,
         "part": "a",
         "marks": 2,
-        "sampleAnswer": "6 ⌠ Ax = dx 1 ⎮ + x2 ⌡0 4 ln(x2 4)⎤⎦ A 6 ⎡⎣ + = 1 2 0 A(ln40 ) = − 1 ln4 2 ⎛ ⎞ A 40 = 1 ln ⎝ ⎠ 2 4 A = ln10 1 2 2 = A ln10",
+        "sampleAnswer": "⌠ 6 ⎮ Ax/x2+4 dx = 1 ⌡0 ln(x2 4)⎤⎦ 6 A/2 ⎡⎣ + = 1 0 A(ln40 − ln4 ) = 1 2 A/2 ⎛ ln 40/4 ⎞ = 1 ⎝ ⎠ A/2 ln10 = 1 A = 2/ln10",
         "criteria": [
           {
             "marks": 2,
@@ -1270,7 +1270,7 @@
           },
           {
             "marks": 1,
-            "text": "Ax Finds the anti-derivative of , or equivalent merit + x2 4"
+            "text": "Finds the anti-derivative of Ax/x2+4, or equivalent merit"
           }
         ]
       },
@@ -1278,7 +1278,7 @@
         "question": 33,
         "part": "b",
         "marks": 2,
-        "sampleAnswer": "( ) ( ) + − x2 A Ax 2x 4 ( ) = ′ ƒ x (x2 4) 2 + + − Ax2 2Ax2 A 4 = (x2 4) 2 + − Ax2 A 4 = = 0 (x2 4) 2 + ∴ − = Ax2 A 4 0 = Ax2 4A When = 2 x 4 = > x x 2, 0 ∴The X mode of is 2.",
+        "sampleAnswer": "A ( x2 + 4 ) − Ax ( 2x ) ƒ ′( x ) = 2 (x2 + 4) Ax2 + 4 A − 2Ax2 = 2 (x2 + 4) = 4A−Ax2/(x24)2 = 0 + ∴ 4 A − Ax2 = 0 When Ax2 = 4A x 2 = 4 x = 2, x > 0 ∴The mode of X is 2.",
         "criteria": [
           {
             "marks": 2,
@@ -1286,7 +1286,7 @@
           },
           {
             "marks": 1,
-            "text": "Finds the correct derivative of f(x) , or equivalent merit"
+            "text": "Finds the correct derivative of f(x), or equivalent merit"
           }
         ]
       },
@@ -1294,7 +1294,7 @@
         "question": 33,
         "part": "c",
         "marks": 2,
-        "sampleAnswer": "2 ⌠ Ax < = P(X dx 2) ⎮ + x2 ⌡0 4 ⎡ln(x2 4)⎤ A 2 = + ⎣ ⎦ 2 0 A(ln8 ) = − ln4 2 A = ln2 2 2 1 = × × ln2 ln10 2 ln2 = ln10 = log10 2",
+        "sampleAnswer": "⌠ 2 P(X < 2) = ⎮ Ax/x2+4 dx ⌡0 ⎡ln(x2 4)⎤ 2 = A/2 ⎣ + ⎦ 0 = A(ln8 − ln4 ) 2 = A/2 ln2 = 2/ln10 × 1/2 × ln2 = ln2/ln10 = log10 2",
         "criteria": [
           {
             "marks": 2,
@@ -1310,7 +1310,7 @@
         "question": 33,
         "part": "d",
         "marks": 2,
-        "sampleAnswer": "> P(IQ 130) − − ⎛ ⎞ IQ 100 130 100 = > P ⎝ ⎠ 15 15 = > P(Z 2) = 2.5% ⎛ ⎞ Time to > < P IQ 130 2⎟ ⎜ complete ⎝ ⎠ ⎛ ⎞ Time to > ∩ < P IQ 130 2 ⎝⎜ ⎠⎟ complete = ⎛ ⎞ Time to < P 2 ⎝⎜ ⎠⎟ complete × 2.5% 80% = 2 log10 = 0.06643… = 0.066 (three decimal places)",
+        "sampleAnswer": "P(IQ > 130) = P ⎛ IQ−100/15 > 130−100/15 ⎞ ⎝ ⎠ = P(Z > 2) = 2.5% ⎛ Time to ⎞ P ⎜ IQ > 130 complete < 2⎟ ⎝ ⎠ ⎛ Time to ⎞ P IQ > 130 ∩ complete < 2 ⎝⎜ ⎠⎟ = ⎛ Time to ⎞ P complete < 2 ⎝⎜ ⎠⎟ 2.5% × 80% = log10 2 = 0.06643… = 0.066 (three decimal places)",
         "criteria": [
           {
             "marks": 2,
@@ -1326,7 +1326,7 @@
         "question": 34,
         "part": null,
         "marks": 3,
-        "sampleAnswer": "+ + + = n r2 r r 1 = = = a r, r, n Sum of GP with common ratio number of terms ( ) − rn r 1 ∴ = 1 − r 1 rn+1 − = − r r 1 rn+1 = − 2r 1 ———— (*) ∑xP(X ( ) x) = = E X n−1 = × + × + + × rn n r2 r r r r n+1 n+1 n+1 = + + + r r r rn+1 = × n n+1 = nr n(2r 1) = − from (*) 2021 HSC Mathematics Advanced Mapping Grid Section I Question Marks Content Syllabus outcomes 1 1 MA-T2 Trigonometric Functions and Identities MA11-1 2 1 MA-S1 Probability and Discrete Probability Distributions MA11-7 3 1 MA-E1 Logarithms and Exponentials MA12-1 4 1 MA-S2 Descriptive Statistics and Bivariate Data Analysis MA12-8 5 1 MA-E1 Logarithms and Exponentials MA12-1 6 1 MA-S1 Probability and Discrete Probability Distributions MA11-7 7 1 MA-C3 Applications of Differentiation MA12-3 8 1 MA-F1 Working with Functions MA11-1 9 1 MA-C1 Introduction to Differentiation MA11-1 10 1 MA-C3 Applications of Differentiation MA12-10 Section II Question Marks Content Syllabus outcomes 11 2 MA-F1 Working with Functions MA11-1 12 (a) 2 MA-T1 Trigonometry and Measure of Angles MA11-3 12 (b) 3 MA-T1 Trigonometry and Measure of Angles MA11-3 13 3 MA-C2 Differential Calculus MA12-3 14 2 MA-M1 Modelling Financial Situations MA12-4 15 2 MA-C4 Integral Calculus MA12-3 16 3 MA-C3 Applications of Differentiation MA12-6 17 (a) (i) 1 MA-S2 Descriptive Statistics and Bivariate Data Analysis MA12-8 17 (a) (ii) 2 MA-S2 Descriptive Statistics and Bivariate Data Analysis MA12-8 17 (b) 1 MA-S2 Descriptive Statistics and Bivariate Data Analysis MA12-8 18 3 MA-T1 Trigonometry and Measure of Angles MA11-3 19 3 MA-F2 Graphing Techniques MA12-1 20 2 MA-T3 Trigonometric Functions and Graphs MA12-5 21 2 MA-F2 Graphing Techniques MA12-1 Question Marks Content Syllabus outcomes 22 (a) 1 MA-S3 Random Variables MA12-8 22 (b) 3 MA-S3 Random Variables MA12-8 23 4 MA-C3 Applications of Differentiation MA12-3 24 3 MA-C4 Integral Calculus MA12-7 25 3 MA-M1 Modelling Financial Situations MA12-2 26 (a) 2 MA-C3 Applications of Differentiation MA12-6 26 (b) 3 MA-C3 Applications of Differentiation MA12-6 27 (a) 2 MA-T3 Trigonometric Functions and Graphs MA12-5 27 (b) 2 MA-C4 Integral Calculus MA12-3 27 (c) 3 MA-T3 Trigonometric Functions and Graphs MA12-5 27 (d) 1 MA-C4 Integral Calculus MA12-10 28 (a) 3 MA-C4 Integral Calculus MA12-7 28 (b) 2 MA-F2 Graphing Techniques MA12-1 28 (c) 1 MA-C4 Integral Calculus MA12-7 29 (a) 2 MA-M1 Modelling Financial Situations MA12-4 29 (b) 3 MA-M1 Modelling Financial Situations MA12-2 30 2 MA-S3 Random Variables MA12-8 31 4 MA-C3 Applications of Differentiation MA12-10 32 4 MA-S3 Random Variables MA12-8 33 (a) 2 MA-S3 Random Variables MA12-8 33 (b) 2 MA-S3 Random Variables MA12-8 33 (c) 2 MA-S1 Random Variables MA 12-8 33 (d) 2 MA-S1 Probability and Discrete Probability Distributions MA11-7 34 3 MA-S1 Probability and Discrete Probability Distributions MA11-7",
+        "sampleAnswer": "r + r2 + + r n = 1 Sum of GP with a = r, common ratio = r, number of terms = n ( rn ) ∴ r−1/r−1 = 1 rn+1 − r = r − 1 rn+1 = 2r − 1 ———— (*) E ( X ) = ∑xP(X = x) = r × rn + r2 × r n−1 + + r n × r = r n+1 + r n+1 + + r n+1 = rn+1 × n = nr n+1 = n(2r − 1) from (*) 2021 HSC Mathematics Advanced Mapping Grid Section I Question Marks Content Syllabus outcomes 1 1 MA-T2 Trigonometric Functions and Identities MA11-1 2 1 MA-S1 Probability and Discrete Probability Distributions MA11-7 3 1 MA-E1 Logarithms and Exponentials MA12-1 4 1 MA-S2 Descriptive Statistics and Bivariate Data Analysis MA12-8 5 1 MA-E1 Logarithms and Exponentials MA12-1 6 1 MA-S1 Probability and Discrete Probability Distributions MA11-7 7 1 MA-C3 Applications of Differentiation MA12-3 8 1 MA-F1 Working with Functions MA11-1 9 1 MA-C1 Introduction to Differentiation MA11-1 10 1 MA-C3 Applications of Differentiation MA12-10 Section II Question Marks Content Syllabus outcomes 11 2 MA-F1 Working with Functions MA11-1 12 (a) 2 MA-T1 Trigonometry and Measure of Angles MA11-3 12 (b) 3 MA-T1 Trigonometry and Measure of Angles MA11-3 13 3 MA-C2 Differential Calculus MA12-3 14 2 MA-M1 Modelling Financial Situations MA12-4 15 2 MA-C4 Integral Calculus MA12-3 16 3 MA-C3 Applications of Differentiation MA12-6 17 (a) (i) 1 MA-S2 Descriptive Statistics and Bivariate Data Analysis MA12-8 17 (a) (ii) 2 MA-S2 Descriptive Statistics and Bivariate Data Analysis MA12-8 17 (b) 1 MA-S2 Descriptive Statistics and Bivariate Data Analysis MA12-8 18 3 MA-T1 Trigonometry and Measure of Angles MA11-3 19 3 MA-F2 Graphing Techniques MA12-1 20 2 MA-T3 Trigonometric Functions and Graphs MA12-5 21 2 MA-F2 Graphing Techniques MA12-1 Question Marks Content Syllabus outcomes 22 (a) 1 MA-S3 Random Variables MA12-8 22 (b) 3 MA-S3 Random Variables MA12-8 23 4 MA-C3 Applications of Differentiation MA12-3 24 3 MA-C4 Integral Calculus MA12-7 25 3 MA-M1 Modelling Financial Situations MA12-2 26 (a) 2 MA-C3 Applications of Differentiation MA12-6 26 (b) 3 MA-C3 Applications of Differentiation MA12-6 27 (a) 2 MA-T3 Trigonometric Functions and Graphs MA12-5 27 (b) 2 MA-C4 Integral Calculus MA12-3 27 (c) 3 MA-T3 Trigonometric Functions and Graphs MA12-5 27 (d) 1 MA-C4 Integral Calculus MA12-10 28 (a) 3 MA-C4 Integral Calculus MA12-7 28 (b) 2 MA-F2 Graphing Techniques MA12-1 28 (c) 1 MA-C4 Integral Calculus MA12-7 29 (a) 2 MA-M1 Modelling Financial Situations MA12-4 29 (b) 3 MA-M1 Modelling Financial Situations MA12-2 30 2 MA-S3 Random Variables MA12-8 31 4 MA-C3 Applications of Differentiation MA12-10 32 4 MA-S3 Random Variables MA12-8 33 (a) 2 MA-S3 Random Variables MA12-8 33 (b) 2 MA-S3 Random Variables MA12-8 33 (c) 2 MA-S1 Random Variables MA 12-8 33 (d) 2 MA-S1 Probability and Discrete Probability Distributions MA11-7 34 3 MA-S1 Probability and Discrete Probability Distributions MA11-7",
         "criteria": [
           {
             "marks": 3,
@@ -1334,11 +1334,11 @@
           },
           {
             "marks": 2,
-            "text": "n+ = 1 Shows and attempts to find the sum of probabilities using E(X) nr sum of formula, or equivalent merit GP"
+            "text": "Shows E(X) = nr n+ 1 and attempts to find the sum of probabilities using sum of GP formula, or equivalent merit"
           },
           {
             "marks": 1,
-            "text": "Finds correct expression for or writes the sum of probabilities equal E(X) to 1"
+            "text": "Finds correct expression for E(X) or writes the sum of probabilities equal to 1"
           }
         ]
       }
@@ -1348,7 +1348,7 @@
         "question": 11,
         "part": "a",
         "marks": 2,
-        "sampleAnswer": "A = 98 + 62 = 160 192 96 = B = = 96% 200 100",
+        "sampleAnswer": "A = 98 + 62 = 160 B = 192/200 = 96/100 = 96%",
         "criteria": [
           {
             "marks": 2,
@@ -1376,7 +1376,7 @@
         "question": 12,
         "part": "a",
         "marks": 2,
-        "sampleAnswer": "k = M T When T = 15 M = 12 k = 12 15 × k = 15 12 =180 180 = M T",
+        "sampleAnswer": "M = k/T When T = 15 M = 12 12 = k/15 k = 15 × 12 =180 M = 180/T",
         "criteria": [
           {
             "marks": 2,
@@ -1408,7 +1408,7 @@
         "question": 13,
         "part": null,
         "marks": 2,
-        "sampleAnswer": "2 ⌠ x2 + 1 dx ⎮ ⌡0 x 0 1 2 2 + 1 1.414 2.236 1 x 2 ⌠ 1 1 [ 1.414]+ [1.414 2.236] 2 1+ = + + 1 x dx ⎮ 2 2 ⌡ 0 = 3.03 (2 decimal places)",
+        "sampleAnswer": "⌠ 2 ⎮ 1 + x2 dx ⌡0 x 0 1 2 1 + x 2 1 1.414 2.236 ⌠ 2 1+ x 2 dx = 1/2 [ 1 + 1.414]+ 1/2 [1.414 + 2.236] ⎮ ⌡ 0 = 3.03 (2 decimal places)",
         "criteria": [
           {
             "marks": 2,
@@ -1424,7 +1424,7 @@
         "question": 14,
         "part": null,
         "marks": 2,
-        "sampleAnswer": "k = amplitude = 4 2π Period = a 2π 6p = a 1 ∴ a = 3",
+        "sampleAnswer": "k = amplitude = 4 Period = 2π/a 6p = 2π/a ∴ a = 1/3",
         "criteria": [
           {
             "marks": 2,
@@ -1440,7 +1440,7 @@
         "question": 15,
         "part": "a",
         "marks": 1,
-        "sampleAnswer": "2 1 1 3 P( ) = × + × 5 3 6 3 6 5 = 18",
+        "sampleAnswer": "P( 5) = 2/3 × 1/6 + 1/3 × 3/6 = 5/18",
         "criteria": [
           {
             "marks": 1,
@@ -1452,7 +1452,7 @@
         "question": 15,
         "part": "b",
         "marks": 1,
-        "sampleAnswer": "( ∩) special die 5 P P(special 5) = die | P(5 ) 1 3 × 3 6 = 5 18 3 = 5",
+        "sampleAnswer": "P(special die | 5) = P ( special die ∩) 5 P(5) 1/3 × 3/6 = 5/18 = 3/5",
         "criteria": [
           {
             "marks": 1,
@@ -1464,7 +1464,7 @@
         "question": 16,
         "part": null,
         "marks": 3,
-        "sampleAnswer": "3 ⌠ x2 = + − 2x 3 A dx ⎮⌡−1 3 ⎡ 3 ⎤ x ⎢x2 = + − 3x ⎥ 3 ⎣ ⎦−1 1⎞ ⎛ (9 9) = + − − − + 9 1 3 ⎝ 3⎠ 2 units2 = Area 10 3",
+        "sampleAnswer": "⌠ 3 A = 2x + 3 − x2 dx ⎮⌡−1 ⎡ 3 ⎤ 3 = ⎢x2 + 3x − x/3 ⎥ ⎣ ⎦−1 = (9 + 9 − 9) − ⎛ 1 − 3 + 1⎞ ⎝ 3⎠ Area = 10 2/3 units2",
         "criteria": [
           {
             "marks": 3,
@@ -1484,7 +1484,7 @@
         "question": 17,
         "part": "a",
         "marks": 2,
-        "sampleAnswer": "Number of cards = 3 + 6 + 9 + ··· (12 terms) n ⎛ ⎞ ( ) (n 1)d = + − arithmetic series 2a S 12 (2 3) ⎜ ⎟ n × + × 3 11 2 S = 12 2 ⎜ ⎟ ⎝ ⎠ = = 3 3 a d = 234",
+        "sampleAnswer": "Number of cards = 3 + 6 + 9 + ··· (12 terms) ⎛ arithmetic series S = n/2 ( 2a + (n − 1)d ) ⎞ S = 12/2 (2 × 3 + 11 × 3) ⎜ n ⎟ 12 ⎜ ⎟ ⎝ a = 3 d = 3 ⎠ = 234",
         "criteria": [
           {
             "marks": 2,
@@ -1500,7 +1500,7 @@
         "question": 17,
         "part": "b",
         "marks": 3,
-        "sampleAnswer": "Let n = number of rows n (2 1)3) (n × + − = 3 828 2 n(3n 3) + = 1656 3n(n 1) + = 1656 n2 + = 552 n n2 + − = 552 0 n 12 −1 ± − × −552 4 = n 2 −1 ± 47 = 2 = 23 (taking positive solution) There are 23 rows.",
+        "sampleAnswer": "Let n = number of rows n/2 (2 × 3 + (n − 1)3) = 828 n(3n + 3) = 1656 3n(n + 1) = 1656 n2 + n = 552 n2 + n − 552 = 0 −1 ± 12 − 4 × −552 n = 2 = −1±47/2 = 23 (taking positive solution) There are 23 rows.",
         "criteria": [
           {
             "marks": 3,
@@ -1512,7 +1512,7 @@
           },
           {
             "marks": 1,
-            "text": "Correctly substitutes a, d and 828 into formula for S , or equivalent merit n"
+            "text": "Correctly substitutes a, d and 828 into formula for S n, or equivalent merit"
           }
         ]
       },
@@ -1520,7 +1520,7 @@
         "question": 18,
         "part": "a",
         "marks": 2,
-        "sampleAnswer": "(x 1) 4 2 = + y (x2 1) dy 3 = + × 4 2x dx ( ) 3 x2 = + 8x 1",
+        "sampleAnswer": "y = (x 2 + 1)4 = 4 (x2 + 1) 3 × 2x dy/dx = 8x ( x2 + 1 ) 3",
         "criteria": [
           {
             "marks": 2,
@@ -1536,7 +1536,7 @@
         "question": 18,
         "part": "b",
         "marks": 1,
-        "sampleAnswer": "⌠ ⎮x(x +1) 3 2 dx ⌡ ⌠ ( ) 1 3 x2 = + ⎮8x 1 dx 8 ⌡ (x2 ) 1 4 = + + 1 c from part (a) 8",
+        "sampleAnswer": "⌠ ⎮x(x 2 +1) 3 dx ⌡ ⌠ ( x2 ) 3 = 1/8 ⎮8x + 1 dx ⌡ = (x2 + 1 )4 + c 1/8 from part (a)",
         "criteria": [
           {
             "marks": 1,
@@ -1548,7 +1548,7 @@
         "question": 19,
         "part": null,
         "marks": 3,
-        "sampleAnswer": "m)2 g(x) (x = − − 5 k (x2 ) m2 = − + − 2xm 5 k kx2 m2k = − + − 2mkx 5 By inspection k = 3 By equating coefficient of x 2mk = 12 6m = 12 m = 2 ALTERNATE SOLUTION m)2 g(x) (x = − − 5 k g(x) 3x2 = − + 12x 7 3(x2 4x) = − + 7 3(x2 4) = − + + − 4x 7 12 3(x 2)2 = − − 5 So k = 3 and m = 2",
+        "sampleAnswer": "g(x) = k (x − m)2 − 5 = k (x2 − 2xm + m2 ) − 5 = kx2 − 2mkx + m2k − 5 By inspection k = 3 By equating coefficient of x 2mk = 12 6m = 12 m = 2 ALTERNATE SOLUTION g(x) = k (x − m)2 − 5 g(x) = 3x2 − 12x + 7 = 3(x2 − 4x) + 7 = 3(x2 − 4x + 4) + 7 − 12 = 3(x − 2)2 − 5 So k = 3 and m = 2",
         "criteria": [
           {
             "marks": 3,
@@ -1568,7 +1568,7 @@
         "question": 20,
         "part": "a",
         "marks": 1,
-        "sampleAnswer": "200e0 N(0) = = 200",
+        "sampleAnswer": "N(0) = 200e0 = 200",
         "criteria": [
           {
             "marks": 1,
@@ -1580,7 +1580,7 @@
         "question": 20,
         "part": "b",
         "marks": 1,
-        "sampleAnswer": "200e0.013×24 N(24) = = 273.23… ≈ 273 bacteria",
+        "sampleAnswer": "N(24) = 200e0.013×24 = 273.23… ≈ 273 bacteria",
         "criteria": [
           {
             "marks": 1,
@@ -1592,7 +1592,7 @@
         "question": 20,
         "part": "c",
         "marks": 2,
-        "sampleAnswer": "dN × e0.013t = 200 × 0.013 dt dN × When t = 24 = 0.013 273 from part (b) dt = 3.55 Rate of increase = 3.55 bacteria/hour.",
+        "sampleAnswer": "dN/dt = 200 × 0.013 × e0.013t When t = 24 dN/dt = 0.013 × 273 from part (b) = 3.55 Rate of increase = 3.55 bacteria/hour.",
         "criteria": [
           {
             "marks": 2,
@@ -1600,7 +1600,7 @@
           },
           {
             "marks": 1,
-            "text": "dN Attempts to find dt"
+            "text": "Attempts to find dN/dt"
           }
         ]
       },
@@ -1608,7 +1608,7 @@
         "question": 21,
         "part": "a",
         "marks": 2,
-        "sampleAnswer": "× P = 40 000, r = 1.2% pa compounded monthly, N = 10 12 = 120 120 0.012 ⎛ ⎞ = + 40 000 1 FV ⎝ ⎠ 12 = $45 097.17",
+        "sampleAnswer": "P = 40 000, r = 1.2% pa compounded monthly, N = 10 × 12 = 120 ⎛ ⎞ 120 FV = 40 000 ⎝ 1 + 0.012/12 ⎠ = $45 097.17",
         "criteria": [
           {
             "marks": 2,
@@ -1624,7 +1624,7 @@
         "question": 21,
         "part": "b",
         "marks": 2,
-        "sampleAnswer": "Option 2 = × 10 years quarterly ===> N 10 4 = 40 2.4% 0.024 = = = 0.006 r 4 4 From table: 45.05630 × So FV = 45.05630 1000 = 45 056.30 As Option 1 = $45 097.17, the difference is $40.87 .",
+        "sampleAnswer": "Option 2 10 years quarterly ===> N = 10 × 4 = 40 r = 2.4%/4 = 0.024/4 = 0.006 From table: 45.05630 So FV = 45.05630 × 1000 = 45 056.30 As Option 1 = $45 097.17, the difference is $40.87.",
         "criteria": [
           {
             "marks": 2,
@@ -1640,7 +1640,7 @@
         "question": 22,
         "part": null,
         "marks": 4,
-        "sampleAnswer": "Global maximum and minimum values occur at local maximum and minimum or end points of the interval. x3 6x2 y = − + 8 dy 3x2 = − 12x dx dy 3x2 = 0 ===> − 12x = 0 dx 3x(x − 4) = 0 Stationary points at x = 0 and x = 4 When x = 0 y = 8 When x = 4 y = −24 End points of interval When x = −1 y = 1 When x = 7 y = 57 Global minimum value = −24 Global maximum value = 57",
+        "sampleAnswer": "Global maximum and minimum values occur at local maximum and minimum or end points of the interval. y = x3 − 6x2 + 8 dy/dx = 3x2 − 12x dy/dx = 0 ===> 3x2 − 12x = 0 3x(x − 4) = 0 Stationary points at x = 0 and x = 4 When x = 0 y = 8 When x = 4 y = −24 End points of interval When x = −1 y = 1 When x = 7 y = 57 Global minimum value = −24 Global maximum value = 57",
         "criteria": [
           {
             "marks": 4,
@@ -1664,7 +1664,7 @@
         "question": 23,
         "part": "a",
         "marks": 2,
-        "sampleAnswer": "⎛4π ⎞ = − 1.3 0.6cos d t ⎝ ⎠ 25 Maximum depth ( high tide) = 1.3 + 0.6 = 1.9 m Minimum depth ( low tide ) = 1.3 − 0.6 = 0.7 m",
+        "sampleAnswer": "d = 1.3 − 0.6cos ⎛4π t ⎞ ⎝ 25 ⎠ Maximum depth ( high tide) = 1.3 + 0.6 = 1.9 m Minimum depth (low tide) = 1.3 − 0.6 = 0.7 m",
         "criteria": [
           {
             "marks": 2,
@@ -1680,7 +1680,7 @@
         "question": 23,
         "part": "b",
         "marks": 1,
-        "sampleAnswer": "2π Period = hours 4π ⎛ ⎞ ⎝ ⎠ 25 = 12.5 hours",
+        "sampleAnswer": "Period = 2π/⎛4π⎞ hours ⎝ 25 ⎠ = 12.5 hours",
         "criteria": [
           {
             "marks": 1,
@@ -1692,7 +1692,7 @@
         "question": 23,
         "part": "c",
         "marks": 3,
-        "sampleAnswer": "⎛4π ⎞ = − 1.3 0.6cos d t ⎝ ⎠ 25 ⎛4π ⎞ = − 1 1.3 0.6cos t , when d = 1 ⎝ ⎠ 25 ⎛4π ⎞ −0.3 = −0.6cos t ⎝ ⎠ 25 4π 1 ⎛ ⎞ = cos t ⎝25 ⎠ 2 4π π 5π = , t 25 3 3 π 5π 25 25 = × × , t 4π 4π 3 3 25 125 = , 12 12 125 25 − Time interval = 12 12 1 8 = hours 3",
+        "sampleAnswer": "d = 1.3 − 0.6cos ⎛4π t ⎞ ⎝ 25 ⎠ 1 = 1.3 − 0.6cos ⎛4π t ⎞, when d = 1 ⎝ 25 ⎠ −0.3 = −0.6cos ⎛4π t ⎞ ⎝ 25 ⎠ = cos ⎛ 4π ⎞ 1/2 ⎝25 t ⎠ 4π/25 t = π/3, 5π/3 t = π/3 × 25/4π, 5π/3 × 25/4π = 25/12, 125/12 Time interval = 125/12 − 25/12 = 8 1/3 hours",
         "criteria": [
           {
             "marks": 3,
@@ -1736,7 +1736,7 @@
         "question": 25,
         "part": null,
         "marks": 3,
-        "sampleAnswer": "(x) = sin2x ƒ ′(x) = 2cos2x ƒ ′′(x) = −4sin2x ƒ ′(x) = − ⇒ = − 3 2cos2x 3 ƒ − 3 = < < 2π cos2x 0 2x 2 5π 7π = 2x , 6 6 5π 7π = , x 12 12 ′′(x) = ⇒ −4sin2x = 2 2 ƒ −1 = < < 2π sin2x 0 2x 2 7π 11π = 2x , 6 6 7π 11π = , x 12 12 7π < < π 0 x ∴ x = for 12",
+        "sampleAnswer": "ƒ (x) = sin2x ƒ ′(x) = 2cos2x ƒ ′′(x) = −4sin2x ƒ ′(x) = − 3 ⇒ 2cos2x = − 3 cos2x = −3/2 0 < 2x < 2π 2x = 5π/6, 7π/6 x = 5π/12, 7π/12 ƒ ′′(x) = 2 ⇒ −4sin2x = 2 sin2x = −1/2 0 < 2x < 2π 2x = 7π/6, 11π/6 x = 7π/12, 11π/12 ∴ x = 7π/12 for 0 < x < π",
         "criteria": [
           {
             "marks": 3,
@@ -1744,11 +1744,11 @@
           },
           {
             "marks": 2,
-            "text": "< < π 0 x Finds the values of x, , for each derivative equation"
+            "text": "Finds the values of x, 0 < x < π, for each derivative equation"
           },
           {
             "marks": 1,
-            "text": "′(x) ′′(x), ƒ ƒ Attempts to find a value for that solves or or equivalent x merit"
+            "text": "Attempts to find a value for x that solves ƒ ′(x) or ƒ ′′(x), or equivalent merit"
           }
         ]
       },
@@ -1776,7 +1776,7 @@
         "question": 27,
         "part": "a",
         "marks": 2,
-        "sampleAnswer": "e−2x −2x ′(x) = − 2xe ƒ 2(x ) −2e−2x −2e−2x e−2x ′′(x) = − × + ƒ −2e−2x 4xe−2x 2e−2x = + − 4)e−2x (4x = − −2x 4(x 1)e = −",
+        "sampleAnswer": "ƒ ′(x) = e−2x − 2xe −2x ƒ ′′(x) = −2e−2x − 2(x × −2e−2x + e−2x ) = −2e−2x + 4xe−2x − 2e−2x = (4x − 4)e−2x = 4(x − 1)e −2x",
         "criteria": [
           {
             "marks": 2,
@@ -1792,7 +1792,7 @@
         "question": 27,
         "part": "b",
         "marks": 2,
-        "sampleAnswer": "′(x) = 0 ƒ Stationary points where x)e−2x (1 – 2 = 0 1 1⎞ 1 1 ⎛ −1 ≠ e−2x = = ƒ e x = , since 0, ⎝ 2⎠ 2 2 2e 1⎞ 1 ⎛ −1 −2e−1 = × − × = < ′′ 4 0 ƒ e ⎝ 2⎠ 2 ⎛1 1 ⎞ , ∴ is a local maximum. ⎝ ⎠ 2 2e",
+        "sampleAnswer": "Stationary points where ƒ ′(x) = 0 (1 – 2x)e−2x = 0 x = 1/2, since e−2x ≠ 0, ƒ ⎛ 1⎞ = 1/2 e −1 = 1/2e ⎝ 2⎠ ƒ ′′ ⎛ 1⎞ = 4 × − 1/2 × e −1 = −2e−1 < 0 ⎝ 2⎠ ∴ ⎛1, 1/2e ⎞ is a local maximum. ⎝ 2 ⎠",
         "criteria": [
           {
             "marks": 2,
@@ -1808,7 +1808,7 @@
         "question": 27,
         "part": "c",
         "marks": 3,
-        "sampleAnswer": "′′(x) = 0 ƒ Possible point of inflection where 1)e−2x 4(x − = 0 ≠ e−2x ∴ x = 1, since 0 x 0 1 2 ′′(x) ƒ 4e−4 −4 0 Changes concavity at x = 1 ∴ Inflection point at x = 1 ( ) 1e−2×1 1 ƒ = e−2 = 1 ⎛ ⎞ ⎝1, — Inflection point ⎠ 2 e (0) ƒ = 0 ∴ graph passes through (0, 0) (x) →∞ → x 0 ƒ As ,",
+        "sampleAnswer": "Possible point of inflection where ƒ ′′(x) = 0 4(x − 1)e−2x = 0 ∴ x = 1, since e−2x ≠ 0 x 0 1 2 ƒ ′′(x) −4 0 4e−4 Changes concavity at x = 1 ∴ Inflection point at x = 1 ƒ ( 1 ) = 1e−2×1 = e−2 ⎛ 1/e2 ⎞ — Inflection point ⎝1, ⎠ ƒ (0) = 0 ∴ graph passes through (0, 0) As x →∞, ƒ (x) → 0",
         "criteria": [
           {
             "marks": 3,
@@ -1828,7 +1828,7 @@
         "question": 28,
         "part": "a",
         "marks": 2,
-        "sampleAnswer": "Area = Area sector − Area triangle 1 1 r2θ = − × × 1 1 Area 2 2 π 1 ( ) 1 2 = × − 2 2 4 2 π 1 = − 4 2",
+        "sampleAnswer": "Area = Area sector − Area triangle Area = 1/2 r2θ − 1/2 × 1 × 1 = ( 2 )2 × − 1/2 π/4 1/2 = π/4 − 1/2",
         "criteria": [
           {
             "marks": 2,
@@ -1844,7 +1844,7 @@
         "question": 28,
         "part": "b",
         "marks": 2,
-        "sampleAnswer": "Substitute x = y = 0 a a 0 = − 1 ∴ = 1 b b ∴ a = b Substitute x = y = 1 a 1 = − 1 − 1 b a 1 = − 1 − 1 a a = 2 − 1 a a = 2a − 2 ∴ ∴ a = 2 b = 2",
+        "sampleAnswer": "Substitute x = y = 0 0 = a/b − 1 ∴ a/b = 1 ∴ a = b Substitute x = y = 1 1 = a/b−1 − 1 1 = a/a−1 − 1 a/a−1 = 2 a = 2a − 2 ∴ a = 2 ∴ b = 2",
         "criteria": [
           {
             "marks": 2,
@@ -1860,7 +1860,7 @@
         "question": 28,
         "part": "c",
         "marks": 3,
-        "sampleAnswer": "1 ⌠ 2 ⎛ ⎞ − 1 dx Area under curve (hyperbola) = ⎮ ⎝ ⎠ − 2 x ⌡ 0 [− x]0 1 2ln(2 x) = − − = −2ln1 − + − 1 2ln2 0 = − 2ln2 1 π 1 −1+ − 2) 2ln2 Total area = (units 4 2 π 3 + − (units2) 2ln2 = 4 2",
+        "sampleAnswer": "⌠ 1 Area under curve (hyperbola) = ⎛ 2/2−x − 1 ⎞ dx ⎮ ⎝ ⎠ ⌡ 0 = [− 2ln(2 − x) − x]0 1 = −2ln1 − 1 + 2ln2 − 0 = 2ln2 − 1 Total area = 2ln2 −1+ π/4 − 1/2 (units 2) = 2ln2 + π/4 − 3/2 (units2)",
         "criteria": [
           {
             "marks": 3,
@@ -1880,7 +1880,7 @@
         "question": 29,
         "part": "a",
         "marks": 1,
-        "sampleAnswer": "20 2−1 2−2 Limiting sum = + + + ··· 1 a S = , where a = 1 and r = − 1 2 r 1 = 1 − 1 2 = 2",
+        "sampleAnswer": "Limiting sum = 20 + 2−1 + 2−2 + ··· S = a/1−r, where a = 1 and r = 1/2 = 1/1 1 − 2 = 2",
         "criteria": [
           {
             "marks": 1,
@@ -1892,7 +1892,7 @@
         "question": 29,
         "part": "b",
         "marks": 2,
-        "sampleAnswer": "4 4 ⌠ ⎡−1 ⎤ − − x x = 2 2 dx (using the reference sheet) ⎮ ⎢ ⎥ ⎣ ⎦ ln2 ⌡ 0 0 −1 ⎡2−4 20 ⎤ = − ⎣ ⎦ ln2 1 1 15 ⎛ ⎞ = − = 1 ⎝ 16⎠ ln2 16ln2",
+        "sampleAnswer": "⌠ 4 4 2 − x dx = ⎡−1 2 − x ⎤ (using the reference sheet) ⎮ ⎢ ⎣ ln2 ⎥ ⎦ ⌡ 0 0 = −1/ln2 ⎣ ⎡2−4 − 20 ⎤ ⎦ ⎛ 1 ⎞ = ⎝ 1 − 1/ln2 = 15/16ln2 16⎠",
         "criteria": [
           {
             "marks": 2,
@@ -1908,7 +1908,7 @@
         "question": 29,
         "part": "c",
         "marks": 2,
-        "sampleAnswer": "Limiting sum of rectangles > area under curve between 0 and 4 15 ∴ < 2 area under the curve between 0 and 4 < limiting sum of rectangles 16ln2 ∴ < 15 32ln2 ln(232 ) ∴ < 15 15 232 ∴ < e",
+        "sampleAnswer": "Limiting sum of rectangles > area under curve between 0 and 4 ∴ 15/16ln2 < 2 area under the curve between 0 and 4 < limiting sum of rectangles ∴ 15 < 32ln2 ∴ 15 < ln(232 ) ∴ e 15 < 232",
         "criteria": [
           {
             "marks": 2,
@@ -1924,7 +1924,7 @@
         "question": 30,
         "part": "a",
         "marks": 1,
-        "sampleAnswer": "(e 3) = 1, F We need since F(x) is a CDF (e 3) 1 3 = lne F k 3 = k 3 = 1 So k ∴ k = 3",
+        "sampleAnswer": "We need F (e 3) = 1, since F(x) is a CDF F (e 3) = 1/k lne 3 = 3/k So 3/k = 1 ∴ k = 3",
         "criteria": [
           {
             "marks": 1,
@@ -1936,7 +1936,7 @@
         "question": 30,
         "part": "b",
         "marks": 2,
-        "sampleAnswer": "P(X c) P(X c) > = − < 1 1[ c)] P(X c) P(X < = − < 2 3P(X c) < = 2 2 P(X c) < = 3 2 ( ) ∴ = F c 3 1 2 = lnc 3 3 = lnc 2 2 = c e",
+        "sampleAnswer": "P(X > c) = 1 − P(X < c) P(X < c) = 2 1[ − P(X < c)] 3P(X < c) = 2 P(X < c) = 2/3 ∴ F ( c ) = 2/3 1/3 lnc = 2/3 lnc = 2 c = e 2",
         "criteria": [
           {
             "marks": 2,
@@ -1944,7 +1944,7 @@
           },
           {
             "marks": 1,
-            "text": "( c) ( ), > = − < 1 P X P X c Recognises that or equivalent merit"
+            "text": "Recognises that P ( X > c) = 1 − P ( X < c ), or equivalent merit"
           }
         ]
       },
@@ -1952,7 +1952,7 @@
         "question": 31,
         "part": "a",
         "marks": 2,
-        "sampleAnswer": "gradient XP = gradient PY − − 0 2 2 y = − − 1 0 1 x 1)( 2) (x − − = 2 y 2 − = 2 y − 1 x 2 = + 2 y − 1 x + − 2 2x 2 = − 1 x 2x = − 1 x",
+        "sampleAnswer": "gradient XP = gradient PY 0−2/x−1 = y−2/0−1 (x − 1)( y − 2) = 2 y − 2 = 2/x−1 y = 2/x−1 + 2 = 2+2x−2/x−1 = 2x/x−1",
         "criteria": [
           {
             "marks": 2,
@@ -1968,7 +1968,7 @@
         "question": 31,
         "part": "b",
         "marks": 4,
-        "sampleAnswer": "2 x 1 2x ⎡ ⎤ = = = A from and A xy y ⎢⎣ 1⎥⎦ − − 1 x 2 x (x 1)2x (1 ) x2 − − dA = (x 1) 2 − dx 2x2 x2 − − 2x = (x 1) 2 − x2 − 2x = (x 1) 2 − (x 2) − x = (x 1) 2 − dA = 0 when x = 0 or x = 2 dx discard x = 0 since x > 1. (from question) x 1.5 2 3 dA 3 −3 0 dx 4 Slope changes from negative to positive so x = 2 is a minimum. 4 A = − 2 1 units2 ∴ Minimum area = 4",
+        "sampleAnswer": "2 ⎡ ⎤ A = x/x−1 from A = 1/2 xy and y = 2x/x− ⎢⎣ 1⎥⎦ (x − 1)2x − x2 (1 ) dA/dx = 2 (x − 1) 2x2 − 2x − x2 = 2 (x − 1) = x2−2x/(x−1)2 = x(x−2)/(x−1)2 dA/dx = 0 when x = 0 or x = 2 discard x = 0 since x > 1. (from question) x 1.5 2 3 dA/dx −3 0 3/4 Slope changes from negative to positive so x = 2 is a minimum. A = 4/2−1 ∴ Minimum area = 4 units2",
         "criteria": [
           {
             "marks": 4,
@@ -1976,11 +1976,11 @@
           },
           {
             "marks": 3,
-            "text": "dA = 0 Solves and determines the nature of stationary point at x = 2 dx"
+            "text": "Solves dA/dx = 0 and determines the nature of stationary point at x = 2"
           },
           {
             "marks": 2,
-            "text": "dA Finds , or equivalent merit dx"
+            "text": "Finds dA/dx, or equivalent merit"
           },
           {
             "marks": 1,
@@ -1992,7 +1992,7 @@
         "question": 32,
         "part": "a",
         "marks": 2,
-        "sampleAnswer": "A = 0 180 (1.0025)1 (1.0025 )179 ⎡1 ⎤ 000(1.0025)180 + + + ! M ∴ 200 = ⎣ ⎦ (1.0025 )180 ⎡ 1⎤ − 180 M ⎢ ⎥ 200 000(1.0025) = − 1.0025 1 ⎣ ⎦ 200000(1.0025)180 × 0.0025 M = (1.0025 )180 − 1 = 1381.163281 = 1381.16 when rounded down",
+        "sampleAnswer": "A 180 = 0 ∴ 200 000(1.0025)180 = M ⎣ ⎡1 + (1.0025)1 + ! + (1.0025)179 ⎤ ⎦ 180 ⎡ (1.0025)180 − 1⎤ 200 000(1.0025) = M ⎢ ⎥ ⎣ 1.0025 − 1 ⎦ 200000(1.0025)180 × 0.0025 M = (1.0025)180 − 1 = 1381.163281 = 1381.16 when rounded down",
         "criteria": [
           {
             "marks": 2,
@@ -2008,7 +2008,7 @@
         "question": 32,
         "part": "b",
         "marks": 3,
-        "sampleAnswer": "(1.0035)n ⎡ ⎤ − 1 n ⎥ 100 032(1.0035) = 1381.16 ⎢ − 1.0035 1 ⎣ ⎦ 0.0035(1.0035)n 1381.16(1.0035)n 100 032 × = − 1381.16 1031.048(1.0035)n = 1381.16 (1.0035)n = 1.33956906 (1.33956906) log n = (1 .0035) log = 83.67407889 ∴ 83 full payments",
+        "sampleAnswer": "n ⎡ (1.0035)n − 1 ⎤ 100 032(1.0035) = 1381.16 ⎢ ⎥ ⎣ 1.0035 − 1 ⎦ 100 032 × 0.0035(1.0035)n = 1381.16(1.0035)n − 1381.16 1031.048(1.0035)n = 1381.16 (1.0035)n = 1.33956906 log (1.33956906) n = (1.0035) log = 83.67407889 ∴ 83 full payments",
         "criteria": [
           {
             "marks": 3,
@@ -2028,7 +2028,7 @@
         "question": 32,
         "part": "c",
         "marks": 2,
-        "sampleAnswer": "After 83 payments (1.0035 )83 ⎡ 1⎤ − 83 ⎢ ⎥ Amount owing = 100 032(1.0035) − 1381.16 −1 1.0035 ⎣ ⎦ = 928.29 × Final payment (84th month) = 928.29 1.0035 (1-month interest) = 931.54 2022 HSC Mathematics Advanced Mapping Grid Section I Syllabus Question Marks Content outcomes 1 1 MA-F1 Working with Functions MA11-1 2 1 MA-S2 Descriptive Statistics and Bivariate Data Analysis MA12-8 3 1 MA-T1 Trigonometry and Measure of Angles MA11-3 4 1 MA-F1 Working with Functions MA11-1 5 1 MA-C1 Introduction to Differentiation MA11-5 6 1 MA-C4 Integral Calculus MA12-7 7 1 MA-S3 Random Variables MA12-8 8 1 MA-C4 Integral Calculus MA12-7 9 1 MA-S1 Probability and Discrete Probability Distributions MA11-7 10 1 MA-F2 Graphing Techniques MA12-1 Section II Syllabus Question Marks Content outcomes 11 (a) 2 MA-S2 Descriptive Statistics and Bivariate Data Analysis MA12-8 11 (b) 1 MA-S2 Descriptive Statistics and Bivariate Data Analysis MA12-8 12 (a) 2 MA-F1 Working with Functions MA11-1 12 (b) 2 MA-F1 Working with Functions MA11-2 13 2 MA-C4 Integral Calculus MA12-7 14 2 MA-T3 Trigonometric Functions and Graphs MA12-5 15 (a) 1 MA-S1 Probability and Discrete Probability Distributions MA11-7 15 (b) 1 MA-S1 Probability and Discrete Probability Distributions MA11-7 16 3 MA-C4 Integral Calculus MA12-7 17 (a) 2 MA-M1 Modelling Financial Situations MA12-4 17 (b) 3 MA-M1 Modelling Financial Situations MA12-4 18 (a) 2 MA-C2 Differential Calculus MA12-6 18 (b) 1 MA-C4 Integral Calculus MA12-7 19 3 MA-F2 Graphing Techniques MA12-1 Syllabus Question Marks Content outcomes 20 (a) 1 MA-E1 Logarithms and Exponentials MA11-6 20 (b) 1 MA-E1 Logarithms and Exponentials MA11-6 20 (c) 2 MA-C3 Applications of Differentiation MA12-6 21 (a) 2 MA-M1 Modelling Financial Situations MA12-2 21 (b) 2 MA-M1 Modelling Financial Situations MA12-2 22 4 MA-C3 Applications of Differentiation MA12-6 23 (a) 2 MA-T3 Trigonometric Functions and Graphs MA12-5 23 (b) 1 MA-T3 Trigonometric Functions and Graphs MA12-5 23 (c) 3 MA-T3 Trigonometric Functions and Graphs MA12-5 24 4 MA-S2 Descriptive Statistics and Bivariate Data Analysis MA12-10 25 3 MA-C2 Differential Calculus MA12-6 26 3 MA-S3 Random Variables MA12-8 27 (a) 2 MA-C2 Differential Calculus MA12-6 27 (b) 2 MA-C3 Applications of Differentiation MA12-6 27 (c) 3 MA-C3 Applications of Differentiation MA12-6 28 (a) 2 MA-T1 Trigonometry and Measure of Angles MA11-3 28 (b) 2 MA-F1 Working with Functions MA11-1 28 (c) 3 MA-C4 Integral Calculus MA12-7 29 (a) 1 MA-M1 Modelling Financial Situations MA12-4 29 (b) 2 MA-C4 Integral Calculus MA12-7 29 (c) 2 MA-C4 Integral Calculus MA12-10 30 (a) 1 MA-S3 Random Variables MA12-8 30 (b) 2 MA-S3 Random Variables MA12-8 31 (a) 2 MA-F1 Working with Functions MA11-1 31 (b) 4 MA-C3 Applications of Differentiation MA12-6 32 (a) 2 MA-M1 Modelling Financial Situations MA12-4 32 (b) 3 MA-M1 Modelling Financial Situations MA12-4 32 (c) 2 MA-M1 Modelling Financial Situations MA12-2",
+        "sampleAnswer": "After 83 payments 83 ⎡ (1.0035)83 − 1⎤ Amount owing = 100 032(1.0035) − 1381.16 ⎢ ⎥ ⎣ 1.0035 −1 ⎦ = 928.29 Final payment (84th month) = 928.29 × 1.0035 (1-month interest) = 931.54 2022 HSC Mathematics Advanced Mapping Grid Section I Question Marks Content Syllabus outcomes 1 1 MA-F1 Working with Functions MA11-1 2 1 MA-S2 Descriptive Statistics and Bivariate Data Analysis MA12-8 3 1 MA-T1 Trigonometry and Measure of Angles MA11-3 4 1 MA-F1 Working with Functions MA11-1 5 1 MA-C1 Introduction to Differentiation MA11-5 6 1 MA-C4 Integral Calculus MA12-7 7 1 MA-S3 Random Variables MA12-8 8 1 MA-C4 Integral Calculus MA12-7 9 1 MA-S1 Probability and Discrete Probability Distributions MA11-7 10 1 MA-F2 Graphing Techniques MA12-1 Section II Question Marks Content Syllabus outcomes 11 (a) 2 MA-S2 Descriptive Statistics and Bivariate Data Analysis MA12-8 11 (b) 1 MA-S2 Descriptive Statistics and Bivariate Data Analysis MA12-8 12 (a) 2 MA-F1 Working with Functions MA11-1 12 (b) 2 MA-F1 Working with Functions MA11-2 13 2 MA-C4 Integral Calculus MA12-7 14 2 MA-T3 Trigonometric Functions and Graphs MA12-5 15 (a) 1 MA-S1 Probability and Discrete Probability Distributions MA11-7 15 (b) 1 MA-S1 Probability and Discrete Probability Distributions MA11-7 16 3 MA-C4 Integral Calculus MA12-7 17 (a) 2 MA-M1 Modelling Financial Situations MA12-4 17 (b) 3 MA-M1 Modelling Financial Situations MA12-4 18 (a) 2 MA-C2 Differential Calculus MA12-6 18 (b) 1 MA-C4 Integral Calculus MA12-7 19 3 MA-F2 Graphing Techniques MA12-1 Question Marks Content Syllabus outcomes 20 (a) 1 MA-E1 Logarithms and Exponentials MA11-6 20 (b) 1 MA-E1 Logarithms and Exponentials MA11-6 20 (c) 2 MA-C3 Applications of Differentiation MA12-6 21 (a) 2 MA-M1 Modelling Financial Situations MA12-2 21 (b) 2 MA-M1 Modelling Financial Situations MA12-2 22 4 MA-C3 Applications of Differentiation MA12-6 23 (a) 2 MA-T3 Trigonometric Functions and Graphs MA12-5 23 (b) 1 MA-T3 Trigonometric Functions and Graphs MA12-5 23 (c) 3 MA-T3 Trigonometric Functions and Graphs MA12-5 24 4 MA-S2 Descriptive Statistics and Bivariate Data Analysis MA12-10 25 3 MA-C2 Differential Calculus MA12-6 26 3 MA-S3 Random Variables MA12-8 27 (a) 2 MA-C2 Differential Calculus MA12-6 27 (b) 2 MA-C3 Applications of Differentiation MA12-6 27 (c) 3 MA-C3 Applications of Differentiation MA12-6 28 (a) 2 MA-T1 Trigonometry and Measure of Angles MA11-3 28 (b) 2 MA-F1 Working with Functions MA11-1 28 (c) 3 MA-C4 Integral Calculus MA12-7 29 (a) 1 MA-M1 Modelling Financial Situations MA12-4 29 (b) 2 MA-C4 Integral Calculus MA12-7 29 (c) 2 MA-C4 Integral Calculus MA12-10 30 (a) 1 MA-S3 Random Variables MA12-8 30 (b) 2 MA-S3 Random Variables MA12-8 31 (a) 2 MA-F1 Working with Functions MA11-1 31 (b) 4 MA-C3 Applications of Differentiation MA12-6 32 (a) 2 MA-M1 Modelling Financial Situations MA12-4 32 (b) 3 MA-M1 Modelling Financial Situations MA12-4 32 (c) 2 MA-M1 Modelling Financial Situations MA12-2",
         "criteria": [
           {
             "marks": 2,
@@ -2062,7 +2062,7 @@
         "question": 12,
         "part": "a",
         "marks": 1,
-        "sampleAnswer": "∑x P(x) E(X) = = 0 × 0 + 1 × 0.3 + 2 × 0.5 + 3 × 0.1 + 4 × 0.1 = 2",
+        "sampleAnswer": "E(X) = ∑x P(x) = 0 × 0 + 1 × 0.3 + 2 × 0.5 + 3 × 0.1 + 4 × 0.1 = 2",
         "criteria": [
           {
             "marks": 1,
@@ -2074,7 +2074,7 @@
         "question": 12,
         "part": "b",
         "marks": 2,
-        "sampleAnswer": "E(X ) 2 2 − µ Var(X) = (X2 ) [E )] 2 ( − E X = ∑x2 P(x ) = − 4 12 22 32 42 = 0 × 0 + × 0.3 + × 0.5 + × 0.1 + × 0.1 − 4 = 0.8 0.8 Standard deviation = = 0.8944… = 0.9 (to 1 decimal place)",
+        "sampleAnswer": "Var(X) = E(X 2 ) − µ 2 = E (X2 ) − [E ( X )] 2 = ∑x2 P(x ) − 4 = 0 × 0 + 12 × 0.3 + 22 × 0.5 + 32 × 0.1 + 42 × 0.1 − 4 = 0.8 Standard deviation = 0.8 = 0.8944… = 0.9 (to 1 decimal place)",
         "criteria": [
           {
             "marks": 2,
@@ -2090,7 +2090,7 @@
         "question": 13,
         "part": null,
         "marks": 2,
-        "sampleAnswer": "dP 2t 3000e = dt 3000 2t ∴ e P = + C 2 1500e2t = + C When t = 0, P = 4000 1500e2× 0 ∴ 4000 = + C ∴ C = 2500 1500e2t So P(t) = + 2500",
+        "sampleAnswer": "dP/dt = 3000e 2t ∴ P = 3000/2 e 2t + C = 1500e2t + C When t = 0, P = 4000 ∴ 4000 = 1500e2× 0 + C ∴ C = 2500 So P(t) = 1500e2t + 2500",
         "criteria": [
           {
             "marks": 2,
@@ -2106,7 +2106,7 @@
         "question": 14,
         "part": null,
         "marks": 3,
-        "sampleAnswer": "(2x 1)3 = + y (2x 1)2 = × + × y′ 3 2 6(2x 1)2 = + y′ When x = 0 = 6 Equation of tangent given by: 6(x 0) − = − 1 y − = 1 6x y = + 6x 1 y",
+        "sampleAnswer": "y = (2x + 1)3 y′ = 3 × (2x + 1)2 × 2 = 6(2x + 1)2 When x = 0 y′ = 6 Equation of tangent given by: y − 1 = 6(x − 0) y − 1 = 6x y = 6x + 1",
         "criteria": [
           {
             "marks": 3,
@@ -2126,7 +2126,7 @@
         "question": 15,
         "part": "a",
         "marks": 2,
-        "sampleAnswer": "$450 000 Amount = 13.181 = $34 140 (to the nearest dollar)",
+        "sampleAnswer": "Amount = $450000/13.181 = $34 140 (to the nearest dollar)",
         "criteria": [
           {
             "marks": 2,
@@ -2142,7 +2142,7 @@
         "question": 15,
         "part": "b",
         "marks": 3,
-        "sampleAnswer": "6 % r = 4 = 1.5% n = 10 × 4 = 40 Amount = $8535 × 54.268 = $463 177.38",
+        "sampleAnswer": "r = 6/4 % = 1.5% n = 10 × 4 = 40 Amount = $8535 × 54.268 = $463 177.38",
         "criteria": [
           {
             "marks": 3,
@@ -2162,7 +2162,7 @@
         "question": 16,
         "part": null,
         "marks": 4,
-        "sampleAnswer": "110 × × π × 2 2.1 Arc length PQ = 360 = 4.03171… 2.12 2.12 + − × × × cos110° 2 2.1 2.1 Length PQ = = 3.4404… Total perimeter = (3.6 × 2) + 8.0 + (8.0 − 3.4404) + 4.0317 = 23.7913 = 23.8 m",
+        "sampleAnswer": "Arc length PQ = 110/360 × 2 × π × 2.1 = 4.03171… Length PQ = 2.12 + 2.12 − 2 × 2.1 × 2.1 × cos110° = 3.4404… Total perimeter = (3.6 × 2) + 8.0 + (8.0 − 3.4404) + 4.0317 = 23.7913 = 23.8 m",
         "criteria": [
           {
             "marks": 4,
@@ -2186,7 +2186,7 @@
         "question": 17,
         "part": null,
         "marks": 2,
-        "sampleAnswer": "1 ⌠ x(x2 1) 2 + dx ⎮⌡ 1 ⌠ 2x(x2 1) 1 2 = + dx ⎮⌡ 2 3 ⎡ ⎤ ( 1) 2 2 + ⎢ ⎥ x 1 = + C ⎢ ⎥ 3 2 ⎢ ⎥ ⎣ ⎦ 2 3 (x2 1) 1 2 = + + C 3",
+        "sampleAnswer": "⌠ 1/2 ⎮⌡ x(x2 + 1) dx ⌠ 1/2 = 1/2 ⎮⌡ 2x(x2 + 1) dx ⎡ 2 3/2 ⎤ ⎢ ( 1) ⎥ = 1/2 ⎢ x+/3 ⎥ + C ⎢ ⎥ ⎣ 2 ⎦ 3/2 = 1/3 (x2 + 1) + C",
         "criteria": [
           {
             "marks": 2,
@@ -2194,7 +2194,7 @@
           },
           {
             "marks": 1,
-            "text": "⌠ [ƒ ] n ′(x) (x) k ƒ dx Recognises the integral is of the form , ⎮⌡ or equivalent merit"
+            "text": "⌠ n Recognises the integral is of the form k ƒ ′(x)[ƒ (x)] dx, ⎮⌡ or equivalent merit"
           }
         ]
       },
@@ -2202,7 +2202,7 @@
         "question": 18,
         "part": "a",
         "marks": 3,
-        "sampleAnswer": "+ + + + + + + + + 0 0 0 2 5 7 8 9 9 10 x = 10 = 5 1840 y = 10 = 184 (x, ) ∴ y = (5, 184)",
+        "sampleAnswer": "0 + 0 + 0 + 2 + 5 + 7 + 8 + 9 + 9 + 10 x = 10 = 5 y = 1840/10 = 184 ∴ (x, y ) = (5, 184)",
         "criteria": [
           {
             "marks": 3,
@@ -2210,11 +2210,11 @@
           },
           {
             "marks": 2,
-            "text": "y x Calculates and , and plots this point on the grid, or equivalent merit"
+            "text": "Calculates x and y, and plots this point on the grid, or equivalent merit"
           },
           {
             "marks": 1,
-            "text": "y x Calculates or , or equivalent merit"
+            "text": "Calculates x or y, or equivalent merit"
           }
         ]
       },
@@ -2222,7 +2222,7 @@
         "question": 18,
         "part": "b",
         "marks": 2,
-        "sampleAnswer": "− 184 236 Slope of regression line = 5 = – 10.4 Gas usage = 236 − 10.4 × temperature ie y = 236 – 10.4x",
+        "sampleAnswer": "Slope of regression line = 184−236/5 = – 10.4 Gas usage = 236 − 10.4 × temperature ie y = 236 – 10.4x",
         "criteria": [
           {
             "marks": 2,
@@ -2258,7 +2258,7 @@
           },
           {
             "marks": 1,
-            "text": "(x) ƒ Provides a sketch of , or equivalent merit"
+            "text": "Provides a sketch of ƒ (x), or equivalent merit"
           }
         ]
       },
@@ -2282,7 +2282,7 @@
         "question": 20,
         "part": null,
         "marks": 3,
-        "sampleAnswer": "≤ ≤ θ 0° 360° ≤ ≤ θ −60° − 60° 300° 3 − (θ sin − 60°) = 2 θ − 60° = 240° or 300° or −60° θ = 300°, 360°, 0°",
+        "sampleAnswer": "0° ≤ θ ≤ 360° −60° ≤ θ − 60° ≤ 300° sin (θ − 60°) = − 3/2 θ − 60° = 240° or 300° or −60° θ = 300°, 360°, 0°",
         "criteria": [
           {
             "marks": 3,
@@ -2290,11 +2290,11 @@
           },
           {
             "marks": 2,
-            "text": "θ Provides − 60° = 240°, 300°, or equivalent merit"
+            "text": "Provides θ − 60° = 240°, 300°, or equivalent merit"
           },
           {
             "marks": 1,
-            "text": "3 sin60° = Recognises that 2"
+            "text": "Recognises that sin60° = 3/2"
           }
         ]
       },
@@ -2302,7 +2302,7 @@
         "question": 21,
         "part": null,
         "marks": 3,
-        "sampleAnswer": "Let a = first term and r = common ratio ar3 Then = 48 ————— (1) 3 ar7 and = ————— (2) 16 Dividing (2) by (1), 3 7 ar 16 = ar3 48 1 ∴ r4 = 256 1 ∴ ± r = 4 3 1 1 ⎛ ⎞ ∴ a If r = = 48 a = 3072 ⎝ ⎠ 4 4 3 1 1 ⎛ ⎞ ∴ − − a If r = = 48 a = −3072 ⎝ 4⎠ 4",
+        "sampleAnswer": "Let a = first term and r = common ratio Then ar3 = 48 ————— (1) and ar7 = 3/16 ————— (2) Dividing (2) by (1), 7 3/16 ar/ar3 = 48 ∴ r4 = 1/256 ∴ r = ± 1/4 ⎛ ⎞ 3 If r = 1/4 a ⎝ 1/4 ⎠ = 48 ∴ a = 3072 ⎛ 1 ⎞ 3 If r = − 1/4 a ⎝ − = 48 ∴ a = −3072 4⎠",
         "criteria": [
           {
             "marks": 3,
@@ -2310,11 +2310,11 @@
           },
           {
             "marks": 2,
-            "text": "4 Finds r , or equivalent merit"
+            "text": "Finds r 4, or equivalent merit"
           },
           {
             "marks": 1,
-            "text": "3 Writes ar = 48, or equivalent merit"
+            "text": "Writes ar 3 = 48, or equivalent merit"
           }
         ]
       },
@@ -2322,7 +2322,7 @@
         "question": 22,
         "part": null,
         "marks": 3,
-        "sampleAnswer": "AM2 32 72 Find AM = + = 9 + 49 = 58 58 AM = Triangle AME, 58 tanα So = 8 α = 43.59° α so = 44° (to the nearest degree)",
+        "sampleAnswer": "Find AM AM2 = 32 + 72 = 9 + 49 = 58 AM = 58 Triangle AME, So tanα = 58/8 α = 43.59° so α = 44° (to the nearest degree)",
         "criteria": [
           {
             "marks": 3,
@@ -2342,7 +2342,7 @@
         "question": 23,
         "part": null,
         "marks": 4,
-        "sampleAnswer": "− µ x z = σ − 11.93 10.40 = 1.15 = 1.33 (2 decimal places) ∴ Probability from table = 0.9082 P(more than 11.93) = 1 − 0.9082 = 0.0918 Number of koalas = 0.0918 × 400 = 36.72 = 36 (accept 37 as well)",
+        "sampleAnswer": "z = x−µ/σ 11.93 − 10.40 = 1.15 = 1.33 (2 decimal places) ∴ Probability from table = 0.9082 P(more than 11.93) = 1 − 0.9082 = 0.0918 Number of koalas = 0.0918 × 400 = 36.72 = 36 (accept 37 as well)",
         "criteria": [
           {
             "marks": 4,
@@ -2366,7 +2366,7 @@
         "question": 24,
         "part": "a",
         "marks": 1,
-        "sampleAnswer": "50 = (x − 2)(y − 1) 50 = y − 1 − 2 x 50 So y = + 1 as required. − 2 x",
+        "sampleAnswer": "50 = (x − 2)(y − 1) 50/x−2 = y − 1 So y = 50/x−2 + 1 as required.",
         "criteria": [
           {
             "marks": 1,
@@ -2378,7 +2378,7 @@
         "question": 24,
         "part": "b",
         "marks": 4,
-        "sampleAnswer": "Area of concrete path is 2y + x − 2 50 ⎛ ⎞ + 1 A = 2 + x − 2 ⎝ ⎠ − 2 x 50 ⎛ ⎞ A = 2 + 2 + x − 2 ⎝ ⎠ − 2 x 100 A = + x − 2 x 2)−1 = 100 (x − + x 100(−1(x ) − 2) 2 − + A′ 1 = −100 = + 1 (x 2)2 − −100 A′ = 0 when = −1 (x 2)2 − 2)2 100 = (x − ±10 = x − 2 x = 12 or −8 Since x is a distance, discard −8. Stationary point at x = 12. x 11 12 13 −100 −100 + + 1 1 A′ 0 81 121 − So there is a minimum turning point at x = 12. The minimum area of the path is when x = 12.",
+        "sampleAnswer": "Area of concrete path is 2y + x − 2 A = 2 ⎛ 50/x−2 + 1 ⎞ + x − 2 ⎝ ⎠ A = 2 ⎛ 50/x−2 ⎞ + 2 + x − 2 ⎝ ⎠ A = 100/x−2 + x = 100 (x − 2)−1 + x A′ = 100(−1(x − 2)− 2 ) + 1 = −100/(x−2)2 + 1 A′ = 0 when −100/(x−2)2 = −1 100 = (x − 2)2 ±10 = x − 2 x = 12 or −8 Since x is a distance, discard −8. Stationary point at x = 12. x 12 11/−100 13/−100 A′ + 1 0 + 1 81 121 − So there is a minimum turning point at x = 12. The minimum area of the path is when x = 12.",
         "criteria": [
           {
             "marks": 4,
@@ -2390,7 +2390,7 @@
           },
           {
             "marks": 2,
-            "text": "A′ Finds , or equivalent merit"
+            "text": "Finds A′, or equivalent merit"
           },
           {
             "marks": 1,
@@ -2402,7 +2402,7 @@
         "question": 25,
         "part": "a",
         "marks": 1,
-        "sampleAnswer": "(1.004) = − 10 000 A1 M (10 M)(1.004) (1.004) = − − 000 A2 M (1.004)2 M(1.004) = − − 10 000 M as required.",
+        "sampleAnswer": "A1 = 10 000 (1.004) − M A2 = (10 000 (1.004) − M)(1.004) − M = 10 000 (1.004)2 − M(1.004) − M as required.",
         "criteria": [
           {
             "marks": 1,
@@ -2414,7 +2414,7 @@
         "question": 25,
         "part": "b",
         "marks": 3,
-        "sampleAnswer": "M(1 1.004n−1) (1.004)n = − + + + 10 000 1.004 ! A n (1.004n 1) − M (1.004)n = − 10 000 0.004 M M (1.004)n 1.004n = − × + 10 000 0.004 0.004 (1.004)n 1.004n = − × + 10 000 250M 250M (10 250M)(1.004)n − + = 000 250M A n",
+        "sampleAnswer": "A n = 10 000 (1.004)n − M(1 + 1.004 + ! + 1.004n−1) M (1.004n − 1) = 10 000 (1.004)n − 0.004 = 10 000 (1.004)n − M/0.004 × 1.004n + M/0.004 = 10 000 (1.004)n − 250M × 1.004n + 250M A n = (10 000 − 250M)(1.004)n + 250M",
         "criteria": [
           {
             "marks": 3,
@@ -2422,11 +2422,11 @@
           },
           {
             "marks": 2,
-            "text": "Provides an expression for A involving the sum of a geometric series, n or equivalent merit"
+            "text": "Provides an expression for An involving the sum of a geometric series, or equivalent merit"
           },
           {
             "marks": 1,
-            "text": "Finds an expression for A using part (a), or equivalent merit n"
+            "text": "Finds an expression for An using part (a), or equivalent merit"
           }
         ]
       },
@@ -2434,7 +2434,7 @@
         "question": 25,
         "part": "c",
         "marks": 2,
-        "sampleAnswer": "A100 > 0 (10 250M)(1.004)100 − + > 000 250M 0 1.004100 1.004100 × − × + > 10 000 250M 250M 0 (1.004100 1) − − > 14 906.34886 250M 0 − × > 14 906.34886 250M 0.4 9063 0 > 14 906.34886 122.6587…M 14 906.34886 > M 122.6587… > 121.527 M The largest amount Jia could withdraw is $121.52 .",
+        "sampleAnswer": "A100 > 0 (10 000 − 250M)(1.004)100 + 250M > 0 10 000 × 1.004100 − 250M × 1.004100 + 250M > 0 14 906.34886 − 250M (1.004100 − 1) > 0 14 906.34886 − 250M × 0.4 9063 > 0 14 906.34886 > 122.6587…M 14 906.34886 > M 122.6587… 121.527 > M The largest amount Jia could withdraw is $121.52.",
         "criteria": [
           {
             "marks": 2,
@@ -2442,7 +2442,7 @@
           },
           {
             "marks": 1,
-            "text": "Identifies A > 0 and n = 100, or equivalent merit n"
+            "text": "Identifies An > 0 and n = 100, or equivalent merit"
           }
         ]
       },
@@ -2450,7 +2450,7 @@
         "question": 26,
         "part": "a",
         "marks": 2,
-        "sampleAnswer": "( t) ⎛5π dx ⎞ = −1.5π sin t ⎝ ⎠ 4 dt ⌠ ⎛5π ⎞ ( t) = −1.5π sin x t dt ⎮ ⎝4 ⎠ ⌡ −1.5π ⎛5π ⎞ = × −cos + t k ⎝ ⎠ 5π 4 4 When t = 0 x = 11.2 1.2cos(0) So 11.2 = + k 11.2 = 1.2 + k k = 10 ⎛5π ⎞ x(t ) = + 1.2 cos 10 t ⎝ ⎠ 4",
+        "sampleAnswer": "dx(t)/dt = −1.5π sin ⎛5π t ⎞ ⎝ 4 ⎠ ⌠ ⎛5π ⎞ x ( t) = ⎮ −1.5π sin t ⎠ dt ⌡ ⎝4 = −1.5π/5π × −cos ⎛5π t ⎞ + k ⎝ 4 ⎠ 4 When t = 0 x = 11.2 So 11.2 = 1.2cos(0) + k 11.2 = 1.2 + k k = 10 x(t ) = 1.2 cos ⎛5π t ⎞ + 10 ⎝ 4 ⎠",
         "criteria": [
           {
             "marks": 2,
@@ -2466,7 +2466,7 @@
         "question": 26,
         "part": "b",
         "marks": 2,
-        "sampleAnswer": "2π Period = = 1.6 5π 4 10 ÷ 1.6 = 6.25 ∴ Number of complete periods in 10 seconds is 6. ∴ Reaches closest point to camera 6 times.",
+        "sampleAnswer": "Period = 2π/5π = 1.6 4 10 ÷ 1.6 = 6.25 ∴ Number of complete periods in 10 seconds is 6. ∴ Reaches closest point to camera 6 times.",
         "criteria": [
           {
             "marks": 2,
@@ -2482,7 +2482,7 @@
         "question": 27,
         "part": "a",
         "marks": 3,
-        "sampleAnswer": "c = 7 Since the absolute value graph has been shifted by 7 vertically b = 6 Shifted by 6 to the right Let x = 3, y = −5 ( ) = − + = −5 3 3 6 7 ƒ a 3a +7 = −5 3a = −12 a = −4 ∴ a = −4, b = 6, c = 7",
+        "sampleAnswer": "c = 7 Since the absolute value graph has been shifted by 7 vertically b = 6 Shifted by 6 to the right Let x = 3, y = −5 ƒ ( 3 ) = a 3 − 6 + 7 = −5 3a +7 = −5 3a = −12 a = −4 ∴ a = −4, b = 6, c = 7",
         "criteria": [
           {
             "marks": 3,
@@ -2502,7 +2502,7 @@
         "question": 27,
         "part": "b",
         "marks": 2,
-        "sampleAnswer": "7 Line joining (6, 7) with (0, 0) has slope 6 7 m must be less than to cut the graph in two places. 6 Slope of right side of graph is −4 m must be greater than −4 or it will only cut graph once 7 Hence −4 < m < . 6",
+        "sampleAnswer": "Line joining (6, 7) with (0, 0) has slope 7/6 m must be less than 7/6 to cut the graph in two places. Slope of right side of graph is −4 m must be greater than −4 or it will only cut graph once Hence −4 < m < 7/6.",
         "criteria": [
           {
             "marks": 2,
@@ -2510,7 +2510,7 @@
           },
           {
             "marks": 1,
-            "text": "7 < m Finds that , or equivalent merit 6"
+            "text": "Finds that m < 7/6, or equivalent merit"
           }
         ]
       },
@@ -2518,7 +2518,7 @@
         "question": 28,
         "part": null,
         "marks": 4,
-        "sampleAnswer": "dy 3x2 = − 6x − 8 dx Tangent at (−1, 6) is y = x + 7 Slope of tangent is 1. dy 3x2 Solve = 1 ie − 6x − 8 = 1 dx 3x2 − 6x − 9 = 0 3(x2 − 2x − 3) = 0 3(x − 3)(x + 1) = 0 So x coordinate of R is 3. dy 3x2 When = − 6x − 8 dx x3 3x2 y = − − 8x + k and when x = −1 y = 6. (−1)3 3(−1)2 So 6 = − − 8(−1) + k 6 = −1 − 3 + 8 + k 6 − 4 = k k = 2 x3 3x2 When x = 3 y = − − 8x + 2 = 27 − 27 − 24 + 2 = −22 ∴ Coordinates of R are (3, −22).",
+        "sampleAnswer": "dy/dx = 3x2 − 6x − 8 Tangent at (−1, 6) is y = x + 7 Slope of tangent is 1. Solve dy/dx = 1 ie 3x2 − 6x − 8 = 1 3x2 − 6x − 9 = 0 3(x2 − 2x − 3) = 0 3(x − 3)(x + 1) = 0 So x coordinate of R is 3. When dy/dx = 3x2 − 6x − 8 y = x3 − 3x2 − 8x + k and when x = −1 y = 6. So 6 = (−1)3 − 3(−1)2 − 8(−1) + k 6 = −1 − 3 + 8 + k 6 − 4 = k k = 2 When x = 3 y = x3 − 3x2 − 8x + 2 = 27 − 27 − 24 + 2 = −22 ∴ Coordinates of R are (3, −22).",
         "criteria": [
           {
             "marks": 4,
@@ -2534,7 +2534,7 @@
           },
           {
             "marks": 1,
-            "text": "dy = 1, Attempts to solve or equivalent merit dx"
+            "text": "Attempts to solve dy/dx = 1, or equivalent merit"
           }
         ]
       },
@@ -2542,7 +2542,7 @@
         "question": 29,
         "part": "a",
         "marks": 2,
-        "sampleAnswer": "(x ) ƒ Mode of X will be when has a maximum. (x ) ≤ ≤ x2 3, ƒ = 12 − 12 x 0 x 1 ′(x) 2 ƒ = 24 x − 36 x = 12 x (2 − 3x) ′(x) ƒ = 0 when x = 0 and when 2 − 3x = 0 2 x = 3 (0 ) ƒ Discard x = 0 since = 0 so 2 the mode of X is . 3",
+        "sampleAnswer": "Mode of X will be when ƒ (x ) has a maximum. ƒ (x ) = 12 x2 − 12 x3, 0 ≤ x ≤ 1 ƒ ′(x) = 24 x − 36 x2 = 12 x (2 − 3x) ƒ ′(x) = 0 when x = 0 and when 2 − 3x = 0 x = 2/3 Discard x = 0 since ƒ (0 ) = 0 so the mode of X is 2/3.",
         "criteria": [
           {
             "marks": 2,
@@ -2550,7 +2550,7 @@
           },
           {
             "marks": 1,
-            "text": "(x ) ƒ Finds the derivative of , or equivalent merit"
+            "text": "Finds the derivative of ƒ (x ), or equivalent merit"
           }
         ]
       },
@@ -2558,7 +2558,7 @@
         "question": 29,
         "part": "b",
         "marks": 2,
-        "sampleAnswer": "x ⌠ (1 t) (x) 12t2 = − F dt ⎮ ⌡0 x ⌠ 12t2 12t3 = − dt ⎮⌡0 x ⎡⎣4t3 3t4 ⎤⎦0 = − 4x3 3x4 = −",
+        "sampleAnswer": "⌠ x F (x) = ⎮ 12t2 (1 − t) dt ⌡0 ⌠ x = 12t2 − 12t3 dt ⎮⌡0 = − 3t4 x ⎡⎣4t3 ⎤⎦0 = 4x3 − 3x4",
         "criteria": [
           {
             "marks": 2,
@@ -2566,7 +2566,7 @@
           },
           {
             "marks": 1,
-            "text": "(x ) (x ) F ƒ Expresses as an integral of , or equivalent merit"
+            "text": "Expresses F (x ) as an integral of ƒ (x ), or equivalent merit"
           }
         ]
       },
@@ -2574,7 +2574,7 @@
         "question": 29,
         "part": "c",
         "marks": 2,
-        "sampleAnswer": "2 ⎛8 ⎛16 ⎞ ⎞ × − × 4x3 3x4 4 3 When x = − = ⎝ ⎠ ⎝ ⎠ 3 27 81 = 0.59 2 The probability of the variable being less than is greater than 0.5, therefore the mode is 3 greater than the median.",
+        "sampleAnswer": "When x = 2/3 4x3 − 3x4 = 4 × ⎛8 ⎞ − 3 × ⎛16 ⎞ ⎝ 27 ⎠ ⎝ 81 ⎠ = 0.59 The probability of the variable being less than 2/3 is greater than 0.5, therefore the mode is greater than the median.",
         "criteria": [
           {
             "marks": 2,
@@ -2590,7 +2590,7 @@
         "question": 30,
         "part": "a",
         "marks": 3,
-        "sampleAnswer": "( x) e−x ƒ = sin x ′(x) e−x −e−x ƒ = cos x + sin x e−x = (cos x − sin x) ′(x) ƒ = 0 when cos x = sin x π 5π x = or 4 4 π 5π π 5π − − ( x) 4 4 ƒ sin sin e e so = or 4 4 The two stationary points are π 5π ⎛ ⎞ ⎛ ⎞ − − π 5π −e 4 4 e ⎜ ⎟ ⎜ ⎟ , , ⎜ ⎟ ⎜4 ⎟ and 4 2 2 ⎜ ⎟ ⎜ ⎟ ⎝ ⎠ ⎝ ⎠ approx. approx. ⎛π 5π ⎛ ⎞ ⎞ − , 0.322 , 0.014 ⎝ ⎠ ⎝ ⎠ and 4 4",
+        "sampleAnswer": "ƒ ( x) = e−x sin x ƒ ′(x) = e−x cos x + −e−x sin x = e−x (cos x − sin x) ƒ ′(x) = 0 when cos x = sin x x = π/4 or 5π/4 − π/4 − 5π/4 so ƒ ( x) = e sin π/4 or e sin 5π/4 The two stationary points are ⎛ − π/4 ⎞ ⎛ − 5π/4 ⎞ ⎜ ⎟ ⎜ 5π ⎟ ⎜ π/4, e/2 ⎟ and ⎜4, −e/2 ⎟ ⎜ ⎝ ⎟ ⎠ ⎜ ⎝ ⎟ ⎠ approx. approx. ⎛π, 0.322⎞ ⎛ 5π/4, − 0.014 ⎞ ⎝ 4 ⎠ and ⎝ ⎠",
         "criteria": [
           {
             "marks": 3,
@@ -2610,7 +2610,7 @@
         "question": 30,
         "part": "b",
         "marks": 2,
-        "sampleAnswer": "( ) π 2π ƒ x = 0 when sin x = 0 x = 0, ,",
+        "sampleAnswer": "ƒ ( x ) = 0 when sin x = 0 x = 0, π, 2π",
         "criteria": [
           {
             "marks": 2,
@@ -2626,7 +2626,7 @@
         "question": 31,
         "part": "a",
         "marks": 1,
-        "sampleAnswer": "P(F S) P(F) ≠ No, since (b)",
+        "sampleAnswer": "No, since P(F S) ≠ P(F)",
         "criteria": [
           {
             "marks": 1,
@@ -2636,9 +2636,9 @@
       },
       {
         "question": 31,
-        "part": null,
+        "part": "b",
         "marks": 2,
-        "sampleAnswer": "( ) ∩ P S F S( ) = P F P(F) ( ) ∩ 1 P S F = 3 3 10 1 ( ) ∩ = P S F 10 ( ) ∩ P S F ( S) = P F P(S) 1 1 10 (since )) ( ) ( = ∩ = ∩ P S F P F S P(S) 8 8 P(S) = 10 4 = 5",
+        "sampleAnswer": "P S( F ) = P(S∩F)/P(F) 1/3 = P(S∩F)/3 10 P ( S ∩ F ) = 1/10 P ( F S) = P(S∩F)/P(S) 1/10 1/8 = (since P ( S ∩ F ) = P ( F ∩ S )) P(S) P(S) = 8/10 = 4/5",
         "criteria": [
           {
             "marks": 2,
@@ -2654,7 +2654,7 @@
         "question": 31,
         "part": "c",
         "marks": 2,
-        "sampleAnswer": "4 ⎛4 256 369 ⎞ − = − = = 1 1 0.5904 ⎝ ⎠ 5 625 625",
+        "sampleAnswer": "⎛4 ⎞ 4 1 − ⎝ ⎠ = 1 − 256/625 = 369/625 = 0.5904 5",
         "criteria": [
           {
             "marks": 2,
@@ -2670,7 +2670,7 @@
         "question": 32,
         "part": "a",
         "marks": 3,
-        "sampleAnswer": "ln2 ⌠ 1 ⎛ ⎞ e−2x e− x = − − dx Shaded area ⎮ ⎝ ⎠ 4 ⌡0 ln2 ⌠ 1 −2x e− x = − + e dx ⎮ 4 ⌡ 0 ln2 1 1 ⎡ ⎤ −2x − x = − + + e e x ⎣⎢ ⎦⎥ 2 4 0 1 1 1 ⎛ ⎞ ⎛ ⎞ −2ln2 e− ln2 = − + + − − + + ln2 1 0 e ⎝ ⎠ ⎝ ⎠ 2 4 2 ln(2 ) ln(2 ) 1 1 1 −2 −1 = − + + − ln2 e e 2 4 2 1 1 1 1 1 = − × + + − ln2 2 4 2 4 2 1 1 = − ln2 4 8",
+        "sampleAnswer": "⌠ ln2 Shaded area = e−2x − ⎛ e− x − 1/4 ⎞ dx ⎮ ⎝ ⎠ ⌡0 ⌠ ln2 = ⎮ e −2x − e− x + 1/4 dx ⌡ 0 ⎡ ⎤ ln2 = − 1/2 e −2x + e − x + 1/4 x ⎣⎢ ⎦⎥ 0 = ⎛ − 1/2 e −2ln2 + e− ln2 + 1/4 ln2⎞ − ⎛ − 1/2 + 1 + 0 ⎞ ⎝ ⎠ ⎝ ⎠ ln(2−2 ) ln(2−1 ) = − 1/2 e + e + 1/4 ln2 − 1/2 = − 1/2 × 1/4 + 1/2 + 1/4 ln2 − 1/2 = 1/4 ln2 − 1/8",
         "criteria": [
           {
             "marks": 3,
@@ -2690,7 +2690,7 @@
         "question": 32,
         "part": "b",
         "marks": 3,
-        "sampleAnswer": "−2x e−x We want the equation e = + k to have 2 solutions. −2x e−x ie e − − k = 0 has 2 solutions (e −) (e x) 2 − x − − = 0 k ie has 2 solutions Using the quadratic formula, ± + 1 1 4k − x = e 2 1 > − k For two real solutions we want 1 + 4k > 0, ie 4 e−x, But for two solutions for both the real solutions to the quadratic must be positive. + ∴ 1 4k < 1 ∴ 1 + 4k < 1 ∴ k < 0 1 − Hence < k < 0. 4 2023 HSC Mathematics Advanced Mapping Grid Section I Question Marks Content Syllabus outcomes 1 1 MA-S2 Descriptive Statistics and Bivariate Data Analysis MA12-8 2 1 MA-S1 Probability and Discrete Probability Distributions MA11-7 3 1 MA-F1 Working with Functions MA11-1 4 1 MA-F1 Working with Functions MA11-1 5 1 MA-C4 Integral Calculus MA12-7 6 1 MA-C3 Applications of Differentiation MA12-6 7 1 MA-C2 Differential Calculus MA12-6 8 1 MA-E1 Logarithms and Exponentials MA11-6 9 1 MA-F1 Working with Functions MA11-2 10 1 MA-F2 Graphing Techniques MA12-1 Section II Question Marks Content Syllabus outcomes 11 2 MA- M1 Modelling Financial Situations MA12-6 12 (a) 1 MA-S1 Probability and Discrete Probability Distributions MA11-7 12 (b) 2 MA-S1 Probability and Discrete Probability Distributions MA11-7 13 2 MA-C4 Integral Calculus MA12-7 14 3 MA-C2 Differential Calculus MA12-6 15 (a) 2 MA-M1 Modelling Financial Situations MA12-2 15 (b) 3 MA-M1 Modelling Financial Situations MA12-2 16 4 MA-T1 Trigonometry and Measure of Angles MA11-3 17 2 MA-C4 Integral Calculus MA12-7 18 (a) 3 MA-S2 Descriptive Statistics and Bivariate Data Analysis MA12-8 18 (b) 2 MA-S2 Descriptive Statistics and Bivariate Data Analysis MA12-8 18 (c) 1 MA-S2 Descriptive Statistics and Bivariate Data Analysis MA12-10 19 (a) 2 MA-F2 Graphing Techniques MA12-1 19 (b) 2 MA-F2 Graphing Techniques MA12-1, MA12-10 20 3 MA-T2 Trigonometric Functions and Identities MA11-1 21 3 MA-M1 Modelling Financial Situations MA12-4 22 3 MA- T1 Trigonometry and Measure of Angles MA11-3 23 4 MA-S3 Random Variables MA12-8 24 (a) 1 MA-F1 Working with Functions MA11-2 24 (b) 4 MA-C3 Applications of Differentiation MA12-3, MA12-10 25 (a) 1 MA-M1 Modelling Financial Situations MA12-10 25 (b) 3 MA-M1 Modelling Financial Situations MA12-4 25 (c) 2 MA-M1 Modelling Financial Situations MA12-2 Question Marks Content Syllabus outcomes 26 (a) 2 MA-C4 Integral Calculus MA12-3 26 (b) 2 MA-T3 Trigonometric Functions and Graphs MA12-5 27 (a) 3 MA-F2 Graphing Techniques MA12-1 27 (b) 2 MA-F2 Graphing Techniques MA12-1 MA-C1 Introduction to Differentiation, MA-C4 Integral 28 4 MA12-3 Calculus 29 (a) 2 MA-S3 Random Variables MA12-8 29 (b) 2 MA-S3 Random Variables MA12-8 29 (c) 2 MA-S3 Random Variables MA12-8 30 (a) 3 MA-C3 Applications of Differentiation MA12-6 30 (b) 2 MA-C3 Applications of Differentiation MA12-3 31 (a) 1 MA-S1 Probability and Discrete Probability Distributions MA11-9 31 (b) 2 MA-S1 Probability and Discrete Probability Distributions MA11-7 31 (c) 2 MA-S1 Probability and Discrete Probability Distributions MA11-7 32 (a) 3 MA-C4 Integral Calculus MA12-7 32 (b) 3 MA-F1 Working with Functions MA11-1",
+        "sampleAnswer": "We want the equation e −2x = e−x + k to have 2 solutions. ie e −2x − e−x − k = 0 has 2 solutions (e −) x 2 (e − x) ie − − k = 0 has 2 solutions Using the quadratic formula, e − x = 1±1+4k/2 For two real solutions we want 1 + 4k > 0, ie k > − 1/4 But for two solutions for e−x, both the real solutions to the quadratic must be positive. ∴ 1 + 4k < 1 ∴ 1 + 4k < 1 ∴ k < 0 Hence − 1/4 < k < 0. 2023 HSC Mathematics Advanced Mapping Grid Section I Question Marks Content Syllabus outcomes 1 1 MA-S2 Descriptive Statistics and Bivariate Data Analysis MA12-8 2 1 MA-S1 Probability and Discrete Probability Distributions MA11-7 3 1 MA-F1 Working with Functions MA11-1 4 1 MA-F1 Working with Functions MA11-1 5 1 MA-C4 Integral Calculus MA12-7 6 1 MA-C3 Applications of Differentiation MA12-6 7 1 MA-C2 Differential Calculus MA12-6 8 1 MA-E1 Logarithms and Exponentials MA11-6 9 1 MA-F1 Working with Functions MA11-2 10 1 MA-F2 Graphing Techniques MA12-1 Section II Question Marks Content Syllabus outcomes 11 2 MA- M1 Modelling Financial Situations MA12-6 12 (a) 1 MA-S1 Probability and Discrete Probability Distributions MA11-7 12 (b) 2 MA-S1 Probability and Discrete Probability Distributions MA11-7 13 2 MA-C4 Integral Calculus MA12-7 14 3 MA-C2 Differential Calculus MA12-6 15 (a) 2 MA-M1 Modelling Financial Situations MA12-2 15 (b) 3 MA-M1 Modelling Financial Situations MA12-2 16 4 MA-T1 Trigonometry and Measure of Angles MA11-3 17 2 MA-C4 Integral Calculus MA12-7 18 (a) 3 MA-S2 Descriptive Statistics and Bivariate Data Analysis MA12-8 18 (b) 2 MA-S2 Descriptive Statistics and Bivariate Data Analysis MA12-8 18 (c) 1 MA-S2 Descriptive Statistics and Bivariate Data Analysis MA12-10 19 (a) 2 MA-F2 Graphing Techniques MA12-1 19 (b) 2 MA-F2 Graphing Techniques MA12-1, MA12-10 20 3 MA-T2 Trigonometric Functions and Identities MA11-1 21 3 MA-M1 Modelling Financial Situations MA12-4 22 3 MA- T1 Trigonometry and Measure of Angles MA11-3 23 4 MA-S3 Random Variables MA12-8 24 (a) 1 MA-F1 Working with Functions MA11-2 24 (b) 4 MA-C3 Applications of Differentiation MA12-3, MA12-10 25 (a) 1 MA-M1 Modelling Financial Situations MA12-10 25 (b) 3 MA-M1 Modelling Financial Situations MA12-4 25 (c) 2 MA-M1 Modelling Financial Situations MA12-2 Question Marks Content Syllabus outcomes 26 (a) 2 MA-C4 Integral Calculus MA12-3 26 (b) 2 MA-T3 Trigonometric Functions and Graphs MA12-5 27 (a) 3 MA-F2 Graphing Techniques MA12-1 27 (b) 2 MA-F2 Graphing Techniques MA12-1 28 4 MA-C1 Introduction to Differentiation, MA-C4 Integral MA12-3 Calculus 29 (a) 2 MA-S3 Random Variables MA12-8 29 (b) 2 MA-S3 Random Variables MA12-8 29 (c) 2 MA-S3 Random Variables MA12-8 30 (a) 3 MA-C3 Applications of Differentiation MA12-6 30 (b) 2 MA-C3 Applications of Differentiation MA12-3 31 (a) 1 MA-S1 Probability and Discrete Probability Distributions MA11-9 31 (b) 2 MA-S1 Probability and Discrete Probability Distributions MA11-7 31 (c) 2 MA-S1 Probability and Discrete Probability Distributions MA11-7 32 (a) 3 MA-C4 Integral Calculus MA12-7 32 (b) 3 MA-F1 Working with Functions MA11-1",
         "criteria": [
           {
             "marks": 3,
@@ -2698,11 +2698,11 @@
           },
           {
             "marks": 2,
-            "text": "1 > − k Uses the discriminant to fin d , or equiv alent merit 4"
+            "text": "Uses the discriminant to find k > − 1/4, or equivalent merit"
           },
           {
             "marks": 1,
-            "text": "Attempts to form a quadrat ic eq u ation, or equi valent merit"
+            "text": "Attempts to form a quadratic equation, or equivalent merit"
           }
         ]
       }
@@ -2712,7 +2712,7 @@
         "question": 11,
         "part": null,
         "marks": 3,
-        "sampleAnswer": "x-value First derivative at x Second derivative at x = -3 Positive Negative x Zero Zero = x 1 Positive Positive = x 5",
+        "sampleAnswer": "x-value First derivative at x Second derivative at x x = -3 Positive Negative x = 1 Zero Zero x = 5 Positive Positive",
         "criteria": [
           {
             "marks": 3,
@@ -2732,7 +2732,7 @@
         "question": 12,
         "part": null,
         "marks": 3,
-        "sampleAnswer": "= = = T a 50 d 7 1 ^n 1h = + - = T a d 2024 n ^n 1h7 + - = 50 2024 ^n 1h7 - = 1974 - = n 1 282 = n 283 ^a lh n = + S 283 2 ^50 2024h 283 = + 2 = 293 471",
+        "sampleAnswer": "T1 = a = 50 d = 7 T n = a + ^n - 1h d = 2024 50 + ^n - 1h7 = 2024 ^n - 1h7 = 1974 n - 1 = 282 n = 283 S 283 = n/2 ^a + lh = 283/2 ^50 + 2024h = 293 471",
         "criteria": [
           {
             "marks": 3,
@@ -2752,7 +2752,7 @@
         "question": 13,
         "part": null,
         "marks": 3,
-        "sampleAnswer": "Population W Population K Population in 1985 = = A 34 B 280 Percentage yearly change in the population 5.5% -3% = 494 61 Population when x 50 ^1.055h50 34 = 494.426... = 494",
+        "sampleAnswer": "Population W Population K Population in 1985 A = 34 B = 280 Percentage yearly change in the population 5.5% -3% Population when x = 50 494 61 34 ^1.055h50 = 494.426... = 494",
         "criteria": [
           {
             "marks": 3,
@@ -2772,7 +2772,7 @@
         "question": 14,
         "part": "a",
         "marks": 1,
-        "sampleAnswer": "Points of intersection: ^x 1h2 x2 - - = 5 x2 x2 - + - 2x 1 = 5 2x2 - - 2x 4 = 0 2^x 2h^x 1h - + = 0 -1 x = 2,",
+        "sampleAnswer": "Points of intersection: ^x - 1h2 = 5 - x2 x2 - 2x + 1 = 5 - x2 2x2 - 2x - 4 = 0 2^x - 2h^x + 1h = 0 x = 2, -1",
         "criteria": [
           {
             "marks": 1,
@@ -2784,7 +2784,7 @@
         "question": 14,
         "part": "b",
         "marks": 3,
-        "sampleAnswer": "2 ^x 1h2 x2 = - - - Area 5 dx – 1 2 2x2 = - + 4 2x dx – 1 2 2x3 <4x x2F = - + 3 –1 d n d n 16 2 = - + - -4 + + 8 4 1 3 3 = 9",
+        "sampleAnswer": "2 Area = 5 - x2 - ^x - 1h2 dx – 1 2 = 4 - 2x2 + 2x dx – 1 2 = <4x - 2x3/3 + x2F –1 = d 8 - 16/3 + 4 n - d -4 + 2/3 + 1 n = 9",
         "criteria": [
           {
             "marks": 3,
@@ -2804,7 +2804,7 @@
         "question": 15,
         "part": null,
         "marks": 3,
-        "sampleAnswer": "dV = - 300 7.5t dt 7.5t2 = - + V 300t C 2 = = When t 0, V 350 = - + 350 0 0 C 3.75t2 ` = - + V 300t 350 dV = When 0 dt - = 300 7.5t 0 = 7.5t 300 = t 40 = When t 40 402 # # = - + V 300 40 3.75 350 = V 6350 L",
+        "sampleAnswer": "dV/dt = 300 - 7.5t V = 300t - 7.5t2/2 + C When t = 0, V = 350 350 = 0 - 0 + C ` V = 300t - 3.75t2 + 350 When dV/dt = 0 300 - 7.5t = 0 7.5t = 300 t = 40 When t = 40 V = 300 # 40 - 3.75 # 402 + 350 V = 6350 L",
         "criteria": [
           {
             "marks": 3,
@@ -2860,7 +2860,7 @@
         "question": 17,
         "part": "b",
         "marks": 2,
-        "sampleAnswer": "6.5_1 –ki = = - When t 1, 2.6 e 2.6 –k - = 1 e 6.5 –k - = 1 e 0.4 –k = e 0.6 -ln^0.6h = k = 0.511 (3 decimal places)",
+        "sampleAnswer": "When t = 1, 2.6 = 6.5_1 - e –ki 1 - e–k = 2.6/6.5 1 - e–k = 0.4 e –k = 0.6 k = -ln^0.6h = 0.511 (3 decimal places)",
         "criteria": [
           {
             "marks": 2,
@@ -2876,7 +2876,7 @@
         "question": 17,
         "part": "c",
         "marks": 2,
-        "sampleAnswer": "dV 6.5ke–kt = dt dV 6.5ke–2k = = When t 2, dt = 1.195 volts/second",
+        "sampleAnswer": "dV/dt = 6.5ke–kt When t = 2, dV/dt = 6.5ke–2k = 1.195 volts/second",
         "criteria": [
           {
             "marks": 2,
@@ -2892,7 +2892,7 @@
         "question": 18,
         "part": "a",
         "marks": 1,
-        "sampleAnswer": "Probability (player misses in 1 attempt) = - = 1 0.15 0.85 Probability (player misses in both attempts) ^0.85h2 = = 0.7225",
+        "sampleAnswer": "Probability (player misses in 1 attempt) = 1 - 0.15 = 0.85 Probability (player misses in both attempts) = ^0.85h2 = 0.7225",
         "criteria": [
           {
             "marks": 1,
@@ -2904,15 +2904,15 @@
         "question": 18,
         "part": "b",
         "marks": 2,
-        "sampleAnswer": "Probability (player scores at least one goal) Prob^player = - 1 misses in n attempts) ^0.85hn = - 1 ^0.85hn - > When 1 0.8 ^0.85hn < 0.2 ln^0.85h ln^0.2h < Taking logs, n ln^0.2h > n ln^0.85h Z 9.90 The player needs 10 attempts.",
+        "sampleAnswer": "Probability (player scores at least one goal) = 1 - Prob^player misses in n attempts) = 1 - ^0.85hn When 1 - ^0.85hn > 0.8 ^0.85hn < 0.2 Taking logs, n ln^0.85h < ln^0.2h ln^0.2h n > ln^0.85h Z 9.90 The player needs 10 attempts.",
         "criteria": [
           {
             "marks": 2,
-            "text": "Provides correct solution ^0.85hn"
+            "text": "Provides correct solution"
           },
           {
             "marks": 1,
-            "text": "Provides the correct inequality, 0.2, or equivalent merit <"
+            "text": "Provides the correct inequality, ^0.85hn < 0.2, or equivalent merit"
           }
         ]
       },
@@ -2920,7 +2920,7 @@
         "question": 19,
         "part": null,
         "marks": 5,
-        "sampleAnswer": "x4 2x3 = - + y 2 4x3 6x2 yl = - 12x2 yll = - 12x yl = Stationary points: 0 4x3 6x2 - = 0 2x2^2x 3h - = 0 3 = = x 0 or x 2 yll = = = When x 0, y 2 and 0 Check concavity: 1 x 0 -1 2 yll 24 0 -3 ^0, 2h. ` Concavity changes sign Horizontal point of inflection at 3, 5 yll = = = When x y and 9 y 2 16 d n 3, 5 ` Local minimum at x4 2x3 3 = - + y 2 2 16 yll = Points of inflection: 0 2 12x2 - = 12x 0 12x^x 1h - = 0 ^1, 1h 1 = = x 0 or x 1 ^0, 2h 3 5 Already found 2, 16 Check concavity: O x 1 2 1 x 1 2 2 yll 0 -3 24 ^1, 1h. ` Point of inflection at Concavity changes sign",
+        "sampleAnswer": "y = x4 - 2x3 + 2 yl = 4x3 - 6x2 yll = 12x2 - 12x Stationary points: yl = 0 4x3 - 6x2 = 0 2x2^2x - 3h = 0 x = 0 or x = 3/2 When x = 0, y = 2 and yll = 0 Check concavity: x -1 0 1/2 yll 24 0 -3 Concavity changes sign ` Horizontal point of inflection at ^0, 2h. When x = 3, y = 5/16 and yll = 9 y 2 ` Local minimum at d 3, 5/16 n 2 3 y = x4 - 2x3 + 2 Points of inflection: yll = 0 12x2 - 12x = 0 2 12x^x - 1h = 0 x = 0 or x = 1 1 ^1, 1h Already found ^0, 2h 3 5/16 2, Check concavity: O x 1 2 x 1/2 1 2 yll -3 0 24 Concavity changes sign ` Point of inflection at ^1, 1h.",
         "criteria": [
           {
             "marks": 5,
@@ -2948,7 +2948,7 @@
         "question": 20,
         "part": "a",
         "marks": 1,
-        "sampleAnswer": "40 = tan 35° AC 40 ` = AC tan 35° = 57.1259... = 57.13 metres (2 decimal places)",
+        "sampleAnswer": "tan 35° = 40/AC ` AC = 40/tan35° = 57.1259... = 57.13 metres (2 decimal places)",
         "criteria": [
           {
             "marks": 1,
@@ -2960,7 +2960,7 @@
         "question": 20,
         "part": "b",
         "marks": 3,
-        "sampleAnswer": "40 = tan 30° BC 40 ` = BC tan 30° = 69.28 metres (2 decimal places) EACB: Using cosine rule for 57.132 69.282 1002 + - = EACB cos ^57.13h ^69.28h # # 2 = -0.24462 ` = EACB 104° (nearest degree) ` Bearing of B from C = + 104° 90° = 194°",
+        "sampleAnswer": "tan 30° = 40/BC ` BC = 40/tan30° = 69.28 metres (2 decimal places) Using cosine rule for EACB: 57.132 + 69.282 - 1002 cos EACB = ^57.13h ^69.28h 2 # # = -0.24462 ` EACB = 104° (nearest degree) ` Bearing of B from C = 104° + 90° = 194°",
         "criteria": [
           {
             "marks": 3,
@@ -3000,7 +3000,7 @@
         "question": 22,
         "part": "a",
         "marks": 3,
-        "sampleAnswer": "ln_1 i ^xh x2 f = + l^xh 2x f = x2 + 1 2_1 x2i ^2xh + - ll^xh 2x f = _1 x2i 2 + 2x2 - 2 = > 0 _ x2i 2 + 1 2x2 - > When 2 0 (since denominator always positive) x2 < ie when 1 y 1 O x –1 1 ` -1 < < when x 1",
+        "sampleAnswer": "f ^xh = ln_1 + x2 i f l^xh = 2x/+x2 1 f ll^xh 2_1 + x2i - 2x ^2xh = 2 _1 + x2i = 2-2x2/_x2i2 > 0 1 + When 2 - 2x2 > 0 (since denominator always positive) ie when x2 < 1 y 1 –1 O 1 x ` when -1 < x < 1",
         "criteria": [
           {
             "marks": 3,
@@ -3020,7 +3020,7 @@
         "question": 22,
         "part": "b",
         "marks": 2,
-        "sampleAnswer": "1 1 ^xh ^xh f f = dx 2 dx – 1 0 - ^0.0606 0.4463hA 1 0 70 Z # + + + + 2 0.6931 2 0.2231 # 2 4 = 0.538275",
+        "sampleAnswer": "1 1 f ^xh dx = 2 f ^xh dx – 1 0 Z 2 # 1-0/2#4 70 + 0.6931 + 2 ^0.0606 + 0.2231 + 0.4463hA = 0.538275",
         "criteria": [
           {
             "marks": 2,
@@ -3036,7 +3036,7 @@
         "question": 22,
         "part": "c",
         "marks": 1,
-        "sampleAnswer": "^xh f -1 < < From part (a) is concave up when x 1, so the straight line segments will lie above the curve. So this is an overestimate.",
+        "sampleAnswer": "From part (a) f ^xh is concave up when -1 < x < 1, so the straight line segments will lie above the curve. So this is an overestimate.",
         "criteria": [
           {
             "marks": 1,
@@ -3048,7 +3048,7 @@
         "question": 23,
         "part": "a",
         "marks": 2,
-        "sampleAnswer": "- 70 58 = z 15 = 0.8 = P from table 0.7881 = - = P required 0.7881 0.5 0.2881 ` 28.81%",
+        "sampleAnswer": "z = 70-58/15 = 0.8 P from table = 0.7881 P required = 0.7881 - 0.5 = 0.2881 ` 28.81%",
         "criteria": [
           {
             "marks": 2,
@@ -3064,7 +3064,7 @@
         "question": 23,
         "part": "b",
         "marks": 1,
-        "sampleAnswer": "-0.8 The z-score for 46 is . By symmetry the area between 46 and 58 is equal to the area between 58 and 70. So, the percentage of scores between 46 and 70 is twice 28.81%.",
+        "sampleAnswer": "The z-score for 46 is -0.8. By symmetry the area between 46 and 58 is equal to the area between 58 and 70. So, the percentage of scores between 46 and 70 is twice 28.81%.",
         "criteria": [
           {
             "marks": 1,
@@ -3076,7 +3076,7 @@
         "question": 23,
         "part": "c",
         "marks": 2,
-        "sampleAnswer": "- x 58 = 1.3 15 = x 77.5 ` = Approximate minimum score 77 Answers could include: 78",
+        "sampleAnswer": "1.3 = x-58/15 x = 77.5 ` Approximate minimum score = 77 Answers could include: 78",
         "criteria": [
           {
             "marks": 2,
@@ -3092,7 +3092,7 @@
         "question": 24,
         "part": "a",
         "marks": 3,
-        "sampleAnswer": "The first deposit accrues interest for 24 months 80^1.005h24 ` Its future value is The next deposit accrues interest for 23 months and so on ` Total amount after 24 months is 80^1.005h24 80^1.005h23 80^1.005h1 + + + · · · 807^1.005h1 ^1.005h24A ^1.005h2 = + + + · · · ^1.005h24 - ^1.005h 1 # = 80 - 1.005 1 = 2044.73",
+        "sampleAnswer": "The first deposit accrues interest for 24 months ` Its future value is 80^1.005h24 The next deposit accrues interest for 23 months and so on ` Total amount after 24 months is 80^1.005h24 + 80^1.005h23 + · · · + 80^1.005h1 = 807^1.005h1 + ^1.005h2 + · · · + ^1.005h24A ^1.005h ^1.005h24 - 1 = 80 # 1.005 - 1 = 2044.73",
         "criteria": [
           {
             "marks": 3,
@@ -3112,7 +3112,7 @@
         "question": 24,
         "part": "b",
         "marks": 1,
-        "sampleAnswer": "= 80A 2044.73 2044.73 = A 80 = 25.559",
+        "sampleAnswer": "80A = 2044.73 A = 2044.73/80 = 25.559",
         "criteria": [
           {
             "marks": 1,
@@ -3124,7 +3124,7 @@
         "question": 25,
         "part": "a",
         "marks": 2,
-        "sampleAnswer": "y = We want the area of the triangle 1 1 ` # # = 1 1 h 1 x 2 = - y 1 h = h 2 O h x",
+        "sampleAnswer": "We want the area of the triangle = 1 y ` 1/2 # 1 # h = 1 1 y = 1 - x/h h = 2 O h x",
         "criteria": [
           {
             "marks": 2,
@@ -3132,7 +3132,7 @@
           },
           {
             "marks": 1,
-            "text": "Identifies that the area under the curve 1, or equivalent merit ="
+            "text": "Identifies that the area under the curve = 1, or equivalent merit"
           }
         ]
       },
@@ -3140,7 +3140,7 @@
         "question": 25,
         "part": "b",
         "marks": 2,
-        "sampleAnswer": "x t2 x y t = G - = - 1 dx t 2 4 0 0 1 < 0, for x 0 x2 # # = - x , for 0 x 2, 4 O x > 1, for x 2 2",
+        "sampleAnswer": "x x y 1 - t/2 dx = = t - t2/4 G 0 0 1 0, for x < 0 = x - x2/4, for 0 # x # 2, 1, for x > 2 O 2 x",
         "criteria": [
           {
             "marks": 2,
@@ -3156,7 +3156,7 @@
         "question": 25,
         "part": "c",
         "marks": 2,
-        "sampleAnswer": "t2 1 - = t 4 2 t2 ` - + = 4t 2 0 ! # # - 4 16 4 1 2 = t # 2 1 ! 4 8 = t 2 ! = t 2 2 < We need t 2 ` = - t 2 2 . 0.586",
+        "sampleAnswer": "t - t2/4 = 1/2 ` t2 - 4t + 2 = 0 4 ! 16 - 4 # 1 # 2 t = 2 # 1 t = 4!8/2 t = 2 ! 2 We need t < 2 ` t = 2 - 2. 0.586",
         "criteria": [
           {
             "marks": 2,
@@ -3172,7 +3172,7 @@
         "question": 26,
         "part": null,
         "marks": 4,
-        "sampleAnswer": "2.4% = = r 0.002 12 0 15 25 # = For 25 years need 1200 225.430 270 516 # = For 15 years need extra 800 151.036 120 828.80 = Total $391 344.80",
+        "sampleAnswer": "r = 2.4%/12 = 0.002 0 15 25 For 25 years need 1200 # 225.430 = 270 516 For 15 years need extra 800 # 151.036 = 120 828.80 Total = $391 344.80",
         "criteria": [
           {
             "marks": 4,
@@ -3196,7 +3196,7 @@
         "question": 27,
         "part": "a",
         "marks": 2,
-        "sampleAnswer": "x2 = y tan x x2 sec2 yl = + x 2x tan x",
+        "sampleAnswer": "y = x2 tan x yl = x2 sec2 x + 2x tan x",
         "criteria": [
           {
             "marks": 2,
@@ -3212,7 +3212,7 @@
         "question": 27,
         "part": "b",
         "marks": 3,
-        "sampleAnswer": "^x 1h2 x2 tan2 + = + + tan x dx x 2x tan x 1 dx ^sec2 1h x2 = - + + x 2x tan x 1 dx x2 sec2 x2 = + - + x 2x tan x 1 dx x3 x2 = - + + tan x x C 3",
+        "sampleAnswer": "^x tan x + 1h2 dx = x2 tan2 x + 2x tan x + 1 dx = x2 ^sec2 x - 1h + 2x tan x + 1 dx = x2 sec2 x + 2x tan x - x2 + 1 dx = x2 tan x - x3/3 + x + C",
         "criteria": [
           {
             "marks": 3,
@@ -3220,7 +3220,7 @@
           },
           {
             "marks": 2,
-            "text": "tan2 sec2 Correctly uses the identity, = - x x 1"
+            "text": "Correctly uses the identity, tan2 x = sec2 x - 1"
           },
           {
             "marks": 1,
@@ -3232,7 +3232,7 @@
         "question": 28,
         "part": "a",
         "marks": 2,
-        "sampleAnswer": "39 18 = c 21 21 = k 18 18 3",
+        "sampleAnswer": "39 18 c = 21 21 k = 18 18 3",
         "criteria": [
           {
             "marks": 2,
@@ -3248,7 +3248,7 @@
         "question": 28,
         "part": "b",
         "marks": 1,
-        "sampleAnswer": "2p = = Period 48 p 24 It takes 48 seconds.",
+        "sampleAnswer": "Period = 2p/p = 48 24 It takes 48 seconds.",
         "criteria": [
           {
             "marks": 1,
@@ -3260,7 +3260,7 @@
         "question": 28,
         "part": "c",
         "marks": 4,
-        "sampleAnswer": "p p cosd n cosd ^t 6hn - = - - We want c k t c k 24 24 p p cosd n cosd ^t 6hn ` = - t 24 24 p p ^t 6h ` = - t which is impossible. 24 24 p p ^t 6h - = - or t 24 24 p p p ` - = - t t 24 24 4 p p ` = t 12 4 ` = t 3 p p ^t 6h 2p - = - or t 24 24 2p p -2p - = - t 24 4 pt 9p = 12 4 ` = t 27 3p = - = When t 3 height is 21 18 cos 4.37 m 24 27p = - = When t 27 height is 21 18 cos 37.63 m 24",
+        "sampleAnswer": "We want c - k cosd p/24 t n = c - k cosd p/24 ^t - 6hn ` cosd p/24 t n = cosd p/24 ^t - 6hn ` p/24 t = p/24 ^t - 6h which is impossible. or - p/24 t = p/24 ^t - 6h ` - p/24 t = p/24 t - p/4 ` p/12 t = p/4 ` t = 3 or 2p - p/24 t = p/24 ^t - 6h - 2p/24 t = -2p - p/4 pt/12 = 9p/4 ` t = 27 When t = 3 height is 21 - 18 cos 3p/24 = 4.37 m When t = 27 height is 21 - 18 cos 27p/24 = 37.63 m",
         "criteria": [
           {
             "marks": 4,
@@ -3268,7 +3268,7 @@
           },
           {
             "marks": 3,
-            "text": "Finds 3, or equivalent merit = t"
+            "text": "Finds t = 3, or equivalent merit"
           },
           {
             "marks": 2,
@@ -3284,7 +3284,7 @@
         "question": 29,
         "part": null,
         "marks": 4,
-        "sampleAnswer": "The tangent and normal meet where 1 + = - - 2x 3 x 2 2 5x = -5 2 = -2 x 2^-2h = + y 3 = -1 y ^-2, -1h. ` They meet at ax2 yl + + = + = If y bx c, then 2ax b yl = -4 = When x 0 ` -8a + = b 0 ` = b 8a yl = -2 = When x 2 -4a + = b 2 ` -4a + = 8a 2 1 ` = a 2 ` = b 4 = -2 = -1 When x y ^-2h2 ^-2h ` + + = -1 a b c 1 # # + -2 + = -1 4 4 c 2 -6 + = -1 c ` = c 5",
+        "sampleAnswer": "The tangent and normal meet where 2x + 3 = - 1/2 x - 2 5x/2 = -5 x = -2 y = 2^-2h + 3 y = -1 ` They meet at ^-2, -1h. If y = ax2 + bx + c, then yl = 2ax + b When x = -4 yl = 0 ` -8a + b = 0 ` b = 8a When x = -2 yl = 2 -4a + b = 2 ` -4a + 8a = 2 ` a = 1/2 ` b = 4 When x = -2 y = -1 ` a ^-2h2 + b ^-2h + c = -1 1/2 # 4 + 4 # -2 + c = -1 -6 + c = -1 ` c = 5",
         "criteria": [
           {
             "marks": 4,
@@ -3308,7 +3308,7 @@
         "question": 30,
         "part": null,
         "marks": 3,
-        "sampleAnswer": "x2 x3+ = + + S x ··· x = -1 < < where x 1 - 1 x ^x 1h - - - 1 1 = -1 - = y - - x 1 x 1 -x x = = - - x 1 1 x x = So, the graph of y is as shown. - 1 x y –1 1 x 1 - 2 –1 1 = -1 = - When x y 2 1 -1 < < > - From the graph, when x 1, y 2 1 > - Hence, S 2",
+        "sampleAnswer": "S = x + x2 + x3+ ··· = x/1-x where -1 < x < 1 - ^x - 1h - 1 y = -1 - 1/x-1 = x - 1 = -x/x-1 = x/1-x So, the graph of y = x/1-x is as shown. y –1 - 1/2 1 x –1 When x = -1 y = - 1/2 From the graph, when -1 < x < 1, y > - 1/2 Hence, S > - 1/2",
         "criteria": [
           {
             "marks": 3,
@@ -3328,7 +3328,7 @@
         "question": 31,
         "part": "a",
         "marks": 3,
-        "sampleAnswer": "^1 xhq 1q = + + + P 2x ^2 xhq = + + 2x ^1 xh2q 1 1 12q $ = + - A 2 2 1 71 1A x2 q = + + - 2x 2 _2x x2i 1 q = + 2 ^2 xh 1 q ➀ = + x 2 ^2 xhq ^2 xhq 2 A = + + + = Since P 2x and x P^xh 2A ` = + 2x x",
+        "sampleAnswer": "P = 1q + ^1 + xhq + 2x = ^2 + xhq + 2x A = 1/2 ^1 + xh2q - 1/2 $ 12q = 1/2 q 71 + 2x + x2 - 1A = 1/2 q _2x + x2i = 1/2 q x ^2 + xh ➀ Since P = ^2 + xhq + 2x and ^2 + xhq = 2A/x ` P^xh = 2x + 2A/x",
         "criteria": [
           {
             "marks": 3,
@@ -3348,7 +3348,7 @@
         "question": 31,
         "part": "b",
         "marks": 3,
-        "sampleAnswer": "2A Pl = - = 2 0 for minimum x2 ^x 0h x2 ` ` = = > A x A 4 A Pll = > = 0 when x A 3 x ` This gives a minimum value. _2 j 1 ➀ q = + Using A A A 2 2A 2 A 2 A q ` = = < _2 j + + A A 2 A A < 2 2024 HSC Mathematics Advanced Mapping Grid Section I Question Marks Content Syllabus outcomes 1 1 MA-F1 Working with Functions MA11-1 2 1 MA-S1 Probability and Discrete Probability Distributions MA11-7 3 1 MA-S3 Random Variables MA12-8 4 1 MA-F2 Graphing Techniques MA12-1 5 1 MA-C4 Integral Calculus MA12-3 6 1 MA-F1 Working with Functions MA11-2 7 1 MA-F2 Graphing Techniques MA12-10 8 1 MA-S2 Descriptive Statistics and Bivariate Data Analysis MA12-8 9 1 MA-S1 Probability and Discrete Probability Distributions MA11-7 10 1 MA-C3 Applications of Differentiation MA12-7 Section II Question Marks Content Syllabus outcomes 11 3 MA-C3 Applications of Differentiation MA12-6 12 3 MA-M1 Modelling Financial Situations MA12-4 13 3 MA-E1 Logarithms and Exponentials MA11-6 14 (a) 1 MA-F1 Linear, quadratic and cubic functions MA11-1 14 (b) 3 MA-C4 Integral Calculus MA12-3 15 3 MA-C4 Integral Calculus MA12-3 16 3 MA-S2 Descriptive Statistics and Bivariate Data Analysis MA12-10 17 (a) 2 MA-F2 Graphing Techniques MA12-1 17 (b) 2 MA-C3 Applications of Differentiation MA12-3 17 (c) 2 MA-C3 Applications of Differentiation MA12-3 18 (a) 1 MA-S1 Probability and Discrete Probability Distributions MA11-7 18 (b) 2 MA-E1 Logarithms and Exponentials MA11-6 19 5 MA-C3 Applications of Differentiation MA12-6 20 (a) 1 MA-T1 Trigonometry and Measure of Angles MA11-3 20 (b) 3 MA-T1 Trigonometry and Measure of Angles MA11-3 21 3 MA-S2 Descriptive Statistics and Bivariate Data Analysis MA12-10 MA-C2 Differential Calculus 22 (a) 3 MA12-6 MA-C3 Applications of Differentiation 22 (b) 2 MA-C4 Integral Calculus MA12-7 22 (c) 1 MA-C4 Integral Calculus MA12-10 23 (a) 2 MA-S3 Random Variables MA12-8 23 (b) 1 MA-S3 Random Variables MA12-8 23 (c) 2 MA-S3 Random Variables MA12-8 Question Marks Content Syllabus outcomes 24 (a) 3 MA-M1 Modelling Financial Situations MA12-4 24 (b) 1 MA-M1 Modelling Financial Situations MA12-4 25 (a) 2 MA-S3 Random Variables MA12-8 25 (b) 2 MA-S3 Random Variables MA12-8 25 (c) 2 MA-S3 Random Variables MA12-8 26 4 MA-M1 Modelling Financial Situations MA12-9 27 (a) 2 MA-C2 Differential Calculus MA12-6 27 (b) 3 MA-C4 Integral Calculus MA12-7 28 (a) 2 MA-T3 Trigonometric Functions and Graphs MA12-5 28 (b) 1 MA-T3 Trigonometric Functions and Graphs MA12-5 28 (c) 4 MA-T3 Trigonometric Functions and Graphs MA12-5 29 4 MA-C3 Applications of Differentiation MA12-6 MA-F2 Graphing Techniques 30 3 MA12-9, MA12-10 MA-M1 Modelling Financial Situations 31 (a) 3 MA-T1 Trigonometry and Measure of Angles MA11-9 31 (b) 3 MA-C3 Applications of Differentiation MA12-10",
+        "sampleAnswer": "Pl = 2 - 2A/x2 = 0 for minimum ` x2 = A ` x = A ^x > 0h Pll = 4A/3 > 0 when x = A x ` This gives a minimum value. Using ➀ A = 1/2 q A _2 + A j ` q = 2A = 2 A < 2 A A _2 + A j 2 + A A < 2 2024 HSC Mathematics Advanced Mapping Grid Section I Question Marks Content Syllabus outcomes 1 1 MA-F1 Working with Functions MA11-1 2 1 MA-S1 Probability and Discrete Probability Distributions MA11-7 3 1 MA-S3 Random Variables MA12-8 4 1 MA-F2 Graphing Techniques MA12-1 5 1 MA-C4 Integral Calculus MA12-3 6 1 MA-F1 Working with Functions MA11-2 7 1 MA-F2 Graphing Techniques MA12-10 8 1 MA-S2 Descriptive Statistics and Bivariate Data Analysis MA12-8 9 1 MA-S1 Probability and Discrete Probability Distributions MA11-7 10 1 MA-C3 Applications of Differentiation MA12-7 Section II Question Marks Content Syllabus outcomes 11 3 MA-C3 Applications of Differentiation MA12-6 12 3 MA-M1 Modelling Financial Situations MA12-4 13 3 MA-E1 Logarithms and Exponentials MA11-6 14 (a) 1 MA-F1 Linear, quadratic and cubic functions MA11-1 14 (b) 3 MA-C4 Integral Calculus MA12-3 15 3 MA-C4 Integral Calculus MA12-3 16 3 MA-S2 Descriptive Statistics and Bivariate Data Analysis MA12-10 17 (a) 2 MA-F2 Graphing Techniques MA12-1 17 (b) 2 MA-C3 Applications of Differentiation MA12-3 17 (c) 2 MA-C3 Applications of Differentiation MA12-3 18 (a) 1 MA-S1 Probability and Discrete Probability Distributions MA11-7 18 (b) 2 MA-E1 Logarithms and Exponentials MA11-6 19 5 MA-C3 Applications of Differentiation MA12-6 20 (a) 1 MA-T1 Trigonometry and Measure of Angles MA11-3 20 (b) 3 MA-T1 Trigonometry and Measure of Angles MA11-3 21 3 MA-S2 Descriptive Statistics and Bivariate Data Analysis MA12-10 MA-C2 Differential Calculus 22 (a) 3 MA12-6 MA-C3 Applications of Differentiation 22 (b) 2 MA-C4 Integral Calculus MA12-7 22 (c) 1 MA-C4 Integral Calculus MA12-10 23 (a) 2 MA-S3 Random Variables MA12-8 23 (b) 1 MA-S3 Random Variables MA12-8 23 (c) 2 MA-S3 Random Variables MA12-8 Question Marks Content Syllabus outcomes 24 (a) 3 MA-M1 Modelling Financial Situations MA12-4 24 (b) 1 MA-M1 Modelling Financial Situations MA12-4 25 (a) 2 MA-S3 Random Variables MA12-8 25 (b) 2 MA-S3 Random Variables MA12-8 25 (c) 2 MA-S3 Random Variables MA12-8 26 4 MA-M1 Modelling Financial Situations MA12-9 27 (a) 2 MA-C2 Differential Calculus MA12-6 27 (b) 3 MA-C4 Integral Calculus MA12-7 28 (a) 2 MA-T3 Trigonometric Functions and Graphs MA12-5 28 (b) 1 MA-T3 Trigonometric Functions and Graphs MA12-5 28 (c) 4 MA-T3 Trigonometric Functions and Graphs MA12-5 29 4 MA-C3 Applications of Differentiation MA12-6 MA-F2 Graphing Techniques 30 3 MA12-9, MA12-10 MA-M1 Modelling Financial Situations 31 (a) 3 MA-T1 Trigonometry and Measure of Angles MA11-9 31 (b) 3 MA-C3 Applications of Differentiation MA12-10",
         "criteria": [
           {
             "marks": 3,
@@ -3356,11 +3356,11 @@
           },
           {
             "marks": 2,
-            "text": "q Expresses in terms of A, or equivalent merit"
+            "text": "Expresses q in terms of A, or equivalent merit"
           },
           {
             "marks": 1,
-            "text": "Shows is a minimum, or equivalent merit = x A"
+            "text": "Shows x = A is a minimum, or equivalent merit"
           }
         ]
       }
@@ -3370,7 +3370,7 @@
         "question": 11,
         "part": "a",
         "marks": 2,
-        "sampleAnswer": "6 2 + t = 2 4 = 42 8 4 12 h = − × + −4 =",
+        "sampleAnswer": "t = 6+2/2 = 4 h = 42 − 8 × 4 + 12 = −4",
         "criteria": [
           {
             "marks": 2,
@@ -3378,7 +3378,7 @@
           },
           {
             "marks": 1,
-            "text": "t, Finds correct value of or equivalent merit"
+            "text": "Finds correct value of t, or equivalent merit"
           }
         ]
       },
@@ -3386,7 +3386,7 @@
         "question": 11,
         "part": "b",
         "marks": 1,
-        "sampleAnswer": "4 4 8 using axis of symmetry t = + = 8 t = `",
+        "sampleAnswer": "t = 4 + 4 = 8 using axis of symmetry ` t = 8",
         "criteria": [
           {
             "marks": 1,
@@ -3418,7 +3418,7 @@
         "question": 13,
         "part": null,
         "marks": 2,
-        "sampleAnswer": "75, p, q, 2025 T1 T2 T3 T4 = = = = 3 2025 a r = (75) 3 2025 r = 3 27 r = 3 r = 75 3 225 T2 p a r = = = × = 2 32 75 675 T3 q a r = = = × = 225 675 p q = =",
+        "sampleAnswer": "T1 = 75, T2 = p, T3 = q, T4 = 2025 a r 3 = 2025 (75) r 3 = 2025 r 3 = 27 r = 3 T2 = p = a r = 75 × 3 = 225 T3 = q = a r 2 = 75 × 32 = 675 p = 225 q = 675",
         "criteria": [
           {
             "marks": 2,
@@ -3454,11 +3454,11 @@
         "criteria": [
           {
             "marks": 2,
-            "text": "y‑intercept Provides correct interpretation of both slope and"
+            "text": "Provides correct interpretation of both slope and y‑intercept"
           },
           {
             "marks": 1,
-            "text": "y‑intercept, Provides correct interpretation of or equivalent merit"
+            "text": "Provides correct interpretation of y‑intercept, or equivalent merit"
           }
         ]
       },
@@ -3490,7 +3490,7 @@
         "question": 15,
         "part": "a",
         "marks": 2,
-        "sampleAnswer": "2 k = 2 2 p p Period 5 ms so a = = = 5 a 2 P1( ) p 2 sin t t = 5",
+        "sampleAnswer": "k = 2 Period = 2p/a = 5 ms so a = 2p/5 P1( t ) = 2 sin 2p/5 t",
         "criteria": [
           {
             "marks": 2,
@@ -3498,7 +3498,7 @@
           },
           {
             "marks": 1,
-            "text": "k, Finds or equivalent merit"
+            "text": "Finds k, or equivalent merit"
           }
         ]
       },
@@ -3506,7 +3506,7 @@
         "question": 15,
         "part": "b",
         "marks": 2,
-        "sampleAnswer": "P(t) 4 2 O t 1 2 3 4 5 6 7 8 9 10 −2 −4",
+        "sampleAnswer": "P(t) 4 2 O 1 2 3 4 5 6 7 8 9 10 t −2 −4",
         "criteria": [
           {
             "marks": 2,
@@ -3522,7 +3522,7 @@
         "question": 15,
         "part": "c",
         "marks": 2,
-        "sampleAnswer": "6.25 8.75 t < <",
+        "sampleAnswer": "6.25 < t < 8.75",
         "criteria": [
           {
             "marks": 2,
@@ -3538,7 +3538,7 @@
         "question": 16,
         "part": "a",
         "marks": 4,
-        "sampleAnswer": "2 x ƒ( ) x = x e x(2 x) 2e x x 2 xe x xe − − ′( ) x ƒ = = 2 2x x e e ( ) 2 x x − ( ) x ′ ƒ = x e 0, 2 0 x x = − = 0, 2 x x = = 4 0, 0.541 y y = = = . . . 2 e −1 0 1 2 3 x ƒ′( ) Negative 0 Positive 0 Negative x 4 (0, 0) Minimum at and maximum at 2, ` 2 e",
+        "sampleAnswer": "ƒ( x ) = x2/ex ƒ ′( x ) = 2xex−x2ex/e2x = xex(2−x)/e2x ƒ ′( x ) = x(2−x)/ex x = 0, 2 − x = 0 x = 0, x = 2 y = 0, y = 4/e2 = 0.541... 0 2 x/ƒ′(x) −1/Negative 0 1/Positive 0 3/Negative ` Minimum at (0, 0) and maximum at 2, 4/e2",
         "criteria": [
           {
             "marks": 4,
@@ -3562,7 +3562,7 @@
         "question": 16,
         "part": "b",
         "marks": 1,
-        "sampleAnswer": "y 1 0.5 O x −2 −1 1 2 3 4 5 6 7",
+        "sampleAnswer": "y 1 0.5 −2 −1 O 1 2 3 4 5 6 7 x",
         "criteria": [
           {
             "marks": 1,
@@ -3582,7 +3582,7 @@
           },
           {
             "marks": 1,
-            "text": "A1, Provides a correct or equivalent merit"
+            "text": "Provides a correct A1, or equivalent merit"
           }
         ]
       },
@@ -3598,7 +3598,7 @@
           },
           {
             "marks": 2,
-            "text": "A Uses the sum of a geometric sequence in , or equivalent merit n"
+            "text": "Uses the sum of a geometric sequence in A n, or equivalent merit"
           },
           {
             "marks": 1,
@@ -3618,7 +3618,7 @@
           },
           {
             "marks": 1,
-            "text": "n, Attempts to use logarithms to find or equivalent merit"
+            "text": "Attempts to use logarithms to find n, or equivalent merit"
           }
         ]
       },
@@ -3642,7 +3642,7 @@
         "question": 19,
         "part": null,
         "marks": 3,
-        "sampleAnswer": "W 0.5 Amara 0.5 1 W′ 6 1 W 0.4 3 Bala 0.6 W′ 1 2 W 0.2 Cassie 0.8 W′ 1 0.5 × 6 (Amara |wins) P = 1 1 1 0.5 0.4 0.2 × + × + × 6 3 2 5 = 19",
+        "sampleAnswer": "0.5 W Amara 0.5 W′ 1/6 1/3 0.4 W Bala 0.6 W′ 1/2 0.2 W Cassie 0.8 W′ 1/6 × 0.5 P (Amara |wins) = 1/6 × 0.5 + 1/3 × 0.4 + 1/2 × 0.2 = 5/19",
         "criteria": [
           {
             "marks": 3,
@@ -3662,7 +3662,7 @@
         "question": 20,
         "part": null,
         "marks": 3,
-        "sampleAnswer": "7 12 6 n = × r = 12 84 periods = 84 6 21 000 1 % + 12 31 927.76 = Monthly deposit = $31 927.76 104.07393 ÷ ` = $306.78",
+        "sampleAnswer": "n = 7 × 12 r = 6/12 = 84 periods 84 21 000 1 + 6/12 % = 31 927.76 ` Monthly deposit = $31 927.76 ÷ 104.07393 = $306.78",
         "criteria": [
           {
             "marks": 3,
@@ -3682,15 +3682,15 @@
         "question": 21,
         "part": "a",
         "marks": 2,
-        "sampleAnswer": "1 ƒ( ) 1 x x e = ≤ ≤ x ^xh f x 1 e ƒ( ) So maximum of on this interval is when 1. x x = Therefore, the mode is 1.",
+        "sampleAnswer": "ƒ( x ) = 1/x 1 ≤ x ≤ e f ^xh 1 e x So maximum of ƒ( x ) on this interval is when x = 1. Therefore, the mode is 1.",
         "criteria": [
           {
             "marks": 2,
-            "text": "Provides correct solution ƒ( ),"
+            "text": "Provides correct solution"
           },
           {
             "marks": 1,
-            "text": "x Attempts to find maximum value of or equivalent merit"
+            "text": "Attempts to find maximum value of ƒ( x ), or equivalent merit"
           }
         ]
       },
@@ -3698,7 +3698,7 @@
         "question": 21,
         "part": "b",
         "marks": 3,
-        "sampleAnswer": "Q1 1 0.25 dx = x 1 Q1 Q 1 1 = G ln ln Q1 − ln 1 dx x = = x 1 1 ln = 0.25 Q1 = e0.25 = 1.284 Q1 =",
+        "sampleAnswer": "Q1 1/x dx = 0.25 1 Q1 Q1 1/x dx = = ln x G = ln Q1 − ln 1 1 1 = ln Q1 = 0.25 Q1 = e0.25 = 1.284",
         "criteria": [
           {
             "marks": 3,
@@ -3718,7 +3718,7 @@
         "question": 22,
         "part": null,
         "marks": 2,
-        "sampleAnswer": "sin4 cos4 + q q LHS 2 = + sin2 cos2 q q sin4 cos4 sin2 cos2 2 + + q q q q = sin2 cos2 q q (sin2 )2 cos2 + q q = sin2 cos2 q q (1)2 sin2 cos2 (as 1) = + = q q 2 2 sin cos q q 1 1 = × 2 sin2 cos q q sec2 cosec2 = q q RHS =",
+        "sampleAnswer": "LHS = sin4 q + cos4 q + 2 sin2 q cos2 q = sin4 q + cos4 q + 2 sin2 q cos2 q sin2 q cos2 q = (sin2 q + cos2 q )2 sin2 q cos2 q = (1)2/sin2qcos2q (as sin2 q + cos2 q = 1) = 1/cos2q × 1/sin2q = sec2 q cosec2 q = RHS",
         "criteria": [
           {
             "marks": 2,
@@ -3734,7 +3734,7 @@
         "question": 23,
         "part": "a",
         "marks": 4,
-        "sampleAnswer": "12 600 Number of male sheep 600 = = 21 Percentage of 15 100 2.5% males weighing = × = 600 2.5% more than kg x 76.2 2 6.8 x z = + × 76.2 x 76.2 13.6 x = + 89.8 kg x =",
+        "sampleAnswer": "Number of male sheep = 12600/21 = 600 Percentage of males weighing = 15/600 × 100 = 2.5% 2.5% more than x kg x = 76.2 + 2 × 6.8 76.2 x z x = 76.2 + 13.6 x = 89.8 kg",
         "criteria": [
           {
             "marks": 4,
@@ -3742,11 +3742,11 @@
           },
           {
             "marks": 3,
-            "text": "z‑score Attempt to use a in a calculation, or equivalent merit kg"
+            "text": "Attempt to use a z‑score in a calculation, or equivalent merit"
           },
           {
             "marks": 2,
-            "text": "x Calculates the percentage of males that weigh more than"
+            "text": "Calculates the percentage of males that weigh more than x kg"
           },
           {
             "marks": 1,
@@ -3758,7 +3758,7 @@
         "question": 23,
         "part": "b",
         "marks": 1,
-        "sampleAnswer": "x − m will be larger than 2 as the mean and standard deviation for females is smaller. z = s The percentage of female sheep with weight greater than kg will be smaller than 2.5%. x So less than 300 females will weigh more than kg. x Answer could include: 2.5% z x Females Males <2.5% 300 sheep ≈",
+        "sampleAnswer": "z = x−m/s will be larger than 2 as the mean and standard deviation for females is smaller. The percentage of female sheep with weight greater than x kg will be smaller than 2.5%. So less than 300 females will weigh more than x kg. Answer could include: 2.5% Females Males x z <2.5% ≈ 300 sheep",
         "criteria": [
           {
             "marks": 1,
@@ -3770,7 +3770,7 @@
         "question": 24,
         "part": null,
         "marks": 4,
-        "sampleAnswer": "2 The gradients of ln and at point of intersection are both equal to 1. y e x y a x c = = + d (e x) ln 1 = ` dx e 1 = ` x (` e) x e y = = (e, e). 2 has gradient of 1 at point y a x c = + ` d 8a cB 2 2 x a x + = ` dx 2 1 at a x x e = = ` 2 1 a e · = ` 1 1 −−−−− a = 2 e 2 and at y a x c e x e = + = = 1 e2 e c = · + ` 2 e e e c = + 2 e −−−−− 2 c = ` 2",
+        "sampleAnswer": "The gradients of y = e ln x and y = a x 2 + c at point of intersection are both equal to 1. ` d/dx (e ln x) = 1 ` e/x = 1 x = e (` y = e) ` y = a x 2 + c has gradient of 1 at point (e, e). ` d/dx 8a x 2 + cB = 2 a x ` 2 a x = 1 at x = e ` 2 a · e = 1 a = 1/2e −−−−− 1 and y = a x 2 + c = e at x = e ` e = 1/2e · e2 + c e = e/2 + c ` c = e/2 −−−−− 2",
         "criteria": [
           {
             "marks": 4,
@@ -3778,7 +3778,7 @@
           },
           {
             "marks": 3,
-            "text": "a, Finds value of or equivalent merit"
+            "text": "Finds value of a, or equivalent merit"
           },
           {
             "marks": 2,
@@ -3794,7 +3794,7 @@
         "question": 25,
         "part": "a",
         "marks": 2,
-        "sampleAnswer": "d 7x xA (sin x) (−sin x) cos cos cos x x x − = − × + dx cos sin cos x x x x = + − sin as required x x =",
+        "sampleAnswer": "d/dx (sin x − x cos x) = cos x − 7x × (−sin x) + cos xA = cos x + x sin x − cos x = x sin x as required",
         "criteria": [
           {
             "marks": 2,
@@ -3810,7 +3810,7 @@
         "question": 25,
         "part": "b",
         "marks": 2,
-        "sampleAnswer": "2025 p 7sin A 2025 sin cos from part (a) x x dx x x x p = − 0 0 (sin p) ( ) 2025 2025 cos 2025 0 = − − p p (−1) 0 2025 = − × p 2025p =",
+        "sampleAnswer": "2025 p x sin x dx = 7sin x − x cos x A 2025 p from part (a) 0 0 = (sin 2025 p − 2025 p cos 2025 p) − ( 0 ) = 0 − 2025 p × (−1) = 2025p",
         "criteria": [
           {
             "marks": 2,
@@ -3842,7 +3842,7 @@
         "question": 26,
         "part": "a",
         "marks": 2,
-        "sampleAnswer": "Circumference of circle and perimeter of triangle must add to 100 cm. So 2 3x 100 r + = p 100 3x − That is r = 2 p A(x) Area of circle area of equilateral triangle = + 1 2 2 sin 60° r x = + p 2 3 2 2 r x = + p 4 2 100 3x 3 − 2 x = + p 2 4 p (100 3x)2 1 − 2 3 x = + 4 p",
+        "sampleAnswer": "Circumference of circle and perimeter of triangle must add to 100 cm. So 2 p r + 3x = 100 That is r = 100−3x/2p A(x) = Area of circle + area of equilateral triangle = p r 2 + 1/2 x 2 sin 60° = p r 2 + 3/4 x 2 2 2 = p 100−3x/2p + 3/4 x = 1/4 3 x 2 + (100−3x)2/p",
         "criteria": [
           {
             "marks": 2,
@@ -3850,7 +3850,7 @@
           },
           {
             "marks": 1,
-            "text": "r x, Finds an expression for in terms of or equivalent merit"
+            "text": "Finds an expression for r in terms of x, or equivalent merit"
           }
         ]
       },
@@ -3858,7 +3858,7 @@
         "question": 26,
         "part": "b",
         "marks": 3,
-        "sampleAnswer": "A(x) 2 is a quadratic with positive coefficient of so has a minimum stationary point. x A The maximum will therefore occur on an endpoint of the domain. 502 50 2 When 0 Area 796 x r r = = = = ≈ p p p 1 1 3 2 33.3332 When 0 33 Area sin 60° 481 r x x = = = = × ≈ 3 2 4 A 0 x 1 21 33 2 A(x) The maximum value of occurs when all wire is used for the circle. `",
+        "sampleAnswer": "A(x) is a quadratic with positive coefficient of x 2 so A has a minimum stationary point. The maximum will therefore occur on an endpoint of the domain. When x = 0 r = 50/p Area = p r 2 = 502/p ≈ 796 When r = 0 x = 33 1/3 Area = 1/2 x 2 sin 60° = 3/4 × 33.3332 ≈ 481 A 0 21 33 x 1/2 ` The maximum value of A(x) occurs when all wire is used for the circle.",
         "criteria": [
           {
             "marks": 3,
@@ -3866,7 +3866,7 @@
           },
           {
             "marks": 2,
-            "text": "A Finds the value of at an endpoint, or equivalent merit"
+            "text": "Finds the value of A at an endpoint, or equivalent merit"
           },
           {
             "marks": 1,
@@ -3878,7 +3878,7 @@
         "question": 27,
         "part": "a",
         "marks": 2,
-        "sampleAnswer": "(x1)C0 b a & ]ag ]bg 9 − Area 2 f f f = + + 2n 2 0 1 1 (1 2 − 2 = + + × 2 2 4 2 × 1 1 1 1 = + + 2 4 9 2 units = 8",
+        "sampleAnswer": "Area = b−a/2n & f ]ag + f ]bg + 2 9 f (x1)C0 = 2−0/2×2 (1 + 1/4 + 2 × 1/2 2 = 1/2 1 + 1/4 + 1 = 9/8 units 2",
         "criteria": [
           {
             "marks": 2,
@@ -3894,15 +3894,15 @@
         "question": 27,
         "part": "b",
         "marks": 2,
-        "sampleAnswer": "2 x 1 dx 2 0 2 x 1 2 = 1 ln 2 0 2 0 1 1 2 2 = − 1 1 ln ln 2 2 3 − 4 = ln 2 − 3 = 4 ln 2",
+        "sampleAnswer": "2 x 1/2 dx 0 x 2 1/2 = ln 1/2 0 2 0 1/2 1/2 = − ln 1/2 ln 1/2 − 3/4 = − ln 2 = 3/4ln2",
         "criteria": [
           {
             "marks": 2,
-            "text": "Provides correct solution x 1"
+            "text": "Provides correct solution"
           },
           {
             "marks": 1,
-            "text": "Provides the correct antiderivative of , or equivalent merit 2"
+            "text": "x Provides the correct antiderivative of 1/2, or equivalent merit"
           }
         ]
       },
@@ -3910,7 +3910,7 @@
         "question": 27,
         "part": "c",
         "marks": 2,
-        "sampleAnswer": "3 9 (Function is concave up. < 4 ln 2 8 Exact value is less than trapezoidal approximation.) ` 24 36 ln 2 < 2 3 ln 2 < 2 ln 8 < 2 8 e < 8 2 2 e < = 2 2 e < `",
+        "sampleAnswer": "3/4ln2 < 9/8 (Function is concave up. ` Exact value is less than trapezoidal approximation.) 24 < 36 ln 2 2 < 3 ln 2 2 < ln 8 e 2 < 8 e < 8 = 2 2 ` e < 2 2",
         "criteria": [
           {
             "marks": 2,
@@ -3926,7 +3926,7 @@
         "question": 28,
         "part": "a",
         "marks": 2,
-        "sampleAnswer": "Area of shaded segment area of sector area of triangle = − 1 area of sector area of triangle area of circle − = × 4 2 1 1 10 p 2 2 10 10 sin × − × = q q 2 2 4 50 50 sin 25 − = q q p (q ) 50 sin 25 − = q p p sin − = q q 2 p sin = + q q 2",
+        "sampleAnswer": "Area of shaded segment = area of sector − area of triangle area of sector − area of triangle = 1/4 × area of circle 1/2 × 10 2 q − 1/2 × 10 2 sin q = 102p/4 50 q − 50 sin q = 25 p 50 (q − sin q ) = 25 p q − sin q = p/2 q = sin q + p/2",
         "criteria": [
           {
             "marks": 2,
@@ -3942,7 +3942,7 @@
         "question": 28,
         "part": "b",
         "marks": 2,
-        "sampleAnswer": "y 3 2 1 O 1 2 3 4 5 6 7 q p sin y = + q 2 p sin from part (a) = + q q 2 p Looking for point of intersection of and sin y y = = + q q 2 So, 2.3 radians = q Arc length r = q 10 m 2.3 23 metres = × =",
+        "sampleAnswer": "y 3 2 1 O 1 2 3 4 5 6 7 q y = sin q + p/2 q = sin q + p/2 from part (a) Looking for point of intersection of y = q and y = sin q + p/2 So, q = 2.3 radians Arc length = r q = 10 m × 2.3 = 23 metres",
         "criteria": [
           {
             "marks": 2,
@@ -3958,7 +3958,7 @@
         "question": 29,
         "part": "a",
         "marks": 1,
-        "sampleAnswer": "h tan 60° in rTYO = OY 30° h 3 2 OY = ` tan 60° h 60° = 3 1",
+        "sampleAnswer": "tan 60° = h/OY in rTYO 30° ` OY = h/tan60° 2 3 = h/3 60°/1",
         "criteria": [
           {
             "marks": 1,
@@ -3970,7 +3970,7 @@
         "question": 29,
         "part": "b",
         "marks": 3,
-        "sampleAnswer": "In rTFO, = 45°, 90° ETFO ETOF = 45° EOTF = ` is isosceles and OF h = r ` In rFOY, by cosine rule 2 h h h2 42 2 4 cos 45° = + − × × 3 3 h2 8h h2 16 = + − 3 6 2h2 8h 16 0 + − = 3 6 8 64 2 4 16 ± − + × × 6 3 6 h = 4 3 3.03 since 0 h = >",
+        "sampleAnswer": "In rTFO, ETFO = 45°, ETOF = 90° ` EOTF = 45° ` r is isosceles and OF = h In rFOY, by cosine rule 2 h2 = h/3 + 42 − 2 × 4 × h/3 cos 45° h2 = h2/3 + 16 − 8h/6 2h2/3 + 8h/6 − 16 = 0 − 8/6 ± 64/6 + 4 × 2/3 × 16 h = 4/3 = 3.03 since h > 0",
         "criteria": [
           {
             "marks": 3,
@@ -3978,11 +3978,11 @@
           },
           {
             "marks": 2,
-            "text": "h, Finds a quadratic expression in or equivalent merit"
+            "text": "Finds a quadratic expression in h, or equivalent merit"
           },
           {
             "marks": 1,
-            "text": "h, Attempts to use the cosine rule to find a value for or equivalent merit"
+            "text": "Attempts to use the cosine rule to find a value for h, or equivalent merit"
           }
         ]
       },
@@ -3990,7 +3990,7 @@
         "question": 29,
         "part": "c",
         "marks": 3,
-        "sampleAnswer": "h 3 sin sin 45° O q Y = 45° h h 3 1 sin h = q 2 3 24° = . . . q 24° ≈ Bearing = 45° − 24° q 021° ≈ F",
+        "sampleAnswer": "h/3 sin q = sin 45° O Y h 45° h/3 sin q = 1/23 h q = 24°... ≈ 24° Bearing = 45° − 24° q ≈ 021° F",
         "criteria": [
           {
             "marks": 3,
@@ -4002,7 +4002,7 @@
           },
           {
             "marks": 1,
-            "text": "OFY, Finds angle or equivalent merit"
+            "text": "Finds angle OFY, or equivalent merit"
           }
         ]
       },
@@ -4018,11 +4018,11 @@
           },
           {
             "marks": 2,
-            "text": "k, Obtains a quadratic in or equivalent merit"
+            "text": "Obtains a quadratic in k, or equivalent merit"
           },
           {
             "marks": 1,
-            "text": "x k y k − − Substitutes and into equation, or equivalent merit"
+            "text": "Substitutes x − k and y − k into equation, or equivalent merit"
           }
         ]
       },
@@ -4030,19 +4030,19 @@
         "question": 31,
         "part": null,
         "marks": 3,
-        "sampleAnswer": "1 cos x = 2 5 7 p p, p , , x = . . . 3 3 3 y cosx y 1 = 1 2 5p 7p x p 3 3 3 1 cos dilation horizontally by a factor of y px = p Lowest value of to get 2 solutions p y cospx y 1 1 5 = p 2 × = p 1 ` p 3 2 5 p p = 2p x 3 2 × p 5 = 6 y cospx y 1 7 1 = p 2 × = p 1 ` p 3 2 7 p p = 2p x 3 2 × p 7 = 6 5 7 p < ≤ ` 6 6 2025 HSC Mathematics Advanced Mapping Grid Section I Question Marks Content Syllabus outcomes 1 1 MA-S1 Probability and Discrete Probability Distributions MA11-7 2 1 MA-E1 Logarithms and Exponentials MA11-9 3 1 MA-F1 Working with Functions MA11-1 4 1 MA-F1 Working with Functions MA11-1 5 1 MA-C4 Integral Calculus MA12-7 6 1 MA-F1 Working with Functions MA11-1 7 1 MA-S1 Probability and Discrete Probability Distributions MA11-7 8 1 MA-S3 Random Variables MA12-8 9 1 MA-C3 Applications of Differentiation MA12-10 10 1 MA-C3 Applications of Differentiation MA12-3 Section II Question Marks Content Syllabus outcomes 11 (a) 2 MA-F1 Working with Functions MA11-2 11 (b) 1 MA-F1 Working with Functions MA11-2 12 3 MA-C1 Introduction to Differentiation MA11-5 13 2 MA-M1 Modelling Financial Situations MA12-4 14 (a) 2 MA-S2 Descriptive Statistics and Bivariate Data Analysis MA12-8 14 (b) 2 MA-S2 Descriptive Statistics and Bivariate Data Analysis MA12-8 14 (c) 1 MA-S2 Descriptive Statistics and Bivariate Data Analysis MA12-8 14 (d) 1 MA-S2 Descriptive Statistics and Bivariate Data Analysis MA12-10 15 (a) 2 MA-T3 Trigonometric Functions and Graphs MA12-5 15 (b) 2 MA-T3 Trigonometric Functions and Graphs MA12-5 15 (c) 2 MA-T3 Trigonometric Functions and Graphs MA12-5 16 (a) 4 MA-C3 Applications of Differentiation MA12-6 16 (b) 1 MA-C3 Applications of Differentiation MA12-6 17 (a) 2 MA-M1 Modelling Financial Situations MA12-4 17 (b) 3 MA-M1 Modelling Financial Situations MA12-4 MA-E1 Logarithms and Exponentials 17 (c) 2 MA11-6, MA12-2 MA-M1 Modelling Financial Situations 18 2 MA-F1 Working with Functions MA11-2 19 3 MA-S1 Probability and Discrete Probability Distributions MA11-7 20 3 MA-M1 Modelling Financial Situations MA12-2 21 (a) 2 MA-S3 Random Variables MA12-8 MA-E1 Logarithms and Exponentials 21 (b) 3 MA11-6, MA12-8 MA-S3 Random Variables Question Marks Content Syllabus outcomes 22 2 MA-T2 Trigonometric Functions and Identities MA11-4 23 (a) 4 MA-S3 Random Variables MA12-8 23 (b) 1 MA-S3 Random Variables MA12-10 24 4 MA-C3 Applications of Differentiation MA12-6 25 (a) 2 MA-C2 Differential Calculus MA12-3 25 (b) 2 MA-C4 Integral Calculus MA12-7 25 (c) 2 MA-M1 Modelling Financial Situations MA12-4 26 (a) 2 MA-C3 Applications of Differentiation MA12-3 26 (b) 3 MA-C3 Applications of Differentiation MA12-3, MA12-10 27 (a) 2 MA-C4 Integral Calculus MA12-7 27 (b) 2 MA-C4 Integral Calculus MA12-7 MA-C3 Applications of Differentiation MA-C4 Integral Calculus 27 (c) 2 MA12-10 MA-E1 Logarithms and Exponentials 28 (a) 2 MA-T1 Trigonometry and Measure of Angles MA11-3 MA-T1 Trigonometry and Measure of Angles 28 (b) 2 MA11-3, MA12-9 MA-T3 Trigonometric Functions and Graphs 29 (a) 1 MA-T1 Trigonometry and Measure of Angles MA11-3 29 (b) 3 MA-T1 Trigonometry and Measure of Angles MA11-3 29 (c) 3 MA-T1 Trigonometry and Measure of Angles MA11-3 30 3 MA-F2 Graphing Techniques MA12-1 31 3 MA-T3 Trigonometric Functions and Graphs MA12-5, MA12-10",
+        "sampleAnswer": "cos x = 1/2 x = p/3, 5/3 p, 7p/3,... y 1 y = cosx 1 2 p/3 5p/3 7p/3 x y = cos px dilation horizontally by a factor of 1/p Lowest value of p to get 2 solutions y 1 y = cospx × = 2 ` 5p/3 1/p p 1/2 p = 5 p 2p x 3 × 2 p = 5/6 y 1 y = cospx × = 2 ` 7p/3 1/p p 1/2 p = 7 p 2p x 3 × 2 p = 7/6 ` 5/6 ≤ p < 7/6 2025 HSC Mathematics Advanced Mapping Grid Section I Question Marks Content Syllabus outcomes 1 1 MA-S1 Probability and Discrete Probability Distributions MA11-7 2 1 MA-E1 Logarithms and Exponentials MA11-9 3 1 MA-F1 Working with Functions MA11-1 4 1 MA-F1 Working with Functions MA11-1 5 1 MA-C4 Integral Calculus MA12-7 6 1 MA-F1 Working with Functions MA11-1 7 1 MA-S1 Probability and Discrete Probability Distributions MA11-7 8 1 MA-S3 Random Variables MA12-8 9 1 MA-C3 Applications of Differentiation MA12-10 10 1 MA-C3 Applications of Differentiation MA12-3 Section II Question Marks Content Syllabus outcomes 11 (a) 2 MA-F1 Working with Functions MA11-2 11 (b) 1 MA-F1 Working with Functions MA11-2 12 3 MA-C1 Introduction to Differentiation MA11-5 13 2 MA-M1 Modelling Financial Situations MA12-4 14 (a) 2 MA-S2 Descriptive Statistics and Bivariate Data Analysis MA12-8 14 (b) 2 MA-S2 Descriptive Statistics and Bivariate Data Analysis MA12-8 14 (c) 1 MA-S2 Descriptive Statistics and Bivariate Data Analysis MA12-8 14 (d) 1 MA-S2 Descriptive Statistics and Bivariate Data Analysis MA12-10 15 (a) 2 MA-T3 Trigonometric Functions and Graphs MA12-5 15 (b) 2 MA-T3 Trigonometric Functions and Graphs MA12-5 15 (c) 2 MA-T3 Trigonometric Functions and Graphs MA12-5 16 (a) 4 MA-C3 Applications of Differentiation MA12-6 16 (b) 1 MA-C3 Applications of Differentiation MA12-6 17 (a) 2 MA-M1 Modelling Financial Situations MA12-4 17 (b) 3 MA-M1 Modelling Financial Situations MA12-4 MA-E1 Logarithms and Exponentials 17 (c) 2 MA11-6, MA12-2 MA-M1 Modelling Financial Situations 18 2 MA-F1 Working with Functions MA11-2 19 3 MA-S1 Probability and Discrete Probability Distributions MA11-7 20 3 MA-M1 Modelling Financial Situations MA12-2 21 (a) 2 MA-S3 Random Variables MA12-8 MA-E1 Logarithms and Exponentials 21 (b) 3 MA11-6, MA12-8 MA-S3 Random Variables Question Marks Content Syllabus outcomes 22 2 MA-T2 Trigonometric Functions and Identities MA11-4 23 (a) 4 MA-S3 Random Variables MA12-8 23 (b) 1 MA-S3 Random Variables MA12-10 24 4 MA-C3 Applications of Differentiation MA12-6 25 (a) 2 MA-C2 Differential Calculus MA12-3 25 (b) 2 MA-C4 Integral Calculus MA12-7 25 (c) 2 MA-M1 Modelling Financial Situations MA12-4 26 (a) 2 MA-C3 Applications of Differentiation MA12-3 26 (b) 3 MA-C3 Applications of Differentiation MA12-3, MA12-10 27 (a) 2 MA-C4 Integral Calculus MA12-7 27 (b) 2 MA-C4 Integral Calculus MA12-7 MA-C3 Applications of Differentiation 27 (c) 2 MA-C4 Integral Calculus MA12-10 MA-E1 Logarithms and Exponentials 28 (a) 2 MA-T1 Trigonometry and Measure of Angles MA11-3 MA-T1 Trigonometry and Measure of Angles 28 (b) 2 MA11-3, MA12-9 MA-T3 Trigonometric Functions and Graphs 29 (a) 1 MA-T1 Trigonometry and Measure of Angles MA11-3 29 (b) 3 MA-T1 Trigonometry and Measure of Angles MA11-3 29 (c) 3 MA-T1 Trigonometry and Measure of Angles MA11-3 30 3 MA-F2 Graphing Techniques MA12-1 31 3 MA-T3 Trigonometric Functions and Graphs MA12-5, MA12-10",
         "criteria": [
           {
             "marks": 3,
-            "text": "Provides correct solution 5 7"
+            "text": "Provides correct solution"
           },
           {
             "marks": 2,
-            "text": "p p = = Finds or , or equivalent merit 6 6"
+            "text": "Finds p = 5/6 or p = 7/6, or equivalent merit"
           },
           {
             "marks": 1,
-            "text": "5p p x = Finds and , or equivalent merit 3 3"
+            "text": "Finds x = p/3 and 5p/3, or equivalent merit"
           }
         ]
       }

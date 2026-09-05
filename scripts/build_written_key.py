@@ -77,6 +77,17 @@ SUBJECTS = {
 MARKS_COL_MIN_X = 440   # the mapping grid's Marks column sits at x~136; the real one at x~472
 HEADER_MAX_X = 110      # "Question" starts in the left margin
 
+# A stacked fraction's bar. ⚠️ "Shorter than row_rules()' 100 pt" is NOT a sufficient
+# test, and assuming it was cost this extractor 145 of its 234 Maths Advanced parts on the
+# first run: the criteria table is TWO cells, so every row is ruled twice -- once across
+# the criteria column (~380 pt) and once across the Marks column (70.32 pt). The second is
+# short, so it posed as a fraction bar and folded the mark digits of adjacent rows into
+# "1/2" tokens, emptying the marks column. A table rule is recognised by SHARING ITS Y with
+# the full-width rule of the same row, which needs no assumption about column widths.
+FRAC_BAR_MIN_W = 4.0
+FRAC_BAR_MAX_W = 60.0
+ROW_RULE_MIN_W = 100.0  # must match row_rules(); a rule this wide brackets a criteria row
+
 # Page furniture. This must be filtered out of the CRITERIA scan as well as the answer
 # text: "Page 18 of 23" puts a 23 in the marks column, which is where 2022 Maths Q35
 # picked up a phantom 23-mark part.
@@ -99,6 +110,18 @@ MARK_VALUE = re.compile(r"^(\d+)(?:\s*[\u2013\u2212-]\s*(\d+))?$")
 BULLET = re.compile("[\ufffd\u2022\u25cf\u25aa\uf0b7]" + r"\s*")
 
 
+# Reassembling a line left-to-right can leave a space in front of punctuation, because the
+# piece that now sits before the comma used to sit after it -- "as 20/40 , or equivalent".
+# That is an artefact of the reassembly, never NESA's typesetting, and it also trips the
+# damage heuristics that read these rows downstream.
+TIGHTEN_PUNCT = re.compile(r"\s+([,.;:])")
+
+
+def tidy(text):
+    """Collapse whitespace and pull punctuation back onto the word before it."""
+    return TIGHTEN_PUNCT.sub(r"\1", re.sub(r"\s+", " ", text)).strip()
+
+
 def is_guidelines(name):
     """True for a marking-guidelines PDF, mirroring build_answer_key.find_papers().
 
@@ -118,13 +141,138 @@ def is_guidelines(name):
     return bool(re.search(r"-mg\b|marking", lowered))
 
 
+def frac_bars(page):
+    """The page's stacked-fraction bars: short horizontal rules that are NOT table rules.
+
+    On 2020 Maths Advanced p4 the bar of 20/40 is a 13.97 pt rect at x 360.3-374.3, sitting
+    exactly over its two digits. The trap is the Marks column's row rule at 70.32 pt --
+    also short, and it fooled the first version of this function. Both cells of a ruled row
+    are drawn at the SAME y, so a short rule level with a full-width one is a table rule and
+    is dropped. See FRAC_BAR_MAX_W.
+    """
+    short, wide = [], []
+    for drawing in page.get_drawings():
+        for item in drawing["items"]:
+            if item[0] == "l":
+                a, b = item[1], item[2]
+                if abs(a.y - b.y) >= 0.6:
+                    continue
+                y, w, x0, x1 = a.y, abs(a.x - b.x), min(a.x, b.x), max(a.x, b.x)
+            elif item[0] == "re" and item[1].height < 1.5:
+                r = item[1]
+                y, w, x0, x1 = r.y0, r.width, r.x0, r.x1
+            else:
+                continue
+            if w > ROW_RULE_MIN_W:
+                wide.append(y)
+            elif FRAC_BAR_MIN_W < w <= FRAC_BAR_MAX_W:
+                short.append((y, x0, x1))
+    return sorted(b for b in short if not any(abs(b[0] - y) < 1.5 for y in wide))
+
+
+def assemble_fractions(words, bars, body_h):
+    """Fold each stacked fraction into ONE token, `num/den`, sitting on its own bar.
+
+    A stacked fraction is the one damage shape that no line-grouping rule can fix, because
+    its numerator genuinely IS above the line and its denominator genuinely IS below it --
+    see 2020 Maths Advanced Q14(c), where "as 20/40," extracted as a leading "20", the
+    sentence, then a stranded "40" ("20 Obtains the probability ... as , or equivalent 40
+    merit"). Reading order cannot be recovered from the glyph boxes alone; it comes from
+    the bar the page draws between them.
+
+    Tokens are claimed at most once, so a nested fraction's inner bar (processed first,
+    bars being sorted top-down) keeps its own digits.
+    """
+    words = list(words)
+    for by, bx0, bx1 in bars:
+        near = [w for w in words
+                if w[0] >= bx0 - 2 and w[2] <= bx1 + 2
+                and abs((w[1] + w[3]) / 2 - by) <= 0.9 * body_h]
+        num = sorted((w for w in near if (w[1] + w[3]) / 2 < by), key=lambda w: w[0])
+        den = sorted((w for w in near if (w[1] + w[3]) / 2 > by), key=lambda w: w[0])
+        if not num or not den:
+            continue          # a rule that is not a fraction bar (a box edge, an underline)
+        # A real bar is drawn to the width of what it divides. Requiring the digits to
+        # span most of it rejects a rule that merely happens to have text above and below.
+        span = max(w[2] for w in num + den) - min(w[0] for w in num + den)
+        if span < 0.4 * (bx1 - bx0):
+            continue
+        text = "".join(w[4] for w in num) + "/" + "".join(w[4] for w in den)
+        for w in num + den:
+            words.remove(w)
+        words.append((bx0, by - body_h / 2, bx1, by + body_h / 2, text))
+    return words
+
+
+def join_split_words(toks):
+    """Rejoin a word the text layer split mid-way, e.g. "studyin"+"g", "equiv"+"alent".
+
+    These are span boundaries, not spaces: get_text("words") splits on whitespace, so two
+    tokens whose boxes touch had no space between them. Real word gaps on these pages are
+    ~3 pt, so the 0.2 pt threshold cannot swallow one.
+    """
+    out = []
+    for t in toks:
+        if out and 0 <= t[0] - out[-1][2] <= 0.2:
+            p = out[-1]
+            out[-1] = (p[0], min(p[1], t[1]), t[2], max(p[3], t[3]), p[4] + t[4])
+        else:
+            out.append(t)
+    return out
+
+
 def page_lines(page):
-    """Group a page's words into lines keyed by rounded y, each sorted left to right."""
-    lines = {}
-    for w in page.get_text("words"):
-        if w[4].strip():
-            lines.setdefault(round(w[1], 1), []).append(w)
-    return [(y, sorted(toks, key=lambda t: t[0])) for y, toks in sorted(lines.items())]
+    """Group a page's words into visual lines, each sorted LEFT TO RIGHT.
+
+    ⚠️ Lines are grouped by vertical CENTRE, not by top-y. Keying on `round(y0, 1)` (what
+    this did until 2026-09-05) makes every inline superscript its own "line", and since
+    the lines are then emitted in y order the fragment is hoisted in front of the sentence
+    it belongs inside: 2020 Maths Advanced Q13 read "sec2 Finds the anti-derivative of x"
+    for "Finds the anti-derivative of sec2 x". The two share a centre to within 0.7 pt
+    while their tops differ by 2.0 pt, which is exactly why the centre is the right key.
+
+    The tolerance is 0.6 x the page's own median glyph height. Consecutive real lines on
+    these pages are ~22 pt apart with ~12 pt glyphs, so they never overlap and cannot be
+    merged. An odd-height token (a tall integral sign, a bracket spanning three lines)
+    attaches to the nearest line but NEVER becomes the line's anchor, so it cannot chain
+    two lines together.
+    """
+    words = [w for w in page.get_text("words") if w[4].strip()]
+    if not words:
+        return []
+    heights = sorted(w[3] - w[1] for w in words)
+    body_h = heights[len(heights) // 2] or 12.0
+    words = assemble_fractions(words, frac_bars(page), body_h)
+
+    # ⚠️ An IMAGE's label is reported with the image's own box, not a glyph box, so it is
+    # enormous and its centre is meaningless -- 2020 Maths Advanced p5 has "solution"
+    # /"diagram" 138 pt tall (11x body), centred on the NEXT question's first criteria row,
+    # and 2020 Standard 2 p2 has "spanning"/"trees" 313 pt tall starting at y = -79.9, off
+    # the top of the page. Grouping either by centre files NESA's picture caption inside a
+    # criteria row, which is then shown to a student as band wording. Measured over all 23
+    # guideline PDFs, > 5x body height selects exactly these 63 tokens and nothing else
+    # (real oversize tops out at 4.7x, on the mapping-grid page this parser discards).
+    # They are kept -- "solution diagram" tells a reviewer the official answer has a
+    # picture -- but as their own line, ordered by their TOP, which is where they visually
+    # begin and which is the block they belong to.
+    oversize = [w for w in words if (w[3] - w[1]) > 5 * body_h]
+    words = [w for w in words if (w[3] - w[1]) <= 5 * body_h]
+
+    normal = lambda w: 0.6 * body_h <= (w[3] - w[1]) <= 1.4 * body_h
+    lines = []          # [anchor-centre, anchored?, [tokens]]
+    for w in sorted(words, key=lambda w: ((w[1] + w[3]) / 2, w[0])):
+        yc = (w[1] + w[3]) / 2
+        if lines and abs(yc - lines[-1][0]) <= 0.6 * body_h:
+            lines[-1][2].append(w)
+            if normal(w) and not lines[-1][1]:
+                lines[-1][0], lines[-1][1] = yc, True
+        else:
+            lines.append([yc, normal(w), [w]])
+    out = [(anchor, join_split_words(sorted(toks, key=lambda t: t[0])))
+           for anchor, _anchored, toks in lines]
+    for w in oversize:
+        out.append((w[1], [w]))
+    return [(round(y, 1), toks) for y, toks in sorted(out, key=lambda r: r[0])]
 
 
 def marks_cell(toks, gap=15.0):
@@ -216,7 +364,7 @@ def criteria_rows(lines):
     rows = []
     for key in order:
         g = groups[key]
-        text = re.sub(r"\s+", " ", " ".join(g["text"])).strip()
+        text = tidy(" ".join(g["text"]))
         text = BULLET.sub("", text).strip()
         if g["marks"] is None or not text:
             continue          # the "Criteria / Marks" header band, and any empty spacer
@@ -290,7 +438,7 @@ def parse_paper(pdf_path):
             "question": qnum,
             "part": ".".join(parts) if parts else None,
             "marks": max(marks),
-            "sampleAnswer": re.sub(r"\s+", " ", " ".join(sample)).strip(),
+            "sampleAnswer": tidy(" ".join(sample)),
             "criteria": criteria_rows(crit_lines),
         })
     return out, unresolved

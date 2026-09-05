@@ -1683,7 +1683,7 @@
           ],
           "minKeywords": 4,
           "bandDescriptors": {
-            "full": "m3 Calculates the correct volume of concrete needed in (including 10% wastage)",
+            "full": "Calculates the correct volume of concrete needed in m3 (including 10% wastage)",
             "partial": "Calculates the volume with minor errors in correct answer without 10% wastage OR Shows some relevant calculations for the concrete needed",
             "minimal": "Shows a relevant calculation"
           }

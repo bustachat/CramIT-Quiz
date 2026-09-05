@@ -1517,7 +1517,12 @@
             "10/39",
             "39"
           ],
-          "minKeywords": 2
+          "minKeywords": 2,
+          "bandDescriptors": {
+            "full": "Provides the correct solution",
+            "partial": "Obtains the probability of a student studying History as 20/40, or equivalent merit",
+            "minimal": "Obtains the probability of a student studying History as 20/40, or equivalent merit"
+          }
         }
       ]
     },
@@ -1591,7 +1596,12 @@
             "sine rule",
             "215"
           ],
-          "minKeywords": 3
+          "minKeywords": 3,
+          "bandDescriptors": {
+            "full": "Provides the correct solution",
+            "partial": "Finds another angle in rAPB, or equivalent merit",
+            "minimal": "Finds another angle in rAPB, or equivalent merit"
+          }
         }
       ]
     },
@@ -1798,7 +1808,12 @@
             "5.2",
             "ln 1.5"
           ],
-          "minKeywords": 1
+          "minKeywords": 1,
+          "bandDescriptors": {
+            "full": "Provides the correct solution",
+            "partial": "Uses the log function to solve the equation",
+            "minimal": "Makes 1.5–0.4t the subject of the equation, or equivalent merit"
+          }
         }
       ]
     },
@@ -1908,9 +1923,9 @@
       ],
       "minKeywords": 3,
       "bandDescriptors": {
-        "full": "P = 2x + 72/x derived correctly, then x = 6 from dP/dx = 0 and a minimum perimeter of 24 m justified by the positive second derivative.",
-        "partial": "The perimeter is minimised correctly but the derivation in (a) is incomplete, or the minimum is not justified.",
-        "minimal": "In (a) the πx terms cancel — the bottom edge is y + x, not y. In (b), solve dP/dx = 0 and then test the second derivative to show it is a minimum, not just a stationary point."
+        "full": "(a) Provides the correct solution (b) Provides the correct solution",
+        "partial": "(a) Writes an expression for the perimeter in terms of x and y and finds a correct expression for y in terms of x, or equivalent merit (b) Verifies that at x = 6 there is a minimum turning point, or equivalent merit OR Solves dP/dx = 0, or equivalent merit",
+        "minimal": "(a) Writes an expression for a perimeter in terms of x and y which includes the curved length of a quadrant, or equivalent merit (b) Finds dP/dx, or equivalent merit"
       },
       "stem": "A landscape gardener wants to build a garden bed in the shape of a rectangle attached to a quarter-circle. Let <em>x</em> and <em>y</em> be the dimensions of the rectangle in metres, as shown in the diagram.<img src=\"/diagrams/mathematics-advanced_2020_Q25_stimulus.jpg\" alt=\"A rectangle of height x and width y with a quarter-circle of radius x attached to its right-hand end.\" style=\"max-width:100%;height:auto;display:block;margin:14px auto\">The garden bed is required to have an area of 36 m&sup2; and to have a perimeter which is as small as possible. Let <em>P</em> metres be the perimeter of the garden bed.<br>",
       "parts": [
@@ -1923,7 +1938,12 @@
             "72/x",
             "quarter"
           ],
-          "minKeywords": 1
+          "minKeywords": 1,
+          "bandDescriptors": {
+            "full": "Provides the correct solution",
+            "partial": "Writes an expression for the perimeter in terms of x and y and finds a correct expression for y in terms of x, or equivalent merit",
+            "minimal": "Writes an expression for a perimeter in terms of x and y which includes the curved length of a quadrant, or equivalent merit"
+          }
         },
         {
           "label": "(b)",
@@ -1936,7 +1956,12 @@
             "72/x",
             "minimum"
           ],
-          "minKeywords": 2
+          "minKeywords": 2,
+          "bandDescriptors": {
+            "full": "Provides the correct solution",
+            "partial": "Verifies that at x = 6 there is a minimum turning point, or equivalent merit OR Solves dP/dx = 0, or equivalent merit",
+            "minimal": "Finds dP/dx, or equivalent merit"
+          }
         }
       ]
     },
@@ -2075,7 +2100,12 @@
             "0.815",
             "at least one"
           ],
-          "minKeywords": 2
+          "minKeywords": 2,
+          "bandDescriptors": {
+            "full": "Provides the correct solution",
+            "partial": "Finds the percentage of adults earning between $15 and $30 and finds a probability using 1 – P(neither earns...), or equivalent merit",
+            "minimal": "Finds a probability using 1 – P(neither earns...), or equivalent merit OR diagram Finds the percentage of adults earning between $15 and $30, or equivalent merit"
+          }
         },
         {
           "label": "(b)",
@@ -2114,9 +2144,9 @@
       ],
       "minKeywords": 3,
       "bandDescriptors": {
-        "full": "Tangent derived correctly from dy/dx = c/x at the point (p, c ln p), then c = e found from the two conditions c/p = 1 and c ln p = c.",
-        "partial": "The tangent equation is correct but the two conditions in (b) are not combined to reach c = e.",
-        "minimal": "In (a) use the point (p, c ln p) with gradient c/p. In (b) the two conditions give p = c and ln p = 1 — solve them together."
+        "full": "(a) Provides the correct solution (b) Provides the correct solution",
+        "partial": "(a) Finds the gradient of the tangent at x = p, or equivalent merit (b) States that c/p = 1 or −c + cln p = 0, or equivalent merit",
+        "minimal": "(a) Finds the gradient of the tangent at x = p, or equivalent merit (b) States that c/p = 1 or −c + cln p = 0, or equivalent merit"
       },
       "stem": "The diagram shows the graph of <em>y</em> = <em>c</em> ln <em>x</em>, <em>c</em> &gt; 0.",
       "parts": [
@@ -2129,7 +2159,12 @@
             "c/x",
             "point-gradient"
           ],
-          "minKeywords": 1
+          "minKeywords": 1,
+          "bandDescriptors": {
+            "full": "Provides the correct solution",
+            "partial": "Finds the gradient of the tangent at x = p, or equivalent merit",
+            "minimal": "Finds the gradient of the tangent at x = p, or equivalent merit"
+          }
         },
         {
           "label": "(b)",
@@ -2142,7 +2177,12 @@
             "origin",
             "ln p = 1"
           ],
-          "minKeywords": 2
+          "minKeywords": 2,
+          "bandDescriptors": {
+            "full": "Provides the correct solution",
+            "partial": "States that c/p = 1 or −c + cln p = 0, or equivalent merit",
+            "minimal": "States that c/p = 1 or −c + cln p = 0, or equivalent merit"
+          }
         }
       ]
     },
@@ -2247,7 +2287,12 @@
             "15 000",
             "20 000"
           ],
-          "minKeywords": 1
+          "minKeywords": 1,
+          "bandDescriptors": {
+            "full": "Provides the correct values for a and b",
+            "partial": "Provides the correct value of a or the correct value of b, or equivalent merit",
+            "minimal": "Provides the correct value of a or the correct value of b, or equivalent merit"
+          }
         },
         {
           "label": "(b)",
@@ -2259,7 +2304,12 @@
             "10 < t < 13",
             "t = 36"
           ],
-          "minKeywords": 2
+          "minKeywords": 2,
+          "bandDescriptors": {
+            "full": "Provides the correct solution",
+            "partial": "Finds the values of t when the population of mice increases and the values of t when the population of cats increases",
+            "minimal": "Finds the values of t when the population of mice increases, or equivalent merit"
+          }
         },
         {
           "label": "(c)",
@@ -2725,7 +2775,12 @@
             "7 + √69",
             "−10√69"
           ],
-          "minKeywords": 2
+          "minKeywords": 2,
+          "bandDescriptors": {
+            "full": "Provides correct solution",
+            "partial": "Finds the correct value of t, or equivalent merit",
+            "minimal": "Attempts to solve to find the time y(t) = 0, or equivalent merit"
+          }
         }
       ]
     },
@@ -2912,7 +2967,12 @@
             "8554.535",
             "1.03"
           ],
-          "minKeywords": 1
+          "minKeywords": 1,
+          "bandDescriptors": {
+            "full": "Provides correct solution",
+            "partial": "Finds the correct value of A1, or equivalent merit",
+            "minimal": "Finds the correct value of A1, or equivalent merit"
+          }
         },
         {
           "label": "(b)",
@@ -3040,7 +3100,12 @@
             "ln(x² + 4)",
             "2/ln 10"
           ],
-          "minKeywords": 1
+          "minKeywords": 1,
+          "bandDescriptors": {
+            "full": "Provides correct solution",
+            "partial": "Finds the anti-derivative of Ax/x2+4, or equivalent merit",
+            "minimal": "Finds the anti-derivative of Ax/x2+4, or equivalent merit"
+          }
         },
         {
           "label": "(b)",
@@ -3050,7 +3115,12 @@
           "keywords": [
             "4 − x²"
           ],
-          "minKeywords": 1
+          "minKeywords": 1,
+          "bandDescriptors": {
+            "full": "Provides correct solution",
+            "partial": "Finds the correct derivative of f(x), or equivalent merit",
+            "minimal": "Finds the correct derivative of f(x), or equivalent merit"
+          }
         },
         {
           "label": "(c)",
@@ -3144,7 +3214,12 @@
             "delivery fee",
             "cumulative"
           ],
-          "minKeywords": 2
+          "minKeywords": 2,
+          "bandDescriptors": {
+            "full": "Finds the correct values of A and B",
+            "partial": "Finds the correct value of A or B",
+            "minimal": "Finds the correct value of A or B"
+          }
         },
         {
           "label": "(b)",
@@ -3373,7 +3448,12 @@
             "3n(n + 1)/2",
             "552"
           ],
-          "minKeywords": 2
+          "minKeywords": 2,
+          "bandDescriptors": {
+            "full": "Provides correct solution",
+            "partial": "Finds correct quadratic expression",
+            "minimal": "Correctly substitutes a, d and 828 into formula for S n, or equivalent merit"
+          }
         }
       ]
     },
@@ -3529,7 +3609,12 @@
             "2.6e",
             "rate"
           ],
-          "minKeywords": 2
+          "minKeywords": 2,
+          "bandDescriptors": {
+            "full": "Provides correct answer",
+            "partial": "Attempts to find dN/dt",
+            "minimal": "Attempts to find dN/dt"
+          }
         }
       ]
     },
@@ -3682,7 +3767,12 @@
             "8.33",
             "0.5"
           ],
-          "minKeywords": 2
+          "minKeywords": 2,
+          "bandDescriptors": {
+            "full": "Provides correct solution",
+            "partial": "Finds one value of t for d = 1, or equivalent merit",
+            "minimal": "Attempts to solve the given equation when d = 1"
+          }
         }
       ]
     },
@@ -3984,7 +4074,12 @@
             "2/3",
             "ln c = 2"
           ],
-          "minKeywords": 2
+          "minKeywords": 2,
+          "bandDescriptors": {
+            "full": "Provides correct solution",
+            "partial": "Recognises that P ( X > c) = 1 − P ( X < c ), or equivalent merit",
+            "minimal": "Recognises that P ( X > c) = 1 − P ( X < c ), or equivalent merit"
+          }
         }
       ]
     },
@@ -4044,7 +4139,12 @@
             "4",
             "minimum"
           ],
-          "minKeywords": 3
+          "minKeywords": 3,
+          "bandDescriptors": {
+            "full": "Provides correct solution",
+            "partial": "Solves dA/dx = 0 and determines the nature of stationary point at x = 2 OR Finds dA/dx, or equivalent merit",
+            "minimal": "Attempts to find the area in terms of x"
+          }
         }
       ]
     },
@@ -4604,7 +4704,12 @@
             "minimum",
             "(x − 2)"
           ],
-          "minKeywords": 3
+          "minKeywords": 3,
+          "bandDescriptors": {
+            "full": "Provides correct solution",
+            "partial": "Finds x = 12, or equivalent merit OR Finds A′, or equivalent merit",
+            "minimal": "Finds an expression for the Area in terms of x, or equivalent merit"
+          }
         }
       ]
     },
@@ -4657,7 +4762,12 @@
             "250",
             "(1.004)"
           ],
-          "minKeywords": 2
+          "minKeywords": 2,
+          "bandDescriptors": {
+            "full": "Provides correct solution",
+            "partial": "Provides an expression for An involving the sum of a geometric series, or equivalent merit",
+            "minimal": "Finds an expression for An using part (a), or equivalent merit"
+          }
         },
         {
           "label": "(c)",
@@ -4670,7 +4780,12 @@
             "(1.004)",
             "A₁₀₀ ≥ 0"
           ],
-          "minKeywords": 2
+          "minKeywords": 2,
+          "bandDescriptors": {
+            "full": "Provides correct solution",
+            "partial": "Identifies An > 0 and n = 100, or equivalent merit",
+            "minimal": "Identifies An > 0 and n = 100, or equivalent merit"
+          }
         }
       ]
     },
@@ -4793,7 +4908,12 @@
             "−4 < m < 7/6",
             "vertex"
           ],
-          "minKeywords": 3
+          "minKeywords": 3,
+          "bandDescriptors": {
+            "full": "Provides correct solution",
+            "partial": "Finds that m < 7/6, or equivalent merit",
+            "minimal": "Finds that m < 7/6, or equivalent merit"
+          }
         }
       ]
     },
@@ -4856,7 +4976,12 @@
           "keywords": [
             "2/3"
           ],
-          "minKeywords": 1
+          "minKeywords": 1,
+          "bandDescriptors": {
+            "full": "Provides correct solution",
+            "partial": "Finds the derivative of ƒ (x ), or equivalent merit",
+            "minimal": "Finds the derivative of ƒ (x ), or equivalent merit"
+          }
         },
         {
           "label": "(b)",
@@ -4866,7 +4991,12 @@
           "keywords": [
             "4x³ − 3x⁴"
           ],
-          "minKeywords": 1
+          "minKeywords": 1,
+          "bandDescriptors": {
+            "full": "Provides correct solution",
+            "partial": "Expresses F (x ) as an integral of ƒ (x ), or equivalent merit",
+            "minimal": "Expresses F (x ) as an integral of ƒ (x ), or equivalent merit"
+          }
         },
         {
           "label": "(c)",
@@ -5047,7 +5177,12 @@
             "u = e⁻ˣ",
             "discriminant"
           ],
-          "minKeywords": 2
+          "minKeywords": 2,
+          "bandDescriptors": {
+            "full": "Provides correct solution",
+            "partial": "Uses the discriminant to find k > − 1/4, or equivalent merit",
+            "minimal": "Attempts to form a quadratic equation, or equivalent merit"
+          }
         }
       ]
     },
@@ -5084,7 +5219,12 @@
             "8",
             "turning point"
           ],
-          "minKeywords": 2
+          "minKeywords": 2,
+          "bandDescriptors": {
+            "full": "Provides correct answer",
+            "partial": "Finds correct value of t, or equivalent merit",
+            "minimal": "Finds correct value of t, or equivalent merit"
+          }
         },
         {
           "label": "(b)",
@@ -5198,7 +5338,12 @@
             "0.7",
             "64.3"
           ],
-          "minKeywords": 1
+          "minKeywords": 1,
+          "bandDescriptors": {
+            "full": "Provides correct interpretation of both slope and y‑intercept",
+            "partial": "Provides correct interpretation of y‑intercept, or equivalent merit",
+            "minimal": "Provides correct interpretation of y‑intercept, or equivalent merit"
+          }
         },
         {
           "label": "(c)",
@@ -5276,7 +5421,12 @@
             "2 sin",
             "2π/5"
           ],
-          "minKeywords": 1
+          "minKeywords": 1,
+          "bandDescriptors": {
+            "full": "Provides correct equation",
+            "partial": "Finds k, or equivalent merit",
+            "minimal": "Finds k, or equivalent merit"
+          }
         },
         {
           "label": "(c)",
@@ -5459,7 +5609,12 @@
             "1",
             "decreasing"
           ],
-          "minKeywords": 1
+          "minKeywords": 1,
+          "bandDescriptors": {
+            "full": "Provides correct solution",
+            "partial": "Attempts to find maximum value of ƒ( x ), or equivalent merit",
+            "minimal": "Attempts to find maximum value of ƒ( x ), or equivalent merit"
+          }
         },
         {
           "label": "(b)",
@@ -5537,7 +5692,12 @@
             "2.5",
             "12 000"
           ],
-          "minKeywords": 2
+          "minKeywords": 2,
+          "bandDescriptors": {
+            "full": "Provides correct solution",
+            "partial": "Attempt to use a z‑score in a calculation, or equivalent merit OR Calculates the percentage of males that weigh more than x kg",
+            "minimal": "Calculates the number of male sheep, or equivalent merit"
+          }
         },
         {
           "label": "(b)",
@@ -5773,7 +5933,12 @@
             "3.03",
             "south-west"
           ],
-          "minKeywords": 2
+          "minKeywords": 2,
+          "bandDescriptors": {
+            "full": "Provides correct solution",
+            "partial": "Finds a quadratic expression in h, or equivalent merit",
+            "minimal": "Attempts to use the cosine rule to find a value for h, or equivalent merit"
+          }
         },
         {
           "label": "(c)",
@@ -5786,7 +5951,12 @@
             "21",
             "bearing"
           ],
-          "minKeywords": 2
+          "minKeywords": 2,
+          "bandDescriptors": {
+            "full": "Provides correct solution",
+            "partial": "Attempts to find the bearing, or equivalent merit",
+            "minimal": "Finds angle OFY, or equivalent merit"
+          }
         }
       ]
     },
@@ -6131,7 +6301,12 @@
             "ln",
             "10"
           ],
-          "minKeywords": 2
+          "minKeywords": 2,
+          "bandDescriptors": {
+            "full": "Provides correct solution",
+            "partial": "Provides the correct inequality, ^0.85hn < 0.2, or equivalent merit",
+            "minimal": "Provides the correct inequality, ^0.85hn < 0.2, or equivalent merit"
+          }
         }
       ]
     },
@@ -6468,7 +6643,12 @@
           "keywords": [
             "h = 2"
           ],
-          "minKeywords": 1
+          "minKeywords": 1,
+          "bandDescriptors": {
+            "full": "Provides correct solution",
+            "partial": "Identifies that the area under the curve = 1, or equivalent merit",
+            "minimal": "Identifies that the area under the curve = 1, or equivalent merit"
+          }
         },
         {
           "label": "(c)",
@@ -6564,7 +6744,12 @@
             "x² tan x",
             "x³/3"
           ],
-          "minKeywords": 2
+          "minKeywords": 2,
+          "bandDescriptors": {
+            "full": "Provides correct solution",
+            "partial": "Correctly uses the identity, tan2 x = sec2 x - 1",
+            "minimal": "Expands the integrand, or equivalent merit"
+          }
         }
       ]
     },
@@ -6635,7 +6820,12 @@
             "4.37",
             "37.63"
           ],
-          "minKeywords": 2
+          "minKeywords": 2,
+          "bandDescriptors": {
+            "full": "Provides a correct solution",
+            "partial": "Finds t = 3, or equivalent merit OR Makes correct use of the periodic nature of cosine function",
+            "minimal": "Equates the appropriate trigonometric ratios, or equivalent merit"
+          }
         }
       ]
     },
@@ -6742,7 +6932,12 @@
             "x = √A",
             "2√A/(2 + √A)"
           ],
-          "minKeywords": 1
+          "minKeywords": 1,
+          "bandDescriptors": {
+            "full": "Provides correct solution",
+            "partial": "Expresses q in terms of A, or equivalent merit",
+            "minimal": "Shows x = A is a minimum, or equivalent merit"
+          }
         }
       ]
     }
