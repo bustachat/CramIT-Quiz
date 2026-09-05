@@ -68,7 +68,7 @@
         "question": 13,
         "part": null,
         "marks": 2,
-        "sampleAnswer": "⌠ π/4 sec2 x dx ⎮⌡ 0 ⎡ ⎤ π/4 = ⎢ tan x ⎥ ⎣ ⎦ 0 = ⎡ tan π/4 − tan0 ⎤ ⎣ ⎢ ⎦⎥ = 1",
+        "sampleAnswer": "π/4 ∫ sec2 x dx 0 π/4 = [ tan x ] 0 = [ tan π/4 − tan0 ] = 1",
         "criteria": [
           {
             "marks": 2,
@@ -196,7 +196,7 @@
         "question": 17,
         "part": null,
         "marks": 2,
-        "sampleAnswer": "⌠ ⌠ ⎮⌡ x/4+x2 dx = 1/2 ⎮⌡ 2x/4+x2 dx = 1/2 ln ( 4 + x 2 ) + c",
+        "sampleAnswer": "∫ x/4+x2 dx = 1/2 ∫ 2x/4+x2 dx = 1/2 ln ( 4 + x 2 ) + c",
         "criteria": [
           {
             "marks": 2,
@@ -228,7 +228,7 @@
         "question": 18,
         "part": "b",
         "marks": 1,
-        "sampleAnswer": "⌠ (x + 1)e2x dx ⎮⌡ ⌠ = 1/4 4(x + 1)e2x dx ⎮⌡ = 1/4 e 2x (2x + 1) + c",
+        "sampleAnswer": "∫ (x + 1)e2x dx = 1/4 ∫ 4(x + 1)e2x dx = 1/4 e 2x (2x + 1) + c",
         "criteria": [
           {
             "marks": 1,
@@ -300,7 +300,7 @@
         "question": 21,
         "part": "c",
         "marks": 3,
-        "sampleAnswer": "55 = 25 + 70(1.5)−0.4t 30/70 = 1.5−0.4t ln ⎛3⎞ = −0.4t ln (1.5) ⎝ 7⎠ ln ⎛3⎞ t = − ⎝7⎠/0.4ln(1.5) =!! 5.22 minutes",
+        "sampleAnswer": "55 = 25 + 70(1.5)−0.4t 30/70 = 1.5−0.4t ln (3) = −0.4t ln (1.5) 7 ln (3 t = − 7/0.4ln(1.5) ^) =!! 5.22 minutes",
         "criteria": [
           {
             "marks": 3,
@@ -344,7 +344,7 @@
         "question": 23,
         "part": "a",
         "marks": 2,
-        "sampleAnswer": "⌠ k ⎮sin x dx = 1 ⌡0 ⎡ ⎤ k ⎣⎢ − cos x ⎦⎥ = 1 0 − cos k + cos0 = 1 cos k = 0 k = π/2",
+        "sampleAnswer": "k ∫ sin x dx = 1 0 [ − cos x ] _0 ^k = 1 − cos k + cos0 = 1 cos k = 0 k = π/2",
         "criteria": [
           {
             "marks": 2,
@@ -360,7 +360,7 @@
         "question": 23,
         "part": "b",
         "marks": 2,
-        "sampleAnswer": "⌠ 1 ⎮ sin x dx ⌡0 ⎡ ⎤ 1 = ⎣⎢ − cos x ⎦⎥0 = − cos1 + 1 = !! 0.4597",
+        "sampleAnswer": "1 ∫ sin x dx 0 1 = [ − cos x ] 0 = − cos1 + 1 = !! 0.4597",
         "criteria": [
           {
             "marks": 2,
@@ -388,7 +388,7 @@
           },
           {
             "marks": 1,
-            "text": "graph Completes the square for the equation, or equivalent merit"
+            "text": "Completes the square for the equation, or equivalent merit"
           }
         ]
       },
@@ -396,7 +396,7 @@
         "question": 25,
         "part": "a",
         "marks": 3,
-        "sampleAnswer": "xy + 1/4 π x2 = 36 xy = 36 – 1/4 π x2 y = 36/x − 1/4 π x P = 2y + 2x + 1/4 × 2π x = 2 ⎛ 36/x − 1/4 π ⎞ + 2x + 1/2 π x ⎝ x⎠ = 72/x − 1/2 π x + 2x + 1/2 π x = 2x + 72/x",
+        "sampleAnswer": "xy + 1/4 π x2 = 36 xy = 36 – 1/4 π x2 y = 36/x − 1/4 π x P = 2y + 2x + 1/4 × 2π x = 2 ( 36/x − 1/4 π x ) + 2x + 1/2 π x = 72/x − 1/2 π x + 2x + 1/2 π x = 2x + 72/x",
         "criteria": [
           {
             "marks": 3,
@@ -532,7 +532,7 @@
           },
           {
             "marks": 1,
-            "text": "Finds a probability using 1 – P(neither earns...), or equivalent merit OR diagram Finds the percentage of adults earning between $15 and $30, or equivalent merit"
+            "text": "Finds a probability using 1 – P(neither earns...), or equivalent merit OR Finds the percentage of adults earning between $15 and $30, or equivalent merit"
           }
         ]
       },
@@ -604,7 +604,7 @@
         "question": 30,
         "part": "b",
         "marks": 4,
-        "sampleAnswer": "⌠ 4/a+1 ⎮ (4x − x2 − ax2)dx = 16/3 ⌡ 0 ⌠ 4/a+1 ∴ ⎮ ( 4x − (a + 1) x2)dx = 16/3 ⌡ 0 ⎡ x3⎤ 4/a+1 ⎢2 x 2 − (a+1)/3⎥ = 16/3 ⎣ ⎦0 2×16/(a+1)2 − (a+1)/3 × 64/(a+1)3 −0 = 16/3 32/(a+1)2 − 64/3(a+1)2 = 16/3 96−64/3(a+1)2 = 16/3 32/3(a+1)2 = 16/3 ∴ (a + 1)2 = 2 a = 2 − 1 (since a > 0)",
+        "sampleAnswer": "4/a+1 ∫ (4x − x2 − ax2)dx = 16/3 0 ∴ ∫ _0 ^4/a+1 ( 4x − (a + 1) x2)dx = 16/3 [ 2 x 2 − (a+1)/3 ^x3] _0 ^4/a+1 = 16/3 2×16/(a+1)2 − (a+1)/3 × 64/(a+1)3 −0 = 16/3 32/(a+1)2 − 64/3(a+1)2 = 16/3 96−64/3(a+1)2 = 16/3 32/3(a+1)2 = 16/3 ∴ (a + 1)2 = 2 a = 2 − 1 (since a > 0)",
         "criteria": [
           {
             "marks": 4,
@@ -628,7 +628,7 @@
         "question": 31,
         "part": "a",
         "marks": 2,
-        "sampleAnswer": "35 000 − 5000 a = 2 = 15 000 35 000 + 5000 b = 2 = 20 000 graph",
+        "sampleAnswer": "35 000 _2 − 5000 a = = 15 000 35 000 _2 + 5000 b = = 20 000 graph",
         "criteria": [
           {
             "marks": 2,
@@ -664,7 +664,7 @@
         "question": 31,
         "part": "c",
         "marks": 2,
-        "sampleAnswer": "The cat population reaches a maximum at t = 36. m′( t) = π/26 × 15 000cos ⎛π t ⎞ ⎝ 26 ⎠ m′(36) = π/26 × 15 000cos ⎛π × 36 ⎞ ⎝ 26 ⎠ = −642.7… Therefore the mice population is decreasing at 643 mice per week. 2020 HSC Mathematics Advanced Mapping Grid Section I Question Marks Content Syllabus outcomes 1 1 MA-F1 Working with Functions MA11-1 2 1 MA-F2 Graphing Techniques MA12-1 3 1 MA-S1 Probability and Discrete Probability MA12-8 Distributions 4 1 MA-C4 Integral Calculus MA12-7 5 1 MA-F1 Working with Functions MA11-2 6 1 MA-T3 Trigonometric Functions MA12-5 7 1 MA-C4 Integral Calculus MA12-7 8 1 MA-C3 Applications of Differentiation MA12-3 9 1 MA-S3 Random Variables MA12-8 10 1 MA-C2 Differential Calculus MA12-6 Section II Question Marks Content Syllabus outcomes 11 (a) 1 MA-F1 Working with Functions MA11-2 11 (b) 2 MA-F1 Working with Functions MA11-1 11 (c) 1 MA-F1 Working with Functions MA11-2 12 3 MA-M1 Modelling Financial Situations MA12–4 13 2 MA-C4 Integral Calculus MA12-7 14 (a) 2 MA-S1 Probability and Discrete Probability MA11-9 Distributions 14 (b) 1 MA-S1 Probability and Discrete Probability MA11-7 Distributions 14 (c) 2 MA-S1 Probability and Discrete Probability MA11-7 Distributions 15 (a) 1 MA-T1 Trigonometry and Measuring Angles MA11-1 15 (b) 2 MA-T1 Trigonometry and Measuring Angles MA11-3 15 (c) 2 MA-T1 Trigonometry and Measuring Angles MA11-3 16 4 MA-C3 Applications of Differentiation MA12-3, 6,10 17 2 MA-C4 Integral Calculus MA12-7 18 (a) 2 MA-C2 Differential Calculus MA12-6 18 (b) 1 MA-C4 Integral Calculus MA12-3 19 2 MA-T2 Trigonometric Functions and Identities MA11-4 Question Marks Content Syllabus outcomes 20 2 MA-C4 Integral Calculus MA12-7 21 (a) 1 MA-E1 Exponentials and Logarithms MA11-6 21 (b) 2 MA-C3 Applications of Differentiation MA12-6 21 (c) 3 MA-E1 Exponentials and Logarithms MA11-6 22 4 MA-T1 Trigonometry and Measuring Angles MA11-9 23 (a) 2 MA-S3 Random Variables MA12-8 23 (b) 2 MA-S3 Random Variables MA12-8 24 3 MA-F2 Graphing Techniques MA12-1 25 (a) 3 MA-F1 Working with Functions MA11-1 25 (b) 4 MA-C3 Applications of Differentiation MA12-10 26 (a) 2 MA-M1 Modelling Financial Situations MA12-2 26 (b) 2 MA-M1 Modelling Financial Situations MA12-2 26 (c) 3 MA-M1 Modelling Financial Situations MA12–4 27 5 MA-S2 Descriptive Statistics and Bivariate Data MA12-8 Analysis 28 (a) 3 MA-S3 Random Variables MA12-8 28 (b) 2 MA-S3 Random Variables MA12-8 29 (a) 2 MA-C2 Differential Calculus MA12-6 29 (b) 2 MA-C2 Differential Calculus MA12-6 30 (a) 2 MA-F1 Working with Functions MA11-1 30 (b) 4 MA-C4 Integral Calculus MA12-7 31 (a) 2 MA-T3 Trigonometric Functions MA12-5 31 (b) 3 MA-T3 Trigonometric Functions MA12-5 31 (c) 2 MA-C3 Applications of Differentiation MA12-6",
+        "sampleAnswer": "The cat population reaches a maximum at t = 36. m′( t) = π/26 × 15 000cos (π _26 t ) m′(36) = π/26 × 15 000cos (π _26 × 36 ) = −642.7… Therefore the mice population is decreasing at 643 mice per week. 2020 HSC Mathematics Advanced Mapping Grid Section I Question Marks Content Syllabus outcomes 1 1 MA-F1 Working with Functions MA11-1 2 1 MA-F2 Graphing Techniques MA12-1 3 1 MA-S1 _Distributions Probability and Discrete Probability MA12-8 4 1 MA-C4 Integral Calculus MA12-7 5 1 MA-F1 Working with Functions MA11-2 6 1 MA-T3 Trigonometric Functions MA12-5 7 1 MA-C4 Integral Calculus MA12-7 8 1 MA-C3 Applications of Differentiation MA12-3 9 1 MA-S3 Random Variables MA12-8 10 1 MA-C2 Differential Calculus MA12-6 Section II Question Marks Content Syllabus outcomes 11 (a) 1 MA-F1 Working with Functions MA11-2 11 (b) 2 MA-F1 Working with Functions MA11-1 11 (c) 1 MA-F1 Working with Functions MA11-2 12 3 MA-M1 Modelling Financial Situations MA12–4 13 2 MA-C4 Integral Calculus MA12-7 14 (a) 2 MA-S1 _Distributions Probability and Discrete Probability MA11-9 14 (b) 1 MA-S1 _Distributions Probability and Discrete Probability MA11-7 14 (c) 2 MA-S1 _Distributions Probability and Discrete Probability MA11-7 15 (a) 1 MA-T1 Trigonometry and Measuring Angles MA11-1 15 (b) 2 MA-T1 Trigonometry and Measuring Angles MA11-3 15 (c) 2 MA-T1 Trigonometry and Measuring Angles MA11-3 16 4 MA-C3 Applications of Differentiation MA12-3, 6,10 17 2 MA-C4 Integral Calculus MA12-7 18 (a) 2 MA-C2 Differential Calculus MA12-6 18 (b) 1 MA-C4 Integral Calculus MA12-3 19 2 MA-T2 Trigonometric Functions and Identities MA11-4 Question Marks Content Syllabus outcomes 20 2 MA-C4 Integral Calculus MA12-7 21 (a) 1 MA-E1 Exponentials and Logarithms MA11-6 21 (b) 2 MA-C3 Applications of Differentiation MA12-6 21 (c) 3 MA-E1 Exponentials and Logarithms MA11-6 22 4 MA-T1 Trigonometry and Measuring Angles MA11-9 23 (a) 2 MA-S3 Random Variables MA12-8 23 (b) 2 MA-S3 Random Variables MA12-8 24 3 MA-F2 Graphing Techniques MA12-1 25 (a) 3 MA-F1 Working with Functions MA11-1 25 (b) 4 MA-C3 Applications of Differentiation MA12-10 26 (a) 2 MA-M1 Modelling Financial Situations MA12-2 26 (b) 2 MA-M1 Modelling Financial Situations MA12-2 26 (c) 3 MA-M1 Modelling Financial Situations MA12–4 27 5 MA-S2 _Analysis Descriptive Statistics and Bivariate Data MA12-8 28 (a) 3 MA-S3 Random Variables MA12-8 28 (b) 2 MA-S3 Random Variables MA12-8 29 (a) 2 MA-C2 Differential Calculus MA12-6 29 (b) 2 MA-C2 Differential Calculus MA12-6 30 (a) 2 MA-F1 Working with Functions MA11-1 30 (b) 4 MA-C4 Integral Calculus MA12-7 31 (a) 2 MA-T3 Trigonometric Functions MA12-5 31 (b) 3 MA-T3 Trigonometric Functions MA12-5 31 (c) 2 MA-C3 Applications of Differentiation MA12-6",
         "criteria": [
           {
             "marks": 2,
@@ -734,7 +734,7 @@
         "question": 13,
         "part": null,
         "marks": 3,
-        "sampleAnswer": "y = x tanx dy/dx = x sec2x + tanx Gradient of tangent = π/3 sec 2 ⎛ π/3 ⎞ + tan ⎛ π/3 ⎞ ⎝ ⎠ ⎝ ⎠ = π/3 1/⎛1⎞2 + 3 ⎝ 2⎠ = 4π/3 + 3",
+        "sampleAnswer": "y = x tanx dy/dx = x sec2x + tanx Gradient of tangent = π/3 sec 2 ( π/3 ) + tan ( π/3 ) = π/3 1/(1)2 + 3 ( 2) = 4π/3 + 3",
         "criteria": [
           {
             "marks": 3,
@@ -770,7 +770,7 @@
         "question": 15,
         "part": null,
         "marks": 2,
-        "sampleAnswer": "⌠ 0 ⌠ 0 1 ⎮ 2x + 4 dx = ⎮(2x + 4)2 dx ⌡−2 ⌡−2 ⎡ 3/2 ⎤ 0 = 1/2 ⋅ 2/3 ⎢( 2x + 4 ) ⎥ ⎣ ⎦ −2 ⎛ 3/2 ⎞ = 1/3 ⎜4 − 0⎟ ⎜ ⎝ ⎟ ⎠ = 8/3",
+        "sampleAnswer": "0 0 1 ∫ 2x + 4 dx = (2x ∫ + 4)2 dx −2 −2 3/2 0 = 1/2 ⋅ 2/3 [( 2x + 4 ) ] −2 = 1/3 4 ( ^3/2 − 0 ) = 8/3",
         "criteria": [
           {
             "marks": 2,
@@ -950,7 +950,7 @@
         "question": 23,
         "part": null,
         "marks": 4,
-        "sampleAnswer": "− t/10 P = 5000b t = 20, P = 1250 1250 = 5000 b–2 b−2 = 1/4 b = 2 (b > 0) ∴ P = 5000 ( 2 )− t/10 −t/10 dP/dt = 5000 × ln2 × −1/10 × 2 dP/dt = −30 t = ? −t −30 = −500 × ln2 × 210 t/10 2 = 500ln2/30 t/10 2 = 11.55… t/10 ln2 = ln11.55… t = 35.3",
+        "sampleAnswer": "− t/10 P = 5000b t = 20, P = 1250 1250 = 5000 b–2 b−2 = 1/4 b = 2 (b > 0) ∴ P = 5000 ( 2 )− t/10 −t/10 dP/dt = 5000 × ln2 × −1/10 × 2 dP/dt = −30 t = ? −30 = −500 × ln2 × 210 ^−t t/10 2 = 500ln2/30 t/10 2 = 11.55… t/10 ln2 = ln11.55… t = 35.3",
         "criteria": [
           {
             "marks": 4,
@@ -974,7 +974,7 @@
         "question": 24,
         "part": null,
         "marks": 3,
-        "sampleAnswer": "⌠ 4 Area = 2×3/2 + ⎮ 3/x−1 dx ⌡2 = 3 + 3[ ln (x − 1)]2 4 = (3 + 3ln3) units2",
+        "sampleAnswer": "Area = 2×3/2 + ∫ _2 ^4 3/x−1 dx = 3 + 3[ ln (x − 1)]2 4 = (3 + 3ln3) units2",
         "criteria": [
           {
             "marks": 3,
@@ -982,7 +982,7 @@
           },
           {
             "marks": 2,
-            "text": "⌠ 4 Evaluates ⎮ 3/x−1 dx, or equivalent merit ⌡2"
+            "text": "Evaluates ∫ _2 ^4 3/x−1 dx, or equivalent merit"
           },
           {
             "marks": 1,
@@ -1030,7 +1030,7 @@
         "question": 26,
         "part": "b",
         "marks": 3,
-        "sampleAnswer": "To find when the particle hits the ground, we solve −5t2 + 70t + 100 = 0 t2 − 14t − 20 = 0 14 ± 196 + 80 t = 2 = 7 ± 69 t = 7 + 69, since t > 0 y′(7 + 69 ) = −10 (7 + 69 ) + 70 = −10 69 ∴ a = − 10 and b = 69 Geometry",
+        "sampleAnswer": "To find when the particle hits the ground, we solve −5t2 + 70t + 100 = 0 t2 − 14t − 20 = 0 14 ± 196 _2 + 80 t = = 7 ± 69 t = 7 + 69, since t > 0 y′(7 + 69 ) = −10 (7 + 69 ) + 70 = −10 69 ∴ a = − 10 and b = 69 Geometry",
         "criteria": [
           {
             "marks": 3,
@@ -1066,7 +1066,7 @@
         "question": 27,
         "part": "b",
         "marks": 2,
-        "sampleAnswer": "⌠ b E = P t( )dt ⎮⌡a ⌠ b = 400sin ⎛π ⎞ dt ⎮ ⎝ 12 t⎠ ⌡a ⎡ ⎛ ⎞⎤ b = − 400(12)/π cos ⎝ π/12 t ⎠ ⎣⎢ ⎦⎥ a = − 4800/π ⎛ cos bπ/12 − cos aπ/12 ⎞ ⎝ ⎠ = 4800/π ⎛ cos aπ/12 − cos bπ/12 ⎞ ⎝ ⎠",
+        "sampleAnswer": "E = ∫ ^b P t( )dt a b = ∫ 400sin (π t ) dt a 12 b = − 400(12)/π [ cos ( π/12 t )] a = − 4800/π ( cos bπ/12 − cos aπ/12 ) = 4800/π ( cos aπ/12 − cos bπ/12 )",
         "criteria": [
           {
             "marks": 2,
@@ -1074,7 +1074,7 @@
           },
           {
             "marks": 1,
-            "text": "Provides correct anti-derivative ofsin ⎛ π/12 t⎞, or equivalent merit ⎝ ⎠"
+            "text": "Provides correct anti-derivative ofsin ( π/12 t), or equivalent merit"
           }
         ]
       },
@@ -1082,7 +1082,7 @@
         "question": 27,
         "part": "c",
         "marks": 3,
-        "sampleAnswer": "300 = 4800/π ⎛ cos 3π/12 − cos bπ/12 ⎞ ⎝ ⎠ π/16 = 1/2 − cos bπ/12 cos bπ/12 = 1/2 − π/16 b = 12/π −1 ⎛ 1/2 − π/16 ⎞ cos ⎝⎜ ⎠⎟ b = 3.95 ∴ He needs to wait 0.95 × 60 = 57 minutes (to the nearest minute)",
+        "sampleAnswer": "300 = 4800/π ( cos 3π/12 − cos bπ/12 ) π/16 = 1/2 − cos bπ/12 cos bπ/12 = 1/2 − π/16 b = 12/π cos −1 ( 1/2 − π/16 ) b = 3.95 ∴ He needs to wait 0.95 × 60 = 57 minutes (to the nearest minute)",
         "criteria": [
           {
             "marks": 3,
@@ -1114,7 +1114,7 @@
         "question": 28,
         "part": "a",
         "marks": 3,
-        "sampleAnswer": "⌠ 3 8 − 2x dx ⎮⌡0 ⎡ ⎤ 3 = 8x − 2x/ln2 ⎣⎢ ⎦⎥ 0 = ⎛ 24 − 8/ln2 ⎞ ⎛ 0 − 1/ln2 ⎞ ⎝ ⎠− ⎝ ⎠ = 24 − 8/ln2 + 1/ln2 = 24 − 7/ln2 Geometry",
+        "sampleAnswer": "3 ∫ 8 − 2x dx 0 3 = [8x − 2x/ln2 ] 0 = ( 24 − 8/ln2 ) − ( 0 − 1/ln2 ) = 24 − 8/ln2 + 1/ln2 = 24 − 7/ln2 Geometry",
         "criteria": [
           {
             "marks": 3,
@@ -1150,7 +1150,7 @@
         "question": 28,
         "part": "c",
         "marks": 1,
-        "sampleAnswer": "⌠ 5 ⎮ g ( x ) dx = 7/ln2 − 24 ⌡2",
+        "sampleAnswer": "5 ∫ g ( x ) dx = 7/ln2 − 24 2",
         "criteria": [
           {
             "marks": 1,
@@ -1178,7 +1178,7 @@
         "question": 29,
         "part": "b",
         "marks": 3,
-        "sampleAnswer": "Let B n = the amount in the account after n withdrawals Then B0 = 30 025.83 B1 = 30 025.83(1.03) − 2000 B2 = 30 025.83(1.03)2 − 2000(1.03) − 2000 B n = 30 025.83(1.03)n − 2000 ⎡⎣1 + (1.03) + + (1.03)n−1 ⎤⎦ We want B n < 0. Find n so that Bn = 0. ⎡(1.03)n 1⎤ 30 025.83 ( 1.03)n = 2000 ⎢ −/1.03−1 ⎥ ⎣ ⎦ 0.03 × 30 025.83 (1.03)n (1.03)n = − 1 2000 0.45039 ( 1.03)n = (1.03)n − 1 0.54961 ( 1.03)n = 1 (1.03)n = 1.8194… n ln ( 1.03) = ln ( 1.8194) n = ln(1.8194)/ln(1.03) n ≅ 20.25 ∴ Megan makes 20 withdrawals of $2000.",
+        "sampleAnswer": "Let B n = the amount in the account after n withdrawals Then B0 = 30 025.83 B1 = 30 025.83(1.03) − 2000 B2 = 30 025.83(1.03)2 − 2000(1.03) − 2000 B n = 30 025.83(1.03)n − 2000 [1 + (1.03) + + (1.03)n−1 ] We want B n < 0. Find n so that Bn = 0. [(1.03)n 1] 30 025.83 ( 1.03)n = 2000 _[ −/1.03−1 0.03 × _2000 30 025.83 (1.03)n (1.03)n = − 1 0.45039 ( 1.03)n = (1.03)n − 1 0.54961 ( 1.03)n = 1 (1.03)n = 1.8194… n ln ( 1.03) = ln ( 1.8194) n = ln(1.8194)/ln(1.03) n ≅ 20.25 ∴ Megan makes 20 withdrawals of $2000.",
         "criteria": [
           {
             "marks": 3,
@@ -1242,7 +1242,7 @@
         "criteria": [
           {
             "marks": 4,
-            "text": "Geometry Provides correct solution"
+            "text": "Provides correct solution"
           },
           {
             "marks": 3,
@@ -1262,7 +1262,7 @@
         "question": 33,
         "part": "a",
         "marks": 2,
-        "sampleAnswer": "⌠ 6 ⎮ Ax/x2+4 dx = 1 ⌡0 ln(x2 4)⎤⎦ 6 A/2 ⎡⎣ + = 1 0 A(ln40 − ln4 ) = 1 2 A/2 ⎛ ln 40/4 ⎞ = 1 ⎝ ⎠ A/2 ln10 = 1 A = 2/ln10",
+        "sampleAnswer": "6 ∫ Ax/x2+4 dx = 1 0 ln(x2 4)] 6 A/2 [ + _0 = 1 A(ln40 − ln4 ) = 1 2 A/2 ( ln 40/4 ) = 1 A/2 ln10 = 1 A = 2/ln10",
         "criteria": [
           {
             "marks": 2,
@@ -1278,7 +1278,7 @@
         "question": 33,
         "part": "b",
         "marks": 2,
-        "sampleAnswer": "A ( x2 + 4 ) − Ax ( 2x ) ƒ ′( x ) = 2 (x2 + 4) Ax2 + 4 A − 2Ax2 = 2 (x2 + 4) = 4A−Ax2/(x24)2 = 0 + ∴ 4 A − Ax2 = 0 When Ax2 = 4A x 2 = 4 x = 2, x > 0 ∴The mode of X is 2.",
+        "sampleAnswer": "A ( x2 + 4 ) − Ax ( 2x ) ƒ ′( x ) = _(x2 _+ _4)2 Ax2 + 4 A − 2Ax2 = _(x2 _+ _4)2 = 4A−Ax2/(x24)2 _+ = 0 ∴ 4 A − Ax2 = 0 When Ax2 = 4A x 2 = 4 x = 2, x > 0 ∴The mode of X is 2.",
         "criteria": [
           {
             "marks": 2,
@@ -1294,7 +1294,7 @@
         "question": 33,
         "part": "c",
         "marks": 2,
-        "sampleAnswer": "⌠ 2 P(X < 2) = ⎮ Ax/x2+4 dx ⌡0 ⎡ln(x2 4)⎤ 2 = A/2 ⎣ + ⎦ 0 = A(ln8 − ln4 ) 2 = A/2 ln2 = 2/ln10 × 1/2 × ln2 = ln2/ln10 = log10 2",
+        "sampleAnswer": "P(X < 2) = ∫ _0 ^2 Ax/x2+4 dx [ln(x2 4)] 2 = A/2 + 0 = A(ln8 − ln4 ) 2 = A/2 ln2 = 2/ln10 × 1/2 × ln2 = ln2/ln10 = log10 2",
         "criteria": [
           {
             "marks": 2,
@@ -1310,7 +1310,7 @@
         "question": 33,
         "part": "d",
         "marks": 2,
-        "sampleAnswer": "P(IQ > 130) = P ⎛ IQ−100/15 > 130−100/15 ⎞ ⎝ ⎠ = P(Z > 2) = 2.5% ⎛ Time to ⎞ P ⎜ IQ > 130 complete < 2⎟ ⎝ ⎠ ⎛ Time to ⎞ P IQ > 130 ∩ complete < 2 ⎝⎜ ⎠⎟ = ⎛ Time to ⎞ P complete < 2 ⎝⎜ ⎠⎟ 2.5% × 80% = log10 2 = 0.06643… = 0.066 (three decimal places)",
+        "sampleAnswer": "P(IQ > 130) = P ( IQ−100/15 > 130−100/15 ) = P(Z > 2) = 2.5% P ( IQ > 130 Time to < ) complete 2 P ( IQ > 130 ∩ _complete Time to < 2 ) = P ( Time to < 2 ) complete 2.5% × 80% = log10 2 = 0.06643… = 0.066 (three decimal places)",
         "criteria": [
           {
             "marks": 2,
@@ -1326,7 +1326,7 @@
         "question": 34,
         "part": null,
         "marks": 3,
-        "sampleAnswer": "r + r2 + + r n = 1 Sum of GP with a = r, common ratio = r, number of terms = n ( rn ) ∴ r−1/r−1 = 1 rn+1 − r = r − 1 rn+1 = 2r − 1 ———— (*) E ( X ) = ∑xP(X = x) = r × rn + r2 × r n−1 + + r n × r = r n+1 + r n+1 + + r n+1 = rn+1 × n = nr n+1 = n(2r − 1) from (*) 2021 HSC Mathematics Advanced Mapping Grid Section I Question Marks Content Syllabus outcomes 1 1 MA-T2 Trigonometric Functions and Identities MA11-1 2 1 MA-S1 Probability and Discrete Probability Distributions MA11-7 3 1 MA-E1 Logarithms and Exponentials MA12-1 4 1 MA-S2 Descriptive Statistics and Bivariate Data Analysis MA12-8 5 1 MA-E1 Logarithms and Exponentials MA12-1 6 1 MA-S1 Probability and Discrete Probability Distributions MA11-7 7 1 MA-C3 Applications of Differentiation MA12-3 8 1 MA-F1 Working with Functions MA11-1 9 1 MA-C1 Introduction to Differentiation MA11-1 10 1 MA-C3 Applications of Differentiation MA12-10 Section II Question Marks Content Syllabus outcomes 11 2 MA-F1 Working with Functions MA11-1 12 (a) 2 MA-T1 Trigonometry and Measure of Angles MA11-3 12 (b) 3 MA-T1 Trigonometry and Measure of Angles MA11-3 13 3 MA-C2 Differential Calculus MA12-3 14 2 MA-M1 Modelling Financial Situations MA12-4 15 2 MA-C4 Integral Calculus MA12-3 16 3 MA-C3 Applications of Differentiation MA12-6 17 (a) (i) 1 MA-S2 Descriptive Statistics and Bivariate Data Analysis MA12-8 17 (a) (ii) 2 MA-S2 Descriptive Statistics and Bivariate Data Analysis MA12-8 17 (b) 1 MA-S2 Descriptive Statistics and Bivariate Data Analysis MA12-8 18 3 MA-T1 Trigonometry and Measure of Angles MA11-3 19 3 MA-F2 Graphing Techniques MA12-1 20 2 MA-T3 Trigonometric Functions and Graphs MA12-5 21 2 MA-F2 Graphing Techniques MA12-1 Question Marks Content Syllabus outcomes 22 (a) 1 MA-S3 Random Variables MA12-8 22 (b) 3 MA-S3 Random Variables MA12-8 23 4 MA-C3 Applications of Differentiation MA12-3 24 3 MA-C4 Integral Calculus MA12-7 25 3 MA-M1 Modelling Financial Situations MA12-2 26 (a) 2 MA-C3 Applications of Differentiation MA12-6 26 (b) 3 MA-C3 Applications of Differentiation MA12-6 27 (a) 2 MA-T3 Trigonometric Functions and Graphs MA12-5 27 (b) 2 MA-C4 Integral Calculus MA12-3 27 (c) 3 MA-T3 Trigonometric Functions and Graphs MA12-5 27 (d) 1 MA-C4 Integral Calculus MA12-10 28 (a) 3 MA-C4 Integral Calculus MA12-7 28 (b) 2 MA-F2 Graphing Techniques MA12-1 28 (c) 1 MA-C4 Integral Calculus MA12-7 29 (a) 2 MA-M1 Modelling Financial Situations MA12-4 29 (b) 3 MA-M1 Modelling Financial Situations MA12-2 30 2 MA-S3 Random Variables MA12-8 31 4 MA-C3 Applications of Differentiation MA12-10 32 4 MA-S3 Random Variables MA12-8 33 (a) 2 MA-S3 Random Variables MA12-8 33 (b) 2 MA-S3 Random Variables MA12-8 33 (c) 2 MA-S1 Random Variables MA 12-8 33 (d) 2 MA-S1 Probability and Discrete Probability Distributions MA11-7 34 3 MA-S1 Probability and Discrete Probability Distributions MA11-7",
+        "sampleAnswer": "r + r2 + + r n = 1 Sum of GP with a = r, common ratio = r, number of terms = n ∴ r−1/r−1 ^( ^rn ^) = 1 rn+1 − r = r − 1 rn+1 = 2r − 1 ———— (*) E ( X ) = ∑xP(X = x) = r × rn + r2 × r n−1 + + r n × r = r n+1 + r n+1 + + r n+1 = rn+1 × n = nr n+1 = n(2r − 1) from (*) 2021 HSC Mathematics Advanced Mapping Grid Section I Question Marks Content Syllabus outcomes 1 1 MA-T2 Trigonometric Functions and Identities MA11-1 2 1 MA-S1 Probability and Discrete Probability Distributions MA11-7 3 1 MA-E1 Logarithms and Exponentials MA12-1 4 1 MA-S2 Descriptive Statistics and Bivariate Data Analysis MA12-8 5 1 MA-E1 Logarithms and Exponentials MA12-1 6 1 MA-S1 Probability and Discrete Probability Distributions MA11-7 7 1 MA-C3 Applications of Differentiation MA12-3 8 1 MA-F1 Working with Functions MA11-1 9 1 MA-C1 Introduction to Differentiation MA11-1 10 1 MA-C3 Applications of Differentiation MA12-10 Section II Question Marks Content Syllabus outcomes 11 2 MA-F1 Working with Functions MA11-1 12 (a) 2 MA-T1 Trigonometry and Measure of Angles MA11-3 12 (b) 3 MA-T1 Trigonometry and Measure of Angles MA11-3 13 3 MA-C2 Differential Calculus MA12-3 14 2 MA-M1 Modelling Financial Situations MA12-4 15 2 MA-C4 Integral Calculus MA12-3 16 3 MA-C3 Applications of Differentiation MA12-6 17 (a) (i) 1 MA-S2 Descriptive Statistics and Bivariate Data Analysis MA12-8 17 (a) (ii) 2 MA-S2 Descriptive Statistics and Bivariate Data Analysis MA12-8 17 (b) 1 MA-S2 Descriptive Statistics and Bivariate Data Analysis MA12-8 18 3 MA-T1 Trigonometry and Measure of Angles MA11-3 19 3 MA-F2 Graphing Techniques MA12-1 20 2 MA-T3 Trigonometric Functions and Graphs MA12-5 21 2 MA-F2 Graphing Techniques MA12-1 Question Marks Content Syllabus outcomes 22 (a) 1 MA-S3 Random Variables MA12-8 22 (b) 3 MA-S3 Random Variables MA12-8 23 4 MA-C3 Applications of Differentiation MA12-3 24 3 MA-C4 Integral Calculus MA12-7 25 3 MA-M1 Modelling Financial Situations MA12-2 26 (a) 2 MA-C3 Applications of Differentiation MA12-6 26 (b) 3 MA-C3 Applications of Differentiation MA12-6 27 (a) 2 MA-T3 Trigonometric Functions and Graphs MA12-5 27 (b) 2 MA-C4 Integral Calculus MA12-3 27 (c) 3 MA-T3 Trigonometric Functions and Graphs MA12-5 27 (d) 1 MA-C4 Integral Calculus MA12-10 28 (a) 3 MA-C4 Integral Calculus MA12-7 28 (b) 2 MA-F2 Graphing Techniques MA12-1 28 (c) 1 MA-C4 Integral Calculus MA12-7 29 (a) 2 MA-M1 Modelling Financial Situations MA12-4 29 (b) 3 MA-M1 Modelling Financial Situations MA12-2 30 2 MA-S3 Random Variables MA12-8 31 4 MA-C3 Applications of Differentiation MA12-10 32 4 MA-S3 Random Variables MA12-8 33 (a) 2 MA-S3 Random Variables MA12-8 33 (b) 2 MA-S3 Random Variables MA12-8 33 (c) 2 MA-S1 Random Variables MA 12-8 33 (d) 2 MA-S1 Probability and Discrete Probability Distributions MA11-7 34 3 MA-S1 Probability and Discrete Probability Distributions MA11-7",
         "criteria": [
           {
             "marks": 3,
@@ -1408,7 +1408,7 @@
         "question": 13,
         "part": null,
         "marks": 2,
-        "sampleAnswer": "⌠ 2 ⎮ 1 + x2 dx ⌡0 x 0 1 2 1 + x 2 1 1.414 2.236 ⌠ 2 1+ x 2 dx = 1/2 [ 1 + 1.414]+ 1/2 [1.414 + 2.236] ⎮ ⌡ 0 = 3.03 (2 decimal places)",
+        "sampleAnswer": "2 ∫ 1 + x2 dx 0 x 0 1 2 1 + x 2 1 1.414 2.236 2 ∫ 1+ x 2 dx = 1/2 [ 1 + 1.414]+ 1/2 [1.414 + 2.236] 0 = 3.03 (2 decimal places)",
         "criteria": [
           {
             "marks": 2,
@@ -1452,7 +1452,7 @@
         "question": 15,
         "part": "b",
         "marks": 1,
-        "sampleAnswer": "P(special die | 5) = P ( special die ∩) 5 P(5) 1/3 × 3/6 = 5/18 = 3/5",
+        "sampleAnswer": "P(special die | 5) = P ( special _P(5 die _) ∩) 5 1/3 × 3/6 = 5/18 = 3/5",
         "criteria": [
           {
             "marks": 1,
@@ -1464,7 +1464,7 @@
         "question": 16,
         "part": null,
         "marks": 3,
-        "sampleAnswer": "⌠ 3 A = 2x + 3 − x2 dx ⎮⌡−1 ⎡ 3 ⎤ 3 = ⎢x2 + 3x − x/3 ⎥ ⎣ ⎦−1 = (9 + 9 − 9) − ⎛ 1 − 3 + 1⎞ ⎝ 3⎠ Area = 10 2/3 units2",
+        "sampleAnswer": "A = ∫ ^3 2x + 3 − x2 dx −1 3 3 = [ x2 + 3x − x/3 ] −1 = (9 + 9 − 9) − ( 1 − 3 + 1) _3 Area = 10 2/3 units2",
         "criteria": [
           {
             "marks": 3,
@@ -1484,7 +1484,7 @@
         "question": 17,
         "part": "a",
         "marks": 2,
-        "sampleAnswer": "Number of cards = 3 + 6 + 9 + ··· (12 terms) ⎛ arithmetic series S = n/2 ( 2a + (n − 1)d ) ⎞ S = 12/2 (2 × 3 + 11 × 3) ⎜ n ⎟ 12 ⎜ ⎟ ⎝ a = 3 d = 3 ⎠ = 234",
+        "sampleAnswer": "Number of cards = 3 + 6 + 9 + ··· (12 terms) arithmetic series Sn = n/2 ( 2a + (n − 1)d ) S12 = 12/2 (2 × 3 + 11 × 3) ( ) a = 3 d = 3 = 234",
         "criteria": [
           {
             "marks": 2,
@@ -1500,7 +1500,7 @@
         "question": 17,
         "part": "b",
         "marks": 3,
-        "sampleAnswer": "Let n = number of rows n/2 (2 × 3 + (n − 1)3) = 828 n(3n + 3) = 1656 3n(n + 1) = 1656 n2 + n = 552 n2 + n − 552 = 0 −1 ± 12 − 4 × −552 n = 2 = −1±47/2 = 23 (taking positive solution) There are 23 rows.",
+        "sampleAnswer": "Let n = number of rows n/2 (2 × 3 + (n − 1)3) = 828 n(3n + 3) = 1656 3n(n + 1) = 1656 n2 + n = 552 n2 + n − 552 = 0 −1 ± 12 − _2 4 × −552 n = = −1±47/2 = 23 (taking positive solution) There are 23 rows.",
         "criteria": [
           {
             "marks": 3,
@@ -1536,7 +1536,7 @@
         "question": 18,
         "part": "b",
         "marks": 1,
-        "sampleAnswer": "⌠ ⎮x(x 2 +1) 3 dx ⌡ ⌠ ( x2 ) 3 = 1/8 ⎮8x + 1 dx ⌡ = (x2 + 1 )4 + c 1/8 from part (a)",
+        "sampleAnswer": "x(x 2 +1) 3 dx ∫ = ( x2 + 1 ) 3 dx 1/8 ∫ 8x = (x2 + 1 )4 + c 1/8 from part (a)",
         "criteria": [
           {
             "marks": 1,
@@ -1608,7 +1608,7 @@
         "question": 21,
         "part": "a",
         "marks": 2,
-        "sampleAnswer": "P = 40 000, r = 1.2% pa compounded monthly, N = 10 × 12 = 120 ⎛ ⎞ 120 FV = 40 000 ⎝ 1 + 0.012/12 ⎠ = $45 097.17",
+        "sampleAnswer": "P = 40 000, r = 1.2% pa compounded monthly, N = 10 × 12 = 120 120 FV = 40 000 ( 1 + 0.012/12 ) = $45 097.17",
         "criteria": [
           {
             "marks": 2,
@@ -1664,7 +1664,7 @@
         "question": 23,
         "part": "a",
         "marks": 2,
-        "sampleAnswer": "d = 1.3 − 0.6cos ⎛4π t ⎞ ⎝ 25 ⎠ Maximum depth ( high tide) = 1.3 + 0.6 = 1.9 m Minimum depth (low tide) = 1.3 − 0.6 = 0.7 m",
+        "sampleAnswer": "d = 1.3 − 0.6cos (4π _25 t ) Maximum depth ( high tide) = 1.3 + 0.6 = 1.9 m Minimum depth (low tide) = 1.3 − 0.6 = 0.7 m",
         "criteria": [
           {
             "marks": 2,
@@ -1680,7 +1680,7 @@
         "question": 23,
         "part": "b",
         "marks": 1,
-        "sampleAnswer": "Period = 2π/⎛4π⎞ hours ⎝ 25 ⎠ = 12.5 hours",
+        "sampleAnswer": "Period = 2π/(4π) hours 25 = 12.5 hours",
         "criteria": [
           {
             "marks": 1,
@@ -1692,7 +1692,7 @@
         "question": 23,
         "part": "c",
         "marks": 3,
-        "sampleAnswer": "d = 1.3 − 0.6cos ⎛4π t ⎞ ⎝ 25 ⎠ 1 = 1.3 − 0.6cos ⎛4π t ⎞, when d = 1 ⎝ 25 ⎠ −0.3 = −0.6cos ⎛4π t ⎞ ⎝ 25 ⎠ = cos ⎛ 4π ⎞ 1/2 ⎝25 t ⎠ 4π/25 t = π/3, 5π/3 t = π/3 × 25/4π, 5π/3 × 25/4π = 25/12, 125/12 Time interval = 125/12 − 25/12 = 8 1/3 hours",
+        "sampleAnswer": "d = 1.3 − 0.6cos (4π _25 t 1 = 1.3 − 0.6cos 4π _25 t ), when d = 1 −0.3 = −0.6cos 4π _25 t = cos 4π 1/2 25 ( t ) 4π/25 t = π/3, 5π/3 t = π/3 × 25/4π, 5π/3 × 25/4π = 25/12, 125/12 Time interval = 125/12 − 25/12 = 8 1/3 hours",
         "criteria": [
           {
             "marks": 3,
@@ -1792,7 +1792,7 @@
         "question": 27,
         "part": "b",
         "marks": 2,
-        "sampleAnswer": "Stationary points where ƒ ′(x) = 0 (1 – 2x)e−2x = 0 x = 1/2, since e−2x ≠ 0, ƒ ⎛ 1⎞ = 1/2 e −1 = 1/2e ⎝ 2⎠ ƒ ′′ ⎛ 1⎞ = 4 × − 1/2 × e −1 = −2e−1 < 0 ⎝ 2⎠ ∴ ⎛1, 1/2e ⎞ is a local maximum. ⎝ 2 ⎠",
+        "sampleAnswer": "Stationary points where ƒ ′(x) = 0 (1 – 2x)e−2x = 0 x = 1/2, since e−2x ≠ 0, ƒ ( 1) _2 = 1/2 e −1 = 1/2e ƒ ′′ ( 1) = 4 × − 1/2 × e −1 = −2e−1 < 0 2 ∴ (1, 1/2e ) is a local maximum. 2",
         "criteria": [
           {
             "marks": 2,
@@ -1808,7 +1808,7 @@
         "question": 27,
         "part": "c",
         "marks": 3,
-        "sampleAnswer": "Possible point of inflection where ƒ ′′(x) = 0 4(x − 1)e−2x = 0 ∴ x = 1, since e−2x ≠ 0 x 0 1 2 ƒ ′′(x) −4 0 4e−4 Changes concavity at x = 1 ∴ Inflection point at x = 1 ƒ ( 1 ) = 1e−2×1 = e−2 ⎛ 1/e2 ⎞ — Inflection point ⎝1, ⎠ ƒ (0) = 0 ∴ graph passes through (0, 0) As x →∞, ƒ (x) → 0",
+        "sampleAnswer": "Possible point of inflection where ƒ ′′(x) = 0 4(x − 1)e−2x = 0 ∴ x = 1, since e−2x ≠ 0 x 0 1 2 ƒ ′′(x) −4 0 4e−4 Changes concavity at x = 1 ∴ Inflection point at x = 1 ƒ ( 1 ) = 1e−2×1 = e−2 ( 1, 1/e2 ) — Inflection point ƒ (0) = 0 ∴ graph passes through (0, 0) As x →∞, ƒ (x) → 0",
         "criteria": [
           {
             "marks": 3,
@@ -1860,7 +1860,7 @@
         "question": 28,
         "part": "c",
         "marks": 3,
-        "sampleAnswer": "⌠ 1 Area under curve (hyperbola) = ⎛ 2/2−x − 1 ⎞ dx ⎮ ⎝ ⎠ ⌡ 0 = [− 2ln(2 − x) − x]0 1 = −2ln1 − 1 + 2ln2 − 0 = 2ln2 − 1 Total area = 2ln2 −1+ π/4 − 1/2 (units 2) = 2ln2 + π/4 − 3/2 (units2)",
+        "sampleAnswer": "Area under curve (hyperbola) = ∫ _0 ^1 ( 2/2−x − 1 ) dx = [− 2ln(2 − x) − x]0 1 = −2ln1 − 1 + 2ln2 − 0 = 2ln2 − 1 Total area = 2ln2 −1+ π/4 − 1/2 (units 2) = 2ln2 + π/4 − 3/2 (units2)",
         "criteria": [
           {
             "marks": 3,
@@ -1892,7 +1892,7 @@
         "question": 29,
         "part": "b",
         "marks": 2,
-        "sampleAnswer": "⌠ 4 4 2 − x dx = ⎡−1 2 − x ⎤ (using the reference sheet) ⎮ ⎢ ⎣ ln2 ⎥ ⎦ ⌡ 0 0 = −1/ln2 ⎣ ⎡2−4 − 20 ⎤ ⎦ ⎛ 1 ⎞ = ⎝ 1 − 1/ln2 = 15/16ln2 16⎠",
+        "sampleAnswer": "4 4 ∫ 2 − x dx = [−1 2 − x ] (using the reference sheet) 0 ln2 0 = −1/ln2 [2−4 − 20 ] = ( 1 − _16 ^1 ) 1/ln2 = 15/16ln2",
         "criteria": [
           {
             "marks": 2,
@@ -1968,7 +1968,7 @@
         "question": 31,
         "part": "b",
         "marks": 4,
-        "sampleAnswer": "2 ⎡ ⎤ A = x/x−1 from A = 1/2 xy and y = 2x/x− ⎢⎣ 1⎥⎦ (x − 1)2x − x2 (1 ) dA/dx = 2 (x − 1) 2x2 − 2x − x2 = 2 (x − 1) = x2−2x/(x−1)2 = x(x−2)/(x−1)2 dA/dx = 0 when x = 0 or x = 2 discard x = 0 since x > 1. (from question) x 1.5 2 3 dA/dx −3 0 3/4 Slope changes from negative to positive so x = 2 is a minimum. A = 4/2−1 ∴ Minimum area = 4 units2",
+        "sampleAnswer": "A = x/x−1 ^2 [ from A = 1/2 xy and y = 2x/x− _1 ] (x − 1)2x − x2 (1 ) dA/dx = _(x _− _1)2 2x2 − 2x − x2 = _(x _− _1)2 = x2−2x/(x−1)2 = x(x−2)/(x−1)2 dA/dx = 0 when x = 0 or x = 2 discard x = 0 since x > 1. (from question) x 1.5 2 3 dA/dx −3 0 3/4 Slope changes from negative to positive so x = 2 is a minimum. A = 4/2−1 ∴ Minimum area = 4 units2",
         "criteria": [
           {
             "marks": 4,
@@ -1992,7 +1992,7 @@
         "question": 32,
         "part": "a",
         "marks": 2,
-        "sampleAnswer": "A 180 = 0 ∴ 200 000(1.0025)180 = M ⎣ ⎡1 + (1.0025)1 + ! + (1.0025)179 ⎤ ⎦ 180 ⎡ (1.0025)180 − 1⎤ 200 000(1.0025) = M ⎢ ⎥ ⎣ 1.0025 − 1 ⎦ 200000(1.0025)180 × 0.0025 M = (1.0025)180 − 1 = 1381.163281 = 1381.16 when rounded down",
+        "sampleAnswer": "A 180 = 0 ∴ 200 000(1.0025)180 = M [1 + (1.0025)1 + ! + (1.0025)179 ] 180 (1.0025 _1.0025 )180 _− _1 − 1] 200 000(1.0025) = M [ 200000(1.0025)180 × 0.0025 M = (1.0025)180 − 1 = 1381.163281 = 1381.16 when rounded down",
         "criteria": [
           {
             "marks": 2,
@@ -2008,7 +2008,7 @@
         "question": 32,
         "part": "b",
         "marks": 3,
-        "sampleAnswer": "n ⎡ (1.0035)n − 1 ⎤ 100 032(1.0035) = 1381.16 ⎢ ⎥ ⎣ 1.0035 − 1 ⎦ 100 032 × 0.0035(1.0035)n = 1381.16(1.0035)n − 1381.16 1031.048(1.0035)n = 1381.16 (1.0035)n = 1.33956906 log (1.33956906) n = (1.0035) log = 83.67407889 ∴ 83 full payments",
+        "sampleAnswer": "n (1.0035)n − 1 100 032(1.0035) = 1381.16 [ _1.0035 _− _1 ] 100 032 × 0.0035(1.0035)n = 1381.16(1.0035)n − 1381.16 1031.048(1.0035)n = 1381.16 (1.0035)n = 1.33956906 log (1.33956906) n = _log (1.0035) = 83.67407889 ∴ 83 full payments",
         "criteria": [
           {
             "marks": 3,
@@ -2028,7 +2028,7 @@
         "question": 32,
         "part": "c",
         "marks": 2,
-        "sampleAnswer": "After 83 payments 83 ⎡ (1.0035)83 − 1⎤ Amount owing = 100 032(1.0035) − 1381.16 ⎢ ⎥ ⎣ 1.0035 −1 ⎦ = 928.29 Final payment (84th month) = 928.29 × 1.0035 (1-month interest) = 931.54 2022 HSC Mathematics Advanced Mapping Grid Section I Question Marks Content Syllabus outcomes 1 1 MA-F1 Working with Functions MA11-1 2 1 MA-S2 Descriptive Statistics and Bivariate Data Analysis MA12-8 3 1 MA-T1 Trigonometry and Measure of Angles MA11-3 4 1 MA-F1 Working with Functions MA11-1 5 1 MA-C1 Introduction to Differentiation MA11-5 6 1 MA-C4 Integral Calculus MA12-7 7 1 MA-S3 Random Variables MA12-8 8 1 MA-C4 Integral Calculus MA12-7 9 1 MA-S1 Probability and Discrete Probability Distributions MA11-7 10 1 MA-F2 Graphing Techniques MA12-1 Section II Question Marks Content Syllabus outcomes 11 (a) 2 MA-S2 Descriptive Statistics and Bivariate Data Analysis MA12-8 11 (b) 1 MA-S2 Descriptive Statistics and Bivariate Data Analysis MA12-8 12 (a) 2 MA-F1 Working with Functions MA11-1 12 (b) 2 MA-F1 Working with Functions MA11-2 13 2 MA-C4 Integral Calculus MA12-7 14 2 MA-T3 Trigonometric Functions and Graphs MA12-5 15 (a) 1 MA-S1 Probability and Discrete Probability Distributions MA11-7 15 (b) 1 MA-S1 Probability and Discrete Probability Distributions MA11-7 16 3 MA-C4 Integral Calculus MA12-7 17 (a) 2 MA-M1 Modelling Financial Situations MA12-4 17 (b) 3 MA-M1 Modelling Financial Situations MA12-4 18 (a) 2 MA-C2 Differential Calculus MA12-6 18 (b) 1 MA-C4 Integral Calculus MA12-7 19 3 MA-F2 Graphing Techniques MA12-1 Question Marks Content Syllabus outcomes 20 (a) 1 MA-E1 Logarithms and Exponentials MA11-6 20 (b) 1 MA-E1 Logarithms and Exponentials MA11-6 20 (c) 2 MA-C3 Applications of Differentiation MA12-6 21 (a) 2 MA-M1 Modelling Financial Situations MA12-2 21 (b) 2 MA-M1 Modelling Financial Situations MA12-2 22 4 MA-C3 Applications of Differentiation MA12-6 23 (a) 2 MA-T3 Trigonometric Functions and Graphs MA12-5 23 (b) 1 MA-T3 Trigonometric Functions and Graphs MA12-5 23 (c) 3 MA-T3 Trigonometric Functions and Graphs MA12-5 24 4 MA-S2 Descriptive Statistics and Bivariate Data Analysis MA12-10 25 3 MA-C2 Differential Calculus MA12-6 26 3 MA-S3 Random Variables MA12-8 27 (a) 2 MA-C2 Differential Calculus MA12-6 27 (b) 2 MA-C3 Applications of Differentiation MA12-6 27 (c) 3 MA-C3 Applications of Differentiation MA12-6 28 (a) 2 MA-T1 Trigonometry and Measure of Angles MA11-3 28 (b) 2 MA-F1 Working with Functions MA11-1 28 (c) 3 MA-C4 Integral Calculus MA12-7 29 (a) 1 MA-M1 Modelling Financial Situations MA12-4 29 (b) 2 MA-C4 Integral Calculus MA12-7 29 (c) 2 MA-C4 Integral Calculus MA12-10 30 (a) 1 MA-S3 Random Variables MA12-8 30 (b) 2 MA-S3 Random Variables MA12-8 31 (a) 2 MA-F1 Working with Functions MA11-1 31 (b) 4 MA-C3 Applications of Differentiation MA12-6 32 (a) 2 MA-M1 Modelling Financial Situations MA12-4 32 (b) 3 MA-M1 Modelling Financial Situations MA12-4 32 (c) 2 MA-M1 Modelling Financial Situations MA12-2",
+        "sampleAnswer": "After 83 payments 83 (1.0035 _1.0035 )83 _−1 − 1] Amount owing = 100 032(1.0035) − 1381.16 [ = 928.29 Final payment (84th month) = 928.29 × 1.0035 (1-month interest) = 931.54 2022 HSC Mathematics Advanced Mapping Grid Section I Question Marks Content Syllabus outcomes 1 1 MA-F1 Working with Functions MA11-1 2 1 MA-S2 Descriptive Statistics and Bivariate Data Analysis MA12-8 3 1 MA-T1 Trigonometry and Measure of Angles MA11-3 4 1 MA-F1 Working with Functions MA11-1 5 1 MA-C1 Introduction to Differentiation MA11-5 6 1 MA-C4 Integral Calculus MA12-7 7 1 MA-S3 Random Variables MA12-8 8 1 MA-C4 Integral Calculus MA12-7 9 1 MA-S1 Probability and Discrete Probability Distributions MA11-7 10 1 MA-F2 Graphing Techniques MA12-1 Section II Question Marks Content Syllabus outcomes 11 (a) 2 MA-S2 Descriptive Statistics and Bivariate Data Analysis MA12-8 11 (b) 1 MA-S2 Descriptive Statistics and Bivariate Data Analysis MA12-8 12 (a) 2 MA-F1 Working with Functions MA11-1 12 (b) 2 MA-F1 Working with Functions MA11-2 13 2 MA-C4 Integral Calculus MA12-7 14 2 MA-T3 Trigonometric Functions and Graphs MA12-5 15 (a) 1 MA-S1 Probability and Discrete Probability Distributions MA11-7 15 (b) 1 MA-S1 Probability and Discrete Probability Distributions MA11-7 16 3 MA-C4 Integral Calculus MA12-7 17 (a) 2 MA-M1 Modelling Financial Situations MA12-4 17 (b) 3 MA-M1 Modelling Financial Situations MA12-4 18 (a) 2 MA-C2 Differential Calculus MA12-6 18 (b) 1 MA-C4 Integral Calculus MA12-7 19 3 MA-F2 Graphing Techniques MA12-1 Question Marks Content Syllabus outcomes 20 (a) 1 MA-E1 Logarithms and Exponentials MA11-6 20 (b) 1 MA-E1 Logarithms and Exponentials MA11-6 20 (c) 2 MA-C3 Applications of Differentiation MA12-6 21 (a) 2 MA-M1 Modelling Financial Situations MA12-2 21 (b) 2 MA-M1 Modelling Financial Situations MA12-2 22 4 MA-C3 Applications of Differentiation MA12-6 23 (a) 2 MA-T3 Trigonometric Functions and Graphs MA12-5 23 (b) 1 MA-T3 Trigonometric Functions and Graphs MA12-5 23 (c) 3 MA-T3 Trigonometric Functions and Graphs MA12-5 24 4 MA-S2 Descriptive Statistics and Bivariate Data Analysis MA12-10 25 3 MA-C2 Differential Calculus MA12-6 26 3 MA-S3 Random Variables MA12-8 27 (a) 2 MA-C2 Differential Calculus MA12-6 27 (b) 2 MA-C3 Applications of Differentiation MA12-6 27 (c) 3 MA-C3 Applications of Differentiation MA12-6 28 (a) 2 MA-T1 Trigonometry and Measure of Angles MA11-3 28 (b) 2 MA-F1 Working with Functions MA11-1 28 (c) 3 MA-C4 Integral Calculus MA12-7 29 (a) 1 MA-M1 Modelling Financial Situations MA12-4 29 (b) 2 MA-C4 Integral Calculus MA12-7 29 (c) 2 MA-C4 Integral Calculus MA12-10 30 (a) 1 MA-S3 Random Variables MA12-8 30 (b) 2 MA-S3 Random Variables MA12-8 31 (a) 2 MA-F1 Working with Functions MA11-1 31 (b) 4 MA-C3 Applications of Differentiation MA12-6 32 (a) 2 MA-M1 Modelling Financial Situations MA12-4 32 (b) 3 MA-M1 Modelling Financial Situations MA12-4 32 (c) 2 MA-M1 Modelling Financial Situations MA12-2",
         "criteria": [
           {
             "marks": 2,
@@ -2046,7 +2046,7 @@
         "question": 11,
         "part": null,
         "marks": 2,
-        "sampleAnswer": "d = 7 − 3 = 4 d = 4 a = 3 t15 = a + (15 – 1)d = 3 + 14 × 4 = 59",
+        "sampleAnswer": "d = 7 − 3 = 4 d = 4 a = 3 t15 = a + (15 – 1)d = _= 3 _59 + 14 × 4",
         "criteria": [
           {
             "marks": 2,
@@ -2186,7 +2186,7 @@
         "question": 17,
         "part": null,
         "marks": 2,
-        "sampleAnswer": "⌠ 1/2 ⎮⌡ x(x2 + 1) dx ⌠ 1/2 = 1/2 ⎮⌡ 2x(x2 + 1) dx ⎡ 2 3/2 ⎤ ⎢ ( 1) ⎥ = 1/2 ⎢ x+/3 ⎥ + C ⎢ ⎥ ⎣ 2 ⎦ 3/2 = 1/3 (x2 + 1) + C",
+        "sampleAnswer": "∫ x(x2 + 1)^1/2 dx = 1/2 ∫ 2x(x2 + 1)^1/2 dx 2 3/2 = 1/2 [ x+/3 ^( ^1) ] + C 2 = 1/3 (x2 + 1)^3/2 + C",
         "criteria": [
           {
             "marks": 2,
@@ -2194,7 +2194,7 @@
           },
           {
             "marks": 1,
-            "text": "⌠ n Recognises the integral is of the form k ƒ ′(x)[ƒ (x)] dx, ⎮⌡ or equivalent merit"
+            "text": "Recognises the integral is of the form k ∫ ƒ ′(x)[ƒ (x)] n dx, or equivalent merit"
           }
         ]
       },
@@ -2202,7 +2202,7 @@
         "question": 18,
         "part": "a",
         "marks": 3,
-        "sampleAnswer": "0 + 0 + 0 + 2 + 5 + 7 + 8 + 9 + 9 + 10 x = 10 = 5 y = 1840/10 = 184 ∴ (x, y ) = (5, 184)",
+        "sampleAnswer": "0 + 0 + 0 + 2 + 5 _10 + 7 + 8 + 9 + 9 + 10 x = = 5 y = 1840/10 = 184 ∴ (x, y ) = (5, 184)",
         "criteria": [
           {
             "marks": 3,
@@ -2302,7 +2302,7 @@
         "question": 21,
         "part": null,
         "marks": 3,
-        "sampleAnswer": "Let a = first term and r = common ratio Then ar3 = 48 ————— (1) and ar7 = 3/16 ————— (2) Dividing (2) by (1), 7 3/16 ar/ar3 = 48 ∴ r4 = 1/256 ∴ r = ± 1/4 ⎛ ⎞ 3 If r = 1/4 a ⎝ 1/4 ⎠ = 48 ∴ a = 3072 ⎛ 1 ⎞ 3 If r = − 1/4 a ⎝ − = 48 ∴ a = −3072 4⎠",
+        "sampleAnswer": "Let a = first term and r = common ratio Then ar3 = 48 ————— (1) and ar7 = 3/16 ————— (2) Dividing (2) by (1), 7 3/16 ar/ar3 = 48 ∴ r4 = 1/256 ∴ r = ± 1/4 If r = 1/4 a ( 1/4 ) ^3 = 48 ∴ a = 3072 If r = − 1/4 a ( − ^1 _4) ^) ^3 = 48 ∴ a = −3072",
         "criteria": [
           {
             "marks": 3,
@@ -2322,7 +2322,7 @@
         "question": 22,
         "part": null,
         "marks": 3,
-        "sampleAnswer": "Find AM AM2 = 32 + 72 = 9 + 49 = 58 AM = 58 Triangle AME, So tanα = 58/8 α = 43.59° so α = 44° (to the nearest degree)",
+        "sampleAnswer": "Find AM AM2 = 32 + 72 = 9 + 49 AM ^= = ^58 58 Triangle AME, So tanα = 58/8 α = 43.59° so α = 44° (to the nearest degree)",
         "criteria": [
           {
             "marks": 3,
@@ -2378,7 +2378,7 @@
         "question": 24,
         "part": "b",
         "marks": 4,
-        "sampleAnswer": "Area of concrete path is 2y + x − 2 A = 2 ⎛ 50/x−2 + 1 ⎞ + x − 2 ⎝ ⎠ A = 2 ⎛ 50/x−2 ⎞ + 2 + x − 2 ⎝ ⎠ A = 100/x−2 + x = 100 (x − 2)−1 + x A′ = 100(−1(x − 2)− 2 ) + 1 = −100/(x−2)2 + 1 A′ = 0 when −100/(x−2)2 = −1 100 = (x − 2)2 ±10 = x − 2 x = 12 or −8 Since x is a distance, discard −8. Stationary point at x = 12. x 12 11/−100 13/−100 A′ + 1 0 + 1 81 121 − So there is a minimum turning point at x = 12. The minimum area of the path is when x = 12.",
+        "sampleAnswer": "Area of concrete path is 2y + x − 2 A = 2 50/x−2 + 1 ) + x − 2 A = 2 ^( 50/x−2 ) + 2 + x − 2 A = 100/x−2 + x = 100 (x − 2)−1 + x A′ = 100(−1(x − 2)− 2 ) + 1 = −100/(x−2)2 + 1 A′ = 0 when −100/(x−2)2 = −1 100 = (x − 2)2 ±10 = x − 2 x = 12 or −8 Since x is a distance, discard −8. Stationary point at x = 12. x 12 11/−100 13/−100 A′ + 1 0 + 1 81 121 − So there is a minimum turning point at x = 12. The minimum area of the path is when x = 12.",
         "criteria": [
           {
             "marks": 4,
@@ -2450,7 +2450,7 @@
         "question": 26,
         "part": "a",
         "marks": 2,
-        "sampleAnswer": "dx(t)/dt = −1.5π sin ⎛5π t ⎞ ⎝ 4 ⎠ ⌠ ⎛5π ⎞ x ( t) = ⎮ −1.5π sin t ⎠ dt ⌡ ⎝4 = −1.5π/5π × −cos ⎛5π t ⎞ + k ⎝ 4 ⎠ 4 When t = 0 x = 11.2 So 11.2 = 1.2cos(0) + k 11.2 = 1.2 + k k = 10 x(t ) = 1.2 cos ⎛5π t ⎞ + 10 ⎝ 4 ⎠",
+        "sampleAnswer": "dx(t)/dt = −1.5π sin (5π _4 t ) x ( t) = ∫ −1.5π sin (5π _4 t ) dt = −1.5π/5π × −cos (5π _4 t ) + k 4 When t = 0 x = 11.2 So 11.2 = 1.2cos(0) + k 11.2 = 1.2 + k k = 10 x(t ) = 1.2 cos (5π _4 t ) + 10",
         "criteria": [
           {
             "marks": 2,
@@ -2558,7 +2558,7 @@
         "question": 29,
         "part": "b",
         "marks": 2,
-        "sampleAnswer": "⌠ x F (x) = ⎮ 12t2 (1 − t) dt ⌡0 ⌠ x = 12t2 − 12t3 dt ⎮⌡0 = − 3t4 x ⎡⎣4t3 ⎤⎦0 = 4x3 − 3x4",
+        "sampleAnswer": "F (x) = ∫ _0 ^x 12t2 (1 − t) dt x = ∫ 12t2 − 12t3 dt 0 = − 3t4 x [4t3 ]0 = 4x3 − 3x4",
         "criteria": [
           {
             "marks": 2,
@@ -2574,7 +2574,7 @@
         "question": 29,
         "part": "c",
         "marks": 2,
-        "sampleAnswer": "When x = 2/3 4x3 − 3x4 = 4 × ⎛8 ⎞ − 3 × ⎛16 ⎞ ⎝ 27 ⎠ ⎝ 81 ⎠ = 0.59 The probability of the variable being less than 2/3 is greater than 0.5, therefore the mode is greater than the median.",
+        "sampleAnswer": "When x = 2/3 4x3 − 3x4 = 4 × (8 ) − 3 × (16 ) 27 81 = 0.59 The probability of the variable being less than 2/3 is greater than 0.5, therefore the mode is greater than the median.",
         "criteria": [
           {
             "marks": 2,
@@ -2590,7 +2590,7 @@
         "question": 30,
         "part": "a",
         "marks": 3,
-        "sampleAnswer": "ƒ ( x) = e−x sin x ƒ ′(x) = e−x cos x + −e−x sin x = e−x (cos x − sin x) ƒ ′(x) = 0 when cos x = sin x x = π/4 or 5π/4 − π/4 − 5π/4 so ƒ ( x) = e sin π/4 or e sin 5π/4 The two stationary points are ⎛ − π/4 ⎞ ⎛ − 5π/4 ⎞ ⎜ ⎟ ⎜ 5π ⎟ ⎜ π/4, e/2 ⎟ and ⎜4, −e/2 ⎟ ⎜ ⎝ ⎟ ⎠ ⎜ ⎝ ⎟ ⎠ approx. approx. ⎛π, 0.322⎞ ⎛ 5π/4, − 0.014 ⎞ ⎝ 4 ⎠ and ⎝ ⎠",
+        "sampleAnswer": "ƒ ( x) = e−x sin x ƒ ′(x) = e−x cos x + −e−x sin x = e−x (cos x − sin x) ƒ ′(x) = 0 when cos x = sin x x = π/4 or 5π/4 − π/4 − 5π/4 so ƒ ( x) = e sin π/4 or e sin 5π/4 The two stationary points are − π/4 − 5π/4 ( π/4, e/2 ) and ( 4 ^5π, −e/2 ) approx. approx. (π, 0.322) and ( 5π/4, − 0.014 ) 4",
         "criteria": [
           {
             "marks": 3,
@@ -2638,7 +2638,7 @@
         "question": 31,
         "part": "b",
         "marks": 2,
-        "sampleAnswer": "P S( F ) = P(S∩F)/P(F) 1/3 = P(S∩F)/3 10 P ( S ∩ F ) = 1/10 P ( F S) = P(S∩F)/P(S) 1/10 1/8 = (since P ( S ∩ F ) = P ( F ∩ S )) P(S) P(S) = 8/10 = 4/5",
+        "sampleAnswer": "P S( F ) = P(S∩F)/P(F) 1/3 = P(S∩F)/3 10 P ( S ∩ F ) = 1/10 P ( F S) = P(S∩F)/P(S) 1/8 = ^1/10 (since P ( S ∩ F ) = P ( F ∩ S )) P(S) P(S) = 8/10 = 4/5",
         "criteria": [
           {
             "marks": 2,
@@ -2654,7 +2654,7 @@
         "question": 31,
         "part": "c",
         "marks": 2,
-        "sampleAnswer": "⎛4 ⎞ 4 1 − ⎝ ⎠ = 1 − 256/625 = 369/625 = 0.5904 5",
+        "sampleAnswer": "(4 4 1 − _5 ) = 1 − 256/625 = 369/625 = 0.5904",
         "criteria": [
           {
             "marks": 2,
@@ -2670,7 +2670,7 @@
         "question": 32,
         "part": "a",
         "marks": 3,
-        "sampleAnswer": "⌠ ln2 Shaded area = e−2x − ⎛ e− x − 1/4 ⎞ dx ⎮ ⎝ ⎠ ⌡0 ⌠ ln2 = ⎮ e −2x − e− x + 1/4 dx ⌡ 0 ⎡ ⎤ ln2 = − 1/2 e −2x + e − x + 1/4 x ⎣⎢ ⎦⎥ 0 = ⎛ − 1/2 e −2ln2 + e− ln2 + 1/4 ln2⎞ − ⎛ − 1/2 + 1 + 0 ⎞ ⎝ ⎠ ⎝ ⎠ ln(2−2 ) ln(2−1 ) = − 1/2 e + e + 1/4 ln2 − 1/2 = − 1/2 × 1/4 + 1/2 + 1/4 ln2 − 1/2 = 1/4 ln2 − 1/8",
+        "sampleAnswer": "Shaded area = ∫ _0 ^ln2 e−2x − ( e− x − 1/4 ) dx ln2 = ∫ e −2x − e− x + 1/4 dx 0 ln2 = [ − 1/2 e −2x + e − x + 1/4 x ] 0 = ( − 1/2 e −2ln2 + e− ln2 + 1/4 ln2) − ( − 1/2 + 1 + 0 ) ln(2−2 ) ln(2−1 ) = − 1/2 e + e + 1/4 ln2 − 1/2 = − 1/2 × 1/4 + 1/2 + 1/4 ln2 − 1/2 = 1/4 ln2 − 1/8",
         "criteria": [
           {
             "marks": 3,
@@ -2690,7 +2690,7 @@
         "question": 32,
         "part": "b",
         "marks": 3,
-        "sampleAnswer": "We want the equation e −2x = e−x + k to have 2 solutions. ie e −2x − e−x − k = 0 has 2 solutions (e −) x 2 (e − x) ie − − k = 0 has 2 solutions Using the quadratic formula, e − x = 1±1+4k/2 For two real solutions we want 1 + 4k > 0, ie k > − 1/4 But for two solutions for e−x, both the real solutions to the quadratic must be positive. ∴ 1 + 4k < 1 ∴ 1 + 4k < 1 ∴ k < 0 Hence − 1/4 < k < 0. 2023 HSC Mathematics Advanced Mapping Grid Section I Question Marks Content Syllabus outcomes 1 1 MA-S2 Descriptive Statistics and Bivariate Data Analysis MA12-8 2 1 MA-S1 Probability and Discrete Probability Distributions MA11-7 3 1 MA-F1 Working with Functions MA11-1 4 1 MA-F1 Working with Functions MA11-1 5 1 MA-C4 Integral Calculus MA12-7 6 1 MA-C3 Applications of Differentiation MA12-6 7 1 MA-C2 Differential Calculus MA12-6 8 1 MA-E1 Logarithms and Exponentials MA11-6 9 1 MA-F1 Working with Functions MA11-2 10 1 MA-F2 Graphing Techniques MA12-1 Section II Question Marks Content Syllabus outcomes 11 2 MA- M1 Modelling Financial Situations MA12-6 12 (a) 1 MA-S1 Probability and Discrete Probability Distributions MA11-7 12 (b) 2 MA-S1 Probability and Discrete Probability Distributions MA11-7 13 2 MA-C4 Integral Calculus MA12-7 14 3 MA-C2 Differential Calculus MA12-6 15 (a) 2 MA-M1 Modelling Financial Situations MA12-2 15 (b) 3 MA-M1 Modelling Financial Situations MA12-2 16 4 MA-T1 Trigonometry and Measure of Angles MA11-3 17 2 MA-C4 Integral Calculus MA12-7 18 (a) 3 MA-S2 Descriptive Statistics and Bivariate Data Analysis MA12-8 18 (b) 2 MA-S2 Descriptive Statistics and Bivariate Data Analysis MA12-8 18 (c) 1 MA-S2 Descriptive Statistics and Bivariate Data Analysis MA12-10 19 (a) 2 MA-F2 Graphing Techniques MA12-1 19 (b) 2 MA-F2 Graphing Techniques MA12-1, MA12-10 20 3 MA-T2 Trigonometric Functions and Identities MA11-1 21 3 MA-M1 Modelling Financial Situations MA12-4 22 3 MA- T1 Trigonometry and Measure of Angles MA11-3 23 4 MA-S3 Random Variables MA12-8 24 (a) 1 MA-F1 Working with Functions MA11-2 24 (b) 4 MA-C3 Applications of Differentiation MA12-3, MA12-10 25 (a) 1 MA-M1 Modelling Financial Situations MA12-10 25 (b) 3 MA-M1 Modelling Financial Situations MA12-4 25 (c) 2 MA-M1 Modelling Financial Situations MA12-2 Question Marks Content Syllabus outcomes 26 (a) 2 MA-C4 Integral Calculus MA12-3 26 (b) 2 MA-T3 Trigonometric Functions and Graphs MA12-5 27 (a) 3 MA-F2 Graphing Techniques MA12-1 27 (b) 2 MA-F2 Graphing Techniques MA12-1 28 4 MA-C1 Introduction to Differentiation, MA-C4 Integral MA12-3 Calculus 29 (a) 2 MA-S3 Random Variables MA12-8 29 (b) 2 MA-S3 Random Variables MA12-8 29 (c) 2 MA-S3 Random Variables MA12-8 30 (a) 3 MA-C3 Applications of Differentiation MA12-6 30 (b) 2 MA-C3 Applications of Differentiation MA12-3 31 (a) 1 MA-S1 Probability and Discrete Probability Distributions MA11-9 31 (b) 2 MA-S1 Probability and Discrete Probability Distributions MA11-7 31 (c) 2 MA-S1 Probability and Discrete Probability Distributions MA11-7 32 (a) 3 MA-C4 Integral Calculus MA12-7 32 (b) 3 MA-F1 Working with Functions MA11-1",
+        "sampleAnswer": "We want the equation e −2x = e−x + k to have 2 solutions. ie e −2x − e−x − k = 0 has 2 solutions (e −) x 2 (e − x) ie − − k = 0 has 2 solutions Using the quadratic formula, e − x = 1±1+4k/2 For two real solutions we want 1 + 4k > 0, ie k > − 1/4 But for two solutions for e−x, both the real solutions to the quadratic must be positive. ∴ 1 + 4k < 1 ∴ 1 + 4k < 1 ∴ k < 0 Hence − 1/4 < k < 0. 2023 HSC Mathematics Advanced Mapping Grid Section I Question Marks Content Syllabus outcomes 1 1 MA-S2 Descriptive Statistics and Bivariate Data Analysis MA12-8 2 1 MA-S1 Probability and Discrete Probability Distributions MA11-7 3 1 MA-F1 Working with Functions MA11-1 4 1 MA-F1 Working with Functions MA11-1 5 1 MA-C4 Integral Calculus MA12-7 6 1 MA-C3 Applications of Differentiation MA12-6 7 1 MA-C2 Differential Calculus MA12-6 8 1 MA-E1 Logarithms and Exponentials MA11-6 9 1 MA-F1 Working with Functions MA11-2 10 1 MA-F2 Graphing Techniques MA12-1 Section II Question Marks Content Syllabus outcomes 11 2 MA- M1 Modelling Financial Situations MA12-6 12 (a) 1 MA-S1 Probability and Discrete Probability Distributions MA11-7 12 (b) 2 MA-S1 Probability and Discrete Probability Distributions MA11-7 13 2 MA-C4 Integral Calculus MA12-7 14 3 MA-C2 Differential Calculus MA12-6 15 (a) 2 MA-M1 Modelling Financial Situations MA12-2 15 (b) 3 MA-M1 Modelling Financial Situations MA12-2 16 4 MA-T1 Trigonometry and Measure of Angles MA11-3 17 2 MA-C4 Integral Calculus MA12-7 18 (a) 3 MA-S2 Descriptive Statistics and Bivariate Data Analysis MA12-8 18 (b) 2 MA-S2 Descriptive Statistics and Bivariate Data Analysis MA12-8 18 (c) 1 MA-S2 Descriptive Statistics and Bivariate Data Analysis MA12-10 19 (a) 2 MA-F2 Graphing Techniques MA12-1 19 (b) 2 MA-F2 Graphing Techniques MA12-1, MA12-10 20 3 MA-T2 Trigonometric Functions and Identities MA11-1 21 3 MA-M1 Modelling Financial Situations MA12-4 22 3 MA- T1 Trigonometry and Measure of Angles MA11-3 23 4 MA-S3 Random Variables MA12-8 24 (a) 1 MA-F1 Working with Functions MA11-2 24 (b) 4 MA-C3 Applications of Differentiation MA12-3, MA12-10 25 (a) 1 MA-M1 Modelling Financial Situations MA12-10 25 (b) 3 MA-M1 Modelling Financial Situations MA12-4 25 (c) 2 MA-M1 Modelling Financial Situations MA12-2 Question Marks Content Syllabus outcomes 26 (a) 2 MA-C4 Integral Calculus MA12-3 26 (b) 2 MA-T3 Trigonometric Functions and Graphs MA12-5 27 (a) 3 MA-F2 Graphing Techniques MA12-1 27 (b) 2 MA-F2 Graphing Techniques MA12-1 28 4 MA-C1 Introduction _Calculus to Differentiation, MA-C4 Integral MA12-3 29 (a) 2 MA-S3 Random Variables MA12-8 29 (b) 2 MA-S3 Random Variables MA12-8 29 (c) 2 MA-S3 Random Variables MA12-8 30 (a) 3 MA-C3 Applications of Differentiation MA12-6 30 (b) 2 MA-C3 Applications of Differentiation MA12-3 31 (a) 1 MA-S1 Probability and Discrete Probability Distributions MA11-9 31 (b) 2 MA-S1 Probability and Discrete Probability Distributions MA11-7 31 (c) 2 MA-S1 Probability and Discrete Probability Distributions MA11-7 32 (a) 3 MA-C4 Integral Calculus MA12-7 32 (b) 3 MA-F1 Working with Functions MA11-1",
         "criteria": [
           {
             "marks": 3,
@@ -2784,7 +2784,7 @@
         "question": 14,
         "part": "b",
         "marks": 3,
-        "sampleAnswer": "2 Area = 5 - x2 - ^x - 1h2 dx – 1 2 = 4 - 2x2 + 2x dx – 1 2 = <4x - 2x3/3 + x2F –1 = d 8 - 16/3 + 4 n - d -4 + 2/3 + 1 n = 9",
+        "sampleAnswer": "Area = _– ^2 _1 5 - x2 - ^x - 1h2 dx 2 = 4 - 2x2 + 2x dx – 1 2 = <4x - 2x3/3 + x2F –1 = d 8 - 16/3 + 4 n - d -4 + 2/3 + 1 n = 9",
         "criteria": [
           {
             "marks": 3,
@@ -2904,7 +2904,7 @@
         "question": 18,
         "part": "b",
         "marks": 2,
-        "sampleAnswer": "Probability (player scores at least one goal) = 1 - Prob^player misses in n attempts) = 1 - ^0.85hn When 1 - ^0.85hn > 0.8 ^0.85hn < 0.2 Taking logs, n ln^0.85h < ln^0.2h ln^0.2h n > ln^0.85h Z 9.90 The player needs 10 attempts.",
+        "sampleAnswer": "Probability (player scores at least one goal) = 1 - Prob^player misses in n attempts) = 1 - ^0.85hn When 1 - ^0.85hn > 0.8 ^0.85hn < 0.2 Taking logs, n ln^0.85h < ln^0.2h n > ln^0.85h ^ln^0.2h Z 9.90 The player needs 10 attempts.",
         "criteria": [
           {
             "marks": 2,
@@ -2920,7 +2920,7 @@
         "question": 19,
         "part": null,
         "marks": 5,
-        "sampleAnswer": "y = x4 - 2x3 + 2 yl = 4x3 - 6x2 yll = 12x2 - 12x Stationary points: yl = 0 4x3 - 6x2 = 0 2x2^2x - 3h = 0 x = 0 or x = 3/2 When x = 0, y = 2 and yll = 0 Check concavity: x -1 0 1/2 yll 24 0 -3 Concavity changes sign ` Horizontal point of inflection at ^0, 2h. When x = 3, y = 5/16 and yll = 9 y 2 ` Local minimum at d 3, 5/16 n 2 3 y = x4 - 2x3 + 2 Points of inflection: yll = 0 12x2 - 12x = 0 2 12x^x - 1h = 0 x = 0 or x = 1 1 ^1, 1h Already found ^0, 2h 3 5/16 2, Check concavity: O x 1 2 x 1/2 1 2 yll -3 0 24 Concavity changes sign ` Point of inflection at ^1, 1h.",
+        "sampleAnswer": "y = x4 - 2x3 + 2 yl = 4x3 - 6x2 yll = 12x2 - 12x Stationary points: yl = 0 4x3 - 6x2 = 0 2x2^2x - 3h = 0 x = 0 or x = 3/2 When x = 0, y = 2 and yll = 0 Check concavity: x -1 0 1/2 yll 24 0 -3 Concavity changes sign ` Horizontal point of inflection at ^0, 2h. When x = 3, _2 y = 5/16 and yll = 9 y ` Local minimum at d 3, 5/16 n 2 3 y = x4 - 2x3 + 2 Points of inflection: yll = 0 12x2 - 12x = 0 2 12x^x - 1h = 0 x = 0 or x = 1 1 ^1, 1h Already found ^0, 2h 3 5/16 2, Check concavity: O x 1 2 x 1/2 1 2 yll -3 0 24 Concavity changes sign ` Point of inflection at ^1, 1h.",
         "criteria": [
           {
             "marks": 5,
@@ -3000,7 +3000,7 @@
         "question": 22,
         "part": "a",
         "marks": 3,
-        "sampleAnswer": "f ^xh = ln_1 + x2 i f l^xh = 2x/+x2 1 f ll^xh 2_1 + x2i - 2x ^2xh = 2 _1 + x2i = 2-2x2/_x2i2 > 0 1 + When 2 - 2x2 > 0 (since denominator always positive) ie when x2 < 1 y 1 –1 O 1 x ` when -1 < x < 1",
+        "sampleAnswer": "f ^xh = ln_1 + x2 i f l^xh = 2x/+x2 _1 f ll^xh 2_1 + x2i - 2x ^2xh = __1 _+ _x2i2 = 2-2x2/_x2i2 > 0 1 + When 2 - 2x2 > 0 (since denominator always positive) ie when x2 < 1 y 1 –1 O 1 x ` when -1 < x < 1",
         "criteria": [
           {
             "marks": 3,
@@ -3092,7 +3092,7 @@
         "question": 24,
         "part": "a",
         "marks": 3,
-        "sampleAnswer": "The first deposit accrues interest for 24 months ` Its future value is 80^1.005h24 The next deposit accrues interest for 23 months and so on ` Total amount after 24 months is 80^1.005h24 + 80^1.005h23 + · · · + 80^1.005h1 = 807^1.005h1 + ^1.005h2 + · · · + ^1.005h24A ^1.005h ^1.005h24 - 1 = 80 # 1.005 - 1 = 2044.73",
+        "sampleAnswer": "The first deposit accrues interest for 24 months ` Its future value is 80^1.005h24 The next deposit accrues interest for 23 months and so on ` Total amount after 24 months is 80^1.005h24 + 80^1.005h23 + · · · + 80^1.005h1 = 807^1.005h1 + ^1.005h2 + · · · + ^1.005h24A ^1.005h ^1.005h24 _1.005 _- - _1 1 = 80 # = 2044.73",
         "criteria": [
           {
             "marks": 3,
@@ -3156,7 +3156,7 @@
         "question": 25,
         "part": "c",
         "marks": 2,
-        "sampleAnswer": "t - t2/4 = 1/2 ` t2 - 4t + 2 = 0 4 ! 16 - 4 # 1 # 2 t = 2 # 1 t = 4!8/2 t = 2 ! 2 We need t < 2 ` t = 2 - 2. 0.586",
+        "sampleAnswer": "t - t2/4 = 1/2 ` t2 - 4t + 2 = 0 4 ! 16 _2 - _# 4 _1 # 1 # 2 t = t = 4!8/2 t = 2 ! 2 We need t < 2 ` t = 2 - 2. 0.586",
         "criteria": [
           {
             "marks": 2,
@@ -3348,7 +3348,7 @@
         "question": 31,
         "part": "b",
         "marks": 3,
-        "sampleAnswer": "Pl = 2 - 2A/x2 = 0 for minimum ` x2 = A ` x = A ^x > 0h Pll = 4A/3 > 0 when x = A x ` This gives a minimum value. Using ➀ A = 1/2 q A _2 + A j ` q = 2A = 2 A < 2 A A _2 + A j 2 + A A < 2 2024 HSC Mathematics Advanced Mapping Grid Section I Question Marks Content Syllabus outcomes 1 1 MA-F1 Working with Functions MA11-1 2 1 MA-S1 Probability and Discrete Probability Distributions MA11-7 3 1 MA-S3 Random Variables MA12-8 4 1 MA-F2 Graphing Techniques MA12-1 5 1 MA-C4 Integral Calculus MA12-3 6 1 MA-F1 Working with Functions MA11-2 7 1 MA-F2 Graphing Techniques MA12-10 8 1 MA-S2 Descriptive Statistics and Bivariate Data Analysis MA12-8 9 1 MA-S1 Probability and Discrete Probability Distributions MA11-7 10 1 MA-C3 Applications of Differentiation MA12-7 Section II Question Marks Content Syllabus outcomes 11 3 MA-C3 Applications of Differentiation MA12-6 12 3 MA-M1 Modelling Financial Situations MA12-4 13 3 MA-E1 Logarithms and Exponentials MA11-6 14 (a) 1 MA-F1 Linear, quadratic and cubic functions MA11-1 14 (b) 3 MA-C4 Integral Calculus MA12-3 15 3 MA-C4 Integral Calculus MA12-3 16 3 MA-S2 Descriptive Statistics and Bivariate Data Analysis MA12-10 17 (a) 2 MA-F2 Graphing Techniques MA12-1 17 (b) 2 MA-C3 Applications of Differentiation MA12-3 17 (c) 2 MA-C3 Applications of Differentiation MA12-3 18 (a) 1 MA-S1 Probability and Discrete Probability Distributions MA11-7 18 (b) 2 MA-E1 Logarithms and Exponentials MA11-6 19 5 MA-C3 Applications of Differentiation MA12-6 20 (a) 1 MA-T1 Trigonometry and Measure of Angles MA11-3 20 (b) 3 MA-T1 Trigonometry and Measure of Angles MA11-3 21 3 MA-S2 Descriptive Statistics and Bivariate Data Analysis MA12-10 MA-C2 Differential Calculus 22 (a) 3 MA12-6 MA-C3 Applications of Differentiation 22 (b) 2 MA-C4 Integral Calculus MA12-7 22 (c) 1 MA-C4 Integral Calculus MA12-10 23 (a) 2 MA-S3 Random Variables MA12-8 23 (b) 1 MA-S3 Random Variables MA12-8 23 (c) 2 MA-S3 Random Variables MA12-8 Question Marks Content Syllabus outcomes 24 (a) 3 MA-M1 Modelling Financial Situations MA12-4 24 (b) 1 MA-M1 Modelling Financial Situations MA12-4 25 (a) 2 MA-S3 Random Variables MA12-8 25 (b) 2 MA-S3 Random Variables MA12-8 25 (c) 2 MA-S3 Random Variables MA12-8 26 4 MA-M1 Modelling Financial Situations MA12-9 27 (a) 2 MA-C2 Differential Calculus MA12-6 27 (b) 3 MA-C4 Integral Calculus MA12-7 28 (a) 2 MA-T3 Trigonometric Functions and Graphs MA12-5 28 (b) 1 MA-T3 Trigonometric Functions and Graphs MA12-5 28 (c) 4 MA-T3 Trigonometric Functions and Graphs MA12-5 29 4 MA-C3 Applications of Differentiation MA12-6 MA-F2 Graphing Techniques 30 3 MA12-9, MA12-10 MA-M1 Modelling Financial Situations 31 (a) 3 MA-T1 Trigonometry and Measure of Angles MA11-9 31 (b) 3 MA-C3 Applications of Differentiation MA12-10",
+        "sampleAnswer": "Pl = 2 - 2A/x2 = 0 for minimum ` x2 = A ` x = A ^x > 0h Pll = 4A/3 _x > 0 when x = A ` This gives a minimum value. Using ➀ A = 1/2 q A _2 + A j ` q = 2A = 2 A < 2 A A _2 + A j 2 + A A < 2 2024 HSC Mathematics Advanced Mapping Grid Section I Question Marks Content Syllabus outcomes 1 1 MA-F1 Working with Functions MA11-1 2 1 MA-S1 Probability and Discrete Probability Distributions MA11-7 3 1 MA-S3 Random Variables MA12-8 4 1 MA-F2 Graphing Techniques MA12-1 5 1 MA-C4 Integral Calculus MA12-3 6 1 MA-F1 Working with Functions MA11-2 7 1 MA-F2 Graphing Techniques MA12-10 8 1 MA-S2 Descriptive Statistics and Bivariate Data Analysis MA12-8 9 1 MA-S1 Probability and Discrete Probability Distributions MA11-7 10 1 MA-C3 Applications of Differentiation MA12-7 Section II Question Marks Content Syllabus outcomes 11 3 MA-C3 Applications of Differentiation MA12-6 12 3 MA-M1 Modelling Financial Situations MA12-4 13 3 MA-E1 Logarithms and Exponentials MA11-6 14 (a) 1 MA-F1 Linear, quadratic and cubic functions MA11-1 14 (b) 3 MA-C4 Integral Calculus MA12-3 15 3 MA-C4 Integral Calculus MA12-3 16 3 MA-S2 Descriptive Statistics and Bivariate Data Analysis MA12-10 17 (a) 2 MA-F2 Graphing Techniques MA12-1 17 (b) 2 MA-C3 Applications of Differentiation MA12-3 17 (c) 2 MA-C3 Applications of Differentiation MA12-3 18 (a) 1 MA-S1 Probability and Discrete Probability Distributions MA11-7 18 (b) 2 MA-E1 Logarithms and Exponentials MA11-6 19 5 MA-C3 Applications of Differentiation MA12-6 20 (a) 1 MA-T1 Trigonometry and Measure of Angles MA11-3 20 (b) 3 MA-T1 Trigonometry and Measure of Angles MA11-3 21 3 MA-S2 Descriptive Statistics and Bivariate Data Analysis MA12-10 MA-C2 Differential Calculus 22 (a) 3 MA12-6 MA-C3 Applications of Differentiation 22 (b) 2 MA-C4 Integral Calculus MA12-7 22 (c) 1 MA-C4 Integral Calculus MA12-10 23 (a) 2 MA-S3 Random Variables MA12-8 23 (b) 1 MA-S3 Random Variables MA12-8 23 (c) 2 MA-S3 Random Variables MA12-8 Question Marks Content Syllabus outcomes 24 (a) 3 MA-M1 Modelling Financial Situations MA12-4 24 (b) 1 MA-M1 Modelling Financial Situations MA12-4 25 (a) 2 MA-S3 Random Variables MA12-8 25 (b) 2 MA-S3 Random Variables MA12-8 25 (c) 2 MA-S3 Random Variables MA12-8 26 4 MA-M1 Modelling Financial Situations MA12-9 27 (a) 2 MA-C2 Differential Calculus MA12-6 27 (b) 3 MA-C4 Integral Calculus MA12-7 28 (a) 2 MA-T3 Trigonometric Functions and Graphs MA12-5 28 (b) 1 MA-T3 Trigonometric Functions and Graphs MA12-5 28 (c) 4 MA-T3 Trigonometric Functions and Graphs MA12-5 29 4 MA-C3 Applications of Differentiation MA12-6 MA-F2 Graphing Techniques 30 3 MA12-9, MA12-10 MA-M1 Modelling Financial Situations 31 (a) 3 MA-T1 Trigonometry and Measure of Angles MA11-9 31 (b) 3 MA-C3 Applications of Differentiation MA12-10",
         "criteria": [
           {
             "marks": 3,
@@ -3642,7 +3642,7 @@
         "question": 19,
         "part": null,
         "marks": 3,
-        "sampleAnswer": "0.5 W Amara 0.5 W′ 1/6 1/3 0.4 W Bala 0.6 W′ 1/2 0.2 W Cassie 0.8 W′ 1/6 × 0.5 P (Amara |wins) = 1/6 × 0.5 + 1/3 × 0.4 + 1/2 × 0.2 = 5/19",
+        "sampleAnswer": "0.5 W Amara 0.5 W′ 1/6 1/3 _Bala 0.4 W 0.6 W′ 1/2 0.2 W Cassie 0.8 W′ 1/6 × 0.5 P (Amara |wins) = 1/6 × 0.5 + 1/3 × 0.4 + 1/2 × 0.2 = 5/19",
         "criteria": [
           {
             "marks": 3,
@@ -3662,7 +3662,7 @@
         "question": 20,
         "part": null,
         "marks": 3,
-        "sampleAnswer": "n = 7 × 12 r = 6/12 = 84 periods 84 21 000 1 + 6/12 % = 31 927.76 ` Monthly deposit = $31 927.76 ÷ 104.07393 = $306.78",
+        "sampleAnswer": "n = 7 × 12 r = 6/12 = 84 periods 84 21 000 1 + 6/12 % = 31 927.76 ` Monthly deposit = _= $31 _$306.78 927.76 ÷ 104.07393",
         "criteria": [
           {
             "marks": 3,
@@ -3810,7 +3810,7 @@
         "question": 25,
         "part": "b",
         "marks": 2,
-        "sampleAnswer": "2025 p x sin x dx = 7sin x − x cos x A 2025 p from part (a) 0 0 = (sin 2025 p − 2025 p cos 2025 p) − ( 0 ) = 0 − 2025 p × (−1) = 2025p",
+        "sampleAnswer": "2025 p x sin x dx = 7sin x − x cos x A _0 2025 p from part (a) 0 = (sin 2025 p − 2025 p cos 2025 p) − ( 0 ) = 0 − 2025 p × (−1) = 2025p",
         "criteria": [
           {
             "marks": 2,
@@ -3858,7 +3858,7 @@
         "question": 26,
         "part": "b",
         "marks": 3,
-        "sampleAnswer": "A(x) is a quadratic with positive coefficient of x 2 so A has a minimum stationary point. The maximum will therefore occur on an endpoint of the domain. When x = 0 r = 50/p Area = p r 2 = 502/p ≈ 796 When r = 0 x = 33 1/3 Area = 1/2 x 2 sin 60° = 3/4 × 33.3332 ≈ 481 A 0 21 33 x 1/2 ` The maximum value of A(x) occurs when all wire is used for the circle.",
+        "sampleAnswer": "A(x) is a quadratic with positive coefficient of x 2 so A has a minimum stationary point. The maximum will therefore occur on an endpoint of the domain. When x = 0 r = 50/p Area = p r 2 = 502/p ≈ 796 When r = 0 x = 33 1/3 Area = 1/2 x 2 sin 60° = 3/4 × 33.3332 ≈ 481 A 0 21 33 _1/2 x ` The maximum value of A(x) occurs when all wire is used for the circle.",
         "criteria": [
           {
             "marks": 3,
@@ -3902,7 +3902,7 @@
           },
           {
             "marks": 1,
-            "text": "x Provides the correct antiderivative of 1/2, or equivalent merit"
+            "text": "Provides the correct antiderivative of 1/2 ^x, or equivalent merit"
           }
         ]
       },
@@ -3958,7 +3958,7 @@
         "question": 29,
         "part": "a",
         "marks": 1,
-        "sampleAnswer": "tan 60° = h/OY in rTYO 30° ` OY = h/tan60° 2 3 = h/3 60°/1",
+        "sampleAnswer": "tan 60° = h/OY in rTYO ` OY = h/tan60° 2 ^30° 3 = h/3 60°/1",
         "criteria": [
           {
             "marks": 1,
@@ -3970,7 +3970,7 @@
         "question": 29,
         "part": "b",
         "marks": 3,
-        "sampleAnswer": "In rTFO, ETFO = 45°, ETOF = 90° ` EOTF = 45° ` r is isosceles and OF = h In rFOY, by cosine rule 2 h2 = h/3 + 42 − 2 × 4 × h/3 cos 45° h2 = h2/3 + 16 − 8h/6 2h2/3 + 8h/6 − 16 = 0 − 8/6 ± 64/6 + 4 × 2/3 × 16 h = 4/3 = 3.03 since h > 0",
+        "sampleAnswer": "In rTFO, ETFO = 45°, ETOF = 90° ` EOTF = 45° ` r is isosceles and OF = h In rFOY, by cosine rule h2 = h/3 ^2 + 42 − 2 × 4 × h/3 cos 45° h2 = h2/3 + 16 − 8h/6 2h2/3 + 8h/6 − 16 = 0 − 8/6 ± 64/6 + 4 × 2/3 × 16 h = 4/3 = 3.03 since h > 0",
         "criteria": [
           {
             "marks": 3,
@@ -3990,7 +3990,7 @@
         "question": 29,
         "part": "c",
         "marks": 3,
-        "sampleAnswer": "h/3 sin q = sin 45° O Y h 45° h/3 sin q = 1/23 h q = 24°... ≈ 24° Bearing = 45° − 24° q ≈ 021° F",
+        "sampleAnswer": "sin q = sin 45° O ^h/3 Y h 45° h/3 sin q = 1/23 h q = 24°... ≈ 24° Bearing = 45° − 24° q ≈ 021° F",
         "criteria": [
           {
             "marks": 3,
@@ -4030,7 +4030,7 @@
         "question": 31,
         "part": null,
         "marks": 3,
-        "sampleAnswer": "cos x = 1/2 x = p/3, 5/3 p, 7p/3,... y 1 y = cosx 1 2 p/3 5p/3 7p/3 x y = cos px dilation horizontally by a factor of 1/p Lowest value of p to get 2 solutions y 1 y = cospx × = 2 ` 5p/3 1/p p 1/2 p = 5 p 2p x 3 × 2 p = 5/6 y 1 y = cospx × = 2 ` 7p/3 1/p p 1/2 p = 7 p 2p x 3 × 2 p = 7/6 ` 5/6 ≤ p < 7/6 2025 HSC Mathematics Advanced Mapping Grid Section I Question Marks Content Syllabus outcomes 1 1 MA-S1 Probability and Discrete Probability Distributions MA11-7 2 1 MA-E1 Logarithms and Exponentials MA11-9 3 1 MA-F1 Working with Functions MA11-1 4 1 MA-F1 Working with Functions MA11-1 5 1 MA-C4 Integral Calculus MA12-7 6 1 MA-F1 Working with Functions MA11-1 7 1 MA-S1 Probability and Discrete Probability Distributions MA11-7 8 1 MA-S3 Random Variables MA12-8 9 1 MA-C3 Applications of Differentiation MA12-10 10 1 MA-C3 Applications of Differentiation MA12-3 Section II Question Marks Content Syllabus outcomes 11 (a) 2 MA-F1 Working with Functions MA11-2 11 (b) 1 MA-F1 Working with Functions MA11-2 12 3 MA-C1 Introduction to Differentiation MA11-5 13 2 MA-M1 Modelling Financial Situations MA12-4 14 (a) 2 MA-S2 Descriptive Statistics and Bivariate Data Analysis MA12-8 14 (b) 2 MA-S2 Descriptive Statistics and Bivariate Data Analysis MA12-8 14 (c) 1 MA-S2 Descriptive Statistics and Bivariate Data Analysis MA12-8 14 (d) 1 MA-S2 Descriptive Statistics and Bivariate Data Analysis MA12-10 15 (a) 2 MA-T3 Trigonometric Functions and Graphs MA12-5 15 (b) 2 MA-T3 Trigonometric Functions and Graphs MA12-5 15 (c) 2 MA-T3 Trigonometric Functions and Graphs MA12-5 16 (a) 4 MA-C3 Applications of Differentiation MA12-6 16 (b) 1 MA-C3 Applications of Differentiation MA12-6 17 (a) 2 MA-M1 Modelling Financial Situations MA12-4 17 (b) 3 MA-M1 Modelling Financial Situations MA12-4 MA-E1 Logarithms and Exponentials 17 (c) 2 MA11-6, MA12-2 MA-M1 Modelling Financial Situations 18 2 MA-F1 Working with Functions MA11-2 19 3 MA-S1 Probability and Discrete Probability Distributions MA11-7 20 3 MA-M1 Modelling Financial Situations MA12-2 21 (a) 2 MA-S3 Random Variables MA12-8 MA-E1 Logarithms and Exponentials 21 (b) 3 MA11-6, MA12-8 MA-S3 Random Variables Question Marks Content Syllabus outcomes 22 2 MA-T2 Trigonometric Functions and Identities MA11-4 23 (a) 4 MA-S3 Random Variables MA12-8 23 (b) 1 MA-S3 Random Variables MA12-10 24 4 MA-C3 Applications of Differentiation MA12-6 25 (a) 2 MA-C2 Differential Calculus MA12-3 25 (b) 2 MA-C4 Integral Calculus MA12-7 25 (c) 2 MA-M1 Modelling Financial Situations MA12-4 26 (a) 2 MA-C3 Applications of Differentiation MA12-3 26 (b) 3 MA-C3 Applications of Differentiation MA12-3, MA12-10 27 (a) 2 MA-C4 Integral Calculus MA12-7 27 (b) 2 MA-C4 Integral Calculus MA12-7 MA-C3 Applications of Differentiation 27 (c) 2 MA-C4 Integral Calculus MA12-10 MA-E1 Logarithms and Exponentials 28 (a) 2 MA-T1 Trigonometry and Measure of Angles MA11-3 MA-T1 Trigonometry and Measure of Angles 28 (b) 2 MA11-3, MA12-9 MA-T3 Trigonometric Functions and Graphs 29 (a) 1 MA-T1 Trigonometry and Measure of Angles MA11-3 29 (b) 3 MA-T1 Trigonometry and Measure of Angles MA11-3 29 (c) 3 MA-T1 Trigonometry and Measure of Angles MA11-3 30 3 MA-F2 Graphing Techniques MA12-1 31 3 MA-T3 Trigonometric Functions and Graphs MA12-5, MA12-10",
+        "sampleAnswer": "cos x = 1/2 x = p/3, 5/3 p, 7p/3,... y 1 y = cosx 1 2 p/3 5p/3 7p/3 x y = cos px dilation horizontally by a factor of 1/p Lowest value of p to get 2 solutions y 1 y = cospx × = 2 ` 5p/3 1/p p 1/2 p = 5 p 2p x _= _5/6 3 × 2 p y 1 y = cospx × = 2 ` 7p/3 1/p p 1/2 p = 7 p 2p x _= _7/6 3 × 2 p ` 5/6 ≤ p < 7/6 2025 HSC Mathematics Advanced Mapping Grid Section I Question Marks Content Syllabus outcomes 1 1 MA-S1 Probability and Discrete Probability Distributions MA11-7 2 1 MA-E1 Logarithms and Exponentials MA11-9 3 1 MA-F1 Working with Functions MA11-1 4 1 MA-F1 Working with Functions MA11-1 5 1 MA-C4 Integral Calculus MA12-7 6 1 MA-F1 Working with Functions MA11-1 7 1 MA-S1 Probability and Discrete Probability Distributions MA11-7 8 1 MA-S3 Random Variables MA12-8 9 1 MA-C3 Applications of Differentiation MA12-10 10 1 MA-C3 Applications of Differentiation MA12-3 Section II Question Marks Content Syllabus outcomes 11 (a) 2 MA-F1 Working with Functions MA11-2 11 (b) 1 MA-F1 Working with Functions MA11-2 12 3 MA-C1 Introduction to Differentiation MA11-5 13 2 MA-M1 Modelling Financial Situations MA12-4 14 (a) 2 MA-S2 Descriptive Statistics and Bivariate Data Analysis MA12-8 14 (b) 2 MA-S2 Descriptive Statistics and Bivariate Data Analysis MA12-8 14 (c) 1 MA-S2 Descriptive Statistics and Bivariate Data Analysis MA12-8 14 (d) 1 MA-S2 Descriptive Statistics and Bivariate Data Analysis MA12-10 15 (a) 2 MA-T3 Trigonometric Functions and Graphs MA12-5 15 (b) 2 MA-T3 Trigonometric Functions and Graphs MA12-5 15 (c) 2 MA-T3 Trigonometric Functions and Graphs MA12-5 16 (a) 4 MA-C3 Applications of Differentiation MA12-6 16 (b) 1 MA-C3 Applications of Differentiation MA12-6 17 (a) 2 MA-M1 Modelling Financial Situations MA12-4 17 (b) 3 MA-M1 Modelling Financial Situations MA12-4 MA-E1 Logarithms and Exponentials 17 (c) 2 MA11-6, MA12-2 MA-M1 Modelling Financial Situations 18 2 MA-F1 Working with Functions MA11-2 19 3 MA-S1 Probability and Discrete Probability Distributions MA11-7 20 3 MA-M1 Modelling Financial Situations MA12-2 21 (a) 2 MA-S3 Random Variables MA12-8 MA-E1 Logarithms and Exponentials 21 (b) 3 MA11-6, MA12-8 MA-S3 Random Variables Question Marks Content Syllabus outcomes 22 2 MA-T2 Trigonometric Functions and Identities MA11-4 23 (a) 4 MA-S3 Random Variables MA12-8 23 (b) 1 MA-S3 Random Variables MA12-10 24 4 MA-C3 Applications of Differentiation MA12-6 25 (a) 2 MA-C2 Differential Calculus MA12-3 25 (b) 2 MA-C4 Integral Calculus MA12-7 25 (c) 2 MA-M1 Modelling Financial Situations MA12-4 26 (a) 2 MA-C3 Applications of Differentiation MA12-3 26 (b) 3 MA-C3 Applications of Differentiation MA12-3, MA12-10 27 (a) 2 MA-C4 Integral Calculus MA12-7 27 (b) 2 MA-C4 Integral Calculus MA12-7 MA-C3 Applications of Differentiation 27 (c) 2 MA-C4 Integral Calculus MA12-10 MA-E1 Logarithms and Exponentials 28 (a) 2 MA-T1 Trigonometry and Measure of Angles MA11-3 MA-T1 Trigonometry and Measure of Angles 28 (b) 2 MA11-3, MA12-9 MA-T3 Trigonometric Functions and Graphs 29 (a) 1 MA-T1 Trigonometry and Measure of Angles MA11-3 29 (b) 3 MA-T1 Trigonometry and Measure of Angles MA11-3 29 (c) 3 MA-T1 Trigonometry and Measure of Angles MA11-3 30 3 MA-F2 Graphing Techniques MA12-1 31 3 MA-T3 Trigonometric Functions and Graphs MA12-5, MA12-10",
         "criteria": [
           {
             "marks": 3,

@@ -3947,3 +3947,106 @@ written against the pre-fix rows. On the repaired rows that test is mostly false
 re-running either would strip real NESA wording from ~7 parts — a warning to that effect is now at
 the top of `mathsadv_add_parts.py`. `refresh_band_descriptors.py` is the authoritative path and
 carries the relaxed test.
+
+---
+
+## 2026-09-06 — The five stretched-delimiter criteria rows, fixed
+
+**What changed.** `scripts/build_written_key.py` gained `fold_delimiters()` and
+`attach_orphans()`. All four written keys were regenerated and
+`scripts/refresh_band_descriptors.py` re-run. **All five rows recorded as "still scrambled,
+deliberately not chased" on 2026-09-05 now read correctly**, and **every part in the repo
+now carries NESA's own band wording — 0 fall back to the engine's generic text** (was 1).
+**0 of 587 parts changed marks**, and no criteria row was gained or lost.
+
+| | before | after |
+|---|---|---|
+| 2020 Q24 | `graph Completes the square for the equation, or equivalent merit` | `Completes the square for the equation, or equivalent merit` |
+| 2021 Q24 | `⌠ 4 Evaluates ⎮ 3/x−1 dx, or equivalent merit ⌡2` | `Evaluates ∫ _2 ^4 3/x−1 dx, or equivalent merit` |
+| 2021 Q27(b) | `Provides correct anti-derivative ofsin ⎛ π/12 t⎞, or equivalent merit ⎝ ⎠` | `Provides correct anti-derivative ofsin ( π/12 t), or equivalent merit` |
+| 2023 Q17 | `⌠ n Recognises the integral is of the form k ƒ ′(x)[ƒ (x)] dx, ⎮⌡ or equivalent merit` | `Recognises the integral is of the form k ∫ ƒ ′(x)[ƒ (x)] n dx, or equivalent merit` |
+| 2025 Q27(b) | `x Provides the correct antiderivative of 1/2, or equivalent merit` | `Provides the correct antiderivative of 1/2 ^x, or equivalent merit` |
+
+### Three mechanisms, not one
+
+The 2026-09-05 note called all five "multi-line stretched delimiters". Only three were.
+
+1. **A tall bracket or integral is a STACK of Unicode pieces, one per line it spans.**
+   `⌠`/`⎮`/`⌡` and `⎛`/`⎝` each land on a different visual line, so the halves outside the
+   sentence's own line get appended to the row. `fold_delimiters()` substitutes each piece
+   with its canonical glyph in place, keeps only the topmost of a stack, and moves a
+   piece-only token to the stack's vertical centre so a three-line-tall `∫` lands on the
+   line it is read with. Measured: **496 pieces on 43 pages, perfectly paired**
+   (⎛ = ⎝ = 59, ⌠ = ⌡ = ⎮ = 34) — and **none at all in VET or Multimedia**, which is why
+   folding could not disturb VET's review ledger.
+
+2. **A superscript raised off a tall neighbour clears the centre tolerance** and becomes
+   its own one-token line, sorting before or after the sentence instead of inside it
+   (2025 Q27(b)'s `^x`, 2021 Q24's upper limit `^4`). `attach_orphans()` merges such a
+   fragment into the line whose horizontal extent contains it, marking `^` or `_` when it
+   sits clearly above or below that line's centre.
+
+3. **2020 Q24 was never a delimiter at all** — `graph` is an *image label*, 428 pt tall and
+   starting 165 pt **above** the page, so it has no honest position and landed at the front
+   of the first criteria row on its page. Image labels are now excluded from criteria
+   wording, while still kept in the sample answer where "solution diagram" usefully tells a
+   reviewer the official answer has a picture.
+
+### Three bugs found by measuring, each of which the first version shipped
+
+⚠️ **`attach_orphans()` ate the wrapped continuation of a criteria sentence.** A row
+wrapping onto a second line leaves it holding just "merit" or "building site", which is
+short, interior to the line above once the Marks column stretches its span, and otherwise
+indistinguishable from a fragment. The first run turned *"…on a building site"* into
+*"Provides _building _site a description of…"* and pushed the flagged-damage count **up** —
+VET 0 → 7, Standard 2 0 → 9, Multimedia 0 → 2. Two guards fix it: the target line's span
+now **excludes the Marks column**, and an orphan must start **well right of the line's own
+left margin** (a superscript always is interior; a wrap never is).
+
+⚠️ **It also merged a fragment into the `Sample answer:` heading, silently discarding a
+whole sample answer.** An integral's upper limit `k` sat nearer the heading than its own
+integral sign, giving `Sample _k answer:` — which stopped `ANSWER_HEAD` matching, so
+2020 Q23(a)'s entire sample answer came out **empty**. Structural headings
+(`Sample answer`, `Answers could include`, `Question N`, `Criteria`) are now never attach
+targets. This is the one that mattered most: it destroyed data rather than reordering it,
+and only a word-level before/after diff caught it.
+
+⚠️ **A single token can carry pieces of two DIFFERENT delimiter groups.** 2020 Q21(c) has
+the token `⎛3⎞`, whose `⎛` belongs to one stack and whose `⎞` belongs to another. The first
+version folded a whole stack by concatenating its tokens, which took the first piece it
+found, deleted every other piece including the `⎞`, and scrambled the row around it.
+Editing each occurrence **in place**, by group, removes the problem entirely.
+
+### Verified
+
+- **Marks: 0 of 587 parts changed**, in any subject. Criteria row counts unchanged
+  (540 / 510 / 146 / 251).
+- **Flagged-damage across the whole repo: 1 row**, and it is a **false positive** —
+  *"Provides the values of k and a"*, clean English caught by the trailing-`a` rule. Its
+  question (2022 Q14) has no `parts[]`, so it costs nothing; the detector was left alone
+  rather than loosened for no benefit.
+- **No sample answer was emptied, and no words were lost.** The only two word-multiset
+  changes in Advanced are token *joins* (`S`+`n` → `Sn`, `S`+`12` → `S12`), and Standard 2,
+  Multimedia and VET have **zero**. Sample answers improved markedly where stacked maths is
+  involved: 2020 Q13 went from `⌠ π/4 sec2 x dx ⎮⌡ 0 ⎡ ⎤ π/4 = ⎢ tan x ⎥ ⎣ ⎦ 0 …` to
+  `π/4 ∫ sec2 x dx 0 π/4 = [ tan x ] 0 = [ tan π/4 − tan0 ] = 1`.
+- **VET's review ledger still holds** — 23 re-laid out (wording unchanged), 0 stale.
+- Only **3 criteria rows repo-wide** carry a `^`/`_` marker, and all three read correctly
+  (`Evaluates ∫ _2 ^4 3/x−1 dx` is the integral from 2 to 4). **0 rows anywhere retain a
+  leftover piece character.**
+- **Four viewport widths — 320, 430, 1400, 1920** — each scoring every part of every
+  multi-part question against its own model answer: Advanced 60 questions / 141 part rows,
+  Standard 2 66 / 148, VET 18 / 52. At every width: **0 occurrences of `undefined`, 0 band
+  strings tripping the damage test, 0 leftover delimiter pieces, 0 overflows, 0 render
+  errors, 0 parts on generic fallback, and every question scoring full.**
+- A real flow on 2021 Q27 rendered the repaired row to the student —
+  **"Provides correct anti-derivative ofsin ( π/12 t), or equivalent merit"**, with the
+  stranded `⎝ ⎠` gone. Screenshotted.
+- Full local CI: `MC=706 Written=374 imageRefs=337 missingImages=0`, `Issues: 0`; **285** MC
+  answers and **334** written questions checked, 0 wrong, 0 unverifiable; `npm test`
+  **73/73**. No console errors.
+
+**Noted and deliberately not changed: `ofsin`.** NESA's own text layer emits "of" and "sin"
+with no space between them, so they arrive as one token. Confirmed pre-existing — it is in
+the committed key at `67d5301`, before any of this work — and the count of such run-ons is
+**identical (73) before and after**, so the word-rejoin rule added none.

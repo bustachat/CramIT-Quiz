@@ -40,7 +40,7 @@
         "question": 17,
         "part": null,
         "marks": 2,
-        "sampleAnswer": "x 8/5×5 = where x is the required number of trees 1000 × 1000 ∴ x = 8000000/25 = 320 000 spanning trees",
+        "sampleAnswer": "8/5×5 = ^x where x is the required number of trees 1000 × 1000 ∴ x = 8000000/25 = 320 000 spanning trees",
         "criteria": [
           {
             "marks": 2,
@@ -128,7 +128,7 @@
         "question": 20,
         "part": null,
         "marks": 3,
-        "sampleAnswer": "Tax = 20 797 + 0.37 (122 680 – 90 000) = $32 888.60 PAYG tax = 3000 × 12 = $36 000 Refund = 36 000 – 32 888.60 = $3111.40",
+        "sampleAnswer": "Tax = 20 797 + 0.37 (122 680 – 90 000) = $32 888.60 PAYG tax = _= 3000 _$36 _000 × 12 Refund = _= 36 _$3111.40 000 – 32 888.60",
         "criteria": [
           {
             "marks": 3,
@@ -164,7 +164,7 @@
         "question": 22,
         "part": null,
         "marks": 3,
-        "sampleAnswer": "⎛ ⎞ 15 Amount owing = 500 ⎝ 1 + 0.17/365 ⎠ − 250 = $253.50",
+        "sampleAnswer": "Amount owing = 500 ( 1 + 0.17/365 ) ^15 − 250 = $253.50",
         "criteria": [
           {
             "marks": 3,
@@ -260,7 +260,7 @@
         "question": 25,
         "part": null,
         "marks": 3,
-        "sampleAnswer": "Height of triangle = 11 – 8 = 3 Five square faces = 82 × 5 = 320 Two triangular faces = 3×8/2 × 2 = 24 Two rectangular faces = 5 × 8 × 2 = 80 Total surface area = 320 + 24 + 80 = 424 cm2 diagram",
+        "sampleAnswer": "Height of triangle = 11 – 8 = 3 Five square faces = _= 82 _320 × 5 Two triangular faces = 3×8/2 × 2 = 24 Two rectangular faces = _= 5 _80 × 8 × 2 Total surface area = _= 320 _424 + _cm2 24 + 80 diagram",
         "criteria": [
           {
             "marks": 3,
@@ -308,7 +308,7 @@
         "question": 26,
         "part": "c",
         "marks": 2,
-        "sampleAnswer": "Activity Earliest Float time starttime/0 A 12 G 20 15",
+        "sampleAnswer": "Activity Earliest Float _time A ^starttime/0 12 G 20 15",
         "criteria": [
           {
             "marks": 2,
@@ -384,7 +384,7 @@
         "question": 29,
         "part": null,
         "marks": 3,
-        "sampleAnswer": "Total dividend from company ABC = 200 × 0.06 × 5.5 = 66 Dividend for XYZ = 149.52 – 66 = 83.52 (Number of shares in XYZ) × (0.04) × (6) = 83.52 ∴ 348 shares in XYZ",
+        "sampleAnswer": "Total dividend from company ABC = 200 × 0.06 × 5.5 = 66 Dividend for XYZ = _= 149.52 _83.52 – 66 (Number of shares in XYZ) × (0.04) × (6) = 83.52 ∴ 348 shares in XYZ",
         "criteria": [
           {
             "marks": 3,
@@ -420,7 +420,7 @@
         "question": 30,
         "part": "b",
         "marks": 1,
-        "sampleAnswer": "Weight of cut = 200 + 75 + 50 = 325 This is not equal to the value of the maximum flow. Hence the cut is not a minimum cut.",
+        "sampleAnswer": "Weight of cut = _= 200 _325 + 75 + 50 This is not equal to the value of the maximum flow. Hence the cut is not a minimum cut.",
         "criteria": [
           {
             "marks": 1,
@@ -576,7 +576,7 @@
         "question": 35,
         "part": "b",
         "marks": 2,
-        "sampleAnswer": "Mean of City B = 112 1 standard deviation above the mean for City B = 112 + 16 = 128 So Yin’s IQ score is 1 standard deviation above the mean of IQ scores in City B. ∴ percentage of population that have IQ score lower than Yin’s is 50% + 1/2 × 68% = 84% ∴ expected number of adults = 1 000 000 × 0.84 = 840 000",
+        "sampleAnswer": "Mean of City B = 112 1 standard deviation above the mean for City B = 112 + 16 = 128 So Yin’s IQ score is 1 standard deviation above the mean of IQ scores in City B. ∴ percentage of population that have IQ score lower than Yin’s is 50% + 1/2 × 68% = 84% ∴ expected number of adults = _= 1 _840 000 _000 000 × 0.84",
         "criteria": [
           {
             "marks": 2,
@@ -640,7 +640,7 @@
         "question": 37,
         "part": null,
         "marks": 3,
-        "sampleAnswer": "Present value of $1000 annuity for 20 years 16.351 × 1000 = $16 351 Present value of $3000 annuity for 30 years 22.396 × 3000 = $67 188 Present value of $3000 annuity for 20 years 16.351 × 3000 = $49 053 Present value = 16 351 + 67 188 – 49 053 = $34 486 Alternate solution 3000 × 8.983 Present value of $3000 annuity for the last 10 years = (1 + 0.02 )20 3000 × 8.983 Total present value = 16.351 × 1000 + (1 + 0.02 )20 = $34 486.90 2020 HSC Mathematics Standard 2 Mapping Grid Section I Question Marks Content Syllabus outcomes 1 1 MS-A4 Types of Relationships MS2-12-1 2 1 MS-M1 Applications of Measurement MS11-3 3 1 MS-M7 Rates and Ratios MS2-12-6 4 1 MS-F4 Investments and Loans MS2-12-5 5 1 MS-M1 Applications of Measurement MS11-3 6 1 MS-A2 Linear Relationships MS11-6 7 1 MS-S1 Data Analysis MS11-10 8 1 MS-S5 The Normal Distribution MS2-12-7 9 1 MS-N2 Network Concepts MS2-12-8 10 1 MS-A2 Linear Relationships MS11-6 11 1 MS-F4 Investments and Loans MS2-12-5 12 1 MS-S4 Bivariate Data Analysis MS2-12-2 13 1 MS-A1 Formulae and Equations MS11-6 14 1 MS-F5 Annuities MS2-12-5 15 1 MS-S2 Relative Frequency and Probability MS11-8 Section II Question Marks Content Syllabus outcomes 16 (a) 2 MS-M6 Non-right-angled Trigonometry MS2-12-4 16 (b) 2 MS-M6 Non-right-angled Trigonometry MS2-12-4 17 2 MS-M7 Rates and Ratios MS2-12-1 18 (a) 3 MS-N2 Network Concepts MS2-12-8 18 (b) 1 MS-N2 Network Concepts MS2-12-8 19 (a) 1 MS-A4 Types of Relationships MS2-12-6 19 (b) 2 MS-A4 Types of Relationships MS2-12-6 19 (c) 1 MS-A4 Types of Relationships MS2-12-1 20 3 MS-F1 Money Matters MS11-5 21 2 MS-F4 Investments And Loans MS2-12-5 22 3 MS2-F4 Investments and Loans MS2-12-5 Question Marks Content Syllabus outcomes 23 (a) 2 MS-M7 Rates and Ratios MS2-12-3 23 (b) 3 MS-M7 Rates and Ratios MS2-12-4 24 (a) 1 MS-A2 Linear Relationships MS11-2 24 (b) 2 MS-A4 Types of Relationships MS2-12-6 24 (c) 1 MS-A4 Types of Relationships MS2-12-6 25 3 MS-M1 Applications of Measurement MS11-4 26 (a) 1 MS-N3 Critical Path Analysis MS2-12-8 26 (b) 2 MS-N3 Critical Path Analysis MS2-12-8 26 (c) 2 MS-N3 Critical Path Analysis MS2-12-8 27 (a) 3 MS-M7 Rates and Ratios MS2-12-4 27 (b) 2 MS-M7 Rates and Ratios MS2-12-4 28 4 MS-S1 Data Analysis MS11-7 29 3 MS-F4 Investments and Loans MS2-12-5 30 (a) 2 MS-N2 Network Concepts MS2-12-8 30 (b) 1 MS-N2 Network Concepts MS2-12-8 31 (a) 1 MS-M6 Non-right-angled Trigonometry MS2-12-4 31 (b) 2 MS-M6 Non-right-angled Trigonometry MS2-12-4 31 (c) 2 MS-M6 Non-right-angled Trigonometry MS2-12-4 32 4 MS-M6 Non-right-angled Trigonometry MS2-12-4 33 (a) 1 MS-A4 Types of Relationships MS2-12-6 33 (b) 2 MS-A4 Types of Relationships MS2-12-6 34 (a) 2 MS-F5 Annuities MS2-12-5 34 (b) 2 MS-F5 Annuities MS2-12-5 35 (a) 2 MS-S5 The Normal Distribution MS2-12-7 35 (b) 2 MS-S5 The Normal Distribution MS2-12-7 35 (c) 3 MS-S5 The Normal Distribution MS2-12-7 36 5 MS-S4 Bivariate Data Analysis MS2-12-7 37 3 MS-F5 Annuities MS2-12-5",
+        "sampleAnswer": "Present value of $1000 annuity for 20 years 16.351 × 1000 = $16 351 Present value of $3000 annuity for 30 years 22.396 × 3000 = $67 188 Present value of $3000 annuity for 20 years 16.351 × 3000 = $49 053 Present value = _= 16 _$34 351 _486 + 67 188 – 49 053 Alternate solution 3000 × 8.983 Present value of $3000 annuity for the last 10 years = (1 + 0.02 )20 3000 × 8.983 Total present value = 16.351 × 1000 + (1 + 0.02 )20 = $34 486.90 2020 HSC Mathematics Standard 2 Mapping Grid Section I Question Marks Content Syllabus outcomes 1 1 MS-A4 Types of Relationships MS2-12-1 2 1 MS-M1 Applications of Measurement MS11-3 3 1 MS-M7 Rates and Ratios MS2-12-6 4 1 MS-F4 Investments and Loans MS2-12-5 5 1 MS-M1 Applications of Measurement MS11-3 6 1 MS-A2 Linear Relationships MS11-6 7 1 MS-S1 Data Analysis MS11-10 8 1 MS-S5 The Normal Distribution MS2-12-7 9 1 MS-N2 Network Concepts MS2-12-8 10 1 MS-A2 Linear Relationships MS11-6 11 1 MS-F4 Investments and Loans MS2-12-5 12 1 MS-S4 Bivariate Data Analysis MS2-12-2 13 1 MS-A1 Formulae and Equations MS11-6 14 1 MS-F5 Annuities MS2-12-5 15 1 MS-S2 Relative Frequency and Probability MS11-8 Section II Question Marks Content Syllabus outcomes 16 (a) 2 MS-M6 Non-right-angled Trigonometry MS2-12-4 16 (b) 2 MS-M6 Non-right-angled Trigonometry MS2-12-4 17 2 MS-M7 Rates and Ratios MS2-12-1 18 (a) 3 MS-N2 Network Concepts MS2-12-8 18 (b) 1 MS-N2 Network Concepts MS2-12-8 19 (a) 1 MS-A4 Types of Relationships MS2-12-6 19 (b) 2 MS-A4 Types of Relationships MS2-12-6 19 (c) 1 MS-A4 Types of Relationships MS2-12-1 20 3 MS-F1 Money Matters MS11-5 21 2 MS-F4 Investments And Loans MS2-12-5 22 3 MS2-F4 Investments and Loans MS2-12-5 Question Marks Content Syllabus outcomes 23 (a) 2 MS-M7 Rates and Ratios MS2-12-3 23 (b) 3 MS-M7 Rates and Ratios MS2-12-4 24 (a) 1 MS-A2 Linear Relationships MS11-2 24 (b) 2 MS-A4 Types of Relationships MS2-12-6 24 (c) 1 MS-A4 Types of Relationships MS2-12-6 25 3 MS-M1 Applications of Measurement MS11-4 26 (a) 1 MS-N3 Critical Path Analysis MS2-12-8 26 (b) 2 MS-N3 Critical Path Analysis MS2-12-8 26 (c) 2 MS-N3 Critical Path Analysis MS2-12-8 27 (a) 3 MS-M7 Rates and Ratios MS2-12-4 27 (b) 2 MS-M7 Rates and Ratios MS2-12-4 28 4 MS-S1 Data Analysis MS11-7 29 3 MS-F4 Investments and Loans MS2-12-5 30 (a) 2 MS-N2 Network Concepts MS2-12-8 30 (b) 1 MS-N2 Network Concepts MS2-12-8 31 (a) 1 MS-M6 Non-right-angled Trigonometry MS2-12-4 31 (b) 2 MS-M6 Non-right-angled Trigonometry MS2-12-4 31 (c) 2 MS-M6 Non-right-angled Trigonometry MS2-12-4 32 4 MS-M6 Non-right-angled Trigonometry MS2-12-4 33 (a) 1 MS-A4 Types of Relationships MS2-12-6 33 (b) 2 MS-A4 Types of Relationships MS2-12-6 34 (a) 2 MS-F5 Annuities MS2-12-5 34 (b) 2 MS-F5 Annuities MS2-12-5 35 (a) 2 MS-S5 The Normal Distribution MS2-12-7 35 (b) 2 MS-S5 The Normal Distribution MS2-12-7 35 (c) 3 MS-S5 The Normal Distribution MS2-12-7 36 5 MS-S4 Bivariate Data Analysis MS2-12-7 37 3 MS-F5 Annuities MS2-12-5",
         "criteria": [
           {
             "marks": 3,
@@ -898,7 +898,7 @@
         "question": 26,
         "part": "b",
         "marks": 2,
-        "sampleAnswer": "Interest in Option A = $37 158.72 − $35 000 = $2158.72 2158.72 = 35 000 × r/100 × 1 r = 6.17 (two decimal places)",
+        "sampleAnswer": "Interest in Option A = _= $37 _$2158.72 158.72 − $35 000 2158.72 = 35 000 × r/100 × 1 r = 6.17 (two decimal places)",
         "criteria": [
           {
             "marks": 2,
@@ -1258,7 +1258,7 @@
         "question": 39,
         "part": "b",
         "marks": 3,
-        "sampleAnswer": "D ˆOC = 330° − 150° − 72° = 108° CD2 = 312 + 282 − 2 × 31 × 28 × cos108° = 2281.45… ∴ CD = 47.76 ∴ Fencing required = 31 + 28 + 47.76… = 106.8 m (one decimal place)",
+        "sampleAnswer": "D ˆOC = _= 330° _108° − 150° − 72° CD2 = 312 + 282 − 2 × 31 × 28 × cos108° = 2281.45… ∴ CD = 47.76 ∴ Fencing required = 31 + 28 + 47.76… = 106.8 m (one decimal place)",
         "criteria": [
           {
             "marks": 3,
@@ -1708,7 +1708,7 @@
         "question": 30,
         "part": "a",
         "marks": 2,
-        "sampleAnswer": "P = 40 000, r = 1.2% pa compounded monthly, N = 10 × 12 = 120 ⎛ ⎞ 120 FV = 40 000 ⎝ 1 + 0.012/12 ⎠ = $45 097.17",
+        "sampleAnswer": "P = 40 000, r = 1.2% pa compounded monthly, N = 10 × 12 = 120 120 FV = 40 000 ( 1 + 0.012/12 ) = $45 097.17",
         "criteria": [
           {
             "marks": 2,
@@ -2422,7 +2422,7 @@
         "question": 31,
         "part": "a",
         "marks": 2,
-        "sampleAnswer": "Critical paths are H, I, G, C and H, I, K",
+        "sampleAnswer": "Critical paths are H, _H, I, _I, G, _K C and",
         "criteria": [
           {
             "marks": 2,
@@ -2454,7 +2454,7 @@
         "question": 32,
         "part": "a",
         "marks": 2,
-        "sampleAnswer": "⎛ ⎞ 21 Full amount on card = $450 1 + 13.5/365 % ⎝ ⎠ = $453.51 ∴ Interest charged = $453.51 − $450 = $3.51",
+        "sampleAnswer": "21 Full amount on card = $450 ( 1 + 13.5/365 % ) = $453.51 ∴ Interest charged = $453.51 − $450 = $3.51",
         "criteria": [
           {
             "marks": 2,
@@ -2510,7 +2510,7 @@
         "question": 34,
         "part": "a",
         "marks": 3,
-        "sampleAnswer": "0 + 0 + 0 + 2 + 5 + 7 + 8 + 9 + 9 + 10 x = 10 = 5 y = 1840/10 = 184 ∴ (x, y ) = (5, 184)",
+        "sampleAnswer": "0 + 0 + 0 + 2 + 5 _10 + 7 + 8 + 9 + 9 + 10 x = = 5 y = 1840/10 = 184 ∴ (x, y ) = (5, 184)",
         "criteria": [
           {
             "marks": 3,
@@ -2696,7 +2696,7 @@
         "question": 18,
         "part": "a",
         "marks": 2,
-        "sampleAnswer": "B C A 4 D 2 1 2 F E 4 3 G 1 4 J H 3 I Weight = 24",
+        "sampleAnswer": "A 4 ^B ^C D 2 1 2 F E 4 3 G 1 _H 4 J 3 I Weight = 24",
         "criteria": [
           {
             "marks": 2,
@@ -2828,7 +2828,7 @@
         "question": 23,
         "part": null,
         "marks": 3,
-        "sampleAnswer": "Normal time earnings = 38 # 45 = 1710 Overtime paid = 2790 - 1710 = 1080 Overtime hours = $1080/^45#1.5h = 16 hours Therefore 16 hours overtime.",
+        "sampleAnswer": "Normal time earnings = _= _1710 38 # 45 Overtime paid = 2790 - 1710 = 1080 Overtime hours = $1080/^45#1.5h = 16 hours Therefore 16 hours overtime.",
         "criteria": [
           {
             "marks": 3,
@@ -2848,7 +2848,7 @@
         "question": 24,
         "part": "a",
         "marks": 2,
-        "sampleAnswer": "10^1.2 # 3h -7.5 # 2.5 BAC = 5.5 # 60 = 0.0522... = 0.052 (to 3 decimal places)",
+        "sampleAnswer": "10^1.2 # _5.5 3h _# -7.5 _60 # 2.5 BAC = = 0.0522... = 0.052 (to 3 decimal places)",
         "criteria": [
           {
             "marks": 2,
@@ -3076,7 +3076,7 @@
         "question": 34,
         "part": null,
         "marks": 4,
-        "sampleAnswer": "2 Surface area of sphere = 4 # p # d 23/2 n Surface area curved cylindrical body = 2 # p # 23/2 # ^23 # 2h 2 ` Total surface area = f4 # p # d 23/2 n p + d 2 # p # 23/2 # 46n = 4985.707... = 4985.7 cm2 = 0.5 m2 (correct to 1 decimal place)",
+        "sampleAnswer": "2 Surface area of sphere = 4 # p # d 23/2 n Surface area curved cylindrical body = 2 # p # 23/2 # ^23 # 2h ` Total surface area = f4 # p # d 23/2 n ^2 p + d 2 # p # 23/2 # 46n = 4985.707... = 4985.7 cm2 = 0.5 m2 (correct to 1 decimal place)",
         "criteria": [
           {
             "marks": 4,
@@ -3294,7 +3294,7 @@
         "question": 16,
         "part": null,
         "marks": 2,
-        "sampleAnswer": "Cost of ten-litre cans: $205 × 8 = $1640 Cost of four-litre cans: $90 × 20 = $1800 Savings = $1800 − $1640 = $160",
+        "sampleAnswer": "Cost of ten-litre cans: _= $205 _$1640 × 8 Cost of four-litre cans: _= $90 _$1800 × 20 Savings = $1800 − $1640 _= _$160",
         "criteria": [
           {
             "marks": 2,
@@ -3330,7 +3330,7 @@
         "question": 18,
         "part": null,
         "marks": 2,
-        "sampleAnswer": "Amount = $5000 × 12.288 = $61 440",
+        "sampleAnswer": "Amount _= = _$61 $5000 _440 × 12.288",
         "criteria": [
           {
             "marks": 2,
@@ -3362,7 +3362,7 @@
         "question": 19,
         "part": "b",
         "marks": 2,
-        "sampleAnswer": "Critical path is BDEFH Minimum duration = 4 + 5 + 5 + 7 + 5 = 26",
+        "sampleAnswer": "Critical path is BDEFH Minimum duration = _= 4 _26 + 5 + 5 + 7 + 5",
         "criteria": [
           {
             "marks": 2,
@@ -3430,7 +3430,7 @@
         "question": 21,
         "part": "b",
         "marks": 2,
-        "sampleAnswer": "Cost per day = OR $640 = 92 × h × 0.29 × 3.2 640/92 $640 = 85.376h = 6.956... h = 640/85.376 Cost per hour = 3.2 × 0.29 = 0.928 h = 7.49... Number of hours = 6.956.../0.928 ≈ 7.5 hours = 7.49... ≈ 7.5 hours",
+        "sampleAnswer": "Cost per day = _640/92 OR $640 = 92 × h × 0.29 × 3.2 $640 = 85.376h = 6.956... h = 640/85.376 Cost per hour = 3.2 × 0.29 = 0.928 h = 7.49... Number of hours = 6.956.../0.928 ≈ 7.5 hours = 7.49... ≈ 7.5 hours",
         "criteria": [
           {
             "marks": 2,
@@ -3634,7 +3634,7 @@
         "question": 27,
         "part": null,
         "marks": 3,
-        "sampleAnswer": "Interest days = 68 − 45 = 23 23 Amount = $392 1 + 13.74/365 % = $395.41 Interest charged = $395.41 − $392 = $3.41",
+        "sampleAnswer": "Interest days = 68 − 45 = 23 23 Amount = $392 1 + 13.74/365 % = $395.41 Interest charged = _= $395.41 _$3.41 − $392",
         "criteria": [
           {
             "marks": 3,
@@ -3674,7 +3674,7 @@
         "question": 29,
         "part": null,
         "marks": 2,
-        "sampleAnswer": "6/15 Blue Blue 7/16 9/15 Yellow 7/15 Blue 9/16 Yellow 8/15 Yellow P (BB) + P (YY) = 7/16 × 6/15 + 9/16 × 8/15 = 19/40",
+        "sampleAnswer": "6/15 Blue 7/16 ^Blue 9/15 Yellow 7/15 Blue 9/16 Yellow 8/15 Yellow P (BB) + P (YY) = 7/16 × 6/15 + 9/16 × 8/15 = 19/40",
         "criteria": [
           {
             "marks": 2,
@@ -3774,7 +3774,7 @@
         "question": 34,
         "part": null,
         "marks": 3,
-        "sampleAnswer": "n = 7 × 12 r = 6/12 = 84 periods 84 21 000 1 + 6/12 % = 31 927.76 ` Monthly deposit = $31 927.76 ÷ 104.07393 = $306.78",
+        "sampleAnswer": "n = 7 × 12 r = 6/12 = 84 periods 84 21 000 1 + 6/12 % = 31 927.76 ` Monthly deposit = _= $31 _$306.78 927.76 ÷ 104.07393",
         "criteria": [
           {
             "marks": 3,
@@ -3794,7 +3794,7 @@
         "question": 35,
         "part": null,
         "marks": 3,
-        "sampleAnswer": "T q 36° 51 P 36° A 75",
+        "sampleAnswer": "T q 36° 51 P _75 36° A",
         "criteria": [
           {
             "marks": 3,

@@ -204,6 +204,96 @@ def assemble_fractions(words, bars, body_h):
     return words
 
 
+# A tall bracket or integral sign is not one glyph in these PDFs: it is drawn as a stack
+# of Unicode "piece" characters in a single x-column, one per line it spans. Each piece
+# therefore lands on a DIFFERENT visual line, and the halves that fall outside the
+# sentence's own line get appended to the row after it -- 2021 Advanced Q27(b) extracted as
+# "...ofsin ⎛ π/12 t⎞, or equivalent merit ⎝ ⎠", the bottom halves stranded at the end.
+# Folding the stack back into one glyph is the only way to place it, exactly as a stacked
+# fraction needs its bar. Measured over all 23 guideline PDFs: 496 pieces on 43 pages,
+# perfectly paired (⎛ = ⎝ = 59, ⌠ = ⌡ = ⎮ = 34), and NONE in VET or Multimedia.
+DELIM_PIECES = {
+    "⌠": "∫", "⎮": "∫", "⌡": "∫",   # ⌠ ⎮ ⌡ -> ∫
+    "⎛": "(", "⎜": "(", "⎝": "(",                   # ⎛ ⎜ ⎝ -> (
+    "⎞": ")", "⎟": ")", "⎠": ")",                   # ⎞ ⎟ ⎠ -> )
+    "⎡": "[", "⎢": "[", "⎣": "[",                   # ⎡ ⎢ ⎣ -> [
+    "⎤": "]", "⎥": "]", "⎦": "]",                   # ⎤ ⎥ ⎦ -> ]
+    "⎧": "{", "⎨": "{", "⎩": "{", "⎪": "{",     # ⎧ ⎨ ⎩ ⎪ -> {
+    "⎫": "}", "⎬": "}", "⎭": "}",                   # ⎫ ⎬ ⎭ -> }
+}
+
+
+def fold_delimiters(words, body_h):
+    """Fold each stacked bracket/integral into ONE glyph on the line it belongs to.
+
+    Every piece is SUBSTITUTED IN PLACE by its canonical glyph, and within a stack only
+    the topmost survives; the rest are deleted and a token left empty is dropped. Editing
+    in place rather than concatenating the stack is what makes a token carrying pieces of
+    two DIFFERENT groups safe -- 2020 Advanced Q21(c) has the single token `⎛3⎞`, whose
+    `⎛` belongs to one stack and whose `⎞` belongs to another; concatenating lost the `⎞`
+    and scrambled the row around it.
+
+    A surviving token that is nothing BUT its glyph is moved to the stack's vertical
+    centre, so a two- or three-line-tall integral sign lands on the text line it is read
+    with instead of the line its top piece happens to start on. One that also carries
+    content stays where it is, because that content belongs on its own line.
+    """
+    occurrences = []
+    for i, w in enumerate(words):
+        for j, ch in enumerate(w[4]):
+            if ch in DELIM_PIECES:
+                occurrences.append((DELIM_PIECES[ch], i, j))
+    if not occurrences:
+        return words
+
+    # Column by x-range OVERLAP, not by x0. A piece often shares its token with content
+    # to its left, so the token's x0 is that content's edge: 2021 Advanced Q27(b) pairs
+    # `t⎞` (x0 = 290.6, the `t`) with a bare `⎠` under the `⎞` itself, and bucketing on
+    # x0 puts them in different columns and folds neither.
+    groups = {}
+    for canon, i, j in occurrences:
+        w = words[i]
+        for key, members in groups.items():
+            if key[0] == canon and w[0] < key[2] and key[1] < w[2]:
+                members.append((i, j))
+                break
+        else:
+            groups[(canon, w[0], w[2])] = [(i, j)]
+
+    edits = {}      # token index -> {char index: replacement}
+    recentre = {}   # token index -> new vertical centre
+    for (canon, _lo, _hi), members in groups.items():
+        members.sort(key=lambda m: words[m[0]][1])
+        stack = [members[0]]
+        for m in members[1:] + [None]:
+            if m is not None and words[m[0]][1] - words[stack[-1][0]][3] <= 0.75 * body_h:
+                stack.append(m)
+                continue
+            for n, (i, j) in enumerate(stack):
+                edits.setdefault(i, {})[j] = canon if n == 0 else ""
+            if len(stack) > 1:
+                top = words[stack[0][0]]
+                if all(c in DELIM_PIECES for c in top[4]):
+                    ys = [words[i][1] for i, _ in stack] + [words[i][3] for i, _ in stack]
+                    recentre[stack[0][0]] = (min(ys) + max(ys)) / 2
+            stack = [m] if m is not None else []
+
+    out = []
+    for i, w in enumerate(words):
+        if i not in edits:
+            out.append(w)
+            continue
+        text = "".join(edits[i].get(j, ch) for j, ch in enumerate(w[4]))
+        if not text:
+            continue
+        if i in recentre:
+            yc = recentre[i]
+            out.append((w[0], yc - body_h / 2, w[2], yc + body_h / 2, text))
+        else:
+            out.append((w[0], w[1], w[2], w[3], text))
+    return out
+
+
 def join_split_words(toks):
     """Rejoin a word the text layer split mid-way, e.g. "studyin"+"g", "equiv"+"alent".
 
@@ -243,6 +333,7 @@ def page_lines(page):
     heights = sorted(w[3] - w[1] for w in words)
     body_h = heights[len(heights) // 2] or 12.0
     words = assemble_fractions(words, frac_bars(page), body_h)
+    words = fold_delimiters(words, body_h)
 
     # ⚠️ An IMAGE's label is reported with the image's own box, not a glyph box, so it is
     # enormous and its centre is meaningless -- 2020 Maths Advanced p5 has "solution"
@@ -268,11 +359,88 @@ def page_lines(page):
                 lines[-1][0], lines[-1][1] = yc, True
         else:
             lines.append([yc, normal(w), [w]])
-    out = [(anchor, join_split_words(sorted(toks, key=lambda t: t[0])))
+    attach_orphans(lines, body_h)
+    out = [(anchor, join_split_words(sorted(toks, key=lambda t: t[0])), False)
            for anchor, _anchored, toks in lines]
     for w in oversize:
-        out.append((w[1], [w]))
-    return [(round(y, 1), toks) for y, toks in sorted(out, key=lambda r: r[0])]
+        out.append((w[1], [w], True))
+    return [(round(y, 1), toks, layout) for y, toks, layout in sorted(out, key=lambda r: r[0])]
+
+
+# Structural headings, which an orphan fragment must never be merged into. Matching one
+# of these is what tells parse_paper where the criteria table ends and the official answer
+# begins, so corrupting one costs a whole sample answer, not just a stray character.
+HEADING = re.compile(r"^\s*(Sample answer|Answers? could include|Question\s+\d|Criteria)",
+                     re.I)
+
+
+def attach_orphans(lines, body_h):
+    """Pull a stray fragment into the line it visually sits inside.
+
+    A superscript raised off a tall neighbour clears the centre tolerance and becomes its
+    own one-token "line", which then sorts before or after the sentence instead of inside
+    it: 2025 Advanced Q27(b) extracted as "x Provides the correct antiderivative of 1/2"
+    for "... of 1/2 ^x". The fragment is merged into the nearest line whose horizontal
+    extent CONTAINS it, and marked `^` or `_` when it sits clearly above or below that
+    line's centre, which is the ordinary way to write it in plain text.
+
+    Deliberately narrow, because merging the wrong thing corrupts a criteria row:
+      * only a line of at most 3 tokens spanning under 60 pt is ever a candidate;
+      * NEVER a token in the Marks column -- pulling a mark digit into a neighbouring
+        row would silently change that row's mark, which is the one thing here that is
+        ground truth;
+      * the target must be within 1.5 x body height, and must be the closest line.
+    Mutates `lines` in place; emptied lines are dropped.
+    """
+    def span(toks):
+        # The Marks column is excluded: a mark digit sits at x ~ 485 and would otherwise
+        # stretch every line's span to the full page width, making any short line look
+        # "inside" it.
+        body = [t for t in toks if t[0] <= MARKS_COL_MIN_X] or toks
+        return min(t[0] for t in body), max(t[2] for t in body)
+
+    for orphan in list(lines):
+        toks = orphan[2]
+        if len(toks) > 3:
+            continue
+        ox0, ox1 = span(toks)
+        if ox1 - ox0 > 60 or any(t[0] > MARKS_COL_MIN_X for t in toks):
+            continue
+        best, best_d = None, 1.5 * body_h
+        for line in lines:
+            if line is orphan or not line[2]:
+                continue
+            # ⚠️ NEVER annotate one of NESA's structural headings. An integral's upper
+            # limit `k` sat nearer the "Sample answer:" heading than its own integral sign
+            # and was merged into it as "Sample _k answer:", which stopped ANSWER_HEAD
+            # matching and silently DISCARDED the whole sample answer of 2020 Advanced
+            # Q23(a). A heading is never annotated with maths, so it is never a target.
+            if HEADING.match(" ".join(t[4] for t in line[2])):
+                continue
+            tx0, tx1 = span(line[2])
+            # ⚠️ Must start WELL RIGHT of the line's own left margin. Without this the
+            # rule eats the wrapped continuation of a criteria sentence -- a second line
+            # holding just "merit" or "building site" begins at the same margin and is
+            # otherwise indistinguishable from a fragment, which turned
+            # "...on a building site" into "Provides _building _site a description of...".
+            # A superscript is always interior; a wrap never is.
+            if not (ox0 > tx0 + 2 * body_h and ox1 < tx1):
+                continue
+            d = abs(orphan[0] - line[0])
+            if d < best_d:
+                best, best_d = line, d
+        if best is None:
+            continue
+        offset = orphan[0] - best[0]
+        for t in toks:
+            text = t[4]
+            if offset < -0.35 * body_h:
+                text = "^" + text
+            elif offset > 0.35 * body_h:
+                text = "_" + text
+            best[2].append((t[0], t[1], t[2], t[3], text))
+        orphan[2] = []
+    lines[:] = [l for l in lines if l[2]]
 
 
 def marks_cell(toks, gap=15.0):
@@ -378,12 +546,12 @@ def parse_paper(pdf_path):
     rows, rules = [], {}
     for pi in range(doc.page_count):
         rules[pi] = row_rules(doc[pi])
-        for y, toks in page_lines(doc[pi]):
-            rows.append((pi, y, toks))
+        for y, toks, layout in page_lines(doc[pi]):
+            rows.append((pi, y, toks, layout))
 
     # Locate question headers: "Question 16", "Question 16 (a)", "Question 16 (a) (i)".
     headers = []
-    for i, (pi, y, toks) in enumerate(rows):
+    for i, (pi, y, toks, _layout) in enumerate(rows):
         if toks[0][4] != "Question" or toks[0][0] >= HEADER_MAX_X:
             continue
         if len(toks) < 2 or not re.fullmatch(r"\d+", toks[1][4]):
@@ -402,7 +570,7 @@ def parse_paper(pdf_path):
         marks, sample, in_sample = [], [], False
         crit_lines = []
         for j in range(idx + 1, end):
-            pi, y, toks = rows[j]
+            pi, y, toks, layout = rows[j]
             text = " ".join(t[4] for t in toks)
             if RUNNING.match(text):
                 continue
@@ -426,7 +594,14 @@ def parse_paper(pdf_path):
             # with the line's ruled band so criteria_rows() can rejoin a row split over
             # 2-3 lines. Defined by exclusion rather than by the x threshold so a
             # criteria sentence that wraps past MARKS_COL_MIN_X keeps its last word.
+            # ⚠️ An image's label ("solution diagram", "graph") is layout, not criteria
+            # wording, and its box is the IMAGE's -- 2020 Advanced Q24's "graph" is 428 pt
+            # tall and starts 165 pt ABOVE the page, so it has no honest position at all
+            # and landed at the front of the first criteria row on its page. It is kept in
+            # the sample answer, where it usefully tells a reviewer the official answer has
+            # a picture, and excluded here.
             crit_lines.append((pi, y, band_of(y, rules[pi]),
+                               "" if layout else
                                " ".join(t[4] for t in toks if t not in cell_toks).strip(),
                                value))
 

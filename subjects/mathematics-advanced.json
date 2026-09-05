@@ -2104,7 +2104,7 @@
           "bandDescriptors": {
             "full": "Provides the correct solution",
             "partial": "Finds the percentage of adults earning between $15 and $30 and finds a probability using 1 – P(neither earns...), or equivalent merit",
-            "minimal": "Finds a probability using 1 – P(neither earns...), or equivalent merit OR diagram Finds the percentage of adults earning between $15 and $30, or equivalent merit"
+            "minimal": "Finds a probability using 1 – P(neither earns...), or equivalent merit OR Finds the percentage of adults earning between $15 and $30, or equivalent merit"
           }
         },
         {
@@ -2827,7 +2827,12 @@
           "keywords": [
             "4800/π"
           ],
-          "minKeywords": 1
+          "minKeywords": 1,
+          "bandDescriptors": {
+            "full": "Provides correct solution",
+            "partial": "Provides correct anti-derivative ofsin ( π/12 t), or equivalent merit",
+            "minimal": "Provides correct anti-derivative ofsin ( π/12 t), or equivalent merit"
+          }
         },
         {
           "label": "(c)",
