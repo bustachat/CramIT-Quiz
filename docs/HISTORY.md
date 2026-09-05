@@ -3658,3 +3658,151 @@ rules, not an approximation of them.** An approximate survey does not fail safe 
 - Its keywords are answer fragments (`3 ln 3`, `0.0918`), and `MATHS_SUBJECT_KEYS` already
   suppresses the Key Concepts checklist for `mathsadv`, so the model-answer acceptance gate
   ("every part must score full marks when fed its own model answer") applies unchanged.
+
+---
+
+## 2026-09-05 (later still, ×3) — Mathematics Advanced on the per-part standard, and four defects the build surfaced
+
+**What changed.** `subjects/mathematics-advanced.json`: **60 of its 65 multi-part written
+questions gained `parts[]`** — 141 parts, an answer box and a mark each (CLAUDE.md §10 rule 10).
+Built by `scripts/archive/mathsadv_add_parts.py`. Separately,
+`scripts/archive/mathsadv_wrap_tables.py` wrapped **4 wide tables in 3 questions** in the standard
+horizontal scroller. Written entries stay **126** and official coverage stays **234/234** — this is
+purely additive: only the new `parts` and `stem` keys were written, and **no pre-existing field on
+any question was changed** (machine-checked against `HEAD`), nor any MC question, mark, answer or
+omission declaration.
+
+The 2026-09-05 survey called this "a clean scripted port, 0 problem cases". The *port* was clean.
+The **verification was not**, and everything below was found by running and rendering, never by
+reading the diff.
+
+**Where it stopped, deliberately: 5 questions get no `parts[]`** — 2022 Q28(b), 2025 Q17(a),
+2025 Q25(a), 2025 Q26(a), 2025 Q27(b). Every one is a **"Show that …" part whose result the stem
+already states**, so all of the question's keywords target results derived in the *later* parts and
+none belongs to this one. Authoring a keyword from the printed target would pay a student full
+marks for copying the prompt. They keep today's single box. **25 keywords across 23 questions**
+appear in no part's model answer; they are left on the question untouched and simply take no part
+in per-part scoring.
+
+### Four defects, each found by running the thing
+
+1. ⚠️ **`<img[^>]*>` is wrong on this subject, and it silently ate a question's part (a).**
+   The survey established that Advanced prints `…<img …>(a)` with the label straight after an
+   inline tag. But 2020 Q29's alt text reads *"…for c > 0…"* — a `>` **inside a quoted
+   attribute** — so `[^>]*` stops there and the label never matches. The pattern is now
+   `<img(?:[^>"]|"[^"]*")*>`. One question in the subject, and the failure mode is a lost part,
+   not an error.
+
+2. ⚠️ **Keyword assignment disagreed with the scorer, making a part unwinnable.** Standard 2's
+   builder assigns a keyword on a normalised/`squash()`ed substring match. `squash()` strips every
+   separator, so it can join across a word boundary the engine never joins: on 2025 Q25 part (a)
+   it found `odd` inside *"…x sin x. **So d/dx**…"* → `…sinxsoddxsin…`. **The acceptance gate
+   caught it** (the part scored 0/2 from its own model answer). A part is now given a keyword only
+   if the substring test passes **and** the engine's own `keywordHit()` fires on that part's model
+   answer.
+
+3. ⚠️ **The Standard 2 damage detector is too weak, and it put scrambled NESA text on screen.**
+   Scoring a real answer to 2020 Q14 in the browser showed part (c)'s band feedback as
+   *"20 Obtains the probability of a student studyin g History as , or equivalent 40 merit"* —
+   the `build_written_key.py` word-order known issue, straight to a student. It passed the
+   `{empty, dangling function word, starts lowercase}` test because it starts with a digit.
+   Four signals added — **does not start with an uppercase letter**, **a space before a comma or
+   period**, **a lone letter or bare number stranded at the end**, and **NESA's stock
+   "or equivalent merit" not being the row's final clause** (unless the row joins two bulleted
+   alternatives with `OR`/`AND`). That takes Advanced from **42 to 101 of 540 rows flagged**, and
+   every one of the ~60 additional rows was read and is genuinely scrambled. **CLAUDE.md's
+   recorded figure of 42/540 for this subject was an undercount by the weaker detector, not a
+   measurement of the damage.**
+   ⚠️ **The detector still was not enough on its own.** All **106** distinct band-descriptor
+   strings that actually shipped were then read one by one, and one more survived:
+   *"OFY, Finds angle or equivalent merit"* — uppercase-initial, and it *does* end on the stock
+   qualifier, so every rule above passed it. A hoisted tail can land in front of the sentence and
+   keep its own comma; a fifth rule catches that. Final: **104 distinct strings, all clean**.
+   **44 parts get no `bandDescriptors`** and correctly fall back to the engine's generic wording.
+   The detector is deliberately biased toward flagging — a false positive costs one part its
+   NESA wording, a false negative shows a student mangled text. ~6 of the 101 are false positives
+   (`"Shows that a = b"`, `"Finds the values of a and b"`), which is the right trade.
+
+4. ⚠️ **The acceptance gate was more generous than the engine, because Python's `\w` is
+   Unicode-aware and JavaScript's is not.** `keywordHit()` splits the answer with `/\W+/`, which in
+   JS treats `θ`, `π`, `√` as **separators**; Python's `re.split(r"\W+", …)` treats them as **word
+   characters**. So the gate matched `θ < 2` against the bare word `θ` and passed parts the engine
+   then scored below full — **2024 Q31 at 4/6 and 2025 Q28 at 3/4**. Found by scoring all 60
+   questions **in the real engine**, not by re-reading the mirror. The split is now ASCII-only,
+   and re-verified: **all 60 questions score full from their own model answers, at every viewport
+   width tested.**
+
+### One recovered part label, read off the paper rather than inferred
+
+`build_written_key.py` lost the `(b)` label on **2023 Q31**, leaving the row labelled `None` and
+swallowing the label into the **end of part (a)'s sample answer** ("No, since P(F S) P(F) ≠ (b)").
+Rather than infer it from position, NESA's own marking guidelines were opened: **2023 page 27,
+"Question 31 (b)"**. It is recovered through an explicit `LABEL_RECOVERY` table that asserts the
+question's row labels *and* marks match the recorded shape and **fails loudly** if the committed key
+ever changes underneath it. It is the only such row in the subject.
+
+### The viewport sweep found three unwrapped wide tables
+
+Sweeping **six widths** rather than one turned up horizontal overflow at **320 px** on three
+questions, every one an unwrapped `.q-table`:
+
+| Question | Overflow at 320px | Mine? |
+|---|---|---|
+| 2021 Q25 | 399 px in a 280 px box (6 columns via `colspan`) | **No** — identical with `parts` deleted |
+| 2024 Q26 | 335 px (5 columns) | **No** — identical with `parts` deleted |
+| 2022 Q11 | 375 px → **390 px** (4 columns) | **Partly** — 15 px, its table moved into `.parts-stem` |
+
+Whether each was pre-existing was **established by re-rendering the same question with `parts`
+deleted**, not assumed. All four tables (2022 Q11's appears in both `stem` and `q`) are now wrapped
+in `overflow-x:auto`. ⚠️ **§10's rule names "7+ columns" as the test — that threshold was measured
+at 430 px and does not hold at 320 px**, where a 2-cell header row with a `colspan` already spills.
+The durable test is the measurement, not the column count. The wrapper deliberately sets **no
+`min-width`**: all three already fit at 430 px, and forcing one would add a scrollbar where none is
+needed.
+
+### Verified
+
+- **Six viewport widths — 320, 430, 768, 1180, 1400, 1920** — each running two full sweeps over all
+  **126 questions**: a render sweep walking **all 141 parts** (`.question-area` overflow,
+  `body.scrollWidth`, stems scrolling inside themselves, images wider than their host, marks badge,
+  the literal string `undefined`) and a **scored** sweep that fills every part of all **60**
+  multi-part questions with its own model answer and submits. Result at every width: **0 overflows,
+  0 nested scrollbars, 0 images wider than their container, 0 missing marks badges, 0 occurrences of
+  `undefined`, 0 render errors, 141 part rows, and `notFull: []`** — every question scoring full
+  from its own model answers in the real engine. Largest question image **600 × 302**, the
+  `min(100%,600px)` cap holding; **17 tables scroll inside their wrappers at 320 px, 12 at 430 px,
+  0 from 768 px up**.
+- **All 51 distinct question images load** (0 broken paths).
+- A real practice flow on **2020 Q14**: parts (a) and (b) answered correctly, (c) left as "I am not
+  sure how to do this one." → **`Score: 3 / 5 marks`**, `(a) 2/2`, `(b) 1/1`, `(c) 0/2`, with (a)
+  and (b) showing NESA's own criteria ("Provides the correct solution", "Provides the correct
+  answer") and (c) correctly falling back to generic wording because its criteria row is damaged.
+  Screenshotted.
+- **Single-part questions untouched** (2024 Q29: one `#written-input`, no accordion, no shared stem,
+  4/4, and the Key Concepts grid still suppressed for `mathsadv`).
+- **Test mode still never auto-scores** a multi-part question, and per-part answers survive
+  Next/Prev as the `{"(a)": …}` object.
+- **The other four subjects are unaffected**: all 248 written questions in Standard 2, VET,
+  Multimedia and HMS re-rendered with **0 overflow, 0 `undefined`, 0 errors**.
+- Full local CI: `MC=706 Written=374 imageRefs=337 missingImages=0`, `Issues: 0`; **285** MC answers
+  and **334** written questions checked, 0 wrong, 0 unverifiable; Advanced coverage **234/234**
+  unchanged; 5 functions syntax-check; **`npm test` 73/73**. No console errors.
+
+⚠️ **The live AI marking call still has NOT been made** — there is no `ANTHROPIC_API_KEY` in this
+environment — so the multi-part marking path remains verified only to the prompt boundary and by
+`tests/mark-written.test.js`. Unchanged from 2026-09-05.
+
+### Two things found and deliberately not changed
+
+- **Mathematics Standard 2 carries 6 per-part keywords the engine can never credit in that part**
+  (2023 Q21(a)/(c) `$40`, 2024 Q20(a) `2%`, 2025 Q20(a) `-4`, 2023 Q34(b)/(c) `-10.4`) — the same
+  class as defect 2, from the same builder. Every one is a **duplicate form of a keyword that *is*
+  credited** (`$40` beside `40`; the ASCII `-10.4` beside the answer's Unicode `−10.4`), and every
+  affected part still scores full from its own model answer, so no student is blocked. It only
+  makes a *partial* answer marginally harsher. Measured, reported, committed data left alone.
+- **The per-part backlog is now much smaller than recorded.** After this session: Standard 2 66,
+  Advanced 60, VET 18. **Multimedia has *zero* multi-part questions in its current bank** — its only
+  ones are the six Section III `Q16(a)/(b)`, which are not ported, so that work lands with the
+  Section III port, not as a separate backlog item. **HMS has no answer key at all** and cannot have
+  one until after the 2026 HSC, so its 40 written questions have no ground truth to derive per-part
+  marks from. There is nothing further to convert today.

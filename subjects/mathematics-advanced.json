@@ -1364,6 +1364,44 @@
           "marks": 1,
           "reason": "The student must draw the graph of V = 1000 − 20t on a printed grid and label it as Tank A. The engine cannot accept or mark a hand-drawn graph."
         }
+      ],
+      "stem": "There are two tanks on a property, Tank <em>A</em> and Tank <em>B</em>. Initially, Tank <em>A</em> holds 1000 litres of water and Tank <em>B</em> is empty. Tank <em>A</em> begins to lose water at a constant rate of 20 litres per minute. The volume of water in Tank <em>A</em> is modelled by <em>V</em> = 1000 &minus; 20<em>t</em> where <em>V</em> is the volume in litres and <em>t</em> is the time in minutes from when the tank begins to lose water.<br>",
+      "parts": [
+        {
+          "label": "(b)",
+          "marks": 2,
+          "q": "Tank <em>B</em> remains empty until <em>t</em> = 15 when water is added to it at a constant rate of 30 litres per minute.<br><br>By drawing a line on the grid on the previous page, or otherwise, find the value of <em>t</em> when the two tanks contain the same volume of water. <strong>(2 marks)</strong>",
+          "answer": "Tank A: V = 1000 − 20t. Tank B for t ≥ 15: V = 30(t − 15) = 30t − 450.\nEqual volumes: 1000 − 20t = 30t − 450\n1450 = 50t, so t = 29 minutes.",
+          "keywords": [
+            "29",
+            "45",
+            "1000 − 20t",
+            "30(t − 15)"
+          ],
+          "minKeywords": 2,
+          "bandDescriptors": {
+            "full": "Provides the correct solution",
+            "partial": "Draws the graph of volume for tank B, or equivalent merit",
+            "minimal": "Draws the graph of volume for tank B, or equivalent merit"
+          }
+        },
+        {
+          "label": "(c)",
+          "marks": 1,
+          "q": "Using the graphs drawn, or otherwise, find the value of <em>t</em> (where <em>t</em> &gt; 0) when the total volume of water in the two tanks is 1000 litres. <strong>(1 mark)</strong><br><br><em style=\"opacity:0.75\">Part (a), which asked for the graph of <em>V</em> = 1000 &minus; 20<em>t</em> to be drawn on a printed grid, is not included here &mdash; answer both parts algebraically.</em>",
+          "answer": "Total volume = (1000 − 20t) + (30t − 450) = 550 + 10t.\n550 + 10t = 1000, so 10t = 450 and t = 45 minutes.\n(Tank A does not run dry until t = 50, so t = 45 is valid.)",
+          "keywords": [
+            "45",
+            "1000 − 20t",
+            "total"
+          ],
+          "minKeywords": 2,
+          "bandDescriptors": {
+            "full": "Provides the correct answer",
+            "partial": "Does not meet the criterion: provides the correct answer",
+            "minimal": "Does not meet the criterion: provides the correct answer"
+          }
+        }
       ]
     },
     {
@@ -1434,7 +1472,54 @@
         "full": "All three probabilities correct — 1/8, 13/18 and 10/39 — with the overlap of 5 students established first.",
         "partial": "The overlap of 5 students is found and at least one probability is correct, but not all three.",
         "minimal": "Start with the union: 33 students study at least one subject, so the overlap is 20 + 18 − 33 = 5. In part (c) the second choice is from 39 students, not 40."
-      }
+      },
+      "stem": "History and Geography are two of the subjects students may decide to study. For a group of 40 students, the following is known.<br>&bull; 7 students study neither History nor Geography<br>&bull; 20 students study History<br>&bull; 18 students study Geography<br>",
+      "parts": [
+        {
+          "label": "(a)",
+          "marks": 2,
+          "q": "A student is chosen at random. By using a Venn diagram, or otherwise, find the probability that the student studies both History and Geography. <strong>(2 marks)</strong>",
+          "answer": "40 − 7 = 33 students study at least one subject.\n|H ∪ G| = |H| + |G| − |H ∩ G|, so 33 = 20 + 18 − |H ∩ G|, giving |H ∩ G| = 5.\nP(both) = 5/40 = 1/8.",
+          "keywords": [
+            "1/8",
+            "5"
+          ],
+          "minKeywords": 1,
+          "bandDescriptors": {
+            "full": "Provides the correct solution",
+            "partial": "Finds the number of students who study both History and Geography, or equivalent merit",
+            "minimal": "Finds the number of students who study both History and Geography, or equivalent merit"
+          }
+        },
+        {
+          "label": "(b)",
+          "marks": 1,
+          "q": "A student is chosen at random. Given that the student studies Geography, what is the probability that the student does NOT study History? <strong>(1 mark)</strong>",
+          "answer": "Of the 18 who study Geography, 5 also study History, so 13 do not.\nP(not History | Geography) = 13/18.",
+          "keywords": [
+            "5",
+            "13/18"
+          ],
+          "minKeywords": 1,
+          "bandDescriptors": {
+            "full": "Provides the correct answer",
+            "partial": "Does not meet the criterion: provides the correct answer",
+            "minimal": "Does not meet the criterion: provides the correct answer"
+          }
+        },
+        {
+          "label": "(c)",
+          "marks": 2,
+          "q": "Two different students are chosen at random, one after the other. What is the probability that the first student studies History and the second student does NOT study History? <strong>(2 marks)</strong>",
+          "answer": "20 study History and 20 do not. Choosing without replacement:\nP = (20/40) × (20/39) = 400/1560 = 10/39.",
+          "keywords": [
+            "5",
+            "10/39",
+            "39"
+          ],
+          "minKeywords": 2
+        }
+      ]
     },
     {
       "year": 2020,
@@ -1458,7 +1543,57 @@
         "full": "All three parts correct — ∠APB = 65°, AB = 8.76 km by the cosine rule, and a bearing of 146° found from the back bearing 215° less ∠PAB.",
         "partial": "The angle and the distance are correct, but the bearing in (c) is wrong — usually because the back bearing of 215° was not used.",
         "minimal": "Part (a) is the difference of the two bearings. Part (b) needs the cosine rule with the included angle 65°. For (c), work from the north line at A: the bearing of P from A is 215°."
-      }
+      },
+      "stem": "Mr Ali, Ms Brown and a group of students were camping at the site located at <em>P</em>. Mr Ali walked with some of the students on a bearing of 035&deg; for 7 km to location <em>A</em>. Ms Brown, with the rest of the students, walked on a bearing of 100&deg; for 9 km to location <em>B</em>.",
+      "parts": [
+        {
+          "label": "(a)",
+          "marks": 1,
+          "q": "Show that the angle <em>APB</em> is 65&deg;. <strong>(1 mark)</strong>",
+          "answer": "Both bearings are measured clockwise from the same north line at P, so\n∠APB = 100° − 35° = 65°.",
+          "keywords": [
+            "65"
+          ],
+          "minKeywords": 1,
+          "bandDescriptors": {
+            "full": "Provides the correct solution",
+            "partial": "Does not meet the criterion: provides the correct solution",
+            "minimal": "Does not meet the criterion: provides the correct solution"
+          }
+        },
+        {
+          "label": "(b)",
+          "marks": 2,
+          "q": "Find the distance <em>AB</em>. <strong>(2 marks)</strong>",
+          "answer": "Cosine rule in △APB:\nAB² = 7² + 9² − 2(7)(9) cos 65°\nAB² = 49 + 81 − 126 cos 65° = 130 − 53.25 = 76.75\nAB = 8.76 km (2 d.p.).",
+          "keywords": [
+            "65",
+            "8.76",
+            "cosine rule",
+            "sine rule"
+          ],
+          "minKeywords": 2,
+          "bandDescriptors": {
+            "full": "Provides the correct solution",
+            "partial": "Attempts to use the cosine rule to find the distance AB",
+            "minimal": "Attempts to use the cosine rule to find the distance AB"
+          }
+        },
+        {
+          "label": "(c)",
+          "marks": 2,
+          "q": "Find the bearing of Ms Brown&rsquo;s group from Mr Ali&rsquo;s group. Give your answer correct to the nearest degree. <strong>(2 marks)</strong>",
+          "answer": "Sine rule to find ∠PAB:\nsin(∠PAB)/9 = sin 65°/8.76, so sin(∠PAB) = 0.9311 and ∠PAB = 68.6°.\nThe bearing of P from A is 035° + 180° = 215°.\nBearing of B from A = 215° − 68.6° = 146.4° ≈ 146°.",
+          "keywords": [
+            "65",
+            "8.76",
+            "146",
+            "sine rule",
+            "215"
+          ],
+          "minKeywords": 3
+        }
+      ]
     },
     {
       "year": 2020,
@@ -1507,7 +1642,42 @@
         "full": "Derivative 4(x + 1)e^(2x) correct by the product rule, and (b) obtained by reversing it and dividing by 4 to give ¼ e^(2x)(2x + 1) + c.",
         "partial": "The derivative is correct but (b) does not use it — or the factor of ¼ is missing.",
         "minimal": "Use the product rule in (a). In (b), 'Hence' means read the answer to (a) backwards: since the derivative is 4(x + 1)e^(2x), the primitive of (x + 1)e^(2x) is a quarter of e^(2x)(2x + 1)."
-      }
+      },
+      "parts": [
+        {
+          "label": "(a)",
+          "marks": 2,
+          "q": "Differentiate <em>e</em><sup>2<em>x</em></sup>(2<em>x</em> + 1). <strong>(2 marks)</strong>",
+          "answer": "Product rule with u = e^(2x) and v = 2x + 1:\nd/dx [e^(2x)(2x + 1)] = 2e^(2x)(2x + 1) + e^(2x)(2)\n= e^(2x)(4x + 2 + 2)\n= e^(2x)(4x + 4) = 4(x + 1)e^(2x).",
+          "keywords": [
+            "4(x + 1)e",
+            "product rule",
+            "(2x + 1)"
+          ],
+          "minKeywords": 2,
+          "bandDescriptors": {
+            "full": "Provides the correct solution",
+            "partial": "Attempts to use the product rule",
+            "minimal": "Attempts to use the product rule"
+          }
+        },
+        {
+          "label": "(b)",
+          "marks": 1,
+          "q": "Hence, find &int; (<em>x</em> + 1)<em>e</em><sup>2<em>x</em></sup> <em>dx</em>. <strong>(1 mark)</strong>",
+          "answer": "From (a), ∫ 4(x + 1)e^(2x) dx = e^(2x)(2x + 1) + c.\nDivide by 4: ∫ (x + 1)e^(2x) dx = ¼ e^(2x)(2x + 1) + c.",
+          "keywords": [
+            "4(x + 1)e",
+            "(2x + 1)"
+          ],
+          "minKeywords": 1,
+          "bandDescriptors": {
+            "full": "Provides the correct answer",
+            "partial": "Does not meet the criterion: provides the correct answer",
+            "minimal": "Does not meet the criterion: provides the correct answer"
+          }
+        }
+      ]
     },
     {
       "year": 2020,
@@ -1582,7 +1752,55 @@
         "full": "All three parts correct — 61.6°C, a cooling rate of about 5.9°C per minute (negative derivative), and about 5.2 minutes to reach 55°C.",
         "partial": "Parts (a) and (c) correct but the rate in (b) is wrong — most often because the ln 1.5 factor is missing when differentiating a base other than e.",
         "minimal": "For (b), d/dt (a^(kt)) = a^(kt) × k ln a, so the ln 1.5 factor is essential. For (c), take logarithms of both sides after isolating the power."
-      }
+      },
+      "stem": "Hot tea is poured into a cup. The temperature of tea can be modelled by <em>T</em> = 25 + 70(1.5)<sup>&minus;0.4<em>t</em></sup>, where <em>T</em> is the temperature of the tea, in degrees Celsius, <em>t</em> minutes after it is poured.<br>",
+      "parts": [
+        {
+          "label": "(a)",
+          "marks": 1,
+          "q": "What is the temperature of the tea 4 minutes after it has been poured? <strong>(1 mark)</strong>",
+          "answer": "T = 25 + 70(1.5)^(−0.4 × 4) = 25 + 70(1.5)^(−1.6)\n= 25 + 70(0.5227) = 61.6°C (1 d.p.).",
+          "keywords": [
+            "61.6",
+            "5.2"
+          ],
+          "minKeywords": 1,
+          "bandDescriptors": {
+            "full": "Provides the correct answer",
+            "partial": "Does not meet the criterion: provides the correct answer",
+            "minimal": "Does not meet the criterion: provides the correct answer"
+          }
+        },
+        {
+          "label": "(b)",
+          "marks": 2,
+          "q": "At what rate is the tea cooling 4 minutes after it has been poured? <strong>(2 marks)</strong>",
+          "answer": "Differentiate: dT/dt = 70 × ln 1.5 × (−0.4)(1.5)^(−0.4t)\n= −28 ln 1.5 × (1.5)^(−0.4t).\nAt t = 4: dT/dt = −28(0.4055)(0.5227) = −5.93.\nThe tea is cooling at about 5.9°C per minute.",
+          "keywords": [
+            "5.9",
+            "5.2",
+            "ln 1.5",
+            "cooling"
+          ],
+          "minKeywords": 2,
+          "bandDescriptors": {
+            "full": "Provides the correct solution",
+            "partial": "Finds the derivative of T, or equivalent merit",
+            "minimal": "Finds the derivative of T, or equivalent merit"
+          }
+        },
+        {
+          "label": "(c)",
+          "marks": 3,
+          "q": "How long after the tea is poured will it take for its temperature to reach 55&deg;C? <strong>(3 marks)</strong>",
+          "answer": "55 = 25 + 70(1.5)^(−0.4t)\n30/70 = (1.5)^(−0.4t), so 3/7 = (1.5)^(−0.4t)\nln(3/7) = −0.4t ln 1.5\nt = −ln(3/7)/(0.4 ln 1.5) = 0.8473/0.1622\nt ≈ 5.2 minutes.",
+          "keywords": [
+            "5.2",
+            "ln 1.5"
+          ],
+          "minKeywords": 1
+        }
+      ]
     },
     {
       "year": 2020,
@@ -1629,7 +1847,43 @@
         "full": "Both parts correct — k = π/2 from setting the total area to 1, and P(X ≤ 1) = 0.4597 from 1 − cos 1.",
         "partial": "One part correct, or the right method with a calculator in degrees instead of radians.",
         "minimal": "A probability density function integrates to 1 over its domain — that equation gives k. For (b), integrate the same function from 0 to 1, in radians."
-      }
+      },
+      "stem": "A continuous random variable, <em>X</em>, has the following probability density function.<br><br><em>f</em>(<em>x</em>) = <table style=\"display:inline-table;vertical-align:middle;border-collapse:collapse;margin:0 0 0 4px\"><tr><td rowspan=\"2\" style=\"border:0;padding:0 4px 0 0;font-size:2.6em;font-weight:300;line-height:0.86;vertical-align:middle\">{</td><td style=\"border:0;padding:1px 0;text-align:left;font-size:0.85em\">sin <em>x</em>&nbsp;&nbsp;&nbsp;for 0 &le; <em>x</em> &le; <em>k</em></td></tr><tr><td style=\"border:0;padding:1px 0;text-align:left;font-size:0.85em\">0&nbsp;&nbsp;&nbsp;for all other values of <em>x</em></td></tr></table><br>",
+      "parts": [
+        {
+          "label": "(a)",
+          "marks": 2,
+          "q": "Find the value of <em>k</em>. <strong>(2 marks)</strong>",
+          "answer": "The total probability must be 1:\n∫₀^k sin x dx = 1\n[−cos x]₀^k = 1\n−cos k + cos 0 = 1, so 1 − cos k = 1\ncos k = 0, and since k > 0 the smallest solution is k = π/2.",
+          "keywords": [
+            "π/2",
+            "1 − cos",
+            "total probability"
+          ],
+          "minKeywords": 2,
+          "bandDescriptors": {
+            "full": "Provides the correct solution",
+            "partial": "Writes an equation involving a definite integral set equal to 1, or equivalent merit",
+            "minimal": "Writes an equation involving a definite integral set equal to 1, or equivalent merit"
+          }
+        },
+        {
+          "label": "(b)",
+          "marks": 2,
+          "q": "Find <em>P</em>(<em>X</em> &le; 1). Give your answer correct to four decimal places. <strong>(2 marks)</strong>",
+          "answer": "P(X ≤ 1) = ∫₀¹ sin x dx\n= [−cos x]₀¹\n= 1 − cos 1\n= 1 − 0.5403\n= 0.4597 (4 d.p.).",
+          "keywords": [
+            "0.4597",
+            "1 − cos"
+          ],
+          "minKeywords": 1,
+          "bandDescriptors": {
+            "full": "Provides the correct solution",
+            "partial": "Writes the definite integral",
+            "minimal": "Writes the definite integral"
+          }
+        }
+      ]
     },
     {
       "year": 2020,
@@ -1657,7 +1911,34 @@
         "full": "P = 2x + 72/x derived correctly, then x = 6 from dP/dx = 0 and a minimum perimeter of 24 m justified by the positive second derivative.",
         "partial": "The perimeter is minimised correctly but the derivation in (a) is incomplete, or the minimum is not justified.",
         "minimal": "In (a) the πx terms cancel — the bottom edge is y + x, not y. In (b), solve dP/dx = 0 and then test the second derivative to show it is a minimum, not just a stationary point."
-      }
+      },
+      "stem": "A landscape gardener wants to build a garden bed in the shape of a rectangle attached to a quarter-circle. Let <em>x</em> and <em>y</em> be the dimensions of the rectangle in metres, as shown in the diagram.<img src=\"/diagrams/mathematics-advanced_2020_Q25_stimulus.jpg\" alt=\"A rectangle of height x and width y with a quarter-circle of radius x attached to its right-hand end.\" style=\"max-width:100%;height:auto;display:block;margin:14px auto\">The garden bed is required to have an area of 36 m&sup2; and to have a perimeter which is as small as possible. Let <em>P</em> metres be the perimeter of the garden bed.<br>",
+      "parts": [
+        {
+          "label": "(a)",
+          "marks": 3,
+          "q": "Show that <em>P</em> = 2<em>x</em> + 72/<em>x</em>. <strong>(3 marks)</strong>",
+          "answer": "The quarter-circle has radius x, so\nArea = xy + ¼πx² = 36, giving y = 36/x − πx/4.\nThe boundary is: the left side x, the top y, the quarter-circle arc ¼(2πx) = πx/2, and the bottom y + x.\nP = x + y + πx/2 + y + x = 2x + 2y + πx/2.\nSubstituting y: P = 2x + 2(36/x − πx/4) + πx/2\n= 2x + 72/x − πx/2 + πx/2\n= 2x + 72/x.",
+          "keywords": [
+            "72/x",
+            "quarter"
+          ],
+          "minKeywords": 1
+        },
+        {
+          "label": "(b)",
+          "marks": 4,
+          "q": "Find the smallest possible perimeter of the garden bed, showing why this is the minimum perimeter. <strong>(4 marks)</strong>",
+          "answer": "dP/dx = 2 − 72/x².\nSetting dP/dx = 0: 2 = 72/x², so x² = 36 and x = 6 (x > 0).\nd²P/dx² = 144/x³, which is positive at x = 6, so this is a minimum.\nP = 2(6) + 72/6 = 12 + 12 = 24 metres.",
+          "keywords": [
+            "24",
+            "x = 6",
+            "72/x",
+            "minimum"
+          ],
+          "minKeywords": 2
+        }
+      ]
     },
     {
       "year": 2020,
@@ -1681,7 +1962,59 @@
         "full": "All three amounts correct — $58 492.49 after the third withdrawal, $892.49 of interest, and $187.85 after the 94th — with a closed form used for (c).",
         "partial": "Parts (a) and (b) correct, but (c) is wrong or attempted by iterating rather than by a closed form.",
         "minimal": "In (b), interest each month is 0.5% of that month's opening balance. For (c), expand the recurrence into a geometric series: Aₙ = 160 000 − 100 000(1.005)ⁿ."
-      }
+      },
+      "stem": "Tina inherits $60 000 and invests it in an account earning interest at a rate of 0.5% per month. Each month, immediately after the interest has been paid, Tina withdraws $800.<br><br>The amount in the account immediately after the <em>n</em>th withdrawal can be determined using the recurrence relation <em>A</em><sub><em>n</em></sub> = <em>A</em><sub><em>n</em>&minus;1</sub>(1.005) &minus; 800, where <em>n</em> = 1, 2, 3, &hellip; and <em>A</em><sub>0</sub> = 60 000.<br>",
+      "parts": [
+        {
+          "label": "(a)",
+          "marks": 2,
+          "q": "Use the recurrence relation to find the amount of money in the account immediately after the third withdrawal. <strong>(2 marks)</strong>",
+          "answer": "A₁ = 60 000(1.005) − 800 = 60 300 − 800 = $59 500\nA₂ = 59 500(1.005) − 800 = 59 797.50 − 800 = $58 997.50\nA₃ = 58 997.50(1.005) − 800 = 59 292.4875 − 800 = $58 492.49.",
+          "keywords": [
+            "58 492",
+            "1.005"
+          ],
+          "minKeywords": 1,
+          "bandDescriptors": {
+            "full": "Provides the correct solution",
+            "partial": "Finds the value of A1, or equivalent merit",
+            "minimal": "Finds the value of A1, or equivalent merit"
+          }
+        },
+        {
+          "label": "(b)",
+          "marks": 2,
+          "q": "Calculate the amount of interest earned in the first three months. <strong>(2 marks)</strong>",
+          "answer": "Interest is 0.5% of the balance at the start of each month:\n60 000(0.005) + 59 500(0.005) + 58 997.50(0.005)\n= 300 + 297.50 + 294.99 = $892.49.\n(Equivalently: 58 492.49 − 60 000 + 3 × 800 = 892.49.)",
+          "keywords": [
+            "58 492",
+            "892.49"
+          ],
+          "minKeywords": 1,
+          "bandDescriptors": {
+            "full": "Provides the correct solution",
+            "partial": "Finds by how much the balance is reduced, or equivalent merit",
+            "minimal": "Finds by how much the balance is reduced, or equivalent merit"
+          }
+        },
+        {
+          "label": "(c)",
+          "marks": 3,
+          "q": "Calculate the amount of money in the account immediately after the 94th withdrawal. <strong>(3 marks)</strong>",
+          "answer": "Expanding the recurrence gives\nAₙ = 60 000(1.005)ⁿ − 800[(1.005)ⁿ − 1]/0.005\n= 60 000(1.005)ⁿ − 160 000[(1.005)ⁿ − 1]\n= 160 000 − 100 000(1.005)ⁿ.\nA₉₄ = 160 000 − 100 000(1.005)⁹⁴ = 160 000 − 159 812.15\n= $187.85.",
+          "keywords": [
+            "187.85",
+            "1.005",
+            "160 000"
+          ],
+          "minKeywords": 2,
+          "bandDescriptors": {
+            "full": "Provides the correct solution",
+            "partial": "Finds an expression for A94, or equivalent merit",
+            "minimal": "Attempts to develop a formula for A94, or equivalent merit"
+          }
+        }
+      ]
     },
     {
       "year": 2020,
@@ -1729,7 +2062,38 @@
         "full": "Both parts correct — 0.9658 via the complement of 'neither', and 3/8 from P(works) = 3/4 multiplied by the half of the distribution above the mean.",
         "partial": "The 0.815 region is found correctly but 'at least one' is not handled by the complement, or (b) uses the wrong proportion of workers.",
         "minimal": "In (a), z = −2 and z = 1, and 'at least one' is easiest as 1 − P(neither). In (b), three times as many work as do not, so 3 in every 4 adults work; $25 is the mean, so exactly half of those earn more."
-      }
+      },
+      "stem": "In a particular country, the hourly rate of pay for adults who work is normally distributed with a mean of $25 and a standard deviation of $5.<br>",
+      "parts": [
+        {
+          "label": "(a)",
+          "marks": 3,
+          "q": "Two adults who both work are chosen at random. Find the probability that at least one of them earns between $15 and $30 per hour. <strong>(3 marks)</strong>",
+          "answer": "$15 is z = (15 − 25)/5 = −2 and $30 is z = (30 − 25)/5 = 1.\nUsing the empirical rule, P(−2 < z < 1) = 0.95/2 + 0.68/2 = 0.475 + 0.34 = 0.815.\nP(neither of the two) = (1 − 0.815)² = 0.185² = 0.034225.\nP(at least one) = 1 − 0.034225 = 0.9658.",
+          "keywords": [
+            "0.9658",
+            "0.815",
+            "at least one"
+          ],
+          "minKeywords": 2
+        },
+        {
+          "label": "(b)",
+          "marks": 2,
+          "q": "The number of adults who work is equal to three times the number of adults who do not work. One adult is chosen at random. Find the probability that the chosen adult works and earns more than $25 per hour. <strong>(2 marks)</strong>",
+          "answer": "If w adults do not work, then 3w work, out of 4w in total, so P(works) = 3/4.\n$25 is the mean, so P(earns more than $25 | works) = 0.5.\nP(works and earns more than $25) = (3/4)(1/2) = 3/8 = 0.375.",
+          "keywords": [
+            "3/8",
+            "0.375"
+          ],
+          "minKeywords": 1,
+          "bandDescriptors": {
+            "full": "Provides the correct solution",
+            "partial": "Finds the probability of randomly choosing an adult who works or the probability of an adult earning more than $25 per hour",
+            "minimal": "Finds the probability of randomly choosing an adult who works or the probability of an adult earning more than $25 per hour"
+          }
+        }
+      ]
     },
     {
       "year": 2020,
@@ -1753,7 +2117,34 @@
         "full": "Tangent derived correctly from dy/dx = c/x at the point (p, c ln p), then c = e found from the two conditions c/p = 1 and c ln p = c.",
         "partial": "The tangent equation is correct but the two conditions in (b) are not combined to reach c = e.",
         "minimal": "In (a) use the point (p, c ln p) with gradient c/p. In (b) the two conditions give p = c and ln p = 1 — solve them together."
-      }
+      },
+      "stem": "The diagram shows the graph of <em>y</em> = <em>c</em> ln <em>x</em>, <em>c</em> &gt; 0.",
+      "parts": [
+        {
+          "label": "(a)",
+          "marks": 2,
+          "q": "Show that the equation of the tangent to <em>y</em> = <em>c</em> ln <em>x</em> at <em>x</em> = <em>p</em>, where <em>p</em> &gt; 0, is <em>y</em> = (<em>c</em>/<em>p</em>)<em>x</em> &minus; <em>c</em> + <em>c</em> ln <em>p</em>. <strong>(2 marks)</strong>",
+          "answer": "y = c ln x, so dy/dx = c/x.\nAt x = p the gradient is c/p and the point of contact is (p, c ln p).\nPoint-gradient form: y − c ln p = (c/p)(x − p)\ny = (c/p)x − (c/p)(p) + c ln p\ny = (c/p)x − c + c ln p.",
+          "keywords": [
+            "c/x",
+            "point-gradient"
+          ],
+          "minKeywords": 1
+        },
+        {
+          "label": "(b)",
+          "marks": 2,
+          "q": "Find the value of <em>c</em> such that the tangent from part (a) has a gradient of 1 and passes through the origin. <strong>(2 marks)</strong>",
+          "answer": "Gradient 1 means c/p = 1, so p = c.\nThrough the origin means (0, 0) satisfies the tangent:\n0 = 0 − c + c ln p, so c ln p = c.\nSince c > 0, ln p = 1 and p = e.\nTherefore c = p = e.",
+          "keywords": [
+            "p = e",
+            "c = e",
+            "origin",
+            "ln p = 1"
+          ],
+          "minKeywords": 2
+        }
+      ]
     },
     {
       "year": 2020,
@@ -1780,7 +2171,43 @@
         "full": "Intersection x = 4/(a + 1) established, the area between the curves integrated to 32/[3(a + 1)²], and a = √2 − 1 obtained.",
         "partial": "The area integral is set up correctly as upper curve minus lower curve, but the algebra does not reach a = √2 − 1.",
         "minimal": "In (a), equate the two expressions and factor out x. In (b), integrate (4x − x²) − ax² from 0 to the x-coordinate of A, then solve for a."
-      }
+      },
+      "stem": "The diagram shows two parabolas <em>y</em> = 4<em>x</em> &minus; <em>x</em>&sup2; and <em>y</em> = <em>ax</em>&sup2;, where <em>a</em> &gt; 0. The two parabolas intersect at the origin, <em>O</em>, and at <em>A</em>.",
+      "parts": [
+        {
+          "label": "(a)",
+          "marks": 2,
+          "q": "Show that the <em>x</em>-coordinate of <em>A</em> is 4/(<em>a</em> + 1). <strong>(2 marks)</strong>",
+          "answer": "At an intersection the y-values are equal:\n4x − x² = ax²\n4x = ax² + x² = (a + 1)x²\nx[(a + 1)x − 4] = 0\nSo x = 0 (the origin) or x = 4/(a + 1), which is the x-coordinate of A.",
+          "keywords": [
+            "4/(a + 1)"
+          ],
+          "minKeywords": 1,
+          "bandDescriptors": {
+            "full": "Provides the correct solution",
+            "partial": "Attempts to solve a quadratic equation to find the x-coordinate of A, or equivalent merit",
+            "minimal": "Attempts to solve a quadratic equation to find the x-coordinate of A, or equivalent merit"
+          }
+        },
+        {
+          "label": "(b)",
+          "marks": 4,
+          "q": "Find the value of <em>a</em> such that the shaded area is 16/3. <strong>(4 marks)</strong>",
+          "answer": "Let k = 4/(a + 1). The shaded area is the region between the curves from 0 to k:\nArea = ∫₀^k [(4x − x²) − ax²] dx = ∫₀^k [4x − (a + 1)x²] dx\n= [2x² − (a + 1)x³/3]₀^k\n= 2k² − (a + 1)k³/3.\nSubstituting k = 4/(a + 1):\n= 32/(a + 1)² − 64/[3(a + 1)²]\n= 32/[3(a + 1)²].\nSet equal to 16/3: 32/[3(a + 1)²] = 16/3\n(a + 1)² = 2, so a + 1 = √2 (positive since a > 0)\na = √2 − 1.",
+          "keywords": [
+            "√2 − 1",
+            "4/(a + 1)",
+            "between the curves",
+            "32/3"
+          ],
+          "minKeywords": 2,
+          "bandDescriptors": {
+            "full": "Provides the correct solution",
+            "partial": "Correctly substitutes the limits into the anti-derivative, or equivalent merit OR Finds the anti-derivative, or equivalent merit",
+            "minimal": "Writes an expression for the area involving an integral of the difference between two functions, or equivalent merit"
+          }
+        }
+      ]
     },
     {
       "year": 2020,
@@ -1808,7 +2235,50 @@
         "full": "a = 15 000 and b = 20 000; both populations increasing only on 10 < t < 13; and a rate of about −643 mice per week at t = 36.",
         "partial": "The amplitude and centre are correct and one derivative is analysed correctly, but the overlap or the final rate is wrong.",
         "minimal": "The amplitude is half the difference of the maximum and minimum, and b is their average. For (b), solve m′(t) > 0 and c′(t) > 0 separately and intersect. The cat population peaks where the cosine equals −1."
-      }
+      },
+      "stem": "The population of mice on an isolated island can be modelled by the function <em>m</em>(<em>t</em>) = <em>a</em> sin((&pi;/26)<em>t</em>) + <em>b</em>, where <em>t</em> is the time in weeks and 0 &le; <em>t</em> &le; 52. The population of mice reaches a maximum of 35 000 when <em>t</em> = 13 and a minimum of 5000 when <em>t</em> = 39. The graph of <em>m</em>(<em>t</em>) is shown.",
+      "parts": [
+        {
+          "label": "(a)",
+          "marks": 2,
+          "q": "What are the values of <em>a</em> and <em>b</em>? <strong>(2 marks)</strong>",
+          "answer": "The amplitude is half the range: a = (35 000 − 5000)/2 = 15 000.\nThe centre is the mean of the extremes: b = (35 000 + 5000)/2 = 20 000.",
+          "keywords": [
+            "15 000",
+            "20 000"
+          ],
+          "minKeywords": 1
+        },
+        {
+          "label": "(b)",
+          "marks": 3,
+          "q": "On the same island, the population of cats can be modelled by the function <em>c</em>(<em>t</em>) = &minus;80 cos((&pi;/26)(<em>t</em> &minus; 10)) + 120. Consider the graph of <em>m</em>(<em>t</em>) and the graph of <em>c</em>(<em>t</em>). Find the values of <em>t</em>, 0 &le; <em>t</em> &le; 52, for which both populations are increasing. <strong>(3 marks)</strong>",
+          "answer": "m′(t) = 15 000(π/26) cos((π/26)t), which is positive when cos((π/26)t) > 0,\ni.e. for 0 ≤ t < 13 and 39 < t ≤ 52.\nc′(t) = 80(π/26) sin((π/26)(t − 10)), which is positive when sin((π/26)(t − 10)) > 0,\ni.e. when 0 < (π/26)(t − 10) < π, giving 10 < t < 36.\nBoth increase on the overlap: 10 < t < 13.\n(The interval 39 < t ≤ 52 does not overlap 10 < t < 36.)",
+          "keywords": [
+            "15 000",
+            "10 < t < 13",
+            "t = 36"
+          ],
+          "minKeywords": 2
+        },
+        {
+          "label": "(c)",
+          "marks": 2,
+          "q": "Find the rate of change of the mice population when the cat population reaches a maximum. <strong>(2 marks)</strong>",
+          "answer": "c(t) is greatest when cos((π/26)(t − 10)) = −1, i.e. (π/26)(t − 10) = π, so t = 36.\nm′(36) = 15 000(π/26) cos(36π/26)\n= 1812.4 × (−0.3546)\n≈ −643.\nThe mice population is falling at about 643 mice per week.",
+          "keywords": [
+            "15 000",
+            "643",
+            "t = 36"
+          ],
+          "minKeywords": 2,
+          "bandDescriptors": {
+            "full": "Provides the correct solution",
+            "partial": "Correctly differentiates m(t), or equivalent merit",
+            "minimal": "Correctly differentiates m(t), or equivalent merit"
+          }
+        }
+      ]
     },
     {
       "year": 2021,
@@ -1854,7 +2324,43 @@
         "full": "XY = 13.86 cm and the shaded area is 45.1 cm², found as semicircle minus triangle.",
         "partial": "XY is correct, or the method (semicircle − triangle) is correct but an area is miscalculated or the triangle's second side is wrong.",
         "minimal": "The angle in a semicircle is 90°, so XZ is the hypotenuse. For the shading, subtract the triangle's area from the semicircle's area."
-      }
+      },
+      "stem": "A right-angled triangle <em>XYZ</em> is cut out from a semicircle with centre <em>O</em>. The length of the diameter <em>XZ</em> is 16 cm and &ang;<em>YXZ</em> = 30&deg;, as shown on the diagram.<br><br><img src=\"/diagrams/mathematics-advanced_2021_Q12_stimulus.jpg\" alt=\"Semicircle on diameter XZ of 16 cm with right-angled triangle XYZ inscribed, angle YXZ = 30 degrees, the region between the arc and the triangle shaded\" style=\"max-width:100%;height:auto;display:block;margin:14px auto\"><br>",
+      "parts": [
+        {
+          "label": "(a)",
+          "marks": 2,
+          "q": "Find the length of <em>XY</em> in centimetres, correct to two decimal places. <strong>(2 marks)</strong>",
+          "answer": "The angle in a semicircle is a right angle, so ∠XYZ = 90° and XYZ is right-angled at Y with hypotenuse XZ = 16 cm.\n\ncos 30° = XY / XZ\nXY = 16 cos 30° = 16 × (√3/2) = 8√3 = 13.8564…\nXY = 13.86 cm (2 d.p.)",
+          "keywords": [
+            "13.86",
+            "angle in a semicircle",
+            "32π"
+          ],
+          "minKeywords": 2,
+          "bandDescriptors": {
+            "full": "Provides correct solution",
+            "partial": "Uses correct trigonometric ratio, or equivalent merit",
+            "minimal": "Uses correct trigonometric ratio, or equivalent merit"
+          }
+        },
+        {
+          "label": "(b)",
+          "marks": 3,
+          "q": "Hence, find the area of the shaded region in square centimetres, correct to one decimal place. <strong>(3 marks)</strong>",
+          "answer": "The shaded region is the semicircle with the triangle removed.\n\nSemicircle: radius 8, area = ½π(8)² = 32π = 100.5309… cm²\n\nTriangle: the other side is YZ = 16 sin 30° = 8 cm, and the right angle is between XY and YZ, so\narea = ½ × 8√3 × 8 = 32√3 = 55.4256… cm²\n\nShaded area = 100.5309 − 55.4256 = 45.1053…\nShaded area = 45.1 cm² (1 d.p.)",
+          "keywords": [
+            "32π",
+            "45.1"
+          ],
+          "minKeywords": 1,
+          "bandDescriptors": {
+            "full": "Provides correct solution",
+            "partial": "Calculates the area of XYZ and the semicircle, or equivalent merit",
+            "minimal": "Calculates the area of a semicircle, or equivalent merit"
+          }
+        }
+      ]
     },
     {
       "year": 2021,
@@ -1968,7 +2474,42 @@
         "full": "23.3 °C; the gradient means temperature falls by 0.011 °C for each additional metre of height; latitude is better because |r| = 0.897 shows a much stronger linear relationship than |r| = 0.494.",
         "partial": "The prediction is correct and the gradient is interpreted as a decrease, but no units or context are given, or latitude is chosen without comparing the correlation coefficients.",
         "minimal": "Substitute the height into the equation. A gradient is a rate of change: how much y changes for a one-unit rise in x. To compare two models, compare how close each r is to −1 or 1."
-      }
+      },
+      "stem": "For a sample of 17 inland towns in Australia, the height above sea level, <em>x</em> (metres), and the average maximum daily temperature, <em>y</em> (&deg;C), were recorded.<br><br>The graph shows the data as well as a regression line.<br><br><img src=\"/diagrams/mathematics-advanced_2021_Q17_stimulus.jpg\" alt=\"Scatterplot of average maximum daily temperature against height above sea level for 17 towns, with a dashed regression line sloping gently downwards\" style=\"max-width:100%;height:auto;display:block;margin:14px auto\"><br><br>The equation of the regression line is <em>y</em> = 29.2 &minus; 0.011<em>x</em>.<br><br>The correlation coefficient is <em>r</em> = &minus;0.494.<br>",
+      "parts": [
+        {
+          "label": "(a)",
+          "marks": 3,
+          "q": "(i) By using the equation of the regression line, predict the average maximum daily temperature, in degrees Celsius, for a town that is 540 m above sea level. Give your answer correct to one decimal place. <strong>(1 mark)</strong><br><br>(ii) The gradient of the regression line is &minus;0.011. Interpret the value of this gradient in the given context. <strong>(2 marks)</strong>",
+          "answer": "(i) Substitute x = 540 into y = 29.2 − 0.011x:\ny = 29.2 − 0.011(540) = 29.2 − 5.94 = 23.26\ny = 23.3 °C (1 d.p.)<br>(ii) For each extra metre above sea level, the average maximum daily temperature is predicted to fall by 0.011 °C. (Equivalently, a rise of 100 m in height corresponds to a fall of about 1.1 °C.)",
+          "keywords": [
+            "23.3",
+            "0.011"
+          ],
+          "minKeywords": 1,
+          "bandDescriptors": {
+            "full": "Provides correct solution",
+            "partial": "Provides correct answer",
+            "minimal": "Provides a correct relevant statement relating temperature to height above sea level, or equivalent merit"
+          }
+        },
+        {
+          "label": "(b)",
+          "marks": 1,
+          "q": "The graph below shows the relationship between the latitude, <em>x</em> (degrees south), and the average maximum daily temperature, <em>y</em> (&deg;C), for the same 17 towns, as well as a regression line. <strong>(1 mark)</strong><br><br><img src=\"/diagrams/mathematics-advanced_2021_Q17b_stimulus.jpg\" alt=\"Scatterplot of average maximum daily temperature against latitude in degrees south for the same 17 towns, with a dashed regression line sloping steeply downwards\" style=\"max-width:100%;height:auto;display:block;margin:14px auto\"><br><br>The equation of the regression line is <em>y</em> = 45.6 &minus; 0.683<em>x</em>.<br><br>The correlation coefficient is <em>r</em> = &minus;0.897.<br><br>Another inland town in Australia is 540 m above sea level. Its latitude is 28 degrees south.<br><br>Which measurement, height above sea level or latitude, would be better to use to predict this town&rsquo;s average maximum daily temperature? Give a reason for your answer.",
+          "answer": "Latitude is the better predictor. Its correlation coefficient, r = −0.897, is much closer to −1 than the height's r = −0.494, so the relationship between latitude and temperature is far more strongly linear and the prediction from the latitude regression line is more reliable.",
+          "keywords": [
+            "latitude",
+            "−0.897"
+          ],
+          "minKeywords": 1,
+          "bandDescriptors": {
+            "full": "Provides correct solution",
+            "partial": "Does not meet the criterion: provides correct solution",
+            "minimal": "Does not meet the criterion: provides correct solution"
+          }
+        }
+      ]
     },
     {
       "year": 2021,
@@ -2033,7 +2574,41 @@
         "full": "P = 0.1517, and about 345 babies (z = 0.4, so P = 0.5 − 0.1554 = 0.3446).",
         "partial": "The z-score of 0.4 is correct and the table is read correctly, but 0.1554 is used directly instead of subtracting it from 0.5, or the result is not scaled to 1000.",
         "minimal": "The table gives the area between 0 and z only. For an area between two positive values, subtract; for an area in the upper tail, subtract from 0.5."
-      }
+      },
+      "stem": "A random variable is normally distributed with mean 0 and standard deviation 1. The table gives the probability that this random variable lies between 0 and <em>z</em> for different values of <em>z</em>.<div style=\"overflow-x:auto;-webkit-overflow-scrolling:touch;margin:14px 0\"><table class=\"q-table\" style=\"min-width:520px;margin:0\"><tr><th><em>z</em></th><th>0.1</th><th>0.2</th><th>0.3</th><th>0.4</th><th>0.5</th><th>0.6</th></tr><tr><td>Probability</td><td>0.0398</td><td>0.0793</td><td>0.1179</td><td>0.1554</td><td>0.1915</td><td>0.2257</td></tr></table></div>The probability values given in the table for different values of <em>z</em> are represented by the shaded area in the following diagram.<br><br><img src=\"/diagrams/mathematics-advanced_2021_Q22_stimulus.jpg\" alt=\"Standard normal curve with the region between 0 and z shaded\" style=\"max-width:100%;height:auto;display:block;margin:14px auto\"><br>",
+      "parts": [
+        {
+          "label": "(a)",
+          "marks": 1,
+          "q": "Using the table, find the probability that a value from a random variable that is normally distributed with mean 0 and standard deviation 1 lies between 0.1 and 0.5. <strong>(1 mark)</strong>",
+          "answer": "The table gives the area from 0 up to z. The strip between 0.1 and 0.5 is the difference of the two areas:\n\nP(0.1 < Z < 0.5) = 0.1915 − 0.0398 = 0.1517",
+          "keywords": [
+            "0.1517"
+          ],
+          "minKeywords": 1,
+          "bandDescriptors": {
+            "full": "Provides correct solution",
+            "partial": "Does not meet the criterion: provides correct solution",
+            "minimal": "Does not meet the criterion: provides correct solution"
+          }
+        },
+        {
+          "label": "(b)",
+          "marks": 3,
+          "q": "Birth weights are normally distributed with a mean of 3300 grams and a standard deviation of 570 grams. By first calculating a <em>z</em>-score, find how many babies, out of 1000 born, are expected to have a birth weight greater than 3528 grams. <strong>(3 marks)</strong>",
+          "answer": "Convert 3528 grams to a z-score:\nz = (x − μ)/σ = (3528 − 3300)/570 = 228/570 = 0.4\n\nThe table gives P(0 < Z < 0.4) = 0.1554. Half of the distribution lies above the mean, so\nP(Z > 0.4) = 0.5 − 0.1554 = 0.3446\n\nOut of 1000 babies: 0.3446 × 1000 = 344.6\n\nAbout 345 babies are expected to have a birth weight greater than 3528 grams.",
+          "keywords": [
+            "0.3446",
+            "345"
+          ],
+          "minKeywords": 1,
+          "bandDescriptors": {
+            "full": "Provides correct solution",
+            "partial": "Finds associated probability, or equivalent merit",
+            "minimal": "Calculates z-score, or equivalent merit"
+          }
+        }
+      ]
     },
     {
       "year": 2021,
@@ -2085,7 +2660,7 @@
       "section": "II",
       "category": "M1",
       "marks": 3,
-      "q": "A table of future value interest factors for an annuity of $1 is shown.<table class=\"q-table\"><tr><th rowspan=\"2\">Number of periods</th><th colspan=\"5\">Interest rate per period</th></tr><tr><th>0.25%</th><th>0.5%</th><th>0.75%</th><th>1%</th><th>1.25%</th></tr><tr><td>2</td><td>2.0025</td><td>2.0050</td><td>2.0075</td><td>2.0100</td><td>2.0125</td></tr><tr><td>4</td><td>4.0150</td><td>4.0301</td><td>4.0452</td><td>4.0604</td><td>4.0756</td></tr><tr><td>6</td><td>6.0376</td><td>6.0755</td><td>6.1136</td><td>6.1520</td><td>6.1907</td></tr><tr><td>8</td><td>8.0704</td><td>8.1414</td><td>8.2132</td><td>8.2857</td><td>8.3589</td></tr><tr><td>10</td><td>10.1133</td><td>10.2280</td><td>10.3443</td><td>10.4622</td><td>10.5817</td></tr></table>Simone deposits $1000 into a savings account at the end of each year for 8 years. The interest rate for these 8 years is 0.75% per annum, compounded annually.<br><br>After the 8th deposit, Simone stops making deposits but leaves the money in the savings account. The money in her savings account then earns interest at 1.25% per annum, compounded annually, for a further two years.<br><br>Find the amount of money in Simone&rsquo;s savings account at the end of ten years.",
+      "q": "A table of future value interest factors for an annuity of $1 is shown.<div style=\"overflow-x:auto;-webkit-overflow-scrolling:touch;margin:14px 0\"><table class=\"q-table\" style=\"margin:0\"><tr><th rowspan=\"2\">Number of periods</th><th colspan=\"5\">Interest rate per period</th></tr><tr><th>0.25%</th><th>0.5%</th><th>0.75%</th><th>1%</th><th>1.25%</th></tr><tr><td>2</td><td>2.0025</td><td>2.0050</td><td>2.0075</td><td>2.0100</td><td>2.0125</td></tr><tr><td>4</td><td>4.0150</td><td>4.0301</td><td>4.0452</td><td>4.0604</td><td>4.0756</td></tr><tr><td>6</td><td>6.0376</td><td>6.0755</td><td>6.1136</td><td>6.1520</td><td>6.1907</td></tr><tr><td>8</td><td>8.0704</td><td>8.1414</td><td>8.2132</td><td>8.2857</td><td>8.3589</td></tr><tr><td>10</td><td>10.1133</td><td>10.2280</td><td>10.3443</td><td>10.4622</td><td>10.5817</td></tr></table></div>Simone deposits $1000 into a savings account at the end of each year for 8 years. The interest rate for these 8 years is 0.75% per annum, compounded annually.<br><br>After the 8th deposit, Simone stops making deposits but leaves the money in the savings account. The money in her savings account then earns interest at 1.25% per annum, compounded annually, for a further two years.<br><br>Find the amount of money in Simone&rsquo;s savings account at the end of ten years.",
       "image": null,
       "answer": "Step 1 — value after 8 deposits. Read the table at 8 periods and 0.75%: the factor is 8.2132.\n\nValue = 1000 × 8.2132 = $8213.20\n\nStep 2 — grow that amount for two more years at 1.25%. There are no further deposits, so this is ordinary compound interest:\n\nA = 8213.20 × (1.0125)²\n  = 8213.20 × 1.02515625\n  = 8419.8133…\n\nAmount at the end of ten years = $8419.81",
       "keywords": [
@@ -2121,7 +2696,38 @@
         "full": "Maximum height 345 m; velocity −10√69 m/s.",
         "partial": "The maximum height is correct, and the quadratic for the landing time is solved, but the velocity is left as a decimal or the negative root is used.",
         "minimal": "At the maximum, y′(t) = 0. The particle lands when y(t) = 0 — solve that quadratic, take the positive root, and substitute it into y′(t)."
-      }
+      },
+      "stem": "A particle is shot vertically upwards from a point 100 metres above ground level. The position of the particle, <em>y</em> metres above the ground after <em>t</em> seconds, is given by <em>y</em>(<em>t</em>) = &minus;5<em>t</em>&sup2; + 70<em>t</em> + 100.<br>",
+      "parts": [
+        {
+          "label": "(a)",
+          "marks": 2,
+          "q": "Find the maximum height above ground level reached by the particle. <strong>(2 marks)</strong>",
+          "answer": "The maximum height occurs where the velocity is zero.\ny′(t) = −10t + 70\n−10t + 70 = 0 gives t = 7\n\ny(7) = −5(49) + 70(7) + 100 = −245 + 490 + 100 = 345\n\nMaximum height = 345 metres above ground level.",
+          "keywords": [
+            "t = 7",
+            "345"
+          ],
+          "minKeywords": 1,
+          "bandDescriptors": {
+            "full": "Provides correct solution",
+            "partial": "Finds the time it takes to reach maximum height, or equivalent merit",
+            "minimal": "Finds the time it takes to reach maximum height, or equivalent merit"
+          }
+        },
+        {
+          "label": "(b)",
+          "marks": 3,
+          "q": "Find the velocity of the particle, in metres per second, immediately before it hits the ground, leaving your answer in the form <em>a</em>&radic;<em>b</em>, where <em>a</em> and <em>b</em> are integers. <strong>(3 marks)</strong>",
+          "answer": "The particle hits the ground when y = 0:\n−5t² + 70t + 100 = 0\nt² − 14t − 20 = 0\nt = [14 ± √(196 + 80)]/2 = [14 ± √276]/2 = 7 ± √69\n\nTime must be positive, so t = 7 + √69.\n\nVelocity at that instant:\ny′(7 + √69) = −10(7 + √69) + 70 = −70 − 10√69 + 70 = −10√69\n\nVelocity = −10√69 m/s (that is, 10√69 ≈ 83.07 m/s downwards).",
+          "keywords": [
+            "t = 7",
+            "7 + √69",
+            "−10√69"
+          ],
+          "minKeywords": 2
+        }
+      ]
     },
     {
       "year": 2021,
@@ -2154,6 +2760,53 @@
           "part": "a",
           "marks": 2,
           "reason": "The student must sketch the graph of P(t) = 400 sin(πt/12) for 0 ≤ t ≤ 12. The engine cannot accept or mark a hand-drawn graph."
+        }
+      ],
+      "stem": "Kenzo has a solar powered phone charger. Its power, <em>P</em>, can be modelled by the function<br><br><em>P</em>(<em>t</em>) = 400 sin(&pi;<em>t</em>/12), 0 &le; <em>t</em> &le; 12,<br><br>where <em>t</em> is the number of hours after sunrise.<br><br>Power is the rate of change of energy. Hence the amount of energy, <em>E</em> units, generated by the solar powered phone charger from <em>t</em> = <em>a</em> to <em>t</em> = <em>b</em>, where 0 &le; <em>a</em> &le; <em>b</em> &le; 12, is given by<br><br><em>E</em> = &int;<sub><em>a</em></sub><sup><em>b</em></sup> <em>P</em>(<em>t</em>) <em>dt</em>.<br>",
+      "parts": [
+        {
+          "label": "(b)",
+          "marks": 2,
+          "q": "Show that <em>E</em> = (4800/&pi;)(cos(<em>a</em>&pi;/12) &minus; cos(<em>b</em>&pi;/12)). <strong>(2 marks)</strong>",
+          "answer": "E = ∫ₐᵇ 400 sin(πt/12) dt\n\nThe primitive of sin(kt) is −(1/k)cos(kt), with k = π/12, so 1/k = 12/π:\n\nE = 400 × [−(12/π) cos(πt/12)]ₐᵇ\n  = −(4800/π)[cos(bπ/12) − cos(aπ/12)]\n  = (4800/π)(cos(aπ/12) − cos(bπ/12))   ✓",
+          "keywords": [
+            "4800/π"
+          ],
+          "minKeywords": 1
+        },
+        {
+          "label": "(c)",
+          "marks": 3,
+          "q": "To make a phone call, a phone battery needs at least 300 units of energy. Kenzo woke up 3 hours after sunrise and found that his phone battery had no units of energy. He immediately began to use his solar powered charger to charge his phone battery.<br><br>Find the least amount of time he needed to wait before he could make a phone call. Give your answer correct to the nearest minute. <strong>(3 marks)</strong>",
+          "answer": "Charging starts at a = 3 and must deliver 300 units:\n\n300 = (4800/π)(cos(3π/12) − cos(bπ/12))\n300π/4800 = cos(π/4) − cos(bπ/12)\n0.196350 = 0.707107 − cos(bπ/12)\ncos(bπ/12) = 0.510757\nbπ/12 = 1.034812 radians\nb = 1.034812 × 12/π = 3.95272 hours\n\nWaiting time = 3.95272 − 3 = 0.95272 hours = 57.16 minutes\n\nHe needed to wait 57 minutes (nearest minute).",
+          "keywords": [
+            "4800/π",
+            "57"
+          ],
+          "minKeywords": 1,
+          "bandDescriptors": {
+            "full": "Provides correct solution",
+            "partial": "Calculates the value of b, or equivalent merit",
+            "minimal": "Substitutes into E given in part (b), or equivalent merit"
+          }
+        },
+        {
+          "label": "(d)",
+          "marks": 1,
+          "q": "The next day, Kenzo woke up 6 hours after sunrise and again found that his phone battery had no units of energy. He immediately began to use his solar powered charger to charge his phone battery.<br><br>Would it take more time or less time or the same amount of time, compared to the answer in part (c), to charge his phone battery in order to make a phone call? Explain your answer by referring to the graph drawn in part (a). <strong>(1 mark)</strong><br><br><em style=\"opacity:0.75\">Part (a), which asked for the graph of <em>P</em> to be sketched for 0 &le; <em>t</em> &le; 12, is not included here. The graph is simply the curve <em>P</em>(<em>t</em>) = 400 sin(&pi;<em>t</em>/12) given in the stem above &mdash; half a sine wave rising from 0 at sunrise to 400 at <em>t</em> = 6 and back to 0 at <em>t</em> = 12 &mdash; so part (d) can still be answered from the function itself. NESA&rsquo;s wording of parts (b), (c) and (d) is unchanged.</em>",
+          "answer": "Less time.\n\nThe energy delivered is the area under the power curve. The curve P(t) = 400 sin(πt/12) reaches its maximum of 400 at t = 6, so charging from t = 6 begins at the highest power the charger ever produces. Charging from t = 3 begins at P(3) = 400 sin(π/4) ≈ 283 units per hour, well below the peak. Since the power is greater throughout the early part of the charge starting at t = 6, the same 300 units of energy accumulate in a shorter time.\n\n(Check: from a = 6, cos(6π/12) = cos(π/2) = 0, so cos(bπ/12) = −0.196350, b = 6.7546 and the wait is 0.7546 h ≈ 45 minutes — less than 57.)",
+          "keywords": [
+            "57",
+            "less time",
+            "maximum",
+            "area under"
+          ],
+          "minKeywords": 2,
+          "bandDescriptors": {
+            "full": "Provides correct solution",
+            "partial": "Does not meet the criterion: provides correct solution",
+            "minimal": "Does not meet the criterion: provides correct solution"
+          }
         }
       ]
     },
@@ -2188,6 +2841,44 @@
           "marks": 2,
           "reason": "The student must sketch the graph of y = g(x), showing the x-intercept and the asymptote. The engine cannot accept or mark a hand-drawn graph."
         }
+      ],
+      "stem": "The region bounded by the graph of the function <em>f</em>(<em>x</em>) = 8 &minus; 2<sup><em>x</em></sup> and the coordinate axes is shown.<br><br><img src=\"/diagrams/mathematics-advanced_2021_Q28_stimulus.jpg\" alt=\"The curve y = f(x) = 8 - 2 to the power x with the horizontal asymptote y = 8, and the region between the curve and the coordinate axes shaded\" style=\"max-width:100%;height:auto;display:block;margin:14px auto\"><br>",
+      "parts": [
+        {
+          "label": "(a)",
+          "marks": 3,
+          "q": "Show that the exact area of the shaded region is given by 24 &minus; 7/ln 2. <strong>(3 marks)</strong>",
+          "answer": "The region runs from the y-axis to the x-intercept of f. Find that intercept:\n8 − 2ˣ = 0, so 2ˣ = 8 and x = 3.\n\nArea = ∫₀³ (8 − 2ˣ) dx\n\nThe primitive of 2ˣ is 2ˣ/ln 2, so\n= [8x − 2ˣ/ln 2]₀³\n= (24 − 8/ln 2) − (0 − 1/ln 2)\n= 24 − 8/ln 2 + 1/ln 2\n= 24 − 7/ln 2   ✓",
+          "keywords": [
+            "x = 3",
+            "2ˣ/ln 2",
+            "24 − 7/ln 2"
+          ],
+          "minKeywords": 2,
+          "bandDescriptors": {
+            "full": "Provides correct solution",
+            "partial": "Finds the correct anti-derivative, or equivalent merit",
+            "minimal": "Writes the correct definite integral, or equivalent merit"
+          }
+        },
+        {
+          "label": "(c)",
+          "marks": 1,
+          "q": "Hence, find the exact value of &int;<sub>2</sub><sup>5</sup> <em>g</em>(<em>x</em>) <em>dx</em>, where <em>g</em>(<em>x</em>) is the function found by taking the graph of <em>y</em> = &minus;<em>f</em>(&minus;<em>x</em>) and translating it by 5 units to the right. <strong>(1 mark)</strong><br><br><em style=\"opacity:0.75\">Part (b), which asked for the graph of <em>y</em> = <em>g</em>(<em>x</em>) to be sketched showing the <em>x</em>-intercept and the asymptote, is not included here. Its definition of <em>g</em> has been repeated in part (c) above, which is otherwise NESA&rsquo;s wording; part (c) is answerable from that definition alone.</em>",
+          "answer": "y = −f(−x) is the graph of f rotated 180° about the origin, so the shaded region is carried to a congruent region lying *below* the x-axis, between x = −3 and x = 0. Translating 5 units right moves it to 2 ≤ x ≤ 5 — exactly the interval of the integral.\n\nAn integral of a region below the axis is the negative of its area, so\n\n∫₂⁵ g(x) dx = −(24 − 7/ln 2) = 7/ln 2 − 24\n\n(Direct check: g(x) = −f(−(x − 5)) = 2^(5−x) − 8, and ∫₂⁵ (2^(5−x) − 8) dx = [2ᵘ/ln 2 − 8u]₀³ with u = 5 − x, giving 8/ln 2 − 24 − 1/ln 2 = 7/ln 2 − 24.)",
+          "keywords": [
+            "x = 3",
+            "2ˣ/ln 2",
+            "24 − 7/ln 2",
+            "7/ln 2 − 24"
+          ],
+          "minKeywords": 2,
+          "bandDescriptors": {
+            "full": "Provides correct answer",
+            "partial": "Does not meet the criterion: provides correct answer",
+            "minimal": "Does not meet the criterion: provides correct answer"
+          }
+        }
       ]
     },
     {
@@ -2210,7 +2901,37 @@
         "full": "A₃ = $8554.54 is shown, and 20 withdrawals of $2000 can be made.",
         "partial": "A₃ is shown correctly and an expression for the balance after n withdrawals is set up, but the inequality is solved incorrectly or the answer is rounded up to 21.",
         "minimal": "Build the recurrence one year at a time: multiply by 1.03, then add or subtract the payment. For (b), form Bₙ, set Bₙ ≥ 0 and solve for n with logarithms — then round DOWN, since a partial withdrawal is not a withdrawal of $2000."
-      }
+      },
+      "parts": [
+        {
+          "label": "(a)",
+          "marks": 2,
+          "q": "On the day that Megan was born, her grandfather deposited $5000 into an account earning 3% per annum compounded annually. On each birthday after this, her grandfather deposited $1000 into the same account, making his final deposit on Megan&rsquo;s 17th birthday. That is, a total of 18 deposits were made.<br><br>Let <em>A<sub>n</sub></em> be the amount in the account on Megan&rsquo;s <em>n</em>th birthday, after the deposit is made.<br><br>Show that <em>A</em><sub>3</sub> = $8554.54. <strong>(2 marks)</strong>",
+          "answer": "Each year the balance grows by 3% and then $1000 is added.\n\nA₁ = 5000(1.03) + 1000 = 5150 + 1000 = 6150\nA₂ = 6150(1.03) + 1000 = 6334.50 + 1000 = 7334.50\nA₃ = 7334.50(1.03) + 1000 = 7554.535 + 1000 = 8554.535\n\nA₃ = $8554.54 (to the nearest cent)   ✓\n\n(Equivalently A₃ = 5000(1.03)³ + 1000(1.03² + 1.03 + 1) = 5463.635 + 3090.90 = 8554.535.)",
+          "keywords": [
+            "8554.535",
+            "1.03"
+          ],
+          "minKeywords": 1
+        },
+        {
+          "label": "(b)",
+          "marks": 3,
+          "q": "On her 17th birthday, just after the final deposit is made, Megan has $30&nbsp;025.83 in her account. You are NOT required to show this.<br><br>Megan then decides to leave all the money in the same account continuing to earn interest at 3% per annum compounded annually. On her 18th birthday, and on each birthday after this, Megan withdraws $2000 from the account.<br><br>How many withdrawals of $2000 will Megan be able to make? <strong>(3 marks)</strong>",
+          "answer": "Let Bₙ be the balance after n withdrawals, starting from $30 025.83.\n\nBₙ = 30025.83(1.03)ⁿ − 2000[(1.03)ⁿ − 1]/0.03\n   = 30025.83(1.03)ⁿ − (200000/3)[(1.03)ⁿ − 1]\n   = (1.03)ⁿ(30025.83 − 66666.667) + 66666.667\n   = 66666.667 − 36640.837(1.03)ⁿ\n\nA withdrawal is possible while the balance stays at or above zero, so require Bₙ ≥ 0:\n\n(1.03)ⁿ ≤ 66666.667 ÷ 36640.837 = 1.819276\nn ≤ ln(1.819276) ÷ ln(1.03) = 0.598427 ÷ 0.029559 = 20.245\n\nSo n = 20.\n\nCheck: B₂₀ = 66666.67 − 36640.84 × (1.03)²⁰ = 66666.67 − 66177.44 = $489.23, which is not enough for a 21st withdrawal of $2000.\n\nMegan can make 20 withdrawals of $2000.",
+          "keywords": [
+            "1.03",
+            "20",
+            "withdrawals"
+          ],
+          "minKeywords": 2,
+          "bandDescriptors": {
+            "full": "Provides correct solution",
+            "partial": "Finds the correct expression for the amount after n withdrawals using the sum of GP formula, or equivalent merit",
+            "minimal": "Attempts to find an expression for the amount after n withdrawals, or equivalent merit"
+          }
+        }
+      ]
     },
     {
       "year": 2021,
@@ -2307,7 +3028,64 @@
         "full": "A = 2/ln 10, the mode is 2, P(X < 2) = log₁₀ 2, and the conditional probability is 0.066.",
         "partial": "Parts (a) to (c) are shown correctly but (d) does not combine them — for example P(H) is not recognised as 0.025, or the conditional probability is inverted.",
         "minimal": "For (a) the total area under a probability density function is 1, and Ax/(x² + 4) integrates to (A/2)ln(x² + 4). For (d), 130 is two standard deviations above the mean, and P(H and C) = P(C | H) × P(H) divided by P(C) from part (c)."
-      }
+      },
+      "stem": "People are given a maximum of six hours to complete a puzzle. The time spent on the puzzle, in hours, can be modelled using the continuous random variable <em>X</em> which has probability density function<br><br><em>f</em>(<em>x</em>) =<table style=\"display:inline-table;vertical-align:middle;border-collapse:collapse;margin:0 0 0 4px\"><tr><td rowspan=\"2\" style=\"border:0;padding:0 4px 0 0;font-size:2.6em;font-weight:300;line-height:0.86;vertical-align:middle\">{</td><td style=\"border:0;padding:1px 0;text-align:left;font-size:0.85em\"><em>Ax</em>/(<em>x</em>&sup2; + 4),&nbsp; for 0 &le; <em>x</em> &le; 6 (where <em>A</em> &gt; 0)</td></tr><tr><td style=\"border:0;padding:1px 0;text-align:left;font-size:0.85em\">0,&nbsp; for all other values of <em>x</em></td></tr></table><br><br>The graph of the probability density function is shown below. The graph has a local maximum.<br><br><img src=\"/diagrams/mathematics-advanced_2021_Q33_stimulus.jpg\" alt=\"The probability density function f(x) = Ax over x squared plus 4, rising steeply from the origin to a local maximum and then decreasing to x = 6\" style=\"max-width:100%;height:auto;display:block;margin:14px auto\"><br>",
+      "parts": [
+        {
+          "label": "(a)",
+          "marks": 2,
+          "q": "Show that <em>A</em> = 2/ln 10. <strong>(2 marks)</strong>",
+          "answer": "A probability density function has total area 1:\n∫₀⁶ Ax/(x² + 4) dx = 1\n\nThe numerator is half the derivative of the denominator, so the primitive is (A/2)ln(x² + 4):\n(A/2)[ln(x² + 4)]₀⁶ = 1\n(A/2)(ln 40 − ln 4) = 1\n(A/2) ln 10 = 1\nA = 2/ln 10   ✓",
+          "keywords": [
+            "ln(x² + 4)",
+            "2/ln 10"
+          ],
+          "minKeywords": 1
+        },
+        {
+          "label": "(b)",
+          "marks": 2,
+          "q": "Show that the mode of <em>X</em> is two hours. <strong>(2 marks)</strong>",
+          "answer": "The mode is the value of x at which f is greatest. Differentiate using the quotient rule:\nf′(x) = A[(x² + 4)(1) − x(2x)]/(x² + 4)²\n     = A(4 − x²)/(x² + 4)²\n\nThe denominator is always positive, so f′(x) = 0 when 4 − x² = 0, that is x = 2 (x = −2 is outside 0 ≤ x ≤ 6).\n\nf′ > 0 for x < 2 and f′ < 0 for x > 2, so x = 2 is a maximum. The mode is 2 hours.   ✓",
+          "keywords": [
+            "4 − x²"
+          ],
+          "minKeywords": 1
+        },
+        {
+          "label": "(c)",
+          "marks": 2,
+          "q": "Show that <em>P</em>(<em>X</em> &lt; 2) = log<sub>10</sub> 2. <strong>(2 marks)</strong>",
+          "answer": "P(X < 2) = ∫₀² Ax/(x² + 4) dx\n = (A/2)[ln(x² + 4)]₀²\n = (A/2)(ln 8 − ln 4)\n = (A/2) ln 2\n = (1/ln 10) ln 2\n = log₁₀ 2   ✓",
+          "keywords": [
+            "ln(x² + 4)",
+            "log₁₀ 2"
+          ],
+          "minKeywords": 1,
+          "bandDescriptors": {
+            "full": "Provides correct solution",
+            "partial": "Provides correct definite integral, or equivalent merit",
+            "minimal": "Provides correct definite integral, or equivalent merit"
+          }
+        },
+        {
+          "label": "(d)",
+          "marks": 2,
+          "q": "The Intelligence Quotient (IQ) scores of people are normally distributed with a mean of 100 and standard deviation of 15.<br><br>It has been observed that the puzzle is generally completed more quickly by people with a high IQ.<br><br>It is known that 80% of people with an IQ greater than 130 can complete the puzzle in less than two hours.<br><br>A person chosen at random can complete the puzzle in less than two hours.<br><br>What is the probability that this person has an IQ greater than 130? Give your answer correct to three decimal places. <strong>(2 marks)</strong>",
+          "answer": "Let H be the event \"IQ greater than 130\" and C the event \"completes the puzzle in less than two hours\".\n\nAn IQ of 130 is 100 + 2(15), that is two standard deviations above the mean, so by the empirical rule\nP(H) = P(Z > 2) = 0.025\n\nGiven: P(C | H) = 0.8, and from part (c) P(C) = log₁₀ 2 = 0.301030.\n\nP(H | C) = P(C | H) × P(H) ÷ P(C)\n        = 0.8 × 0.025 ÷ 0.301030\n        = 0.02 ÷ 0.301030\n        = 0.066438…\n\nP(H | C) = 0.066 (3 d.p.)",
+          "keywords": [
+            "log₁₀ 2",
+            "0.025",
+            "0.066"
+          ],
+          "minKeywords": 2,
+          "bandDescriptors": {
+            "full": "Provides correct solution",
+            "partial": "Attempts to find the conditional probability, or equivalent merit",
+            "minimal": "Attempts to find the conditional probability, or equivalent merit"
+          }
+        }
+      ]
     },
     {
       "year": 2021,
@@ -2337,7 +3115,7 @@
       "section": "II",
       "category": "S2",
       "marks": 3,
-      "q": "The table shows the types of customer complaints received by an online business in a month.<table class=\"q-table\"><tr><th><em>Type of complaint</em></th><th><em>Frequency</em></th><th><em>Cumulative frequency</em></th><th><em>Cumulative percentage</em></th></tr><tr><td>Stock shortage</td><td>98</td><td>98</td><td>49</td></tr><tr><td>Delivery fee</td><td>62</td><td><strong><em>A</em></strong></td><td>80</td></tr><tr><td>Delivery time</td><td>24</td><td>184</td><td>92</td></tr><tr><td>Damaged item</td><td>8</td><td>192</td><td><strong><em>B</em></strong></td></tr><tr><td>Returns policy</td><td>6</td><td>198</td><td>99</td></tr><tr><td>Product information</td><td>2</td><td>200</td><td>100</td></tr><tr><td><em>Total</em></td><td>200</td><td></td><td></td></tr></table><br>(a) What are the values of <em>A</em> and <em>B</em>? <strong>(2 marks)</strong><br><br>(b) The data from the table are shown in the following Pareto chart.<img src=\"/diagrams/mathematics-advanced_2022_Q11_stimulus.jpg\" alt=\"A Pareto chart of customer complaints: bars for frequency by complaint type in descending order, with a cumulative percentage line rising to 100%.\" style=\"max-width:100%;height:auto;display:block;margin:14px auto\">The manager will address 80% of the complaints.<br><br>Which types of complaints will the manager address? <strong>(1 mark)</strong>",
+      "q": "The table shows the types of customer complaints received by an online business in a month.<div style=\"overflow-x:auto;-webkit-overflow-scrolling:touch;margin:14px 0\"><table class=\"q-table\" style=\"margin:0\"><tr><th><em>Type of complaint</em></th><th><em>Frequency</em></th><th><em>Cumulative frequency</em></th><th><em>Cumulative percentage</em></th></tr><tr><td>Stock shortage</td><td>98</td><td>98</td><td>49</td></tr><tr><td>Delivery fee</td><td>62</td><td><strong><em>A</em></strong></td><td>80</td></tr><tr><td>Delivery time</td><td>24</td><td>184</td><td>92</td></tr><tr><td>Damaged item</td><td>8</td><td>192</td><td><strong><em>B</em></strong></td></tr><tr><td>Returns policy</td><td>6</td><td>198</td><td>99</td></tr><tr><td>Product information</td><td>2</td><td>200</td><td>100</td></tr><tr><td><em>Total</em></td><td>200</td><td></td><td></td></tr></table></div><br>(a) What are the values of <em>A</em> and <em>B</em>? <strong>(2 marks)</strong><br><br>(b) The data from the table are shown in the following Pareto chart.<img src=\"/diagrams/mathematics-advanced_2022_Q11_stimulus.jpg\" alt=\"A Pareto chart of customer complaints: bars for frequency by complaint type in descending order, with a cumulative percentage line rising to 100%.\" style=\"max-width:100%;height:auto;display:block;margin:14px auto\">The manager will address 80% of the complaints.<br><br>Which types of complaints will the manager address? <strong>(1 mark)</strong>",
       "image": null,
       "answer": "(a) A is the cumulative frequency after Delivery fee:\nA = 98 + 62 = 160.\n\nB is the cumulative percentage after Damaged item:\nB = 192/200 × 100 = 96.\n\n(b) Reading the cumulative percentage line, Stock shortage alone reaches 49% and Stock shortage together with Delivery fee reaches 80%.\n\nSo the manager will address Stock shortage and Delivery fee.",
       "keywords": [
@@ -2352,7 +3130,40 @@
         "full": "A = 160 and B = 96, and the two complaint types identified are Stock shortage and Delivery fee.",
         "partial": "One of A or B correct, or the right idea in (b) but only one complaint type named. B is a percentage of the 200 total, not a frequency.",
         "minimal": "Cumulative frequency adds each row's frequency to the running total. Cumulative percentage is that running total as a percentage of 200. In (b), read up the cumulative line to 80%."
-      }
+      },
+      "stem": "The table shows the types of customer complaints received by an online business in a month.<div style=\"overflow-x:auto;-webkit-overflow-scrolling:touch;margin:14px 0\"><table class=\"q-table\" style=\"margin:0\"><tr><th><em>Type of complaint</em></th><th><em>Frequency</em></th><th><em>Cumulative frequency</em></th><th><em>Cumulative percentage</em></th></tr><tr><td>Stock shortage</td><td>98</td><td>98</td><td>49</td></tr><tr><td>Delivery fee</td><td>62</td><td><strong><em>A</em></strong></td><td>80</td></tr><tr><td>Delivery time</td><td>24</td><td>184</td><td>92</td></tr><tr><td>Damaged item</td><td>8</td><td>192</td><td><strong><em>B</em></strong></td></tr><tr><td>Returns policy</td><td>6</td><td>198</td><td>99</td></tr><tr><td>Product information</td><td>2</td><td>200</td><td>100</td></tr><tr><td><em>Total</em></td><td>200</td><td></td><td></td></tr></table></div>",
+      "parts": [
+        {
+          "label": "(a)",
+          "marks": 2,
+          "q": "What are the values of <em>A</em> and <em>B</em>? <strong>(2 marks)</strong>",
+          "answer": "A is the cumulative frequency after Delivery fee:\nA = 98 + 62 = 160.\n\nB is the cumulative percentage after Damaged item:\nB = 192/200 × 100 = 96.",
+          "keywords": [
+            "160",
+            "96",
+            "delivery fee",
+            "cumulative"
+          ],
+          "minKeywords": 2
+        },
+        {
+          "label": "(b)",
+          "marks": 1,
+          "q": "The data from the table are shown in the following Pareto chart.<img src=\"/diagrams/mathematics-advanced_2022_Q11_stimulus.jpg\" alt=\"A Pareto chart of customer complaints: bars for frequency by complaint type in descending order, with a cumulative percentage line rising to 100%.\" style=\"max-width:100%;height:auto;display:block;margin:14px auto\">The manager will address 80% of the complaints.<br><br>Which types of complaints will the manager address? <strong>(1 mark)</strong>",
+          "answer": "Reading the cumulative percentage line, Stock shortage alone reaches 49% and Stock shortage together with Delivery fee reaches 80%.\n\nSo the manager will address Stock shortage and Delivery fee.",
+          "keywords": [
+            "stock shortage",
+            "delivery fee",
+            "cumulative"
+          ],
+          "minKeywords": 2,
+          "bandDescriptors": {
+            "full": "Provides correct answer",
+            "partial": "Does not meet the criterion: provides correct answer",
+            "minimal": "Does not meet the criterion: provides correct answer"
+          }
+        }
+      ]
     },
     {
       "year": 2022,
@@ -2450,7 +3261,43 @@
         "full": "P(5) = 5/18 and P(special | 5) = 3/5.",
         "partial": "One part correct. A common slip in (a) is forgetting that two of the three dice are ordinary, so the ordinary branch carries weight 2/3, not 1/2.",
         "minimal": "Weight each die by the chance of selecting it: 2/3 for an ordinary die, 1/3 for the special one. Then (b) is P(special and 5) divided by the P(5) from (a)."
-      }
+      },
+      "stem": "In a bag there are 3 six-sided dice. Two of the dice have faces marked 1, 2, 3, 4, 5, 6. The other is a special die with faces marked 1, 2, 3, 5, 5, 5.<br><br>One die is randomly selected and tossed.<br>",
+      "parts": [
+        {
+          "label": "(a)",
+          "marks": 1,
+          "q": "What is the probability that the die shows a 5? <strong>(1 mark)</strong>",
+          "answer": "P(ordinary die) = 2/3 and that die shows a 5 with probability 1/6.\nP(special die) = 1/3 and that die shows a 5 with probability 3/6 = 1/2.\n\nP(5) = (2/3)(1/6) + (1/3)(1/2)\n= 2/18 + 3/18\n= 5/18.",
+          "keywords": [
+            "5/18",
+            "2/3",
+            "1/3"
+          ],
+          "minKeywords": 2,
+          "bandDescriptors": {
+            "full": "Provides correct answer",
+            "partial": "Does not meet the criterion: provides correct answer",
+            "minimal": "Does not meet the criterion: provides correct answer"
+          }
+        },
+        {
+          "label": "(b)",
+          "marks": 1,
+          "q": "Given that the die shows a 5, what is the probability that it is the special die? <strong>(1 mark)</strong>",
+          "answer": "P(special | 5) = P(special and 5) ÷ P(5)\n= (3/18) ÷ (5/18)\n= 3/5.",
+          "keywords": [
+            "5/18",
+            "3/5"
+          ],
+          "minKeywords": 1,
+          "bandDescriptors": {
+            "full": "Provides correct answer",
+            "partial": "Does not meet the criterion: provides correct answer",
+            "minimal": "Does not meet the criterion: provides correct answer"
+          }
+        }
+      ]
     },
     {
       "year": 2022,
@@ -2496,7 +3343,39 @@
         "full": "(a) The arithmetic sum 3n(n + 1)/2 is derived and evaluated at n = 12 to give 234. (b) Solving 3n(n + 1)/2 = 828 gives n = 23 rows.",
         "partial": "Part (a) shown but the quadratic in (b) is not solved, or both roots are kept when only the positive one makes sense.",
         "minimal": "The row sizes 3, 6, 9, … form an arithmetic series with a = 3 and d = 3. Use Sn = (n/2)[2a + (n − 1)d], then set that sum equal to 828 and solve for n."
-      }
+      },
+      "stem": "Cards are stacked to build a &lsquo;house of cards&rsquo;. A house of cards with 3 rows is shown.<br><br>A house of cards requires 3 cards in the top row, 6 cards in the next row, and each successive row has 3 more cards than the previous row.",
+      "parts": [
+        {
+          "label": "(a)",
+          "marks": 2,
+          "q": "Show that a house of cards with 12 rows has a total of 234 cards. <strong>(2 marks)</strong>",
+          "answer": "Sn = (n/2)[2a + (n − 1)d] = (n/2)[6 + 3(n − 1)] = 3n(n + 1)/2.\n\nFor n = 12: S₁₂ = 3 × 12 × 13 ÷ 2 = 468/2 = 234 cards, as required.",
+          "keywords": [
+            "234",
+            "23",
+            "3n(n + 1)/2"
+          ],
+          "minKeywords": 2,
+          "bandDescriptors": {
+            "full": "Provides correct solution",
+            "partial": "Finds the values of a and d, or equivalent merit",
+            "minimal": "Finds the values of a and d, or equivalent merit"
+          }
+        },
+        {
+          "label": "(b)",
+          "marks": 3,
+          "q": "Another house of cards has a total of 828 cards.<br><br>How many rows are in this house of cards? <strong>(3 marks)</strong>",
+          "answer": "Set 3n(n + 1)/2 = 828:\nn(n + 1) = 552\nn² + n − 552 = 0\n\nn = (−1 + √(1 + 2208))/2 = (−1 + √2209)/2 = (−1 + 47)/2 = 23.\n(The negative root is rejected.)\n\nThe house of cards has 23 rows.",
+          "keywords": [
+            "23",
+            "3n(n + 1)/2",
+            "552"
+          ],
+          "minKeywords": 2
+        }
+      ]
     },
     {
       "year": 2022,
@@ -2522,7 +3401,41 @@
         "full": "dy/dx = 8x(x² + 1)³ and ∫ x(x² + 1)³ dx = (1/8)(x² + 1)⁴ + C.",
         "partial": "The derivative is correct but the factor of 1/8 is dropped in (b), or the chain-rule factor 2x is omitted in (a).",
         "minimal": "Differentiate with the chain rule, then read (b) backwards from (a): the integrand is your derivative divided by 8, so the integral is (x² + 1)⁴ divided by 8."
-      }
+      },
+      "parts": [
+        {
+          "label": "(a)",
+          "marks": 2,
+          "q": "Differentiate <em>y</em> = (<em>x</em>&sup2; + 1)&#8308;. <strong>(2 marks)</strong>",
+          "answer": "Chain rule with u = x² + 1, so du/dx = 2x:\ndy/dx = 4(x² + 1)³ × 2x\n= 8x(x² + 1)³.",
+          "keywords": [
+            "8x(x² + 1)³",
+            "chain rule"
+          ],
+          "minKeywords": 1,
+          "bandDescriptors": {
+            "full": "Provides correct derivative",
+            "partial": "Attempts to use the chain rule, or equivalent merit",
+            "minimal": "Attempts to use the chain rule, or equivalent merit"
+          }
+        },
+        {
+          "label": "(b)",
+          "marks": 1,
+          "q": "Hence, or otherwise, find &int; <em>x</em>(<em>x</em>&sup2; + 1)&sup3; d<em>x</em>. <strong>(1 mark)</strong>",
+          "answer": "Part (a) says the derivative of (x² + 1)⁴ is 8x(x² + 1)³, so\n∫ 8x(x² + 1)³ dx = (x² + 1)⁴ + C.\n\nDividing by 8:\n∫ x(x² + 1)³ dx = (1/8)(x² + 1)⁴ + C.",
+          "keywords": [
+            "8x(x² + 1)³",
+            "(1/8)(x² + 1)⁴"
+          ],
+          "minKeywords": 1,
+          "bandDescriptors": {
+            "full": "Provides correct answer",
+            "partial": "Does not meet the criterion: provides correct answer",
+            "minimal": "Does not meet the criterion: provides correct answer"
+          }
+        }
+      ]
     },
     {
       "year": 2022,
@@ -2571,7 +3484,54 @@
         "full": "200 initially, about 273 after 24 hours, and a rate of about 3.55 bacteria per hour at t = 24.",
         "partial": "Parts (a) and (b) correct but (c) evaluates N(24) again instead of N′(24), or the chain-rule factor 0.013 is dropped when differentiating.",
         "minimal": "&ldquo;Initial&rdquo; means t = 0. A &ldquo;rate of increase&rdquo; is a derivative: differentiate N(t) = 200e^(0.013t) first, then substitute t = 24."
-      }
+      },
+      "stem": "A scientist is studying the growth of bacteria. The scientist models the number of bacteria, <em>N</em>, by the equation<br><br><em>N</em>(<em>t</em>) = 200<em>e</em><sup>0.013<em>t</em></sup>,<br><br>where <em>t</em> is the number of hours after starting the experiment.<br>",
+      "parts": [
+        {
+          "label": "(a)",
+          "marks": 1,
+          "q": "What is the initial number of bacteria in the experiment? <strong>(1 mark)</strong>",
+          "answer": "Initially t = 0, so N(0) = 200e⁰ = 200 bacteria.",
+          "keywords": [
+            "200"
+          ],
+          "minKeywords": 1,
+          "bandDescriptors": {
+            "full": "Provides correct answer",
+            "partial": "Does not meet the criterion: provides correct answer",
+            "minimal": "Does not meet the criterion: provides correct answer"
+          }
+        },
+        {
+          "label": "(b)",
+          "marks": 1,
+          "q": "What is the number of bacteria 24 hours after starting the experiment? <strong>(1 mark)</strong>",
+          "answer": "N(24) = 200e^(0.013 × 24) = 200e^0.312 ≈ 200 × 1.36615 ≈ 273.23,\nso about 273 bacteria.",
+          "keywords": [
+            "200",
+            "273"
+          ],
+          "minKeywords": 1,
+          "bandDescriptors": {
+            "full": "Provides correct answer",
+            "partial": "Does not meet the criterion: provides correct answer",
+            "minimal": "Does not meet the criterion: provides correct answer"
+          }
+        },
+        {
+          "label": "(c)",
+          "marks": 2,
+          "q": "What is the rate of increase in the number of bacteria 24 hours after starting the experiment? <strong>(2 marks)</strong>",
+          "answer": "The rate of increase is N′(t):\nN′(t) = 200 × 0.013 × e^(0.013t) = 2.6e^(0.013t).\n\nN′(24) = 2.6e^0.312 ≈ 2.6 × 1.36615 ≈ 3.55,\nso the number of bacteria is increasing at about 3.55 bacteria per hour.",
+          "keywords": [
+            "200",
+            "3.55",
+            "2.6e",
+            "rate"
+          ],
+          "minKeywords": 2
+        }
+      ]
     },
     {
       "year": 2022,
@@ -2594,7 +3554,44 @@
         "full": "Option 1 is about $45 097.17, Option 2 is $45 056.30 from the table factor 45.05630, and the difference is about $40.87.",
         "partial": "One of the two future values is correct. The most common slip is using the annual rate instead of the rate per period, or reading the table at r = 0.024 rather than r = 0.006.",
         "minimal": "Convert each annual rate to a rate per compounding period and count the periods in 10 years. Option 1 is a single deposit (compound interest); Option 2 is a series of equal deposits, so it uses the table factor."
-      }
+      },
+      "stem": "Eli is choosing between two investment options.<br><br><strong>Option 1:</strong> Depositing a single amount of $40&nbsp;000 today, earning interest of 1.2% per annum, compounded monthly.<br><br><strong>Option 2:</strong> Depositing $1000 at the end of each quarter, earning interest of 2.4% per annum, compounded quarterly.<br><br>A table of future value interest factors for an annuity of $1 is shown. <em>N</em> is the number of periods and the column headings give the interest rate <em>r</em> per period, as a decimal.<div style=\"overflow-x:auto;-webkit-overflow-scrolling:touch;margin:14px 0\"><table class=\"q-table\" style=\"min-width:560px;margin:0\"><tr><th><em>N</em></th><th>0.002</th><th>0.006</th><th>0.020</th><th>0.024</th><th>0.060</th><th>0.240</th></tr><tr><td>10</td><td>10.09048</td><td>10.27437</td><td>10.94972</td><td>11.15211</td><td>13.18079</td><td>31.64344</td></tr><tr><td>20</td><td>20.38460</td><td>21.18211</td><td>24.29737</td><td>25.28909</td><td>36.78559</td><td>303.60062</td></tr><tr><td>30</td><td>30.88646</td><td>32.76227</td><td>40.56808</td><td>43.20983</td><td>79.05819</td><td>2640.91639</td></tr><tr><td>40</td><td>41.60026</td><td>45.05630</td><td>60.40198</td><td>65.92708</td><td>154.76197</td><td>22&nbsp;728.80260</td></tr></table>",
+      "parts": [
+        {
+          "label": "(a)",
+          "marks": 2,
+          "q": "What is the value of Eli&rsquo;s investment after 10 years using Option 1? <strong>(2 marks)</strong>",
+          "answer": "Option 1 is a single deposit with compound interest.\nRate per period r = 0.012 ÷ 12 = 0.001, and N = 10 × 12 = 120 periods.\n\nFV = 40 000(1.001)¹²⁰\n≈ 40 000 × 1.1274293\n≈ $45 097.17.",
+          "keywords": [
+            "45 097"
+          ],
+          "minKeywords": 1,
+          "bandDescriptors": {
+            "full": "Provides correct solution",
+            "partial": "Writes an expression for the future value with some correct element(s), or equivalent merit",
+            "minimal": "Writes an expression for the future value with some correct element(s), or equivalent merit"
+          }
+        },
+        {
+          "label": "(b)",
+          "marks": 2,
+          "q": "What is the difference between the future values after 10 years using Option 1 and Option 2? <strong>(2 marks)</strong>",
+          "answer": "Option 2 is an annuity.\nRate per period r = 0.024 ÷ 4 = 0.006, and N = 10 × 4 = 40 periods.\nFrom the table, the future value interest factor is 45.05630.\n\nFV = 1000 × 45.05630 = $45 056.30.\n\nDifference = 45 097.17 − 45 056.30 = $40.87.",
+          "keywords": [
+            "45 097",
+            "45 056.30",
+            "45.05630",
+            "40.87",
+            "0.006"
+          ],
+          "minKeywords": 3,
+          "bandDescriptors": {
+            "full": "Provides correct solution",
+            "partial": "Calculates the future value using the interest factor table, or equivalent merit",
+            "minimal": "Calculates the future value using the interest factor table, or equivalent merit"
+          }
+        }
+      ]
     },
     {
       "year": 2022,
@@ -2641,7 +3638,53 @@
         "full": "0.7 m at low tide and 1.9 m at high tide, a 12.5 hour interval, and the depth is at least 1 m for 25/3 ≈ 8.33 hours.",
         "partial": "Parts (a) and (b) correct but (c) solves only for the first crossing rather than the whole interval, or the inequality sign is not reversed when dividing by −0.6.",
         "minimal": "The extremes come from cos = ±1. The period of cos(kt) is 2π/k. In (c), rearrange to cos(4πt/25) ≤ 0.5 — reversing the inequality when you divide by a negative — and find the whole range of angles that satisfy it."
-      }
+      },
+      "stem": "The depth of water in a bay rises and falls with the tide. On a particular day the depth of the water, <em>d</em> metres, can be modelled by the equation<br><br><em>d</em> = 1.3 &minus; 0.6 cos(4&pi;<em>t</em>/25),<br><br>where <em>t</em> is the time in hours since low tide.<br>",
+      "parts": [
+        {
+          "label": "(a)",
+          "marks": 2,
+          "q": "Find the depth of water at low tide and at high tide. <strong>(2 marks)</strong>",
+          "answer": "cos takes values from −1 to 1.\nLow tide: cos(4πt/25) = 1, so d = 1.3 − 0.6 = 0.7 m.\nHigh tide: cos(4πt/25) = −1, so d = 1.3 + 0.6 = 1.9 m.",
+          "keywords": [
+            "0.7",
+            "1.9"
+          ],
+          "minKeywords": 1,
+          "bandDescriptors": {
+            "full": "Provides correct solution",
+            "partial": "Finds the depth of water at either high or low tide, or equivalent merit",
+            "minimal": "Finds the depth of water at either high or low tide, or equivalent merit"
+          }
+        },
+        {
+          "label": "(b)",
+          "marks": 1,
+          "q": "What is the time interval, in hours, between two successive low tides? <strong>(1 mark)</strong>",
+          "answer": "The period is 2π ÷ (4π/25) = 2π × 25/(4π) = 12.5 hours.",
+          "keywords": [
+            "12.5"
+          ],
+          "minKeywords": 1,
+          "bandDescriptors": {
+            "full": "Provides correct answer",
+            "partial": "Does not meet the criterion: provides correct answer",
+            "minimal": "Does not meet the criterion: provides correct answer"
+          }
+        },
+        {
+          "label": "(c)",
+          "marks": 3,
+          "q": "For how long between successive low tides will the depth of water be at least 1 metre? <strong>(3 marks)</strong>",
+          "answer": "Require d ≥ 1:\n1.3 − 0.6 cos(4πt/25) ≥ 1\n−0.6 cos(4πt/25) ≥ −0.3\ncos(4πt/25) ≤ 0.5.\n\nLet θ = 4πt/25. Over one period 0 ≤ θ ≤ 2π, cos θ ≤ 0.5 for π/3 ≤ θ ≤ 5π/3,\nan interval of length 5π/3 − π/3 = 4π/3.\n\nSince t = 25θ/(4π), the corresponding time is\n(25/(4π)) × 4π/3 = 25/3 hours ≈ 8.33 hours (8 hours 20 minutes).",
+          "keywords": [
+            "25/3",
+            "8.33",
+            "0.5"
+          ],
+          "minKeywords": 2
+        }
+      ]
     },
     {
       "year": 2022,
@@ -2748,6 +3791,42 @@
           "marks": 3,
           "reason": "The student must sketch the curve y = xe⁻²ˣ, showing stationary points, points of inflection and intercepts with the axes. The engine cannot accept or mark a hand-drawn graph."
         }
+      ],
+      "stem": "Let <em>f</em>(<em>x</em>) = <em>xe</em><sup>&minus;2<em>x</em></sup>.<br><br>It is given that <em>f</em>&prime;(<em>x</em>) = <em>e</em><sup>&minus;2<em>x</em></sup> &minus; 2<em>xe</em><sup>&minus;2<em>x</em></sup>.<br>",
+      "parts": [
+        {
+          "label": "(a)",
+          "marks": 2,
+          "q": "Show that <em>f</em>&Prime;(<em>x</em>) = 4(<em>x</em> &minus; 1)<em>e</em><sup>&minus;2<em>x</em></sup>. <strong>(2 marks)</strong>",
+          "answer": "Differentiate f′(x) = e⁻²ˣ − 2xe⁻²ˣ term by term.\n\nd/dx (e⁻²ˣ) = −2e⁻²ˣ\nd/dx (2xe⁻²ˣ) = 2e⁻²ˣ + 2x(−2e⁻²ˣ) = 2e⁻²ˣ − 4xe⁻²ˣ  (product rule)\n\nSo f″(x) = −2e⁻²ˣ − (2e⁻²ˣ − 4xe⁻²ˣ)\n= −4e⁻²ˣ + 4xe⁻²ˣ\n= 4(x − 1)e⁻²ˣ, as required.",
+          "keywords": [
+            "4(x − 1)"
+          ],
+          "minKeywords": 1,
+          "bandDescriptors": {
+            "full": "Provides correct solution",
+            "partial": "Attempts to use the product rule",
+            "minimal": "Attempts to use the product rule"
+          }
+        },
+        {
+          "label": "(b)",
+          "marks": 2,
+          "q": "Find any stationary points of <em>f</em>(<em>x</em>) and determine their nature. <strong>(2 marks)</strong><br><br><em style=\"opacity:0.75\">Part (c), which asked for the curve <em>y</em> = <em>xe</em><sup>&minus;2<em>x</em></sup> to be sketched showing stationary points, points of inflection and intercepts, is not included here.</em>",
+          "answer": "Stationary points where f′(x) = 0:\ne⁻²ˣ(1 − 2x) = 0.\ne⁻²ˣ is never zero, so 1 − 2x = 0 and x = 1/2.\n\ny-value: f(1/2) = (1/2)e⁻¹ = 1/(2e) ≈ 0.184.\n\nNature: f″(1/2) = 4(1/2 − 1)e⁻¹ = −2e⁻¹ < 0, so the curve is concave down there.\n\nThere is a single stationary point, a maximum at (1/2, 1/(2e)).",
+          "keywords": [
+            "1/2",
+            "1/(2e)",
+            "maximum",
+            "concave down"
+          ],
+          "minKeywords": 2,
+          "bandDescriptors": {
+            "full": "Provides correct solution",
+            "partial": "Finds the x value of the stationary point",
+            "minimal": "Finds the x value of the stationary point"
+          }
+        }
       ]
     },
     {
@@ -2803,7 +3882,56 @@
         "full": "(a) a = 1, r = ½ and S∞ = 2. (b) The antiderivative −2⁻ˣ/ln 2 evaluated from 0 to 4 gives 15/(16 ln 2). (c) The rectangles overestimate the integral, giving 15/8 > 15/(16 ln 2), hence ln 2 > ½ and e¹⁵ < 2³².",
         "partial": "Parts (a) and (b) shown but (c) does not compare the correct four-rectangle sum 15/8 with the integral, or the inequality is reversed when dividing.",
         "minimal": "The rectangle areas form a geometric series with r = ½. For (b), the antiderivative of aˣ is aˣ/ln a. For (c), note the rectangles lie above the decreasing curve, so their total area exceeds the integral over the same interval."
-      }
+      },
+      "parts": [
+        {
+          "label": "(a)",
+          "marks": 1,
+          "q": "The diagram shows the graph of <em>y</em> = 2<sup>&minus;<em>x</em></sup>. Also shown on the diagram are the first 5 of an infinite number of rectangular strips of width 1 unit and height <em>y</em> = 2<sup>&minus;<em>x</em></sup> for non-negative integer values of <em>x</em>. For example, the second rectangle shown has width 1 and height &frac12;.<img src=\"/diagrams/mathematics-advanced_2022_Q29_stimulus.jpg\" alt=\"The decreasing curve y = 2 to the power −x with five shaded rectangles of width 1, standing on the x-axis between x = 0 and x = 5, each with its top-left corner on the curve.\" style=\"max-width:100%;height:auto;display:block;margin:14px auto\">The sum of the areas of the rectangles forms a geometric series.<br><br>Show that the limiting sum of this series is 2. <strong>(1 mark)</strong>",
+          "answer": "The rectangles have width 1 and heights 2⁰, 2⁻¹, 2⁻², … so their areas are 1, ½, ¼, …\n\nThis is a geometric series with a = 1 and r = ½, and |r| < 1, so\nS∞ = a/(1 − r) = 1/(1 − ½) = 2, as required.",
+          "keywords": [
+            "S∞ = 2"
+          ],
+          "minKeywords": 1,
+          "bandDescriptors": {
+            "full": "Shows the limiting sum",
+            "partial": "Does not meet the criterion: shows the limiting sum",
+            "minimal": "Does not meet the criterion: shows the limiting sum"
+          }
+        },
+        {
+          "label": "(b)",
+          "marks": 2,
+          "q": "Show that &int;&#8320;&#8308; 2<sup>&minus;<em>x</em></sup> d<em>x</em> = 15/(16 ln 2). <strong>(2 marks)</strong>",
+          "answer": "∫ 2⁻ˣ dx = −2⁻ˣ/ln 2, so\n∫₀⁴ 2⁻ˣ dx = [−2⁻ˣ/ln 2]₀⁴\n= (−2⁻⁴ + 2⁰)/ln 2\n= (1 − 1/16)/ln 2\n= 15/(16 ln 2), as required.",
+          "keywords": [
+            "15/(16 ln 2)"
+          ],
+          "minKeywords": 1,
+          "bandDescriptors": {
+            "full": "Provides correct solution",
+            "partial": "Substitutes correctly into anti-derivative, or equivalent merit",
+            "minimal": "Substitutes correctly into anti-derivative, or equivalent merit"
+          }
+        },
+        {
+          "label": "(c)",
+          "marks": 2,
+          "q": "Use parts (a) and (b) to show that <em>e</em><sup>15</sup> &lt; 2<sup>32</sup>. <strong>(2 marks)</strong>",
+          "answer": "The first four rectangles cover 0 ≤ x ≤ 4. Their total area is the limiting sum from (a) less the rectangles from x = 4 onwards:\n1 + ½ + ¼ + ⅛ = 2 − (1/16 + 1/32 + …) = 2 − ⅛ = 15/8.\n\nBecause 2⁻ˣ is decreasing, each rectangle sits above the curve, so the rectangles overestimate the area:\n15/8 > ∫₀⁴ 2⁻ˣ dx = 15/(16 ln 2).\n\nDivide both sides by 15 and rearrange:\n1/8 > 1/(16 ln 2)\n16 ln 2 > 8\nln 2 > ½.\n\nMultiply by 32:  32 ln 2 > 16 > 15,\nso ln(2³²) > 15 and therefore 2³² > e¹⁵, that is e¹⁵ < 2³².",
+          "keywords": [
+            "15/(16 ln 2)",
+            "15/8",
+            "overestimate"
+          ],
+          "minKeywords": 2,
+          "bandDescriptors": {
+            "full": "Provides correct solution",
+            "partial": "Sets up correct inequality, or equivalent merit",
+            "minimal": "Sets up correct inequality, or equivalent merit"
+          }
+        }
+      ]
     },
     {
       "year": 2022,
@@ -2826,7 +3954,39 @@
         "full": "k = 3 from F(e³) = 1, and c = e² from F(c) = 2/3.",
         "partial": "k = 3 shown but (b) sets F(c) = 2/3 incorrectly — for instance solving F(c) = 2 or splitting the probability as ⅓ and ⅔ the wrong way round.",
         "minimal": "A cumulative distribution function reaches 1 at the top of its range. In (b), P(X > c) = 1 − F(c), so the condition becomes F(c) = 2[1 − F(c)]."
-      }
+      },
+      "stem": "A continuous random variable <em>X</em> has cumulative distribution function given by <table style=\"display:inline-table;vertical-align:middle;border-collapse:collapse;margin:0 0 0 4px\"><tr><td rowspan=\"3\" style=\"border:0;padding:0 4px 0 0;font-size:3.9em;font-weight:300;line-height:0.86;vertical-align:middle\">{</td><td style=\"border:0;padding:1px 0;text-align:left;font-size:0.85em\">1,&nbsp;&nbsp;&nbsp;<em>x</em> &gt; <em>e</em>&sup3;</td></tr><tr><td style=\"border:0;padding:1px 0;text-align:left;font-size:0.85em\">(1/<em>k</em>) ln <em>x</em>,&nbsp;&nbsp;&nbsp;1 &le; <em>x</em> &le; <em>e</em>&sup3;</td></tr><tr><td style=\"border:0;padding:1px 0;text-align:left;font-size:0.85em\">0,&nbsp;&nbsp;&nbsp;<em>x</em> &lt; 1</td></tr></table><br>",
+      "parts": [
+        {
+          "label": "(a)",
+          "marks": 1,
+          "q": "Show that <em>k</em> = 3. <strong>(1 mark)</strong>",
+          "answer": "A cumulative distribution function must reach 1 at the top of its range, and F must be continuous there.\n\nAt x = e³:  F(e³) = (1/k) ln(e³) = 3/k.\nSetting 3/k = 1 gives k = 3, as required.",
+          "keywords": [
+            "k = 3",
+            "F(e³) = 1"
+          ],
+          "minKeywords": 1,
+          "bandDescriptors": {
+            "full": "Provides correct solution",
+            "partial": "Does not meet the criterion: provides correct solution",
+            "minimal": "Does not meet the criterion: provides correct solution"
+          }
+        },
+        {
+          "label": "(b)",
+          "marks": 2,
+          "q": "Given that P(<em>X</em> &lt; <em>c</em>) = 2P(<em>X</em> &gt; <em>c</em>), find the exact value of <em>c</em>. <strong>(2 marks)</strong>",
+          "answer": "With k = 3, F(x) = (1/3) ln x for 1 ≤ x ≤ e³.\n\nP(X < c) = F(c) and P(X > c) = 1 − F(c), so\nF(c) = 2[1 − F(c)]\n3F(c) = 2\nF(c) = 2/3.\n\nHence (1/3) ln c = 2/3, so ln c = 2 and\nc = e².\n\n(This lies in the range, since 1 ≤ e² ≤ e³.)",
+          "keywords": [
+            "k = 3",
+            "c = e²",
+            "2/3",
+            "ln c = 2"
+          ],
+          "minKeywords": 2
+        }
+      ]
     },
     {
       "year": 2022,
@@ -2853,7 +4013,40 @@
         "full": "(a) y = 2x/(x − 1) from equal gradients through P. (b) A = x²/(x − 1), dA/dx = x(x − 2)/(x − 1)², minimum at x = 2 giving area 4 square units.",
         "partial": "The area function is set up and differentiated but x = 0 is kept as a solution (it is outside x > 1), or the minimum is not verified.",
         "minimal": "Use the fact that X, P and Y lie on one line to link x and y. Then the triangle's area is ½xy — write it in terms of x alone and minimise it for x > 1."
-      }
+      },
+      "stem": "A line passes through the point <em>P</em>(1, 2) and meets the axes at <em>X</em>(<em>x</em>, 0) and <em>Y</em>(0, <em>y</em>), where <em>x</em> &gt; 1.",
+      "parts": [
+        {
+          "label": "(a)",
+          "marks": 2,
+          "q": "Show that <em>y</em> = 2<em>x</em>/(<em>x</em> &minus; 1). <strong>(2 marks)</strong>",
+          "answer": "X, P and Y are collinear, so the gradient from Y to P equals the gradient from P to X.\n\nGradient YP = (2 − y)/(1 − 0) = 2 − y\nGradient PX = (0 − 2)/(x − 1) = −2/(x − 1)\n\nSet them equal:\n2 − y = −2/(x − 1)\ny = 2 + 2/(x − 1)\n= [2(x − 1) + 2]/(x − 1)\n= 2x/(x − 1), as required.",
+          "keywords": [
+            "2x/(x − 1)",
+            "x²/(x − 1)"
+          ],
+          "minKeywords": 1,
+          "bandDescriptors": {
+            "full": "Provides correct solution",
+            "partial": "Equates the two expressions for the gradients, or equivalent merit",
+            "minimal": "Equates the two expressions for the gradients, or equivalent merit"
+          }
+        },
+        {
+          "label": "(b)",
+          "marks": 4,
+          "q": "Find the minimum value of the area of triangle <em>XOY</em>. <strong>(4 marks)</strong>",
+          "answer": "Triangle XOY is right-angled at the origin with legs x and y, so\nA = ½xy = ½ × x × 2x/(x − 1) = x²/(x − 1).\n\nDifferentiate with the quotient rule:\ndA/dx = [2x(x − 1) − x²]/(x − 1)²\n= (x² − 2x)/(x − 1)²\n= x(x − 2)/(x − 1)².\n\ndA/dx = 0 for x > 1 gives x = 2.\n\nFor 1 < x < 2, dA/dx < 0; for x > 2, dA/dx > 0. So x = 2 gives a minimum.\n\nMinimum area = 2²/(2 − 1) = 4 square units.",
+          "keywords": [
+            "2x/(x − 1)",
+            "x²/(x − 1)",
+            "x = 2",
+            "4",
+            "minimum"
+          ],
+          "minKeywords": 3
+        }
+      ]
     },
     {
       "year": 2022,
@@ -2876,7 +4069,61 @@
         "full": "(a) M = $1381.16 from A₁₈₀ = 0. (b) n ≈ 83.67, so 83 more full repayments. (c) A₈₃ ≈ $928.29 and the final payment is about $931.54.",
         "partial": "Parts (a) and (b) correct but the answer to (b) is rounded up to 84, or (c) gives the balance $928.29 without adding the final month's interest.",
         "minimal": "Sum the bracket as a geometric series, then set A_n = 0 to find M. In (b), restart the same formula with the new rate, the new balance and the same repayment, and solve for n — then read the non-integer answer carefully: a partial month is not a full payment."
-      }
+      },
+      "stem": "In a reducing-balance loan, an amount $<em>P</em> is borrowed for a period of <em>n</em> months at an interest rate of 0.25% per month, compounded monthly. At the end of each month, a repayment of $<em>M</em> is made. After the <em>n</em>th repayment has been made, the amount owing, $<em>A</em><sub><em>n</em></sub>, is given by<br><br><em>A</em><sub><em>n</em></sub> = <em>P</em>(1.0025)<sup><em>n</em></sup> &minus; <em>M</em>(1 + (1.0025)&sup1; + (1.0025)&sup2; + &hellip; + (1.0025)<sup><em>n</em>&minus;1</sup>).<br><br>(Do NOT prove this.)<br>",
+      "parts": [
+        {
+          "label": "(a)",
+          "marks": 2,
+          "q": "Jane borrows $200&nbsp;000 in a reducing-balance loan as described.<br><br>The loan is to be repaid in 180 monthly repayments.<br><br>Show that <em>M</em> = 1381.16, when rounded to the nearest cent. <strong>(2 marks)</strong>",
+          "answer": "The bracket is a geometric series with a = 1, r = 1.0025 and 180 terms, so it sums to (1.0025¹⁸⁰ − 1)/0.0025.\n\nThe loan is repaid when A₁₈₀ = 0:\n200 000(1.0025)¹⁸⁰ = M(1.0025¹⁸⁰ − 1)/0.0025\n\n1.0025¹⁸⁰ ≈ 1.5674336, so\nM = 200 000 × 0.0025 × 1.5674336 ÷ 0.5674336\n= 783.7168 ÷ 0.5674336\n≈ 1381.1633\n\nM = $1381.16 when rounded to the nearest cent.",
+          "keywords": [
+            "1381.16",
+            "83",
+            "geometric"
+          ],
+          "minKeywords": 2,
+          "bandDescriptors": {
+            "full": "Provides correct solution",
+            "partial": "Uses the sum for a geometric progression",
+            "minimal": "Uses the sum for a geometric progression"
+          }
+        },
+        {
+          "label": "(b)",
+          "marks": 3,
+          "q": "After 100 repayments of $1381.16 have been made, the interest rate changes to 0.35% per month.<br><br>At this stage, the amount owing to the nearest dollar is $100&nbsp;032. (Do NOT prove this.)<br><br>Jane continues to make the same monthly repayments.<br><br>For how many more months will Jane need to make full monthly payments of $1381.16? <strong>(3 marks)</strong>",
+          "answer": "Restart with P = 100 032, r = 0.0035 and M = 1381.16. Let x = 1.0035ⁿ.\n\nA_n = 100 032x − 1381.16(x − 1)/0.0035 = 0\n100 032x = 394 617.14(x − 1)\n394 617.14 = 294 585.14x\nx = 1.339569\n\nn = ln(1.339569) ÷ ln(1.0035) ≈ 0.292348 ÷ 0.0034939 ≈ 83.67.\n\nSo after 83 more full repayments there is still a small amount owing, and the 84th payment is smaller than a full one.\n\nJane needs to make 83 more full monthly payments of $1381.16.",
+          "keywords": [
+            "1381.16",
+            "83"
+          ],
+          "minKeywords": 1,
+          "bandDescriptors": {
+            "full": "Provides correct solution",
+            "partial": "Writes the equation in simplest exponential form",
+            "minimal": "Writes the equation in terms of n using the new interest rate and the new principal"
+          }
+        },
+        {
+          "label": "(c)",
+          "marks": 2,
+          "q": "The final repayment will be less than $1381.16.<br><br>How much will Jane need to pay in the final payment in order to pay off the loan? <strong>(2 marks)</strong>",
+          "answer": "Amount owing after those 83 repayments:\nA₈₃ = 100 032(1.0035)⁸³ − 1381.16 × [(1.0035)⁸³ − 1]/0.0035\n≈ 133 679.6 − 132 751.3\n≈ $928.29\n\nOne more month's interest is charged before the final payment:\nFinal payment = 928.29 × 1.0035 ≈ $931.54.",
+          "keywords": [
+            "1381.16",
+            "83",
+            "931.54",
+            "928.29"
+          ],
+          "minKeywords": 2,
+          "bandDescriptors": {
+            "full": "Provides correct solution",
+            "partial": "Substitutes n = 83 into amount owing, or equivalent merit",
+            "minimal": "Substitutes n = 83 into amount owing, or equivalent merit"
+          }
+        }
+      ]
     },
     {
       "year": 2023,
@@ -2923,7 +4170,43 @@
         "full": "E(X) = 2 shown from Σ x P(X = x), then Var(X) = 4.8 − 4 = 0.8 and σ = 0.9 to one decimal place.",
         "partial": "The expected value is shown but the standard deviation is wrong — commonly the variance 0.8 is given as the answer, or the square root is not taken.",
         "minimal": "Var(X) = E(X²) − [E(X)]², where E(X²) uses x² against the same probabilities. The standard deviation is the square root of the variance."
-      }
+      },
+      "stem": "The table shows the probability distribution of a discrete random variable.<table class=\"q-table\"><tr><th><em>x</em></th><th>0</th><th>1</th><th>2</th><th>3</th><th>4</th></tr><tr><td><em>P</em>(<em>X</em> = <em>x</em>)</td><td>0</td><td>0.3</td><td>0.5</td><td>0.1</td><td>0.1</td></tr></table>",
+      "parts": [
+        {
+          "label": "(a)",
+          "marks": 1,
+          "q": "Show that the expected value <em>E</em>(<em>X</em>) = 2. <strong>(1 mark)</strong>",
+          "answer": "E(X) = Σ x P(X = x)\n= 0(0) + 1(0.3) + 2(0.5) + 3(0.1) + 4(0.1)\n= 0 + 0.3 + 1 + 0.3 + 0.4\n= 2.",
+          "keywords": [
+            "E(X²)"
+          ],
+          "minKeywords": 1,
+          "bandDescriptors": {
+            "full": "Provides correct solution",
+            "partial": "Does not meet the criterion: provides correct solution",
+            "minimal": "Does not meet the criterion: provides correct solution"
+          }
+        },
+        {
+          "label": "(b)",
+          "marks": 2,
+          "q": "Calculate the standard deviation, correct to one decimal place. <strong>(2 marks)</strong>",
+          "answer": "E(X²) = 0²(0) + 1²(0.3) + 2²(0.5) + 3²(0.1) + 4²(0.1)\n= 0.3 + 2 + 0.9 + 1.6\n= 4.8\nVar(X) = E(X²) − [E(X)]² = 4.8 − 2² = 0.8\nσ = √0.8 = 0.894… = 0.9 (1 d.p.).",
+          "keywords": [
+            "0.9",
+            "0.8",
+            "4.8",
+            "E(X²)"
+          ],
+          "minKeywords": 2,
+          "bandDescriptors": {
+            "full": "Provides correct solution",
+            "partial": "Attempts to find Var(X), or equivalent merit",
+            "minimal": "Attempts to find Var(X), or equivalent merit"
+          }
+        }
+      ]
     },
     {
       "year": 2023,
@@ -2991,7 +4274,45 @@
         "full": "$34 140 in (a) from dividing by 13.181, and $463 177.38 in (b) from multiplying $8535 by the 40-period 1.5% factor 54.268.",
         "partial": "One part correct, or the right factor chosen but used the wrong way round — (a) divides by the factor, (b) multiplies by it.",
         "minimal": "Read the table by period and rate. In (b) the period is a quarter, so there are 4 × 10 = 40 periods and the rate per period is 6% ÷ 4 = 1.5%, not 10 periods at 6%."
-      }
+      },
+      "stem": "A table of future value interest factors for an annuity of $1 is shown.<table class=\"q-table\"><tr><th>Period</th><th>1.5%</th><th>3%</th><th>4.5%</th><th>6%</th></tr><tr><td>5</td><td>5.152</td><td>5.309</td><td>5.471</td><td>5.637</td></tr><tr><td>10</td><td>10.703</td><td>11.464</td><td>12.288</td><td>13.181</td></tr><tr><td>20</td><td>23.124</td><td>26.870</td><td>31.371</td><td>36.786</td></tr><tr><td>40</td><td>54.268</td><td>75.401</td><td>107.030</td><td>154.762</td></tr></table>",
+      "parts": [
+        {
+          "label": "(a)",
+          "marks": 2,
+          "q": "Micky wants to save $450&nbsp;000 over the next 10 years.<br><br>If the interest rate is 6% per annum compounding annually, how much should Micky contribute each year? Give your answer to the nearest dollar. <strong>(2 marks)</strong>",
+          "answer": "10 years at 6% per annum: the future value interest factor is 13.181.\nFuture value = contribution × 13.181 = 450 000\ncontribution = 450 000 ÷ 13.181 = 34 140.05…\nMicky should contribute $34 140 each year.",
+          "keywords": [
+            "34 140",
+            "13.181",
+            "40"
+          ],
+          "minKeywords": 2,
+          "bandDescriptors": {
+            "full": "Provides correct solution",
+            "partial": "Identifies the correct factor from the table",
+            "minimal": "Identifies the correct factor from the table"
+          }
+        },
+        {
+          "label": "(b)",
+          "marks": 3,
+          "q": "Instead, Micky decides to contribute $8535 every three months for 10 years to an annuity paying 6% per annum, compounding quarterly.<br><br>How much will Micky have at the end of 10 years? <strong>(3 marks)</strong>",
+          "answer": "Compounding quarterly for 10 years gives 40 periods at a rate of 6% ÷ 4 = 1.5% per period.\nThe factor for 40 periods at 1.5% is 54.268.\nFuture value = 8535 × 54.268 = 463 177.38.\nMicky will have $463 177.38 at the end of 10 years.",
+          "keywords": [
+            "54.268",
+            "463 177",
+            "40",
+            "1.5%"
+          ],
+          "minKeywords": 2,
+          "bandDescriptors": {
+            "full": "Provides correct solution",
+            "partial": "Provides the correct interest rate and the correct number of periods, or equivalent merit",
+            "minimal": "Multiplies a factor from the table by $8535, or equivalent merit"
+          }
+        }
+      ]
     },
     {
       "year": 2023,
@@ -3067,6 +4388,44 @@
           "part": "a",
           "marks": 3,
           "reason": "The student must plot the point (x̄, ȳ) and the y-intercept of the least-squares regression line on a printed grid. The engine cannot accept or mark points plotted by hand."
+        }
+      ],
+      "stem": "A university uses gas to heat its buildings. Over a period of 10 weekdays during winter, the gas used each day was measured in megawatts (MW) and the average outside temperature each day was recorded in degrees Celsius (&deg;C).<br><br>Using <em>x</em> as the average daily outside temperature and <em>y</em> as the total daily gas usage, the equation of the least-squares regression line was found.<br><br>The equation of the regression line predicts that when the temperature is 0&deg;C, the daily gas usage is 236 MW.<br><br>The ten temperatures measured were: 0&deg;, 0&deg;, 0&deg;, 2&deg;, 5&deg;, 7&deg;, 8&deg;, 9&deg;, 9&deg;, 10&deg;.<br><br>The total gas usage for the ten weekdays was 1840 MW.<br><br>In any bivariate dataset, the least-squares regression line passes through the point (<em>x&#772;</em>, <em>y&#772;</em>), where <em>x&#772;</em> is the sample mean of the <em>x</em>-values and <em>y&#772;</em> is the sample mean of the <em>y</em>-values.<br>",
+      "parts": [
+        {
+          "label": "(b)",
+          "marks": 2,
+          "q": "What is the equation of the regression line? <strong>(2 marks)</strong>",
+          "answer": "x̄ = (0 + 0 + 0 + 2 + 5 + 7 + 8 + 9 + 9 + 10) ÷ 10 = 50/10 = 5\nȳ = 1840/10 = 184\nThe line passes through (5, 184), and its y-intercept is (0, 236).\nGradient = (184 − 236)/(5 − 0) = −52/5 = −10.4\ny = −10.4x + 236.",
+          "keywords": [
+            "−10.4",
+            "236",
+            "184",
+            "5"
+          ],
+          "minKeywords": 2,
+          "bandDescriptors": {
+            "full": "Provides correct solution",
+            "partial": "Finds the slope of the regression line, or equivalent merit",
+            "minimal": "Finds the slope of the regression line, or equivalent merit"
+          }
+        },
+        {
+          "label": "(c)",
+          "marks": 1,
+          "q": "In the context of the dataset, identify ONE problem with using the regression line to predict gas usage when the average outside temperature is 23&deg;C. <strong>(1 mark)</strong><br><br><em style=\"opacity:0.75\">Part (a), which asked for the point (x&#772;, y&#772;) and the <em>y</em>-intercept to be plotted on a printed grid, is not included here &mdash; work with the numbers directly.</em>",
+          "answer": "The temperatures in the dataset run only from 0°C to 10°C, so predicting at 23°C is extrapolation — well outside the range of the data. There is no evidence the linear relationship continues that far, and the line in fact predicts a negative gas usage (236 − 10.4 × 23 ≈ −4 MW), which is impossible.",
+          "keywords": [
+            "236",
+            "extrapolation",
+            "outside the range"
+          ],
+          "minKeywords": 2,
+          "bandDescriptors": {
+            "full": "Identifies one problem with predicting using the regression line",
+            "partial": "Does not meet the criterion: identifies one problem with predicting using the regression line",
+            "minimal": "Does not meet the criterion: identifies one problem with predicting using the regression line"
+          }
         }
       ]
     },
@@ -3215,7 +4574,39 @@
         "full": "y = 50/(x − 2) + 1 derived from the garden's dimensions, then x = 12 from dA/dx = 0 with a positive second derivative confirming a minimum.",
         "partial": "The area function is set up and differentiated correctly but the minimum is not justified, or the negative root x − 2 = −10 is kept.",
         "minimal": "The garden is (x − 2) by (y − 1) — the path takes 1 m from each end and 1 m from the bottom, but not from the wall side. The path's area is the outer rectangle minus 50."
-      }
+      },
+      "stem": "A gardener wants to build a rectangular garden of area 50 m&sup2; against an existing wall as shown in the diagram. A concrete path of width 1 metre is to be built around the other three sides of the garden.<img src=\"/diagrams/mathematics-advanced_2023_Q24_stimulus.jpg\" alt=\"A garden of area 50 square metres set against an existing wall, with a 1 metre wide concrete path along the other three sides. The outer rectangle measures x metres by y metres.\" style=\"max-width:100%;height:auto;display:block;margin:14px auto\">Let <em>x</em> and <em>y</em> be the dimensions, in metres, of the outer rectangle as shown.<br>",
+      "parts": [
+        {
+          "label": "(a)",
+          "marks": 1,
+          "q": "Show that <em>y</em> = 50/(<em>x</em> &minus; 2) + 1. <strong>(1 mark)</strong>",
+          "answer": "The path is 1 m wide on both ends and along the bottom, so the garden measures (x − 2) by (y − 1).\n(x − 2)(y − 1) = 50\ny − 1 = 50/(x − 2)\ny = 50/(x − 2) + 1.",
+          "keywords": [
+            "(x − 2)"
+          ],
+          "minKeywords": 1,
+          "bandDescriptors": {
+            "full": "Provides correct solution",
+            "partial": "Does not meet the criterion: provides correct solution",
+            "minimal": "Does not meet the criterion: provides correct solution"
+          }
+        },
+        {
+          "label": "(b)",
+          "marks": 4,
+          "q": "Find the value of <em>x</em> such that the area of the concrete path is a minimum. Show that your answer gives a minimum area. <strong>(4 marks)</strong>",
+          "answer": "Area of path A = xy − 50\n= x[50/(x − 2) + 1] − 50\n= 50x/(x − 2) + x − 50.\n\nDifferentiate, using the quotient rule on the first term:\nd/dx [50x/(x − 2)] = [50(x − 2) − 50x]/(x − 2)² = −100/(x − 2)²\ndA/dx = 1 − 100/(x − 2)².\n\nSet dA/dx = 0:\n(x − 2)² = 100, so x − 2 = 10 (taking the positive root, since x > 2)\nx = 12.\n\nSecond derivative: d²A/dx² = 200/(x − 2)³, which at x = 12 is 200/1000 = 0.2 > 0, so the stationary point is a minimum.\n\nx = 12 m.",
+          "keywords": [
+            "x = 12",
+            "50x/(x − 2)",
+            "second derivative",
+            "minimum",
+            "(x − 2)"
+          ],
+          "minKeywords": 3
+        }
+      ]
     },
     {
       "year": 2023,
@@ -3238,7 +4629,50 @@
         "full": "Both 'show that' results established, with the geometric series summed correctly in (b), and M ≤ 121.526… in (c) from A₁₀₀ ≥ 0.",
         "partial": "(a) and (b) correct but (c) sets A₁₀₀ = 0 with the wrong index (99 or 101), or rounds up past the limit.",
         "minimal": "In (b) the withdrawals form a geometric series whose sum is [(1.004)ⁿ − 1]/0.004 = 250[(1.004)ⁿ − 1] — that is where the 250 comes from. In (c), 'at least 100 withdrawals' means the balance after the 100th is still non-negative."
-      }
+      },
+      "stem": "On the first day of November, Jia deposits $10&nbsp;000 into a new account which earns 0.4% interest per month, compounded monthly. At the end of each month, after the interest is added to the account, Jia intends to withdraw $<em>M</em> from the account.<br><br>Let <em>A</em><sub><em>n</em></sub> be the amount (in dollars) in Jia&rsquo;s account at the end of <em>n</em> months.<br>",
+      "parts": [
+        {
+          "label": "(a)",
+          "marks": 1,
+          "q": "Show that <em>A</em><sub>2</sub> = 10&nbsp;000(1.004)&sup2; &minus; <em>M</em>(1.004) &minus; <em>M</em>. <strong>(1 mark)</strong>",
+          "answer": "A₁ = 10 000(1.004) − M.\nA₂ = A₁(1.004) − M\n= [10 000(1.004) − M](1.004) − M\n= 10 000(1.004)² − M(1.004) − M.",
+          "keywords": [
+            "(1.004)"
+          ],
+          "minKeywords": 1,
+          "bandDescriptors": {
+            "full": "Provides correct solution",
+            "partial": "Does not meet the criterion: provides correct solution",
+            "minimal": "Does not meet the criterion: provides correct solution"
+          }
+        },
+        {
+          "label": "(b)",
+          "marks": 3,
+          "q": "Show that <em>A</em><sub><em>n</em></sub> = (10&nbsp;000 &minus; 250<em>M</em>)(1.004)<sup><em>n</em></sup> + 250<em>M</em>. <strong>(3 marks)</strong>",
+          "answer": "Continuing the pattern,\nAₙ = 10 000(1.004)ⁿ − M[(1.004)ⁿ⁻¹ + … + 1.004 + 1]\nThe bracket is a geometric series with a = 1, r = 1.004 and n terms:\nsum = [(1.004)ⁿ − 1]/0.004 = 250[(1.004)ⁿ − 1]\nAₙ = 10 000(1.004)ⁿ − 250M[(1.004)ⁿ − 1]\n= (10 000 − 250M)(1.004)ⁿ + 250M.",
+          "keywords": [
+            "geometric series",
+            "250",
+            "(1.004)"
+          ],
+          "minKeywords": 2
+        },
+        {
+          "label": "(c)",
+          "marks": 2,
+          "q": "Jia wants to be able to make at least 100 withdrawals.<br><br>What is the largest value of <em>M</em> that will enable Jia to do this? <strong>(2 marks)</strong>",
+          "answer": "To make 100 withdrawals the account must not run out, so A₁₀₀ ≥ 0.\n(1.004)¹⁰⁰ = 1.49063…\n(10 000 − 250M)(1.49063) + 250M ≥ 0\n14 906.35 − 372.66M + 250M ≥ 0\n14 906.35 ≥ 122.66M\nM ≤ 121.526…\n\nSo the largest withdrawal is M = $121.52 (to the nearest cent below the limit; M ≈ $121.53).",
+          "keywords": [
+            "121.5",
+            "250",
+            "(1.004)",
+            "A₁₀₀ ≥ 0"
+          ],
+          "minKeywords": 2
+        }
+      ]
     },
     {
       "year": 2023,
@@ -3265,7 +4699,43 @@
         "full": "x(t) = 1.2 cos(5πt/4) + 10, then 6 times in the first 10 seconds.",
         "partial": "The integration is correct but the constant is not found from x(0) = 11.2, or the count in (b) is out by one — t = 10.4 lies outside the 10 seconds.",
         "minimal": "Antidifferentiate sin(kt) to −cos(kt)/k. Then the closest approach is the minimum of x, once per period, and the period is 2π ÷ (5π/4) = 1.6 seconds."
-      }
+      },
+      "stem": "A camera films the motion of a swing in a park.<br><br>Let <em>x</em>(<em>t</em>) be the horizontal distance, in metres, from the camera to the seat of the swing at <em>t</em> seconds.<br><br>The seat is released from rest at a horizontal distance of 11.2 m from the camera.",
+      "parts": [
+        {
+          "label": "(a)",
+          "marks": 2,
+          "q": "The rate of change of <em>x</em> can be modelled by the equation <em>dx</em>/<em>dt</em> = &minus;1.5&pi; sin(5&pi;<em>t</em>/4).<br><br>Find an expression for <em>x</em>(<em>t</em>). <strong>(2 marks)</strong>",
+          "answer": "x(t) = ∫ −1.5π sin(5πt/4) dt\n= −1.5π × [−cos(5πt/4)] ÷ (5π/4) + C\n= (1.5π × 4)/(5π) × cos(5πt/4) + C\n= 1.2 cos(5πt/4) + C.\n\nReleased from rest at 11.2 m means x(0) = 11.2:\n1.2 cos 0 + C = 11.2, so 1.2 + C = 11.2 and C = 10.\nx(t) = 1.2 cos(5πt/4) + 10.",
+          "keywords": [
+            "1.2 cos",
+            "+ 10"
+          ],
+          "minKeywords": 1,
+          "bandDescriptors": {
+            "full": "Provides correct solution",
+            "partial": "Finds the antiderivative, or equivalent merit",
+            "minimal": "Finds the antiderivative, or equivalent merit"
+          }
+        },
+        {
+          "label": "(b)",
+          "marks": 2,
+          "q": "How many times does the swing reach the closest point to the camera during the first 10 seconds? <strong>(2 marks)</strong>",
+          "answer": "The closest point to the camera is the minimum of x, where cos(5πt/4) = −1, that is 5πt/4 = π, 3π, 5π, …\nt = 0.8, 2.4, 4.0, 5.6, 7.2, 8.8, 10.4, … (one every full period of 2π ÷ (5π/4) = 1.6 seconds)\n\nWithin the first 10 seconds: t = 0.8, 2.4, 4.0, 5.6, 7.2, 8.8 — 6 times.",
+          "keywords": [
+            "6",
+            "1.6",
+            "period"
+          ],
+          "minKeywords": 2,
+          "bandDescriptors": {
+            "full": "Provides correct solution",
+            "partial": "Finds the period, or equivalent merit",
+            "minimal": "Finds the period, or equivalent merit"
+          }
+        }
+      ]
     },
     {
       "year": 2023,
@@ -3289,7 +4759,43 @@
         "full": "a = −4, b = 6, c = 7 in (a), and −4 < m < 7/6 in (b), with both endpoints correctly excluded.",
         "partial": "(a) fully correct but (b) gives only one boundary, or includes an endpoint — at m = 7/6 the line passes through the vertex and meets the graph once, and at m = −4 it is parallel to a branch.",
         "minimal": "The vertex of y = a|x − b| + c is (b, c), which the diagram gives directly. For (b), write the two branches as separate straight lines and ask when y = mx meets each one on its own side of x = 6."
-      }
+      },
+      "stem": "The graph of <em>y</em> = <em>f</em>(<em>x</em>), where <em>f</em>(<em>x</em>) = <em>a</em>|<em>x</em> &minus; <em>b</em>| + <em>c</em>, passes through the points (3, &minus;5), (6, 7) and (9, &minus;5) as shown in the diagram.",
+      "parts": [
+        {
+          "label": "(a)",
+          "marks": 3,
+          "q": "Find the values of <em>a</em>, <em>b</em> and <em>c</em>. <strong>(3 marks)</strong>",
+          "answer": "The graph is symmetric about its vertex, which the diagram shows at (6, 7). For y = a|x − b| + c the vertex is (b, c), so b = 6 and c = 7.\nSubstitute (3, −5):\na|3 − 6| + 7 = −5\n3a = −12, so a = −4.\na = −4, b = 6, c = 7.",
+          "keywords": [
+            "−4",
+            "6",
+            "7",
+            "vertex"
+          ],
+          "minKeywords": 2,
+          "bandDescriptors": {
+            "full": "Provides correct solution",
+            "partial": "Finds the value of b and c, or equivalent merit",
+            "minimal": "Finds value of c, or equivalent merit"
+          }
+        },
+        {
+          "label": "(b)",
+          "marks": 2,
+          "q": "The line <em>y</em> = <em>mx</em> cuts the graph of <em>y</em> = <em>f</em>(<em>x</em>) in two distinct places.<br><br>Find all possible values of <em>m</em>. <strong>(2 marks)</strong>",
+          "answer": "f(x) = −4|x − 6| + 7 has two straight branches:\nleft branch (x < 6): y = 4x − 17\nright branch (x ≥ 6): y = −4x + 31\n\nThe line y = mx passes through the origin. It meets the right branch where mx = −4x + 31, that is x = 31/(m + 4), and that intersection lies on the branch (x ≥ 6) only when −4 < m ≤ 7/6.\nIt meets the left branch where mx = 4x − 17, that is x = 17/(4 − m), and that lies on the branch (x < 6) only when m < 7/6 or m > 4.\n\nBoth branches are cut, in distinct points, exactly when\n−4 < m < 7/6.\n\n(At m = 7/6 the line passes through the vertex (6, 7) and touches at a single point; at m = −4 the line is parallel to the right branch.)",
+          "keywords": [
+            "−4",
+            "6",
+            "7",
+            "7/6",
+            "−4 < m < 7/6",
+            "vertex"
+          ],
+          "minKeywords": 3
+        }
+      ]
     },
     {
       "year": 2023,
@@ -3339,7 +4845,47 @@
         "full": "Mode 2/3, F(x) = 4x³ − 3x⁴ on [0, 1], and F(2/3) = 16/27 > 0.5 used to place the median below the mode.",
         "partial": "Mode and cumulative distribution function correct, but (c) attempts to solve for the median instead of comparing F(2/3) with 0.5.",
         "minimal": "The mode maximises f, so solve f′(x) = 0. The cumulative distribution function is ∫₀ˣ f(t) dt. For (c), the median is where F = 0.5 — so just work out F at the mode and compare."
-      }
+      },
+      "stem": "A continuous random variable <em>X</em> has probability density function <em>f</em>(<em>x</em>) given by <table style=\"display:inline-table;vertical-align:middle;border-collapse:collapse;margin:0 0 0 4px\"><tr><td rowspan=\"2\" style=\"border:0;padding:0 4px 0 0;font-size:2.6em;font-weight:300;line-height:0.86;vertical-align:middle\">{</td><td style=\"border:0;padding:1px 0;text-align:left;font-size:0.85em\">12<em>x</em>&sup2;(1 &minus; <em>x</em>),&nbsp;&nbsp;&nbsp;for 0 &le; <em>x</em> &le; 1</td></tr><tr><td style=\"border:0;padding:1px 0;text-align:left;font-size:0.85em\">0,&nbsp;&nbsp;&nbsp;for all other values of <em>x</em></td></tr></table><br>",
+      "parts": [
+        {
+          "label": "(a)",
+          "marks": 2,
+          "q": "Find the mode of <em>X</em>. <strong>(2 marks)</strong>",
+          "answer": "The mode is where f is greatest. Expand: f(x) = 12x² − 12x³.\nf′(x) = 24x − 36x² = 12x(2 − 3x)\nf′(x) = 0 at x = 0 and x = 2/3. Since f′ changes from positive to negative at x = 2/3, that is the maximum.\nMode = 2/3.",
+          "keywords": [
+            "2/3"
+          ],
+          "minKeywords": 1
+        },
+        {
+          "label": "(b)",
+          "marks": 2,
+          "q": "Find the cumulative distribution function for the given probability density function. <strong>(2 marks)</strong>",
+          "answer": "For 0 ≤ x ≤ 1,\nF(x) = ∫₀ˣ (12t² − 12t³) dt = [4t³ − 3t⁴]₀ˣ = 4x³ − 3x⁴.\nSo F(x) = 0 for x < 0, F(x) = 4x³ − 3x⁴ for 0 ≤ x ≤ 1, and F(x) = 1 for x > 1.\n(Check: F(1) = 4 − 3 = 1.)",
+          "keywords": [
+            "4x³ − 3x⁴"
+          ],
+          "minKeywords": 1
+        },
+        {
+          "label": "(c)",
+          "marks": 2,
+          "q": "Without calculating the median, show that the mode is greater than the median. <strong>(2 marks)</strong>",
+          "answer": "Evaluate F at the mode:\nF(2/3) = 4(8/27) − 3(16/81) = 32/27 − 16/27 = 16/27 ≈ 0.593.\nThat is more than 0.5, so more than half the probability lies below x = 2/3. F is increasing, so the median — the value where F = 0.5 — must lie to the left of 2/3.\nTherefore the mode is greater than the median.",
+          "keywords": [
+            "2/3",
+            "16/27",
+            "0.5"
+          ],
+          "minKeywords": 2,
+          "bandDescriptors": {
+            "full": "Provides correct solution",
+            "partial": "Substitutes the mode from part (a) into their cumulative distribution function, or equivalent merit",
+            "minimal": "Substitutes the mode from part (a) into their cumulative distribution function, or equivalent merit"
+          }
+        }
+      ]
     },
     {
       "year": 2023,
@@ -3393,7 +4939,59 @@
         "full": "Not independent because P(S|F) ≠ P(S); P(S) = 4/5 shown from P(F ∩ S) = 1/10; and P(at least one not available) = 1 − (4/5)⁴ = 369/625.",
         "partial": "(b) correct but (c) computes P(all four unavailable) as (1/5)⁴ instead of using the complement of 'all four available'.",
         "minimal": "Start with P(F ∩ S) = P(S|F)P(F). That single value unlocks P(S) through the definition of P(F|S). For (c), 'at least one' almost always means 1 minus the probability of none."
-      }
+      },
+      "stem": "Four Year 12 students want to organise a graduation party. All four students have the same probability, <em>P</em>(<em>F</em>), of being available next Friday. All four students have the same probability, <em>P</em>(<em>S</em>), of being available next Saturday.<br><br>It is given that <em>P</em>(<em>F</em>) = 3/10, <em>P</em>(<em>S</em>|<em>F</em>) = 1/3, and <em>P</em>(<em>F</em>|<em>S</em>) = 1/8.<br><br>Kim is one of the four students.<br>",
+      "parts": [
+        {
+          "label": "(a)",
+          "marks": 1,
+          "q": "Is Kim&rsquo;s availability next Friday independent from his availability next Saturday? Justify your answer. <strong>(1 mark)</strong>",
+          "answer": "No. If F and S were independent then P(S|F) would equal P(S). Here P(S|F) = 1/3, while P(S) = 4/5 (found in part (b)), and 1/3 ≠ 4/5, so the two events are not independent.",
+          "keywords": [
+            "4/5",
+            "not independent"
+          ],
+          "minKeywords": 1,
+          "bandDescriptors": {
+            "full": "Provides correct reason",
+            "partial": "Does not meet the criterion: provides correct reason",
+            "minimal": "Does not meet the criterion: provides correct reason"
+          }
+        },
+        {
+          "label": "(b)",
+          "marks": 2,
+          "q": "Show that the probability that Kim is available next Saturday is 4/5. <strong>(2 marks)</strong>",
+          "answer": "P(F ∩ S) = P(S|F) × P(F) = (1/3)(3/10) = 1/10.\nP(F|S) = P(F ∩ S)/P(S), so\n1/8 = (1/10)/P(S)\nP(S) = (1/10) × 8 = 8/10 = 4/5.",
+          "keywords": [
+            "4/5",
+            "1/10"
+          ],
+          "minKeywords": 1,
+          "bandDescriptors": {
+            "full": "Provides correct solution",
+            "partial": "Attempts to use conditional probability formula, or equivalent merit",
+            "minimal": "Attempts to use conditional probability formula, or equivalent merit"
+          }
+        },
+        {
+          "label": "(c)",
+          "marks": 2,
+          "q": "What is the probability that at least one of the four students is NOT available next Saturday? <strong>(2 marks)</strong>",
+          "answer": "P(a given student is available on Saturday) = 4/5, and the four students are independent of one another.\nP(at least one NOT available) = 1 − P(all four available)\n= 1 − (4/5)⁴\n= 1 − 256/625\n= 369/625\n= 0.5904.",
+          "keywords": [
+            "4/5",
+            "369/625",
+            "0.5904"
+          ],
+          "minKeywords": 2,
+          "bandDescriptors": {
+            "full": "Provides correct answer",
+            "partial": "Uses expression for complementary events, or equivalent merit",
+            "minimal": "Uses expression for complementary events, or equivalent merit"
+          }
+        }
+      ]
     },
     {
       "year": 2023,
@@ -3420,7 +5018,38 @@
         "full": "The area established as (1/4)ln 2 − 1/8, and −1/4 < k < 0 in (b) from requiring two distinct positive roots of u² − u − k = 0.",
         "partial": "(a) correct but (b) only applies the discriminant, giving k > −1/4 and missing the requirement that both roots be positive.",
         "minimal": "In (a) integrate (upper − lower) from 0 to ln 2. In (b) substitute u = e⁻ˣ to get a quadratic, and remember u must be <em>positive</em> for a real x to exist — the discriminant alone is not enough."
-      }
+      },
+      "stem": "The curves <em>y</em> = <em>e</em><sup>&minus;2<em>x</em></sup> and <em>y</em> = <em>e</em><sup>&minus;<em>x</em></sup> &minus; 1/4 intersect at exactly one point as shown in the diagram. The point of intersection has coordinates (ln 2, 1/4). (Do NOT prove this.)",
+      "parts": [
+        {
+          "label": "(a)",
+          "marks": 3,
+          "q": "Show that the area bounded by the two curves and the <em>y</em>-axis, as shaded in the diagram, is (1/4)ln 2 &minus; 1/8. <strong>(3 marks)</strong>",
+          "answer": "Between x = 0 and x = ln 2 the upper curve is y = e⁻²ˣ and the lower is y = e⁻ˣ − 1/4.\nArea = ∫₀^(ln 2) [e⁻²ˣ − e⁻ˣ + 1/4] dx\n= [−½e⁻²ˣ + e⁻ˣ + x/4]₀^(ln 2)\n\nAt x = ln 2: e⁻ˣ = 1/2 and e⁻²ˣ = 1/4, giving\n−½(1/4) + 1/2 + (ln 2)/4 = 3/8 + (ln 2)/4\nAt x = 0: −½ + 1 + 0 = 1/2\n\nArea = 3/8 + (ln 2)/4 − 1/2 = (1/4)ln 2 − 1/8.",
+          "keywords": [
+            "ln 2",
+            "(1/4)ln 2 − 1/8"
+          ],
+          "minKeywords": 1,
+          "bandDescriptors": {
+            "full": "Provides correct solution",
+            "partial": "Provides an antiderivative, or equivalent merit",
+            "minimal": "Provides an integral expression for the area, or equivalent merit"
+          }
+        },
+        {
+          "label": "(b)",
+          "marks": 3,
+          "q": "Find the values of <em>k</em> such that the curves <em>y</em> = <em>e</em><sup>&minus;2<em>x</em></sup> and <em>y</em> = <em>e</em><sup>&minus;<em>x</em></sup> + <em>k</em> intersect at two points. <strong>(3 marks)</strong>",
+          "answer": "Set the curves equal: e⁻²ˣ = e⁻ˣ + k.\nLet u = e⁻ˣ, so u > 0, and every positive u corresponds to exactly one value of x.\nu² = u + k\nu² − u − k = 0\n\nTwo intersections means two distinct positive roots u.\nDiscriminant: 1 + 4k > 0, so k > −1/4.\nProduct of roots = −k > 0, so k < 0.\nSum of roots = 1 > 0, consistent.\n\nSo −1/4 < k < 0.",
+          "keywords": [
+            "−1/4 < k < 0",
+            "u = e⁻ˣ",
+            "discriminant"
+          ],
+          "minKeywords": 2
+        }
+      ]
     },
     {
       "year": 2025,
@@ -3442,7 +5071,37 @@
         "full": "The turning point is t = 4, h = −4, and the other value giving h = 12 is t = 8.",
         "partial": "t = 4 is found but h is not evaluated, or part (b) is attempted without setting t² − 8t + 12 equal to 12.",
         "minimal": "The turning point sits halfway between the two zeros. For part (b), put h = 12 into the equation and solve t² − 8t = 0 by factorising, not by the quadratic formula."
-      }
+      },
+      "stem": "The graph of a quadratic function represented by the equation <em>h</em> = <em>t</em>&sup2; &minus; 8<em>t</em> + 12 is shown.",
+      "parts": [
+        {
+          "label": "(a)",
+          "marks": 2,
+          "q": "Find the values of <em>t</em> and <em>h</em> at the turning point of the graph. <strong>(2 marks)</strong>",
+          "answer": "The turning point of h = t² − 8t + 12 lies midway between the zeros t = 2 and t = 6, so t = 4. (Equivalently, t = −b/(2a) = 8/2 = 4.)\nh = 4² − 8(4) + 12 = 16 − 32 + 12 = −4.\nThe turning point is (4, −4), so t = 4 and h = −4.",
+          "keywords": [
+            "4",
+            "8",
+            "turning point"
+          ],
+          "minKeywords": 2
+        },
+        {
+          "label": "(b)",
+          "marks": 1,
+          "q": "The graph shows <em>h</em> = 12 when <em>t</em> = 0.<br>What is the other value of <em>t</em> for which <em>h</em> = 12? <strong>(1 mark)</strong>",
+          "answer": "Set h = 12: t² − 8t + 12 = 12, so t² − 8t = 0 and t(t − 8) = 0.\nThat gives t = 0 or t = 8, so the other value is t = 8.",
+          "keywords": [
+            "8"
+          ],
+          "minKeywords": 1,
+          "bandDescriptors": {
+            "full": "Provides correct answer",
+            "partial": "Does not meet the criterion: provides correct answer",
+            "minimal": "Does not meet the criterion: provides correct answer"
+          }
+        }
+      ]
     },
     {
       "year": 2025,
@@ -3511,7 +5170,71 @@
         "full": "Linear and negative; the slope is a fall of 0.7 exercise minutes per extra television minute and the intercept is 64.3 minutes at zero television; Jo is predicted 34.9 minutes; and 120 minutes lies outside the data range of 0–60.",
         "partial": "Some parts are right but the slope or intercept is stated as a bare number without being tied to minutes of television and exercise, or the extrapolation answer says only that 120 is 'too big'.",
         "minimal": "Interpreting a slope means saying what one extra unit of x does to y, in the units of the question. The extrapolation argument must name the range of the data."
-      }
+      },
+      "stem": "In a research study, participants were asked to record the number of minutes they spent watching television and the number of minutes they spent exercising each day over a period of 3 months. The averages for each participant were recorded and graphed.<img src=\"/diagrams/mathematics-advanced_2025_Q14_stimulus.jpg\" alt=\"A scatterplot of average minutes per day exercising against average minutes per day watching television, showing a loose downward trend from about 0 to 60 minutes of television.\" style=\"max-width:100%;height:auto;display:block;margin:14px auto\">The equation of the least-squares regression line for this dataset is <em>y</em> = 64.3 &minus; 0.7<em>x</em>.<br>",
+      "parts": [
+        {
+          "label": "(a)",
+          "marks": 2,
+          "q": "Describe the bivariate dataset in terms of its form and direction. <strong>(2 marks)</strong>",
+          "answer": "Form: linear. Direction: negative.",
+          "keywords": [
+            "linear",
+            "negative"
+          ],
+          "minKeywords": 1,
+          "bandDescriptors": {
+            "full": "Provides correct form and direction",
+            "partial": "Provides correct direction, or equivalent merit",
+            "minimal": "Provides correct direction, or equivalent merit"
+          }
+        },
+        {
+          "label": "(b)",
+          "marks": 2,
+          "q": "Interpret the values of the slope and <em>y</em>-intercept of the regression line in the context of this dataset. <strong>(2 marks)</strong>",
+          "answer": "The slope −0.7 means that for each extra minute per day spent watching television, the average time spent exercising falls by about 0.7 minutes.\nThe y-intercept 64.3 means a participant who watches no television is predicted to exercise about 64.3 minutes per day.",
+          "keywords": [
+            "0.7",
+            "64.3"
+          ],
+          "minKeywords": 1
+        },
+        {
+          "label": "(c)",
+          "marks": 1,
+          "q": "Jo spends an average of 42 minutes per day watching television.<br>Use the equation of the regression line to determine how many minutes on average Jo is expected to exercise each day. <strong>(1 mark)</strong>",
+          "answer": "y = 64.3 − 0.7 × 42 = 64.3 − 29.4 = 34.9 minutes.",
+          "keywords": [
+            "0.7",
+            "64.3",
+            "34.9"
+          ],
+          "minKeywords": 2,
+          "bandDescriptors": {
+            "full": "Provides correct answer",
+            "partial": "Does not meet the criterion: provides correct answer",
+            "minimal": "Does not meet the criterion: provides correct answer"
+          }
+        },
+        {
+          "label": "(d)",
+          "marks": 1,
+          "q": "Explain why it is NOT appropriate to extrapolate the regression line to predict the average number of minutes of exercise per day for someone who watches an average of 2 hours of television per day. <strong>(1 mark)</strong>",
+          "answer": "2 hours is 120 minutes, which is well outside the range of the data (0 to about 60 minutes). The linear relationship has not been shown to hold beyond that range, so a prediction there is unreliable.",
+          "keywords": [
+            "linear",
+            "outside",
+            "120"
+          ],
+          "minKeywords": 2,
+          "bandDescriptors": {
+            "full": "Provides correct reason",
+            "partial": "Does not meet the criterion: provides correct reason",
+            "minimal": "Does not meet the criterion: provides correct reason"
+          }
+        }
+      ]
     },
     {
       "year": 2025,
@@ -3540,6 +5263,38 @@
           "part": "b",
           "marks": 2,
           "reason": "The student must sketch the graph of P₂(t) = 4 sin(πt/10) on a printed diagram that already carries the graph of P₁(t). The engine cannot accept or mark a hand-drawn graph."
+        }
+      ],
+      "stem": "A sound wave can be modelled using a function <em>P</em>(<em>t</em>) = <em>k</em> sin <em>at</em>, where <em>P</em> is air pressure in Pascals, <em>t</em> is time in milliseconds (ms) and <em>k</em> and <em>a</em> are constants.<br>",
+      "parts": [
+        {
+          "label": "(a)",
+          "marks": 2,
+          "q": "Write the equation for a sound wave <em>P</em><sub>1</sub>(<em>t</em>) that has an amplitude of 2 Pascals and a period of 5 ms. <strong>(2 marks)</strong>",
+          "answer": "The amplitude is k, so k = 2.\nThe period of k sin at is 2π/a, so 2π/a = 5 and a = 2π/5.\nP₁(t) = 2 sin(2πt/5).",
+          "keywords": [
+            "2 sin",
+            "2π/5"
+          ],
+          "minKeywords": 1
+        },
+        {
+          "label": "(c)",
+          "marks": 2,
+          "q": "Hence, find the values of <em>t</em>, where 0 &lt; <em>t</em> &lt; 10, for which functions <em>P</em><sub>1</sub>(<em>t</em>) and <em>P</em><sub>2</sub>(<em>t</em>) = 4 sin(&pi;<em>t</em>/10) are BOTH decreasing. <strong>(2 marks)</strong><br><br><em style=\"opacity:0.75\">Part (b), which asked for the graph of <em>P</em><sub>2</sub>(<em>t</em>) = 4 sin(&pi;<em>t</em>/10) to be sketched on a printed diagram, is not included here. Its definition of <em>P</em><sub>2</sub> has been repeated in part (c) above, which is otherwise NESA&rsquo;s wording and is answerable from the two equations alone.</em>",
+          "answer": "A sine curve decreases on the part of its cycle from the maximum to the minimum.\n\nP₁ has period 5, with a maximum at t = 1.25 and a minimum at t = 3.75, so it is decreasing for 1.25 < t < 3.75 and again for 6.25 < t < 8.75.\n\nP₂ has period 2π ÷ (π/10) = 20, with a maximum at t = 5 and a minimum at t = 15, so on 0 < t < 10 it is decreasing for 5 < t < 10.\n\nBoth are decreasing on the overlap: 6.25 < t < 8.75.",
+          "keywords": [
+            "2π/5",
+            "6.25",
+            "8.75",
+            "decreasing"
+          ],
+          "minKeywords": 2,
+          "bandDescriptors": {
+            "full": "Provides correct answer",
+            "partial": "Finds one correct endpoint of interval, or equivalent merit",
+            "minimal": "Finds one correct endpoint of interval, or equivalent merit"
+          }
         }
       ]
     },
@@ -3692,7 +5447,39 @@
         "full": "The mode is x = 1 because 1/x is decreasing on [1, e], and Q₁ = e^0.25 ≈ 1.284.",
         "partial": "The mode is stated without justification, or the integral is set up correctly but not solved for q, or the answer is not given to 3 decimal places.",
         "minimal": "The mode of a continuous distribution is where the density is highest, not where the area is half. For the quartile, integrate the density from 1 up to q and set the area equal to 0.25."
-      }
+      },
+      "stem": "A continuous random variable <em>X</em> has a probability density function given by<br><br><em>f</em>(<em>x</em>) = <table style=\"display:inline-table;vertical-align:middle;border-collapse:collapse;margin:0 0 0 4px\"><tr><td rowspan=\"3\" style=\"border:0;padding:0 4px 0 0;font-size:3.9em;font-weight:300;line-height:0.86;vertical-align:middle\">{</td><td style=\"border:0;padding:1px 0;text-align:left;font-size:0.85em\">0&nbsp;&nbsp;&nbsp;<em>x</em> &lt; 1</td></tr><tr><td style=\"border:0;padding:1px 0;text-align:left;font-size:0.85em\">1/<em>x</em>&nbsp;&nbsp;&nbsp;1 &le; <em>x</em> &le; <em>e</em></td></tr><tr><td style=\"border:0;padding:1px 0;text-align:left;font-size:0.85em\">0&nbsp;&nbsp;&nbsp;<em>x</em> &gt; <em>e</em></td></tr></table><br>",
+      "parts": [
+        {
+          "label": "(a)",
+          "marks": 2,
+          "q": "Find the mode of the given probability density function. Justify your answer. <strong>(2 marks)</strong>",
+          "answer": "The mode is the value of x at which f(x) is greatest.\nOn 1 ≤ x ≤ e, f(x) = 1/x is a decreasing function, so its largest value occurs at the left endpoint x = 1, where f(1) = 1.\nThe mode is x = 1.",
+          "keywords": [
+            "1",
+            "decreasing"
+          ],
+          "minKeywords": 1
+        },
+        {
+          "label": "(b)",
+          "marks": 3,
+          "q": "Calculate the value of the 25th percentile (<em>Q</em><sub>1</sub>) of this distribution. Give your answer correct to 3 decimal places. <strong>(3 marks)</strong>",
+          "answer": "The 25th percentile q satisfies ∫₁^q (1/x) dx = 0.25.\n[ln x]₁^q = ln q − ln 1 = ln q.\nln q = 0.25\nq = e^0.25 ≈ 1.2840254.\n\nQ₁ ≈ 1.284.",
+          "keywords": [
+            "1",
+            "1.284",
+            "ln",
+            "0.25"
+          ],
+          "minKeywords": 2,
+          "bandDescriptors": {
+            "full": "Provides correct solution",
+            "partial": "Finds the correct cumulative distribution function (cdf ), or equivalent merit",
+            "minimal": "Writes a correct integral for the cumulative distribution function (cdf ), or equivalent merit"
+          }
+        }
+      ]
     },
     {
       "year": 2025,
@@ -3737,7 +5524,40 @@
         "full": "There are 600 males, 15 of them is 2.5%, which is two standard deviations above the mean, so x = 89.8 kg; and fewer than 300 females would be expected because 89.8 kg is more than two female standard deviations above a smaller female mean.",
         "partial": "x = 89.8 is found but part (b) is answered as 'yes, also 2.5%', or the flock is split as 12 600 ÷ 20 rather than ÷ 21.",
         "minimal": "The ratio 1 : 20 means 21 equal parts, not 20. Then turn 15 out of the male total into a percentage and match it to the empirical rule."
-      }
+      },
+      "parts": [
+        {
+          "label": "(a)",
+          "marks": 4,
+          "q": "In a flock of 12&nbsp;600 sheep, the ratio of males to females is 1 : 20.<br><br>The weights of the male sheep are normally distributed with a mean of 76.2 kg and a standard deviation of 6.8 kg.<br><br>In the flock, 15 of the male sheep each weigh more than <em>x</em> kg.<br><br>Find the value of <em>x</em>. <strong>(4 marks)</strong>",
+          "answer": "The ratio 1 : 20 splits the flock into 21 parts, so the number of males is 12 600 ÷ 21 = 600 (and there are 12 000 females).\n\nThe proportion of males above x kg is 15/600 = 0.025, that is 2.5%.\n\nFor a normal distribution, 95% of values lie within two standard deviations of the mean, so 2.5% lie above μ + 2σ.\n\nx = 76.2 + 2(6.8) = 76.2 + 13.6 = 89.8 kg.",
+          "keywords": [
+            "600",
+            "89.8",
+            "2.5",
+            "12 000"
+          ],
+          "minKeywords": 2
+        },
+        {
+          "label": "(b)",
+          "marks": 1,
+          "q": "The weights of the female sheep are also normally distributed but have a smaller mean and smaller standard deviation than the weights of male sheep.<br><br>Explain whether it could be expected that 300 of the females from the flock each weigh more than <em>x</em> kg, where <em>x</em> is the value found in part (a). <strong>(1 mark)</strong>",
+          "answer": "300 out of 12 000 females is also 2.5%. But the females have a smaller mean and a smaller standard deviation, so 89.8 kg is more than two standard deviations above the female mean. The proportion of females above 89.8 kg is therefore well under 2.5%, and far fewer than 300 would be expected.",
+          "keywords": [
+            "89.8",
+            "2.5",
+            "12 000",
+            "fewer"
+          ],
+          "minKeywords": 2,
+          "bandDescriptors": {
+            "full": "Provides correct reason",
+            "partial": "Does not meet the criterion: provides correct reason",
+            "minimal": "Does not meet the criterion: provides correct reason"
+          }
+        }
+      ]
     },
     {
       "year": 2025,
@@ -3865,7 +5685,43 @@
         "full": "Equating the segment area ½r²(θ − sin θ) to a quarter of πr² gives θ = sin θ + π/2; drawing y = θ on the grid gives θ ≈ 2.3, so the arc length is 10θ ≈ 23 m.",
         "partial": "The equation in (a) is derived but (b) uses the chord length instead of the arc, or reads a value of θ without drawing the line y = θ.",
         "minimal": "The r² cancels in part (a), which is why the radius never appears. In part (b) the equation θ = sin θ + π/2 says the line y = θ crosses the printed curve — draw it and read off θ, then use arc = rθ."
-      }
+      },
+      "stem": "A farmer wants to use a straight fence to divide a circular paddock of radius 10 metres into two segments. The smaller segment is &frac14; of the paddock and is shaded in the diagram. The fence subtends an angle of &theta; radians at the centre of the circle as shown.",
+      "parts": [
+        {
+          "label": "(a)",
+          "marks": 2,
+          "q": "Show that &theta; = sin &theta; + &pi;/2. <strong>(2 marks)</strong>",
+          "answer": "Area of a segment = ½r²(θ − sin θ), and the whole circle has area πr².\nThe segment is ¼ of the paddock:\n½r²(θ − sin θ) = ¼ πr²\nDivide both sides by r² and multiply by 2:\nθ − sin θ = π/2\nθ = sin θ + π/2.",
+          "keywords": [
+            "π/2"
+          ],
+          "minKeywords": 1,
+          "bandDescriptors": {
+            "full": "Provides correct solution",
+            "partial": "Provides a correct expression relating the areas in the diagram, or equivalent merit",
+            "minimal": "Provides a correct expression relating the areas in the diagram, or equivalent merit"
+          }
+        },
+        {
+          "label": "(b)",
+          "marks": 2,
+          "q": "The graph of <em>y</em> = sin &theta; + &pi;/2 is shown.<img src=\"/diagrams/mathematics-advanced_2025_Q28b_stimulus.jpg\" alt=\"The curve y = sin theta + pi over 2 drawn on a fine grid for theta from 0 to about 7.3, oscillating between about 0.57 and 2.57.\" style=\"max-width:100%;height:auto;display:block;margin:14px auto\">Use the graph and the result in part (a) to estimate the arc length of the smaller segment to the nearest metre. <strong>(2 marks)</strong>",
+          "answer": "The solution of θ = sin θ + π/2 is where the line y = θ meets the curve y = sin θ + π/2. Drawing y = θ on the given grid, the graphs cross at about θ = 2.3 radians.\n\nArc length = rθ = 10 × 2.3 = 23 metres (to the nearest metre).",
+          "keywords": [
+            "π/2",
+            "2.3",
+            "23",
+            "arc length"
+          ],
+          "minKeywords": 2,
+          "bandDescriptors": {
+            "full": "Provides correct solution",
+            "partial": "Finds the value of q, or equivalent merit",
+            "minimal": "Finds the value of q, or equivalent merit"
+          }
+        }
+      ]
     },
     {
       "year": 2025,
@@ -3889,7 +5745,50 @@
         "full": "OY = h/√3 and OF = h; resolving the 4 km south-west step gives h² + 2√6h − 24 = 0 and h ≈ 3.03 km, and the bearing of O from F is about 021°.",
         "partial": "Part (a) and OF = h are correct but the south-west displacement is not resolved into east and north components, or the bearing is measured from the wrong end (the bearing of F from O rather than O from F).",
         "minimal": "South-west is 4/√2 km west and 4/√2 km south. Put O at the origin, write F's coordinates, and use OF = h. A bearing is measured clockwise from north at the point you are standing on — here that is F."
-      }
+      },
+      "stem": "The point <em>T</em> is the peak of a mountain and the point <em>O</em> is directly below the mountain&rsquo;s peak. The point <em>Y</em> is due east of <em>O</em> and the angle of elevation of <em>T</em> from <em>Y</em> is 60&deg;. The point <em>F</em> is 4 km south-west of <em>Y</em>. The points <em>O</em>, <em>Y</em> and <em>F</em> are on level ground. The angle of elevation of <em>T</em> from <em>F</em> is 45&deg;.",
+      "parts": [
+        {
+          "label": "(a)",
+          "marks": 1,
+          "q": "Let the height of the mountain be <em>h</em>.<br>Show that <em>OY</em> = <em>h</em>/&radic;3. <strong>(1 mark)</strong>",
+          "answer": "Triangle TOY is right-angled at O, with the angle of elevation 60° at Y.\ntan 60° = h/OY, so OY = h/tan 60° = h/√3.",
+          "keywords": [
+            "h/√3"
+          ],
+          "minKeywords": 1,
+          "bandDescriptors": {
+            "full": "Provides correct solution",
+            "partial": "Does not meet the criterion: provides correct solution",
+            "minimal": "Does not meet the criterion: provides correct solution"
+          }
+        },
+        {
+          "label": "(b)",
+          "marks": 3,
+          "q": "Hence, or otherwise, find the value of <em>h</em>, correct to 2 decimal places. <strong>(3 marks)</strong>",
+          "answer": "From F the elevation is 45°, so OF = h/tan 45° = h.\n\nSet up coordinates on the level ground with O at the origin, east as x and north as y.\nY is due east: Y = (h/√3, 0).\nF is 4 km south-west of Y, so F = (h/√3 − 4/√2, −4/√2) = (h/√3 − 2√2, −2√2).\n\nOF² = h² gives\n(h/√3 − 2√2)² + (2√2)² = h²\nh²/3 − (4√6/3)h + 8 + 8 = h²\nMultiply by 3: h² − 4√6 h + 48 = 3h²\n2h² + 4√6 h − 48 = 0\nh² + 2√6 h − 24 = 0\nh = (−2√6 + √(24 + 96))/2 = −√6 + √30 ≈ 3.03.\n\nh ≈ 3.03 km.",
+          "keywords": [
+            "h/√3",
+            "3.03",
+            "south-west"
+          ],
+          "minKeywords": 2
+        },
+        {
+          "label": "(c)",
+          "marks": 3,
+          "q": "Find the bearing of point <em>O</em> from point <em>F</em>, correct to the nearest degree. <strong>(3 marks)</strong>",
+          "answer": "With h = 3.0277, OY = h/√3 = 1.7481, so\nF = (1.7481 − 2.8284, −2.8284) = (−1.0804, −2.8284).\n\nFrom F, the point O lies 1.0804 km east and 2.8284 km north.\nThe angle east of north is arctan(1.0804/2.8284) = arctan(0.3820) = 20.9°.\n\nThe bearing of O from F is 021° (to the nearest degree).",
+          "keywords": [
+            "h/√3",
+            "021",
+            "21",
+            "bearing"
+          ],
+          "minKeywords": 2
+        }
+      ]
     },
     {
       "year": 2025,
@@ -4027,7 +5926,43 @@
         "full": "x = −1 and x = 2, and the enclosed area is 9 square units.",
         "partial": "The intersections are found correctly and the integral of the difference is set up, but the subtraction is the wrong way round or the primitive is evaluated incorrectly.",
         "minimal": "Equate the two expressions to find the limits, then integrate (upper curve − lower curve) between them. Over this interval the downward parabola is the upper curve."
-      }
+      },
+      "stem": "The curves <em>y</em> = (<em>x</em> &minus; 1)&sup2; and <em>y</em> = 5 &minus; <em>x</em>&sup2; intersect at two points, as shown in the diagram.",
+      "parts": [
+        {
+          "label": "(a)",
+          "marks": 1,
+          "q": "Find the <em>x</em>-coordinates of the points of intersection of the two curves. <strong>(1 mark)</strong>",
+          "answer": "Set the two expressions equal:\n(x − 1)² = 5 − x²\nx² − 2x + 1 = 5 − x²\n2x² − 2x − 4 = 0\n2(x − 2)(x + 1) = 0\nx = −1 and x = 2",
+          "keywords": [
+            "x = −1",
+            "x = 2"
+          ],
+          "minKeywords": 1,
+          "bandDescriptors": {
+            "full": "Finds x-coordinates of the points of intersection",
+            "partial": "Does not meet the criterion: finds x-coordinates of the points of intersection",
+            "minimal": "Does not meet the criterion: finds x-coordinates of the points of intersection"
+          }
+        },
+        {
+          "label": "(b)",
+          "marks": 3,
+          "q": "Find the area enclosed by the two curves. <strong>(3 marks)</strong>",
+          "answer": "Between x = −1 and x = 2 the curve y = 5 − x² lies above y = (x − 1)²:\n\nArea = ∫₋₁² [(5 − x²) − (x − 1)²] dx\n     = ∫₋₁² (5 − x² − x² + 2x − 1) dx\n     = ∫₋₁² (−2x² + 2x + 4) dx\n     = [−2x³/3 + x² + 4x]₋₁²\n     = (−16/3 + 4 + 8) − (2/3 + 1 − 4)\n     = (−16/3 + 12) − (2/3 − 3)\n     = 20/3 − (−7/3)\n     = 27/3\n     = 9\n\nThe area enclosed by the two curves is 9 square units.",
+          "keywords": [
+            "x = −1",
+            "x = 2",
+            "9"
+          ],
+          "minKeywords": 2,
+          "bandDescriptors": {
+            "full": "Provides correct solution",
+            "partial": "Finds the correct antiderivative",
+            "minimal": "Finds the correct integrand, or equivalent merit"
+          }
+        }
+      ]
     },
     {
       "year": 2024,
@@ -4105,6 +6040,41 @@
           "marks": 2,
           "reason": "The student must draw a sketch of the graph of V(t) = 6.5(1 − e^(−kt)), showing its behaviour as t increases. The engine cannot accept or mark a hand-drawn graph."
         }
+      ],
+      "stem": "In a particular electrical circuit, the voltage <em>V</em> (volts) across a capacitor is given by<br><br><em>V</em>(<em>t</em>) = 6.5(1 &minus; <em>e</em><sup>&minus;<em>kt</em></sup>),<br><br>where <em>k</em> is a positive constant and <em>t</em> is the number of seconds after the circuit is switched on.<br>",
+      "parts": [
+        {
+          "label": "(b)",
+          "marks": 2,
+          "q": "When <em>t</em> = 1, the voltage across the capacitor is 2.6 volts.<br><br>Find the value of <em>k</em>, correct to 3 decimal places. <strong>(2 marks)</strong>",
+          "answer": "Substitute t = 1 and V = 2.6:\n2.6 = 6.5(1 − e^(−k))\n2.6/6.5 = 1 − e^(−k)\n0.4 = 1 − e^(−k)\ne^(−k) = 0.6\n−k = ln 0.6\nk = −ln 0.6 = 0.510825…\n\nk = 0.511 (3 decimal places)",
+          "keywords": [
+            "0.6",
+            "0.511"
+          ],
+          "minKeywords": 1,
+          "bandDescriptors": {
+            "full": "Provides correct solution",
+            "partial": "Provides an expression with correct substitutions, or equivalent merit",
+            "minimal": "Provides an expression with correct substitutions, or equivalent merit"
+          }
+        },
+        {
+          "label": "(c)",
+          "marks": 2,
+          "q": "Find the rate at which the voltage is increasing when <em>t</em> = 2, correct to 3 decimal places. <strong>(2 marks)</strong><br><br><em style=\"opacity:0.75\">Part (a), which asked for a sketch of the graph of <em>V</em>(<em>t</em>) showing its behaviour as <em>t</em> increases, is not included here &mdash; the engine cannot mark a hand-drawn graph. Parts (b) and (c) work only from the equation above, so nothing from part (a) is needed. NESA&rsquo;s wording of parts (b) and (c) is unchanged.</em>",
+          "answer": "Differentiate: dV/dt = 6.5k e^(−kt).\n\nWhen t = 2:\ndV/dt = 6.5 × 0.510825… × e^(−2 × 0.510825…)\n      = 3.32036… × e^(−1.02165…)\n      = 3.32036… × 0.36\n      = 1.19533…\n\nThe voltage is increasing at 1.195 volts per second (3 decimal places).",
+          "keywords": [
+            "6.5k",
+            "1.195"
+          ],
+          "minKeywords": 1,
+          "bandDescriptors": {
+            "full": "Provides correct solution",
+            "partial": "Finds the correct derivative, or equivalent merit",
+            "minimal": "Finds the correct derivative, or equivalent merit"
+          }
+        }
       ]
     },
     {
@@ -4131,7 +6101,39 @@
         "full": "P = 0.7225 in (a), and 10 attempts in (b) with the inequality (0.85)ⁿ < 0.2 solved by logarithms.",
         "partial": "(a) is correct and the inequality (0.85)ⁿ < 0.2 is set up, but the inequality sign is not reversed when dividing by the negative ln 0.85, or 9.9 is rounded down to 9.",
         "minimal": "'At least one' is 1 − P(none). Set 1 − (0.85)ⁿ > 0.8, take logarithms of both sides, and remember that dividing by ln 0.85 (a negative number) reverses the inequality."
-      }
+      },
+      "stem": "In a game, the probability that a particular player scores a goal at each attempt is 0.15.<br>",
+      "parts": [
+        {
+          "label": "(a)",
+          "marks": 1,
+          "q": "What is the probability that this player does NOT score a goal in the first two attempts? <strong>(1 mark)</strong>",
+          "answer": "P(misses one attempt) = 1 − 0.15 = 0.85\nThe attempts are independent, so\nP(misses both attempts) = (0.85)² = 0.7225",
+          "keywords": [
+            "0.85",
+            "0.7225",
+            "10"
+          ],
+          "minKeywords": 2,
+          "bandDescriptors": {
+            "full": "Provides correct answer",
+            "partial": "Does not meet the criterion: provides correct answer",
+            "minimal": "Does not meet the criterion: provides correct answer"
+          }
+        },
+        {
+          "label": "(b)",
+          "marks": 2,
+          "q": "Determine the least number of attempts that this player must make so that the probability of scoring at least one goal is greater than 0.8. <strong>(2 marks)</strong>",
+          "answer": "P(at least one goal in n attempts) = 1 − (0.85)ⁿ\n\nRequire 1 − (0.85)ⁿ > 0.8\n(0.85)ⁿ < 0.2\n\nTake natural logarithms. Because ln 0.85 is negative, the inequality reverses:\nn ln 0.85 < ln 0.2\nn > ln 0.2 / ln 0.85\nn > (−1.60944)/(−0.162519)\nn > 9.9032…\n\nn must be a whole number, so the player needs 10 attempts.",
+          "keywords": [
+            "0.85",
+            "ln",
+            "10"
+          ],
+          "minKeywords": 2
+        }
+      ]
     },
     {
       "year": 2024,
@@ -4154,7 +6156,43 @@
         "full": "AC = 57.13 m shown, BC = 69.28 m, ∠ACB = 104° from the cosine rule, and the bearing 194°.",
         "partial": "BC is found correctly and the cosine rule gives 104°, but the angle is not converted to a bearing — 104° is given as the answer, or it is added to the wrong reference direction.",
         "minimal": "Use tan of the angle of elevation in each right-angled triangle to get the two ground distances, then the cosine rule in triangle ACB to find ∠ACB. A is due east of C, so CA is on a bearing of 090°."
-      }
+      },
+      "stem": "A vertical tower <em>TC</em> is 40 metres high. The point <em>A</em> is due east of the base of the tower <em>C</em>. The angle of elevation to the top <em>T</em> of the tower from <em>A</em> is 35&deg;. A second point <em>B</em> is on a different bearing from the tower as shown. The angle of elevation to the top of the tower from <em>B</em> is 30&deg;. The points <em>A</em> and <em>B</em> are 100 metres apart.",
+      "parts": [
+        {
+          "label": "(a)",
+          "marks": 1,
+          "q": "Show that distance <em>AC</em> is 57.13 metres, correct to 2 decimal places. <strong>(1 mark)</strong>",
+          "answer": "In the right-angled triangle TCA, the tower TC = 40 is opposite the angle of elevation at A and AC is adjacent:\ntan 35° = 40/AC\nAC = 40/tan 35° = 40/0.700207… = 57.1259…\nAC = 57.13 metres (2 decimal places) ✓",
+          "keywords": [
+            "57.13"
+          ],
+          "minKeywords": 1,
+          "bandDescriptors": {
+            "full": "Provides correct solution",
+            "partial": "Does not meet the criterion: provides correct solution",
+            "minimal": "Does not meet the criterion: provides correct solution"
+          }
+        },
+        {
+          "label": "(b)",
+          "marks": 3,
+          "q": "Find the bearing of <em>B</em> from <em>C</em> to the nearest degree. <strong>(3 marks)</strong>",
+          "answer": "In the right-angled triangle TCB:\ntan 30° = 40/BC\nBC = 40/tan 30° = 40/0.577350… = 69.2820… = 69.28 metres\n\nNow use the cosine rule in triangle ACB, where AB = 100:\ncos ∠ACB = (AC² + BC² − AB²)/(2 × AC × BC)\n        = (57.1259² + 69.2820² − 100²)/(2 × 57.1259 × 69.2820)\n        = (3263.4 + 4800.0 − 10 000)/7915.0\n        = −1936.6/7915.0\n        = −0.24467…\n∠ACB = 104.16…° = 104° (nearest degree)\n\nA is due east of C, so the bearing of A from C is 090°. B lies a further 104° clockwise from CA, so\nbearing of B from C = 090° + 104° = 194°.\n\nThe bearing of B from C is 194°.",
+          "keywords": [
+            "69.28",
+            "cosine rule",
+            "104",
+            "194"
+          ],
+          "minKeywords": 2,
+          "bandDescriptors": {
+            "full": "Provides correct solution",
+            "partial": "Finds the angle at C, or equivalent merit",
+            "minimal": "Finds the length of BC, or equivalent merit"
+          }
+        }
+      ]
     },
     {
       "year": 2024,
@@ -4205,7 +6243,59 @@
         "full": "f″(x) = 2(1 − x²)/(1 + x²)² with the sign argument, the area 0.538275 (doubling the half from 0 to 1), and 'overestimate' justified by concavity.",
         "partial": "The second derivative is correct and the trapezoidal rule is applied correctly, but the symmetry is missed so the answer is 0.269 rather than 0.538; or (c) says overestimate with no reason.",
         "minimal": "Differentiate twice — chain rule then quotient rule — and argue from the sign of the numerator. For (b) note the shaded region is on both sides of the y-axis. For (c) a concave-up curve lies below its chords."
-      }
+      },
+      "stem": "The graph of the function <em>f</em>(<em>x</em>) = ln(1 + <em>x</em>&sup2;) is shown.",
+      "parts": [
+        {
+          "label": "(a)",
+          "marks": 3,
+          "q": "Prove that <em>f</em>(<em>x</em>) is concave up for &minus;1 &lt; <em>x</em> &lt; 1. <strong>(3 marks)</strong>",
+          "answer": "f(x) = ln(1 + x²)\n\nFirst derivative, by the chain rule:\nf′(x) = 2x/(1 + x²)\n\nSecond derivative, by the quotient rule:\nf″(x) = [2(1 + x²) − 2x(2x)]/(1 + x²)²\n      = (2 + 2x² − 4x²)/(1 + x²)²\n      = 2(1 − x²)/(1 + x²)²\n\nThe denominator (1 + x²)² is always positive, so the sign of f″ is the sign of 2(1 − x²).\n2(1 − x²) > 0 when x² < 1, that is when −1 < x < 1.\n\nTherefore f″(x) > 0 for −1 < x < 1, so f(x) is concave up on that interval. ✓",
+          "keywords": [
+            "2x/(1 + x²)",
+            "1 − x²",
+            "concave up"
+          ],
+          "minKeywords": 2,
+          "bandDescriptors": {
+            "full": "Provides correct solution",
+            "partial": "Finds the correct second derivative, or equivalent merit",
+            "minimal": "Finds the correct first derivative, or equivalent merit"
+          }
+        },
+        {
+          "label": "(b)",
+          "marks": 2,
+          "q": "A table of function values, correct to 4 decimal places, for some <em>x</em> values is provided.<table class=\"q-table\"><tr><th><em>x</em></th><th>0</th><th>0.25</th><th>0.5</th><th>0.75</th><th>1</th></tr><tr><td>ln(1 + <em>x</em>&sup2;)</td><td>0</td><td>0.0606</td><td>0.2231</td><td>0.4463</td><td>0.6931</td></tr></table>Using the function values provided and the trapezoidal rule, estimate the shaded area in the diagram. <strong>(2 marks)</strong>",
+          "answer": "The shaded region is symmetric about the y-axis, so the total area is twice the area from x = 0 to x = 1.\n\nTrapezoidal rule with h = 0.25 and five function values:\n∫₀¹ f(x) dx ≈ (0.25/2)[0 + 2(0.0606 + 0.2231 + 0.4463) + 0.6931]\n          = 0.125[2(0.7300) + 0.6931]\n          = 0.125[1.4600 + 0.6931]\n          = 0.125 × 2.1531\n          = 0.2691375\n\nTotal shaded area ≈ 2 × 0.2691375 = 0.538275 square units.",
+          "keywords": [
+            "0.538"
+          ],
+          "minKeywords": 1,
+          "bandDescriptors": {
+            "full": "Provides correct solution",
+            "partial": "Uses the values from the table correctly in the trapezoidal rule, or equivalent merit",
+            "minimal": "Uses the values from the table correctly in the trapezoidal rule, or equivalent merit"
+          }
+        },
+        {
+          "label": "(c)",
+          "marks": 1,
+          "q": "Is the answer to part (b) an overestimate or underestimate? Give a reason for your answer. <strong>(1 mark)</strong>",
+          "answer": "It is an overestimate.\n\nFrom part (a) the curve is concave up on −1 < x < 1, so each trapezium's straight top edge lies above the curve. The trapezoidal rule therefore counts more area than there really is.",
+          "keywords": [
+            "1 − x²",
+            "overestimate",
+            "concave up"
+          ],
+          "minKeywords": 2,
+          "bandDescriptors": {
+            "full": "Provides correct answer with a reason",
+            "partial": "Does not meet the criterion: provides correct answer with a reason",
+            "minimal": "Does not meet the criterion: provides correct answer with a reason"
+          }
+        }
+      ]
     },
     {
       "year": 2024,
@@ -4229,7 +6319,59 @@
         "full": "z = 0.8 giving 28.81% in (a), a symmetry argument using z = −0.8 in (b), and about 77 marks in (c) from z = 1.3.",
         "partial": "The z-score is correct but 0.7881 is quoted as the answer to (a) instead of subtracting 0.5; or (c) reads the table correctly and then fails to convert z back to a score.",
         "minimal": "The table gives the area to the LEFT of z, so subtract 0.5 to get the area between the mean and z. For (c), the top 10% starts where the left-hand area is 0.90, then reverse the z-score formula: x = μ + zσ."
-      }
+      },
+      "stem": "A random variable is normally distributed with mean 0 and standard deviation 1. The table gives the probability that this random variable is less than <em>z</em>.<div style=\"overflow-x:auto;-webkit-overflow-scrolling:touch;margin:14px 0\"><table class=\"q-table\" style=\"min-width:560px;margin:0\"><tr><th><em>z</em></th><th>0.6</th><th>0.7</th><th>0.8</th><th>0.9</th><th>1.0</th><th>1.1</th><th>1.2</th><th>1.3</th><th>1.4</th></tr><tr><td><em>Probability</em></td><td>0.7257</td><td>0.7580</td><td>0.7881</td><td>0.8159</td><td>0.8413</td><td>0.8643</td><td>0.8849</td><td>0.9032</td><td>0.9192</td></tr></table></div>The probability values given in the table for different values of <em>z</em> are represented by the shaded area in the following diagram.<img src=\"/diagrams/mathematics-advanced_2024_Q23_stimulus.jpg\" alt=\"A standard normal curve with the whole area to the left of z shaded, and 0 and z marked on the horizontal axis\" style=\"max-width:100%;height:auto;display:block;margin:14px auto\">The scores in a university examination with a large number of candidates are normally distributed with mean 58 and standard deviation 15.<br>",
+      "parts": [
+        {
+          "label": "(a)",
+          "marks": 2,
+          "q": "By calculating a <em>z</em>-score, find the percentage of scores that are between 58 and 70. <strong>(2 marks)</strong>",
+          "answer": "z = (x − μ)/σ = (70 − 58)/15 = 12/15 = 0.8\n\nFrom the table, P(Z < 0.8) = 0.7881. This is the whole area to the left of z = 0.8, and 58 is the mean, so half the area (0.5) lies to the left of 58.\n\nP(58 < X < 70) = 0.7881 − 0.5 = 0.2881\n\nSo 28.81% of scores lie between 58 and 70.",
+          "keywords": [
+            "z = 0.8",
+            "0.7881",
+            "28.81"
+          ],
+          "minKeywords": 2,
+          "bandDescriptors": {
+            "full": "Provides correct solution, including a correct z-score",
+            "partial": "Finds z-score corresponding to 70, or equivalent merit",
+            "minimal": "Finds z-score corresponding to 70, or equivalent merit"
+          }
+        },
+        {
+          "label": "(b)",
+          "marks": 1,
+          "q": "Explain why the percentage of scores between 46 and 70 is twice your answer to part (a). <strong>(1 mark)</strong>",
+          "answer": "The z-score of 46 is (46 − 58)/15 = −12/15 = −0.8, the exact negative of the z-score for 70.\n\nA normal distribution is symmetric about its mean, so the area between 46 and 58 equals the area between 58 and 70. The interval from 46 to 70 is made up of those two equal pieces, so its percentage is twice the answer to part (a): 2 × 28.81% = 57.62%.",
+          "keywords": [
+            "28.81",
+            "symmetr"
+          ],
+          "minKeywords": 1,
+          "bandDescriptors": {
+            "full": "Provides correct answer",
+            "partial": "Does not meet the criterion: provides correct answer",
+            "minimal": "Does not meet the criterion: provides correct answer"
+          }
+        },
+        {
+          "label": "(c)",
+          "marks": 2,
+          "q": "By using the values in the table above, find an approximate minimum score that a candidate would need to be placed in the top 10% of the candidates. <strong>(2 marks)</strong>",
+          "answer": "To be in the top 10%, a candidate needs a score above the 90th percentile, so we need\nP(Z < z) = 0.90.\n\nThe closest value in the table is 0.9032, at z = 1.3.\n\nx = μ + zσ = 58 + 1.3 × 15 = 58 + 19.5 = 77.5\n\nAn approximate minimum score is 77 marks (accepting 78, since the score must exceed 77.5).",
+          "keywords": [
+            "1.3",
+            "77"
+          ],
+          "minKeywords": 1,
+          "bandDescriptors": {
+            "full": "Provides correct solution, with evidence of using the table",
+            "partial": "Finds the z-score corresponding to 90th percentile, or equivalent merit",
+            "minimal": "Finds the z-score corresponding to 90th percentile, or equivalent merit"
+          }
+        }
+      ]
     },
     {
       "year": 2024,
@@ -4251,7 +6393,43 @@
         "full": "$2044.73 in (a), from a geometric series with r = 1.005 over 24 deposits, and A = 25.559 in (b).",
         "partial": "The monthly rate 0.005 and the geometric series are set up correctly, but the number of interest periods is out by one — a common answer is $2034.56, from starting the first deposit at 23 months.",
         "minimal": "Convert 6% p.a. compounded monthly to 0.5% per month. Each deposit grows for a different number of months, so the total is a geometric series. In (b), the factor is the total per $1 deposited."
-      }
+      },
+      "stem": "Jack intends to deposit $80 into a savings account on the first day of each month for 24 months. The interest rate during this time is 6% per annum, compounded monthly.<br>",
+      "parts": [
+        {
+          "label": "(a)",
+          "marks": 3,
+          "q": "Calculate how much money Jack will have in his account at the end of the 24 months. <strong>(3 marks)</strong>",
+          "answer": "The monthly interest rate is 6%/12 = 0.5% = 0.005.\n\nThe first deposit is made on day 1 of month 1 and earns interest for all 24 months, so its future value is 80(1.005)²⁴. The next deposit earns interest for 23 months, and so on down to the last deposit, which earns interest for 1 month.\n\nTotal = 80(1.005)²⁴ + 80(1.005)²³ + … + 80(1.005)¹\n\nThis is a geometric series with first term a = 80(1.005), ratio r = 1.005 and n = 24 terms:\nSₙ = a(rⁿ − 1)/(r − 1)\n   = 80(1.005) × [(1.005)²⁴ − 1]/(1.005 − 1)\n   = 80.4 × (1.127159… − 1)/0.005\n   = 80.4 × 25.4319…\n   = 2044.73\n\nJack will have $2044.73 at the end of the 24 months.",
+          "keywords": [
+            "0.005",
+            "1.005",
+            "2044.73"
+          ],
+          "minKeywords": 2,
+          "bandDescriptors": {
+            "full": "Provides correct solution",
+            "partial": "Sets up an appropriate series, or equivalent merit",
+            "minimal": "Finds a correct term in the series, or equivalent merit"
+          }
+        },
+        {
+          "label": "(b)",
+          "marks": 1,
+          "q": "A table of future value interest factors could have been used to calculate how much money Jack would have in his account at the end of the 24 months.<br><br>Part of the table is shown.<table class=\"q-table\"><tr><th rowspan=\"2\"><em>Number of periods</em></th><th colspan=\"3\"><em>Interest rate per period</em></th></tr><tr><th>&nbsp;</th><th>0.5%</th><th>&nbsp;</th></tr><tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr><tr><td>24</td><td>&nbsp;</td><td><em>A</em></td><td>&nbsp;</td></tr><tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr></table>What is the value of <em>A</em> in the table? Give your answer correct to 3 decimal places. <strong>(1 mark)</strong>",
+          "answer": "A future value interest factor is the future value of an annuity of $1, so the amount is 80 × A:\n80A = 2044.73\nA = 2044.73/80 = 25.5591…\n\nA = 25.559 (3 decimal places).",
+          "keywords": [
+            "2044.73",
+            "25.559"
+          ],
+          "minKeywords": 1,
+          "bandDescriptors": {
+            "full": "Provides correct answer",
+            "partial": "Does not meet the criterion: provides correct answer",
+            "minimal": "Does not meet the criterion: provides correct answer"
+          }
+        }
+      ]
     },
     {
       "year": 2024,
@@ -4279,6 +6457,36 @@
           "marks": 2,
           "reason": "The student must find a formula for the cumulative distribution function and then sketch its graph. The engine cannot accept or mark a hand-drawn graph."
         }
+      ],
+      "stem": "A function <em>f</em>(<em>x</em>) is defined as<br><br><em>f</em>(<em>x</em>) =<table style=\"display:inline-table;vertical-align:middle;border-collapse:collapse;margin:0 0 0 4px\"><tr><td rowspan=\"3\" style=\"border:0;padding:0 4px 0 0;font-size:3.9em;font-weight:300;line-height:0.86;vertical-align:middle\">{</td><td style=\"border:0;padding:1px 0;text-align:left;font-size:0.85em\">0,&nbsp;&nbsp;&nbsp;for <em>x</em> &lt; 0</td></tr><tr><td style=\"border:0;padding:1px 0;text-align:left;font-size:0.85em\">1 &minus; <em>x</em>/<em>h</em>,&nbsp;&nbsp;&nbsp;for 0 &le; <em>x</em> &le; <em>h</em></td></tr><tr><td style=\"border:0;padding:1px 0;text-align:left;font-size:0.85em\">0,&nbsp;&nbsp;&nbsp;for <em>x</em> &gt; <em>h</em></td></tr></table><br><br>where <em>h</em> is a constant.<br>",
+      "parts": [
+        {
+          "label": "(a)",
+          "marks": 2,
+          "q": "Find the value of <em>h</em> such that <em>f</em>(<em>x</em>) is a probability density function. <strong>(2 marks)</strong>",
+          "answer": "A probability density function must enclose a total area of 1.\n\nBetween x = 0 and x = h the graph of y = 1 − x/h is a straight line from (0, 1) down to (h, 0), so the region under it is a triangle of base h and height 1:\n½ × h × 1 = 1\nh = 2\n\n(Equivalently, ∫₀ʰ (1 − x/h) dx = [x − x²/(2h)]₀ʰ = h − h/2 = h/2 = 1, so h = 2.)",
+          "keywords": [
+            "h = 2"
+          ],
+          "minKeywords": 1
+        },
+        {
+          "label": "(c)",
+          "marks": 2,
+          "q": "Find the value of the median of the probability density function <em>f</em>(<em>x</em>). Give your answer correct to 3 decimal places. <strong>(2 marks)</strong><br><br><em style=\"opacity:0.75\">Part (b), which asked the student to find a formula for the cumulative distribution function and sketch its graph, is not included here &mdash; the engine cannot mark a hand-drawn graph. Part (c) asks for the median of <em>f</em>(<em>x</em>) itself, so it needs only the value of <em>h</em> from part (a). NESA&rsquo;s wording of parts (a) and (c) is unchanged.</em>",
+          "answer": "With h = 2, f(x) = 1 − x/2 on 0 ≤ x ≤ 2. The median m satisfies ∫₀ᵐ f(x) dx = 0.5:\n\n∫₀ᵐ (1 − x/2) dx = [x − x²/4]₀ᵐ = m − m²/4\n\nm − m²/4 = 0.5\n4m − m² = 2\nm² − 4m + 2 = 0\n\nm = [4 ± √(16 − 8)]/2 = [4 ± √8]/2 = 2 ± √2\n\nThe median must lie in 0 ≤ m ≤ 2, so m = 2 − √2 = 0.585786…\n\nThe median is 0.586 (3 decimal places).",
+          "keywords": [
+            "h = 2",
+            "2 − √2",
+            "0.586"
+          ],
+          "minKeywords": 2,
+          "bandDescriptors": {
+            "full": "Provides correct solution",
+            "partial": "Finds the correct quadratic equation, or equivalent merit",
+            "minimal": "Finds the correct quadratic equation, or equivalent merit"
+          }
+        }
       ]
     },
     {
@@ -4287,7 +6495,7 @@
       "section": "II",
       "category": "M1",
       "marks": 4,
-      "q": "Twenty-five years ago, Phoenix deposited a single sum of money into a new bank account, earning 2.4% interest per annum compounding monthly.<br><br>Present value interest factors for an annuity of $1 for various interest rates (<em>r</em>) and numbers of periods (<em>n</em>) are given in the table.<table class=\"q-table\"><tr><th><em>Rate</em> (<em>r</em>) &rarr;<br><em>Period</em> (<em>n</em>) &darr;</th><th>0.001</th><th>0.002</th><th>0.003</th><th>0.004</th></tr><tr><td>60</td><td>58.207</td><td>56.487</td><td>54.835</td><td>53.249</td></tr><tr><td>120</td><td>113.026</td><td>106.592</td><td>100.649</td><td>95.156</td></tr><tr><td>180</td><td>164.655</td><td>151.036</td><td>138.927</td><td>128.137</td></tr><tr><td>240</td><td>213.278</td><td>190.460</td><td>170.908</td><td>154.093</td></tr><tr><td>300</td><td>259.071</td><td>225.430</td><td>197.627</td><td>174.521</td></tr></table>Phoenix made the following withdrawals from this account.<br><br>&bull; $2000 at the end of each month for the first 15 years, starting at the end of the first month.<br><br>&bull; $1200 at the end of each month for the next 10 years, starting at the end of the 181st month.<br><br>Calculate the minimum sum that Phoenix could have deposited in order to make these withdrawals.",
+      "q": "Twenty-five years ago, Phoenix deposited a single sum of money into a new bank account, earning 2.4% interest per annum compounding monthly.<br><br>Present value interest factors for an annuity of $1 for various interest rates (<em>r</em>) and numbers of periods (<em>n</em>) are given in the table.<div style=\"overflow-x:auto;-webkit-overflow-scrolling:touch;margin:14px 0\"><table class=\"q-table\" style=\"margin:0\"><tr><th><em>Rate</em> (<em>r</em>) &rarr;<br><em>Period</em> (<em>n</em>) &darr;</th><th>0.001</th><th>0.002</th><th>0.003</th><th>0.004</th></tr><tr><td>60</td><td>58.207</td><td>56.487</td><td>54.835</td><td>53.249</td></tr><tr><td>120</td><td>113.026</td><td>106.592</td><td>100.649</td><td>95.156</td></tr><tr><td>180</td><td>164.655</td><td>151.036</td><td>138.927</td><td>128.137</td></tr><tr><td>240</td><td>213.278</td><td>190.460</td><td>170.908</td><td>154.093</td></tr><tr><td>300</td><td>259.071</td><td>225.430</td><td>197.627</td><td>174.521</td></tr></table></div>Phoenix made the following withdrawals from this account.<br><br>&bull; $2000 at the end of each month for the first 15 years, starting at the end of the first month.<br><br>&bull; $1200 at the end of each month for the next 10 years, starting at the end of the 181st month.<br><br>Calculate the minimum sum that Phoenix could have deposited in order to make these withdrawals.",
       "image": null,
       "answer": "The monthly interest rate is r = 0.024/12 = 0.002.\n\nTreat the withdrawals as $1200 every month for the full 25 years, plus an extra $800 every month for the first 15 years.\n\n25 years = 300 months. From the table, at r = 0.002 and n = 300 the factor is 225.430:\n1200 × 225.430 = $270 516\n\n15 years = 180 months. At r = 0.002 and n = 180 the factor is 151.036:\n800 × 151.036 = $120 828.80\n\nTotal present value = 270 516 + 120 828.80 = $391 344.80\n\nThe minimum sum Phoenix could have deposited is $391 344.80.",
       "keywords": [
@@ -4327,7 +6535,38 @@
         "full": "The derivative x² sec²x + 2x tan x, and the integral x² tan x − x³/3 + x + C.",
         "partial": "The product rule in (a) is correct and the square is expanded in (b), but tan²x is not rewritten as sec²x − 1, so part (a) cannot be used and the integral is left unfinished.",
         "minimal": "In (a) use the product rule; the derivative of tan x is sec²x. In (b) expand the bracket, replace tan²x with sec²x − 1, and look for part (a)'s expression inside the result."
-      }
+      },
+      "parts": [
+        {
+          "label": "(a)",
+          "marks": 2,
+          "q": "Find the derivative of <em>x</em>&sup2; tan <em>x</em>. <strong>(2 marks)</strong>",
+          "answer": "Use the product rule with u = x² and v = tan x:\nd/dx (x² tan x) = x² sec²x + 2x tan x",
+          "keywords": [
+            "x² sec²x + 2x tan x",
+            "x² tan x"
+          ],
+          "minKeywords": 1,
+          "bandDescriptors": {
+            "full": "Provides correct solution",
+            "partial": "Applies the product rule, or equivalent merit",
+            "minimal": "Applies the product rule, or equivalent merit"
+          }
+        },
+        {
+          "label": "(b)",
+          "marks": 3,
+          "q": "Hence, find &int;(<em>x</em> tan <em>x</em> + 1)&sup2; <em>dx</em>. <strong>(3 marks)</strong>",
+          "answer": "Expand the square first:\n(x tan x + 1)² = x² tan²x + 2x tan x + 1\n\nNow use the identity tan²x = sec²x − 1:\n= x²(sec²x − 1) + 2x tan x + 1\n= x² sec²x + 2x tan x − x² + 1\n\nThe first two terms are exactly the derivative found in part (a), so\n\n∫(x tan x + 1)² dx = ∫(x² sec²x + 2x tan x) dx − ∫x² dx + ∫1 dx\n                  = x² tan x − x³/3 + x + C",
+          "keywords": [
+            "x² sec²x + 2x tan x",
+            "sec²x − 1",
+            "x² tan x",
+            "x³/3"
+          ],
+          "minKeywords": 2
+        }
+      ]
     },
     {
       "year": 2024,
@@ -4351,7 +6590,54 @@
         "full": "c = 21, k = 18, a period of 48 seconds, and the two heights 4.37 m and 37.63 m at t = 3 and t = 27.",
         "partial": "(a) and (b) are correct and the equation cos(πt/24) = cos((π/24)(t − 6)) is formed, but only the t = 3 solution is found, so the second height is missing.",
         "minimal": "The greatest and smallest heights are c + k and c − k. The period of cos(πt/24) is 2π ÷ (π/24). For (c), equate the two heights and use the fact that cos θ = cos(−θ) — the second solution comes from adding a full 2π."
-      }
+      },
+      "stem": "Anna is sitting in a carriage of a Ferris wheel which is revolving. The height, <em>A</em>(<em>t</em>), in metres above the ground of the top of her carriage is given by<br><br><em>A</em>(<em>t</em>) = <em>c</em> &minus; <em>k</em> cos(&pi;<em>t</em>/24),<br><br>where <em>t</em> is the time in seconds after Anna&rsquo;s carriage first reaches the bottom of its revolution and <em>c</em> and <em>k</em> are constants.<img src=\"/diagrams/mathematics-advanced_2024_Q28_stimulus.jpg\" alt=\"A Ferris wheel with six carriages, an arrow showing the direction of rotation. Marked NOT TO SCALE\" style=\"max-width:100%;height:auto;display:block;margin:14px auto\">The top of each carriage reaches a greatest height of 39 metres and a smallest height of 3 metres.<br>",
+      "parts": [
+        {
+          "label": "(a)",
+          "marks": 2,
+          "q": "Find the value of <em>c</em> and <em>k</em>. <strong>(2 marks)</strong>",
+          "answer": "The cosine term oscillates between −1 and 1, so A(t) runs between c − k and c + k.\n\nc + k = 39 and c − k = 3\nAdding: 2c = 42, so c = 21.\nSubtracting: 2k = 36, so k = 18.",
+          "keywords": [
+            "c = 21",
+            "k = 18"
+          ],
+          "minKeywords": 1,
+          "bandDescriptors": {
+            "full": "Provides correct solution",
+            "partial": "Finds the value of c or k, or equivalent merit",
+            "minimal": "Finds the value of c or k, or equivalent merit"
+          }
+        },
+        {
+          "label": "(b)",
+          "marks": 1,
+          "q": "How many seconds does it take for one complete revolution of the Ferris wheel? <strong>(1 mark)</strong>",
+          "answer": "The period of cos(πt/24) is 2π ÷ (π/24) = 48.\n\nOne complete revolution takes 48 seconds.",
+          "keywords": [
+            "48"
+          ],
+          "minKeywords": 1,
+          "bandDescriptors": {
+            "full": "Provides correct answer",
+            "partial": "Does not meet the criterion: provides correct answer",
+            "minimal": "Does not meet the criterion: provides correct answer"
+          }
+        },
+        {
+          "label": "(c)",
+          "marks": 4,
+          "q": "Billie is in another carriage. The height, <em>B</em>(<em>t</em>), in metres above the ground of the top of her carriage is given by<br><br><em>B</em>(<em>t</em>) = <em>c</em> &minus; <em>k</em> cos((&pi;/24)(<em>t</em> &minus; 6)),<br><br>where <em>c</em> and <em>k</em> are as found in part (a).<br><br>During each revolution, there are two occasions when Anna&rsquo;s and Billie&rsquo;s carriages are at the same heights. At what two heights does this occur? Give your answer correct to 2 decimal places. <strong>(4 marks)</strong>",
+          "answer": "Set the two heights equal:\n21 − 18cos(πt/24) = 21 − 18cos((π/24)(t − 6))\ncos(πt/24) = cos((π/24)(t − 6))\n\nTwo angles have the same cosine when they are equal, or when one is the negative of the other (plus a multiple of 2π).\n\nCase 1: πt/24 = (π/24)(t − 6) gives t = t − 6, which is impossible.\n\nCase 2: πt/24 = −(π/24)(t − 6) + 2πn\nt = −(t − 6) + 48n\n2t = 6 + 48n\nt = 3 + 24n\n\nWithin one revolution (0 ≤ t < 48) this gives t = 3 and t = 27.\n\nWhen t = 3: A = 21 − 18cos(3π/24) = 21 − 18cos(π/8) = 21 − 18(0.923880) = 4.3702…\nWhen t = 27: A = 21 − 18cos(27π/24) = 21 − 18(−0.923880) = 37.6298…\n\nThe two heights are 4.37 metres and 37.63 metres (2 decimal places).",
+          "keywords": [
+            "48",
+            "t = 3",
+            "4.37",
+            "37.63"
+          ],
+          "minKeywords": 2
+        }
+      ]
     },
     {
       "year": 2024,
@@ -4427,7 +6713,38 @@
         "full": "A = ½θ(2x + x²) and P = θ(2 + x) + 2x combined to give P(x) = 2x + 2A/x; then x = √A at the minimum, θ = 2√A/(2 + √A), and the comparison showing θ < 2.",
         "partial": "Part (a) is shown correctly and x = √A is found with the second-derivative test, but θ is not expressed in terms of A, so the inequality θ < 2 is asserted rather than proved.",
         "minimal": "QRST is the difference of two sectors, and its perimeter is two arcs plus two radial sides of length x each. In (b), minimise P, then substitute back into the area equation to get θ in terms of A and compare it with 2."
-      }
+      },
+      "stem": "Two circles have the same centre <em>O</em>. The smaller circle has radius 1 cm, while the larger circle has radius (1 + <em>x</em>) cm. The circles enclose a region <em>QRST</em>, which is subtended by an angle <em>&theta;</em> at <em>O</em>, as shaded.<br><br>The area of <em>QRST</em> is <em>A</em> cm&sup2;, where <em>A</em> is a constant and <em>A</em> &gt; 0.<img src=\"/diagrams/mathematics-advanced_2024_Q31_stimulus.jpg\" alt=\"Two concentric circles with centre O, radii 1 and 1 + x, and the region QRST between them subtended by an angle theta shaded\" style=\"max-width:100%;height:auto;display:block;margin:14px auto\">Let <em>P</em> cm be the perimeter of <em>QRST</em>.<br>",
+      "parts": [
+        {
+          "label": "(a)",
+          "marks": 3,
+          "q": "By finding expressions for the area and perimeter of <em>QRST</em>, show that <em>P</em>(<em>x</em>) = 2<em>x</em> + 2<em>A</em>/<em>x</em>. <strong>(3 marks)</strong>",
+          "answer": "Area: QRST is the difference of two sectors of angle θ, radii 1 + x and 1:\nA = ½θ(1 + x)² − ½θ(1)²\n  = ½θ[(1 + x)² − 1]\n  = ½θ(2x + x²)\n  = ½θx(2 + x)          … (1)\n\nPerimeter: the two arcs QR and TS have lengths θ(1 + x) and θ(1), and the two straight sides QT and RS each have length x:\nP = θ(1 + x) + θ + 2x\n  = θ(2 + x) + 2x\n\nFrom (1), θ(2 + x) = 2A/x. Substituting:\nP(x) = 2x + 2A/x   ✓",
+          "keywords": [
+            "½θ(2x + x²)",
+            "θ(2 + x) + 2x",
+            "x = √A"
+          ],
+          "minKeywords": 2,
+          "bandDescriptors": {
+            "full": "Provides correct solution",
+            "partial": "Finds correct expressions for the perimeter and area, or equivalent merit",
+            "minimal": "Finds the correct expression for the perimeter or area, or equivalent merit"
+          }
+        },
+        {
+          "label": "(b)",
+          "marks": 3,
+          "q": "Show that if the perimeter, <em>P</em>(<em>x</em>), is minimised, then <em>&theta;</em> must be less than 2. <strong>(3 marks)</strong>",
+          "answer": "Differentiate: P′(x) = 2 − 2A/x².\n\nP′(x) = 0 when 2 = 2A/x², so x² = A and, since x > 0, x = √A.\n\nP″(x) = 4A/x³, which is positive for x > 0, so this stationary point is a minimum.\n\nSubstitute x = √A into (1) to find θ:\nθ = 2A/[x(2 + x)] = 2A/[√A(2 + √A)] = 2√A/(2 + √A)\n\nNow compare with 2:\n2√A/(2 + √A) < 2\n⟺ 2√A < 2(2 + √A)          (valid because 2 + √A > 0)\n⟺ 2√A < 4 + 2√A\n⟺ 0 < 4, which is always true.\n\nTherefore when P(x) is minimised, θ = 2√A/(2 + √A) < 2.   ✓",
+          "keywords": [
+            "x = √A",
+            "2√A/(2 + √A)"
+          ],
+          "minKeywords": 1
+        }
+      ]
     }
   ]
 }
