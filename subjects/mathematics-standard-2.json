@@ -6913,6 +6913,7 @@
           "acceptableAnswers": [
             "$37 158",
             "6.17",
+            "r = 6.17",
             "6.17%"
           ],
           "bandDescriptors": {
@@ -7709,7 +7710,6 @@
           "keywords": [
             "400 kWh",
             "400",
-            "$40",
             "40"
           ],
           "minKeywords": 2,
@@ -7744,11 +7744,10 @@
           "keywords": [
             "400 kWh",
             "400",
-            "$40",
             "40",
             "0.25k"
           ],
-          "minKeywords": 3,
+          "minKeywords": 2,
           "bandDescriptors": {
             "full": "Provides correct answer",
             "partial": "Does not meet the criterion: provides correct answer",
@@ -7978,8 +7977,7 @@
           "keywords": [
             "2005.32",
             "$2005",
-            "10.0266",
-            "2%"
+            "10.0266"
           ],
           "minKeywords": 2,
           "bandDescriptors": {
@@ -8287,7 +8285,6 @@
           "answer": "Turning point:\nt = −(−8)/(2 × 1) = 8/2 = 4\nh = 4² − 8(4) + 12 = 16 − 32 + 12 = −4\nTurning point: (4, −4)",
           "keywords": [
             "4",
-            "-4",
             "8",
             "turning point"
           ],
@@ -10668,7 +10665,6 @@
           "answer": "Slope = (ȳ − y-intercept) / (x̄ − 0)\n= (184 − 236) / (5 − 0)\n= −52/5\n= −10.4\n\nEquation: <strong>y = 236 − 10.4x</strong>",
           "keywords": [
             "236",
-            "-10.4",
             "10.4",
             "184"
           ],
@@ -10686,7 +10682,6 @@
           "answer": "When temperature = 23°C:\ny = 236 − 10.4 × 23 = 236 − 239.2 = −3.2 MW\n\nThis gives a <strong>negative gas usage</strong>, which is not physically possible. Also, 23°C is well outside the range of the data (0–10°C), making it an extrapolation — the regression line may not apply outside this range.",
           "keywords": [
             "236",
-            "-10.4",
             "10.4",
             "negative",
             "extrapolation",

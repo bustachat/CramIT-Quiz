@@ -4050,3 +4050,95 @@ Editing each occurrence **in place**, by group, removes the problem entirely.
 with no space between them, so they arrive as one token. Confirmed pre-existing — it is in
 the committed key at `67d5301`, before any of this work — and the count of such run-ons is
 **identical (73) before and after**, so the word-rejoin rule added none.
+
+---
+
+## 2026-09-06 (later) — Both per-part builds re-run against the repaired criteria; the pipeline is proved deterministic
+
+**What changed.** `scripts/archive/ms2_add_parts.py` and
+`scripts/archive/mathsadv_add_parts.py` now **import** the damage test and the band collapse
+from `scripts/refresh_band_descriptors.py` instead of carrying their own copies, and
+`ms2_add_parts.py` gains the two correctness fixes the Advanced build already had. Both were
+re-run. **Mathematics Advanced came back BYTE-FOR-BYTE IDENTICAL**; Mathematics Standard 2
+changed on **8 fields across 6 questions**, every one a defect previously reported and left.
+
+This removes the warning added on 2026-09-05 that re-running either script would strip real
+NESA wording. That was true while each carried its own strict, pre-fix detector; it is not
+true now, and the warning is deleted rather than left to mislead.
+
+### Why they could not simply be re-run
+
+Three copies of the same logic had drifted:
+
+- `ms2_add_parts.py` carried the **original** damage test (empty / dangling function word /
+  starts lowercase) — the one that put *"20 Obtains the probability of a student studyin g
+  History as , or equivalent 40 merit"* on a student's screen.
+- `mathsadv_add_parts.py` carried the **strict** version written against the scrambled rows,
+  which on the repaired rows is mostly false positives.
+- `refresh_band_descriptors.py` carried the **relaxed** version, correct for the repaired rows.
+
+All three now share one implementation, imported. A duplicated heuristic that three files
+disagree about is exactly how the wrong one gets run.
+
+### The two fixes ported into the Standard 2 build
+
+Both were found on the Advanced build and never back-ported:
+
+1. **ASCII-only word split in the acceptance gate.** Python's `\\W` is Unicode-aware and treats
+   θ, π, √ as word characters; JavaScript's is not and splits on them, so the gate was
+   strictly more generous than the engine it mirrors.
+2. **Keyword assignment must agree with the scorer.** `squash()` strips every separator, so it
+   can match across a word boundary the engine never joins. A keyword is now assigned to a
+   part only if it also passes the engine's own `keyword_hit()` on that part's model answer.
+
+### What actually changed in the data
+
+**Mathematics Advanced: nothing.** The rebuild reproduces the committed file exactly — which
+is the useful result, because it proves the bank is deterministically derivable from the
+repaired key plus the scripts, with no hand-editing anywhere in the chain.
+
+**Mathematics Standard 2: the 6 uncreditable keywords are gone.** These are the ones reported
+on 2026-09-05 and deliberately left alone at the time — each a duplicate form of a keyword
+that *is* credited, on a part whose own model answer cannot match it:
+
+| question / part | removed |
+|---|---|
+| 2023 Q21(a), (c) | `$40` (beside the credited `40`; (c) also `minKeywords` 3 → 2) |
+| 2023 Q34(b), (c) | `-10.4` (ASCII, where the model answer writes Unicode `−10.4`) |
+| 2024 Q20(a) | `2%` |
+| 2025 Q20(a) | `-4` |
+
+⚠️ **`$40` was correctly KEPT on 2023 Q21(b) and (d)**, whose model answers do contain it.
+The fix is per-part, not per-question — it removes a keyword only from the parts that can
+never credit it.
+
+One field was **added**: 2021 Q26(b) gained `acceptableAnswers` entry `r = 6.17`, because the
+repaired criteria rows now carry the evidence for it. A slightly more lenient part, supported
+by NESA's own text.
+
+### Verified
+
+- **`refresh_band_descriptors.py` is now a complete no-op** — 0 rewritten, 0 added, 0 removed
+  across all four subjects. The builder and the refresher produce identical band descriptors,
+  which is the cross-check that the shared import actually took.
+- **Four viewport widths — 320, 430, 1400, 1920** — scoring every part of every multi-part
+  question against its own model answer: Advanced 60 questions / 141 part rows, Standard 2
+  66 / 148, VET 18 / 52. At every width: **0 `undefined`, 0 band strings tripping the damage
+  test, 0 leftover delimiter pieces, 0 overflows, 0 render errors, 0 parts on generic
+  fallback, every question scoring full.**
+- **0 uncreditable per-part keywords remain in either maths subject**, measured in the real
+  engine with `keywordHit()` rather than a mirror of it. Standard 2 was 6 before.
+- A real flow on Standard 2 2023 Q21 scored **3 / 5** — (a) 1/1, (b) 1/1, (c) 1/1 from their
+  model answers and (d) 0/2 from a weak attempt, each row carrying NESA's own wording.
+- Full local CI: `MC=706 Written=374 imageRefs=337 missingImages=0`, `Issues: 0`; **285** MC
+  answers and **334** written questions checked, 0 wrong, 0 unverifiable; VET 76/76 coverage
+  and 34/34 reviewed with 23 re-laid out, 0 stale; `npm test` **73/73**. No console errors.
+
+⚠️ **Surfaced, out of scope, and NOT changed: VET Construction has 18 per-part keywords the
+engine cannot credit in their part** (`2023 Q17(c) reuse`, `2021 Q18(b) pi`, `2024 Q19(a)
+perimeter`, …). Same class as Standard 2's six, but VET's `parts[]` came from
+`vet_add_parts.py` recovering the pre-merge bank, not from either script re-run here, and
+VET is the one subject whose written content a human has reviewed end to end. Every VET part
+still scores full from its own model answer, so no student is blocked; the effect is only
+that a partial answer is marked marginally harsher. Left for a deliberate decision rather
+than swept into this change.

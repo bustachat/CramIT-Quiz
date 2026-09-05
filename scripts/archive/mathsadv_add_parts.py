@@ -41,12 +41,11 @@ Everything else is deliberately unchanged from the Standard 2 build, including
 the acceptance gate that a part must score full marks when fed its own model
 answer, so both subjects are built by the same rules.
 
-⚠️ DO NOT RE-RUN THIS TO REFRESH BAND DESCRIPTORS. Since 2026-09-05 they are
-maintained by `scripts/refresh_band_descriptors.py`, which re-derives them from
-the committed criteria rows and carries the RELAXED damage test. The detector
-below is the strict version written against the pre-fix, scrambled rows; on the
-repaired rows it is mostly false positives, so re-running this would strip real
-NESA wording from ~7 parts and replace it with the engine's generic text.
+Re-run safely: since 2026-09-06 the damage test and the band collapse are
+IMPORTED from `scripts/refresh_band_descriptors.py`, so this build and that
+refresher cannot drift. Re-running against the repaired criteria rows reproduces
+the committed bank BYTE-FOR-BYTE, which is the check that the whole pipeline is
+deterministic from the key.
 
 Run:  python scripts/archive/mathsadv_add_parts.py [--write]
 """
@@ -97,74 +96,13 @@ def split_labelled(text, rx):
     return text[: hits[0].start()].strip(), out
 
 
-# A criteria row whose words have been emitted out of reading order by the PDF
-# extractor (the build_written_key.py known issue). Advanced is by far the
-# worst-hit subject, so a part with a damaged row gets NO bandDescriptors and
-# falls back to the engine's generic wording rather than showing a student
-# scrambled NESA text.
-#
-# ⚠️ The Standard 2 detector (empty / dangling function word / starts lowercase)
-# is NOT strong enough here. It passed 2020 Q14(c)'s row through to the screen as
-# "20 Obtains the probability of a student studyin g History as , or equivalent
-# 40 merit" — found by reading a real scored answer in the browser, not by
-# reading the data. Four more signals are added below; on this subject they take
-# the flagged count from 42 rows to 84 of 540, and every one of the additional
-# rows was read and is genuinely scrambled.
-#
-# This is a smell test, not a parser. It is deliberately biased toward flagging:
-# a false positive costs one part the engine's generic band wording, while a
-# false negative puts mangled NESA text in front of a student. The real fix is
-# ordering the spans by x within each line in build_written_key.py — its own
-# task, and it needs the local PDFs.
-DANGLING_TAIL = re.compile(r"\b(and|or|of|the|to|for|with|from|in|a|an)\s*$", re.I)
-# " ," / " ." — a space before punctuation is a layout artefact, never typed.
-SPACE_PUNCT = re.compile(r"\s[,.](\s|$)")
-# A trailing orphan: a lone letter or bare number stranded at the end of the row
-# by the re-ordering ("... or equivalent merit x").
-TRAILING_ORPHAN = re.compile(r"\s(?:[A-Za-z]|\d+)\s*$")
-# NESA's stock qualifier is always the row's final clause. Anywhere else, the
-# line was disturbed — except where the row genuinely joins two bulleted
-# alternatives, which the extractor renders with an uppercase OR / AND.
-MERIT_TAIL = re.compile(r"or equiv\w*\s+\w*merit\s*[.]?\s*$", re.I)
-# A hoisted tail can land in front of the sentence and keep its own comma:
-# "OFY, Finds angle or equivalent merit" is "Finds angle OFY, or equivalent
-# merit". Caught by reading the shipped descriptors, not by the rules above —
-# it starts uppercase and does end on the stock qualifier.
-LEADING_FRAGMENT = re.compile(r"^\S+,\s")
-
-
-def criteria_damaged(text):
-    t = str(text).strip()
-    if not t:
-        return True
-    if (DANGLING_TAIL.search(t) or SPACE_PUNCT.search(t)
-            or TRAILING_ORPHAN.search(t) or LEADING_FRAGMENT.search(t)):
-        return True
-    if not t[0].isupper():          # digit-, symbol- or lowercase-initial
-        return True
-    if "merit" in t.lower() and not MERIT_TAIL.search(t) and " OR " not in t and " AND " not in t:
-        return True
-    return False
-
-
-def collapse_criteria(rows):
-    """NESA's N criteria rows -> the engine's fixed {full, partial, minimal}.
-
-    Same rule VET's written review established: top row verbatim, middle rows
-    joined with ' OR ', bottom row verbatim. N=2 repeats the bottom row into
-    `partial`; N=1 is all-or-nothing. Returns None if ANY row is damaged."""
-    rows = [r for r in rows if str(r.get("text", "")).strip()]
-    if not rows or any(criteria_damaged(r["text"]) for r in rows):
-        return None
-    rows = sorted(rows, key=lambda r: -int(r.get("marks", 0)))
-    texts = [str(r["text"]).strip() for r in rows]
-    if len(texts) == 1:
-        return {"full": texts[0],
-                "partial": f"Does not meet the criterion: {texts[0].lower()}",
-                "minimal": f"Does not meet the criterion: {texts[0].lower()}"}
-    if len(texts) == 2:
-        return {"full": texts[0], "partial": texts[1], "minimal": texts[1]}
-    return {"full": texts[0], "partial": " OR ".join(texts[1:-1]), "minimal": texts[-1]}
+# ⚠️ The damage test and the band collapse are IMPORTED, not copied. Both used to be
+# duplicated here and in the sibling build, and they drifted: this file's copy was written
+# against the pre-2026-09-05 scrambled rows and is far too strict for the repaired ones,
+# so re-running it with the local copy would have stripped real NESA wording from parts
+# that now have it. scripts/refresh_band_descriptors.py owns the single implementation.
+sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[1]))
+from refresh_band_descriptors import criteria_damaged, collapse_criteria  # noqa: E402
 
 
 def norm(s):

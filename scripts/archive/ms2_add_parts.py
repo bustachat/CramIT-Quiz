@@ -25,6 +25,13 @@ Runs four passes, each independently asserted:
                 score full marks when fed its own model answer, or the build
                 fails and reports it.
 
+Re-run safely (2026-09-06): the damage test and band collapse are IMPORTED from
+`scripts/refresh_band_descriptors.py` so this build cannot drift from it, and the
+keyword gate now matches the engine exactly (ASCII-only word split, and a keyword
+must also pass the engine's own keyword_hit on the part's model answer). Re-running
+against the repaired criteria rows dropped the 6 per-part keywords the engine could
+never credit and gained one acceptableAnswer NESA's own criteria support.
+
 Run:  python scripts/archive/ms2_add_parts.py [--write]
 """
 import json
@@ -78,45 +85,13 @@ def md_to_html(s):
     return re.sub(r"\*\*(?!\s)(.+?)(?<!\s)\*\*", r"<strong>\1</strong>", str(s))
 
 
-# A criteria row whose words have been emitted out of reading order by the PDF
-# extractor. Found 2026-09-05 while deriving band descriptors from these rows:
-# 2025 Q25(b) reads "y-intercept Provides correct interpretation of both slope
-# and" — the tail hoisted to the front. It happens where a row contains an
-# inline symbol or superscript ("sec2 Finds the anti-derivative of x"), so it is
-# concentrated in the maths subjects: 42/540 rows in Advanced, 20/510 in
-# Standard 2, 1/251 in VET, 0/146 in Multimedia. The extractor needs a real fix
-# (its own task, and it needs the PDFs); until then a damaged row must never
-# reach a student, so a part with one falls back to the engine's generic wording.
-DANGLING_TAIL = re.compile(r"\b(and|or|of|the|to|for|with|from|in|a|an)\s*$", re.I)
-
-
-def criteria_damaged(text):
-    t = str(text).strip()
-    return (not t) or bool(DANGLING_TAIL.search(t)) or t[0].islower()
-
-
-def collapse_criteria(rows):
-    """NESA's N criteria rows -> the engine's fixed {full, partial, minimal}.
-
-    Same rule VET's written review established and recorded: top row verbatim,
-    middle rows joined with ' OR ', bottom row verbatim. N=2 repeats the bottom
-    row into `partial`; N=1 is all-or-nothing, so `partial`/`minimal` state
-    non-attainment (the only authored text this produces).
-
-    Returns None if ANY row is damaged — better no descriptor (the engine then
-    shows its generic wording) than scrambled NESA text shown as feedback."""
-    rows = [r for r in rows if str(r.get("text", "")).strip()]
-    if not rows or any(criteria_damaged(r["text"]) for r in rows):
-        return None
-    rows = sorted(rows, key=lambda r: -int(r.get("marks", 0)))
-    texts = [str(r["text"]).strip() for r in rows]
-    if len(texts) == 1:
-        return {"full": texts[0],
-                "partial": f"Does not meet the criterion: {texts[0].lower()}",
-                "minimal": f"Does not meet the criterion: {texts[0].lower()}"}
-    if len(texts) == 2:
-        return {"full": texts[0], "partial": texts[1], "minimal": texts[1]}
-    return {"full": texts[0], "partial": " OR ".join(texts[1:-1]), "minimal": texts[-1]}
+# ⚠️ The damage test and the band collapse are IMPORTED, not copied. Both used to be
+# duplicated here and in the sibling build, and they drifted: this file's copy was written
+# against the pre-2026-09-05 scrambled rows and is far too strict for the repaired ones,
+# so re-running it with the local copy would have stripped real NESA wording from parts
+# that now have it. scripts/refresh_band_descriptors.py owns the single implementation.
+sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[1]))
+from refresh_band_descriptors import criteria_damaged, collapse_criteria  # noqa: E402
 
 
 def norm(s):
@@ -136,7 +111,12 @@ def squash(s):
 def keyword_hit(kw, sa):
     if kw in sa:
         return True
-    for word in re.split(r"\W+", sa):
+    # ⚠️ ASCII-only split, to match JavaScript's `sa.split(/\W+/)`. Python's \W is
+    # Unicode-aware and treats θ, π, √ as WORD characters; JavaScript's does not and
+    # splits on them, so Python's default makes this gate strictly MORE GENEROUS than the
+    # engine and can pass a part the engine then scores below full. Found on the sibling
+    # Advanced build by scoring every question in the real engine.
+    for word in re.split(r"[^A-Za-z0-9_]+", sa):
         if not word:
             continue
         if word.startswith(kw) or kw.startswith(word):
@@ -161,6 +141,11 @@ def score(keywords, min_kw, max_mark, answer):
     if matched < min_kw:
         earned = min(earned, max_mark // 2)
     return earned
+
+
+def norm_raw(s):
+    """The part's model answer as the ENGINE sees it: HTML stripped, lowercased."""
+    return strip_html(s).lower()
 
 
 def strip_html(s):
@@ -305,10 +290,17 @@ def main():
                 all_acc = q.get("acceptableAnswers") or []
                 assigned = {L: [] for L in letters}
                 orphaned = []
+                answer_raw = {L: norm_raw(ans_parts[L]) for L in letters}
                 for kw in all_kw:
                     k, ks = norm(kw), squash(kw)
+                    # ⚠️ Also require the engine's OWN matcher to fire. squash() strips
+                    # every separator, so it can match across a word boundary the scorer
+                    # never joins -- on the sibling Advanced build it found `odd` inside
+                    # "...x sin x. So d/dx..." -> "...sinxsoddxsin...". Without this a part
+                    # is scored against a concept the engine cannot credit there.
                     hits = [L for L in letters
-                            if (k and k in answer_text[L]) or (ks and ks in answer_sq[L])]
+                            if ((k and k in answer_text[L]) or (ks and ks in answer_sq[L]))
+                            and keyword_hit(kw.lower(), answer_raw[L])]
                     for L in hits:
                         assigned[L].append(kw)
                     if not hits:
