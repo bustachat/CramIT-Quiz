@@ -15,8 +15,8 @@ not re-run in their usual form. **This runbook starts at Stage 1.**
 | Stage | Status | Session |
 |---|---|---|
 | **1 Survey** | ✅ **done 2026-09-06** | 1 session |
-| 2 Syllabus grounding (Section III scope only) | ⬜ **next** | 1 session |
-| 4 Port | ⬜ | 1–2 sessions |
+| 2 Syllabus grounding (Section III scope only) | ✅ **done 2026-09-06** | 1 session |
+| 4 Port | ⬜ **next** | 1–2 sessions |
 | 6 Ground truth — **marks** | ➡️ already done — folded into Stage 4's gate | — |
 | **6b Written-answer review** | ⬜ **NEW** — covers Section III's 6 new entries **and** Multimedia's existing 29 → **35** | 1 session |
 | 7 Release | ⬜ | 1 session |
@@ -41,6 +41,7 @@ not re-run in their usual form. **This runbook starts at Stage 1.**
 | Ground truth | ✅ **Already committed.** `data/answer-key/written/multimedia.json` holds all 12 parts' official marks, **NESA's sample answers**, and — since the 2026-09-01 extractor extension, repaired 2026-09-06 — **the criteria rows** each part is banded against. Nothing to extract; `bandDescriptors` are *derived*, not authored |
 | Assets | ✅ **ZERO** — confirmed at Stage 1 by reading all six pages and rendering two. No image, table or content graphic on any Section III page |
 | Bank shape | ✅ **Decided at Stage 1: one merged entry per year, `parts[]` of two.** All six papers use **one** Writing Booklet — this is NOT VET Q20/Q21's separate-booklet case |
+| Syllabus | ✅ **Read at Stage 2.** `industrial-technology-st6-syl.docx` (2008, amended Aug 2013), owner-supplied, in the papers folder, **not committed**. Section III = the **Industry Study** strand under §9 *Focus Area: All* — **8 content areas**, common to all six focus areas, which is why none of the 7 Study Mode topics touches it |
 | Current coverage | `check_written_key.cjs` reports **30/42** official leaf parts claimed. Porting these 12 closes it to **42/42** |
 | Existing bank content | **None.** Unlike Study Mode topics 1–7, there is nothing to build from — original authoring against NESA's sample answers |
 | Papers | Local, never committed — `NESA Exams Folder/Industrial Technology - Multimedia/`. Section III is the **last page** of the exam PDF, page 9 in all six years |
@@ -232,7 +233,7 @@ precedent, no engine change** · [x] asset count confirmed by reading all six pa
 
 ---
 
-## Stage 2 — Syllabus grounding (Section III scope only) ⬜
+## Stage 2 — Syllabus grounding (Section III scope only) ✅ DONE 2026-09-06
 
 ⚠️ **CLAUDE.md §10's mandatory syllabus rule applies, and this is the case it exists for.** The
 seven Study Mode topics were re-grounded in the real NESA syllabus on 2026-07-29 precisely
@@ -243,24 +244,141 @@ Do **not** derive the scope from these six papers. Six years of questions is exa
 syllabus scope — VET is the standing counter-example, with 80 rows of "Working in the industry"
 content including material never once examined.
 
-⚠️ **BLOCKED — the syllabus is not on disk, and downloading it needs the owner's permission.**
-Checked 2026-09-06: `NESA Exams Folder/Industrial Technology - Multimedia/` holds **only** the
-six papers, six marking guidelines and five marking-feedback PDFs. No syllabus. (For contrast,
-Maths Advanced, Maths Standard 2 and VET Construction each have theirs saved.)
+✅ **RESOLVED 2026-09-06 — the owner supplied the syllabus.** It was not on disk (the folder held
+only the six papers, six marking guidelines and five marking-feedback PDFs); it now sits at
+`NESA Exams Folder/Industrial Technology - Multimedia/industrial-technology-st6-syl.docx`,
+**not committed to git**, same copyright treatment as the papers. Read with `python-docx` —
+`pandoc` was unavailable in this environment on a previous port — taking **both**
+`document.paragraphs` and `document.tables`, since NESA's templates put the scope-of-learning
+content in tables. Results below.
 
-Ask the owner before downloading, then save it into
-`NESA Exams Folder/Industrial Technology - Multimedia/` under the same copyright treatment as
-the papers — not committed to git.
+---
 
-**Where to look:** `site:educationstandards.nsw.edu.au` and `site:nsw.gov.au` for the
-*Industrial Technology Stage 6 Syllabus*; NESA has moved some syllabus hosting to nsw.gov.au
-and old links 301-redirect. Section III's scope is the **industry-study / business strand**.
-For a DOCX, `pandoc` was unavailable in this environment on a previous port — `python-docx`
-worked, and **both `document.paragraphs` and `document.tables` must be read**, since NESA's
-templates put scope-of-learning content in tables.
+### Stage 2 — RESULTS, read 2026-09-06
 
-**GATE 2** — [ ] primary syllabus document located and read · [ ] Section III scope stated from
-it, not from the papers · [ ] stated plainly whether the list is primary-sourced
+**Primary-sourced. Stated plainly, as CLAUDE.md §10's mandatory rule requires: the scope below
+comes from the official NESA syllabus document, not from the six papers and not from the
+question bank.** The papers were then mapped *onto* it as a cross-check, which is the direction
+the rule demands.
+
+| | |
+|---|---|
+| Document | **Industrial Technology Stage 6 Syllabus**, `industrial-technology-st6-syl.docx` — supplied by the owner 2026-09-06, saved in `NESA Exams Folder/Industrial Technology - Multimedia/`, **not committed** (same copyright treatment as the papers) |
+| Version | **2008**, original published version updated to **August 2013** (minor amendments). Current for all six papers |
+| Read with | `python-docx` — **259 paragraphs and 20 tables**; the substantive content is in the **tables**, as the runbook warned |
+
+#### Where Section III sits in the syllabus
+
+The syllabus organises **both** courses around four sections (§6, *Course Structure*):
+
+> **A. Industry Study** · B. Design, Management and Communication · C. Production ·
+> D. Industry Related Manufacturing Technology
+
+**Section III of the exam is section A, Industry Study** — weighted **15% of the HSC course**
+(§9: *"Industry Study HSC (15%)"*, *"Students will undertake a broad study of industry related to
+the specific business studied in the Preliminary course."*).
+
+Critically, this content sits under **§9 → "Focus Area: All"**, i.e. it is common to all six
+focus areas (Automotive, Electronics, Graphics, Metal & Engineering, **Multimedia**, Timber) —
+**it is not Multimedia-specific content at all.** That is precisely why none of the seven
+existing Study Mode topics touches it: those were built from the *Multimedia Technologies (HSC)*
+focus-area table, a different table entirely.
+
+**Relevant outcomes:** `H1.1` investigates industry through the study of businesses in one focus
+area · `H1.2` … impact of new and developing technologies in industry · `H1.3` identifies
+important historical developments in the focus area industry · `H7.1` explains the impact of the
+focus area industry on the social and physical environment · `H7.2` analyses the impact of
+existing, new and emerging technologies … on society and the environment.
+
+#### The scope — 8 content areas, verbatim from the syllabus table
+
+The HSC "Focus Area: All" content is **two** tables. Only the first is Section III's:
+
+| Syllabus table | Strand | In scope here? |
+|---|---|---|
+| **Table 1 (9 rows)** | **Industry Study** | ✅ **This is Section III's entire scope** |
+| Table 2 (6 rows) | Design, Management & Communication + Production — Major Project, folio, working drawings, time/finance plans | ❌ **No** — school-assessed Major Project work, never examined in Section III |
+
+**The eight Industry Study content areas, with the syllabus's own sub-points:**
+
+| # | Content area | Sub-points (syllabus wording) |
+|---|---|---|
+| 1 | **Structural considerations** | organisation · management (roles and levels) · marketing and advertising · production and efficiency · **restructuring** · **quality control** |
+| 2 | **Technical considerations** | **mechanisation** · **specialisation/generalisation** · mass production · automation · new and emerging technologies |
+| 3 | **Environmental and sociological considerations** | alternative resources (power, material, processes, limitations) · recycling and reusing · waste management and minimisation · **pollution** · sustainable development · **rehabilitation of commercial sites** |
+| 4 | **Legislative requirements** | local · state · federal · environmental studies |
+| 5 | **Location** | land costs and availability · transportation facilities · workforce · impact on surrounding population · resource availability · geographical factors · waste management |
+| 6 | **Personnel issues** | industrial relations: **equity/EEO**, **unions**, **group negotiated contracts**, **individual contracts** · career and training opportunities · **specialisation and multi-skilling** · roles of industry personnel · work practices |
+| 7 | **Work health and safety** | government legislation · industry requirements: standards, **policing**, **prosecution** · **risk assessment** · safety training and human factors · **workplace culture** · **WHS communication** |
+| 8 | **Historical developments** | significant developments in the focus-area industry and their impact, including **manufacturing processes**, **materials**, **work practices** |
+
+⚠️ **Extraction note for anyone re-reading this table.** Its cells are merged, and `python-docx`
+reports a merged cell once per column it spans — so rows 1–6 return the *"Students learn about"*
+text **twice** (col0 and col1 identical) while rows 7–8 return *"Students learn to"* twice
+(col1 and col2 identical). Reading a fixed column index gives the wrong field on two of the eight
+rows. Read by de-duplicating the row's cells, not by index.
+
+#### Cross-check: the six papers map onto the scope one-to-one
+
+Done **after** the scope was derived, as a check on it — not as its source.
+
+| # | Syllabus content area | Examined in |
+|---|---|---|
+| 1 | Structural considerations | **2024 (a)** marketing/advertising by structure · **2024 (b)** structure → production and efficiency |
+| 2 | Technical considerations | **2023 (a)** ONE new technology · **2023 (b)** mass production and automation |
+| 3 | Environmental and sociological | **2020 (b)** strategies to minimise continuing environmental impact |
+| 4 | Legislative requirements | **2025 (a)** effects of legislative requirements on sustainable practices |
+| 5 | Location | **2020 (a)** environmental factors in selecting a new site |
+| 6 | Personnel issues | **2021 (a)** Industrial Relations issues · **2021 (b)** career and training opportunities |
+| 7 | Work health and safety | **2022 (a)** role of WHS legislation · **2022 (b)** strategies to improve safety |
+| 8 | Historical developments | **2025 (b)** historical developments in manufacturing processes |
+
+**All 8 areas are examined at least once across 2020–2025, and all 12 parts land inside the
+scope — nothing in the papers falls outside it.** Two questions reuse the syllabus's own wording
+almost verbatim: 2021 (b) *"career and training opportunities"* and 2025 (b) *"manufacturing
+processes"*.
+
+⚠️ **But "every area examined" is a row-level statement, and the VET lesson applies at the
+sub-point level.** Several sub-points are **in scope and never examined 2020–2025** — bolded in
+the scope table above. The most substantial:
+
+- **restructuring** and **quality control** (area 1) — 2024 examined organisation, management,
+  marketing and production/efficiency, not these
+- **mechanisation** and **specialisation/generalisation** (area 2)
+- **pollution** and **rehabilitation of commercial sites** (area 3)
+- **equity/EEO, unions, group negotiated contracts, individual contracts** and **specialisation
+  and multi-skilling** (area 6) — 2021 treated IR broadly
+- **policing, prosecution, risk assessment, workplace culture, WHS communication** (area 7)
+
+**This is exactly the VET "Working in the industry" situation** — content with real syllabus
+weight that six years of exam history makes invisible. It does **not** change Stage 4 (the port
+authors the twelve questions NESA actually set), but it is the reason a future **Stage 8** Study
+Mode topic must be built from this table and **not** from the six questions.
+
+#### What this changes downstream
+
+- **Stage 4:** nothing structural. It confirms the strand is single and coherent — one
+  Industry Study topic, not several — and gives the vocabulary to author `keywords` from. When
+  writing a part's keyword list, draw on **its own syllabus sub-points** (e.g. 2022's WHS part
+  can credit *risk assessment*, *workplace culture*, *WHS communication*, *standards*), which is
+  how the lists get rich enough for the 10–12 mark granularity Decision 2 flagged.
+- **Stage 8 (optional):** the topic is **"Industry Study"**, 8 content areas, sourced here. It
+  would be Multimedia's 8th Study Mode topic and the only one drawn from *Focus Area: All*
+  rather than the Multimedia focus-area table.
+- **`category`:** unchanged from Stage 1 — still **none**. The syllabus gives no code system for
+  this content (unlike Maths' `MA-F1` etc.), which is also why Multimedia's mapping grid names
+  topics in prose and was never parsed.
+
+⚠️ **Currency:** this is the **2008** syllabus as amended **August 2013**, and it is the one that
+governs every paper in the folder. Unlike Mathematics Advanced — where a 2017 syllabus is
+superseded by a 2024 one at the 2027 HSC — no successor document is present here, and none was
+searched for. **If a Stage 8 topic is built, confirm the syllabus is still current first**; do
+not assume from this note.
+
+**GATE 2** — [x] primary syllabus document located and read (owner-supplied, `python-docx`,
+paragraphs **and** tables) · [x] Section III scope stated **from the syllabus** — Industry Study,
+8 content areas — with the papers used only as an after-the-fact cross-check · [x] stated
+plainly that this is primary-sourced, and which table was excluded and why
 
 ---
 

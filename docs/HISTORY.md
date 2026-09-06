@@ -4425,3 +4425,94 @@ and VET Construction each have theirs saved; this subject does not. Downloading 
 owner's permission, so that is asked now rather than surfaced as a mid-task blocker later.
 
 **GATE 1 is met on all four items.** Next: Stage 2, on the owner's answer.
+
+## 2026-09-06 (later still, ×4) — Multimedia Section III, Stage 2 (Syllabus grounding): Section III is the *Industry Study* strand, and it is common to all six focus areas
+
+**Planning and record-keeping only — no code, data, credential, schema or pricing fact changed.**
+Only `docs/subject-plans/multimedia-section-iii.md` (plus this file and the CLAUDE.md roadmap row)
+was touched. Local CI re-run and green (`Issues: 0`; 334 written checks, 0 wrong; `npm test`
+73/73).
+
+Stage 2 was **blocked at the end of the previous session** — the Industrial Technology syllabus
+was not on disk and downloading it needed permission. The owner supplied it directly, so Stage 2
+ran in the same session.
+
+### Source
+
+`NESA Exams Folder/Industrial Technology - Multimedia/industrial-technology-st6-syl.docx` —
+**Industrial Technology Stage 6 Syllabus, 2008, original version updated to August 2013**. Not
+committed to git, same copyright treatment as the papers. Read with `python-docx` (`pandoc` was
+unavailable in this environment on a previous port): **259 paragraphs and 20 tables**, and — as
+the runbook warned — the substantive content is entirely in the **tables**.
+
+### The finding that matters: this is *Focus Area: All* content, not Multimedia content
+
+The syllabus organises both courses around four sections (§6): **A. Industry Study**, B. Design,
+Management and Communication, C. Production, D. Industry Related Manufacturing Technology.
+**Exam Section III is section A, Industry Study**, weighted **15% of the HSC course**.
+
+Its content lives under **§9 → "Focus Area: All"** — shared by all six focus areas (Automotive,
+Electronics, Graphics, Metal & Engineering, Multimedia, Timber). **It is not Multimedia-specific
+at all.** That is the concrete reason none of the seven existing Study Mode topics touches any of
+it: those were built from the separate *Multimedia Technologies (HSC)* focus-area table. The
+runbook had recorded the symptom (*"a different strand from everything already in the subject"*);
+this is the cause.
+
+Relevant outcomes: `H1.1`, `H1.2`, `H1.3`, `H7.1`, `H7.2`.
+
+### Scope — 8 content areas, taken from the syllabus, not the papers
+
+The HSC "Focus Area: All" content is **two** tables, and only the first is in scope. The second
+(6 rows — design principles, working drawings, time and finance plans, folio, production) is the
+**Major Project** strand: school-assessed, never examined in Section III. Excluded explicitly.
+
+The eight Industry Study areas: **Structural considerations · Technical considerations ·
+Environmental and sociological considerations · Legislative requirements · Location · Personnel
+issues · Work health and safety · Historical developments**, each with the syllabus's own
+sub-points recorded verbatim in the runbook.
+
+### Cross-check, run *after* deriving the scope
+
+All six papers map onto it **one-to-one**: 2024 → Structural, 2023 → Technical, 2020(b) →
+Environmental, 2025(a) → Legislative, 2020(a) → Location, 2021 → Personnel, 2022 → WHS, 2025(b) →
+Historical. **All 8 areas are examined at least once and all 12 parts land inside the scope —
+nothing in the papers falls outside it.** Two questions reuse syllabus wording almost verbatim
+(2021(b) *"career and training opportunities"*, 2025(b) *"manufacturing processes"*).
+
+⚠️ **"Every area examined" is a row-level statement, and the VET lesson bites one level down.**
+Several sub-points are **in scope and never examined 2020–2025** — *restructuring*, *quality
+control*, *mechanisation*, *specialisation/generalisation*, *pollution*, *rehabilitation of
+commercial sites*, *equity/EEO*, *unions*, *group- and individual-negotiated contracts*,
+*specialisation and multi-skilling*, *policing*, *prosecution*, *risk assessment*, *workplace
+culture*, *WHS communication*. This is exactly the VET *"Working in the industry"* situation:
+real syllabus weight made invisible by exam history. It does **not** change Stage 4 — that ports
+the twelve questions NESA actually set — but it is why a future Stage 8 topic must be built from
+this table and **not** from the six questions.
+
+### Extraction trap recorded
+
+The Industry Study table's cells are **merged**, and `python-docx` returns a merged cell once per
+column it spans. Verified row by row: rows 0–6 return `col0 == col1` (the *"Students learn about"*
+text twice), while **rows 7–8 return `col1 == col2`** (the *"Students learn to"* text twice). So
+reading a fixed column index yields the **wrong field on two of the eight rows** — Work Health and
+Safety and Historical Developments, the two whose sub-points matter most for keyword authoring.
+De-duplicate the row's cells rather than indexing.
+
+### Downstream
+
+- **Stage 4** (now next): nothing structural changes. The strand is confirmed single and
+  coherent — one Industry Study topic, not several — and the syllabus sub-points are the
+  vocabulary to author `keywords` from, which is how the lists get rich enough for the 10–12 mark
+  granularity Stage 1 flagged (e.g. 2022's WHS part can credit *risk assessment*, *workplace
+  culture*, *WHS communication*, *standards*).
+- **Stage 8** (optional): the topic is **"Industry Study"**, 8 areas, primary-sourced here.
+- **`category`:** unchanged — still none. The syllabus gives no code system for this content
+  (unlike Maths' `MA-F1`), which is also why Multimedia's mapping grid names topics in prose and
+  was never parsed.
+
+⚠️ **Currency:** this is the 2008 syllabus as amended August 2013, and it governs every paper in
+the folder. Unlike Mathematics Advanced (2017 superseded by 2024 at the 2027 HSC), no successor
+is present here — **and none was searched for**. Confirm currency before building a Stage 8
+topic; do not infer it from this note.
+
+**GATE 2 met on all three items.** Next: **Stage 4 (Port)**.
