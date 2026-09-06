@@ -4635,3 +4635,113 @@ stays green; committing one is how a subject opts in to hard enforcement.
 
 No credential, pricing, schema or engine-contract fact changed. No MC question, no existing
 written question, and no omission declaration was altered.
+
+## 2026-09-06 (later still, ×6) — Multimedia Stage 6b: written-answer review, 35/35 — and a 1-mark question was scoring a correct answer 0/1
+
+**Multimedia becomes the second subject with a committed review ledger, and the first taken to
+100% in a single pass.** All 35 written questions were compared against NESA's committed sample
+answers and criteria rows in `data/answer-key/written/multimedia.json`; the marking guidelines
+themselves were never re-read (§10). `check_written_key.cjs` now **enforces** the subject:
+**35/35 — 23 ok, 9 corrected, 3 divergent-accepted**.
+
+### Provenance, stated before anything else
+
+`REVIEW_METHOD` reads: *"assistant-compared against NESA's committed sample answers and criteria
+rows; NO human sign-off on any question. The six Section III questions were authored by the same
+session that reviewed them."* The checker prints that line on **every run**, so nothing
+downstream can inherit an overstatement — which is precisely the failure the VET ledger was
+corrected for earlier the same day.
+
+**This review is weaker than VET's in one specific way**: VET at least had a human spot-check on
+a small subset. This has none, and six of its 35 entries are self-review of work authored hours
+earlier in the same session. Both facts are in the ledger and in those six entries' notes.
+
+### The nine corrections — every one invisible to CI, because the marks were right
+
+- **2022 Q11 — the one that actually cost marks.** A 1-mark *"identify AN advantage of PDF"*
+  question carried **seven keywords** with `minKeywords: 1`. The offline formula is
+  proportional, so a student who correctly identified one advantage matched about 3 of 7 and
+  `round(3/7 × 1) = 0` — **a correct answer scored 0/1**. Converted to `acceptableAnswers`,
+  which returns full marks on any one match and is the mechanism the subject's other four 1-mark
+  questions already use. **Proved in the real engine rather than argued: the same correct answer
+  scores 0/1 before and 1/1 after.**
+- **2020 Q14, 2023 Q12, 2024 Q12, 2024 Q13** — each carried a keyword the engine could never
+  credit because the word appeared nowhere in its own model answer (`compress`/`format`,
+  `bandwidth`, `recogni`, `grainy`). In every case **the missing word is one NESA's own sample
+  answer uses** — `grainy` is literally NESA's word for what the bank called *"blurry or
+  pixelated"* — so the fix was to put NESA's vocabulary into the model answer, not to invent
+  anything.
+- **2021 Q11** — `acceptableAnswers` omitted **ten** vector packages NESA itself names (Adobe
+  Fireworks, PaintShop Pro, Lunacy, Draw Pad, Vecteezy Editor, Snappa, Artboard, Designimo …),
+  so a student answering with NESA's own accepted software was marked wrong. The same defect
+  class as VET 2023 16(a)(i)'s missing *'sliding saw'*.
+- **2020 / 2021 / 2023 / 2024 Q11** — no `bandDescriptors` at all, so AI marking fell back to the
+  generic 0/50/100% rubric. **Resolved rather than deferred**: each gained descriptors built from
+  its single official criteria row — the degenerate **N = 1** case, `full` verbatim and
+  `partial`/`minimal` stating non-attainment in VET's established house style. That is the only
+  authored descriptor text in the subject and every entry flags it. Their `acceptableAnswers`
+  were deliberately kept and no keywords added, since `scoreOne()` short-circuits on
+  `acceptableAnswers` and keywords beside it would be inert dead data.
+
+**Three `divergent-accepted`** — 2020 Q13, 2021 Q13 and 2023 Q13, whose NESA samples are costing
+**tables** or equation layout extracting as run-together text, so the bank's worked prose
+necessarily reads unlike them. Each was compared **numerically**, with every figure quoted in its
+ledger note. 2022 Q13 is deliberately **`ok`** rather than divergent, because NESA's sample there
+is readable prose the bank follows exactly — the distinction matters if the verdict is to mean
+anything.
+
+### Two method findings worth carrying to the next subject
+
+⚠️ **Mechanical triage was materially weaker than the engine's own matcher, in a way that would
+have wasted a lot of reading.** `review_triage.py` reported roughly **20** keywords *"absent from
+modelAnswer"*; a faithful mirror of `keywordHit()` found only **five** the engine genuinely
+cannot credit. The gap is the matcher's **4-character shared-stem rule** — *"calls to action"*
+credits the keyword `call to action`, which triage scores as absent. Decide with the engine's
+matcher; use triage only to order the queue.
+
+⚠️ **A new mechanical check earned its keep and should become standard: what does the engine
+award at a question's OWN `minKeywords`?** If `round(min/n × marks)` is 0, the question scores
+zero for an answer it itself calls sufficient. Run across all 35, exactly **one** failed — 2022
+Q11, the defect above. It is cheap and it finds a class that reading alone missed: the mark check
+cannot see it, and the question's own model answer still scored full, so every existing gate was
+green.
+
+⚠️ **A matcher looseness that is NOT fixable per question**, recorded on 2020 Q13:
+`keywordHit`'s `kw.startsWith(word)` branch means the bare digit **`2` credits the keyword
+`2670`**, and `1` credits `1560` — numeric keywords fire on almost any answer containing digits.
+Same class as the `pi`/`pipe` looseness noted on VET 2024 19(b). Left as authored; the fix is an
+engine change, not a content change.
+
+### Verified
+
+- CI enforces the ledger — `35/35 with a committed review entry`, with the `method:` line
+  printing the provenance every run.
+- **The staleness guarantee was tested, not assumed**: corrupting a fingerprint makes that entry
+  **STALE and exits 1**, on a single-part question **and** on a merged multi-part one (the
+  checker aggregates the constituent parts' sample answers). ⚠️ A first attempt appeared to show
+  multi-part entries were unprotected; that was **my own error** — I corrupted a misspelt
+  `sampleAnswerWordFingerprint` rather than the real `sampleAnswerWordsFingerprint`. Recorded
+  because it would have been reported as a hole in the guarantee.
+- **Whole subject in the real engine**: all 35 score full from their own model answers, **0
+  `undefined`**, **0 generic band fallbacks**, **0 missing `bandDescriptors`**.
+- **Viewport sweep at 320 / 430 / 1400 / 1920**, 41 renders each: 0 overflows, 0 missing marks
+  badges, 0 `undefined` on screen, 0 over-wide images. No console errors.
+- **Only teaching/scoring fields changed**, machine-checked against `HEAD`: 9 questions touched
+  across `answer` / `acceptableAnswers` / `keywords` / `minKeywords` / `bandDescriptors` only —
+  no marks, no `q`, no `stem`, no `parts`, no MC question, no omission declaration, and
+  `mcQuestions` / `studyNotes` / `omittedQuestions` byte-identical.
+- Full local CI: `MC=706 Written=380 imageRefs=337 missingImages=0`, `Issues: 0`; 285 MC and 340
+  written checks, 0 wrong; `npm test` 73/73.
+
+### Found while verifying — OUT OF SCOPE, deliberately not fixed
+
+**16 single-part questions in the other four subjects do not score full from their own model
+answer.** Most are near-misses (9/10, 3/4, 6/7), but two are severe: **`mathematics-standard-2`
+2025 Q17 scores 0/3** and **`mathematics-advanced` 2024 Q30 scores 1/3**. Multimedia is 0. Those
+subjects have no ledger so CI stays green, and fixing them is the review backlog's job, not this
+stage's — but the `minKeywords` threshold check and the self-score check should both be run
+across a subject before its ledger is committed.
+
+**Remaining to review: 305 of 380** — Maths Advanced 126, Standard 2 145, HMS 40 (HMS has no
+answer key and cannot have one until after the 2026 HSC, so it cannot be reviewed this way at
+all). **Stage 7 (Release) is next** for Section III.

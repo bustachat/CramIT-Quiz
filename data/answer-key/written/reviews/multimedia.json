@@ -1,0 +1,440 @@
+{
+  "subject": "multimedia",
+  "note": "Written-answer review ledger. One entry per written bank question, recording that its modelAnswer, keywords and bandDescriptors were compared against NESA's official sample answer and criteria in data/answer-key/written/. ⚠️ `reviewMethod` says WHO did the comparing and how far a human checked it — do not read an entry as a per-question human sign-off unless that field says so. `sampleAnswerFingerprint` hashes the OFFICIAL answer as at review time: regenerate the key and any review whose official WORDS moved is void, not stale. `sampleAnswerWordsFingerprint` hashes the same text with word ORDER discarded, so a pure re-layout by the extractor is reported rather than treated as NESA changing. See docs/porting-playbook.md section 6. Rebuild with scripts/build_review_ledger.py; never hand-edit.",
+  "reviewMethod": "assistant-compared against NESA's committed sample answers and criteria rows; NO human sign-off on any question. The six Section III questions were authored by the same session that reviewed them",
+  "reviewedAt": "2026-09-06",
+  "reviews": {
+    "2020": {
+      "11": {
+        "reviewedAt": "2026-09-06",
+        "verdict": "corrected",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:ce682be3904e3471b7104963afb8d73282ce380b609b8ee62fb417ac567955bf",
+        "sampleAnswerWordsFingerprint": "sha256:12271ca045182aaead8385528b546c86d97871a20cfd916d36764b2d9be3a9d7",
+        "note": "Answer and acceptableAnswers match NESA exactly ('Real Time Streaming Protocol'). Corrected only in that it had NO bandDescriptors, so AI marking fell back to the engine's generic 0/50/100% rubric. NESA prints ONE criteria row ('Correctly identifies RTSP'), the degenerate N=1 case: full is that row verbatim, partial and minimal state its non-attainment in the established house style -- authored text, not NESA's, and flagged here as such. Deliberately keeps acceptableAnswers rather than keywords: scoreOne() short-circuits on acceptableAnswers, which is the right mechanism for a one-fact recall question, and keywords beside it would be inert dead data (the VET 2023 16(a)(i) finding)."
+      },
+      "12": {
+        "reviewedAt": "2026-09-06",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:ac0dd00f846841651f1ef10e4ea7e510295e2f3f240d0c785bdcd335dddcf234",
+        "sampleAnswerWordsFingerprint": "sha256:ec0ad35ffdf82af91ce1b3e4ecb4c018558823783f18b9754cfdef96b6cf19ae",
+        "note": "Matches NESA (optical systems track markers on the actor, movements in 3D, computers assemble the data to approximate the character's movements). The bank adds infrared cameras and the skeleton model, which is how optical mocap actually works -- an extension, not a divergence."
+      },
+      "13": {
+        "reviewedAt": "2026-09-06",
+        "verdict": "divergent-accepted",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:de6c055615c111a42ce679294b96964f82916f74fe02613b3f651c238ee03af9",
+        "sampleAnswerWordsFingerprint": "sha256:ecfade56f67d390116e5c13b1f3a48a7a5ac2268a509f0dc73ff97d0475a9728",
+        "note": "NESA's sample answer is a costing TABLE that extracts as run-together layout ('Item Cost per item Number required Cost Paper (ream) $25.00 30 750.00 ...'), so the bank's worked prose necessarily reads unlike it. Compared numerically instead: paper 30 reams x $25 = $750.00, black toner 7.5 rounded up to 8 x $45 = $360.00, colour toner 23.07 rounded up to 24 x $65 = $1560.00, total $2670.00. Every figure agrees, including both round-ups. NOTE a matcher looseness, not fixable per question: the keywords are numeric, and keywordHit()'s kw.startsWith(word) branch means the bare digit '2' credits the keyword '2670' and '1' credits '1560' -- so those two fire on almost any answer containing digits. Same class as the 'pi'/'pipe' looseness noted on VET 2024 19(b). Left as authored; the fix is an engine change, not a content change."
+      },
+      "14": {
+        "reviewedAt": "2026-09-06",
+        "verdict": "corrected",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:719132cfe2f20debc250ce0abf8532a48600bd3cf3eee9b71ddc8153eceb245e",
+        "sampleAnswerWordsFingerprint": "sha256:a5fcfb58b06752974bf8675c7665200a2b84026dc55628b4385c6df388cf01c2",
+        "note": "Content matched NESA (convert to a smaller format, trim unwanted parts, change bit rate, resolution and frame rate). Corrected because TWO of its own keywords -- 'compress' and 'format' -- appeared nowhere in its model answer, so the engine could never credit them; a student writing NESA's own vocabulary was marked down for it. The model answer's last sentence now reads 'converting to a more efficient codec or file format (such as H.265/HEVC instead of H.264, or WMV) applies stronger compression', taking the words from NESA's own sample ('convert to a smaller sized format such as WMV', 'FLV program will also compress MP4'). Nothing else changed."
+      },
+      "15": {
+        "reviewedAt": "2026-09-06",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:44b55c87f87c29bf15654de68b88c5fea05b95793f27a053ce1b41591dd80d48",
+        "sampleAnswerWordsFingerprint": "sha256:1d228a19fb3c1e04efb6b1b576f74b0b26335c9675354254e9d7357dcde5b7ef",
+        "note": "Covers NESA's list point for point (links to services, logo, headline with name/purpose/address/contact, site map and return links, photos or graphics, search function, content blocks, social proof/testimonials, special offers/subscriptions) and adds calls to action. Triage flagged 'call to action' as absent from the model answer; it is not -- the answer says 'Calls to action', which keywordHit() credits on the 4-character shared stem."
+      },
+      "16": {
+        "reviewedAt": "2026-09-06",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:8cbf7b57a75906021c1d2c1defd7f57d9d0febdcc8703d3e3fcba36e0215966b",
+        "sampleAnswerWordsFingerprint": "sha256:f4657b03eae48e45583d03bed5fd26023a36a61785e91e1c580ad6b62ee76e85",
+        "note": "Section III, ported earlier THIS session and reviewed by the same session -- self-review, weaker evidence than an independent read. Model answers authored from NESA's committed sample answer (with the Mapping Grid that parse_paper() swallows into every (b) sample stripped out); per-part marks taken from the key and asserted against it; bandDescriptors generated VERBATIM from the criteria rows by the standing collapse rule, not authored. (a) location factors and (b) strategies to minimise continuing environmental impact; NESA's grid files both under 'Environmental and sociological considerations'. (b)'s answer is written with points for and against, which is what NESA's top band explicitly asks for."
+      }
+    },
+    "2021": {
+      "11": {
+        "reviewedAt": "2026-09-06",
+        "verdict": "corrected",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:341fba6cfa3aa932d0d1e32296090ad55b7f27eb882a0635c4bb2908aa6d171b",
+        "sampleAnswerWordsFingerprint": "sha256:74a843de0da3efb8a46eac4fc13928fdccc6af133ba18aad6f50f51a0c25623a",
+        "note": "TWO corrections. (1) acceptableAnswers listed only Adobe Illustrator, Corel Draw, Inkscape, Affinity Designer and the generic 'vector', but NESA also names Adobe Fireworks, PaintShop Pro, Lunacy, Draw Pad, Vecteezy Editor, Snappa, Artboard, Vector Magic, Vectornator Pro and Designimo -- a student answering with NESA's own accepted software was marked wrong. Same defect class as VET 2023 16(a)(i)'s missing 'sliding saw'. The names not already caught by the 'vector' substring were added. (2) Had no bandDescriptors; added from NESA's single criteria row (degenerate N=1, partial/minimal authored non-attainment, as 2020 Q11)."
+      },
+      "13": {
+        "reviewedAt": "2026-09-06",
+        "verdict": "divergent-accepted",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:9ec6b15b4870b6f4cd182bc82c2913de6b025a5a61052ec9d41a1a6e81b583b5",
+        "sampleAnswerWordsFingerprint": "sha256:96b08fcebf900d2a709d83ac9e4c22aa2275bcd2f9044d316143bd9165aa46b2",
+        "note": "NESA's sample extracts as mangled equation layout ('66 355 200 / (8 x 1024 x 1024) = _= 66 _7.91MB 355 200 / 8388608'), so the bank's step-by-step prose necessarily reads unlike it. Compared numerically: 1920 x 1080 = 2 073 600 pixels; x 32 bits = 66 355 200 bits; / 8 = 8 294 400 bytes; / 1 048 576 = 7.91 MB. Every figure agrees, including NESA's own 8388608 divisor route. Same numeric-keyword looseness as 2020 Q13 -- the single-character keyword '8' fires on any answer containing an 8."
+      },
+      "14": {
+        "reviewedAt": "2026-09-06",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:bdaf462053c87b646b0f25c2634cc2d02c623a6d6fc7c2dd2cc9a01de8622a02",
+        "sampleAnswerWordsFingerprint": "sha256:d4b1aaad82ec4bb39d09cd79c8cb03e26a3d604dee1f242d9ab92b58393d8057",
+        "note": "Matches NESA's structure (compression reduces file size for sharing; lossy = smaller files, quality lost, MP4 the example; lossless = quality preserved, very large files, large storage; high-end cameras shoot raw lossless and normally require post-processing; lossy codecs use algorithms to remove still pixels)."
+      },
+      "15": {
+        "reviewedAt": "2026-09-06",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:646f9a2a26cb24d205c30b07825121ab75a4021af694363263253b2541e3274f",
+        "sampleAnswerWordsFingerprint": "sha256:884de5b894df32bebe2b27ea20cfd7d274a35e375b187c4e9e2289bb7aff52e2",
+        "note": "Matches NESA (licensing fees and infringement, permission for photos and video, copyright licensing to prevent legal action, Australian classification so viewers can judge suitability, consumers following copyright law, protecting producers' intellectual property). The bank adds privacy/consent and fair use, both reasonable extensions of the same strand. NESA also lists WHS as an alternative; not covered, but the question asks for ethical issues and the bank gives four substantial ones."
+      },
+      "16": {
+        "reviewedAt": "2026-09-06",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:9a5c95920e790baf6679ef44419ed89718c8fc15e281e2bf4a8af467457887f7",
+        "sampleAnswerWordsFingerprint": "sha256:e1c2639ae3ce5273c553f090e2cde7c39a90b353934b0dfffbc3569605646aef",
+        "note": "Section III, ported earlier THIS session and reviewed by the same session -- self-review, weaker evidence than an independent read. Model answers authored from NESA's committed sample answer (with the Mapping Grid that parse_paper() swallows into every (b) sample stripped out); per-part marks taken from the key and asserted against it; bandDescriptors generated VERBATIM from the criteria rows by the standing collapse rule, not authored. (a) Industrial Relations issues and (b) career and training opportunities; NESA's grid files both under 'Personnel issues'. (b) follows NESA's own two-branch structure (expansion vs downsizing) and links each strategy to its outcome, which is what the top band requires."
+      }
+    },
+    "2022": {
+      "11": {
+        "reviewedAt": "2026-09-06",
+        "verdict": "corrected",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:1e4cc8a4fbd4e545a37bb2e9250017fab73ae0a68712c989106fa5e1c3be027a",
+        "sampleAnswerWordsFingerprint": "sha256:80f4c81da4d3974112b3da5ca657c801c4326784d4678b6d058432986f8bd138",
+        "note": "The most consequential defect found in this review, and it cost marks. This 1-mark question asks the student to identify ONE advantage of PDF, but it carried SEVEN keywords with minKeywords 1, and the offline formula is proportional: a student who correctly identified one advantage matched about 3 of 7, and round(3/7 x 1) = 0, so a CORRECT answer scored 0/1. Measured across the subject, it was the only question that scored zero at its own stated threshold. Converted to acceptableAnswers ('formatting', 'platform', 'consistent', 'prevent', 'password', 'unauthorised'), which returns full marks on any one match -- the right semantics for 'identify ONE', and the mechanism the subject's other four 1-mark questions already use. Separately, 'platform' and 'cross-platform' appeared nowhere in the model answer; its first sentence now ends 'software platforms -- that is, they are cross-platform', taking 'platforms' from NESA's own sample ('formatting to be maintained across different software platforms'). Content was correct throughout and is unchanged."
+      },
+      "12": {
+        "reviewedAt": "2026-09-06",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:0ed10cfde89a3180dae1175340272554ac3b7516b9de12473d4b4abf9e851c93",
+        "sampleAnswerWordsFingerprint": "sha256:f94390eac28aa730ac8584d11dc340939a48324eeb81cca8256bb532d64115a1",
+        "note": "Matches NESA (a smaller copy of the original, used on a web page to reduce download time, and a preview so the full file need not be downloaded to be viewed). The bank adds bandwidth and gallery/playlist browsing, which its own model answer demonstrates."
+      },
+      "13": {
+        "reviewedAt": "2026-09-06",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:2603d69624417a5092cfde723c0a4fb2d768e57755bf80a78f6b5ec1e8e1da01",
+        "sampleAnswerWordsFingerprint": "sha256:7d1e38ea76ca356e7e34cff0ea3e82c3d4551946d15f77dc3654331490c6a4f0",
+        "note": "NESA's sample here is readable prose rather than mangled table layout, and the bank follows it exactly: 550 MB x 8 = 4400 megabits, 4400 / 80 = 55 seconds. Marked ok rather than divergent-accepted for that reason -- unlike 2020/2021/2023 Q13. The single-character keyword '8' is loose in the same way noted on 2020 Q13."
+      },
+      "14": {
+        "reviewedAt": "2026-09-06",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:1ac665a54141e1dcb7b11d8b78d49b2dc1891ef8e20c4239bf6cbe7f702c5f16",
+        "sampleAnswerWordsFingerprint": "sha256:08e74167b3f7c9f6620367478cbf893dcc0ba1cac48b788ed33c557570c9752c",
+        "note": "Matches NESA (dangerous activities completed safely in an immersive virtual environment, training for specialist fields such as the army and pilots, specialist hardware and software expensive to set up and maintain, motion sickness). The bank's surgeons/emergency responders and eye strain are extensions of NESA's own examples."
+      },
+      "15": {
+        "reviewedAt": "2026-09-06",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:210cfc368736745a27945b10dd6d6e585ebb66148be64e90490ccf42a49e98ad",
+        "sampleAnswerWordsFingerprint": "sha256:a762b1ec63558b38a1bb64f5ae88dcda5df305b243adf8a6c308906175812970",
+        "note": "Matches NESA (pre-made reference bank of assets, tweening and morphing when placing mouth shapes on the timeline, each shape matched to its corresponding audio sound, synchronising as the final step). The bank adds the phoneme and waveform terminology and the lip-sync name, all standard. NESA's 'saves the animator time' point is implicit in the bank rather than stated -- noted, not a defect at this mark value."
+      },
+      "16": {
+        "reviewedAt": "2026-09-06",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:5ecf61c76af08e36654d46b921f3c6a10dfb58946a55768a5d2a7f45bc576304",
+        "sampleAnswerWordsFingerprint": "sha256:514a6df7f364b8c3688ab423f5ae50fa7092dbe550c649a81ae9226166dc8cc3",
+        "note": "Section III, ported earlier THIS session and reviewed by the same session -- self-review, weaker evidence than an independent read. Model answers authored from NESA's committed sample answer (with the Mapping Grid that parse_paper() swallows into every (b) sample stripped out); per-part marks taken from the key and asserted against it; bandDescriptors generated VERBATIM from the criteria rows by the standing collapse rule, not authored. (a) the role of WHS legislation and (b) strategies to improve safety; NESA's grid files both under 'Work, health and safety'. (b) is organised around the hierarchy of control, which NESA's own sample leads with, and explains how each strategy addresses a hazard rather than listing them, as the top band requires."
+      }
+    },
+    "2023": {
+      "11": {
+        "reviewedAt": "2026-09-06",
+        "verdict": "corrected",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:ff3e957256f4edde5eedbf0c58aebd8726f3354e1c5adb5d2e3199d97a12d9be",
+        "sampleAnswerWordsFingerprint": "sha256:dc4e6e86d69d8386d437dcd50999f9acaebc2e2ae804c3787744d5915dd0e131",
+        "note": "acceptableAnswers already covered NESA's interactivity, sensory feedback and believability, plus immersion, presence and haptic. Corrected only in that it had NO bandDescriptors; added from NESA's single criteria row (degenerate N=1, partial/minimal authored non-attainment, as 2020 Q11)."
+      },
+      "12": {
+        "reviewedAt": "2026-09-06",
+        "verdict": "corrected",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:939a9f9656c4f2c2a5a5145d793fa13c352240198ecfd3328ed53aaa41fc3501",
+        "sampleAnswerWordsFingerprint": "sha256:d3420c83cfb8c261aaf9dda77d44f517d552c3431367e43facf646509f4f2c2b",
+        "note": "Content matched NESA (high-resolution graphics significantly increase file size, leading to longer loading times and more storage, and requiring more processing power causing performance issues on lower-end devices). Corrected because the keyword 'bandwidth' appeared nowhere in the model answer and so could never be credited. The answer now reads 'require more storage space, consume more bandwidth and take longer to load'; NESA's own alternatives include 'Slower internet connection', which is the same idea. Nothing else changed."
+      },
+      "13": {
+        "reviewedAt": "2026-09-06",
+        "verdict": "divergent-accepted",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:45952d80982a27aaa9310908f65938f74a911468fc3a3ad1190c377ba56d8b30",
+        "sampleAnswerWordsFingerprint": "sha256:41eddf523bbc70fc92952e69273545e5a60379d74b0e8ada391ebde050baaccb",
+        "note": "NESA's sample is a costing TABLE that extracts as run-together layout ('BUSINESS CARD COSTING Cost per unit Number of units required Total $0.85 800 $680 ...'), so the bank's worked prose necessarily reads unlike it. Compared numerically: 800 x $0.85 = $680, 800 x $0.10 gloss = $80, design $60 flat, total $820. Every figure agrees. NESA also prints an alternative costing at design $40 giving $800; the stem specifies $60, so $820 is the answer for this question. Numeric keywords are loose in the same way as 2020 Q13 ('80' and '60' are short)."
+      },
+      "14": {
+        "reviewedAt": "2026-09-06",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:e2c5a99188368a7254ed581150412777de15a95e6b95d1ffae7062a64e8f39c1",
+        "sampleAnswerWordsFingerprint": "sha256:2e285fedee437c396ce7e69651cb49fa5494da11fb834d436c8b81427e5d038a",
+        "note": "Follows NESA's process step for step (audio file added to the editing software library, selected and placed at the desired location on the timeline, fade in and fade out because abrupt cuts sound unnatural, volume adjusted, playback to test for accuracy and natural fit, repeat as necessary)."
+      },
+      "15": {
+        "reviewedAt": "2026-09-06",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:95d2a540664b2d19d7c8bb43cc0a9978cd00c28a4a163be44d76d9438c1f7977",
+        "sampleAnswerWordsFingerprint": "sha256:f67610ae1a32be822551b20fe2dd6579008090112e5242eef522a453bf6c7d3e",
+        "note": "Covers NESA's ethical strand (intellectual property, permissions and licences, copyright, fair use, reputational damage) and legal strand (liabilities, trademark law, privacy and consent, proper attribution). NESA also mentions defamation, which the bank does not name -- noted; the bank covers privacy and consent, and the question is answered comprehensively at 5 marks."
+      },
+      "16": {
+        "reviewedAt": "2026-09-06",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:e31d63e698dd84cfb14cbb003ca0458497e76bdf9180d01a4bc53abc6ec8b8c1",
+        "sampleAnswerWordsFingerprint": "sha256:bda78204bc61009981484af0f3324be17efa365e4a094b1499ef96181110156b",
+        "note": "Section III, ported earlier THIS session and reviewed by the same session -- self-review, weaker evidence than an independent read. Model answers authored from NESA's committed sample answer (with the Mapping Grid that parse_paper() swallows into every (b) sample stripped out); per-part marks taken from the key and asserted against it; bandDescriptors generated VERBATIM from the criteria rows by the standing collapse rule, not authored. The only year with a 3 + 12 split rather than 5 + 10. (a) is the degenerate N=3 criteria case, where the top/middle/bottom collapse maps one-to-one with no joining. (b) is the longest response in the subject at 12 marks and is written with advantages, disadvantages and an overall judgement, integrating industry examples (rendering farms, disc replication, template publishing, automated encoding) because NESA's top band requires them."
+      }
+    },
+    "2024": {
+      "11": {
+        "reviewedAt": "2026-09-06",
+        "verdict": "corrected",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:1770bb53de92c14954b9d249e0f69834e5334c70fab50785db4429f3b0397eea",
+        "sampleAnswerWordsFingerprint": "sha256:94e97374ebf31205cd66ad4e5b06fa57bc622dcf5037ebea2582e0373e240da7",
+        "note": "acceptableAnswers covers NESA's MP3, MIDI, wav and wma, plus aac, flac and ogg. Corrected only in that it had NO bandDescriptors; added from NESA's single criteria row (degenerate N=1, partial/minimal authored non-attainment, as 2020 Q11)."
+      },
+      "12": {
+        "reviewedAt": "2026-09-06",
+        "verdict": "corrected",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:9ffd676a3c4ed5fdc06ce38115d59d537881fc28881e0cef2c625da9c35a3cfb",
+        "sampleAnswerWordsFingerprint": "sha256:7f6763c3153634b6e8ec68dc77bebd5ba75a27c4553db797910b98e8a33c0238",
+        "note": "Content matched NESA (serifs help distinguish letterforms and make text easier to read at small sizes, clearer in print, and easier for the eye to track and recognise words quickly). Corrected because the keyword 'recogni' appeared nowhere in the model answer. The answer now reads 'easier to track, distinguish and recognise individual words and characters quickly', taking 'recognise' from NESA's own sample. Nothing else changed."
+      },
+      "13": {
+        "reviewedAt": "2026-09-06",
+        "verdict": "corrected",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:0b8c59869dece3818f9cad25887961a51aa1f76222965d40150fa0ff47b22617",
+        "sampleAnswerWordsFingerprint": "sha256:758a4b5346cfdc2ab8c8dbcff5b0b96b33468a6e4ce8591923611aa694d9a467",
+        "note": "Content matched NESA (bitmaps are made of pixels, vectors of lines described by equations; zooming a bitmap makes it grainy while a vector stays smooth and sharp). Corrected because the keyword 'grainy' -- NESA's own word -- appeared nowhere in the model answer, which said only 'blurry or pixelated'. Now reads 'appear grainy, blurry or \"pixelated\"'. Nothing else changed."
+      },
+      "14": {
+        "reviewedAt": "2026-09-06",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:8f017bd7bea543daeb52bbf751d76b0c67121db6d5931b11ab8a0995f7e54608",
+        "sampleAnswerWordsFingerprint": "sha256:9e37fbe9ff2488696f8eeb02e20322472a15a586798dbf1b699d9e7dc459a6eb",
+        "note": "Matches NESA (close-up shots for intense emotion, wide shots to establish and set the scene, low angle for power or authority, tracking shots for cinematic impact) and adds medium and high-angle shots with examples, which the 'use examples' instruction invites."
+      },
+      "15": {
+        "reviewedAt": "2026-09-06",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:39db556d3d180993bf098ad28943d55a000c8433faf32818749749f42f168243",
+        "sampleAnswerWordsFingerprint": "sha256:61224aad3c5cadd05ce94c498ab4e3eb67da23716f5c28d45457d5351e134e92",
+        "note": "Follows NESA closely (detailed storyboard identifying the effects scenes, assessment of software/hardware/skill-set requirements, green screens for chroma keying with actors, 3D models and textures and digital assets, lighting and coordination for seamless post-production integration, added effects layers, and the CGI-in-Marvel-films example NESA itself gives)."
+      },
+      "16": {
+        "reviewedAt": "2026-09-06",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:7b75e46c67dd19a127e115572eff88d8beea9eb192cdd864537649cd2203baf4",
+        "sampleAnswerWordsFingerprint": "sha256:74439a5f8d858c0c283fe3800106c815f02378a2567e2dabea0e6e7d08f1728c",
+        "note": "Section III, ported earlier THIS session and reviewed by the same session -- self-review, weaker evidence than an independent read. Model answers authored from NESA's committed sample answer (with the Mapping Grid that parse_paper() swallows into every (b) sample stripped out); per-part marks taken from the key and asserted against it; bandDescriptors generated VERBATIM from the criteria rows by the standing collapse rule, not authored. (a) compares marketing and advertising across the two firms and (b) analyses how their structures affect production and efficiency; NESA's grid files both under 'Structural considerations'. This is the only year whose stimulus NESA explicitly binds to both parts ('Use the following information to answer parts (a) and (b)'), so it is held in the shared stem and rendered once; the paper's italics on Organisation A and B are preserved."
+      }
+    },
+    "2025": {
+      "11": {
+        "reviewedAt": "2026-09-06",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:bbe34bed2bf7e9b013e2cc50fdc75ab26a97e6ce8683f89650d32a6490578bd7",
+        "sampleAnswerWordsFingerprint": "sha256:56c3a5233593013bb73c3d0ea4167157af84810f072bfb9adc956917540675d4",
+        "note": "Matches NESA (PNG supports lossless compression so quality is not compromised, and supports transparent backgrounds, useful for web design and graphics requiring layering)."
+      },
+      "12": {
+        "reviewedAt": "2026-09-06",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:b75c339070e5a9062a0efffd09dfcbc7ff016bd57471ad91a7df02838c152a70",
+        "sampleAnswerWordsFingerprint": "sha256:7c195bf8961d63fe457a1a0405cf1ef4ac51d3a35adc31f2e82287e8a76a58a1",
+        "note": "Matches NESA (adjust colours, saturation and overlays to match the brand aesthetic; suitable aspect ratio; contrast for text readability; optimise for fast loading; test responsiveness across devices)."
+      },
+      "13": {
+        "reviewedAt": "2026-09-06",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:af4edeeea062a1e6106cd724ab4b369a4bd41e8fd91dd6a3956b3009bc67d635",
+        "sampleAnswerWordsFingerprint": "sha256:1baccce81cb8d20fab6b53df46db66e900c029452e8465e5f9d684a337f14560",
+        "note": "Matches NESA (analogue uses continuous signals giving smooth natural transitions; digital uses discrete signals allowing better quality, easier editing and correction). The bank adds binary representation, generational loss and compression, all standard."
+      },
+      "14": {
+        "reviewedAt": "2026-09-06",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:ad8b2a40ef2b70f8e2f1569f147b3261d7bf59be22264eb30790053fa4f57ebf",
+        "sampleAnswerWordsFingerprint": "sha256:bb09dbf3651875daceea5a0d4166cc6293a6eaf779a5313f33267009df7a4834",
+        "note": "Matches NESA almost point for point (realistic fluid movement, reduced labour-intensive keyframing, improved efficiency, subtle emotion and expressiveness, reusable data with long-term value, and using MoCap selectively for complex scenes to balance cost and quality)."
+      },
+      "15": {
+        "reviewedAt": "2026-09-06",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:427b22f22a83fa37f529e8edc11df5c90d2e52f03c494682f8bd4026031f4064",
+        "sampleAnswerWordsFingerprint": "sha256:62b3ba8c8786fe935b7c7a4318b8bb30faecaa9c1987d5e3101279706c834ecf",
+        "note": "Matches NESA (authenticity, misinformation and consumer deception; over-editing creating unrealistic beauty standards affecting mental health; altered images in journalism eroding trust; the positive example of pixelating a traumatic image to protect privacy; copyright and attribution; balancing creativity with honesty and transparency in advertising)."
+      },
+      "16": {
+        "reviewedAt": "2026-09-06",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:a9f54824c4d6c37eb9120e8502487c6b3c5a012fa595a7154630fcecb29f7736",
+        "sampleAnswerWordsFingerprint": "sha256:a81522cdd294169e27683b0a468512188ed5ae4ff7bcc1f09191be0c8b878108",
+        "note": "Section III, ported earlier THIS session and reviewed by the same session -- self-review, weaker evidence than an independent read. Model answers authored from NESA's committed sample answer (with the Mapping Grid that parse_paper() swallows into every (b) sample stripped out); per-part marks taken from the key and asserted against it; bandDescriptors generated VERBATIM from the criteria rows by the standing collapse rule, not authored. (a) the effects of legislative requirements on sustainable practices and (b) historical developments in manufacturing; NESA's grid files (a) under 'Environmental and sociological considerations - legislative requirements' and (b) under 'Historical developments'. (b) draws on NESA's own long alternatives list (mechanisation, digital technology, miniaturisation, CAD/CAM, robotics and CNC, cloud computing, circular economy) and closes with an overall judgement, as the top band requires."
+      }
+    }
+  }
+}

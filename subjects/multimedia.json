@@ -1106,7 +1106,12 @@
         "real time streaming protocol",
         "real-time streaming protocol",
         "rtsp"
-      ]
+      ],
+      "bandDescriptors": {
+        "full": "Correctly identifies RTSP",
+        "partial": "Does not correctly identify RTSP. The mark is awarded in full or not at all.",
+        "minimal": "Does not correctly identify RTSP. The mark is awarded in full or not at all."
+      }
     },
     {
       "year": 2020,
@@ -1159,7 +1164,7 @@
       "section": "II",
       "qNum": 14,
       "q": "Describe how large MP4 files can be reduced in size when authoring for DVD media.",
-      "answer": "Large MP4 files can be reduced in size through several techniques. First, reducing the bit rate forces less data to be stored per second of video, directly decreasing file size, though some quality loss may result. Second, lowering the video resolution (e.g., from 1920×1080 to 1280×720) reduces the number of pixels per frame, significantly cutting file size. Third, reducing the frame rate (e.g., from 60fps to 25fps) means fewer frames are stored per second. Fourth, trimming unwanted sections of the video using editing software removes unnecessary data. Finally, converting to a more efficient codec (such as H.265/HEVC instead of H.264) can achieve smaller file sizes at the same visual quality, making the file more suitable for DVD authoring.",
+      "answer": "Large MP4 files can be reduced in size through several techniques. First, reducing the bit rate forces less data to be stored per second of video, directly decreasing file size, though some quality loss may result. Second, lowering the video resolution (e.g., from 1920×1080 to 1280×720) reduces the number of pixels per frame, significantly cutting file size. Third, reducing the frame rate (e.g., from 60fps to 25fps) means fewer frames are stored per second. Fourth, trimming unwanted sections of the video using editing software removes unnecessary data. Finally, converting to a more efficient codec or file format (such as H.265/HEVC instead of H.264, or WMV) applies stronger compression, achieving smaller file sizes at the same visual quality and making the file more suitable for DVD authoring.",
       "keywords": [
         "bit rate",
         "resolution",
@@ -1341,8 +1346,22 @@
         "corel draw",
         "inkscape",
         "affinity designer",
-        "vector"
-      ]
+        "vector",
+        "adobe fireworks",
+        "fireworks",
+        "paintshop",
+        "lunacy",
+        "draw pad",
+        "vecteezy",
+        "snappa",
+        "artboard",
+        "designimo"
+      ],
+      "bandDescriptors": {
+        "full": "Correctly identifies an authoring software used for creating vector graphics",
+        "partial": "Does not correctly identify an authoring software used for creating vector graphics. The mark is awarded in full or not at all.",
+        "minimal": "Does not correctly identify an authoring software used for creating vector graphics. The mark is awarded in full or not at all."
+      }
     },
     {
       "year": 2021,
@@ -1542,22 +1561,20 @@
       "section": "II",
       "qNum": 11,
       "q": "Identify an advantage of using PDF files.",
-      "answer": "PDF files maintain consistent formatting across different operating systems, devices and software applications. They can also be password-protected to prevent unauthorised editing.",
-      "keywords": [
-        "formatting",
-        "maintained",
-        "platform",
-        "consistent",
-        "prevent editing",
-        "cross-platform",
-        "password"
-      ],
-      "minKeywords": 1,
+      "answer": "PDF files maintain consistent formatting across different operating systems, devices and software platforms — that is, they are cross-platform. They can also be password-protected to prevent unauthorised editing.",
       "bandDescriptors": {
         "full": "1/1 — States a valid, specific advantage — e.g. PDF maintains consistent formatting across different devices and operating systems, or PDFs can be password-protected to prevent unauthorised editing.",
         "partial": "0/1 — Too vague to award the mark (e.g. 'they are easy to use') or states an advantage that applies equally to most other file types.",
         "minimal": "0/1 — Incorrect or irrelevant advantage stated."
-      }
+      },
+      "acceptableAnswers": [
+        "formatting",
+        "platform",
+        "consistent",
+        "prevent",
+        "password",
+        "unauthorised"
+      ]
     },
     {
       "year": 2022,
@@ -1788,7 +1805,12 @@
         "immersive",
         "presence",
         "haptic"
-      ]
+      ],
+      "bandDescriptors": {
+        "full": "Identifies a key characteristic of fully immersive virtual reality",
+        "partial": "Does not identify a key characteristic of fully immersive virtual reality. The mark is awarded in full or not at all.",
+        "minimal": "Does not identify a key characteristic of fully immersive virtual reality. The mark is awarded in full or not at all."
+      }
     },
     {
       "year": 2023,
@@ -1796,7 +1818,7 @@
       "section": "II",
       "qNum": 12,
       "q": "Outline ONE disadvantage of using high-resolution graphics when creating a multimedia product.",
-      "answer": "A significant disadvantage of using high-resolution graphics in a multimedia product is that they substantially increase file size. Larger files require more storage space and take longer to load, which can result in poor user experience — particularly for web-based products where slow load times may cause users to abandon the content. High-resolution graphics also demand greater processing power to render and display, which can cause performance issues or lag on lower-end devices, limiting the product's accessibility.",
+      "answer": "A significant disadvantage of using high-resolution graphics in a multimedia product is that they substantially increase file size. Larger files require more storage space, consume more bandwidth and take longer to load, which can result in poor user experience — particularly for web-based products where slow load times may cause users to abandon the content. High-resolution graphics also demand greater processing power to render and display, which can cause performance issues or lag on lower-end devices, limiting the product's accessibility.",
       "keywords": [
         "file size",
         "large",
@@ -2007,7 +2029,12 @@
         "aac",
         "flac",
         "ogg"
-      ]
+      ],
+      "bandDescriptors": {
+        "full": "Correctly identifies an audio file type",
+        "partial": "Does not correctly identify an audio file type. The mark is awarded in full or not at all.",
+        "minimal": "Does not correctly identify an audio file type. The mark is awarded in full or not at all."
+      }
     },
     {
       "year": 2024,
@@ -2015,7 +2042,7 @@
       "section": "II",
       "qNum": 12,
       "q": "Outline TWO advantages of using a serif font.",
-      "answer": "First, serif fonts improve readability in print at small sizes because the small strokes (serifs) at the ends of letterforms help guide the reader's eye along the line of text, making it easier to track and distinguish individual characters quickly. Second, serif fonts convey a sense of authority, tradition and professionalism, making them well-suited to formal documents, newspapers, books and corporate communications where credibility is important.",
+      "answer": "First, serif fonts improve readability in print at small sizes because the small strokes (serifs) at the ends of letterforms help guide the reader's eye along the line of text, making it easier to track, distinguish and recognise individual words and characters quickly. Second, serif fonts convey a sense of authority, tradition and professionalism, making them well-suited to formal documents, newspapers, books and corporate communications where credibility is important.",
       "keywords": [
         "easier to read",
         "distinguish",
@@ -2040,7 +2067,7 @@
       "section": "II",
       "qNum": 13,
       "q": "Describe the differences between vector and bitmapped images.",
-      "answer": "Bitmap (raster) images are made up of a fixed grid of individual pixels, each assigned a specific colour value. This means they are resolution-dependent — if a bitmap image is enlarged beyond its original size, individual pixels become visible, causing the image to appear blurry or \"pixelated\" and losing quality.\n\nVector images, by contrast, are defined by mathematical equations that describe shapes, lines, curves and colours rather than pixels. This makes them resolution-independent — a vector image can be scaled to any size without any loss of quality, always remaining perfectly sharp and smooth.\n\nBitmap images are better suited to complex photographic content with subtle colour gradations, while vector images are preferred for logos, icons and illustrations that need to be reproduced at multiple sizes.",
+      "answer": "Bitmap (raster) images are made up of a fixed grid of individual pixels, each assigned a specific colour value. This means they are resolution-dependent — if a bitmap image is enlarged beyond its original size, individual pixels become visible, causing the image to appear grainy, blurry or \"pixelated\" and losing quality.\n\nVector images, by contrast, are defined by mathematical equations that describe shapes, lines, curves and colours rather than pixels. This makes them resolution-independent — a vector image can be scaled to any size without any loss of quality, always remaining perfectly sharp and smooth.\n\nBitmap images are better suited to complex photographic content with subtle colour gradations, while vector images are preferred for logos, icons and illustrations that need to be reproduced at multiple sizes.",
       "keywords": [
         "pixel",
         "equation",
