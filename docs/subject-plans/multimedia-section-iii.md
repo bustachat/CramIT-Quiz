@@ -16,9 +16,9 @@ not re-run in their usual form. **This runbook starts at Stage 1.**
 |---|---|---|
 | **1 Survey** | ✅ **done 2026-09-06** | 1 session |
 | 2 Syllabus grounding (Section III scope only) | ✅ **done 2026-09-06** | 1 session |
-| 4 Port | ⬜ **next** | 1–2 sessions |
+| 4 Port | ✅ **done 2026-09-06** | 1–2 sessions |
 | 6 Ground truth — **marks** | ➡️ already done — folded into Stage 4's gate | — |
-| **6b Written-answer review** | ⬜ **NEW** — covers Section III's 6 new entries **and** Multimedia's existing 29 → **35** | 1 session |
+| **6b Written-answer review** | ⬜ **next** — covers Section III's 6 new entries **and** Multimedia's existing 29 → **35** | 1 session |
 | 7 Release | ⬜ | 1 session |
 | 8 Study Mode topic (optional) | ⬜ | separate project — playbook §9 |
 
@@ -41,7 +41,7 @@ not re-run in their usual form. **This runbook starts at Stage 1.**
 | Ground truth | ✅ **Already committed.** `data/answer-key/written/multimedia.json` holds all 12 parts' official marks, **NESA's sample answers**, and — since the 2026-09-01 extractor extension, repaired 2026-09-06 — **the criteria rows** each part is banded against. Nothing to extract; `bandDescriptors` are *derived*, not authored |
 | Assets | ✅ **ZERO** — confirmed at Stage 1 by reading all six pages and rendering two. No image, table or content graphic on any Section III page |
 | Bank shape | ✅ **Decided at Stage 1: one merged entry per year, `parts[]` of two.** All six papers use **one** Writing Booklet — this is NOT VET Q20/Q21's separate-booklet case |
-| Syllabus | ✅ **Read at Stage 2.** `industrial-technology-st6-syl.docx` (2008, amended Aug 2013), owner-supplied, in the papers folder, **not committed**. Section III = the **Industry Study** strand under §9 *Focus Area: All* — **8 content areas**, common to all six focus areas, which is why none of the 7 Study Mode topics touches it |
+| Syllabus | ✅ **Read at Stage 2.** `industrial-technology-st6-syl.docx` (2008, amended Aug 2013), owner-supplied, in the papers folder, **not committed**. Section III = the **Industry Study** strand under §9 *Focus Area: All* — **6 content areas across 8 table rows**, common to all six focus areas, which is why none of the 7 Study Mode topics touches it |
 | Current coverage | `check_written_key.cjs` reports **30/42** official leaf parts claimed. Porting these 12 closes it to **42/42** |
 | Existing bank content | **None.** Unlike Study Mode topics 1–7, there is nothing to build from — original authoring against NESA's sample answers |
 | Papers | Local, never committed — `NESA Exams Folder/Industrial Technology - Multimedia/`. Section III is the **last page** of the exam PDF, page 9 in all six years |
@@ -290,7 +290,7 @@ important historical developments in the focus area industry · `H7.1` explains 
 focus area industry on the social and physical environment · `H7.2` analyses the impact of
 existing, new and emerging technologies … on society and the environment.
 
-#### The scope — 8 content areas, verbatim from the syllabus table
+#### The scope — 6 content areas (8 table rows), verbatim from the syllabus table
 
 The HSC "Focus Area: All" content is **two** tables. Only the first is Section III's:
 
@@ -299,18 +299,31 @@ The HSC "Focus Area: All" content is **two** tables. Only the first is Section I
 | **Table 1 (9 rows)** | **Industry Study** | ✅ **This is Section III's entire scope** |
 | Table 2 (6 rows) | Design, Management & Communication + Production — Major Project, folio, working drawings, time/finance plans | ❌ **No** — school-assessed Major Project work, never examined in Section III |
 
-**The eight Industry Study content areas, with the syllabus's own sub-points:**
+**Six top-level content areas across eight table rows.**
+
+⚠️ **CORRECTED 2026-09-06 during Stage 4 — this section first said "8 content areas".** It is
+**6**: rows 4 and 5 are printed **lowercase with a trailing colon** (`legislative requirements:`,
+`location:`) while the other six are capitalised, i.e. they are **continuation sub-headings under
+row 3, *Environmental and sociological considerations***, not areas of their own. **NESA's own
+mapping grids confirm it** — 2020 Q16(a) is a *location* question and is filed as
+*"Environmental and sociological considerations"*; 2025 Q16(a) is a *legislative* question and is
+filed as *"Environmental and sociological considerations – legislative requirements"*. Nothing
+else changes: the scope, the cross-check and the never-examined list below are all unaffected,
+and all 12 parts still land inside the scope. (Caught by applying `docs/porting-playbook.md` §0's
+new *"a recorded claim is not evidence"* rule to this runbook's own Stage 2 conclusion.)
+
+**The content areas, with the syllabus's own sub-points:**
 
 | # | Content area | Sub-points (syllabus wording) |
 |---|---|---|
 | 1 | **Structural considerations** | organisation · management (roles and levels) · marketing and advertising · production and efficiency · **restructuring** · **quality control** |
 | 2 | **Technical considerations** | **mechanisation** · **specialisation/generalisation** · mass production · automation · new and emerging technologies |
 | 3 | **Environmental and sociological considerations** | alternative resources (power, material, processes, limitations) · recycling and reusing · waste management and minimisation · **pollution** · sustainable development · **rehabilitation of commercial sites** |
-| 4 | **Legislative requirements** | local · state · federal · environmental studies |
-| 5 | **Location** | land costs and availability · transportation facilities · workforce · impact on surrounding population · resource availability · geographical factors · waste management |
-| 6 | **Personnel issues** | industrial relations: **equity/EEO**, **unions**, **group negotiated contracts**, **individual contracts** · career and training opportunities · **specialisation and multi-skilling** · roles of industry personnel · work practices |
-| 7 | **Work health and safety** | government legislation · industry requirements: standards, **policing**, **prosecution** · **risk assessment** · safety training and human factors · **workplace culture** · **WHS communication** |
-| 8 | **Historical developments** | significant developments in the focus-area industry and their impact, including **manufacturing processes**, **materials**, **work practices** |
+| 3a | ↳ *legislative requirements:* (sub-heading of 3) | local · state · federal · environmental studies |
+| 3b | ↳ *location:* (sub-heading of 3) | land costs and availability · transportation facilities · workforce · impact on surrounding population · resource availability · geographical factors · waste management |
+| 4 | **Personnel issues** | industrial relations: **equity/EEO**, **unions**, **group negotiated contracts**, **individual contracts** · career and training opportunities · **specialisation and multi-skilling** · roles of industry personnel · work practices |
+| 5 | **Work health and safety** | government legislation · industry requirements: standards, **policing**, **prosecution** · **risk assessment** · safety training and human factors · **workplace culture** · **WHS communication** |
+| 6 | **Historical developments** | significant developments in the focus-area industry and their impact, including **manufacturing processes**, **materials**, **work practices** |
 
 ⚠️ **Extraction note for anyone re-reading this table.** Its cells are merged, and `python-docx`
 reports a merged cell once per column it spans — so rows 1–6 return the *"Students learn about"*
@@ -322,23 +335,25 @@ rows. Read by de-duplicating the row's cells, not by index.
 
 Done **after** the scope was derived, as a check on it — not as its source.
 
-| # | Syllabus content area | Examined in |
-|---|---|---|
-| 1 | Structural considerations | **2024 (a)** marketing/advertising by structure · **2024 (b)** structure → production and efficiency |
-| 2 | Technical considerations | **2023 (a)** ONE new technology · **2023 (b)** mass production and automation |
-| 3 | Environmental and sociological | **2020 (b)** strategies to minimise continuing environmental impact |
-| 4 | Legislative requirements | **2025 (a)** effects of legislative requirements on sustainable practices |
-| 5 | Location | **2020 (a)** environmental factors in selecting a new site |
-| 6 | Personnel issues | **2021 (a)** Industrial Relations issues · **2021 (b)** career and training opportunities |
-| 7 | Work health and safety | **2022 (a)** role of WHS legislation · **2022 (b)** strategies to improve safety |
-| 8 | Historical developments | **2025 (b)** historical developments in manufacturing processes |
+| # | Syllabus content area | Examined in | NESA's own mapping-grid label |
+|---|---|---|---|
+| 1 | Structural considerations | **2024 (a)** marketing/advertising by structure · **2024 (b)** structure → production and efficiency | *Structural considerations* |
+| 2 | Technical considerations | **2023 (a)** ONE new technology · **2023 (b)** mass production and automation | *Technical considerations – new technologies* · *Automation and mass production* |
+| 3 | Environmental and sociological | **2020 (a)** factors in selecting a new site *(sub-heading `location`)* · **2020 (b)** minimising continuing environmental impact · **2025 (a)** legislative requirements and sustainable practices *(sub-heading `legislative requirements`)* | *Environmental and sociological considerations* — and, for 2025 (a), *…– legislative requirements* |
+| 4 | Personnel issues | **2021 (a)** Industrial Relations issues · **2021 (b)** career and training opportunities | *Personnel issues* |
+| 5 | Work health and safety | **2022 (a)** role of WHS legislation · **2022 (b)** strategies to improve safety | *Work, health and safety* |
+| 6 | Historical developments | **2025 (b)** historical developments in manufacturing processes | *Historical developments* |
 
-**All 8 areas are examined at least once across 2020–2025, and all 12 parts land inside the
+The right-hand column is NESA's own content label for that part, read from the **Mapping Grid**
+printed at the end of each marking guideline. It is the evidence for the nesting correction
+above, and it is why area 3 carries five of the twelve parts.
+
+**All 6 areas are examined at least once across 2020–2025, and all 12 parts land inside the
 scope — nothing in the papers falls outside it.** Two questions reuse the syllabus's own wording
 almost verbatim: 2021 (b) *"career and training opportunities"* and 2025 (b) *"manufacturing
 processes"*.
 
-⚠️ **But "every area examined" is a row-level statement, and the VET lesson applies at the
+⚠️ **But "every area examined" is an area-level statement, and the VET lesson applies at the
 sub-point level.** Several sub-points are **in scope and never examined 2020–2025** — bolded in
 the scope table above. The most substantial:
 
@@ -362,7 +377,7 @@ Mode topic must be built from this table and **not** from the six questions.
   writing a part's keyword list, draw on **its own syllabus sub-points** (e.g. 2022's WHS part
   can credit *risk assessment*, *workplace culture*, *WHS communication*, *standards*), which is
   how the lists get rich enough for the 10–12 mark granularity Decision 2 flagged.
-- **Stage 8 (optional):** the topic is **"Industry Study"**, 8 content areas, sourced here. It
+- **Stage 8 (optional):** the topic is **"Industry Study"**, 6 content areas (8 table rows), sourced here. It
   would be Multimedia's 8th Study Mode topic and the only one drawn from *Focus Area: All*
   rather than the Multimedia focus-area table.
 - **`category`:** unchanged from Stage 1 — still **none**. The syllabus gives no code system for
@@ -377,12 +392,12 @@ not assume from this note.
 
 **GATE 2** — [x] primary syllabus document located and read (owner-supplied, `python-docx`,
 paragraphs **and** tables) · [x] Section III scope stated **from the syllabus** — Industry Study,
-8 content areas — with the papers used only as an after-the-fact cross-check · [x] stated
+6 content areas across 8 table rows — with the papers used only as an after-the-fact cross-check · [x] stated
 plainly that this is primary-sourced, and which table was excluded and why
 
 ---
 
-## Stage 4 — Port ⬜
+## Stage 4 — Port ✅ DONE 2026-09-06
 
 Twelve parts, authored against NESA's committed sample answers in
 `data/answer-key/written/multimedia.json`. Ground truth already exists, so unlike a normal
@@ -406,8 +421,98 @@ with the shared prose in `stem` for 2020, 2021, 2022 and 2024. No `category`. No
   stays at 0 wrong.
 - Targeted text edits only — see the `json.dumps` warning above.
 
-**GATE 4** — [ ] validator green · [ ] `check_written_key.cjs` 0 wrong, **coverage 42/42** ·
-[ ] every paper reconciles to its front-page Section III total of 15
+---
+
+### Stage 4 — RESULTS, built 2026-09-06
+
+**Six bank entries, twelve parts, 90 marks. `multimedia.json` written goes 29 → 35, and the
+repo's last reverse-coverage gap is closed: `check_written_key.cjs` reports Multimedia
+**42/42**.**
+
+Built by `scripts/archive/multimedia_sec3_add.py` (with its content in
+`multimedia_sec3_content.py`), which **refuses to write** unless every gate below holds.
+
+| | |
+|---|---|
+| Entries | 6 — `year`, `marks: 15`, `section: "III"`, `qNum: 16` (int, matching the subject's own convention) |
+| Parts | 12 — 5+10 for five years, **3+12 for 2023** |
+| `stem` | 2020, 2021, 2022, 2024 (2023 and 2025 have none — the parts stand alone) |
+| `category` | none, per Stage 1 |
+| Images | none |
+
+**What was authored and what was not.** Stems are NESA's own wording from the exam papers.
+Per-part **marks came from the committed key**, never from the content file — the build asserts
+the two agree and exits if not. **`bandDescriptors` were not authored at all**: they are
+generated **verbatim** from the key's criteria rows by the standing collapse rule (top row →
+`full`, middle rows joined with " OR " → `partial`, bottom row → `minimal`). 2023 (a) is the
+degenerate **N = 3** case, where top/middle/bottom map one-to-one with no joining. Model answers
+are authored from NESA's committed sample answers; the marking guidelines were never re-read
+(§10). Question-level `bandDescriptors` **are** authored, as rule 9 requires — NESA grades each
+part separately, so no official combined rubric exists.
+
+⚠️ **The sample answers in the key carry the Mapping Grid swallowed into every (b) part** — the
+known `parse_paper()` artefact — so the grid text was stripped when authoring rather than
+treated as part of NESA's answer. Several samples also carry text-layer spacing damage
+(`w ith`, `m ore`, `possi bilities`), another reason the model answers are authored rather than
+copied.
+
+**Acceptance gate — every keyword must be creditable from its own part's model answer.** The
+build mirrors `index.html`'s `keywordHit()` with an **ASCII-only word split**, because JavaScript's
+`\W` is ASCII-only while Python's is Unicode-aware — the discrepancy that passed two bad
+questions during the Mathematics Advanced per-part build. Every keyword was additionally chosen
+to be a literal substring of its part's model answer, which sidesteps the issue entirely.
+Keyword density follows VET 2021 Q20 (18 keywords for 15 marks): **10–18 per part**, ~1.2–2.0
+per mark.
+
+**Splice method.** `multimedia.json` must never round-trip through `json.dumps` (it expands
+`studyNotes`' compact inline arrays into a 461-line diff). The build rewrites **only the
+`writtenQuestions` array slice**, leaving every other line untouched. Verified: the diff is
+**730 insertions, 0 deletions**, and `mcQuestions`, `studyNotes`, `omittedQuestions` and all
+**29 pre-existing written entries compare byte-identical** to `HEAD`.
+
+#### Verified in the browser, not inferred from the diff
+
+- **All six papers reconcile to 15**, per paper and per part, against the committed key
+  (2023 correctly 3 + 12).
+- **Offline scoring, in the real engine** (`buildPartFeedback`): every one of the 12 parts
+  scores **full** from its own model answer — 2020–2022, 2024–2025 at 15/15, 2023 at 3/3 + 12/12
+  — with **0 `undefined`** and **0 parts falling back to the generic band**.
+- **The score is genuinely computed, not always-full**: blank → **0/15**, a weak two-sentence
+  answer → **1/15**, a partial answer → **7/15**, model answers → **15/15**.
+- **NESA's own criteria wording reaches the screen** — asserted verbatim against
+  `bandDescriptors.full`.
+- **Viewport sweep at 320 / 430 / 768 / 1180 / 1400 / 1920**, each rendering all six questions
+  with **both** accordion states (12 renders per width, 72 total): **0 `.question-area`
+  overflows, 0 missing marks badges, 0 `undefined` on screen, 0 nested scrollbars, 0 images
+  wider than their container**, and `body.scrollWidth` never exceeding the viewport.
+- **A real end-to-end flow** on 2023: typed part (a), clicked the real *Next part* button, typed
+  part (b), submitted with *Show model answer* → **11 / 15**, rows (a) 2/3 and (b) 9/12, each
+  captioned with NESA's own criteria text, model answer revealed correctly labelled.
+- **`partDrafts` behaves**: `answers[currentIdx]` stays `null` across the part advance, so the
+  question does not flip into its already-checked state — the defect found during the per-part
+  build is not present.
+- **Test mode still never auto-scores** (no score, no model answer, button reads *Next →*).
+- **Regression across all five subjects**: 150 multi-part questions / 357 part rows re-scored
+  against their own model answers — **0 `undefined`, 0 generic bands, 0 failing to score full**.
+- **No console errors.**
+- Full local CI: `MC=706 Written=380 imageRefs=337 missingImages=0`, `Issues: 0`; **285 MC and
+  340 written checks, 0 wrong, 0 unverifiable**; `npm test` **73/73**.
+
+⚠️ **The live AI marking call has still NEVER been made** — there is no `ANTHROPIC_API_KEY` in
+this environment. The payload was verified to the boundary instead: for 2023 it sends **2 parts,
+(a)=3 and (b)=12, totalling 15**, every part carrying its own keywords and all three band
+descriptors, with no `undefined` and no `<img>` tags in the prompt text. Stage 7 must make a real
+call before this is considered proven.
+
+⚠️ **One measurement error worth recording, because it nearly became a false bug report.** A
+first pass showed part (b) scoring **0/12** after a full flow. The cause was **test
+contamination, not the product**: an earlier stray click on the *MC* `checkAnswer()` handler had
+set `answered = true` and re-rendered, discarding the uncommitted textarea before submit. A clean
+re-run scored 11/15. Also: `Object.keys(partDrafts[i])` returning `(a),(b)` proves nothing —
+`blankAnswerFor()` pre-seeds **both** labels with empty strings.
+
+**GATE 4** — [x] validator green · [x] `check_written_key.cjs` **0 wrong, coverage 42/42** ·
+[x] every paper reconciles to its front-page Section III total of **15**
 
 ---
 

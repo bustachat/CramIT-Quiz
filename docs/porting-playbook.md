@@ -53,6 +53,73 @@ Stage 3 needs Stage 2's topics, Stage 4 needs Stage 3's field names, Stage 6 nee
 | 7 | Release | Deployed subject | Browser-verified | Human | QA Agent + human PR |
 | 8 | Operate | — | Annual paper intake | Human | Content + Syllabus Agents |
 
+### ⚠️ A recorded claim is not evidence — re-verify what an earlier stage wrote down
+
+Every stage here hands the next one a **written artifact**, and the whole point of the artifact
+is that the next session does not re-derive it. That is the right default for *measurements* —
+crop counts, mark totals, field names. **It is the wrong default for a stage's stated
+conclusions and its forward-looking risk calls**, and this playbook's own runbooks have now
+produced several that were confidently written and simply untrue.
+
+**The distinction that matters: did the earlier stage MEASURE it, or did it REASON to it?**
+
+| A measurement — inherit it | A conclusion or a risk call — re-verify it |
+|---|---|
+| "121 crops, 28 tables" | "Section III sends the parts to separate booklets" |
+| "all six papers reconcile to 100" | "the longest response the engine has handled is 5 marks" |
+| "`build_written_key.py` extracts no criteria table" | "these four questions are a real marking-quality defect" |
+| "60 MC answers, 0 wrong" | "`optionImagesWide` is not needed for this subject" |
+
+**Every entry in the right-hand column is a real one that was wrong**, and each was written into
+a runbook as settled fact:
+
+- **Multimedia Section III, Stage 1 (2026-09-06).** The runbook recorded that NESA sends
+  Q16 (a)/(b) *"to separate writing booklets in four of the six years"* and concluded the bank
+  should be split. Reading all six instruction lines: **zero of six** — every year says *"the
+  Section III Writing Booklet"*, singular, and 2020/2021 merely allocate pages inside it. The
+  correct shape is the **opposite** of the one recorded. It was caught only because that same
+  runbook told the next session to read the lines — the one place it distrusted itself.
+- **Multimedia Section III, Stage 1, again.** The same runbook named a 10–12 mark extended
+  response *"the one genuine feasibility risk in the whole runbook"*, on the premise that *"the
+  longest thing it has ever handled is a 5-mark answer"*. True of that one subject's JSON; false
+  of the engine, which already ships **ten VET responses at 10–15 marks and four HMS at 12**. A
+  whole stage had been scoped around a risk that production had retired months earlier.
+- **Maths Advanced, Stage 1 → Stage 4.** Its Section II crop list was treated as complete and was
+  a **lower bound three separate times** (2023 Q16 absent; 2025 Q29 absent from the table though
+  named in the same document's prose; 2022 Q28 one entry for two diagrams). Its
+  *"`optionImagesWide` not needed anywhere"* was wrong too — 2021 Q4 needs it.
+- **VET Construction, review ledger.** Recorded as *"a human compared each question against
+  NESA"*; the comparison was assistant-performed with a spot-check on a couple. **Seven
+  documents inherited the overstatement**, and it became a Gate 6 exemplar before anyone checked.
+
+The failure mode is always the same and it is cheap to avoid: **a claim gets written down once,
+and from then on it is quoted rather than checked** — including by the person who wrote it. The
+more confidently a runbook words something, the less likely the next session is to test it.
+
+**Rules:**
+
+1. **When a stage's conclusion determines what you build, re-derive it from the primary source
+   before building.** Not the whole stage — the one claim. Reading six instruction lines cost
+   about a minute and inverted a bank-shape decision.
+2. **A claim about "the engine" or "the repo" must be measured against the engine or the repo**,
+   never against the one subject in front of you. `multimedia.json`'s longest answer is not the
+   engine's longest answer. Grep or script it across all of `subjects/`.
+3. **Write claims so their scope is visible.** *"multimedia.json's longest written answer is 5
+   marks"* would have been true and harmless; *"the longest thing it has ever handled"* was
+   neither. Name the thing measured.
+4. **Record HOW a claim was established, next to the claim** — measured / read from the source /
+   reasoned / assumed. The review ledger's `reviewMethod` exists for exactly this reason; the
+   same discipline applies to prose in a runbook.
+5. **When you find a recorded claim was wrong, correct it in place AND say so in the write-up.**
+   Silently building the right thing leaves the wrong claim to mislead the next session, and this
+   project has had one propagate through seven documents.
+
+⚠️ **Applies with most force to a stage that scopes work it will not do itself** — Stage 0's
+feasibility calls, Stage 1's asset counts and risk escalations, Stage 3's schema decisions.
+Those are read months later, by a session with no memory of how firm the evidence was.
+
+---
+
 Study Mode (`studyNotes`) is a **separate follow-on project**, not part of a port. See §9.
 
 ---

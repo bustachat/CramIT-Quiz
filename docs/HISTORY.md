@@ -4516,3 +4516,122 @@ is present here — **and none was searched for**. Confirm currency before build
 topic; do not infer it from this note.
 
 **GATE 2 met on all three items.** Next: **Stage 4 (Port)**.
+
+## 2026-09-06 (later still, ×5) — Multimedia Section III ported: the repo's last reverse-coverage gap is closed, 42/42
+
+**The one remaining hole in the repo's written coverage is filled.** `subjects/multimedia.json`
+goes **29 → 35** written questions; `check_written_key.cjs` reports Multimedia **42/42** official
+parts, up from 30/42. Every subject with past papers now has complete written coverage. Repo-wide
+written total: **374 → 380**.
+
+Also in this session: `docs/porting-playbook.md` §0 gains a new rule, at the owner's request.
+
+### The playbook rule — "a recorded claim is not evidence"
+
+Stages 1 and 2 earlier today each found a confidently-written runbook claim that was simply
+untrue, and both pointed at more work than was needed. The generalisation is now recorded in
+`docs/porting-playbook.md` §0, with the distinction that matters: **inherit a stage's
+*measurements*; re-verify its *conclusions and risk calls*.** It carries four worked instances
+(Section III's booklet claim and its phantom marking risk, Maths Advanced's crop list being a
+lower bound three times over and its `optionImagesWide` call, and VET's review-provenance
+overstatement that propagated through seven documents), plus five rules — most usefully, that a
+claim about "the engine" must be measured against the engine rather than the one subject in
+front of you, and that scope should be visible in the wording (*"multimedia.json's longest
+written answer is 5 marks"* would have been true and harmless).
+
+**It immediately caught one of my own.** Applying it to this session's Stage 2 write-up showed
+that *"8 content areas"* was wrong: rows 4 and 5 of the syllabus table are printed **lowercase
+with a trailing colon** (`legislative requirements:`, `location:`) while the other six are
+capitalised — they are **sub-headings under *Environmental and sociological considerations***,
+not areas of their own. **NESA's own mapping grids confirm it**: 2020 Q16(a), a *location*
+question, is filed as *"Environmental and sociological considerations"*, and 2025 Q16(a), a
+*legislative* question, as *"…– legislative requirements"*. The scope is **6 top-level areas
+across 8 table rows**. Corrected in the runbook, and the cross-check table now carries NESA's own
+grid label per part as the evidence. Nothing else moved — all 12 parts still land inside the
+scope.
+
+### Stage 4 — what was built
+
+Six bank entries (`year`, `marks: 15`, `section: "III"`, `qNum: 16` as an int, matching the
+subject's own convention), each with **`parts[]` of two**: 5+10 for five years and **3+12 for
+2023**. `stem` on 2020, 2021, 2022 and 2024; 2023 and 2025 have none. No `category`, per Stage 1.
+No images. Built by `scripts/archive/multimedia_sec3_add.py` with its content in
+`multimedia_sec3_content.py`.
+
+**What was authored and what was not.** Stems are NESA's wording from the exam papers. Per-part
+**marks come from the committed key**, never from the content file — the build asserts the two
+agree and exits if not. **`bandDescriptors` were not authored at all**: they are generated
+**verbatim** from the key's criteria rows by the standing collapse rule (top row → `full`, middle
+rows joined with " OR " → `partial`, bottom row → `minimal`), with 2023 (a) the degenerate
+**N = 3** case mapping one-to-one. Model answers are authored from NESA's committed sample
+answers; the marking guidelines were never re-read (§10). Question-level `bandDescriptors` **are**
+authored, as rule 9 requires — NESA grades each part separately, so no official combined rubric
+exists.
+
+⚠️ **Every (b) sample answer in the key carries the Mapping Grid swallowed into it** — the known
+`parse_paper()` artefact, noted on the VET ledger back on 2026-09-01 — so that text was stripped
+when authoring rather than mistaken for NESA's answer. Several samples also carry text-layer
+spacing damage (`w ith`, `m ore`, `possi bilities`), a second reason the model answers are
+authored rather than copied.
+
+**The acceptance gate.** Every keyword must be creditable from its own part's model answer, using
+a mirror of `index.html`'s `keywordHit()` with an **ASCII-only word split** — JavaScript's `\\W`
+is ASCII-only while Python's is Unicode-aware, the discrepancy that passed two bad questions
+during the Mathematics Advanced per-part build. Every keyword was additionally chosen to be a
+literal substring of its part's model answer, sidestepping the issue entirely. Density follows
+VET 2021 Q20 (18 keywords for 15 marks): **10–18 per part**.
+
+**The splice.** `multimedia.json` must never round-trip through `json.dumps` — it expands
+`studyNotes`' compact inline arrays into a 461-line diff. The build rewrites **only the
+`writtenQuestions` array slice**. Verified: **730 insertions, 0 deletions**, with `mcQuestions`,
+`studyNotes`, `omittedQuestions` and all **29 pre-existing written entries byte-identical** to
+HEAD. The archived script is also **idempotent** — re-running it reproduces
+`subjects/multimedia.json` with an **identical MD5**, so the bank is deterministically derivable
+from the key plus the scripts, the same property the Maths Advanced rebuild proved.
+
+### Verified in the browser, not inferred from the diff
+
+- All six papers reconcile to **15**, per paper and per part, against the key (2023 = 3 + 12).
+- **Offline scoring in the real engine** (`buildPartFeedback`): all 12 parts score **full** from
+  their own model answers, **0 `undefined`**, **0 generic band fallbacks**.
+- **Genuinely computed, not always-full**: blank → **0/15**, weak → **1/15**, partial → **7/15**,
+  model answers → **15/15**.
+- **NESA's criteria wording reaches the screen**, asserted verbatim against `bandDescriptors.full`.
+- **Viewport sweep at 320 / 430 / 768 / 1180 / 1400 / 1920** — all six questions in **both**
+  accordion states, 72 renders: **0 overflows, 0 missing marks badges, 0 `undefined` on screen,
+  0 nested scrollbars, 0 over-wide images**.
+- **A real end-to-end flow** on 2023 — typed (a), clicked the real *Next part*, typed (b),
+  submitted — scored **11 / 15**, rows (a) 2/3 and (b) 9/12, each captioned with NESA's own
+  criteria text, model answer revealed correctly labelled (screenshotted).
+- **`partDrafts` behaves**: `answers[currentIdx]` stays `null` across the part advance, so the
+  question never flips into its already-checked state.
+- **Test mode still never auto-scores.**
+- **Regression across all five subjects**: 150 multi-part questions / 357 part rows re-scored
+  against their own model answers — **0 `undefined`, 0 generic bands, 0 failing to score full**.
+- **No console errors.** Full local CI: `MC=706 Written=380 imageRefs=337 missingImages=0`,
+  `Issues: 0`; **285 MC and 340 written checks, 0 wrong**; 5 functions syntax-check;
+  `npm test` **73/73**.
+
+⚠️ **The live AI marking call has still NEVER been made** — no `ANTHROPIC_API_KEY` here. Verified
+to the boundary only: for 2023 the payload sends **2 parts, (a)=3 and (b)=12, totalling 15**,
+each with its own keywords and all three band descriptors, no `undefined`, no `<img>` in the
+prompt text. **Stage 7 must make a real call**, and Stage 1's caveat still stands: the fixed
+3-tier `{full, partial, minimal}` collapses NESA's 5 bands and the prompt omits their mark
+numbers, so a 10–12 mark part gives the model a wide middle tier.
+
+⚠️ **One measurement error, recorded because it nearly became a false bug report.** A first pass
+showed part (b) scoring **0/12** after a full flow. The cause was **test contamination, not the
+product**: an earlier stray click on the *MC* `checkAnswer()` handler had set `answered = true`
+and re-rendered, discarding the uncommitted textarea before submit. A clean re-run scored 11/15.
+Related trap: `Object.keys(partDrafts[i])` returning `(a),(b)` proves nothing — `blankAnswerFor()`
+pre-seeds **both** labels with empty strings.
+
+### What is next, and what is deliberately not done
+
+**Stage 6b (written-answer review) is next** — now **35** Multimedia questions, not 41, because
+Stage 1 resolved Section III to six merged entries rather than twelve split ones. Stage 7
+(Release) follows. **No review ledger was committed here**, so Multimedia still reports 0/35 and
+stays green; committing one is how a subject opts in to hard enforcement.
+
+No credential, pricing, schema or engine-contract fact changed. No MC question, no existing
+written question, and no omission declaration was altered.
