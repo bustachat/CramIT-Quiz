@@ -1472,7 +1472,7 @@
             "mortice",
             "hinge",
             "lock",
-            "pare",
+            "paring",
             "trim",
             "cut",
             "timber"
@@ -1521,7 +1521,7 @@
             "mallet",
             "maintenance",
             "grind",
-            "hone",
+            "honing",
             "strop",
             "ferrule",
             "handle"
@@ -1654,8 +1654,7 @@
             "radius",
             "2.5",
             "perimeter",
-            "circumference",
-            "pi"
+            "circumference"
           ],
           "minKeywords": 3,
           "bandDescriptors": {
@@ -2018,7 +2017,7 @@
           "q": "The table shows techniques related to tools.<br>Describe each technique when using the given tool. <table class=\"q-table\"><tr><th>Tool</th><th>Technique</th><th>Description of technique</th></tr><tr><td>Chisel</td><td>Honing</td><td>&nbsp;</td></tr><tr><td>Handsaw</td><td>Ripping</td><td>&nbsp;</td></tr></table>",
           "answer": "<strong>Chisel — honing.</strong> Honing is part of the sharpening process. After grinding restores the bevel, the edge is rubbed on an oilstone or waterstone at a consistent angle to produce a fine, keen cutting edge, and the burr is then removed by stropping.<br><br><strong>Handsaw — ripping.</strong> Ripping means cutting timber ALONG the direction of its grain, as opposed to crosscutting, which cuts across the grain. A rip saw has chisel-shaped teeth designed for that cut.",
           "keywords": [
-            "hone",
+            "honing",
             "sharpen",
             "edge",
             "stone",
@@ -2046,7 +2045,7 @@
             "efficiency",
             "profit",
             "frequency",
-            "hire",
+            "hiring",
             "maintenance",
             "training",
             "licence",
@@ -2623,14 +2622,6 @@
           "q": "What type of saw is this?",
           "intro": "A common type of saw used in construction is shown.<img src=\"/diagrams/vet-construction_2023_Q16a_stimulus.jpg\" alt=\"A drop saw (compound mitre saw) mounted on a pivot arm\" style=\"max-width:100%;height:auto;display:block;margin:14px auto\">",
           "answer": "Drop saw (also acceptable: mitre saw, compound mitre saw, cut-off saw). A drop saw is a power saw mounted on a pivot arm that drops down to make precise cross cuts and mitre cuts in timber.",
-          "keywords": [
-            "drop saw",
-            "mitre",
-            "compound",
-            "sliding",
-            "cut-off",
-            "chop saw"
-          ],
           "acceptableAnswers": [
             "drop saw",
             "mitre",
@@ -2639,7 +2630,6 @@
             "cut-off",
             "chop saw"
           ],
-          "minKeywords": 1,
           "bandDescriptors": {
             "full": "Correctly names the saw pictured",
             "partial": "Does not correctly name the saw pictured. The mark is awarded in full or not at all.",
@@ -2655,7 +2645,6 @@
           "keywords": [
             "safety glasses",
             "goggles",
-            "eye",
             "hearing",
             "earmuff",
             "earplug",
@@ -2827,7 +2816,6 @@
             "brick",
             "recycl",
             "metal",
-            "reuse",
             "stormwater"
           ],
           "minKeywords": 6,
@@ -2945,7 +2933,6 @@
             "standard",
             "AS1100",
             "convention",
-            "understood",
             "clarity",
             "confusion",
             "quick",
@@ -3327,7 +3314,6 @@
           "answer": "<strong>Advantage:</strong> it reduces the time needed to complete a measurement — one person can measure a long distance instantly, where a tape would need two people or repeated set-ups. Laser tools are also portable, easy to use, and can hold and recall stored measurements.<br><br><strong>Disadvantage:</strong> the battery periodically needs replacing or recharging, so the tool can fail mid-job. They are also expensive compared with a tape, need to be maintained and calibrated, require a clear line of sight to the target, and generally measure internal dimensions only.",
           "keywords": [
             "time",
-            "quick",
             "one person",
             "portable",
             "store",
@@ -3362,7 +3348,6 @@
             "delay",
             "completion",
             "fit",
-            "rework",
             "quality",
             "safety"
           ],
@@ -3481,8 +3466,7 @@
             "problem",
             "issue",
             "improvement",
-            "client",
-            "expectation"
+            "client"
           ],
           "minKeywords": 4,
           "bandDescriptors": {
@@ -3610,7 +3594,6 @@
             "26",
             "hypotenuse",
             "5",
-            "perimeter",
             "sides"
           ],
           "minKeywords": 2,
@@ -3629,7 +3612,6 @@
             "7.2",
             "0.471",
             "6.73",
-            "pi",
             "radius",
             "circle",
             "slab",
@@ -3676,8 +3658,7 @@
             "8",
             "13",
             "tonne",
-            "km",
-            "delivery"
+            "km"
           ],
           "minKeywords": 3,
           "bandDescriptors": {
@@ -3941,7 +3922,6 @@
             "coarse",
             "fine",
             "material",
-            "timber",
             "aluminium oxide",
             "silicon carbide",
             "backing",
@@ -4072,8 +4052,7 @@
             "appliance",
             "specification",
             "material",
-            "colour",
-            "finish"
+            "colour"
           ],
           "minKeywords": 4,
           "bandDescriptors": {

@@ -4142,3 +4142,87 @@ VET is the one subject whose written content a human has reviewed end to end. Ev
 still scores full from its own model answer, so no student is blocked; the effect is only
 that a partial answer is marked marginally harsher. Left for a deliberate decision rather
 than swept into this change.
+
+---
+
+## 2026-09-06 (later still) — VET's 18 uncreditable per-part keywords, closed
+
+**What changed.** `subjects/vet-construction.json`: **17 edits across 16 parts**, confined to
+`keywords` and `minKeywords`. **Zero uncreditable per-part keywords now remain anywhere in
+the repo** (Advanced and Standard 2 were closed earlier the same day). Built by
+`scripts/archive/vet_fix_part_keywords.py`. No mark, label, model answer, band descriptor,
+question-level field, MC question or omission declaration was touched.
+
+⚠️ **These were NOT the same defect as Standard 2's six**, and treating them as one batch
+would have been wrong. Standard 2's were a *script* mis-assigning a question-level keyword to
+a part, so deletion simply undid a bad assignment. VET's were authored **per part by a
+human**, so each of the 18 was read against its own model answer and classified:
+
+**FORM (4).** The concept IS in the model answer, in a form `keywordHit()` cannot reach —
+"paring" vs `pare`, "honing" vs `hone` (×2), "hiring" vs `hire`. The keyword takes the model
+answer's own form.
+
+⚠️ **An assertion caught me claiming this was free.** The script asserted that the longer
+form still credits a student writing the bare stem, and it **failed**: `'paring'.startswith('pare')`
+is false — they diverge at the fourth character — and the matcher's 4-character stem rule
+compares "pari" against "pare". **No single keyword can match both forms.** So a student who
+writes the bare stem loses that one keyword. It is still strictly better than before, where
+*no* answer could earn it — not even a perfect one — so the mark was unreachable rather than
+merely harder. **Measured on 2022 Q16(b)**: model answer 9/10 → 10/10 matched, a student
+writing "honing" 5/10 → 6/10, a student writing "hone" 5/10 → 4/10 — and **the awarded mark
+is identical in all three cases** (2/2, 1/2, 1/2). The claim was corrected rather than the
+assertion removed.
+
+**INERT (1 part, 2 keywords).** 2023 Q16(a)(i) carried `keywords` **and**
+`acceptableAnswers` holding the *identical* six accepted names. `scoreOne()` short-circuits
+on `acceptableAnswers`, so that part's `keywords` never scored anything offline, and
+`index.html` sends `p.keywords || p.acceptableAnswers` to the AI marker — the same six list
+either way. The duplicate is deleted as dead data. ⚠️ **This is a no-op in behaviour, not a
+defect that was costing marks** — an earlier reading of mine that a correct one-name answer
+scored 0 of 1 was wrong, because it ignored the short-circuit. Verified in the browser:
+"drop saw" → 1/1, "chop saw" → 1/1, "banana" → 0/1, unchanged.
+
+**REDUNDANT (12).** The concept is genuinely absent from the model answer, and in every case
+another keyword on the same part already carries it — the script asserts both facts before
+dropping anything, and records the covering keyword so the judgement is auditable:
+
+| dropped | covered by | | dropped | covered by |
+|---|---|---|---|---|
+| 2021 Q18(b) `pi` | `circumference` | | 2024 Q17(b) `rework` | `reorder` |
+| 2023 Q16(a)(ii) `eye` | `safety glasses` | | 2024 Q18(a) `expectation` | `client` |
+| 2023 Q17(c) `reuse` | `recycl` | | 2024 Q19(a) `perimeter` | `sides` |
+| 2023 Q18(c) `understood` | `clarity` | | 2024 Q19(b) `pi` | `circle` |
+| 2024 Q17(a) `quick` | `time` | | 2024 Q19(d) `delivery` | `km` |
+| 2025 Q17(a) `timber` | `material` | | 2025 Q18(a) `finish` | `specification` |
+
+The alternative — extending each model answer until it demonstrates the concept — is
+authoring content in the one subject a human has reviewed end to end, and was **not** done.
+
+`minKeywords` is deliberately left alone: it stays valid (never exceeds the shortened list),
+and removing a keyword already makes a partial answer score slightly better, so lowering the
+threshold too would compound that.
+
+### Verified
+
+- **0 uncreditable per-part keywords remain in any subject**, measured in the real engine
+  with `keywordHit()` rather than a mirror of it.
+- The diff is confined to `keywords` and `minKeywords` on parts — machine-checked that every
+  part's `marks`, `label` and `answer` are byte-identical, that no question-level field
+  moved, and that `mcQuestions` and `omittedQuestions` are untouched.
+- **Four viewport widths — 320, 430, 1400, 1920** — scoring every part of every multi-part
+  question against its own model answer: VET 18 questions / 52 part rows, Standard 2 66 /
+  148, Advanced 60 / 141. At every width: **0 `undefined`, 0 overflows, 0 render errors,
+  0 parts on generic band wording, every question scoring full.**
+- `refresh_band_descriptors.py` remains a complete no-op, so no band wording moved.
+- Full local CI: `MC=706 Written=374 imageRefs=337 missingImages=0`, `Issues: 0`; **285** MC
+  answers and **334** written questions checked, 0 wrong, 0 unverifiable; VET coverage 76/76
+  and 34/34 reviewed with 23 re-laid out, 0 stale; `npm test` **73/73**. No console errors.
+
+⚠️ **One thing for the owner to decide, not something CI can catch.** VET's review ledger
+records that a human compared each question's `modelAnswer`, `keywords` **and**
+`bandDescriptors` against NESA. Its staleness mechanism only tracks NESA's own sample-answer
+text, so editing `keywords` does **not** mark any entry stale — and all 34 still report as
+reviewed. But 16 of those questions now carry a keyword list the reviewer did not sign off
+in this exact form. The edits are mechanical (a keyword the engine could never credit, or a
+duplicate that never scored) rather than re-authoring, so the verdicts are argued to stand;
+whether that warrants a re-read is a judgement about the review's meaning, not a bug.
