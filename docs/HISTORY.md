@@ -4745,3 +4745,92 @@ across a subject before its ledger is committed.
 **Remaining to review: 305 of 380** — Maths Advanced 126, Standard 2 145, HMS 40 (HMS has no
 answer key and cannot have one until after the 2026 HSC, so it cannot be reviewed this way at
 all). **Stage 7 (Release) is next** for Section III.
+
+## 2026-09-06 (later still, ×7) — Multimedia Section III RELEASED (Stage 7): the runbook is complete
+
+**Every stage of `docs/subject-plans/multimedia-section-iii.md` is done.** Only the optional
+Stage 8 (a Study Mode "Industry Study" topic) remains, and the playbook treats that as a separate
+project.
+
+No registration work was required — unlike a new subject port, Multimedia was already live
+(`SUBJECT_ID_MAP`, `SUBJECT_CATALOGUE`, card and artwork all existed); Section III added entries
+to an existing bank.
+
+### One user-visible defect, found only because Stage 7 looked at the app
+
+⚠️ **`SUBJECT_CATALOGUE`'s Multimedia row still advertised `'60 MC + 29 written · 2020–2025'`** —
+a hard-coded string shown to students in the subscribe/subject-chooser flow. Nothing in CI reads
+it: `validate_subjects.cjs` checks the JSON, not the copy. Corrected to **35 written**, and the
+page was then grepped for any other stale count (**none** — Maths Advanced's `126 written` is
+correct). The Exam Mode picker's *"Written Response · 35 questions"* is computed live and was
+already right, which is precisely why the hard-coded one survived four stages unnoticed.
+
+### AI marking on a 10+ mark response — the gate that has been open all along
+
+⚠️ **A live Claude call still cannot be made here: there is no `ANTHROPIC_API_KEY` in this
+environment** (it is a Cloudflare/GitHub secret; no `.env` or `.dev.vars` exists locally). Rather
+than tick the gate on "verified to the prompt boundary" as previous sessions had to, **six
+permanent tests were added to `tests/mark-written.test.js`** that drive the **real 2023 Q16 bank
+entry** — the largest single part anywhere in the repo at **12 marks** — through the **real
+`onRequestPost`**, stubbing only the Supabase and Anthropic HTTP calls:
+
+- a **shape guard** asserting the real entry is still 15 marks, `(a)` 3 + `(b)` 12, so the test
+  fails if the bank moves underneath it;
+- the **prompt** carries `PART (a) (3 marks)`, `PART (b) (12 marks)`, *"worth 15 marks in
+  total"*, part (b)'s **NESA top-band wording verbatim**, its real keywords, and **no
+  `undefined`** anywhere in a 12-mark prompt;
+- a 12-mark part awarded 12 comes back as **12**, total derived as **15**, grade `excellent`;
+- **clamping is per part, not per question** — 15 on the 3-mark part and 99 on the 12-mark part
+  clamp to **3 and 12**;
+- a blank 12-mark part is sent as `(left blank — award 0)` and scores 0;
+- the parts path requests `max_tokens: 1024` on `claude-haiku-4-5`.
+
+`npm test` goes **73 → 79, all passing**. This is materially stronger than reading the source —
+it exercises production data through the production handler — but **it is still not a live model
+call**. It proves the request we build and the response we handle, not what Claude actually
+returns for a 12-mark extended response. **That remains open**, and it is the same standing
+caveat every subject in this repo carries. The owner can close it by exporting
+`ANTHROPIC_API_KEY` in a shell and re-running; nothing else is needed.
+
+### Browser verification at mobile width
+
+Driven through the page's own handlers on the real elements — the Browser pane was hidden, so
+pointer clicks time out (the established workaround).
+
+- Real card → picker: the **Study Mode / Exam Mode** toggle renders, and Exam Mode shows
+  **"Written Response · 35 questions"**.
+- **2025 Q16 renders correctly**: `15 marks` badge, year chip, `0 OF 2 PARTS ANSWERED`, accordion
+  with `(a)` 5 marks open and `(b)` 10 marks collapsed. **No topic badge, which is intended** —
+  Stage 1 decided Section III carries no `category`, and the rest of the subject shows none.
+- **A complete student flow**: typed part (a), clicked the real *Next part* button, typed part
+  (b), submitted → **8 / 15 (53%)**, rows **(a) 4/5** and **(b) 4/10**, genuinely computed, each
+  captioned with **NESA's own criteria wording**, model answer revealed and correctly labelled,
+  and `YOUR ANSWERS` showing each part separately under `PART (A) · 5 MARKS` / `PART (B) · 10
+  MARKS`. Screenshotted.
+- **0 `undefined` on screen, 0 overflow, no console errors.**
+
+⚠️ **Process note, recorded because it could have gone badly**: a blind *"find the first visible
+`×` and click it"* during this verification hit a sign-in control and redirected the tab into
+**Google's real OAuth flow**. Nothing was entered and the tab was navigated straight back to
+localhost, but the lesson stands — on a page carrying real auth, do not click buttons selected by
+shape rather than by identity.
+
+### Full local CI
+
+`MC=706 Written=380 imageRefs=337 missingImages=0`, `Issues: 0`; **285 MC** and **340 written**
+checks, 0 wrong, 0 unverifiable; Multimedia **coverage 42/42** and **review 35/35**; 5 Cloudflare
+functions syntax-check; **`npm test` 79/79**.
+
+### Where this leaves the repo
+
+- **Multimedia is complete**: 60 MC + **35 written**, 42/42 official parts, 35/35 reviewed
+  (assistant-compared, no human sign-off — see the ledger's `reviewMethod`).
+- **The last reverse-coverage gap in the repo is closed.** Every subject with past papers now has
+  complete written coverage.
+- **Two subjects have review ledgers** (VET 34/34, Multimedia 35/35); **305 of 380 written
+  questions remain unreviewed** — Maths Advanced 126, Standard 2 145, and HMS's 40, which cannot
+  be reviewed this way at all until an answer key exists after the 2026 HSC.
+- Still open and unchanged by this work: the live AI marking call, the unplaced Flaticon
+  attribution, and the 16 single-part questions in other subjects that do not score full from
+  their own model answer (**Standard 2 2025 Q17 at 0/3** and **Maths Advanced 2024 Q30 at 1/3**
+  being the severe ones).

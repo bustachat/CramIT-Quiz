@@ -19,7 +19,7 @@ not re-run in their usual form. **This runbook starts at Stage 1.**
 | 4 Port | ✅ **done 2026-09-06** | 1–2 sessions |
 | 6 Ground truth — **marks** | ➡️ already done — folded into Stage 4's gate | — |
 | **6b Written-answer review** | ✅ **done 2026-09-06** — covers Section III's 6 new entries **and** Multimedia's existing 29 → **35** | 1 session |
-| 7 Release | ⬜ **next** | 1 session |
+| 7 Release | ✅ **done 2026-09-06** | 1 session |
 | 8 Study Mode topic (optional) | ⬜ | separate project — playbook §9 |
 
 ### How to start a session
@@ -691,7 +691,7 @@ compared what** — assistant-compared, no human sign-off, self-review on six en
 
 ---
 
-## Stage 7 — Release ⬜
+## Stage 7 — Release ✅ DONE 2026-09-06
 
 1. Browser-verify at mobile width: load Multimedia, open Written Response, render a 15-mark
    Q16, submit an answer, confirm AI marking returns a sane band and no console errors.
@@ -702,8 +702,84 @@ compared what** — assistant-compared, no human sign-off, self-review on six en
    a regression; the rest of the subject shows none either.
 3. `docs/HISTORY.md` entry; CLAUDE.md §7 row (written **29 → 35**) and §11 roadmap.
 
-**GATE 7** — [ ] full local CI green · [ ] exercised in a browser at mobile width · [ ] AI
-marking tested on a 10+ mark response · [ ] docs updated
+---
+
+### Stage 7 — RESULTS, 2026-09-06
+
+**Multimedia Section III is released. All stages of this runbook are complete.**
+
+No registration work was needed — unlike a new subject port, Multimedia was already live
+(`SUBJECT_ID_MAP`, `SUBJECT_CATALOGUE`, card, artwork all existed); Section III added entries to
+an existing bank.
+
+#### One user-visible defect found and fixed
+
+⚠️ **`SUBJECT_CATALOGUE`'s Multimedia row still advertised `'60 MC + 29 written · 2020–2025'`.**
+That string is shown to students in the subscribe/subject-chooser flow, and nothing in CI reads
+it — `validate_subjects.cjs` checks the JSON, not the copy. Corrected to **35 written**, and the
+page was then grepped for any other stale count (**none**; Maths Advanced's `126 written` is
+correct). The Exam Mode picker's *"Written Response · 35 questions"* is computed live and was
+already right — **the hard-coded string was the only stale one**, which is exactly why it
+survived four stages.
+
+#### AI marking on a 10+ mark response
+
+⚠️ **A live Claude call still cannot be made here — there is no `ANTHROPIC_API_KEY` in this
+environment** (it is a Cloudflare/GitHub secret; no `.env` or `.dev.vars` exists locally). Rather
+than leave the gate on "verified to the prompt boundary", **six permanent tests were added to
+`tests/mark-written.test.js`** that drive the **real 2023 Q16 bank entry** — the largest single
+part anywhere in the repo at **12 marks** — through the **real `onRequestPost`**, with only the
+Supabase and Anthropic HTTP calls stubbed:
+
+| Test | Asserts |
+|---|---|
+| shape guard | the real entry is still 15 marks, `(a)` 3 + `(b)` 12 — the test fails if the bank changes underneath it |
+| prompt | `PART (a) (3 marks)` and `PART (b) (12 marks)`, *"worth 15 marks in total"*, part (b)'s **NESA top-band wording verbatim**, its real keywords, and **no `undefined`** anywhere in a 12-mark prompt |
+| full marks | a 12-mark part awarded 12 comes back as 12, total derived as **15**, grade `excellent` |
+| clamping | 15 on the 3-mark part and 99 on the 12-mark part clamp to **3 and 12** — to each part's own maximum, not the question total |
+| blank | an unanswered 12-mark part is sent as `(left blank — award 0)` and scores 0 |
+| headroom | the parts path requests `max_tokens: 1024` on `claude-haiku-4-5` |
+
+`npm test` goes **73 → 79, all passing**. This is materially stronger than reading the source,
+but it is **still not a live model call**: it proves the request we build and the response we
+handle, not what Claude actually returns for a 12-mark extended response. **That remains open**
+and is the same standing caveat carried by every subject in the repo.
+
+To close it, the owner can export `ANTHROPIC_API_KEY` in a shell and re-run; nothing else is
+needed.
+
+#### Browser verification, at mobile width
+
+Driven through the page's own handlers on the real elements (the Browser pane was hidden, so
+pointer clicks time out — the established workaround).
+
+- Real card → picker: **Study Mode / Exam Mode** toggle renders (Multimedia has `hasStudy`), and
+  Exam Mode shows **"Written Response · 35 questions"**.
+- **2025 Q16 renders**: `15 marks` badge, year chip, `0 OF 2 PARTS ANSWERED`, accordion with
+  `(a)` 5 marks open and `(b)` 10 marks collapsed. **No topic badge — intended**, since Stage 1
+  decided Section III carries no `category` and the rest of the subject shows none either.
+- **A complete student flow**: typed part (a), clicked the real *Next part*, typed part (b),
+  submitted with *Show model answer* → **8 / 15 (53%)**, rows **(a) 4/5** and **(b) 4/10**,
+  genuinely computed, each captioned with **NESA's own criteria wording**, the model answer
+  revealed and correctly labelled, `YOUR ANSWERS` showing each part separately under
+  `PART (A) · 5 MARKS` / `PART (B) · 10 MARKS`. Screenshotted.
+- **0 `undefined` on screen, 0 overflow, no console errors.**
+
+⚠️ **A process note worth recording**: a blind *"find the first visible `×` and click it"* during
+this verification hit a sign-in control and redirected the tab into **Google's real OAuth flow**.
+Nothing was entered and the tab was navigated straight back, but it is a reminder not to click
+buttons selected by shape rather than by identity on a page carrying real auth.
+
+#### Full local CI
+
+`MC=706 Written=380 imageRefs=337 missingImages=0`, `Issues: 0`; **285 MC** and **340 written**
+checks, 0 wrong, 0 unverifiable; Multimedia **coverage 42/42** and **review 35/35**; 5 Cloudflare
+functions syntax-check; **`npm test` 79/79**.
+
+**GATE 7** — [x] full local CI green · [x] exercised in a browser at mobile width (real flow,
+8/15, screenshotted) · [x] AI marking exercised on a **12-mark** response through the real
+handler by six new permanent tests — ⚠️ **a live Claude call is still NOT possible here and
+remains open** · [x] docs updated
 
 ---
 

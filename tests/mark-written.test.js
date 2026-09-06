@@ -9,6 +9,7 @@
 import { test, describe, afterEach } from 'node:test';
 import assert from 'node:assert/strict';
 import { onRequestPost } from '../functions/mark-written.js';
+import { readFileSync } from 'node:fs';
 
 const realFetch = globalThis.fetch;
 afterEach(() => { globalThis.fetch = realFetch; });
@@ -211,5 +212,141 @@ describe('mark-written.js multi-part marking', () => {
     const res = await onRequestPost({ request: goodRequest(partsBody({ parts: [PARTS[0]] })), env: ENV });
     const body = await res.json();
     assert.equal(body.partResults, undefined);
+  });
+});
+
+// ── Section III: the longest response the engine handles ─────────────────────
+// Multimedia Q16 is 15 marks in two parts, and 2023 is 3 + 12 — the largest
+// single part anywhere in the bank. These drive the REAL bank entry through the
+// real handler, so the prompt and the response handling are exercised against
+// production data rather than a fixture. (A live Claude call still needs
+// ANTHROPIC_API_KEY, which no CI or dev environment here has — see GATE 7.)
+
+const MULTIMEDIA = JSON.parse(
+  readFileSync(new URL('../subjects/multimedia.json', import.meta.url), 'utf8')
+);
+const Q16_2023 = MULTIMEDIA.writtenQuestions.find((q) => q.year === 2023 && q.qNum === 16);
+
+// Mirrors index.html tryAiMarking()'s body for a multi-part question.
+function sectionThreeBody(answers) {
+  return {
+    question: Q16_2023.q,
+    maxMarks: Q16_2023.marks,
+    keywords: Q16_2023.keywords || [],
+    studentAnswer: Q16_2023.parts.map((p) => `${p.label} ${answers[p.label] || ''}`).join('\n\n'),
+    bandDescriptors: Q16_2023.bandDescriptors || null,
+    subject: 'multimedia',
+    parts: Q16_2023.parts.map((p) => ({
+      label: p.label,
+      question: [p.intro, p.q].filter(Boolean).join(' '),
+      maxMarks: p.marks,
+      keywords: p.keywords || p.acceptableAnswers || [],
+      bandDescriptors: p.bandDescriptors || null,
+      studentAnswer: String(answers[p.label] || ''),
+    })),
+  };
+}
+
+describe('mark-written.js — Multimedia Section III (15 marks, 3 + 12)', () => {
+  test('the real bank entry is the shape these tests assume', () => {
+    assert.ok(Q16_2023, '2023 Q16 missing from subjects/multimedia.json');
+    assert.equal(Q16_2023.marks, 15);
+    assert.deepEqual(Q16_2023.parts.map((p) => [p.label, p.marks]), [['(a)', 3], ['(b)', 12]]);
+  });
+
+  test('both parts reach Claude with their own maximum, keywords and NESA band descriptors', async () => {
+    const capture = {};
+    mockFetchWithClaude(
+      {
+        partResults: [
+          { label: '(a)', marksAwarded: 3, feedback: 'x' },
+          { label: '(b)', marksAwarded: 12, feedback: 'x' },
+        ],
+        feedback: 'f',
+        improvement: 'i',
+      },
+      capture
+    );
+    await onRequestPost({ request: goodRequest(sectionThreeBody({ '(a)': 'VR.', '(b)': 'Automation.' })), env: ENV });
+    const prompt = capture.body.messages[0].content;
+
+    assert.ok(prompt.includes('PART (a) (3 marks)'), 'part (a) maximum missing');
+    assert.ok(prompt.includes('PART (b) (12 marks)'), 'part (b) maximum missing');
+    assert.ok(prompt.includes('worth 15 marks in total'), 'total missing');
+
+    // NESA's own criteria wording, not the engine's generic fallback.
+    assert.ok(
+      prompt.includes(Q16_2023.parts[1].bandDescriptors.full),
+      "part (b)'s NESA top-band wording missing from the prompt"
+    );
+    // and the part's own key concepts
+    Q16_2023.parts[1].keywords.slice(0, 3).forEach((kw) => {
+      assert.ok(prompt.includes(kw), `keyword ${kw} missing from the prompt`);
+    });
+    // nothing undefined leaks into a 12-mark prompt
+    assert.ok(!prompt.includes('undefined'), 'prompt contains "undefined"');
+  });
+
+  test('a 12-mark part can be awarded its full 12, and the total is derived as 15', async () => {
+    mockFetchWithClaude({
+      partResults: [
+        { label: '(a)', marksAwarded: 3, feedback: 'x' },
+        { label: '(b)', marksAwarded: 12, feedback: 'x' },
+      ],
+      feedback: 'f',
+      improvement: 'i',
+    });
+    const res = await onRequestPost({ request: goodRequest(sectionThreeBody({ '(a)': 'a', '(b)': 'b' })), env: ENV });
+    const body = await res.json();
+    assert.deepEqual(body.partResults.map((p) => p.marksAwarded), [3, 12]);
+    assert.equal(body.marksAwarded, 15);
+    assert.equal(body.maxMarks, 15);
+    assert.equal(body.grade, 'excellent');
+  });
+
+  test('an overgenerous mark on the 12-mark part is clamped to 12, not to the question total', async () => {
+    mockFetchWithClaude({
+      partResults: [
+        { label: '(a)', marksAwarded: 15, feedback: 'x' },  // part is worth 3
+        { label: '(b)', marksAwarded: 99, feedback: 'x' },  // part is worth 12
+      ],
+      feedback: 'f',
+      improvement: 'i',
+    });
+    const res = await onRequestPost({ request: goodRequest(sectionThreeBody({ '(a)': 'a', '(b)': 'b' })), env: ENV });
+    const body = await res.json();
+    assert.deepEqual(body.partResults.map((p) => p.marksAwarded), [3, 12]);
+    assert.equal(body.marksAwarded, 15);
+  });
+
+  test('a blank 12-mark part is sent as blank and scores 0', async () => {
+    const capture = {};
+    mockFetchWithClaude(
+      {
+        partResults: [
+          { label: '(a)', marksAwarded: 2, feedback: 'x' },
+          { label: '(b)', marksAwarded: 0, feedback: 'Not attempted.' },
+        ],
+        feedback: 'f',
+        improvement: 'i',
+      },
+      capture
+    );
+    const res = await onRequestPost({ request: goodRequest(sectionThreeBody({ '(a)': 'VR is immersive.', '(b)': '' })), env: ENV });
+    const body = await res.json();
+    assert.ok(capture.body.messages[0].content.includes('(left blank — award 0)'));
+    assert.equal(body.marksAwarded, 2);
+    assert.equal(body.grade, 'developing');
+  });
+
+  test('the parts path asks for enough output headroom for a 15-mark response', async () => {
+    const capture = {};
+    mockFetchWithClaude(
+      { partResults: [{ label: '(a)', marksAwarded: 0, feedback: '' }, { label: '(b)', marksAwarded: 0, feedback: '' }], feedback: '', improvement: '' },
+      capture
+    );
+    await onRequestPost({ request: goodRequest(sectionThreeBody({ '(a)': 'a', '(b)': 'b' })), env: ENV });
+    assert.equal(capture.body.max_tokens, 1024);
+    assert.equal(capture.body.model, 'claude-haiku-4-5');
   });
 });
