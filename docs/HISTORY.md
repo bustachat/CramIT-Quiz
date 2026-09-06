@@ -4312,3 +4312,116 @@ byte-identical against `HEAD`.
   reviewed". They were not, so that argument is weaker — though the edits remain mechanical
   (a keyword the engine could never credit, or a duplicate that never scored) and every VET
   part still scores full from its own model answer.
+
+## 2026-09-06 (later still, ×3) — Multimedia Section III, Stage 1 (Survey): both of the runbook's own assumptions were wrong
+
+**Planning and record-keeping only — no code, data, credential, schema or pricing fact changed.**
+The single file touched is `docs/subject-plans/multimedia-section-iii.md`. Full local CI was run
+anyway and is green (`MC=706 Written=374 imageRefs=337 missingImages=0`, `Issues: 0`; 285 MC and
+334 written checks, 0 wrong; `npm test` 73/73).
+
+Multimedia Section III is the last reverse-coverage gap in the repo — **Question 16, 15
+marks/paper, 12 official parts, 90 marks across 2020–2025, never ported**. Coverage confirmed
+still at **30/42** before starting. The runbook's precondition (Maths Advanced Stage 7) was met
+2026-09-01, so Stage 1 ran.
+
+**The headline: the two things the runbook told the next session to rely on were both wrong, and
+both were wrong in the direction of more work.** The runbook did tell its reader to check the
+first one, which is the only reason it was caught.
+
+### Decision 1 — bank shape: MERGED, six entries, not twelve
+
+The runbook recorded that *"Section III's own text already says (a)/(b) go to separate writing
+booklets in four of the six years"* and pointed at keeping the bank **split**, on VET Q20/Q21's
+precedent. **All six instruction lines were read. It is zero of six.** Every year, without
+variation:
+
+> *"Answer the question in **the** Section III Writing Booklet. Extra writing booklets are available."*
+
+One booklet. 2020 and 2021 additionally allocate pages *within that same booklet* — (a) pages
+2–4, (b) pages 5–8 — which is one continuous answer space, not two booklets; 2022–2025 carry no
+per-part allocation at all. The contrast with VET's genuinely-split questions is not subtle —
+VET reads *"Answer this question in **TWO SEPARATE** writing booklets… Use **the other** writing
+booklet to answer part (b)"*. So CLAUDE.md §10 rule 9's test resolves the opposite way:
+**merged, one entry per year, six entries carrying `parts[]` of two** (rule 10), matching
+Q16–19 / Maths / VET Section II. No mixed shape across years.
+
+⚠️ **2024's paper binds the stimulus to both parts itself** — *"Use the following information to
+answer parts (a) and (b)."* — the strongest single piece of evidence for the merge, and exactly
+the shared-stimulus shape whose mishandling caused the VET defect that produced rule 9.
+
+This changes the Stage 6b target from **41 to 35** bank questions, since the ledger has one entry
+per bank question.
+
+### Decision 2 — the "one genuine feasibility risk" was already retired in production
+
+The runbook called the 10–12 mark extended response *"the one genuine feasibility risk in the
+whole runbook"*, on the grounds that *"the longest thing it has ever handled is a 5-mark
+answer"*. **That is true of `multimedia.json` alone and false of the engine.** Measured across
+the live bank: **VET ships ten extended responses at 10–15 marks** (2021 Q20, 2022 Q20, 2023
+Q21, 2024 Q21, 2025 Q21 at 15; five more at 10) and **HMS four at 12** — all browser-verified in
+the 2026-09-01 VET completion session. Section III's parts (5+10, 3+12) are every one *smaller*
+than the 15-mark single box already shipping. **No `mark-written.js` change is needed**, and the
+authoring precedent is concrete: VET 2021 Q20 uses **18 keywords, `minKeywords: 7`**, NESA-derived
+band descriptors.
+
+Path-checked rather than assumed: `isMultiPart()` needs `length > 1` so two parts take the
+`parts` path; the server clamps each part to its own maximum and derives the total from the
+parts; `max_tokens: 1024` bounds only the *output* (two short part-feedbacks plus the overall
+pair), not the student's prose; and `scoreOne()` is mark-agnostic (`matched / keywords.length ×
+maxMark`), so it scales to 12 unchanged.
+
+⚠️ **A real caveat was recorded in place of the false risk**: `bandDescriptors` is a fixed 3-tier
+`{full, partial, minimal}` while NESA bands these parts across **5 rows** (10/8/6/4/2), and
+`buildPartsPrompt` sends the band text **without its mark numbers** — so a 10–12 mark part leaves
+the model a wide middle tier. Mitigation is a keyword list rich enough to carry the granularity,
+not an engine change.
+
+### Decision 3 — assets: zero, confirmed
+
+All six Section III pages: **images 0, tables 0, drawings 2** — and both drawings are page
+furniture byte-identical across all six years (the NESA year badge box 33.5 × 14.4 pt at
+y = 68.3; the rule under the section header, 453.5 pt wide at y = 269.5). Confirmed **visually**,
+not just from the text layer (§10 rule 3) — 2020 and 2024 page 9 rendered at 110 dpi and read.
+Pure prose. Stage 1's asset count was a lower bound *three separate times* on Maths Advanced, so
+all six pages were read individually rather than sampled.
+
+### Decision 4 — `category`: match the subject's existing absence
+
+Measured: **all 60 MC and all 29 written questions in `multimedia.json` carry neither `category`
+nor `topic`.** Introducing it for six questions would light the topic badge on Section III and
+nowhere else in the subject, for no gain — there is no populated category filter to join to. A
+Section III topic belongs with the optional Stage 8 Study Mode work. `section: "III"` **is** set;
+verified informational only, no code path reads `q.section`.
+
+### Three further staleness corrections in the runbook
+
+- ✅ **`bandDescriptors` DO have ground truth** — the runbook named extending
+  `build_written_key.py` to capture criteria rows as a *prerequisite* for Stage 6b. That landed
+  2026-09-01 and was repaired 2026-09-06. Verified present for all 12 Section III parts (5/5,
+  5/5, **3**/5, …) — note 2023 (a) has only 3 rows, a degenerate case where the top/middle/bottom
+  collapse maps one-to-one with no joining.
+- ⚠️ **The "four questions with no scoring data" is a false alarm.** The runbook called it *"a
+  real marking-quality defect"*. They are 2020/2021/2023/2024 **Q11 — 1-mark acronym recall**
+  (*"What does RTSP stand for?"*) carrying `acceptableAnswers`, which is the **correct**
+  mechanism: `scoreOne()` short-circuits on it and returns full or zero exactly, and keywords
+  beside it would be inert — the same dead-data finding made on VET 2023 Q16(a)(i) earlier today.
+  What remains true is narrower: the *AI* path sends them no keywords and no bands, which on a
+  one-word answer is close to harmless. Recommended as an explicit deferral, which GATE 6b
+  already permits.
+- The **backlog table was stale**, predating both the VET Section II merge (72 → 34) and the
+  Standard 2 consolidation (151 → 145); re-measured to **374 written / 34 reviewed / 340
+  remaining**. It also counted `keywords` alone and so under-reported Standard 2 and Multimedia,
+  which use `acceptableAnswers` where exact match is right — the column is now "scoring
+  mechanism", **374/374**. VET's provenance correction from earlier today was carried in, so the
+  next session copies VET's *mechanism* without inheriting its overstated wording.
+
+### Stage 2 is blocked, and the question is front-loaded
+
+Stage 2 (syllabus grounding) needs the **Industrial Technology Stage 6 syllabus**, which is
+**not on disk** — `NESA Exams Folder/Industrial Technology - Multimedia/` holds only the six
+papers, six marking guidelines and five marking-feedback PDFs. Maths Advanced, Maths Standard 2
+and VET Construction each have theirs saved; this subject does not. Downloading it needs the
+owner's permission, so that is asked now rather than surfaced as a mid-task blocker later.
+
+**GATE 1 is met on all four items.** Next: Stage 2, on the owner's answer.
