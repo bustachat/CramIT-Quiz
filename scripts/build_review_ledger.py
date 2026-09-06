@@ -96,6 +96,12 @@ def main():
         sys.exit("verdict table names questions not in the bank: %s" % (extra,))
 
     reviews, counts = {}, {}
+    if not getattr(mod, "REVIEW_METHOD", None):
+        sys.exit("%s: scripts/reviews/%s.py must define REVIEW_METHOD — state who did the "
+                 "comparing and how far a human checked it. The ledger claimed a "
+                 "per-question human review for months when it was assistant-compared with "
+                 "a spot-check, and every doc built on it inherited that." % (sid, sid.replace("-", "_")))
+
     for (year, qnum) in written:
         entry = mod.REVIEWED[(year, qnum)]
         if entry["verdict"] not in VERDICTS:
@@ -119,16 +125,20 @@ def main():
     out = {
         "subject": sid,
         "note": ("Written-answer review ledger. One entry per written bank question, "
-                 "recording that a human compared its modelAnswer, keywords and "
-                 "bandDescriptors against NESA's official sample answer and criteria in "
-                 "data/answer-key/written/. `sampleAnswerFingerprint` hashes the OFFICIAL "
+                 "recording that its modelAnswer, keywords and bandDescriptors were "
+                 "compared against NESA's official sample answer and criteria in "
+                 "data/answer-key/written/. ⚠️ `reviewMethod` says WHO did the comparing "
+                 "and how far a human checked it — do not read an entry as a per-question "
+                 "human sign-off unless that field says so. "
+                 "`sampleAnswerFingerprint` hashes the OFFICIAL "
                  "answer as at review time: regenerate the key and any review whose "
                  "official WORDS moved is void, not stale. `sampleAnswerWordsFingerprint` "
                  "hashes the same text with word ORDER discarded, so a pure re-layout by "
                  "the extractor is reported rather than treated as NESA changing. See "
                  "docs/porting-playbook.md "
                  "section 6. Rebuild with scripts/build_review_ledger.py; never hand-edit."),
-        "reviewer": "human review, assisted (session of %s)" % mod.REVIEWED_AT,
+        "reviewMethod": mod.REVIEW_METHOD,
+        "reviewedAt": mod.REVIEWED_AT,
         "reviews": reviews,
     }
     out_dir = os.path.join(REPO, "data", "answer-key", "written", "reviews")

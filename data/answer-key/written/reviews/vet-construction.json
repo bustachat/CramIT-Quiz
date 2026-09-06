@@ -1,7 +1,6 @@
 {
   "subject": "vet-construction",
-  "note": "Written-answer review ledger. One entry per written bank question, recording that a human compared its modelAnswer, keywords and bandDescriptors against NESA's official sample answer and criteria in data/answer-key/written/. `sampleAnswerFingerprint` hashes the OFFICIAL answer as at review time: regenerate the key and any review whose official text moved is void, not stale. See docs/porting-playbook.md section 6. Rebuild with scripts/build_review_ledger.py; never hand-edit.",
-  "reviewer": "human review, assisted (session of 2026-09-01)",
+  "note": "Written-answer review ledger. One entry per written bank question, recording that its modelAnswer, keywords and bandDescriptors were compared against NESA's official sample answer and criteria in data/answer-key/written/. ⚠️ `reviewMethod` says WHO did the comparing and how far a human checked it — do not read an entry as a per-question human sign-off unless that field says so. `sampleAnswerFingerprint` hashes the OFFICIAL answer as at review time: regenerate the key and any review whose official WORDS moved is void, not stale. `sampleAnswerWordsFingerprint` hashes the same text with word ORDER discarded, so a pure re-layout by the extractor is reported rather than treated as NESA changing. See docs/porting-playbook.md section 6. Rebuild with scripts/build_review_ledger.py; never hand-edit.",
   "reviews": {
     "2021": {
       "16": {
@@ -421,5 +420,7 @@
         "sampleAnswerWordsFingerprint": "sha256:b0f52252b644a0c8883d5b3041b38b9b80a0b45da536c52733c1638b23bcc87f"
       }
     }
-  }
+  },
+  "reviewMethod": "assistant-compared against NESA's sample answers and criteria; human spot-check on a small unrecorded subset, not per question",
+  "reviewedAt": "2026-09-01"
 }

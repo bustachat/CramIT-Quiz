@@ -27,6 +27,16 @@ divergent-accepted  the bank legitimately reads unlike NESA's text (note require
 
 REVIEWED_AT = "2026-09-01"
 
+# ⚠️ How these verdicts were actually reached. Corrected 2026-09-06 by the owner: the
+# ledger and every doc built on it said "a human compared each question against NESA",
+# which was not what happened. The per-question comparison was done by an assistant
+# session; the owner spot-checked a couple of questions, not all 34. The work is still
+# real -- it found and fixed 6 genuine defects the mark check could never see -- but it is
+# NOT a per-question human sign-off, and calling it one overstated the guarantee on the one
+# subject the project held up as fully reviewed.
+REVIEW_METHOD = ("assistant-compared against NESA's sample answers and criteria; "
+                 "human spot-check on a small unrecorded subset, not per question")
+
 _ALL = ["modelAnswer", "keywords", "bandDescriptors"]
 
 REVIEWED = {

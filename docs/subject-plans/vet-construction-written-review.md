@@ -1,5 +1,12 @@
 # VET Construction — Written-Answer Review AND Completion Port
 
+> ⚠️ **Corrected 2026-09-06 by the owner.** This runbook, the ledger it produced and every
+> document built on them described the result as a per-question human review. It was not.
+> The comparisons were performed by an assistant session; the owner spot-checked a couple of
+> questions, not all 34. The findings are still real — six genuine defects were found and
+> fixed, none of which the mark check could see — but read every "reviewed" below as
+> "assistant-compared, human spot-check", and see the ledger's own `reviewMethod` field.
+
 **Status: COMPLETE, 2026-09-01. Both gates passed.** Branch `review/vet-written`, **not merged**.
 
 Two pieces of work, in order:

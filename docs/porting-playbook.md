@@ -777,7 +777,9 @@ failure.
 - [ ] Every paper reconciles to its front-page totals
 - [ ] Image questions manually compared against the paper
 - [ ] **Every written question reviewed against NESA's sample answer, and the review
-      committed to the ledger** — `modelAnswer`, `keywords` and `bandDescriptors`, with
+      committed to the ledger** — ⚠️ and the ledger's `reviewMethod` must say WHO did the
+      comparing. VET's said "human review" when it was assistant-compared with a spot-check
+      on a couple of questions; no subject has actually met this gate yet — `modelAnswer`, `keywords` and `bandDescriptors`, with
       `divergent-accepted` used and noted where the official text is unusable
 - [ ] **Review coverage 100% for this subject**, and no stale fingerprints
 
@@ -909,7 +911,7 @@ coordination tables.
 - [ ] Image questions compared against the paper by a human (Stage 6)
 - [ ] **Written answers reviewed against NESA's sample answers and the review committed to
       `data/answer-key/written/reviews/{subject}.json` — 100% coverage, no stale
-      fingerprints (Stage 6)**
+      fingerprints, and `reviewMethod` stating who compared them (Stage 6)**
 - [ ] Browser-verified at mobile width, no console errors (Stage 7)
 - [ ] `subjects/index.json`, `SUBJECT_ID_MAP`, `SUBJECT_CATALOGUE`, subject card (CLAUDE.md §10)
 - [ ] `docs/HISTORY.md` entry; CLAUDE.md §7 row added

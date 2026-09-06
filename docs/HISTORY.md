@@ -4226,3 +4226,89 @@ reviewed. But 16 of those questions now carry a keyword list the reviewer did no
 in this exact form. The edits are mechanical (a keyword the engine could never credit, or a
 duplicate that never scored) rather than re-authoring, so the verdicts are argued to stand;
 whether that warrants a re-read is a judgement about the review's meaning, not a bug.
+
+---
+
+## 2026-09-06 (later still, ×2) — The VET written review was never a per-question human review; the record is corrected
+
+⚠️ **Owner correction, and it invalidates a claim this project had been repeating in seven
+places since 2026-09-01.** The VET Construction review ledger recorded
+`reviewer: "human review, assisted"` and a note saying each entry records *"that a human
+compared its modelAnswer, keywords and bandDescriptors against NESA"*. That is not what
+happened. **The per-question comparison was done by an assistant session; the owner
+spot-checked a couple of questions, not all 34.**
+
+**No question data changed.** The six corrections the review produced are real and remain
+applied — they were genuine defects the mark check could never see (a model answer headlining
+2.61 m³ against NESA's 2.99, two fabricated stimulus band labels, an `acceptableAnswers` list
+missing NESA's own alternative, two stems that gave their own answers away). The *work* was
+sound. What was wrong was the **provenance** attached to it, and provenance is exactly what a
+review ledger exists to record.
+
+### Why it mattered more than a wording slip
+
+VET was the one subject the project held up as verified, and everything downstream inherited
+the claim:
+
+- `check_written_key.cjs` printed **"34/34 reviewed against NESA"** on every CI run.
+- CLAUDE.md called VET **"the ONLY fully reviewed subject"** (§6 tree, twice), **"34/34
+  reviewed"** (§7 table) and **"the only reviewed subject"** (§10 rule 8).
+- `docs/porting-playbook.md` made "every written question reviewed against NESA" a Gate 6 /
+  Definition-of-Done item, with VET as the worked exemplar — so every future port would have
+  reproduced the same overstatement and called the gate met.
+- `docs/subject-plans/vet-construction-written-review.md` described the finished result.
+
+The honest position: **no subject has yet had the full per-question human review that gate
+asks for.**
+
+### What changed
+
+- **`scripts/reviews/vet_construction.py`** gains `REVIEW_METHOD`, stating plainly that the
+  comparison was assistant-performed with a human spot-check on a small unrecorded subset.
+- **`scripts/build_review_ledger.py`** now **requires** `REVIEW_METHOD` and exits with an
+  explanation if a verdict table omits it — a future review has to state who did the
+  comparing rather than inherit a flattering default. `reviewer` is replaced by
+  `reviewMethod` + `reviewedAt`, and the ledger's own note no longer says "a human compared".
+- **`scripts/check_written_key.cjs`** prints `34/34 with a committed review entry` instead of
+  `reviewed against NESA`, and adds a **`method:`** line echoing the ledger's `reviewMethod`
+  — so the provenance is in front of whoever reads CI output, every run. A ledger with no
+  method reads `NOT STATED — treat as unverified`.
+- **CLAUDE.md** (4 places) and **`docs/porting-playbook.md`** (both gate items) corrected;
+  the VET runbook gains a correction banner at the top.
+
+⚠️ **The ledger was NOT rebuilt.** `build_review_ledger.py` recomputes
+`sampleAnswerFingerprint` from *today's* key, which would have erased the "23 re-laid out"
+signal earned on 2026-09-05 and silently re-validated every entry against text nobody
+reviewed — the precise "do not just re-fingerprint it" the ledger exists to prevent. A
+one-off, `scripts/archive/correct_review_provenance.py`, rewrites only the top-level
+provenance strings and **asserts the `reviews` object is unchanged before writing**. Verified
+byte-identical against `HEAD`.
+
+### Verified
+
+- Review entries byte-identical to `HEAD`; only `note`/`reviewer` → `note`/`reviewMethod`/
+  `reviewedAt` at the top level.
+- CI now reads: `review: 34/34 with a committed review entry — 6 corrected, 2
+  divergent-accepted, 26 ok — 23 re-laid out (wording unchanged)` followed by
+  `method: assistant-compared against NESA's sample answers and criteria; human spot-check on
+  a small unrecorded subset, not per question`.
+- `build_review_ledger.py` still builds VET correctly (26 ok / 6 corrected / 2
+  divergent-accepted) — exercised, then discarded in favour of the provenance-only edit.
+- Full local CI: `MC=706 Written=374 imageRefs=337 missingImages=0`, `Issues: 0`; **285** MC
+  answers and **334** written questions checked, 0 wrong, 0 unverifiable; `npm test`
+  **73/73**. No subject JSON changed.
+
+### Open, and the owner's call
+
+- **Whether the 26 `ok` verdicts should stand at all.** They are assistant judgements that a
+  human did not check one by one. The ledger still prevents regression (a changed NESA
+  sample answer voids the entry), which is worth keeping either way — but "reviewed" now
+  means "compared, mostly unverified".
+- **Which questions were actually spot-checked** is not recorded anywhere. If the owner can
+  name them, per-entry provenance could distinguish spot-checked from assistant-only; without
+  that the ledger can only carry the honest subject-level statement it now has.
+- Related, and now differently weighted: **16 VET questions had their `keywords` edited
+  earlier today**. That was argued as safe partly because the questions were "human
+  reviewed". They were not, so that argument is weaker — though the edits remain mechanical
+  (a keyword the engine could never credit, or a duplicate that never scored) and every VET
+  part still scores full from its own model answer.

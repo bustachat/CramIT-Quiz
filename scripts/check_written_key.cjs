@@ -290,12 +290,12 @@ for (const keyFile of keyFiles.sort()) {
   //
   // REPORT-THEN-ENFORCE, opted in per subject by committing a ledger: a subject with
   // no ledger is reported at 0% and does not fail (four subjects carry historical
-  // debt); a subject WITH one must stay fully reviewed, so an unreviewed or stale
+  // debt); a subject WITH one must keep an entry per question, so a missing or stale
   // question fails the build.
   const ledgerFile = path.join(REVIEW_DIR, `${subjectId}.json`);
   if (!fs.existsSync(ledgerFile)) {
     console.log(
-      `        review:   0/${written.length} model answers reviewed against NESA ` +
+      `        review:   0/${written.length} written questions have a review entry ` +
         `— no ledger (reported, not enforced)`
     );
   } else {
@@ -330,11 +330,19 @@ for (const keyFile of keyFiles.sort()) {
       .sort()
       .map((v) => `${verdicts[v]} ${v}`)
       .join(', ');
+    // ⚠️ "reviewed against NESA" overstated this for months. The VET ledger was
+    // assistant-compared with a human spot-check on a couple of questions, not a
+    // per-question human sign-off, and this line was the most visible place the claim got
+    // repeated. It now says what the ledger actually holds, and prints the ledger's own
+    // reviewMethod so the provenance is in front of whoever reads the CI output.
     console.log(
-      `        review:   ${reviewed}/${written.length} reviewed against NESA` +
+      `        review:   ${reviewed}/${written.length} with a committed review entry` +
         (summary ? ` — ${summary}` : '') +
         (stale.length ? ` — ${stale.length} STALE` : '') +
         (relaidOut.length ? ` — ${relaidOut.length} re-laid out (wording unchanged)` : '')
+    );
+    console.log(
+      `        method:   ${ledger.reviewMethod || 'NOT STATED — treat as unverified'}`
     );
     for (const line of unreviewed) console.log(`        ✗ unreviewed: ${line}`);
     for (const line of stale) {
@@ -368,7 +376,7 @@ if (wrongTotal > 0) {
 if (reviewFailures > 0) {
   console.error(
     `\nWritten-answer review check FAILED (${reviewFailures} question(s)). This subject ` +
-      'has a committed review ledger, so every written question must stay reviewed. ' +
+      'has a committed review ledger, so every written question must keep an entry. ' +
       'Read the question against NESA\'s sample answer and criteria in ' +
       'data/answer-key/written/, add or update its verdict in scripts/reviews/, then ' +
       'rebuild with scripts/build_review_ledger.py. A STALE entry means the official ' +
