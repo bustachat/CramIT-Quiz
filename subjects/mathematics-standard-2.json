@@ -10723,7 +10723,7 @@
       "category": "A1",
       "image": null,
       "q": "The following formula can be used to calculate an estimate for blood alcohol content (BAC) for males:\n\nBAC_male = (10N − 7.5H) / (6.8M)\n\nwhere <em>N</em> = number of standard drinks consumed, <em>M</em> = person's weight in kilograms, <em>H</em> = number of hours of drinking.\n\nCameron weighs 75 kg. His BAC was zero when he began drinking alcohol. At 9:00 pm, after consuming 3 standard drinks, his BAC was 0.02.\n\nUsing the formula, estimate at what time Cameron began drinking alcohol, to the nearest minute.",
-      "answer": "0.02 = (10 × 3 − 7.5H) / (6.8 × 75)\n0.02 × 510 = 30 − 7.5H\n10.2 = 30 − 7.5H\n7.5H = 19.8\nH = 2.64 hours = 2 hours 38.4 minutes ≈ 2 hours 38 minutes\n\nCameron began drinking at 9:00 pm − 2 h 38 min = 6:22 pm.",
+      "answer": "Setting BAC = 0.02 and solving for H:\n0.02 = (10 × 3 − 7.5H) / (6.8 × 75)\n0.02 × 510 = 30 − 7.5H\n10.2 = 30 − 7.5H\n7.5H = 19.8\nH = 2.64 hours = 2 hours 38.4 minutes ≈ 2 hours 38 minutes\n\nCameron began drinking at 9:00 pm − 2 h 38 min = 6:22 pm (18:22).",
       "keywords": [
         "6:22",
         "6:22 pm",
@@ -11471,7 +11471,10 @@
       "acceptableAnswers": [
         "y = -2x + 14",
         "y=-2x+14",
-        "y = 14 - 2x"
+        "y = 14 - 2x",
+        "y = −2x + 14",
+        "y=−2x+14",
+        "y = 14 − 2x"
       ],
       "bandDescriptors": {
         "full": "3/3 — Both points plotted, gradient = −2, equation y = −2x + 14.",

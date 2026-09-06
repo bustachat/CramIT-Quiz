@@ -3939,7 +3939,7 @@
       "image": null,
       "answer": "(a) The point (1, 1) gives tan θ = 1/1, so θ = π/4. The circle has radius √2, so r² = 2.\n\nSector Oxy from the positive x-axis round to (1, 1):\nArea = ½r²θ = ½ × 2 × π/4 = π/4.\n\nThe shaded region is that sector with the triangle with vertices (0, 0), (1, 0) and (1, 1) removed:\nTriangle area = ½ × 1 × 1 = ½.\n\nShaded area = π/4 − ½ square units.\n\n(b) Through (0, 0):  0 = a/(b − 0) − 1, so a/b = 1 and a = b.\nThrough (1, 1):  1 = a/(b − 1) − 1, so a/(b − 1) = 2 and a = 2b − 2.\n\nSubstituting a = b:  b = 2b − 2, so b = 2 and hence a = 2, as required.\n\n(c) With a = b = 2 the hyperbola is y = 2/(2 − x) − 1.\n\nArea under the hyperbola from x = 0 to x = 1:\n∫₀¹ [2/(2 − x) − 1] dx = [−2 ln(2 − x) − x]₀¹\n= (−2 ln 1 − 1) − (−2 ln 2 − 0)\n= 2 ln 2 − 1.\n\nFrom x = 1 to x = √2 the region is bounded above by the circle, and that piece is exactly the shaded region from part (a): π/4 − ½.\n\nTotal area = (2 ln 2 − 1) + (π/4 − ½)\n= 2 ln 2 + π/4 − 3/2 square units.",
       "keywords": [
-        "π/4 − 1/2",
+        "π/4 − ½",
         "a = b = 2",
         "2 ln 2",
         "π/4 − 3/2",
@@ -4616,7 +4616,7 @@
       "marks": 3,
       "q": "In the rectangular prism shown, <em>AD</em> = 7 cm, <em>AE</em> = 8 cm, <em>EF</em> = 6 cm. Point <em>M</em> is the midpoint of <em>CD</em>.<img src=\"/diagrams/mathematics-advanced_2023_Q22_stimulus.jpg\" alt=\"A rectangular prism with vertices A, B, C, D on the top face and E, F, G below. AD is 7, AE is 8 and EF is 6. M is marked at the midpoint of CD, with EM drawn and a right angle marked at A. Not to scale.\" style=\"max-width:100%;height:auto;display:block;margin:14px auto\">Find &ang;<em>AEM</em>, to the nearest degree.",
       "image": null,
-      "answer": "AE is vertical and AM lies in the top face, so triangle AEM is right-angled at A.\n\nFirst find AM. In the top face, AD = 7 and DM = ½ × CD = ½ × 6 = 3, so\nAM = √(7² + 3²) = √58 cm.\n\nThen in triangle AEM,\ntan ∠AEM = AM/AE = √58/8\n∠AEM = tan⁻¹(0.95197…)\n= 43.59°\n≈ 44°.",
+      "answer": "AE is vertical and AM lies in the top face, so triangle AEM is right-angled at A.\n\nFirst find AM. In the top face, AD = 7 and, since M is the midpoint of CD, DM = ½ × CD = ½ × 6 = 3, so\nAM = √(7² + 3²) = √58 cm.\n\nThen in triangle AEM,\ntan ∠AEM = AM/AE = √58/8\n∠AEM = tan⁻¹(0.95197…)\n= 43.59°\n≈ 44°.",
       "keywords": [
         "44",
         "√58",
@@ -5261,7 +5261,7 @@
         "19",
         "y = 19x - 25",
         "gradient",
-        "-25"
+        "25"
       ],
       "minKeywords": 2,
       "bandDescriptors": {
@@ -5540,7 +5540,7 @@
       "marks": 3,
       "q": "Three girls, Amara, Bala and Cassie, have nominated themselves for the local soccer team. Exactly one of the girls will be selected. The chances of their selection are in the ratio 1 : 2 : 3, respectively.<br><br>The probability that the team wins when:<br>&bull; Amara is selected is 0.5<br>&bull; Bala is selected is 0.4<br>&bull; Cassie is selected is 0.2.<br><br>Given that the team wins, find the probability that Amara was selected. <strong>(3 marks)</strong>",
       "image": null,
-      "answer": "The ratio 1 : 2 : 3 gives selection probabilities 1/6, 2/6 and 3/6.\n\nP(win) = (1/6)(0.5) + (2/6)(0.4) + (3/6)(0.2)\n       = 0.5/6 + 0.8/6 + 0.6/6\n       = 1.9/6.\n\nP(Amara and win) = (1/6)(0.5) = 0.5/6.\n\nP(Amara | win) = (0.5/6) ÷ (1.9/6) = 0.5/1.9 = 5/19 ≈ 0.263.",
+      "answer": "The ratio 1 : 2 : 3 gives selection probabilities 1/6, 2/6 and 3/6.\n\nP(win) = (1/6)(0.5) + (2/6)(0.4) + (3/6)(0.2)\n       = 0.5/6 + 0.8/6 + 0.6/6\n       = 1.9/6.\n\nP(Amara and win) = (1/6)(0.5) = 0.5/6.\n\nThis is a conditional probability:\nP(Amara | win) = (0.5/6) ÷ (1.9/6) = 0.5/1.9 = 5/19 ≈ 0.263.",
       "keywords": [
         "5/19",
         "0.263",
@@ -5976,7 +5976,7 @@
       "answer": "Translating right by k replaces x with x − k; translating up by k adds k:\ny = (x − k − 1)(x − k − 5) + k.\n\nSubstitute the point (6, 11):\n11 = (6 − k − 1)(6 − k − 5) + k\n11 = (5 − k)(1 − k) + k\n11 = 5 − 5k − k + k² + k\n11 = k² − 5k + 5\nk² − 5k − 6 = 0\n(k − 6)(k + 1) = 0\nk = 6 or k = −1.\n\nk is positive, so k = 6.",
       "keywords": [
         "6",
-        "(x - k - 1)",
+        "translat",
         "k² - 5k - 6",
         "positive"
       ],

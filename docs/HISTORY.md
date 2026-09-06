@@ -4834,3 +4834,112 @@ functions syntax-check; **`npm test` 79/79**.
   attribution, and the 16 single-part questions in other subjects that do not score full from
   their own model answer (**Standard 2 2025 Q17 at 0/3** and **Maths Advanced 2024 Q30 at 1/3**
   being the severe ones).
+
+## 2026-09-07 — The questions that could not earn full marks from their own model answer: 15 fixed, and the 16th was my measuring instrument
+
+**Every written question in the repo now scores full marks when fed its own model answer —
+380 of 380, measured in the real engine.** Fifteen were fixed; the sixteenth was never broken.
+
+### ⚠️ First, a correction to yesterday's report
+
+Yesterday's Stage 6b write-up said **16** questions failed and named
+**`mathematics-advanced` 2024 Q30 (1/3)** as one of the two severe cases. **That was wrong, and
+the fault was in how I measured, not in the bank.** My checker stripped HTML with `<[^>]+>`,
+which is not how a browser parses. Maths answers are full of inequalities, and 2024 Q30's answer
+contains `|x| < 1, that is −1 < x < 1, …` — the regex treated `< 1, that is −1 <` as a tag and
+**deleted 500 characters of the answer**, so two keywords looked uncreditable and the question
+looked capped at 1/3.
+
+**Re-measured by letting the browser parse the HTML and reading `textContent` — what the student
+actually sees — 2024 Q30 scores 3/3 and always did.** The true count was **15**.
+
+Related, and worth recording so nobody "fixes" it later: a scan found **295 bare `<` characters
+across 48 questions** in the two maths subjects. **They are harmless.** The HTML parser only
+starts a tag when `<` is followed by a letter, `/`, `!` or `?`; `< 1` and `< x` are literal text.
+Verified in the browser: 2024 Q30's `−1 < x < 1` renders correctly on screen. **No escaping is
+needed, and adding `&lt;` would be churn.**
+
+### The 15 real ones, and why each failed
+
+Three causes, and the fix used for each. **No keyword was deleted, and no mark, stem, band
+descriptor, MC question or omission declaration was touched** — machine-checked against HEAD,
+only `answer`, `keywords` and `acceptableAnswers` changed, on exactly 15 questions.
+
+**FORM (7)** — the keyword and the model answer say the same thing in different notation:
+
+- `mathematics-standard-2` **2025 Q17 (0/3 — the worst)**: `acceptableAnswers` held the ASCII
+  `y = -2x + 14` while the model answer uses the **Unicode minus** `y = −2x + 14`, so the
+  substring never matched. Unicode variants added — an OR list, so this is strictly more
+  permissive. Now ASCII, Unicode and `y = 14 - 2x` all score 3/3, and a wrong answer still 0/3.
+- `mathematics-advanced` **2025 Q12**: keyword `-25` against an answer reading `y = 19x − 25`.
+  Replaced with bare **`25`**, which matches both notations. ⚠️ **This also fixed a real student
+  defect**: a student typing `y = 19x - 25` has a *space* around the minus, so `-25` never
+  matched them either — measured **2/3 before, 3/3 after** for that student.
+- `mathematics-advanced` **2022 Q28**: keyword `π/4 − 1/2` against an answer writing `π/4 − ½`.
+- `mathematics-advanced` **2025 Q30**: keyword `(x - k - 1)` (ASCII) against Unicode minus in the
+  answer. Replaced with the notation-free **`translat`**, which the answer's *"Translating right
+  by k"* satisfies and a student writing *"translated"* also earns.
+- `vet-construction` **2022 Q21(b)** and **2024 Q20(b)**: keywords `SWMS`, `JSA`, `SDS`, but the
+  answers only ever spelled the terms out. The acronym now follows the full term in parentheses —
+  *"Safe Work Method Statement (SWMS)"* — which is how the documents are written on site anyway.
+
+**ABSENT (5)** — the concept genuinely was not demonstrated in the model answer, so the answer was
+extended rather than the keyword dropped:
+
+- `mathematics-standard-2` **2023 Q36**: never wrote *BAC* (the quantity the question is about) and
+  gave the time only as `6:22 pm` against a keyword of `18:22`. Now *"Setting BAC = 0.02…"* and
+  *"6:22 pm (18:22)"*.
+- `mathematics-advanced` **2023 Q22**: the stem says *M is the midpoint of CD*; the answer used the
+  fact without naming it. Now *"since M is the midpoint of CD, DM = ½ × CD = 3"*.
+- `mathematics-advanced` **2025 Q19**: computed `P(Amara | win)` without ever calling it a
+  **conditional probability**. Now named.
+- `health-movement-science` idx 4: explained both assessment tools but never stated the
+  **difference** the question asks for. A closing sentence now does.
+- `health-movement-science` idx 14: performed an evaluation but never used the word; *"Overall,
+  these policies are effective"* → *"Overall, **evaluating** these policies shows they are
+  effective"*.
+- `health-movement-science` idx 17: applied progressive overload by distance without naming
+  **frequency / intensity / duration**, which is the syllabus framing. Now stated, then applied.
+
+**MENU (3, all HMS)** — the question asks for a *subset* (*THREE principles*, *TWO adaptations*)
+but the keyword list enumerates the whole menu, so a correct answer can never match all of it.
+Fixed with an **"Other principles / adaptations that could be credited"** line — the pattern
+already used in Multimedia 2023 Q16(a) and throughout VET for NESA's alternatives. Affects idx 22,
+24 and 25.
+
+### Verified
+
+- **380 of 380 written questions across all five subjects now score full from their own model
+  answers in the real engine**, with **0 `undefined`** and **0 generic band fallbacks**.
+- **Scoring still discriminates** — it has not been made trivially generous. Probed with weak
+  answers: Standard 2 2023 Q36 model 4/4 vs weak **0/4**; Advanced 2025 Q19 3/3 vs **0/3**; HMS
+  idx22 5/5 vs **1/5**; VET 2022 Q21(b) 10/10 vs **0/10**.
+- **No student regressions from the four keyword changes**, checked by scoring a plausible correct
+  ASCII-typed student answer against the old and new keyword lists: 2025 Q30 unchanged at 3/3,
+  2022 Q28 unchanged at 4/7, and **2025 Q12 improved 2/3 → 3/3**.
+- **345 questions rendered at 320 / 430 / 1400 px** (1 035 renders): **0 overflows, 0 `undefined`
+  on screen, 0 missing marks badges**, no console errors. The new HMS paragraphs render as
+  paragraphs — no stray tags in the text.
+- **VET's review ledger is undisturbed**: still **34/34** with its *23 re-laid out* signal intact.
+  The staleness fingerprint tracks **NESA's** sample answer, not ours, so editing our model answer
+  marks nothing stale. ⚠️ **But the reviewer did not sign off this exact wording** — two VET model
+  answers changed. The edits are mechanical (an acronym added beside the term already there) and
+  the ledger was deliberately **not rebuilt**, since rebuilding recomputes fingerprints from
+  today's key and would erase the *re-laid out* signal.
+- Full local CI: `MC=706 Written=380 imageRefs=337 missingImages=0`, `Issues: 0`; 285 MC and 340
+  written checks, 0 wrong; Multimedia 42/42 and 35/35 reviewed; **`npm test` 79/79**.
+
+### Found while verifying — reported, NOT fixed
+
+⚠️ **Nine questions score ZERO at their own `minKeywords`** — the defect class found at Multimedia
+Stage 6b (2022 Q11), where `round(min/n × marks)` is 0, so an answer the bank itself calls
+sufficient earns nothing. **`mathematics-standard-2` 2023 Q18, 2023 Q30, 2023 Q36, 2024 Q33,
+2024 Q37, 2025 Q23** and **`vet-construction` 2023 Q16(a)(ii), 2023 Q17(a), 2024 Q17(a)**. Two
+more (VET 2021 Q16(a), 2022 Q19(a)) are in the same shape but **harmless**, because they carry
+`acceptableAnswers` and `scoreOne()` short-circuits before the keyword path runs.
+
+This is a *different* defect from the one this session fixed — those questions' model answers do
+score full; it is a *student* who meets the stated bar and gets 0. Note **2023 Q36 is in both
+lists**: its self-score is fixed, and it still scores 0 at its threshold. Left for a deliberate
+decision, since the fix is either trimming keyword lists or raising `minKeywords`, and both change
+how real students are marked.
