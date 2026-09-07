@@ -1388,7 +1388,7 @@
         {
           "label": "(c)",
           "marks": 1,
-          "q": "Using the graphs drawn, or otherwise, find the value of <em>t</em> (where <em>t</em> &gt; 0) when the total volume of water in the two tanks is 1000 litres. <strong>(1 mark)</strong><br><br><em style=\"opacity:0.75\">Part (a), which asked for the graph of <em>V</em> = 1000 &minus; 20<em>t</em> to be drawn on a printed grid, is not included here &mdash; answer both parts algebraically.</em>",
+          "q": "Using the graphs drawn, or otherwise, find the value of <em>t</em> (where <em>t</em> &gt; 0) when the total volume of water in the two tanks is 1000 litres.<br><br><em style=\"opacity:0.75\">Part (a), which asked for the graph of <em>V</em> = 1000 &minus; 20<em>t</em> to be drawn on a printed grid, is not included here &mdash; answer both parts algebraically.</em>",
           "answer": "Total volume = (1000 − 20t) + (30t − 450) = 550 + 10t.\n550 + 10t = 1000, so 10t = 450 and t = 45 minutes.\n(Tank A does not run dry until t = 50, so t = 45 is valid.)",
           "keywords": [
             "45",
@@ -1513,7 +1513,6 @@
           "q": "Two different students are chosen at random, one after the other. What is the probability that the first student studies History and the second student does NOT study History?",
           "answer": "20 study History and 20 do not. Choosing without replacement:\nP = (20/40) × (20/39) = 400/1560 = 10/39.",
           "keywords": [
-            "5",
             "10/39",
             "39"
           ],
@@ -1549,7 +1548,7 @@
         "partial": "The angle and the distance are correct, but the bearing in (c) is wrong — usually because the back bearing of 215° was not used.",
         "minimal": "Part (a) is the difference of the two bearings. Part (b) needs the cosine rule with the included angle 65°. For (c), work from the north line at A: the bearing of P from A is 215°."
       },
-      "stem": "Mr Ali, Ms Brown and a group of students were camping at the site located at <em>P</em>. Mr Ali walked with some of the students on a bearing of 035&deg; for 7 km to location <em>A</em>. Ms Brown, with the rest of the students, walked on a bearing of 100&deg; for 9 km to location <em>B</em>.",
+      "stem": "Mr Ali, Ms Brown and a group of students were camping at the site located at <em>P</em>. Mr Ali walked with some of the students on a bearing of 035&deg; for 7 km to location <em>A</em>. Ms Brown, with the rest of the students, walked on a bearing of 100&deg; for 9 km to location <em>B</em>.<img src=\"/diagrams/mathematics-advanced_2020_Q15_stimulus.jpg\" alt=\"Bearings diagram: P with north line, A on a bearing of 035 degrees at 7 km, B on a bearing of 100 degrees at 9 km. Not to scale.\" style=\"max-width:100%;height:auto;display:block;margin:14px auto\">",
       "parts": [
         {
           "label": "(a)",
@@ -2129,7 +2128,7 @@
       "section": "II",
       "category": "C2",
       "marks": 4,
-      "q": "The diagram shows the graph of <em>y</em> = <em>c</em> ln <em>x</em>, <em>c</em> &gt; 0.<img src=\"/diagrams/mathematics-advanced_2020_Q29_stimulus.jpg\" alt=\"Graph of y = c ln x for c > 0, crossing the x-axis at x = 1 and increasing without bound.\" style=\"max-width:100%;height:auto;display:block;margin:14px auto\">(a) Show that the equation of the tangent to <em>y</em> = <em>c</em> ln <em>x</em> at <em>x</em> = <em>p</em>, where <em>p</em> &gt; 0, is <em>y</em> = (<em>c</em>/<em>p</em>)<em>x</em> &minus; <em>c</em> + <em>c</em> ln <em>p</em>. <strong>(2 marks)</strong><br><br>(b) Find the value of <em>c</em> such that the tangent from part (a) has a gradient of 1 and passes through the origin. <strong>(2 marks)</strong>",
+      "q": "The diagram shows the graph of <em>y</em> = <em>c</em> ln <em>x</em>, <em>c</em> &gt; 0.<img src=\"/diagrams/mathematics-advanced_2020_Q29_stimulus.jpg\" alt=\"Graph of y = c ln x for c &gt; 0, crossing the x-axis at x = 1 and increasing without bound.\" style=\"max-width:100%;height:auto;display:block;margin:14px auto\">(a) Show that the equation of the tangent to <em>y</em> = <em>c</em> ln <em>x</em> at <em>x</em> = <em>p</em>, where <em>p</em> &gt; 0, is <em>y</em> = (<em>c</em>/<em>p</em>)<em>x</em> &minus; <em>c</em> + <em>c</em> ln <em>p</em>. <strong>(2 marks)</strong><br><br>(b) Find the value of <em>c</em> such that the tangent from part (a) has a gradient of 1 and passes through the origin. <strong>(2 marks)</strong>",
       "image": null,
       "answer": "(a) y = c ln x, so dy/dx = c/x.\nAt x = p the gradient is c/p and the point of contact is (p, c ln p).\nPoint-gradient form: y − c ln p = (c/p)(x − p)\ny = (c/p)x − (c/p)(p) + c ln p\ny = (c/p)x − c + c ln p.\n\n(b) Gradient 1 means c/p = 1, so p = c.\nThrough the origin means (0, 0) satisfies the tangent:\n0 = 0 − c + c ln p, so c ln p = c.\nSince c > 0, ln p = 1 and p = e.\nTherefore c = p, so c = e.",
       "keywords": [
@@ -2146,7 +2145,7 @@
         "partial": "(a) Finds the gradient of the tangent at x = p, or equivalent merit (b) States that c/p = 1 or −c + cln p = 0, or equivalent merit",
         "minimal": "(a) Finds the gradient of the tangent at x = p, or equivalent merit (b) States that c/p = 1 or −c + cln p = 0, or equivalent merit"
       },
-      "stem": "The diagram shows the graph of <em>y</em> = <em>c</em> ln <em>x</em>, <em>c</em> &gt; 0.",
+      "stem": "The diagram shows the graph of <em>y</em> = <em>c</em> ln <em>x</em>, <em>c</em> &gt; 0.<img src=\"/diagrams/mathematics-advanced_2020_Q29_stimulus.jpg\" alt=\"Graph of y = c ln x for c &gt; 0, crossing the x-axis at x = 1 and increasing without bound.\" style=\"max-width:100%;height:auto;display:block;margin:14px auto\">",
       "parts": [
         {
           "label": "(a)",
@@ -2209,7 +2208,7 @@
         "partial": "The area integral is set up correctly as upper curve minus lower curve, but the algebra does not reach a = √2 − 1.",
         "minimal": "In (a), equate the two expressions and factor out x. In (b), integrate (4x − x²) − ax² from 0 to the x-coordinate of A, then solve for a."
       },
-      "stem": "The diagram shows two parabolas <em>y</em> = 4<em>x</em> &minus; <em>x</em>&sup2; and <em>y</em> = <em>ax</em>&sup2;, where <em>a</em> &gt; 0. The two parabolas intersect at the origin, <em>O</em>, and at <em>A</em>.",
+      "stem": "The diagram shows two parabolas <em>y</em> = 4<em>x</em> &minus; <em>x</em>&sup2; and <em>y</em> = <em>ax</em>&sup2;, where <em>a</em> &gt; 0. The two parabolas intersect at the origin, <em>O</em>, and at <em>A</em>.<img src=\"/diagrams/mathematics-advanced_2020_Q30_stimulus.jpg\" alt=\"Two parabolas: y = 4x minus x squared and y = a x squared, intersecting at the origin and at A, with the region between them shaded.\" style=\"max-width:100%;height:auto;display:block;margin:14px auto\">",
       "parts": [
         {
           "label": "(a)",
@@ -2272,7 +2271,7 @@
         "partial": "The amplitude and centre are correct and one derivative is analysed correctly, but the overlap or the final rate is wrong.",
         "minimal": "The amplitude is half the difference of the maximum and minimum, and b is their average. For (b), solve m′(t) > 0 and c′(t) > 0 separately and intersect. The cat population peaks where the cosine equals −1."
       },
-      "stem": "The population of mice on an isolated island can be modelled by the function <em>m</em>(<em>t</em>) = <em>a</em> sin((&pi;/26)<em>t</em>) + <em>b</em>, where <em>t</em> is the time in weeks and 0 &le; <em>t</em> &le; 52. The population of mice reaches a maximum of 35 000 when <em>t</em> = 13 and a minimum of 5000 when <em>t</em> = 39. The graph of <em>m</em>(<em>t</em>) is shown.",
+      "stem": "The population of mice on an isolated island can be modelled by the function <em>m</em>(<em>t</em>) = <em>a</em> sin((&pi;/26)<em>t</em>) + <em>b</em>, where <em>t</em> is the time in weeks and 0 &le; <em>t</em> &le; 52. The population of mice reaches a maximum of 35 000 when <em>t</em> = 13 and a minimum of 5000 when <em>t</em> = 39. The graph of <em>m</em>(<em>t</em>) is shown.<img src=\"/diagrams/mathematics-advanced_2020_Q31_stimulus.jpg\" alt=\"Graph of the mice population m(t) over 0 to 52 weeks, peaking at 35 000 and dipping to 5000.\" style=\"max-width:100%;height:auto;display:block;margin:14px auto\">",
       "parts": [
         {
           "label": "(a)",
@@ -2541,7 +2540,7 @@
         {
           "label": "(b)",
           "marks": 1,
-          "q": "The graph below shows the relationship between the latitude, <em>x</em> (degrees south), and the average maximum daily temperature, <em>y</em> (&deg;C), for the same 17 towns, as well as a regression line. <strong>(1 mark)</strong><br><br><img src=\"/diagrams/mathematics-advanced_2021_Q17b_stimulus.jpg\" alt=\"Scatterplot of average maximum daily temperature against latitude in degrees south for the same 17 towns, with a dashed regression line sloping steeply downwards\" style=\"max-width:100%;height:auto;display:block;margin:14px auto\"><br><br>The equation of the regression line is <em>y</em> = 45.6 &minus; 0.683<em>x</em>.<br><br>The correlation coefficient is <em>r</em> = &minus;0.897.<br><br>Another inland town in Australia is 540 m above sea level. Its latitude is 28 degrees south.<br><br>Which measurement, height above sea level or latitude, would be better to use to predict this town&rsquo;s average maximum daily temperature? Give a reason for your answer.",
+          "q": "The graph below shows the relationship between the latitude, <em>x</em> (degrees south), and the average maximum daily temperature, <em>y</em> (&deg;C), for the same 17 towns, as well as a regression line.<br><br><img src=\"/diagrams/mathematics-advanced_2021_Q17b_stimulus.jpg\" alt=\"Scatterplot of average maximum daily temperature against latitude in degrees south for the same 17 towns, with a dashed regression line sloping steeply downwards\" style=\"max-width:100%;height:auto;display:block;margin:14px auto\"><br><br>The equation of the regression line is <em>y</em> = 45.6 &minus; 0.683<em>x</em>.<br><br>The correlation coefficient is <em>r</em> = &minus;0.897.<br><br>Another inland town in Australia is 540 m above sea level. Its latitude is 28 degrees south.<br><br>Which measurement, height above sea level or latitude, would be better to use to predict this town&rsquo;s average maximum daily temperature? Give a reason for your answer.",
           "answer": "Latitude is the better predictor. Its correlation coefficient, r = −0.897, is much closer to −1 than the height's r = −0.494, so the relationship between latitude and temperature is far more strongly linear and the prediction from the latitude regression line is more reliable.",
           "keywords": [
             "latitude",
@@ -2848,7 +2847,7 @@
         {
           "label": "(d)",
           "marks": 1,
-          "q": "The next day, Kenzo woke up 6 hours after sunrise and again found that his phone battery had no units of energy. He immediately began to use his solar powered charger to charge his phone battery.<br><br>Would it take more time or less time or the same amount of time, compared to the answer in part (c), to charge his phone battery in order to make a phone call? Explain your answer by referring to the graph drawn in part (a). <strong>(1 mark)</strong><br><br><em style=\"opacity:0.75\">Part (a), which asked for the graph of <em>P</em> to be sketched for 0 &le; <em>t</em> &le; 12, is not included here. The graph is simply the curve <em>P</em>(<em>t</em>) = 400 sin(&pi;<em>t</em>/12) given in the stem above &mdash; half a sine wave rising from 0 at sunrise to 400 at <em>t</em> = 6 and back to 0 at <em>t</em> = 12 &mdash; so part (d) can still be answered from the function itself. NESA&rsquo;s wording of parts (b), (c) and (d) is unchanged.</em>",
+          "q": "The next day, Kenzo woke up 6 hours after sunrise and again found that his phone battery had no units of energy. He immediately began to use his solar powered charger to charge his phone battery.<br><br>Would it take more time or less time or the same amount of time, compared to the answer in part (c), to charge his phone battery in order to make a phone call? Explain your answer by referring to the graph drawn in part (a).<br><br><em style=\"opacity:0.75\">Part (a), which asked for the graph of <em>P</em> to be sketched for 0 &le; <em>t</em> &le; 12, is not included here. The graph is simply the curve <em>P</em>(<em>t</em>) = 400 sin(&pi;<em>t</em>/12) given in the stem above &mdash; half a sine wave rising from 0 at sunrise to 400 at <em>t</em> = 6 and back to 0 at <em>t</em> = 12 &mdash; so part (d) can still be answered from the function itself. NESA&rsquo;s wording of parts (b), (c) and (d) is unchanged.</em>",
           "answer": "Less time.\n\nThe energy delivered is the area under the power curve. The curve P(t) = 400 sin(πt/12) reaches its maximum of 400 at t = 6, so charging from t = 6 begins at the highest power the charger ever produces. Charging from t = 3 begins at P(3) = 400 sin(π/4) ≈ 283 units per hour, well below the peak. Since the power is greater throughout the early part of the charge starting at t = 6, the same 300 units of energy accumulate in a shorter time.\n\n(Check: from a = 6, cos(6π/12) = cos(π/2) = 0, so cos(bπ/12) = −0.196350, b = 6.7546 and the wait is 0.7546 h ≈ 45 minutes — less than 57.)",
           "keywords": [
             "57",
@@ -2919,7 +2918,7 @@
         {
           "label": "(c)",
           "marks": 1,
-          "q": "Hence, find the exact value of &int;<sub>2</sub><sup>5</sup> <em>g</em>(<em>x</em>) <em>dx</em>, where <em>g</em>(<em>x</em>) is the function found by taking the graph of <em>y</em> = &minus;<em>f</em>(&minus;<em>x</em>) and translating it by 5 units to the right. <strong>(1 mark)</strong><br><br><em style=\"opacity:0.75\">Part (b), which asked for the graph of <em>y</em> = <em>g</em>(<em>x</em>) to be sketched showing the <em>x</em>-intercept and the asymptote, is not included here. Its definition of <em>g</em> has been repeated in part (c) above, which is otherwise NESA&rsquo;s wording; part (c) is answerable from that definition alone.</em>",
+          "q": "Hence, find the exact value of &int;<sub>2</sub><sup>5</sup> <em>g</em>(<em>x</em>) <em>dx</em>, where <em>g</em>(<em>x</em>) is the function found by taking the graph of <em>y</em> = &minus;<em>f</em>(&minus;<em>x</em>) and translating it by 5 units to the right.<br><br><em style=\"opacity:0.75\">Part (b), which asked for the graph of <em>y</em> = <em>g</em>(<em>x</em>) to be sketched showing the <em>x</em>-intercept and the asymptote, is not included here. Its definition of <em>g</em> has been repeated in part (c) above, which is otherwise NESA&rsquo;s wording; part (c) is answerable from that definition alone.</em>",
           "answer": "y = −f(−x) is the graph of f rotated 180° about the origin, so the shaded region is carried to a congruent region lying *below* the x-axis, between x = −3 and x = 0. Translating 5 units right moves it to 2 ≤ x ≤ 5 — exactly the interval of the integral.\n\nAn integral of a region below the axis is the negative of its area, so\n\n∫₂⁵ g(x) dx = −(24 − 7/ln 2) = 7/ln 2 − 24\n\n(Direct check: g(x) = −f(−(x − 5)) = 2^(5−x) − 8, and ∫₂⁵ (2^(5−x) − 8) dx = [2ᵘ/ln 2 − 8u]₀³ with u = 5 − x, giving 8/ln 2 − 24 − 1/ln 2 = 7/ln 2 − 24.)",
           "keywords": [
             "24 − 7/ln 2",
@@ -3244,7 +3243,7 @@
       "section": "II",
       "category": "F1",
       "marks": 2,
-      "q": "A student believes that the time it takes for an ice cube to melt (<em>M</em> minutes) varies inversely with the room temperature (<em>T</em>&deg;C). The student observes that at a room temperature of 15&deg;C it takes 12 minutes for an ice cube to melt.<br><br>(a) Find the equation relating <em>M</em> and <em>T</em>. <strong>(2 marks)</strong><br><br><em style=\"opacity:0.75\">Part (b), which asked for a table of values to be completed and the relationship graphed on a printed grid from <em>T</em> = 5&deg;C to <em>T</em> = 30&deg;C, is not included here.</em>",
+      "q": "A student believes that the time it takes for an ice cube to melt (<em>M</em> minutes) varies inversely with the room temperature (<em>T</em>&deg;C). The student observes that at a room temperature of 15&deg;C it takes 12 minutes for an ice cube to melt.<br><br>(a) Find the equation relating <em>M</em> and <em>T</em>.<br><br><em style=\"opacity:0.75\">Part (b), which asked for a table of values to be completed and the relationship graphed on a printed grid from <em>T</em> = 5&deg;C to <em>T</em> = 30&deg;C, is not included here.</em>",
       "image": null,
       "answer": "Inverse variation means M = k/T for some constant k.\n\nSubstitute the observation M = 12 when T = 15:\n12 = k/15\nk = 180.\n\nSo M = 180/T.",
       "keywords": [
@@ -3417,7 +3416,7 @@
         "partial": "Part (a) shown but the quadratic in (b) is not solved, or both roots are kept when only the positive one makes sense.",
         "minimal": "The row sizes 3, 6, 9, … form an arithmetic series with a = 3 and d = 3. Use Sn = (n/2)[2a + (n − 1)d], then set that sum equal to 828 and solve for n."
       },
-      "stem": "Cards are stacked to build a &lsquo;house of cards&rsquo;. A house of cards with 3 rows is shown.<br><br>A house of cards requires 3 cards in the top row, 6 cards in the next row, and each successive row has 3 more cards than the previous row.",
+      "stem": "Cards are stacked to build a &lsquo;house of cards&rsquo;. A house of cards with 3 rows is shown.<br><br>A house of cards requires 3 cards in the top row, 6 cards in the next row, and each successive row has 3 more cards than the previous row.<img src=\"/diagrams/mathematics-advanced_2022_Q17_stimulus.jpg\" alt=\"A house of cards with three rows, built from leaning pairs of cards with horizontal cards between the rows.\" style=\"max-width:100%;height:auto;display:block;margin:14px auto\">",
       "parts": [
         {
           "label": "(a)",
@@ -3426,7 +3425,6 @@
           "answer": "Sn = (n/2)[2a + (n − 1)d] = (n/2)[6 + 3(n − 1)] = 3n(n + 1)/2.\n\nFor n = 12: S₁₂ = 3 × 12 × 13 ÷ 2 = 468/2 = 234 cards, as required.",
           "keywords": [
             "234",
-            "23",
             "3n(n + 1)/2"
           ],
           "minKeywords": 2,
@@ -3900,7 +3898,7 @@
         {
           "label": "(b)",
           "marks": 2,
-          "q": "Find any stationary points of <em>f</em>(<em>x</em>) and determine their nature. <strong>(2 marks)</strong><br><br><em style=\"opacity:0.75\">Part (c), which asked for the curve <em>y</em> = <em>xe</em><sup>&minus;2<em>x</em></sup> to be sketched showing stationary points, points of inflection and intercepts, is not included here.</em>",
+          "q": "Find any stationary points of <em>f</em>(<em>x</em>) and determine their nature.<br><br><em style=\"opacity:0.75\">Part (c), which asked for the curve <em>y</em> = <em>xe</em><sup>&minus;2<em>x</em></sup> to be sketched showing stationary points, points of inflection and intercepts, is not included here.</em>",
           "answer": "Stationary points where f′(x) = 0:\ne⁻²ˣ(1 − 2x) = 0.\ne⁻²ˣ is never zero, so 1 − 2x = 0 and x = 1/2.\n\ny-value: f(1/2) = (1/2)e⁻¹ = 1/(2e) ≈ 0.184.\n\nNature: f″(1/2) = 4(1/2 − 1)e⁻¹ = −2e⁻¹ < 0, so the curve is concave down there.\n\nThere is a single stationary point, a maximum at (1/2, 1/(2e)).",
           "keywords": [
             "1/2",
@@ -4107,7 +4105,7 @@
         "partial": "The area function is set up and differentiated but x = 0 is kept as a solution (it is outside x > 1), or the minimum is not verified.",
         "minimal": "Use the fact that X, P and Y lie on one line to link x and y. Then the triangle's area is ½xy — write it in terms of x alone and minimise it for x > 1."
       },
-      "stem": "A line passes through the point <em>P</em>(1, 2) and meets the axes at <em>X</em>(<em>x</em>, 0) and <em>Y</em>(0, <em>y</em>), where <em>x</em> &gt; 1.",
+      "stem": "A line passes through the point <em>P</em>(1, 2) and meets the axes at <em>X</em>(<em>x</em>, 0) and <em>Y</em>(0, <em>y</em>), where <em>x</em> &gt; 1.<img src=\"/diagrams/mathematics-advanced_2022_Q31_stimulus.jpg\" alt=\"A line falling from Y(0, y) on the y-axis through P(1, 2) to X(x, 0) on the x-axis, with the triangle XOY shaded.\" style=\"max-width:100%;height:auto;display:block;margin:14px auto\">",
       "parts": [
         {
           "label": "(a)",
@@ -4176,7 +4174,6 @@
           "answer": "The bracket is a geometric series with a = 1, r = 1.0025 and 180 terms, so it sums to (1.0025¹⁸⁰ − 1)/0.0025.\n\nThe loan is repaid when A₁₈₀ = 0:\n200 000(1.0025)¹⁸⁰ = M(1.0025¹⁸⁰ − 1)/0.0025\n\n1.0025¹⁸⁰ ≈ 1.5674336, so\nM = 200 000 × 0.0025 × 1.5674336 ÷ 0.5674336\n= 783.7168 ÷ 0.5674336\n≈ 1381.1633\n\nM = $1381.16 when rounded to the nearest cent.",
           "keywords": [
             "1381.16",
-            "83",
             "geometric"
           ],
           "minKeywords": 2,
@@ -4382,8 +4379,7 @@
           "answer": "10 years at 6% per annum: the future value interest factor is 13.181.\nFuture value = contribution × 13.181 = 450 000\ncontribution = 450 000 ÷ 13.181 = 34 140.05…\nMicky should contribute $34 140 each year.",
           "keywords": [
             "34 140",
-            "13.181",
-            "40"
+            "13.181"
           ],
           "minKeywords": 2,
           "bandDescriptors": {
@@ -4511,7 +4507,7 @@
         {
           "label": "(c)",
           "marks": 1,
-          "q": "In the context of the dataset, identify ONE problem with using the regression line to predict gas usage when the average outside temperature is 23&deg;C. <strong>(1 mark)</strong><br><br><em style=\"opacity:0.75\">Part (a), which asked for the point (x&#772;, y&#772;) and the <em>y</em>-intercept to be plotted on a printed grid, is not included here &mdash; work with the numbers directly.</em>",
+          "q": "In the context of the dataset, identify ONE problem with using the regression line to predict gas usage when the average outside temperature is 23&deg;C.<br><br><em style=\"opacity:0.75\">Part (a), which asked for the point (x&#772;, y&#772;) and the <em>y</em>-intercept to be plotted on a printed grid, is not included here &mdash; work with the numbers directly.</em>",
           "answer": "The temperatures in the dataset run only from 0°C to 10°C, so predicting at 23°C is extrapolation — well outside the range of the data. There is no evidence the linear relationship continues that far, and the line in fact predicts a negative gas usage (236 − 10.4 × 23 ≈ −4 MW), which is impossible.",
           "keywords": [
             "236",
@@ -4533,7 +4529,7 @@
       "section": "II",
       "category": "F2",
       "marks": 2,
-      "q": "(b) Hence, or otherwise, solve the inequality <em>x</em> &minus; 1 &lt; (1 &minus; <em>x</em>)(3 + <em>x</em>). <strong>(2 marks)</strong><br><br><em style=\"opacity:0.75\">Part (a), which asked for the graphs of <em>f</em>(<em>x</em>) = <em>x</em> &minus; 1 and <em>g</em>(<em>x</em>) = (1 &minus; <em>x</em>)(3 + <em>x</em>) to be sketched on a printed grid showing the <em>x</em>-intercepts, is not included here &mdash; solve part (b) algebraically.</em>",
+      "q": "(b) Hence, or otherwise, solve the inequality <em>x</em> &minus; 1 &lt; (1 &minus; <em>x</em>)(3 + <em>x</em>).<br><br><em style=\"opacity:0.75\">Part (a), which asked for the graphs of <em>f</em>(<em>x</em>) = <em>x</em> &minus; 1 and <em>g</em>(<em>x</em>) = (1 &minus; <em>x</em>)(3 + <em>x</em>) to be sketched on a printed grid showing the <em>x</em>-intercepts, is not included here &mdash; solve part (b) algebraically.</em>",
       "image": null,
       "answer": "Expand the right-hand side:\n(1 − x)(3 + x) = 3 + x − 3x − x² = 3 − 2x − x²\n\nx − 1 < 3 − 2x − x²\nx² + x + 2x − 1 − 3 < 0\nx² + 3x − 4 < 0\n(x + 4)(x − 1) < 0\n\nThe parabola is concave up with roots −4 and 1, so it is negative between them:\n−4 < x < 1.",
       "keywords": [
@@ -4813,7 +4809,7 @@
         "partial": "The integration is correct but the constant is not found from x(0) = 11.2, or the count in (b) is out by one — t = 10.4 lies outside the 10 seconds.",
         "minimal": "Antidifferentiate sin(kt) to −cos(kt)/k. Then the closest approach is the minimum of x, once per period, and the period is 2π ÷ (5π/4) = 1.6 seconds."
       },
-      "stem": "A camera films the motion of a swing in a park.<br><br>Let <em>x</em>(<em>t</em>) be the horizontal distance, in metres, from the camera to the seat of the swing at <em>t</em> seconds.<br><br>The seat is released from rest at a horizontal distance of 11.2 m from the camera.",
+      "stem": "A camera films the motion of a swing in a park.<br><br>Let <em>x</em>(<em>t</em>) be the horizontal distance, in metres, from the camera to the seat of the swing at <em>t</em> seconds.<br><br>The seat is released from rest at a horizontal distance of 11.2 m from the camera.<img src=\"/diagrams/mathematics-advanced_2023_Q26_stimulus.jpg\" alt=\"A camera at ground level filming a swing, with the horizontal distance from the camera to the seat marked as 11.2 m. Not to scale.\" style=\"max-width:100%;height:auto;display:block;margin:14px auto\">",
       "parts": [
         {
           "label": "(a)",
@@ -4873,7 +4869,7 @@
         "partial": "(a) fully correct but (b) gives only one boundary, or includes an endpoint — at m = 7/6 the line passes through the vertex and meets the graph once, and at m = −4 it is parallel to a branch.",
         "minimal": "The vertex of y = a|x − b| + c is (b, c), which the diagram gives directly. For (b), write the two branches as separate straight lines and ask when y = mx meets each one on its own side of x = 6."
       },
-      "stem": "The graph of <em>y</em> = <em>f</em>(<em>x</em>), where <em>f</em>(<em>x</em>) = <em>a</em>|<em>x</em> &minus; <em>b</em>| + <em>c</em>, passes through the points (3, &minus;5), (6, 7) and (9, &minus;5) as shown in the diagram.",
+      "stem": "The graph of <em>y</em> = <em>f</em>(<em>x</em>), where <em>f</em>(<em>x</em>) = <em>a</em>|<em>x</em> &minus; <em>b</em>| + <em>c</em>, passes through the points (3, &minus;5), (6, 7) and (9, &minus;5) as shown in the diagram.<img src=\"/diagrams/mathematics-advanced_2023_Q27_stimulus.jpg\" alt=\"An inverted V-shaped absolute value graph with its vertex at (6, 7), passing through (3, -5) and (9, -5).\" style=\"max-width:100%;height:auto;display:block;margin:14px auto\">",
       "parts": [
         {
           "label": "(a)",
@@ -5021,7 +5017,7 @@
       "section": "II",
       "category": "C3",
       "marks": 3,
-      "q": "Let <em>f</em>(<em>x</em>) = <em>e</em><sup>&minus;<em>x</em></sup> sin <em>x</em>.<br><br>(a) Find the coordinates of the stationary points of <em>f</em>(<em>x</em>) for 0 &le; <em>x</em> &le; 2&pi;. You do NOT need to check the nature of the stationary points. <strong>(3 marks)</strong><br><br><em style=\"opacity:0.75\">Part (b), which asked for the graph of <em>y</em> = <em>f</em>(<em>x</em>) to be sketched on a printed set of axes showing stationary points and intercepts, is not included here.</em>",
+      "q": "Let <em>f</em>(<em>x</em>) = <em>e</em><sup>&minus;<em>x</em></sup> sin <em>x</em>.<br><br>(a) Find the coordinates of the stationary points of <em>f</em>(<em>x</em>) for 0 &le; <em>x</em> &le; 2&pi;. You do NOT need to check the nature of the stationary points.<br><br><em style=\"opacity:0.75\">Part (b), which asked for the graph of <em>y</em> = <em>f</em>(<em>x</em>) to be sketched on a printed set of axes showing stationary points and intercepts, is not included here.</em>",
       "image": null,
       "answer": "Differentiate with the product rule:\nf′(x) = −e⁻ˣ sin x + e⁻ˣ cos x\n= e⁻ˣ(cos x − sin x).\n\ne⁻ˣ is never zero, so f′(x) = 0 when cos x = sin x, that is tan x = 1.\nFor 0 ≤ x ≤ 2π: x = π/4 and x = 5π/4.\n\nf(π/4) = e^(−π/4) × √2/2 ≈ 0.322\nf(5π/4) = e^(−5π/4) × (−√2/2) ≈ −0.014\n\nStationary points: (π/4, (√2/2)e^(−π/4)) ≈ (0.785, 0.322) and (5π/4, −(√2/2)e^(−5π/4)) ≈ (3.927, −0.014).",
       "keywords": [
@@ -5053,7 +5049,7 @@
       "marks": 5,
       "q": "Four Year 12 students want to organise a graduation party. All four students have the same probability, <em>P</em>(<em>F</em>), of being available next Friday. All four students have the same probability, <em>P</em>(<em>S</em>), of being available next Saturday.<br><br>It is given that <em>P</em>(<em>F</em>) = 3/10, <em>P</em>(<em>S</em>|<em>F</em>) = 1/3, and <em>P</em>(<em>F</em>|<em>S</em>) = 1/8.<br><br>Kim is one of the four students.<br><br>(a) Is Kim&rsquo;s availability next Friday independent from his availability next Saturday? Justify your answer. <strong>(1 mark)</strong><br><br>(b) Show that the probability that Kim is available next Saturday is 4/5. <strong>(2 marks)</strong><br><br>(c) What is the probability that at least one of the four students is NOT available next Saturday? <strong>(2 marks)</strong>",
       "image": null,
-      "answer": "(a) No. If F and S were independent then P(S|F) would equal P(S). Here P(S|F) = 1/3, while P(S) = 4/5 (found in part (b)), and 1/3 ≠ 4/5, so the two events are not independent.\n\n(b) P(F ∩ S) = P(S|F) × P(F) = (1/3)(3/10) = 1/10.\nP(F|S) = P(F ∩ S)/P(S), so\n1/8 = (1/10)/P(S)\nP(S) = (1/10) × 8 = 8/10 = 4/5.\n\n(c) P(a given student is available on Saturday) = 4/5, and the four students are independent of one another.\nP(at least one NOT available) = 1 − P(all four available)\n= 1 − (4/5)⁴\n= 1 − 256/625\n= 369/625\n= 0.5904.",
+      "answer": "(a) No. Independence would require P(F|S) = P(F). The question gives P(F|S) = 1/8 and P(F) = 3/10, and 1/8 ≠ 3/10, so the two events are not independent. (Equivalently, independence would require P(S|F) = P(S): P(S|F) = 1/3 while P(S) = 4/5 from part (b).)\n\n(b) P(F ∩ S) = P(S|F) × P(F) = (1/3)(3/10) = 1/10.\nP(F|S) = P(F ∩ S)/P(S), so\n1/8 = (1/10)/P(S)\nP(S) = (1/10) × 8 = 8/10 = 4/5.\n\n(c) P(a given student is available on Saturday) = 4/5, and the four students are independent of one another.\nP(at least one NOT available) = 1 − P(all four available)\n= 1 − (4/5)⁴\n= 1 − 256/625\n= 369/625\n= 0.5904.",
       "keywords": [
         "4/5",
         "1/10",
@@ -5074,7 +5070,7 @@
           "label": "(a)",
           "marks": 1,
           "q": "Is Kim&rsquo;s availability next Friday independent from his availability next Saturday? Justify your answer.",
-          "answer": "No. If F and S were independent then P(S|F) would equal P(S). Here P(S|F) = 1/3, while P(S) = 4/5 (found in part (b)), and 1/3 ≠ 4/5, so the two events are not independent.",
+          "answer": "No. Independence would require P(F|S) = P(F). The question gives P(F|S) = 1/8 and P(F) = 3/10, and 1/8 ≠ 3/10, so the two events are not independent. (Equivalently, independence would require P(S|F) = P(S): P(S|F) = 1/3 while P(S) = 4/5 from part (b).)",
           "keywords": [
             "4/5",
             "not independent"
@@ -5147,7 +5143,7 @@
         "partial": "(a) correct but (b) only applies the discriminant, giving k > −1/4 and missing the requirement that both roots be positive.",
         "minimal": "In (a) integrate (upper − lower) from 0 to ln 2. In (b) substitute u = e⁻ˣ to get a quadratic, and remember u must be <em>positive</em> for a real x to exist — the discriminant alone is not enough."
       },
-      "stem": "The curves <em>y</em> = <em>e</em><sup>&minus;2<em>x</em></sup> and <em>y</em> = <em>e</em><sup>&minus;<em>x</em></sup> &minus; 1/4 intersect at exactly one point as shown in the diagram. The point of intersection has coordinates (ln 2, 1/4). (Do NOT prove this.)",
+      "stem": "The curves <em>y</em> = <em>e</em><sup>&minus;2<em>x</em></sup> and <em>y</em> = <em>e</em><sup>&minus;<em>x</em></sup> &minus; 1/4 intersect at exactly one point as shown in the diagram. The point of intersection has coordinates (ln 2, 1/4). (Do NOT prove this.)<img src=\"/diagrams/mathematics-advanced_2023_Q32_stimulus.jpg\" alt=\"Two decreasing exponential curves meeting at the point (ln 2, one quarter), with the region between them and the y-axis shaded.\" style=\"max-width:100%;height:auto;display:block;margin:14px auto\">",
       "parts": [
         {
           "label": "(a)",
@@ -5205,7 +5201,7 @@
         "partial": "t = 4 is found but h is not evaluated, or part (b) is attempted without setting t² − 8t + 12 equal to 12.",
         "minimal": "The turning point sits halfway between the two zeros. For part (b), put h = 12 into the equation and solve t² − 8t = 0 by factorising, not by the quadratic formula."
       },
-      "stem": "The graph of a quadratic function represented by the equation <em>h</em> = <em>t</em>&sup2; &minus; 8<em>t</em> + 12 is shown.",
+      "stem": "The graph of a quadratic function represented by the equation <em>h</em> = <em>t</em>&sup2; &minus; 8<em>t</em> + 12 is shown.<img src=\"/diagrams/mathematics-advanced_2025_Q11_stimulus.jpg\" alt=\"A parabola opening upwards, cutting the vertical h-axis at 12 and the horizontal t-axis at t = 2 and t = 6.\" style=\"max-width:100%;height:auto;display:block;margin:14px auto\">",
       "parts": [
         {
           "label": "(a)",
@@ -5429,7 +5425,7 @@
         {
           "label": "(c)",
           "marks": 2,
-          "q": "Hence, find the values of <em>t</em>, where 0 &lt; <em>t</em> &lt; 10, for which functions <em>P</em><sub>1</sub>(<em>t</em>) and <em>P</em><sub>2</sub>(<em>t</em>) = 4 sin(&pi;<em>t</em>/10) are BOTH decreasing. <strong>(2 marks)</strong><br><br><em style=\"opacity:0.75\">Part (b), which asked for the graph of <em>P</em><sub>2</sub>(<em>t</em>) = 4 sin(&pi;<em>t</em>/10) to be sketched on a printed diagram, is not included here. Its definition of <em>P</em><sub>2</sub> has been repeated in part (c) above, which is otherwise NESA&rsquo;s wording and is answerable from the two equations alone.</em>",
+          "q": "Hence, find the values of <em>t</em>, where 0 &lt; <em>t</em> &lt; 10, for which functions <em>P</em><sub>1</sub>(<em>t</em>) and <em>P</em><sub>2</sub>(<em>t</em>) = 4 sin(&pi;<em>t</em>/10) are BOTH decreasing.<br><br><em style=\"opacity:0.75\">Part (b), which asked for the graph of <em>P</em><sub>2</sub>(<em>t</em>) = 4 sin(&pi;<em>t</em>/10) to be sketched on a printed diagram, is not included here. Its definition of <em>P</em><sub>2</sub> has been repeated in part (c) above, which is otherwise NESA&rsquo;s wording and is answerable from the two equations alone.</em>",
           "answer": "A sine curve decreases on the part of its cycle from the maximum to the minimum.\n\nP₁ has period 5, with a maximum at t = 1.25 and a minimum at t = 3.75, so it is decreasing for 1.25 < t < 3.75 and again for 6.25 < t < 8.75.\n\nP₂ has period 2π ÷ (π/10) = 20, with a maximum at t = 5 and a minimum at t = 15, so on 0 < t < 10 it is decreasing for 5 < t < 10.\n\nBoth are decreasing on the overlap: 6.25 < t < 8.75.",
           "keywords": [
             "6.25",
@@ -5451,7 +5447,7 @@
       "section": "II",
       "category": "C3",
       "marks": 4,
-      "q": "Consider the function <em>f</em>(<em>x</em>) = <em>x</em>&sup2;/e<sup><em>x</em></sup>.<br><br>(a) Find the stationary points of the function and determine their nature. <strong>(4 marks)</strong><br><br><em style=\"opacity:0.75\">Part (b), which asked for a partially completed printed graph of <em>f</em>(<em>x</em>) to be completed, is not included here.</em>",
+      "q": "Consider the function <em>f</em>(<em>x</em>) = <em>x</em>&sup2;/e<sup><em>x</em></sup>.<br><br>(a) Find the stationary points of the function and determine their nature.<br><br><em style=\"opacity:0.75\">Part (b), which asked for a partially completed printed graph of <em>f</em>(<em>x</em>) to be completed, is not included here.</em>",
       "image": null,
       "answer": "Write f(x) = x²e⁻ˣ and differentiate with the product rule:\nf′(x) = 2xe⁻ˣ − x²e⁻ˣ = e⁻ˣ x(2 − x).\n\ne⁻ˣ is never zero, so f′(x) = 0 when x = 0 or x = 2.\n\nf(0) = 0 and f(2) = 4/e² ≈ 0.54, so the stationary points are (0, 0) and (2, 4/e²).\n\nTest the sign of f′ = e⁻ˣ x(2 − x), whose sign is the sign of x(2 − x):\nx < 0: negative;  0 < x < 2: positive;  x > 2: negative.\n\nSo (0, 0) is a minimum turning point and (2, 4/e²) is a maximum turning point.",
       "keywords": [
@@ -5903,7 +5899,7 @@
         "partial": "Part (a) and OF = h are correct but the south-west displacement is not resolved into east and north components, or the bearing is measured from the wrong end (the bearing of F from O rather than O from F).",
         "minimal": "South-west is 4/√2 km west and 4/√2 km south. Put O at the origin, write F's coordinates, and use OF = h. A bearing is measured clockwise from north at the point you are standing on — here that is F."
       },
-      "stem": "The point <em>T</em> is the peak of a mountain and the point <em>O</em> is directly below the mountain&rsquo;s peak. The point <em>Y</em> is due east of <em>O</em> and the angle of elevation of <em>T</em> from <em>Y</em> is 60&deg;. The point <em>F</em> is 4 km south-west of <em>Y</em>. The points <em>O</em>, <em>Y</em> and <em>F</em> are on level ground. The angle of elevation of <em>T</em> from <em>F</em> is 45&deg;.",
+      "stem": "The point <em>T</em> is the peak of a mountain and the point <em>O</em> is directly below the mountain&rsquo;s peak. The point <em>Y</em> is due east of <em>O</em> and the angle of elevation of <em>T</em> from <em>Y</em> is 60&deg;. The point <em>F</em> is 4 km south-west of <em>Y</em>. The points <em>O</em>, <em>Y</em> and <em>F</em> are on level ground. The angle of elevation of <em>T</em> from <em>F</em> is 45&deg;.<img src=\"/diagrams/mathematics-advanced_2025_Q29_stimulus.jpg\" alt=\"A three-dimensional diagram: the vertical mountain OT of height h, with Y due east of O at an angle of elevation of 60 degrees, and F south-west of Y at 4 km, with an angle of elevation of 45 degrees. Not to scale.\" style=\"max-width:100%;height:auto;display:block;margin:14px auto\">",
       "parts": [
         {
           "label": "(a)",
@@ -6094,7 +6090,7 @@
         "partial": "The intersections are found correctly and the integral of the difference is set up, but the subtraction is the wrong way round or the primitive is evaluated incorrectly.",
         "minimal": "Equate the two expressions to find the limits, then integrate (upper curve − lower curve) between them. Over this interval the downward parabola is the upper curve."
       },
-      "stem": "The curves <em>y</em> = (<em>x</em> &minus; 1)&sup2; and <em>y</em> = 5 &minus; <em>x</em>&sup2; intersect at two points, as shown in the diagram.",
+      "stem": "The curves <em>y</em> = (<em>x</em> &minus; 1)&sup2; and <em>y</em> = 5 &minus; <em>x</em>&sup2; intersect at two points, as shown in the diagram.<img src=\"/diagrams/mathematics-advanced_2024_Q14_stimulus.jpg\" alt=\"An upward parabola and a downward parabola crossing at two points, with the region between them shaded. Marked NOT TO SCALE\" style=\"max-width:100%;height:auto;display:block;margin:14px auto\">",
       "parts": [
         {
           "label": "(a)",
@@ -6229,7 +6225,7 @@
         {
           "label": "(c)",
           "marks": 2,
-          "q": "Find the rate at which the voltage is increasing when <em>t</em> = 2, correct to 3 decimal places. <strong>(2 marks)</strong><br><br><em style=\"opacity:0.75\">Part (a), which asked for a sketch of the graph of <em>V</em>(<em>t</em>) showing its behaviour as <em>t</em> increases, is not included here &mdash; the engine cannot mark a hand-drawn graph. Parts (b) and (c) work only from the equation above, so nothing from part (a) is needed. NESA&rsquo;s wording of parts (b) and (c) is unchanged.</em>",
+          "q": "Find the rate at which the voltage is increasing when <em>t</em> = 2, correct to 3 decimal places.<br><br><em style=\"opacity:0.75\">Part (a), which asked for a sketch of the graph of <em>V</em>(<em>t</em>) showing its behaviour as <em>t</em> increases, is not included here &mdash; the engine cannot mark a hand-drawn graph. Parts (b) and (c) work only from the equation above, so nothing from part (a) is needed. NESA&rsquo;s wording of parts (b) and (c) is unchanged.</em>",
           "answer": "Differentiate: dV/dt = 6.5k e^(−kt).\n\nWhen t = 2:\ndV/dt = 6.5 × 0.510825… × e^(−2 × 0.510825…)\n      = 3.32036… × e^(−1.02165…)\n      = 3.32036… × 0.36\n      = 1.19533…\n\nThe voltage is increasing at 1.195 volts per second (3 decimal places).",
           "keywords": [
             "6.5k",
@@ -6328,7 +6324,7 @@
         "partial": "BC is found correctly and the cosine rule gives 104°, but the angle is not converted to a bearing — 104° is given as the answer, or it is added to the wrong reference direction.",
         "minimal": "Use tan of the angle of elevation in each right-angled triangle to get the two ground distances, then the cosine rule in triangle ACB to find ∠ACB. A is due east of C, so CA is on a bearing of 090°."
       },
-      "stem": "A vertical tower <em>TC</em> is 40 metres high. The point <em>A</em> is due east of the base of the tower <em>C</em>. The angle of elevation to the top <em>T</em> of the tower from <em>A</em> is 35&deg;. A second point <em>B</em> is on a different bearing from the tower as shown. The angle of elevation to the top of the tower from <em>B</em> is 30&deg;. The points <em>A</em> and <em>B</em> are 100 metres apart.",
+      "stem": "A vertical tower <em>TC</em> is 40 metres high. The point <em>A</em> is due east of the base of the tower <em>C</em>. The angle of elevation to the top <em>T</em> of the tower from <em>A</em> is 35&deg;. A second point <em>B</em> is on a different bearing from the tower as shown. The angle of elevation to the top of the tower from <em>B</em> is 30&deg;. The points <em>A</em> and <em>B</em> are 100 metres apart.<img src=\"/diagrams/mathematics-advanced_2024_Q20_stimulus.jpg\" alt=\"A vertical tower TC of 40 m with the angle of elevation 35 degrees from A and 30 degrees from B, and AB marked 100 m. Marked NOT TO SCALE\" style=\"max-width:100%;height:auto;display:block;margin:14px auto\">",
       "parts": [
         {
           "label": "(a)",
@@ -6415,7 +6411,7 @@
         "partial": "The second derivative is correct and the trapezoidal rule is applied correctly, but the symmetry is missed so the answer is 0.269 rather than 0.538; or (c) says overestimate with no reason.",
         "minimal": "Differentiate twice — chain rule then quotient rule — and argue from the sign of the numerator. For (b) note the shaded region is on both sides of the y-axis. For (c) a concave-up curve lies below its chords."
       },
-      "stem": "The graph of the function <em>f</em>(<em>x</em>) = ln(1 + <em>x</em>&sup2;) is shown.",
+      "stem": "The graph of the function <em>f</em>(<em>x</em>) = ln(1 + <em>x</em>&sup2;) is shown.<img src=\"/diagrams/mathematics-advanced_2024_Q22_stimulus.jpg\" alt=\"The curve y = ln(1 + x squared), a U-shape with its minimum at the origin, with the regions from x = −1 to 0 and from 0 to 1 shaded\" style=\"max-width:100%;height:auto;display:block;margin:14px auto\">",
       "parts": [
         {
           "label": "(a)",
@@ -6648,7 +6644,7 @@
         {
           "label": "(c)",
           "marks": 2,
-          "q": "Find the value of the median of the probability density function <em>f</em>(<em>x</em>). Give your answer correct to 3 decimal places. <strong>(2 marks)</strong><br><br><em style=\"opacity:0.75\">Part (b), which asked the student to find a formula for the cumulative distribution function and sketch its graph, is not included here &mdash; the engine cannot mark a hand-drawn graph. Part (c) asks for the median of <em>f</em>(<em>x</em>) itself, so it needs only the value of <em>h</em> from part (a). NESA&rsquo;s wording of parts (a) and (c) is unchanged.</em>",
+          "q": "Find the value of the median of the probability density function <em>f</em>(<em>x</em>). Give your answer correct to 3 decimal places.<br><br><em style=\"opacity:0.75\">Part (b), which asked the student to find a formula for the cumulative distribution function and sketch its graph, is not included here &mdash; the engine cannot mark a hand-drawn graph. Part (c) asks for the median of <em>f</em>(<em>x</em>) itself, so it needs only the value of <em>h</em> from part (a). NESA&rsquo;s wording of parts (a) and (c) is unchanged.</em>",
           "answer": "With h = 2, f(x) = 1 − x/2 on 0 ≤ x ≤ 2. The median m satisfies ∫₀ᵐ f(x) dx = 0.5:\n\n∫₀ᵐ (1 − x/2) dx = [x − x²/4]₀ᵐ = m − m²/4\n\nm − m²/4 = 0.5\n4m − m² = 2\nm² − 4m + 2 = 0\n\nm = [4 ± √(16 − 8)]/2 = [4 ± √8]/2 = 2 ± √2\n\nThe median must lie in 0 ≤ m ≤ 2, so m = 2 − √2 = 0.585786…\n\nThe median is 0.586 (3 decimal places).",
           "keywords": [
             "h = 2",

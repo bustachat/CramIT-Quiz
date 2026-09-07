@@ -5755,3 +5755,112 @@ their own model answers; and a real scored flow on Standard 2 2020 Q19 shows the
 in place — *"Not achieved — this mark is awarded in full or not at all. The criterion is:
 Provides the correct answer"* — with NESA's capitalisation intact. Screenshot taken. No
 console errors.
+
+---
+
+## 2026-09-07 (later still, ×7) — Mathematics Advanced Stage 6b: the written-answer review backlog is CLOSED
+
+126 of 126 questions reviewed, the ledger committed, and CI now enforces the subject.
+**Every subject in the repo that has an answer key now has a committed review ledger** —
+Standard 2 145/145, Advanced 126/126, VET 34/34, Multimedia 35/35. HMS has no answer key
+and cannot have one until after the 2026 HSC.
+
+**89 ok · 31 corrected · 6 divergent-accepted.**
+
+Runbook: [`docs/subject-plans/mathematics-advanced-written-review.md`](subject-plans/mathematics-advanced-written-review.md).
+
+### The content was clean
+
+Not one result, method or figure disagrees with NESA. That is a real difference from the
+other ports (VET 6 defects in 34, Multimedia 9 in 35) and it is consistent with how this
+subject was built: uniquely, it was ported from the papers with the official key already
+committed and reconciling to exactly 100 marks per paper at every stage.
+
+All 31 corrections are scoring, teaching, rendering or presentation defects — every one
+invisible to CI because the marks were right, and **two of them findable only by rendering
+the questions**.
+
+### ⚠️ 14 stimulus images had not been reaching students since 2026-09-05
+
+The serious one, and a **regression rather than a porting gap**.
+
+A multi-part question is drawn as `stem` + each part's prompt; the combined `q` is never
+rendered in the quiz. When the per-part build split `stem` out of `q` on 2026-09-05 it
+copied the intro **text** and left the `<img>` behind — so 14 questions said *"The diagram
+shows the graph of…"* above no diagram.
+
+**Proved, not inferred:** rendering 2020 Q29 with its `parts` deleted shows 1 image; with
+`parts` present, 0. Moved into `stem`, where the existing `.parts-stem img` cap bounds it —
+measured at **250×154 inside a 278 px stem** for an 1114 px source.
+
+⚠️ **Checked elsewhere rather than assumed**: none in Standard 2, Multimedia or HMS, and
+VET's two candidates are fine — their image is in a part's `intro`, which *does* render. A
+first version of the detector called VET broken because it did not count `intro`.
+
+### The other four classes
+
+- **A bare `>` inside an `alt`** (2020 Q29) closed the `<img` tag early, so ~90 characters
+  of the attribute rendered as visible text. One instance repo-wide.
+- **Four sibling-part keyword leaks**, found by a new check: a *numeric* keyword whose only
+  match in its own model answer is **preceded by a digit**, making it a suffix fragment of
+  a longer number — `83` inside `783.7168`, `40` inside `34 140`, `23` inside `234`, `5`
+  inside `1560`. Run repo-wide it found two more in Standard 2.
+- **A model answer that forward-references a later part** (2023 Q31(a) used part (b)'s
+  `P(S) = 4/5`; NESA argues from the given `P(F|S)` and `P(F)`).
+- **13 duplicated mark labels** — a stem or prompt ending in `(N marks)` under the badge
+  that already says it. Questions carrying *several* labels were left alone: there each one
+  is the only place that sub-part's value appears.
+
+### ⚠️ The one that was NOT dropped is the point of the method
+
+2020 Q11(b) carries part (c)'s answer `45` by the same suffix-fragment signature. Dropping
+it **measured 2/2 → 1/2 on a fully correct working**, because that working writes `450` and
+the keyword was carrying the match. It stays. Every drop that *was* made had been probed
+against four realistic student answers first — 2020 Q14(c) improves a correct `10/39` from
+1/2 to 2/2, the rest are no-ops.
+
+Two shapes the first version of the detector got wrong, both caught by reading the evidence
+rather than trusting the count: a trailing full stop (`= 15 000.`) and a decimal
+continuation (`$45 097.17` containing `45 097`) are legitimate, not fragments.
+
+### `ok` vs `divergent-accepted`
+
+NESA's maths samples extract as equation **layout**, so the comparison made here was
+**mathematical** — method, intermediate values, result. Possible for 120 questions (`ok`);
+impossible for 6 where the key's `sampleAnswer` is simply **empty**, all in 2025 (Q12
+extracts as the single character `2`; Q14(c), Q17, Q18, Q25(c), Q30). Four further blanks
+are for parts already declared in `omittedParts`.
+
+Triage reported overlap **0.00 on almost every question** — the signature of equation-layout
+extraction, not a signal about the bank. It ordered the queue and decided nothing.
+
+### Verified
+
+Full local CI green — `Issues: 0`; **285** MC and **340** written checks, 0 wrong; coverage
+234/234; review **126/126**; `npm test` **124/124**; `content_audit.cjs --strict` exits 0
+with **0 mark-affecting findings**.
+
+**Staleness tested, not assumed**: corrupting one fingerprint on a merged multi-part entry
+and one on a single-part entry makes the checker report both STALE and exit 1.
+
+Blast radius machine-checked against HEAD — only `q`, `stem`, `answer`, `parts.q`,
+`parts.answer` and `parts.keywords` moved; `marks`, `qNum`, `section`, `category`, `image`,
+`omittedParts`, `acceptableAnswers` and every MC question unchanged.
+
+In the running app, all **126** questions render at 375 px and 320 px with **0 overflows,
+0 nested scrollbars, 0 `undefined`, 0 missing marks badges and 0 duplicated labels**; **47
+distinct images all load**; all **207** question/part rows score **full** from their own
+model answers with **0** on generic band wording. A real end-to-end flow on 2020 Q29 — the
+restored-image question — scored **3 / 4**, part (a) 2/2 and part (b) 1/2, each row
+captioned with NESA's own criteria wording, the stimulus rendering and the model answer
+revealed. No console errors.
+
+Standard 2's ledger was rebuilt after its five edits and machine-compared: **only the five
+notes moved** — no fingerprint, verdict or `reviewMethod`.
+
+### Left open
+
+No human sign-off, here or on any ledger. The live AI marking call still cannot be made
+here (no `ANTHROPIC_API_KEY`). And `keywordHit`'s `normNum` joins two numbers separated by a
+space (`= 18 3x` → `183x`); it is applied symmetrically so no behavioural defect was found,
+but it made two detector readings look like leaks. Recorded, not changed.

@@ -6592,7 +6592,7 @@
         {
           "label": "(c)",
           "marks": 2,
-          "q": "Complete the table below, showing the earliest start time and float time for activities A and G. (2 marks)\n\n<div style=\"overflow-x:auto;-webkit-overflow-scrolling:touch;\"><table style=\"font-size:0.68em;border-collapse:collapse;margin:8px 0;\"><thead><tr><th style=\"border:1px solid #ccc;padding:4px 10px;\">Activity</th><th style=\"border:1px solid #ccc;padding:4px 10px;\">Earliest start time (minutes)</th><th style=\"border:1px solid #ccc;padding:4px 10px;\">Float time (minutes)</th></tr></thead><tbody><tr><td style=\"border:1px solid #ccc;padding:4px 10px;\">A</td><td style=\"border:1px solid #ccc;padding:4px 10px;\"></td><td style=\"border:1px solid #ccc;padding:4px 10px;\"></td></tr><tr><td style=\"border:1px solid #ccc;padding:4px 10px;\">G</td><td style=\"border:1px solid #ccc;padding:4px 10px;\"></td><td style=\"border:1px solid #ccc;padding:4px 10px;\"></td></tr></tbody></table></div></div>",
+          "q": "Complete the table below, showing the earliest start time and float time for activities A and G.\n\n<div style=\"overflow-x:auto;-webkit-overflow-scrolling:touch;\"><table style=\"font-size:0.68em;border-collapse:collapse;margin:8px 0;\"><thead><tr><th style=\"border:1px solid #ccc;padding:4px 10px;\">Activity</th><th style=\"border:1px solid #ccc;padding:4px 10px;\">Earliest start time (minutes)</th><th style=\"border:1px solid #ccc;padding:4px 10px;\">Float time (minutes)</th></tr></thead><tbody><tr><td style=\"border:1px solid #ccc;padding:4px 10px;\">A</td><td style=\"border:1px solid #ccc;padding:4px 10px;\"></td><td style=\"border:1px solid #ccc;padding:4px 10px;\"></td></tr><tr><td style=\"border:1px solid #ccc;padding:4px 10px;\">G</td><td style=\"border:1px solid #ccc;padding:4px 10px;\"></td><td style=\"border:1px solid #ccc;padding:4px 10px;\"></td></tr></tbody></table></div></div>",
           "answer": "Activity A: EST = 0, Float = 12\nActivity G: EST = 20, Float = 15",
           "keywords": [
             "12",
@@ -7301,7 +7301,7 @@
         {
           "label": "(b)",
           "marks": 2,
-          "q": "By first completing this table of values, graph the relationship between temperature and time from T = 5°C to T = 30°C.  (2 marks)\n\n<div style=\"overflow-x:auto;-webkit-overflow-scrolling:touch;\"><table style=\"font-size:0.68em;border-collapse:collapse;margin:8px 0;width:100%;\"><tr><th style=\"border:1px solid #ccc;padding:6px 10px;background:#f5f5f5;text-align:center;\">T</th><th style=\"border:1px solid #ccc;padding:6px 10px;background:#f5f5f5;text-align:center;\">5</th><th style=\"border:1px solid #ccc;padding:6px 10px;background:#f5f5f5;text-align:center;\">15</th><th style=\"border:1px solid #ccc;padding:6px 10px;background:#f5f5f5;text-align:center;\">30</th></tr><tr><td style=\"border:1px solid #ccc;padding:6px 10px;text-align:center;\"><em>M</em></td><td style=\"border:1px solid #ccc;padding:6px 10px;text-align:center;\"></td><td style=\"border:1px solid #ccc;padding:6px 10px;text-align:center;\">12</td><td style=\"border:1px solid #ccc;padding:6px 10px;text-align:center;\"></td></tr></table></div></div>",
+          "q": "By first completing this table of values, graph the relationship between temperature and time from T = 5°C to T = 30°C.\n\n<div style=\"overflow-x:auto;-webkit-overflow-scrolling:touch;\"><table style=\"font-size:0.68em;border-collapse:collapse;margin:8px 0;width:100%;\"><tr><th style=\"border:1px solid #ccc;padding:6px 10px;background:#f5f5f5;text-align:center;\">T</th><th style=\"border:1px solid #ccc;padding:6px 10px;background:#f5f5f5;text-align:center;\">5</th><th style=\"border:1px solid #ccc;padding:6px 10px;background:#f5f5f5;text-align:center;\">15</th><th style=\"border:1px solid #ccc;padding:6px 10px;background:#f5f5f5;text-align:center;\">30</th></tr><tr><td style=\"border:1px solid #ccc;padding:6px 10px;text-align:center;\"><em>M</em></td><td style=\"border:1px solid #ccc;padding:6px 10px;text-align:center;\"></td><td style=\"border:1px solid #ccc;padding:6px 10px;text-align:center;\">12</td><td style=\"border:1px solid #ccc;padding:6px 10px;text-align:center;\"></td></tr></table></div></div>",
           "answer": "T = 5: M = 180/5 = 36; T = 30: M = 180/30 = 6\nGraph: decreasing hyperbola through (5, 36), (15, 12), (30, 6).",
           "keywords": [
             "180",
@@ -7691,7 +7691,7 @@
         {
           "label": "(a)",
           "marks": 1,
-          "q": "Complete the table showing Provider A's monthly charges for different levels of electricity usage.  (1 mark)\n\n<div style=\"overflow-x:auto;-webkit-overflow-scrolling:touch;\"><table style=\"font-size:0.68em;border-collapse:collapse;margin:8px 0;width:100%;\"><tr><th style=\"border:1px solid #ccc;padding:6px 10px;background:#f5f5f5;text-align:center;\">Electricity used (kWh)</th><th style=\"border:1px solid #ccc;padding:6px 10px;background:#f5f5f5;text-align:center;\">0</th><th style=\"border:1px solid #ccc;padding:6px 10px;background:#f5f5f5;text-align:center;\">400</th><th style=\"border:1px solid #ccc;padding:6px 10px;background:#f5f5f5;text-align:center;\">1000</th></tr><tr><td style=\"border:1px solid #ccc;padding:6px 10px;text-align:center;\">Monthly charge ($)</td><td style=\"border:1px solid #ccc;padding:6px 10px;text-align:center;\">$40</td><td style=\"border:1px solid #ccc;padding:6px 10px;text-align:center;\"></td><td style=\"border:1px solid #ccc;padding:6px 10px;text-align:center;\">$290</td></tr></table></div></div>\n\nProvider B charges 35 cents per kWh, with no fixed monthly charge.",
+          "q": "Complete the table showing Provider A's monthly charges for different levels of electricity usage.\n\n<div style=\"overflow-x:auto;-webkit-overflow-scrolling:touch;\"><table style=\"font-size:0.68em;border-collapse:collapse;margin:8px 0;width:100%;\"><tr><th style=\"border:1px solid #ccc;padding:6px 10px;background:#f5f5f5;text-align:center;\">Electricity used (kWh)</th><th style=\"border:1px solid #ccc;padding:6px 10px;background:#f5f5f5;text-align:center;\">0</th><th style=\"border:1px solid #ccc;padding:6px 10px;background:#f5f5f5;text-align:center;\">400</th><th style=\"border:1px solid #ccc;padding:6px 10px;background:#f5f5f5;text-align:center;\">1000</th></tr><tr><td style=\"border:1px solid #ccc;padding:6px 10px;text-align:center;\">Monthly charge ($)</td><td style=\"border:1px solid #ccc;padding:6px 10px;text-align:center;\">$40</td><td style=\"border:1px solid #ccc;padding:6px 10px;text-align:center;\"></td><td style=\"border:1px solid #ccc;padding:6px 10px;text-align:center;\">$290</td></tr></table></div></div>\n\nProvider B charges 35 cents per kWh, with no fixed monthly charge.",
           "answer": "400 kWh: $140 (i.e. 0.25 × 400 + 40 = $140)",
           "keywords": [
             "400 kWh",
@@ -9711,8 +9711,7 @@
           "answer": "A cut through E→Sink (20) and B→Sink (20) minus back-flow gives a cut capacity of <strong>35</strong>. Since 35 < 40, by the max-flow min-cut theorem, the maximum flow cannot exceed 35 visitors.",
           "keywords": [
             "40",
-            "35",
-            "5"
+            "35"
           ],
           "minKeywords": 2,
           "bandDescriptors": {
@@ -11821,7 +11820,6 @@
           "q": "The weights of the female sheep are also normally distributed but have a smaller mean and smaller standard deviation than the weights of male sheep. Explain whether it could be expected that 300 of the females from the flock each weigh more than <em>x</em> kg, where <em>x</em> is the value found in part (a).",
           "answer": "Number of females = 12 600 × (20/21) = 12 000\n300 out of 12 000 = 0.025 (2.5%) would need to weigh more than 89.5 kg.\nBut females have SMALLER mean and SMALLER standard deviation than males.\nSo x = 89.5 kg is even further into the upper tail for females.\nLess than 2.5% of females would weigh more than x kg.\nTherefore it could NOT be expected that 300 females weigh more than x kg.",
           "keywords": [
-            "600",
             "89.5",
             "smaller",
             "could not"

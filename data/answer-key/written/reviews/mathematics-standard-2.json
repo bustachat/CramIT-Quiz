@@ -171,7 +171,7 @@
         ],
         "sampleAnswerFingerprint": "sha256:8b32b883723aa6a43cded604dd884da35304a43c4bbec9368e5bb993b99b10f9",
         "sampleAnswerWordsFingerprint": "sha256:bc556ea34c463080bc64b8bb788c74a8d4f30be63f7a82f81d71068f2e32319e",
-        "note": "SCORING DEFECT: a content-free answer scored FULL marks. The critical path 'C - D - E - F - H - I' had been split into six SINGLE-LETTER keywords ('c','d','e','f','h','i'), and keywordHit() does a plain substring test, so each fires on ordinary English -- 'Activity', 'EST', 'Float' between them contain c, e, f and i. Measured in the real engine: a fluent but content-free answer scored 1/1 on part (a) and 2/2 on part (b). Parts (a) and (b) now use acceptableAnswers (the answer 46, and the critical path in the separator forms a student actually writes); part (c) keeps keywords but they are the table's own values 12, 15 and 20. Content was correct throughout and is unchanged; NESA agrees on 46 minutes, C-D-E-F-H-I, and A: EST 0 / float 12, G: EST 20 / float 15."
+        "note": "SCORING DEFECT: a content-free answer scored FULL marks. The critical path 'C - D - E - F - H - I' had been split into six SINGLE-LETTER keywords ('c','d','e','f','h','i'), and keywordHit() does a plain substring test, so each fires on ordinary English -- 'Activity', 'EST', 'Float' between them contain c, e, f and i. Measured in the real engine: a fluent but content-free answer scored 1/1 on part (a) and 2/2 on part (b). Parts (a) and (b) now use acceptableAnswers (the answer 46, and the critical path in the separator forms a student actually writes); part (c) keeps keywords but they are the table's own values 12, 15 and 20. Content was correct throughout and is unchanged; NESA agrees on 46 minutes, C-D-E-F-H-I, and A: EST 0 / float 12, G: EST 20 / float 15. ALSO EDITED LATER THE SAME DAY, by the Mathematics Advanced review's repo-wide label sweep: part (c)'s prompt carried a duplicated '(2 marks)' that the earlier sweep missed because a TABLE follows it, so the label is not at the end of the raw string. Presentation only."
       },
       "27": {
         "reviewedAt": "2026-09-07",
@@ -655,7 +655,7 @@
         ],
         "sampleAnswerFingerprint": "sha256:7faa4e50c9e6aa5be2ed58eacb41f471459da6df1cde6c453aa59fcde4856e87",
         "sampleAnswerWordsFingerprint": "sha256:b3f291d625f013373aed69ce99b24cfc58994dec95bd94e9edabd099965fe5e9",
-        "note": "Compared against NESA's committed sample answer and criteria rows: the model answer's method and final result agree, every keyword is creditable from the model answer in the real engine, and the band descriptors match NESA's criteria."
+        "note": "Compared against NESA's committed sample answer and criteria rows: the model answer's method and final result agree, every keyword is creditable from the model answer in the real engine, and the band descriptors match NESA's criteria. EDITED LATER THE SAME DAY by the Mathematics Advanced review's repo-wide label sweep: part (b)'s prompt carried a duplicated '(2 marks)' that the earlier sweep missed because a TABLE follows it. Presentation only; no content, mark or scoring field changed, and the verdict stands."
       },
       "25": {
         "reviewedAt": "2026-09-07",
@@ -811,7 +811,7 @@
         ],
         "sampleAnswerFingerprint": "sha256:429cc3f79f1fdecb7ecc332cf280aee29bb5997cf90babc5474c2acacdcb24e7",
         "sampleAnswerWordsFingerprint": "sha256:5ee88dade3056c984fe9301aa0af923cfa388304fe5f0b6cb6ef820cbbde307b",
-        "note": "Compared against NESA's committed sample answer and criteria rows: the model answer's method and final result agree, every keyword is creditable from the model answer in the real engine, and the band descriptors match NESA's criteria."
+        "note": "Compared against NESA's committed sample answer and criteria rows: the model answer's method and final result agree, every keyword is creditable from the model answer in the real engine, and the band descriptors match NESA's criteria. EDITED LATER THE SAME DAY by the Mathematics Advanced review's sibling-part keyword sweep: part (b) carried '5', which is part (c)'s figure and matched (b)'s own model answer only inside 35, as a suffix fragment of a longer number. Measured as a no-op on every probe in the real engine before dropping it. Content unchanged and the verdict stands."
       },
       "32": {
         "reviewedAt": "2026-09-07",
@@ -873,7 +873,7 @@
         ],
         "sampleAnswerFingerprint": "sha256:42c46ce14970ea1e0ae5f7b8d16cc4cdb0fbc1bdd617b2648ea8dfa6ff306a18",
         "sampleAnswerWordsFingerprint": "sha256:6b0a7e849d73747c08fcdbd9d77c9bc9e5c118116f97ea2acb56e6c3b410b94f",
-        "note": "The combined stem printed the WRONG PER-PART MARKS: (a) 1, (b) 2, (c) 1, (d) 1. The paper (2023 pp16-17) and the committed key both say (a) 1, (b) 1, (c) 1, (d) 2. The total is 5 either way, so check_written_key.cjs could not see it, but the student is told the wrong value for two parts. Corrected. Content and NESA's answers ($140, 400 kWh, Provider A by $40) are unchanged."
+        "note": "The combined stem printed the WRONG PER-PART MARKS: (a) 1, (b) 2, (c) 1, (d) 1. The paper (2023 pp16-17) and the committed key both say (a) 1, (b) 1, (c) 1, (d) 2. The total is 5 either way, so check_written_key.cjs could not see it, but the student is told the wrong value for two parts. Corrected. Content and NESA's answers ($140, 400 kWh, Provider A by $40) are unchanged. ALSO EDITED LATER THE SAME DAY, by the Mathematics Advanced review's repo-wide label sweep: part (a)'s prompt carried a duplicated '(1 mark)' that the earlier sweep missed because a TABLE follows it. Presentation only."
       },
       "22": {
         "reviewedAt": "2026-09-07",
@@ -1753,7 +1753,7 @@
         ],
         "sampleAnswerFingerprint": "sha256:e29bed37353287ca60725eab1c273e5d32e69147e48a946c79da0d5730d3caf8",
         "sampleAnswerWordsFingerprint": "sha256:b68cbc327f80f3f9f4e7f00be44e2c943cf24fd22e78df714b30e8b90245251c",
-        "note": "Compared against NESA's committed sample answer and criteria rows: the model answer's method and final result agree, every keyword is creditable from the model answer in the real engine, and the band descriptors match NESA's criteria."
+        "note": "Compared against NESA's committed sample answer and criteria rows: the model answer's method and final result agree, every keyword is creditable from the model answer in the real engine, and the band descriptors match NESA's criteria. EDITED LATER THE SAME DAY by the Mathematics Advanced review's sibling-part keyword sweep: part (b) carried '600', which is part (a)'s male-sheep count and matched (b)'s own model answer only inside 12 600. Measured as a no-op on every probe in the real engine before dropping it. Content unchanged and the verdict stands."
       }
     }
   }
