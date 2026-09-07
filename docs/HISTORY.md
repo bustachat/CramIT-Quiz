@@ -5642,3 +5642,116 @@ from their own model answers (587 part rows, 0 generic bands, 0 `undefined`), th
 going 1/2 → **0/2** and 2020 Q20 and Q37 going 3/3 → **0/3** on a digits-only answer, while
 every correct form still scores full — including `$8213.20` typed with the space the bank
 does not store. No console errors.
+
+---
+
+## 2026-09-07 (later still, ×6) — D and E: the audit's last actionable rows go to zero
+
+The cosmetic half of the plan, run straight after the engine fix. Three sweeps, all
+student-facing text, none of them touching a mark.
+
+### E — 237 duplicated mark labels removed
+
+A stem ending in a literal `(3 marks)` sat directly under the pill that already reads
+**3 marks**, and a part prompt ending in `(2 marks)` sat under a header already reading
+**PART (A) · 2 MARKS**. Recorded as an open item since 2026-09-01, across Standard 2 and VET.
+
+Scope was decided by **what the student actually sees**, not by the raw count:
+
+| | count | action |
+|---|---|---|
+| single-part question `q` — this IS the stem on screen | 94 | removed |
+| `parts[].q` prompts — the accordion prints its own header | 143 | removed |
+| multi-part combined `q` — **not rendered in the quiz at all** | 136 | **kept** |
+
+The 136 are what the test-mode results breakdown prints, where the per-part mark values are
+useful context rather than a duplicate. Only a *trailing* label is removed: a mid-text
+`(1 mark)` inside a merged (i)/(ii) prompt is the only place that sub-part's value appears.
+
+⚠️ **A second pass was needed for 7 more**, found by measuring on screen rather than in the
+data: their label is followed by an `<img>`, so it is not at the end of the *raw* string even
+though it is the last thing the student reads. The image is untouched; 211 `<img>` tags
+still present.
+
+### D — 83 confusing non-attainment strings rewritten
+
+Where NESA's criteria table has a single row, the collapse rule has to author the
+`partial`/`minimal` slots, and the generated form read as an instruction rather than a
+verdict:
+
+> ~~Does not meet the criterion: provides correct answer~~
+> **Not achieved — this mark is awarded in full or not at all. The criterion is: Provides the correct answer**
+
+It also `.lower()`-ed NESA's own sentence, which mangled proper nouns — Standard 2
+2023 Q21(b) came out *"graphs provider a's charges"*. The new form quotes the criterion
+**verbatim**, so capitalisation comes back with it.
+
+Fixed in `scripts/refresh_band_descriptors.py` (so future runs produce the better wording)
+**and** rewritten in place, because that script deliberately preserves existing
+`partial`/`minimal` on an all-or-nothing part — VET's were hand-authored — so re-running it
+would not have touched them.
+
+⚠️ **7 more hid in the question-level roll-up** of multi-part questions, where the phrase sits
+*mid*-string (`"(a) Does not meet the criterion: … (b) Provides a correct percentage"`) and a
+`startswith()` test cannot see it. Those were rebuilt from the parts' own descriptors.
+
+⚠️ **`multimedia.json` was refused by the round-trip guard**, exactly as CLAUDE.md warns — it
+does not survive `json.dumps`. It had no instances anyway, and the file is byte-unchanged.
+
+### The 29 dead keywords, folded in as promised
+
+Keywords whose own model answer never demonstrated them. These only became visible after the
+engine fix — the loose prefix rule had been fake-matching them too. Not mark-affecting (the
+question still self-scores full, and a student who writes the keyword still earns it), but the
+model answer is shown **directly to the student**, so it should teach what the marking rewards.
+
+Same two classes as the exposed set, handled the same way:
+
+- **LEAKED (9)** — the keyword belongs to a different part: `0.77`/`0.77%` in Standard 2
+  2023 Q32(a), `0.2881` in 2024 Q35(b), a stray `5.2` on both parts of Maths Advanced
+  2020 Q21, `x = 3` and `2ˣ/ln 2` in 2021 Q28(c), `10` in 2024 Q18(a), `1 − x²` in
+  2024 Q22(c), `2π/5` in 2025 Q15(c). Removed from the part they do not describe.
+- **FORM (20)** — extend the **answer**, never delete the keyword: *"one clear peak"* → *"one
+  peak"*; *"d = 7 − 3 = 4"* → *"d = 4 (since 7 − 3 = 4)"*; *"skid off the timber"* → *"slip or
+  skid"*; *"PC (Prime Cost) items"* → *"PC items (Prime Cost)"*. Two keywords were aligned to
+  the answer's notation instead: VET `AS1100` → `1100` (which matches both *AS 1100* and
+  *AS1100*), and HMS `not early` → `early`.
+
+⚠️ **One of my own edits broke a different keyword** and the audit caught it immediately:
+writing *"8 am (8:00 am) Wednesday"* split the phrase keyword `8 am Wednesday`. Reordered to
+*"8 am Wednesday 20 July (8:00 am)"*.
+
+### Where the audit stands
+
+Every actionable row is **zero**:
+
+```
+A self-score 0   B zero-at-threshold 0   C over-credit 0   D dead-keyword 0
+E no-mechanism 0  F single-letter 0      G regex 0         H acceptableAnswers 0
+I no-band 0       J missing tier 0       K undefined 0     L non-attainment 0
+N raw markdown 0  Q part-mark labels 0   R $-damage 0
+MARK-AFFECTING: 0
+```
+
+The three that remain are the **known false-positive classes**, reported for reading and
+never for bulk-fixing: `M_scratch_work` 5 (*"he needed to **wait** 57 minutes"*),
+`P_missing_picture` 8 (parts with a declared `omittedParts` and a visible note), and
+`O_stem_marks_suffix` 133 (the multi-part combined strings that are not rendered).
+
+### Verified
+
+Full local CI green — `Issues: 0`; **285** MC and **340** written checks, 0 wrong; all three
+review ledgers intact with **0 stale**; `npm test` **124/124**.
+
+Blast radius machine-checked against the previous commit: **174 questions touched**, and only
+`q` / `answer` / `keywords` / `minKeywords` / `bandDescriptors` / `parts` moved. `marks`,
+`qNum`, `section`, `category`, `image`, `omittedParts`, `acceptableAnswers`, `stem` and every
+MC question are **unchanged**.
+
+In the running app at **430 px and 320 px**, all **380** written questions across all five
+subjects render with **0 overflows, 0 `undefined`, 0 missing marks badges, 0 errors**;
+**0 duplicate mark labels remain on screen**; all **587** part rows still score full from
+their own model answers; and a real scored flow on Standard 2 2020 Q19 shows the new wording
+in place — *"Not achieved — this mark is awarded in full or not at all. The criterion is:
+Provides the correct answer"* — with NESA's capitalisation intact. Screenshot taken. No
+console errors.
