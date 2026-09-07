@@ -1613,7 +1613,7 @@
       "marks": 2,
       "q": "Find &int; <em>x</em>/(4 + <em>x</em>&sup2;) <em>dx</em>.",
       "image": null,
-      "answer": "The numerator is half the derivative of the denominator: d/dx (4 + x²) = 2x.\n∫ x/(4 + x²) dx = ½ ∫ 2x/(4 + x²) dx\n= ½ ln(4 + x²) + c.\n(No absolute value is needed because 4 + x² > 0 for all x.)",
+      "answer": "The numerator is half the derivative of the denominator: d/dx (4 + x²) = 2x.\n∫ x/(4 + x²) dx = 1/2 ∫ 2x/(4 + x²) dx\n= 1/2 ln(4 + x²) + c.\n(No absolute value is needed because 4 + x² > 0 for all x.)",
       "keywords": [
         "ln",
         "4 + x",
@@ -1697,7 +1697,7 @@
       "marks": 2,
       "q": "Prove that sec &theta; &minus; cos &theta; = sin &theta; tan &theta;.",
       "image": null,
-      "answer": "Work from the left-hand side.\nLHS = sec θ − cos θ\n= 1/cos θ − cos θ\n= (1 − cos² θ)/cos θ      [common denominator]\n= sin² θ/cos θ            [since sin² θ + cos² θ = 1]\n= sin θ × (sin θ/cos θ)\n= sin θ tan θ = RHS.",
+      "answer": "Work from the left-hand side.\nLHS = sec θ − cos θ\n= 1/cos θ − cos θ\n= (1 − cos² θ)/cos θ      [common denominator]\n= sin² θ/cos θ            [by the Pythagorean identity sin² θ + cos² θ = 1]\n= sin θ × (sin θ/cos θ)\n= sin θ tan θ = RHS.",
       "keywords": [
         "1/cos",
         "common denominator",
@@ -4325,7 +4325,6 @@
       "keywords": [
         "1500",
         "2500",
-        "e",
         "C ="
       ],
       "minKeywords": 2,
@@ -5283,7 +5282,7 @@
         "225",
         "675",
         "3",
-        "r"
+        "ratio"
       ],
       "minKeywords": 2,
       "bandDescriptors": {

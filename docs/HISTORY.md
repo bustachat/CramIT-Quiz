@@ -5418,3 +5418,125 @@ back **off the rendered page**, not out of the JSON. **No console errors.**
 `reviewMethod` states and `check_written_key.cjs` prints on every run. **Gate 6 remains unmet on
 all three ledgered subjects.** Remaining unreviewed: **166 of 380** — Mathematics Advanced 126,
 and HMS's 40, which cannot be reviewed this way until an answer key exists after the 2026 HSC.
+
+---
+
+## 2026-09-07 (later still, ×4) — One audit instead of one check: `content_audit.cjs`, and the acceptableAnswers boundary fix
+
+**Why this session happened.** The owner's question was *"why is this session still
+picking up defects I thought were resolved?"* The cause turned out to be structural, not
+sloppiness: **every past session invented ONE new check, ran it on ONE subject, fixed those
+hits and moved on.** No one had ever run all of them everywhere, so each session honestly
+believed it had finished and the next one honestly found more.
+
+### The total, finally measured
+
+`scripts/content_audit.cjs` (new) runs **every check this project has ever devised across
+all five subjects in one command**, driving the real `scoring.js` through `node:vm`. Wired
+into `validate.yml`; `--strict` exits 1 on the mark-affecting subset.
+
+**Nine of eighteen checks were already at zero repo-wide** — self-score, zero-at-minKeywords,
+no-mechanism, missing bandDescriptors, missing band tier, `undefined` in band text, raw
+markdown, wrong per-part mark labels, `$`-damage. The prior sessions' work had held.
+
+⚠️ **Three checks turned out to be the DETECTOR, not the data**, and were fixed rather than
+reported: `(x + 4)(x − 1)` is maths notation, not a regex (5 false positives); a part with a
+declared `omittedParts` and a visible note is correct, not a missing picture (8); and *"he
+needed to **wait** 57 minutes"* is legitimate prose (5). A tool that cries wolf gets ignored,
+which is part of how the drip started.
+
+### A — over-crediting: 8 of 10 are ONE engine rule, not ten bad keyword lists
+
+Every hit traced to `keywordHit`'s `kw.startsWith(word)` branch firing on a short English
+word: **"in"** credits `interest` and `internal`, **"not"** credits `not independent`,
+**"to"** credits `total probability`, **"i"** credits `iqr`, **"on"** credits `one person`.
+Those keywords are *correct*; mangling them to dodge a bug would be the wrong fix.
+
+**The engine fix was measured, not proposed blind** — four candidates, scored against every
+question's own model answer:
+
+| candidate | self-score regressions | prose decoy ≥50% | digits-only decoy ≥50% |
+|---|---|---|---|
+| today | 0 | 10 | **331** |
+| `word.length >= 4` | **50** | 2 | 33 |
+| normalise digit groups only | 0 | 10 | 331 |
+| normalise + `word.length >= 4` | **25** | 2 | 33 |
+| gate the alphabetic case only | **17** | 2 | 330 |
+
+⚠️ **The obvious one-liner breaks 50 questions** — a student writing the bank's own model
+answer would lose marks, because `320` legitimately credits `320000` (students write
+`320 000`). Reading the 25 surviving regressions of the best candidate showed most are
+keywords that **never legitimately matched in the first place** (`bdefh`, `abfgd`, `E(X²)`,
+`VO2 max`), so the real sequence would be: fix the engine, then repair the ~25 keywords it
+exposes. **Not done — it is the owner's call**, and it moves marks in every subject.
+
+**Two hits WERE genuine data defects and are fixed**: single-letter keywords `e` (Maths
+Advanced 2023 Q13) and `r` (2025 Q13), which fire on any English text. Eight remain,
+recorded as engine-blocked.
+
+### B — `acceptableAnswers` took full marks for the wrong number: **45 of 57 questions**
+
+`scoreOne()` matched an entry with a bare `sa.includes(a)`, so the entry `"16"` matched
+inside `"116"` and `"160 hours"` — and because `acceptableAnswers` **short-circuits**, a
+wrong answer took *all* the marks. The audit's first count of 11 was itself too generous: it
+looked only at entries of ≤2 characters. Scoring realistically-wrong numbers through the
+engine found **45 of the 57 questions using `acceptableAnswers`**.
+
+Fixed in `scoring.js`: a numeric entry must land on a **number boundary**. Two asymmetric
+rules, both found by probing real answers:
+
+- a digit before, **or a decimal point whose own left neighbour is a digit** → the entry is
+  a fragment of a bigger number (`38` inside `0.38`)
+- **only a bare digit after** blocks (`16` inside `160`)
+
+⚠️ A following decimal point is **extra precision, not a different number**: `"$37 158"` is
+a legitimate prefix of `"$37 158.72"`. Requiring a boundary on that side regressed three
+real questions, which is how the asymmetry was found. The guard keys off the entry's own
+**edges**, not off whether it contains letters — `"x = 38"` ends in a digit and so must not
+match inside `"x = 380"`.
+
+**Result: 45 → 0 exploitable, with 0 self-score regressions across all 587 question/part
+rows.** Five new unit tests pin both directions; `npm test` 112 → 117.
+
+### C — keywords a model answer could never credit: 7 → 0
+
+Fixed by the established **ABSENT** precedent — extend the model answer so it demonstrates
+the concept, rather than deleting the keyword. Maths Advanced 2020 Q17 (`1/2` vs `½`) and
+2020 Q19 (`Pythagorean`, used but never named); HMS `internal`, `hold` (the answer had only
+*"is held"*, and `held`/`hold` share no 4-character stem), `health goals`, `individual`,
+`rain`.
+
+⚠️ **`review_checks.cjs` was reporting all 40 HMS questions as "no scoring mechanism"** —
+my own tool read `q.marks` where HMS stores `maxMark`, and HMS carries no `year`/`qNum`
+either. Fixed in both tools; the same trap will catch the next one.
+
+### Verified
+
+Full local CI green — `validate_subjects.cjs` `Issues: 0`; **285** MC and **340** written
+checks, 0 wrong; all three review ledgers intact and none stale; 5 functions syntax-check;
+`npm test` **117/117**. `content_audit.cjs` reports **8 mark-affecting findings**, all the
+engine cases above.
+
+In the running app: **all 380 written questions across all five subjects still score full
+from their own model answers** (587 part rows, 0 generic band fallbacks, 0 `undefined`), and
+real typed flows prove the B fix moves marks the right way —
+
+| | before | after |
+|---|---|---|
+| 2025 Q24 `"4 snails"` / `"about 4"` | 2/2 | 2/2 |
+| 2025 Q24 `"14"` / `"0.4"` | **2/2** | **0/2** |
+| 2024 Q23 `"16 hours"` | 3/3 | 3/3 |
+| 2024 Q23 `"160 hours"` | **3/3** | **0/3** |
+| 2020 Q28 `"x = 38"` | 4/4 | 4/4 |
+| 2020 Q28 `"x = 380"` | **4/4** | **0/4** |
+| 2021 Q31 `"$1725.60"` | 2/2 | 2/2 |
+| 2021 Q26 `"$37 158.72"` | 4/4 | 4/4 |
+
+No console errors.
+
+### What the audit says is left
+
+**8** mark-affecting (the engine rule above). Non-mark-affecting: **83** generated
+*"Does not meet the criterion: …"* strings, **230** stems ending in a literal `(N marks)`,
+and **166 of 380** written questions never reviewed against NESA — Maths Advanced 126, and
+HMS 40 which cannot be reviewed until an answer key exists after the 2026 HSC.

@@ -37,6 +37,19 @@ jobs:
       - name: Check written-question marks against the official marking guidelines
         run: node scripts/check_written_key.cjs
 
+      # Everything the mark check CANNOT see: scoring data that pays full marks for
+      # a wrong answer, a keyword its own model answer can never credit, authoring
+      # scratch-work in a student-facing model answer, and so on. Runs every known
+      # content check over every subject at once — the point being that each of
+      # these was previously invented for one subject and never run again anywhere,
+      # so defects of a class already "fixed" kept resurfacing.
+      #
+      # --strict fails only on the MARK-AFFECTING checks. The rest are quality
+      # reports printed for a human to read; some (G/M/P) are known to produce
+      # false positives and must never be bulk-fixed.
+      - name: Content audit (marking-quality checks the mark check cannot see)
+        run: node scripts/content_audit.cjs
+
       - name: Syntax-check Cloudflare Pages Functions
         run: |
           set -e

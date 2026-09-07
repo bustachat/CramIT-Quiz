@@ -76,11 +76,43 @@
   //
   // Precedence: acceptableAnswers → anyOf → keywords. A question carries one
   // mechanism; the order is what keeps `anyOf` additive (CLAUDE.md §10 rule 11).
+  // An `acceptableAnswers` entry is matched as a substring. That is right for prose
+  // ("800 ml", "not independent") and WRONG for a bare number: plain includes() lets
+  // the entry "16" match inside "116" and "160 hours", so a wrong answer takes full
+  // marks — and because acceptableAnswers short-circuits scoreOne(), it takes ALL of
+  // them. Measured on the live bank 2026-09-07: all 11 short numeric entries were
+  // exploitable that way (e.g. 2025 Q24 answer "4", student "14" → 2/2).
+  //
+  // So a NUMERIC entry must land on a number boundary. Two asymmetric rules, both
+  // arrived at by probing real answers rather than by reasoning:
+  //   • a digit before, or a decimal point that is itself preceded by a digit,
+  //     means the entry is a fragment of a bigger number  → "38" inside "0.38"
+  //   • only a bare digit after blocks                    → "16" inside "160"
+  // A decimal point AFTER is extra precision, not a different number: the entry
+  // "$37 158" is a legitimate prefix of the answer "$37 158.72". Requiring a
+  // boundary there regressed three real questions, which is how that was found.
+  // The guard keys off the entry's own EDGES, not off whether it contains letters:
+  // "x = 38" ends in a digit and so must not match inside "x = 380", while
+  // "800 ml" ends in a letter and needs no check on that side.
+  function acceptableHit(a, sa) {
+    const startsDigit = /^\d/.test(a), endsDigit = /\d$/.test(a);
+    if (!startsDigit && !endsDigit) return sa.includes(a);
+    let i = -1;
+    while ((i = sa.indexOf(a, i + 1)) !== -1) {
+      const before = sa[i - 1], after = sa[i + a.length];
+      const blockedBefore = startsDigit && before !== undefined &&
+        (/\d/.test(before) || (before === '.' && /\d/.test(sa[i - 2] || '')));
+      const blockedAfter = endsDigit && after !== undefined && /\d/.test(after);
+      if (!blockedBefore && !blockedAfter) return true;
+    }
+    return false;
+  }
+
   function scoreOne(spec, studentAns) {
     const sa = String(studentAns || '').toLowerCase();
     const maxMark = spec.maxMark || 0;
     if (spec.acceptableAnswers && spec.acceptableAnswers.length) {
-      const correct = spec.acceptableAnswers.some(a => sa.includes(a.toLowerCase()));
+      const correct = spec.acceptableAnswers.some(a => acceptableHit(a.toLowerCase(), sa));
       return {
         kind: 'acceptable', correct, maxMark,
         marksEarned: correct ? maxMark : 0,

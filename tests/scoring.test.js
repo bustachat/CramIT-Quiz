@@ -93,6 +93,54 @@ describe('scoreOne — acceptableAnswers', () => {
     assert.equal(res.kind, 'acceptable');
     assert.equal(res.kwResults.length, 0);
   });
+
+  // ── Numeric entries must land on a NUMBER BOUNDARY (added 2026-09-07) ──────
+  //
+  // A plain includes() let the entry "16" match inside "116" and "160 hours",
+  // handing FULL marks to a wrong answer — and because acceptableAnswers
+  // short-circuits scoreOne(), it hands over all of them. Measured on the live
+  // bank: 45 of the 57 questions using acceptableAnswers accepted a
+  // realistically-wrong number. These tests pin the fix in both directions,
+  // because a boundary rule that is too strict is just as wrong: requiring one
+  // on the right-hand side regressed three real questions whose accepted entry
+  // is a legitimate PREFIX of a more precise answer.
+  const marks16 = { maxMark: 2, acceptableAnswers: ['16', '16 hours'] };
+  test('a bare numeric entry no longer matches inside a longer number', () => {
+    assert.equal(S.scoreOne(marks16, '16').marksEarned, 2);
+    assert.equal(S.scoreOne(marks16, '16 hours').marksEarned, 2);
+    assert.equal(S.scoreOne(marks16, 'the answer is 16').marksEarned, 2);
+    assert.equal(S.scoreOne(marks16, '116').marksEarned, 0);
+    assert.equal(S.scoreOne(marks16, '160 hours').marksEarned, 0);
+    assert.equal(S.scoreOne(marks16, '1.6').marksEarned, 0);
+  });
+  test('a decimal fragment does not count — "38" is not inside "0.38"', () => {
+    const s38 = { maxMark: 4, acceptableAnswers: ['38', 'x = 38'] };
+    assert.equal(S.scoreOne(s38, 'x = 38').marksEarned, 4);
+    assert.equal(S.scoreOne(s38, '0.38').marksEarned, 0);
+    assert.equal(S.scoreOne(s38, '138').marksEarned, 0);
+    // the entry itself ends in a digit, so a trailing digit blocks it too
+    assert.equal(S.scoreOne(s38, 'x = 380').marksEarned, 0);
+  });
+  test('a following decimal point is EXTRA PRECISION, not a different number', () => {
+    // "$37 158" is the bank's accepted (nearest-dollar) form of "$37 158.72".
+    const money = { maxMark: 2, acceptableAnswers: ['$37 158'] };
+    assert.equal(S.scoreOne(money, 'fv = $37 158.72').marksEarned, 2);
+    assert.equal(S.scoreOne(money, '$37 158').marksEarned, 2);
+  });
+  test('entries that do not begin or end in a digit are matched as before', () => {
+    const prose = { maxMark: 2, acceptableAnswers: ['800 ml', 'not independent'] };
+    assert.equal(S.scoreOne(prose, 'about 800 ml of juice').marksEarned, 2);
+    assert.equal(S.scoreOne(prose, 'they are not independent').marksEarned, 2);
+    assert.equal(S.scoreOne(prose, 'no idea').marksEarned, 0);
+  });
+  test('a unit suffix still anchors the left-hand side — "4" not inside "0.4"', () => {
+    const snails = { maxMark: 2, acceptableAnswers: ['4', '4 snails'] };
+    assert.equal(S.scoreOne(snails, '4 snails').marksEarned, 2);
+    assert.equal(S.scoreOne(snails, 'about 4').marksEarned, 2);
+    assert.equal(S.scoreOne(snails, '0.4').marksEarned, 0);
+    assert.equal(S.scoreOne(snails, '14').marksEarned, 0);
+    assert.equal(S.scoreOne(snails, '40 snails').marksEarned, 0);
+  });
 });
 
 describe('scoreOne — keywords', () => {

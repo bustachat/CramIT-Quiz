@@ -103,13 +103,27 @@ const DECOYS = [
   'you write down the working and then find the final result carefully',
 ];
 
-/** Spec for a whole question with no parts[]. */
+/**
+ * Spec for a whole question with no parts[].
+ *
+ * ⚠️ `q.marks || q.maxMark` -- HMS is the schema outlier and stores `maxMark`
+ * (docs/porting-playbook.md). Reading `q.marks` alone makes maxMark 0, scoreOne()
+ * return null, and this tool report all 40 HMS questions as "no scoring mechanism".
+ * That is the tool being wrong, not the bank.
+ */
 function questionSpec(q) {
   return {
-    maxMark: q.marks, keywords: q.keywords, minKeywords: q.minKeywords,
+    maxMark: q.marks || q.maxMark, keywords: q.keywords, minKeywords: q.minKeywords,
     acceptableAnswers: q.acceptableAnswers, anyOf: q.anyOf,
     bandDescriptors: q.bandDescriptors,
   };
+}
+
+/** HMS carries no year/qNum either, so fall back to something a human can find. */
+function label(q, i) {
+  return (q.year !== undefined && q.qNum !== undefined)
+    ? `${q.year} Q${q.qNum}`
+    : `idx${i}${q.topic ? ' [' + q.topic + ']' : ''}`;
 }
 
 /** (b) the threshold check — only meaningful on the keyword path. */
@@ -122,8 +136,8 @@ function thresholdMark(spec) {
   return { min, n: kws.length, mark: Math.round((min / kws.length) * spec.maxMark) };
 }
 
-for (const q of questions) {
-  const tag = `${q.year} Q${q.qNum}`;
+questions.forEach((q, qi) => {
+  const tag = label(q, qi);
   const units = E.isMultiPart(q)
     ? q.parts.map(p => ({ label: p.label, spec: {
         maxMark: p.marks, keywords: p.keywords, minKeywords: p.minKeywords,
@@ -161,7 +175,7 @@ for (const q of questions) {
       threshFail.push(`${name}: minKeywords=${t.min} of ${t.n} on ${u.spec.maxMark} marks → round(${(t.min / t.n).toFixed(2)} × ${u.spec.maxMark}) = 0`);
     }
   }
-}
+});
 
 function report(title, list) {
   console.log(`\n${title}: ${list.length}`);
