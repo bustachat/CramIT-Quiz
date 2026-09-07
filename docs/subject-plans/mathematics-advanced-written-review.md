@@ -61,10 +61,19 @@ count `intro`.
 
 ### 2.2 A bare `>` inside an `alt` attribute — 1 question
 
-2020 Q29 carried `alt="Graph of y = c ln x for c > 0, …"`. A bare `>` inside a quoted
-attribute still closes the tag, so the parser ended `<img` there and the remaining ~90
-characters rendered as visible text. Escaped to `&gt;`. **One instance repo-wide**, swept
-across all five subjects and both question arrays.
+> ⚠️ **Corrected 2026-09-08.** This was first written up as a *rendering* defect. That was
+> wrong, and the browser was asked directly: the pre-fix string parses to exactly one
+> `<img>` with its full alt and style intact and nothing leaked as text. Inside a
+> double-quoted attribute value the HTML tokenizer treats `<` and `>` as ordinary
+> characters — only `"` ends the value.
+
+2020 Q29 carried `alt="Graph of y = c ln x for c > 0, …"`. It renders fine. What it breaks
+is **this repo's own regex parsing of markup**: `<img[^>]*>` in
+`scripts/archive/mathsadv_add_parts.py` — whose docstring records it losing this very
+question's image, which is plausibly how §2.1 happened here — and the live
+`/<img[^>]+src="([^"]+)"/g` in `validate_subjects.cjs`. Escaped to `&gt;` so the data is
+safe for that tooling. **One instance repo-wide**, swept across all five subjects and both
+question arrays.
 
 ### 2.3 Sibling-part keyword leaks — 4 questions (+2 in Standard 2)
 

@@ -56,6 +56,20 @@ jobs:
       - name: Content audit (marking-quality checks the mark check cannot see)
         run: node scripts/content_audit.cjs --strict
 
+      # RENDER AUDIT. Every other check here is static — it reads the JSON and
+      # reasons about it. This one boots index.html in jsdom and drives the
+      # app's OWN renderer over every question in both modes, because the worst
+      # defects of the last fortnight only existed once the page was drawn: 14
+      # questions whose diagram was in a field the renderer never draws, 57
+      # showing the literal word "undefined" as feedback, and a whole subject
+      # with no marks badge. Each was found by a human happening to look.
+      #
+      # ⚠️ Layout is OUT OF SCOPE: jsdom has no layout engine, so overflow,
+      # image widths and table scrolling still need a real browser at a real
+      # viewport. See CLAUDE.md section 10 — the test is the measurement.
+      - name: Render audit (what the student actually sees)
+        run: node scripts/render_audit.cjs --strict
+
       - name: Syntax-check Cloudflare Pages Functions
         run: |
           set -e

@@ -58,7 +58,10 @@ const MARK_AFFECTING = ['A_self_score', 'B_zero_at_threshold', 'C_over_credit',
 // wrong to READ, which is worse. Added 2026-09-07 after 14 Maths Advanced
 // questions were found asking about a diagram no student had been shown since
 // the per-part build two days earlier. --strict fails on these too.
-const UNANSWERABLE = ['U_unreachable_image', 'V_attr_angle_bracket'];
+//
+// ⚠️ V_attr_angle_bracket was in this group for one commit and was WRONG to be.
+// See its check below: browsers parse it correctly, so it is not unanswerable.
+const UNANSWERABLE = ['U_unreachable_image'];
 
 /** Browser-faithful HTML strip (a `<` opens a tag only before a letter, / ! ?). */
 function strip(h) {
@@ -285,16 +288,59 @@ for (const sid of SUBJECTS) {
         add('U_unreachable_image', `${tag}: ${nImg(q.q)} image(s) in \`q\` only — the accordion never draws \`q\``);
       }
     }
+
+    // 10 stem drift (reporting). On a multi-part question `stem` is carved out
+    // of the front of `q`, so it should stay a prefix of it. When the two
+    // diverge, one of them is stale — and that divergence is the general shape
+    // of the bug U catches the specific case of. Reporting rather than blocking
+    // because a deliberate reword of `stem` alone is not by itself a defect;
+    // it just means `q` needs the same edit.
+    if (E.isMultiPart(q) && q.stem && !String(q.q || '').startsWith(q.stem)) {
+      add('W_stem_drift', tag);
+    }
+
+    // 11 an image with no max-width of its own (reporting). CLAUDE.md section 10
+    // requires every question image to carry its own inline max-width: without
+    // one it renders at natural crop width — measured at 1767px inside a 390px
+    // stem — and `body { overflow-x: hidden }` silently clips it.
+    //
+    // Reporting, not blocking, because since 2026-09-05 a stylesheet rule
+    // (`.parts-stem img, .part-body img, .q-text img`) also caps these, so an
+    // unstyled image is bounded anyway. This is defence in depth for the day
+    // that rule is changed — which is exactly why section 10 says to keep
+    // writing the inline style regardless.
+    {
+      const shown = E.isMultiPart(q)
+        ? [['stem', q.stem], ...q.parts.flatMap(p => [[p.label + '.q', p.q], [p.label + '.intro', p.intro]])]
+        : [['q', q.q]];
+      for (const [f, v] of shown) {
+        for (const m of String(v || '').matchAll(/<img\b[^>]*>/g)) {
+          if (!/max-width/i.test(m[0])) add('X_img_no_maxwidth', `${tag} ${f}`);
+        }
+      }
+    }
   }
 
-  // 9 an angle bracket inside a quoted attribute value (2026-09-07). A bare '>'
-  // there still closes the tag, so the parser ends the element early and the
-  // rest of the attribute renders as visible text. Found once repo-wide, in an
-  // img alt reading `alt="Graph of y = c ln x for c > 0, …"`.
+  // 9 an angle bracket inside a quoted attribute value (2026-09-07).
   //
-  // Detected by parsing the way a browser does rather than by a regex over the
-  // attribute: if the span from '<' to the first '>' contains an ODD number of
-  // double quotes, that '>' landed inside a quoted value.
+  // ⚠️ READ THIS BEFORE TRUSTING A FINDING. When first written, this check was
+  // blocking, on the belief that a bare '>' inside a quoted attribute closes the
+  // tag early and spills the rest as visible text. THAT IS FALSE, and the
+  // browser was asked directly: the pre-fix Maths Advanced 2020 Q29 string
+  // parses to exactly one <img>, with its full alt and style intact and zero
+  // text leaked — identical to the escaped version. Inside a double-quoted
+  // attribute value the HTML tokenizer treats '<' and '>' as ordinary
+  // characters; only '"' ends the value.
+  //
+  // It is kept, and demoted to reporting, because it flags a real hazard to
+  // THIS REPO'S OWN TOOLING rather than to the page: several scripts parse
+  // markup with regexes that a '>' inside an attribute defeats — including the
+  // live `/<img[^>]+src="([^"]+)"/g` in validate_subjects.cjs, and the
+  // `<img[^>]*>` in scripts/archive/mathsadv_add_parts.py, whose docstring
+  // records it losing this very question's image.
+  //
+  // Heuristic: if the span from '<' to the first '>' holds an ODD number of
+  // double quotes, that '>' sits inside a quoted value.
   for (const arr of ['writtenQuestions', 'mcQuestions']) {
     (bank[arr] || []).forEach((q, i) => {
       const tag = (q.year !== undefined && q.qNum !== undefined)
@@ -343,7 +389,9 @@ const TITLES = {
   R_dollar_damage: '$1..$9 eaten by a JavaScript String.replace()',
   T_leaked_numeric_kw: "A sibling part's number carried as this part's keyword",
   U_unreachable_image: 'A stimulus image the renderer can never draw',
-  V_attr_angle_bracket: 'A bare < or > inside a quoted attribute (closes the tag early)',
+  V_attr_angle_bracket: 'A > inside a quoted attribute — renders fine, but defeats this repo’s regex tooling',
+  W_stem_drift: '`stem` is no longer a prefix of `q` — one of them is stale',
+  X_img_no_maxwidth: 'A rendered <img> with no max-width of its own (renders at natural width)',
   S_review_coverage: 'Written-answer review coverage',
 };
 

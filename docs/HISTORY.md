@@ -5799,8 +5799,11 @@ first version of the detector called VET broken because it did not count `intro`
 
 ### The other four classes
 
-- **A bare `>` inside an `alt`** (2020 Q29) closed the `<img` tag early, so ~90 characters
-  of the attribute rendered as visible text. One instance repo-wide.
+- **A bare `>` inside an `alt`** (2020 Q29). ⚠️ **Corrected 2026-09-08**: this originally
+  read *"closed the `<img` tag early, so ~90 characters of the attribute rendered as visible
+  text"*. That is **false** — browsers parse it correctly, and the pre-fix string was asked
+  directly. It is a hazard to this repo's own regex markup parsing (`<img[^>]*>`), not to
+  the page. One instance repo-wide.
 - **Four sibling-part keyword leaks**, found by a new check: a *numeric* keyword whose only
   match in its own model answer is **preceded by a digit**, making it a suffix fragment of
   a longer number — `83` inside `783.7168`, `40` inside `34 140`, `23` inside `234`, `5`
@@ -5898,10 +5901,11 @@ questions. So there is now a second group that also fails the build:
   `q`. The accordion renders `stem` + each part's prompt and never `q`, so that image reaches
   no student. Counts `parts[].intro` as reachable; a first version did not, and wrongly
   called VET broken.
-- **`V_attr_angle_bracket`** *(blocking)* — a bare `<` or `>` inside a quoted attribute.
-  Detected the way a browser parses: if the span from `<` to the first `>` holds an **odd**
-  number of double quotes, that `>` landed inside a quoted value. Not a regex over the
-  attribute, because a regex is what created this class of bug in the first place.
+- **`V_attr_angle_bracket`** — a `>` inside a quoted attribute. ⚠️ **Corrected 2026-09-08,
+  the day after: this was added as BLOCKING on a false premise, and is now reporting-only.**
+  Browsers parse it correctly. What it really flags is a hazard to this repo's own regex
+  markup parsing. Heuristic: an **odd** number of double quotes between `<` and the first
+  `>`.
 - **`T_leaked_numeric_kw`** *(reporting only)* — a numeric keyword whose every match in its
   own model answer is preceded by a digit, and which appears cleanly in a sibling part.
 
@@ -5912,6 +5916,12 @@ clean repo          T 0   U 0   V 0        --strict exit 0
 defects re-injected T 3   U 1   V 1        --strict exit 1
 restored            T 0   U 0   V 0        --strict exit 0
 ```
+
+⚠️ **Note what this table does NOT show, and what it cost.** That a check *fires* says
+nothing about whether the thing it fires on is a defect. V fired exactly as designed, on a
+string browsers render perfectly well. Proving a check both ways is necessary and is not
+sufficient — **the premise has to be tested against the real renderer too**, which is
+precisely the gap the render sweep exists to close.
 
 ### ⚠️ T is not blocking, and its first two hits were false
 
@@ -5951,3 +5961,118 @@ Every CI step run exactly as `validate.yml` runs it — `validate_subjects`,
 `npm test` (124/124) — all exit 0, and `validate.yml` re-parses as valid YAML. The two
 blocking checks were each proved by re-introducing the real 2020 Q29 defects into the bank:
 both fire, `--strict` exits 1, and exits 0 again once restored.
+
+---
+
+## 2026-09-08 — A render audit in CI, and a correction: the check I added yesterday was wrong
+
+Steps 2 and 3 of making the review standard permanent — and, first, undoing a mistake made
+while doing step 1.
+
+### ⚠️ The correction: `V_attr_angle_bracket` was blocking CI on a false premise
+
+Yesterday I added a check on the belief that a bare `>` inside a quoted attribute closes
+the tag early, so the rest of the attribute spills out as visible text. **That is false.**
+The browser was finally asked directly, with the exact pre-fix Maths Advanced 2020 Q29
+string:
+
+```
+broken  →  1 <img>, full alt, style intact, 0 characters leaked
+fixed   →  1 <img>, full alt, style intact, 0 characters leaked   (identical)
+```
+
+Inside a double-quoted attribute value the HTML tokenizer treats `<` and `>` as ordinary
+characters; only `"` ends the value. The check has been **demoted to reporting** and the
+claim corrected in the ledger entry, the runbook, both HISTORY entries and CLAUDE.md.
+
+It is **kept**, because it does flag something real — just not what I said. A `>` inside an
+attribute defeats **this repo's own regex parsing of markup**: the live
+`/<img[^>]+src="([^"]+)"/g` in `validate_subjects.cjs`, and the `<img[^>]*>` in
+`scripts/archive/mathsadv_add_parts.py`, whose docstring records it losing *this very
+question's* image — which is plausibly how the 14 lost stimuli happened in the first place.
+The `&gt;` escape stays; it makes the data safe for that tooling.
+
+**How it survived review**: I proved the check fired, and it did — exactly as designed, on a
+string that renders perfectly well. *Proving a check both ways is necessary and not
+sufficient. The premise has to be tested against the real renderer.* Which is the entire
+argument for what follows.
+
+### Two static contracts added (step 2)
+
+Both measured at **0** across all five subjects before being added, and both proved by
+injection:
+
+- **`W_stem_drift`** — on a multi-part question `stem` is carved off the front of `q`, so it
+  should stay a prefix of it. When they diverge, one is stale. This is the *general* shape of
+  the bug `U` catches one instance of.
+- **`X_img_no_maxwidth`** — a rendered `<img>` with no inline `max-width`, which §10 requires;
+  without one it renders at natural crop width (measured at 1767px inside a 390px stem).
+
+Both reporting, not blocking: a stem reworded alone is not yet a defect, and a stylesheet
+rule has capped unstyled images since 2026-09-05, so `X` is defence in depth.
+
+Two more candidates were **measured and rejected**: an unwrapped `<table>` (17 hits, all of
+which fit on screen — §10 is explicit that the test is the measurement, so this belongs in a
+browser, not a static check) and HTML inside `optionImages` option text (1 hit, and the
+browser showed it renders correctly).
+
+### `scripts/render_audit.cjs` — the real answer (step 3)
+
+Every other check in this repo reads the JSON and reasons about it. This one **boots
+index.html in jsdom, runs its own inline script, serves its fetches off disk, and drives the
+app's own `renderQuestion` and `togglePart`** over every question in both modes — 1086
+renders — then looks at what came out.
+
+| check | what it catches |
+|---|---|
+| `R1_render_threw` | the renderer throwing |
+| `R2_undefined_on_screen` | the literal word "undefined" shown to a student |
+| `R3_no_marks_badge` | a written question with no marks badge |
+| `R4_image_never_drawn` | data references an image the renderer never draws |
+| `R5_markup_leak` | an attribute fragment leaking into visible text |
+| `R6_option_images_missing` | not every option image reaches the DOM |
+| `R7_blank_render` | the question text renders empty |
+| `R9_feedback_threw` | `buildKeywordFeedback()` throwing |
+| `R10_generic_band_shown` | feedback falling back to the engine's generic wording |
+
+`R9`/`R10` feed each question its **own model answer** through the app's real feedback
+builder — which is the path the 57-question Standard 2 `undefined` defect lived on.
+
+All ten report **0** today. Wired into `validate.yml` with `--strict`, so they block.
+
+⚠️ **What it cannot see: layout.** jsdom has no layout engine — every element measures zero.
+Overflow, image widths and table scrolling still need a real browser at a real viewport.
+That limit is written into the script header and the workflow step.
+
+### ⚠️ Proving it found two bugs in the harness itself
+
+Neither would have been visible from a green run:
+
+1. **1086 identical throws on the first run.** `index.html` declares `activeQuestions` and
+   `answers` with `let` inside its inline script, so `win.activeQuestions = bank` created a
+   *different* global and the renderer kept reading its own stale one. The values are now
+   handed over a real window property and assigned from inside the app's scope.
+2. **`R7` could never fire on a multi-part question.** It measured the whole question area,
+   which always carries a marks badge, year and topic chips, "FOR ALL PARTS" and the part
+   rows — so blanking every prompt still left far more than the threshold. It now measures
+   the question-text elements only. Found by injection, not by reading.
+
+### Verified
+
+Injecting one instance of each class into the bank makes them fire and `--strict` exit 1;
+restoring the file returns 0, with `git diff` on `subjects/` empty:
+
+```
+injected R2 R3 R4 R7 R10   →  R2 3   R3 1   R4 1   R7 1   R10 1   --strict exit 1
+restored                   →  all 0                                --strict exit 0
+```
+
+Every CI step run exactly as `validate.yml` runs it — `validate_subjects`,
+`check_answer_key`, `check_written_key`, `content_audit --strict`, `render_audit --strict`,
+functions syntax and `npm test` (124/124) — all exit 0. `validate.yml` re-parses as valid
+YAML at 10 steps. `jsdom` added as the repo's first devDependency; `npm run render-audit`
+runs it locally.
+
+⚠️ **Not verified from here**: the GitHub Actions run itself. The render audit takes ~40s
+locally and adds a dependency install; if it proves flaky in CI the honest fix is to make it
+reporting-only rather than to delete it.
