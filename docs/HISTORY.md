@@ -4943,3 +4943,98 @@ score full; it is a *student* who meets the stated bar and gets 0. Note **2023 Q
 lists**: its self-score is fixed, and it still scores 0 at its threshold. Left for a deliberate
 decision, since the fix is either trimming keyword lists or raising `minKeywords`, and both change
 how real students are marked.
+
+## 2026-09-07 (later) — The nine questions that paid nothing at their own stated bar — and the "obvious" fix that made marking worse
+
+**No question in the repo now awards zero marks at its own declared `minKeywords`**, except two
+where the keyword path is dead code. Nine questions fixed, by raising `minKeywords` alone —
+**not one keyword list changed**, and **no student's mark moves**.
+
+### The defect
+
+`scoreOne()` computes `round(matched / n × marks)` and uses `minKeywords` only to **cap**. So a
+long keyword list beside a small `minKeywords` declares a bar that earns nothing: Standard 2 2024
+Q37 had n = 9, min = 1, marks = 2, and `round(1/9 × 2) = 0`. The bank said one keyword was
+sufficient and paid nothing for it. Same class as the Multimedia 2022 Q11 defect fixed at Stage
+6b, found by the threshold check invented there.
+
+Nine were reachable: **Standard 2 2023 Q18, 2023 Q30, 2023 Q36, 2024 Q33, 2024 Q37, 2025 Q23** and
+**VET 2023 Q16(a)(ii), 2023 Q17(a), 2024 Q17(a)**. Two more (VET 2021 Q16(a), 2022 Q19(a)) are the
+same shape but **harmless** — they carry `acceptableAnswers`, and `scoreOne()` short-circuits
+before the keyword path runs. Left alone.
+
+### ⚠️ The obvious fix was wrong, and only a probe caught it
+
+The intuitive move is to shrink `n` by deleting "duplicate" keywords — `'$82.41'` beside
+`'82.41'`, `'6:22 pm'` beside `'6:22'`. I did that first, with an assertion that every removal was
+covered by a kept keyword. It passed, and **it was still wrong**.
+
+A strong answer matches the duplicates too. Removing *k* of them takes *k* off the **numerator**
+as well as the denominator, and `(m−k)/(n−k) < m/n` whenever `m < n`. So dedupe *lowers* the mark
+for every partial answer — the opposite of the intent. Measured in the real engine on realistic
+student text:
+
+| Question | Student answer | Before | After dedupe |
+|---|---|---|---|
+| Standard 2 2023 Q30 | *"$38.60 + $3.86 = $42.46, so items without GST = $82.41"* | **3** | 2 |
+| Standard 2 2023 Q36 | *"7.5H = 19.8 so H = 2.64 hours … he started at 6:22 pm"* | **3** | 2 |
+| Standard 2 2024 Q37 | *"8:00 am"* | **1** | 0 |
+
+Reverted in full. The lesson is not "assert harder" — the assertion I wrote was true and the
+conclusion still didn't follow. It is that **a change to a scoring formula has to be probed
+against realistic inputs, not reasoned about**; the algebra is unintuitive and I got it backwards.
+
+### The fix that is actually safe
+
+**Raise `minKeywords` to the smallest count that genuinely earns a mark.** This is provably a
+no-op for every student: below the new bar the ratio score is `0` by construction, and the cap
+only clamps downward, so `min(0, floor(marks/2)) = 0` either way. The script asserts that per
+question before writing.
+
+| Question | marks | n | minKeywords | mark at the bar |
+|---|---|---|---|---|
+| S2 2023 Q18 | 2 | 5 | 1 → 2 | 0 → 1 |
+| S2 2023 Q30 | 3 | 8 | 1 → 2 | 0 → 1 |
+| S2 2023 Q36 | 4 | 9 | 1 → 2 | 0 → 1 |
+| S2 2024 Q33 | 3 | 8 | 1 → 2 | 0 → 1 |
+| S2 2024 Q37 | 2 | 9 | 1 → 3 | 0 → 1 |
+| S2 2025 Q23 | 2 | 5 | 1 → 2 | 0 → 1 |
+| VET 2023 Q16(a)(ii) | 2 | 9 | 2 → 3 | 0 → 1 |
+| VET 2023 Q17(a) | 2 | 11 | 2 → 3 | 0 → 1 |
+| VET 2024 Q17(a) | 2 | 10 | 2 → 3 | 0 → 1 |
+
+Also folded in, on **Standard 2 2024 Q37**, two genuinely uncreditable keywords of the same
+FORM/ABSENT classes fixed earlier today: `-3` could never match an answer writing the
+Unicode-minus `UTC−3` (a UTC offset is conventionally an ASCII hyphen anyway), and `13 hours` was
+never stated. Both now match; the answer gains one sentence.
+
+### Verified
+
+- **380 of 380 written questions still score full from their own model answers** in the real
+  engine, **0 `undefined`**, **0 generic band fallbacks**.
+- **0 reachable questions award zero at their own `minKeywords`** (down from 9); the 2 remaining
+  are the `acceptableAnswers`-dead ones.
+- **28 realistic student probes across all nine questions: 0 regressions.** These are the same
+  probes that caught the dedupe mistake, so the check is known to have teeth.
+- **179 questions rendered at 430 px**: 0 overflows, 0 `undefined` on screen, 0 missing marks
+  badges. No console errors from the app.
+- **No keyword list changed anywhere** — machine-checked. Only `minKeywords` on 9 questions plus
+  one `answer` on 2024 Q37; no marks, stems, parts, band descriptors, MC questions or omission
+  declarations touched.
+- **VET's review ledger is undisturbed**: 34/34, *23 re-laid out*, and its `method:` line intact.
+- Full local CI: `Issues: 0`; 285 MC and 340 written checks, 0 wrong; `npm test` 79/79.
+
+### What this does and does not fix
+
+It makes the declared bar **truthful**: meet `minKeywords` and you now earn at least one mark.
+It does **not** make marking more generous — no student's mark changes.
+
+⚠️ **The deeper problem is untouched and is engine-shaped.** A *"list TWO items of PPE"* question
+with nine acceptable alternatives cannot be marked correctly by a proportional formula: a fully
+correct two-item answer matches 2 of 9 and scores 0–1 of 2. Shrinking the list to make that work
+would mark down every student who picks a different valid pair. **VET 2023 Q16(a)(ii), 2023
+Q17(a) and 2024 Q17(a) are still under-marking correct answers on the offline path**, and so are
+"choose N from a menu" questions generally. The AI path handles them correctly because it reads
+the answer; the keyword grid is the logged-out fallback. Fixing it properly needs an engine
+change — an `anyOf` mechanism, or treating `minKeywords` as a full-marks threshold rather than a
+cap — not a content edit.

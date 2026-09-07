@@ -8380,7 +8380,7 @@
         "b is better",
         "19%"
       ],
-      "minKeywords": 1,
+      "minKeywords": 2,
       "bandDescriptors": {
         "full": "2/2 — Both yields calculated (A ≈ 19%, B ≈ 21%), Company B identified as better.",
         "partial": "1/2 — One yield correctly calculated.",
@@ -10055,7 +10055,7 @@
         "symmetric",
         "one peak"
       ],
-      "minKeywords": 1,
+      "minKeywords": 2,
       "bandDescriptors": {
         "full": "Identifies two correct features: symmetrical AND unimodal (or bell-shaped).",
         "partial": "Identifies one correct feature with a clear explanation.",
@@ -10460,7 +10460,7 @@
         "without gst",
         "10%"
       ],
-      "minKeywords": 1,
+      "minKeywords": 2,
       "bandDescriptors": {
         "full": "Provides the correct solution",
         "partial": "Calculates the difference between the total and the amount on which GST is charged, or equivalent merit",
@@ -10735,7 +10735,7 @@
         "BAC",
         "510"
       ],
-      "minKeywords": 1,
+      "minKeywords": 2,
       "bandDescriptors": {
         "full": "Provides correct solution",
         "partial": "Finds the correct value of H OR Attempts to solve for H",
@@ -11146,7 +11146,7 @@
         "speed",
         "seconds"
       ],
-      "minKeywords": 1,
+      "minKeywords": 2,
       "bandDescriptors": {
         "full": "Provides correct solution",
         "partial": "Provides correct calculations in hours, or equivalent merit",
@@ -11311,7 +11311,7 @@
       "category": "M2",
       "image": null,
       "q": "Sakura will travel from Sydney (UTC +10) to Rio de Janeiro (UTC −3).\nThe flight from Sydney to Rio de Janeiro will take 20 hours.\nThe flight will arrive in Rio de Janeiro at 3 pm on Wednesday 20 July.\n\nOn what day and at what time will Sakura leave Sydney?",
-      "answer": "Arrival: Wednesday 20 July, 3 pm in Rio (UTC−3)\nConvert to UTC: 3 pm + 3 h = 6 pm UTC, Wednesday 20 July\nConvert to Sydney (UTC+10): 6 pm + 10 h = 4 am, Thursday 21 July (Sydney time)\nDeparture from Sydney = arrival time in Sydney − flight duration\n= 4 am Thursday − 20 hours = 8 am Wednesday 20 July",
+      "answer": "Arrival: Wednesday 20 July, 3 pm in Rio (UTC-3)\nSydney (UTC+10) is 13 hours ahead of Rio (UTC-3).\nConvert to UTC: 3 pm + 3 h = 6 pm UTC, Wednesday 20 July\nConvert to Sydney (UTC+10): 6 pm + 10 h = 4 am, Thursday 21 July (Sydney time)\nDeparture from Sydney = arrival time in Sydney − flight duration\n= 4 am Thursday − 20 hours = 8 am Wednesday 20 July",
       "keywords": [
         "8 am",
         "8:00 am",
@@ -11323,7 +11323,7 @@
         "13 hours",
         "8 am Wednesday"
       ],
-      "minKeywords": 1,
+      "minKeywords": 3,
       "bandDescriptors": {
         "full": "Provides correct solution",
         "partial": "Provides 7 pm Tuesday or 4 am Thursday, or equivalent merit",

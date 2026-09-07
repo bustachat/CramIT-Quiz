@@ -2653,7 +2653,7 @@
             "footwear",
             "hair"
           ],
-          "minKeywords": 2,
+          "minKeywords": 3,
           "bandDescriptors": {
             "full": "Lists TWO correct items of PPE",
             "partial": "Lists ONE correct item of PPE",
@@ -2762,7 +2762,7 @@
             "MBA",
             "dispute"
           ],
-          "minKeywords": 2,
+          "minKeywords": 3,
           "bandDescriptors": {
             "full": "Outlines a method of resolving the situation",
             "partial": "Provides some relevant information",
@@ -3324,7 +3324,7 @@
             "line of sight",
             "internal"
           ],
-          "minKeywords": 2,
+          "minKeywords": 3,
           "bandDescriptors": {
             "full": "Identifies ONE advantage and ONE disadvantage",
             "partial": "Identifies either an advantage or disadvantage",
