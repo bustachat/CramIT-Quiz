@@ -6804,7 +6804,7 @@
       "qNum": "20",
       "category": "M2",
       "q": "City A in Sweden is at (58°N, 16°E). Sydney is at (33°S, 151°E).\n\nRobert must give an online presentation to City A at 5:00 pm Thursday (City A local time).\n\nWhat time and day should Robert be ready in Sydney? (15° = 1 hour time difference. Ignore daylight saving.)",
-      "answer": "Both cities are East. Longitude difference = 151° − 16° = 135°\nTime difference = 135 ÷ 15 = 9 hours\nSydney is 9 hours ahead of City A.\n5:00 pm Thursday (City A) + 9 hours = 2:00 am Friday (Sydney)",
+      "answer": "Both cities are East. Longitude difference = 151° − 16° = 135°\nTime difference = 135 ÷ 15 = 9 hours\nSydney is 9 hours ahead of City A.\n5:00 pm Thursday (City A) + 9 hours = 2:00 am Friday (Sydney).\nRobert should be ready at 2 am on Friday.",
       "keywords": [
         "9 hours",
         "135",
@@ -9828,7 +9828,6 @@
           "q": "Show that the distance between the airport at A and the airport at B is 38.5 km, correct to 1 decimal place.",
           "answer": "Angle AOB = 135° − 90° = 45° (bearing 135° means A is south-east of O, so angle between north and OA is 135°, angle AOB = 135° − 90° = 45°)\nUsing cosine rule:\nAB² = OA² + OB² − 2 × OA × OB × cos(∠AOB)\n= 20² + 50² − 2 × 20 × 50 × cos(45°)\n= 400 + 2500 − 2000 × 0.7071...\n= 2900 − 1414.2...\n= 1485.8...\nAB = √1485.8 = 38.5 km ✓",
           "keywords": [
-            "22",
             "38.5"
           ],
           "minKeywords": 1,
@@ -10060,7 +10059,7 @@
       "category": "N2",
       "image": null,
       "q": "A network of running tracks connects points A, B, C, D, E, F, G and H. The number on each edge is the time in minutes.\n\n<img src=\"/diagrams/mathematics-standard-2_2023_Q19_stimulus.png\" alt=\"Diagram\" style=\"max-width:100%;margin:8px 0;\">\n\n(a) Which path could a runner take from A to D in the shortest time? (2 marks)\n\n(b) A spanning tree of the network is shown below. Is it a minimum spanning tree? Give a reason. (2 marks)\n\n<img src=\"/diagrams/mathematics-standard-2_2023_Q19b_stimulus.png\" alt=\"Diagram\" style=\"max-width:100%;margin:8px 0;\">",
-      "answer": "(a) Shortest path from A to D: A → B → F → G → D\n(Trace the path with smallest cumulative time using the diagram)\n\n(b) The spanning tree shown is NOT a minimum spanning tree.\nReason: The edge BC shown is not the shortest way to connect C — there is a shorter alternative edge that would reduce the total weight of the spanning tree.",
+      "answer": "(a) Shortest path from A to D: A → B → F → G → D (ABFGD)\n(Trace the path with smallest cumulative time using the diagram)\n\n(b) The spanning tree shown is NOT a minimum spanning tree.\nReason: The edge BC shown is not the shortest way to connect C — there is a shorter alternative edge that would reduce the total weight of the spanning tree.",
       "keywords": [
         "abfgd",
         "abfg",
@@ -10080,7 +10079,7 @@
           "label": "(a)",
           "marks": 2,
           "q": "Which path could a runner take from A to D in the shortest time?",
-          "answer": "Shortest path from A to D: A → B → F → G → D\n(Trace the path with smallest cumulative time using the diagram)",
+          "answer": "Shortest path from A to D: A → B → F → G → D (ABFGD)\n(Trace the path with smallest cumulative time using the diagram)",
           "keywords": [
             "abfgd",
             "abfg"
@@ -10915,16 +10914,17 @@
           "marks": 2,
           "q": "What is the equation of the least-squares regression line for this dataset?",
           "answer": "Reading from the graph: the line passes through (0, 6) and (10, 20).\nGradient m = (20 − 6)/(10 − 0) = 14/10 = <strong>1.4</strong>\ny-intercept = 6\n\nEquation: <strong>y = 1.4x + 6</strong>",
-          "keywords": [
-            "1.4x + 6",
-            "1.4x+6"
-          ],
-          "minKeywords": 1,
           "bandDescriptors": {
             "full": "Provides correct solution",
             "partial": "Finds the y-intercept or gradient, or equivalent merit",
             "minimal": "Finds the y-intercept or gradient, or equivalent merit"
-          }
+          },
+          "acceptableAnswers": [
+            "y = 1.4x + 6",
+            "y = 1.4x+6",
+            "1.4x + 6",
+            "1.4x+6"
+          ]
         },
         {
           "label": "(b)",
@@ -11480,7 +11480,7 @@
       "category": "N3",
       "image": null,
       "q": "The activities and corresponding durations in days for a project are shown in the network diagram.\n\n<img src=\"/diagrams/mathematics-standard-2_2025_Q19_stimulus.png\" alt=\"Diagram\" style=\"max-width:100%;margin:8px 0;\">\n\n(a) Complete the table showing the immediate prerequisites for activities B, E and F. (2 marks)\n\n(b) Find the critical path for this project AND state the minimum duration. (2 marks)\n\n(c) The duration of activity A is increased by 2 days. Does this affect the critical path? Give a reason. (1 mark)",
-      "answer": "(a) Immediate prerequisites:\nB: none (B starts the project)\nE: C and D (both must finish before E can start)\nF: E\n(b) The two routes into the join are A→C = 3 + 3 = 6 days and B→D = 4 + 5 = 9 days, so B and D are critical. After E, F→H = 7 + 5 = 12 days beats G = 3 days.\nCritical path: B–D–E–F–H = 4 + 5 + 5 + 7 + 5 = 26 days\nMinimum duration = 26 days\n(c) No. A is not on the critical path — A→C takes 6 days against B→D's 9, so A has a float time of 3 days. Increasing A by 2 days still leaves it inside that float, so the critical path and the 26-day minimum duration are unchanged.",
+      "answer": "(a) Immediate prerequisites:\nB: none (B starts the project)\nE: C and D (both must finish before E can start)\nF: E\n(b) The two routes into the join are A→C = 3 + 3 = 6 days and B→D = 4 + 5 = 9 days, so B and D are critical. After E, F→H = 7 + 5 = 12 days beats G = 3 days.\nCritical path: B–D–E–F–H (BDEFH) = 4 + 5 + 5 + 7 + 5 = 26 days\nMinimum duration = 26 days\n(c) No. A is not on the critical path — A→C takes 6 days against B→D's 9, so A has a float time of 3 days. Increasing A by 2 days still leaves it inside that float, so the critical path and the 26-day minimum duration are unchanged.",
       "keywords": [
         "26",
         "bdefh",

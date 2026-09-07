@@ -1412,7 +1412,7 @@
       "marks": 3,
       "q": "Calculate the sum of the arithmetic series 4 + 10 + 16 + &middot;&middot;&middot; + 1354.",
       "image": null,
-      "answer": "a = 4 and d = 10 − 4 = 6.\nFind how many terms: Tₙ = a + (n − 1)d = 4 + 6(n − 1) = 1354\n6(n − 1) = 1350, so n − 1 = 225 and n = 226.\nSₙ = (n/2)(a + l) = (226/2)(4 + 1354) = 113 × 1358 = 153 454.",
+      "answer": "This is an arithmetic series with a = 4 and d = 6 (since 10 − 4 = 6).\nFind how many terms: Tₙ = a + (n − 1)d = 4 + 6(n − 1) = 1354\n6(n − 1) = 1350, so n − 1 = 225 and n = 226.\nSₙ = (n/2)(a + l) = (226/2)(4 + 1354) = 113 × 1358 = 153 454.",
       "keywords": [
         "153454",
         "153 454",
@@ -1825,7 +1825,7 @@
       "marks": 4,
       "q": "The diagram shows a regular decagon (ten-sided shape with all sides equal and all interior angles equal). The decagon has centre <em>O</em>.<img src=\"/diagrams/mathematics-advanced_2020_Q22_stimulus.jpg\" alt=\"A regular decagon with centre O; dashed radii OA and OB drawn to two adjacent vertices A and B on the top edge, marked equal.\" style=\"max-width:100%;height:auto;display:block;margin:14px auto\">The perimeter of the shape is 80 cm.<br><br>By considering triangle <em>OAB</em>, calculate the area of the ten-sided shape. Give your answer in square centimetres correct to one decimal place.",
       "image": null,
-      "answer": "Each side: AB = 80/10 = 8 cm.\nThe ten radii divide the decagon into 10 congruent triangles, so ∠AOB = 360°/10 = 36°.\nLet r = OA = OB. By the cosine rule in △OAB:\n8² = r² + r² − 2r² cos 36°\n64 = 2r²(1 − cos 36°), so r² = 32/(1 − cos 36°) = 167.55.\nArea of △OAB = ½ r² sin 36° = ½(167.55)(0.5878) = 49.24 cm².\nArea of decagon = 10 × 49.24 = 492.4 cm² (1 d.p.).",
+      "answer": "Each side: AB = 80/10 = 8 cm.\nThe ten radii divide the decagon into 10 congruent triangles, so ∠AOB = 360°/10 = 36°.\nLet r = OA = OB. By the cosine rule in △OAB:\n8² = r² + r² − 2r² cos 36°\n64 = 2r²(1 − cos 36°), so r² = 32/(1 − cos 36°) = 167.55.\nArea of △OAB = 1/2 ab sin C = ½ r² sin 36° = ½(167.55)(0.5878) = 49.24 cm².\nArea of decagon = 10 × 49.24 = 492.4 cm² (1 d.p.).",
       "keywords": [
         "492.4",
         "36",
@@ -2203,7 +2203,6 @@
         "√2 − 1",
         "4/(a + 1)",
         "between the curves",
-        "32/3",
         "upper minus lower"
       ],
       "minKeywords": 2,
@@ -2237,8 +2236,7 @@
           "keywords": [
             "√2 − 1",
             "4/(a + 1)",
-            "between the curves",
-            "32/3"
+            "between the curves"
           ],
           "minKeywords": 2,
           "bandDescriptors": {
@@ -2302,7 +2300,7 @@
           "keywords": [
             "15 000",
             "10 < t < 13",
-            "t = 36"
+            "36"
           ],
           "minKeywords": 2,
           "bandDescriptors": {
@@ -2384,10 +2382,9 @@
           "answer": "The angle in a semicircle is a right angle, so ∠XYZ = 90° and XYZ is right-angled at Y with hypotenuse XZ = 16 cm.\n\ncos 30° = XY / XZ\nXY = 16 cos 30° = 16 × (√3/2) = 8√3 = 13.8564…\nXY = 13.86 cm (2 d.p.)",
           "keywords": [
             "13.86",
-            "angle in a semicircle",
-            "32π"
+            "angle in a semicircle"
           ],
-          "minKeywords": 2,
+          "minKeywords": 1,
           "bandDescriptors": {
             "full": "Provides correct solution",
             "partial": "Uses correct trigonometric ratio, or equivalent merit",
@@ -3387,7 +3384,7 @@
       "marks": 3,
       "q": "The parabola <em>y</em> = <em>x</em>&sup2; meets the line <em>y</em> = 2<em>x</em> + 3 at the points (&minus;1, 1) and (3, 9) as shown in the diagram.<img src=\"/diagrams/mathematics-advanced_2022_Q16_stimulus.jpg\" alt=\"The parabola y = x² and the line y = 2x + 3 meeting at (−1, 1) and (3, 9), with the region between them shaded.\" style=\"max-width:100%;height:auto;display:block;margin:14px auto\">Find the area enclosed by the parabola and the line.",
       "image": null,
-      "answer": "Between x = −1 and x = 3 the line lies above the parabola, so\n\nArea = ∫₋₁³ [(2x + 3) − x²] dx\n= [x² + 3x − x³/3]₋₁³\n\nAt x = 3: 9 + 9 − 9 = 9.\nAt x = −1: 1 − 3 + 1/3 = −5/3.\n\nArea = 9 − (−5/3) = 32/3 square units (≈ 10.67 square units).",
+      "answer": "Between x = −1 and x = 3 the line lies above the parabola, so\n\nArea = ∫₋₁³ [2x + 3 − x²] dx\n= [x² + 3x − x³/3]₋₁³\n\nAt x = 3: 9 + 9 − 9 = 9.\nAt x = −1: 1 − 3 + 1/3 = −5/3.\n\nArea = 9 − (−5/3) = 32/3 square units (≈ 10.67 square units).",
       "keywords": [
         "32/3",
         "10.67",
@@ -3838,7 +3835,7 @@
       "marks": 3,
       "q": "The life span of batteries from a particular factory is normally distributed with a mean of 840 hours and a standard deviation of 80 hours.<br><br>It is known from statistical tables that for this distribution approximately 60% of the batteries have a life span of less than 860 hours.<br><br>What is the approximate percentage of batteries with a life span between 820 and 920 hours?",
       "image": null,
-      "answer": "Standardise each value with z = (x − μ)/σ, where μ = 840 and σ = 80.\n\n860 → z = 20/80 = 0.25, and we are told P(Z < 0.25) ≈ 0.60.\n820 → z = −20/80 = −0.25\n920 → z = 80/80 = 1\n\nBy symmetry, P(Z < −0.25) = 1 − P(Z < 0.25) = 1 − 0.60 = 0.40.\n\nFrom the empirical rule, 68% of values lie within one standard deviation, so\nP(Z < 1) = 0.5 + 0.34 = 0.84.\n\nP(820 < X < 920) = P(−0.25 < Z < 1)\n= 0.84 − 0.40\n= 0.44.\n\nAbout 44% of the batteries.",
+      "answer": "Standardise each value with z = (x − μ)/σ, where μ = 840 and σ = 80.\n\n860 → z = 20/80 = 0.25, and we are told P(Z < 0.25) ≈ 0.60.\n820 → z = −20/80, so z = −0.25\n920 → z = 80/80, so z = 1\n\nBy symmetry, P(Z < −0.25) = 1 − P(Z < 0.25) = 1 − 0.60 = 0.40.\n\nFrom the empirical rule, 68% of values lie within one standard deviation, so\nP(Z < 1) = 0.5 + 0.34 = 0.84.\n\nP(820 < X < 920) = P(−0.25 < Z < 1)\n= 0.84 − 0.40\n= 0.44.\n\nAbout 44% of the batteries.",
       "keywords": [
         "44",
         "0.84",
@@ -3964,7 +3961,7 @@
       "marks": 5,
       "q": "(a) The diagram shows the graph of <em>y</em> = 2<sup>&minus;<em>x</em></sup>. Also shown on the diagram are the first 5 of an infinite number of rectangular strips of width 1 unit and height <em>y</em> = 2<sup>&minus;<em>x</em></sup> for non-negative integer values of <em>x</em>. For example, the second rectangle shown has width 1 and height &frac12;.<img src=\"/diagrams/mathematics-advanced_2022_Q29_stimulus.jpg\" alt=\"The decreasing curve y = 2 to the power −x with five shaded rectangles of width 1, standing on the x-axis between x = 0 and x = 5, each with its top-left corner on the curve.\" style=\"max-width:100%;height:auto;display:block;margin:14px auto\">The sum of the areas of the rectangles forms a geometric series.<br><br>Show that the limiting sum of this series is 2. <strong>(1 mark)</strong><br><br>(b) Show that &int;&#8320;&#8308; 2<sup>&minus;<em>x</em></sup> d<em>x</em> = 15/(16 ln 2). <strong>(2 marks)</strong><br><br>(c) Use parts (a) and (b) to show that <em>e</em><sup>15</sup> &lt; 2<sup>32</sup>. <strong>(2 marks)</strong>",
       "image": null,
-      "answer": "(a) The rectangles have width 1 and heights 2⁰, 2⁻¹, 2⁻², … so their areas are 1, ½, ¼, …\n\nThis is a geometric series with a = 1 and r = ½, and |r| < 1, so\nS∞ = a/(1 − r) = 1/(1 − ½) = 2, as required.\n\n(b) ∫ 2⁻ˣ dx = −2⁻ˣ/ln 2, so\n∫₀⁴ 2⁻ˣ dx = [−2⁻ˣ/ln 2]₀⁴\n= (−2⁻⁴ + 2⁰)/ln 2\n= (1 − 1/16)/ln 2\n= 15/(16 ln 2), as required.\n\n(c) The first four rectangles cover 0 ≤ x ≤ 4. Their total area is the limiting sum from (a) less the rectangles from x = 4 onwards:\n1 + ½ + ¼ + ⅛ = 2 − (1/16 + 1/32 + …) = 2 − ⅛ = 15/8.\n\nBecause 2⁻ˣ is decreasing, each rectangle sits above the curve, so the rectangles overestimate the area:\n15/8 > ∫₀⁴ 2⁻ˣ dx = 15/(16 ln 2).\n\nDivide both sides by 15 and rearrange:\n1/8 > 1/(16 ln 2)\n16 ln 2 > 8\nln 2 > ½.\n\nMultiply by 32:  32 ln 2 > 16 > 15,\nso ln(2³²) > 15 and therefore 2³² > e¹⁵, that is e¹⁵ < 2³².",
+      "answer": "(a) The rectangles have width 1 and heights 2⁰, 2⁻¹, 2⁻², … so their areas are 1, ½, ¼, …\n\nThis is a geometric series with a = 1 and r = ½, and |r| < 1, so\nS∞ = a/(1 − r) = 1/(1 − ½) = 2. Hence S∞ = 2, as required.\n\n(b) ∫ 2⁻ˣ dx = −2⁻ˣ/ln 2, so\n∫₀⁴ 2⁻ˣ dx = [−2⁻ˣ/ln 2]₀⁴\n= (−2⁻⁴ + 2⁰)/ln 2\n= (1 − 1/16)/ln 2\n= 15/(16 ln 2), as required.\n\n(c) The first four rectangles cover 0 ≤ x ≤ 4. Their total area is the limiting sum from (a) less the rectangles from x = 4 onwards:\n1 + ½ + ¼ + ⅛ = 2 − (1/16 + 1/32 + …) = 2 − ⅛ = 15/8.\n\nBecause 2⁻ˣ is decreasing, each rectangle sits above the curve, so the rectangles overestimate the area:\n15/8 > ∫₀⁴ 2⁻ˣ dx = 15/(16 ln 2).\n\nDivide both sides by 15 and rearrange:\n1/8 > 1/(16 ln 2)\n16 ln 2 > 8\nln 2 > ½.\n\nMultiply by 32:  32 ln 2 > 16 > 15,\nso ln(2³²) > 15 and therefore 2³² > e¹⁵, that is e¹⁵ < 2³².",
       "keywords": [
         "S∞ = 2",
         "15/(16 ln 2)",
@@ -3983,7 +3980,7 @@
           "label": "(a)",
           "marks": 1,
           "q": "The diagram shows the graph of <em>y</em> = 2<sup>&minus;<em>x</em></sup>. Also shown on the diagram are the first 5 of an infinite number of rectangular strips of width 1 unit and height <em>y</em> = 2<sup>&minus;<em>x</em></sup> for non-negative integer values of <em>x</em>. For example, the second rectangle shown has width 1 and height &frac12;.<img src=\"/diagrams/mathematics-advanced_2022_Q29_stimulus.jpg\" alt=\"The decreasing curve y = 2 to the power −x with five shaded rectangles of width 1, standing on the x-axis between x = 0 and x = 5, each with its top-left corner on the curve.\" style=\"max-width:100%;height:auto;display:block;margin:14px auto\">The sum of the areas of the rectangles forms a geometric series.<br><br>Show that the limiting sum of this series is 2. <strong>(1 mark)</strong>",
-          "answer": "The rectangles have width 1 and heights 2⁰, 2⁻¹, 2⁻², … so their areas are 1, ½, ¼, …\n\nThis is a geometric series with a = 1 and r = ½, and |r| < 1, so\nS∞ = a/(1 − r) = 1/(1 − ½) = 2, as required.",
+          "answer": "The rectangles have width 1 and heights 2⁰, 2⁻¹, 2⁻², … so their areas are 1, ½, ¼, …\n\nThis is a geometric series with a = 1 and r = ½, and |r| < 1, so\nS∞ = a/(1 − r) = 1/(1 − ½) = 2. Hence S∞ = 2, as required.",
           "keywords": [
             "S∞ = 2"
           ],
@@ -4122,8 +4119,7 @@
           "q": "Show that <em>y</em> = 2<em>x</em>/(<em>x</em> &minus; 1). <strong>(2 marks)</strong>",
           "answer": "X, P and Y are collinear, so the gradient from Y to P equals the gradient from P to X.\n\nGradient YP = (2 − y)/(1 − 0) = 2 − y\nGradient PX = (0 − 2)/(x − 1) = −2/(x − 1)\n\nSet them equal:\n2 − y = −2/(x − 1)\ny = 2 + 2/(x − 1)\n= [2(x − 1) + 2]/(x − 1)\n= 2x/(x − 1), as required.",
           "keywords": [
-            "2x/(x − 1)",
-            "x²/(x − 1)"
+            "2x/(x − 1)"
           ],
           "minKeywords": 1,
           "bandDescriptors": {
@@ -4284,9 +4280,11 @@
           "q": "Show that the expected value <em>E</em>(<em>X</em>) = 2. <strong>(1 mark)</strong>",
           "answer": "E(X) = Σ x P(X = x)\n= 0(0) + 1(0.3) + 2(0.5) + 3(0.1) + 4(0.1)\n= 0 + 0.3 + 1 + 0.3 + 0.4\n= 2.",
           "keywords": [
-            "E(X²)"
+            "E(X)",
+            "0.3",
+            "0.5"
           ],
-          "minKeywords": 1,
+          "minKeywords": 2,
           "bandDescriptors": {
             "full": "Provides correct solution",
             "partial": "Does not meet the criterion: provides correct solution",
@@ -6917,10 +6915,9 @@
           "answer": "Area: QRST is the difference of two sectors of angle θ, radii 1 + x and 1:\nA = ½θ(1 + x)² − ½θ(1)²\n  = ½θ[(1 + x)² − 1]\n  = ½θ(2x + x²)\n  = ½θx(2 + x)          … (1)\n\nPerimeter: the two arcs QR and TS have lengths θ(1 + x) and θ(1), and the two straight sides QT and RS each have length x:\nP = θ(1 + x) + θ + 2x\n  = θ(2 + x) + 2x\n\nFrom (1), θ(2 + x) = 2A/x. Substituting:\nP(x) = 2x + 2A/x   ✓",
           "keywords": [
             "½θ(2x + x²)",
-            "θ(2 + x) + 2x",
-            "x = √A"
+            "θ(2 + x) + 2x"
           ],
-          "minKeywords": 2,
+          "minKeywords": 1,
           "bandDescriptors": {
             "full": "Provides correct solution",
             "partial": "Finds correct expressions for the perimeter and area, or equivalent merit",

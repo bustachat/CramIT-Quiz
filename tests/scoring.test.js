@@ -69,14 +69,60 @@ describe('keywordHit', () => {
     assert.equal(S.keywordHit('call to action', 'add calls to action'), true, '4-char shared stem');
   });
 
-  test('short keywords are LOOSE — documented, not a bug', () => {
-    // kw.startsWith(word): the bare digit "2" credits "2670".
-    assert.equal(S.keywordHit('2670', 'the answer is 2 dollars'), true);
+  test('a SHORT keyword is still loose — that direction is the rule\'s purpose', () => {
+    // word.startsWith(kw) is unchanged and ungated: a student's longer word
+    // matching a shorter keyword is exactly what stem matching is for.
     assert.equal(S.keywordHit('pi', 'lay the pipe'), true);
   });
 
   test('does not match across an unrelated word', () => {
     assert.equal(S.keywordHit('mitochondria', 'the heart pumps blood'), false);
+  });
+
+  // ── The prefix rule is gated at 4 characters (fixed 2026-09-07) ────────────
+  //
+  // kw.startsWith(word) used to accept a word of ANY length, so ordinary English
+  // reached almost every keyword. Measured on the live bank: a fluent but
+  // content-free answer took >=50% of the mark on 10 question/parts, and an
+  // answer of nothing but digits took >=50% on 331 of 587.
+  describe('kw.startsWith(word) requires a 4-character word', () => {
+    test('an ordinary short word no longer credits a longer keyword', () => {
+      assert.equal(S.keywordHit('interest', 'the answer depends on the information given in'), false);
+      assert.equal(S.keywordHit('internal', 'given in the diagram'), false);
+      assert.equal(S.keywordHit('not independent', 'I am not sure how to answer'), false);
+      assert.equal(S.keywordHit('total probability', 'I will try my best to explain'), false);
+      assert.equal(S.keywordHit('one person', 'it depends on the method'), false);
+    });
+    test('a 4-character word still credits a longer keyword', () => {
+      assert.equal(S.keywordHit('interest', 'compound inte'), true, '"inte" is 4 chars');
+      assert.equal(S.keywordHit('depreciation', 'straight-line depr'), true);
+    });
+    test('the student writing the keyword itself is unaffected', () => {
+      assert.equal(S.keywordHit('interest', 'the interest charged is $3.51'), true);
+      assert.equal(S.keywordHit('not independent', 'they are not independent'), true);
+    });
+  });
+
+  // ── Notation is normalised on BOTH sides before matching ───────────────────
+  describe('normalisation', () => {
+    test('digit-group separators — the student writes "320 000"', () => {
+      assert.equal(S.keywordHit('320000', 'about 320 000 trees'), true);
+      assert.equal(S.keywordHit('1725.60', 'the repayment is $1,725.60'), true);
+      // ⚠️ load-bearing: without this, gating the prefix rule at 4 characters
+      // strips a legitimate match on 50 questions, because the 3-character word
+      // "320" was carrying "320000".
+    });
+    test('dashes — the bank uses U+2212, students type a hyphen', () => {
+      assert.equal(S.keywordHit('k² - 5k - 6', 'so k² − 5k − 6 = 0'), true);
+      assert.equal(S.keywordHit('y = 19x − 25', 'y = 19x - 25'), true);
+    });
+    test('subscript digits — "VO₂ max" is typed "VO2 max"', () => {
+      assert.equal(S.keywordHit('vo2 max', 'monitoring vo₂ max every 4 weeks'), true);
+    });
+    test('a bare digit no longer reaches a long numeric keyword', () => {
+      assert.equal(S.keywordHit('2670', 'the answer is 2 dollars'), false);
+      assert.equal(S.keywordHit('320000', '1 + 2 + 3 + 4 + 5'), false);
+    });
   });
 });
 

@@ -5540,3 +5540,105 @@ No console errors.
 *"Does not meet the criterion: …"* strings, **230** stems ending in a literal `(N marks)`,
 and **166 of 380** written questions never reviewed against NESA — Maths Advanced 126, and
 HMS 40 which cannot be reviewed until an answer key exists after the 2026 HSC.
+
+---
+
+## 2026-09-07 (later still, ×5) — The engine decision: `keywordHit`'s prefix rule is gated, and the audit is finally green
+
+**Owner's call, taken deliberately: fix the engine before the cosmetic sweeps.** The
+reasoning that decided it — this is the only remaining *mark-affecting* class; the app is
+pre-launch so no subscriber's score shifts under them; it is what makes
+`content_audit.cjs --strict` green so CI holds the line instead of a session doing it; and
+it has to precede the 126-question Mathematics Advanced review or that review is done
+against a moving target.
+
+### The change
+
+`keywordHit`'s `kw.startsWith(word)` branch used to accept a word of **any** length, so
+ordinary English reached almost every keyword: **"in"** credited `interest` and `internal`,
+**"not"** credited `not independent`, **"to"** credited `total probability`, **"on"**
+credited `one person`, and any bare digit credited any numeric keyword.
+
+Two halves, and **both are required** — either alone measures worse:
+
+1. **Normalise notation on both sides** before matching — digit-group separators
+   (`320 000` → `320000`, `$1,725.60` → `1725.60`), dashes (U+2212 vs the ASCII hyphen a
+   student types), and subscript digits (`VO₂ max` → `VO2 max`). Superscripts deliberately
+   left alone: they changed nothing measurable and `x²` → `x2` would collide with variable
+   names.
+2. **Gate the prefix rule at 4 characters** — the same threshold the shared-stem rule
+   directly below it already used. `word.startsWith(kw)` is untouched and ungated: a
+   student's longer word matching a shorter keyword is what stem matching is *for*.
+
+⚠️ **The one-line version of this is wrong and the measurement is what showed it.** Gating
+without normalising breaks **50 questions**, because a student writes `320 000` where the
+bank stores `320000`, so the 3-character word `320` was legitimately carrying that match.
+Four candidates were scored against every question's own model answer before one was
+chosen.
+
+### What it exposed, and why that is the point
+
+The fix left **24** questions short of full marks from their own model answers — then 18
+after normalisation. **None of these was ever a real match**; each was being credited only
+by a 1–3 character fragment. The fix did not break them, it revealed them. Two classes:
+
+- **LEAKED (6)** — the keyword belongs to a *different part* of the same question and had
+  been copied in: `22` in Standard 2 2022 Q33(a) (it is part (b)'s answer), `32π` in Maths
+  Advanced 2021 Q12(a), `x²/(x − 1)` in 2022 Q31(a), `E(X²)` in 2023 Q12(a), `x = √A` in
+  2024 Q31(a), and `32/3` in 2020 Q30(b), which describes neither part. Removed from the
+  part they do not describe.
+- **FORM (12)** — the concept *is* in the model answer, in a notation the keyword cannot
+  reach: `abfgd` against an answer written `A → B → F → G → D`; `2 am` against `2:00 am`;
+  `arithmetic` and `d = 6` against `a = 4 and d = 10 − 4 = 6`; `1/2 ab sin` against
+  `½ r² sin 36°`; `S∞ = 2` against `… = 2, as required`; `WHS Act` against
+  *The Work Health and Safety Act 2011 (NSW)*. The **answer** was extended or aligned — the
+  established ABSENT/FORM precedent — never the keyword deleted.
+
+**All 18 repaired; 0 exposed.**
+
+### Which marks actually move
+
+Measured, not asserted, across all 587 question/part rows:
+
+| | unchanged | lost marks |
+|---|---|---|
+| the **full** model answer | **587** | **0** |
+| **half** the model answer | 427 | 160 |
+| a **quarter** of it | 438 | 149 |
+| a wrong (content-free or digits-only) answer | — | **372 lose undeserved marks** |
+
+⚠️ **160 partial answers losing marks needed checking, not hand-waving.** Every one of the
+**309** partial-answer losses was re-tested against the two branches that did *not* change
+(`includes`, `word.startsWith(kw)`, the 4-char shared stem): **309 of 309 were caused solely
+by the removed coincidence, and 0 had the concept genuinely present.** The change cannot
+strip real partial credit — only credit that was awarded for a bare digit or a two-letter
+fragment.
+
+Repo-wide: the content-free decoy goes **10 → 0** rows at ≥50% of the mark, and the
+digits-only decoy **331 → 32**.
+
+### The audit is green
+
+`content_audit.cjs` now reports **0 mark-affecting findings** and `--strict` exits 0, so CI
+holds this from here rather than a future session rediscovering it.
+
+⚠️ **One counter reopened, and it is not a regression: `D_dead_keyword` went 0 → 29.** Those
+are keywords whose own model answer does not demonstrate them — they were "passing" before
+only because the loose rule fake-matched them too. They are **not** mark-affecting (the
+question still self-scores full, and a student who writes the keyword still earns it); it is
+a teaching-completeness signal. Folded into the next pass with D and E rather than expanding
+this change.
+
+### Verified
+
+`npm test` **117 → 124** (7 new tests pinning both directions of the gate, all three
+normalisations, and that `word.startsWith(kw)` is deliberately still loose — `pi` credits
+`pipe`). Full local CI green: `Issues: 0`; **285** MC and **340** written checks, 0 wrong;
+all three review ledgers intact with **0 stale**.
+
+In the running app, all **380** written questions across all five subjects still score full
+from their own model answers (587 part rows, 0 generic bands, 0 `undefined`), the served
+`scoring.js` is confirmed to be the fixed one, and real typed flows show 2021 Q17's decoy
+going 1/2 → **0/2** and 2020 Q20 and Q37 going 3/3 → **0/3** on a digits-only answer, while
+every correct form still scores full — including `$8213.20` typed with the space the bank
+does not store. No console errors.
