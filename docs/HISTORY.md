@@ -5038,3 +5038,98 @@ Q17(a) and 2024 Q17(a) are still under-marking correct answers on the offline pa
 the answer; the keyword grid is the logged-out fallback. Fixing it properly needs an engine
 change — an `anyOf` mechanism, or treating `minKeywords` as a full-marks threshold rather than a
 cap — not a content edit.
+
+## 2026-09-07 (later still) — `anyOf`: an engine mechanism for "choose N from a menu", and the three questions that needed it
+
+**The offline marker can now express *"list TWO items of PPE"*.** It could not before: the
+keyword grid computes `round(matched / n × marks)`, so a fully correct two-item answer matched 2
+of 9 acceptable alternatives and scored **0 of 2**. Three VET parts were under-marking correct
+answers for exactly this reason, and shrinking their keyword lists would only have moved the harm
+onto students who named a different valid pair.
+
+### The mechanism
+
+`anyOf` on a question or a part, checked in `scoreOne()` **after** `acceptableAnswers` and
+**before** `keywords`, so no existing question changes behaviour:
+
+```jsonc
+"anyOf": [
+  { "required": 2,
+    "label": "advantage",
+    "groups": [ ["safety glasses", "goggles"], ["hearing", "earmuff", "earplug"] ] }
+]
+```
+
+Each **group** is one creditable item and its entries are synonyms for that item, so a group
+counts at most once. The mark is `round(credited / totalRequired × marks)`, where `credited` sums
+each block's `min(groupsMatched, required)`.
+
+⚠️ **It is an ARRAY of blocks, and that is load-bearing.** *"Identify ONE advantage and ONE
+disadvantage"* is **two pools of one**, not one pool of two — a single pool would pay full marks
+for naming two advantages. Capping each block at its own `required` means over-supplying one pool
+can never cover a missing other. That case is VET 2024 Q17(a), and it is why the shape is an array
+rather than the single object I first wrote.
+
+### What changed
+
+- `index.html`: the `anyOf` branch in `scoreOne()`; `anyOf` passed through in `scoreAllParts()`;
+  `buildKeywordFeedback()` renders it (checklist by group label, heading *"Key Concepts — any N of
+  these"*); new `anyOfConcepts()` / `hasAnyOf()` / `hasScoringData()` helpers; the AI-marking
+  trigger and payload now recognise it.
+- `scripts/validate_subjects.cjs`: `anyOf` counts as a scoring mechanism, and `checkAnyOf()`
+  rejects a malformed block, a non-integer `required`, or a `required` larger than the group count
+  (unreachable).
+- **`functions/mark-written.js` did not change.** The client flattens every alternative into the
+  `keywords` field it already sends, and the model reads the *"list TWO"* instruction from the
+  question stem.
+
+### The three questions converted
+
+**Every existing keyword was preserved — only regrouped.** The build asserts the multiset of
+keywords going in equals the multiset of alternatives coming out, so this cannot widen or narrow
+what the engine accepts; it only changes how the count maps to marks.
+
+| Question | marks | before | after |
+|---|---|---|---|
+| VET 2023 Q16(a)(ii) *list TWO items of PPE* | 2 | 9 keywords, min 3 | 1 block, 6 groups, required 2 |
+| VET 2023 Q17(a) *how could this be resolved* | 2 | 11 keywords, min 3 | 1 block, 5 groups, required 2 |
+| VET 2024 Q17(a) *ONE advantage and ONE disadvantage* | 2 | 10 keywords, min 3 | **2 blocks**, 9 groups, required 1 + 1 |
+
+### Verified in the real engine
+
+| Probe | Was | Now |
+|---|---|---|
+| PPE — two correct items | **0/2** | **2/2** |
+| PPE — a *different* valid pair (dust mask + footwear) | **0/2** | **2/2** |
+| PPE — one item only | 0/2 | 1/2 |
+| PPE — four items (capping) | 0/2 | 2/2, not more |
+| PPE — wrong | 0/2 | 0/2 |
+| Laser — one advantage + one disadvantage | ~1/2 | **2/2** |
+| Laser — **two advantages, no disadvantage** | ~1/2 | **1/2** (correctly refuses to pay twice) |
+| Dispute — two avenues | ~1/2 | **2/2** |
+
+- **A real end-to-end flow** on VET 2023 Q16 through the actual UI — typed each part, clicked the
+  real *Next part*, submitted — scored **5 / 6**, with **(a)(ii) at 2/2** for *"A dust mask and
+  protective footwear"*, captioned with NESA's own *"Lists TWO correct items of PPE"*.
+  Screenshotted.
+- The **single-question** `anyOf` path (no part currently uses it) was exercised with a synthetic
+  question: heading reads *"Key Concepts — any 2 of these"*, the checklist lists group labels,
+  the band descriptor renders, and the ladder is 2/2 → 1/2 → 0/2 with no `undefined`.
+- **380 written questions still self-score full**, 0 `undefined`, 0 generic band fallbacks, and
+  **0 reachable questions award zero at their own `minKeywords`**.
+- **1 590 renders** (530 questions × 3 widths, 320 / 430 / 1400, opening first and last part of
+  every multi-part question): 0 overflows, 0 `undefined` on screen, 0 missing marks badges, no
+  console errors.
+- Full local CI: `Issues: 0`; 285 MC and 340 written checks, 0 wrong; VET coverage 76/76 and
+  ledger **34/34** with its *23 re-laid out* signal intact; 5 functions syntax-check;
+  `npm test` **79/79**.
+
+⚠️ **VET's review ledger was not rebuilt.** Three parts moved from `keywords` to `anyOf` — a
+reviewed field — so the reviewer did not sign off this exact shape. The change is a pure
+regrouping with no keyword added or removed (machine-asserted), and the ledger's staleness
+fingerprint tracks NESA's sample answer rather than ours, so nothing is marked stale.
+
+⚠️ **`scoreOne()` lives in `index.html` and cannot be unit-tested** — the whole `npm test` suite
+is server-side. This was verified by driving the real engine in a browser instead. Extracting the
+scoring functions into an importable module would let them be tested properly; not done here, and
+worth considering.

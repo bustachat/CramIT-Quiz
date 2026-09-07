@@ -2642,23 +2642,39 @@
           "q": "List TWO items of personal protective equipment (PPE) required when using this saw.",
           "intro": "A common type of saw used in construction is shown.<img src=\"/diagrams/vet-construction_2023_Q16a_stimulus.jpg\" alt=\"A drop saw (compound mitre saw) mounted on a pivot arm\" style=\"max-width:100%;height:auto;display:block;margin:14px auto\">",
           "answer": "1. <strong>Safety glasses or goggles</strong> — a drop saw throws timber chips and dust directly back towards the operator's face.<br>2. <strong>Hearing protection</strong> — earmuffs or earplugs, because the blade noise is well above the level at which hearing damage occurs.<br><br>Other acceptable items are a face shield, a dust mask, protective footwear, and hair tied back or restrained so it cannot be caught by the blade.",
-          "keywords": [
-            "safety glasses",
-            "goggles",
-            "hearing",
-            "earmuff",
-            "earplug",
-            "face shield",
-            "dust mask",
-            "footwear",
-            "hair"
-          ],
-          "minKeywords": 3,
           "bandDescriptors": {
             "full": "Lists TWO correct items of PPE",
             "partial": "Lists ONE correct item of PPE",
             "minimal": "Lists ONE correct item of PPE"
-          }
+          },
+          "anyOf": [
+            {
+              "required": 2,
+              "groups": [
+                [
+                  "safety glasses",
+                  "goggles"
+                ],
+                [
+                  "hearing",
+                  "earmuff",
+                  "earplug"
+                ],
+                [
+                  "face shield"
+                ],
+                [
+                  "dust mask"
+                ],
+                [
+                  "footwear"
+                ],
+                [
+                  "hair"
+                ]
+              ]
+            }
+          ]
         },
         {
           "label": "(b)",
@@ -2749,25 +2765,39 @@
           "marks": 2,
           "q": "A construction worker and the employer cannot agree on the correct amount the worker should be paid.<br>How could this disagreement be resolved?",
           "answer": "Either party can seek clarification of the correct award pay rate from an independent authority rather than trying to settle it between themselves.<br><br>The worker or employer could contact a <strong>government regulator</strong> — the Fair Work Ombudsman or Fair Work Commission — to obtain a ruling on the applicable award rate.<br><br>They could also seek advice from a <strong>trade union</strong> (for the worker), a <strong>professional association</strong> or an <strong>industry group</strong> such as the HIA or MBA (for the employer). If the disagreement cannot be resolved that way, it can be taken to formal dispute resolution.",
-          "keywords": [
-            "award",
-            "rate",
-            "regulator",
-            "fair work",
-            "ombudsman",
-            "union",
-            "association",
-            "industry",
-            "HIA",
-            "MBA",
-            "dispute"
-          ],
-          "minKeywords": 3,
           "bandDescriptors": {
             "full": "Outlines a method of resolving the situation",
             "partial": "Provides some relevant information",
             "minimal": "Provides some relevant information"
-          }
+          },
+          "anyOf": [
+            {
+              "required": 2,
+              "groups": [
+                [
+                  "award",
+                  "rate"
+                ],
+                [
+                  "regulator",
+                  "fair work",
+                  "ombudsman"
+                ],
+                [
+                  "union"
+                ],
+                [
+                  "association",
+                  "industry",
+                  "HIA",
+                  "MBA"
+                ],
+                [
+                  "dispute"
+                ]
+              ]
+            }
+          ]
         },
         {
           "label": "(b)",
@@ -3312,24 +3342,53 @@
           "marks": 2,
           "q": "Identify ONE advantage and ONE disadvantage of using a laser measuring tool.",
           "answer": "<strong>Advantage:</strong> it reduces the time needed to complete a measurement — one person can measure a long distance instantly, where a tape would need two people or repeated set-ups. Laser tools are also portable, easy to use, and can hold and recall stored measurements.<br><br><strong>Disadvantage:</strong> the battery periodically needs replacing or recharging, so the tool can fail mid-job. They are also expensive compared with a tape, need to be maintained and calibrated, require a clear line of sight to the target, and generally measure internal dimensions only.",
-          "keywords": [
-            "time",
-            "one person",
-            "portable",
-            "store",
-            "battery",
-            "recharge",
-            "expensive",
-            "maintain",
-            "line of sight",
-            "internal"
-          ],
-          "minKeywords": 3,
           "bandDescriptors": {
             "full": "Identifies ONE advantage and ONE disadvantage",
             "partial": "Identifies either an advantage or disadvantage",
             "minimal": "Identifies either an advantage or disadvantage"
-          }
+          },
+          "anyOf": [
+            {
+              "required": 1,
+              "label": "advantage",
+              "groups": [
+                [
+                  "time"
+                ],
+                [
+                  "one person"
+                ],
+                [
+                  "portable"
+                ],
+                [
+                  "store"
+                ]
+              ]
+            },
+            {
+              "required": 1,
+              "label": "disadvantage",
+              "groups": [
+                [
+                  "battery",
+                  "recharge"
+                ],
+                [
+                  "expensive"
+                ],
+                [
+                  "maintain"
+                ],
+                [
+                  "line of sight"
+                ],
+                [
+                  "internal"
+                ]
+              ]
+            }
+          ]
         },
         {
           "label": "(b)",

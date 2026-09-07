@@ -43,6 +43,32 @@ for (const file of files) {
   totalMC += mc.length;
   totalWritten += written.length;
 
+  // `anyOf` marks "any N of these M items" (index.html scoreOne). Each GROUP is
+  // one creditable item and its entries are synonyms for it, so `required` must
+  // be reachable — a question asking for more items than it lists alternatives
+  // for could never be answered in full.
+  const checkAnyOf = (a, ctx) => {
+    if (a === undefined) return;
+    const blocks = Array.isArray(a) ? a : [a];
+    if (!blocks.length) { warn(file, `${ctx}: anyOf must not be empty`); return; }
+    blocks.forEach((b, bi) => {
+      const bctx = Array.isArray(a) ? `${ctx} anyOf[${bi}]` : `${ctx} anyOf`;
+      if (!b || typeof b !== 'object' || Array.isArray(b)) { warn(file, `${bctx}: must be an object`); return; }
+      if (!Array.isArray(b.groups) || !b.groups.length) { warn(file, `${bctx}: groups must be a non-empty array`); return; }
+      b.groups.forEach((g, j) => {
+        if (!Array.isArray(g) || !g.length) { warn(file, `${bctx}: groups[${j}] must be a non-empty array`); return; }
+        g.forEach((alt, k) => {
+          if (typeof alt !== 'string' || !alt.trim()) warn(file, `${bctx}: groups[${j}][${k}] must be a non-empty string`);
+        });
+      });
+      if (!Number.isInteger(b.required) || b.required < 1) {
+        warn(file, `${bctx}: required must be a positive integer (got ${b.required})`);
+      } else if (b.required > b.groups.length) {
+        warn(file, `${bctx}: required ${b.required} exceeds ${b.groups.length} group(s) — unreachable`);
+      }
+    });
+  };
+
   const checkImg = (p, ctx) => {
     if (!p) return;
     imgRefs++;
@@ -70,7 +96,8 @@ for (const file of files) {
   written.forEach((q, i) => {
     const ctx = `WR[${i}] (${q.year || '?'} ${q.category || q.topic || ''})`;
     if (typeof q.q !== 'string' || !q.q.trim()) warn(file, `${ctx}: missing/empty q`);
-    if (!q.keywords?.length && !q.acceptableAnswers?.length) warn(file, `${ctx}: no scoring mechanism (keywords or acceptableAnswers)`);
+    if (!q.keywords?.length && !q.acceptableAnswers?.length && q.anyOf === undefined) warn(file, `${ctx}: no scoring mechanism (keywords, acceptableAnswers or anyOf)`);
+    checkAnyOf(q.anyOf, ctx);
     if (!q.answer && !q.modelAnswer && !q.sampleAnswer) warn(file, `${ctx}: no model answer (answer/modelAnswer/sampleAnswer)`);
     checkImg(q.image, ctx + ' image');
     if (q.q) {
@@ -101,7 +128,8 @@ for (const file of files) {
           if (!Number.isInteger(p.marks) || p.marks < 1) warn(file, `${pctx}: marks must be a positive integer (got ${p.marks})`);
           else sum += p.marks;
           if (typeof p.q !== 'string' || !p.q.trim()) warn(file, `${pctx}: missing/empty q`);
-          if (!p.keywords?.length && !p.acceptableAnswers?.length) warn(file, `${pctx}: no scoring mechanism (keywords or acceptableAnswers)`);
+          if (!p.keywords?.length && !p.acceptableAnswers?.length && p.anyOf === undefined) warn(file, `${pctx}: no scoring mechanism (keywords, acceptableAnswers or anyOf)`);
+          checkAnyOf(p.anyOf, pctx);
           if (!p.answer) warn(file, `${pctx}: no model answer`);
           [p.q, p.intro].forEach(html => {
             if (!html) return;

@@ -1084,6 +1084,23 @@ function saveWritten(idx, val) {
 // quotes defensively so a future label can never break the selector.
 function cssEscapeAttr(s) { return String(s).replace(/"/g, '\\"'); }
 
+// An `anyOf` question has no flat `keywords` list, but the AI marker still wants
+// the concepts. Flatten every alternative — the model reads the question stem,
+// which is where the "list TWO" instruction lives. Returns null (not []) so the
+// callers' `||` chains fall through to the next mechanism.
+function anyOfConcepts(anyOf) {
+  const blocks = Array.isArray(anyOf) ? anyOf : (anyOf ? [anyOf] : null);
+  if (!blocks) return null;
+  const out = blocks.flatMap(b => (b && Array.isArray(b.groups)) ? b.groups.flat() : []);
+  return out.length ? out : null;
+}
+function hasAnyOf(o) {
+  return !!(o && anyOfConcepts(o.anyOf));
+}
+function hasScoringData(q) {
+  return !!(q && (q.keywords || q.acceptableAnswers || hasAnyOf(q)));
+}
+
 // Scores one answer against one set of expectations. This is the single
 // implementation of the offline (non-AI) marking formula — buildKeywordFeedback()
 // calls it for a whole question, and the per-part renderer calls it per part, so
@@ -1099,6 +1116,45 @@ function scoreOne(spec, studentAns) {
       tier: correct ? 'full' : 'minimal',
       kwResults: [], matched: 0, percentage: correct ? 100 : 0,
     };
+  }
+  // "any N of these M items" — the shape a `list TWO items of PPE` question
+  // actually has. The proportional keyword formula below cannot express it: a
+  // correct two-item answer matches 2 of 9 alternatives and scores
+  // round(2/9 x marks), which is 0 on a 2-mark question.
+  //
+  // `anyOf` is an ARRAY of requirement blocks, because one pool is not always
+  // enough: "identify ONE advantage and ONE disadvantage" is two pools of one,
+  // and a single pool would pay full marks for two advantages. Within a block
+  // each GROUP is one creditable item and its entries are synonyms for that
+  // item, so a group counts at most once. Each block's hits are capped at its
+  // own `required`, so naming more than asked is neither rewarded nor punished,
+  // and over-supplying one pool can never cover a missing other.
+  const blocks = Array.isArray(spec.anyOf) ? spec.anyOf : (spec.anyOf ? [spec.anyOf] : null);
+  if (blocks && blocks.length && maxMark > 0) {
+    const kwResults = [];
+    let totalRequired = 0, credited = 0;
+    blocks.forEach(block => {
+      const groups = (block && Array.isArray(block.groups)) ? block.groups : [];
+      if (!groups.length) return;
+      const required = Math.max(1, Math.min(Number(block.required) || 1, groups.length));
+      totalRequired += required;
+      let hits = 0;
+      groups.forEach(group => {
+        const hit = group.some(alt => keywordHit(String(alt).toLowerCase(), sa));
+        if (hit) hits++;
+        kwResults.push({ label: (block.label ? block.label + ': ' : '') + group[0], hit });
+      });
+      credited += Math.min(hits, required);
+    });
+    if (totalRequired > 0) {
+      const marksEarned = Math.round((credited / totalRequired) * maxMark);
+      const tier = marksEarned >= maxMark * 0.7 ? 'full' : marksEarned > 0 ? 'partial' : 'minimal';
+      return {
+        kind: 'anyOf', maxMark, marksEarned, tier, kwResults,
+        matched: credited, required: totalRequired,
+        percentage: Math.round((credited / totalRequired) * 100),
+      };
+    }
   }
   const keywords = spec.keywords || [];
   if (!keywords.length || maxMark <= 0) return null;
@@ -1132,7 +1188,8 @@ function scoreAllParts(q, ansObj) {
     const studentAns = (ansObj && ansObj[p.label]) || '';
     const spec = {
       maxMark: p.marks, keywords: p.keywords, minKeywords: p.minKeywords,
-      acceptableAnswers: p.acceptableAnswers, bandDescriptors: p.bandDescriptors,
+      acceptableAnswers: p.acceptableAnswers, anyOf: p.anyOf,
+      bandDescriptors: p.bandDescriptors,
     };
     const attempted = String(studentAns).trim() !== '';
     const res = attempted ? scoreOne(spec, studentAns) : null;
@@ -2366,9 +2423,9 @@ function buildKeywordFeedback(q, studentAns) {
       <button class="written-clear-btn" onclick="clearWrittenAnswer()">\u21a9 Try again</button>
     </div>`;
   }
-  if (q.keywords && q.keywords.length) {
+  if ((q.keywords && q.keywords.length) || hasAnyOf(q)) {
     const maxMark = q.maxMark || q.marks || 0;
-    const res = scoreOne({ maxMark, keywords: q.keywords, minKeywords: q.minKeywords }, studentAns);
+    const res = scoreOne({ maxMark, keywords: q.keywords, minKeywords: q.minKeywords, anyOf: q.anyOf }, studentAns);
     if (res) {
       const pillClass = res.tier === 'full' ? 'pill-excellent' : res.tier === 'partial' ? 'pill-good' : 'pill-developing';
       const feedbackText = q.bandDescriptors ? q.bandDescriptors[res.tier] : GENERIC_BAND[res.tier];
@@ -2384,7 +2441,7 @@ function buildKeywordFeedback(q, studentAns) {
           <span class="score-pct-pill ${pillClass}">${res.percentage}% matched</span>
         </div>
         <div class="score-feedback-text">${feedbackText}</div>
-        ${!MATHS_SUBJECT_KEYS.includes(currentSubjectKey) ? `<div class="concepts-heading">Key Concepts</div><div class="keyword-checklist">${checklistHTML}</div>` : ''}
+        ${!MATHS_SUBJECT_KEYS.includes(currentSubjectKey) ? `<div class="concepts-heading">${res.kind === 'anyOf' ? `Key Concepts — any ${res.required} of these` : 'Key Concepts'}</div><div class="keyword-checklist">${checklistHTML}</div>` : ''}
         <button class="written-clear-btn" onclick="clearWrittenAnswer()">\u21a9 Try again</button>
       </div>`;
     }
@@ -2517,7 +2574,7 @@ async function tryAiMarking(questionIdx, q, studentAnswer) {
       body: JSON.stringify({
         question:        q.q || q.question || q.text || '',
         maxMarks:        q.maxMark || q.marks || 0,
-        keywords:        q.keywords || [],
+        keywords:        q.keywords || anyOfConcepts(q.anyOf) || [],
         // Flattened text is still sent so the server has a single studentAnswer
         // to fall back on; `parts` is what drives per-part marking.
         studentAnswer:   writtenAnswerText(q, studentAnswer),
@@ -2530,7 +2587,7 @@ async function tryAiMarking(questionIdx, q, studentAnswer) {
           label:           p.label,
           question:        [p.intro, p.q].filter(Boolean).join(' '),
           maxMarks:        p.marks,
-          keywords:        p.keywords || p.acceptableAnswers || [],
+          keywords:        p.keywords || anyOfConcepts(p.anyOf) || p.acceptableAnswers || [],
           bandDescriptors: p.bandDescriptors || null,
           studentAnswer:   String((studentAnswer && studentAnswer[p.label]) || ''),
         })) : null,
@@ -2589,7 +2646,7 @@ function nextQuestion() {
     renderQuestion();
     // Fire AI marking in the background (non-blocking, silent fallback)
     const _q = activeQuestions[currentIdx];
-    if (answers[currentIdx] && currentUser && (_q.keywords || _q.acceptableAnswers || isMultiPart(_q))) {
+    if (answers[currentIdx] && currentUser && (hasScoringData(_q) || isMultiPart(_q))) {
       tryAiMarking(currentIdx, _q, answers[currentIdx]);
     }
     return;
