@@ -5133,3 +5133,88 @@ fingerprint tracks NESA's sample answer rather than ours, so nothing is marked s
 is server-side. This was verified by driving the real engine in a browser instead. Extracting the
 scoring functions into an importable module would let them be tested properly; not done here, and
 worth considering.
+
+## 2026-09-07 (later still, ×2) — The marking engine is now a testable module: `scoring.js`, 33 tests
+
+**`npm test` goes 79 → 112.** The offline (non-AI) marking engine moved out of `index.html` into
+`scoring.js`, and `tests/scoring.test.js` exercises it directly. Behaviour is unchanged — this is
+a pure extraction, verified question by question against the live app.
+
+The prompt for it: two scoring changes in two days, and one of them (the keyword "dedupe") had
+algebra that ran backwards and was only caught by probing the running app. There was no way to
+unit-test the formula, because it lived inside a 5 000-line HTML file.
+
+### What moved, and what deliberately did not
+
+`scoring.js` holds the **pure** functions — no DOM, no fetch, no app globals:
+`keywordHit`, `scoreOne`, `scoreAllParts`, `bandTextFor`, `GENERIC_BAND`, `isMultiPart`,
+`anyOfConcepts`, `hasAnyOf`, `hasScoringData`.
+
+`buildKeywordFeedback` and `buildPartFeedback` **stayed in `index.html`**: they build HTML and
+read `currentSubjectKey` / `MATHS_SUBJECT_KEYS`, so they are rendering, not scoring. Extracting
+them would have meant inventing an injection seam for no test benefit.
+
+### ⚠️ It is a CLASSIC script, and that is the load-bearing decision
+
+```html
+<script src="/supabase.min.js"></script>
+<script src="/scoring.js"></script>   <!-- before the inline script -->
+```
+
+A `type="module"` tag is **deferred**: it would execute *after* `index.html`'s inline
+`<script>`, which is where every caller lives. Classic scripts run synchronously in document
+order, so everything is defined before anything calls it. There is no build step in this project
+and no reason to introduce one.
+
+Two tests guard exactly that: one asserts `scoring.js` contains no `import`/`export`, the other
+asserts `index.html` loads it **before** the inline script and **not** as a module. Breaking the
+ordering now fails CI instead of the app.
+
+### The tests load the real file, not a copy
+
+`tests/scoring.test.js` reads `scoring.js` and runs it through **`node:vm`** with a `module`
+shim, so the assertions exercise the exact bytes Cloudflare serves. No re-implementation that
+could silently drift from the shipped file — which matters, because a mirrored matcher is
+precisely what went wrong on the Maths Advanced build (Python's `\\w` is Unicode-aware,
+JavaScript's is not).
+
+⚠️ One wrinkle worth knowing: values returned from the vm belong to **that realm**, so
+`assert.deepEqual` on an array fails on prototype identity unless you compare a host-realm copy
+(`[...arr]`). Three assertions hit it; the fix is a spread, and the reason is commented in the
+loader so nobody "corrects" it back.
+
+### What the 33 tests cover
+
+- **`keywordHit`** — substring, multi-word keywords, plural/suffix, the 4-character shared stem
+  (*"calls to action"* credits `call to action`), and the **documented looseness**: the bare digit
+  `2` credits the keyword `2670`, and `pi` credits `pipe`. Pinned as behaviour so a future change
+  is a deliberate decision, not an accident.
+- **`scoreOne` precedence** — `acceptableAnswers` → `anyOf` → `keywords`, each direction asserted,
+  including that keywords beside `acceptableAnswers` are dead data.
+- **`minKeywords` only ever CAPS**, at `floor(maxMark/2)` — it never raises a mark. That is the
+  property the 2026-09-07 threshold fix relied on, and it is now a test rather than an argument.
+- **`anyOf`** — two correct items score full; a *different* valid pair also scores full; naming
+  more than asked is capped; a group counts once however many synonyms appear; and **two items
+  from one pool cannot cover a missing other**, which is the whole reason the shape is an array of
+  blocks.
+- **`scoreAllParts`** — totalling, per-part band captions, unattempted parts, and a question
+  mixing `anyOf` and `acceptableAnswers` across its parts.
+
+### Verified in the running app, not just by the tests
+
+- Every extracted function resolves as a global (`typeof` checked in the browser), and the
+  renderers still resolve too.
+- **380 written questions score identically to before the extraction** — 0 self-score failures,
+  0 `undefined`, 0 generic band fallbacks, 0 reachable questions awarding zero at their own
+  `minKeywords`, and the three `anyOf` parts still score 2 / 1 / 0.
+- **A real end-to-end flow** on VET 2023 Q16 through the actual UI: **5 / 6**, with `(a)(ii)` at
+  **2/2** — byte-identical to the pre-extraction run.
+- **1 590 renders** (530 questions × 320 / 430 / 1400, opening first and last part of every
+  multi-part question): 0 overflows, 0 `undefined`, 0 missing marks badges, no console errors.
+- **MC mode is unaffected** — 4 options render, a correct answer scores, no `undefined`.
+- `/scoring.js` is served as `application/javascript`, is not gitignored, and there is no
+  `_routes.json` / `_headers` / `wrangler.toml` that could exclude it from the Pages deploy.
+- Full local CI: `Issues: 0`; 285 MC and 340 written checks, 0 wrong; 5 functions syntax-check;
+  **`npm test` 112/112**.
+
+`index.html` is 145 lines lighter. No subject data changed.
