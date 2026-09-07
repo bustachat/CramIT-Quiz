@@ -44,11 +44,17 @@ jobs:
       # these was previously invented for one subject and never run again anywhere,
       # so defects of a class already "fixed" kept resurfacing.
       #
-      # --strict fails only on the MARK-AFFECTING checks. The rest are quality
-      # reports printed for a human to read; some (G/M/P) are known to produce
-      # false positives and must never be bulk-fixed.
+      # --strict fails on the MARK-AFFECTING checks (a defect that moves a
+      # student's mark) and the UNANSWERABLE ones (a question the renderer
+      # cannot present correctly). The rest are quality reports printed for a
+      # human to read; four classes (G/M/P/T) are known to produce false
+      # positives and must never be bulk-fixed.
+      #
+      # ⚠️ The flag was missing here until 2026-09-07: this comment described
+      # --strict while the command ran without it, so the audit could report a
+      # marking defect and the build would still go green.
       - name: Content audit (marking-quality checks the mark check cannot see)
-        run: node scripts/content_audit.cjs
+        run: node scripts/content_audit.cjs --strict
 
       - name: Syntax-check Cloudflare Pages Functions
         run: |

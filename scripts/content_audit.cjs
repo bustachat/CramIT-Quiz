@@ -7,18 +7,33 @@
  * so the total is knowable in one command instead of one class at a time.
  *
  *     node scripts/content_audit.cjs            all subjects
- *     node scripts/content_audit.cjs --strict    exit 1 if any MARK-AFFECTING check fires
+ *     node scripts/content_audit.cjs --strict    exit 1 on MARK-AFFECTING or UNANSWERABLE
+ *
+ * --strict is what CI runs (.github/workflows/validate.yml, since 2026-09-07).
+ * Before that the workflow ran the bare command, so the audit reported a
+ * marking defect and went green anyway.
  *
  * Engine-driven checks load the REAL scoring.js through node:vm — never a
  * re-implementation, which has come out more permissive than the engine every
  * single time it has been tried (docs/HISTORY.md 2026-09-05, 2026-09-06).
  *
- * ⚠️ NOT every finding is a defect, and the report says which is which. Three
+ * ⚠️ NOT every finding is a defect, and the report says which is which. Four
  * classes are known to produce false positives and are reported for reading,
  * never for fixing in bulk:
- *   G_regex_kw       maths notation like "(x + 4)(x − 1)" is not a regex
+ *   G_regex_kw        maths notation like "(x + 4)(x − 1)" is not a regex
  *   P_missing_picture a part with a declared omittedParts and a visible note is correct
- *   M_scratch_work   "he needed to wait 57 minutes" is legitimate prose
+ *   M_scratch_work    "he needed to wait 57 minutes" is legitimate prose
+ *   T_leaked_numeric_kw a flagged keyword may still be earning real credit —
+ *                     2020 Q11(b) in Maths Advanced measured 2/2 → 1/2 when its
+ *                     flagged keyword was dropped. Probe before removing.
+ *
+ * ADDING A CHECK. The house rule, learned the hard way and applied to T/U/V
+ * below: a new check is not trusted until it has been run repo-wide, every hit
+ * READ, and its false-positive classes written down here beside it. Three of
+ * the checks above turned out to be the instrument rather than the data, and
+ * T's first two hits were both false (a coordinate pair, not a leak). Prove a
+ * new check BOTH ways — that it reports zero on clean data, and that it fires
+ * when the defect it was written for is put back.
  */
 'use strict';
 const fs = require('fs');
@@ -39,6 +54,12 @@ const MARK_AFFECTING = ['A_self_score', 'B_zero_at_threshold', 'C_over_credit',
                         'E_no_mechanism', 'F_single_letter_kw', 'H_short_acceptable',
                         'K_band_undefined', 'Q_part_mark_labels', 'R_dollar_damage'];
 
+// These do not change the arithmetic — they make the question impossible or
+// wrong to READ, which is worse. Added 2026-09-07 after 14 Maths Advanced
+// questions were found asking about a diagram no student had been shown since
+// the per-part build two days earlier. --strict fails on these too.
+const UNANSWERABLE = ['U_unreachable_image', 'V_attr_angle_bracket'];
+
 /** Browser-faithful HTML strip (a `<` opens a tag only before a letter, / ! ?). */
 function strip(h) {
   let o = '', s = String(h || '');
@@ -58,6 +79,26 @@ const DECOYS = [
   'The answer depends on the information given in the diagram above and the method used.',
   'you write down the working and then find the final result carefully',
 ];
+
+/**
+ * Digit-group normalisation, mirroring scoring.js's own `normNum`, so that a
+ * keyword stored as "34 140" can be LOCATED inside an answer that writes
+ * "34140" and vice versa.
+ *
+ * ⚠️ This is the one place a mirror of engine behaviour is allowed, and only
+ * because it decides nothing: it is used to find a substring's POSITION for the
+ * structural check below. Every question about whether a keyword actually
+ * matches still goes through the real E.keywordHit.
+ */
+function nn(s) {
+  return String(s).replace(/[−–—‒]/g, '-').replace(/\d[\d ,]*\d/g, m => m.replace(/[ ,]/g, ''));
+}
+/** Does `k` occur in `t` at a position NOT preceded by a digit? */
+function hasCleanHit(k, t) {
+  let i = -1;
+  while ((i = t.indexOf(k, i + 1)) !== -1) if (!/\d/.test(t[i - 1] || '')) return true;
+  return false;
+}
 
 const SCRATCH = /(\bwait\b|\bActually[:,]\s|\bno\.\s|From MG\b|Actual MG\b|Using MG\b|\bTODO\b|\bFIXME\b)/i;
 const REFS_PICTURE = /\b(the (diagram|graph|network diagram|scatterplot|box-?plot|histogram)|shown (below|on the diagram)|on the grid|from the graph|the following diagram)\b/i;
@@ -184,6 +225,97 @@ for (const sid of SUBJECTS) {
         add('R_dollar_damage', `${tag} ${f}: …${t.slice(Math.max(0, m.index - 40), m.index + 12)}…`);
       }
     }
+
+    // 7 sibling-part keyword leak (2026-09-07). A NUMERIC keyword whose every
+    // match in its OWN model answer is preceded by a digit is a suffix fragment
+    // of a longer number — "83" inside 783.7168 — and is really a neighbouring
+    // part's answer copied in.
+    //
+    // ⚠️ The sibling requirement is load-bearing, not decoration. Without it
+    // this fires on artefacts of the engine's own digit-group normalisation:
+    // "= 18 3x" normalises to "183x", so the keyword "3x = 19" looks preceded
+    // by a digit while being perfectly legitimate. Four such false positives
+    // were read and discarded before this rule was settled.
+    //
+    // ⚠️ It also deliberately says nothing about a keyword with a CLEAN match
+    // as well. 2020 Q11(b) in Maths Advanced carries part (c)'s "45" and matches
+    // it inside its own "450"; dropping it measured 2/2 → 1/2 on a fully correct
+    // working. Reported findings must still be probed before anything is removed.
+    if (E.isMultiPart(q)) {
+      for (const p of q.parts) {
+        for (const k of (p.keywords || [])) {
+          if (!/^\d/.test(String(k))) continue;
+          const kn = nn(String(k).toLowerCase());
+          const ownRaw = strip(p.answer).toLowerCase();
+          const own = nn(ownRaw);
+          if (!own.includes(kn)) continue;
+          // ⚠️ Test the RAW text as well as the normalised one. `nn` treats a
+          // comma as a digit-group separator, so a coordinate pair "(5, 4977)"
+          // normalises to "54977" and makes a perfectly legitimate value look
+          // like it is buried inside a longer number. Both of this check's first
+          // two hits were exactly that, and both were false. A value that reads
+          // cleanly in either form is not a fragment.
+          if (hasCleanHit(kn, own) || hasCleanHit(String(k).toLowerCase(), ownRaw)) continue;
+          const sibs = q.parts.filter(o => o !== p && hasCleanHit(kn, nn(strip(o.answer).toLowerCase())));
+          if (sibs.length) {
+            add('T_leaked_numeric_kw',
+                `${tag} ${p.label}: '${k}' matches only inside a longer number here; ` +
+                `belongs to part ${sibs.map(o => o.label).join('/')}`);
+          }
+        }
+      }
+    }
+
+    // 8 a stimulus the accordion can never draw (2026-09-07). A multi-part
+    // question renders as `stem` + each part's own prompt; the combined `q` is
+    // NOT rendered in the quiz — it feeds CI and the test-mode results
+    // breakdown. So an <img> that lives only in `q` reaches no student.
+    //
+    // This is the shape the per-part build left behind on 14 Maths Advanced
+    // questions: it copied the intro TEXT out of `q` into `stem` and left the
+    // picture. Nothing static noticed for two days, because every file existed
+    // and every path resolved.
+    //
+    // ⚠️ `parts[].intro` counts. A first version of this check reported VET as
+    // broken because it only looked at `parts[].q`.
+    if (E.isMultiPart(q)) {
+      const nImg = s => (String(s || '').match(/<img\b/g) || []).length;
+      const inParts = q.parts.reduce((n, p) => n + nImg(p.q) + nImg(p.intro), 0);
+      if (nImg(q.q) && !nImg(q.stem) && !inParts) {
+        add('U_unreachable_image', `${tag}: ${nImg(q.q)} image(s) in \`q\` only — the accordion never draws \`q\``);
+      }
+    }
+  }
+
+  // 9 an angle bracket inside a quoted attribute value (2026-09-07). A bare '>'
+  // there still closes the tag, so the parser ends the element early and the
+  // rest of the attribute renders as visible text. Found once repo-wide, in an
+  // img alt reading `alt="Graph of y = c ln x for c > 0, …"`.
+  //
+  // Detected by parsing the way a browser does rather than by a regex over the
+  // attribute: if the span from '<' to the first '>' contains an ODD number of
+  // double quotes, that '>' landed inside a quoted value.
+  for (const arr of ['writtenQuestions', 'mcQuestions']) {
+    (bank[arr] || []).forEach((q, i) => {
+      const tag = (q.year !== undefined && q.qNum !== undefined)
+        ? `${sid} ${q.year} Q${q.qNum}` : `${sid} ${arr} idx${i}`;
+      const fields = [['q', q.q], ['stem', q.stem], ['answer', q.answer || q.modelAnswer],
+                      ['solution', q.solution]];
+      for (const p of q.parts || []) {
+        fields.push([`${p.label}.q`, p.q], [`${p.label}.intro`, p.intro], [`${p.label}.answer`, p.answer]);
+      }
+      for (const [f, v] of fields) {
+        const s = String(v || '');
+        for (let j = 0; j < s.length; j++) {
+          if (s[j] !== '<' || !/[A-Za-z]/.test(s[j + 1] || '')) continue;
+          const g = s.indexOf('>', j);
+          if (g === -1) break;
+          const quotes = (s.slice(j, g).match(/"/g) || []).length;
+          if (quotes % 2 === 1) add('V_attr_angle_bracket', `${tag} ${f}: …${s.slice(j, g + 1).slice(-70)}…`);
+          j = g;
+        }
+      }
+    });
   }
 
   if (ledger) add('S_review_coverage', `${sid}: ${reviewed}/${(bank.writtenQuestions || []).length} reviewed`);
@@ -209,6 +341,9 @@ const TITLES = {
   P_missing_picture: 'Refers to a picture the student is never shown',
   Q_part_mark_labels: 'Stem prints per-part marks that disagree with the key',
   R_dollar_damage: '$1..$9 eaten by a JavaScript String.replace()',
+  T_leaked_numeric_kw: "A sibling part's number carried as this part's keyword",
+  U_unreachable_image: 'A stimulus image the renderer can never draw',
+  V_attr_angle_bracket: 'A bare < or > inside a quoted attribute (closes the tag early)',
   S_review_coverage: 'Written-answer review coverage',
 };
 
@@ -226,10 +361,14 @@ for (const k of order) {
   if (v.length > show.length) console.log(`    … and ${v.length - show.length} more`);
 }
 
-const marky = MARK_AFFECTING.reduce((n, k) => n + (F[k] || []).length, 0);
+const count = ks => ks.reduce((n, k) => n + (F[k] || []).length, 0);
+const marky = count(MARK_AFFECTING);
+const broken = count(UNANSWERABLE);
 console.log('');
 console.log('='.repeat(78));
 console.log(`MARK-AFFECTING findings: ${marky}   (${MARK_AFFECTING.join(', ')})`);
-console.log('Everything else is a quality or consistency report — read it, do not bulk-fix it.');
+console.log(`UNANSWERABLE findings:   ${broken}   (${UNANSWERABLE.join(', ')})`);
+console.log('Both groups fail --strict. Everything else is a quality or consistency');
+console.log('report — read it, do not bulk-fix it.');
 console.log('='.repeat(78));
-if (STRICT && marky > 0) process.exit(1);
+if (STRICT && marky + broken > 0) process.exit(1);

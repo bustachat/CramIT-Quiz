@@ -5864,3 +5864,90 @@ No human sign-off, here or on any ledger. The live AI marking call still cannot 
 here (no `ANTHROPIC_API_KEY`). And `keywordHit`'s `normNum` joins two numbers separated by a
 space (`= 18 3x` → `183x`); it is applied symmetrically so no behavioural defect was found,
 but it made two detector readings look like leaks. Recorded, not changed.
+
+---
+
+## 2026-09-07 (later still, ×8) — The audit becomes a gate, and this session's detectors stop being disposable
+
+Step 1 of making the review standard permanent. No subject data changed.
+
+### ⚠️ The flag was missing
+
+`validate.yml`'s audit step carried a comment reading *"--strict fails only on the
+MARK-AFFECTING checks"* — and ran `node scripts/content_audit.cjs` **without the flag**. So
+the one command in the repo that can fail a build on a marking defect was not the one CI
+ran. It reported, and went green.
+
+That is now `--strict`, with the omission recorded in the workflow so it reads as a fixed
+mistake rather than a choice.
+
+### A second blocking group: UNANSWERABLE
+
+`--strict` used to fail only on MARK-AFFECTING findings — defects that move the arithmetic.
+The worst defect found this week moved no arithmetic at all: it removed the diagram from 14
+questions. So there is now a second group that also fails the build:
+
+| group | meaning | checks |
+|---|---|---|
+| MARK-AFFECTING | moves a student's mark | A, B, C, E, F, H, K, Q, R |
+| UNANSWERABLE | the renderer cannot present the question | **U, V** |
+
+### Three checks landed, each proved both ways
+
+- **`U_unreachable_image`** *(blocking)* — a multi-part question whose `<img>` lives only in
+  `q`. The accordion renders `stem` + each part's prompt and never `q`, so that image reaches
+  no student. Counts `parts[].intro` as reachable; a first version did not, and wrongly
+  called VET broken.
+- **`V_attr_angle_bracket`** *(blocking)* — a bare `<` or `>` inside a quoted attribute.
+  Detected the way a browser parses: if the span from `<` to the first `>` holds an **odd**
+  number of double quotes, that `>` landed inside a quoted value. Not a regex over the
+  attribute, because a regex is what created this class of bug in the first place.
+- **`T_leaked_numeric_kw`** *(reporting only)* — a numeric keyword whose every match in its
+  own model answer is preceded by a digit, and which appears cleanly in a sibling part.
+
+**Proved both ways** — the discipline, not a formality:
+
+```
+clean repo          T 0   U 0   V 0        --strict exit 0
+defects re-injected T 3   U 1   V 1        --strict exit 1
+restored            T 0   U 0   V 0        --strict exit 0
+```
+
+### ⚠️ T is not blocking, and its first two hits were false
+
+Both matter, and both are written into the file.
+
+It is **not blocking** because dropping a flagged keyword is not automatically an
+improvement: on Maths Advanced 2020 Q11(b), removing the flagged `45` measured **2/2 → 1/2**
+on a fully correct working, because that working writes `450`. A finding is a prompt to
+probe, never a licence to delete.
+
+Its **first two hits were both false**, and reading them changed the check rather than the
+data. `nn()` treats a comma as a digit-group separator, so the coordinate pair `(5, 4977)`
+normalises to `54977` and a perfectly legitimate value looked buried inside a longer number.
+It now accepts a clean hit in the **raw** text as well as the normalised one.
+
+### `review_checks.cjs` deliberately NOT added to CI
+
+The plan said to add it. Reading it first showed its gates (a), (b) and (d) are exactly the
+audit's `A_self_score`, `B_zero_at_threshold` and `E_no_mechanism`, which `--strict` already
+runs across all five subjects rather than one. It stays the reviewer's per-subject tool for
+its richer per-question output; a duplicate CI step would only make the build slower and the
+signal ambiguous.
+
+### The house rule, now in the audit's own header
+
+> A new check is not trusted until it has been run repo-wide, every hit READ, and its
+> false-positive classes written down beside it. Prove it BOTH ways — zero on clean data,
+> and firing when the defect it was written for is put back.
+
+Three of the audit's existing checks turned out to be the instrument rather than the data.
+So did T. The known-false-positive list goes **three → four**.
+
+### Verified
+
+Every CI step run exactly as `validate.yml` runs it — `validate_subjects`,
+`check_answer_key`, `check_written_key`, `content_audit --strict`, functions syntax check and
+`npm test` (124/124) — all exit 0, and `validate.yml` re-parses as valid YAML. The two
+blocking checks were each proved by re-introducing the real 2020 Q29 defects into the bank:
+both fire, `--strict` exits 1, and exits 0 again once restored.
