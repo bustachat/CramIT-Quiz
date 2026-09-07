@@ -44,7 +44,29 @@ def leaves(year, qnum):
     return out
 
 def strip(html):
-    return re.sub(r'\s+', ' ', re.sub(r'<[^>]+>', ' ', html)).strip()
+    """Strip HTML the way a BROWSER does, not with /<[^>]+>/g.
+
+    A naive tag regex is NOT how the page renders: the HTML parser only opens a
+    tag when `<` is followed by a letter, `/`, `!` or `?`, so `P(0 < Z < 0.3)`
+    is literal text on screen. The regex ate it, and a reviewer reading this
+    output would report a damaged model answer that is perfectly fine -- the
+    same measuring-instrument error that produced a false finding on
+    mathematics-advanced 2024 Q30 (docs/HISTORY.md 2026-09-07).
+    """
+    s, out, i = html or '', [], 0
+    while i < len(s):
+        if s[i] == '<' and i + 1 < len(s) and re.match(r'[A-Za-z/!?]', s[i + 1]):
+            g = s.find('>', i)
+            if g != -1:
+                out.append(' '); i = g + 1; continue
+        out.append(s[i]); i += 1
+    t = ''.join(out)
+    for a, b in (('&nbsp;', ' '), ('&amp;', '&'), ('&lt;', '<'), ('&gt;', '>'),
+                 ('&quot;', '"'), ('&#39;', "'"), ('&minus;', '−'), ('&deg;', '°'),
+                 ('&sup2;', '²'), ('&frasl;', '/'), ('&hellip;', '…'),
+                 ('&bull;', '•'), ('&middot;', '·'), ('&times;', '×')):
+        t = t.replace(a, b)
+    return re.sub(r'\s+', ' ', t).strip()
 
 STOP = set('a an the and or of to in is are for with that this it be as on at by from will can '
            'you they their there which when what how not no if then than have has had do does '
@@ -87,9 +109,29 @@ for r in rows:
     print('%s   bank marks=%d   official=%d   section=%s' % (tag, r['marks'], r['off'], q.get('section')))
     print('-- STEM --');            print(strip(q['q']))
     if q.get('image'): print('   [image] %s' % q['image'])
+    if q.get('stem'): print('-- BANK stem (shared) --'); print(strip(q['stem']))
     print('-- BANK answer --');     print(strip(q['answer']))
     print('-- BANK keywords (minKeywords=%s) --' % q.get('minKeywords')); print(q.get('keywords'))
     if 'acceptableAnswers' in q: print('-- BANK acceptableAnswers --'); print(q['acceptableAnswers'])
+    if q.get('anyOf'): print('-- BANK anyOf --'); print(q['anyOf'])
+    if q.get('bandDescriptors'): print('-- BANK bandDescriptors --'); print(q['bandDescriptors'])
+    # A question NESA prints with lettered parts is ONE bank entry but is marked
+    # PART BY PART (CLAUDE.md section 10 rule 10), so a review that reads only the
+    # question-level fields never sees the data the student is actually scored on.
+    for pt in (q.get('parts') or []):
+        print('   -- BANK part %s (%s marks, minKeywords=%s) --' % (pt.get('label'), pt.get('marks'), pt.get('minKeywords')))
+        if pt.get('intro'): print('      intro:  %s' % strip(pt['intro']))
+        print('      prompt: %s' % strip(pt.get('q','')))
+        print('      answer: %s' % strip(pt.get('answer','')))
+        if pt.get('keywords'):          print('      keywords: %s' % (pt['keywords'],))
+        if pt.get('acceptableAnswers'): print('      acceptableAnswers: %s' % (pt['acceptableAnswers'],))
+        if pt.get('anyOf'):             print('      anyOf: %s' % (pt['anyOf'],))
+        bd = pt.get('bandDescriptors')
+        if bd:
+            for tier in ('full','partial','minimal'):
+                if bd.get(tier): print('      band.%-8s %s' % (tier+':', bd[tier]))
+        else:
+            print('      band: (none - engine falls back to GENERIC_BAND)')
     for p in r['leaves']:
         lbl = 'Q%s%s' % (p['question'], '' if not p['part'] else ''.join('(%s)'%x for x in p['part'].split('.')))
         print('-- NESA %s (%d marks) criteria --' % (lbl, p['marks']))
