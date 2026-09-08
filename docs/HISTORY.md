@@ -6076,3 +6076,83 @@ runs it locally.
 ⚠️ **Not verified from here**: the GitHub Actions run itself. The render audit takes ~40s
 locally and adds a dependency install; if it proves flaky in CI the honest fix is to make it
 reporting-only rather than to delete it.
+
+---
+
+## 2026-09-09 — Browser verification stops being a session anecdote
+
+`scripts/browser_audit.cjs`: the same sweep that has been done by hand in a browser for
+months, now run in real Chromium on every build. **3258 question renders at 320/375/430px
+in 11 seconds.**
+
+### Why, when `render_audit.cjs` already exists
+
+Browser verification has been this project's standard for a long time, and it is what
+actually caught the serious defects — the 14 stimulus images, the nine clipped Maths
+Advanced stems, the z-table losing its right-hand columns. But it was always done **by hand,
+in a session, by an assistant**, which has two consequences: it never ran again once the
+session ended, and its provenance was assistant-performed — the same status as the review
+ledger.
+
+`render_audit.cjs` (jsdom) made the **structural** half permanent and explicitly declares
+layout out of scope, because jsdom has no layout engine. This is that half.
+
+| check | |
+|---|---|
+| `B0_page_error` | the page threw |
+| `B1_question_overflows` | `.question-area` overflows horizontally |
+| `B2_page_scrolls_sideways` | the page itself scrolls sideways |
+| `B3_image_wider_than_container` | an image renders wider than its container |
+| `B4_image_failed_to_load` | a referenced image does not load |
+
+All report **0**. Wired into `validate.yml` with `--strict`, after an
+`npx playwright install --with-deps chromium` step.
+
+The whole sweep runs *inside* the page — layout is synchronous there — so it is one round
+trip per subject/mode rather than per question. That is why 3258 renders cost 11s.
+
+### Proved both ways
+
+```
+B1  remove 2023 Q23's overflow-x wrapper (11-column z-table)  -> 714 > 320/375/430
+B3  remove the .parts-stem img cap AND the inline max-width   -> 1114px inside 320px
+B4  point a stimulus at a path that does not resolve          -> 9 hits
+    clean repo                                                -> all 0, --strict exit 0
+```
+
+⚠️ **B0 and B2 are NOT independently proved** and are recorded in the script as guards
+rather than tested checks. B2 is close to unreachable while `body` keeps
+`overflow-x: hidden` — which is precisely the rule that has hidden clipped content in this
+app before, so the guard earns its place. A `0` from either is not evidence that it works.
+
+### ⚠️ A check written twice, wrong both times, and removed
+
+There is deliberately **no separate unwrapped-table check**:
+
+1. The first version compared a `<table>`'s own `scrollWidth` to its `clientWidth`. A table
+   never scrolls itself — it lays out as wide as it likes and an ancestor clips it — so the
+   comparison is false almost always. It reported **0 across 41 real tables**, which is what
+   sent me looking.
+2. The second measured the table against the question area and walked up for a scroller. But
+   `.question-area` is **itself** `overflow-x: auto`, so the walk always found one and the
+   check could never fire — the same shape as the `R7` mistake the day before.
+
+`B1` is the correct and sufficient signal: an unwrapped table makes the **question area**
+overflow, and B1 measures exactly that. Proved by injection.
+
+Two candidates were also rejected on measurement, not taste: the static unwrapped-table
+check (17 hits, all of which fit on screen) and `B3` as a *data* check — removing an image's
+inline `max-width` changes nothing, because the stylesheet cap carries `!important` and
+still bounds it at 250px. The app is genuinely defended there; `B3` guards the day that rule
+is edited.
+
+### What it still cannot do
+
+Tell you whether the content is **correct**. A wrong model answer renders perfectly — VET
+2023 19(b)(i) said 2.61 m³ where NESA says 2.99, and looked flawless at every width.
+
+### Verified
+
+Every CI step run exactly as `validate.yml` runs it — 12 steps, all exit 0, `npm test`
+124/124, `validate.yml` valid YAML. `playwright` joins `jsdom` as a devDependency;
+`npm run browser-audit` runs it locally. No subject data changed.
