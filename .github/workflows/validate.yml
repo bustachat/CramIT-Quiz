@@ -70,6 +70,22 @@ jobs:
       - name: Render audit (what the student actually sees)
         run: node scripts/render_audit.cjs --strict
 
+      # BROWSER AUDIT — the layout half. jsdom has no layout engine, so the
+      # render audit above declares overflow, image widths and table scrolling
+      # out of scope. This runs the same sweep in real Chromium at 320/375/430,
+      # which is what CLAUDE.md section 10 means by "the test is the
+      # MEASUREMENT, not a remembered threshold": the "7+ columns" rule of thumb
+      # held at 430 and broke at 320 on tables of 6, 5 and 4 columns.
+      #
+      # Browser verification has been this project's standard for a long time,
+      # but it was always done by hand in a session and never ran again. This is
+      # that standard, automated.
+      - name: Install Chromium for the browser audit
+        run: npx playwright install --with-deps chromium
+
+      - name: Browser audit (layout, in real Chromium at 320/375/430px)
+        run: node scripts/browser_audit.cjs --strict
+
       - name: Syntax-check Cloudflare Pages Functions
         run: |
           set -e
