@@ -26,18 +26,58 @@
   // the engine never would (this cost two bad questions on the Maths Advanced
   // per-part build — see docs/HISTORY.md 2026-09-05).
   //
-  // ⚠️ The `kw.startsWith(word)` branch makes SHORT keywords very loose: the bare
-  // digit "2" credits the keyword "2670", and "pi" credits "pipe". Known and
-  // documented, not fixed here — changing it would move marks on live questions.
+  // ⚠️ FIXED 2026-09-07. The `kw.startsWith(word)` branch used to accept a word of
+  // ANY length, which made every keyword reachable from an ordinary English word:
+  // "in" credited `interest` and `internal`, "not" credited `not independent`,
+  // "to" credited `total probability`, "on" credited `one person`. Measured on the
+  // live bank, a fluent but content-free answer took ≥50% of the mark on 10
+  // question/parts, and an answer of nothing but digits took ≥50% on 331 of 587
+  // — because a bare digit prefixes any numeric keyword.
+  //
+  // The obvious one-line fix (require word.length >= 4) BREAKS 50 questions: a
+  // student writes "320 000" where the bank stores "320000", so the 3-character
+  // word "320" was legitimately carrying that match. Normalising digit groups on
+  // both sides removes that dependency, and only then can the length gate go in.
+  // Both halves are needed; either alone measures worse.
+  //
+  // Residual, deliberately kept: `word.startsWith(kw)` is unchanged, so a SHORT
+  // KEYWORD is still loose — "pi" is credited by "pipe". That direction is the
+  // rule's actual purpose (a student's longer word matching a shorter keyword),
+  // and the audit reports any single-letter keyword separately.
+  // Put both sides into the same NOTATION before matching, so a keyword and an
+  // answer that mean the same thing are the same string. Each rule was measured
+  // against every question's own model answer, not guessed at:
+  //   • digit separators  — students write "320 000" and "$1,725.60"; the bank
+  //     stores "320000" and "1725.60". This one is load-bearing: without it the
+  //     length gate below strips a legitimate match on 50 questions.
+  //   • dashes            — the bank mixes U+2212 MINUS with the ASCII hyphen a
+  //     student types ("k² − 5k − 6" vs the keyword "k² - 5k - 6").
+  //   • subscript digits  — "VO₂ max" is written "VO2 max" by every student.
+  // Superscripts are deliberately NOT normalised: they changed nothing measurable
+  // and "x²" → "x2" would collide with ordinary variable names.
+  function normNum(s) {
+    return String(s)
+      .replace(/[−–—‒]/g, '-')
+      .replace(/[₀-₉]/g, c => String.fromCharCode(c.charCodeAt(0) - 0x2080 + 48))
+      .replace(/\d[\d ,]*\d/g, m => m.replace(/[ ,]/g, ''));
+  }
   function keywordHit(kw, sa) {
+    kw = normNum(kw);
+    sa = normNum(sa);
     // Direct substring (catches multi-word keywords like "file size")
     if (sa.includes(kw)) return true;
     // Word-level stem matching — split student answer into words
     const words = sa.split(/\W+/);
     for (const word of words) {
       if (!word) continue;
-      // One starts with the other (plural/suffix: slow→slower, load→loading/loads)
-      if (word.startsWith(kw) || kw.startsWith(word)) return true;
+      // The student's word is a longer form of the keyword (slow→slower,
+      // load→loading/loads). Unrestricted: this is the rule's real purpose.
+      if (word.startsWith(kw)) return true;
+      // The keyword is a longer form of the student's word. Gated at 4
+      // characters — the SAME threshold the shared-stem rule below already uses
+      // — because below it, "word" is an ordinary English fragment that prefixes
+      // half the vocabulary.
+      if (word.length >= 4 && kw.startsWith(word)) return true;
       // Shared 4-char stem (load/loading/loads all share "load")
       const stemLen = Math.min(4, word.length, kw.length);
       if (stemLen >= 4 && word.substring(0, stemLen) === kw.substring(0, stemLen)) return true;
@@ -76,11 +116,43 @@
   //
   // Precedence: acceptableAnswers → anyOf → keywords. A question carries one
   // mechanism; the order is what keeps `anyOf` additive (CLAUDE.md §10 rule 11).
+  // An `acceptableAnswers` entry is matched as a substring. That is right for prose
+  // ("800 ml", "not independent") and WRONG for a bare number: plain includes() lets
+  // the entry "16" match inside "116" and "160 hours", so a wrong answer takes full
+  // marks — and because acceptableAnswers short-circuits scoreOne(), it takes ALL of
+  // them. Measured on the live bank 2026-09-07: all 11 short numeric entries were
+  // exploitable that way (e.g. 2025 Q24 answer "4", student "14" → 2/2).
+  //
+  // So a NUMERIC entry must land on a number boundary. Two asymmetric rules, both
+  // arrived at by probing real answers rather than by reasoning:
+  //   • a digit before, or a decimal point that is itself preceded by a digit,
+  //     means the entry is a fragment of a bigger number  → "38" inside "0.38"
+  //   • only a bare digit after blocks                    → "16" inside "160"
+  // A decimal point AFTER is extra precision, not a different number: the entry
+  // "$37 158" is a legitimate prefix of the answer "$37 158.72". Requiring a
+  // boundary there regressed three real questions, which is how that was found.
+  // The guard keys off the entry's own EDGES, not off whether it contains letters:
+  // "x = 38" ends in a digit and so must not match inside "x = 380", while
+  // "800 ml" ends in a letter and needs no check on that side.
+  function acceptableHit(a, sa) {
+    const startsDigit = /^\d/.test(a), endsDigit = /\d$/.test(a);
+    if (!startsDigit && !endsDigit) return sa.includes(a);
+    let i = -1;
+    while ((i = sa.indexOf(a, i + 1)) !== -1) {
+      const before = sa[i - 1], after = sa[i + a.length];
+      const blockedBefore = startsDigit && before !== undefined &&
+        (/\d/.test(before) || (before === '.' && /\d/.test(sa[i - 2] || '')));
+      const blockedAfter = endsDigit && after !== undefined && /\d/.test(after);
+      if (!blockedBefore && !blockedAfter) return true;
+    }
+    return false;
+  }
+
   function scoreOne(spec, studentAns) {
     const sa = String(studentAns || '').toLowerCase();
     const maxMark = spec.maxMark || 0;
     if (spec.acceptableAnswers && spec.acceptableAnswers.length) {
-      const correct = spec.acceptableAnswers.some(a => sa.includes(a.toLowerCase()));
+      const correct = spec.acceptableAnswers.some(a => acceptableHit(a.toLowerCase(), sa));
       return {
         kind: 'acceptable', correct, maxMark,
         marksEarned: correct ? maxMark : 0,

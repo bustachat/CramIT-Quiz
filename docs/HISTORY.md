@@ -5218,3 +5218,861 @@ loader so nobody "corrects" it back.
   **`npm test` 112/112**.
 
 `index.html` is 145 lines lighter. No subject data changed.
+
+---
+
+## 2026-09-07 (later still, ×3) — Mathematics Standard 2's written-answer review: 145/145, 22 defects, and a damage class nobody had looked for
+
+**Stage 6b for the biggest written bank in the repo.** All 145 questions compared against
+NESA's committed sample answers and criteria rows in
+`data/answer-key/written/mathematics-standard-2.json`; the marking guidelines themselves were
+never re-read. Ledger committed at `data/answer-key/written/reviews/mathematics-standard-2.json`,
+so `check_written_key.cjs` now **enforces** this subject. Verdicts: **90 ok, 22 corrected,
+33 divergent-accepted.** Runbook: `docs/subject-plans/mathematics-standard-2-written-review.md`.
+
+This is the **third** ledger, after VET (34) and Multimedia (35), and the largest by a factor
+of four. **22 defects in 145 is 15%** — the same rate as VET's 6/34 and Multimedia's 9/35 —
+and, as on both of those, **every single one was invisible to CI, because every mark was right.**
+
+### The class nobody had looked for: `$1`..`$9` eaten by a JavaScript `String.replace()`
+
+`String.prototype.replace()` treats `$1`–`$9` in the **replacement string** as capture-group
+references. Some historical authoring pass ran text through such a replace, and every `$`
+followed by a digit silently vanished.
+
+- **2020 Q20** — the *stem* read *"Wally had a taxable income of **22 680**. During the year,
+  he paid **000** per month in PAYG tax."* The paper (p16) reads `$122 680` and `$3000`.
+  **The question was unanswerable as printed**, and had been for as long as it has shipped.
+- **2021 Q40** — the *model answer* read *"Annuity: **000** per year … FV = 1000 × 8.2132 =
+  **213.20** … = **419.81**"* against NESA's `$8213.20` and `$8419.81`. A student was being
+  shown arithmetic that does not work.
+
+The signature to sweep for: a number that is a strict **suffix** of the same number elsewhere
+in the question with its `$` also gone, plus — as a cheap screen — any number literally
+beginning with `0`, which is impossible in written maths outside a bearing or a decimal. Swept
+across all five subject files: **exactly these two, both in Standard 2.**
+
+⚠️ Worth noting *why* 2021 Q40 kept scoring: its keywords `8213.20` and `8419.81` were right,
+and `keywordHit`'s `kw.startsWith(word)` branch means the bare digit `8` in *"for 8 years"*
+credits them. The mark was fine; the teaching was broken.
+
+### Four questions paid FULL marks for a fluent, content-free answer
+
+Found by a check no previous session had run: score every question against plausible English
+containing no subject content, and flag anything earning ≥ 50%.
+
+| | Cause | Before → after, measured in the real engine |
+|---|---|---|
+| **2020 Q26** | the critical path `C - D - E - F - H - I` split into six **single-letter keywords**; `keywordHit` is a substring test, so `c`/`e`/`f`/`i` fire on almost any English | content-free **1/1 on (a) and 2/2 on (b)** → **0/5**; correct answer still 5/5 |
+| **2021 Q27(a)** | `acceptableAnswers` was `['4.38','$4.38','5']` — the bare `'5'` is **part (b)'s** answer, and `scoreOne()` short-circuits on `acceptableAnswers` with a plain `includes()` | *"The answer is 5"* **2/4** → **0/4**; correct 4/4 |
+| **2021 Q28(b)** | 1-mark part, only keyword `increase`, credited by the ordinary word **"in"** | content-free **1/1** → **0/3**; correct 3/3 |
+| **2021 Q36(b)** | a **regex** stored as a keyword: `'a.*c.*d.*e.*g.*j.*k'`. `keywordHit()` never evaluates regexes — it credited the string via the bare letter `a` | never matched as intended; now `acceptableAnswers` |
+
+### Eight stems contradicted the exam paper, and all eight were wrong
+
+Checked by opening the papers, which CLAUDE.md's exam-citation rule requires and which the
+marking-guideline rule permits — the papers are not the guidelines.
+
+- **2024 Q35 had three errors in one question**: standard deviation `12` where the paper says
+  `15`; part (a) asking *"the percentage of scores that are less than 46"* where the paper asks
+  *"between 58 and 70"*; part (c) asking for the *"top 5%"* where the paper asks for the
+  *"top 10%"*. **In every case the model answer was already working NESA's version**, so stem
+  and answer contradicted each other on all three parts. Part (b)'s own claim (that the
+  percentage between 46 and 70 is twice part (a)'s) is only true under the paper's reading.
+- **2024 Q19(b) was unanswerable**: *"Another student … scored 5 for the assignment."* The
+  paper adds *"and 12 on the test"*, and NESA's own sample answer depends on it.
+- **2021 Q33** gave the regression line as `y = 29.2 − 0.00404x`; the paper prints `−0.011`,
+  which is what NESA's sample and the bank's own model answer both use. A student following
+  the printed stem gets 27.0 °C and is marked wrong against 23.3 °C.
+- **2021 Q23(b)** asked for *"Queentown to **Fernville** along the minimum spanning tree"*; the
+  paper asks *"Queentown to **Underwood** using the **fastest route**"*.
+- **2025 Q26(b) and (c)** asked questions the paper never asks (a percentage, and a mass of
+  plastic) while their model answers worked NESA's actual questions (an area, and a percentage
+  error) — confirmed by NESA's criteria rows as well as the paper.
+- **2024 Q34** asked for *"square centimetres, correct to the nearest whole number"*; the paper
+  asks for *"square metres correct to 1 decimal place"*, which is the `0.5 m²` the answer gives.
+- ⚠️ **2023 Q21 and 2023 Q32 printed the wrong PER-PART marks** — `(a) 1, (b) 2, (c) 1, (d) 1`
+  against the paper's `1, 1, 1, 2`, and `(a) 3, (b) 1` against `2, 2`. **`check_written_key.cjs`
+  structurally cannot see this**: the labels live inside the combined `q` string and the
+  question's own `marks` still reconciles. A sweep comparing the sequence of `(N marks)` labels
+  in `q` against `parts[].marks` found exactly these two, repo-wide.
+
+### Six model answers showed authoring scratch-work; three carried wrong results
+
+`index.html` renders `answer` **directly to the student**, so this is pure teaching damage.
+
+- **2024 Q41** — *"PV₁ = $2000 × 151.036 = $302 072 **Wait — let me re-read the MG. MG says:**"*
+- **2023 Q27(b)** — *"… cos θ = 7.5/40… **no.** … should be 40… **wait Actually:**"*
+- **2023 Q26(a)** — two abandoned attempts plus *"**From MG:**"*
+- **2024 Q34**, **2025 Q26(b)**, **2024 Q36(b)**, **2024 Q39(c)**, **2025 Q35** — *"Actual MG
+  calculation:"*, *"Using MG:"*, `Actually:` markers, self-cancelling parentheticals
+
+And the class VET 2023 19(b)(i) established — the mark is right, the number is wrong:
+
+- **2022 Q30** gave Option 1 as `$45 093.59` and the difference as `$37.29`; NESA gives
+  `$45 097.17` and `$40.87`, and 40 000 × (1.001)¹²⁰ confirms NESA. **The question's own
+  `acceptableAnswers` already held `'45097.17'`, so the bank disagreed with itself.**
+- **2021 Q23(a)**'s minimum spanning tree was **fabricated**: it named *"Kingsville-Underwood=20"*
+  where the paper's K–U edge is **65**, its listed edges summed to **95** against a stated 160,
+  and it ended in a literal `+...` on screen. Recomputed from the committed crop
+  (10+15+20+20+25+30+40), reproducing NESA's 160 exactly.
+- **2025 Q19** — the worst single question in the subject. Wrong prerequisites (*E: B*, *F: A, C*
+  against NESA's *E: C, D* and *F: E*), wrong critical path (*B–F–H = 16 days* against NESA's
+  *BDEFH = 26*), and a part (c) that **contradicted itself**: it opened *"No — increasing A by
+  2 days does not affect the critical path"* and closed *"**Corrected:** … This **DOES** affect
+  the critical path."*
+
+### The method changes that outlive this session
+
+**1. A third mandatory mechanical check, and it is now tooling.** `scripts/review_checks.cjs`
+(new) drives the **real `scoring.js`** through `node:vm` — never a Python mirror, which has come
+out more permissive than the engine every time it has been tried — and runs the playbook's two
+gates plus the new one. Standard 2 was already clean on the first two (earlier sessions fixed
+those repo-wide); **only the content-free-answer check could see 2020 Q26 and 2021 Q28.**
+
+⚠️ Its output needs interpreting rather than batch-applying: most hits are the documented
+`kw.startsWith(word)` looseness paying **one** mark out of a long list, which is inherent to a
+proportional grid. The content defects are the ones whose cause is in the data — a single-letter
+keyword, a leaked short `acceptableAnswers` entry, a regex stored as a keyword.
+
+**2. The measuring instrument had to be fixed first.** `review_triage.py` stripped HTML with
+`/<[^>]+>/g`. That is not how a browser parses: the HTML parser opens a tag only when `<` is
+followed by a letter, `/`, `!` or `?`, so `P(0 < Z < 0.3)` is literal text on screen. The regex
+ate it and made 2021 Q38's model answer look truncated when it is perfectly fine — the same
+error that produced a false finding on Mathematics Advanced 2024 Q30 earlier today. The tool now
+strips the way a browser does, and also prints each question's **`parts[]`**, without which a
+review of a 66-multi-part subject never sees the data students are actually scored on.
+
+**3. Triage ordered the queue and decided nothing, again — and the numbers say why.** Its top
+entries were calculation questions whose NESA sample is mangled (benign `divergent-accepted`),
+while **2024 Q35's three wrong stem values, 2025 Q19's wrong critical path and both mark-label
+errors sat well down the list**. A stem that contradicts the paper scores as *perfect agreement*
+with the sample answer, because triage never reads the paper.
+
+**4. A scoring change was probed, not reasoned about.** 2025 Q19's keyword list was chosen by
+running four candidates against a correct answer, a differently-phrased correct answer, the old
+wrong answer and a decoy **in the running engine**. The list that looked best on paper
+under-marked a correct answer at 4/5. The one adopted keeps both correct phrasings at 5/5 while
+dropping the wrong answer from 4/5 to 3/5.
+
+### Verification
+
+Full local CI green: `validate_subjects.cjs` `MC=706 Written=380 imageRefs=337 missingImages=0`,
+`Issues: 0`; `check_answer_key.cjs` **285 answers, 0 wrong**; `check_written_key.cjs` **340
+written questions, 0 wrong**, Standard 2 coverage **235/235** and review **145/145**; `node
+--check` on all five Cloudflare functions; `npm test` **112 pass, 0 fail**.
+
+**Staleness guarantee tested, not assumed** — corrupting one entry's fingerprints reports
+`1 STALE` for that exact question and **exits 1**; restoring it returns 0.
+
+**Blast radius machine-checked against `HEAD`** — exactly **22 of 145** questions changed, and
+only `answer` / `keywords` / `minKeywords` / `acceptableAnswers` / `bandDescriptors` / `q` /
+`stem` / `parts` moved. `mcQuestions`, `studyNotes`, `tips` and every other top-level key are
+**byte-identical**; no `marks`, `qNum`, `section`, `category`, `image`, `omittedParts` or part
+label/mark was touched.
+
+**Browser, against the local preview, at six widths — 320, 375, 430, 768, 1400, 1920** —
+driving the real renderer over all **145** questions and opening **every part of every
+multi-part question** (148 part-opens per width): **0 `.question-area` overflows, 0 occurrences
+of `undefined`, 0 missing marks badges, 0 over-wide images, 0 render errors**, `body.scrollWidth`
+never exceeding the viewport. All **145 score full from their own model answers** in the page's
+own engine (227 part rows, **0 generic band fallbacks**). All **75 distinct images load**. A real
+typed flow on **2025 Q19 scores 5/5** with the corrected model answer on screen; **2020 Q26
+screenshotted at 5/5** with NESA's own criteria wording per part row. Corrected stems were read
+back **off the rendered page**, not out of the JSON. **No console errors.**
+
+### Recorded, deliberately not fixed
+
+1. ⚠️ **On the offline path, an answer of nothing but digits scores full marks on most maths
+   questions.** `keywordHit`'s `kw.startsWith(word)` branch credits any numeric keyword from a
+   bare digit that prefixes it, so *"1 + 2 + 3 + … + 9 + 0 = 45"* matches `320000`, `45097` and
+   `8213.20` alike. **Measured while building the decoy check: 167 of Standard 2's 227
+   question/part rows.** The looseness is already documented in `scoring.js` and CLAUDE.md as
+   deliberately unfixed — changing it would move marks on live questions in every subject — but
+   nobody had put a number on it. It is also why the committed decoy set is **prose-only**: a
+   digit decoy buries every content defect under the engine's own behaviour. The AI marking
+   path is unaffected; this is the logged-out fallback.
+2. ⚠️ **The same rule is materially wrong on network questions.** A critical-path answer is full
+   of single-letter activity names, so a bare `C` credits the keyword `critical path` and a bare
+   `F` credits `float`. That is why 2025 Q19's old wrong answer still scores 3/5 after its
+   keyword list was tightened.
+3. **Five questions still give a prose-only content-free answer partial credit** — 2021 Q17,
+   2024 Q21(a) and 2023 Q19(b) at 1/2; 2022 Q35 and 2025 Q22(b) at 1/4. The committed check
+   reports the first three, which clear its 50% threshold. One keyword out of several; none is
+   a data defect.
+4. **Standard 2's 79 single-part `bandDescriptors` are authored paraphrases, not NESA verbatim.**
+   `refresh_band_descriptors.py` regenerates **per-part** descriptors only. They were read
+   against the criteria and are faithful, but regenerating them verbatim is a mechanical pass
+   worth doing deliberately.
+5. ⚠️ **The generated 1-mark non-attainment wording reads badly** — *"Does not meet the
+   criterion: provides correct answer"* is student-facing, and on 2023 Q21(b) it lowercases
+   NESA's own text. Generated identically for Mathematics Advanced, so it is a generator change
+   across two subjects.
+6. **Drawing tasks are silently reworded** (2021 Q24(c) has *"Describe the key features"*
+   appended to NESA's *"draw the graph"*); the established convention is an `omittedParts` entry
+   or a visibly separate note.
+7. **90 Standard 2 stems end in a literal `(N marks)`** duplicating the badge — recorded since
+   2026-09-01 and still wanting one pass across Standard 2 and VET together.
+
+⚠️ **Provenance: every entry is assistant-compared with NO human sign-off**, as the ledger's
+`reviewMethod` states and `check_written_key.cjs` prints on every run. **Gate 6 remains unmet on
+all three ledgered subjects.** Remaining unreviewed: **166 of 380** — Mathematics Advanced 126,
+and HMS's 40, which cannot be reviewed this way until an answer key exists after the 2026 HSC.
+
+---
+
+## 2026-09-07 (later still, ×4) — One audit instead of one check: `content_audit.cjs`, and the acceptableAnswers boundary fix
+
+**Why this session happened.** The owner's question was *"why is this session still
+picking up defects I thought were resolved?"* The cause turned out to be structural, not
+sloppiness: **every past session invented ONE new check, ran it on ONE subject, fixed those
+hits and moved on.** No one had ever run all of them everywhere, so each session honestly
+believed it had finished and the next one honestly found more.
+
+### The total, finally measured
+
+`scripts/content_audit.cjs` (new) runs **every check this project has ever devised across
+all five subjects in one command**, driving the real `scoring.js` through `node:vm`. Wired
+into `validate.yml`; `--strict` exits 1 on the mark-affecting subset.
+
+**Nine of eighteen checks were already at zero repo-wide** — self-score, zero-at-minKeywords,
+no-mechanism, missing bandDescriptors, missing band tier, `undefined` in band text, raw
+markdown, wrong per-part mark labels, `$`-damage. The prior sessions' work had held.
+
+⚠️ **Three checks turned out to be the DETECTOR, not the data**, and were fixed rather than
+reported: `(x + 4)(x − 1)` is maths notation, not a regex (5 false positives); a part with a
+declared `omittedParts` and a visible note is correct, not a missing picture (8); and *"he
+needed to **wait** 57 minutes"* is legitimate prose (5). A tool that cries wolf gets ignored,
+which is part of how the drip started.
+
+### A — over-crediting: 8 of 10 are ONE engine rule, not ten bad keyword lists
+
+Every hit traced to `keywordHit`'s `kw.startsWith(word)` branch firing on a short English
+word: **"in"** credits `interest` and `internal`, **"not"** credits `not independent`,
+**"to"** credits `total probability`, **"i"** credits `iqr`, **"on"** credits `one person`.
+Those keywords are *correct*; mangling them to dodge a bug would be the wrong fix.
+
+**The engine fix was measured, not proposed blind** — four candidates, scored against every
+question's own model answer:
+
+| candidate | self-score regressions | prose decoy ≥50% | digits-only decoy ≥50% |
+|---|---|---|---|
+| today | 0 | 10 | **331** |
+| `word.length >= 4` | **50** | 2 | 33 |
+| normalise digit groups only | 0 | 10 | 331 |
+| normalise + `word.length >= 4` | **25** | 2 | 33 |
+| gate the alphabetic case only | **17** | 2 | 330 |
+
+⚠️ **The obvious one-liner breaks 50 questions** — a student writing the bank's own model
+answer would lose marks, because `320` legitimately credits `320000` (students write
+`320 000`). Reading the 25 surviving regressions of the best candidate showed most are
+keywords that **never legitimately matched in the first place** (`bdefh`, `abfgd`, `E(X²)`,
+`VO2 max`), so the real sequence would be: fix the engine, then repair the ~25 keywords it
+exposes. **Not done — it is the owner's call**, and it moves marks in every subject.
+
+**Two hits WERE genuine data defects and are fixed**: single-letter keywords `e` (Maths
+Advanced 2023 Q13) and `r` (2025 Q13), which fire on any English text. Eight remain,
+recorded as engine-blocked.
+
+### B — `acceptableAnswers` took full marks for the wrong number: **45 of 57 questions**
+
+`scoreOne()` matched an entry with a bare `sa.includes(a)`, so the entry `"16"` matched
+inside `"116"` and `"160 hours"` — and because `acceptableAnswers` **short-circuits**, a
+wrong answer took *all* the marks. The audit's first count of 11 was itself too generous: it
+looked only at entries of ≤2 characters. Scoring realistically-wrong numbers through the
+engine found **45 of the 57 questions using `acceptableAnswers`**.
+
+Fixed in `scoring.js`: a numeric entry must land on a **number boundary**. Two asymmetric
+rules, both found by probing real answers:
+
+- a digit before, **or a decimal point whose own left neighbour is a digit** → the entry is
+  a fragment of a bigger number (`38` inside `0.38`)
+- **only a bare digit after** blocks (`16` inside `160`)
+
+⚠️ A following decimal point is **extra precision, not a different number**: `"$37 158"` is
+a legitimate prefix of `"$37 158.72"`. Requiring a boundary on that side regressed three
+real questions, which is how the asymmetry was found. The guard keys off the entry's own
+**edges**, not off whether it contains letters — `"x = 38"` ends in a digit and so must not
+match inside `"x = 380"`.
+
+**Result: 45 → 0 exploitable, with 0 self-score regressions across all 587 question/part
+rows.** Five new unit tests pin both directions; `npm test` 112 → 117.
+
+### C — keywords a model answer could never credit: 7 → 0
+
+Fixed by the established **ABSENT** precedent — extend the model answer so it demonstrates
+the concept, rather than deleting the keyword. Maths Advanced 2020 Q17 (`1/2` vs `½`) and
+2020 Q19 (`Pythagorean`, used but never named); HMS `internal`, `hold` (the answer had only
+*"is held"*, and `held`/`hold` share no 4-character stem), `health goals`, `individual`,
+`rain`.
+
+⚠️ **`review_checks.cjs` was reporting all 40 HMS questions as "no scoring mechanism"** —
+my own tool read `q.marks` where HMS stores `maxMark`, and HMS carries no `year`/`qNum`
+either. Fixed in both tools; the same trap will catch the next one.
+
+### Verified
+
+Full local CI green — `validate_subjects.cjs` `Issues: 0`; **285** MC and **340** written
+checks, 0 wrong; all three review ledgers intact and none stale; 5 functions syntax-check;
+`npm test` **117/117**. `content_audit.cjs` reports **8 mark-affecting findings**, all the
+engine cases above.
+
+In the running app: **all 380 written questions across all five subjects still score full
+from their own model answers** (587 part rows, 0 generic band fallbacks, 0 `undefined`), and
+real typed flows prove the B fix moves marks the right way —
+
+| | before | after |
+|---|---|---|
+| 2025 Q24 `"4 snails"` / `"about 4"` | 2/2 | 2/2 |
+| 2025 Q24 `"14"` / `"0.4"` | **2/2** | **0/2** |
+| 2024 Q23 `"16 hours"` | 3/3 | 3/3 |
+| 2024 Q23 `"160 hours"` | **3/3** | **0/3** |
+| 2020 Q28 `"x = 38"` | 4/4 | 4/4 |
+| 2020 Q28 `"x = 380"` | **4/4** | **0/4** |
+| 2021 Q31 `"$1725.60"` | 2/2 | 2/2 |
+| 2021 Q26 `"$37 158.72"` | 4/4 | 4/4 |
+
+No console errors.
+
+### What the audit says is left
+
+**8** mark-affecting (the engine rule above). Non-mark-affecting: **83** generated
+*"Does not meet the criterion: …"* strings, **230** stems ending in a literal `(N marks)`,
+and **166 of 380** written questions never reviewed against NESA — Maths Advanced 126, and
+HMS 40 which cannot be reviewed until an answer key exists after the 2026 HSC.
+
+---
+
+## 2026-09-07 (later still, ×5) — The engine decision: `keywordHit`'s prefix rule is gated, and the audit is finally green
+
+**Owner's call, taken deliberately: fix the engine before the cosmetic sweeps.** The
+reasoning that decided it — this is the only remaining *mark-affecting* class; the app is
+pre-launch so no subscriber's score shifts under them; it is what makes
+`content_audit.cjs --strict` green so CI holds the line instead of a session doing it; and
+it has to precede the 126-question Mathematics Advanced review or that review is done
+against a moving target.
+
+### The change
+
+`keywordHit`'s `kw.startsWith(word)` branch used to accept a word of **any** length, so
+ordinary English reached almost every keyword: **"in"** credited `interest` and `internal`,
+**"not"** credited `not independent`, **"to"** credited `total probability`, **"on"**
+credited `one person`, and any bare digit credited any numeric keyword.
+
+Two halves, and **both are required** — either alone measures worse:
+
+1. **Normalise notation on both sides** before matching — digit-group separators
+   (`320 000` → `320000`, `$1,725.60` → `1725.60`), dashes (U+2212 vs the ASCII hyphen a
+   student types), and subscript digits (`VO₂ max` → `VO2 max`). Superscripts deliberately
+   left alone: they changed nothing measurable and `x²` → `x2` would collide with variable
+   names.
+2. **Gate the prefix rule at 4 characters** — the same threshold the shared-stem rule
+   directly below it already used. `word.startsWith(kw)` is untouched and ungated: a
+   student's longer word matching a shorter keyword is what stem matching is *for*.
+
+⚠️ **The one-line version of this is wrong and the measurement is what showed it.** Gating
+without normalising breaks **50 questions**, because a student writes `320 000` where the
+bank stores `320000`, so the 3-character word `320` was legitimately carrying that match.
+Four candidates were scored against every question's own model answer before one was
+chosen.
+
+### What it exposed, and why that is the point
+
+The fix left **24** questions short of full marks from their own model answers — then 18
+after normalisation. **None of these was ever a real match**; each was being credited only
+by a 1–3 character fragment. The fix did not break them, it revealed them. Two classes:
+
+- **LEAKED (6)** — the keyword belongs to a *different part* of the same question and had
+  been copied in: `22` in Standard 2 2022 Q33(a) (it is part (b)'s answer), `32π` in Maths
+  Advanced 2021 Q12(a), `x²/(x − 1)` in 2022 Q31(a), `E(X²)` in 2023 Q12(a), `x = √A` in
+  2024 Q31(a), and `32/3` in 2020 Q30(b), which describes neither part. Removed from the
+  part they do not describe.
+- **FORM (12)** — the concept *is* in the model answer, in a notation the keyword cannot
+  reach: `abfgd` against an answer written `A → B → F → G → D`; `2 am` against `2:00 am`;
+  `arithmetic` and `d = 6` against `a = 4 and d = 10 − 4 = 6`; `1/2 ab sin` against
+  `½ r² sin 36°`; `S∞ = 2` against `… = 2, as required`; `WHS Act` against
+  *The Work Health and Safety Act 2011 (NSW)*. The **answer** was extended or aligned — the
+  established ABSENT/FORM precedent — never the keyword deleted.
+
+**All 18 repaired; 0 exposed.**
+
+### Which marks actually move
+
+Measured, not asserted, across all 587 question/part rows:
+
+| | unchanged | lost marks |
+|---|---|---|
+| the **full** model answer | **587** | **0** |
+| **half** the model answer | 427 | 160 |
+| a **quarter** of it | 438 | 149 |
+| a wrong (content-free or digits-only) answer | — | **372 lose undeserved marks** |
+
+⚠️ **160 partial answers losing marks needed checking, not hand-waving.** Every one of the
+**309** partial-answer losses was re-tested against the two branches that did *not* change
+(`includes`, `word.startsWith(kw)`, the 4-char shared stem): **309 of 309 were caused solely
+by the removed coincidence, and 0 had the concept genuinely present.** The change cannot
+strip real partial credit — only credit that was awarded for a bare digit or a two-letter
+fragment.
+
+Repo-wide: the content-free decoy goes **10 → 0** rows at ≥50% of the mark, and the
+digits-only decoy **331 → 32**.
+
+### The audit is green
+
+`content_audit.cjs` now reports **0 mark-affecting findings** and `--strict` exits 0, so CI
+holds this from here rather than a future session rediscovering it.
+
+⚠️ **One counter reopened, and it is not a regression: `D_dead_keyword` went 0 → 29.** Those
+are keywords whose own model answer does not demonstrate them — they were "passing" before
+only because the loose rule fake-matched them too. They are **not** mark-affecting (the
+question still self-scores full, and a student who writes the keyword still earns it); it is
+a teaching-completeness signal. Folded into the next pass with D and E rather than expanding
+this change.
+
+### Verified
+
+`npm test` **117 → 124** (7 new tests pinning both directions of the gate, all three
+normalisations, and that `word.startsWith(kw)` is deliberately still loose — `pi` credits
+`pipe`). Full local CI green: `Issues: 0`; **285** MC and **340** written checks, 0 wrong;
+all three review ledgers intact with **0 stale**.
+
+In the running app, all **380** written questions across all five subjects still score full
+from their own model answers (587 part rows, 0 generic bands, 0 `undefined`), the served
+`scoring.js` is confirmed to be the fixed one, and real typed flows show 2021 Q17's decoy
+going 1/2 → **0/2** and 2020 Q20 and Q37 going 3/3 → **0/3** on a digits-only answer, while
+every correct form still scores full — including `$8213.20` typed with the space the bank
+does not store. No console errors.
+
+---
+
+## 2026-09-07 (later still, ×6) — D and E: the audit's last actionable rows go to zero
+
+The cosmetic half of the plan, run straight after the engine fix. Three sweeps, all
+student-facing text, none of them touching a mark.
+
+### E — 237 duplicated mark labels removed
+
+A stem ending in a literal `(3 marks)` sat directly under the pill that already reads
+**3 marks**, and a part prompt ending in `(2 marks)` sat under a header already reading
+**PART (A) · 2 MARKS**. Recorded as an open item since 2026-09-01, across Standard 2 and VET.
+
+Scope was decided by **what the student actually sees**, not by the raw count:
+
+| | count | action |
+|---|---|---|
+| single-part question `q` — this IS the stem on screen | 94 | removed |
+| `parts[].q` prompts — the accordion prints its own header | 143 | removed |
+| multi-part combined `q` — **not rendered in the quiz at all** | 136 | **kept** |
+
+The 136 are what the test-mode results breakdown prints, where the per-part mark values are
+useful context rather than a duplicate. Only a *trailing* label is removed: a mid-text
+`(1 mark)` inside a merged (i)/(ii) prompt is the only place that sub-part's value appears.
+
+⚠️ **A second pass was needed for 7 more**, found by measuring on screen rather than in the
+data: their label is followed by an `<img>`, so it is not at the end of the *raw* string even
+though it is the last thing the student reads. The image is untouched; 211 `<img>` tags
+still present.
+
+### D — 83 confusing non-attainment strings rewritten
+
+Where NESA's criteria table has a single row, the collapse rule has to author the
+`partial`/`minimal` slots, and the generated form read as an instruction rather than a
+verdict:
+
+> ~~Does not meet the criterion: provides correct answer~~
+> **Not achieved — this mark is awarded in full or not at all. The criterion is: Provides the correct answer**
+
+It also `.lower()`-ed NESA's own sentence, which mangled proper nouns — Standard 2
+2023 Q21(b) came out *"graphs provider a's charges"*. The new form quotes the criterion
+**verbatim**, so capitalisation comes back with it.
+
+Fixed in `scripts/refresh_band_descriptors.py` (so future runs produce the better wording)
+**and** rewritten in place, because that script deliberately preserves existing
+`partial`/`minimal` on an all-or-nothing part — VET's were hand-authored — so re-running it
+would not have touched them.
+
+⚠️ **7 more hid in the question-level roll-up** of multi-part questions, where the phrase sits
+*mid*-string (`"(a) Does not meet the criterion: … (b) Provides a correct percentage"`) and a
+`startswith()` test cannot see it. Those were rebuilt from the parts' own descriptors.
+
+⚠️ **`multimedia.json` was refused by the round-trip guard**, exactly as CLAUDE.md warns — it
+does not survive `json.dumps`. It had no instances anyway, and the file is byte-unchanged.
+
+### The 29 dead keywords, folded in as promised
+
+Keywords whose own model answer never demonstrated them. These only became visible after the
+engine fix — the loose prefix rule had been fake-matching them too. Not mark-affecting (the
+question still self-scores full, and a student who writes the keyword still earns it), but the
+model answer is shown **directly to the student**, so it should teach what the marking rewards.
+
+Same two classes as the exposed set, handled the same way:
+
+- **LEAKED (9)** — the keyword belongs to a different part: `0.77`/`0.77%` in Standard 2
+  2023 Q32(a), `0.2881` in 2024 Q35(b), a stray `5.2` on both parts of Maths Advanced
+  2020 Q21, `x = 3` and `2ˣ/ln 2` in 2021 Q28(c), `10` in 2024 Q18(a), `1 − x²` in
+  2024 Q22(c), `2π/5` in 2025 Q15(c). Removed from the part they do not describe.
+- **FORM (20)** — extend the **answer**, never delete the keyword: *"one clear peak"* → *"one
+  peak"*; *"d = 7 − 3 = 4"* → *"d = 4 (since 7 − 3 = 4)"*; *"skid off the timber"* → *"slip or
+  skid"*; *"PC (Prime Cost) items"* → *"PC items (Prime Cost)"*. Two keywords were aligned to
+  the answer's notation instead: VET `AS1100` → `1100` (which matches both *AS 1100* and
+  *AS1100*), and HMS `not early` → `early`.
+
+⚠️ **One of my own edits broke a different keyword** and the audit caught it immediately:
+writing *"8 am (8:00 am) Wednesday"* split the phrase keyword `8 am Wednesday`. Reordered to
+*"8 am Wednesday 20 July (8:00 am)"*.
+
+### Where the audit stands
+
+Every actionable row is **zero**:
+
+```
+A self-score 0   B zero-at-threshold 0   C over-credit 0   D dead-keyword 0
+E no-mechanism 0  F single-letter 0      G regex 0         H acceptableAnswers 0
+I no-band 0       J missing tier 0       K undefined 0     L non-attainment 0
+N raw markdown 0  Q part-mark labels 0   R $-damage 0
+MARK-AFFECTING: 0
+```
+
+The three that remain are the **known false-positive classes**, reported for reading and
+never for bulk-fixing: `M_scratch_work` 5 (*"he needed to **wait** 57 minutes"*),
+`P_missing_picture` 8 (parts with a declared `omittedParts` and a visible note), and
+`O_stem_marks_suffix` 133 (the multi-part combined strings that are not rendered).
+
+### Verified
+
+Full local CI green — `Issues: 0`; **285** MC and **340** written checks, 0 wrong; all three
+review ledgers intact with **0 stale**; `npm test` **124/124**.
+
+Blast radius machine-checked against the previous commit: **174 questions touched**, and only
+`q` / `answer` / `keywords` / `minKeywords` / `bandDescriptors` / `parts` moved. `marks`,
+`qNum`, `section`, `category`, `image`, `omittedParts`, `acceptableAnswers`, `stem` and every
+MC question are **unchanged**.
+
+In the running app at **430 px and 320 px**, all **380** written questions across all five
+subjects render with **0 overflows, 0 `undefined`, 0 missing marks badges, 0 errors**;
+**0 duplicate mark labels remain on screen**; all **587** part rows still score full from
+their own model answers; and a real scored flow on Standard 2 2020 Q19 shows the new wording
+in place — *"Not achieved — this mark is awarded in full or not at all. The criterion is:
+Provides the correct answer"* — with NESA's capitalisation intact. Screenshot taken. No
+console errors.
+
+---
+
+## 2026-09-07 (later still, ×7) — Mathematics Advanced Stage 6b: the written-answer review backlog is CLOSED
+
+126 of 126 questions reviewed, the ledger committed, and CI now enforces the subject.
+**Every subject in the repo that has an answer key now has a committed review ledger** —
+Standard 2 145/145, Advanced 126/126, VET 34/34, Multimedia 35/35. HMS has no answer key
+and cannot have one until after the 2026 HSC.
+
+**89 ok · 31 corrected · 6 divergent-accepted.**
+
+Runbook: [`docs/subject-plans/mathematics-advanced-written-review.md`](subject-plans/mathematics-advanced-written-review.md).
+
+### The content was clean
+
+Not one result, method or figure disagrees with NESA. That is a real difference from the
+other ports (VET 6 defects in 34, Multimedia 9 in 35) and it is consistent with how this
+subject was built: uniquely, it was ported from the papers with the official key already
+committed and reconciling to exactly 100 marks per paper at every stage.
+
+All 31 corrections are scoring, teaching, rendering or presentation defects — every one
+invisible to CI because the marks were right, and **two of them findable only by rendering
+the questions**.
+
+### ⚠️ 14 stimulus images had not been reaching students since 2026-09-05
+
+The serious one, and a **regression rather than a porting gap**.
+
+A multi-part question is drawn as `stem` + each part's prompt; the combined `q` is never
+rendered in the quiz. When the per-part build split `stem` out of `q` on 2026-09-05 it
+copied the intro **text** and left the `<img>` behind — so 14 questions said *"The diagram
+shows the graph of…"* above no diagram.
+
+**Proved, not inferred:** rendering 2020 Q29 with its `parts` deleted shows 1 image; with
+`parts` present, 0. Moved into `stem`, where the existing `.parts-stem img` cap bounds it —
+measured at **250×154 inside a 278 px stem** for an 1114 px source.
+
+⚠️ **Checked elsewhere rather than assumed**: none in Standard 2, Multimedia or HMS, and
+VET's two candidates are fine — their image is in a part's `intro`, which *does* render. A
+first version of the detector called VET broken because it did not count `intro`.
+
+### The other four classes
+
+- **A bare `>` inside an `alt`** (2020 Q29). ⚠️ **Corrected 2026-09-08**: this originally
+  read *"closed the `<img` tag early, so ~90 characters of the attribute rendered as visible
+  text"*. That is **false** — browsers parse it correctly, and the pre-fix string was asked
+  directly. It is a hazard to this repo's own regex markup parsing (`<img[^>]*>`), not to
+  the page. One instance repo-wide.
+- **Four sibling-part keyword leaks**, found by a new check: a *numeric* keyword whose only
+  match in its own model answer is **preceded by a digit**, making it a suffix fragment of
+  a longer number — `83` inside `783.7168`, `40` inside `34 140`, `23` inside `234`, `5`
+  inside `1560`. Run repo-wide it found two more in Standard 2.
+- **A model answer that forward-references a later part** (2023 Q31(a) used part (b)'s
+  `P(S) = 4/5`; NESA argues from the given `P(F|S)` and `P(F)`).
+- **13 duplicated mark labels** — a stem or prompt ending in `(N marks)` under the badge
+  that already says it. Questions carrying *several* labels were left alone: there each one
+  is the only place that sub-part's value appears.
+
+### ⚠️ The one that was NOT dropped is the point of the method
+
+2020 Q11(b) carries part (c)'s answer `45` by the same suffix-fragment signature. Dropping
+it **measured 2/2 → 1/2 on a fully correct working**, because that working writes `450` and
+the keyword was carrying the match. It stays. Every drop that *was* made had been probed
+against four realistic student answers first — 2020 Q14(c) improves a correct `10/39` from
+1/2 to 2/2, the rest are no-ops.
+
+Two shapes the first version of the detector got wrong, both caught by reading the evidence
+rather than trusting the count: a trailing full stop (`= 15 000.`) and a decimal
+continuation (`$45 097.17` containing `45 097`) are legitimate, not fragments.
+
+### `ok` vs `divergent-accepted`
+
+NESA's maths samples extract as equation **layout**, so the comparison made here was
+**mathematical** — method, intermediate values, result. Possible for 120 questions (`ok`);
+impossible for 6 where the key's `sampleAnswer` is simply **empty**, all in 2025 (Q12
+extracts as the single character `2`; Q14(c), Q17, Q18, Q25(c), Q30). Four further blanks
+are for parts already declared in `omittedParts`.
+
+Triage reported overlap **0.00 on almost every question** — the signature of equation-layout
+extraction, not a signal about the bank. It ordered the queue and decided nothing.
+
+### Verified
+
+Full local CI green — `Issues: 0`; **285** MC and **340** written checks, 0 wrong; coverage
+234/234; review **126/126**; `npm test` **124/124**; `content_audit.cjs --strict` exits 0
+with **0 mark-affecting findings**.
+
+**Staleness tested, not assumed**: corrupting one fingerprint on a merged multi-part entry
+and one on a single-part entry makes the checker report both STALE and exit 1.
+
+Blast radius machine-checked against HEAD — only `q`, `stem`, `answer`, `parts.q`,
+`parts.answer` and `parts.keywords` moved; `marks`, `qNum`, `section`, `category`, `image`,
+`omittedParts`, `acceptableAnswers` and every MC question unchanged.
+
+In the running app, all **126** questions render at 375 px and 320 px with **0 overflows,
+0 nested scrollbars, 0 `undefined`, 0 missing marks badges and 0 duplicated labels**; **47
+distinct images all load**; all **207** question/part rows score **full** from their own
+model answers with **0** on generic band wording. A real end-to-end flow on 2020 Q29 — the
+restored-image question — scored **3 / 4**, part (a) 2/2 and part (b) 1/2, each row
+captioned with NESA's own criteria wording, the stimulus rendering and the model answer
+revealed. No console errors.
+
+Standard 2's ledger was rebuilt after its five edits and machine-compared: **only the five
+notes moved** — no fingerprint, verdict or `reviewMethod`.
+
+### Left open
+
+No human sign-off, here or on any ledger. The live AI marking call still cannot be made
+here (no `ANTHROPIC_API_KEY`). And `keywordHit`'s `normNum` joins two numbers separated by a
+space (`= 18 3x` → `183x`); it is applied symmetrically so no behavioural defect was found,
+but it made two detector readings look like leaks. Recorded, not changed.
+
+---
+
+## 2026-09-07 (later still, ×8) — The audit becomes a gate, and this session's detectors stop being disposable
+
+Step 1 of making the review standard permanent. No subject data changed.
+
+### ⚠️ The flag was missing
+
+`validate.yml`'s audit step carried a comment reading *"--strict fails only on the
+MARK-AFFECTING checks"* — and ran `node scripts/content_audit.cjs` **without the flag**. So
+the one command in the repo that can fail a build on a marking defect was not the one CI
+ran. It reported, and went green.
+
+That is now `--strict`, with the omission recorded in the workflow so it reads as a fixed
+mistake rather than a choice.
+
+### A second blocking group: UNANSWERABLE
+
+`--strict` used to fail only on MARK-AFFECTING findings — defects that move the arithmetic.
+The worst defect found this week moved no arithmetic at all: it removed the diagram from 14
+questions. So there is now a second group that also fails the build:
+
+| group | meaning | checks |
+|---|---|---|
+| MARK-AFFECTING | moves a student's mark | A, B, C, E, F, H, K, Q, R |
+| UNANSWERABLE | the renderer cannot present the question | **U, V** |
+
+### Three checks landed, each proved both ways
+
+- **`U_unreachable_image`** *(blocking)* — a multi-part question whose `<img>` lives only in
+  `q`. The accordion renders `stem` + each part's prompt and never `q`, so that image reaches
+  no student. Counts `parts[].intro` as reachable; a first version did not, and wrongly
+  called VET broken.
+- **`V_attr_angle_bracket`** — a `>` inside a quoted attribute. ⚠️ **Corrected 2026-09-08,
+  the day after: this was added as BLOCKING on a false premise, and is now reporting-only.**
+  Browsers parse it correctly. What it really flags is a hazard to this repo's own regex
+  markup parsing. Heuristic: an **odd** number of double quotes between `<` and the first
+  `>`.
+- **`T_leaked_numeric_kw`** *(reporting only)* — a numeric keyword whose every match in its
+  own model answer is preceded by a digit, and which appears cleanly in a sibling part.
+
+**Proved both ways** — the discipline, not a formality:
+
+```
+clean repo          T 0   U 0   V 0        --strict exit 0
+defects re-injected T 3   U 1   V 1        --strict exit 1
+restored            T 0   U 0   V 0        --strict exit 0
+```
+
+⚠️ **Note what this table does NOT show, and what it cost.** That a check *fires* says
+nothing about whether the thing it fires on is a defect. V fired exactly as designed, on a
+string browsers render perfectly well. Proving a check both ways is necessary and is not
+sufficient — **the premise has to be tested against the real renderer too**, which is
+precisely the gap the render sweep exists to close.
+
+### ⚠️ T is not blocking, and its first two hits were false
+
+Both matter, and both are written into the file.
+
+It is **not blocking** because dropping a flagged keyword is not automatically an
+improvement: on Maths Advanced 2020 Q11(b), removing the flagged `45` measured **2/2 → 1/2**
+on a fully correct working, because that working writes `450`. A finding is a prompt to
+probe, never a licence to delete.
+
+Its **first two hits were both false**, and reading them changed the check rather than the
+data. `nn()` treats a comma as a digit-group separator, so the coordinate pair `(5, 4977)`
+normalises to `54977` and a perfectly legitimate value looked buried inside a longer number.
+It now accepts a clean hit in the **raw** text as well as the normalised one.
+
+### `review_checks.cjs` deliberately NOT added to CI
+
+The plan said to add it. Reading it first showed its gates (a), (b) and (d) are exactly the
+audit's `A_self_score`, `B_zero_at_threshold` and `E_no_mechanism`, which `--strict` already
+runs across all five subjects rather than one. It stays the reviewer's per-subject tool for
+its richer per-question output; a duplicate CI step would only make the build slower and the
+signal ambiguous.
+
+### The house rule, now in the audit's own header
+
+> A new check is not trusted until it has been run repo-wide, every hit READ, and its
+> false-positive classes written down beside it. Prove it BOTH ways — zero on clean data,
+> and firing when the defect it was written for is put back.
+
+Three of the audit's existing checks turned out to be the instrument rather than the data.
+So did T. The known-false-positive list goes **three → four**.
+
+### Verified
+
+Every CI step run exactly as `validate.yml` runs it — `validate_subjects`,
+`check_answer_key`, `check_written_key`, `content_audit --strict`, functions syntax check and
+`npm test` (124/124) — all exit 0, and `validate.yml` re-parses as valid YAML. The two
+blocking checks were each proved by re-introducing the real 2020 Q29 defects into the bank:
+both fire, `--strict` exits 1, and exits 0 again once restored.
+
+---
+
+## 2026-09-08 — A render audit in CI, and a correction: the check I added yesterday was wrong
+
+Steps 2 and 3 of making the review standard permanent — and, first, undoing a mistake made
+while doing step 1.
+
+### ⚠️ The correction: `V_attr_angle_bracket` was blocking CI on a false premise
+
+Yesterday I added a check on the belief that a bare `>` inside a quoted attribute closes
+the tag early, so the rest of the attribute spills out as visible text. **That is false.**
+The browser was finally asked directly, with the exact pre-fix Maths Advanced 2020 Q29
+string:
+
+```
+broken  →  1 <img>, full alt, style intact, 0 characters leaked
+fixed   →  1 <img>, full alt, style intact, 0 characters leaked   (identical)
+```
+
+Inside a double-quoted attribute value the HTML tokenizer treats `<` and `>` as ordinary
+characters; only `"` ends the value. The check has been **demoted to reporting** and the
+claim corrected in the ledger entry, the runbook, both HISTORY entries and CLAUDE.md.
+
+It is **kept**, because it does flag something real — just not what I said. A `>` inside an
+attribute defeats **this repo's own regex parsing of markup**: the live
+`/<img[^>]+src="([^"]+)"/g` in `validate_subjects.cjs`, and the `<img[^>]*>` in
+`scripts/archive/mathsadv_add_parts.py`, whose docstring records it losing *this very
+question's* image — which is plausibly how the 14 lost stimuli happened in the first place.
+The `&gt;` escape stays; it makes the data safe for that tooling.
+
+**How it survived review**: I proved the check fired, and it did — exactly as designed, on a
+string that renders perfectly well. *Proving a check both ways is necessary and not
+sufficient. The premise has to be tested against the real renderer.* Which is the entire
+argument for what follows.
+
+### Two static contracts added (step 2)
+
+Both measured at **0** across all five subjects before being added, and both proved by
+injection:
+
+- **`W_stem_drift`** — on a multi-part question `stem` is carved off the front of `q`, so it
+  should stay a prefix of it. When they diverge, one is stale. This is the *general* shape of
+  the bug `U` catches one instance of.
+- **`X_img_no_maxwidth`** — a rendered `<img>` with no inline `max-width`, which §10 requires;
+  without one it renders at natural crop width (measured at 1767px inside a 390px stem).
+
+Both reporting, not blocking: a stem reworded alone is not yet a defect, and a stylesheet
+rule has capped unstyled images since 2026-09-05, so `X` is defence in depth.
+
+Two more candidates were **measured and rejected**: an unwrapped `<table>` (17 hits, all of
+which fit on screen — §10 is explicit that the test is the measurement, so this belongs in a
+browser, not a static check) and HTML inside `optionImages` option text (1 hit, and the
+browser showed it renders correctly).
+
+### `scripts/render_audit.cjs` — the real answer (step 3)
+
+Every other check in this repo reads the JSON and reasons about it. This one **boots
+index.html in jsdom, runs its own inline script, serves its fetches off disk, and drives the
+app's own `renderQuestion` and `togglePart`** over every question in both modes — 1086
+renders — then looks at what came out.
+
+| check | what it catches |
+|---|---|
+| `R1_render_threw` | the renderer throwing |
+| `R2_undefined_on_screen` | the literal word "undefined" shown to a student |
+| `R3_no_marks_badge` | a written question with no marks badge |
+| `R4_image_never_drawn` | data references an image the renderer never draws |
+| `R5_markup_leak` | an attribute fragment leaking into visible text |
+| `R6_option_images_missing` | not every option image reaches the DOM |
+| `R7_blank_render` | the question text renders empty |
+| `R9_feedback_threw` | `buildKeywordFeedback()` throwing |
+| `R10_generic_band_shown` | feedback falling back to the engine's generic wording |
+
+`R9`/`R10` feed each question its **own model answer** through the app's real feedback
+builder — which is the path the 57-question Standard 2 `undefined` defect lived on.
+
+All ten report **0** today. Wired into `validate.yml` with `--strict`, so they block.
+
+⚠️ **What it cannot see: layout.** jsdom has no layout engine — every element measures zero.
+Overflow, image widths and table scrolling still need a real browser at a real viewport.
+That limit is written into the script header and the workflow step.
+
+### ⚠️ Proving it found two bugs in the harness itself
+
+Neither would have been visible from a green run:
+
+1. **1086 identical throws on the first run.** `index.html` declares `activeQuestions` and
+   `answers` with `let` inside its inline script, so `win.activeQuestions = bank` created a
+   *different* global and the renderer kept reading its own stale one. The values are now
+   handed over a real window property and assigned from inside the app's scope.
+2. **`R7` could never fire on a multi-part question.** It measured the whole question area,
+   which always carries a marks badge, year and topic chips, "FOR ALL PARTS" and the part
+   rows — so blanking every prompt still left far more than the threshold. It now measures
+   the question-text elements only. Found by injection, not by reading.
+
+### Verified
+
+Injecting one instance of each class into the bank makes them fire and `--strict` exit 1;
+restoring the file returns 0, with `git diff` on `subjects/` empty:
+
+```
+injected R2 R3 R4 R7 R10   →  R2 3   R3 1   R4 1   R7 1   R10 1   --strict exit 1
+restored                   →  all 0                                --strict exit 0
+```
+
+Every CI step run exactly as `validate.yml` runs it — `validate_subjects`,
+`check_answer_key`, `check_written_key`, `content_audit --strict`, `render_audit --strict`,
+functions syntax and `npm test` (124/124) — all exit 0. `validate.yml` re-parses as valid
+YAML at 10 steps. `jsdom` added as the repo's first devDependency; `npm run render-audit`
+runs it locally.
+
+⚠️ **Not verified from here**: the GitHub Actions run itself. The render audit takes ~40s
+locally and adds a dependency install; if it proves flaky in CI the honest fix is to make it
+reporting-only rather than to delete it.

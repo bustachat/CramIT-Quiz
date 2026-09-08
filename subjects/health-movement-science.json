@@ -3482,8 +3482,8 @@
   "writtenQuestions": [
     {
       "topic": "classification",
-      "q": "Explain the difference between direct and indirect sports injuries, providing one example of each. (4 marks)",
-      "answer": "<p><strong>Direct injuries</strong> are caused by external forces applied to the body from outside. They result from physical contact such as a tackle, collision, or impact from an object. Examples include fractures, dislocations, sprains and bruises. For instance, a fractured collarbone from a rugby tackle is a direct injury.</p>\n              <p><strong>Indirect injuries</strong> are caused by forces generated within the body itself, rather than from external contact. They occur as a result of inadequate warm-up, ballistic (explosive) movements, or excessive strain placed on muscles and tendons. For example, a hamstring tear from sprinting without warming up is an indirect injury.</p>",
+      "q": "Explain the difference between direct and indirect sports injuries, providing one example of each.",
+      "answer": "<p><strong>Direct injuries</strong> are caused by external forces applied to the body from outside. They result from physical contact such as a tackle, collision, or impact from an object. Examples include fractures, dislocations, sprains and bruises. For instance, a fractured collarbone from a rugby tackle is a direct injury.</p>\n              <p><strong>Indirect injuries</strong> are caused by internal forces generated within the body itself, rather than from external contact. They occur as a result of inadequate warm-up, ballistic (explosive) movements, or excessive strain placed on muscles and tendons. For example, a hamstring tear from sprinting without warming up is an indirect injury.</p>",
       "keywords": [
         "direct",
         "external",
@@ -3504,7 +3504,7 @@
     },
     {
       "topic": "classification",
-      "q": "Compare soft tissue and hard tissue injuries, explaining why chronic soft tissue injuries require long rehabilitation. (5 marks)",
+      "q": "Compare soft tissue and hard tissue injuries, explaining why chronic soft tissue injuries require long rehabilitation.",
       "answer": "<p><strong>Soft tissue injuries</strong> damage muscles, tendons, ligaments, cartilage or skin through overstretching, impact or twisting. A <strong>sprain</strong> injures the ligaments and joint capsule; a <strong>strain</strong> injures the muscles or tendons. They can be acute (sudden onset) or chronic (prolonged/overuse).</p>\n              <p><strong>Hard tissue injuries</strong> damage bones and teeth — including fractures, breaks and dislocations. They are frequently more serious than soft tissue injuries and require careful examination and immobilisation due to bone's structural support role.</p>\n              <p>Chronic soft tissue injuries require long rehabilitation because repeated microtrauma leads to <strong>scar tissue formation</strong>, which shortens the muscle and increases re-injury risk. The scar tissue must be carefully broken down through progressive mobilisation and stretching to restore full function.</p>",
       "keywords": [
         "soft",
@@ -3529,7 +3529,7 @@
     },
     {
       "topic": "classification",
-      "q": "Describe overuse injuries, identifying two examples and explaining the cycle by which they develop. (4 marks)",
+      "q": "Describe overuse injuries, identifying two examples and explaining the cycle by which they develop.",
       "answer": "<p><strong>Overuse injuries</strong> result from intense or unreasonable repetitive use of joints or body areas. They are provoked by repetitive, low-impact exercise such as jogging, cycling or stepping, causing pain and inflammation at the injury site.</p>\n              <p>Two examples are: (1) <strong>Anterior shin splints</strong> — irritation to the front of the shinbone from running; and (2) <strong>Achilles tendinitis</strong> — irritation and inflammation of the Achilles tendon from repetitive loading.</p>\n              <p>The overuse cycle is: repetitive musculoskeletal activity → tissue overload → tissue fatigue and decreasing strength → tissue failure (microtrauma) → inadequate tissue repair → overuse injury (stress fractures, tendinitis) → major loss of strength and flexibility → back to repetitive activity.</p>",
       "keywords": [
         "overuse",
@@ -3551,7 +3551,7 @@
     },
     {
       "topic": "assessment",
-      "q": "Outline the TOTAPS assessment procedure, including when and why you stop the assessment. (6 marks)",
+      "q": "Outline the TOTAPS assessment procedure, including when and why you stop the assessment.",
       "answer": "<p>TOTAPS is the secondary field-based assessment tool used after DRSABCD confirms no life-threatening emergency. It involves six sequential steps:</p>\n              <ul>\n                <li><strong>Talk</strong> — ask the athlete about the incident and their history to understand the injury mechanism.</li>\n                <li><strong>Observe</strong> — expose and compare the injured side with the uninjured side for swelling, discolouration and deformity.</li>\n                <li><strong>Touch</strong> — feel for warmth (inflammation), tenderness and pain.</li>\n                <li><strong>Active Movement</strong> — the athlete moves the injured part through its range, only to the point of pain.</li>\n                <li><strong>Passive Movement</strong> — the sports trainer moves the injured part through its range, only to the point of pain.</li>\n                <li><strong>Skill Test</strong> — sport-specific skills test to confirm full, pain-free movement.</li>\n              </ul>\n              <p>You stop the assessment at any step the athlete cannot complete without pain and treat the injury immediately. This prevents further damage by not forcing movement beyond the body's pain threshold.</p>",
       "keywords": [
         "talk",
@@ -3575,7 +3575,7 @@
     },
     {
       "topic": "assessment",
-      "q": "Explain the difference between the primary and secondary injury assessment tools and when each is used. (4 marks)",
+      "q": "Explain the difference between the primary and secondary injury assessment tools and when each is used.",
       "answer": "<p>The <strong>primary assessment tool</strong> is <strong>DRSABCD</strong> (Danger, Response, Send for help, Airway, Breathing, Compressions, Defibrillation). It is used first for any injured person to identify and manage life-threatening emergencies. It must always be completed before any other assessment.</p>\n              <p>The <strong>secondary assessment tool</strong> is <strong>TOTAPS</strong>, which is used on the sporting field after DRSABCD confirms the athlete is not in a life-threatening condition. TOTAPS specifically assesses the nature and severity of a sports injury through a six-step process to determine whether the athlete can safely return to play.</p>\n              <p>The key <strong>difference</strong> is therefore one of purpose and order: DRSABCD is a primary, life-saving check applied to every casualty first, whereas TOTAPS is a secondary, injury-specific assessment used only once the athlete is known to be stable.</p>",
       "keywords": [
         "primary",
@@ -3595,7 +3595,7 @@
     },
     {
       "topic": "management",
-      "q": "Describe the RICER protocol for managing a soft tissue injury, including one important caution about ice use. (5 marks)",
+      "q": "Describe the RICER protocol for managing a soft tissue injury, including one important caution about ice use.",
       "answer": "<p>RICER is applied immediately after a soft tissue injury such as a sprain or strain:</p>\n              <ul>\n                <li><strong>Rest</strong> — avoid movement to reduce blood flow to the injured site.</li>\n                <li><strong>Ice</strong> — apply a cold pack wrapped in a towel for 20 minutes every 2 hours to reduce pain, swelling and bleeding.</li>\n                <li><strong>Compression</strong> — apply a bandage firmly (not too tight) to reduce swelling and bleeding.</li>\n                <li><strong>Elevation</strong> — raise the injured area (e.g. place a pillow under the ankle) to reduce bleeding and swelling via gravity.</li>\n                <li><strong>Referral</strong> — refer to a qualified professional (doctor/physiotherapist) for diagnosis and treatment.</li>\n              </ul>\n              <p><strong>Caution:</strong> While ice reduces inflammation in the early stages, prolonged use can reduce blood flow and cause nerve damage — ice should never be applied continuously or directly to skin.</p>",
       "keywords": [
         "rest",
@@ -3618,7 +3618,7 @@
     },
     {
       "topic": "management",
-      "q": "Outline the management of hard tissue injuries, distinguishing between the management of fractures and dislocations. (6 marks)",
+      "q": "Outline the management of hard tissue injuries, distinguishing between the management of fractures and dislocations.",
       "answer": "<p><strong>Fracture management</strong> requires: using DRSABCD, controlling bleeding, treating shock, using a splint and bandage to immobilise the area, and seeking immediate medical assistance. Medical attention is required when there is obvious deformity, uncontrolled bleeding, or the casualty cannot complete TOTAPS. Simple (closed) fractures keep bone beneath skin; compound (open) fractures involve bone protruding through skin and are more serious.</p>\n              <p><strong>Dislocation management</strong> requires: never attempting to relocate the displaced bone (this risks further damage), securing the joint with a splint for full immobilisation, applying ice and elevation, using a supportive bandage, and seeking immediate medical attention. A subluxation — where the bone briefly pops out and returns — also requires rehabilitation and possibly surgery.</p>",
       "keywords": [
         "fracture",
@@ -3641,7 +3641,7 @@
     },
     {
       "topic": "rehabilitation",
-      "q": "Explain progressive mobilisation and the rules that must be followed when applying it after injury. (4 marks)",
+      "q": "Explain progressive mobilisation and the rules that must be followed when applying it after injury.",
       "answer": "<p><strong>Progressive mobilisation</strong> is the gradual reintroduction of movement to an injured area after RICER has been applied and the acute inflammatory phase has passed. It involves gradually extending the range of movement through light stretches and rotations to reduce scar tissue build-up and restore mobility.</p>\n              <p>Mobilisation can be <strong>active</strong> (performed by the athlete) or <strong>passive</strong> (the injured part is manipulated by another person). Rules that must be followed include: (1) confirm no fracture is present — an X-ray may be needed; (2) do not begin during the acute inflammatory phase; (3) movements must be slow and progressive, not sharp or rapid; and (4) movements must remain within a pain-free range at all times.</p>",
       "keywords": [
         "progressive",
@@ -3664,7 +3664,7 @@
     },
     {
       "topic": "rehabilitation",
-      "q": "Describe how graduated exercise, including stretching and conditioning, is used in rehabilitation. (6 marks)",
+      "q": "Describe how graduated exercise, including stretching and conditioning, is used in rehabilitation.",
       "answer": "<p><strong>Graduated exercise</strong> encompasses stretching and conditioning to rebuild fitness after injury.</p>\n              <p><strong>Stretching:</strong> Stretching the injured area ensures healing without scarring. Scarring shortens muscle, making it prone to re-injury. The most appropriate methods are <strong>static stretching</strong> and <strong>PNF (Proprioceptive Neuromuscular Facilitation)</strong> stretching, which reduce muscle tension, increase circulation and restore range of motion. Movements initially stay within pain barriers and gradually increase as strength improves.</p>\n              <p><strong>Conditioning:</strong> Uses the <strong>overload principle</strong> to progressively increase physical stress and build adaptation. The program targets cardiorespiratory fitness plus strength, power and local muscular endurance around the injured area (specificity). It is designed to prevent <strong>muscle atrophy</strong>. As strength returns, further resistance is applied and weight-bearing exercises are introduced if the area can support them.</p>",
       "keywords": [
         "graduated",
@@ -3688,7 +3688,7 @@
     },
     {
       "topic": "rehabilitation",
-      "q": "Explain the use of heat and cold therapy in rehabilitation, including when each should and should not be used. (5 marks)",
+      "q": "Explain the use of heat and cold therapy in rehabilitation, including when each should and should not be used.",
       "answer": "<p><strong>Cold therapy</strong> is used for the <em>immediate treatment</em> of injury as it prevents swelling by constricting blood vessels and limiting internal bleeding. It is also useful after exercise during rehabilitation when the injured area has been through a workout. Methods include ice packs, ice massage, cold water immersion and topical cold spray. <strong>Caution:</strong> prolonged cold use reduces blood flow and can cause nerve damage.</p>\n              <p><strong>Heat therapy</strong> should <em>not</em> be used in the early (acute) stage while bleeding is still occurring, as it promotes blood flow and would worsen swelling. Heat is used in <em>later rehabilitation</em> for chronic injuries to promote circulation, relax muscles, decrease muscle spasm and tightness, and reduce pain. Methods include heat packs, hydrotherapy, infra-red lamps, ultrasound and shortwave machines.</p>",
       "keywords": [
         "cold",
@@ -3702,7 +3702,7 @@
         "bleeding",
         "muscle spasm",
         "blood flow",
-        "not early"
+        "early"
       ],
       "maxMark": 5,
       "bandDescriptors": {
@@ -3713,7 +3713,7 @@
     },
     {
       "topic": "rehabilitation",
-      "q": "Explain how total body fitness is maintained and restored during a rehabilitation program. (5 marks)",
+      "q": "Explain how total body fitness is maintained and restored during a rehabilitation program.",
       "answer": "<p><strong>Total body fitness</strong> in rehabilitation means regaining full pre-injury fitness by targeting all muscle groups and energy systems — not just the injured area. The program must apply all principles of training, particularly <strong>progressive overload</strong>.</p>\n              <p>Activities used to promote total body fitness include treadmill work, rowing or cycling ergometers, swimming and water-resistance activities, weight training, and walking/light jogging. Adaptations to aim for include: strengthening of ligaments and tendons, complete absence of pain, and full confidence in the injured area.</p>\n              <p>Flexibility, strength and endurance are maintained through activities <strong>specific to the sport</strong> that do not endanger recovery. The program is complete when the athlete can participate in all elements of a full training session — warm-up, skills, drills, match play and cool-down — without pain.</p>",
       "keywords": [
         "total body",
@@ -3736,7 +3736,7 @@
     },
     {
       "topic": "returnplay",
-      "q": "Outline how the indicators of readiness to return to play are used following an ankle sprain. (3 marks)",
+      "q": "Outline how the indicators of readiness to return to play are used following an ankle sprain.",
       "answer": "<p>After an ankle sprain the athlete must demonstrate all five indicators before return:</p>\n              <ul>\n                <li><strong>Elasticity</strong> — the new tissue has been stretched to promote flexibility</li>\n                <li><strong>Strength</strong> — equal to the uninjured side (tested via single-leg hop)</li>\n                <li><strong>Mobility</strong> — full agility and direction changes without pain</li>\n                <li><strong>Pain-free</strong> — during both light and strenuous exercise</li>\n                <li><strong>Balance</strong> — able to balance on the injured limb alone</li>\n              </ul>\n              <p>These are confirmed through sport-specific skill tests. Only when all criteria are met can the athlete return to competition.</p>",
       "keywords": [
         "elasticity",
@@ -3757,7 +3757,7 @@
     },
     {
       "topic": "returnplay",
-      "q": "How are skill and physical tests used to indicate an athlete's readiness to return to play after injury? (8 marks)",
+      "q": "How are skill and physical tests used to indicate an athlete's readiness to return to play after injury?",
       "answer": "<p>Return to play is a coordinated effort between the athlete and medical staff. All athletes returning to play should undertake and pass comprehensive skill and physical related tests. These tests should include a demonstration of <strong>pain-free full range of motion</strong>. For example, an athlete who injures their shoulder in football should be able to complete a circumduction test free of any musculoskeletal pain. Any discomfort or pain indicates the athlete is not ready to return.</p>\n              <p>In addition to being pain-free, the athlete must have a <strong>normal degree of mobility</strong> at the injury site. For example, a soccer player with a torn ligament should undergo physical skills such as agility and mobility tests (e.g. Illinois Agility Test) to ensure they can successfully bear full weight and complete all pre-injury duties.</p>\n              <p><strong>Strength and flexibility testing</strong> involves comparison between the injured and uninjured limb. This ensures the athlete has recovered full mobility and strength to prevent recurrence or a secondary injury, and ensures optimal performance upon return. The athlete must perform exercises related to their sport — e.g. kicking a football with both legs. If the athlete demonstrates <strong>90–95% of strength and range of motion</strong> returned to the injured limb, they are determined fit to play.</p>\n              <p>Generic skill tests can also compare an athlete pre-injury to post-injury — for example, using the vertical jump to test muscular power in a basketball player provides comparable statistics to judge readiness for activities like jump shots and slam dunks.</p>\n              <p><strong>Game-specific skill tests</strong> assess fitness to return by putting athletes through sport-specific drills (running, pivoting, passing, throwing). Athletes should be assessed by qualified staff to confirm they can complete game-related skills to an acceptable competitive level.</p>",
       "keywords": [
         "pain-free",
@@ -3785,7 +3785,7 @@
     },
     {
       "topic": "returnplay",
-      "q": "Discuss the ethical issues to consider before an athlete returns to play following an injury. (5 marks)",
+      "q": "Discuss the ethical issues to consider before an athlete returns to play following an injury.",
       "answer": "<p>Two major ethical issues are the use of <strong>painkillers</strong> and <strong>pressure to participate</strong>.</p>\n              <p>Painkilling injections mask pain — the body's warning signal — so the athlete cannot feel further damage occurring. This desensitises the injured tissue, setting up an environment for additional rupturing and potentially permanent injury. Even oral painkillers like paracetamol mask symptoms that indicate healing is incomplete.</p>\n              <p>Pressure to return early can come from coaches, parents, contracts or fear of losing a position on the team. In children and young athletes, inexperienced coaches or parents can cause additional damage by pushing athletes to play before full recovery. This pressure breaches duty of care.</p>\n              <p>Policies requiring <strong>final medical clearance from a qualified doctor</strong> help prevent these ethical breaches by removing the decision from non-medical parties.</p>",
       "keywords": [
         "painkillers",
@@ -3808,7 +3808,7 @@
     },
     {
       "topic": "returnplay",
-      "q": "Evaluate policies and procedures that address the ethical considerations in determining when an athlete returns to play from injury. (12 marks)",
+      "q": "Evaluate policies and procedures that address the ethical considerations in determining when an athlete returns to play from injury.",
       "answer": "<p>Return-to-play policies in Australian sport directly address ethical concerns including pressure to participate and misuse of painkillers.</p>\n              <p>The <strong>NRL</strong> requires an 11-day mandatory stand-down; <strong>Netball Australia</strong> requires 14 days completely symptom-free before contact training plus a minimum 21-day overall stand-down; <strong>Boxing</strong> imposes a 30–90 day automatic suspension after a knockout with specialist neurological review. All three protocols mandate final <strong>medical clearance</strong> from a qualified doctor.</p>\n              <p>These policies prevent premature return driven by financial contracts, fear of losing team position, or parental and coach pressure. Painkilling injections are especially dangerous because they mask the body's warning signal, allowing further tissue damage and potentially permanent injury without the athlete's awareness.</p>\n              <p>By placing the decision solely with medical professionals, these policies uphold duty of care and remove pressure from coaches, managers and athletes themselves. However, not all sports have such policies, creating inequity in athlete protection.</p>\n              <p>Overall, evaluating these policies shows they are effective in minimising ethical breaches and ensuring athletes return to <strong>sustained movement and performance</strong> safely (HM-12-09 / HM-12-10).</p>",
       "keywords": [
         "NRL",
@@ -3834,7 +3834,7 @@
     },
     {
       "topic": "concussion",
-      "q": "Outline the graduated return-to-play (GRTP) protocol for a junior netball player following a concussion. (6 marks)",
+      "q": "Outline the graduated return-to-play (GRTP) protocol for a junior netball player following a concussion.",
       "answer": "<p>Netball Australia's GRTP requires the player to be <strong>completely symptom-free for 14 days</strong> before beginning any graduated activity. The overall minimum return period for community-level players is <strong>21 days</strong>.</p>\n              <p>The graduated steps are: (1) Complete rest until symptom-free → (2) Light aerobic exercise (walking, swimming) → (3) Sport-specific exercise (running drills, no contact) → (4) Non-contact training drills → (5) Medical clearance from a qualified doctor → (6) Return to full contact competition.</p>\n              <p>If symptoms return at any stage, the player must immediately return to the previous step and remain there until symptom-free. <strong>Final medical clearance</strong> is mandatory before full return to play.</p>",
       "keywords": [
         "GRTP",
@@ -3857,7 +3857,7 @@
     },
     {
       "topic": "concussion",
-      "q": "Compare the concussion return-to-play protocols for NRL, Netball and Boxing, explaining why the differences exist. (8 marks)",
+      "q": "Compare the concussion return-to-play protocols for NRL, Netball and Boxing, explaining why the differences exist.",
       "answer": "<p>The three protocols differ significantly in their stand-down periods, reflecting the risk level of each sport.</p>\n              <p>The <strong>NRL</strong> requires an 11-day mandatory stand-down before any return to competition following a diagnosed concussion.</p>\n              <p><strong>Netball Australia</strong> follows a more conservative approach: 14 days completely symptom-free before full contact training, with an overall minimum of 21 days for community-level players.</p>\n              <p><strong>Boxing</strong> has the strictest protocol: after a knockout, the boxer faces an automatic 30–90 day suspension (longer for repeated KOs), plus mandatory specialist neurological review before clearance.</p>\n              <p>All three protocols require final medical clearance from a qualified doctor. The differences in stand-down periods reflect the varying levels of head trauma risk. Boxing's extended suspension acknowledges the direct targeting of the head and the high risk of cumulative brain damage from repeated knockouts. The NRL's shorter period reflects that concussions occur incidentally rather than by design, though the sport is still high contact.</p>",
       "keywords": [
         "NRL",
@@ -3883,7 +3883,7 @@
     },
     {
       "topic": "fa2_principles",
-      "q": "Define 'progressive overload' and provide ONE specific example of how a soccer player could apply it to aerobic training. (3 marks)",
+      "q": "Define 'progressive overload' and provide ONE specific example of how a soccer player could apply it to aerobic training.",
       "maxMark": 3,
       "keywords": [
         "progressive overload",
@@ -3903,7 +3903,7 @@
     },
     {
       "topic": "fa2_methods",
-      "q": "Distinguish between static and dynamic stretching. State when each is MOST appropriately used in a training session. (3 marks)",
+      "q": "Distinguish between static and dynamic stretching. State when each is MOST appropriately used in a training session.",
       "maxMark": 3,
       "keywords": [
         "static",
@@ -3915,7 +3915,7 @@
         "range of motion",
         "temperature"
       ],
-      "answer": "<p><strong>Static stretching:</strong> A position is held at the end range of motion for 15–30 seconds without movement. MOST appropriate during the <em>cool-down</em> after training — muscles are warm and pliable, allowing safe passive lengthening and reducing post-exercise soreness.</p>\n<p><strong>Dynamic stretching:</strong> Controlled, deliberate movements that take joints through their full range (e.g. leg swings, hip circles, high knees). MOST appropriate during the <em>warm-up</em> — it raises muscle temperature, elevates heart rate and activates the neuromuscular system to prepare the body for high-intensity performance without reducing power output.</p>",
+      "answer": "<p><strong>Static stretching:</strong> The athlete holds a position at the end range of motion for 15–30 seconds without movement. MOST appropriate during the <em>cool-down</em> after training — muscles are warm and pliable, allowing safe passive lengthening and reducing post-exercise soreness.</p>\n<p><strong>Dynamic stretching:</strong> Controlled, deliberate movements that take joints through their full range (e.g. leg swings, hip circles, high knees). MOST appropriate during the <em>warm-up</em> — it raises muscle temperature, elevates heart rate and activates the neuromuscular system to prepare the body for high-intensity performance without reducing power output.</p>",
       "bandDescriptors": {
         "full": "3/3 — Both types clearly and accurately distinguished (hold vs movement). Both correctly timed: static = cool-down, dynamic = warm-up. At least ONE reason given for the timing of each.",
         "partial": "2/3 — Both types defined correctly but no reasoning for when to use each, OR one type is correct with reason but the other is missing or incorrectly placed.",
@@ -3924,7 +3924,7 @@
     },
     {
       "topic": "fa2_adaptations",
-      "q": "Explain how endurance training causes a decrease in a soccer player's resting heart rate. (3 marks)",
+      "q": "Explain how endurance training causes a decrease in a soccer player's resting heart rate.",
       "maxMark": 3,
       "keywords": [
         "cardiac hypertrophy",
@@ -3943,7 +3943,7 @@
     },
     {
       "topic": "fa2_assessment",
-      "q": "Explain ONE key difference between how fitness testing is used by an elite soccer player compared to a recreational player. (3 marks)",
+      "q": "Explain ONE key difference between how fitness testing is used by an elite soccer player compared to a recreational player.",
       "maxMark": 3,
       "keywords": [
         "elite",
@@ -3954,7 +3954,7 @@
         "baseline",
         "motivation"
       ],
-      "answer": "<p><strong>Elite soccer player:</strong> Uses fitness testing to track objective performance benchmarks across a season — for example, monitoring VO₂ max scores every 4–6 weeks to determine whether their aerobic training program is producing the intended cardiovascular adaptations. Results directly drive program modifications.</p>\n<p><strong>Recreational player:</strong> Uses fitness testing primarily to establish a baseline and set achievable goals. For example, a recreational player completing a beep test discovers their aerobic fitness is below average — this result motivates them to focus their training on aerobic development and provides a measurable goal to work toward.</p>\n<p><strong>Key difference:</strong> Elite athletes use testing analytically and diagnostically to optimise performance; recreational players use it primarily for goal-setting and motivation.</p>",
+      "answer": "<p><strong>Elite soccer player:</strong> Uses fitness testing to track objective performance benchmarks across a season — for example, monitoring VO₂ max scores every 4–6 weeks to determine whether their aerobic training program is producing the intended cardiovascular adaptations. Results directly drive program modifications.</p>\n<p><strong>Recreational player:</strong> Uses fitness testing primarily to establish a baseline and set achievable health goals. For example, a recreational player completing a beep test discovers their aerobic fitness is below average — this result motivates them to focus their training on aerobic development and provides a measurable goal to work toward.</p>\n<p><strong>Key difference:</strong> Elite athletes use testing analytically and diagnostically to optimise performance; recreational players use it primarily for goal-setting and motivation.</p>",
       "bandDescriptors": {
         "full": "3/3 — Clear, accurate difference identified with a specific example for at least one group. Comparison is logical and reflects genuine differences in purpose.",
         "partial": "2/3 — Correct difference identified but no supporting example, OR both groups described but the difference between them is not explicitly stated.",
@@ -3963,7 +3963,7 @@
     },
     {
       "topic": "fa2_methods",
-      "q": "Compare fartlek training and continuous aerobic training. Justify which method is MORE appropriate for a soccer midfielder in pre-season preparation. (5 marks)",
+      "q": "Compare fartlek training and continuous aerobic training. Justify which method is MORE appropriate for a soccer midfielder in pre-season preparation.",
       "maxMark": 5,
       "keywords": [
         "fartlek",
@@ -3987,7 +3987,7 @@
     },
     {
       "topic": "fa2_principles",
-      "q": "Explain how THREE principles of training can be applied to design an effective 8-week pre-season program for a soccer team. (5 marks)",
+      "q": "Explain how THREE principles of training can be applied to design an effective 8-week pre-season program for a soccer team.",
       "maxMark": 5,
       "keywords": [
         "progressive overload",
@@ -4010,7 +4010,7 @@
     },
     {
       "topic": "fa2_periodisation",
-      "q": "Compare the training focus of the PRE-SEASON and IN-SEASON phases for a soccer team. Include reference to volume, intensity and specific goals of each phase. (5 marks)",
+      "q": "Compare the training focus of the PRE-SEASON and IN-SEASON phases for a soccer team. Include reference to volume, intensity and specific goals of each phase.",
       "maxMark": 5,
       "keywords": [
         "pre-season",
@@ -4033,7 +4033,7 @@
     },
     {
       "topic": "fa2_adaptations",
-      "q": "Explain how TWO physiological adaptations from aerobic training improve a soccer player's performance during a 90-minute match. (5 marks)",
+      "q": "Explain how TWO physiological adaptations from aerobic training improve a soccer player's performance during a 90-minute match.",
       "maxMark": 5,
       "keywords": [
         "stroke volume",
@@ -4047,7 +4047,7 @@
         "performance",
         "endurance"
       ],
-      "answer": "<p><strong>Adaptation 1 — Increased stroke volume and cardiac output:</strong><br>\nAerobic training causes cardiac hypertrophy — the left ventricle enlarges and pumps more blood per beat. During a 90-minute match, this increased cardiac output (HR × SV) delivers significantly more oxygen to working muscles per minute. The result: a midfielder can sustain high-intensity running for longer before reaching the anaerobic threshold, delaying fatigue and maintaining decision-making quality and sprint output in the final 20 minutes when untrained players are fading.</p>\n<p><strong>Adaptation 2 — Increased haemoglobin concentration:</strong><br>\nTraining increases haemoglobin concentration in red blood cells, improving the blood's oxygen-carrying capacity. More oxygen is delivered per litre of blood circulated. For a soccer player, this means greater oxygen availability to muscles during sustained sprinting — reducing reliance on anaerobic metabolism and lactate accumulation. Practically, the player can repeat high-intensity sprint efforts throughout the match rather than experiencing declining sprint quality in the second half.</p>\n<p><strong>Other adaptations that could be explained:</strong> increased VO₂ max, and greater mitochondrial density and capillary supply in slow twitch fibres — both raising aerobic endurance.</p>",
+      "answer": "<p><strong>Adaptation 1 — Increased stroke volume and cardiac output:</strong><br>\nAerobic training causes cardiac hypertrophy — the left ventricle enlarges and pumps more blood per beat. During a 90-minute match, this increased cardiac output (HR × SV) delivers significantly more oxygen to working muscles per minute. The result: a midfielder can sustain high-intensity running for longer before reaching the anaerobic threshold, delaying fatigue and maintaining decision-making quality and sprint output in the final 20 minutes when untrained players are fading.</p>\n<p><strong>Adaptation 2 — Increased haemoglobin concentration:</strong><br>\nTraining increases haemoglobin concentration in red blood cells, improving the blood's oxygen-carrying capacity. More oxygen is delivered per litre of blood circulated. For a soccer player, this means greater oxygen availability to muscles during sustained sprinting — reducing reliance on anaerobic metabolism and lactate accumulation. Practically, the player can repeat high-intensity sprint efforts throughout the match rather than experiencing declining sprint quality and performance in the second half.</p>\n<p><strong>Other adaptations that could be explained:</strong> increased VO₂ max, and greater mitochondrial density and capillary supply in slow twitch fibres — both raising aerobic endurance.</p>",
       "bandDescriptors": {
         "full": "5/5 — TWO adaptations correctly identified and accurately explained. For EACH: the adaptation is defined AND its specific performance benefit for soccer is explained (not just \"improves endurance\" — but HOW it does so in match context with specific timing or consequence).",
         "partial": "3–4/5 — Two adaptations identified but one performance link is vague. OR one adaptation is excellent and specific, the other is superficial.",
@@ -4056,7 +4056,7 @@
     },
     {
       "topic": "fa2_principles",
-      "q": "Evaluate how the application of the principles of training leads to physiological adaptations that improve performance for a soccer player. Refer to at least TWO principles of training and TWO physiological adaptations. (12 marks)",
+      "q": "Evaluate how the application of the principles of training leads to physiological adaptations that improve performance for a soccer player. Refer to at least TWO principles of training and TWO physiological adaptations.",
       "maxMark": 12,
       "keywords": [
         "progressive overload",
@@ -4090,7 +4090,7 @@
     },
     {
       "topic": "fa2_periodisation",
-      "q": "Evaluate how a yearly training program for a soccer team differs from that of an individual competitive swimmer. Refer to phases of competition, peaking and tapering, and psychological strategies. (12 marks)",
+      "q": "Evaluate how a yearly training program for a soccer team differs from that of an individual competitive swimmer. Refer to phases of competition, peaking and tapering, and psychological strategies.",
       "maxMark": 12,
       "keywords": [
         "pre-season",
@@ -4115,7 +4115,7 @@
         "evaluate",
         "interdependence"
       ],
-      "answer": "<div style=\"background:#f9f7f4;border-left:4px solid #c17d3c;padding:16px;border-radius:8px;margin-bottom:20px\">\n<strong>📋 BAND 6 SCAFFOLD</strong><br>\n<span style=\"color:#8c7b6e;font-size:0.9em\">INTRO → Phases comparison → Peaking/tapering comparison → Psychological strategies → EVALUATE the fundamental difference → CONCLUSION (synthesise)</span>\n</div>\n\n<p><strong>INTRODUCTION</strong><br>\nIndividual and group sports both use yearly periodisation — but the structure, timing and content of each phase differs fundamentally due to their contrasting competition schedules, team vs individual dynamics, and performance contexts. Soccer (group) and competitive swimming (individual) illustrate these contrasts across phases, peaking and psychological management.</p>\n\n<p><strong>PHASES OF COMPETITION</strong><br>\nA soccer team follows a structured domestic season: off-season (recovery, general fitness), pre-season (base building, team tactics, cohesion development), in-season (weekly competition — training volume reduced to maintain freshness) and finals (performance peak). The in-season phase spans 6–8 months with weekly game commitments — the team cannot simply rest for three weeks to recover; weekly performance is required.</p>\n<p>A competitive swimmer may have multiple annual peaks — long course and short course seasons, state and national championships across the year. Their periodisation allows multiple tapering and peaking cycles within a single year, alternating high-volume base-building blocks with competition-focused refinement phases. Between peaks, volume training can resume without the constraint of weekly match commitments.</p>\n\n<p><strong>PEAKING AND TAPERING</strong><br>\nSoccer teams peak once or twice per season — typically at finals. Team tapering involves reducing training volume in the 1–2 weeks before finals while maintaining intensity, sharpening set plays and ensuring key players are fully recovered. The challenge: 18+ players need tapering simultaneously, AND competitive results must still be managed during the taper period (no \"rest weeks\" from competition).</p>\n<p>An individual swimmer can taper with individual precision — 2–3 weeks before their target event, volume reduces 40–60%, intensity is maintained, and the athlete's individual physiology determines the exact taper length. This individual optimisation allows tighter performance peaking than is achievable in a team environment where squad needs must be averaged.</p>\n\n<p><strong>PSYCHOLOGICAL STRATEGIES</strong><br>\nSoccer players manage both individual and collective psychological readiness. Pre-match strategies include team goal-setting sessions, mental rehearsal of team set plays, and breathing techniques (centering) to bring individual arousal to optimal levels. The unique challenge is managing team cohesion under pressure — one over-aroused or under-motivated player affects the entire unit. Coaches use motivational pre-match talks and team routines to calibrate collective arousal.</p>\n<p>Individual swimmers manage arousal privately and precisely. Visualisation (mentally rehearsing each stroke and turn of the perfect race), controlled breathing and positive self-talk are individually tailored. There is no team dynamic to manage — success rests entirely on the individual's own psychological state. This places a higher individual psychological demand on the swimmer but also allows more precise, personalised mental preparation.</p>\n\n<p><strong>EVALUATION: The fundamental difference and its implications</strong><br>\nThe fundamental distinction is interdependence vs independence. A soccer program must balance individual player needs with collective team scheduling — a star midfielder cannot taper individually if the team is playing a semifinal that week. This interdependence limits the precision of peaking. A swimmer's program can be fully individualised — every decision serves one athlete's optimal preparation. Individual sports therefore have a structural advantage in achieving precise performance peaks.</p>\n<p>However, group sports benefit from shared motivation, social support and the tactical complexity that individual sports cannot replicate — these team dynamics influence training design and psychological preparation year-round, and can be a significant performance advantage when well-managed.</p>\n\n<p><strong>CONCLUSION</strong><br>\nBoth soccer and swimming use periodised yearly programs with pre-season, competition and recovery phases, tapering, and psychological management. However, the GROUP nature of soccer constrains individual peaking precision and requires collective psychological strategies — the team must peak together. INDIVIDUAL swimming allows multiple precisely timed peaks and fully individualised mental preparation. The sport's fundamental structure — team vs individual — drives every programming decision, from phase duration and taper timing to the selection of psychological strategies. Understanding this difference is central to designing an effective yearly training program for either context.</p>",
+      "answer": "<div style=\"background:#f9f7f4;border-left:4px solid #c17d3c;padding:16px;border-radius:8px;margin-bottom:20px\">\n<strong>📋 BAND 6 SCAFFOLD</strong><br>\n<span style=\"color:#8c7b6e;font-size:0.9em\">INTRO → Phases and sub-phases comparison → Peaking/tapering comparison → Psychological strategies → EVALUATE the fundamental difference → CONCLUSION (synthesise)</span>\n</div>\n\n<p><strong>INTRODUCTION</strong><br>\nIndividual and group sports both use yearly periodisation — but the structure, timing and content of each phase differs fundamentally due to their contrasting competition schedules, team vs individual dynamics, and performance contexts. Soccer (group) and competitive swimming (individual) illustrate these contrasts across phases, peaking and psychological management.</p>\n\n<p><strong>PHASES OF COMPETITION</strong><br>\nA soccer team follows a structured domestic season: off-season (recovery, general fitness), pre-season (base building, team tactics, cohesion development), in-season (weekly competition — training volume reduced to maintain freshness) and finals (performance peak). The in-season phase spans 6–8 months with weekly game commitments — the team cannot simply rest for three weeks to recover; weekly performance is required.</p>\n<p>A competitive swimmer may have multiple annual peaks — long course and short course seasons, state and national championships across the year. Their periodisation allows multiple tapering and peaking cycles within a single year, alternating high-volume base-building blocks with competition-focused refinement phases. Between peaks, volume training can resume without the constraint of weekly match commitments.</p>\n\n<p><strong>PEAKING AND TAPERING</strong><br>\nSoccer teams peak once or twice per season — typically at finals. Team tapering involves reducing training volume in the 1–2 weeks before finals while maintaining intensity, sharpening set plays and ensuring key players are fully recovered. The challenge: 18+ players need tapering simultaneously, AND competitive results must still be managed during the taper period (no \"rest weeks\" from competition).</p>\n<p>An individual swimmer can taper with individual precision — 2–3 weeks before their target event, volume reduces 40–60%, intensity is maintained, and the athlete's individual physiology determines the exact taper length. This individual optimisation allows tighter performance peaking than is achievable in a team environment where squad needs must be averaged.</p>\n\n<p><strong>PSYCHOLOGICAL STRATEGIES</strong><br>\nSoccer players manage both individual and collective psychological readiness. Pre-match strategies include team goal-setting sessions, mental rehearsal of team set plays, and breathing techniques (centering) to bring individual arousal and pre-competition anxiety to optimal levels. The unique challenge is managing team cohesion under pressure — one over-aroused or under-motivated player affects the entire unit. Coaches use motivational pre-match talks and team routines to calibrate collective arousal.</p>\n<p>Individual swimmers manage arousal privately and precisely. Visualisation (mentally rehearsing each stroke and turn of the perfect race), controlled breathing and positive self-talk are individually tailored. There is no team dynamic to manage — success rests entirely on the individual's own psychological state. This places a higher individual psychological demand on the swimmer but also allows more precise, personalised mental preparation.</p>\n\n<p><strong>EVALUATION: The fundamental difference and its implications</strong><br>\nThe fundamental distinction is interdependence vs independence. A soccer program must balance individual player needs with collective team scheduling — a star midfielder cannot taper individually if the team is playing a semifinal that week. This interdependence limits the precision of peaking. A swimmer's program can be fully individualised — every decision serves one athlete's optimal preparation. Individual sports therefore have a structural advantage in achieving precise performance peaks.</p>\n<p>However, group sports benefit from shared motivation, social support and the tactical complexity that individual sports cannot replicate — these team dynamics influence training design and psychological preparation year-round, and can be a significant performance advantage when well-managed.</p>\n\n<p><strong>CONCLUSION</strong><br>\nBoth soccer and swimming use periodised yearly programs with pre-season, competition and recovery phases, tapering, and psychological management. However, the GROUP nature of soccer constrains individual peaking precision and requires collective psychological strategies — the team must peak together. INDIVIDUAL swimming allows multiple precisely timed peaks and fully individualised mental preparation. The sport's fundamental structure — team vs individual — drives every programming decision, from phase duration and taper timing to the selection of psychological strategies. Understanding this difference is central to designing an effective yearly training program for either context.</p>",
       "bandDescriptors": {
         "full": "10–12/12 — EVALUATES key differences (not just lists them). Addresses all three areas: phases, peaking/tapering AND psychological strategies. Links differences to the underlying reason (team vs individual interdependence). Uses specific examples for both soccer and swimming. Conclusion synthesises the structural reason for the differences rather than just summarising content.",
         "partial": "6–9/12 — Covers most content areas but evaluation is weak — describes differences without explaining their implications or underlying cause. OR one of the three content areas (phases, peaking, psychology) is missing or superficial.",
@@ -4124,8 +4124,8 @@
     },
     {
       "topic": "fa2_psychology",
-      "q": "Define arousal and explain how the inverted U hypothesis describes the relationship between arousal and performance. (3 marks)",
-      "answer": "Arousal is a physiological state of activation and readiness to perform — a level of physical and mental stimulation. The inverted U hypothesis shows that as arousal increases from low to moderate levels, performance improves toward an optimal point (peak of the curve). If arousal rises beyond this optimal level, performance declines due to excessive muscular tension and mental confusion. This means each athlete has an ideal arousal level — too low causes disinterest and poor focus; too high causes over-tension and errors.",
+      "q": "Define arousal and explain how the inverted U hypothesis describes the relationship between arousal and performance.",
+      "answer": "Arousal is a physiological state of activation and readiness to perform — a level of physical and mental stimulation. The inverted U hypothesis shows that as arousal increases from low (under-aroused) to moderate levels, performance improves toward an optimal point (peak of the curve). If arousal rises beyond this optimal level, performance declines due to excessive muscular tension and mental confusion. This means each athlete has an ideal arousal level — too low causes disinterest and poor focus; too high causes over-tension and errors.",
       "keywords": [
         "arousal",
         "physiological",
@@ -4144,8 +4144,8 @@
     },
     {
       "topic": "fa2_psychology",
-      "q": "Explain how a soccer player and a netball team can each apply psychological strategies to manage stress and anxiety and improve performance. (5 marks)",
-      "answer": "A soccer player may use mental rehearsal (visualisation) to manage pre-game anxiety — imagining successful passes, positioning and scoring at performance speed. This creates a clear blueprint that narrows focus and reduces anxious thoughts. They may also practise centred breathing before penalties to control over-arousal and prevent muscular tension disrupting technique. SMART goal setting can help the player focus on controllable short-term outcomes (e.g. making 5 successful tackles) rather than worrying about the result, reducing anxiety.\n\nA netball team may use group meditation or progressive muscular relaxation before a grand final to manage collective over-arousal — calming physiological state and reducing tension. The coach may use concentration/attention skills, asking players to focus on process (e.g. leading into space, executing set plays) rather than the outcome (winning), helping the team stay calm and perform effectively under pressure.",
+      "q": "Explain how a soccer player and a netball team can each apply psychological strategies to manage stress and anxiety and improve performance.",
+      "answer": "For an individual athlete, a soccer player may use mental rehearsal (visualisation) to manage pre-game anxiety — imagining successful passes, positioning and scoring at performance speed. This creates a clear blueprint that narrows focus and reduces anxious thoughts. They may also practise centred breathing before penalties to control over-arousal and prevent muscular tension disrupting technique. SMART goal setting can help the player focus on controllable short-term outcomes (e.g. making 5 successful tackles) rather than worrying about the result, reducing anxiety.\n\nA netball team may use group meditation or progressive muscular relaxation before a grand final to manage collective over-arousal — calming physiological state and reducing tension. The coach may use concentration/attention skills, asking players to focus on process (e.g. leading into space, executing set plays) rather than the outcome (winning), helping the team stay calm and perform effectively under pressure.",
       "keywords": [
         "mental rehearsal",
         "visualisation",
@@ -4167,7 +4167,7 @@
     },
     {
       "topic": "fa2_individual_group",
-      "q": "Compare training session design for an athlete in an individual sport and an athlete in a group sport. Refer to at least THREE components of a training session in your response. (5 marks)",
+      "q": "Compare training session design for an athlete in an individual sport and an athlete in a group sport. Refer to at least THREE components of a training session in your response.",
       "answer": "Both individual and group sport athletes require similar training session structures — health and safety, warm-up/cool-down, skill instruction, conditioning and evaluation.\n\nHowever, key differences exist. In health and safety, group sports must address contact rules and opposed drill supervision (e.g. refereed training games in rugby league), while individual athletes focus on personal technique safety. In strategies and tactics, group sport sessions must allocate time to team formations, collective decision-making and small-sided games (e.g. 3v3 in soccer to simulate game pressure) — none of which apply to individual athletes who focus on personal race strategies (e.g. sit and kick). In conditioning, group sports often use game-based drills that simultaneously develop fitness and tactical skills, while individual athletes use isolated methods (e.g. interval running) tailored to their energy system demands.",
       "keywords": [
         "health and safety",
@@ -4190,7 +4190,7 @@
     },
     {
       "topic": "fa2_individual_group",
-      "q": "A periodisation chart is being developed for a soccer team and an elite marathon runner. Analyse why the fitness and skill-specific requirements change during each phase of competition, and how the yearly training program differs between the two athletes. (12 marks)",
+      "q": "A periodisation chart is being developed for a soccer team and an elite marathon runner. Analyse why the fitness and skill-specific requirements change during each phase of competition, and how the yearly training program differs between the two athletes.",
       "answer": "INTRODUCTION: A yearly training program divides into three phases — pre-season, in-season and off-season — with sub-phases (macrocycles, mesocycles, microcycles) enabling detailed planning. These phases differ significantly for a soccer team (group sport) and a marathon runner (individual) due to differences in fitness demands, competition frequency and skill requirements.\n\nPRE-SEASON: Both athletes use pre-season to build a fitness base at high volume and moderate intensity. For the marathon runner, pre-season involves continuous training and fartlek to build aerobic capacity, VO2 max and running economy — directly linked to solo endurance demands. For the soccer team, pre-season also involves aerobic base work but adds team strategies, set plays and collective decision-making — because group sport performance requires team cohesion alongside individual fitness.\n\nIN-SEASON: Both athletes shift to higher intensity and reduced volume — specificity applied more rigorously. The marathon runner undergoes speed work (anaerobic intervals) at race-specific pace. However, the soccer team faces weekly games — requiring peaking for each match, not one annual peak. The soccer team uses mini-tapers (one rest day before each game) compared to the marathon runner's 2-week pre-race taper. Fitness components become increasingly sport-specific — the marathon runner focuses on lactate threshold and fat utilisation; the soccer team develops agility, power and tactical execution.\n\nOFF-SEASON: Both enter recovery — one week total rest followed by active rest. The marathon runner uses this to address technical weaknesses individually; the soccer team focuses on individual player rehabilitation and general maintenance.\n\nEVALUATION: The major structural difference is competition frequency and peaking strategy. A marathon runner peaks 1–2 times per year with a full 2-week taper. A soccer team must perform at near-peak weekly — making extended tapering impractical and requiring ongoing fatigue management through sub-phases and mini-tapers.\n\nCONCLUSION: Both programs manipulate volume and intensity to optimise performance at the right time, but differ significantly in tapering, peaking frequency and the integration of skill/tactical development — reflecting the fundamental differences between individual endurance and group sport demands.",
       "keywords": [
         "pre-season",
@@ -4218,7 +4218,7 @@
     },
     {
       "topic": "fa2_sleep",
-      "q": "Explain how sleep and hydration can be used to reduce fatigue and positively influence movement and injury prevention in athletes. (5 marks)",
+      "q": "Explain how sleep and hydration can be used to reduce fatigue and positively influence movement and injury prevention in athletes.",
       "answer": "Sleep is essential for reducing fatigue. During deep sleep, growth hormone is secreted, stimulating protein synthesis — repairing muscle tissue damaged during training. Athletes require 8–10 hours per night. Insufficient sleep elevates cortisol, increasing inflammation and slowing recovery, predisposing athletes to injury. Adequate sleep also restores the nervous system, improving reaction time and decision-making — reducing the risk of technique errors that cause injury. For example, well-rested soccer players execute correct tackling technique, reducing contact injuries.\n\nAdequate hydration prevents dehydration, which reduces blood volume and limits oxygen delivery to working muscles — causing early-onset fatigue. Well-hydrated athletes maintain synovial fluid in joints, allowing smoother movement and reducing friction injuries. Hydration also maintains muscle elasticity — dehydrated muscles are more prone to strains and tears. Athletes should consume 200–300 mL every 15–20 minutes during exercise, using pale yellow urine as an indicator of adequate hydration.",
       "keywords": [
         "sleep",
@@ -4243,8 +4243,8 @@
     },
     {
       "topic": "fa2_nutrition",
-      "q": "Analyse the dietary requirements before, during and after performance for a marathon runner and a soccer player. (5 marks)",
-      "answer": "Before performance, both athletes require a meal 3–4 hours prior, rich in low GI carbohydrates (e.g. oats, pasta) for sustained energy release, with moderate protein and minimal fat and fibre to avoid digestive discomfort. The marathon runner may also carb load (7–12g/kg/day for 36–72 hours) before their race to maximise glycogen stores — essential for an event exceeding 90 minutes. The soccer player does not typically carb load but ensures adequate glycogen stores through pre-match meals.\n\nDuring performance, both require high GI carbohydrates for rapid energy. The marathon runner needs 30–60g of carbohydrate per hour (gels, sports drinks) and 200–300mL fluid every 15–20 minutes to maintain hydration and replace electrolytes lost through sweat. The soccer player consumes high GI foods at half-time (bananas, gels, sports drinks) to replenish blood glucose.\n\nPost-performance, both athletes need high GI carbohydrates combined with lean protein to replenish glycogen stores and repair muscle micro-tears — for example, pasta with chicken or a protein shake with banana. Rehydration is critical: replacing 125–150% of fluid lost over 4–6 hours.",
+      "q": "Analyse the dietary requirements before, during and after performance for a marathon runner and a soccer player.",
+      "answer": "Pre-performance: before performance, both athletes require a meal 3–4 hours prior, rich in low GI carbohydrates (e.g. oats, pasta) for sustained energy release, with moderate protein and minimal fat and fibre to avoid digestive discomfort. The marathon runner may also carb load (7–12g/kg/day for 36–72 hours) before their race to maximise glycogen stores — essential for an event exceeding 90 minutes. The soccer player does not typically carb load but ensures adequate glycogen stores through pre-match meals.\n\nDuring performance, both require high GI carbohydrates for rapid energy. The marathon runner needs 30–60g of carbohydrate per hour (gels, sports drinks) and 200–300mL fluid every 15–20 minutes to maintain hydration and replace electrolytes lost through sweat. The soccer player consumes high GI foods at half-time (bananas, gels, sports drinks) to replenish blood glucose.\n\nPost-performance, both athletes need high GI carbohydrates combined with lean protein to replenish glycogen stores and repair muscle micro-tears — for example, pasta with chicken or a protein shake with banana. Rehydration is critical: replacing 125–150% of fluid lost over 4–6 hours.",
       "keywords": [
         "pre-performance",
         "low GI",
@@ -4269,8 +4269,8 @@
     },
     {
       "topic": "fa2_individual_group",
-      "q": "Discuss the factors that influence how strategies and tactics are applied to individual and group sports. Refer to at least TWO factors in your response. (5 marks)",
-      "answer": "Environmental conditions significantly influence strategies and tactics for both individual and group sport athletes. In wet conditions, a soccer team may simplify their attacking play — reducing passes to minimise handling errors with a slippery ball. An individual cyclist may take corners more cautiously to avoid slipping. Wind can cause an individual 1500m runner to use a 'sit and kick' strategy, avoiding the front to conserve energy, while an AFL team may choose shorter kicks to maintain possession.\n\nGroup strengths and weaknesses also shape tactical decisions. A soccer team with fast wingers may use a counter-attacking strategy — absorbing pressure then exploiting pace on the break. Conversely, if a known weakness is aerial defending, the coach may instruct players to defend set pieces with a zonal system to compensate. In individual sports, the athlete focuses on their own strengths — for example, a 1500m runner with a strong finishing kick will position themselves to maximise their sprint in the final 200 metres rather than leading from the front.",
+      "q": "Discuss the factors that influence how strategies and tactics are applied to individual and group sports. Refer to at least TWO factors in your response.",
+      "answer": "Environmental conditions significantly influence strategies and tactics for both individual and group sport athletes. In wet conditions such as rain, a soccer team may adjust and simplify their attacking play — reducing passes to minimise handling errors with a slippery ball. An individual cyclist may take corners more cautiously to avoid slipping. Wind can cause an individual 1500m runner to use a 'sit and kick' strategy, avoiding the front to conserve energy, while an AFL team may choose shorter kicks to maintain possession.\n\nGroup strengths and weaknesses also shape tactical decisions. A soccer team with fast wingers may use a counter-attacking strategy — absorbing pressure then exploiting pace on the break. Conversely, if a known weakness is aerial defending, the coach may instruct players to defend set pieces with a zonal system to compensate. In individual sports, the athlete focuses on their own strengths — for example, a 1500m runner with a strong finishing kick will position themselves to maximise their sprint in the final 200 metres rather than leading from the front.",
       "keywords": [
         "environmental conditions",
         "rain",
@@ -4292,7 +4292,7 @@
     },
     {
       "topic": "fa2_adaptations",
-      "q": "Examine the relationship between the principles of training, physiological adaptations and improved performance for a soccer player. (5 marks)",
+      "q": "Examine the relationship between the principles of training, physiological adaptations and improved performance for a soccer player.",
       "answer": "The principles of training drive physiological adaptations that directly improve soccer performance. Progressive overload applied through increasing aerobic training loads stimulates cardiac hypertrophy — the heart muscle grows stronger, increasing stroke volume. This raises cardiac output (heart rate × stroke volume), delivering more oxygen to working muscles, allowing a soccer midfielder to maintain high-intensity running for 90 minutes rather than fatiguing in the second half.\n\nSpecificity ensures training targets the energy systems and muscles used in competition. A soccer player who trains with fartlek and aerobic interval methods — mimicking the variable intensity of match play — develops slow-twitch muscle fibres and mitochondrial density specific to their demands. This means the player uses oxygen more efficiently during sustained efforts.\n\nReversibility highlights that these adaptations are temporary — if a player stops training, stroke volume and VO₂ max decline within weeks. This underpins why consistent year-round training, even in the off-season, is necessary to maintain performance gains.",
       "keywords": [
         "progressive overload",
@@ -4316,7 +4316,7 @@
     },
     {
       "topic": "fa2_biomechanics",
-      "q": "Explain how biomechanics can be applied to improve technique in a sport of your choice. (5 marks)",
+      "q": "Explain how biomechanics can be applied to improve technique in a sport of your choice.",
       "answer": "<p><strong>Biomechanics</strong> is the study of the forces acting on the body (kinetics) and the movement the body produces (kinematics), used to analyse and improve technique.</p><p>For example, in a <strong>tennis serve</strong>, a biomechanist can analyse the transfer of weight from the back foot to the front foot. Correctly shifting this weight transfers <strong>force</strong> through the kinetic chain into the racquet, generating greater momentum and racquet-head speed for a more powerful, efficient serve. Refining the timing of shoulder and trunk rotation similarly maximises velocity into the ball.</p><p>Applying these principles allows technique to become more efficient — reducing wasted energy and joint strain — which both improves performance and reduces injury risk, allowing the movement to be sustained over a full match.</p>",
       "keywords": [
         "biomechanics",
@@ -4337,7 +4337,7 @@
     },
     {
       "topic": "fa2_biomechanics",
-      "q": "Describe how a swimmer can apply biomechanical principles to reduce drag and sustain movement. (4 marks)",
+      "q": "Describe how a swimmer can apply biomechanical principles to reduce drag and sustain movement.",
       "answer": "<p><strong>Drag</strong> is the resisting force that opposes a swimmer's forward motion through the water, and minimising it is central to sustaining efficient movement.</p><p>A swimmer can reduce drag by adopting a <strong>streamlined position</strong> — engaging the core and lifting the hips so the body sits higher and flatter in the water — and by keeping the arms and legs close to the body to reduce the joint angle at the shoulders and hips. A <strong>tight kick</strong> with legs close together and toes pointed further reduces splash and resistance, and using a <em>scull</em> (slightly cupped) hand position helps \"catch\" the water for a more effective pull.</p><p>Together, these adjustments lower the energy required to move through the water, reducing fatigue and allowing the swimmer to sustain their pace for longer.</p>",
       "keywords": [
         "drag",
@@ -4358,7 +4358,7 @@
     },
     {
       "topic": "fa2_technology",
-      "q": "To what extent can technology improve performance? Provide examples. (8 marks)",
+      "q": "To what extent can technology improve performance? Provide examples.",
       "answer": "<p>Technology can improve athletic performance to a <strong>significant extent</strong>, though its benefit depends on how well the data or equipment it provides is understood and applied by athletes and coaches.</p><p><strong>Training innovations</strong> such as lactate testing allow coaches to set individualised training zones based on an athlete's own physiology, while GPS wearables and heart-rate monitors record distance, speed and workload in real time — helping manage training load and reduce injury risk. Virtual and augmented reality allow athletes to rehearse skills and scenarios (e.g. a basketball player practising shooting, or a soccer player rehearsing tactics) without the physical toll of full training, and AI systems such as PlayerMaker or TacticAI can personalise training programs and flag early fatigue.</p><p><strong>Equipment advances</strong> also contribute — lighter, more aerodynamic materials such as carbon-fibre bike frames or cushioned, carbon-plated running shoes improve energy return and reduce injury load, while smart racquets and balls with embedded sensors give athletes real-time feedback on technique.</p><p>However, technology's benefit is not unlimited: data is only useful once correctly interpreted by a knowledgeable coach, and equipment access is not equal across all athletes. Overall, though, when used well, technology gives athletes and coaches objective information that supports more precise, individualised training decisions than would otherwise be possible — representing a genuine and significant improvement to performance.</p>",
       "keywords": [
         "technology",
@@ -4380,7 +4380,7 @@
     },
     {
       "topic": "fa2_drugs",
-      "q": "Discuss the health implications and ethical considerations of performance-enhancing drug (PED) use in sport. (6 marks)",
+      "q": "Discuss the health implications and ethical considerations of performance-enhancing drug (PED) use in sport.",
       "answer": "<p>Performance-enhancing drugs carry serious <strong>health implications</strong> that vary by category. Anabolic steroids can cause liver damage, heart disease and, in female athletes, masculinising effects such as facial hair growth. EPO (blood doping) increases the blood's oxygen-carrying capacity but also its viscosity, raising the risk of blood clots and stroke. Diuretics, used to \"make weight\", can cause dehydration and heart or kidney failure.</p><p>These health risks connect directly to <strong>ethical concerns</strong>. PED use undermines <em>fairness of competition</em>, since not every athlete has equal access to these substances or the medical supervision to manage their risks. It raises <em>athlete health and safety</em> concerns where coaches or team doctors pressure athletes to use PEDs or play through masked injury. It threatens the <em>integrity of sport</em> by rewarding artificial enhancement over genuine skill and training, and it can normalise drug use for <em>young athletes</em> who look up to elite competitors.</p><p>Together, these health and ethical dimensions are why sports organisations maintain strict anti-doping rules — the risks are not just physical, but extend to the fairness and integrity of competition itself.</p>",
       "keywords": [
         "steroids",
@@ -4401,7 +4401,7 @@
     },
     {
       "topic": "fa2_drugs",
-      "q": "Explain the process and purpose of drug testing in sport, including its benefits and limitations. (5 marks)",
+      "q": "Explain the process and purpose of drug testing in sport, including its benefits and limitations.",
       "answer": "<p>Drug testing (sample collection) is conducted by anti-doping organisations — in Australia, <strong>Sport Integrity Australia</strong> — testing both in- and out-of-competition, with athletes given no advance warning. Testing is random, which increases the chance of catching an athlete who is doping and acts as a deterrent to athletes who might otherwise consider it.</p><p>The <strong>benefits</strong> of testing include protecting the right of athletes to compete in a doping-free environment, ensuring athletes are rewarded for natural ability and training rather than chemical enhancement, and providing a way for clean athletes to prove their performances are genuine.</p><p>However, testing has real <strong>limitations</strong>. It is expensive, costing millions of dollars annually to run at scale internationally. The <strong>World Anti-Doping Agency (WADA)</strong> prohibited list is revised every 1 January, meaning athletes must continually stay informed of what is currently banned. The collection process itself — requiring a same-gender chaperone to witness a urine sample, for example — can also be a confronting experience for athletes.</p>",
       "keywords": [
         "Sport Integrity Australia",

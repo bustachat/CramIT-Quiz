@@ -73,9 +73,14 @@ def collapse_criteria(rows):
     rows = sorted(rows, key=lambda r: -int(r.get("marks", 0)))
     texts = [str(r["text"]).strip() for r in rows]
     if len(texts) == 1:
-        return {"full": texts[0],
-                "partial": f"Does not meet the criterion: {texts[0].lower()}",
-                "minimal": f"Does not meet the criterion: {texts[0].lower()}"}
+        # ⚠️ Do NOT lowercase NESA's sentence to graft it onto a lead-in. The old
+        # form ("Does not meet the criterion: {text.lower()}") read as an
+        # instruction rather than a verdict, and lowercasing mangled proper nouns
+        # -- Standard 2 2023 Q21(b) came out "graphs provider a's charges".
+        # Quote the criterion verbatim and say plainly that it is all-or-nothing.
+        na = ("Not achieved — this mark is awarded in full or not at all. "
+              f"The criterion is: {texts[0]}")
+        return {"full": texts[0], "partial": na, "minimal": na}
     if len(texts) == 2:
         return {"full": texts[0], "partial": texts[1], "minimal": texts[1]}
     return {"full": texts[0], "partial": " OR ".join(texts[1:-1]), "minimal": texts[-1]}

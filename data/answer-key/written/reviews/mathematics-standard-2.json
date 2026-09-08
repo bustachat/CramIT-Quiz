@@ -1,0 +1,1760 @@
+{
+  "subject": "mathematics-standard-2",
+  "note": "Written-answer review ledger. One entry per written bank question, recording that its modelAnswer, keywords and bandDescriptors were compared against NESA's official sample answer and criteria in data/answer-key/written/. ⚠️ `reviewMethod` says WHO did the comparing and how far a human checked it — do not read an entry as a per-question human sign-off unless that field says so. `sampleAnswerFingerprint` hashes the OFFICIAL answer as at review time: regenerate the key and any review whose official WORDS moved is void, not stale. `sampleAnswerWordsFingerprint` hashes the same text with word ORDER discarded, so a pure re-layout by the extractor is reported rather than treated as NESA changing. See docs/porting-playbook.md section 6. Rebuild with scripts/build_review_ledger.py; never hand-edit.",
+  "reviewMethod": "assistant-compared against NESA's committed sample answers and criteria rows, with the eight changed stems additionally checked against the exam papers; NO human sign-off on any question",
+  "reviewedAt": "2026-09-07",
+  "reviews": {
+    "2020": {
+      "17": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "divergent-accepted",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:4a60b36436b37d1bbf1d86286352d2e767a5a763e7818c81d91fabb196262b29",
+        "sampleAnswerWordsFingerprint": "sha256:4bf210655fb88241e58af87dde0b4b06a59115cdd2ea1958903525d970544559",
+        "note": "NESA's committed sample answer is unusable as prose here -- it extracts as mangled equation layout ('8/5×5 = ^x where x is the required number of trees 1000 × 1000 ∴ x = 8000000/25 = 320 000 spann...'), so the bank's worked solution necessarily reads nothing like it. Compared NUMERICALLY instead and every figure agrees, and the band descriptors were checked against the criteria rows, which extract cleanly."
+      },
+      "20": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "corrected",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:00ccbea1557b2759ad0cf31f9349c1c9ad3a837302dd8732f35a06a0ee913622",
+        "sampleAnswerWordsFingerprint": "sha256:5a941fdb65cd80b404aea11b948de468646358afdbd0a2195b414d9ae2aae994",
+        "note": "STEM DEFECT, and a whole damage class. The stem read 'a taxable income of 22 680' and 'he paid 000 per month in PAYG tax' -- the leading '$1' and '$3' had been eaten. In JavaScript, String.replace() treats $1..$9 in the REPLACEMENT string as capture-group references, so '$122 680' becomes '22 680' and '$3000' becomes '000'. The question was unanswerable as printed. Restored from the paper (2020 p16: 'a taxable income of $122 680 ... he paid $3000 per month'), which also matches NESA's own working (20 797 + 0.37(122 680 - 90 000) = $32 888.60; 3000 x 12 = $36 000; refund $3111.40). A sweep for the same signature across all five subjects found exactly one other instance, 2021 Q40."
+      },
+      "21": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:d5cd4ded5a4e1eaf5e83c2cc904342f00796fb20c8c59bf7456f73764e951a82",
+        "sampleAnswerWordsFingerprint": "sha256:2ee9587b58d3648ef28624ce0cc7de1f911f434248760987e9e03aee4b825fe1",
+        "note": "Compared against NESA's committed sample answer and criteria rows: the model answer's method and final result agree, every keyword is creditable from the model answer in the real engine, and the band descriptors match NESA's criteria."
+      },
+      "22": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:386473396ab43f5f9451050ea6b693616edd0e20bcecf41d2c4189d74d0cbe8f",
+        "sampleAnswerWordsFingerprint": "sha256:c84e3d6da190977f48440909cf55a433b6e197ec1e5964b51171fbd817c0279a",
+        "note": "Compared against NESA's committed sample answer and criteria rows: the model answer's method and final result agree, every keyword is creditable from the model answer in the real engine, and the band descriptors match NESA's criteria."
+      },
+      "23": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:efe01391bb37808ebf0abec9164c23bf9fa48e7d4f42987bc9a0994d49ed9918",
+        "sampleAnswerWordsFingerprint": "sha256:48d162e9754369ff3a1066e11f6f04c7d4981c7d904e5444adbdcbedcf1a8ead",
+        "note": "Compared against NESA's committed sample answer and criteria rows: the model answer's method and final result agree, every keyword is creditable from the model answer in the real engine, and the band descriptors match NESA's criteria."
+      },
+      "28": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:b63ac43f4e5e40d32fd86176084ca6f3803ae081f1bc9273870ee02ed79006da",
+        "sampleAnswerWordsFingerprint": "sha256:221d7fff22c916faa4ece58adb5c337a4e855795bcdbe595a0949529332b3fec",
+        "note": "Compared against NESA's committed sample answer and criteria rows: the model answer's method and final result agree, every keyword is creditable from the model answer in the real engine, and the band descriptors match NESA's criteria."
+      },
+      "29": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "divergent-accepted",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:8701f38e6e47d8ac69dc9465d7496b66661e8158f745d56df6ee850c1dd0fc31",
+        "sampleAnswerWordsFingerprint": "sha256:f20c1b565cc4b89ce08e94c786aaa6748b4023971964561ec0525b58110b79dc",
+        "note": "NESA's committed sample answer is unusable as prose here -- it extracts as mangled equation layout ('Total dividend from company ABC = 200 × 0.06 × 5.5 = 66 Dividend for XYZ = _= 149.52 _83.52 – 6...'), so the bank's worked solution necessarily reads nothing like it. Compared NUMERICALLY instead and every figure agrees, and the band descriptors were checked against the criteria rows, which extract cleanly."
+      },
+      "34": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:a9c8c442a33d141938adce560ad0f676e2fb249dc7228dbbcf58c9518366fdd6",
+        "sampleAnswerWordsFingerprint": "sha256:0058c2e7ba116cd46409f5f1d5185033724a6a300563629087420477fc30b190",
+        "note": "Compared against NESA's committed sample answer and criteria rows: the model answer's method and final result agree, every keyword is creditable from the model answer in the real engine, and the band descriptors match NESA's criteria."
+      },
+      "35": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "divergent-accepted",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:21c0e2105234d5f51e39b63e616dacf581195111348ee623ba61f96b8822826d",
+        "sampleAnswerWordsFingerprint": "sha256:2cc52541cd08926b93a9ebd189808ea32e084acd43ddcb41888910ddc58f393f",
+        "note": "NESA's committed sample answer is unusable as prose here -- it extracts as mangled equation layout ('128 corresponds to 2 standard deviations above the mean ∴ 5%/2 = 2.5% have an IQ score higher t...'), so the bank's worked solution necessarily reads nothing like it. Compared NUMERICALLY instead and every figure agrees, and the band descriptors were checked against the criteria rows, which extract cleanly."
+      },
+      "37": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "divergent-accepted",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:604a595822e399d5718f6ced814b44c7f0661524e2b6417e6115bf3ff1fbb1ae",
+        "sampleAnswerWordsFingerprint": "sha256:d9922560342f685499278ccba970ca22781e90cb7c30af29d5447925bf5f2723",
+        "note": "NESA's committed sample answer is unusable as prose here -- it extracts as mangled equation layout ('Present value of $1000 annuity for 20 years 16.351 × 1000 = $16 351 Present value of $3000 annu...'), so the bank's worked solution necessarily reads nothing like it. Compared NUMERICALLY instead and every figure agrees, and the band descriptors were checked against the criteria rows, which extract cleanly."
+      },
+      "18": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:9cd66ffd546e1d8db58aeb43a45947a4212213c1de81b43e444c96e1abd3b09a",
+        "sampleAnswerWordsFingerprint": "sha256:d98dc99bf5c4eee8adbf38652d4e2de8e5a008da911cf602d14a0adda4085899",
+        "note": "Compared against NESA's committed sample answer and criteria rows: the model answer's method and final result agree, every keyword is creditable from the model answer in the real engine, and the band descriptors match NESA's criteria."
+      },
+      "19": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:7e5cd262d35245b2177425fdc8b73ae47e36bc3ddcb52e13bcdf805298640b0a",
+        "sampleAnswerWordsFingerprint": "sha256:a6462c9728caf2a92422028a536ea965dd8ec69ae911ae9297b02e70244992db",
+        "note": "Compared against NESA's committed sample answer and criteria rows: the model answer's method and final result agree, every keyword is creditable from the model answer in the real engine, and the band descriptors match NESA's criteria."
+      },
+      "24": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:7d3d98183a69f5f334740b5a26e9a8897ee71bebcb1a1519abd284b075964d45",
+        "sampleAnswerWordsFingerprint": "sha256:ffbc13600d51f315539b3ab1ed306c4a84f59bc7f6bd5d5c309394f83918cb15",
+        "note": "Compared against NESA's committed sample answer and criteria rows: the model answer's method and final result agree, every keyword is creditable from the model answer in the real engine, and the band descriptors match NESA's criteria."
+      },
+      "26": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "corrected",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:8b32b883723aa6a43cded604dd884da35304a43c4bbec9368e5bb993b99b10f9",
+        "sampleAnswerWordsFingerprint": "sha256:bc556ea34c463080bc64b8bb788c74a8d4f30be63f7a82f81d71068f2e32319e",
+        "note": "SCORING DEFECT: a content-free answer scored FULL marks. The critical path 'C - D - E - F - H - I' had been split into six SINGLE-LETTER keywords ('c','d','e','f','h','i'), and keywordHit() does a plain substring test, so each fires on ordinary English -- 'Activity', 'EST', 'Float' between them contain c, e, f and i. Measured in the real engine: a fluent but content-free answer scored 1/1 on part (a) and 2/2 on part (b). Parts (a) and (b) now use acceptableAnswers (the answer 46, and the critical path in the separator forms a student actually writes); part (c) keeps keywords but they are the table's own values 12, 15 and 20. Content was correct throughout and is unchanged; NESA agrees on 46 minutes, C-D-E-F-H-I, and A: EST 0 / float 12, G: EST 20 / float 15. ALSO EDITED LATER THE SAME DAY, by the Mathematics Advanced review's repo-wide label sweep: part (c)'s prompt carried a duplicated '(2 marks)' that the earlier sweep missed because a TABLE follows it, so the label is not at the end of the raw string. Presentation only."
+      },
+      "27": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:ecb646f0de4029ce9f341ffebc7c16c2ce8f8e06df2ed23c3644abcb1d51bf71",
+        "sampleAnswerWordsFingerprint": "sha256:12abb46504c707c095082982f61026826104811a79904cdd37a43b781204472c",
+        "note": "Compared against NESA's committed sample answer and criteria rows: the model answer's method and final result agree, every keyword is creditable from the model answer in the real engine, and the band descriptors match NESA's criteria."
+      },
+      "30": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "divergent-accepted",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:b32cfa09c702ba6cbabfc590294281de0a427c0e2071d824c42922320f231a7a",
+        "sampleAnswerWordsFingerprint": "sha256:877c11f0d710b3e5ae838d3c2b6149ff87a399ecba385d0f299e3019afca8d58",
+        "note": "NESA's committed sample answer is unusable as prose here -- it extracts as mangled equation layout ('The minimum cut passes through BD, BE, CE and CF. ∴ Maximum flow = 275 Weight of cut = _= 200 _...'), so the bank's worked solution necessarily reads nothing like it. Compared NUMERICALLY instead and every figure agrees, and the band descriptors were checked against the criteria rows, which extract cleanly."
+      },
+      "36": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:35e8773f316d5c9515bd4ca2eb6b4c91ab7808fae1adf41fa92715feb448bf72",
+        "sampleAnswerWordsFingerprint": "sha256:0af6fd8c28bfed0583fbd01131190a07ac9658ebcb0e83ea221f68cda170641a",
+        "note": "Compared against NESA's committed sample answer and criteria rows: the model answer's method and final result agree, every keyword is creditable from the model answer in the real engine, and the band descriptors match NESA's criteria."
+      },
+      "16": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:e26f8796be58a4bffcf9c3e83fe779014c1bda234567c8ef225f9592d6fb95f5",
+        "sampleAnswerWordsFingerprint": "sha256:651d2ca0eec55a498f93ad7d8417e3ce656cb6c33a4c1f80f1bf8914b3af85e1",
+        "note": "Compared against NESA's committed sample answer and criteria rows: the model answer's method and final result agree, every keyword is creditable from the model answer in the real engine, and the band descriptors match NESA's criteria."
+      },
+      "25": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "divergent-accepted",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:2cfa9eb21cfd6f8bf5800051039f8b833730e2f001c77671ad7c1bb305aa4888",
+        "sampleAnswerWordsFingerprint": "sha256:23f3559fc22aab89c9d7d3ac08e7bf5108a44db0aa8793e9d921f5474f89027a",
+        "note": "NESA's committed sample answer is unusable as prose here -- it extracts as mangled equation layout ('Height of triangle = 11 – 8 = 3 Five square faces = _= 82 _320 × 5 Two triangular faces = 3×8/2...'), so the bank's worked solution necessarily reads nothing like it. Compared NUMERICALLY instead and every figure agrees, and the band descriptors were checked against the criteria rows, which extract cleanly."
+      },
+      "31": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "divergent-accepted",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:cb736f1286c72d0db6622f07410a8f1cc6294acb0fc1370ef4204c00f4f515df",
+        "sampleAnswerWordsFingerprint": "sha256:a064dff8ace74ae0433ff0d58f049a4b45b699bb0d96e31ff71587e8af9bc909",
+        "note": "NESA's committed sample answer is unusable as prose here -- it extracts as mangled equation layout ('100° – 35° = 65° diagram AB2 = 72 + 92 − 2 × 7 × 9 cos65° = 76.75… AB = 8.76 km sinA/9 = sin65°...'), so the bank's worked solution necessarily reads nothing like it. Compared NUMERICALLY instead and every figure agrees, and the band descriptors were checked against the criteria rows, which extract cleanly."
+      },
+      "32": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "divergent-accepted",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:be469f7d9f110fc608d914a28fd81993d63ddbb99691fb4556d085b9e86875f9",
+        "sampleAnswerWordsFingerprint": "sha256:36f42f438485f636de90b80ea2ae2d39bb273a9e042b9738b3cb9029deff797c",
+        "note": "NESA's committed sample answer is unusable as prose here -- it extracts as mangled equation layout ('triangle AB = 80 ÷ 10 = 8 cm ∠AOB = 360° ÷ 10 = 36° ∠OAB = 180°−36°/2 = 72° r/sin72° = 8/sin36°...'), so the bank's worked solution necessarily reads nothing like it. Compared NUMERICALLY instead and every figure agrees, and the band descriptors were checked against the criteria rows, which extract cleanly."
+      },
+      "33": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:2d14fd9d0c29056fe055b661fd566908a08f018b762a5ced573a84df80833f43",
+        "sampleAnswerWordsFingerprint": "sha256:589cd28d15c55182797298f92911c8a1f86da5260972834abcc9d5ddbda012ad",
+        "note": "Compared against NESA's committed sample answer and criteria rows: the model answer's method and final result agree, every keyword is creditable from the model answer in the real engine, and the band descriptors match NESA's criteria."
+      }
+    },
+    "2021": {
+      "17": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:5c6807206e456b623e7b26c4c6f7966570f878e07a090cb7ccd15e161c6e6b76",
+        "sampleAnswerWordsFingerprint": "sha256:be6ece1eb5c81d7b2d83406857844dc35da2ce3933d93c52d460d7fc6f9b6209",
+        "note": "Compared against NESA's committed sample answer and criteria rows: the model answer's method and final result agree, every keyword is creditable from the model answer in the real engine, and the band descriptors match NESA's criteria."
+      },
+      "18": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:d4343901015c2bca61f6f843f988790bf0f6e5d2f6ae9f5c123f99a845e6f135",
+        "sampleAnswerWordsFingerprint": "sha256:c9aeb4894a89b8b54ea30af6f3fcd3cc407d5fa753c0bc5d138c8bef47313816",
+        "note": "Compared against NESA's committed sample answer and criteria rows: the model answer's method and final result agree, every keyword is creditable from the model answer in the real engine, and the band descriptors match NESA's criteria."
+      },
+      "19": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:0c6402b99aa900dd91bfc6c7e1af090c5dd81de07548eea52d791e74b08e23d2",
+        "sampleAnswerWordsFingerprint": "sha256:34fdb037e43f1283d5639fd278cc1bfcb053ee5cfa3b84e87715f9b86ce8ff62",
+        "note": "Compared against NESA's committed sample answer and criteria rows: the model answer's method and final result agree, every keyword is creditable from the model answer in the real engine, and the band descriptors match NESA's criteria."
+      },
+      "20": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:e854131196e95a9e58fa66d5d1c4d4583bc8e357cbf73df7d13f6cbd08ce99cb",
+        "sampleAnswerWordsFingerprint": "sha256:8337177633d31096a6c5de4eb04b60c6bf23426a62c0ed5e69f65eb3e45563f4",
+        "note": "Compared against NESA's committed sample answer and criteria rows: the model answer's method and final result agree, every keyword is creditable from the model answer in the real engine, and the band descriptors match NESA's criteria."
+      },
+      "21": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:a05b4b5c63b887cd3dac7f779101b03a96be646ea175aac8cc2bdc0594377ec9",
+        "sampleAnswerWordsFingerprint": "sha256:9966e409c4d6a7475de5cd6d3ff017e6938fc3a58552773a656709344ef47c13",
+        "note": "Compared against NESA's committed sample answer and criteria rows: the model answer's method and final result agree, every keyword is creditable from the model answer in the real engine, and the band descriptors match NESA's criteria."
+      },
+      "22": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:59da40efae703e82a65c87177b69601f758bd7974f6cf306b8139fb8c0317dde",
+        "sampleAnswerWordsFingerprint": "sha256:2f9c6528764f7fcf487eeb3993817581fe451a241f544f2ec2bed3fdec65f064",
+        "note": "Compared against NESA's committed sample answer and criteria rows: the model answer's method and final result agree, every keyword is creditable from the model answer in the real engine, and the band descriptors match NESA's criteria."
+      },
+      "26": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "divergent-accepted",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:310cb94464311ef1f9f07ed683e5afdf7948ff3f3ae2dd3eae121f1f0d9e54e9",
+        "sampleAnswerWordsFingerprint": "sha256:fc3a19cc4dbb585ad1d01271a5375122338a775a59633dd7a315c2bb73c9c7ed",
+        "note": "NESA's committed sample answer is unusable as prose here -- it extracts as mangled equation layout ('6% ÷ 12 = 0.5% per month Future value of Option A = 35 000 (1 + 0.005)12 = $37 158.72 Interest ...'), so the bank's worked solution necessarily reads nothing like it. Compared NUMERICALLY instead and every figure agrees, and the band descriptors were checked against the criteria rows, which extract cleanly."
+      },
+      "27": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "corrected",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:6e77f7d51f337c53cf455255349a7adefd1c0bcb3b59e129c2fc0df1ed6891ae",
+        "sampleAnswerWordsFingerprint": "sha256:6c4e70d00d203d0e1ec9a3c1bbbcad7737132a257e0ff585b21575383655cc70",
+        "note": "SCORING DEFECT. Part (a)'s acceptableAnswers were ['4.38', '$4.38', '5'] -- the bare '5' is part (b)'s answer, not (a)'s. scoreOne() short-circuits on acceptableAnswers using a plain includes(), so ANY answer containing the digit 5 scored 2/2 on a part whose answer is $4.38. Dropped. NESA's figures ($43.80, $4.38 and 5 years) are unchanged and agree."
+      },
+      "29": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:f76c58abc19774771db33e58730710d69c50cf6c1d1d3b8b5c1e6abd13bf1b4d",
+        "sampleAnswerWordsFingerprint": "sha256:f5fe9496e185eadf3b9a1e02c11e50628c81c37d82f85fab88c0679e2c14e9a8",
+        "note": "Compared against NESA's committed sample answer and criteria rows: the model answer's method and final result agree, every keyword is creditable from the model answer in the real engine, and the band descriptors match NESA's criteria."
+      },
+      "30": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:b802e9ceff6162f6a5af2dbd2ef0a461a6b7343e1672a0b7af65cef3294c0cc6",
+        "sampleAnswerWordsFingerprint": "sha256:dedd0f559d626024423be63cf98ec3a0c4bf7919cb2da3ccd321b3e6bbd01dfe",
+        "note": "Compared against NESA's committed sample answer and criteria rows: the model answer's method and final result agree, every keyword is creditable from the model answer in the real engine, and the band descriptors match NESA's criteria."
+      },
+      "31": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:28cb810793e302d31338b0a95ba23a58cc71fc856e9520f709783d1a16fe9041",
+        "sampleAnswerWordsFingerprint": "sha256:a56a22d15a67babbdfe7803202e8d114edfe811ec4b816fac5043533732edb7b",
+        "note": "Compared against NESA's committed sample answer and criteria rows: the model answer's method and final result agree, every keyword is creditable from the model answer in the real engine, and the band descriptors match NESA's criteria."
+      },
+      "16": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:2619a7638985a402648708a696dad4f0b7c3c93c43e5917a98b983a420255dc6",
+        "sampleAnswerWordsFingerprint": "sha256:3047ee909f5b70db7149a4ab0bf7b9d57a497d669b9e37cbf4fdc4a63f3add79",
+        "note": "Compared against NESA's committed sample answer and criteria rows: the model answer's method and final result agree, every keyword is creditable from the model answer in the real engine, and the band descriptors match NESA's criteria."
+      },
+      "23": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "corrected",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:1109fb3bd1564a26d64539e1832787a2bd4dd4f7a2c704fc9046eb9339636a72",
+        "sampleAnswerWordsFingerprint": "sha256:09147ec1b6cc08fe9909c407b19ef90227b5875dc22665444b6f597b59cc3584",
+        "note": "TWO defects. (1) The model answer's minimum-spanning-tree edge list was FABRICATED: it named 'Kingsville-Underwood=20' where the paper's K-U edge is 65, its listed edges summed to 95 against the stated 160, and it ended in a literal '+...' shown to the student. The tree was recomputed from the committed crop (Minertown-Walltown 10, Walltown-Parktown 15, Minertown-Underwood 20, Walltown-Fernville 20, Kingsville-Minertown 25, Queentown-Kingsville 30, Parktown-Citadel 40 = 160), which reproduces NESA's 160 exactly. (2) Part (b)'s prompt asked for 'Queentown to Fernville along the minimum spanning tree'; the paper (2021 p19) asks 'How long does it take to travel from Queentown to Underwood using the fastest route?' -- a different destination, and not restricted to the tree. Restored, and the answer now shows the 45 + 20 = 65 route NESA gives."
+      },
+      "24": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:cf809bc3282e9ab0307c0bbb16bd30d5e157916d231bcf89068b1ea749dca321",
+        "sampleAnswerWordsFingerprint": "sha256:cef23cb2da59dab808bc6f83626493857637d90098760190bc3e3831d342f828",
+        "note": "Compared against NESA's committed sample answer and criteria rows: the model answer's method and final result agree, every keyword is creditable from the model answer in the real engine, and the band descriptors match NESA's criteria."
+      },
+      "25": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:7404d5f58296f4e7ffffc18abe6aa347e408c4da70784c1831fae9da9c176ef3",
+        "sampleAnswerWordsFingerprint": "sha256:aa6c4d72c711271507319858ce0769f20e5ee8906ca9a0ac4889914a622f7460",
+        "note": "Compared against NESA's committed sample answer and criteria rows: the model answer's method and final result agree, every keyword is creditable from the model answer in the real engine, and the band descriptors match NESA's criteria."
+      },
+      "28": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "corrected",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:818dcb37dc5ee8014f5a832926593a01bdf14b08935e615cfdbe1e502e54e96e",
+        "sampleAnswerWordsFingerprint": "sha256:b3d568b6201b7cf3a7cd5efd7cf9dedc9a6940f4eb825e11cac08f46336e693a",
+        "note": "SCORING DEFECT. Part (b) is 1 mark with the single keyword 'increase'. keywordHit()'s kw.startsWith(word) branch means the ordinary word 'in' credits it, so a content-free answer scored 1/1 -- measured in the real engine. Converted to acceptableAnswers ('increase', 'increases', 'greater', 'steeper', 'larger'), which uses a plain includes() that 'in' does not satisfy. NESA's answer ('It would increase.') is unchanged."
+      },
+      "32": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:b19d41ae5c94485362df01ebb7cd47370cd16f04e7bd5f3146e4c85bbf0a56e1",
+        "sampleAnswerWordsFingerprint": "sha256:019d8058dd072aa613d7608557e41d68845b72f1ef50e58a0bfd679290eeb130",
+        "note": "Compared against NESA's committed sample answer and criteria rows: the model answer's method and final result agree, every keyword is creditable from the model answer in the real engine, and the band descriptors match NESA's criteria."
+      },
+      "33": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "corrected",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:58d18c4b15583c068f01012996fff537a63367a18dfba64cabacf893b0b22386",
+        "sampleAnswerWordsFingerprint": "sha256:40ffaf45e999a8938aa463cd89bd571a9685c37a5ddd1d901a00eef6fa98ffc6",
+        "note": "STEM DEFECT: the stem contradicted both NESA and its own model answer. It gave the regression line as y = 29.2 - 0.00404x and said 'The gradient of the regression line is -0.00404'; the paper (2021 p28) prints y = 29.2 - 0.011x and '-0.011', which is what NESA's sample answer and the bank's own model answer both use (29.2 - 0.011 x 540 = 23.3 degrees C). A student following the printed stem gets 27.0 and is marked wrong. Corrected in the stem, the shared stem and the part (a) prompt."
+      },
+      "34": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:c884901acd1475f4eff5abb2f140cfd9b6d9e88b502e0fed9ecea673a80fec85",
+        "sampleAnswerWordsFingerprint": "sha256:f547400469a4d0b616717b3102a5ed46aec664113f62620663e6141ee93613e1",
+        "note": "Compared against NESA's committed sample answer and criteria rows: the model answer's method and final result agree, every keyword is creditable from the model answer in the real engine, and the band descriptors match NESA's criteria."
+      },
+      "35": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:13b1e01c2e740a7614c7462239d6b87c4cfdea88a7ad7ed54e002112990ab07a",
+        "sampleAnswerWordsFingerprint": "sha256:011f5804689631db54f4e50f3c16a52cd3f97810cd7e6da8418fc02c4519240e",
+        "note": "Compared against NESA's committed sample answer and criteria rows: the model answer's method and final result agree, every keyword is creditable from the model answer in the real engine, and the band descriptors match NESA's criteria."
+      },
+      "36": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "corrected",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:db357b83caee3afecef97f59e9e001b780ade70f46e58c7a68ee14c0e5c29f1e",
+        "sampleAnswerWordsFingerprint": "sha256:0b1f25494c0ddeac5ccb55c82b39c8c48ca9f5c3a6aa8b952f019166b0afe56a",
+        "note": "SCORING DEFECT: a REGEX was stored as a keyword. Part (b)'s keywords included 'a.*c.*d.*e.*g.*j.*k'. keywordHit() never evaluates regexes -- it credited the string via the bare letter 'a' (kw.startsWith(word)), so it fired on almost any answer while never matching as intended. Replaced with acceptableAnswers holding the path A-C-D-E-G-J-K in the usual separator forms. NESA's answers (40 minutes, A-C-D-E-G-J-K, float 1 minute) are unchanged and agree."
+      },
+      "37": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:97707742ebac2768290b0daf688e0c33f847114d41c2fedd633b79c8d3e30666",
+        "sampleAnswerWordsFingerprint": "sha256:bec947a79a24edeb4dec8932fbdabde3e623369c2ea651e8fa80fb6bd92412e5",
+        "note": "Compared against NESA's committed sample answer and criteria rows: the model answer's method and final result agree, every keyword is creditable from the model answer in the real engine, and the band descriptors match NESA's criteria."
+      },
+      "38": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:86e135aaa87423535c1a7846a255bfce09fff44a86ed4d96e5093c888c329851",
+        "sampleAnswerWordsFingerprint": "sha256:5c6d4304c6ba2c16adfdf7482af12652361b279feb38547427a89a911b1303e3",
+        "note": "Compared against NESA's committed sample answer and criteria rows: the model answer's method and final result agree, every keyword is creditable from the model answer in the real engine, and the band descriptors match NESA's criteria."
+      },
+      "39": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "divergent-accepted",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:b0dbc2905b1ff62856b57d53ae352771b94b2efa9c67ffb49e8ea4f59b6e85d5",
+        "sampleAnswerWordsFingerprint": "sha256:580e2dbbc9dfa1e4d9fd2edb0403c9d75023289e83ef6be16a81e28c839ebb38",
+        "note": "NESA's committed sample answer is unusable as prose here -- it extracts as mangled equation layout ('466 = 1/2 × 28 × 35 × sinC ˆOB ∴ sinC OB ˆ = 0.95102… ∴ C ˆOB = 72° (nearest degree) D ˆOC = _=...'), so the bank's worked solution necessarily reads nothing like it. Compared NUMERICALLY instead and every figure agrees, and the band descriptors were checked against the criteria rows, which extract cleanly."
+      },
+      "40": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "corrected",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:01153be7aef6332e28dc5ae51ce8203ed0497764c5a55f3381ddfc348d2f34b1",
+        "sampleAnswerWordsFingerprint": "sha256:fab85f5ec1a9b370907c4f9bf5a3e816022ccf98d5aca7e26e30a051f5517dd2",
+        "note": "The same $1..$9 loss as 2020 Q20, this time in the MODEL ANSWER and the band descriptors. It read 'Annuity: 000 per year', 'FV = 1000 x 8.2132 = 213.20' and '= 419.81', against NESA's '1000 x 8.2132 = $8213.20' and '= $8419.81'. The student was shown arithmetic that does not work. Restored; the keywords ('8213.20', '8419.81') were already right, which is how the loss was spotted -- and note they had been scoring anyway only because the bare digit '8' in 'for 8 years' credits them through keywordHit's prefix rule."
+      },
+      "41": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:4eb92daea3457708a927b75b56eee60c77b7f2b4dd0ecae8f5966fd76d16d9b7",
+        "sampleAnswerWordsFingerprint": "sha256:157f4fd71d50f43310e95a3cc4fc9418059876059dd1cce1c2b8cfe2f1e94d80",
+        "note": "Compared against NESA's committed sample answer and criteria rows: the model answer's method and final result agree, every keyword is creditable from the model answer in the real engine, and the band descriptors match NESA's criteria."
+      }
+    },
+    "2022": {
+      "16": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:4ff8a5c75e3e630d263be9355ba39dfc1c03e9607d34def6a8c7a6e45d8c0511",
+        "sampleAnswerWordsFingerprint": "sha256:4b204df14fff967bda60edda75e558df436eaa63a5a7e9e6ba736af6c8571ec8",
+        "note": "Compared against NESA's committed sample answer and criteria rows: the model answer's method and final result agree, every keyword is creditable from the model answer in the real engine, and the band descriptors match NESA's criteria."
+      },
+      "18": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:9e54a3799f24ce39b90f3500799607d03b75756733d5ff338288b5dd8f2a3b6a",
+        "sampleAnswerWordsFingerprint": "sha256:29b87f4c9e86286ac8b2bab153423b5e7453dbc83c03c2e7417ff2c389eddffa",
+        "note": "Compared against NESA's committed sample answer and criteria rows: the model answer's method and final result agree, every keyword is creditable from the model answer in the real engine, and the band descriptors match NESA's criteria."
+      },
+      "19": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:751f7fef12c5aada24efc1efaecf36d16dfa6caa6a9fb9d8bac177b8c7961800",
+        "sampleAnswerWordsFingerprint": "sha256:53dfb5aced5cd91cb983caef9a0d39356e61c3ed4babb831859f8a5755fe015e",
+        "note": "Compared against NESA's committed sample answer and criteria rows: the model answer's method and final result agree, every keyword is creditable from the model answer in the real engine, and the band descriptors match NESA's criteria."
+      },
+      "21": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:faf5da7f90b9166c3d82059fc6fbd1c8fd9230e8125b2252d77c9c091f9dbdb1",
+        "sampleAnswerWordsFingerprint": "sha256:29fd5e1c6e033b1e55743681439d757892c214728d8be9f3f5d0bb2c1ed64574",
+        "note": "Compared against NESA's committed sample answer and criteria rows: the model answer's method and final result agree, every keyword is creditable from the model answer in the real engine, and the band descriptors match NESA's criteria."
+      },
+      "22": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:ef1d0e0372859f9dd56573a6c808612b16bf3921221abdd1bf3973715e7d8a08",
+        "sampleAnswerWordsFingerprint": "sha256:b0453c47e578bf3994e6fa8a319cf9e76392c45be6e7ff38e82f33ea41d73bad",
+        "note": "Compared against NESA's committed sample answer and criteria rows: the model answer's method and final result agree, every keyword is creditable from the model answer in the real engine, and the band descriptors match NESA's criteria."
+      },
+      "24": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:7faa4e50c9e6aa5be2ed58eacb41f471459da6df1cde6c453aa59fcde4856e87",
+        "sampleAnswerWordsFingerprint": "sha256:b3f291d625f013373aed69ce99b24cfc58994dec95bd94e9edabd099965fe5e9",
+        "note": "Compared against NESA's committed sample answer and criteria rows: the model answer's method and final result agree, every keyword is creditable from the model answer in the real engine, and the band descriptors match NESA's criteria. EDITED LATER THE SAME DAY by the Mathematics Advanced review's repo-wide label sweep: part (b)'s prompt carried a duplicated '(2 marks)' that the earlier sweep missed because a TABLE follows it. Presentation only; no content, mark or scoring field changed, and the verdict stands."
+      },
+      "25": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:bcea771138b4c405d2ed0b7553dd47c46f0ed0c5048100df8578ee25d78d51bb",
+        "sampleAnswerWordsFingerprint": "sha256:72a24e6a126c3d3b7d6487ba8901988435cb22a9f83337bab7f9c94c9af2bbc2",
+        "note": "Compared against NESA's committed sample answer and criteria rows: the model answer's method and final result agree, every keyword is creditable from the model answer in the real engine, and the band descriptors match NESA's criteria."
+      },
+      "27": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:43e575f3bd391cbdc2f6cc8f6fdf56b73c564c784296a8b81c375dfeeaa31a19",
+        "sampleAnswerWordsFingerprint": "sha256:7edb2142daba6f7843806c6dff8d9e341f284eb7194dd6fd559c405f271d3e10",
+        "note": "Compared against NESA's committed sample answer and criteria rows: the model answer's method and final result agree, every keyword is creditable from the model answer in the real engine, and the band descriptors match NESA's criteria."
+      },
+      "29": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:964c29202ac8988087669a1100ce43ecaf672f1fe31321eae3ee9629c7f6de87",
+        "sampleAnswerWordsFingerprint": "sha256:4d3937912af9008cce86faad71dd1cf5d3c2f3bdf85857540d3844576b39e149",
+        "note": "Compared against NESA's committed sample answer and criteria rows: the model answer's method and final result agree, every keyword is creditable from the model answer in the real engine, and the band descriptors match NESA's criteria."
+      },
+      "30": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "corrected",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:967e2015fa4a6e8b8bbde14d75f5ad3aab2532ca4c14927b30fc39d2767fa4ac",
+        "sampleAnswerWordsFingerprint": "sha256:b8e58e1a563a813a72f9006455513228579492e45679707bff27299c54b7ee0b",
+        "note": "WRONG RESULTS in the model answer -- the worst class of defect, invisible to CI because the marks were right. It gave Option 1 as $45 093.59 and the difference as $37.29; NESA gives $45 097.17 and $40.87, and $40 000 x (1.001)^120 = $45 097.17 confirms NESA. The question's own acceptableAnswers already held '45097.17', so the bank disagreed with itself. Answer and keywords corrected to NESA's figures."
+      },
+      "36": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:60238057bb5884676be4a454eb9ab60ad3bdee084c9977995798cd23e0aba5ae",
+        "sampleAnswerWordsFingerprint": "sha256:213a70b895510aa149bdacd52f7b86ef6e7e034a74f2dc9a146338d65824c016",
+        "note": "Compared against NESA's committed sample answer and criteria rows: the model answer's method and final result agree, every keyword is creditable from the model answer in the real engine, and the band descriptors match NESA's criteria."
+      },
+      "37": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:aed3f802b5470e29e9e529f58993fcf360ad7aa94b7903d81e178a04e913e1e5",
+        "sampleAnswerWordsFingerprint": "sha256:971d8a4ec52efea59ed024a5ebe29831fd80ef84f55762a76c4eff3e090c39a5",
+        "note": "Compared against NESA's committed sample answer and criteria rows: the model answer's method and final result agree, every keyword is creditable from the model answer in the real engine, and the band descriptors match NESA's criteria."
+      },
+      "38": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:19323c9e7686e4bbdf09fc2244a84787dfac3effff036e13760f82fb749c3561",
+        "sampleAnswerWordsFingerprint": "sha256:b3c9503641a792a6a8acf949e590697067330eb06274f4ecae8c065596f7eeac",
+        "note": "Compared against NESA's committed sample answer and criteria rows: the model answer's method and final result agree, every keyword is creditable from the model answer in the real engine, and the band descriptors match NESA's criteria."
+      },
+      "17": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:2bc0e98a503c9899cf41d7ee0a33e2e4165a47c84a6a65d671343070c347b287",
+        "sampleAnswerWordsFingerprint": "sha256:ac05d9d4394190ee88b0acf4306f05fdd69406ced0c9521b2599869aadeda8f4",
+        "note": "Compared against NESA's committed sample answer and criteria rows: the model answer's method and final result agree, every keyword is creditable from the model answer in the real engine, and the band descriptors match NESA's criteria."
+      },
+      "20": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:85087e4536eae01db6c9d0343c70e49a34e00629d939a0ab4391271d1432c4eb",
+        "sampleAnswerWordsFingerprint": "sha256:887c850f96f4e48a7ff20e1d80f5037be8ffea10c3359047f6abab60ec5166b6",
+        "note": "Compared against NESA's committed sample answer and criteria rows: the model answer's method and final result agree, every keyword is creditable from the model answer in the real engine, and the band descriptors match NESA's criteria."
+      },
+      "23": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:e83cb99a8430b5f65728b91854d58028587766ec6791527a2f2045022f905be9",
+        "sampleAnswerWordsFingerprint": "sha256:411a7a3d40f36ded94f625f7ad24f0920e6c455160a9f7a5a3c53cc71d58cc31",
+        "note": "Compared against NESA's committed sample answer and criteria rows: the model answer's method and final result agree, every keyword is creditable from the model answer in the real engine, and the band descriptors match NESA's criteria."
+      },
+      "26": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "divergent-accepted",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:5fdad21e7854e00fefd102824697a2a0a41fec58de4700e03b9b146de555a14e",
+        "sampleAnswerWordsFingerprint": "sha256:95fdb0cbcd39bfab99d1d3f1d25e060e88f3181a9ce80080e77ea696bd87edbc",
+        "note": "NESA's committed sample answer is unusable as prose here -- it extracts as mangled equation layout ('Using ABC, tan 41° = AB/35 so AB = 35 tan 41° Using ABD, sinθ = AB/93 ie sinθ = 35tan41°/93 θ =...'), so the bank's worked solution necessarily reads nothing like it. Compared NUMERICALLY instead and every figure agrees, and the band descriptors were checked against the criteria rows, which extract cleanly."
+      },
+      "28": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:1cb93be9ce84361ae67766c66cab6992c545e66934cfa9524093384f9ae7ab35",
+        "sampleAnswerWordsFingerprint": "sha256:11d197105fb614fabff3ca78fd51f3a53913ae956b8ad0c53d4846b9b14551e5",
+        "note": "Compared against NESA's committed sample answer and criteria rows: the model answer's method and final result agree, every keyword is creditable from the model answer in the real engine, and the band descriptors match NESA's criteria."
+      },
+      "31": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:429cc3f79f1fdecb7ecc332cf280aee29bb5997cf90babc5474c2acacdcb24e7",
+        "sampleAnswerWordsFingerprint": "sha256:5ee88dade3056c984fe9301aa0af923cfa388304fe5f0b6cb6ef820cbbde307b",
+        "note": "Compared against NESA's committed sample answer and criteria rows: the model answer's method and final result agree, every keyword is creditable from the model answer in the real engine, and the band descriptors match NESA's criteria. EDITED LATER THE SAME DAY by the Mathematics Advanced review's sibling-part keyword sweep: part (b) carried '5', which is part (c)'s figure and matched (b)'s own model answer only inside 35, as a suffix fragment of a longer number. Measured as a no-op on every probe in the real engine before dropping it. Content unchanged and the verdict stands."
+      },
+      "32": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:f51a0cffb2e7f2c890d0880788daa2cfe9e80aafda877356bc8ef8c7b2c47199",
+        "sampleAnswerWordsFingerprint": "sha256:7634d6fe74207b2689719345b14bd1bd3a76f5b36872beb40e8993ae23b39a82",
+        "note": "Compared against NESA's committed sample answer and criteria rows: the model answer's method and final result agree, every keyword is creditable from the model answer in the real engine, and the band descriptors match NESA's criteria."
+      },
+      "33": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:77c49a032f3364e98de07e64cd7223e673f51811fd1c886bb11e08a09507e241",
+        "sampleAnswerWordsFingerprint": "sha256:b6ed0ff8747ee5ca1ba5136a6559b01557c6e6f4eb0dfc6d0f0c96ccaf80258c",
+        "note": "Compared against NESA's committed sample answer and criteria rows: the model answer's method and final result agree, every keyword is creditable from the model answer in the real engine, and the band descriptors match NESA's criteria."
+      },
+      "34": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:c01928bb59e1df2fc52b7fa146e877aa6dcc5ab74eeb3b8268bb668712904150",
+        "sampleAnswerWordsFingerprint": "sha256:a91882d26e330027b3e37da8fcbb5dae775df8c0e39cd19d9f1c99dc0950f658",
+        "note": "Compared against NESA's committed sample answer and criteria rows: the model answer's method and final result agree, every keyword is creditable from the model answer in the real engine, and the band descriptors match NESA's criteria."
+      },
+      "35": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:d705742be3f67878b1a1b6b95ca93e5d14faf970b6232ce7fbbfddc758e89a30",
+        "sampleAnswerWordsFingerprint": "sha256:362db4f618f4094e056b52fd3e9d7e7ea576a4417404fc4e61e549314aec3280",
+        "note": "Compared against NESA's committed sample answer and criteria rows: the model answer's method and final result agree, every keyword is creditable from the model answer in the real engine, and the band descriptors match NESA's criteria."
+      }
+    },
+    "2023": {
+      "21": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "corrected",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:42c46ce14970ea1e0ae5f7b8d16cc4cdb0fbc1bdd617b2648ea8dfa6ff306a18",
+        "sampleAnswerWordsFingerprint": "sha256:6b0a7e849d73747c08fcdbd9d77c9bc9e5c118116f97ea2acb56e6c3b410b94f",
+        "note": "The combined stem printed the WRONG PER-PART MARKS: (a) 1, (b) 2, (c) 1, (d) 1. The paper (2023 pp16-17) and the committed key both say (a) 1, (b) 1, (c) 1, (d) 2. The total is 5 either way, so check_written_key.cjs could not see it, but the student is told the wrong value for two parts. Corrected. Content and NESA's answers ($140, 400 kWh, Provider A by $40) are unchanged. ALSO EDITED LATER THE SAME DAY, by the Mathematics Advanced review's repo-wide label sweep: part (a)'s prompt carried a duplicated '(1 mark)' that the earlier sweep missed because a TABLE follows it. Presentation only."
+      },
+      "22": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:cb2136bdbf0805330f526e32dfe5e1cd4c5d2d9370f4d6677d4e60c9f8a4831e",
+        "sampleAnswerWordsFingerprint": "sha256:1e4865eea6965f4694f30e19c7dbd7fa0ba901b9059ddf75db3b48d9e917bd99",
+        "note": "Compared against NESA's committed sample answer and criteria rows: the model answer's method and final result agree, every keyword is creditable from the model answer in the real engine, and the band descriptors match NESA's criteria."
+      },
+      "23": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:ae1bc97a7fc3e2b871273570ed611f38a53e37efbce162519bbd2b412605e904",
+        "sampleAnswerWordsFingerprint": "sha256:c5f063dbd5942b8b82d46d6bc73a9498c1e98e017229f730377dd79105456731",
+        "note": "Compared against NESA's committed sample answer and criteria rows: the model answer's method and final result agree, every keyword is creditable from the model answer in the real engine, and the band descriptors match NESA's criteria."
+      },
+      "25": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:2bd5e2f4d8fb54d8612f41b4424c97ab0050b987f94372724a58602fda49d7a3",
+        "sampleAnswerWordsFingerprint": "sha256:94f56712f03040ba2e9b3d8c7fbb93cc1e5021071fa80c5f621ed9161f1afd1c",
+        "note": "Compared against NESA's committed sample answer and criteria rows: the model answer's method and final result agree, every keyword is creditable from the model answer in the real engine, and the band descriptors match NESA's criteria."
+      },
+      "16": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:edd90a7f00994d2efd0662d2388729556001d785e023fadf9f0ada702b9f1aa6",
+        "sampleAnswerWordsFingerprint": "sha256:9cca8f341ceb33729b198a9550eda1dc7aef49836f636ac3bfb3e5dabe331577",
+        "note": "Compared against NESA's committed sample answer and criteria rows: the model answer's method and final result agree, every keyword is creditable from the model answer in the real engine, and the band descriptors match NESA's criteria."
+      },
+      "17": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:11437b9bac11fade6e1ae3ee436a0a3ccac5467b6653529ad6637d1f2e56ef17",
+        "sampleAnswerWordsFingerprint": "sha256:53c29c4cffac230ea2c82c791f92abbd40103ce433b64275a59cc8a0a600284c",
+        "note": "Compared against NESA's committed sample answer and criteria rows: the model answer's method and final result agree, every keyword is creditable from the model answer in the real engine, and the band descriptors match NESA's criteria."
+      },
+      "18": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:8900d5efb5fb8c97cfc74321a1afe98a8d009bc7519840be3d390f2c556eabce",
+        "sampleAnswerWordsFingerprint": "sha256:049df753fe4b5584c5dca565398116017e31b2cac44deb99c8544c9e9aa253e6",
+        "note": "Compared against NESA's committed sample answer and criteria rows: the model answer's method and final result agree, every keyword is creditable from the model answer in the real engine, and the band descriptors match NESA's criteria."
+      },
+      "19": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:b3ebd29719b13ba226922974b714b113719ec7eb284aea53d24d4b726fb32f93",
+        "sampleAnswerWordsFingerprint": "sha256:0610326a8309601f833f9dc006bc20565c833ebf7611e1f310cde4e29af72194",
+        "note": "Compared against NESA's committed sample answer and criteria rows: the model answer's method and final result agree, every keyword is creditable from the model answer in the real engine, and the band descriptors match NESA's criteria."
+      },
+      "20": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:db23018d0e3634255e4e43c35501eda11d248905b3679cadfd257a43ff0026e7",
+        "sampleAnswerWordsFingerprint": "sha256:fec8664cf5a40a8cb4cf6aed3c4b1c65e0f518d31ffc63dbb39611c8f81f6fd4",
+        "note": "Compared against NESA's committed sample answer and criteria rows: the model answer's method and final result agree, every keyword is creditable from the model answer in the real engine, and the band descriptors match NESA's criteria."
+      },
+      "24": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:9d0cee85783d3553ebe7d6a9c31b471774c4d6a18567485dcb4ed9781a904ff2",
+        "sampleAnswerWordsFingerprint": "sha256:cca7dceb73773e539078bebd15443211b3489c21d7c2c2708eae7186e02e2637",
+        "note": "Compared against NESA's committed sample answer and criteria rows: the model answer's method and final result agree, every keyword is creditable from the model answer in the real engine, and the band descriptors match NESA's criteria."
+      },
+      "26": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "corrected",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:33b410dbdbb8699037b689ba6562d828e30288040e6ef5be0fa9a0eee8ca4671",
+        "sampleAnswerWordsFingerprint": "sha256:dceb7f0153c7db98d4fe900d72e671fef71b515d6b1980ef392779cd1b96cddc",
+        "note": "AUTHORING SCRATCH-WORK shown to the student. Part (a)'s model answer read 'Area with path = (3 + 0.5 + 0.5) x (8 + 0.5) = 4 x 8.5 = 34 m2... Actually: ... Inner garden area = 3 x 8 = 24 m2... From MG: Area of path = (3 x 8) - (7 x 2.5) = 6.5 m2' -- two abandoned attempts and the internal phrase 'From MG:' (from the marking guidelines). Replaced with NESA's own method. The result 6.5 m2 was already right and is unchanged, as is part (b) (300 kg, 20 bags)."
+      },
+      "27": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "corrected",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:d7bcf24f3a8b99cc3ad30b6563f3c4dad44a8e15b5c335cd4b356ad964c70837",
+        "sampleAnswerWordsFingerprint": "sha256:801ae8fe6bf0929f574ff25940c87f23c40bc981b1c111cb3ec3811c3c430de8",
+        "note": "AUTHORING SCRATCH-WORK shown to the student, the worst instance in the subject: part (b)'s model answer contained literal thinking-aloud -- '... cos theta = 7.5/40... no. Using right angle at P: ... XC = sqrt(XP2 + CP2) should be 40... wait Actually: ...'. Replaced with NESA's method (cos(angle CXP) = 7.5/40, 79 degrees 12', bearing 180 + 79 = 259). The final answers 7.5 km and 259 were already right and are unchanged."
+      },
+      "28": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:967a276f8d13a04a98e1409ec0f015423a207b56522e44eb87a831d8e2a0665d",
+        "sampleAnswerWordsFingerprint": "sha256:fcfcd6f4f12405662c7ea732ee136e61fad971cac10f5ad8309bcb96ff310932",
+        "note": "Compared against NESA's committed sample answer and criteria rows: the model answer's method and final result agree, every keyword is creditable from the model answer in the real engine, and the band descriptors match NESA's criteria."
+      },
+      "29": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:e9e0853a727f7adbc49fd93eeb9f09d726c0f723892ee1133ef5238b4f6985bc",
+        "sampleAnswerWordsFingerprint": "sha256:d540eaa7f1ae4f0ac26938af200f1a073ba72e1079b7d1e9f76f6b117b65476b",
+        "note": "Compared against NESA's committed sample answer and criteria rows: the model answer's method and final result agree, every keyword is creditable from the model answer in the real engine, and the band descriptors match NESA's criteria."
+      },
+      "30": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:8419fa131bb69257acafcd379f39b9a28b07c40d919e19158b2270446570361d",
+        "sampleAnswerWordsFingerprint": "sha256:0050d0f5cce4f60ae10ade009c5334689a18212ddafbccbbaf0b2f51789d1812",
+        "note": "Compared against NESA's committed sample answer and criteria rows: the model answer's method and final result agree, every keyword is creditable from the model answer in the real engine, and the band descriptors match NESA's criteria."
+      },
+      "31": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:91402663e0fc8580a76f95af70437c4df1ee159ad831c1387cfa992f730f68c0",
+        "sampleAnswerWordsFingerprint": "sha256:6dec42625c1ef713d6f29788ea4b2acfe1b58206df6283591a118aa01e2235d2",
+        "note": "Compared against NESA's committed sample answer and criteria rows: the model answer's method and final result agree, every keyword is creditable from the model answer in the real engine, and the band descriptors match NESA's criteria."
+      },
+      "32": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "corrected",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:89641eeb63aa508c49c5ee03471e420ae5f195d54baa2fde8b7a48baca716c7f",
+        "sampleAnswerWordsFingerprint": "sha256:b674bf7c2a159aaa43b4691e67f96c5dced800f24d575b5275eaa9879e1adbdf",
+        "note": "The combined stem printed (a) 3 marks and (b) 1 mark; the paper (2023 p28) and the committed key both say 2 and 2. Same class as 2023 Q21 -- totals 4 either way, so CI could not see it. Corrected. NESA's answers ($3.51 and 0.77%) are unchanged."
+      },
+      "33": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:fb5bbeae98e594639929970c6bd38a9067dc3f5207bb9f16815eb3b1d5a415e7",
+        "sampleAnswerWordsFingerprint": "sha256:74a7a8fad472c6c35412b4c641a4ec3e9311bb6b7aee1457ed4a79542efb146c",
+        "note": "Compared against NESA's committed sample answer and criteria rows: the model answer's method and final result agree, every keyword is creditable from the model answer in the real engine, and the band descriptors match NESA's criteria."
+      },
+      "34": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:a7aa01c859930b4637229f391d1afb4cd5d91172a8a933245a5f9f1e3175b232",
+        "sampleAnswerWordsFingerprint": "sha256:f45ec0003f47cc6eade9b732ac7c17d15042c9411d263a202f974fd711f2e267",
+        "note": "Compared against NESA's committed sample answer and criteria rows: the model answer's method and final result agree, every keyword is creditable from the model answer in the real engine, and the band descriptors match NESA's criteria."
+      },
+      "35": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:70737c2f4ec6f428ac100d3b931018cde91a87d6b1d82726022ed1351e340a58",
+        "sampleAnswerWordsFingerprint": "sha256:6b2c6b541f5037c3d76b51e731d59f2f8bbe5b82b7dda0b6398e06ec96dcfd74",
+        "note": "Compared against NESA's committed sample answer and criteria rows: the model answer's method and final result agree, every keyword is creditable from the model answer in the real engine, and the band descriptors match NESA's criteria."
+      },
+      "36": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:09c0105c4f6e134fef90040277504eaa45ac6216ee0e9db2fe88da2517f3d58e",
+        "sampleAnswerWordsFingerprint": "sha256:a03c76d42d065db6a97cc0869de9daac58e484f3821c554f9466e7b5e577a32b",
+        "note": "Compared against NESA's committed sample answer and criteria rows: the model answer's method and final result agree, every keyword is creditable from the model answer in the real engine, and the band descriptors match NESA's criteria."
+      },
+      "37": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:6dc9c611c2fad03627a4a024cb2cf6f47bcc93cc9f9fbe33c3eea24d58ed8d8c",
+        "sampleAnswerWordsFingerprint": "sha256:3338de658968ae84a7ff4ae935e41b193274686f21f858ffb6b61946c77f7894",
+        "note": "Compared against NESA's committed sample answer and criteria rows: the model answer's method and final result agree, every keyword is creditable from the model answer in the real engine, and the band descriptors match NESA's criteria."
+      },
+      "38": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:9a17ee31a5fa3ce58634f866960e5c1ce7ae0397585980526286e502c1d89c58",
+        "sampleAnswerWordsFingerprint": "sha256:b861ecfcdb309161ac61b42349a1e17c0c3b791a3e403c6d3b9ae647985cc017",
+        "note": "Compared against NESA's committed sample answer and criteria rows: the model answer's method and final result agree, every keyword is creditable from the model answer in the real engine, and the band descriptors match NESA's criteria."
+      }
+    },
+    "2024": {
+      "17": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "divergent-accepted",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:78157acc1e72eaf9304a1bb05b1cf0c0de32d4a769e1744944e0660d1cfd5f85",
+        "sampleAnswerWordsFingerprint": "sha256:e1c4d864eeb48cd5f4080e4c9e288b487646ed0e11bff453bd87b30f8a7c8f19",
+        "note": "NESA's committed sample answer is unusable as prose here -- it extracts as mangled equation layout ('650/1000 # 6 # $0.3013 = $1.18'), so the bank's worked solution necessarily reads nothing like it. Compared NUMERICALLY instead and every figure agrees, and the band descriptors were checked against the criteria rows, which extract cleanly."
+      },
+      "20": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "divergent-accepted",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:13c904c372a8fcdf33458628da5e1028b3ae4e5d4e9f0d4581983bf68ef1545f",
+        "sampleAnswerWordsFingerprint": "sha256:c2b10d800cb434b043de589874bd3f276e73dbcf873924889b104b99de5672ff",
+        "note": "NESA's committed sample answer is unusable as prose here -- it extracts as mangled equation layout ('$200 # 10.0266 = $2005.32 r = 4/2 % = 2% n = 3 # 2 = 6 Investment per 6 months = 4500/6.4343 = ...'), so the bank's worked solution necessarily reads nothing like it. Compared NUMERICALLY instead and every figure agrees, and the band descriptors were checked against the criteria rows, which extract cleanly."
+      },
+      "21": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:7dcdbc5c8e6b71cc0d5703d1bda6cac3db209ea087dbbf9418023030be1daf9f",
+        "sampleAnswerWordsFingerprint": "sha256:5d74136872e4f91c816f55c2b8e5db6c4d01997fe022bfd22b6c58cb9249083c",
+        "note": "Compared against NESA's committed sample answer and criteria rows: the model answer's method and final result agree, every keyword is creditable from the model answer in the real engine, and the band descriptors match NESA's criteria."
+      },
+      "22": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:9031b3667eef140db77ac7a450895e5c9503cd505d914772b69290addfa2867b",
+        "sampleAnswerWordsFingerprint": "sha256:e37e8ebd97088f724c78e252f5717ad3326e79d4937192c66ba08fe8a90c3e2a",
+        "note": "Compared against NESA's committed sample answer and criteria rows: the model answer's method and final result agree, every keyword is creditable from the model answer in the real engine, and the band descriptors match NESA's criteria."
+      },
+      "23": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "divergent-accepted",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:8e2e5e2139384c5ceaf57c75f5c629b5b7de0b15d3fad291b73a2d7d98e05dd5",
+        "sampleAnswerWordsFingerprint": "sha256:f7ade15541b74dacd0877f4035006fa05029b252901454c5b294e3f8426c81ea",
+        "note": "NESA's committed sample answer is unusable as prose here -- it extracts as mangled equation layout ('Normal time earnings = _= _1710 38 # 45 Overtime paid = 2790 - 1710 = 1080 Overtime hours = $10...'), so the bank's worked solution necessarily reads nothing like it. Compared NUMERICALLY instead and every figure agrees, and the band descriptors were checked against the criteria rows, which extract cleanly."
+      },
+      "24": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "divergent-accepted",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:4d9f70d9722e78bb3081b067efc1c24067b578beb7a4c56ad97886d77ff9ba67",
+        "sampleAnswerWordsFingerprint": "sha256:7c5beb55d1ebbbc6a8535b3e82851370941979234bc85c332abfbb1cb0dc30d1",
+        "note": "NESA's committed sample answer is unusable as prose here -- it extracts as mangled equation layout ('10^1.2 # _5.5 3h _# -7.5 _60 # 2.5 BAC = = 0.0522... = 0.052 (to 3 decimal places) Time = 0.052...'), so the bank's worked solution necessarily reads nothing like it. Compared NUMERICALLY instead and every figure agrees, and the band descriptors were checked against the criteria rows, which extract cleanly."
+      },
+      "25": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "divergent-accepted",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:cd055c7a327323258e38c488ea79ecf9b567489596e8a1991cb9f6eb129a8095",
+        "sampleAnswerWordsFingerprint": "sha256:8284b749e1c550fa3032411201dcc9eae21eb478f6f4f539d134dca1859be7aa",
+        "note": "NESA's committed sample answer is unusable as prose here -- it extracts as mangled equation layout ('Alex’s interest after 5 years = 1800 # 7.5% # 5 = $675 4 × 5 Jun’s investment at 5 years = 1800...'), so the bank's worked solution necessarily reads nothing like it. Compared NUMERICALLY instead and every figure agrees, and the band descriptors were checked against the criteria rows, which extract cleanly."
+      },
+      "27": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "divergent-accepted",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:b61cb36d77a1c2f249d4d792452d8a40514971114b7d73accb83b0d96e9d5076",
+        "sampleAnswerWordsFingerprint": "sha256:96f5219da5b8e63ad76794c6681b0d6e15aa764e691fdde66809ad959d1ef124",
+        "note": "NESA's committed sample answer is unusable as prose here -- it extracts as mangled equation layout ('Repayments for 5 years at 280 = 280 # 12 # 5 = 16 800 Repayments for 7 years at 250 = 21 000 To...'), so the bank's worked solution necessarily reads nothing like it. Compared NUMERICALLY instead and every figure agrees, and the band descriptors were checked against the criteria rows, which extract cleanly."
+      },
+      "16": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:cb871c3739f4b5e67055d726b7712560224bf16b9793c05b450b20da547002c1",
+        "sampleAnswerWordsFingerprint": "sha256:44e8983db4386ef5a05a1c3243e0dd0e38e91ca04ba5922440d1b4185068a0ef",
+        "note": "Compared against NESA's committed sample answer and criteria rows: the model answer's method and final result agree, every keyword is creditable from the model answer in the real engine, and the band descriptors match NESA's criteria."
+      },
+      "18": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "divergent-accepted",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:27a3e1723de20abfa005c0138cb1d8b317e30e5d2afe62d3778478f424ad3e18",
+        "sampleAnswerWordsFingerprint": "sha256:b1264534a449771e55b25fe84820cc688a30b4b02fc024211212bd1574d2ecc0",
+        "note": "NESA's committed sample answer is unusable as prose here -- it extracts as mangled equation layout ('A 4 ^B ^C D 2 1 2 F E 4 3 G 1 _H 4 J 3 I Weight = 24 Yes, use BC instead of FC as the weight of...'), so the bank's worked solution necessarily reads nothing like it. Compared NUMERICALLY instead and every figure agrees, and the band descriptors were checked against the criteria rows, which extract cleanly."
+      },
+      "19": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "corrected",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:6a5597a9cdd145a9b4b1b7f3045affec26440ebece28551c0368471be8999b5f",
+        "sampleAnswerWordsFingerprint": "sha256:2ec47dbd58a3584d17133dbc879fa9e7bf1a5c307633f74308b47e63add0c600",
+        "note": "STEM DEFECT: part (b) was UNANSWERABLE as printed. The stem said only 'Another student ... scored 5 for the assignment' and then asked whether that student did better or worse than predicted -- the student's actual test mark was missing. The paper (2024 p13) reads 'scored 5 for the assignment and 12 on the test', and NESA's sample answer ('Worse as the predicted test mark was 13 instead of 12') depends on it. Restored. The model answer already used 12 and is unchanged."
+      },
+      "26": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "divergent-accepted",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:7605c60567aec99f15f12e387aa154f75612f243db719f60e1cfe3249f9a6087",
+        "sampleAnswerWordsFingerprint": "sha256:96a0db0033d9d5bb772a3db4393c7f53c5b2c496e18c09ff55846418b2bb83c3",
+        "note": "NESA's committed sample answer is unusable as prose here -- it extracts as mangled equation layout ('A = -0.5w2 + 20w Maximum area when width = 20 A = -0.5^20h2 + 20^20h = 200 cm2 A = h # w 200 = ...'), so the bank's worked solution necessarily reads nothing like it. Compared NUMERICALLY instead and every figure agrees, and the band descriptors were checked against the criteria rows, which extract cleanly."
+      },
+      "28": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:34affff714b8aa484a67a9abb0db0ebc7ab20947f39f8ae6095242e684dbb382",
+        "sampleAnswerWordsFingerprint": "sha256:639bddd83c3fa4f35defaabf66904fc34864502ac322d8faba2c4f26b52a4020",
+        "note": "Compared against NESA's committed sample answer and criteria rows: the model answer's method and final result agree, every keyword is creditable from the model answer in the real engine, and the band descriptors match NESA's criteria."
+      },
+      "29": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "divergent-accepted",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:b8d44bf5f90c0cf5444781a05b7bc18de13a6cd359d90a59b18d0fe2b3c8b115",
+        "sampleAnswerWordsFingerprint": "sha256:937e839913479ed9e148388ece2eafda13b3107fdf03c1a08f8b194df6affb22",
+        "note": "NESA's committed sample answer is unusable as prose here -- it extracts as mangled equation layout ('Value after 4 years: Using straight-line method = 50 000 - 1500 # 4 = 44 000 Value after the ne...'), so the bank's worked solution necessarily reads nothing like it. Compared NUMERICALLY instead and every figure agrees, and the band descriptors were checked against the criteria rows, which extract cleanly."
+      },
+      "30": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:d0ccb4ab867db9416ad2837ef3d3f88393186a1d88a2b4536e773b4e9361e8f6",
+        "sampleAnswerWordsFingerprint": "sha256:b19538d0295d03494851bf07b367d6e4b726976770e9531beb4ba3eeb41c9c82",
+        "note": "Compared against NESA's committed sample answer and criteria rows: the model answer's method and final result agree, every keyword is creditable from the model answer in the real engine, and the band descriptors match NESA's criteria."
+      },
+      "31": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "divergent-accepted",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:b296eeff1784041133b5bfd3fa280ad8988fb6ad6ba35ed38a80ace3b38f8cd0",
+        "sampleAnswerWordsFingerprint": "sha256:9cd38435f09081d1ebf8d3ffed719d896df3ae7267e587f40aa7aeb3689e12c7",
+        "note": "NESA's committed sample answer is unusable as prose here -- it extracts as mangled equation layout ('2/3 P(no heads) = 1/3 # 1/3 = 1/9 ` P(at least 1 head) = 1 - 1/9 = 8/9'), so the bank's worked solution necessarily reads nothing like it. Compared NUMERICALLY instead and every figure agrees, and the band descriptors were checked against the criteria rows, which extract cleanly."
+      },
+      "32": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "divergent-accepted",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:14e12f0893dd4afeab6a4167f6139f4225692ccade826392db16e08f556add20",
+        "sampleAnswerWordsFingerprint": "sha256:b69b752c9e4bebe8846f4f5d28f138ceef031b170abf6a301a29e9f8cd8e870a",
+        "note": "NESA's committed sample answer is unusable as prose here -- it extracts as mangled equation layout ('A = p r 2 circle = p # 302 = 2827.433... A3 = 1/2 ab sin C = 1/2 # 30 # 30 sin 72° = 427.975......'), so the bank's worked solution necessarily reads nothing like it. Compared NUMERICALLY instead and every figure agrees, and the band descriptors were checked against the criteria rows, which extract cleanly."
+      },
+      "33": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "divergent-accepted",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:415b748088a1fab3a3c5c6818933e1edf00c0c9bcba39c25db83b0c07b767f31",
+        "sampleAnswerWordsFingerprint": "sha256:c60f197f771802e7bcdf1c184a431ced275692bb1f949ea300bb5ed9601fc8a7",
+        "note": "NESA's committed sample answer is unusable as prose here -- it extracts as mangled equation layout ('Speed = Distance/Time 40 km/h = 0.15km/T T = 0.15/40 T = 0.00375 hours T = 0.00375 # 3600 secon...'), so the bank's worked solution necessarily reads nothing like it. Compared NUMERICALLY instead and every figure agrees, and the band descriptors were checked against the criteria rows, which extract cleanly."
+      },
+      "34": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "corrected",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:e2b4d9441efe236d98a9458b6cce916d13b6ddf868b6d6c6119b37558e2c2d9d",
+        "sampleAnswerWordsFingerprint": "sha256:8d22a08311c7fbb9494ee42b0d1aa9053cbed993bb8e94a768ed762e61faa131",
+        "note": "TWO defects. (1) The stem asked for the answer 'in square centimetres, correct to the nearest whole number'; the paper (2024 p28) asks for 'square metres correct to 1 decimal place', which is what NESA's criteria ('Provides correct solution in square metres') and the bank's own model answer (0.5 m2) both use. (2) The model answer carried abandoned working with a wrong cylinder length ('2pi x 11.5 x 69 = ... = 4985.7 - 1661.9 = ...') and the internal phrase 'Actual MG calculation:'. Both corrected; the result 4985.7 cm2 = 0.5 m2 is unchanged and matches NESA."
+      },
+      "35": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "corrected",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:25ff25e7b5014e82ca15d2235c13fb2c053b69018cd04af3c70242ca6ec76159",
+        "sampleAnswerWordsFingerprint": "sha256:fc973d5542ccf7251734a0492e2266d1a657252cd955105beeb80df9f84f3458",
+        "note": "THREE stem errors in one question, every one confirmed on paper p29, and in every case the model answer was already working NESA's version -- so stem and answer contradicted each other throughout. (1) 'standard deviation 12' should be 15 (NESA's own working is z = (70-58)/15 = 0.8). (2) Part (a) asked for 'the percentage of scores that are less than 46'; the paper asks for the percentage 'between 58 and 70' -- and the bank's answer computes exactly that (28.81%). It is also the only reading under which part (b) is true, since 2 x 28.81% = 57.62% is the percentage between 46 and 70. (3) Part (c) asked for the 'top 5%'; the paper asks for the 'top 10%', which is what z = 1.3 (P = 0.9032) and the answer's 77 or 78 give. All three corrected in the stem, the shared stem and the part prompts."
+      },
+      "36": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "corrected",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:2067e93e4ab600716f2efb07ec982bd374f50220e1c82801b16731d4acdeca98",
+        "sampleAnswerWordsFingerprint": "sha256:3581966a939d60f86034f8b647b5520e55e85e0f0103e295fca2da3400ab1209",
+        "note": "Part (b)'s model answer carried an 'Actually:' scratch marker mid-working and a bogus justification ('CD = BE - BX (vertical drop from B to C along slope)'). Replaced with NESA's own three lines. The results 25.4 m and 19.7 m were already right and are unchanged."
+      },
+      "37": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:a234fb64baf490cc8efb3f16e71d12a957d8d638ea4b1c8f148450bdafdba50c",
+        "sampleAnswerWordsFingerprint": "sha256:24c9f44b00707590df5bc23bfde0b6cec734b844108a94d6adf4d0b570ceefcb",
+        "note": "Compared against NESA's committed sample answer and criteria rows: the model answer's method and final result agree, every keyword is creditable from the model answer in the real engine, and the band descriptors match NESA's criteria."
+      },
+      "38": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "divergent-accepted",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:b9ddf4d0b323506b97f59ae46701150873755763771b0d131c2abd23e9c1bea0",
+        "sampleAnswerWordsFingerprint": "sha256:5a00868322dd03309df805115b5dc26281e4b3a31496cd759d7edf0e6c332443",
+        "note": "NESA's committed sample answer is unusable as prose here -- it extracts as mangled equation layout ('Volume of cylinder: volume of top = 5: 1 Volume of cylinder = p # 152 # 6 = 4241.150... = 5 par...'), so the bank's worked solution necessarily reads nothing like it. Compared NUMERICALLY instead and every figure agrees, and the band descriptors were checked against the criteria rows, which extract cleanly."
+      },
+      "39": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "corrected",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:622f1918967ce9811a6e4daac105b6768cc7a4e79d596ddfe38757c83ad8abe4",
+        "sampleAnswerWordsFingerprint": "sha256:5e9d1619e2b7f81423804c54cba6989a0928ab8b6e24568b4faa1711221049f1",
+        "note": "Part (c)'s model answer was muddled and self-cancelling: 'F starts at EST = LST of C + duration of C (actually at the EST of the next node)'. Rewritten around NESA's own working (12 - 3 = 9, 9 - 1 = 8 hours). The answers BEGI, 7 hours and 8 hours were already right and are unchanged."
+      },
+      "40": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "divergent-accepted",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:ac90f60fd8a6b17a25c58d7a4c63e0d907a0ca137b6ca4d457091b5c22814795",
+        "sampleAnswerWordsFingerprint": "sha256:7a646f1f03e3ff53711b29348457c146cd5f1a8cddfa8d758a17964ead4997e6",
+        "note": "NESA's committed sample answer is unusable as prose here -- it extracts as mangled equation layout ('In UODA: 382 + 422 - 67.52 cos EAOD = 2 # 38 # 42 = -0.42238... EAOD = 114.985.... 115° Bearing...'), so the bank's worked solution necessarily reads nothing like it. Compared NUMERICALLY instead and every figure agrees, and the band descriptors were checked against the criteria rows, which extract cleanly."
+      },
+      "41": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "corrected",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:202898ff10ed7b7d3d94f80ce70db80795c1bcff23c4b560a4c5628e153bd9fb",
+        "sampleAnswerWordsFingerprint": "sha256:89f5f5cbb139eacc3f93b7b3e28b33c7dbfc6e50e1bc52ccf3118d1439cb67dd",
+        "note": "AUTHORING SCRATCH-WORK shown to the student, including an instruction to itself: 'PV1 = $2000 x 151.036 = $302 072 Wait -- let me re-read the MG. MG says: ...'. The abandoned $302 072 line and the note were removed; the remaining working ($1200 x 225.430 = $270 516 plus $800 x 151.036 = $120 828.80, total $391 344.80) is NESA's and was already right."
+      }
+    },
+    "2025": {
+      "16": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "divergent-accepted",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:69e11d99d3c79bd01b90fa391946f98b750f954be6c598d4be17b3b28af681d0",
+        "sampleAnswerWordsFingerprint": "sha256:1d3be67197c289f51c6c94f9b25259c2cc67714131642be6f184580be93e3877",
+        "note": "NESA's committed sample answer is unusable as prose here -- it extracts as mangled equation layout ('Cost of ten-litre cans: _= $205 _$1640 × 8 Cost of four-litre cans: _= $90 _$1800 × 20 Savings ...'), so the bank's worked solution necessarily reads nothing like it. Compared NUMERICALLY instead and every figure agrees, and the band descriptors were checked against the criteria rows, which extract cleanly."
+      },
+      "18": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "divergent-accepted",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:c14186e361da6f808845e053987a831303bf06d74a74f95f8b12a153bbc9838e",
+        "sampleAnswerWordsFingerprint": "sha256:9a0d01c03c4dc22a42c377eb615a9b14be90ecfb8997218f662e4296bc2aa85c",
+        "note": "NESA's committed sample answer is unusable as prose here -- it extracts as mangled equation layout ('Amount _= = _$61 $5000 _440 × 12.288'), so the bank's worked solution necessarily reads nothing like it. Compared NUMERICALLY instead and every figure agrees, and the band descriptors were checked against the criteria rows, which extract cleanly."
+      },
+      "20": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:1ba8d44ef11a2b80ae6b1ece6d2e3c8d0514ab59aa45af6635de000c753f08dc",
+        "sampleAnswerWordsFingerprint": "sha256:e267efee27997c222a92c05fd84c6b7e21a567085f465fead009cd32cf4f000c",
+        "note": "Compared against NESA's committed sample answer and criteria rows: the model answer's method and final result agree, every keyword is creditable from the model answer in the real engine, and the band descriptors match NESA's criteria."
+      },
+      "21": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:271e3575f164804c94510d9212cbcb04670ad87bc71df47e874171e795878458",
+        "sampleAnswerWordsFingerprint": "sha256:9f81a41cbb38ff5e2a0b8cb178a8f71709195949b8cbf139a43de7261bf4f5c0",
+        "note": "Compared against NESA's committed sample answer and criteria rows: the model answer's method and final result agree, every keyword is creditable from the model answer in the real engine, and the band descriptors match NESA's criteria."
+      },
+      "23": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:656d4d1b15bb9f87e6b8c6aa7d6d249952d72c43686b9b587be9725de2b45d04",
+        "sampleAnswerWordsFingerprint": "sha256:5d1826b6b7a0d92dbfb63235676358b11a9d189116bde392d9213e462a7f6d74",
+        "note": "Compared against NESA's committed sample answer and criteria rows: the model answer's method and final result agree, every keyword is creditable from the model answer in the real engine, and the band descriptors match NESA's criteria."
+      },
+      "24": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:0f3f9cc24121df2ca443b0b4aafe69d9ec59872552017c4ec92307af55d87eda",
+        "sampleAnswerWordsFingerprint": "sha256:3de86639a796296db300657030c9f24ea5ef5a55fb038c225076a857af62b824",
+        "note": "Compared against NESA's committed sample answer and criteria rows: the model answer's method and final result agree, every keyword is creditable from the model answer in the real engine, and the band descriptors match NESA's criteria."
+      },
+      "25": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:2f52b8f40dbf3fb9c299a3fa9b86a53b725753f00f3f8102b165e7686f7975a6",
+        "sampleAnswerWordsFingerprint": "sha256:c9e50e50cc5e607bbd6203c9987df41cc89e989d90608e5a1011f7d0b5e0ac03",
+        "note": "Compared against NESA's committed sample answer and criteria rows: the model answer's method and final result agree, every keyword is creditable from the model answer in the real engine, and the band descriptors match NESA's criteria."
+      },
+      "27": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "divergent-accepted",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:732f3ecdd602eab8e9343fd511004f603d01ad090aa9797fe2c5d32f2dbf6e22",
+        "sampleAnswerWordsFingerprint": "sha256:37a29223edd0072c7ae3abdc3e5310f22a5367bd334698f6bff046cb8c024c74",
+        "note": "NESA's committed sample answer is unusable as prose here -- it extracts as mangled equation layout ('Interest days = 68 − 45 = 23 23 Amount = $392 1 + 13.74/365 % = $395.41 Interest charged = _= $...'), so the bank's worked solution necessarily reads nothing like it. Compared NUMERICALLY instead and every figure agrees, and the band descriptors were checked against the criteria rows, which extract cleanly."
+      },
+      "29": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "divergent-accepted",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:6d38a34c677d40835d5c283946dcfb1187a0452bead65708fa4d5622d4f56207",
+        "sampleAnswerWordsFingerprint": "sha256:82cd0f213b50534e03a4ace38590d796ce5f61db65f1309753e841ae466bf0a5",
+        "note": "NESA's committed sample answer is unusable as prose here -- it extracts as mangled equation layout ('6/15 Blue 7/16 ^Blue 9/15 Yellow 7/15 Blue 9/16 Yellow 8/15 Yellow P (BB) + P (YY) = 7/16 × 6/1...'), so the bank's worked solution necessarily reads nothing like it. Compared NUMERICALLY instead and every figure agrees, and the band descriptors were checked against the criteria rows, which extract cleanly."
+      },
+      "30": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:59d5cee3240ab0a5f7beb9969e42150d1793e5f0db223c693954ecfef2f8ecff",
+        "sampleAnswerWordsFingerprint": "sha256:75a6bb0e4daad45904c1bedf23b2b4d6510847baf505c46eedb68eef30a90645",
+        "note": "Compared against NESA's committed sample answer and criteria rows: the model answer's method and final result agree, every keyword is creditable from the model answer in the real engine, and the band descriptors match NESA's criteria."
+      },
+      "31": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:02b418a3ddf3fa449712b3e7ff9f820ccc0dce74ca754926ed6fcdae0712fbd4",
+        "sampleAnswerWordsFingerprint": "sha256:8922d8071de7a38bfea4dce51753ba3e3b18c84f2aa30a403dc681b1e2a993c7",
+        "note": "Compared against NESA's committed sample answer and criteria rows: the model answer's method and final result agree, every keyword is creditable from the model answer in the real engine, and the band descriptors match NESA's criteria."
+      },
+      "33": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "divergent-accepted",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "sampleAnswerWordsFingerprint": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "note": "NESA's committed sample answer is unusable as prose here -- it is empty, so the bank's worked solution necessarily reads nothing like it. Compared NUMERICALLY instead and every figure agrees, and the band descriptors were checked against the criteria rows, which extract cleanly."
+      },
+      "34": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "divergent-accepted",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:c52d8afdc24e7616984e260a26634e669bb7787bfa32a0ff6e069b8ef3a2fb80",
+        "sampleAnswerWordsFingerprint": "sha256:2202d6a10f7e326bf058fa70e0e6055a292aa377cdc38a464324fa845d124d4b",
+        "note": "NESA's committed sample answer is unusable as prose here -- it extracts as mangled equation layout ('n = 7 × 12 r = 6/12 = 84 periods 84 21 000 1 + 6/12 % = 31 927.76 ` Monthly deposit = _= $31 _$...'), so the bank's worked solution necessarily reads nothing like it. Compared NUMERICALLY instead and every figure agrees, and the band descriptors were checked against the criteria rows, which extract cleanly."
+      },
+      "17": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:7fd0de090eba7d22621c4a207c32e634614b1426533b476d2b903cf441a3d47f",
+        "sampleAnswerWordsFingerprint": "sha256:f76b5e3264f4f82852928423bff41dc1b851894dab17f54abf4dd18a368eb868",
+        "note": "Compared against NESA's committed sample answer and criteria rows: the model answer's method and final result agree, every keyword is creditable from the model answer in the real engine, and the band descriptors match NESA's criteria."
+      },
+      "19": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "corrected",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:cb266676a718fc43908c373d15acc61932365bd8a43a51776d3ce153a68a3833",
+        "sampleAnswerWordsFingerprint": "sha256:c272f46d7620406cfcb323f0e6967f1ad3ddc6061bbdd0d867128605ba7b5066",
+        "note": "The worst finding in the subject: the model answer was wrong on all three parts and contradicted itself. (a) It gave 'E: B' and 'F: A, C'; NESA's table is E: C, D and F: E. (b) It gave the critical path as B-F-H = 16 days; NESA gives BDEFH = 4 + 5 + 5 + 7 + 5 = 26 days, which the committed crop confirms (A 3, B 4, C 3, D 5, E 5, F 7, G 3, H 5: A->C = 6 against B->D = 9, then E, then F->H = 12 against G = 3). (c) It opened 'No -- increasing A by 2 days does not affect the critical path' and then closed 'Corrected: ... This DOES affect the critical path', contradicting both itself and NESA ('No, as the float time for activity A is 3'). Rewritten from NESA; keywords ('16' and a regex-shaped 'b.*f.*h') and bandDescriptors rebuilt around the correct path and duration."
+      },
+      "22": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:48932d760bcd33d6483303f670831963a89cfaf18ed0c92143d959ef92637bb6",
+        "sampleAnswerWordsFingerprint": "sha256:3a5d52c1706d84a158365a1e5c7e907210a4dfe397a57b224283ead7864ff986",
+        "note": "Compared against NESA's committed sample answer and criteria rows: the model answer's method and final result agree, every keyword is creditable from the model answer in the real engine, and the band descriptors match NESA's criteria."
+      },
+      "26": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "corrected",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:314a6a1277686738f9a79a9b5acb3d876612a82047fb928ae58069aef626acb4",
+        "sampleAnswerWordsFingerprint": "sha256:69d266be46f3e803c8f8ce49c729ef6fd01bc3940f57caae369ef2a44542ee15",
+        "note": "TWO parts asked questions the paper never asks, while their model answers worked NESA's actual questions -- so the student was shown a prompt and an answer that did not match. Paper pp22-23: (b) is 'What is the approximate area of the curved surface?' (the bank asked for a percentage, and the answer gives the area, 582.64 cm2); (c) is 'The measurements shown on the diagram are given to the nearest millimetre. What is the percentage error of the measurement of 10.2 cm? Give your answer correct to 3 significant figures.' (the bank asked for a mass of plastic, and the answer gives the percentage error, 0.490%). NESA's criteria confirm both ('Finds at least 2 correct areas as part of a surface area calculation'; 'Provides correct absolute error'). Both prompts restored; part (b)'s answer also had a 'Using MG:' leak and a '480 cm...' typo removed."
+      },
+      "28": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:ca8f1a1a9132ce48133a518dcf5881b572dc56b5d09854fa95da198106e81396",
+        "sampleAnswerWordsFingerprint": "sha256:c1e1bea15f777cc1226e8fb1cbeafc5f475db0efa0169424a7dd27a36283fd87",
+        "note": "Compared against NESA's committed sample answer and criteria rows: the model answer's method and final result agree, every keyword is creditable from the model answer in the real engine, and the band descriptors match NESA's criteria."
+      },
+      "32": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "divergent-accepted",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:4b227777d4dd1fc61c6f884f48641d02b4d121d3fd328cb08b5531fcacdabf8a",
+        "sampleAnswerWordsFingerprint": "sha256:4b227777d4dd1fc61c6f884f48641d02b4d121d3fd328cb08b5531fcacdabf8a",
+        "note": "NESA's committed sample answer is unusable as prose here -- it extracts as mangled equation layout ('4'), so the bank's worked solution necessarily reads nothing like it. Compared NUMERICALLY instead and every figure agrees, and the band descriptors were checked against the criteria rows, which extract cleanly."
+      },
+      "35": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "corrected",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:9006ad501a7e39412a1603283dc08d143899f4427af408e140cc938e498bc64b",
+        "sampleAnswerWordsFingerprint": "sha256:1c0dda18859f9f261bccb0fc156dce07af9b7dfebb7d5a050eb792895c9bcea0",
+        "note": "The model answer opened with a self-cancelling parenthetical: 'the angle TAP (alternate angle) = 36 degrees (since TA is horizontal from T's perspective, but actually angle TAP = 36 degrees from the horizontal at A)'. Rewritten as one clear sentence. The working and the result 35.29 m are unchanged; NESA's sample for this question is a diagram dump, so the result was checked by recomputation (sin(angle) = 75 sin 36 / 51, obtuse angle 120 degrees, angle TPA 24 degrees, TA = 51 sin 24 / sin 36 = 35.29)."
+      },
+      "36": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:653bdd878240b20b26005dd975bd6fc96b06cafbf8e06fcd5e947c32d6fd50af",
+        "sampleAnswerWordsFingerprint": "sha256:4762d9ef07450e94849aaea5cb70f5329a54712dd20c8b399b30c4ab83ae1938",
+        "note": "Compared against NESA's committed sample answer and criteria rows: the model answer's method and final result agree, every keyword is creditable from the model answer in the real engine, and the band descriptors match NESA's criteria."
+      },
+      "37": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "divergent-accepted",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:e0338b4bc0c9073bb616dd2720c5049a4b1e60e6dcf71febfe26eab1badce8d3",
+        "sampleAnswerWordsFingerprint": "sha256:81f82bc5e402865be30d4302e782cde192c63641325209c53ef39b4b0931fb69",
+        "note": "NESA's committed sample answer is unusable as prose here -- it extracts as mangled equation layout ('60° 3 9 c'), so the bank's worked solution necessarily reads nothing like it. Compared NUMERICALLY instead and every figure agrees, and the band descriptors were checked against the criteria rows, which extract cleanly."
+      },
+      "39": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:eafd967d16d3d564448d0df4555b325887d5a9ca9b60827b0020b67aea447b9c",
+        "sampleAnswerWordsFingerprint": "sha256:d356b47ce182741b74fa21d727e2f6800701815c9401e6b5b47282073f6038b7",
+        "note": "Compared against NESA's committed sample answer and criteria rows: the model answer's method and final result agree, every keyword is creditable from the model answer in the real engine, and the band descriptors match NESA's criteria."
+      },
+      "38": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:5d97b3aa6f9ed1eadb7a355ebee00988b4002c752ca89be81c95cb56f71fcb97",
+        "sampleAnswerWordsFingerprint": "sha256:48535aca6dbd26f821beb204b0f6df934d2ec634d362ce6ef09ff7d56c88c76c",
+        "note": "Compared against NESA's committed sample answer and criteria rows: the model answer's method and final result agree, every keyword is creditable from the model answer in the real engine, and the band descriptors match NESA's criteria."
+      },
+      "40": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:e29bed37353287ca60725eab1c273e5d32e69147e48a946c79da0d5730d3caf8",
+        "sampleAnswerWordsFingerprint": "sha256:b68cbc327f80f3f9f4e7f00be44e2c943cf24fd22e78df714b30e8b90245251c",
+        "note": "Compared against NESA's committed sample answer and criteria rows: the model answer's method and final result agree, every keyword is creditable from the model answer in the real engine, and the band descriptors match NESA's criteria. EDITED LATER THE SAME DAY by the Mathematics Advanced review's sibling-part keyword sweep: part (b) carried '600', which is part (a)'s male-sheep count and matched (b)'s own model answer only inside 12 600. Measured as a no-op on every probe in the real engine before dropping it. Content unchanged and the verdict stands."
+      }
+    }
+  }
+}

@@ -793,6 +793,27 @@ carrying historical debt report 0% and keep CI green. Tooling: `scripts/build_re
 (from a hand-typed verdict table in `scripts/reviews/{subject_id}.py`) and
 `scripts/review_triage.py <subject-id>` for the queue.
 
+**Three mechanical checks are mandatory before a ledger is committed** — run
+`node scripts/review_checks.cjs <subject-id>`, which drives the REAL `scoring.js` through
+`node:vm`. ⚠️ **Never mirror `keywordHit()` in another language to decide anything**: every
+attempt has come out MORE permissive than the engine and passed questions the engine then
+failed.
+
+| Check | Why |
+|---|---|
+| (a) every question/part scores **full marks** from its OWN model answer | otherwise a student writing the bank's own answer is marked down |
+| (b) `round(minKeywords / n × marks)` is never **0** | otherwise the question scores zero for an answer it itself calls sufficient — one of Multimedia's 35 failed this |
+| (c) a fluent but **content-free** answer must score **< 50%** | added 2026-09-07: it is the only check that could see **four Standard 2 questions paying FULL marks for one** — a critical path split into single-letter keywords, an `acceptableAnswers` list leaking another part's bare `'5'`, a lone keyword `increase` credited by the word "in", and a **regex** stored as a keyword |
+
+⚠️ Check (c) needs reading, not batch-applying. Most hits are the documented
+`kw.startsWith(word)` engine looseness paying one mark out of a long list, which is inherent to
+a proportional grid. **The content defects are the ones whose cause is in the data.**
+
+⚠️ **Fix the measuring instrument before trusting it.** A tag-stripping regex `/<[^>]+>/g` is
+NOT how a browser parses — it opens a tag only before a letter, `/`, `!` or `?` — so
+`P(0 < Z < 0.3)` is literal text on screen. The regex eats it and invents defects; it has now
+done so twice (Maths Advanced 2024 Q30, Standard 2 2021 Q38).
+
 **Mechanical triage orders the reading queue. It never decides anything.**
 ⚠️ The VET run put numbers on how weak it is: its queue's **top** entry was a benign
 `divergent-accepted`, and **two of the six real defects sat at the very bottom, on term
@@ -831,6 +852,13 @@ official sentence beats inventing a third); N = 1 (all-or-nothing 1-mark questio
 neither, so `partial`/`minimal` state the row's non-attainment — the one place a descriptor
 is not NESA's wording, and it must be flagged in the ledger. Worked through in
 `docs/subject-plans/vet-construction-written-review.md`.
+
+⚠️ **A stem can contradict the exam paper, and triage cannot see it** — it scores as *perfect
+agreement* with the sample answer, because triage never reads the paper. Standard 2's review
+found **eight** such stems and **all eight were wrong**, including one question with three
+errors and one that was outright unanswerable. **Open the paper for any stem you touch**, and
+note that a per-part `(N marks)` label printed inside the combined `q` string is invisible to
+`check_written_key.cjs` whenever the question's total still reconciles.
 
 **Where a subject legitimately diverges, say so in the ledger.** Maths sample answers extract
 as mangled equation layout (`x2 102 82 = + 2 = 164`), so a Maths model answer *should* read

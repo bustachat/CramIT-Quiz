@@ -69,14 +69,60 @@ describe('keywordHit', () => {
     assert.equal(S.keywordHit('call to action', 'add calls to action'), true, '4-char shared stem');
   });
 
-  test('short keywords are LOOSE — documented, not a bug', () => {
-    // kw.startsWith(word): the bare digit "2" credits "2670".
-    assert.equal(S.keywordHit('2670', 'the answer is 2 dollars'), true);
+  test('a SHORT keyword is still loose — that direction is the rule\'s purpose', () => {
+    // word.startsWith(kw) is unchanged and ungated: a student's longer word
+    // matching a shorter keyword is exactly what stem matching is for.
     assert.equal(S.keywordHit('pi', 'lay the pipe'), true);
   });
 
   test('does not match across an unrelated word', () => {
     assert.equal(S.keywordHit('mitochondria', 'the heart pumps blood'), false);
+  });
+
+  // ── The prefix rule is gated at 4 characters (fixed 2026-09-07) ────────────
+  //
+  // kw.startsWith(word) used to accept a word of ANY length, so ordinary English
+  // reached almost every keyword. Measured on the live bank: a fluent but
+  // content-free answer took >=50% of the mark on 10 question/parts, and an
+  // answer of nothing but digits took >=50% on 331 of 587.
+  describe('kw.startsWith(word) requires a 4-character word', () => {
+    test('an ordinary short word no longer credits a longer keyword', () => {
+      assert.equal(S.keywordHit('interest', 'the answer depends on the information given in'), false);
+      assert.equal(S.keywordHit('internal', 'given in the diagram'), false);
+      assert.equal(S.keywordHit('not independent', 'I am not sure how to answer'), false);
+      assert.equal(S.keywordHit('total probability', 'I will try my best to explain'), false);
+      assert.equal(S.keywordHit('one person', 'it depends on the method'), false);
+    });
+    test('a 4-character word still credits a longer keyword', () => {
+      assert.equal(S.keywordHit('interest', 'compound inte'), true, '"inte" is 4 chars');
+      assert.equal(S.keywordHit('depreciation', 'straight-line depr'), true);
+    });
+    test('the student writing the keyword itself is unaffected', () => {
+      assert.equal(S.keywordHit('interest', 'the interest charged is $3.51'), true);
+      assert.equal(S.keywordHit('not independent', 'they are not independent'), true);
+    });
+  });
+
+  // ── Notation is normalised on BOTH sides before matching ───────────────────
+  describe('normalisation', () => {
+    test('digit-group separators — the student writes "320 000"', () => {
+      assert.equal(S.keywordHit('320000', 'about 320 000 trees'), true);
+      assert.equal(S.keywordHit('1725.60', 'the repayment is $1,725.60'), true);
+      // ⚠️ load-bearing: without this, gating the prefix rule at 4 characters
+      // strips a legitimate match on 50 questions, because the 3-character word
+      // "320" was carrying "320000".
+    });
+    test('dashes — the bank uses U+2212, students type a hyphen', () => {
+      assert.equal(S.keywordHit('k² - 5k - 6', 'so k² − 5k − 6 = 0'), true);
+      assert.equal(S.keywordHit('y = 19x − 25', 'y = 19x - 25'), true);
+    });
+    test('subscript digits — "VO₂ max" is typed "VO2 max"', () => {
+      assert.equal(S.keywordHit('vo2 max', 'monitoring vo₂ max every 4 weeks'), true);
+    });
+    test('a bare digit no longer reaches a long numeric keyword', () => {
+      assert.equal(S.keywordHit('2670', 'the answer is 2 dollars'), false);
+      assert.equal(S.keywordHit('320000', '1 + 2 + 3 + 4 + 5'), false);
+    });
   });
 });
 
@@ -92,6 +138,54 @@ describe('scoreOne — acceptableAnswers', () => {
     const res = S.scoreOne(both, 'rtsp');
     assert.equal(res.kind, 'acceptable');
     assert.equal(res.kwResults.length, 0);
+  });
+
+  // ── Numeric entries must land on a NUMBER BOUNDARY (added 2026-09-07) ──────
+  //
+  // A plain includes() let the entry "16" match inside "116" and "160 hours",
+  // handing FULL marks to a wrong answer — and because acceptableAnswers
+  // short-circuits scoreOne(), it hands over all of them. Measured on the live
+  // bank: 45 of the 57 questions using acceptableAnswers accepted a
+  // realistically-wrong number. These tests pin the fix in both directions,
+  // because a boundary rule that is too strict is just as wrong: requiring one
+  // on the right-hand side regressed three real questions whose accepted entry
+  // is a legitimate PREFIX of a more precise answer.
+  const marks16 = { maxMark: 2, acceptableAnswers: ['16', '16 hours'] };
+  test('a bare numeric entry no longer matches inside a longer number', () => {
+    assert.equal(S.scoreOne(marks16, '16').marksEarned, 2);
+    assert.equal(S.scoreOne(marks16, '16 hours').marksEarned, 2);
+    assert.equal(S.scoreOne(marks16, 'the answer is 16').marksEarned, 2);
+    assert.equal(S.scoreOne(marks16, '116').marksEarned, 0);
+    assert.equal(S.scoreOne(marks16, '160 hours').marksEarned, 0);
+    assert.equal(S.scoreOne(marks16, '1.6').marksEarned, 0);
+  });
+  test('a decimal fragment does not count — "38" is not inside "0.38"', () => {
+    const s38 = { maxMark: 4, acceptableAnswers: ['38', 'x = 38'] };
+    assert.equal(S.scoreOne(s38, 'x = 38').marksEarned, 4);
+    assert.equal(S.scoreOne(s38, '0.38').marksEarned, 0);
+    assert.equal(S.scoreOne(s38, '138').marksEarned, 0);
+    // the entry itself ends in a digit, so a trailing digit blocks it too
+    assert.equal(S.scoreOne(s38, 'x = 380').marksEarned, 0);
+  });
+  test('a following decimal point is EXTRA PRECISION, not a different number', () => {
+    // "$37 158" is the bank's accepted (nearest-dollar) form of "$37 158.72".
+    const money = { maxMark: 2, acceptableAnswers: ['$37 158'] };
+    assert.equal(S.scoreOne(money, 'fv = $37 158.72').marksEarned, 2);
+    assert.equal(S.scoreOne(money, '$37 158').marksEarned, 2);
+  });
+  test('entries that do not begin or end in a digit are matched as before', () => {
+    const prose = { maxMark: 2, acceptableAnswers: ['800 ml', 'not independent'] };
+    assert.equal(S.scoreOne(prose, 'about 800 ml of juice').marksEarned, 2);
+    assert.equal(S.scoreOne(prose, 'they are not independent').marksEarned, 2);
+    assert.equal(S.scoreOne(prose, 'no idea').marksEarned, 0);
+  });
+  test('a unit suffix still anchors the left-hand side — "4" not inside "0.4"', () => {
+    const snails = { maxMark: 2, acceptableAnswers: ['4', '4 snails'] };
+    assert.equal(S.scoreOne(snails, '4 snails').marksEarned, 2);
+    assert.equal(S.scoreOne(snails, 'about 4').marksEarned, 2);
+    assert.equal(S.scoreOne(snails, '0.4').marksEarned, 0);
+    assert.equal(S.scoreOne(snails, '14').marksEarned, 0);
+    assert.equal(S.scoreOne(snails, '40 snails').marksEarned, 0);
   });
 });
 

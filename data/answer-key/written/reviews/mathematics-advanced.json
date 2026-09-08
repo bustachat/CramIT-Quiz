@@ -1,0 +1,1532 @@
+{
+  "subject": "mathematics-advanced",
+  "note": "Written-answer review ledger. One entry per written bank question, recording that its modelAnswer, keywords and bandDescriptors were compared against NESA's official sample answer and criteria in data/answer-key/written/. ⚠️ `reviewMethod` says WHO did the comparing and how far a human checked it — do not read an entry as a per-question human sign-off unless that field says so. `sampleAnswerFingerprint` hashes the OFFICIAL answer as at review time: regenerate the key and any review whose official WORDS moved is void, not stale. `sampleAnswerWordsFingerprint` hashes the same text with word ORDER discarded, so a pure re-layout by the extractor is reported rather than treated as NESA changing. See docs/porting-playbook.md section 6. Rebuild with scripts/build_review_ledger.py; never hand-edit.",
+  "reviewMethod": "assistant-compared against NESA's committed sample answers and criteria rows, question by question, with the mathematics checked rather than the wording; NO human sign-off on any question",
+  "reviewedAt": "2026-09-07",
+  "reviews": {
+    "2020": {
+      "11": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "corrected",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:7d3d98183a69f5f334740b5a26e9a8897ee71bebcb1a1519abd284b075964d45",
+        "sampleAnswerWordsFingerprint": "sha256:ffbc13600d51f315539b3ab1ed306c4a84f59bc7f6bd5d5c309394f83918cb15",
+        "note": "PRESENTATION DEFECT: the part prompt ended in a literal (1 mark) sitting directly under the accordion header that already reads the same marks, immediately before the note explaining that part (a) is omitted. Removed; the separator and the text around it are untouched. No content, mark or scoring field changed."
+      },
+      "12": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:29e9a9584f582128eda0d6523fe6fb00c6db8b2de8c7a113aa3b75a848c1276a",
+        "sampleAnswerWordsFingerprint": "sha256:267050b653c6a0365682a9335f928ea948f62479fb90ef49efbe44a981b2e6b4",
+        "note": "Compared against NESA's committed sample answer and criteria rows. The bank's method, every intermediate value and the final result agree; every keyword is creditable from the model answer in the real engine; and the band descriptors are NESA's own criteria rows, generated verbatim rather than authored."
+      },
+      "13": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:c5bee906b3a1127e2cd0e53adc137975ab4681c30e8f9d24f91798f90f67cc9f",
+        "sampleAnswerWordsFingerprint": "sha256:4c6ad817cf54cfdceeeaad7d14ef0c3ec12f0326591ea0ab9a49adbd6cd13131",
+        "note": "Compared against NESA's committed sample answer and criteria rows. The bank's method, every intermediate value and the final result agree; every keyword is creditable from the model answer in the real engine; and the band descriptors are NESA's own criteria rows, generated verbatim rather than authored."
+      },
+      "14": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "corrected",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:d7136484a23d91f4f31d9108116b175462151fe91cb2dcbb42341d4414d6a8c1",
+        "sampleAnswerWordsFingerprint": "sha256:a3aac83637ab2e44d381fd3131c5813a5c8e1c30a4c2f8c242ab58e341d01830",
+        "note": "SCORING DEFECT (sibling-part keyword leak). Part (c) carried the keyword '5', which is part (b)'s figure -- (c)'s own model answer contains it only INSIDE 1560, as a suffix fragment. Measured in the real engine: a correct answer of '10/39' scored 1/2 before and 2/2 after dropping it. Content unchanged and agrees with NESA (10/39)."
+      },
+      "15": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "corrected",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:93647125a133470f64170189f19d1d13afecf16656f904e249642750100fd30c",
+        "sampleAnswerWordsFingerprint": "sha256:4249f94c108a09011aba9e81c9e6b08f2b6398f921a72f3197b059e10616d16c",
+        "note": "RENDERING DEFECT, found by rendering the question rather than by reading it. The stimulus image was in `q`, which a multi-part question NEVER renders -- the accordion draws `stem` plus each part's own prompt -- so the question said 'the diagram shows...' above no diagram. Introduced on 2026-09-05, when the per-part build split `stem` out of `q` and copied the intro TEXT but left the <img> behind. Proved rather than inferred: rendering 2020 Q29 with `parts` deleted shows 1 image, with `parts` present it shows 0. The tag was moved into `stem`, where the .parts-stem img cap (min(100%,600px), max-height 30vh) bounds it -- measured at 250x154 inside a 278px stem. 14 questions in this subject; none in Standard 2, Multimedia or HMS, and VET's two candidates were checked and are fine (their image sits in a part's `intro`, which does render)."
+      },
+      "17": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:5141bfb9e00ec02adc15b9083eb67fa5eac48f883ab9aa1b0d526ed3911a24ae",
+        "sampleAnswerWordsFingerprint": "sha256:58ed58f1f4d449b5e1661f16ba41f2954396214259106b81c2ff5d80836fb693",
+        "note": "Compared against NESA's committed sample answer and criteria rows. The bank's method, every intermediate value and the final result agree; every keyword is creditable from the model answer in the real engine; and the band descriptors are NESA's own criteria rows, generated verbatim rather than authored."
+      },
+      "18": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:eceb4c44a1cb6031543b9d040e3ed0b8021180c4142aeb702d8d236e1f54ae44",
+        "sampleAnswerWordsFingerprint": "sha256:1e20ff44ebddb3192596c7eef8d361253841db2707fddf933d8e8bd733022c0c",
+        "note": "Compared against NESA's committed sample answer and criteria rows. The bank's method, every intermediate value and the final result agree; every keyword is creditable from the model answer in the real engine; and the band descriptors are NESA's own criteria rows, generated verbatim rather than authored."
+      },
+      "19": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:dda2e686969b4380c3843ec37a31b29baf5427c08834b4111e294aaf3dae464f",
+        "sampleAnswerWordsFingerprint": "sha256:155427a3816357e9291043eb1f42b257873bffa2abd9f1adad7ce9aef8dbeeb3",
+        "note": "Compared against NESA's committed sample answer and criteria rows. The bank's method, every intermediate value and the final result agree; every keyword is creditable from the model answer in the real engine; and the band descriptors are NESA's own criteria rows, generated verbatim rather than authored."
+      },
+      "20": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:82fce5f9ba51a242c91ccf75689a5fc13567f310431dfba3ca37c82f26b6b5c0",
+        "sampleAnswerWordsFingerprint": "sha256:c7f163526673a752dd6481f290ab5b2ad4636dfeb05cf9b532fbdb54763e4aa6",
+        "note": "Compared against NESA's committed sample answer and criteria rows. The bank's method, every intermediate value and the final result agree; every keyword is creditable from the model answer in the real engine; and the band descriptors are NESA's own criteria rows, generated verbatim rather than authored."
+      },
+      "21": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:e3f38d489d082ba1460424e3c734c4aa9da9674013f282b2e27a1c71893c1085",
+        "sampleAnswerWordsFingerprint": "sha256:ad5f8dd6379eb3a61e20a7ea3076976dfdc59e1fc9422c3e1999a065eaeaec41",
+        "note": "Compared against NESA's committed sample answer and criteria rows. The bank's method, every intermediate value and the final result agree; every keyword is creditable from the model answer in the real engine; and the band descriptors are NESA's own criteria rows, generated verbatim rather than authored."
+      },
+      "22": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:fa853e242cee2a785c0b135556ffa94af65f481a15333ced4848b93ce9761caa",
+        "sampleAnswerWordsFingerprint": "sha256:22e99f7b7ba97881232f2dfac8924417a807a704a3e98a7d59da3b60fe5f36e1",
+        "note": "Compared against NESA's committed sample answer and criteria rows. The bank's method, every intermediate value and the final result agree; every keyword is creditable from the model answer in the real engine; and the band descriptors are NESA's own criteria rows, generated verbatim rather than authored."
+      },
+      "23": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:b371ae57e5aae53b2929793b83b1ea539fe3d3229540355aecb37b0d5bed3836",
+        "sampleAnswerWordsFingerprint": "sha256:031e0833899931e7140acd2eb4cd29253137ffd3ce351ac5bc2ec8311d318d34",
+        "note": "Compared against NESA's committed sample answer and criteria rows. The bank's method, every intermediate value and the final result agree; every keyword is creditable from the model answer in the real engine; and the band descriptors are NESA's own criteria rows, generated verbatim rather than authored."
+      },
+      "25": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:72145f47073ea4b4c208d32fe6336447e0782ee2de8d4552659ef35471aca9f5",
+        "sampleAnswerWordsFingerprint": "sha256:7994c05d715d435f3810131db8cb2eecc56aa231d44704672796875d38c5e79d",
+        "note": "Compared against NESA's committed sample answer and criteria rows. The bank's method, every intermediate value and the final result agree; every keyword is creditable from the model answer in the real engine; and the band descriptors are NESA's own criteria rows, generated verbatim rather than authored."
+      },
+      "26": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:88be7b90a1bdca0b3dca3468e84446504c5bf08288bb60d1afed84be8245c557",
+        "sampleAnswerWordsFingerprint": "sha256:a4e2aab32ff79fa44f458020accd720a0f2df59f47d690714622c2e3e813fbae",
+        "note": "Compared against NESA's committed sample answer and criteria rows. The bank's method, every intermediate value and the final result agree; every keyword is creditable from the model answer in the real engine; and the band descriptors are NESA's own criteria rows, generated verbatim rather than authored."
+      },
+      "27": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:35e8773f316d5c9515bd4ca2eb6b4c91ab7808fae1adf41fa92715feb448bf72",
+        "sampleAnswerWordsFingerprint": "sha256:0af6fd8c28bfed0583fbd01131190a07ac9658ebcb0e83ea221f68cda170641a",
+        "note": "Compared against NESA's committed sample answer and criteria rows. The bank's method, every intermediate value and the final result agree; every keyword is creditable from the model answer in the real engine; and the band descriptors are NESA's own criteria rows, generated verbatim rather than authored."
+      },
+      "28": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:4dfe7ed6f30669c8e08ce9b86630abcb9330668526ee77dea06fab9189aabda5",
+        "sampleAnswerWordsFingerprint": "sha256:0844a8e9544ce2e1b4af51990d689141ef959ef92ae4ca34dbab3ea96e5bfa34",
+        "note": "Compared against NESA's committed sample answer and criteria rows. The bank's method, every intermediate value and the final result agree; every keyword is creditable from the model answer in the real engine; and the band descriptors are NESA's own criteria rows, generated verbatim rather than authored."
+      },
+      "29": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "corrected",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:74052a02c140316b9c687110347b9ea1ead861f93853fb7c9ceb6160fdf111f3",
+        "sampleAnswerWordsFingerprint": "sha256:18dbd1288d1b3c75e66a5802b7e1178a4a768cb2058ccbe0c27cfc76afd437cf",
+        "note": "TOOLING HAZARD (corrected 2026-09-08 -- this was first written up as a rendering defect and that was WRONG). The stimulus image's alt attribute read alt=\"Graph of y = c ln x for c > 0, ...\". Browsers handle that correctly: asked directly, the pre-fix string parses to exactly one <img> with its full alt and style intact and nothing leaked as text, because inside a double-quoted attribute value '<' and '>' are ordinary characters. What the bare '>' does break is this repo's own regex parsing of markup -- the <img[^>]*> in scripts/archive/mathsadv_add_parts.py, whose docstring records it losing this very question's image, and the live /<img[^>]+src=\"([^\"]+)\"/g in validate_subjects.cjs. Escaped to &gt; so the data is safe for that tooling. One instance repo-wide. No content changed; the solution agrees with NESA (c = e). ALSO: RENDERING DEFECT, found by rendering the question rather than by reading it. The stimulus image was in `q`, which a multi-part question NEVER renders -- the accordion draws `stem` plus each part's own prompt -- so the question said 'the diagram shows...' above no diagram. Introduced on 2026-09-05, when the per-part build split `stem` out of `q` and copied the intro TEXT but left the <img> behind. Proved rather than inferred: rendering 2020 Q29 with `parts` deleted shows 1 image, with `parts` present it shows 0. The tag was moved into `stem`, where the .parts-stem img cap (min(100%,600px), max-height 30vh) bounds it -- measured at 250x154 inside a 278px stem. 14 questions in this subject; none in Standard 2, Multimedia or HMS, and VET's two candidates were checked and are fine (their image sits in a part's `intro`, which does render)."
+      },
+      "30": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "corrected",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:dd60639531c06e2adbe9afdb568d8ae789b46f65505c94e15e5ac8fef263eaea",
+        "sampleAnswerWordsFingerprint": "sha256:783abba973a0fa037acf44b3e73a615ef13d2105fedba788f37809069eaa5490",
+        "note": "RENDERING DEFECT, found by rendering the question rather than by reading it. The stimulus image was in `q`, which a multi-part question NEVER renders -- the accordion draws `stem` plus each part's own prompt -- so the question said 'the diagram shows...' above no diagram. Introduced on 2026-09-05, when the per-part build split `stem` out of `q` and copied the intro TEXT but left the <img> behind. Proved rather than inferred: rendering 2020 Q29 with `parts` deleted shows 1 image, with `parts` present it shows 0. The tag was moved into `stem`, where the .parts-stem img cap (min(100%,600px), max-height 30vh) bounds it -- measured at 250x154 inside a 278px stem. 14 questions in this subject; none in Standard 2, Multimedia or HMS, and VET's two candidates were checked and are fine (their image sits in a part's `intro`, which does render)."
+      },
+      "31": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "corrected",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:a5bd537f17926a13b6ce3090e1571f73500a197a1ff55ab400ed85e7ee0fc4d9",
+        "sampleAnswerWordsFingerprint": "sha256:d8fccc4b0063e23618b6963f32f9d4d474340147f927d5a99256cbec5befc612",
+        "note": "RENDERING DEFECT, found by rendering the question rather than by reading it. The stimulus image was in `q`, which a multi-part question NEVER renders -- the accordion draws `stem` plus each part's own prompt -- so the question said 'the diagram shows...' above no diagram. Introduced on 2026-09-05, when the per-part build split `stem` out of `q` and copied the intro TEXT but left the <img> behind. Proved rather than inferred: rendering 2020 Q29 with `parts` deleted shows 1 image, with `parts` present it shows 0. The tag was moved into `stem`, where the .parts-stem img cap (min(100%,600px), max-height 30vh) bounds it -- measured at 250x154 inside a 278px stem. 14 questions in this subject; none in Standard 2, Multimedia or HMS, and VET's two candidates were checked and are fine (their image sits in a part's `intro`, which does render)."
+      }
+    },
+    "2021": {
+      "11": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:f76c58abc19774771db33e58730710d69c50cf6c1d1d3b8b5c1e6abd13bf1b4d",
+        "sampleAnswerWordsFingerprint": "sha256:f5fe9496e185eadf3b9a1e02c11e50628c81c37d82f85fab88c0679e2c14e9a8",
+        "note": "Compared against NESA's committed sample answer and criteria rows. The bank's method, every intermediate value and the final result agree; every keyword is creditable from the model answer in the real engine; and the band descriptors are NESA's own criteria rows, generated verbatim rather than authored."
+      },
+      "12": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:b19d41ae5c94485362df01ebb7cd47370cd16f04e7bd5f3146e4c85bbf0a56e1",
+        "sampleAnswerWordsFingerprint": "sha256:019d8058dd072aa613d7608557e41d68845b72f1ef50e58a0bfd679290eeb130",
+        "note": "Compared against NESA's committed sample answer and criteria rows. The bank's method, every intermediate value and the final result agree; every keyword is creditable from the model answer in the real engine; and the band descriptors are NESA's own criteria rows, generated verbatim rather than authored."
+      },
+      "13": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:17f9624d2155a6c3da2e62aef518e73cdcda24366e23b23bb5f01a1cb98c947b",
+        "sampleAnswerWordsFingerprint": "sha256:6a1876012e2434ac4f1d38ab4cce1862700a2f581625ad04d532c74fbf7dacbe",
+        "note": "Compared against NESA's committed sample answer and criteria rows. The bank's method, every intermediate value and the final result agree; every keyword is creditable from the model answer in the real engine; and the band descriptors are NESA's own criteria rows, generated verbatim rather than authored."
+      },
+      "14": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:b913f353aa9e89bfa0e5084461ee0de5d4744b45ef1258370678de45a7d2d052",
+        "sampleAnswerWordsFingerprint": "sha256:8546ae700b21b54c85c8996fdacadae6fcce8eb9a98ec2ff65759623002d77e5",
+        "note": "Compared against NESA's committed sample answer and criteria rows. The bank's method, every intermediate value and the final result agree; every keyword is creditable from the model answer in the real engine; and the band descriptors are NESA's own criteria rows, generated verbatim rather than authored."
+      },
+      "15": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:41ebf05e75af9ccda770d3ac628d38e9e474623675163d6df23b3b3e3b2e33fd",
+        "sampleAnswerWordsFingerprint": "sha256:f6824ee05bfef43465d9579edb09eb5f6fc90140a5c6e8df06f2a7b72033e802",
+        "note": "Compared against NESA's committed sample answer and criteria rows. The bank's method, every intermediate value and the final result agree; every keyword is creditable from the model answer in the real engine; and the band descriptors are NESA's own criteria rows, generated verbatim rather than authored."
+      },
+      "16": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:1789e8037dc26e2177932119e6a07bb461ce3f9db0259621257fc5ec2cb309eb",
+        "sampleAnswerWordsFingerprint": "sha256:9054da74ebdb01ef7e3f24531ffbef5ce21c23bdfd1675979bc06aa90bc513d3",
+        "note": "Compared against NESA's committed sample answer and criteria rows. The bank's method, every intermediate value and the final result agree; every keyword is creditable from the model answer in the real engine; and the band descriptors are NESA's own criteria rows, generated verbatim rather than authored."
+      },
+      "17": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "corrected",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:58d18c4b15583c068f01012996fff537a63367a18dfba64cabacf893b0b22386",
+        "sampleAnswerWordsFingerprint": "sha256:40ffaf45e999a8938aa463cd89bd571a9685c37a5ddd1d901a00eef6fa98ffc6",
+        "note": "PRESENTATION DEFECT: the part prompt ended in a literal (1 mark) sitting directly under the accordion header that already reads the same marks -- here it was also in the wrong place, stranded mid-sentence after the description of the graph rather than after a question. Removed; the separator and the text around it are untouched. No content, mark or scoring field changed."
+      },
+      "18": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:97707742ebac2768290b0daf688e0c33f847114d41c2fedd633b79c8d3e30666",
+        "sampleAnswerWordsFingerprint": "sha256:bec947a79a24edeb4dec8932fbdabde3e623369c2ea651e8fa80fb6bd92412e5",
+        "note": "Compared against NESA's committed sample answer and criteria rows. The bank's method, every intermediate value and the final result agree; every keyword is creditable from the model answer in the real engine; and the band descriptors are NESA's own criteria rows, generated verbatim rather than authored."
+      },
+      "20": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:e6ce895450d8ef607279d2618cf198f6c1165608a930080092c91eca3b9b7789",
+        "sampleAnswerWordsFingerprint": "sha256:a84147bb684476ee0f860a3a3ec3b8af06aa94bf7d8551c29a3927b0a6bd402a",
+        "note": "Compared against NESA's committed sample answer and criteria rows. The bank's method, every intermediate value and the final result agree; every keyword is creditable from the model answer in the real engine; and the band descriptors are NESA's own criteria rows, generated verbatim rather than authored."
+      },
+      "22": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:732cc92e60711cf212bfd5f5d21d9da67a241cfafe1c8417c9baaf2c879b64c3",
+        "sampleAnswerWordsFingerprint": "sha256:02a35c42fe1e287e5bce74261c32a54721f906881a48484e73dba109c2d1939a",
+        "note": "Compared against NESA's committed sample answer and criteria rows. The bank's method, every intermediate value and the final result agree; every keyword is creditable from the model answer in the real engine; and the band descriptors are NESA's own criteria rows, generated verbatim rather than authored."
+      },
+      "23": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:893c8a255f41a8156dbbe5fd1242420833644332365674984e63591f771fde58",
+        "sampleAnswerWordsFingerprint": "sha256:1b0583daa0b786e856c22ec1e47cabf40421d52371dbf8adcf8ff0e7401f0c43",
+        "note": "Compared against NESA's committed sample answer and criteria rows. The bank's method, every intermediate value and the final result agree; every keyword is creditable from the model answer in the real engine; and the band descriptors are NESA's own criteria rows, generated verbatim rather than authored."
+      },
+      "24": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:8c9e3254632f6c868e7bd88eb59e6799e1be38dbdff0b14daad5d966716876a1",
+        "sampleAnswerWordsFingerprint": "sha256:a4b2008b438002cd5e72569605d73b40a8c9a1f75a3e12ec3fc7d82a923633bd",
+        "note": "Compared against NESA's committed sample answer and criteria rows. The bank's method, every intermediate value and the final result agree; every keyword is creditable from the model answer in the real engine; and the band descriptors are NESA's own criteria rows, generated verbatim rather than authored."
+      },
+      "25": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:01153be7aef6332e28dc5ae51ce8203ed0497764c5a55f3381ddfc348d2f34b1",
+        "sampleAnswerWordsFingerprint": "sha256:fab85f5ec1a9b370907c4f9bf5a3e816022ccf98d5aca7e26e30a051f5517dd2",
+        "note": "Compared against NESA's committed sample answer and criteria rows. The bank's method, every intermediate value and the final result agree; every keyword is creditable from the model answer in the real engine; and the band descriptors are NESA's own criteria rows, generated verbatim rather than authored."
+      },
+      "26": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:fa7d1a334b6d18c355a1f5d3c7ad3b66c3dff69eb8788463db7d89701d66385b",
+        "sampleAnswerWordsFingerprint": "sha256:1a6e5886c92f480166a33ad73067d8c0c6a2aa2a304d0aa661a64d1efad44d2f",
+        "note": "Compared against NESA's committed sample answer and criteria rows. The bank's method, every intermediate value and the final result agree; every keyword is creditable from the model answer in the real engine; and the band descriptors are NESA's own criteria rows, generated verbatim rather than authored."
+      },
+      "27": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "corrected",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:7cfff0e1e7be51317962fa18b294978155f5089a1f819e5e3994af9c38bb0b6b",
+        "sampleAnswerWordsFingerprint": "sha256:ea0a1a37282519b0fd14591a6ee727c4414d7721735d04f5f193ef9cefff2176",
+        "note": "PRESENTATION DEFECT: the part prompt ended in a literal (1 mark) sitting directly under the accordion header that already reads the same marks, immediately before the note explaining that part (a) is omitted. Removed; the separator and the text around it are untouched. No content, mark or scoring field changed."
+      },
+      "28": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "corrected",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:49685c8de5db95279cb08532cd4720ee53d86301961339823ceab5971b8b4c4f",
+        "sampleAnswerWordsFingerprint": "sha256:4d5b94cc9c9fb326c039dad5895dcb10a41f9a0cbff11a3544c80c4a739ce149",
+        "note": "PRESENTATION DEFECT: the part prompt ended in a literal (1 mark) sitting directly under the accordion header that already reads the same marks, immediately before the note explaining that part (b) is omitted. Removed; the separator and the text around it are untouched. No content, mark or scoring field changed."
+      },
+      "29": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:9dee5f5605e388eaf9d526e054157fcef58adea0652ef169af5eed4013d4c71b",
+        "sampleAnswerWordsFingerprint": "sha256:4a538e3f335a12d7de3e0cd4d32fc8ef839a6a474afa60c8e272a72e644eb449",
+        "note": "Compared against NESA's committed sample answer and criteria rows. The bank's method, every intermediate value and the final result agree; every keyword is creditable from the model answer in the real engine; and the band descriptors are NESA's own criteria rows, generated verbatim rather than authored."
+      },
+      "30": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:144b4248d009edc1803a9513ae6eb06319913649b883e6d49c60417a8df77c42",
+        "sampleAnswerWordsFingerprint": "sha256:d840334ff81a65c7c7867c824a5848df67971bdb378eeb249844e4ede644932b",
+        "note": "Compared against NESA's committed sample answer and criteria rows. The bank's method, every intermediate value and the final result agree; every keyword is creditable from the model answer in the real engine; and the band descriptors are NESA's own criteria rows, generated verbatim rather than authored."
+      },
+      "31": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:62da58710104399bde8a8298e7f4d4186faf74c50d4d8f60370c47ed4dc7457a",
+        "sampleAnswerWordsFingerprint": "sha256:6f6201326c04948cb2ae3a726fd0de528cc0da8ecd99258f938fd5ed8bb44059",
+        "note": "Compared against NESA's committed sample answer and criteria rows. The bank's method, every intermediate value and the final result agree; every keyword is creditable from the model answer in the real engine; and the band descriptors are NESA's own criteria rows, generated verbatim rather than authored."
+      },
+      "32": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:fff8d752192c2c520ae1de9ee69ba82c23a94d527cbae3f14678f7c1b76a4194",
+        "sampleAnswerWordsFingerprint": "sha256:390ab57241a8104ed9992793730f85dffd40d85c509362aec86db4fcba2b561f",
+        "note": "Compared against NESA's committed sample answer and criteria rows. The bank's method, every intermediate value and the final result agree; every keyword is creditable from the model answer in the real engine; and the band descriptors are NESA's own criteria rows, generated verbatim rather than authored."
+      },
+      "33": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:48d1809a3288c0e6f45ddc35d2f55557c7467bfb1cdd6c62c2c23e508d25ba7e",
+        "sampleAnswerWordsFingerprint": "sha256:a6a0572364c9326f4337fe439f829f3ba6572c208eee08d86aa582ae44677a40",
+        "note": "Compared against NESA's committed sample answer and criteria rows. The bank's method, every intermediate value and the final result agree; every keyword is creditable from the model answer in the real engine; and the band descriptors are NESA's own criteria rows, generated verbatim rather than authored."
+      },
+      "34": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:ca8dee332ec9c17b82d555276d0a171b44ae5fab98e58ad174b8ca2a25c39866",
+        "sampleAnswerWordsFingerprint": "sha256:322f384cf6e903f6228babb4d8060cccffa1063f43c835ca7165680f872748cb",
+        "note": "Compared against NESA's committed sample answer and criteria rows. The bank's method, every intermediate value and the final result agree; every keyword is creditable from the model answer in the real engine; and the band descriptors are NESA's own criteria rows, generated verbatim rather than authored."
+      }
+    },
+    "2022": {
+      "11": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:751f7fef12c5aada24efc1efaecf36d16dfa6caa6a9fb9d8bac177b8c7961800",
+        "sampleAnswerWordsFingerprint": "sha256:53dfb5aced5cd91cb983caef9a0d39356e61c3ed4babb831859f8a5755fe015e",
+        "note": "Compared against NESA's committed sample answer and criteria rows. The bank's method, every intermediate value and the final result agree; every keyword is creditable from the model answer in the real engine; and the band descriptors are NESA's own criteria rows, generated verbatim rather than authored."
+      },
+      "12": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "corrected",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:7faa4e50c9e6aa5be2ed58eacb41f471459da6df1cde6c453aa59fcde4856e87",
+        "sampleAnswerWordsFingerprint": "sha256:b3f291d625f013373aed69ce99b24cfc58994dec95bd94e9edabd099965fe5e9",
+        "note": "PRESENTATION DEFECT: this is a SINGLE-part question, so `q` is exactly what the student reads, and it ended in a literal (2 marks) sitting under the badge that already says the same thing, immediately before the note explaining the omitted part. Removed. Questions carrying SEVERAL such labels were left alone -- there each one is the only place that sub-part's value appears."
+      },
+      "13": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:97b7ebdfc7fd985c2caa07976c8976295c727fd9452ef0e1e6ac8ccbcd9c07f0",
+        "sampleAnswerWordsFingerprint": "sha256:72baabd203e3dda1cc4db56860ad5e9b4ad913492bb80079a20797cc98fa11a2",
+        "note": "Compared against NESA's committed sample answer and criteria rows. The bank's method, every intermediate value and the final result agree; every keyword is creditable from the model answer in the real engine; and the band descriptors are NESA's own criteria rows, generated verbatim rather than authored."
+      },
+      "14": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:b4638d30bfbf72bce80438aff231fd8ed449ad2b32287e399ec373fc812b75d7",
+        "sampleAnswerWordsFingerprint": "sha256:1ae42c463bdcf5ead59e25d59626582c1a1ad6c7ff8532ed411ad73b2003a48a",
+        "note": "Compared against NESA's committed sample answer and criteria rows. The bank's method, every intermediate value and the final result agree; every keyword is creditable from the model answer in the real engine; and the band descriptors are NESA's own criteria rows, generated verbatim rather than authored."
+      },
+      "15": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:60a86a531d2f986649ff8e4cd386749b3603966592c24d630714cac051c3796a",
+        "sampleAnswerWordsFingerprint": "sha256:8ec385e6f02aa2a14b75c35d490d847d0ea40e7d02ebc8b406de6b0812365b67",
+        "note": "Compared against NESA's committed sample answer and criteria rows. The bank's method, every intermediate value and the final result agree; every keyword is creditable from the model answer in the real engine; and the band descriptors are NESA's own criteria rows, generated verbatim rather than authored."
+      },
+      "16": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:880ad53132a0f10b2297f817f66151743d225c321158b9411c82d9511f6aa8f6",
+        "sampleAnswerWordsFingerprint": "sha256:ad933c4ff63ca9388bfacee8c641e94e312371edd4cb0cb7dd4c3669d49eeee2",
+        "note": "Compared against NESA's committed sample answer and criteria rows. The bank's method, every intermediate value and the final result agree; every keyword is creditable from the model answer in the real engine; and the band descriptors are NESA's own criteria rows, generated verbatim rather than authored."
+      },
+      "17": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "corrected",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:2e1ff519a806a01293a7a007659ab2a68e6ba606536507030c253aaa218dee8f",
+        "sampleAnswerWordsFingerprint": "sha256:281cb22193dd7a22cfe8d25dce39a22e9d7a6d5b5befdddc1f21998afc48f283",
+        "note": "Sibling-part keyword leak: part (a) carried '23', which is part (b)'s answer and matched (a)'s model answer only inside 234. Measured as a no-op on every probe before dropping it. Content agrees with NESA (234 cards, 23 rows). ALSO: RENDERING DEFECT, found by rendering the question rather than by reading it. The stimulus image was in `q`, which a multi-part question NEVER renders -- the accordion draws `stem` plus each part's own prompt -- so the question said 'the diagram shows...' above no diagram. Introduced on 2026-09-05, when the per-part build split `stem` out of `q` and copied the intro TEXT but left the <img> behind. Proved rather than inferred: rendering 2020 Q29 with `parts` deleted shows 1 image, with `parts` present it shows 0. The tag was moved into `stem`, where the .parts-stem img cap (min(100%,600px), max-height 30vh) bounds it -- measured at 250x154 inside a 278px stem. 14 questions in this subject; none in Standard 2, Multimedia or HMS, and VET's two candidates were checked and are fine (their image sits in a part's `intro`, which does render)."
+      },
+      "18": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:a1f6817bb467eb7e330a53d0097d3d0681066a48785bc377566d92a8997399d4",
+        "sampleAnswerWordsFingerprint": "sha256:b5f9d2730e2dcd929163c6883b3e23217695182494702e29458a6b905e033bfe",
+        "note": "Compared against NESA's committed sample answer and criteria rows. The bank's method, every intermediate value and the final result agree; every keyword is creditable from the model answer in the real engine; and the band descriptors are NESA's own criteria rows, generated verbatim rather than authored."
+      },
+      "19": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:c07b5276ead9d810771c9840e4e072447c78111f0601e496f9c002de32d870cf",
+        "sampleAnswerWordsFingerprint": "sha256:1eef38a9f98ea64f17ece593a41e02d8928d64f11be02ed1630a31bf6480805d",
+        "note": "Compared against NESA's committed sample answer and criteria rows. The bank's method, every intermediate value and the final result agree; every keyword is creditable from the model answer in the real engine; and the band descriptors are NESA's own criteria rows, generated verbatim rather than authored."
+      },
+      "20": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:11e065caf4a5c200a03fa5e8b961bbc0242e931f400217a1f9d884ff49dfd8d5",
+        "sampleAnswerWordsFingerprint": "sha256:03a5168257a814e382bbe173c00512d7734c1ebf91a7b12722163ec4a522be7a",
+        "note": "Compared against NESA's committed sample answer and criteria rows. The bank's method, every intermediate value and the final result agree; every keyword is creditable from the model answer in the real engine; and the band descriptors are NESA's own criteria rows, generated verbatim rather than authored."
+      },
+      "21": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:967e2015fa4a6e8b8bbde14d75f5ad3aab2532ca4c14927b30fc39d2767fa4ac",
+        "sampleAnswerWordsFingerprint": "sha256:b8e58e1a563a813a72f9006455513228579492e45679707bff27299c54b7ee0b",
+        "note": "Compared against NESA's committed sample answer and criteria rows. The bank's method, every intermediate value and the final result agree; every keyword is creditable from the model answer in the real engine; and the band descriptors are NESA's own criteria rows, generated verbatim rather than authored."
+      },
+      "22": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:35257ceeae7ff94839f779f74d97427f57f09eab8dd4a1c8b94a14b7b43b5ffa",
+        "sampleAnswerWordsFingerprint": "sha256:f95736e77afc1028a637aafd7d3e8a1738852f65f32c53ed16e0f8f74859f1d3",
+        "note": "Compared against NESA's committed sample answer and criteria rows. The bank's method, every intermediate value and the final result agree; every keyword is creditable from the model answer in the real engine; and the band descriptors are NESA's own criteria rows, generated verbatim rather than authored."
+      },
+      "23": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:8b3ab46574b30b877be54a5f6932077e02568a6631c48d1f0f8fc4519a70b0b0",
+        "sampleAnswerWordsFingerprint": "sha256:cb52fea9868f1ad536a0342bce19ee993fc1a4956c3cc0133ff8416cc3305b3c",
+        "note": "Compared against NESA's committed sample answer and criteria rows. The bank's method, every intermediate value and the final result agree; every keyword is creditable from the model answer in the real engine; and the band descriptors are NESA's own criteria rows, generated verbatim rather than authored."
+      },
+      "24": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:35edce64fde7b7848a78bb83feb08dce3a820c96ef59844cf9f6f4de3a3c7f3e",
+        "sampleAnswerWordsFingerprint": "sha256:dfd08ac92c54f3227f9b83b06006f81b87ebdb461698dfdb3df35ce6a6e28af5",
+        "note": "Compared against NESA's committed sample answer and criteria rows. The bank's method, every intermediate value and the final result agree; every keyword is creditable from the model answer in the real engine; and the band descriptors are NESA's own criteria rows, generated verbatim rather than authored."
+      },
+      "25": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:443651b544450b844cecf8fdd0028ebacf5426f07dca99c58367c33f687ce110",
+        "sampleAnswerWordsFingerprint": "sha256:e2ab243c370c94afaae036c28484e2e2818192c6513aa959be425ca8c7ac1195",
+        "note": "Compared against NESA's committed sample answer and criteria rows. The bank's method, every intermediate value and the final result agree; every keyword is creditable from the model answer in the real engine; and the band descriptors are NESA's own criteria rows, generated verbatim rather than authored."
+      },
+      "26": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:aed3f802b5470e29e9e529f58993fcf360ad7aa94b7903d81e178a04e913e1e5",
+        "sampleAnswerWordsFingerprint": "sha256:971d8a4ec52efea59ed024a5ebe29831fd80ef84f55762a76c4eff3e090c39a5",
+        "note": "Compared against NESA's committed sample answer and criteria rows. The bank's method, every intermediate value and the final result agree; every keyword is creditable from the model answer in the real engine; and the band descriptors are NESA's own criteria rows, generated verbatim rather than authored."
+      },
+      "27": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "corrected",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:21e3a9ac169e6d2ce107884705f04cf6e51f4adc91644bb710ad2dfab7e9c890",
+        "sampleAnswerWordsFingerprint": "sha256:4478a92c66226e170e59f84f4812547e79f35c457539920e2a55551631ebd238",
+        "note": "PRESENTATION DEFECT: the part prompt ended in a literal (2 marks) sitting directly under the accordion header that already reads the same marks, immediately before the note explaining that part (c) is omitted. Removed; the separator and the text around it are untouched. No content, mark or scoring field changed."
+      },
+      "28": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:61d9d1dc96e5640392d2403b8a95f899c17bcf41ade12d2e77b473bfb0ea0d67",
+        "sampleAnswerWordsFingerprint": "sha256:8041e616b9f4eb6a39eb958d328a95bd468c964febc4d73f4d956d24ce60fdec",
+        "note": "Compared against NESA's committed sample answer and criteria rows. The bank's method, every intermediate value and the final result agree; every keyword is creditable from the model answer in the real engine; and the band descriptors are NESA's own criteria rows, generated verbatim rather than authored."
+      },
+      "29": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:388cc0ca517364427ff4e70079cd42c33c7e818cede91f0f69e25912077eb51f",
+        "sampleAnswerWordsFingerprint": "sha256:4142823f9cda9cb9ee2368d874b903d8f0fd5c10f6328a38116a4454201b4798",
+        "note": "Compared against NESA's committed sample answer and criteria rows. The bank's method, every intermediate value and the final result agree; every keyword is creditable from the model answer in the real engine; and the band descriptors are NESA's own criteria rows, generated verbatim rather than authored."
+      },
+      "30": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:bcc12451434f23b3a582247ee092c9ea7e090d8d36fcbfde113c6b140d2b41a5",
+        "sampleAnswerWordsFingerprint": "sha256:ea13e2f666788b246a1f80e08e623ca623abefe2e5b4707ba061ef56bc4f1863",
+        "note": "Compared against NESA's committed sample answer and criteria rows. The bank's method, every intermediate value and the final result agree; every keyword is creditable from the model answer in the real engine; and the band descriptors are NESA's own criteria rows, generated verbatim rather than authored."
+      },
+      "31": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "corrected",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:2767c621c52074a80ed53ba7497cc5c7aaa81a52e20a9e2a16cb76b759e00613",
+        "sampleAnswerWordsFingerprint": "sha256:1927654d4f086278b6ab60459c6dffe89bf6001593e88ff023f3040558ceb69a",
+        "note": "RENDERING DEFECT, found by rendering the question rather than by reading it. The stimulus image was in `q`, which a multi-part question NEVER renders -- the accordion draws `stem` plus each part's own prompt -- so the question said 'the diagram shows...' above no diagram. Introduced on 2026-09-05, when the per-part build split `stem` out of `q` and copied the intro TEXT but left the <img> behind. Proved rather than inferred: rendering 2020 Q29 with `parts` deleted shows 1 image, with `parts` present it shows 0. The tag was moved into `stem`, where the .parts-stem img cap (min(100%,600px), max-height 30vh) bounds it -- measured at 250x154 inside a 278px stem. 14 questions in this subject; none in Standard 2, Multimedia or HMS, and VET's two candidates were checked and are fine (their image sits in a part's `intro`, which does render)."
+      },
+      "32": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "corrected",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:4064129852e5591bb56e34016ebce95fe939978007ad90d8449fbf44fea94af0",
+        "sampleAnswerWordsFingerprint": "sha256:d9723c05429fbc2a52d0ea6bd0509f7b527b02a7b340d0e25db25e6720416ff7",
+        "note": "Sibling-part keyword leak: part (a) carried '83', part (b)'s answer, matched in (a) only inside the intermediate 783.7168. Measured as a no-op before dropping. Content agrees with NESA ($1381.16, 83 full payments, $931.54)."
+      }
+    },
+    "2023": {
+      "11": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:2cec38380d3bd5cb9a35af7fc8aba5814091d5697fe7997fa4b9f9d31f82c80a",
+        "sampleAnswerWordsFingerprint": "sha256:133924ca0d75ce0ed5edb9416e01152c1bdf22cf5a314e4bf578582338dc3f6e",
+        "note": "Compared against NESA's committed sample answer and criteria rows. The bank's method, every intermediate value and the final result agree; every keyword is creditable from the model answer in the real engine; and the band descriptors are NESA's own criteria rows, generated verbatim rather than authored."
+      },
+      "12": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:678480df234ad106461a9c10757c30b1ff343cd544ce0894faa2043d51c21cd6",
+        "sampleAnswerWordsFingerprint": "sha256:387b911df98cdd8be846ce9ee14e5c9d0e1218b366be35e6301b0cbb1201ff46",
+        "note": "Compared against NESA's committed sample answer and criteria rows. The bank's method, every intermediate value and the final result agree; every keyword is creditable from the model answer in the real engine; and the band descriptors are NESA's own criteria rows, generated verbatim rather than authored."
+      },
+      "13": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:5ded1efa57edd8408b48074ae30eedb5224a903811aff9e9026a0bf75a811a5b",
+        "sampleAnswerWordsFingerprint": "sha256:e42b46a859bda393d3f6dd3203479e1417249850cd27674c7ab175a580a15019",
+        "note": "Compared against NESA's committed sample answer and criteria rows. The bank's method, every intermediate value and the final result agree; every keyword is creditable from the model answer in the real engine; and the band descriptors are NESA's own criteria rows, generated verbatim rather than authored."
+      },
+      "14": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:43c0d0090d1c694f70fddde6d7f5c81562db3bf7120354439743a91758d9f08e",
+        "sampleAnswerWordsFingerprint": "sha256:88375c1a3565febedf3a75087fd9506671b157a6d4b8b199b528fb39ea5024a6",
+        "note": "Compared against NESA's committed sample answer and criteria rows. The bank's method, every intermediate value and the final result agree; every keyword is creditable from the model answer in the real engine; and the band descriptors are NESA's own criteria rows, generated verbatim rather than authored."
+      },
+      "15": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "corrected",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:2bd5e2f4d8fb54d8612f41b4424c97ab0050b987f94372724a58602fda49d7a3",
+        "sampleAnswerWordsFingerprint": "sha256:94f56712f03040ba2e9b3d8c7fbb93cc1e5021071fa80c5f621ed9161f1afd1c",
+        "note": "Sibling-part keyword leak: part (a) carried '40', part (b)'s period count, matched in (a) only inside 34 140. Measured as a no-op before dropping. Content agrees with NESA ($34 140 and $463 177.38)."
+      },
+      "16": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:fb5bbeae98e594639929970c6bd38a9067dc3f5207bb9f16815eb3b1d5a415e7",
+        "sampleAnswerWordsFingerprint": "sha256:74a7a8fad472c6c35412b4c641a4ec3e9311bb6b7aee1457ed4a79542efb146c",
+        "note": "Compared against NESA's committed sample answer and criteria rows. The bank's method, every intermediate value and the final result agree; every keyword is creditable from the model answer in the real engine; and the band descriptors are NESA's own criteria rows, generated verbatim rather than authored."
+      },
+      "17": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:6dbee997e6f66dc06eb1426ddc81613f0262ee4c892a65f58b513baae2dcd194",
+        "sampleAnswerWordsFingerprint": "sha256:99b2d793a6d3d83a1d54b4da28d4ce129ce0064b99761c1e5c3afb50d8a9f428",
+        "note": "Compared against NESA's committed sample answer and criteria rows. The bank's method, every intermediate value and the final result agree; every keyword is creditable from the model answer in the real engine; and the band descriptors are NESA's own criteria rows, generated verbatim rather than authored."
+      },
+      "18": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "corrected",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:a7aa01c859930b4637229f391d1afb4cd5d91172a8a933245a5f9f1e3175b232",
+        "sampleAnswerWordsFingerprint": "sha256:f45ec0003f47cc6eade9b732ac7c17d15042c9411d263a202f974fd711f2e267",
+        "note": "PRESENTATION DEFECT: the part prompt ended in a literal (1 mark) sitting directly under the accordion header that already reads the same marks, immediately before the note explaining that part (a) is omitted. Removed; the separator and the text around it are untouched. No content, mark or scoring field changed."
+      },
+      "19": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "corrected",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:8b88fc7290efb5492815b0785a00d9be6f70af397c0506b8fb348cfba8588284",
+        "sampleAnswerWordsFingerprint": "sha256:21b089bdc188bee28d8be237df58d99dfeea882ec74cd7cb39ac09765f8c48eb",
+        "note": "PRESENTATION DEFECT: this is a SINGLE-part question, so `q` is exactly what the student reads, and it ended in a literal (2 marks) sitting under the badge that already says the same thing, immediately before the note explaining the omitted part. Removed. Questions carrying SEVERAL such labels were left alone -- there each one is the only place that sub-part's value appears."
+      },
+      "20": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:04beca00d3c692cdb800a2b705e528f84274ccd4effcff732ad56ee7e46a5dd7",
+        "sampleAnswerWordsFingerprint": "sha256:2d9bccbe1b3b3056c687f2e5fdebe6c58583a521f9c9f77ec3e0ca292d319e9a",
+        "note": "Compared against NESA's committed sample answer and criteria rows. The bank's method, every intermediate value and the final result agree; every keyword is creditable from the model answer in the real engine; and the band descriptors are NESA's own criteria rows, generated verbatim rather than authored."
+      },
+      "21": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:4d5792f138133194fbf234c7c8f7c36bcb5f7391ea19d808bdc0805739734eb9",
+        "sampleAnswerWordsFingerprint": "sha256:eca12a03707dfe9cc4b3b019f8d41a16695ae1ec494587f737e38f2da09cb9d9",
+        "note": "Compared against NESA's committed sample answer and criteria rows. The bank's method, every intermediate value and the final result agree; every keyword is creditable from the model answer in the real engine; and the band descriptors are NESA's own criteria rows, generated verbatim rather than authored."
+      },
+      "22": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:c33046615dc59059e705bc068ff70590c69de1e681f7223004ab0ec285e17c95",
+        "sampleAnswerWordsFingerprint": "sha256:2378c12f54018e9db0d9d1a16de5c893d7082322f565aeff31fd143e3e3d1fab",
+        "note": "Compared against NESA's committed sample answer and criteria rows. The bank's method, every intermediate value and the final result agree; every keyword is creditable from the model answer in the real engine; and the band descriptors are NESA's own criteria rows, generated verbatim rather than authored."
+      },
+      "23": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:abd43535eb305fdc64bc167f03f83816876b0af5236c2364755bb39c8c6e6ddb",
+        "sampleAnswerWordsFingerprint": "sha256:1ddc860dd358f82dd43af4828421560efea21b0e916ec9be31a31172bd266ed2",
+        "note": "Compared against NESA's committed sample answer and criteria rows. The bank's method, every intermediate value and the final result agree; every keyword is creditable from the model answer in the real engine; and the band descriptors are NESA's own criteria rows, generated verbatim rather than authored."
+      },
+      "24": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:eda8061aeedfda68f7faa41dee5a10a845852d3e4395a405daf798a7c82a5051",
+        "sampleAnswerWordsFingerprint": "sha256:24a47f61b3a873ff6608e88b404ad8b8e3f46c07bc06edc6ca221105755156a3",
+        "note": "Compared against NESA's committed sample answer and criteria rows. The bank's method, every intermediate value and the final result agree; every keyword is creditable from the model answer in the real engine; and the band descriptors are NESA's own criteria rows, generated verbatim rather than authored."
+      },
+      "25": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:3f67843df1f73c8e5c8e6822e682fe72c2225bde3e8770d9afa606e1ccc60c93",
+        "sampleAnswerWordsFingerprint": "sha256:64a1ef7d250d48fad6ecfd37d520108af59fb2f16253cc972b4118cea7931402",
+        "note": "Compared against NESA's committed sample answer and criteria rows. The bank's method, every intermediate value and the final result agree; every keyword is creditable from the model answer in the real engine; and the band descriptors are NESA's own criteria rows, generated verbatim rather than authored."
+      },
+      "26": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "corrected",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:0a3324165250c07a64b64ba191c052092b7b3001014e8a681d4163ac8ad40934",
+        "sampleAnswerWordsFingerprint": "sha256:969e9fc00ed66b2e4b37dfbc16425ea3f201f2d4207055e495068f2101256ca5",
+        "note": "RENDERING DEFECT, found by rendering the question rather than by reading it. The stimulus image was in `q`, which a multi-part question NEVER renders -- the accordion draws `stem` plus each part's own prompt -- so the question said 'the diagram shows...' above no diagram. Introduced on 2026-09-05, when the per-part build split `stem` out of `q` and copied the intro TEXT but left the <img> behind. Proved rather than inferred: rendering 2020 Q29 with `parts` deleted shows 1 image, with `parts` present it shows 0. The tag was moved into `stem`, where the .parts-stem img cap (min(100%,600px), max-height 30vh) bounds it -- measured at 250x154 inside a 278px stem. 14 questions in this subject; none in Standard 2, Multimedia or HMS, and VET's two candidates were checked and are fine (their image sits in a part's `intro`, which does render)."
+      },
+      "27": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "corrected",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:797c42f4dd5f30e28114f1bb830e334a68b47c430d90e6132fc35d03ba8bf234",
+        "sampleAnswerWordsFingerprint": "sha256:33851d0db74ff7cc2e2bb380fa17f46030f781445a3b382b7dc14b11e6e482e8",
+        "note": "RENDERING DEFECT, found by rendering the question rather than by reading it. The stimulus image was in `q`, which a multi-part question NEVER renders -- the accordion draws `stem` plus each part's own prompt -- so the question said 'the diagram shows...' above no diagram. Introduced on 2026-09-05, when the per-part build split `stem` out of `q` and copied the intro TEXT but left the <img> behind. Proved rather than inferred: rendering 2020 Q29 with `parts` deleted shows 1 image, with `parts` present it shows 0. The tag was moved into `stem`, where the .parts-stem img cap (min(100%,600px), max-height 30vh) bounds it -- measured at 250x154 inside a 278px stem. 14 questions in this subject; none in Standard 2, Multimedia or HMS, and VET's two candidates were checked and are fine (their image sits in a part's `intro`, which does render)."
+      },
+      "28": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:e7fc250aabc9fbb0fc8a37f4b656531d39f7899794564ef05bdb93e6aade8b75",
+        "sampleAnswerWordsFingerprint": "sha256:f39a9690a4b117346f91e1d779245825a5da0b3acb15933611234773f6d960e3",
+        "note": "Compared against NESA's committed sample answer and criteria rows. The bank's method, every intermediate value and the final result agree; every keyword is creditable from the model answer in the real engine; and the band descriptors are NESA's own criteria rows, generated verbatim rather than authored."
+      },
+      "29": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:4fd2501e0f427c0bdc8d69fd1cc3022f99e0f85062a60b23f9a3ed3aea630a6d",
+        "sampleAnswerWordsFingerprint": "sha256:ef3d0d62dafe6e793a98757ed112843a0e4d54e258ded7bddde6346a369aff74",
+        "note": "Compared against NESA's committed sample answer and criteria rows. The bank's method, every intermediate value and the final result agree; every keyword is creditable from the model answer in the real engine; and the band descriptors are NESA's own criteria rows, generated verbatim rather than authored."
+      },
+      "30": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "corrected",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:bc66ae27d523a2ce2855a25fa5bf7283ff501a62580a76d14355c01aa9aa3f82",
+        "sampleAnswerWordsFingerprint": "sha256:25836de2e732cc0b412295005c62f20f42f268ec355cd2188fd3c69d66a6a7bd",
+        "note": "PRESENTATION DEFECT: this is a SINGLE-part question, so `q` is exactly what the student reads, and it ended in a literal (3 marks) sitting under the badge that already says the same thing, immediately before the note explaining the omitted part. Removed. Questions carrying SEVERAL such labels were left alone -- there each one is the only place that sub-part's value appears."
+      },
+      "31": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "corrected",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:a9e071af06bdf86f1a7985e638b888a39cf66139eedb3b7f097f993c0e9bac79",
+        "sampleAnswerWordsFingerprint": "sha256:af0735950b7de3d60718ca954b4431bb46c6571d83c309f28c3251815270f519",
+        "note": "TEACHING DEFECT. Part (a) justified non-independence using P(S) = 4/5, which is part (b)'s result -- a student answering (a) first cannot use it. NESA argues from the values the question gives (P(F|S) = 1/8 against P(F) = 3/10). The model answer now leads with NESA's argument and keeps the P(S|F) form as a parenthetical. The conclusion was correct and is unchanged."
+      },
+      "32": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "corrected",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:820ddd38e4194e6daafa75bcc97e8fafef4acd4e19af4eaf7ab970870ed7549a",
+        "sampleAnswerWordsFingerprint": "sha256:9f5a14206611e40ccff26f8303821a0d8b66d81848c59395f16d6955983b6f1f",
+        "note": "RENDERING DEFECT, found by rendering the question rather than by reading it. The stimulus image was in `q`, which a multi-part question NEVER renders -- the accordion draws `stem` plus each part's own prompt -- so the question said 'the diagram shows...' above no diagram. Introduced on 2026-09-05, when the per-part build split `stem` out of `q` and copied the intro TEXT but left the <img> behind. Proved rather than inferred: rendering 2020 Q29 with `parts` deleted shows 1 image, with `parts` present it shows 0. The tag was moved into `stem`, where the .parts-stem img cap (min(100%,600px), max-height 30vh) bounds it -- measured at 250x154 inside a 278px stem. 14 questions in this subject; none in Standard 2, Multimedia or HMS, and VET's two candidates were checked and are fine (their image sits in a part's `intro`, which does render)."
+      }
+    },
+    "2025": {
+      "11": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "corrected",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:d14c0feacbdae20e60d6fb29253be25f1cf67184e333d998b7dc8e99e728bf67",
+        "sampleAnswerWordsFingerprint": "sha256:e267efee27997c222a92c05fd84c6b7e21a567085f465fead009cd32cf4f000c",
+        "note": "RENDERING DEFECT, found by rendering the question rather than by reading it. The stimulus image was in `q`, which a multi-part question NEVER renders -- the accordion draws `stem` plus each part's own prompt -- so the question said 'the diagram shows...' above no diagram. Introduced on 2026-09-05, when the per-part build split `stem` out of `q` and copied the intro TEXT but left the <img> behind. Proved rather than inferred: rendering 2020 Q29 with `parts` deleted shows 1 image, with `parts` present it shows 0. The tag was moved into `stem`, where the .parts-stem img cap (min(100%,600px), max-height 30vh) bounds it -- measured at 250x154 inside a 278px stem. 14 questions in this subject; none in Standard 2, Multimedia or HMS, and VET's two candidates were checked and are fine (their image sits in a part's `intro`, which does render)."
+      },
+      "12": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "divergent-accepted",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:d4735e3a265e16eee03f59718b9b5d03019c07d8b6c51f90da3a666eec13ab35",
+        "sampleAnswerWordsFingerprint": "sha256:d4735e3a265e16eee03f59718b9b5d03019c07d8b6c51f90da3a666eec13ab35",
+        "note": "NESA's committed sample answer for the whole question (it extracts as the single character '2') is ABSENT from the key (the 2025 marking guidelines extract with several answer blocks empty), so there is no official text to compare the bank's wording against. Compared MATHEMATICALLY instead -- the method and every figure were checked against the question itself and against NESA's criteria rows, which do extract cleanly and which the band descriptors are taken from verbatim."
+      },
+      "13": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:8510fa0af671699d305935538cdac5e5dd1e4051b55b7bf34ef0cffa28c1f61b",
+        "sampleAnswerWordsFingerprint": "sha256:3a53e34960221ae712443a6384423955e40b6b5ce7a44ff1eee31117e7fddb97",
+        "note": "Compared against NESA's committed sample answer and criteria rows. The bank's method, every intermediate value and the final result agree; every keyword is creditable from the model answer in the real engine; and the band descriptors are NESA's own criteria rows, generated verbatim rather than authored."
+      },
+      "14": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "divergent-accepted",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:85eaaeb6da58ac16bea11dd5e2e2284b3e0d5787367a8725dae297a001262efc",
+        "sampleAnswerWordsFingerprint": "sha256:dfa6415c30cc1945f0d134b8d8326794e89dc3b05212da57f4474d0ffd4d08ab",
+        "note": "NESA's committed sample answer for part (c) is ABSENT from the key (the 2025 marking guidelines extract with several answer blocks empty), so there is no official text to compare the bank's wording against. Compared MATHEMATICALLY instead -- the method and every figure were checked against the question itself and against NESA's criteria rows, which do extract cleanly and which the band descriptors are taken from verbatim."
+      },
+      "15": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "corrected",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:5513e783d63abb47b0ffc6325e2f559a619a01ea5d746c272cd2b2bc9850ce26",
+        "sampleAnswerWordsFingerprint": "sha256:bdadf55b51cd4ccf2a18a5827488f544912632161cf45773d4f2f380bb635f0e",
+        "note": "PRESENTATION DEFECT: the part prompt ended in a literal (2 marks) sitting directly under the accordion header that already reads the same marks, immediately before the note explaining that part (b) is omitted. Removed; the separator and the text around it are untouched. No content, mark or scoring field changed."
+      },
+      "16": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "corrected",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:2ade2d92864fea90dd962ac29e104547a6ad558ff3c84dc63f252f3262b9c708",
+        "sampleAnswerWordsFingerprint": "sha256:d8a61e69f6a8d15f03982ee98727af77b2f062f397ac94375bbc900f0ead0a92",
+        "note": "PRESENTATION DEFECT: this is a SINGLE-part question, so `q` is exactly what the student reads, and it ended in a literal (4 marks) sitting under the badge that already says the same thing, immediately before the note explaining the omitted part. Removed. Questions carrying SEVERAL such labels were left alone -- there each one is the only place that sub-part's value appears."
+      },
+      "17": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "divergent-accepted",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "sampleAnswerWordsFingerprint": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "note": "NESA's committed sample answer for all three parts is ABSENT from the key (the 2025 marking guidelines extract with several answer blocks empty), so there is no official text to compare the bank's wording against. Compared MATHEMATICALLY instead -- the method and every figure were checked against the question itself and against NESA's criteria rows, which do extract cleanly and which the band descriptors are taken from verbatim."
+      },
+      "18": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "divergent-accepted",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "sampleAnswerWordsFingerprint": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "note": "NESA's committed sample answer for the whole question is ABSENT from the key (the 2025 marking guidelines extract with several answer blocks empty), so there is no official text to compare the bank's wording against. Compared MATHEMATICALLY instead -- the method and every figure were checked against the question itself and against NESA's criteria rows, which do extract cleanly and which the band descriptors are taken from verbatim."
+      },
+      "19": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:dc4226986a1fd840b33b7dbd7b5d7cf88d5068b2c52e3e7886acfbcea474adae",
+        "sampleAnswerWordsFingerprint": "sha256:572363e89b8047436c9a2b5a0127512a56a3f3e7fdb406fa5185e82081da79e9",
+        "note": "Compared against NESA's committed sample answer and criteria rows. The bank's method, every intermediate value and the final result agree; every keyword is creditable from the model answer in the real engine; and the band descriptors are NESA's own criteria rows, generated verbatim rather than authored."
+      },
+      "20": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:c52d8afdc24e7616984e260a26634e669bb7787bfa32a0ff6e069b8ef3a2fb80",
+        "sampleAnswerWordsFingerprint": "sha256:2202d6a10f7e326bf058fa70e0e6055a292aa377cdc38a464324fa845d124d4b",
+        "note": "Compared against NESA's committed sample answer and criteria rows. The bank's method, every intermediate value and the final result agree; every keyword is creditable from the model answer in the real engine; and the band descriptors are NESA's own criteria rows, generated verbatim rather than authored."
+      },
+      "21": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:e17fa5e37f294fbe896f34b3cfdd34f83aa86a895b8209fb8030506fd26df5b8",
+        "sampleAnswerWordsFingerprint": "sha256:d3ee98b6b2428371265c6074d11767c515d9f519d44b32166ad7116dd4d14340",
+        "note": "Compared against NESA's committed sample answer and criteria rows. The bank's method, every intermediate value and the final result agree; every keyword is creditable from the model answer in the real engine; and the band descriptors are NESA's own criteria rows, generated verbatim rather than authored."
+      },
+      "22": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:496ad74c9f32501fc120a80edb79ee42863cf15462d3b773931beaceed327b7e",
+        "sampleAnswerWordsFingerprint": "sha256:b4b2828d2fca48f15ebc474b3068979939d6ab00367c7c085684e95eac41007b",
+        "note": "Compared against NESA's committed sample answer and criteria rows. The bank's method, every intermediate value and the final result agree; every keyword is creditable from the model answer in the real engine; and the band descriptors are NESA's own criteria rows, generated verbatim rather than authored."
+      },
+      "23": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:7a5a6fdee35a4a44e7e40b4b236a1f9c1a49f2e62debd76f88f8f6b6b1b11183",
+        "sampleAnswerWordsFingerprint": "sha256:b663e0c305bba73af0b56e31ac1ea62c3a7e1011d9789f05a507c463741ebf32",
+        "note": "Compared against NESA's committed sample answer and criteria rows. The bank's method, every intermediate value and the final result agree; every keyword is creditable from the model answer in the real engine; and the band descriptors are NESA's own criteria rows, generated verbatim rather than authored."
+      },
+      "24": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:6a147abaf92e0b5758d5cdd24071ad298775e1531fcce717f382a25955356ade",
+        "sampleAnswerWordsFingerprint": "sha256:c1739db052c607ff5c4ddb8616d06b620dce7be3db261f923c1a43ea89ae377d",
+        "note": "Compared against NESA's committed sample answer and criteria rows. The bank's method, every intermediate value and the final result agree; every keyword is creditable from the model answer in the real engine; and the band descriptors are NESA's own criteria rows, generated verbatim rather than authored."
+      },
+      "25": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "divergent-accepted",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:e3b59a18268753650f782c8dd7d898781b2e105003ded81c4f4383b29dc0e35d",
+        "sampleAnswerWordsFingerprint": "sha256:b24ea954c917ddbdc16121cf1066779131126141fa4d901cf59332947103cdb8",
+        "note": "NESA's committed sample answer for part (c) is ABSENT from the key (the 2025 marking guidelines extract with several answer blocks empty), so there is no official text to compare the bank's wording against. Compared MATHEMATICALLY instead -- the method and every figure were checked against the question itself and against NESA's criteria rows, which do extract cleanly and which the band descriptors are taken from verbatim."
+      },
+      "26": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:0a67c966f221ab0607963f770adb4771ad6cca74bec642d6a43a5ae56c19c01f",
+        "sampleAnswerWordsFingerprint": "sha256:4c938a543e1c2a71f458c6613ac02947d6d407aed3bc56943cae5c88184fa7ab",
+        "note": "Compared against NESA's committed sample answer and criteria rows. The bank's method, every intermediate value and the final result agree; every keyword is creditable from the model answer in the real engine; and the band descriptors are NESA's own criteria rows, generated verbatim rather than authored."
+      },
+      "27": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:8f742c4542f99f681a6155c85df4834c786cc3d052848cf5d7fb6a7b13d76283",
+        "sampleAnswerWordsFingerprint": "sha256:975aa98e01a832d9425ec71a93a3ebde9df44b96cf97ab28d3533d22cf72a28a",
+        "note": "Compared against NESA's committed sample answer and criteria rows. The bank's method, every intermediate value and the final result agree; every keyword is creditable from the model answer in the real engine; and the band descriptors are NESA's own criteria rows, generated verbatim rather than authored."
+      },
+      "28": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:4a4f63d441152f84de8519d7f5c8967e739ac17a0786d4eea8ad65fd150e19a6",
+        "sampleAnswerWordsFingerprint": "sha256:1a4918abad10ad04c40dbbeb42eb468dccbae6598e1f4140994bc0ce002e8baa",
+        "note": "Compared against NESA's committed sample answer and criteria rows. The bank's method, every intermediate value and the final result agree; every keyword is creditable from the model answer in the real engine; and the band descriptors are NESA's own criteria rows, generated verbatim rather than authored."
+      },
+      "29": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "corrected",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:9e46f2165fa5772a2eefc1a6470e6e992af73fa484913db8c3cb8d8cfbf890ed",
+        "sampleAnswerWordsFingerprint": "sha256:b6232973d16830ec8748f89d1480985c33870021b4fe79be7324d64958d629e0",
+        "note": "RENDERING DEFECT, found by rendering the question rather than by reading it. The stimulus image was in `q`, which a multi-part question NEVER renders -- the accordion draws `stem` plus each part's own prompt -- so the question said 'the diagram shows...' above no diagram. Introduced on 2026-09-05, when the per-part build split `stem` out of `q` and copied the intro TEXT but left the <img> behind. Proved rather than inferred: rendering 2020 Q29 with `parts` deleted shows 1 image, with `parts` present it shows 0. The tag was moved into `stem`, where the .parts-stem img cap (min(100%,600px), max-height 30vh) bounds it -- measured at 250x154 inside a 278px stem. 14 questions in this subject; none in Standard 2, Multimedia or HMS, and VET's two candidates were checked and are fine (their image sits in a part's `intro`, which does render)."
+      },
+      "30": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "divergent-accepted",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "sampleAnswerWordsFingerprint": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "note": "NESA's committed sample answer for the whole question is ABSENT from the key (the 2025 marking guidelines extract with several answer blocks empty), so there is no official text to compare the bank's wording against. Compared MATHEMATICALLY instead -- the method and every figure were checked against the question itself and against NESA's criteria rows, which do extract cleanly and which the band descriptors are taken from verbatim."
+      },
+      "31": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:75a58540b3dad8934b142a40cf896bf763ed8225771edfb466e0f2964fe52011",
+        "sampleAnswerWordsFingerprint": "sha256:1d88fefa59926c3f7441c26c47c8f9172a7b2d5b0a1285fc659b222889208331",
+        "note": "Compared against NESA's committed sample answer and criteria rows. The bank's method, every intermediate value and the final result agree; every keyword is creditable from the model answer in the real engine; and the band descriptors are NESA's own criteria rows, generated verbatim rather than authored."
+      }
+    },
+    "2024": {
+      "11": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:02c4e56a7acbc4dd6f76e1958e462e31b4e12d15716c6bc977a90ce1a7f2fab0",
+        "sampleAnswerWordsFingerprint": "sha256:9ee4250db65b139345e3e2579c4e7e6446d51bee3e3d2032fe26d07d8b59efab",
+        "note": "Compared against NESA's committed sample answer and criteria rows. The bank's method, every intermediate value and the final result agree; every keyword is creditable from the model answer in the real engine; and the band descriptors are NESA's own criteria rows, generated verbatim rather than authored."
+      },
+      "12": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:a066a1aaed094bd2a791e686d7a74fe2facfa4f694a29a713cf86570e5fe1ac8",
+        "sampleAnswerWordsFingerprint": "sha256:f3af6b32a54f87f2fb5eebc47bf1dd12b96e0f8606063062a129922337386119",
+        "note": "Compared against NESA's committed sample answer and criteria rows. The bank's method, every intermediate value and the final result agree; every keyword is creditable from the model answer in the real engine; and the band descriptors are NESA's own criteria rows, generated verbatim rather than authored."
+      },
+      "13": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:9031b3667eef140db77ac7a450895e5c9503cd505d914772b69290addfa2867b",
+        "sampleAnswerWordsFingerprint": "sha256:e37e8ebd97088f724c78e252f5717ad3326e79d4937192c66ba08fe8a90c3e2a",
+        "note": "Compared against NESA's committed sample answer and criteria rows. The bank's method, every intermediate value and the final result agree; every keyword is creditable from the model answer in the real engine; and the band descriptors are NESA's own criteria rows, generated verbatim rather than authored."
+      },
+      "14": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "corrected",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:9bf2da890999ee84788ad4d1e292921ce5f27731e1e12722a1be8fc5e5c4353e",
+        "sampleAnswerWordsFingerprint": "sha256:d366f6b20b57823e23e2052bcb8bf52ef434dde813d0b41f0978ac86d860bb01",
+        "note": "RENDERING DEFECT, found by rendering the question rather than by reading it. The stimulus image was in `q`, which a multi-part question NEVER renders -- the accordion draws `stem` plus each part's own prompt -- so the question said 'the diagram shows...' above no diagram. Introduced on 2026-09-05, when the per-part build split `stem` out of `q` and copied the intro TEXT but left the <img> behind. Proved rather than inferred: rendering 2020 Q29 with `parts` deleted shows 1 image, with `parts` present it shows 0. The tag was moved into `stem`, where the .parts-stem img cap (min(100%,600px), max-height 30vh) bounds it -- measured at 250x154 inside a 278px stem. 14 questions in this subject; none in Standard 2, Multimedia or HMS, and VET's two candidates were checked and are fine (their image sits in a part's `intro`, which does render)."
+      },
+      "15": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:bd74e3c798c7804a6f10bc03c704f69f6e6f425eb1d8b2be9a08c98661fd4d4a",
+        "sampleAnswerWordsFingerprint": "sha256:19331969b8bbd977fc75b8f4d18e3ce78fe3af7059b4cc73a990792f2c86c82a",
+        "note": "Compared against NESA's committed sample answer and criteria rows. The bank's method, every intermediate value and the final result agree; every keyword is creditable from the model answer in the real engine; and the band descriptors are NESA's own criteria rows, generated verbatim rather than authored."
+      },
+      "16": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:34affff714b8aa484a67a9abb0db0ebc7ab20947f39f8ae6095242e684dbb382",
+        "sampleAnswerWordsFingerprint": "sha256:639bddd83c3fa4f35defaabf66904fc34864502ac322d8faba2c4f26b52a4020",
+        "note": "Compared against NESA's committed sample answer and criteria rows. The bank's method, every intermediate value and the final result agree; every keyword is creditable from the model answer in the real engine; and the band descriptors are NESA's own criteria rows, generated verbatim rather than authored."
+      },
+      "17": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "corrected",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:45462ee5352c720705988cc9337b3a534b6e38a1c1118f68f046834ec93d7beb",
+        "sampleAnswerWordsFingerprint": "sha256:0ee29d1e388ffed18b563bf44f5aa59063d4cd375e7fed94c9a5cc90d42b5dd7",
+        "note": "PRESENTATION DEFECT: the part prompt ended in a literal (2 marks) sitting directly under the accordion header that already reads the same marks, immediately before the note explaining that part (a) is omitted. Removed; the separator and the text around it are untouched. No content, mark or scoring field changed."
+      },
+      "18": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:dbcec7e012318009fe782c7ee6847ff08af1c0ee6e6b5989561aae09f476256a",
+        "sampleAnswerWordsFingerprint": "sha256:45934f27c684d4515f58a2f3c9b4896419119ee3962f4088a842f88dd14dc1f9",
+        "note": "Compared against NESA's committed sample answer and criteria rows. The bank's method, every intermediate value and the final result agree; every keyword is creditable from the model answer in the real engine; and the band descriptors are NESA's own criteria rows, generated verbatim rather than authored."
+      },
+      "20": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "corrected",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:59b042dd2a032cb16df85b448a731c8ce86f46d85e51d062a987b03094ddc0d9",
+        "sampleAnswerWordsFingerprint": "sha256:5c68ce7595fcb94e9ccb23cb687f00b37d6e85529b627d806d9f7feaf4ae37e2",
+        "note": "RENDERING DEFECT, found by rendering the question rather than by reading it. The stimulus image was in `q`, which a multi-part question NEVER renders -- the accordion draws `stem` plus each part's own prompt -- so the question said 'the diagram shows...' above no diagram. Introduced on 2026-09-05, when the per-part build split `stem` out of `q` and copied the intro TEXT but left the <img> behind. Proved rather than inferred: rendering 2020 Q29 with `parts` deleted shows 1 image, with `parts` present it shows 0. The tag was moved into `stem`, where the .parts-stem img cap (min(100%,600px), max-height 30vh) bounds it -- measured at 250x154 inside a 278px stem. 14 questions in this subject; none in Standard 2, Multimedia or HMS, and VET's two candidates were checked and are fine (their image sits in a part's `intro`, which does render)."
+      },
+      "21": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:d0ccb4ab867db9416ad2837ef3d3f88393186a1d88a2b4536e773b4e9361e8f6",
+        "sampleAnswerWordsFingerprint": "sha256:b19538d0295d03494851bf07b367d6e4b726976770e9531beb4ba3eeb41c9c82",
+        "note": "Compared against NESA's committed sample answer and criteria rows. The bank's method, every intermediate value and the final result agree; every keyword is creditable from the model answer in the real engine; and the band descriptors are NESA's own criteria rows, generated verbatim rather than authored."
+      },
+      "22": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "corrected",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:642e23f549c2d619727b51a1c3cd403bd3149c093d66070b833fbd9e883f4015",
+        "sampleAnswerWordsFingerprint": "sha256:0866bbcd806599c8f54c84ed34d49a57787994efbd09031e7fc15e69b5988637",
+        "note": "RENDERING DEFECT, found by rendering the question rather than by reading it. The stimulus image was in `q`, which a multi-part question NEVER renders -- the accordion draws `stem` plus each part's own prompt -- so the question said 'the diagram shows...' above no diagram. Introduced on 2026-09-05, when the per-part build split `stem` out of `q` and copied the intro TEXT but left the <img> behind. Proved rather than inferred: rendering 2020 Q29 with `parts` deleted shows 1 image, with `parts` present it shows 0. The tag was moved into `stem`, where the .parts-stem img cap (min(100%,600px), max-height 30vh) bounds it -- measured at 250x154 inside a 278px stem. 14 questions in this subject; none in Standard 2, Multimedia or HMS, and VET's two candidates were checked and are fine (their image sits in a part's `intro`, which does render)."
+      },
+      "23": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:25ff25e7b5014e82ca15d2235c13fb2c053b69018cd04af3c70242ca6ec76159",
+        "sampleAnswerWordsFingerprint": "sha256:fc973d5542ccf7251734a0492e2266d1a657252cd955105beeb80df9f84f3458",
+        "note": "Compared against NESA's committed sample answer and criteria rows. The bank's method, every intermediate value and the final result agree; every keyword is creditable from the model answer in the real engine; and the band descriptors are NESA's own criteria rows, generated verbatim rather than authored."
+      },
+      "24": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:88c65c429fd11e2d6c2bd4ac1cc748d993be3fc1d3e34febc53f2880e2003f56",
+        "sampleAnswerWordsFingerprint": "sha256:4a387ef18d14d4ca495964764f169746ca71fb050a1e717b07a0e9c155962016",
+        "note": "Compared against NESA's committed sample answer and criteria rows. The bank's method, every intermediate value and the final result agree; every keyword is creditable from the model answer in the real engine; and the band descriptors are NESA's own criteria rows, generated verbatim rather than authored."
+      },
+      "25": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "corrected",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:3b3b9ab0f5dc39eb0d5ff50dbc9626a2794d7e25f2dfd4c0494f54ef6179a49f",
+        "sampleAnswerWordsFingerprint": "sha256:5be3f6e230ac5a5cd69d354e3fe4f18123089fbba9747faa8b5d94a66196a135",
+        "note": "PRESENTATION DEFECT: the part prompt ended in a literal (2 marks) sitting directly under the accordion header that already reads the same marks, immediately before the note explaining that part (b) is omitted. Removed; the separator and the text around it are untouched. No content, mark or scoring field changed."
+      },
+      "26": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:34042ef643c3a5779ad08f251b25a846bc1f9c91c69338954b69e2ad6b2f07cf",
+        "sampleAnswerWordsFingerprint": "sha256:b9f814eeaf312971e49457cc06ec4560d6a9f56a76ef59883547aeacff983769",
+        "note": "Compared against NESA's committed sample answer and criteria rows. The bank's method, every intermediate value and the final result agree; every keyword is creditable from the model answer in the real engine; and the band descriptors are NESA's own criteria rows, generated verbatim rather than authored."
+      },
+      "27": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:96a6124deb17bc9f7e0d5125f9964fa05e4993618d56c2767ed5c969fbe8f99d",
+        "sampleAnswerWordsFingerprint": "sha256:c3eba76d6adabcab9ad06c70640d97a7114758cb871d52efb3728604d5f7b64f",
+        "note": "Compared against NESA's committed sample answer and criteria rows. The bank's method, every intermediate value and the final result agree; every keyword is creditable from the model answer in the real engine; and the band descriptors are NESA's own criteria rows, generated verbatim rather than authored."
+      },
+      "28": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:4ca2357eee5b901f1f0cb30b3c4ad0046b1cb6774a65dc935fe187ad95874c4f",
+        "sampleAnswerWordsFingerprint": "sha256:cdb23ae24647d80b816bf95419503913bbce356167d912229c428f477ee1c11f",
+        "note": "Compared against NESA's committed sample answer and criteria rows. The bank's method, every intermediate value and the final result agree; every keyword is creditable from the model answer in the real engine; and the band descriptors are NESA's own criteria rows, generated verbatim rather than authored."
+      },
+      "29": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:bfd6e64317b2213e6567ee8c0d7fac53ddff299744112dbe1bc3f419a3ef711b",
+        "sampleAnswerWordsFingerprint": "sha256:77670cf0cfc9a0ebd03f17cf420cb8a24e940668cd7d1b0b2fe3e00eb2ce8f53",
+        "note": "Compared against NESA's committed sample answer and criteria rows. The bank's method, every intermediate value and the final result agree; every keyword is creditable from the model answer in the real engine; and the band descriptors are NESA's own criteria rows, generated verbatim rather than authored."
+      },
+      "30": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:adcfe9c481801872ba6a80940fdf7642639ce13a2dc7bb3e57f04c27956577c3",
+        "sampleAnswerWordsFingerprint": "sha256:bc46b32b8036710338e3a359fcb7f9bef3adc44183ec977e57636f926c8ea165",
+        "note": "Compared against NESA's committed sample answer and criteria rows. The bank's method, every intermediate value and the final result agree; every keyword is creditable from the model answer in the real engine; and the band descriptors are NESA's own criteria rows, generated verbatim rather than authored."
+      },
+      "31": {
+        "reviewedAt": "2026-09-07",
+        "verdict": "ok",
+        "fields": [
+          "modelAnswer",
+          "keywords",
+          "bandDescriptors"
+        ],
+        "sampleAnswerFingerprint": "sha256:4611a597c5da07e9bf0f0e50d99ee358ffc0fe390e25f1021afe2ac19262d279",
+        "sampleAnswerWordsFingerprint": "sha256:e4137722d43acde0392be815ef70e69bb97272cf0f63b17a2df44542f4150df2",
+        "note": "Compared against NESA's committed sample answer and criteria rows. The bank's method, every intermediate value and the final result agree; every keyword is creditable from the model answer in the real engine; and the band descriptors are NESA's own criteria rows, generated verbatim rather than authored."
+      }
+    }
+  }
+}
